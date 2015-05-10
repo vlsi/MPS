@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
@@ -21,7 +22,7 @@ public class StructureChecker extends SpecificChecker {
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, final ProgressMonitor monitor) {
     monitor.start("structure", 1);
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    ValidationUtil.validateModelContent(SModelOperations.roots(model, null), new Processor<ValidationProblem>() {
+    ValidationUtil.validateModelContent(SModelOperations.roots(model, null), new TemplatesModelProcessorDecorator(model, new Processor<ValidationProblem>() {
       public boolean process(ValidationProblem vp) {
         if (monitor.isCanceled()) {
           return false;
@@ -33,7 +34,7 @@ public class StructureChecker extends SpecificChecker {
         SpecificChecker.addIssue(results, nvp.getNode(), nvp.getMessage(), ModelChecker.SEVERITY_ERROR, "structure error", null);
         return true;
       }
-    });
+    }));
     monitor.done();
 
     return results;

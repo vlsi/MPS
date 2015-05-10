@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.LanguageMissingError;
@@ -83,7 +84,7 @@ public class MigrationCheckUtil {
     // find missing concepts, when language's not missing 
     // find missing concept features when concept's not mising 
     for (SModel model : Sequence.fromIterable(models)) {
-      ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
+      ValidationUtil.validateModelContent(model.getRootNodes(), new TemplatesModelProcessorDecorator(model, new Processor<ValidationProblem>() {
         public boolean process(ValidationProblem vp) {
           if (vp instanceof LanguageMissingError) {
             LanguageMissingError err = (LanguageMissingError) vp;
@@ -119,7 +120,7 @@ public class MigrationCheckUtil {
           _maxErrors.value--;
           return _maxErrors.value > 0;
         }
-      });
+      }));
       if (_maxErrors.value == 0) {
         return result;
       }

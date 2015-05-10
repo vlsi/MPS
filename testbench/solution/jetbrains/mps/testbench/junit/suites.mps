@@ -4597,8 +4597,16 @@
                           <ref role="37wK5l" to="ec5l:~SModel.getRootNodes():java.lang.Iterable" resolve="getRootNodes" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="2RMHhGkSwJT" role="37wK5m">
-                        <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
+                      <node concept="2ShNRf" id="5xiD47T6ciY" role="37wK5m">
+                        <node concept="1pGfFk" id="5xiD47T6dOH" role="2ShVmc">
+                          <ref role="37wK5l" to="6k24:~TemplatesModelProcessorDecorator.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.util.Processor)" resolve="TemplatesModelProcessorDecorator" />
+                          <node concept="37vLTw" id="5xiD47T6pPI" role="37wK5m">
+                            <ref role="3cqZAo" node="2RMHhGkSwJC" resolve="sm" />
+                          </node>
+                          <node concept="37vLTw" id="5xiD47T6e2y" role="37wK5m">
+                            <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>

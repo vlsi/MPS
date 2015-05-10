@@ -16,6 +16,7 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -94,7 +95,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
       public void run() {
         for (SModel sm : extractModels(true)) {
           MessageCollectProcessor collector = new MessageCollectProcessor();
-          ValidationUtil.validateModelContent(sm.getRootNodes(), collector);
+          ValidationUtil.validateModelContent(sm.getRootNodes(), new TemplatesModelProcessorDecorator(sm, collector));
           if (collector.getErrors().isEmpty()) {
             continue;
           }
