@@ -25,7 +25,7 @@ public class ConceptFeatureCardinalityError extends NodeValidationProblem {
   public ConceptFeatureCardinalityError(SNode node, SConceptFeature feature, boolean isUpperBoundBroken) {
     super(Severity.ERROR, node, isUpperBoundBroken ?
             "Only one  " + feature.getPresentableKind() + " allowed in role " + feature.getPresentableName() :
-            "No  " + feature.getPresentableKind() + " in obligatory role " + feature.getPresentableName()
+            "No " + feature.getPresentableKind() + " in obligatory role " + feature.getPresentableName()
     );
     myFeature = feature;
     myUpperBoundBroken = isUpperBoundBroken;
