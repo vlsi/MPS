@@ -124,15 +124,30 @@ public class ValidationUtil {
       if (!link.isOptional() && children.isEmpty()) {
         // TODO this is a hack for constructor declarations
         if (jetbrains.mps.smodel.SNodeUtil.link_ConstructorDeclaration_returnType.equals(link)) continue;
+
+        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
+        // todo state behavior on a meeting and remove this hack
+        if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
+
         if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return false;
       }
       if (!link.isMultiple() && children.size() > 1) {
+
+        // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
+        // todo state behavior on a meeting and remove this hack
+        if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
+
         if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return false;
       }
     }
     for (SReferenceLink ref : concept.getReferenceLinks()) {
       if (!ref.isOptional()) {
         if (node.getReference(ref) == null) {
+
+          // todo this is a hack introduced because we haven't yet done cardinalities checking on generators
+          // todo state behavior on a meeting and remove this hack
+          if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
+
           if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return false;
         }
       }
