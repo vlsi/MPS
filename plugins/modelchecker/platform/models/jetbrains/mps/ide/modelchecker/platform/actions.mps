@@ -3452,6 +3452,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1ayFbsDhRY$" role="3cqZAp">
+          <node concept="2OqwBi" id="1ayFbsDhSu9" role="3clFbG">
+            <node concept="37vLTw" id="1ayFbsDhRYy" role="2Oq$k0">
+              <ref role="3cqZAo" node="63oasX2fiCm" resolve="myCheckingLevelSlider" />
+            </node>
+            <node concept="liA8E" id="1ayFbsDhU4N" role="2OqNvi">
+              <ref role="37wK5l" to="dbrf:~JSlider.setSnapToTicks(boolean):void" resolve="setSnapToTicks" />
+              <node concept="3clFbT" id="1ayFbsDhU9I" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="2uWRnxk9QxD" role="3cqZAp">
           <node concept="2OqwBi" id="2uWRnxk9RoO" role="3clFbG">
             <node concept="37vLTw" id="2uWRnxk9QxB" role="2Oq$k0">

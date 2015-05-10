@@ -39,6 +39,7 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     myCheckingLevelSlider.setPaintLabels(true);
     myCheckingLevelSlider.setPaintTicks(true);
     myCheckingLevelSlider.setMajorTickSpacing(1);
+    myCheckingLevelSlider.setSnapToTicks(true);
     myCheckingLevelSlider.setPreferredSize(new Dimension(350, 60));
 
     myPage = new JPanel(new GridBagLayout());
