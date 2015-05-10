@@ -4602,19 +4602,156 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbF" id="2RMHhGkSwJU" role="3cqZAp">
-                    <node concept="2OqwBi" id="2RMHhGkSwJV" role="3clFbG">
-                      <node concept="37vLTw" id="2RMHhGkSwJW" role="2Oq$k0">
+                  <node concept="3clFbJ" id="5xiD47T5ItB" role="3cqZAp">
+                    <node concept="3clFbS" id="5xiD47T5ItC" role="3clFbx">
+                      <node concept="3N13vt" id="5xiD47T5ItD" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="5xiD47T5ItE" role="3clFbw">
+                      <node concept="2OqwBi" id="5xiD47T5ItF" role="2Oq$k0">
+                        <node concept="37vLTw" id="5xiD47T5ItG" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
+                        </node>
+                        <node concept="liA8E" id="5xiD47T5ItH" role="2OqNvi">
+                          <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5xiD47T5ItI" role="2OqNvi">
+                        <ref role="37wK5l" to="k7g3:~List.isEmpty():boolean" resolve="isEmpty" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="5xiD47T5ItJ" role="3cqZAp" />
+                  <node concept="3cpWs8" id="5xiD47T5ItK" role="3cqZAp">
+                    <node concept="3cpWsn" id="5xiD47T5ItL" role="3cpWs9">
+                      <property role="3TUv4t" value="false" />
+                      <property role="TrG5h" value="errorMessages" />
+                      <node concept="3uibUv" id="5xiD47T5ItM" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~StringBuilder" resolve="StringBuilder" />
+                      </node>
+                      <node concept="2ShNRf" id="5xiD47T5ItN" role="33vP2m">
+                        <node concept="1pGfFk" id="5xiD47T5ItO" role="2ShVmc">
+                          <ref role="37wK5l" to="e2lb:~StringBuilder.&lt;init&gt;()" resolve="StringBuilder" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5xiD47T5ItP" role="3cqZAp">
+                    <node concept="2OqwBi" id="5xiD47T5ItQ" role="3clFbG">
+                      <node concept="2OqwBi" id="5xiD47T5ItR" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5xiD47T5ItS" role="2Oq$k0">
+                          <node concept="37vLTw" id="5xiD47T5ItT" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5xiD47T5ItL" resolve="errorMessages" />
+                          </node>
+                          <node concept="liA8E" id="5xiD47T5ItU" role="2OqNvi">
+                            <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                            <node concept="Xl_RD" id="5xiD47T5ItV" role="37wK5m">
+                              <property role="Xl_RC" value="errors in model: " />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="5xiD47T5ItW" role="2OqNvi">
+                          <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                          <node concept="2OqwBi" id="5xiD47T5ItX" role="37wK5m">
+                            <node concept="2OqwBi" id="5xiD47T5ItY" role="2Oq$k0">
+                              <node concept="37vLTw" id="5xiD47T5ItZ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2RMHhGkSwJC" resolve="sm" />
+                              </node>
+                              <node concept="liA8E" id="5xiD47T5Iu0" role="2OqNvi">
+                                <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="5xiD47T5Iu1" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5xiD47T5Iu2" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                        <node concept="Xl_RD" id="5xiD47T5Iu3" role="37wK5m">
+                          <property role="Xl_RC" value="\n" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5xiD47T5Iu4" role="3cqZAp">
+                    <node concept="2OqwBi" id="5xiD47T5Iu5" role="3clFbG">
+                      <node concept="1eOMI4" id="5xiD47T5Iu6" role="2Oq$k0">
+                        <node concept="10QFUN" id="5xiD47T5Iu7" role="1eOMHV">
+                          <node concept="2OqwBi" id="5xiD47T5Iu8" role="10QFUP">
+                            <node concept="37vLTw" id="5xiD47T5Iu9" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
+                            </node>
+                            <node concept="liA8E" id="5xiD47T5Iua" role="2OqNvi">
+                              <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
+                            </node>
+                          </node>
+                          <node concept="_YKpA" id="5xiD47T5Iub" role="10QFUM">
+                            <node concept="3uibUv" id="5xiD47T5Iuc" role="_ZDj9">
+                              <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2es0OD" id="5xiD47T5Iud" role="2OqNvi">
+                        <node concept="1bVj0M" id="5xiD47T5Iue" role="23t8la">
+                          <node concept="3clFbS" id="5xiD47T5Iuf" role="1bW5cS">
+                            <node concept="3clFbF" id="5xiD47T5Iug" role="3cqZAp">
+                              <node concept="2OqwBi" id="5xiD47T5Iuh" role="3clFbG">
+                                <node concept="2OqwBi" id="5xiD47T5Iui" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="5xiD47T5Iuj" role="2Oq$k0">
+                                    <node concept="37vLTw" id="5xiD47T5Iuk" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="5xiD47T5ItL" resolve="errorMessages" />
+                                    </node>
+                                    <node concept="liA8E" id="5xiD47T5Iul" role="2OqNvi">
+                                      <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                                      <node concept="Xl_RD" id="5xiD47T5Ium" role="37wK5m">
+                                        <property role="Xl_RC" value="\t" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="5xiD47T5Iun" role="2OqNvi">
+                                    <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                                    <node concept="37vLTw" id="5xiD47T5Iuo" role="37wK5m">
+                                      <ref role="3cqZAo" node="5xiD47T5Iur" resolve="it" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="5xiD47T5Iup" role="2OqNvi">
+                                  <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                                  <node concept="Xl_RD" id="5xiD47T5Iuq" role="37wK5m">
+                                    <property role="Xl_RC" value="\n" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="5xiD47T5Iur" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="5xiD47T5Ius" role="1tU5fm" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="5xiD47T5Iut" role="3cqZAp">
+                    <node concept="2OqwBi" id="5xiD47T5Iuu" role="3clFbG">
+                      <node concept="37vLTw" id="5xiD47T5Iuv" role="2Oq$k0">
                         <ref role="3cqZAo" node="2RMHhGkSwJs" resolve="errors" />
                       </node>
-                      <node concept="liA8E" id="2RMHhGkSwJX" role="2OqNvi">
-                        <ref role="37wK5l" to="k7g3:~List.addAll(java.util.Collection):boolean" resolve="addAll" />
-                        <node concept="2OqwBi" id="2RMHhGkSwJY" role="37wK5m">
-                          <node concept="37vLTw" id="2RMHhGkSwJZ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2RMHhGkSwJM" resolve="collector" />
+                      <node concept="liA8E" id="5xiD47T5Iuw" role="2OqNvi">
+                        <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="3cpWs3" id="5xiD47T5Iux" role="37wK5m">
+                          <node concept="Xl_RD" id="5xiD47T5Iuy" role="3uHU7B">
+                            <property role="Xl_RC" value="Broken References: " />
                           </node>
-                          <node concept="liA8E" id="2RMHhGkSwK0" role="2OqNvi">
-                            <ref role="37wK5l" to="6k24:~MessageCollectProcessor.getErrors():java.util.List" resolve="getErrors" />
+                          <node concept="2OqwBi" id="5xiD47T5Iuz" role="3uHU7w">
+                            <node concept="37vLTw" id="5xiD47T5Iu$" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5xiD47T5ItL" resolve="errorMessages" />
+                            </node>
+                            <node concept="liA8E" id="5xiD47T5Iu_" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                            </node>
                           </node>
                         </node>
                       </node>

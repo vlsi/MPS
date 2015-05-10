@@ -95,7 +95,18 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
         for (SModel sm : extractModels(true)) {
           MessageCollectProcessor collector = new MessageCollectProcessor();
           ValidationUtil.validateModelContent(sm.getRootNodes(), collector);
-          errors.addAll(collector.getErrors());
+          if (collector.getErrors().isEmpty()) {
+            continue;
+          }
+
+          final StringBuilder errorMessages = new StringBuilder();
+          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+          ListSequence.fromList(((List<String>) collector.getErrors())).visitAll(new IVisitor<String>() {
+            public void visit(String it) {
+              errorMessages.append("\t").append(it).append("\n");
+            }
+          });
+          errors.add("Broken References: " + errorMessages.toString());
         }
       }
     });
