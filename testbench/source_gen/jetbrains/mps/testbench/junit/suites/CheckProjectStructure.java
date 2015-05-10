@@ -16,6 +16,8 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.project.validation.TemplatesModelProcessorDecorator;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -42,7 +44,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
         }
 
         for (SModule sm : modules) {
-          MessageCollectProcessor processor = new MessageCollectProcessor();
+          MessageCollectProcessor processor = new MessageCollectProcessor(false);
           ValidationUtil.validateModule(sm, processor);
           if (processor.getErrors().isEmpty()) {
             continue;
@@ -67,7 +69,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor collector = new MessageCollectProcessor();
+          MessageCollectProcessor collector = new MessageCollectProcessor(false);
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
             continue;
@@ -94,7 +96,16 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor collector = new MessageCollectProcessor();
+          MessageCollectProcessor collector = new MessageCollectProcessor(false) {
+            @Override
+            protected String formatMessage(ValidationProblem problem) {
+              String err = super.formatMessage(problem);
+              if (!((problem instanceof NodeValidationProblem))) {
+                return err;
+              }
+              return err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
+            }
+          };
           ValidationUtil.validateModelContent(sm.getRootNodes(), new TemplatesModelProcessorDecorator(sm, collector));
           if (collector.getErrors().isEmpty()) {
             continue;
@@ -107,7 +118,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
               errorMessages.append("\t").append(it).append("\n");
             }
           });
-          errors.add("Broken References: " + errorMessages.toString());
+          errors.add(errorMessages.toString());
         }
       }
     });

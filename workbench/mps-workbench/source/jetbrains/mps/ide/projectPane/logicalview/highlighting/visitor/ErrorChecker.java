@@ -79,7 +79,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
       public void run() {
         SModule module = mr.resolve(myProject.getRepository());
 
-        MessageCollectProcessor collector = new MessageCollectProcessor();
+        MessageCollectProcessor collector = new MessageCollectProcessor(true);
         if (module != null) {
           ValidationUtil.validateModule(module, collector);
         }

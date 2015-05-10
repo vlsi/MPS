@@ -25,15 +25,28 @@ import java.util.List;
 public class MessageCollectProcessor implements Processor<ValidationProblem> {
   private List<String> myWarnings = new ArrayList<String>(1);
   private List<String> myErrors = new ArrayList<String>(1);
+  private final boolean myCollectWarnings;
+
+  public MessageCollectProcessor() {
+    this(true);
+  }
+
+  public MessageCollectProcessor(boolean collectWarnings) {
+    myCollectWarnings = collectWarnings;
+  }
 
   @Override
   public boolean process(ValidationProblem problem) {
-    if (problem.getSeverity()== Severity.ERROR){
-      myErrors.add(problem.getMessage());
-    } else {
-      myWarnings.add(problem.getMessage());
+    if (problem.getSeverity() == Severity.ERROR) {
+      myErrors.add(formatMessage(problem));
+    } else if (myCollectWarnings){
+      myWarnings.add(formatMessage(problem));
     }
     return true;
+  }
+
+  protected String formatMessage(ValidationProblem problem) {
+    return problem.getMessage();
   }
 
   public List<String> getWarnings() {
