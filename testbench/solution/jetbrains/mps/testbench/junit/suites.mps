@@ -4465,17 +4465,12 @@
                       </node>
                       <node concept="liA8E" id="2RMHhGkU_AY" role="2OqNvi">
                         <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
-                        <node concept="3cpWs3" id="2RMHhGkU_AZ" role="37wK5m">
-                          <node concept="Xl_RD" id="2RMHhGkT$a3" role="3uHU7B">
-                            <property role="Xl_RC" value="Broken References: " />
+                        <node concept="2OqwBi" id="2RMHhGkT$a4" role="37wK5m">
+                          <node concept="37vLTw" id="2RMHhGkT$a5" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2RMHhGkU_Ak" resolve="errorMessages" />
                           </node>
-                          <node concept="2OqwBi" id="2RMHhGkT$a4" role="3uHU7w">
-                            <node concept="37vLTw" id="2RMHhGkT$a5" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2RMHhGkU_Ak" resolve="errorMessages" />
-                            </node>
-                            <node concept="liA8E" id="2RMHhGkT$a6" role="2OqNvi">
-                              <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
-                            </node>
+                          <node concept="liA8E" id="2RMHhGkT$a6" role="2OqNvi">
+                            <ref role="37wK5l" to="e2lb:~StringBuilder.toString():java.lang.String" resolve="toString" />
                           </node>
                         </node>
                       </node>

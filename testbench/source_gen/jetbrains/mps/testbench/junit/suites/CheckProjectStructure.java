@@ -80,7 +80,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
               errorMessages.append("\t").append(it).append("\n");
             }
           });
-          errors.add("Broken References: " + errorMessages.toString());
+          errors.add(errorMessages.toString());
         }
       }
     });
