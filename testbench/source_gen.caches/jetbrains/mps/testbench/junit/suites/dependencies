@@ -73,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.Order" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestsUtil" />
