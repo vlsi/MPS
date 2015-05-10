@@ -25,7 +25,7 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
   private JPanel myPage;
   private JSlider myCheckingLevelSlider = new JSlider(JSlider.HORIZONTAL, 0, ModelCheckerSettings.CheckingLevel.values().length - 1, 0);
   private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
-  private JCheckBox myCheckSpecificCheckBox = new JCheckBox("Perform other checks");
+  private JCheckBox myCheckSpecificCheckBox = new JCheckBox("Perform additional checks");
   private ModelCheckerSettings myModelCheckerSettings;
 
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {

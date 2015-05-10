@@ -3307,7 +3307,7 @@
         <node concept="1pGfFk" id="63oasX2fgy3" role="2ShVmc">
           <ref role="37wK5l" to="dbrf:~JCheckBox.&lt;init&gt;(java.lang.String)" resolve="JCheckBox" />
           <node concept="Xl_RD" id="63oasX2fgy4" role="37wK5m">
-            <property role="Xl_RC" value="Perform other checks" />
+            <property role="Xl_RC" value="Perform additional checks" />
           </node>
         </node>
       </node>
