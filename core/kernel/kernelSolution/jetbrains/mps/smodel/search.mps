@@ -5508,9 +5508,14 @@
               </node>
               <node concept="liA8E" id="7mY9WXbe9jj" role="2OqNvi">
                 <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
-                <node concept="2YIFZM" id="5v$VO3Ro9pm" role="37wK5m">
-                  <ref role="37wK5l" to="iwwu:i0YipiH" resolve="getBaseConcept" />
-                  <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
+                <node concept="2OqwBi" id="6Kqn2fZziJp" role="37wK5m">
+                  <node concept="10M0yZ" id="4sxTOdQsHp_" role="2Oq$k0">
+                    <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
+                    <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
+                  </node>
+                  <node concept="liA8E" id="6Kqn2fZziSM" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -5,7 +5,6 @@ package jetbrains.mps.kernel.model;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -32,17 +31,11 @@ public class SModelUtil {
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
     return MetaAdapterFactoryByName.getConcept(conceptFQName).getDeclarationNode();
   }
-  @NotNull
-  @Deprecated
-  public static SNode getBaseConcept() {
-    // Deprecated, use SNodeUtil.concept_BaseConcept nstead! 
-    return (SNode) SNodeUtil.concept_BaseConcept.getDeclarationNode();
-  }
   public static Language getDeclaringLanguage(final SNode concept) {
     if (concept == null) {
       return null;
     }
-    return as_74see4_a0b0c(check_74see4_a0b0c(concept.getModel()), Language.class);
+    return as_74see4_a0b0b(check_74see4_a0b0b(concept.getModel()), Language.class);
   }
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {
     while (linkDeclaration != null && SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null) {
@@ -142,7 +135,7 @@ public class SModelUtil {
     return isAssignableConcept(fromFqName, toFqName);
   }
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0l(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0k(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -176,16 +169,16 @@ public class SModelUtil {
   public static String getLinkDeclarationRole(SNode link) {
     return SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
   }
-  private static SModule check_74see4_a0b0c(SModel checkedDotOperand) {
+  private static SModule check_74see4_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static boolean eq_74see4_a0a0l(Object a, Object b) {
+  private static boolean eq_74see4_a0a0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static <T> T as_74see4_a0b0c(Object o, Class<T> type) {
+  private static <T> T as_74see4_a0b0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

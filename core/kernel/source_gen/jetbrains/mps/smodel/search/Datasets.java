@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.HashSet;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -20,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Arrays;
 import jetbrains.mps.util.FlattenIterable;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 /*package*/ class Datasets {
   /*package*/ static final AbstractCache.DataSetCreator<ConceptAndSuperConceptsCache> CONCEPTS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ConceptAndSuperConceptsCache>() {
@@ -97,7 +97,7 @@ import jetbrains.mps.util.FlattenIterable;
     protected void init() {
       Set<SNode> result = new LinkedHashSet<SNode>();
       Datasets.collectImplementedAndExtended(myTopConcept, result);
-      result.add(SModelUtil.getBaseConcept());
+      result.add(SNodeUtil.concept_BaseConcept.getDeclarationNode());
       myConcepts = result.toArray(new SNode[result.size()]);
       //  depends on concepts and implemented interface references 
       myDependsOnNodes = new HashSet<SNode>(myConcepts.length * 2);
