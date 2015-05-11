@@ -21,6 +21,7 @@ import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -98,7 +99,6 @@ public class NodeFactoryManager {
   }
 
   public static void setupNode(SAbstractConcept nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model) {
-    List<SNode> nodeFactories = new ArrayList<SNode>();
     for (SAbstractConcept ancestor : new DepthFirstConceptIterator(nodeConcept)) {
       ActionAspectDescriptor actionAspectDescriptor = null;
       LanguageRuntime languageRuntime = LanguageRegistry.getInstance().getLanguage(ancestor.getLanguage().getQualifiedName());
@@ -116,6 +116,6 @@ public class NodeFactoryManager {
   }
 
   private static SConcept asSConcept(SNode nodeConcept) {
-    return SConceptRepository.getInstance().getInstanceConcept(NameUtil.nodeFQName(nodeConcept));
+    return MetaAdapterByDeclaration.getInstanceConcept(nodeConcept);
   }
 }
