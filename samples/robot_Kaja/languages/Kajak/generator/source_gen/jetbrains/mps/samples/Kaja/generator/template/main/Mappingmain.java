@@ -25,6 +25,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -349,6 +351,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
     public String getApplicableConcept() {
       return "jetbrains.mps.samples.Kaja.structure.Library";
+    }
+    public SAbstractConcept getApplicableSConcept() {
+      return MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library");
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return true;

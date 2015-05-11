@@ -23,6 +23,8 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
@@ -109,6 +111,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
     public String getApplicableConcept() {
       return "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept";
+    }
+    public SAbstractConcept getApplicableSConcept() {
+      return MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept");
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return true;
