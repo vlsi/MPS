@@ -169,7 +169,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3540,53 +3540,6 @@
         <property role="TrG5h" value="node" />
         <node concept="3uibUv" id="1NYD3hytmUU" role="1tU5fm">
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-        </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1NYD3hytmVk" role="jymVt">
-      <property role="TrG5h" value="getConcept" />
-      <property role="IEkAT" value="true" />
-      <node concept="2AHcQZ" id="2DYuqezwIO8" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="3uibUv" id="4PX4kXtxHxK" role="3clF45">
-        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
-      </node>
-      <node concept="3Tm1VV" id="1NYD3hytmVm" role="1B3o_S" />
-      <node concept="3clFbS" id="1NYD3hytmVn" role="3clF47">
-        <node concept="3cpWs6" id="1NYD3hytmVo" role="3cqZAp">
-          <node concept="2OqwBi" id="2EJVTl9jd1l" role="3cqZAk">
-            <node concept="liA8E" id="2EJVTl9jd1m" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstanceConcept(java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getInstanceConcept" />
-              <node concept="37vLTw" id="2EJVTl9jhXi" role="37wK5m">
-                <ref role="3cqZAo" node="1NYD3hytmVx" resolve="name" />
-              </node>
-            </node>
-            <node concept="2YIFZM" id="2EJVTl9jd1r" role="2Oq$k0">
-              <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-              <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1NYD3hytmVx" role="3clF46">
-        <property role="TrG5h" value="name" />
-        <node concept="3uibUv" id="1NYD3hytmVy" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="1NYD3hytmVz" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwIO6" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwIO7" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwIOQ" role="1dT_Ay">
-              <property role="1dT_AB" value="rewrite to SConcept, don't use concepts by name" />
-            </node>
-          </node>
-        </node>
-        <node concept="TZ5HA" id="1NYD3hytmV$" role="TZ5H$">
-          <node concept="1dT_AC" id="1NYD3hytmV_" role="1dT_Ay">
-            <property role="1dT_AB" value="todo rewrite the code using this" />
-          </node>
         </node>
       </node>
     </node>
