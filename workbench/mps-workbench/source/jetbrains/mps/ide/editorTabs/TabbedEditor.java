@@ -32,6 +32,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.ide.editor.tabs.FileStatusChangeListener;
 import jetbrains.mps.ide.editor.tabs.RepoChangeListener;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
@@ -78,6 +79,7 @@ public class TabbedEditor extends BaseNodeEditor {
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
   private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
+  private final FileStatusChangeListener myFileStatusListener;
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
@@ -107,6 +109,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myProject = mpsProject;
 
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
+    myFileStatusListener = new FileStatusChangeListener(mpsProject);
 
     myTabsPanel = new JPanel(new BorderLayout());
     // bloody BaseNodeEditor makes us know about layout used there
@@ -154,6 +157,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
     myRepoChangeListener.subscribeTo(myProject.getRepository());
+    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myProject)).addFileStatusListener(myFileStatusListener);
   }
 
   private void installTabsComponent() {
@@ -179,6 +183,7 @@ public class TabbedEditor extends BaseNodeEditor {
     );
 
     myRepoChangeListener.setTabController(myTabsComponent);
+    myFileStatusListener.setTabController(myTabsComponent, myBaseNode);
 
     JComponent c = myTabsComponent.getComponent();
     if (c != null) {
@@ -188,6 +193,7 @@ public class TabbedEditor extends BaseNodeEditor {
 
   @Override
   public void dispose() {
+    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myProject)).removeFileStatusListener(myFileStatusListener);
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
 
     myNextTabAction.dispose();

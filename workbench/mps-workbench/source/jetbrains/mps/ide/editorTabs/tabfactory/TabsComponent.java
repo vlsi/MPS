@@ -42,10 +42,16 @@ public interface TabsComponent {
   JComponent getComponent();
 
   /**
-   * Refresh visible tabs, bring them into up-to-date state.
+   * Refresh visible tabs, bring them into up-to-date state (add/remove missing/new).
    * Expects EDT and model read.
    */
   void updateTabs();
+
+  /**
+   * Update visual presentation of present tabs, do not add/remove tabs.
+   * Expects EDT and model read.
+   */
+  void updateTabColors();
 
   ///-------------tab navigation----------------
   abstract void nextTab();

@@ -108,8 +108,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
       public void tabsMoved() {
       }
     });
-
-    addListeners();
   }
 
 
@@ -167,14 +165,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
   //this is synchronized because we change myJbTabs here (while disposing)
   @Override
   public synchronized void dispose() {
-    removeListeners();
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
   }
 
   @Override
-  protected synchronized void updateTabColors() {
-    if (isDisposed()) return;
+  public synchronized void updateTabColors() {
+    if (isDisposed()) {
+      return;
+    }
 
     for (int i = 0; i < myRealTabs.size(); i++) {
       SNodeReference nodePtr = myRealTabs.get(i).getNode();

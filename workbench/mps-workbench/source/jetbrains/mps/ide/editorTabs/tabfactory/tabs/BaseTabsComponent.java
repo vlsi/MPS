@@ -22,9 +22,6 @@ import com.intellij.openapi.actionSystem.ActionPopupMenu;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.FileStatusListener;
-import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
@@ -35,8 +32,6 @@ import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -71,7 +66,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private SNodeReference myLastNode = null;
 
   private JComponent myComponent;
-  private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
   private volatile boolean myDisposed = false;
 
   protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
@@ -185,47 +179,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myColorProvider;
   }
 
-  ///-------------events----------------
-
-  protected void addListeners() {
-    FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
-  }
-
-  protected void removeListeners() {
-    FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-  }
-
   protected boolean isDisposedNode() {
     SNode node = myBaseNode.resolve(getProject().getRepository());
     return node == null;
   }
 
   protected abstract boolean isTabUpdateNeeded(SNodeReference node);
-
-  protected abstract void updateTabColors();
-
-  private class MyFileStatusListener implements FileStatusListener {
-    private void updateTabColorsLater() {
-      getProject().getModelAccess().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          updateTabColors();
-        }
-      });
-    }
-
-    @Override
-    public void fileStatusesChanged() {
-      updateTabColorsLater();
-    }
-
-    @Override
-    public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
-      if (virtualFile instanceof MPSNodeVirtualFile && myBaseNode.equals(((MPSNodeVirtualFile) virtualFile).getSNodePointer())) {
-        updateTabColorsLater();
-      }
-    }
-  }
 
   protected final jetbrains.mps.project.Project getProject() {
     return ProjectHelper.toMPSProject(myProject);

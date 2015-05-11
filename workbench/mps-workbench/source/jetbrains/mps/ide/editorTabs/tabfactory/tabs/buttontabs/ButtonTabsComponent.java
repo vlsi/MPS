@@ -66,14 +66,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         });
       }
     });
-
-    addListeners();
-  }
-
-  @Override
-  public void dispose() {
-    removeListeners();
-    super.dispose();
   }
 
   public Component getComponentForTabIndex(int index) {
@@ -193,7 +185,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   @Override
-  protected void updateTabColors() {
+  public void updateTabColors() {
     for (ButtonEditorTab realTab : myRealTabs) {
       realTab.updateIcon();
     }
