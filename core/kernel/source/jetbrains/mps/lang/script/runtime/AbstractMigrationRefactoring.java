@@ -23,7 +23,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractMigrationRefactoring {
+  @Deprecated
   public AbstractMigrationRefactoring(IOperationContext context) {
+  }
+
+  public AbstractMigrationRefactoring() {
   }
 
   public abstract String getName();
