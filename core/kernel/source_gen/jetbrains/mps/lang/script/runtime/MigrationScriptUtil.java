@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MigrationScriptUtil {
   private static final Logger LOG = LogManager.getLogger(MigrationScriptUtil.class);
@@ -90,9 +89,6 @@ public class MigrationScriptUtil {
     } catch (InvocationTargetException e) {
       throw new RuntimeException(e);
     }
-  }
-  public static SNode getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
-    return SModelUtil.findConceptDeclaration(migrationRefactoring.getFqNameOfConceptToSearchInstances());
   }
   public static boolean isApplicableRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
     try {
