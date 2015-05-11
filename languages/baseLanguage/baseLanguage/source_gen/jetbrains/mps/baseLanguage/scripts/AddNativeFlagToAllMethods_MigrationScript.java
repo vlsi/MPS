@@ -5,29 +5,36 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class AddNativeFlagToAllMethods_MigrationScript extends BaseMigrationScript {
   public AddNativeFlagToAllMethods_MigrationScript(IOperationContext operationContext) {
     super("Add native flag to all methods");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add the native flag";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add the native flag";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.MethodDeclaration";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return node.getProperty("isNative") == null;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, 0x73f30e3df95c0b73L, "isNative"), "" + (false));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

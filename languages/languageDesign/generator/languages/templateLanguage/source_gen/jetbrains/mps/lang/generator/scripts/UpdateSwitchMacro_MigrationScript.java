@@ -5,28 +5,34 @@ package jetbrains.mps.lang.generator.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
   public UpdateSwitchMacro_MigrationScript(IOperationContext operationContext) {
     super("Update SWITCH macro to support parameters ");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Replace SwitchMacro with TemplateSwitchMacro";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Replace SwitchMacro with TemplateSwitchMacro";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.generator.structure.SwitchMacro";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, "jetbrains.mps.lang.generator.structure.SwitchMacro");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode n = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"));
         SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x10313f93662L, "templateSwitch")));
@@ -34,6 +40,7 @@ public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
         SLinkOperations.setTarget(n, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, 0xda3dc6e5174759eL, "sourceNodeQuery"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313f84dd6L, 0x11008e5fed8L, "sourceNodeQuery")));
         SLinkOperations.setTarget(n, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

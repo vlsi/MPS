@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -12,7 +14,6 @@ import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -22,16 +23,20 @@ import jetbrains.mps.smodel.SReference;
 public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigrationScript {
   public AddMissingOverrideAnnotations_MigrationScript(IOperationContext operationContext) {
     super("Add missing @Override annotations");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "add @Override annotations";
       }
+      @Override
       public String getAdditionalInfo() {
         return "add @Override annotations";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         List<SNode> instanceMethods = Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -48,6 +53,7 @@ public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigration
         OverridingMethodsFinder finder = new OverridingMethodsFinder(node, instanceMethods);
         return SetSequence.fromSet(finder.getOverridingMethods()).isNotEmpty();
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> instanceMethods = Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -63,6 +69,7 @@ public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigration
           ListSequence.fromList(SLinkOperations.getChildren(meth, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).addElement(createAnnotationInstance_eltaeh_a0a0a2a0a());
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return true;
       }

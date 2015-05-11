@@ -5,9 +5,10 @@ package jetbrains.mps.lang.editor.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.intentions.IndentLayoutUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -17,39 +18,50 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript {
   public MigrationToIndentLayout_MigrationScript(IOperationContext operationContext) {
     super("Migration to Indent Layout");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "MoveEditor to indent Layout";
       }
+      @Override
       public String getAdditionalInfo() {
         return "MoveEditor to indent Layout";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.editor.structure.CellModel_Collection";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"))) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent")));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         IndentLayoutUtil.moveToIndentLayout(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "CellModel_RefNodeList migration";
       }
+      @Override
       public String getAdditionalInfo() {
         return "CellModel_RefNodeList migration";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout")) == null;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120150bb441L, "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))));
         if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02faL, "vertical"))) {
@@ -59,6 +71,7 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
           ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))).addElement(indentStyle);
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
