@@ -96,44 +96,37 @@
       <node id="4642948870877886655" at="40,48,41,48" concept="9" />
       <node id="2197509460969578529" at="45,36,46,29" concept="3" />
       <node id="4642948870877886690" at="53,30,54,21" concept="2" />
-      <node id="4642948870877886708" at="56,57,57,77" concept="9" />
-      <node id="4642948870877886714" at="57,77,58,91" concept="3" />
-      <node id="5871435193454873204" at="61,40,62,33" concept="3" />
-      <node id="4642948870877886674" at="66,31,67,69" concept="3" />
-      <node id="4642948870877886745" at="70,5,71,18" concept="10" />
+      <node id="5871435193454873204" at="57,38,58,31" concept="3" />
+      <node id="4642948870877886674" at="61,31,62,69" concept="3" />
+      <node id="4642948870877886745" at="65,5,66,18" concept="10" />
       <node id="4642948870877886614" at="30,12,33,7" concept="0" />
       <node id="7396589207140093143" at="44,49,47,11" concept="7" />
       <node id="4642948870877886685" at="52,13,55,11" concept="7" />
-      <node id="7396589207140427291" at="60,64,63,15" concept="7" />
+      <node id="7396589207140427291" at="56,62,59,13" concept="7" />
       <node id="4642948870877886578" at="21,0,25,0" concept="1" trace="ModelAndImportedModelsScope#(Lorg/jetbrains/mps/openapi/model/SModel;Z)V" />
       <node id="2197509460969578522" at="43,35,48,9" concept="6" />
-      <node id="5871435193454872970" at="59,18,64,13" concept="6" />
+      <node id="5871435193454872970" at="55,11,60,11" concept="6" />
       <node id="4642948870877886610" at="27,27,33,7" concept="7" />
-      <node id="4642948870877886695" at="59,16,65,11" concept="0" />
       <node id="4642948870877886730" at="42,22,49,7" concept="6" />
       <node id="4642948870877886605" at="26,35,34,5" concept="7" />
-      <node id="4642948870877886691" at="55,11,65,11" concept="7" />
       <node id="4642948870877886600" at="25,0,37,0" concept="8" trace="getModels#()Ljava/util/List;" />
-      <node id="4642948870877886671" at="51,35,68,9" concept="18" />
-      <node id="4642948870877886666" at="50,12,69,7" concept="6" />
-      <node id="4642948870877886664" at="50,10,70,5" concept="0" />
-      <node id="4642948870877886662" at="41,48,70,5" concept="7" />
-      <node id="4642948870877886642" at="37,0,73,0" concept="8" trace="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
+      <node id="4642948870877886671" at="51,35,63,9" concept="18" />
+      <node id="4642948870877886666" at="50,12,64,7" concept="6" />
+      <node id="4642948870877886664" at="50,10,65,5" concept="0" />
+      <node id="4642948870877886662" at="41,48,65,5" concept="7" />
+      <node id="4642948870877886642" at="37,0,68,0" concept="8" trace="getNodes#(Lorg/jetbrains/mps/util/Condition;)Ljava/util/List;" />
       <scope id="4642948870877886631" at="28,28,29,44" />
       <scope id="7396589207140093145" at="45,36,46,29" />
       <scope id="4642948870877886689" at="53,30,54,21" />
-      <scope id="7396589207140427293" at="61,40,62,33" />
-      <scope id="4642948870877886672" at="66,0,67,69">
+      <scope id="7396589207140427293" at="57,38,58,31" />
+      <scope id="4642948870877886672" at="61,0,62,69">
         <var name="t" id="4642948870877886682" />
       </scope>
-      <scope id="4642948870877886673" at="66,31,67,69" />
+      <scope id="4642948870877886673" at="61,31,62,69" />
       <scope id="4642948870877886587" at="21,71,23,28" />
       <scope id="4642948870877886615" at="30,14,32,33" />
-      <scope id="4642948870877886707" at="56,57,58,91">
-        <var name="isInstance" id="4642948870877886709" />
-      </scope>
       <scope id="2197509460969578524" at="44,49,47,11" />
-      <scope id="5871435193454872972" at="60,64,63,15" />
+      <scope id="5871435193454872972" at="56,62,59,13" />
       <scope id="4642948870877886578" at="21,0,25,0">
         <var name="model" id="4642948870877886581" />
         <var name="rootsOnly" id="4642948870877886583" />
@@ -142,8 +135,7 @@
         <var name="root" id="2197509460969578523" />
       </scope>
       <scope id="4642948870877886734" at="43,35,48,9" />
-      <scope id="4642948870877886696" at="59,18,64,13" />
-      <scope id="5871435193454872970" at="59,18,64,13">
+      <scope id="5871435193454872970" at="55,11,60,11">
         <var name="node" id="5871435193454872971" />
       </scope>
       <scope id="4642948870877886609" at="27,27,33,7" />
@@ -151,22 +143,22 @@
       <scope id="4642948870877886730" at="42,22,49,7">
         <var name="model" id="4642948870877886732" />
       </scope>
+      <scope id="4642948870877886684" at="52,13,60,11" />
       <scope id="4642948870877886604" at="26,35,35,20" />
       <scope id="4642948870877886600" at="25,0,37,0" />
-      <scope id="4642948870877886684" at="52,13,65,11" />
-      <scope id="4642948870877886670" at="51,35,68,9" />
-      <scope id="4642948870877886665" at="50,12,69,7" />
-      <scope id="4642948870877886666" at="50,12,69,7">
+      <scope id="4642948870877886670" at="51,35,63,9" />
+      <scope id="4642948870877886665" at="50,12,64,7" />
+      <scope id="4642948870877886666" at="50,12,64,7">
         <var name="model" id="4642948870877886668" />
       </scope>
-      <scope id="4642948870877886649" at="39,59,71,18">
+      <scope id="4642948870877886649" at="39,59,66,18">
         <var name="models" id="4642948870877886651" />
         <var name="result" id="4642948870877886656" />
       </scope>
-      <scope id="4642948870877886642" at="37,0,73,0">
+      <scope id="4642948870877886642" at="37,0,68,0">
         <var name="condition" id="4642948870877886646" />
       </scope>
-      <unit id="4642948870877886557" at="16,0,74,0" name="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
+      <unit id="4642948870877886557" at="16,0,69,0" name="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
     </file>
   </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877886748">
@@ -497,34 +489,6 @@
       <unit id="7712479415687789291" at="68,0,93,0" name="jetbrains.mps.smodel.search.ISearchScope$RefAdapter" />
       <unit id="8401916545537503513" at="27,0,68,0" name="jetbrains.mps.smodel.search.ISearchScope$Adapter" />
       <unit id="4642948870877889221" at="16,0,94,0" name="jetbrains.mps.smodel.search.ISearchScope" />
-    </file>
-  </root>
-  <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877889272">
-    <file name="IsInstanceCondition.java">
-      <node id="4642948870877889276" at="12,0,13,0" concept="4" trace="myConceptFqName" />
-      <node id="5253134957342020816" at="13,45,14,39" concept="16" />
-      <node id="4642948870877889306" at="16,45,17,29" concept="3" />
-      <node id="4642948870877889314" at="19,36,20,27" concept="10" />
-      <node id="4642948870877889322" at="23,34,24,102" concept="10" />
-      <node id="4642948870877889279" at="13,0,16,0" concept="1" trace="IsInstanceCondition#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4642948870877889300" at="16,0,19,0" concept="1" trace="IsInstanceCondition#(Ljava/lang/String;)V" />
-      <node id="4642948870877889310" at="19,0,22,0" concept="8" trace="getConceptFqName#()Ljava/lang/String;" />
-      <node id="4642948870877889316" at="22,0,26,0" concept="8" trace="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="4642948870877889284" at="13,45,14,39" />
-      <scope id="4642948870877889305" at="16,45,17,29" />
-      <scope id="4642948870877889313" at="19,36,20,27" />
-      <scope id="4642948870877889321" at="23,34,24,102" />
-      <scope id="4642948870877889279" at="13,0,16,0">
-        <var name="concept" id="4642948870877889282" />
-      </scope>
-      <scope id="4642948870877889300" at="16,0,19,0">
-        <var name="fqName" id="4642948870877889303" />
-      </scope>
-      <scope id="4642948870877889310" at="19,0,22,0" />
-      <scope id="4642948870877889316" at="22,0,26,0">
-        <var name="node" id="4642948870877889319" />
-      </scope>
-      <unit id="4642948870877889272" at="11,0,27,0" name="jetbrains.mps.smodel.search.IsInstanceCondition" />
     </file>
   </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/5889278117585265292">

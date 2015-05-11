@@ -18,8 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -156,11 +154,8 @@ public class LanguageHierarchyCache implements CoreComponent {
         for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModel structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-          Iterable<SNode> iterable =
-              new ConditionalIterable<SNode>(
-                  structureDescriptor.getRootNodes(),
-                  new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration.getQualifiedName()));
-          for (SNode root : iterable) {
+          for (SNode root : structureDescriptor.getRootNodes()) {
+            if (!root.isInstanceOfConcept(SNodeUtil.concept_AbstractConceptDeclaration)) continue;
             addToCache(NameUtil.nodeFQName(root));
           }
         }

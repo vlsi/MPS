@@ -82,10 +82,6 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <child id="1165602531693" name="superclass" index="1zkMxy" />
@@ -236,9 +232,6 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
@@ -2801,26 +2794,16 @@
                   <node concept="37vLTw" id="3GM_nagTrkD" role="37vLTJ">
                     <ref role="3cqZAo" node="2rqw8i0J$5$" resolve="statementList" />
                   </node>
-                  <node concept="10QFUN" id="2rqw8i0J$5Q" role="37vLTx">
-                    <node concept="2YIFZM" id="7LmwlFdThWN" role="10QFUP">
-                      <ref role="37wK5l" to="unno:1NYD3hytmUm" resolve="findParent" />
-                      <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                      <node concept="2JrnkZ" id="7LmwlFdThWO" role="37wK5m">
-                        <node concept="37vLTw" id="3GM_nagTrAh" role="2JrQYb">
-                          <ref role="3cqZAo" node="2rqw8i0J$60" resolve="enclosingNode" />
-                        </node>
-                      </node>
-                      <node concept="2ShNRf" id="7LmwlFdThWQ" role="37wK5m">
-                        <node concept="1pGfFk" id="7LmwlFdThWR" role="2ShVmc">
-                          <ref role="37wK5l" to="y36q:~IsInstanceCondition.&lt;init&gt;(java.lang.String)" resolve="IsInstanceCondition" />
-                          <node concept="3nh3qo" id="7LmwlFdThWS" role="37wK5m">
-                            <ref role="3nh3qp" to="tpee:fzclF80" resolve="StatementList" />
-                          </node>
-                        </node>
-                      </node>
+                  <node concept="2OqwBi" id="48K6v0BCR_Q" role="37vLTx">
+                    <node concept="37vLTw" id="48K6v0BCRyf" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2rqw8i0J$60" resolve="enclosingNode" />
                     </node>
-                    <node concept="3Tqbb2" id="2rqw8i0J$5R" role="10QFUM">
-                      <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
+                    <node concept="2Xjw5R" id="48K6v0BCRJE" role="2OqNvi">
+                      <node concept="1xMEDy" id="48K6v0BCRJG" role="1xVPHs">
+                        <node concept="chp4Y" id="48K6v0BCRKY" role="ri$Ld">
+                          <ref role="cht4Q" to="tpee:fzclF80" resolve="StatementList" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2904,26 +2887,16 @@
                       <node concept="37vLTw" id="3GM_nagTxMg" role="37vLTJ">
                         <ref role="3cqZAo" node="1IXrgHjT31H" resolve="currentStatement" />
                       </node>
-                      <node concept="10QFUN" id="2rqw8i0J$6t" role="37vLTx">
-                        <node concept="2YIFZM" id="7LmwlFdThWZ" role="10QFUP">
-                          <ref role="37wK5l" to="unno:1NYD3hytmUm" resolve="findParent" />
-                          <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                          <node concept="2JrnkZ" id="7LmwlFdThX0" role="37wK5m">
-                            <node concept="37vLTw" id="3GM_nagTvBG" role="2JrQYb">
-                              <ref role="3cqZAo" node="2rqw8i0J$60" resolve="enclosingNode" />
-                            </node>
-                          </node>
-                          <node concept="2ShNRf" id="7LmwlFdThX2" role="37wK5m">
-                            <node concept="1pGfFk" id="7LmwlFdThX3" role="2ShVmc">
-                              <ref role="37wK5l" to="y36q:~IsInstanceCondition.&lt;init&gt;(java.lang.String)" resolve="IsInstanceCondition" />
-                              <node concept="3nh3qo" id="7LmwlFdThX4" role="37wK5m">
-                                <ref role="3nh3qp" to="tpee:fzclF8l" resolve="Statement" />
-                              </node>
-                            </node>
-                          </node>
+                      <node concept="2OqwBi" id="48K6v0BCRNH" role="37vLTx">
+                        <node concept="37vLTw" id="48K6v0BCRNI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2rqw8i0J$60" resolve="enclosingNode" />
                         </node>
-                        <node concept="3Tqbb2" id="2rqw8i0J$6u" role="10QFUM">
-                          <ref role="ehGHo" to="tpee:fzclF8l" resolve="Statement" />
+                        <node concept="2Xjw5R" id="48K6v0BCRNJ" role="2OqNvi">
+                          <node concept="1xMEDy" id="48K6v0BCRNK" role="1xVPHs">
+                            <node concept="chp4Y" id="48K6v0BCRRd" role="ri$Ld">
+                              <ref role="cht4Q" to="tpee:fzclF8l" resolve="Statement" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -3116,26 +3089,16 @@
             <node concept="3Tqbb2" id="2rqw8i0J$6Q" role="1tU5fm">
               <ref role="ehGHo" to="tpee:fzclF8l" resolve="Statement" />
             </node>
-            <node concept="10QFUN" id="2rqw8i0J$6S" role="33vP2m">
-              <node concept="2YIFZM" id="7LmwlFdThWT" role="10QFUP">
-                <ref role="37wK5l" to="unno:1NYD3hytmUm" resolve="findParent" />
-                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                <node concept="2JrnkZ" id="7LmwlFdThWU" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxgkWpX" role="2JrQYb">
-                    <ref role="3cqZAo" node="1IXrgHjT32I" resolve="statementList" />
-                  </node>
-                </node>
-                <node concept="2ShNRf" id="7LmwlFdThWW" role="37wK5m">
-                  <node concept="1pGfFk" id="7LmwlFdThWX" role="2ShVmc">
-                    <ref role="37wK5l" to="y36q:~IsInstanceCondition.&lt;init&gt;(java.lang.String)" resolve="IsInstanceCondition" />
-                    <node concept="3nh3qo" id="7LmwlFdThWY" role="37wK5m">
-                      <ref role="3nh3qp" to="tpee:fzclF8l" resolve="Statement" />
-                    </node>
-                  </node>
-                </node>
+            <node concept="2OqwBi" id="48K6v0BCRSn" role="33vP2m">
+              <node concept="37vLTw" id="48K6v0BCS2t" role="2Oq$k0">
+                <ref role="3cqZAo" node="1IXrgHjT32I" resolve="statementList" />
               </node>
-              <node concept="3Tqbb2" id="2rqw8i0J$6T" role="10QFUM">
-                <ref role="ehGHo" to="tpee:fzclF8l" resolve="Statement" />
+              <node concept="2Xjw5R" id="48K6v0BCRSp" role="2OqNvi">
+                <node concept="1xMEDy" id="48K6v0BCRSq" role="1xVPHs">
+                  <node concept="chp4Y" id="48K6v0BCS7t" role="ri$Ld">
+                    <ref role="cht4Q" to="tpee:fzclF8l" resolve="Statement" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -3153,26 +3116,16 @@
                 <node concept="37vLTw" id="2BHiRxgmaQ0" role="37vLTJ">
                   <ref role="3cqZAo" node="1IXrgHjT32I" resolve="statementList" />
                 </node>
-                <node concept="10QFUN" id="2rqw8i0J$7h" role="37vLTx">
-                  <node concept="2YIFZM" id="7LmwlFdThWH" role="10QFUP">
-                    <ref role="37wK5l" to="unno:1NYD3hytmUm" resolve="findParent" />
-                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                    <node concept="2JrnkZ" id="7LmwlFdThWI" role="37wK5m">
-                      <node concept="37vLTw" id="3GM_nagT_TC" role="2JrQYb">
-                        <ref role="3cqZAo" node="1IXrgHjT33h" resolve="containingStatement" />
-                      </node>
-                    </node>
-                    <node concept="2ShNRf" id="7LmwlFdThWK" role="37wK5m">
-                      <node concept="1pGfFk" id="7LmwlFdThWL" role="2ShVmc">
-                        <ref role="37wK5l" to="y36q:~IsInstanceCondition.&lt;init&gt;(java.lang.String)" resolve="IsInstanceCondition" />
-                        <node concept="3nh3qo" id="7LmwlFdThWM" role="37wK5m">
-                          <ref role="3nh3qp" to="tpee:fzclF80" resolve="StatementList" />
-                        </node>
-                      </node>
-                    </node>
+                <node concept="2OqwBi" id="48K6v0BCScH" role="37vLTx">
+                  <node concept="37vLTw" id="48K6v0BCSjc" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1IXrgHjT33h" resolve="containingStatement" />
                   </node>
-                  <node concept="3Tqbb2" id="2rqw8i0J$7r" role="10QFUM">
-                    <ref role="ehGHo" to="tpee:fzclF80" resolve="StatementList" />
+                  <node concept="2Xjw5R" id="48K6v0BCScJ" role="2OqNvi">
+                    <node concept="1xMEDy" id="48K6v0BCScK" role="1xVPHs">
+                      <node concept="chp4Y" id="48K6v0BCScL" role="ri$Ld">
+                        <ref role="cht4Q" to="tpee:fzclF80" resolve="StatementList" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

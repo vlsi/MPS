@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.cache.CachesManager;
@@ -55,7 +54,7 @@ import java.util.List;
   private String getAssertionMessage(Object element, SNode concept) {
     String conceptFQName = NameUtil.nodeFQName(concept);
     SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
-    SAbstractConcept sconcept = MetaAdapterByDeclaration.getConcept(concept);
+    SAbstractConcept sconcept = SConceptRepository.getInstance().getConcept(conceptFQName);
     return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from SConceptRepository:" + sconcept + "(" + System.identityHashCode(sconcept) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(myTopConcept) + ")";
   }
   @NotNull
