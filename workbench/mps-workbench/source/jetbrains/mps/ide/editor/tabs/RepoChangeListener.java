@@ -35,17 +35,15 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
  * <p/>
  * FIXME for the time being, treats any model/root node removal as worth tab rebuild, perhaps shall respect actual documents (TabsComponent#getAllEditedDocuments())
  * FIXME or TabEditorLayout to rebuild only affected editors
- * <p/>
- * FIXME Shall become package-local class once j.m.ide.editorTabs.TabbedEditor moves to j.m.ide.editor.tabs package
  *
  * @author Artem Tikhomirov
  */
-public class RepoChangeListener extends SRepositoryContentAdapter implements CommandListener {
+class RepoChangeListener extends SRepositoryContentAdapter implements CommandListener {
   private boolean myChangedRoots = false;
   @Nullable
   private TabsComponent myTabController;
 
-  public void setTabController(@Nullable TabsComponent tabController) {
+  /*package*/ void setTabController(@Nullable TabsComponent tabController) {
     myTabController = tabController;
   }
 

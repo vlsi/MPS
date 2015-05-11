@@ -16,8 +16,10 @@
 package jetbrains.mps.ide.editor.tabs;
 
 import com.intellij.openapi.vcs.FileStatusListener;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -25,26 +27,36 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Same considerations about single instance of FileStatusListener per all editors as for {@link RepoChangeListener} apply here.
- * FIXME public until TabbedEditor moves to editor.tabs package from ide.editorTabs
  * FIXME attach(mpsProject)/detach to control listener add/remove
  */
-public class FileStatusChangeListener implements FileStatusListener {
-  private final Project myProject;
+class FileStatusChangeListener implements FileStatusListener {
+  private Project myProject;
   private TabsComponent myTabController;
   private SNodeReference myBaseNode;
 
-  public FileStatusChangeListener(@NotNull Project mpsProject) {
+  /*package*/ void attach(@NotNull Project mpsProject) {
+    FileStatusManager.getInstance(ProjectHelper.toIdeaProject(mpsProject)).addFileStatusListener(this);
     myProject = mpsProject;
   }
 
-  // FIXME shall be package local
-  public void setTabController(TabsComponent controller, @NotNull SNodeReference baseNode) {
+  /*package*/ void detach() {
+    if (myProject != null) {
+      FileStatusManager.getInstance(ProjectHelper.toIdeaProject(myProject)).removeFileStatusListener(this);
+      myProject = null;
+    }
+  }
+
+  /*package*/ void setTabController(TabsComponent controller, @NotNull SNodeReference baseNode) {
     myTabController = controller;
     myBaseNode = baseNode;
   }
 
   private void updateTabColorsLater() {
-    myProject.getModelAccess().runReadInEDT(new Runnable() {
+    final Project mpsProject = myProject;
+    if (mpsProject == null) {
+      return;
+    }
+    mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         myTabController.updateTabColors();

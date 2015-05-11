@@ -32,7 +32,7 @@ import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
+import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;

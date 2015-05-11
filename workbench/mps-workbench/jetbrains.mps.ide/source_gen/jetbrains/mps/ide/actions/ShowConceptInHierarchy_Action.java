@@ -18,7 +18,7 @@ import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
+import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 

@@ -64,6 +64,10 @@ public class EmptyTabsComponent implements TabsComponent {
   }
 
   @Override
+  public void updateTabColors() {
+  }
+
+  @Override
   public JComponent getComponent() {
     return null;
   }
