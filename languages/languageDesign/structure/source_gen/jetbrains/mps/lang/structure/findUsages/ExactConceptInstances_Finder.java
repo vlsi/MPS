@@ -10,8 +10,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
@@ -36,7 +35,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
-      SAbstractConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
+      SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(node);
       Set<SNode> nodes = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), true, monitor);
       for (SNode resNode : nodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));
