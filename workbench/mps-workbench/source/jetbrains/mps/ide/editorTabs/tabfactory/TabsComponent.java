@@ -42,7 +42,8 @@ public interface TabsComponent {
   JComponent getComponent();
 
   /**
-   * Refresh visible tabs, bring them into up-to-date state
+   * Refresh visible tabs, bring them into up-to-date state.
+   * Expects EDT and model read.
    */
   void updateTabs();
 

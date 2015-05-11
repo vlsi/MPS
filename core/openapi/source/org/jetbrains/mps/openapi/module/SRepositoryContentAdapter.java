@@ -84,12 +84,23 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     module.removeModuleListener(this);
   }
 
+  /**
+   * no-op by default.
+   * Subclasses that wish to get model/node change/access events, shall add appropriate listeners here. These listeners
+   * are implemented by this class only for convenience, events are not dispatched unless proper listener is explicitly attached.
+   */
   protected void startListening(SModel model) {
   }
 
+  /**
+   * no-op by default
+   */
   protected void stopListening(SModel model) {
   }
 
+  /**
+   * @return always <code>true</code>
+   */
   protected boolean isIncluded(SModule module) {
     return true;
   }

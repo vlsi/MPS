@@ -30,15 +30,10 @@ import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
-import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -75,10 +70,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private List<Document> myEditedDocuments = new ArrayList<Document>();
   private SNodeReference myLastNode = null;
 
-  private ModelListener myTabRemovalListener = new MyTabRemovalListener();
-
   private JComponent myComponent;
-  private MySModelCommandListener myRootAdditionListener = new MySModelCommandListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
   private volatile boolean myDisposed = false;
 
@@ -134,10 +126,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return myLastNode;
   }
 
-  public ModelListener getTabRemovalListener() {
-    return myTabRemovalListener;
-  }
-
   protected void onNodeChange(SNode node) {
     SNodeReference oldNode = myLastNode;
     setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
@@ -168,7 +156,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
     List<Document> editedDocumentsNew = new ArrayList<Document>();
 
     TabEditorLayout result = new TabEditorLayout();
-    getTabRemovalListener().clearAspects();
 
     SNode baseNode = myBaseNode.resolve(getProject().getRepository());
     if (baseNode == null) return result;
@@ -184,7 +171,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
       if (topToUses.isEmpty()) continue;
 
       for (SNodeReference top : topToUses.keySet()) {
-        getTabRemovalListener().aspectAdded(top);
         editedDocumentsNew.add(MPSUndoUtil.getDoc(top));
         result.add(d, top, topToUses.get(top));
       }
@@ -202,31 +188,11 @@ public abstract class BaseTabsComponent implements TabsComponent {
   ///-------------events----------------
 
   protected void addListeners() {
-    myTabRemovalListener.startListening();
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myRootAdditionListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
 
   protected void removeListeners() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myRootAdditionListener);
-    myTabRemovalListener.stopListening();
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-  }
-
-  private class MyTabRemovalListener extends ModelListener {
-    @Override
-    protected void onImportantRootRemoved(SNodeReference node) {
-      if (isDisposedNode()) return;
-      if (myBaseNode.equals(node)) return;
-      if (!isTabUpdateNeeded(node)) return;
-
-      getProject().getModelAccess().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          updateTabs();
-        }
-      });
-    }
   }
 
   protected boolean isDisposedNode() {
@@ -297,20 +263,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
           popupComponent.show(e.getComponent(), e.getX(), e.getY());
         }
       });
-    }
-  }
-
-  private class MySModelCommandListener implements SModelCommandListener {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e : events) {
-        if (!(e instanceof SModelRootEvent)) continue;
-        SModelRootEvent re = (SModelRootEvent) e;
-        if (!re.isAdded()) continue;
-
-        updateTabs();
-        return;
-      }
     }
   }
 }

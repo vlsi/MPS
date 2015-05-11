@@ -32,6 +32,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.ide.editor.tabs.RepoChangeListener;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabComponentFactory;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
@@ -55,7 +56,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.model.SNodeChangeListenerAdapter;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -70,13 +70,14 @@ import java.util.Set;
 
 public class TabbedEditor extends BaseNodeEditor {
   private TabsComponent myTabsComponent;
-  private final SNodeChangeListener myNameListener = new MyNameListener();
+  private final MyNameListener myNameListener = new MyNameListener();
   private final SNodeReference myBaseNode;
   private final Set<RelationDescriptor> myPossibleTabs;
   private final Project myProject;
   private final ShadowAction myNextTabAction, myPrevTabAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
+  private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
@@ -152,6 +153,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
+    myRepoChangeListener.subscribeTo(myProject.getRepository());
   }
 
   private void installTabsComponent() {
@@ -176,6 +178,8 @@ public class TabbedEditor extends BaseNodeEditor {
         }, ProjectHelper.toIdeaProject(myProject)
     );
 
+    myRepoChangeListener.setTabController(myTabsComponent);
+
     JComponent c = myTabsComponent.getComponent();
     if (c != null) {
       myTabsPanel.add(c, BorderLayout.CENTER);
@@ -191,10 +195,8 @@ public class TabbedEditor extends BaseNodeEditor {
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel model = getCurrentNodeModel();
-        if (model != null) {
-          model.addChangeListener(myNameListener);
-        }
+        myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
+        myNameListener.detach();
       }
     });
     myTabsComponent.dispose();
@@ -233,10 +235,7 @@ public class TabbedEditor extends BaseNodeEditor {
     if (!fromTabs) {
       myTabsComponent.setLastNode(nodeRef);
     }
-    SModel model = getCurrentNodeModel();
-    if (model != null) {
-      model.removeChangeListener(myNameListener);
-    }
+    myNameListener.detach();
 
     SModel md = node.getModel();
     SModule module = md.getModule();
@@ -253,10 +252,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
     editNode(nodeRef, selection);
 
-    model = getCurrentNodeModel();
-    assert model != null;
-
-    model.addChangeListener(myNameListener);
+    myNameListener.attach(md);
 
     executeInEDT(new PrioritizedTask(TaskType.UPDATE_PROPERTIES, myType2TaskMap) {
       @Override
@@ -317,6 +313,23 @@ public class TabbedEditor extends BaseNodeEditor {
   }
 
   private class MyNameListener extends SNodeChangeListenerAdapter {
+    private SModel myLastAttachModel;
+
+    synchronized void attach(@Nullable SModel model) {
+      detach();
+      myLastAttachModel = model;
+      if (model != null) {
+        model.addChangeListener(this);
+      }
+    }
+
+    synchronized void detach() {
+      if (myLastAttachModel != null) {
+        myLastAttachModel.removeChangeListener(this);
+        myLastAttachModel = null;
+      }
+    }
+
     @Override
     public void propertyChanged(@NotNull SPropertyChangeEvent event) {
       if (SNodeUtil.property_INamedConcept_name.equals(event.getProperty()) && event.getNode().getReference().equals(getCurrentlyEditedNode())) {
