@@ -29,6 +29,7 @@ import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.editor.BaseNodeEditor;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -136,7 +137,7 @@ public class TabbedEditor extends BaseNodeEditor {
         // BaseTabsConponent#onNodeChange() exits create mode, if any, and delegates to NodeChangeCallback. Do the same here:
         myTabsComponent.setLastNode(newNode.getReference());
         if (getCurrentEditorComponent() == null) {
-          // this is what CreateModeCallback.exitCreateMode does unconditionally.
+          // this is what CreateModeCallback.exitCreateMode used to do unconditionally.
           // I don't want to track enter/exit create mode, thus assume if there's no editorComponent, then we are in create mode and shall switch to editor
           showEditor();
         }
@@ -161,23 +162,38 @@ public class TabbedEditor extends BaseNodeEditor {
     if (myTabsComponent != null) {
       myTabsComponent.dispose();
     }
-    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), new NodeChangeCallback() {
+    final NodeChangeCallback nodeChangeCallback = new NodeChangeCallback() {
+      @Override
+      public void changeNode(SNode newNode) {
+        if (getCurrentEditorComponent() == null) {
+          showEditor();
+        }
+        showNodeInternal(newNode, true, true);
+      }
+    };
+    final CreateModeCallback createAspectCallback = new CreateModeCallback() {
+      @Override
+      public void create(RelationDescriptor tab) {
+        // FIXME what if we create two+ aspects in a row, who's responsible to dispose inactive CreatePanel instances?
+        final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new NodeChangeCallback() {
           @Override
           public void changeNode(SNode newNode) {
-            showNodeInternal(newNode, true, true);
+            myTabsComponent.updateTabs();
+            myTabsComponent.setLastNode(newNode.getReference());
+            nodeChangeCallback.changeNode(newNode);
           }
-        }, new CreateModeCallback() {
+        }, tab);
+        showComponent(cp);
+        final IdeFocusManager fm = IdeFocusManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+        fm.doWhenFocusSettlesDown(new Runnable() {
           @Override
-          public void exitCreateMode() {
-            showEditor();
+          public void run() {
+            fm.requestFocus(cp, false);
           }
-
-          @Override
-          public void enterCreateMode(JComponent replace) {
-            showComponent(replace);
-          }
-        }, ProjectHelper.toIdeaProject(myProject)
-    );
+        });
+      }
+    };
+    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), nodeChangeCallback, createAspectCallback, ProjectHelper.toIdeaProject(myProject));
 
     myRepoChangeListener.setTabController(myTabsComponent);
     myFileStatusListener.setTabController(myTabsComponent, myBaseNode);

@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.ActionPopupMenu;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -30,19 +25,12 @@ import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -121,28 +109,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected void onNodeChange(SNode node) {
-    SNodeReference oldNode = myLastNode;
     setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
-    if (oldNode == null && node != null) {
-      if (myCreateModeCallback != null) {
-        myCreateModeCallback.exitCreateMode();
-      }
-    }
     myCallback.changeNode(node);
   }
 
   protected void enterCreateMode(RelationDescriptor tab) {
     setLastNode(null);
     if (myCreateModeCallback != null) {
-      final CreatePanel cp = new CreatePanel(tab);
-      myCreateModeCallback.enterCreateMode(cp);
-      final IdeFocusManager fm = IdeFocusManager.getInstance(myProject);
-      fm.doWhenFocusSettlesDown(new Runnable() {
-        @Override
-        public void run() {
-          fm.requestFocus(cp, false);
-        }
-      });
+      myCreateModeCallback.create(tab);
     }
   }
 
@@ -190,38 +164,4 @@ public abstract class BaseTabsComponent implements TabsComponent {
     return ProjectHelper.toMPSProject(myProject);
   }
 
-  ///-------------grayed mode----------------
-
-  private class CreatePanel extends JPanel {
-    public CreatePanel(final RelationDescriptor tab) {
-      super(new BorderLayout());
-
-      JLabel label = new JLabel("Click to create new aspect");
-      label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-      label.setHorizontalAlignment(SwingConstants.CENTER);
-      add(label, BorderLayout.CENTER);
-
-      this.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(final MouseEvent e) {
-          ActionGroup group = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<ActionGroup>() {
-            @Override
-            public ActionGroup compute() {
-              return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {
-                @Override
-                public void changeNode(SNode newNode) {
-                  updateTabs();
-                  onNodeChange(newNode);
-                }
-              }, tab);
-            }
-          });
-
-          ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
-          JPopupMenu popupComponent = popup.getComponent();
-          popupComponent.show(e.getComponent(), e.getX(), e.getY());
-        }
-      });
-    }
-  }
 }
