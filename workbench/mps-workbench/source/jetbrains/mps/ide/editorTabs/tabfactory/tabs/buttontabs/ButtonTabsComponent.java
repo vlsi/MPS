@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,15 +29,12 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.event.HierarchyEvent;
 import java.awt.event.HierarchyListener;
@@ -58,7 +55,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().addHierarchyListener(new HierarchyListener() {
       @Override
       public void hierarchyChanged(HierarchyEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getProject().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             if (isDisposed()) {
@@ -109,11 +106,11 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   @Override
-  protected void updateTabs() {
+  public void updateTabs() {
     if (isDisposedNode()) return;
 
-    if (getLastNode() != null && getLastNode().resolve(MPSModuleRepository.getInstance()) == null) {
-      onNodeChange(myBaseNode.resolve(MPSModuleRepository.getInstance()));
+    if (getLastNode() != null && getLastNode().resolve(getProject().getRepository()) == null) {
+      onNodeChange(myBaseNode.resolve(getProject().getRepository()));
     }
 
     myRealTabs.clear();
@@ -144,14 +141,14 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       group.add(tab.getSelectTabAction());
     }
     if (myToolbar != null) {
-      getComponent().remove(myToolbar.getComponent());
+      removeContent(myToolbar.getComponent());
     }
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true);
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar;
-    getComponent().add(myToolbar.getComponent(), BorderLayout.CENTER);
+    setContent(myToolbar.getComponent());
     if (getLastNode() != null) {
-      onNodeChange(getLastNode().resolve(MPSModuleRepository.getInstance()));
+      onNodeChange(getLastNode().resolve(getProject().getRepository()));
     }
   }
 

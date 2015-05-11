@@ -19,8 +19,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionPopupMenu;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
@@ -33,11 +31,11 @@ import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -53,13 +51,17 @@ import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * This class expects subclasses to supply single component to serve UI functions. Subclasses shall use {@link #setContent(JComponent)}
+ * and {@link #removeContent(JComponent)}, not <code>getComponent().add()</code> or <code>getComponent().remove()</code> as this class
+ * manages layout constraints of the only child itself. Method {@link #getComponent()} is for external consumers or child unrelated activities.
+ */
 public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
   private final CreateModeCallback myCreateModeCallback;
@@ -93,22 +95,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     myCreateModeCallback = createModeCallback;
 
-    AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
-      @Override
-      public void changeNode(SNode newNode) {
-        updateTabs();
-        onNodeChange(newNode);
-      }
-    }) {
-      @Override
-      protected RelationDescriptor getCurrentAspect() {
-        return getCurrentTabAspect();
-      }
-    };
-
     myComponent = new JPanel(new BorderLayout());
-    ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
-    myComponent.add(btn, BorderLayout.WEST);
   }
 
   @Override
@@ -123,6 +110,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
   @Override
   public final JComponent getComponent() {
     return myComponent;
+  }
+
+  protected void setContent(JComponent component) {
+    myComponent.add(component, BorderLayout.CENTER);
+  }
+
+  protected void removeContent(JComponent component) {
+    myComponent.remove(component);
   }
 
   @Override
@@ -175,7 +170,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     TabEditorLayout result = new TabEditorLayout();
     getTabRemovalListener().clearAspects();
 
-    SNode baseNode = myBaseNode.resolve(MPSModuleRepository.getInstance());
+    SNode baseNode = myBaseNode.resolve(getProject().getRepository());
     if (baseNode == null) return result;
 
     for (RelationDescriptor d : myPossibleTabs) {
@@ -225,7 +220,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
       if (myBaseNode.equals(node)) return;
       if (!isTabUpdateNeeded(node)) return;
 
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      getProject().getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
           updateTabs();
@@ -235,20 +230,17 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected boolean isDisposedNode() {
-    SNode node = myBaseNode.resolve(MPSModuleRepository.getInstance());
-    if (node == null) return true;
-    return false;
+    SNode node = myBaseNode.resolve(getProject().getRepository());
+    return node == null;
   }
 
   protected abstract boolean isTabUpdateNeeded(SNodeReference node);
 
   protected abstract void updateTabColors();
 
-  protected abstract void updateTabs();
-
   private class MyFileStatusListener implements FileStatusListener {
     private void updateTabColorsLater() {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      getProject().getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
           updateTabColors();
@@ -269,6 +261,10 @@ public abstract class BaseTabsComponent implements TabsComponent {
     }
   }
 
+  protected final jetbrains.mps.project.Project getProject() {
+    return ProjectHelper.toMPSProject(myProject);
+  }
+
   ///-------------grayed mode----------------
 
   private class CreatePanel extends JPanel {
@@ -283,7 +279,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
       this.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(final MouseEvent e) {
-          ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+          ActionGroup group = new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<ActionGroup>() {
             @Override
             public ActionGroup compute() {
               return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {

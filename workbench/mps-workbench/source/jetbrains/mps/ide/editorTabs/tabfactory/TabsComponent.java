@@ -41,6 +41,11 @@ public interface TabsComponent {
 
   JComponent getComponent();
 
+  /**
+   * Refresh visible tabs, bring them into up-to-date state
+   */
+  void updateTabs();
+
   ///-------------tab navigation----------------
   abstract void nextTab();
 

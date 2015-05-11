@@ -52,6 +52,9 @@ public abstract class ModelListener {
   //------event&callback------
 
   public void clearAspects() {
+    // MEMORY LEAK: on editor open, startListening is invoked twice, both from updateTabs,
+    // indirectly through updateDocumentsAndNodes() and clearAspects, then directly.
+    // Removed only once at dispose(). SModelRepository listeners are plain list, no duplicates check
     stopListening();
     startListening();
   }

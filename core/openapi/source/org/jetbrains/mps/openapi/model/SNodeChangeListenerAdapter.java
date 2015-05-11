@@ -22,19 +22,23 @@ import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 
 /**
- * Listener to track changes to individual nodes in a model.
- * <p/>
- * Change listeners get notified regardless of model being attached to a repository.
- * If, however, model is attached to a repository, all notifications are delivered inside a write lock on the repository <em>after</em> a real change.
- *
- * @see SNodeChangeListenerAdapter
- * @see org.jetbrains.mps.openapi.model.SModel#addChangeListener(SNodeChangeListener)
- * @since 3.3
+ * Blank (no-op) implementation of {@link SNodeChangeListener}
  * @author Artem Tikhomirov
  */
-public interface SNodeChangeListener {
-  void propertyChanged(@NotNull SPropertyChangeEvent event);
-  void referenceChanged(@NotNull SReferenceChangeEvent event);
-  void nodeAdded(@NotNull SNodeAddEvent event);
-  void nodeRemoved(@NotNull SNodeRemoveEvent event);
+public abstract class SNodeChangeListenerAdapter implements SNodeChangeListener {
+  @Override
+  public void propertyChanged(@NotNull SPropertyChangeEvent event) {
+  }
+
+  @Override
+  public void referenceChanged(@NotNull SReferenceChangeEvent event) {
+  }
+
+  @Override
+  public void nodeAdded(@NotNull SNodeAddEvent event) {
+  }
+
+  @Override
+  public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+  }
 }

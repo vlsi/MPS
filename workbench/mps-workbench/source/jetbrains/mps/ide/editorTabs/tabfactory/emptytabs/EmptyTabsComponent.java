@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.emptytabs;
 
 import com.intellij.openapi.editor.Document;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -57,7 +57,10 @@ public class EmptyTabsComponent implements TabsComponent {
 
   @Override
   public void setLastNode(SNodeReference sNodePointer) {
+  }
 
+  @Override
+  public void updateTabs() {
   }
 
   @Override

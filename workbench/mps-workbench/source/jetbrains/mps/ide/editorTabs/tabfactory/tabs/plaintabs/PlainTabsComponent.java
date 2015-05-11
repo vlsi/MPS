@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +32,6 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout.Entry;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -42,7 +40,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Insets;
 import java.util.ArrayList;
@@ -81,7 +78,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         });
     myTabs.setBorder(new EmptyBorder(0, 0, 1, 0));
 
-    getComponent().add(myTabs, BorderLayout.CENTER);
+    setContent(myTabs);
 
     updateTabs();
 
@@ -91,7 +88,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
         if (isDisposed()) return;
         if (myRebuilding) return;
 
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getProject().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             onTabIndexChange();
@@ -126,7 +123,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     SNodeReference np = tab.getNode();
     if (np != null && EqualUtil.equals(np, getLastNode())) return;
 
-    SNode node = np == null ? null : np.resolve(MPSModuleRepository.getInstance());
+    SNode node = np == null ? null : np.resolve(getProject().getRepository());
 
     if (node != null) {
       myLastEmptyTab = null;
@@ -170,7 +167,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
   //this is synchronized because we change myJbTabs here (while disposing)
   @Override
   public synchronized void dispose() {
-    super.dispose();
     removeListeners();
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
@@ -183,7 +179,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     for (int i = 0; i < myRealTabs.size(); i++) {
       SNodeReference nodePtr = myRealTabs.get(i).getNode();
       TabColorProvider colorProvider = getColorProvider();
-      SNode node = nodePtr != null ? nodePtr.resolve(MPSModuleRepository.getInstance()) : null;
+      SNode node = nodePtr != null ? nodePtr.resolve(getProject().getRepository()) : null;
       if (node != null && colorProvider != null) {
         Color color = colorProvider.getNodeColor(node);
         if (color != null) {
@@ -196,7 +192,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   @Override
-  protected synchronized void updateTabs() {
+  public synchronized void updateTabs() {
     if (isDisposed()) return;
 
     SNodeReference selNode = null;
@@ -227,7 +223,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
           for (Entry tabDescriptor : newContent.get(tab)) {
             final PlainEditorTab pet = new PlainEditorTab(tabDescriptor);
             myRealTabs.add(pet);
-            SNode node = pet.getNode().resolve(MPSModuleRepository.getInstance());
+            SNode node = pet.getNode().resolve(getProject().getRepository());
 
             TabInfo info = new TabInfo(new JLabel(""))
                 .setIcon(IconManager.getIconFor(node))
@@ -250,7 +246,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
 
     SNode selNodeResolved;
-    if (selNode != null && (selNodeResolved = selNode.resolve(MPSModuleRepository.getInstance())) != null) {
+    if (selNode != null && (selNodeResolved = selNode.resolve(getProject().getRepository())) != null) {
       for (PlainEditorTab tab : myRealTabs) {
         if (EqualUtil.equals(tab.getNode(), selNode)) {
           myTabs.select(myTabs.getTabAt(myRealTabs.indexOf(tab)), true);
