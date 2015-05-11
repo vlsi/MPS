@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
@@ -78,7 +77,7 @@ public class HighlightInstances_Action extends BaseAction {
     NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
     EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
-    SAbstractConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getQualifiedName());
+    SAbstractConcept concept = ((SNode) MapSequence.fromMap(_params).get("node")).getConcept();
     Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), Collections.singleton(concept), false, new EmptyProgressMonitor());
     for (SNode ref : SetSequence.fromSet(usages)) {
       if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {

@@ -10733,31 +10733,17 @@
             <node concept="3uibUv" id="4Qrd9Rf7Swd" role="1tU5fm">
               <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
             </node>
-            <node concept="2OqwBi" id="3l8GlOJbLYy" role="33vP2m">
-              <node concept="liA8E" id="3l8GlOJbLYz" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                <node concept="2OqwBi" id="3l8GlOJbOKV" role="37wK5m">
-                  <node concept="liA8E" id="24cAaiUz$pX" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                  </node>
-                  <node concept="2OqwBi" id="3l8GlOJbLY$" role="2Oq$k0">
-                    <node concept="liA8E" id="3l8GlOJbOCW" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                    </node>
-                    <node concept="2JrnkZ" id="3l8GlOJbOdg" role="2Oq$k0">
-                      <node concept="2OqwBi" id="3l8GlOJbLYA" role="2JrQYb">
-                        <node concept="2WthIp" id="3l8GlOJbLYB" role="2Oq$k0" />
-                        <node concept="3gHZIF" id="3l8GlOJbLYC" role="2OqNvi">
-                          <ref role="2WH_rO" node="cAZ8XCabVh" resolve="node" />
-                        </node>
-                      </node>
-                    </node>
+            <node concept="2OqwBi" id="3l8GlOJbLY$" role="33vP2m">
+              <node concept="liA8E" id="3l8GlOJbOCW" role="2OqNvi">
+                <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+              </node>
+              <node concept="2JrnkZ" id="3l8GlOJbOdg" role="2Oq$k0">
+                <node concept="2OqwBi" id="3l8GlOJbLYA" role="2JrQYb">
+                  <node concept="2WthIp" id="3l8GlOJbLYB" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="3l8GlOJbLYC" role="2OqNvi">
+                    <ref role="2WH_rO" node="cAZ8XCabVh" resolve="node" />
                   </node>
                 </node>
-              </node>
-              <node concept="2YIFZM" id="3l8GlOJbLYD" role="2Oq$k0">
-                <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
               </node>
             </node>
           </node>

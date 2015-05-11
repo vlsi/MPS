@@ -21,7 +21,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -86,7 +85,7 @@ public class NodeWarningCheckOperation_Editor extends DefaultNodeEditor {
     public NodeWarningCheckOperation_generic_cellMenu_sh9o09_a0b0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.typesystem.structure.WarningStatement");
+      SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1190a1db131L, "jetbrains.mps.lang.typesystem.structure.WarningStatement");
       AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
       Set<SNode> warningInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
       return SetSequence.fromSet(warningInstances).toListSequence().select(new ISelector<SNode, SNode>() {

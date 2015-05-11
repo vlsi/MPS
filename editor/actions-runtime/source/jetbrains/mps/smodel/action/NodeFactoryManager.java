@@ -42,11 +42,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class NodeFactoryManager {
-
-  public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
-    return createNode(SConceptRepository.getInstance().getConcept(conceptFqName), sampleNode, enclosingNode, model);
-  }
-
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
     SAbstractLink linkDeclaration = enclosingNode.getConcept().getLink(linkRole);
     SModel model = enclosingNode.getModel();

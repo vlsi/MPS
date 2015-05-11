@@ -218,8 +218,8 @@
       <concept id="8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" flags="nn" index="1ZRNhn" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1000,15 +1000,6 @@
       </node>
       <node concept="3Tm1VV" id="J8g2iHBSI" role="1B3o_S" />
       <node concept="3clFbS" id="J8g2iHBSJ" role="3clF47">
-        <node concept="3cpWs8" id="J8g2iHBSK" role="3cqZAp">
-          <node concept="3cpWsn" id="J8g2iHBSL" role="3cpWs9">
-            <property role="TrG5h" value="name" />
-            <node concept="17QB3L" id="J8g2iHBSM" role="1tU5fm" />
-            <node concept="3nh3qo" id="J8g2iHBSN" role="33vP2m">
-              <ref role="3nh3qp" to="tpee:fz12cDA" resolve="ClassConcept" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="J8g2iHBSO" role="3cqZAp">
           <node concept="3cpWsn" id="J8g2iHBSP" role="3cpWs9">
             <property role="TrG5h" value="kind" />
@@ -1081,14 +1072,9 @@
         </node>
         <node concept="3clFbJ" id="J8g2iHBTf" role="3cqZAp">
           <node concept="3clFbS" id="J8g2iHBTg" role="3clFbx">
-            <node concept="3clFbF" id="J8g2iHBTh" role="3cqZAp">
-              <node concept="37vLTI" id="J8g2iHBTi" role="3clFbG">
-                <node concept="3nh3qo" id="J8g2iHBTj" role="37vLTx">
-                  <ref role="3nh3qp" to="tpee:fz12cDA" resolve="ClassConcept" />
-                </node>
-                <node concept="37vLTw" id="J8g2iHBTk" role="37vLTJ">
-                  <ref role="3cqZAo" node="J8g2iHBSL" resolve="name" />
-                </node>
+            <node concept="3cpWs6" id="7JBhbjiqUAW" role="3cqZAp">
+              <node concept="35c_gC" id="7JBhbjiqUYr" role="3cqZAk">
+                <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
               </node>
             </node>
           </node>
@@ -1103,14 +1089,9 @@
           </node>
           <node concept="3eNFk2" id="J8g2iHBTo" role="3eNLev">
             <node concept="3clFbS" id="J8g2iHBTp" role="3eOfB_">
-              <node concept="3clFbF" id="J8g2iHBTq" role="3cqZAp">
-                <node concept="37vLTI" id="J8g2iHBTr" role="3clFbG">
-                  <node concept="3nh3qo" id="J8g2iHBTs" role="37vLTx">
-                    <ref role="3nh3qp" to="tpee:g7HP654" resolve="Interface" />
-                  </node>
-                  <node concept="37vLTw" id="J8g2iHBTt" role="37vLTJ">
-                    <ref role="3cqZAo" node="J8g2iHBSL" resolve="name" />
-                  </node>
+              <node concept="3cpWs6" id="7JBhbjiqXhK" role="3cqZAp">
+                <node concept="35c_gC" id="7JBhbjiqY10" role="3cqZAk">
+                  <ref role="35c_gD" to="tpee:g7HP654" resolve="Interface" />
                 </node>
               </node>
             </node>
@@ -1126,14 +1107,9 @@
           </node>
           <node concept="3eNFk2" id="J8g2iHBTx" role="3eNLev">
             <node concept="3clFbS" id="J8g2iHBTy" role="3eOfB_">
-              <node concept="3clFbF" id="J8g2iHBTz" role="3cqZAp">
-                <node concept="37vLTI" id="J8g2iHBT$" role="3clFbG">
-                  <node concept="3nh3qo" id="J8g2iHBT_" role="37vLTx">
-                    <ref role="3nh3qp" to="tpee:hiABswc" resolve="Annotation" />
-                  </node>
-                  <node concept="37vLTw" id="J8g2iHBTA" role="37vLTJ">
-                    <ref role="3cqZAo" node="J8g2iHBSL" resolve="name" />
-                  </node>
+              <node concept="3cpWs6" id="7JBhbjiqYKt" role="3cqZAp">
+                <node concept="35c_gC" id="7JBhbjiqYKu" role="3cqZAk">
+                  <ref role="35c_gD" to="tpee:hiABswc" resolve="Annotation" />
                 </node>
               </node>
             </node>
@@ -1149,14 +1125,9 @@
           </node>
           <node concept="3eNFk2" id="J8g2iHBTE" role="3eNLev">
             <node concept="3clFbS" id="J8g2iHBTF" role="3eOfB_">
-              <node concept="3clFbF" id="J8g2iHBTG" role="3cqZAp">
-                <node concept="37vLTI" id="J8g2iHBTH" role="3clFbG">
-                  <node concept="3nh3qo" id="J8g2iHBTI" role="37vLTx">
-                    <ref role="3nh3qp" to="tpee:fKQs72_" resolve="EnumClass" />
-                  </node>
-                  <node concept="37vLTw" id="J8g2iHBTJ" role="37vLTJ">
-                    <ref role="3cqZAo" node="J8g2iHBSL" resolve="name" />
-                  </node>
+              <node concept="3cpWs6" id="7JBhbjiqYLE" role="3cqZAp">
+                <node concept="35c_gC" id="7JBhbjiqYLF" role="3cqZAk">
+                  <ref role="35c_gD" to="tpee:fKQs72_" resolve="EnumClass" />
                 </node>
               </node>
             </node>
@@ -1171,25 +1142,9 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="J8g2iHBTN" role="3cqZAp">
-          <node concept="1eOMI4" id="4PX4kXt$ep5" role="3cqZAk">
-            <node concept="10QFUN" id="4PX4kXt$ep6" role="1eOMHV">
-              <node concept="2OqwBi" id="4PX4kXt$ep1" role="10QFUP">
-                <node concept="liA8E" id="4PX4kXt$ep2" role="2OqNvi">
-                  <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                  <node concept="37vLTw" id="4PX4kXt$ep3" role="37wK5m">
-                    <ref role="3cqZAo" node="J8g2iHBSL" resolve="name" />
-                  </node>
-                </node>
-                <node concept="2YIFZM" id="4PX4kXt$ep4" role="2Oq$k0">
-                  <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                  <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                </node>
-              </node>
-              <node concept="3uibUv" id="4PX4kXt$ep0" role="10QFUM">
-                <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
-              </node>
-            </node>
+        <node concept="3cpWs6" id="7JBhbjir0HM" role="3cqZAp">
+          <node concept="35c_gC" id="7JBhbjir0HN" role="3cqZAk">
+            <ref role="35c_gD" to="tpee:fz12cDA" resolve="ClassConcept" />
           </node>
         </node>
       </node>
