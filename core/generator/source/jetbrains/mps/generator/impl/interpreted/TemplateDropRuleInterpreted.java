@@ -23,18 +23,20 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
 
   private final SNode myRuleNode;
-  private final String myApplicableConcept;
+  private final SAbstractConcept myApplicableConcept;
   private DropRuleCondition myCondition;
 
   public TemplateDropRuleInterpreted(SNode child) {
     myRuleNode = child;
-    myApplicableConcept = GeneratorUtil.getConceptQualifiedName(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
+    myApplicableConcept = MetaAdapterByDeclaration.getConcept(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
   }
 
   @Override
@@ -43,7 +45,7 @@ public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
   }
 
   @Override
-  public String getApplicableConcept() {
+  public SAbstractConcept getApplicableSConcept() {
     return myApplicableConcept;
   }
 

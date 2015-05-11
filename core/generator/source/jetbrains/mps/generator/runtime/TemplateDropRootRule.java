@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
-/**
- * Evgeny Gryaznov, Nov 29, 2010
- */
-public interface TemplateDropRootRule extends TemplateRuleWithCondition {
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-  String getApplicableConcept();
+public interface TemplateDropRootRule extends TemplateRuleWithCondition {
+  SAbstractConcept getApplicableSConcept();
 }
