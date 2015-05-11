@@ -372,8 +372,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    final Iterable<Problem> problems = myErrors.getProblems();
-    if (Sequence.fromIterable(problems).isEmpty()) {
+    final Wrappers._T<Iterable<Problem>> problems = new Wrappers._T<Iterable<Problem>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        problems.value = myErrors.getProblems();
+      }
+    });
+    if (Sequence.fromIterable(problems.value).isEmpty()) {
       return;
     }
 
@@ -391,7 +396,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 };
                 final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-                Sequence.fromIterable(problems).visitAll(new IVisitor<Problem>() {
+                Sequence.fromIterable(problems.value).visitAll(new IVisitor<Problem>() {
                   public void visit(Problem it) {
                     Object r = it.getReason();
 
