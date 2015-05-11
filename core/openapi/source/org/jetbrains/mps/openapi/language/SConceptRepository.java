@@ -38,4 +38,7 @@ public abstract class SConceptRepository {
 
   @Deprecated // since 3.2
   public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
+
+  @Deprecated // since 3.2
+  public abstract SLanguage getLanguage(@NotNull String qualifiedName);
 }

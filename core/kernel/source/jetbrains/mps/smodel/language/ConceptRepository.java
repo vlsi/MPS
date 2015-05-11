@@ -72,4 +72,10 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         MetaAdapterFactory.getInterfaceConcept(id, fqname) :
         MetaAdapterFactory.getConcept(id, fqname);
   }
+
+  @Deprecated
+  @Override
+  public SLanguage getLanguage(@NotNull String qualifiedName) {
+    return MetaAdapterFactoryByName.getLanguage(qualifiedName);
+  }
 }
