@@ -103,6 +103,15 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptsInLoading.get().remove(new Pair<Object, LanguageAspect>(fqName, aspect));
   }
 
+  @NotNull
+  public ConceptDescriptor getConceptDescriptor(@NotNull SAbstractConcept concept) {
+    if (concept instanceof SConceptAdapterById){
+      return getConceptDescriptor(((SConceptAdapterById) concept).getId());
+    }else{
+      return getConceptDescriptor(concept);
+    }
+  }
+
   @Deprecated
   @ToRemove(version = 3.3)
   @NotNull
@@ -245,6 +254,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @Deprecated
   @ToRemove(version = 3.3)
   @NotNull
+  //no usages in MPS
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
     ConceptDescriptor conceptDescriptor = getConceptDescriptor(fqName);
     return getConstraintsDescriptor(conceptDescriptor.getId());
