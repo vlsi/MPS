@@ -16,12 +16,9 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.SingleTermRules;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -37,25 +34,25 @@ import java.util.concurrent.ConcurrentMap;
 public class RuleSet<T extends IApplicableToConcept> {
 
   private static final String TYPESYSTEM_SUFFIX = ".typesystem";
-  private ConcurrentMap<SAbstractConcept, Set<T>> myRules = new ConcurrentHashMap<SAbstractConcept, /* synchronized */ Set<T>>();
+  private ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
 
   private SingleTermRules<T> mySingleTermRules = new SingleTermRules<T>() {
 
     @Override
-    protected List<SAbstractConcept> getParents(SAbstractConcept nextConcept) {
-      return SConceptOperations.getAllSuperConcepts(nextConcept, false);
+    protected List<String> getParents(String nextConceptFQName) {
+      return ConceptRegistry.getInstance().getConceptDescriptor(nextConceptFQName).getParentsNames();
     }
 
     @Override
-    protected Iterable<T> allForConcept(SAbstractConcept concept, LanguageScope langScope) {
-      return getAllApplicableTo(concept, langScope);
+    protected Iterable<T> allForConcept(String conceptFQName, LanguageScope langScope) {
+      return getAllApplicableTo(conceptFQName, langScope);
     }
 
     @Override
     protected boolean isOverriding(T rule) {
       return rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides();
     }
-  };
+   };
 
 
   public void addRuleSetItem(Set<T> rules) {
@@ -72,7 +69,7 @@ public class RuleSet<T extends IApplicableToConcept> {
   }
 
   private void addRule_internal(T rule) {
-    SAbstractConcept concept = rule.getApplicableConcept();
+    String concept = rule.getApplicableConceptFQName();
     Set<T> existingRules = myRules.get(concept);
     while (existingRules == null) {
       myRules.putIfAbsent(concept, Collections.synchronizedSet(new THashSet<T>(2)));
@@ -85,13 +82,13 @@ public class RuleSet<T extends IApplicableToConcept> {
     return mySingleTermRules.lookupRules(term);
   }
 
-  private Iterable<T> getAllApplicableTo(SAbstractConcept concept, LanguageScope scope) {
-    if (!myRules.containsKey(concept)) return Collections.emptyList();
+  private Iterable<T> getAllApplicableTo(String conceptFQName, LanguageScope scope) {
+    if (!myRules.containsKey(conceptFQName)) return Collections.emptyList();
 
     List<T> result = new ArrayList<T>(4);
-    Set<T> rules = myRules.get(concept);
+    Set<T> rules = myRules.get(conceptFQName);
     synchronized (rules) {
-      for (T rule : rules) {
+      for (T rule: rules) {
         if (scope.containsNamespace(getNamespace(rule))) {
           result.add(rule);
         }
@@ -100,10 +97,10 @@ public class RuleSet<T extends IApplicableToConcept> {
     return Collections.unmodifiableList(result);
   }
 
-  private String getNamespace(T rule) {
+  private String getNamespace (T rule) {
     String pkg = rule.getClass().getPackage().getName();
     if (pkg.endsWith(TYPESYSTEM_SUFFIX)) {
-      return pkg.substring(0, pkg.length() - TYPESYSTEM_SUFFIX.length());
+      return pkg.substring(0, pkg.length()-TYPESYSTEM_SUFFIX.length());
     }
     return pkg;
   }

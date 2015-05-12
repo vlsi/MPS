@@ -17,7 +17,6 @@ package jetbrains.mps.newTypesystem.rules;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -39,8 +38,8 @@ public abstract class SingleTermRules<K> {
   public Set<K> lookupRules(SNode term) {
     final LanguageScope langScope = LanguageScope.getCurrent();
 
-    final SAbstractConcept concept = term.getConcept();
-    final Object compoundKey = new Pair<Object, SAbstractConcept>(langScope, concept);
+    final String conceptFQName = term.getConcept().getQualifiedName();
+    final Object compoundKey = new Pair<Object, String>(langScope, conceptFQName);
 
     Set<K> cachedRules = myCachedRules.get(compoundKey);
     if (cachedRules != null) {
@@ -49,7 +48,7 @@ public abstract class SingleTermRules<K> {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<K>>() {
       @Override
       public Set<K> compute() {
-        Set<K> computedRules = computeRules(concept, langScope);
+        Set<K> computedRules = computeRules(conceptFQName, langScope);
         myCachedRules.put(compoundKey, computedRules);
 
         return computedRules;
@@ -61,14 +60,14 @@ public abstract class SingleTermRules<K> {
     myCachedRules.clear();
   }
 
-  private Set<K> computeRules(SAbstractConcept concept, LanguageScope langScope) {
+  private Set<K> computeRules(String conceptFQName, LanguageScope langScope) {
     THashSet<K> result = new THashSet<K>();
 
-    LinkedList<SAbstractConcept> queue = new LinkedList<SAbstractConcept>();
-    queue.add(concept);
+    LinkedList<String> queue = new LinkedList<String>();
+    queue.add(conceptFQName);
 
     while (!queue.isEmpty()) {
-      SAbstractConcept nextConceptFQName = queue.remove();
+      String nextConceptFQName = queue.remove();
       boolean overriding = false;
       for (K applicableRule : allForConcept(nextConceptFQName, langScope)) {
         overriding |= isOverriding(applicableRule);
@@ -82,9 +81,9 @@ public abstract class SingleTermRules<K> {
     return Collections.unmodifiableSet(result);
   }
 
-  abstract protected List<SAbstractConcept> getParents(SAbstractConcept nextConcept);
+  abstract protected List<String> getParents(String nextConceptFQName);
 
-  abstract protected Iterable<K> allForConcept(SAbstractConcept concept, LanguageScope scope);
+  abstract protected Iterable<K> allForConcept(String conceptFQName, LanguageScope scope);
 
   abstract protected boolean isOverriding(K rule);
 
