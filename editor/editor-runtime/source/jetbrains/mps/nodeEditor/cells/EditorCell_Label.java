@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -36,11 +35,10 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -435,11 +433,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    final int wasPosition = getCaretPosition();
-    final CellSide side;
-    if (wasPosition == 0) {
+    if (!isTextTypedEvent(keyEvent)) {
+      return false;
+    }
+
+    int caretPosition = getCaretPosition();
+    CellSide side;
+    if (caretPosition == 0) {
       side = CellSide.LEFT;
-    } else if (wasPosition == getRenderedText().length()) {
+    } else if (caretPosition == getRenderedText().length()) {
       side = CellSide.RIGHT;
     } else {
       side = null;
@@ -447,46 +449,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     if (isEditable()) {
-      final boolean result[] = new boolean[1];
-      String groupId = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return getCellId() + "_" + getSNode().getNodeId().toString();
-        }
-      });
-      modelAccess.executeCommand(new UndoRunnable.Base(null, getCommandGroupId()) {
-        @Override
-        public void run() {
-          if (processMutableKeyTyped(keyEvent, allowErrors)) {
-            getContext().flushEvents();
-
-            if (isErrorState() && side != null) {
-              if (allowsIntelligentInputKeyStroke(keyEvent)) {
-                String pattern = getRenderedText();
-                IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), pattern, side);
-              }
-            }
-
-            result[0] = true;
-            addChangeTextUndoableAction();
-          } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' ') {
-            result[0] = true;
-          }
-        }
-      });
+      ProcessKeyTypedCommand keyTypedCommand = new ProcessKeyTypedCommand(keyEvent, allowErrors, side);
+      modelAccess.executeCommand(keyTypedCommand);
       getEditor().relayout();
-      if (result[0]) {
-        return true;
-      }
-    }
-    if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return getRenderedTextOn(keyEvent);
-        }
-      });
-      if (!pattern.equals(getRenderedText()) && side != null) {
+      return keyTypedCommand.getResult();
+    } else if (side != null) {
+      String pattern = getTextOnEvent(keyEvent);
+      if (!pattern.equals(getRenderedText())) {
         return IntelligentInputUtil.processCell(this, getContext(), pattern, side);
       }
     }
@@ -495,35 +464,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private void addChangeTextUndoableAction() {
     UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction());
-  }
-
-  private boolean allowsIntelligentInputKeyStroke(KeyEvent keyEvent) {
-    return UIUtil.isReallyTypedEvent(keyEvent);
-  }
-
-  private String getRenderedTextOn(KeyEvent keyEvent) {
-    return emulateKeyType(keyEvent, new Computable<String>() {
-      @Override
-      public String compute() {
-        return getRenderedText();
-      }
-    });
-  }
-
-  private <T> T emulateKeyType(KeyEvent keyEvent, Computable<T> c) {
-    String oldString = getText();
-    String oldNullString = getNullText();
-    int caretPosition = myTextLine.getCaretPosition();
-    int nullCaretPosition = myNullTextLine.getCaretPosition();
-    boolean wasErrorState = isErrorState();
-    processMutableKeyTyped(keyEvent, true);
-    T result = c.compute();
-    myTextLine.setText(oldString);
-    myNullTextLine.setText(oldNullString);
-    myTextLine.setCaretPosition(caretPosition);
-    myNullTextLine.setCaretPosition(nullCaretPosition);
-    setErrorState(wasErrorState);
-    return result;
   }
 
   @Override
@@ -538,30 +478,32 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return textAction.getResult();
   }
 
-  private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    String oldText = myTextLine.getText();
+  private boolean processMutableKeyTyped(KeyEvent keyEvent, final boolean allowErrors) {
+    String newText = getTextOnEvent(keyEvent);
+    if (!allowErrors && !isValidText(newText)) {
+      return false;
+    }
 
     int startSelection = myTextLine.getStartTextSelectionPosition();
-    int endSelection = myTextLine.getEndTextSelectionPosition();
-
-    char keyChar = keyEvent.getKeyChar();
-    if (UIUtil.isReallyTypedEvent(keyEvent)) {
-      String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
-
-      if (!allowErrors && !isValidText(newText)) {
-        return false;
-      }
-
-      changeText(newText);
-      setCaretPositionIfPossible(startSelection + 1);
-      myTextLine.resetSelection();
-      fireSelectionChanged();
-      ensureCaretVisible();
-      return true;
-    }
-    return false;
+    changeText(newText);
+    setCaretPositionIfPossible(startSelection + 1);
+    myTextLine.resetSelection();
+    fireSelectionChanged();
+    ensureCaretVisible();
+    return true;
   }
 
+  /**
+   * @param keyEvent "keyTyped" event, allowsIntelligentInputKeyStroke(keyEvent) should be true
+   * @return the string contained in myTextLine updated in accordance with passed keyEvent
+   */
+  private String getTextOnEvent(KeyEvent keyEvent) {
+    String currentText = myTextLine.getText();
+    int startSelection = myTextLine.getStartTextSelectionPosition();
+    int endSelection = myTextLine.getEndTextSelectionPosition();
+    char keyChar = keyEvent.getKeyChar();
+    return currentText.substring(0, startSelection) + keyChar + currentText.substring(endSelection);
+  }
 
   private boolean canDeleteFrom(EditorCell cell) {
     if (getText().length() == 0) return false;
@@ -1060,6 +1002,52 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       }
 
       return false;
+    }
+
+    @Nullable
+    @Override
+    public String getName() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public String getGroupId() {
+      return getCommandGroupId();
+    }
+  }
+
+  /**
+   * TODO: use EditorComputable instead of AbstractComputeRunnable as a superclass here?
+   */
+  private class ProcessKeyTypedCommand extends AbstractComputeRunnable<Boolean> implements UndoRunnable {
+    private final KeyEvent myKeyEvent;
+    private final boolean myAllowErrors;
+    private final CellSide mySide;
+
+    public ProcessKeyTypedCommand(KeyEvent keyEvent, boolean allowErrors, CellSide side) {
+      myKeyEvent = keyEvent;
+      myAllowErrors = allowErrors;
+      mySide = side;
+    }
+
+    @Override
+    protected Boolean compute() {
+      if (processMutableKeyTyped(myKeyEvent, myAllowErrors)) {
+        getContext().flushEvents();
+        addChangeTextUndoableAction();
+
+        if (isErrorState() && mySide != null && IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), getRenderedText(), mySide)) {
+          /**
+           * Resetting current command group ID if cell was side-transformed. In such situations
+           * side-transforming command as well as char typing command should be separate part of
+           * undo-redo process, not connected with eytyping events which are grouped together.
+           */
+          CommandProcessor.getInstance().setCurrentCommandGroupId(null);
+        }
+        return true;
+      }
+      return isErrorState() && mySide == CellSide.LEFT && myKeyEvent.getKeyChar() == ' ';
     }
 
     @Nullable

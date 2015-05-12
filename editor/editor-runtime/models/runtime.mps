@@ -689,10 +689,9 @@
             </node>
           </node>
           <node concept="3fqX7Q" id="7dwhomQPrDB" role="3clFbw">
-            <node concept="2YIFZM" id="7dwhomQPrDC" role="3fr31v">
-              <ref role="37wK5l" to="vuby:~UIUtil.isReallyTypedEvent(java.awt.event.KeyEvent):boolean" resolve="isReallyTypedEvent" />
-              <ref role="1Pybhc" to="vuby:~UIUtil" resolve="UIUtil" />
-              <node concept="37vLTw" id="2BHiRxglK7n" role="37wK5m">
+            <node concept="1rXfSq" id="15U$KrQ$mYs" role="3fr31v">
+              <ref role="37wK5l" to="jsgz:~EditorCell_Basic.isTextTypedEvent(java.awt.event.KeyEvent):boolean" resolve="isTextTypedEvent" />
+              <node concept="37vLTw" id="15U$KrQ$n2M" role="37wK5m">
                 <ref role="3cqZAo" node="7dwhomQPrDk" resolve="event" />
               </node>
             </node>

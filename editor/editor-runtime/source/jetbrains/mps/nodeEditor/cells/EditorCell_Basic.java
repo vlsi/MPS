@@ -419,7 +419,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyTyped(final KeyEvent e, final boolean allowErrors) {
-    if (getSNode() == null || !isBig()) return false;
+    if (getSNode() == null || !isBig() || !isTextTypedEvent(e)) {
+      return false;
+    }
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
@@ -427,8 +429,6 @@ public abstract class EditorCell_Basic implements EditorCell {
         return getSNode().getModel() != null && getSNode().getParent() == null;
       }
     })) return false;
-
-    if (!UIUtil.isReallyTypedEvent(e)) return false;
 
     getContext().getRepository().getModelAccess().executeCommand(new EditorCommand(getContext()) {
       @Override
@@ -460,6 +460,10 @@ public abstract class EditorCell_Basic implements EditorCell {
     });
 
     return true;
+  }
+
+  protected boolean isTextTypedEvent(KeyEvent e) {
+    return UIUtil.isReallyTypedEvent(e);
   }
 
   private SNode replaceWithDefault() {

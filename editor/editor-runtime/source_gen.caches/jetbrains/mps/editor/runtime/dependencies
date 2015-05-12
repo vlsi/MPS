@@ -14,7 +14,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.EditorCell_Empty" file="EditorCell_Empty.java">
-    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Override" />
