@@ -19,28 +19,29 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Pattern;
 
 public class VisibleModuleRegistry implements ApplicationComponent {
-  ConcurrentMap<String, Boolean> myCache = new ConcurrentHashMap<String, Boolean>();
+  Map<String, Boolean> myCache = new ConcurrentHashMap<String, Boolean>();
 
-  public boolean isVisible(final SModule module) {
+  public boolean isVisible(@Nullable final SModule module) {
     if (module == null) return false;
     //project modules
     //contributed by plugin
-    Set<MPSModuleOwner> moduleOwners = ModelAccess.instance().runReadAction(new Computable<Set<MPSModuleOwner>>() {
+    Set<MPSModuleOwner> moduleOwners = new ModelAccessHelper(module.getRepository()).runReadAction(new Computable<Set<MPSModuleOwner>>() {
       @Override
       public Set<MPSModuleOwner> compute() {
-        return ModuleRepositoryFacade.getInstance().getModuleOwners((SModule) module);
+        return ModuleRepositoryFacade.getInstance().getModuleOwners(module);
       }
     });
     for (MPSModuleOwner owner : moduleOwners) {

@@ -15,23 +15,17 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.CodeSource;
-import java.security.ProtectionDomain;
-import java.security.cert.Certificate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
@@ -76,7 +70,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   public ModuleClassLoader(ModuleClassLoaderSupport support) {
-    super(getParentPluginClassLoader(support.getModule()));
+    super(support.getModule().getRootClassLoader());
     mySupport = support;
   }
 
@@ -280,14 +274,6 @@ public class ModuleClassLoader extends ClassLoader {
 
   public String toString() {
     return String.format("%s ModuleClassLoader %s", mySupport.getModule(), myDisposed ? "[DISPOSED]" : "");
-  }
-
-  private static ClassLoader getParentPluginClassLoader(ReloadableModule module) {
-    IFile moduleHome = ((AbstractModule) module).getModuleSourceDir();
-
-    if (moduleHome == null) return null;
-    String path = moduleHome.getPath();
-    return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 
   public static class ModuleClassLoaderIsDisposedException extends IllegalStateException {
