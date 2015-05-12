@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -87,7 +86,7 @@ public final class IconManager {
     if ((concept != null)) {
       Icon alternativeIcon = null;
       try {
-        String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
+        String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
         if (alternativeIconPath != null) {
           alternativeIcon = IconManager.getIconForConcept(concept, alternativeIconPath);
         }

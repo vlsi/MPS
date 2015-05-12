@@ -679,20 +679,15 @@
                 <ref role="37wK5l" to="n55e:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
               </node>
               <node concept="liA8E" id="LaLafJXgTB" role="2OqNvi">
-                <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
-                <node concept="2OqwBi" id="LaLafJXgTC" role="37wK5m">
-                  <node concept="liA8E" id="LaLafJXgTD" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
+                <node concept="2OqwBi" id="LaLafJXgTE" role="37wK5m">
+                  <node concept="2JrnkZ" id="LaLafJXgTF" role="2Oq$k0">
+                    <node concept="37vLTw" id="LaLafJXgTG" role="2JrQYb">
+                      <ref role="3cqZAo" node="7BBQIYkR5mM" resolve="node" />
+                    </node>
                   </node>
-                  <node concept="2OqwBi" id="LaLafJXgTE" role="2Oq$k0">
-                    <node concept="2JrnkZ" id="LaLafJXgTF" role="2Oq$k0">
-                      <node concept="37vLTw" id="LaLafJXgTG" role="2JrQYb">
-                        <ref role="3cqZAo" node="7BBQIYkR5mM" resolve="node" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="LaLafJXgTH" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                    </node>
+                  <node concept="liA8E" id="LaLafJXgTH" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
                   </node>
                 </node>
               </node>

@@ -54,7 +54,7 @@ public abstract class PropertySupport {
     if (value == null) value = "";
     if (!canSetValue(value)) return false;
     PropertyConstraintsDescriptor descriptor =
-        ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(propertyName);
+        ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept()).getProperty(propertyName);
     if (descriptor == null) {
       LOG.error("No property constraints are available for property " + propertyName + " in node " + node.getPresentation());
       return false;

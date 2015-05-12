@@ -38,6 +38,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -233,7 +234,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
 
   @NotNull
-  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConcept concept) {
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
     if (concept instanceof SConceptAdapterById){
       return getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
     }else{
@@ -242,6 +243,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   }
 
   @Deprecated
+  @ToRemove(version = 3.3)
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
     ConceptDescriptor conceptDescriptor = getConceptDescriptor(fqName);

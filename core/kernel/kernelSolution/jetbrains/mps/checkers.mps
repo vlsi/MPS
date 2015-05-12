@@ -575,20 +575,15 @@
                 <ref role="1Pybhc" to="n55e:~ConceptRegistry" resolve="ConceptRegistry" />
               </node>
               <node concept="liA8E" id="2RmIorjm6vo" role="2OqNvi">
-                <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
-                <node concept="2OqwBi" id="5sNl3sI_9_5" role="37wK5m">
-                  <node concept="liA8E" id="24cAaiUz$qt" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
+                <node concept="2OqwBi" id="5sNl3sI_9_6" role="37wK5m">
+                  <node concept="2JrnkZ" id="5sNl3sI_9_7" role="2Oq$k0">
+                    <node concept="37vLTw" id="2BHiRxgm85R" role="2JrQYb">
+                      <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                    </node>
                   </node>
-                  <node concept="2OqwBi" id="5sNl3sI_9_6" role="2Oq$k0">
-                    <node concept="2JrnkZ" id="5sNl3sI_9_7" role="2Oq$k0">
-                      <node concept="37vLTw" id="2BHiRxgm85R" role="2JrQYb">
-                        <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="5sNl3sI_9_9" role="2OqNvi">
-                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                    </node>
+                  <node concept="liA8E" id="5sNl3sI_9_9" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
                   </node>
                 </node>
               </node>

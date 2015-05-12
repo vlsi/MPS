@@ -44,7 +44,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
-    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept());
 
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
