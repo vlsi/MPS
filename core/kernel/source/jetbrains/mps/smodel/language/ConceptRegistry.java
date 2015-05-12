@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -37,6 +38,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -226,6 +228,16 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     } else {
       return getBehaviorDescriptor(node.getConcept().getQualifiedName());
+    }
+  }
+
+
+  @NotNull
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConcept concept) {
+    if (concept instanceof SConceptAdapterById){
+      return getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
+    }else{
+      return getConstraintsDescriptor(concept.getQualifiedName());
     }
   }
 
