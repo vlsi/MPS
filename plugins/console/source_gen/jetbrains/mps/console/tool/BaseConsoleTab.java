@@ -76,8 +76,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -441,7 +439,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
         ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ConceptRegistry.getInstance().getConceptDescriptor(it.getConcept().getQualifiedName()) instanceof IllegalConceptDescriptor;
+            return !(it.getConcept().isValid());
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {

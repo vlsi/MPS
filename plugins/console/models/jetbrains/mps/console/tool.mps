@@ -7332,32 +7332,20 @@
                         <node concept="1bVj0M" id="3BQjGtYOLJQ" role="23t8la">
                           <node concept="3clFbS" id="3BQjGtYOLJR" role="1bW5cS">
                             <node concept="3clFbF" id="3BQjGtYLOBp" role="3cqZAp">
-                              <node concept="2ZW3vV" id="3BQjGtYLZ1W" role="3clFbG">
-                                <node concept="3uibUv" id="3BQjGtYLZIV" role="2ZW6by">
-                                  <ref role="3uigEE" to="8zae:~IllegalConceptDescriptor" resolve="IllegalConceptDescriptor" />
-                                </node>
-                                <node concept="2OqwBi" id="3BQjGtYLQkS" role="2ZW6bz">
-                                  <node concept="2YIFZM" id="3BQjGtYLQ2N" role="2Oq$k0">
-                                    <ref role="1Pybhc" to="n55e:~ConceptRegistry" resolve="ConceptRegistry" />
-                                    <ref role="37wK5l" to="n55e:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
-                                  </node>
-                                  <node concept="liA8E" id="3BQjGtYLRQq" role="2OqNvi">
-                                    <ref role="37wK5l" to="n55e:~ConceptRegistry.getConceptDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConceptDescriptor" resolve="getConceptDescriptor" />
-                                    <node concept="2OqwBi" id="3BQjGtYLWdb" role="37wK5m">
-                                      <node concept="2OqwBi" id="3BQjGtYL$XG" role="2Oq$k0">
-                                        <node concept="2JrnkZ" id="3BQjGtYL$cV" role="2Oq$k0">
-                                          <node concept="37vLTw" id="3BQjGtYLylY" role="2JrQYb">
-                                            <ref role="3cqZAo" node="3BQjGtYOLJS" resolve="it" />
-                                          </node>
-                                        </node>
-                                        <node concept="liA8E" id="3BQjGtYL_GH" role="2OqNvi">
-                                          <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                                        </node>
-                                      </node>
-                                      <node concept="liA8E" id="3BQjGtYLX3x" role="2OqNvi">
-                                        <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                              <node concept="3fqX7Q" id="6O6H9VQMPbn" role="3clFbG">
+                                <node concept="2OqwBi" id="6O6H9VQMPbo" role="3fr31v">
+                                  <node concept="2OqwBi" id="6O6H9VQMPbp" role="2Oq$k0">
+                                    <node concept="2JrnkZ" id="6O6H9VQMPbq" role="2Oq$k0">
+                                      <node concept="37vLTw" id="6O6H9VQMPbr" role="2JrQYb">
+                                        <ref role="3cqZAo" node="3BQjGtYOLJS" resolve="it" />
                                       </node>
                                     </node>
+                                    <node concept="liA8E" id="6O6H9VQMPbs" role="2OqNvi">
+                                      <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="6O6H9VQMPbt" role="2OqNvi">
+                                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isValid():boolean" resolve="isValid" />
                                   </node>
                                 </node>
                               </node>
