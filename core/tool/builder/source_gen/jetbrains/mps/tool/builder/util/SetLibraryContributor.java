@@ -4,17 +4,18 @@ package jetbrains.mps.tool.builder.util;
 
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.Collections;
 
 public class SetLibraryContributor implements LibraryContributor {
-  private final Set<LibraryContributor.LibDescriptor> myLibraryPaths;
+  private final Set<LibDescriptor> myLibraryPaths;
 
-  public SetLibraryContributor(Set<LibraryContributor.LibDescriptor> libraryPaths) {
+  public SetLibraryContributor(Set<LibDescriptor> libraryPaths) {
     this.myLibraryPaths = libraryPaths;
   }
 
   @Override
-  public Set<LibraryContributor.LibDescriptor> getLibraries() {
+  public Set<LibDescriptor> getPaths() {
     return Collections.unmodifiableSet(myLibraryPaths);
   }
 

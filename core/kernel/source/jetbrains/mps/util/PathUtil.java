@@ -13,8 +13,6 @@ public class PathUtil {
     return path;
   }
 
-
-
   public static String getAbsolutePath(String path) {
     if (path.startsWith("~/") || path.startsWith("~\\")) {
       path = System.getProperty("user.home") + path.substring(1);

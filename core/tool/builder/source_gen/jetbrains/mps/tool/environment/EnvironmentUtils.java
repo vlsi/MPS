@@ -20,9 +20,10 @@ import java.util.ArrayList;
 import java.net.MalformedURLException;
 import jetbrains.mps.library.LibraryInitializer;
 import java.util.Set;
-import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.LinkedHashSet;
 import java.util.Collections;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -99,20 +100,20 @@ public class EnvironmentUtils {
     return new UrlClassLoader(urls, LibraryInitializer.class.getClassLoader());
   }
 
-  private static Set<LibraryContributor.LibDescriptor> getPluginLibDescriptors(EnvironmentConfig config) {
-    Set<LibraryContributor.LibDescriptor> paths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
+  private static Set<LibDescriptor> getPluginLibDescriptors(EnvironmentConfig config) {
+    Set<LibDescriptor> paths = new LinkedHashSet<LibDescriptor>();
     for (String plugin : config.getPlugins()) {
       File lib = new File(plugin + File.separator + "lib");
       UrlClassLoader pluginCL = null;
       if (lib.exists() && lib.isDirectory()) {
         pluginCL = createPluginClassLoader(lib);
         for (File jar : lib.listFiles(PathManager.JARS)) {
-          paths.add(new LibraryContributor.LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
+          paths.add(new LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
         }
       }
       File languages = new File(plugin + File.separator + "languages");
       if (languages.exists() && languages.isDirectory()) {
-        paths.add(new LibraryContributor.LibDescriptor(languages.getAbsolutePath(), pluginCL));
+        paths.add(new LibDescriptor(languages.getAbsolutePath(), pluginCL));
       }
     }
     return Collections.unmodifiableSet(paths);
@@ -132,9 +133,9 @@ public class EnvironmentUtils {
   }
 
   public static LibraryContributor createLibContributor(Map<String, ClassLoader> libToClassLoader) {
-    Set<LibraryContributor.LibDescriptor> libDescriptors = SetSequence.fromSet(new LinkedHashSet<LibraryContributor.LibDescriptor>());
+    Set<LibDescriptor> libDescriptors = SetSequence.fromSet(new LinkedHashSet<LibDescriptor>());
     for (String libPath : libToClassLoader.keySet()) {
-      SetSequence.fromSet(libDescriptors).addElement(new LibraryContributor.LibDescriptor(libPath, libToClassLoader.get(libPath)));
+      SetSequence.fromSet(libDescriptors).addElement(new LibDescriptor(libPath, libToClassLoader.get(libPath)));
     }
     return new SetLibraryContributor(libDescriptors);
   }

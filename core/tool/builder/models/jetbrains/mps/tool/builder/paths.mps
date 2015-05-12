@@ -734,7 +734,7 @@
                                 <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                               </node>
                               <node concept="liA8E" id="1a_CTtY7Ssk" role="2OqNvi">
-                                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                                <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                                 <node concept="37vLTw" id="2BHiRxgm6xp" role="37wK5m">
                                   <ref role="3cqZAo" node="1a_CTtY7Ssm" resolve="path" />
                                 </node>
@@ -1237,7 +1237,7 @@
               <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
             </node>
             <node concept="liA8E" id="1a_CTtY8r8Q" role="2OqNvi">
-              <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+              <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
               <node concept="37vLTw" id="2BHiRxgm7SI" role="37wK5m">
                 <ref role="3cqZAo" node="1a_CTtY8r8e" resolve="path" />
               </node>
@@ -1289,7 +1289,7 @@
                         <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
                       </node>
                       <node concept="liA8E" id="1a_CTtY8r9d" role="2OqNvi">
-                        <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                        <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                         <node concept="37vLTw" id="2BHiRxeuHtk" role="37wK5m">
                           <ref role="3cqZAo" node="1a_CTtY8r7t" resolve="outputRoot" />
                         </node>
@@ -1364,7 +1364,7 @@
                         <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
                       </node>
                       <node concept="liA8E" id="1a_CTtY8r9I" role="2OqNvi">
-                        <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                        <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                         <node concept="37vLTw" id="2BHiRxeusb4" role="37wK5m">
                           <ref role="3cqZAo" node="1a_CTtY8r7w" resolve="cachesOutputRoot" />
                         </node>

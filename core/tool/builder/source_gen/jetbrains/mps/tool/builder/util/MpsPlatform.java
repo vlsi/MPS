@@ -12,8 +12,10 @@ public final class MpsPlatform {
   private MPSPersistence myMPSPersistence;
   private MPSTypesystem myMPSTypesystem;
   private MPSGenerator myMPSGenerator;
+
   public MpsPlatform() {
   }
+
   public void init() {
     myMPSCore = new MPSCore();
     myMPSPersistence = new MPSPersistence();
@@ -24,6 +26,7 @@ public final class MpsPlatform {
     myMPSTypesystem.init();
     myMPSGenerator.init();
   }
+
   public void dispose() {
     myMPSGenerator.dispose();
     myMPSTypesystem.dispose();
@@ -33,5 +36,9 @@ public final class MpsPlatform {
     myMPSTypesystem = null;
     myMPSPersistence = null;
     myMPSCore = null;
+  }
+
+  public MPSCore getMPSCore() {
+    return myMPSCore;
   }
 }

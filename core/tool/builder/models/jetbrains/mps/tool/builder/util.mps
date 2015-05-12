@@ -210,6 +210,9 @@
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -3495,8 +3498,8 @@
       <node concept="3Tm6S6" id="57xhZj4tkXE" role="1B3o_S" />
       <node concept="3uibUv" id="57xhZj4tkXF" role="1tU5fm">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="3uibUv" id="57xhZj4tkXG" role="11_B2D">
-          <ref role="3uigEE" to="c762:~LibraryContributor$LibDescriptor" resolve="LibraryContributor.LibDescriptor" />
+        <node concept="3uibUv" id="6SLhIWeIP6" role="11_B2D">
+          <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
         </node>
       </node>
     </node>
@@ -3523,8 +3526,8 @@
         <property role="TrG5h" value="libraryPaths" />
         <node concept="3uibUv" id="57xhZj4tkXS" role="1tU5fm">
           <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-          <node concept="3uibUv" id="57xhZj4tkXT" role="11_B2D">
-            <ref role="3uigEE" to="c762:~LibraryContributor$LibDescriptor" resolve="LibraryContributor.LibDescriptor" />
+          <node concept="3uibUv" id="6SLhIWeILV" role="11_B2D">
+            <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
           </node>
         </node>
       </node>
@@ -3533,7 +3536,7 @@
     <node concept="3clFb_" id="57xhZj4tkXU" role="jymVt">
       <property role="IEkAT" value="false" />
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getLibraries" />
+      <property role="TrG5h" value="getPaths" />
       <property role="DiZV1" value="false" />
       <node concept="3Tm1VV" id="57xhZj4tkXV" role="1B3o_S" />
       <node concept="3clFbS" id="57xhZj4tkXW" role="3clF47">
@@ -3549,8 +3552,8 @@
       </node>
       <node concept="3uibUv" id="57xhZj4tkY0" role="3clF45">
         <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-        <node concept="3uibUv" id="57xhZj4tkY1" role="11_B2D">
-          <ref role="3uigEE" to="c762:~LibraryContributor$LibDescriptor" resolve="LibraryContributor.LibDescriptor" />
+        <node concept="3uibUv" id="6SLhIWeIKZ" role="11_B2D">
+          <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p7a3" role="2AJF6D">
@@ -3612,12 +3615,14 @@
         <ref role="3uigEE" to="y5px:~MPSGenerator" resolve="MPSGenerator" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1vtSNIfMpov" role="jymVt" />
     <node concept="3Tm1VV" id="KL8AqliugF" role="1B3o_S" />
     <node concept="3clFbW" id="KL8AqliugG" role="jymVt">
       <node concept="3Tm1VV" id="11RXB4mcSq6" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8AqliugH" role="3clF45" />
       <node concept="3clFbS" id="KL8AqliugJ" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="1vtSNIfMpin" role="jymVt" />
     <node concept="3clFb_" id="11RXB4mcWWR" role="jymVt">
       <property role="TrG5h" value="init" />
       <property role="DiZV1" value="false" />
@@ -3714,6 +3719,7 @@
       </node>
       <node concept="3Tm1VV" id="KL8Aqliuh7" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="1vtSNIfMpuC" role="jymVt" />
     <node concept="3clFb_" id="11RXB4mcXyd" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <property role="IEkAT" value="false" />
@@ -3795,6 +3801,25 @@
       </node>
       <node concept="3cqZAl" id="KL8Aqliuh9" role="3clF45" />
       <node concept="3Tm1VV" id="KL8Aqliuhv" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1vtSNIfMpSG" role="jymVt" />
+    <node concept="3clFb_" id="1vtSNIfMqbb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getMPSCore" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1vtSNIfMqbe" role="3clF47">
+        <node concept="3cpWs6" id="1vtSNIfMqhD" role="3cqZAp">
+          <node concept="37vLTw" id="1vtSNIfMqmR" role="3cqZAk">
+            <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1vtSNIfMq4R" role="1B3o_S" />
+      <node concept="3uibUv" id="1vtSNIfMqb6" role="3clF45">
+        <ref role="3uigEE" to="1p1s:~MPSCore" resolve="MPSCore" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="1bMaI2XqGdw">

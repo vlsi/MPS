@@ -88,6 +88,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.library.contributor.LibDescriptor" />
     <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />
   </dependency>
 </dependenciesRoot>
