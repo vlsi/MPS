@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -38,24 +37,22 @@ import java.util.concurrent.ConcurrentMap;
  *   Synchronized.
  */
 public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
-
   private static final String TYPESYSTEM_SUFFIX = ".typesystem";
-
-  ConcurrentMap<Pair<String, String>, Set<T>> myRules = new ConcurrentHashMap<Pair<String, String>, /* synchronized */ Set<T>>();
+  ConcurrentMap<Pair<SAbstractConcept, SAbstractConcept>, Set<T>> myRules = new ConcurrentHashMap<Pair<SAbstractConcept, SAbstractConcept>, /* synchronized */ Set<T>>();
 
   private DoubleTermRules<T> myDoubleTermRules = new DoubleTermRules<T>() {
     @Override
-    protected Iterable<String> allSuperConcepts(String conceptFQName) {
+    protected Iterable<SAbstractConcept> allSuperConcepts(SAbstractConcept conceptFQName) {
       ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName);
       if (concept.isInterfaceConcept()) return Collections.emptyList();
 
       SConceptId sid = concept.getSuperConceptId();
       String sname = concept.getSuperConcept();
 
-      List<String> res = new ArrayList<String>(2);
+      List<SAbstractConcept> res = new ArrayList<SAbstractConcept>(2);
       while (sid != null) {
-        SConcept superConcept = MetaAdapterFactory.getConcept(sid, sname);
-        res.add(sname);
+        SAbstractConcept superConcept = MetaAdapterFactory.getConcept(sid, sname);
+        res.add(superConcept);
 
         ConceptDescriptor superDesc = ConceptRegistry.getInstance().getConceptDescriptor(superConcept);
         sid = superDesc.getSuperConceptId();
@@ -65,16 +62,16 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
     }
 
     @Override
-    protected Iterable<T> allForConceptPair(String leftConceptFQName, String rightConceptFQName, LanguageScope langScope) {
-      return getAllApplicableTo(leftConceptFQName, rightConceptFQName, langScope);
+    protected Iterable<T> allForConceptPair(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope) {
+      return getAllApplicableTo(leftConcept, rightConcept, langScope);
     }
   };
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      String concept1 = rule.getApplicableConceptFQName1();
-      String concept2 = rule.getApplicableConceptFQName2();
-      Pair<String, String> pair = new Pair<String, String>(concept1, concept2);
+      SAbstractConcept concept1 = rule.getApplicableConcept1();
+      SAbstractConcept concept2 = rule.getApplicableConcept2();
+      Pair<SAbstractConcept, SAbstractConcept> pair = new Pair<SAbstractConcept, SAbstractConcept>(concept1, concept2);
       Set<T> existingRules = myRules.get(pair);
       while (existingRules == null) {
         myRules.putIfAbsent(pair, Collections.synchronizedSet(new HashSet<T>(1)));
@@ -89,8 +86,8 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
     return myDoubleTermRules.lookupRules(leftTerm, righTerm);
   }
 
-  private Iterable<T> getAllApplicableTo(String leftConceptFQName, String rightConceptFQName, LanguageScope scope) {
-    Pair<String, String> conceptPair = new Pair<String, String>(leftConceptFQName, rightConceptFQName);
+  private Iterable<T> getAllApplicableTo(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope scope) {
+    Pair<SAbstractConcept, SAbstractConcept> conceptPair = new Pair<SAbstractConcept, SAbstractConcept>(leftConcept, rightConcept);
     if (!myRules.containsKey(conceptPair)) return Collections.emptyList();
 
     List<T> result = new ArrayList<T>(4);
