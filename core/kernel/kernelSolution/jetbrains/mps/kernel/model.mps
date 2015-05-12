@@ -28,6 +28,7 @@
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="42ru" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(jetbrains.mps.module@java_stub)" />
     <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
+    <import index="eunx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.annotation(MPS.Core/jetbrains.mps.util.annotation@java_stub)" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="fwv2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)" implicit="true" />
   </imports>
@@ -52,9 +53,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -106,6 +112,9 @@
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -192,10 +201,15 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -1144,6 +1158,7 @@
     </node>
     <node concept="2YIFZL" id="i1dxEXv" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
+      <property role="IEkAT" value="true" />
       <node concept="10P_77" id="i1dxNcD" role="3clF45" />
       <node concept="3Tm1VV" id="i1dxEXx" role="1B3o_S" />
       <node concept="3clFbS" id="i1dxEXy" role="3clF47">
@@ -1278,9 +1293,31 @@
         <property role="TrG5h" value="to" />
         <node concept="3THzug" id="i1dxRCr" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="3$rob8hHtDV" role="lGtFl">
+        <node concept="TZ5HI" id="3$rob8hHtDW" role="TZ5Hx">
+          <node concept="TZ5HA" id="3$rob8hHtDX" role="3HnX3l">
+            <node concept="1dT_AC" id="3$rob8hHum8" role="1dT_Ay">
+              <property role="1dT_AB" value="use SConcept.isSubConceptOf" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHtDY" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHuma" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="3$rob8hHuE_" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="3$rob8hHuNb" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2YIFZL" id="49NWpd$b1vI" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
+      <property role="IEkAT" value="true" />
       <node concept="10P_77" id="49NWpd$b1vM" role="3clF45" />
       <node concept="3Tm1VV" id="49NWpd$b1vK" role="1B3o_S" />
       <node concept="3clFbS" id="49NWpd$b1vL" role="3clF47">
@@ -1332,9 +1369,31 @@
         <property role="TrG5h" value="toFqName" />
         <node concept="17QB3L" id="49NWpd$b1vR" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="3$rob8hHuNi" role="lGtFl">
+        <node concept="TZ5HI" id="3$rob8hHuNj" role="TZ5Hx">
+          <node concept="TZ5HA" id="3$rob8hHuNk" role="3HnX3l">
+            <node concept="1dT_AC" id="3$rob8hHvmY" role="1dT_Ay">
+              <property role="1dT_AB" value="use SConcept.isSubConceptOf" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHuNl" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHv56" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="3$rob8hHv57" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="3$rob8hHv58" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2YIFZL" id="6CIjHcu$EU8" role="jymVt">
       <property role="TrG5h" value="isAssignableConcept" />
+      <property role="IEkAT" value="true" />
       <node concept="10P_77" id="6CIjHcu$EUc" role="3clF45" />
       <node concept="3Tm1VV" id="6CIjHcu$EUa" role="1B3o_S" />
       <node concept="3clFbS" id="6CIjHcu$EUb" role="3clF47">
@@ -1429,6 +1488,27 @@
       <node concept="37vLTG" id="6CIjHcu$EUf" role="3clF46">
         <property role="TrG5h" value="toFqName" />
         <node concept="17QB3L" id="6CIjHcu$EUh" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="3$rob8hHuSJ" role="lGtFl">
+        <node concept="TZ5HI" id="3$rob8hHuSK" role="TZ5Hx">
+          <node concept="TZ5HA" id="3$rob8hHuSL" role="3HnX3l">
+            <node concept="1dT_AC" id="3$rob8hHvn0" role="1dT_Ay">
+              <property role="1dT_AB" value="use SConcept.isSubConceptOf" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHuSM" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="3$rob8hHva_" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="3$rob8hHvaA" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="3$rob8hHvaB" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2YIFZL" id="i1dAkHk" role="jymVt">

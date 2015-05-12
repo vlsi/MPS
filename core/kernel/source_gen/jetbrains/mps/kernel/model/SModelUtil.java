@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -113,6 +114,12 @@ public class SModelUtil {
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>(resultSet);
     return result;
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, SNode to) {
     assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
     assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
@@ -127,6 +134,12 @@ public class SModelUtil {
     }
     return isAssignableConcept(NameUtil.nodeFQName(from), NameUtil.nodeFQName(to));
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, String toFqName) {
     if (from == null) {
       return false;
@@ -134,6 +147,12 @@ public class SModelUtil {
     String fromFqName = NameUtil.nodeFQName(from);
     return isAssignableConcept(fromFqName, toFqName);
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
     if (eq_74see4_a0a0k(fromFqName, toFqName)) {
       return true;
