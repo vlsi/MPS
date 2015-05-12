@@ -19,11 +19,13 @@ import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.BaseLibraryManager.LibraryState;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,7 +33,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class BaseLibraryManager implements BaseComponent, PersistentStateComponent<LibraryState>, LibraryContributor {
+  private final LibraryInitializer myLibraryInitializer;
+
   public BaseLibraryManager(MPSCoreComponents components) {
+    myLibraryInitializer = components.getMPSCore().getLibraryInitializer();
   }
 
   @Override
@@ -41,22 +46,21 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
 
   @Override
   public void initComponent() {
-    LibraryInitializer.getInstance().addContributor(this);
-    LibraryInitializer.getInstance().update();
+    myLibraryInitializer.load(Collections.<LibraryContributor>singletonList(this));
   }
 
   @Override
   public void disposeComponent() {
-    LibraryInitializer.getInstance().removeContributor(this);
+    myLibraryInitializer.unload(Collections.<LibraryContributor>singletonList(this));
   }
 
   //-------libraries
 
   @Override
-  public final Set<LibDescriptor> getLibraries() {
+  public final Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (Library lib : getUILibraries()) {
-      result.add(new LibDescriptor(lib.getPath(), null));
+      result.add(new LibDescriptor(lib.getPath()));
     }
     return result;
   }
@@ -131,6 +135,11 @@ public abstract class BaseLibraryManager implements BaseComponent, PersistentSta
   @Override
   public void loadState(LibraryState state) {
     myLibraries = removeMacros(state);
+  }
+
+  @Override
+  public String toString() {
+    return "BaseLibraryManager";
   }
 
   static class LibraryState {

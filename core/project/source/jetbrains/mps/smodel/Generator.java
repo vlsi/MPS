@@ -32,6 +32,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -54,10 +55,10 @@ public class Generator extends ReloadableModuleBase {
     ModelsAutoImportsManager.registerContributor(new GeneratorModelsAutoImports());
   }
 
-  private Language mySourceLanguage;
+  @NotNull private Language mySourceLanguage;
   private GeneratorDescriptor myGeneratorDescriptor;
 
-  public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
+  public Generator(@NotNull Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
     initGeneratorDescriptor(generatorDescriptor);
   }
@@ -257,5 +258,10 @@ public class Generator extends ReloadableModuleBase {
     public Set<DevKit> getAutoImportedDevKits(Generator contextModule, org.jetbrains.mps.openapi.model.SModel model) {
       return Collections.singleton(BootstrapLanguages.generalDevKit());
     }
+  }
+
+  @Override
+  public ClassLoader getRootClassLoader() {
+    return mySourceLanguage.getRootClassLoader();
   }
 }

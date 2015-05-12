@@ -15,6 +15,12 @@
  */
 package jetbrains.mps.library.contributor;
 
-public interface LibraryContributor extends RepositoryContributor<LibDescriptor> {
-  boolean hiddenLanguages();
+import java.util.Set;
+
+/**
+ * contributes modules to a repository.
+ * e.g there are project or library modules in the repository
+ */
+public interface RepositoryContributor<P extends RepositoryPathDescriptor> {
+  Set<P> getPaths();
 }

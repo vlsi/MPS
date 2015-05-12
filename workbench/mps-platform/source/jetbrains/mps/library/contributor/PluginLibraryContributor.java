@@ -19,7 +19,6 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
-import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -32,14 +31,21 @@ import java.util.Set;
 /**
  * Contributes user libraries from the extension point in {@link LanguageLibrary#EP_LANGUAGE_LIBS}
  */
-public class PluginLibrariesContributor implements LibraryContributor {
-  private static final Logger LOG = LogManager.getLogger(PluginLibrariesContributor.class);
+public final class PluginLibraryContributor implements LibraryContributor {
+  private static final Logger LOG = LogManager.getLogger(PluginLibraryContributor.class);
 
-  public PluginLibrariesContributor(MPSCoreComponents dep) {
+  @NotNull
+  private LibDescriptor createLibDescriptor(LanguageLibrary library) throws IOException {
+    PluginId pluginId = library.getPluginDescriptor().getPluginId();
+    if (library.dir == null) throw new IllegalStateException("Library attribute 'dir' should be non-empty: plugin=" + pluginId.getIdString());
+    IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
+    if (plugin == null) throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
+    final String libraryPath = new File(plugin.getPath(), library.dir).getCanonicalPath();
+    return new LibDescriptor(libraryPath, plugin.getPluginClassLoader());
   }
 
   @Override
-  public Set<LibDescriptor> getLibraries() {
+  public Set<LibDescriptor> getPaths() {
     final LanguageLibrary[] libraries = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (final LanguageLibrary library : libraries) {
@@ -51,17 +57,6 @@ public class PluginLibrariesContributor implements LibraryContributor {
       }
     }
     return result;
-  }
-
-  @NotNull
-  private LibDescriptor createLibDescriptor(LanguageLibrary library) throws IOException {
-    PluginId pluginId = library.getPluginDescriptor().getPluginId();
-    if (library.dir == null) throw new IllegalStateException("Library attribute 'dir' should be non-empty: plugin=" + pluginId.getIdString());
-    IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
-    if (plugin == null) throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
-    final String libraryPath = new File(plugin.getPath(), library.dir).getCanonicalPath();
-    ClassLoader pluginClassLoader = plugin.getPluginClassLoader();
-    return new LibDescriptor(libraryPath, pluginClassLoader);
   }
 
   @Override

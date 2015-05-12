@@ -243,10 +243,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     setModuleDescriptor(moduleDescriptor);
   }
 
-  public boolean isBootstrap() {
-    return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
-  }
-
   public int getLanguageVersion() {
     return getModuleDescriptor().getVersion();
   }
@@ -441,11 +437,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       if (getPackage(pack) != null) return;
       definePackage(pack, null, null, null, null, null, null, null);
     }
-  }
-
-  @Deprecated
-  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 
   private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {

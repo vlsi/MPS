@@ -15,44 +15,42 @@
  */
 package jetbrains.mps.library;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.library.contributor.RepositoryContributor;
+import jetbrains.mps.library.contributor.RepositoryPathDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class LibraryInitializer implements CoreComponent {
+/**
+ * An implementation of RepositoryReader, which is lazy (in a way that it tries not load the same module twice)
+ * At the same time it creates SLibrary for each path {@link RepositoryContributor#getPaths()} returns.
+ * FIXME need to separate up these two.
+ */
+public final class LibraryInitializer implements CoreComponent, RepositoryReader<LibraryContributor> {
   private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
-
   private static LibraryInitializer INSTANCE;
-  private final ModelAccess myModelAccess;
-  private final CleanupManager myCleanupManager;
 
   public static LibraryInitializer getInstance() {
     return INSTANCE;
   }
 
-  private Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
-  private Map<String, ClassLoader> myParentLoaders = new ConcurrentHashMap<String, ClassLoader>();
+  private final ModelAccess myModelAccess;
+  private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
+  private final Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
 
   @Override
   public void init() {
@@ -68,106 +66,102 @@ public class LibraryInitializer implements CoreComponent {
       lib.dispose();
     }
     myLibraries.clear();
+    myContributors.clear();
     INSTANCE = null;
   }
 
-  public LibraryInitializer(SRepository repository, CleanupManager cleanupManager) {
+  public LibraryInitializer(@NotNull SRepository repository) {
     myModelAccess = repository.getModelAccess();
-    myCleanupManager = cleanupManager;
   }
 
+  /**
+   * EDT is required
+   */
+  @Override
+  public void loadRefreshed(List<LibraryContributor> contributors) {
+    for (LibraryContributor contributor : contributors) {
+      addContributor(contributor);
+    }
+    update(true);
+  }
+
+  @Override
+  public void load(List<LibraryContributor> contributors) {
+    for (LibraryContributor contributor : contributors) {
+      addContributor(contributor);
+    }
+    update(false);
+  }
+
+  @Override
+  public void unload(List<LibraryContributor> contributors) {
+    for (RepositoryContributor contributor : contributors) {
+      removeContributor(contributor);
+    }
+    update(false);
+  }
+
+  /**
+   * @deprecated please use one-step loading methods: {@link #loadRefreshed} or {@link #load}
+   */
+  @Deprecated
   public void update() {
     update(false);
   }
 
-  public ClassLoader getPluginClassLoaderForPath(@Nullable String pluginPath) {
-    // TODO find classloader using ModuleOwner (SLibrary)
-    if (pluginPath != null) {
-      String foundPath = "";
-      for (String path : myParentLoaders.keySet()) {
-        if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
-          // handle one path being a prefix of the other
-          if (path.length() > foundPath.length()) {
-            foundPath = path;
-          }
-        }
-      }
-      if (!foundPath.isEmpty()) {
-        return myParentLoaders.get(foundPath);
+  /**
+   * not intended to be called explicitly anymore.
+   * @see #update()
+   * @param refreshFiles if true, then the caller needs to handle EDT lock, because deeper the synchronous recursive file system refresh would be called.
+   *                     FIXME need to get rid of that synchronous refresh
+   *
+   */
+  @Deprecated
+  private void update(final boolean refreshFiles) {
+    final Set<SLibrary> currentLibs = new HashSet<SLibrary>();
+    List<LibraryContributor> contributors = myContributors;
+    for (LibraryContributor contributor : contributors) {
+      boolean hidden = contributor.hiddenLanguages();
+      for (LibDescriptor pathDescriptor : contributor.getPaths()) {
+        SLibrary lib = new SLibrary(pathDescriptor, hidden);
+        currentLibs.add(lib);
       }
     }
 
-    //project module
-    return LibraryInitializer.class.getClassLoader();
+    final Delta<SLibrary> libraryDelta = Delta.construct(myLibraries, currentLibs);
+
+    if (libraryDelta.isEmpty()) return;
+
+    updateState(refreshFiles, libraryDelta);
+
+    libraryDelta.apply(myLibraries);
   }
 
-  public void update(final boolean refreshFiles) {
-    final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
-    final Set<SLibrary> toLoad = new HashSet<SLibrary>();
-    myParentLoaders.clear();
-    for (LibraryContributor libraryContributor : myContributors) {
-      for (LibDescriptor libDescriptor : libraryContributor.getLibraries()) {
-        IFile path = FileSystem.getInstance().getFileByPath(libDescriptor.getPath());
-        ClassLoader libClassLoader = libDescriptor.getParentClassLoader();
-        SLibrary lib = new SLibrary(path, libClassLoader, libraryContributor.hiddenLanguages());
-        toUnload.remove(lib);
-        if (!myLibraries.contains(lib)) {
-          myLibraries.add(lib);
-          toLoad.add(lib);
-        }
-
-        IFile bundlePath = FileSystem.getInstance().isPackaged(path) ? FileSystem.getInstance().getBundleHome(path) : null;
-        ClassLoader classLoader = libClassLoader != null ? libClassLoader : LibraryInitializer.class.getClassLoader();
-        myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : libDescriptor.getPath(), classLoader);
-      }
-    }
-    myLibraries.removeAll(toUnload);
-
-    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
-
-    if (!toLoad.isEmpty()) LOG.info("Loading " + toLoad.size() + " libraries");
-    if (!toUnload.isEmpty()) LOG.info("Unloading " + toUnload.size() + " libraries");
-
-    List<SLibrary> toUnloadList = new ArrayList<SLibrary>(toUnload);
-    final List<SLibrary> toLoadList = new ArrayList<SLibrary>(toLoad);
-    Collections.sort(toUnloadList);
-    Collections.sort(toLoadList);
-    for (SLibrary unloadLib : toUnloadList) {
-      unloadLib.dispose();
-    }
+  // performed in write action
+  // actual reading from disk happens here
+  private void updateState(final boolean refreshFiles, Delta<SLibrary> libraryDelta) {
+    final List<SLibrary> toUnload= libraryDelta.getRemoved();
+    final List<SLibrary> toLoad = libraryDelta.getAdded();
 
     myModelAccess.runWriteAction(new Runnable() {
       @Override
       public void run() {
-        for (SLibrary loadLib : toLoadList) {
+        LOG.info("Loading " + toLoad.size() + " libraries; Unloading " + toUnload.size() + " libraries.");
+        for (SLibrary unloadLib : toUnload) {
+          unloadLib.dispose();
+        }
+
+        for (SLibrary loadLib : toLoad) {
           loadLib.attach(refreshFiles);
         }
       }
     });
-
-    myCleanupManager.cleanup();
   }
 
   //----------bootstrap modules
 
-  public Set<SModule> getBootstrapModules(Class<? extends SModule> aClass) {
-    myModelAccess.checkReadAccess();
-
-    Set<String> bootstrapPaths = new HashSet<String>();
-    bootstrapPaths.addAll(PathManager.getBootstrapPaths());
-    bootstrapPaths.add(PathManager.getLanguagesPath());
-
-    Set<SModule> result = new LinkedHashSet<SModule>();
-    for (SLibrary lib : myLibraries) {
-      if (bootstrapPaths.contains(lib.getFile().getPath())) {
-        result.addAll(ModuleRepositoryFacade.getInstance().getModules(lib, aClass));
-      }
-    }
-
-    return result;
-  }
-
-  // used in plugin
+  // used in plugin; TODO remove
+  @Deprecated
   public List<ModulesMiner.ModuleHandle> getModuleHandles() {
     myModelAccess.checkReadAccess();
 
@@ -178,17 +172,66 @@ public class LibraryInitializer implements CoreComponent {
     return result;
   }
 
-  //----------ext point
-
-  private List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
-
-  public void addContributor(LibraryContributor c) {
+  /**
+   * Please use one-step version to load modules from disk to MPS {@link #load(List)} or {@link #loadRefreshed(List)}
+   */
+  @Deprecated
+  public void addContributor(@NotNull LibraryContributor c) {
     LOG.info("Adding libraries from " + c.getClass().getName());
     myContributors.add(c);
   }
 
-  public void removeContributor(LibraryContributor c) {
+  /**
+   * Please use one-step version to unload modules from MPS {@link #unload(List)}
+   */
+  @Deprecated
+  public void removeContributor(@NotNull RepositoryContributor c) {
     LOG.info("Removing libraries from " + c.getClass().getName());
     myContributors.remove(c);
+  }
+
+  private static class Delta<T extends Comparable<T>> {
+    private final Set<T> myAdded;
+    private final Set<T> myRemoved;
+
+    public static <T extends Comparable<T>> Delta<T> construct(Collection<T> initial, Collection<T> updated) {
+      Set<T> added = subtractSets(updated, initial);
+      Set<T> removed = subtractSets(initial, updated);
+      return new Delta<T>(added, removed);
+    }
+
+    private static <T> Set<T> subtractSets(Collection<T> s1, Collection<T> s2) {
+      Set<T> set1 = new HashSet<T>(s1);
+      set1.removeAll(s2);
+      return set1;
+    }
+
+    private Delta(Collection<T> added, Collection<T> removed) {
+      myAdded = new HashSet<T>(added);
+      myRemoved = new HashSet<T>(removed);
+    }
+
+    public List<T> getAdded() {
+      return createSortedList(myAdded);
+    }
+
+    public List<T> getRemoved() {
+      return createSortedList(myRemoved);
+    }
+
+    private static <T extends Comparable<T>> List<T> createSortedList(Set<T> added) {
+      List<T> list = new ArrayList<T>(added);
+      Collections.sort(list);
+      return list;
+    }
+
+    public boolean isEmpty() {
+      return myAdded.isEmpty() && myRemoved.isEmpty();
+    }
+
+    public void apply(Collection<T> toChange) {
+      toChange.removeAll(myRemoved);
+      toChange.addAll(myAdded);
+    }
   }
 }

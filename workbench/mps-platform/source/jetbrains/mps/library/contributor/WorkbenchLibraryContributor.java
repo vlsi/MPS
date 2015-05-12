@@ -15,36 +15,24 @@
  */
 package jetbrains.mps.library.contributor;
 
-import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.util.PathManager;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class BootstrapLibContributor implements LibraryContributor, CoreComponent {
+/**
+ * Contributes workbench modules -- IDE and platform (idea) layers
+ */
+public final class WorkbenchLibraryContributor implements LibraryContributor {
   @Override
-  public Set<LibDescriptor> getLibraries() {
+  public Set<LibDescriptor> getPaths() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
-    for (String path : PathManager.getBootstrapPaths()) {
-      res.add(new LibDescriptor(path, null));
-    }
-    res.add(new LibDescriptor(PathManager.getLanguagesPath(), null));
+    res.add(new LibDescriptor(PathManager.getWorkbenchPath(), null));
     return res;
   }
 
   @Override
   public boolean hiddenLanguages() {
     return true;
-  }
-
-  @Override
-  public void init() {
-    LibraryInitializer.getInstance().addContributor(this);
-  }
-
-  @Override
-  public void dispose() {
-    LibraryInitializer.getInstance().removeContributor(this);
   }
 }

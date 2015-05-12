@@ -18,8 +18,11 @@ package jetbrains.mps.library;
 import jetbrains.mps.fs.MPSDirectoryWatcher;
 import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.library.contributor.RepositoryPathDescriptor;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -35,20 +38,25 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * SLibrary tracks a path {@link #myFile} with modules inside.
+ * It listens to file system events and reloads modules from disk if necessary.
+ * It is actually the layer between SRepository and SModule in the repository hierarchy (as well as the Project).
+ * [The repository consists from library modules, project modules and several special modules (there are few of them)]
+ *
  * evgeny, 11/3/12
  */
-class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
+public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
   private final IFile myFile;
-  private final ClassLoader myParentLoader;
+  private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
-  private AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
+  private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
   private final WatchRequestor myWatchRequestor;
 
-  SLibrary(IFile file, ClassLoader parent, boolean hidden) {
-    myFile = file;
-    myParentLoader = parent;
+  public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
+    myPluginClassLoader = pathDescriptor.getPluginClassLoader();
+    myFile = FileSystem.getInstance().getFileByPath(pathDescriptor.getPath());
     myHidden = hidden;
     myWatchRequestor = new WatchRequestor() {
       @Override
@@ -58,11 +66,21 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
     };
   }
 
-  public IFile getFile() {
+  @NotNull
+  private IFile getFile() {
     return myFile;
   }
 
-  public List<ModuleHandle> getHandles() {
+  /**
+   * @return a classloader which will be the parent for all ModuleClassLoaders created for the modules in this SLibrary
+   */
+  @Nullable
+  public ClassLoader getPluginClassLoader() {
+    return myPluginClassLoader;
+  }
+
+  // TODO transfer these methods up to the {@link RepositoryReader}
+  List<ModuleHandle> getHandles() {
     List<ModuleHandle> moduleHandles = myHandles.get();
     if (moduleHandles == null) return Collections.emptyList();
     return moduleHandles;
@@ -89,7 +107,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
-    return null;
+    return Collections.emptyList();
   }
 
   @Override
@@ -134,27 +152,26 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
     SLibrary library = (SLibrary) o;
 
     if (myHidden != library.myHidden) return false;
-    if (myParentLoader != null ? !myParentLoader.equals(library.myParentLoader) : library.myParentLoader != null) return false;
-    if (!myFile.equals(library.myFile)) return false;
+    if (myPluginClassLoader == null ? library.myPluginClassLoader != null : !myPluginClassLoader.equals(library.myPluginClassLoader)) return false;
+    return myFile.equals(library.myFile);
 
-    return true;
   }
 
   @Override
   public String toString() {
-    return "SLibrary with path " + myFile + ", classloader " + myParentLoader;
+    return "SLibrary [path " + myFile + "; plugin " + myPluginClassLoader + "]";
   }
 
   @Override
   public int hashCode() {
     int result = myFile.hashCode();
-    result = 31 * result + (myParentLoader != null ? myParentLoader.hashCode() : 0);
+    result = 31 * result + (myPluginClassLoader != null ? myPluginClassLoader.hashCode() : 0);
     result = 31 * result + (myHidden ? 1 : 0);
     return result;
   }
 
   @Override
   public int compareTo(@NotNull SLibrary another) {
-    return this.getFile().getName().compareTo(another.getFile().getName());
+    return getFile().getName().compareTo(another.getFile().getName());
   }
 }
