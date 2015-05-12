@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -99,6 +100,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptsInLoading.get().remove(new Pair<Object, LanguageAspect>(fqName, aspect));
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
