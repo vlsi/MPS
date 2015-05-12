@@ -104,7 +104,7 @@
     <file name="Component_Behavior.java">
       <node id="5681697064999350436" at="13,74,14,524" concept="0" />
       <node id="5681697064999291989" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5681697064999291989" at="13,0,16,0" concept="1" trace="call_fullNsme_5681697064999291992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5681697064999291989" at="13,0,16,0" concept="1" trace="call_fullName_5681697064999291992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="5681697064999291991" at="11,43,11,43" />
       <scope id="5681697064999291995" at="13,74,14,524" />
       <scope id="5681697064999291989" at="11,0,13,0">

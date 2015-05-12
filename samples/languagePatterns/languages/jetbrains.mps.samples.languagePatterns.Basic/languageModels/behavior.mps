@@ -2,7 +2,7 @@
 <model ref="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -78,7 +78,7 @@
     <property role="3GE5qa" value="custom-presentation" />
     <ref role="13h7C2" to="vseb:4Vpsm2KDZCE" resolve="Component" />
     <node concept="13i0hz" id="4Vpsm2KEoLo" role="13h7CS">
-      <property role="TrG5h" value="fullNsme" />
+      <property role="TrG5h" value="fullName" />
       <node concept="3Tm1VV" id="4Vpsm2KEoLp" role="1B3o_S" />
       <node concept="17QB3L" id="4Vpsm2KEsx$" role="3clF45" />
       <node concept="3clFbS" id="4Vpsm2KEoLr" role="3clF47">

@@ -51,7 +51,7 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return Component_Behavior.call_fullNsme_5681697064999291992(_context.getParameterNode());
+            return Component_Behavior.call_fullName_5681697064999291992(_context.getParameterNode());
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

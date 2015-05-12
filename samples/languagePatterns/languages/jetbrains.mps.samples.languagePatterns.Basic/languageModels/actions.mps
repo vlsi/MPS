@@ -138,6 +138,7 @@
         <child id="1112058057696" name="actionsBuilder" index="3FOPby" />
       </concept>
       <concept id="1112058030570" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" flags="ig" index="3FOIzC">
+        <property id="1158952412335" name="description" index="3mWAmy" />
         <reference id="1112058088712" name="applicableConcept" index="3FOWKa" />
         <child id="1177324142645" name="part" index="tZc4B" />
         <child id="1154465386371" name="precondition" index="3bvWUf" />
@@ -795,6 +796,7 @@
     <property role="3GE5qa" value="seamless-substitution" />
     <property role="TrG5h" value="PickTheRightDescriptionType" />
     <node concept="3FOIzC" id="1CEujLdGVuv" role="3FOPby">
+      <property role="3mWAmy" value="convert to StringDescription text not matching any concept alias" />
       <ref role="3FOWKa" to="vseb:1CEujLdGyea" resolve="AbstractRequestDescription" />
       <node concept="tYCnQ" id="1CEujLdGVvs" role="tZc4B">
         <ref role="uz4UX" to="vseb:1CEujLdGyfl" resolve="StringDescription" />
