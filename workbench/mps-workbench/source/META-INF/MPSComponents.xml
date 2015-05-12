@@ -180,7 +180,9 @@
     </component>
     <!-- language development workbench -->
     <component>
-      <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
+      <interface-class>jetbrains.mps.ide.make.StartupModuleMaker</interface-class>
+      <headless-implementation-class>jetbrains.mps.ide.make.DummyStartupModuleMaker</headless-implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.StartupModuleMakerImpl</implementation-class>
     </component>
   </project-components>
 

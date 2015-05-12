@@ -47,6 +47,7 @@ import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Level;
@@ -85,9 +86,7 @@ public class GenerationTestBase {
 
   @BeforeClass
   public static void init() throws Exception {
-    CREATED_ENV = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(false));
-    Logger.getRootLogger().setLevel(Level.INFO);
-    RuntimeFlags.setTestMode(TestMode.USUAL);
+    CREATED_ENV = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @AfterClass

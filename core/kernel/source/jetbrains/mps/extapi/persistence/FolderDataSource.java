@@ -155,6 +155,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     }
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
     return myFolder;

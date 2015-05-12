@@ -11,7 +11,7 @@ import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.common.JavaCompilerProperties;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -85,7 +85,7 @@ public abstract class MpsWorker {
   }
 
   protected Environment createEnvironment() {
-    Environment env = EnvironmentContainer.getOrCreate(createEnvConfig(myWhatToDo));
+    Environment env = MpsEnvironment.getOrCreate(createEnvConfig(myWhatToDo));
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
     return env;
   }

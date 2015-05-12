@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
 import jetbrains.mps.tests.*;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ import org.junit.runners.Suite;
  */
 // todo: !!!should be WatchingSuite!!!
 @Deprecated
-@RunWith(Suite.class)
+@RunWith(BaseMpsSuite.class)
 @Suite.SuiteClasses({
     TestModule_closures_test.class,
     TestModule_collections_trove_test.class,

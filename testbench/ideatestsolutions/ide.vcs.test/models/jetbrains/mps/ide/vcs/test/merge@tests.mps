@@ -86,6 +86,7 @@
     <import index="8jhf" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.persistence(jetbrains.mps.persistence@java_stub)" />
     <import index="m13h" ref="r:21243d57-0512-4c07-bcfd-21ee53d2aeb3(jetbrains.mps.vcs.changesmanager.roots)" />
     <import index="3ebz" ref="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)" />
+    <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -628,20 +629,12 @@
             <node concept="37vLTw" id="5A5jZryZUTO" role="37vLTJ">
               <ref role="3cqZAo" node="5A5jZryZU6a" resolve="ourEnvironment" />
             </node>
-            <node concept="2YIFZM" id="5A5jZryZV11" role="37vLTx">
-              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-              <node concept="2OqwBi" id="5A5jZrz3DwX" role="37wK5m">
-                <node concept="2YIFZM" id="5A5jZryZV12" role="2Oq$k0">
-                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-                </node>
-                <node concept="liA8E" id="5A5jZrz3DCO" role="2OqNvi">
-                  <ref role="37wK5l" to="79ha:3eUNqOk6UlR" resolve="loadIdea" />
-                  <node concept="3clFbT" id="5A5jZrz3DEc" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
+            <node concept="2YIFZM" id="6LlhC3WLdhP" role="37vLTx">
+              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
+              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+              <node concept="2YIFZM" id="6LlhC3WLdhR" role="37wK5m">
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               </node>
             </node>
           </node>
@@ -3568,6 +3561,16 @@
         <ref role="2AI5Lk" to="qjxg:~BeforeClass" resolve="BeforeClass" />
       </node>
       <node concept="3clFbS" id="6N6R05mYqLA" role="3clF47">
+        <node concept="3clFbF" id="6LlhC3WKFkt" role="3cqZAp">
+          <node concept="2YIFZM" id="6LlhC3WKFux" role="3clFbG">
+            <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
+            <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+            <node concept="2YIFZM" id="6LlhC3WKF$z" role="37wK5m">
+              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="5A5jZrz5Zqg" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZrz5Zqh" role="3cpWs9">
             <property role="TrG5h" value="project" />

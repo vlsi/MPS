@@ -21,11 +21,15 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
 
 /**
  * evgeny, 5/9/13
+ *
+ * currently delegates everything to the ugly singleton {@link MPSModuleRepository}.
+ * TODO: the common editable parent class for the repository must be extracted from the {@link MPSModuleRepository}
  */
 public class ProjectRepository extends SRepositoryBase {
   private final Project myProject;
@@ -37,13 +41,17 @@ public class ProjectRepository extends SRepositoryBase {
     init();
   }
 
+  private MPSModuleRepository getRootRepository() {
+    return MPSModuleRepository.getInstance();
+  }
+
   public Project getProject() {
     return myProject;
   }
 
   @Override
   public SModule getModule(SModuleId ref) {
-    return MPSModuleRepository.getInstance().getModule(ref);
+    return getRootRepository().getModule(ref);
   }
 
   @Override
@@ -63,7 +71,6 @@ public class ProjectRepository extends SRepositoryBase {
 
   @Override
   public void saveAll() {
-    MPSModuleRepository.getInstance().saveAll();
+    getRootRepository().saveAll();
   }
-
 }

@@ -14,7 +14,6 @@
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="zrid" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textGen(MPS.Core/jetbrains.mps.textGen@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -24,7 +23,6 @@
     <import index="ep0o" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.persistence(MPS.Core/jetbrains.mps.extapi.persistence@java_stub)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="jo3e" ref="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" />
     <import index="la4b" ref="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="ft0j" ref="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)" />
@@ -37,6 +35,7 @@
     <import index="qx6n" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
+    <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -935,6 +934,7 @@
         <node concept="10P_77" id="1c0m78RYCYs" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1nB28sfxFS" role="jymVt" />
     <node concept="2YIFZL" id="13DhuT6CgAj" role="jymVt">
       <property role="TrG5h" value="checkFile" />
       <node concept="37vLTG" id="13DhuT6CgAn" role="3clF46">
@@ -942,7 +942,6 @@
         <node concept="17QB3L" id="3DIlWu9b6WU" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="13DhuT6CgAm" role="3clF47">
-        <node concept="3clFbH" id="5Nq0x4ohADs" role="3cqZAp" />
         <node concept="3cpWs8" id="3$PIpB7IceO" role="3cqZAp">
           <node concept="3cpWsn" id="3$PIpB7IceP" role="3cpWs9">
             <property role="TrG5h" value="mr" />
@@ -1241,6 +1240,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1nB28sfwfq" role="jymVt" />
     <node concept="2YIFZL" id="70HT6wFrYle" role="jymVt">
       <property role="TrG5h" value="checkStubModel" />
       <node concept="3cqZAl" id="70HT6wFrYlf" role="3clF45" />
@@ -1272,12 +1272,12 @@
         <node concept="H_c77" id="70HT6wFrYlm" role="1tU5fm" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1nB28sfv4J" role="jymVt" />
     <node concept="2YIFZL" id="70HT6wFrYln" role="jymVt">
       <property role="TrG5h" value="checkStubModels" />
       <node concept="3cqZAl" id="70HT6wFrYlo" role="3clF45" />
       <node concept="3Tm1VV" id="70HT6wFrYlp" role="1B3o_S" />
       <node concept="3clFbS" id="70HT6wFrYlq" role="3clF47">
-        <node concept="3clFbH" id="70HT6wFrYn3" role="3cqZAp" />
         <node concept="3cpWs8" id="5Nq0x4ogLvT" role="3cqZAp">
           <node concept="3cpWsn" id="5Nq0x4ogLvU" role="3cpWs9">
             <property role="TrG5h" value="mr" />
@@ -1655,7 +1655,7 @@
                     </node>
                     <node concept="2ShNRf" id="18t6ep5L01n" role="37wK5m">
                       <node concept="1pGfFk" id="18t6ep5LaLe" role="2ShVmc">
-                        <ref role="37wK5l" to="jo3e:2doG_VG59Hq" resolve="FileMPSProject" />
+                        <ref role="37wK5l" to="v9gs:2doG_VG59Hq" resolve="FileMPSProject" />
                         <node concept="2ShNRf" id="18t6ep5LdaL" role="37wK5m">
                           <node concept="1pGfFk" id="18t6ep5LdaM" role="2ShVmc">
                             <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />

@@ -41,7 +41,7 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import java.util.Collections;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.tool.builder.FileMPSProject;
+import jetbrains.mps.core.tool.environment.util.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -109,8 +109,8 @@ public class Utils {
       throw new RuntimeException(e);
     }
   }
-  public static void checkFile(String path, SNode expected) {
 
+  public static void checkFile(String path, SNode expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule(getModule());
     mr.setContentRoot(path);
@@ -141,11 +141,12 @@ public class Utils {
     }
 
   }
+
   public static void checkStubModel(String dirPath, SModel expected) {
     checkStubModels(dirPath, ListSequence.fromListAndArray(new ArrayList<SModel>(), expected));
   }
-  public static void checkStubModels(String dirPath, List<SModel> expected) {
 
+  public static void checkStubModels(String dirPath, List<SModel> expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule(getModule());
     mr.setContentRoot(dirPath);

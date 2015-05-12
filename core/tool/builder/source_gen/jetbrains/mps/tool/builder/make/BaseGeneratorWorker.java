@@ -24,7 +24,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
-import jetbrains.mps.tool.builder.FileMPSProject;
+import jetbrains.mps.core.tool.environment.util.FileMPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;

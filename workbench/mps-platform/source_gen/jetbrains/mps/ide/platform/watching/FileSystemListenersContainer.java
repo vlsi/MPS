@@ -8,6 +8,7 @@ import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.vfs.FileSystemListener;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -16,11 +17,16 @@ public class FileSystemListenersContainer {
   private final FileSystemListenersContainer.Node root = new FileSystemListenersContainer.Node(null, null);
   private final ConcurrentMap<FileSystemListener, String> myListeners = new ConcurrentHashMap<FileSystemListener, String>();
   private final Pattern myPathSplitPattern;
+
   public FileSystemListenersContainer() {
     myPathSplitPattern = Pattern.compile("/");
   }
-  public void addListener(FileSystemListener listener) {
+
+  public void addListener(@NotNull FileSystemListener listener) {
     if (myListeners.containsKey(listener)) {
+      return;
+    }
+    if (listener.getFileToListen() == null) {
       return;
     }
     String path = listener.getFileToListen().getPath();
@@ -43,7 +49,8 @@ public class FileSystemListenersContainer {
       myLock.writeLock().unlock();
     }
   }
-  public void removeListener(FileSystemListener listener) {
+
+  public void removeListener(@NotNull FileSystemListener listener) {
     String path = myListeners.get(listener);
     if (path == null) {
       return;
@@ -67,7 +74,8 @@ public class FileSystemListenersContainer {
     }
     myListeners.remove(listener);
   }
-  public Iterable<FileSystemListener> listeners(String path) {
+
+  public Iterable<FileSystemListener> listeners(@NotNull String path) {
     FileSystemListenersContainer.Node curr = root;
     List<FileSystemListener> result = new ArrayList<FileSystemListener>();
     myLock.readLock().lock();
@@ -88,22 +96,27 @@ public class FileSystemListenersContainer {
     }
     return result;
   }
-  private String[] normalizeAndSplit(String path) {
+
+  private String[] normalizeAndSplit(@NotNull String path) {
     String normalized = path.replace('\\', '/');
     return myPathSplitPattern.split(normalized, 0);
   }
-  public boolean contains(FileSystemListener listener) {
+
+  public boolean contains(@NotNull FileSystemListener listener) {
     return myListeners.containsKey(listener);
   }
+
   private static class Node {
     private List<FileSystemListener> listeners;
     private final String pathPart;
     private final List<FileSystemListenersContainer.Node> children = new ArrayList<FileSystemListenersContainer.Node>(4);
     private final FileSystemListenersContainer.Node parent;
+
     /*package*/ Node(String pathPart, FileSystemListenersContainer.Node parent) {
       this.parent = parent;
       this.pathPart = pathPart;
     }
+
     /*package*/ FileSystemListenersContainer.Node child(String part, boolean create) {
       // we keep children list sorted and use binary search 
       int index = childIndex(part);
@@ -117,6 +130,7 @@ public class FileSystemListenersContainer {
       }
       return null;
     }
+
     private void deleteIfEmpty() {
       if (parent == null || !(children.isEmpty())) {
         return;
@@ -129,6 +143,7 @@ public class FileSystemListenersContainer {
       parent.children.remove(this);
       parent.deleteIfEmpty();
     }
+
     private int childIndex(String pathPart) {
       int low = 0;
       int high = children.size() - 1;
@@ -146,17 +161,20 @@ public class FileSystemListenersContainer {
       }
       return -(low + 1);
     }
+
     /*package*/ void storeListeners(List<FileSystemListener> result) {
       if (listeners != null) {
         result.addAll(listeners);
       }
     }
+
     /*package*/ void addListener(FileSystemListener l) {
       if (listeners == null) {
         listeners = new ArrayList<FileSystemListener>(4);
       }
       listeners.add(l);
     }
+
     /*package*/ void removeListener(FileSystemListener l) {
       if (listeners != null && listeners.remove(l)) {
         deleteIfEmpty();

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 // todo: !!!should be WatchingSuite!!!
-@RunWith(Suite.class)
+@RunWith(BaseMpsSuite.class)
 @Suite.SuiteClasses({
     jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest.class,
     jetbrains.mps.dataFlow.lang.LivenessAnalysisTest.class,

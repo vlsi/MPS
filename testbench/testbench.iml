@@ -42,8 +42,6 @@
     <orderEntry type="module" module-name="dataflow-rt" scope="RUNTIME" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
-    <orderEntry type="module" module-name="mps-ant" exported="" />
-    <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />

@@ -27,7 +27,7 @@ public class MPSProject extends Project implements ProjectComponent {
   protected com.intellij.openapi.project.Project myProject;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
-    super(new File(project.getProjectFilePath()));
+    super(new File(project.getPresentableUrl()));
     myProject = project;
   }
 

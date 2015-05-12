@@ -15,11 +15,9 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import java.util.Set;
-import jetbrains.mps.module.ReloadableModuleBase;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectLibraryManager;
+import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Collection;
@@ -53,14 +51,7 @@ public class WatchedRootsUpdater implements ApplicationComponent {
   }
   @Override
   public void initComponent() {
-    myClassesListener = new MPSClassesListenerAdapter() {
-      @Override
-      public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
-        processLibrariesChange();
-      }
-    };
     processLibrariesChange();
-    myClassLoaderManager.addClassesHandler(myClassesListener);
     myProjectManagerListener = new ProjectManagerAdapter() {
       @Override
       public void projectOpened(Project project) {
@@ -75,11 +66,11 @@ public class WatchedRootsUpdater implements ApplicationComponent {
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
   }
 
-
   private void processLibrariesChange() {
     processLibrariesChange(myLibraryManager.getUILibraries(), myLibrariesRequests);
     processProjectLibrariesChange();
   }
+
   private void processProjectLibrariesChange() {
     Set<Library> libs = new HashSet<Library>();
     for (Project p : myProjectManager.getOpenProjects()) {
@@ -87,18 +78,21 @@ public class WatchedRootsUpdater implements ApplicationComponent {
     }
     processLibrariesChange(libs, myProjectLibrariesRequests);
   }
+
   private void processLibrariesChange(Set<Library> currentLibraries, Map<Library, LocalFileSystem.WatchRequest> libraryToRequest) {
     List<Library> toRemove = librarySubtract(libraryToRequest.keySet(), currentLibraries);
     List<Library> toAdd = librarySubtract(currentLibraries, libraryToRequest.keySet());
     removeLibraryWatch(toRemove, libraryToRequest);
     addLibraryWatch(toAdd, libraryToRequest);
   }
+
   private void addLibraryWatch(List<Library> toAdd, Map<Library, LocalFileSystem.WatchRequest> librariesRequests) {
     for (Library l : toAdd) {
       LocalFileSystem.WatchRequest watchRequest = myLocalFileSystem.addRootToWatch(l.getPath(), true);
       librariesRequests.put(l, watchRequest);
     }
   }
+
   private void removeLibraryWatch(List<Library> toRemove, Map<Library, LocalFileSystem.WatchRequest> librariesRequests) {
     for (Library l : toRemove) {
       final LocalFileSystem.WatchRequest watchRequest = librariesRequests.get(l);
@@ -108,6 +102,7 @@ public class WatchedRootsUpdater implements ApplicationComponent {
       librariesRequests.remove(l);
     }
   }
+
   private List<Library> librarySubtract(Collection<Library> from, Collection<Library> what) {
     List<Library> result = new ArrayList<Library>();
     for (Library pattern : from) {
@@ -124,6 +119,7 @@ public class WatchedRootsUpdater implements ApplicationComponent {
     }
     return result;
   }
+
   @Override
   public void disposeComponent() {
     myClassLoaderManager.removeClassesHandler(myClassesListener);

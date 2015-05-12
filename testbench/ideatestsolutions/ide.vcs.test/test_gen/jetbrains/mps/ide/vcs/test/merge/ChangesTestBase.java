@@ -8,7 +8,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import com.intellij.openapi.vcs.AbstractVcs;
 import jetbrains.mps.tool.environment.Environment;
 import org.junit.BeforeClass;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
@@ -74,7 +74,7 @@ public abstract class ChangesTestBase {
 
   @BeforeClass
   public static void setUp() {
-    ourEnvironment = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(true));
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 

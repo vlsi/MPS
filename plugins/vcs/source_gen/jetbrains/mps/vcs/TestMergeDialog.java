@@ -14,7 +14,7 @@ import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.util.Scanner;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.smodel.SModel;
@@ -74,7 +74,7 @@ public class TestMergeDialog {
       String line = new Scanner(System.in).nextLine();
       args = new String[]{((line == null ? null : line.trim()))};
     }
-    TestMergeDialog.ENV = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(true));
+    TestMergeDialog.ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     IconLoader.activate();
     final SModel[] models = new SModel[3];
     String resultFile;

@@ -240,11 +240,12 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     private final IFile myFile;
     private final FileSystemListener myDelegate;
 
-    private PathListener(IFile path, FileSystemListener delegate) {
+    private PathListener(@NotNull IFile path, FileSystemListener delegate) {
       myFile = path;
       myDelegate = delegate;
     }
 
+    @NotNull
     @Override
     public IFile getFileToListen() {
       return myFile;

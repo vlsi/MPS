@@ -19,6 +19,9 @@ import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.PathManager;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -27,6 +30,20 @@ import static org.junit.Assert.assertTrue;
 
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
 
+  private Project myProject;
+
+  @Before
+  public void beforeTest() {
+    String homePath = PathManager.getHomePath();
+    assert homePath != null;
+    myProject = openProject(new File(homePath));
+  }
+
+  @After
+  public void afterTest() {
+    closeProject(myProject);
+  }
+
   /**
    * We have languages L1 and L2. They have generators G1 and G2, correspondingly. G1 has a dependency on L2 and G2.
    * The test asserts, that after reloading file descriptor of the language L2 we are still able to get the QueriesGenerated
@@ -34,7 +51,6 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
    */
   @Test
   public void testClassLoadingDescriptorChanged() {
-    final Project project = openProject(new File(jetbrains.mps.tool.builder.util.PathManager.getHomePath()));
     final Language language1 = getLanguage("L1");
     assert language1 != null;
     final Language language2 = getLanguage("L2");
@@ -44,11 +60,10 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
     reloadAfterDescriptorChange(language2);
     generator1 = language1.getGenerators().iterator().next();
     performCheck(generator1);
-    closeProject(project);
   }
 
   private void reloadAfterDescriptorChange(final Language language2) {
-    language2.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         language2.reloadAfterDescriptorChange();

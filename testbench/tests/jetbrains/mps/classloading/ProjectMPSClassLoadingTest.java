@@ -21,8 +21,6 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -31,7 +29,7 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
-import jetbrains.mps.tool.builder.util.PathManager;
+import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 
@@ -48,14 +46,15 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
+  private Project project;
 
   @Test
   public void ClassesAreLoaded() {
-    Project project = openProject(new File(PathManager.getHomePath()));
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project = openProject(new File(PathManager.getHomePath()));
+    project.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+        for (SModule module : project.getRepository().getModules()) {
           checkModule(module);
         }
         if (!myModuleNamesToErrors.isEmpty()) {
@@ -72,9 +71,9 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
 
   @Test
   public void ClassesAreLoadedStress() {
-    MPSModuleRepository.getInstance().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
+    project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
     ClassesAreLoaded();
-    MPSModuleRepository.getInstance().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
+    project.getRepository().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
   }
 
   private boolean checkModule(SModule module) {

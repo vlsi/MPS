@@ -3784,18 +3784,18 @@
         <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
       </node>
       <node concept="3clFbS" id="7X3$Ctw3YtD" role="3clF47">
-        <node concept="3cpWs8" id="2BGPXkExMl_" role="3cqZAp">
-          <node concept="3cpWsn" id="2BGPXkExMlA" role="3cpWs9">
+        <node concept="3cpWs8" id="6LlhC3WLzsm" role="3cqZAp">
+          <node concept="3cpWsn" id="6LlhC3WLzsn" role="3cpWs9">
             <property role="TrG5h" value="env" />
-            <node concept="3uibUv" id="2BGPXkExMlw" role="1tU5fm">
+            <node concept="3uibUv" id="6LlhC3WLzso" role="1tU5fm">
               <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
             </node>
-            <node concept="2YIFZM" id="2BGPXkExMlB" role="33vP2m">
-              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-              <node concept="2YIFZM" id="2BGPXkExO0B" role="37wK5m">
-                <ref role="1Pybhc" node="7X3$CtwaMP1" resolve="ProjectTest" />
-                <ref role="37wK5l" node="2BGPXkExO0$" resolve="createConfig" />
+            <node concept="2YIFZM" id="6LlhC3WLzsp" role="33vP2m">
+              <ref role="1Pybhc" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
+              <ref role="37wK5l" to="79ha:6LlhC3WJZzD" resolve="getOrCreate" />
+              <node concept="2YIFZM" id="6LlhC3WLzsr" role="37wK5m">
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               </node>
             </node>
           </node>
@@ -3807,7 +3807,7 @@
             </node>
             <node concept="2OqwBi" id="2BGPXkExMrm" role="37vLTx">
               <node concept="37vLTw" id="2BGPXkExMqt" role="2Oq$k0">
-                <ref role="3cqZAo" node="2BGPXkExMlA" resolve="env" />
+                <ref role="3cqZAo" node="6LlhC3WLzsn" resolve="env" />
               </node>
               <node concept="liA8E" id="2BGPXkExMw4" role="2OqNvi">
                 <ref role="37wK5l" to="79ha:6rx4kZDk5oX" resolve="createProject" />
@@ -3823,28 +3823,6 @@
       </node>
       <node concept="3Tm1VV" id="7X3$Ctw3YtS" role="1B3o_S" />
       <node concept="3cqZAl" id="6pV9atEQ3H" role="3clF45" />
-    </node>
-    <node concept="2tJIrI" id="2BGPXkExOy_" role="jymVt" />
-    <node concept="2YIFZL" id="2BGPXkExO0$" role="jymVt">
-      <property role="TrG5h" value="createConfig" />
-      <node concept="3Tm6S6" id="2BGPXkExO0_" role="1B3o_S" />
-      <node concept="3uibUv" id="2BGPXkExO0A" role="3clF45">
-        <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-      </node>
-      <node concept="3clFbS" id="2BGPXkExNZL" role="3clF47">
-        <node concept="3cpWs6" id="2BGPXkExO08" role="3cqZAp">
-          <node concept="2OqwBi" id="2BGPXkExO09" role="3cqZAk">
-            <node concept="2YIFZM" id="2BGPXkExO0a" role="2Oq$k0">
-              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-            </node>
-            <node concept="liA8E" id="2BGPXkExO0b" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:3eUNqOk6UlR" resolve="loadIdea" />
-              <node concept="3clFbT" id="2BGPXkExO0c" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="2BGPXkExLGF" role="jymVt" />
     <node concept="2YIFZL" id="7X3$Ctw3YtW" role="jymVt">

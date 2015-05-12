@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/5294483648489409013">
     <file name="MPSLaunch.java">
       <unit id="5294483648489409013" at="10,0,14,0" name="jetbrains.mps.MPSLaunch" />
@@ -10,34 +7,12 @@
   </root>
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393184888">
     <file name="CoreMpsTest.java">
-      <node id="6450649963068084284" at="14,30,15,106" concept="1" />
-      <node id="6450649963068084292" at="15,106,16,15" concept="0" />
-      <node id="6450649963068064398" at="20,32,21,35" concept="0" />
-      <node id="694564436393188689" at="19,0,23,0" concept="2" trace="cleanUp#()V" />
-      <node id="694564436393188669" at="13,0,18,0" concept="2" trace="setUp#()V" />
-      <scope id="694564436393188691" at="20,32,21,35" />
-      <scope id="694564436393188671" at="14,30,16,15">
-        <var name="env" id="6450649963068084285" />
-      </scope>
-      <scope id="694564436393188689" at="19,0,23,0" />
-      <scope id="694564436393188669" at="13,0,18,0" />
-      <unit id="694564436393184888" at="12,0,24,0" name="jetbrains.mps.CoreMpsTest" />
+      <unit id="694564436393184888" at="7,0,9,0" name="jetbrains.mps.CoreMpsTest" />
     </file>
   </root>
   <root nodeRef="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)/694564436393193873">
     <file name="WorkbenchMpsTest.java">
-      <node id="6450649963068049395" at="14,30,15,105" concept="1" />
-      <node id="6450649963068048844" at="15,105,16,15" concept="0" />
-      <node id="6450649963068049708" at="20,32,21,35" concept="0" />
-      <node id="694564436393193902" at="19,0,23,0" concept="2" trace="cleanUp#()V" />
-      <node id="694564436393193882" at="13,0,18,0" concept="2" trace="setUp#()V" />
-      <scope id="694564436393193904" at="20,32,21,35" />
-      <scope id="694564436393193884" at="14,30,16,15">
-        <var name="env" id="6450649963068049396" />
-      </scope>
-      <scope id="694564436393193902" at="19,0,23,0" />
-      <scope id="694564436393193882" at="13,0,18,0" />
-      <unit id="694564436393193873" at="12,0,24,0" name="jetbrains.mps.WorkbenchMpsTest" />
+      <unit id="694564436393193873" at="7,0,9,0" name="jetbrains.mps.WorkbenchMpsTest" />
     </file>
   </root>
 </debug-info>

@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import java.io.File;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 
@@ -62,11 +62,11 @@ public class MigrationAssistant_Test extends TestCase {
     Assert.assertTrue(value1.value.equals("239"));
   }
   public void setUp() {
-    Environment env = EnvironmentContainer.getOrCreate(createConfig());
+    Environment env = IdeaEnvironment.getOrCreate(createConfig());
     project = env.openProject(new File(PROJECT_PATH));
   }
 
   private EnvironmentConfig createConfig() {
-    return EnvironmentConfig.emptyEnvironment().loadIdea(true).addPlugin(MIGRATION_ASSISTANT_PLUGIN);
+    return EnvironmentConfig.emptyEnvironment().addPlugin(MIGRATION_ASSISTANT_PLUGIN);
   }
 }

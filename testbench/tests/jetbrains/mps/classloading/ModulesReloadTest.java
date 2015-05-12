@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -24,6 +25,9 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.testbench.ModuleMpsTest;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -47,6 +51,7 @@ import java.util.Set;
 
 public class ModulesReloadTest extends ModuleMpsTest {
   private static FacetFactory ourOldFacetFactory;
+  private static Environment ourEnvironment;
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
 
   private static final String CLASS_TO_LOAD = "Test";
@@ -75,6 +80,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @BeforeClass
   public static void setUp() {
+    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     new TestClassFileCreator(CLASS_TO_LOAD, TEMP_DIR_PATH).create();
     attachTestJavaFacetFactory();
   }

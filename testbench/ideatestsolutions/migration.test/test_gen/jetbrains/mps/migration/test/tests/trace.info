@@ -159,9 +159,9 @@
       <node id="8423788195542890874" at="59,103,60,50" concept="1" />
       <node id="8423788195542736897" at="60,50,61,106" concept="1" />
       <node id="8423788195542918652" at="61,106,62,50" concept="1" />
-      <node id="3021026760600095739" at="64,23,65,71" concept="4" />
-      <node id="8150591076113152345" at="65,71,66,54" concept="1" />
-      <node id="6450649963067131644" at="69,44,70,101" concept="5" />
+      <node id="3021026760600095739" at="64,23,65,66" concept="4" />
+      <node id="8150591076113152345" at="65,66,66,54" concept="1" />
+      <node id="6450649963067131644" at="69,44,70,86" concept="5" />
       <node id="8423788195542778079" at="43,0,46,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/language/SProperty;)Ljava/lang/String;" />
       <node id="6450649963067131726" at="69,0,72,0" concept="3" trace="createConfig#()Ljetbrains/mps/tool/environment/EnvironmentConfig;" />
       <node id="8423788195543264367" at="54,0,58,0" concept="3" trace="run#()V" />
@@ -172,7 +172,7 @@
       <node id="8423788195543111121" at="35,61,48,7" concept="1" />
       <node id="8150591076113153069" at="31,0,64,0" concept="3" trace="test_test#()V" />
       <scope id="8423788195542778080" at="43,46,44,32" />
-      <scope id="6450649963067131570" at="69,44,70,101" />
+      <scope id="6450649963067131570" at="69,44,70,86" />
       <scope id="8423788195543264369" at="54,25,56,101" />
       <scope id="8150591076113041524" at="64,23,66,54">
         <var name="env" id="3021026760600095740" />

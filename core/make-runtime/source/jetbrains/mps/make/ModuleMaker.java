@@ -423,7 +423,7 @@ public class ModuleMaker {
     return moduleSources;
   }
 
-  private boolean isExcluded(SModule m) {
+  private boolean isExcluded(@NotNull SModule m) {
     return m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
   }
 

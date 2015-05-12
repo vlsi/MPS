@@ -131,6 +131,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     FileSystem.getInstance().removeListener(this);
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
     return myFile;

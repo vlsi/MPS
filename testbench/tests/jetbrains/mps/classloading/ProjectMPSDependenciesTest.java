@@ -15,21 +15,19 @@
  */
 package jetbrains.mps.classloading;
 
-import com.intellij.idea.LoggerFactory;
-import com.intellij.openapi.diagnostic.Logger;
+import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -45,30 +43,26 @@ import jetbrains.mps.library.contributor.LibDescriptor;
  * Internal consistency check of module dependencies between different layers of MPS hierarchy:
  * core, workbench and plugin
  */
-public class ProjectMPSDependenciesTest {
+public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
   private boolean myFailed = false;
 
-
+  @BeforeClass
+  public static void beforeTest() {
+    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+  }
 
   @Test
   public void depsAreValid() {
-    Environment currentEnv = EnvironmentContainer.get();
-    if (currentEnv != null) currentEnv.dispose();
-    Environment environment = new MpsEnvironment(EnvironmentConfig.emptyEnvironment());
-    try {
-      LOG.info("ADDING CORE CONTRIBUTORS");
-      addContributorWithPaths(getCorePaths());
-      checkDeps();
-      LOG.info("ADDING WORKBENCH CONTRIBUTORS");
-      addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
-      checkDeps();
-      LOG.info("ADDING PLUGINS CONTRIBUTORS");
-      addContributorWithPaths(Collections.singletonList(PathManager.getHomePath() + File.separator + "plugins"));
-      checkDeps();
-    } finally {
-      environment.dispose();
-    }
+    LOG.info("ADDING CORE CONTRIBUTORS");
+    addContributorWithPaths(getCorePaths());
+    checkDeps();
+    LOG.info("ADDING WORKBENCH CONTRIBUTORS");
+    addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
+    checkDeps();
+    LOG.info("ADDING PLUGINS CONTRIBUTORS");
+    addContributorWithPaths(Collections.singletonList(PathManager.getHomePath() + File.separator + "plugins"));
+    checkDeps();
     Assert.assertFalse("Some dependencies are invalid", myFailed);
   }
 

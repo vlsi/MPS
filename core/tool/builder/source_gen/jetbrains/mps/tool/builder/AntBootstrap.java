@@ -4,8 +4,8 @@ package jetbrains.mps.tool.builder;
 
 import org.apache.log4j.LogManager;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.tool.common.util.UrlClassLoader;
-import jetbrains.mps.tool.builder.util.ClassloaderUtil;
+import jetbrains.mps.core.tool.environment.classloading.UrlClassLoader;
+import jetbrains.mps.core.tool.environment.classloading.ClassloaderUtil;
 import java.util.ArrayList;
 import java.net.URL;
 import java.lang.reflect.Method;

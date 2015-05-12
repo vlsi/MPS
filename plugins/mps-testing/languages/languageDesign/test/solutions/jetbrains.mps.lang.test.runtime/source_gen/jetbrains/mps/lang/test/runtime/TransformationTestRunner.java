@@ -6,9 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.tool.environment.Environment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -32,8 +30,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.tool.common.util.CanonicalPath;
-import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
+import jetbrains.mps.core.tool.environment.util.CanonicalPath;
+import jetbrains.mps.core.tool.environment.util.MapPathMacrosProvider;
 import jetbrains.mps.project.PathMacros;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -60,8 +58,7 @@ public class TransformationTestRunner implements TestRunner {
   }
 
   private void startMps() {
-    RuntimeFlags.setTestMode(TestMode.USUAL);
-    myEnvironment = EnvironmentContainer.getOrCreate(EnvironmentConfig.emptyEnvironment().loadIdea(true));
+    myEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
     clearSystemClipboard();
     readSystemMacro();
   }

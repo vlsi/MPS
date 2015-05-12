@@ -636,6 +636,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     initFacetsAndModels();
   }
 
+  @Nullable
   @Override
   public IFile getFileToListen() {
     return myDescriptorFile;

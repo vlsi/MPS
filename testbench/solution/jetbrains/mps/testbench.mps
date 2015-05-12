@@ -19,6 +19,7 @@
     <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="qx6n" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="1p1s" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -52,6 +53,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -160,6 +165,9 @@
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -913,6 +921,45 @@
   <node concept="312cEu" id="3eUNqOk3QI8">
     <property role="TrG5h" value="BaseMpsTest" />
     <property role="1sVAO0" value="true" />
+    <node concept="2YIFZL" id="61uE6zXmDxE" role="jymVt">
+      <property role="TrG5h" value="tearDown" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="61uE6zXmDxH" role="3clF47">
+        <node concept="3SKdUt" id="5CmrdrYYECQ" role="3cqZAp">
+          <node concept="3SKdUq" id="5CmrdrYYED0" role="3SKWNk">
+            <property role="3SKdUp" value="it is possible we are inside suite run, no need to recreate an environment then" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="61uE6zXmDAO" role="3cqZAp">
+          <node concept="3clFbS" id="61uE6zXmDAP" role="3clFbx">
+            <node concept="3clFbF" id="61uE6zXmDZH" role="3cqZAp">
+              <node concept="2YIFZM" id="61uE6zXmDZV" role="3clFbG">
+                <ref role="37wK5l" to="79ha:4YCIFw5b4i1" resolve="dispose" />
+                <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="61uE6zXmDWZ" role="3clFbw">
+            <node concept="Rm8GO" id="61uE6zXmDYs" role="3uHU7w">
+              <ref role="Rm8GQ" to="1p1s:~TestMode.USUAL" resolve="USUAL" />
+              <ref role="1Px2BO" to="1p1s:~TestMode" resolve="TestMode" />
+            </node>
+            <node concept="2YIFZM" id="61uE6zXmDRl" role="3uHU7B">
+              <ref role="37wK5l" to="1p1s:~RuntimeFlags.getTestMode():jetbrains.mps.TestMode" resolve="getTestMode" />
+              <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="61uE6zXmDsS" role="1B3o_S" />
+      <node concept="3cqZAl" id="61uE6zXmDxA" role="3clF45" />
+      <node concept="2AHcQZ" id="5CmrdrYUA2f" role="2AJF6D">
+        <ref role="2AI5Lk" to="qjxg:~AfterClass" resolve="AfterClass" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="61uE6zXmDof" role="jymVt" />
     <node concept="2YIFZL" id="5A5jZrz6eRi" role="jymVt">
       <property role="TrG5h" value="getEnvironment" />
       <property role="IEkAT" value="false" />
@@ -1359,9 +1406,8 @@
                 <ref role="3cqZAo" node="4_TMdeLkOkA" resolve="destinationDir" />
               </node>
             </node>
-            <node concept="2YIFZM" id="3eUNqOk78lY" role="2Oq$k0">
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-              <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
+            <node concept="1rXfSq" id="6LlhC3WJUB4" role="2Oq$k0">
+              <ref role="37wK5l" node="5A5jZrz6eRi" resolve="getEnvironment" />
             </node>
           </node>
         </node>
@@ -1404,9 +1450,8 @@
             <node concept="3uibUv" id="5A5jZrz04GL" role="1tU5fm">
               <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
             </node>
-            <node concept="2YIFZM" id="5A5jZrz04GO" role="33vP2m">
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
-              <ref role="37wK5l" to="79ha:3eUNqOk6lzG" resolve="get" />
+            <node concept="1rXfSq" id="6LlhC3WJUDZ" role="33vP2m">
+              <ref role="37wK5l" node="5A5jZrz6eRi" resolve="getEnvironment" />
             </node>
           </node>
         </node>

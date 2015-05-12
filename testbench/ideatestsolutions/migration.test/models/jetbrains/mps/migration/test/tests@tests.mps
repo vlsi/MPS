@@ -31,6 +31,7 @@
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1560,23 +1561,15 @@
     <node concept="3clFb_" id="5A5jZrz0cte" role="jymVt">
       <property role="TrG5h" value="createConfig" />
       <node concept="3Tm6S6" id="5A5jZrz0ctf" role="1B3o_S" />
-      <node concept="3uibUv" id="5A5jZrz0ctg" role="3clF45">
+      <node concept="3uibUv" id="25HKs5OuHID" role="3clF45">
         <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
       <node concept="3clFbS" id="5A5jZrz0cqM" role="3clF47">
         <node concept="3cpWs6" id="5A5jZrz0crW" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz0crX" role="3cqZAk">
-            <node concept="2OqwBi" id="5A5jZrz0crY" role="2Oq$k0">
-              <node concept="2YIFZM" id="5A5jZrz0crZ" role="2Oq$k0">
-                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
-              </node>
-              <node concept="liA8E" id="5A5jZrz0cs0" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:3eUNqOk6UlR" resolve="loadIdea" />
-                <node concept="3clFbT" id="5A5jZrz0cs1" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
-              </node>
+            <node concept="2YIFZM" id="5A5jZrz0crZ" role="2Oq$k0">
+              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
             <node concept="liA8E" id="5A5jZrz0cs2" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
@@ -1597,8 +1590,8 @@
               <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
             </node>
             <node concept="2YIFZM" id="2BGPXkEx8JX" role="33vP2m">
-              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getOrCreate" />
-              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
               <node concept="1rXfSq" id="2BGPXkEx8JY" role="37wK5m">
                 <ref role="37wK5l" node="5A5jZrz0cte" resolve="createConfig" />
               </node>

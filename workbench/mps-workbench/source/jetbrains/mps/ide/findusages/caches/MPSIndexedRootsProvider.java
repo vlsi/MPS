@@ -32,6 +32,6 @@ public class MPSIndexedRootsProvider extends IndexableSetContributor {
   @NotNull
   @Override
   public Set<VirtualFile> getAdditionalProjectRootsToIndex(@Nullable Project project) {
-    return CacheUtil.getIndexableRoots();
+    return new IndexableRootCalculator(project).getIndexableRoots();
   }
 }

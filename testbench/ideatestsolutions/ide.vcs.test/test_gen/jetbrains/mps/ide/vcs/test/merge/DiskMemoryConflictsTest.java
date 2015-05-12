@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import com.intellij.openapi.ui.TestDialog;
 import org.junit.BeforeClass;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.BaseMpsTest;
 import org.junit.Assert;
@@ -76,6 +78,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setupProject() {
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     Project project = BaseMpsTest.openClonedProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
     ourModelAccess = project.getModelAccess();
     Assert.assertNotNull(ourModelAccess);

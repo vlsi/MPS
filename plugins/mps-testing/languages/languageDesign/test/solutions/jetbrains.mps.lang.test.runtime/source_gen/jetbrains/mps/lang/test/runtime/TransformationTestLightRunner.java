@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -39,7 +38,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     if (contextModule == null) {
       return null;
     }
-    return new ModelAccessHelper(contextModule.getRepository()).runReadAction(new Computable<Project>() {
+    return ModelAccess.instance().runReadAction(new Computable<Project>() {
       public Project compute() {
         Collection<SModule> runtimeDeps = new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
         for (Project project : ProjectManager.getInstance().getOpenProjects()) {

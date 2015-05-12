@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.tool.environment.Environment;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -58,7 +58,7 @@ public class ScopesTest {
     });
   }
   public static Project initTestEnvironmentAndLoadContextProject() throws InvocationTargetException, InterruptedException {
-    Environment env = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(false));
+    Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     return env.createProject(new FromDirWithModulesProjectStrategy());
   }
 
