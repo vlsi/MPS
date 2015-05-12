@@ -30,6 +30,7 @@ import java.io.File;
 public class IoFileSystemProvider implements FileSystemProvider {
   static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
 
+  @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
     if (path.contains("!")) {
@@ -51,7 +52,6 @@ public class IoFileSystemProvider implements FileSystemProvider {
 
   @Override
   public boolean isFileIgnored(String name) {
-    // TODO ??
     return false;
   }
 
