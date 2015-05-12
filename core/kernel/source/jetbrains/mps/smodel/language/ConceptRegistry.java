@@ -108,7 +108,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     if (concept instanceof SConceptAdapterById){
       return getConceptDescriptor(((SConceptAdapterById) concept).getId());
     }else{
-      return getConceptDescriptor(concept);
+      return getConceptDescriptor(concept.getQualifiedName()fix tesrt);
     }
   }
 
