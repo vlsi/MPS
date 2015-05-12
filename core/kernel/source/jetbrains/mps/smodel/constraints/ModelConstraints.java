@@ -59,6 +59,9 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   // is it possible: replace node -> node with concept conceptFqName?
   public static boolean canBeReplaced(@NotNull SNode node, @NotNull String conceptFqName) {
     if (node.getModel() != null && node.getParent() == null) {
@@ -107,6 +110,7 @@ public class ModelConstraints {
    */
   @Deprecated
   @ToRemove(version = 3.3)
+  //no usages in MPS
   public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
@@ -118,6 +122,7 @@ public class ModelConstraints {
    */
   @Deprecated
   @ToRemove(version = 3.3)
+  //no usages in MPS
   public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     // todo: use concept descriptor here?
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
@@ -204,14 +209,6 @@ public class ModelConstraints {
       false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
       null // reference
     );
-  }
-
-  // other things
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(
-        ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
   }
 
   public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {
