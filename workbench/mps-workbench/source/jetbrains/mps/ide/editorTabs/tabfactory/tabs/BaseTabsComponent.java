@@ -23,6 +23,7 @@ import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,6 +33,8 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -44,7 +47,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   private final NodeChangeCallback myCallback;
   private final CreateModeCallback myCreateModeCallback;
   protected final SNodeReference myBaseNode;
-  protected final Set<RelationDescriptor> myPossibleTabs;
+  protected final Collection<RelationDescriptor> myPossibleTabs;
   protected final JComponent myEditor;
   protected final boolean myShowGrayed;
   private final TabColorProvider myColorProvider;
@@ -59,7 +62,9 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected BaseTabsComponent(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed,
       CreateModeCallback createModeCallback, Project project) {
     myBaseNode = baseNode;
-    myPossibleTabs = possibleTabs;
+    final ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
+    Collections.sort(tabs, new RelationComparator());
+    myPossibleTabs = Collections.unmodifiableList(tabs);
     myEditor = editor;
     myCallback = callback;
     myShowGrayed = showGrayed;
@@ -100,21 +105,17 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   @Override
-  public void setLastNode(SNodeReference node) {
+  public void editNode(SNodeReference node) {
     myLastNode = node;
-  }
-
-  public SNodeReference getLastNode() {
-    return myLastNode;
-  }
-
-  protected void onNodeChange(SNode node) {
-    setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
     myCallback.changeNode(node);
   }
 
+  protected final SNodeReference getEditedNode() {
+    return myLastNode;
+  }
+
   protected void enterCreateMode(RelationDescriptor tab) {
-    setLastNode(null);
+    myLastNode = null;
     if (myCreateModeCallback != null) {
       myCreateModeCallback.create(tab);
     }
@@ -152,13 +153,6 @@ public abstract class BaseTabsComponent implements TabsComponent {
   public TabColorProvider getColorProvider() {
     return myColorProvider;
   }
-
-  protected boolean isDisposedNode() {
-    SNode node = myBaseNode.resolve(getProject().getRepository());
-    return node == null;
-  }
-
-  protected abstract boolean isTabUpdateNeeded(SNodeReference node);
 
   protected final jetbrains.mps.project.Project getProject() {
     return ProjectHelper.toMPSProject(myProject);

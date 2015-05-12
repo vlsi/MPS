@@ -27,11 +27,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
-import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.JComponent;
@@ -85,11 +83,11 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   @Override
   public RelationDescriptor getCurrentTabAspect() {
-    SNodeReference currentAspect = getLastNode();
+    SNodeReference currentAspect = getEditedNode();
     assert currentAspect != null;
 
     for (ButtonEditorTab bet : myRealTabs) {
-      if (bet.isEditingTabFor(getLastNode())) {
+      if (bet.isEditingTabFor(getEditedNode())) {
         return bet.getDescriptor();
       }
     }
@@ -99,28 +97,27 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   @Override
   public void updateTabs() {
-    if (isDisposedNode()) return;
+    if (isDisposed()) {
+      return;
+    }
 
-    if (getLastNode() != null && getLastNode().resolve(getProject().getRepository()) == null) {
-      onNodeChange(myBaseNode.resolve(getProject().getRepository()));
+    if (getEditedNode() != null && getEditedNode().resolve(getProject().getRepository()) == null) {
+      editNode(myBaseNode);
     }
 
     myRealTabs.clear();
 
-    ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new RelationComparator());
-
     final NodeChangeCallback callback = new NodeChangeCallback() {
       @Override
-      public void changeNode(SNode newNode) {
-        onNodeChange(newNode);
+      public void changeNode(SNodeReference newNode) {
+        editNode(newNode);
       }
     };
     TabEditorLayout newContent = updateDocumentsAndNodes();
-    for (RelationDescriptor tabDescriptor : tabs) {
+    for (RelationDescriptor tabDescriptor : myPossibleTabs) {
       if (newContent.covers(tabDescriptor)) {
         final ButtonEditorTab tab = new ButtonEditorTab(this, myRealTabs.size(), tabDescriptor, newContent.get(tabDescriptor));
-        final SelectTabAction action = new SelectTabAction(tab, callback);
+        final SelectTabAction action = new SelectTabAction(getProject(), tab, callback);
         tab.setSelectTabAction(action);
         action.registerShortcut(myEditor);
         myRealTabs.add(tab);
@@ -139,15 +136,17 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     actionToolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     myToolbar = actionToolbar;
     setContent(myToolbar.getComponent());
-    if (getLastNode() != null) {
-      onNodeChange(getLastNode().resolve(getProject().getRepository()));
+    if (getEditedNode() != null) {
+      editNode(getEditedNode());
     }
   }
 
   @Override
   public void nextTab() {
     for (ButtonEditorTab tab : myRealTabs) {
-      if (!isCurrent(tab)) continue;
+      if (!isCurrent(tab)) {
+        continue;
+      }
       int index = myRealTabs.indexOf(tab) + 1;
       performTabAction(myRealTabs.get(index % myRealTabs.size()).getSelectTabAction());
       return;
@@ -155,10 +154,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   public boolean isCurrent(ButtonEditorTab tab) {
-    if (getLastNode() == null) {
-      return false;
-    }
-    return tab.isEditingTabFor(getLastNode());
+    return getEditedNode() != null && tab.isEditingTabFor(getEditedNode());
   }
 
   @Override
@@ -177,11 +173,6 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     final DataContext context = DataManager.getInstance().getDataContext(getComponent());
     AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, context);
     tabAction.actionPerformed(event);
-  }
-
-  @Override
-  protected boolean isTabUpdateNeeded(SNodeReference node) {
-    return getLastNode().equals(node);
   }
 
   @Override

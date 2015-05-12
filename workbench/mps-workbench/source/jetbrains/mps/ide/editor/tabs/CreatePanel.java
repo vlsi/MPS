@@ -23,8 +23,6 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.CreateGroupsBuilder;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -51,13 +49,7 @@ class CreatePanel extends JPanel {
     this.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(final MouseEvent e) {
-        ActionGroup group = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ActionGroup>() {
-          @Override
-          public ActionGroup compute() {
-            return CreateGroupsBuilder.getCreateGroup(baseNode, callback, tab);
-          }
-        });
-
+        ActionGroup group = new CreateGroupsBuilder(mpsProject, baseNode, callback).getCreateGroup(tab);
         ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group);
         JPopupMenu popupComponent = popup.getComponent();
         popupComponent.show(e.getComponent(), e.getX(), e.getY());

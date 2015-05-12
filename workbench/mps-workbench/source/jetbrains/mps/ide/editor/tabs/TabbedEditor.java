@@ -24,8 +24,7 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.ui.ShadowAction;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -45,6 +44,7 @@ import jetbrains.mps.nodeEditor.EditorSettingsListener;
 import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -75,6 +75,7 @@ public class TabbedEditor extends BaseNodeEditor {
   private final Set<RelationDescriptor> myPossibleTabs;
   private final Project myProject;
   private final ShadowAction myNextTabAction, myPrevTabAction;
+  private final AnAction myAddAction;
   // UI container to hold tab UI components plus auxiliary controls like 'Add aspect' action and alike.
   private final JPanel myTabsPanel;
   private final RepoChangeListener myRepoChangeListener = new RepoChangeListener();
@@ -95,7 +96,8 @@ public class TabbedEditor extends BaseNodeEditor {
         }
       });
       if (node != null) {
-        myTabsComponent.setLastNode(node);
+        myTabsComponent.updateTabs();
+        myTabsComponent.editNode(node);
       }
     }
   };
@@ -130,31 +132,17 @@ public class TabbedEditor extends BaseNodeEditor {
       }
     }), ActionManager.getInstance().getAction(IdeActions.ACTION_PREVIOUS_EDITOR_TAB), getComponent());
 
-    AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
-      @Override
-      public void changeNode(SNode newNode) {
-        myTabsComponent.updateTabs();
-        // BaseTabsConponent#onNodeChange() exits create mode, if any, and delegates to NodeChangeCallback. Do the same here:
-        myTabsComponent.setLastNode(newNode.getReference());
-        if (getCurrentEditorComponent() == null) {
-          // this is what CreateModeCallback.exitCreateMode used to do unconditionally.
-          // I don't want to track enter/exit create mode, thus assume if there's no editorComponent, then we are in create mode and shall switch to editor
-          showEditor();
-        }
-        // That's what our NodeChangeCallback passed to TabComponentFactory does
-        showNodeInternal(newNode, true, true);
-      }
-    }) {
+    myAddAction = new AddAspectAction(mpsProject, myBaseNode, myPossibleTabs, new SetTabsComponentNode()) {
       @Override
       protected RelationDescriptor getCurrentAspect() {
         return myTabsComponent.getCurrentTabAspect();
       }
     };
-    ActionButton btn = new ActionButton(addAction, addAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
+    ActionButton btn = new ActionButton(myAddAction, myAddAction.getTemplatePresentation(), ActionPlaces.UNKNOWN, new Dimension(23, 23));
     myTabsPanel.add(btn, BorderLayout.WEST);
 
     EditorSettings.getInstance().addEditorSettingsListener(mySettingsListener);
-    myRepoChangeListener.subscribeTo(myProject.getRepository());
+    myRepoChangeListener.subscribeTo(MPSModuleRepository.getInstance()); // FIXME ProjectRepository.getModules still gives empty set
     myFileStatusListener.attach(myProject);
   }
 
@@ -164,25 +152,15 @@ public class TabbedEditor extends BaseNodeEditor {
     }
     final NodeChangeCallback nodeChangeCallback = new NodeChangeCallback() {
       @Override
-      public void changeNode(SNode newNode) {
-        if (getCurrentEditorComponent() == null) {
-          showEditor();
-        }
-        showNodeInternal(newNode, true, true);
+      public void changeNode(SNodeReference newNode) {
+        showNodeInternal(newNode);
       }
     };
     final CreateModeCallback createAspectCallback = new CreateModeCallback() {
       @Override
       public void create(RelationDescriptor tab) {
         // FIXME what if we create two+ aspects in a row, who's responsible to dispose inactive CreatePanel instances?
-        final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new NodeChangeCallback() {
-          @Override
-          public void changeNode(SNode newNode) {
-            myTabsComponent.updateTabs();
-            myTabsComponent.setLastNode(newNode.getReference());
-            nodeChangeCallback.changeNode(newNode);
-          }
-        }, tab);
+        final CreatePanel cp = new CreatePanel(myProject, myBaseNode, new SetTabsComponentNode(), tab);
         showComponent(cp);
         final IdeFocusManager fm = IdeFocusManager.getInstance(ProjectHelper.toIdeaProject(myProject));
         fm.doWhenFocusSettlesDown(new Runnable() {
@@ -214,7 +192,7 @@ public class TabbedEditor extends BaseNodeEditor {
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myRepoChangeListener.unsubscribeFrom(myProject.getRepository());
+        myRepoChangeListener.unsubscribeFrom(MPSModuleRepository.getInstance());
         myNameListener.detach();
       }
     });
@@ -234,40 +212,44 @@ public class TabbedEditor extends BaseNodeEditor {
 
   @Override
   public void showNode(SNode node, boolean select) {
-    SNode containingRoot = node.getModel() != null && node.getParent() == null ? node : node.getContainingRoot();
-
     SNodeReference currentNodeReference = getCurrentlyEditedNode();
     SNodeReference newNodeReference = node.getReference();
     if (currentNodeReference != null && currentNodeReference.equals(newNodeReference)) {
       return;
     }
 
-    showNodeInternal(containingRoot, select, false);
+    if (currentNodeReference == null) {
+      showEditor();
+    }
+    myTabsComponent.updateTabs();
+    myTabsComponent.editNode(newNodeReference);
   }
 
-  private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
+  private void showNodeInternal(SNodeReference nodeRef) {
     if (getCurrentEditorComponent() == null) {
       showEditor();
     }
-
-    final SNodeReference nodeRef = node.getReference();
-    if (!fromTabs) {
-      myTabsComponent.setLastNode(nodeRef);
-    }
     myNameListener.detach();
+
+    if (nodeRef == null) {
+      nodeRef = myBaseNode;
+    }
+
+    SNode node = nodeRef.resolve(myProject.getRepository());
+
+    if (node == null || node.getModel() == null) {
+      // FIXME suggest create new? Use CreatePanel?
+      return;
+    }
 
     SModel md = node.getModel();
     SModule module = md.getModule();
     assert module != null : md.getReference().toString() + "; node is disposed = " + !org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node,
         myProject.getRepository());
-    SNodeReference selection = select ? nodeRef : null;
+    SNodeReference selection = nodeRef;
     if (myTabsComponent.getCurrentTabAspect() != null) {
       Collection<SNodeReference> a = myTabsComponent.getSelectionFor(myTabsComponent.getCurrentTabAspect(), nodeRef);
       selection = a.isEmpty() ? selection : a.iterator().next();
-    }
-    if (!select && nodeRef.equals(selection)) {
-      // drop selection if it's the same as edited node and we are not forced to show it
-      selection = null;
     }
     editNode(nodeRef, selection);
 
@@ -281,23 +263,14 @@ public class TabbedEditor extends BaseNodeEditor {
     });
   }
 
-  private SModel getCurrentNodeModel() {
-    SNodeReference n = getCurrentlyEditedNode();
-    if (n == null) {
-      return null;
-    }
-    return n.getModelReference().resolve(myProject.getRepository());
-  }
-
-  /*package*/ boolean updateProperties() {
+  /*package*/ void updateProperties() {
     final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
-    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+    FileEditorManagerEx manager = FileEditorManagerEx.getInstanceEx(project);
     VirtualFile virtualFile = manager.getCurrentFile();
-    if (virtualFile == null) return true;
-
-    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
-    manager.updateFilePresentation(virtualFile);
-    return false;
+    if (virtualFile != null) {
+      FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
+      manager.updateFilePresentation(virtualFile);
+    }
   }
 
 
@@ -315,13 +288,7 @@ public class TabbedEditor extends BaseNodeEditor {
     DefaultActionGroup result = new DefaultActionGroup();
 
     List<DefaultActionGroup> groups =
-        CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, myTabsComponent.getCurrentTabAspect(), new NodeChangeCallback() {
-          @Override
-          public void changeNode(SNode node) {
-            myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
-            showNode(node, true);
-          }
-        });
+        new CreateGroupsBuilder(myProject, myBaseNode, new SetTabsComponentNode()).getCreateGroups(myPossibleTabs, myTabsComponent.getCurrentTabAspect());
     for (DefaultActionGroup group : groups) {
       group.setPopup(false);
       result.add(group);
@@ -391,7 +358,6 @@ public class TabbedEditor extends BaseNodeEditor {
     private static final String NODE = "node";
     private static final String NODE_REF = "node_ref";
 
-
     private SNodeReference myCurrentNode;
 
     /*package*/ void setNode(@Nullable SNodeReference ref) {
@@ -426,10 +392,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
 
     public boolean equals(Object obj) {
-      if (!(obj instanceof TabbedEditorState)) {
-        return false;
-      }
-      return super.equals(obj) && EqualUtil.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
+      return obj instanceof TabbedEditorState && super.equals(obj) && EqualUtil.equals(myCurrentNode, ((TabbedEditorState) obj).myCurrentNode);
     }
   }
 
@@ -437,6 +400,14 @@ public class TabbedEditor extends BaseNodeEditor {
     public BaseNavigationAction(Runnable delegate) {
       super(null, delegate);
       setEnabledInModalContext(true);
+    }
+  }
+
+  private class SetTabsComponentNode implements NodeChangeCallback {
+    @Override
+    public void changeNode(SNodeReference newNode) {
+      myTabsComponent.updateTabs();
+      myTabsComponent.editNode(newNode);
     }
   }
 }

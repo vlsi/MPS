@@ -56,7 +56,7 @@ public class EmptyTabsComponent implements TabsComponent {
   }
 
   @Override
-  public void setLastNode(SNodeReference sNodePointer) {
+  public void editNode(SNodeReference sNodePointer) {
   }
 
   @Override
