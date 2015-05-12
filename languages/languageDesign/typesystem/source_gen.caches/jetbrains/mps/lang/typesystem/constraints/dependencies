@@ -76,8 +76,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ApplicableNodeReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.CaretPositionOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ComparisonRule_Constraints" />

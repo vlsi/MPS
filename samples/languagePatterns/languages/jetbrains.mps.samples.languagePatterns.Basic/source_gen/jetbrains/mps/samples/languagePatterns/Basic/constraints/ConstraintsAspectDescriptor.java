@@ -10,22 +10,6 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
   }
-  public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 3:
-        return new Performance_Constraints();
-      case 4:
-        return new Singer_Constraints();
-      case 2:
-        return new Participant_Constraints();
-      case 0:
-        return new ComponentUsage_Constraints();
-      case 1:
-        return new OperationOnAddress_Constraints();
-      default:
-        return new BaseConstraintsDescriptor(fqName);
-    }
-  }
   public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
     long id = conceptId.getIdValue();
     if (id == 0x34c8853ae7895ce1L) {
@@ -45,5 +29,4 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"};
 }

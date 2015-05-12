@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.constraints.Require_Constraints" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.constraints.RoutineDefinition_Constraints" />
