@@ -16,6 +16,7 @@
 package jetbrains.mps.vfs;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,23 +24,22 @@ import java.io.OutputStream;
 import java.util.List;
 
 /**
+ * MPS wrapping around the platform {@link com.intellij.openapi.vfs.VirtualFile}. It has a fallback implementation base on {@link java.io.File}
  * @author Evgeny Gerashchenko
  */
 public interface IFile {
   String getName();
-  String getPath();
+
+  @NotNull String getPath();
 
   /**
-   * @deprecated use getPath() instead
+   * @return null iff the instance is root and has no parent
    */
-  @Deprecated
-  String getAbsolutePath();
-
-  IFile getParent();
+  @Nullable IFile getParent();
 
   List<IFile> getChildren();
-  @NotNull
-  IFile getDescendant(String suffix);
+
+  @NotNull IFile getDescendant(String suffix);
 
   boolean isDirectory();
   boolean isReadOnly();

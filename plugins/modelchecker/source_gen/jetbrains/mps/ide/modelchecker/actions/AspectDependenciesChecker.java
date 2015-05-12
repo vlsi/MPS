@@ -95,7 +95,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
     DataSource source = (model != null ? model.getSource() : null);
     IFile modelFile = (source instanceof FileDataSource ? ((FileDataSource) source).getFile() : null);
     if (modelFile != null) {
-      String filePath = modelFile.getAbsolutePath().replace('\\', '/');
+      String filePath = modelFile.getPath().replace('\\', '/');
       if (filePath.startsWith(languagesUtilPath)) {
         return OTHER;
       }

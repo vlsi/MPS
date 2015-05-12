@@ -29,7 +29,7 @@ public interface FileSystemProvider {
 
   /**
    * Part of platform functionality.
-   * see IdeaFileSystemProvider implementation for detaisl
+   * @see jetbrains.mps.ide.vfs.IdeaFileSystemProvider implementation for details
    */
   boolean isFileIgnored(String name);
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);

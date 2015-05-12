@@ -43,20 +43,11 @@ public abstract class FileSystem {
 
   /**
    * Write files from appropriate thread and with appropriate locks
-   * @param r
    * @return  false - error occurred
    */
   public abstract boolean runWriteTransaction(Runnable r);
 
   public static FileSystem getInstance() {
     return INSTANCE;
-  }
-
-  /**
-   * @deprecated Use FileSystem.getInstance().getFileByPath(String) instead.
-   */
-  @Deprecated()
-  public IFile getFile(String path) {
-    return FileSystem.getInstance().getFileByPath(path);
   }
 }

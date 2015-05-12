@@ -52,15 +52,10 @@ public class IoFile implements IFileEx {
     return myFile.isDirectory();
   }
 
+  @NotNull
   @Override
   public String getPath() {
     return myFile.getAbsolutePath();
-  }
-
-  @Override
-  @Deprecated
-  public String getAbsolutePath() {
-    return getPath();
   }
 
   @Override
@@ -71,6 +66,11 @@ public class IoFile implements IFileEx {
   @Override
   public boolean exists() {
     return myFile.exists();
+  }
+
+  @Override
+  public boolean mkdirs() {
+    return myFile.mkdirs();
   }
 
   @Override
@@ -93,11 +93,6 @@ public class IoFile implements IFileEx {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  @Override
-  public boolean mkdirs() {
-    return myFile.mkdirs();
   }
 
   @Override

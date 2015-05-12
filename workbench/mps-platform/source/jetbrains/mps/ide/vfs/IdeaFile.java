@@ -53,6 +53,7 @@ class IdeaFile implements IFileEx {
     myPath = virtualFile.getPath();
   }
 
+  @NotNull
   @Override
   public String getPath() {
     if (findVirtualFile()) {
@@ -60,12 +61,6 @@ class IdeaFile implements IFileEx {
     } else {
       return myPath;
     }
-  }
-
-  @Override
-  @Deprecated
-  public String getAbsolutePath() {
-    return getPath();
   }
 
   @Override
@@ -86,7 +81,7 @@ class IdeaFile implements IFileEx {
       }
       return null;
     } else {
-      return new IdeaFile(truncDirPath(myPath));
+      return new IdeaFile(truncateDirPath(myPath));
     }
   }
 
@@ -150,7 +145,7 @@ class IdeaFile implements IFileEx {
       return !myVirtualFile.isDirectory();
     } else {
       try {
-        VirtualFile directory = VfsUtil.createDirectories(truncDirPath(myPath));
+        VirtualFile directory = VfsUtil.createDirectories(truncateDirPath(myPath));
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFile = directory.createChildData(ourRequestor(), fileName);
@@ -322,10 +317,7 @@ class IdeaFile implements IFileEx {
   }
 
   private boolean findVirtualFile(boolean withRefresh) {
-    if (myVirtualFile != null && !myVirtualFile.isValid()) {
-      myVirtualFile = null;
-    }
-    if (myVirtualFile == null) {
+    if (myVirtualFile == null || !myVirtualFile.isValid()) {
       myVirtualFile = findIdeaFile(myPath, withRefresh);
     }
     return myVirtualFile != null;
@@ -368,10 +360,11 @@ class IdeaFile implements IFileEx {
     }
   }
 
-  private static String truncDirPath(String path) {
+  @NotNull
+  private static String truncateDirPath(String path) {
     int index = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'));
     if (index == -1) {
-      return null;
+      return path;
     } else {
       return path.substring(0, index);
     }

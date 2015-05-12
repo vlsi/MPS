@@ -113,12 +113,12 @@ public class DirParser {
                 if (DirParser.checkPackageMatchesSourceDirectory(p, dir)) {
                   pkg.value = p;
                 } else {
-                  LOG.error("package " + p + " doesn't match directory " + dir.getAbsolutePath() + " (in file " + file.getName() + ")");
+                  LOG.error("package " + p + " doesn't match directory " + dir.getPath() + " (in file " + file.getName() + ")");
                   return;
                 }
 
               } else if (!(pkg.value.equals(p))) {
-                LOG.error("different packages in directory " + dir.getAbsolutePath() + ", namely " + pkg.value + " and " + p);
+                LOG.error("different packages in directory " + dir.getPath() + ", namely " + pkg.value + " and " + p);
                 return;
               }
 
@@ -158,7 +158,7 @@ public class DirParser {
         }
       });
     } else {
-      LOG.info("skipping directory " + dir.getAbsolutePath());
+      LOG.info("skipping directory " + dir.getPath());
     }
   }
   private JavaParser.JavaParseResult parseFile(IFile file) throws IOException, JavaParseException {

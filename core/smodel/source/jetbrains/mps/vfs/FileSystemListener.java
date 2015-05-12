@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
  * evgeny, 11/2/12
  */
 public interface FileSystemListener {
-
   IFile getFileToListen();
 
   Iterable<FileSystemListener> getListenerDependencies();

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * danilla 8/7/13
  */
 
-abstract public class FileSystemProviderComponent implements ApplicationComponent, FileSystemProvider {
+public abstract class FileSystemProviderComponent implements ApplicationComponent, FileSystemProvider {
   // component stuff
   @Override
   public void initComponent() {
@@ -27,5 +27,5 @@ abstract public class FileSystemProviderComponent implements ApplicationComponen
 
   @NotNull
   @Override
-  abstract public String getComponentName();
+  public abstract String getComponentName();
 }
