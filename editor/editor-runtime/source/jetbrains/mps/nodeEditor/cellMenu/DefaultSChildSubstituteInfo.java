@@ -82,11 +82,10 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
 
   @Override
   public List<SubstituteAction> createActions() {
-    String conceptFqName = NameUtil.nodeFQName(myTargetConcept.getDeclarationNode());
     SContainmentLink link = mySetter.getLink();
 
     //todo: get rid of declaration node
-    if (!ModelConstraints.canBeChild(conceptFqName, myParentNode, link.getDeclarationNode(), null, null)) {
+    if (!ModelConstraints.canBeChild(myTargetConcept, myParentNode, link.getDeclarationNode(), null, null)) {
       return Collections.emptyList();
     }
     if (myTargetConcept instanceof SConcept) {

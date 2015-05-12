@@ -96,6 +96,17 @@ public class ModelConstraints {
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
+  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    SModule module = getModule(parentNode);
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(concept);
+    return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
+  }
+
+  /**
+   * @deprecated use {@link #canBeChild(SAbstractConcept, SNode, SNode, SNode, CheckingNodeContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);

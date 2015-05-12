@@ -174,28 +174,15 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  /**
-   * @deprecated since MPS 3.2 use:
-   * createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter)
-   *
-   * Should be removed when all user code is migrated to new method
-   */
-  @Deprecated
-  public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
-      IChildNodeSetter setter, IOperationContext operationContext) {
-    return createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, setter);
-  }
-
   public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
       IChildNodeSetter setter) {
-    String conceptFqName = NameUtil.nodeFQName(applicableConcept);
     SNode link = null;
     if (setter instanceof DefaultChildNodeSetter) {
       DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
       link = defaultSetter.getLinkDeclaration();
     }
 
-    if (!ModelConstraints.canBeChild(conceptFqName, parentNode, link, null, null)) {
+    if (!ModelConstraints.canBeChild(MetaAdapterByDeclaration.getConcept(applicableConcept), parentNode, link, null, null)) {
       return Collections.emptyList();
     }
 
