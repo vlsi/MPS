@@ -5635,23 +5635,18 @@
                       <node concept="2ShNRf" id="6LmMlYf_zsK" role="37wK5m">
                         <node concept="1pGfFk" id="6LmMlYf_zsL" role="2ShVmc">
                           <ref role="37wK5l" node="6LmMlYf_vJc" resolve="TypesystemDescriptor.MyOverloadedOperationsTypesProvider" />
-                          <node concept="Xl_RD" id="6LmMlYf_zsN" role="37wK5m">
-                            <property role="Xl_RC" value="conceptFQName" />
-                            <node concept="17Uvod" id="6LmMlYf_zsO" role="lGtFl">
-                              <property role="2qtEX9" value="value" />
-                              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                              <node concept="3zFVjK" id="6LmMlYf_zsP" role="3zH0cK">
-                                <node concept="3clFbS" id="6LmMlYf_zsQ" role="2VODD2">
-                                  <node concept="3clFbF" id="6LmMlYf_zsR" role="3cqZAp">
-                                    <node concept="2OqwBi" id="6LmMlYf_zsS" role="3clFbG">
-                                      <node concept="2qgKlT" id="6LmMlYf_zsW" role="2OqNvi">
-                                        <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-                                      </node>
-                                      <node concept="2OqwBi" id="6LmMlYf_zsT" role="2Oq$k0">
-                                        <node concept="30H73N" id="6LmMlYf_zsU" role="2Oq$k0" />
-                                        <node concept="3TrEf2" id="6LmMlYf_zsV" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="tp25:gNgnhzJ" />
-                                        </node>
+                          <node concept="35c_gC" id="PyyXQH73Bk" role="37wK5m">
+                            <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                            <node concept="1ZhdrF" id="PyyXQH73Sx" role="lGtFl">
+                              <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                              <property role="2qtEX8" value="conceptDeclaration" />
+                              <node concept="3$xsQk" id="PyyXQH73Sy" role="3$ytzL">
+                                <node concept="3clFbS" id="PyyXQH73Sz" role="2VODD2">
+                                  <node concept="3clFbF" id="PyyXQH75Ie" role="3cqZAp">
+                                    <node concept="2OqwBi" id="6LmMlYf_zsT" role="3clFbG">
+                                      <node concept="30H73N" id="6LmMlYf_zsU" role="2Oq$k0" />
+                                      <node concept="3TrEf2" id="6LmMlYf_zsV" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="tp25:gNgnhzJ" />
                                       </node>
                                     </node>
                                   </node>
@@ -5810,27 +5805,22 @@
                                 <node concept="37vLTI" id="72ZQJIMMkkt" role="3clFbG">
                                   <node concept="2OqwBi" id="72ZQJIMMkkE" role="37vLTJ">
                                     <node concept="Xjq3P" id="72ZQJIMMkkG" role="2Oq$k0" />
-                                    <node concept="2OwXpG" id="72ZQJIMMkmf" role="2OqNvi">
-                                      <ref role="2Oxat5" to="7d2t:~OverloadedOpsProvider_OneTypeSpecified.myOperationConceptFQName" resolve="myOperationConceptFQName" />
+                                    <node concept="2OwXpG" id="PyyXQH788g" role="2OqNvi">
+                                      <ref role="2Oxat5" to="7d2t:~OverloadedOpsProvider_OneTypeSpecified.myOperationConcept" resolve="myOperationConcept" />
                                     </node>
                                   </node>
-                                  <node concept="Xl_RD" id="72ZQJIMMkku" role="37vLTx">
-                                    <property role="Xl_RC" value="conceptFQName" />
-                                    <node concept="17Uvod" id="72ZQJIMMkkv" role="lGtFl">
-                                      <property role="2qtEX9" value="value" />
-                                      <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                                      <node concept="3zFVjK" id="72ZQJIMMkkw" role="3zH0cK">
-                                        <node concept="3clFbS" id="72ZQJIMMkkx" role="2VODD2">
-                                          <node concept="3clFbF" id="72ZQJIMMkky" role="3cqZAp">
-                                            <node concept="2OqwBi" id="72ZQJIMMkkz" role="3clFbG">
-                                              <node concept="2qgKlT" id="72ZQJIMMkkD" role="2OqNvi">
-                                                <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
-                                              </node>
-                                              <node concept="2OqwBi" id="72ZQJIMMkk$" role="2Oq$k0">
-                                                <node concept="30H73N" id="4njFz1OiXgS" role="2Oq$k0" />
-                                                <node concept="3TrEf2" id="4njFz1OiXgW" role="2OqNvi">
-                                                  <ref role="3Tt5mk" to="tp25:gNgnhzJ" />
-                                                </node>
+                                  <node concept="35c_gC" id="PyyXQH7940" role="37vLTx">
+                                    <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                    <node concept="1ZhdrF" id="PyyXQH7955" role="lGtFl">
+                                      <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474300074836/2644386474300074837" />
+                                      <property role="2qtEX8" value="conceptDeclaration" />
+                                      <node concept="3$xsQk" id="PyyXQH7956" role="3$ytzL">
+                                        <node concept="3clFbS" id="PyyXQH7957" role="2VODD2">
+                                          <node concept="3clFbF" id="PyyXQH79Z6" role="3cqZAp">
+                                            <node concept="2OqwBi" id="72ZQJIMMkk$" role="3clFbG">
+                                              <node concept="30H73N" id="4njFz1OiXgS" role="2Oq$k0" />
+                                              <node concept="3TrEf2" id="4njFz1OiXgW" role="2OqNvi">
+                                                <ref role="3Tt5mk" to="tp25:gNgnhzJ" />
                                               </node>
                                             </node>
                                           </node>
@@ -6338,8 +6328,8 @@
       <property role="TrG5h" value="MyOverloadedOperationsTypesProvider" />
       <node concept="3clFbW" id="6LmMlYf_vJc" role="jymVt">
         <node concept="37vLTG" id="6LmMlYf_vLD" role="3clF46">
-          <property role="TrG5h" value="conceptFQ" />
-          <node concept="17QB3L" id="6LmMlYf_vLE" role="1tU5fm" />
+          <property role="TrG5h" value="concept" />
+          <node concept="3bZ5Sz" id="PyyXQH72lS" role="1tU5fm" />
         </node>
         <node concept="3clFbS" id="6LmMlYf_vJf" role="3clF47">
           <node concept="3clFbF" id="6LmMlYf_vJB" role="3cqZAp">
@@ -6397,12 +6387,12 @@
           <node concept="3clFbF" id="6LmMlYf_vK7" role="3cqZAp">
             <node concept="37vLTI" id="6LmMlYf_vK8" role="3clFbG">
               <node concept="37vLTw" id="2BHiRxgm70a" role="37vLTx">
-                <ref role="3cqZAo" node="6LmMlYf_vLD" resolve="conceptFQ" />
+                <ref role="3cqZAo" node="6LmMlYf_vLD" resolve="concept" />
               </node>
               <node concept="2OqwBi" id="6LmMlYf_vKj" role="37vLTJ">
                 <node concept="Xjq3P" id="6LmMlYf_vKl" role="2Oq$k0" />
-                <node concept="2OwXpG" id="6LmMlYf_vKk" role="2OqNvi">
-                  <ref role="2Oxat5" to="7d2t:~OverloadedOperationsTypesProvider.myOperationConceptFQName" resolve="myOperationConceptFQName" />
+                <node concept="2OwXpG" id="PyyXQH73fh" role="2OqNvi">
+                  <ref role="2Oxat5" to="7d2t:~OverloadedOperationsTypesProvider.myOperationConcept" resolve="myOperationConcept" />
                 </node>
               </node>
             </node>
