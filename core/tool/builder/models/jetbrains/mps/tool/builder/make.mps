@@ -4127,15 +4127,15 @@
               <property role="TrG5h" value="libraryPaths" />
               <node concept="3uibUv" id="Y0KSQty4jd" role="1tU5fm">
                 <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-                <node concept="3uibUv" id="6JI3W8FwTVs" role="11_B2D">
-                  <ref role="3uigEE" to="c762:~LibraryContributor$LibDescriptor" resolve="LibraryContributor.LibDescriptor" />
+                <node concept="3uibUv" id="5K7XswOusp$" role="11_B2D">
+                  <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
                 </node>
               </node>
               <node concept="2ShNRf" id="Y0KSQty4jf" role="33vP2m">
                 <node concept="1pGfFk" id="Y0KSQty4jg" role="2ShVmc">
                   <ref role="37wK5l" to="k7g3:~LinkedHashSet.&lt;init&gt;()" resolve="LinkedHashSet" />
-                  <node concept="3uibUv" id="6JI3W8FwTVt" role="1pMfVU">
-                    <ref role="3uigEE" to="c762:~LibraryContributor$LibDescriptor" resolve="LibraryContributor.LibDescriptor" />
+                  <node concept="3uibUv" id="5K7XswOuumW" role="1pMfVU">
+                    <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
                   </node>
                 </node>
               </node>
@@ -4165,7 +4165,7 @@
                     <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
                     <node concept="2ShNRf" id="6JI3W8Fx0U1" role="37wK5m">
                       <node concept="1pGfFk" id="6JI3W8Fx0U2" role="2ShVmc">
-                        <ref role="37wK5l" to="c762:~LibraryContributor$LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibraryContributor.LibDescriptor" />
+                        <ref role="37wK5l" to="c762:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
                         <node concept="37vLTw" id="MVJ1IE97AX" role="37wK5m">
                           <ref role="3cqZAo" node="Y0KSQty4jy" resolve="libPath" />
                         </node>
@@ -9093,7 +9093,7 @@
                   <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                 </node>
                 <node concept="liA8E" id="KL8Aqll5ek" role="2OqNvi">
-                  <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                  <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                   <node concept="3EllGN" id="KL8Aqll5el" role="37wK5m">
                     <node concept="37vLTw" id="2BHiRxgmj09" role="3ElVtu">
                       <ref role="3cqZAo" node="KL8Aqll5fM" resolve="path" />
@@ -9328,7 +9328,7 @@
               <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="KL8Aqll5fK" role="2OqNvi">
-              <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+              <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
               <node concept="37vLTw" id="3GM_nagTAsg" role="37wK5m">
                 <ref role="3cqZAo" node="KL8Aqll5fj" resolve="tmp" />
               </node>
@@ -9448,7 +9448,7 @@
                     <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
                   </node>
                   <node concept="liA8E" id="KL8Aqll5gy" role="2OqNvi">
-                    <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                    <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                     <node concept="2OqwBi" id="KL8Aqll5gz" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagT_Nh" role="2Oq$k0">
                         <ref role="3cqZAo" node="KL8Aqll5fV" resolve="p" />
@@ -9514,7 +9514,7 @@
                 <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
               </node>
               <node concept="liA8E" id="KL8Aqll5gU" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
                 <node concept="3cpWs3" id="KL8Aqll5gV" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTu9t" role="3uHU7B">
                     <ref role="3cqZAo" node="KL8Aqll5gI" resolve="prefix" />

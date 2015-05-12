@@ -111,7 +111,7 @@
       <node id="3095993558265470571" at="39,0,40,0" concept="3" trace="myWatchedRootsBase" />
       <node id="6793838228148720983" at="40,0,41,0" concept="3" trace="myProjectManager" />
       <node id="6793838228148720986" at="41,0,42,0" concept="3" trace="myProjectManagerListener" />
-      <node id="6793838228148721001" at="42,174,43,38" concept="2" />
+      <node id="6793838228148721001" at="42,186,43,38" concept="2" />
       <node id="6793838228148721005" at="43,38,44,38" concept="2" />
       <node id="6793838228148721009" at="44,38,45,66" concept="2" />
       <node id="6793838228148721015" at="45,66,46,28" concept="2" />
@@ -161,7 +161,7 @@
       <node id="6793838228148721308" at="90,0,96,0" concept="6" trace="processLibrariesChange#(Ljava/util/Set;Ljava/util/Map;)V" />
       <node id="6793838228148721345" at="96,0,102,0" concept="6" trace="addLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
       <node id="6793838228148721442" at="114,28,120,7" concept="4" />
-      <node id="6793838228148720989" at="42,0,49,0" concept="1" trace="WatchedRootsUpdater#(Lcom/intellij/openapi/vfs/LocalFileSystem;Ljetbrains/mps/ide/platform/watching/WatchedRoots;Ljetbrains/mps/ide/MPSCoreComponents;Ljetbrains/mps/library/LibraryManager;Lcom/intellij/openapi/project/ProjectManager;)V" />
+      <node id="6793838228148720989" at="42,0,49,0" concept="1" trace="WatchedRootsUpdater#(Lcom/intellij/openapi/vfs/LocalFileSystem;Ljetbrains/mps/ide/platform/watching/WatchedRoots;Ljetbrains/mps/ide/MPSCoreComponents;Ljetbrains/mps/library/AdditionalLibrariesManager;Lcom/intellij/openapi/project/ProjectManager;)V" />
       <node id="6793838228148721276" at="83,0,90,0" concept="6" trace="processProjectLibrariesChange#()V" />
       <node id="6793838228148721388" at="102,121,109,5" concept="4" />
       <node id="6793838228148721377" at="102,0,111,0" concept="6" trace="removeLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
@@ -204,7 +204,7 @@
         <var name="l" id="6793838228148721358" />
       </scope>
       <scope id="6793838228148721446" at="115,45,119,9" />
-      <scope id="6793838228148721000" at="42,174,47,38" />
+      <scope id="6793838228148721000" at="42,186,47,38" />
       <scope id="6793838228148721019" at="49,0,54,0" />
       <scope id="6793838228148721279" at="83,48,88,61">
         <var name="libs" id="6793838228148721281" />

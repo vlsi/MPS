@@ -40,7 +40,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import static jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
+import jetbrains.mps.library.contributor.LibDescriptor;
 
 public class ProjectMPSDependenciesTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
@@ -87,19 +87,13 @@ public class ProjectMPSDependenciesTest {
   private void addContributorWithPaths(Iterable<? extends String> paths) {
     Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
     for (String path : paths) {
-      libraryPaths.add(new LibDescriptor(path, null));
+      libraryPaths.add(new LibDescriptor(path));
     }
     addContributor(new SetLibraryContributor(libraryPaths));
   }
 
   private void addContributor(LibraryContributor contributor) {
     LibraryInitializer.getInstance().addContributor(contributor);
-    getRepository().getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(true);
-      }
-    });
   }
 
   private void checkDeps() {

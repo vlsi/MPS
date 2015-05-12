@@ -48,6 +48,7 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
   public IdeaFileSystemProvider() {
   }
 
+  @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
     return new IdeaFile(path);

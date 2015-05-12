@@ -45,7 +45,6 @@ import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import org.jetbrains.annotations.Nullable;
 
@@ -76,7 +75,7 @@ import java.util.List;
 
 public class CreateProjectWizard extends DialogWrapper {
 
-  private static final String PROJECTS_DIR = WorkbenchPathManager.getUserHome() + File.separator + "MPSProjects";
+  private static final String PROJECTS_DIR = System.getProperty("user.home") + File.separator + "MPSProjects";
   private Project myCurrentProject;
 
   private JPanel myPanel;

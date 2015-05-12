@@ -18,26 +18,26 @@ package jetbrains.mps.ide.persistence;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 public class PersistenceComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(PersistenceComponent.class));
+  private static final Logger LOG = LogManager.getLogger(PersistenceComponent.class);
 
   private final static KeyedExtensionCollector<ModelRootSettingsEditorProvider, String> oursCollector =
     new KeyedExtensionCollector<ModelRootSettingsEditorProvider, String>("com.intellij.mps.modelRootSettings") {
+      @NotNull
       @Override
-      protected String keyToString(String key) {
+      protected String keyToString(@NotNull String key) {
         return key;
       }
     };
 
   public PersistenceComponent(MPSCoreComponents components) {
-
   }
 
   public static ModelRootSettingsEditor getModelRootSettingsEditor(String type) {
@@ -49,7 +49,7 @@ public class PersistenceComponent implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    PersistenceRegistry registry = (PersistenceRegistry) PersistenceRegistry.getInstance();
+    PersistenceRegistry registry = PersistenceRegistry.getInstance();
 
     ModelRootFactoryEP[] extensions = ModelRootFactoryEP.EP_NAME.getExtensions();
     for (ModelRootFactoryEP extension : extensions) {

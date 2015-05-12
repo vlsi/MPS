@@ -17,7 +17,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/4423331261408184030">
     <file name="JavaSourceStubModelRoot.java">
@@ -279,7 +278,7 @@
       <node id="2948071073855630587" at="241,30,246,5" concept="6" />
       <node id="336459899665822465" at="146,23,152,13" concept="6" />
       <node id="503891309339217918" at="199,18,205,9" concept="5" />
-      <node id="503891309338952161" at="180,0,187,5" concept="18" />
+      <node id="503891309338952161" at="180,0,187,5" concept="17" />
       <node id="6445318040925090501" at="222,26,229,7" concept="15" />
       <node id="4423331261408311856" at="58,0,66,0" concept="7" trace="createModel#()Ljetbrains/mps/smodel/SModel;" />
       <node id="336459899657961649" at="120,59,129,9" concept="6" />
@@ -446,13 +445,13 @@
       <node id="3967120106639860339" at="36,37,37,55" concept="8" />
       <node id="1931124802058729522" at="37,55,38,43" concept="3" />
       <node id="3967120106640005136" at="40,29,41,77" concept="3" />
-      <node id="3967120106639920669" at="42,15,43,17" concept="9" />
+      <node id="3967120106639920669" at="42,5,43,15" concept="9" />
       <node id="4423331261408331284" at="18,0,21,0" concept="1" trace="MPSJavaSrcDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
       <node id="3967120106639737161" at="27,0,30,0" concept="7" trace="hasJavaFiles#()Z" />
       <node id="4423331261408337725" at="22,0,26,0" concept="7" trace="isIncluded#(Ljetbrains/mps/vfs/IFile;)Z" />
       <node id="3967120106639856071" at="34,9,39,7" concept="5" />
-      <node id="3967120106639943663" at="33,22,44,5" concept="17" />
-      <node id="3967120106639753313" at="31,0,46,0" concept="7" trace="guessPackage#()Ljava/lang/String;" />
+      <node id="1073333717118887257" at="33,22,42,5" concept="16" />
+      <node id="3967120106639753313" at="31,0,45,0" concept="7" trace="guessPackage#()Ljava/lang/String;" />
       <scope id="4423331261408331291" at="18,72,19,26" />
       <scope id="4423331261408337729" at="23,41,24,70" />
       <scope id="3967120106639737164" at="27,33,28,54" />
@@ -460,7 +459,6 @@
         <var name="e" id="3967120106639942677" />
       </scope>
       <scope id="3967120106639942681" at="40,29,41,77" />
-      <scope id="3967120106639943666" at="42,15,43,17" />
       <scope id="4423331261408331284" at="18,0,21,0">
         <var name="dir" id="4423331261408331286" />
         <var name="modelRoot" id="4423331261408331289" />
@@ -477,11 +475,11 @@
         <var name="stream" id="3967120106639856072" />
       </scope>
       <scope id="3967120106639942674" at="34,9,39,7" />
-      <scope id="3967120106639753316" at="32,32,44,5">
+      <scope id="3967120106639753316" at="32,32,43,15">
         <var name="pkg" id="3967120106639913947" />
       </scope>
-      <scope id="3967120106639753313" at="31,0,46,0" />
-      <unit id="4423331261408331046" at="15,0,48,0" name="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
+      <scope id="3967120106639753313" at="31,0,45,0" />
+      <unit id="4423331261408331046" at="15,0,46,0" name="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
     </file>
   </root>
   <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5056426112720866148">

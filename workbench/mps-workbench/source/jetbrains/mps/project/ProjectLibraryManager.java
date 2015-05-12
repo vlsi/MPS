@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -51,32 +49,24 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void initComponent() {
-    if (myProject.isDefault()) return;
-    super.initComponent();
+    if (!myProject.isDefault()) {
+      super.initComponent();
+    }
   }
 
   @Override
   public void disposeComponent() {
-    if (myProject.isDefault()) return;
-    super.disposeComponent();
+    if (!myProject.isDefault()) {
+      super.disposeComponent();
+    }
   }
 
   @Override
   public void projectOpened() {
-    readLibrariesInEDT();
   }
 
   @Override
   public void projectClosed() {
-  }
-
-  protected void readLibrariesInEDT() {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(true);
-      }
-    }, ModalityState.defaultModalityState());
   }
 
   @Override
@@ -97,5 +87,10 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     String projectUrl = myProject.getPresentableUrl();
     if (projectUrl != null) return new File(projectUrl);
     return new File(PathManager.getHomePath());
+  }
+
+  @Override
+  public String toString() {
+    return "ProjectLibraryManager " + myProject.getName();
   }
 }

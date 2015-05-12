@@ -26,7 +26,7 @@ import java.util.Collection;
 import java.util.ArrayList;
 
 /**
- * This sould probably be gone.
+ * This should probably be gone.
  * It listens for library changes, class reloads and refreshes library watched paths.
  */
 public class WatchedRootsUpdater implements ApplicationComponent {
@@ -36,23 +36,15 @@ public class WatchedRootsUpdater implements ApplicationComponent {
   private final Map<Library, LocalFileSystem.WatchRequest> myLibrariesRequests = new HashMap<Library, LocalFileSystem.WatchRequest>();
   private final Map<Library, LocalFileSystem.WatchRequest> myProjectLibrariesRequests = new HashMap<Library, LocalFileSystem.WatchRequest>();
   private final LocalFileSystem myLocalFileSystem;
+  private final WatchedRoots myWatchedRootsBase;
   private final ProjectManager myProjectManager;
-  private ProjectManagerAdapter myProjectManagerListener = new ProjectManagerAdapter() {
-    @Override
-    public void projectOpened(Project project) {
-      processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
-    }
-    @Override
-    public void projectClosing(Project project) {
-      processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
-    }
-  };
-
+  private ProjectManagerAdapter myProjectManagerListener;
   public WatchedRootsUpdater(LocalFileSystem lfs, WatchedRoots watchedRoots, MPSCoreComponents coreComponents, AdditionalLibrariesManager libraryManager, ProjectManager projectManager) {
     myLibraryManager = libraryManager;
     myProjectManager = projectManager;
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     myLocalFileSystem = lfs;
+    myWatchedRootsBase = watchedRoots;
   }
   @NotNull
   @Override
@@ -69,6 +61,16 @@ public class WatchedRootsUpdater implements ApplicationComponent {
     };
     processLibrariesChange();
     myClassLoaderManager.addClassesHandler(myClassesListener);
+    myProjectManagerListener = new ProjectManagerAdapter() {
+      @Override
+      public void projectOpened(Project project) {
+        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
+      }
+      @Override
+      public void projectClosing(Project project) {
+        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
+      }
+    };
 
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
   }

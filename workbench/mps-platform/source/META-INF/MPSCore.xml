@@ -85,12 +85,19 @@
   </project-components>
 
   <extensionPoints>
-    <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
-    <extensionPoint qualifiedName="com.intellij.mps.VisibleModuleMask" beanClass="jetbrains.mps.VisibleModuleMask"/>
-    <extensionPoint qualifiedName="com.intellij.mps.modelRootFactory" beanClass="jetbrains.mps.ide.persistence.ModelRootFactoryEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.modelRootSettings" beanClass="jetbrains.mps.ide.persistence.ModelRootSettingsEP"/>
-    <extensionPoint qualifiedName="com.intellij.mps.treeCreationHandler" area="IDEA_PROJECT" interface="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension"/>
-    <extensionPoint qualifiedName="com.intellij.mps.ModelFactoryProvider" beanClass="jetbrains.mps.persistence.ModelFactoryRegister$ModelFactoryProvider"/>
+    <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary"
+                    beanClass="jetbrains.mps.LanguageLibrary"/>
+    <extensionPoint qualifiedName="com.intellij.mps.VisibleModuleMask"
+                    beanClass="jetbrains.mps.VisibleModuleMask"/>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootFactory"
+                    beanClass="jetbrains.mps.ide.persistence.ModelRootFactoryEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootSettings"
+                    beanClass="jetbrains.mps.ide.persistence.ModelRootSettingsEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.treeCreationHandler"
+                    area="IDEA_PROJECT"
+                    interface="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension"/>
+    <extensionPoint qualifiedName="com.intellij.mps.ModelFactoryProvider"
+                    beanClass="jetbrains.mps.persistence.ModelFactoryRegister$ModelFactoryProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

@@ -97,10 +97,6 @@
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
       </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
@@ -625,132 +621,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="r3D6QYaVAy" role="3cqZAp">
-          <node concept="2OqwBi" id="r3D6QYaVAz" role="3clFbG">
-            <node concept="2YIFZM" id="r3D6QYaVA$" role="2Oq$k0">
-              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="r3D6QYaVA_" role="2OqNvi">
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.addContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="addContributor" />
-              <node concept="37vLTw" id="2jln2VqZqzU" role="37wK5m">
-                <ref role="3cqZAo" node="2jln2VqZqzO" resolve="libContributor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5hfNQWylFlD" role="3cqZAp">
-          <node concept="2OqwBi" id="5hfNQWylFlE" role="3clFbG">
-            <node concept="2YIFZM" id="5hfNQWylFlF" role="2Oq$k0">
-              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="5hfNQWylFlG" role="2OqNvi">
-              <ref role="37wK5l" to="ztul:~LibraryInitializer.addContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="addContributor" />
-              <node concept="37vLTw" id="5hfNQWylGoy" role="37wK5m">
-                <ref role="3cqZAo" node="5hfNQWylD8S" resolve="pluginsContributor" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="SfApY" id="2pL3Qjr$pbR" role="3cqZAp">
-          <node concept="TDmWw" id="2pL3Qjr$pbS" role="TEbGg">
-            <node concept="3clFbS" id="2pL3Qjr$pbT" role="TDEfX">
-              <node concept="YS8fn" id="2pL3Qjr$pbU" role="3cqZAp">
-                <node concept="2ShNRf" id="2pL3Qjr$pbV" role="YScLw">
-                  <node concept="1pGfFk" id="2pL3Qjr$pbW" role="2ShVmc">
-                    <ref role="37wK5l" to="e2lb:~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolve="RuntimeException" />
-                    <node concept="37vLTw" id="2pL3Qjr$pbX" role="37wK5m">
-                      <ref role="3cqZAo" node="2pL3Qjr$pbY" resolve="e" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="2pL3Qjr$pbY" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <property role="3TUv4t" value="false" />
-              <node concept="3uibUv" id="2pL3Qjr$pbZ" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="2pL3Qjr$pc0" role="SfCbr">
-            <node concept="3clFbF" id="2pL3Qjr$pc1" role="3cqZAp">
-              <node concept="2YIFZM" id="2pL3Qjr$pc2" role="3clFbG">
-                <ref role="1Pybhc" to="dbrf:~SwingUtilities" resolve="SwingUtilities" />
-                <ref role="37wK5l" to="dbrf:~SwingUtilities.invokeAndWait(java.lang.Runnable):void" resolve="invokeAndWait" />
-                <node concept="2ShNRf" id="2pL3Qjr$pc3" role="37wK5m">
-                  <node concept="YeOm9" id="2pL3Qjr$pc4" role="2ShVmc">
-                    <node concept="1Y3b0j" id="2pL3Qjr$pc5" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <property role="1sVAO0" value="false" />
-                      <property role="1EXbeo" value="false" />
-                      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                      <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
-                      <node concept="3Tm1VV" id="2pL3Qjr$pc6" role="1B3o_S" />
-                      <node concept="3clFb_" id="2pL3Qjr$pc7" role="jymVt">
-                        <property role="TrG5h" value="run" />
-                        <property role="od$2w" value="false" />
-                        <property role="DiZV1" value="false" />
-                        <node concept="2AHcQZ" id="2pL3Qjr$pc8" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                        </node>
-                        <node concept="3clFbS" id="2pL3Qjr$pc9" role="3clF47">
-                          <node concept="3clFbF" id="2pL3Qjr$pca" role="3cqZAp">
-                            <node concept="2OqwBi" id="2pL3Qjr$pcb" role="3clFbG">
-                              <node concept="2YIFZM" id="2pL3Qjr$pcc" role="2Oq$k0">
-                                <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                              </node>
-                              <node concept="liA8E" id="2pL3Qjr$pcd" role="2OqNvi">
-                                <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
-                                <node concept="2ShNRf" id="2pL3Qjr$pce" role="37wK5m">
-                                  <node concept="YeOm9" id="2pL3Qjr$pcf" role="2ShVmc">
-                                    <node concept="1Y3b0j" id="2pL3Qjr$pcg" role="YeSDq">
-                                      <property role="2bfB8j" value="true" />
-                                      <property role="1sVAO0" value="false" />
-                                      <property role="1EXbeo" value="false" />
-                                      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                                      <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
-                                      <node concept="3Tm1VV" id="2pL3Qjr$pch" role="1B3o_S" />
-                                      <node concept="3clFb_" id="2pL3Qjr$pci" role="jymVt">
-                                        <property role="TrG5h" value="run" />
-                                        <property role="od$2w" value="false" />
-                                        <property role="DiZV1" value="false" />
-                                        <node concept="3clFbS" id="2pL3Qjr$pcj" role="3clF47">
-                                          <node concept="3clFbF" id="2pL3Qjr$pck" role="3cqZAp">
-                                            <node concept="2OqwBi" id="2pL3Qjr$pcl" role="3clFbG">
-                                              <node concept="2YIFZM" id="2pL3Qjr$pcm" role="2Oq$k0">
-                                                <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
-                                                <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
-                                              </node>
-                                              <node concept="liA8E" id="2pL3Qjr$pcn" role="2OqNvi">
-                                                <ref role="37wK5l" to="ztul:~LibraryInitializer.update():void" resolve="update" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3Tm1VV" id="2pL3Qjr$pco" role="1B3o_S" />
-                                        <node concept="3cqZAl" id="2pL3Qjr$pcp" role="3clF45" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3Tm1VV" id="2pL3Qjr$pcq" role="1B3o_S" />
-                        <node concept="3cqZAl" id="2pL3Qjr$pcr" role="3clF45" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="5hfNQWymhSL" role="3cqZAp">
           <node concept="2OqwBi" id="5hfNQWymkVZ" role="3clFbG">
             <node concept="37vLTw" id="5hfNQWymjsK" role="2Oq$k0">
@@ -771,6 +641,20 @@
             <node concept="TSZUe" id="5hfNQWymnIR" role="2OqNvi">
               <node concept="37vLTw" id="5hfNQWympCO" role="25WWJ7">
                 <ref role="3cqZAo" node="5hfNQWylD8S" resolve="pluginsContributor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2GSUWa3xEHK" role="3cqZAp">
+          <node concept="2OqwBi" id="2GSUWa3xEPK" role="3clFbG">
+            <node concept="2YIFZM" id="2GSUWa3xENS" role="2Oq$k0">
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
+              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
+            </node>
+            <node concept="liA8E" id="2GSUWa3xF3d" role="2OqNvi">
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.load(java.util.List):void" resolve="load" />
+              <node concept="37vLTw" id="2GSUWa3xF72" role="37wK5m">
+                <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
               </node>
             </node>
           </node>
@@ -1185,28 +1069,18 @@
           </node>
         </node>
         <node concept="3clFbH" id="76aXy8jeG7i" role="3cqZAp" />
-        <node concept="2Gpval" id="5hfNQWymqym" role="3cqZAp">
-          <node concept="2GrKxI" id="5hfNQWymqyo" role="2Gsz3X">
-            <property role="TrG5h" value="contrib" />
-          </node>
-          <node concept="3clFbS" id="5hfNQWymqyq" role="2LFqv$">
-            <node concept="3clFbF" id="2jln2Vr4H5Z" role="3cqZAp">
-              <node concept="2OqwBi" id="r3D6QYaVB3" role="3clFbG">
-                <node concept="liA8E" id="r3D6QYaVB4" role="2OqNvi">
-                  <ref role="37wK5l" to="ztul:~LibraryInitializer.removeContributor(jetbrains.mps.library.contributor.LibraryContributor):void" resolve="removeContributor" />
-                  <node concept="2GrUjf" id="5hfNQWymsId" role="37wK5m">
-                    <ref role="2Gs0qQ" node="5hfNQWymqyo" resolve="contrib" />
-                  </node>
-                </node>
-                <node concept="2YIFZM" id="r3D6QYaVB5" role="2Oq$k0">
-                  <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
-                  <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
-                </node>
+        <node concept="3clFbF" id="2GSUWa3xH$9" role="3cqZAp">
+          <node concept="2OqwBi" id="2GSUWa3xHTE" role="3clFbG">
+            <node concept="2YIFZM" id="2GSUWa3xHOf" role="2Oq$k0">
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.getInstance():jetbrains.mps.library.LibraryInitializer" resolve="getInstance" />
+              <ref role="1Pybhc" to="ztul:~LibraryInitializer" resolve="LibraryInitializer" />
+            </node>
+            <node concept="liA8E" id="2GSUWa3xIcM" role="2OqNvi">
+              <ref role="37wK5l" to="ztul:~LibraryInitializer.unload(java.util.List):void" resolve="unload" />
+              <node concept="37vLTw" id="2GSUWa3xIeN" role="37wK5m">
+                <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
               </node>
             </node>
-          </node>
-          <node concept="37vLTw" id="5hfNQWymrOF" role="2GsD0m">
-            <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
           </node>
         </node>
         <node concept="3clFbH" id="2jln2Vr4GhV" role="3cqZAp" />
@@ -1927,24 +1801,19 @@
           </node>
         </node>
         <node concept="3cpWs6" id="4_TMdeLkOpO" role="3cqZAp">
-          <node concept="10QFUN" id="1CqjT$$4VOc" role="3cqZAk">
-            <node concept="3uibUv" id="1CqjT$$4XLj" role="10QFUM">
-              <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-            </node>
-            <node concept="2OqwBi" id="4_TMdeLkOpP" role="10QFUP">
-              <node concept="AH0OO" id="4_TMdeLkOpQ" role="2Oq$k0">
-                <node concept="37vLTw" id="4_TMdeLkOpR" role="AHHXb">
-                  <ref role="3cqZAo" node="4_TMdeLkOoi" resolve="project" />
-                </node>
-                <node concept="3cmrfG" id="4_TMdeLkOpS" role="AHEQo">
-                  <property role="3cmrfH" value="0" />
-                </node>
+          <node concept="2OqwBi" id="4_TMdeLkOpP" role="3cqZAk">
+            <node concept="AH0OO" id="4_TMdeLkOpQ" role="2Oq$k0">
+              <node concept="37vLTw" id="4_TMdeLkOpR" role="AHHXb">
+                <ref role="3cqZAo" node="4_TMdeLkOoi" resolve="project" />
               </node>
-              <node concept="liA8E" id="4_TMdeLkOpT" role="2OqNvi">
-                <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="24dvNo_5JTl" role="37wK5m">
-                  <ref role="3VsUkX" to="jrbx:~MPSProject" resolve="MPSProject" />
-                </node>
+              <node concept="3cmrfG" id="4_TMdeLkOpS" role="AHEQo">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4_TMdeLkOpT" role="2OqNvi">
+              <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+              <node concept="3VsKOn" id="24dvNo_5JTl" role="37wK5m">
+                <ref role="3VsUkX" to="jrbx:~MPSProject" resolve="MPSProject" />
               </node>
             </node>
           </node>

@@ -675,8 +675,8 @@
     <node concept="312cEg" id="5T8zXYahxku" role="jymVt">
       <property role="TrG5h" value="myLibraryManager" />
       <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="5T8zXYahxkv" role="1tU5fm">
-        <ref role="3uigEE" to="y090:~LibraryManager" resolve="LibraryManager" />
+      <node concept="3uibUv" id="4hAiIA_Lo$m" role="1tU5fm">
+        <ref role="3uigEE" to="y090:~AdditionalLibrariesManager" resolve="AdditionalLibrariesManager" />
       </node>
       <node concept="3Tm6S6" id="5T8zXYahxkw" role="1B3o_S" />
     </node>
@@ -801,8 +801,8 @@
       </node>
       <node concept="37vLTG" id="5T8zXYahxl$" role="3clF46">
         <property role="TrG5h" value="libraryManager" />
-        <node concept="3uibUv" id="5T8zXYahxl_" role="1tU5fm">
-          <ref role="3uigEE" to="y090:~LibraryManager" resolve="LibraryManager" />
+        <node concept="3uibUv" id="4hAiIA_LoBB" role="1tU5fm">
+          <ref role="3uigEE" to="y090:~AdditionalLibrariesManager" resolve="AdditionalLibrariesManager" />
         </node>
       </node>
       <node concept="37vLTG" id="5T8zXYahxlA" role="3clF46">
@@ -1084,7 +1084,7 @@
                 <ref role="3cqZAo" node="5T8zXYahxku" resolve="myLibraryManager" />
               </node>
               <node concept="liA8E" id="5T8zXYahxpS" role="2OqNvi">
-                <ref role="37wK5l" to="y090:~LibraryManager.getUILibraries():java.util.Set" resolve="getUILibraries" />
+                <ref role="37wK5l" to="y090:~AdditionalLibrariesManager.getUILibraries():java.util.Set" resolve="getUILibraries" />
               </node>
             </node>
             <node concept="37vLTw" id="5T8zXYahxpT" role="37wK5m">
@@ -1645,7 +1645,7 @@
     <node concept="3UR2Jj" id="3nVeIwRabJc" role="lGtFl">
       <node concept="TZ5HA" id="3nVeIwRabJd" role="TZ5H$">
         <node concept="1dT_AC" id="3nVeIwRabJe" role="1dT_Ay">
-          <property role="1dT_AB" value="This sould probably be gone." />
+          <property role="1dT_AB" value="This should probably be gone." />
         </node>
       </node>
       <node concept="TZ5HA" id="3nVeIwRabKv" role="TZ5H$">

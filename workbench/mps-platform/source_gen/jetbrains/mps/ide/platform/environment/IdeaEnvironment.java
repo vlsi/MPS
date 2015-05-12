@@ -19,14 +19,13 @@ import java.io.File;
 import jetbrains.mps.tool.common.util.CanonicalPath;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.library.LibraryInitializer;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.Project;
 import com.intellij.ui.GuiUtils;
 import com.intellij.ide.IdeEventQueue;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStream;
 import java.io.FileOutputStream;
@@ -93,24 +92,9 @@ public class IdeaEnvironment implements Environment {
 
     final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(config);
     final LibraryContributor pluginsContributor = EnvironmentUtils.createPluginLibContributor(config);
-    LibraryInitializer.getInstance().addContributor(libContributor);
-    LibraryInitializer.getInstance().addContributor(pluginsContributor);
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              LibraryInitializer.getInstance().update();
-            }
-          });
-        }
-      });
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
     ListSequence.fromList(myLibContributors).addElement(libContributor);
     ListSequence.fromList(myLibContributors).addElement(pluginsContributor);
+    LibraryInitializer.getInstance().load(myLibContributors);
   }
 
   private IdeaTestApplication createIdeaTestApp() {
@@ -183,9 +167,7 @@ public class IdeaEnvironment implements Environment {
       LOG.debug("Disposing environment");
     }
 
-    for (LibraryContributor contrib : ListSequence.fromList(myLibContributors)) {
-      LibraryInitializer.getInstance().removeContributor(contrib);
-    }
+    LibraryInitializer.getInstance().unload(myLibContributors);
 
     for (Project project : SetSequence.fromSet(myContainer.getProjects())) {
       disposeProject(project.getProjectFile());
@@ -268,7 +250,7 @@ public class IdeaEnvironment implements Environment {
       // this actually happens 
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }
-    return (Project) project[0].getComponent(MPSProject.class);
+    return project[0].getComponent(MPSProject.class);
   }
   protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);
 }

@@ -127,7 +127,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
-      myModelsList = new JBList(myRequiredImports);
+      myModelsList = new JBList((Object[]) myRequiredImports);
       myModelsList.setCellRenderer(new MyCellRenderer());
       myModelsList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myModelsList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
@@ -140,7 +140,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(myRequiredImports.length > 0 ? 5 : 0, 0, 0, 0), 0, 0));
 
-      myLanguagesList = new JBList(myRequiredLanguages);
+      myLanguagesList = new JBList((Object[]) myRequiredLanguages);
       myLanguagesList.setCellRenderer(new MyCellRenderer());
       myLanguagesList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myLanguagesList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));

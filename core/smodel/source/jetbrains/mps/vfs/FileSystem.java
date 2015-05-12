@@ -25,8 +25,10 @@ public abstract class FileSystem {
   private static final FileSystem INSTANCE = new FileSystemImpl();
 
   public abstract void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider);
+  @NotNull
   public abstract FileSystemProvider getFileSystemProvider();
 
+  @NotNull
   public abstract IFile getFileByPath(@NotNull String path);
   public abstract boolean isPackaged(IFile file);
   public abstract boolean isFileIgnored(@NotNull String name);

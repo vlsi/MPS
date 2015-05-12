@@ -9,7 +9,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
@@ -27,19 +27,24 @@ import java.io.File;
 public class GenModuleXmlWorker extends MpsWorker {
   public static final String INDENT_WITH = "  ";
   public static final int INDENT_INNER_XML = 2;
+
   public GenModuleXmlWorker(Script whatToDo) {
     super(whatToDo);
   }
+
   public GenModuleXmlWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
+
   @Override
   protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
   }
+
   @Override
   protected void showStatistic() {
 
   }
+
   @Override
   public void work() {
     setupEnvironment();
@@ -51,11 +56,12 @@ public class GenModuleXmlWorker extends MpsWorker {
     dispose();
     showStatistic();
   }
+
   public void processParameter(Project project, String parameter) {
     ModuleXml params = GenModuleXmlTask.decode(parameter);
 
     final SModuleReference moduleRef = PersistenceFacade.getInstance().createModuleReference(params.getRef());
-    SModule module = ModelAccess.instance().runReadAction(new Computable<SModule>() {
+    SModule module = new ModelAccessHelper(project.getRepository()).runReadAction(new Computable<SModule>() {
       public SModule compute() {
         return ModuleRepositoryFacade.getInstance().getModule(moduleRef);
       }
@@ -64,14 +70,14 @@ public class GenModuleXmlWorker extends MpsWorker {
 
     writeFile(xmlfile, moduleRef, module, params.getInnerText(INDENT_INNER_XML, INDENT_WITH));
   }
-  public void writeFile(IFile file, SModuleReference moduleRef, SModule module, String extraText) {
 
+  public void writeFile(IFile file, SModuleReference moduleRef, SModule module, String extraText) {
     try {
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
       wr.println("<module namespace=\"" + moduleRef.getModuleName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ? "solution" : (module instanceof Language ? "language" : "unknown"))) + "\">");
 
       wr.println(INDENT_WITH + "<dependencies>");
-      Collection<SModule> dependencies = getDepenencies(module);
+      Collection<SModule> dependencies = getDependencies(module);
       if (dependencies == null) {
         // <node> 
         error("module " + moduleRef + " was not found in repository");
@@ -90,18 +96,20 @@ public class GenModuleXmlWorker extends MpsWorker {
       error("Error writing to " + file.getPath());
     }
   }
-  private Collection<SModule> getDepenencies(final SModule module) {
+
+  private Collection<SModule> getDependencies(final SModule module) {
     if (module == null) {
       return null;
     }
     final Wrappers._T<Collection<SModule>> res = new Wrappers._T<Collection<SModule>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    module.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         res.value = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
       }
     });
     return res.value;
   }
+
   public static void main(String[] args) {
     new GenModuleXmlWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.LogLogger()).workFromMain();
   }

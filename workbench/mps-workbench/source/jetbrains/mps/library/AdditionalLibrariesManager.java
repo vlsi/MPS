@@ -21,8 +21,6 @@ import com.intellij.openapi.components.Storage;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.library.contributor.BootstrapLibContributor;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -31,6 +29,9 @@ import java.util.Map;
 import java.util.Set;
 
 
+/**
+ * reads custom libraries from the xml file
+ */
 @State(
   name = "AdditionalLibrariesManager",
   storages = {
@@ -41,9 +42,8 @@ import java.util.Set;
 )
 public class AdditionalLibrariesManager extends BaseLibraryManager implements ApplicationComponent {
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
-  private Set<Library> myWorkbenchLib = createWorkbenchLib();
 
-  public AdditionalLibrariesManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
+  public AdditionalLibrariesManager(MPSCoreComponents coreComponents) {
     super(coreComponents);
   }
 
@@ -56,26 +56,14 @@ public class AdditionalLibrariesManager extends BaseLibraryManager implements Ap
   @Override
   public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>(super.getUILibraries());
-    result.addAll(myWorkbenchLib);
     result.addAll(myCustomBuiltInLibraries.values());
     return result;
   }
 
-  private Set<Library> createWorkbenchLib() {
-    Set<Library> result = new HashSet<Library>();
-    if (InternalFlag.isInternalMode() || RuntimeFlags.isTestMode()) {
-      result.add(new Library("mps.workbench") {
-        @Override
-        @NotNull
-        public String getPath() {
-          return WorkbenchPathManager.getWorkbenchPath();
-        }
-      });
-    }
-    return result;
+  @Override
+  public String toString() {
+    return "AdditionalLibrariesManager";
   }
-
-  //---------------------
 
   @Override
   @NotNull
