@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -16,16 +18,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigrationScript {
   public DeleteUndeclaredLinksAndProperties_MigrationScript(IOperationContext operationContext) {
     super("Delete Undeclared Links and Properties");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Undeclared property";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Undeclared property";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
           if (prop.getDeclarationNode() == null) {
@@ -34,6 +40,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
         }
         return false;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
           if (prop.getDeclarationNode() == null) {
@@ -41,40 +48,51 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           }
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Child in undeclared role";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Child in undeclared role";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return (SNodeOperations.getParent(node) != null) && (SNodeOperations.getContainingLinkDeclaration(node) == null);
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.deleteNode(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Undeclared reference";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Undeclared reference";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -82,6 +100,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           }
         }).isNotEmpty();
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -91,6 +110,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
           node.setReference(ref.getRole(), null);
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

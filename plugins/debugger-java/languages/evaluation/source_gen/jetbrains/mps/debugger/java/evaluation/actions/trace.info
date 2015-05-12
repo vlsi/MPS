@@ -17,11 +17,11 @@
       <node id="7915630211773500932" at="30,207,31,24" concept="2" />
       <node id="7915630211773500891" at="33,53,34,19" concept="2" />
       <node id="7915630211773500896" at="39,56,40,44" concept="2" />
-      <node id="7915630211773500839" at="52,202,53,253" concept="2" />
+      <node id="7915630211773500839" at="52,202,53,341" concept="2" />
       <node id="7915630211773500744" at="52,0,55,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7915630211773500744#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
       <scope id="7915630211773500890" at="33,53,34,19" />
       <scope id="7915630211773500895" at="39,56,40,44" />
-      <scope id="7915630211773500745" at="52,202,53,253" />
+      <scope id="7915630211773500745" at="52,202,53,341" />
       <scope id="7915630211773500885" at="28,94,31,24">
         <var name="downcast" id="7915630211773500899" />
       </scope>

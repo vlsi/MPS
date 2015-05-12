@@ -113,7 +113,7 @@
       <node id="6825241477451043706" at="37,44,38,20" concept="5" />
       <node id="6825241477451043710" at="45,142,46,132" concept="6" />
       <node id="6825241477451043712" at="46,132,47,373" concept="4" />
-      <node id="6825241477451043719" at="47,373,48,242" concept="4" />
+      <node id="6825241477451043719" at="47,373,48,325" concept="4" />
       <node id="4107550939057741409" at="51,57,52,50" concept="5" />
       <node id="6825241477451043706" at="57,63,58,58" concept="5" />
       <node id="6825241477451043706" at="62,7,63,22" concept="5" />
@@ -122,7 +122,7 @@
       <node id="6825241477451043706" at="36,0,40,0" concept="3" trace="hasOwnScopeProvider#()Z" />
       <node id="4107550939057741402" at="50,0,54,0" concept="3" trace="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6825241477451043706" at="56,0,60,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="6825241477451043727" at="48,242,54,14" concept="5" />
+      <node id="6825241477451043727" at="48,325,54,14" concept="5" />
       <node id="6825241477451043706" at="44,0,56,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="6825241477451043706" at="42,56,60,10" concept="5" />
       <node id="6825241477451043706" at="40,0,62,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -165,7 +165,7 @@
       <node id="6825241477451051015" at="38,44,39,20" concept="5" />
       <node id="6825241477451051030" at="47,222,48,44" concept="5" />
       <node id="6825241477451051040" at="49,13,50,373" concept="4" />
-      <node id="6825241477451051047" at="50,373,51,242" concept="4" />
+      <node id="6825241477451051047" at="50,373,51,325" concept="4" />
       <node id="8636141232655275383" at="54,57,55,50" concept="5" />
       <node id="6825241477451051015" at="60,63,61,58" concept="5" />
       <node id="6825241477451051015" at="65,7,66,22" concept="5" />
@@ -175,7 +175,7 @@
       <node id="6825241477451051015" at="37,0,41,0" concept="3" trace="hasOwnScopeProvider#()Z" />
       <node id="8636141232655275376" at="53,0,57,0" concept="3" trace="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="6825241477451051015" at="59,0,63,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="6825241477451051055" at="51,242,57,14" concept="5" />
+      <node id="6825241477451051055" at="51,325,57,14" concept="5" />
       <node id="6825241477451051015" at="45,0,59,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="6825241477451051015" at="43,56,63,10" concept="5" />
       <node id="6825241477451051015" at="41,0,65,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />

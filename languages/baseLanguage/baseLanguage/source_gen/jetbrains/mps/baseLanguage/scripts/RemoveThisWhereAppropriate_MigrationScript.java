@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
@@ -13,71 +15,89 @@ import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 public class RemoveThisWhereAppropriate_MigrationScript extends BaseMigrationScript {
   public RemoveThisWhereAppropriate_MigrationScript(IOperationContext operationContext) {
     super("Remove \"this\" Where Appropriate");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "ConvertLocalFieldReference";
       }
+      @Override
       public String getAdditionalInfo() {
         return "ConvertLocalFieldReference";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         if (node == null) {
           return false;
         }
         return FieldReferenceOperation_Behavior.call_canBeConvertedToLocal_5311267937735160942(node);
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         FieldReferenceOperation_Behavior.call_convertToLocal_5311267937735269195(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return true;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "ConvertLocalInstanceMethodCall";
       }
+      @Override
       public String getAdditionalInfo() {
         return "ConvertLocalInstanceMethodCall";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         if (node == null) {
           return false;
         }
         return InstanceMethodCallOperation_Behavior.call_canBeConvertedToLocal_5311267937735225328(node);
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         InstanceMethodCallOperation_Behavior.call_convertToLocal_5311267937735269230(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return true;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "ConvertLocalStaticMethodCall";
       }
+      @Override
       public String getAdditionalInfo() {
         return "ConvertLocalStaticMethodCall";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         if (node == null) {
           return false;
         }
         return StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node);
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return true;
       }

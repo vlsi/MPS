@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -239,11 +240,10 @@ public class ChildSubstituteActionsHelper {
         linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept);
 
     // create smart actions
-    final String targetConcept = NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(smartReference));
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      if (referentNode == null || !referentNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(targetConcept)))
+      if (referentNode == null || !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference))))
         continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
           currentChild, childSetter, smartConcept, smartReference, refDescriptor));
@@ -320,7 +320,7 @@ public class ChildSubstituteActionsHelper {
 
     @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = NodeFactoryManager.createNode(NameUtil.nodeFQName(mySmartConcept), myCurrentChild, myParentNode, model);
+      SNode childNode = NodeFactoryManager.createNode(MetaAdapterByDeclaration.getConcept(mySmartConcept), myCurrentChild, myParentNode, model);
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
       SNodeAccessUtil.setReferenceTarget(childNode, referentRole, myReferentNode);
       return childNode;

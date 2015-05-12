@@ -80,9 +80,6 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
@@ -186,12 +183,6 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -330,38 +321,6 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="62y0BjDVK3J" role="3clF45" />
-    </node>
-    <node concept="2YIFZL" id="i0YipiH" role="jymVt">
-      <property role="TrG5h" value="getBaseConcept" />
-      <node concept="3THzug" id="i0YipiI" role="3clF45" />
-      <node concept="3Tm1VV" id="i0YipiJ" role="1B3o_S" />
-      <node concept="3clFbS" id="i0YipiK" role="3clF47">
-        <node concept="3SKdUt" id="4sxTOdQsV52" role="3cqZAp">
-          <node concept="3SKdUq" id="4sxTOdQsVcR" role="3SKWNk">
-            <property role="3SKdUp" value="Deprecated, use SNodeUtil.concept_BaseConcept nstead!" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="i0YipiL" role="3cqZAp">
-          <node concept="10QFUN" id="4sxTOdQsUrM" role="3cqZAk">
-            <node concept="3THzug" id="4sxTOdQsUyb" role="10QFUM" />
-            <node concept="2OqwBi" id="4sxTOdQsHya" role="10QFUP">
-              <node concept="10M0yZ" id="4sxTOdQsHp_" role="2Oq$k0">
-                <ref role="1PxDUh" to="cu2c:~SNodeUtil" resolve="SNodeUtil" />
-                <ref role="3cqZAo" to="cu2c:~SNodeUtil.concept_BaseConcept" resolve="concept_BaseConcept" />
-              </node>
-              <node concept="liA8E" id="4sxTOdQsSYc" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="5v$VO3Ro88c" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="2AHcQZ" id="4sxTOdQsTB7" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="2YIFZL" id="i0YipiN" role="jymVt">
       <property role="od$2w" value="false" />

@@ -45,7 +45,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -215,7 +214,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }
 
     FindUsagesFacade findUsages = FindUsagesFacade.getInstance();
-    SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.traceable.structure.UnitConcept");
+    SAbstractConcept concept = MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept");
 
     Set<SNode> instances = findUsages.findInstances(new ModelsScope(getCandidateNonStubModels(unitName)), Collections.singleton(concept), false, new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {

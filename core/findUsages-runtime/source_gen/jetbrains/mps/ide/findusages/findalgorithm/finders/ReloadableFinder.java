@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.lang.ref.WeakReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -37,12 +38,12 @@ public class ReloadableFinder implements IInterfacedFinder {
     return myFinder.get();
   }
   @Override
-  public String getConcept() {
+  public SAbstractConcept getSConcept() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
-      return "";
+      return null;
     }
-    return finder.getConcept();
+    return finder.getSConcept();
   }
   @Override
   public boolean isApplicable(SNode node) {

@@ -74,20 +74,6 @@ public enum LanguageAspect {
   }
 
   /**
-   * @deprecated use {@link #getAspectQualifiedClassName(org.jetbrains.mps.openapi.language.SAbstractConcept)} instead
-   * NOTE, as it's not an API, might be dropped sooner than end of 3.2 dev cycle
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
-    SAbstractConcept c = SConceptRepository.getInstance().getConcept(conceptFqName);
-    if (c == null) {
-      throw new IllegalArgumentException("Not a concept fq name");
-    }
-    return languageAspect.getAspectQualifiedClassName(c);
-  }
-
-  /**
    * INTERNAL USE ONLY.
    * Builds a class name of an aspect class according to hardcoded MPS convention.
    */

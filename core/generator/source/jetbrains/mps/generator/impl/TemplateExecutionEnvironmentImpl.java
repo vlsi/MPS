@@ -45,6 +45,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -90,6 +91,8 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @NotNull
   @Override
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SNode createOutputNode(@NotNull String conceptName) {
     // I use getInstanceConcept because it doesn't return null for unknown concepts
     // Another alternative is to check getContainingConcept for null and instantiate BaseConcept then

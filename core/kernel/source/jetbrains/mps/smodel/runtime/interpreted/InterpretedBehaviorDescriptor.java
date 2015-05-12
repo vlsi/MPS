@@ -135,8 +135,9 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             processed.add(currentConcept);
           }
 
-          if (newFrontier.size() == 0 && !processed.contains(SModelUtil.getBaseConcept())) {
-            newFrontier.add(SModelUtil.getBaseConcept());
+          SNode baseConcept = SNodeUtil.concept_BaseConcept.getDeclarationNode();
+          if (newFrontier.size() == 0 && !processed.contains(baseConcept)) {
+            newFrontier.add(baseConcept);
           }
 
           concepts = newFrontier;

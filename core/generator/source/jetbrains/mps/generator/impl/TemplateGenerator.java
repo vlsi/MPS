@@ -57,6 +57,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -705,13 +706,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
 
     private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
-      String applicableConcept = rule.getApplicableConcept();
+      SAbstractConcept applicableConcept = rule.getApplicableSConcept();
       if (applicableConcept == null) {
         getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
         return false;
       }
 
-      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
+      if (inputRootNode.getConcept().isSubConceptOf(applicableConcept)) {
         return myEnv.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnv, inputRootNode, null));
       }
       return false;

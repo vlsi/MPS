@@ -1709,9 +1709,9 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/7792877032403711913">
     <file name="QueriesGenerated.java">
       <node id="730364496702557781" at="366,111,367,223" concept="7" />
-      <node id="730364496702846783" at="1021,107,1022,507" concept="7" />
+      <node id="730364496702846783" at="1021,107,1022,590" concept="7" />
       <scope id="730364496702557780" at="366,111,367,223" />
-      <scope id="730364496702578720" at="1021,107,1022,507" />
+      <scope id="730364496702578720" at="1021,107,1022,590" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/997079742911131041">

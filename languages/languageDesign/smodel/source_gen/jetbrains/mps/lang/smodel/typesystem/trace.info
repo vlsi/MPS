@@ -87,7 +87,7 @@
       <node id="1226066977720" at="196,43,197,360" concept="3" />
       <node id="1226066977730" at="198,14,199,207" concept="3" />
       <node id="572632429824895293" at="201,218,202,185" concept="3" />
-      <node id="572632429824895281" at="203,12,204,187" concept="8" />
+      <node id="572632429824895281" at="203,12,204,270" concept="8" />
       <node id="572632429824895297" at="205,29,206,187" concept="3" />
       <node id="1226066977740" at="209,37,210,185" concept="3" />
       <node id="1226067094272" at="211,5,212,30" concept="9" />
@@ -214,7 +214,7 @@
       <node id="1205267191810" at="111,211,114,7" concept="6" />
       <node id="1230333667593" at="128,211,131,7" concept="6" />
       <node id="1179506422619" at="140,180,143,5" concept="6" />
-      <node id="572632429824895287" at="204,187,207,7" concept="6" />
+      <node id="572632429824895287" at="204,270,207,7" concept="6" />
       <node id="1226066977738" at="208,5,211,5" concept="6" />
       <node id="1222429131483" at="236,54,239,9" concept="5" />
       <node id="6778875025222463872" at="298,73,301,5" concept="5" />
@@ -4162,7 +4162,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/1193943556383">
     <file name="supertypesOf_ListType_ListType_elementSNode_SubtypingRule.java">
       <node id="1193947530695" at="24,125,25,48" concept="8" />
-      <node id="1193944857496" at="25,48,26,351" concept="8" />
+      <node id="1193944857496" at="25,48,26,434" concept="8" />
       <node id="1193947565440" at="27,370,28,88" concept="3" />
       <node id="1193947322493" at="29,5,30,18" concept="9" />
       <node id="1193943556383" at="32,46,33,71" concept="9" />
@@ -4186,7 +4186,7 @@
       <node id="1196933487766" at="48,233,50,168" concept="0" />
       <node id="1196933487769" at="55,30,57,549" concept="0" />
       <node id="1196933487769" at="55,30,57,549" concept="0" />
-      <node id="1193945364985" at="26,351,29,5" concept="6" />
+      <node id="1193945364985" at="26,434,29,5" concept="6" />
       <node id="1193943556383" at="32,0,35,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1193943556383" at="41,0,44,0" concept="7" trace="isWeak#()Z" />
       <node id="1196933487766" at="47,30,50,168" concept="0" />
@@ -6700,7 +6700,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)/2520452989173340047">
     <file name="supertypesOf_SetType_SetType_elementSNode_SubtypingRule.java">
       <node id="2520452989173340049" at="24,124,25,48" concept="8" />
-      <node id="2520452989173340055" at="25,48,26,350" concept="8" />
+      <node id="2520452989173340055" at="25,48,26,433" concept="8" />
       <node id="2520452989173340065" at="27,370,28,88" concept="3" />
       <node id="2520452989173340080" at="29,5,30,18" concept="9" />
       <node id="2520452989173340047" at="32,46,33,70" concept="9" />
@@ -6724,7 +6724,7 @@
       <node id="2520452989173340069" at="48,232,50,168" concept="0" />
       <node id="2520452989173340077" at="55,30,57,549" concept="0" />
       <node id="2520452989173340077" at="55,30,57,549" concept="0" />
-      <node id="2520452989173340063" at="26,350,29,5" concept="6" />
+      <node id="2520452989173340063" at="26,433,29,5" concept="6" />
       <node id="2520452989173340047" at="32,0,35,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="2520452989173340047" at="41,0,44,0" concept="7" trace="isWeak#()Z" />
       <node id="2520452989173340069" at="47,30,50,168" concept="0" />

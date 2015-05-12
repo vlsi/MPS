@@ -7807,6 +7807,12 @@
               <ref role="3bR37D" node="7Kfy9QB6L9I" resolve="jetbrains.mps.lang.sharedConcepts" />
             </node>
           </node>
+          <node concept="1SiIV0" id="1AO1kwR_lbI" role="3bR37C">
+            <node concept="3bR9La" id="1AO1kwR_lbJ" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruw6" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruw5" role="1SiIV1">
@@ -7873,6 +7879,11 @@
         <node concept="1SiIV0" id="5_$aMF6tbKL" role="3bR37C">
           <node concept="1Busua" id="5_$aMF6tbKM" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1AO1kwR_lbG" role="3bR37C">
+          <node concept="1Busua" id="1AO1kwR_lbH" role="1SiIV1">
+            <ref role="1Busuk" node="4cWf37BbAnE" resolve="jetbrains.mps.lang.checkedName" />
           </node>
         </node>
       </node>

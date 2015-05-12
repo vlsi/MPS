@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -18,16 +20,20 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
   public FixDynamicReferences_MigrationScript(IOperationContext operationContext) {
     super("Replace dynamic references with static references");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "dynamic refs";
       }
+      @Override
       public String getAdditionalInfo() {
         return "dynamic refs";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(((Iterable<SReference>) node.getReferences())).any(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -35,6 +41,7 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
           }
         });
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         Map<String, SNode> roleToTarget = MapSequence.fromMap(new HashMap<String, SNode>());
         for (SReference ref : Sequence.fromIterable(node.getReferences())) {
@@ -47,6 +54,7 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
           node.setReferenceTarget(m.getKey(), m.getValue());
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

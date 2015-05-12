@@ -1899,9 +1899,9 @@
       <node id="1177504289526" at="2690,280,2691,77" concept="7" />
       <node id="1177504295435" at="2691,77,2692,190" concept="7" />
       <node id="1177504271507" at="2692,190,2693,22" concept="14" />
-      <node id="1219330993054" at="2714,196,2715,449" concept="14" />
+      <node id="1219330993054" at="2714,196,2715,531" concept="14" />
       <node id="1177503884613" at="2714,0,2717,0" concept="18" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="1177503884614" at="2714,196,2715,449" />
+      <scope id="1177503884614" at="2714,196,2715,531" />
       <scope id="1177503884613" at="2714,0,2717,0">
         <var name="_context" id="1177503884613" />
         <var name="operationContext" id="1177503884613" />

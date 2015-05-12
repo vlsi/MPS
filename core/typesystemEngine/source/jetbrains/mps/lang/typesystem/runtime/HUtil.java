@@ -17,10 +17,14 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -41,8 +45,14 @@ public class HUtil {
     }
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
-    return new ConceptMatchingPattern(conceptFQName);
+    return new ConceptMatchingPattern(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(conceptFQName)));
+  }
+
+  public static IMatchingPattern createMatchingPatternByConcept(SConcept concept) {
+    return new ConceptMatchingPattern(concept);
   }
 
   public static boolean isRuntimeTypeVariable(SNode node) {

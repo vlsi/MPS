@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -293,7 +294,7 @@ public class IntelligentInputUtil {
     if (concept == null) {
       return false;
     }
-    boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)),
+    boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, MetaAdapterByDeclaration.getConcept(concept),
         "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
     if (property) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();

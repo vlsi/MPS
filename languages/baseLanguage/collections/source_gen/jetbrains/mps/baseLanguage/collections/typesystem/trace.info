@@ -6138,7 +6138,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1226599215753">
     <file name="ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.java">
       <node id="1193947530695" at="24,124,25,48" concept="9" />
-      <node id="1193944857496" at="25,48,26,350" concept="9" />
+      <node id="1193944857496" at="25,48,26,433" concept="9" />
       <node id="1193947565440" at="27,370,28,88" concept="4" />
       <node id="1193947322493" at="29,5,30,18" concept="10" />
       <node id="1226599215753" at="32,46,33,70" concept="10" />
@@ -6162,7 +6162,7 @@
       <node id="1196933487766" at="48,232,50,168" concept="0" />
       <node id="1196933487769" at="55,30,57,549" concept="0" />
       <node id="1196933487769" at="55,30,57,549" concept="0" />
-      <node id="1193945364985" at="26,350,29,5" concept="7" />
+      <node id="1193945364985" at="26,433,29,5" concept="7" />
       <node id="1226599215753" at="32,0,35,0" concept="8" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1226599215753" at="41,0,44,0" concept="8" trace="isWeak#()Z" />
       <node id="1196933487766" at="47,30,50,168" concept="0" />

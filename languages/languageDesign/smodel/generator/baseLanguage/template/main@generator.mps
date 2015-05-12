@@ -9200,7 +9200,7 @@
       <node concept="gft3U" id="4pZHQlQSe5d" role="1lVwrX">
         <node concept="2YIFZM" id="1RKF6U61$Z2" role="gfFT$">
           <ref role="1Pybhc" to="i8bi:5IkW5anFcpd" resolve="SLinkOperations" />
-          <ref role="37wK5l" to="i8bi:5IkW5anFcpj" resolve="findLinkDeclaration" />
+          <ref role="37wK5l" to="i8bi:4w5s_ONLzt" resolve="findLinkDeclaration" />
           <node concept="Xl_RD" id="1RKF6U61$Z5" role="37wK5m">
             <property role="Xl_RC" value="concept FQ name" />
             <node concept="17Uvod" id="1RKF6U61GU_" role="lGtFl">
