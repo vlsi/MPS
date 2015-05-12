@@ -17,9 +17,13 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.newTypesystem.rules.DoubleTermRules;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -42,18 +46,21 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   private DoubleTermRules<T> myDoubleTermRules = new DoubleTermRules<T>() {
     @Override
     protected Iterable<String> allSuperConcepts(String conceptFQName) {
-      ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName);
-      if (conceptDescriptor.isInterfaceConcept()) return Collections.emptyList();
+      ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(conceptFQName);
+      if (concept.isInterfaceConcept()) return Collections.emptyList();
 
-      String superConcept = conceptDescriptor.getSuperConcept();
-      if (superConcept == null) return Collections.emptyList();
+      SConceptId sid = concept.getSuperConceptId();
+      String sname = concept.getSuperConcept();
 
-      List<String> res = new ArrayList<String>(4);
-      while (superConcept != null) {
-        res.add(superConcept);
-        superConcept = ConceptRegistry.getInstance().getConceptDescriptor(superConcept).getSuperConcept();
+      List<String> res = new ArrayList<String>(2);
+      while (sid != null) {
+        SConcept superConcept = MetaAdapterFactory.getConcept(sid, sname);
+        res.add(sname);
+
+        ConceptDescriptor superDesc = ConceptRegistry.getInstance().getConceptDescriptor(superConcept);
+        sid = superDesc.getSuperConceptId();
+        sname = superDesc.getSuperConcept();
       }
-
       return res;
     }
 
@@ -89,7 +96,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
     List<T> result = new ArrayList<T>(4);
     Set<T> rules = myRules.get(conceptPair);
     synchronized (rules) {
-      for (T rule: rules) {
+      for (T rule : rules) {
         if (scope.containsNamespace(getNamespace(rule))) {
           result.add(rule);
         }
@@ -98,10 +105,10 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
     return Collections.unmodifiableList(result);
   }
 
-  private String getNamespace (T rule) {
+  private String getNamespace(T rule) {
     String pkg = rule.getClass().getPackage().getName();
     if (pkg.endsWith(TYPESYSTEM_SUFFIX)) {
-      return pkg.substring(0, pkg.length()-TYPESYSTEM_SUFFIX.length());
+      return pkg.substring(0, pkg.length() - TYPESYSTEM_SUFFIX.length());
     }
     return pkg;
   }
