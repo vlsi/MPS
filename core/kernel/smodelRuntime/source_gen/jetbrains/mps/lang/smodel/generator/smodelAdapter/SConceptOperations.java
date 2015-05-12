@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class SConceptOperations {
@@ -177,13 +176,12 @@ public final class SConceptOperations {
     if (concept == null) {
       return new ArrayList<SAbstractConcept>();
     }
-    Set<String> descendants = ConceptDescendantsCache.getInstance().getDescendants(concept.getQualifiedName());
+    Set<SAbstractConcept> descendants = ConceptDescendantsCache.getInstance().getDescendants(concept);
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
-    for (String descendant : descendants) {
-      SAbstractConcept declaration = MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(descendant));
-      SLanguage lang = declaration.getLanguage();
+    for (SAbstractConcept descendant : descendants) {
+      SLanguage lang = descendant.getLanguage();
       if (SetSequence.fromSet(availableLanguages).contains(lang)) {
-        result.add(declaration);
+        result.add(descendant);
       }
     }
     return result;

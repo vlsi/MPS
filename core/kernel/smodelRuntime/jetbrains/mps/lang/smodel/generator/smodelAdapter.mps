@@ -363,6 +363,7 @@
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -3539,7 +3540,7 @@
             <property role="TrG5h" value="descendants" />
             <node concept="3uibUv" id="1EtdPNufvoI" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
-              <node concept="17QB3L" id="1EtdPNufvoJ" role="11_B2D" />
+              <node concept="3bZ5Sz" id="6O6H9VQLzO$" role="11_B2D" />
             </node>
             <node concept="2OqwBi" id="1EtdPNufvoK" role="33vP2m">
               <node concept="2YIFZM" id="207KEdpTk1M" role="2Oq$k0">
@@ -3547,14 +3548,9 @@
                 <ref role="1Pybhc" to="cu2c:~ConceptDescendantsCache" resolve="ConceptDescendantsCache" />
               </node>
               <node concept="liA8E" id="1EtdPNufvoM" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~ConceptDescendantsCache.getDescendants(java.lang.String):java.util.Set" resolve="getDescendants" />
-                <node concept="2OqwBi" id="1EtdPNug6qk" role="37wK5m">
-                  <node concept="37vLTw" id="1EtdPNug6jn" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1EtdPNufvoq" resolve="concept" />
-                  </node>
-                  <node concept="liA8E" id="6tLUGr5LSqy" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
-                  </node>
+                <ref role="37wK5l" to="cu2c:~ConceptDescendantsCache.getDescendants(org.jetbrains.mps.openapi.language.SAbstractConcept):java.util.Set" resolve="getDescendants" />
+                <node concept="37vLTw" id="1EtdPNug6jn" role="37wK5m">
+                  <ref role="3cqZAo" node="1EtdPNufvoq" resolve="concept" />
                 </node>
               </node>
             </node>
@@ -3581,31 +3577,12 @@
         </node>
         <node concept="1DcWWT" id="1EtdPNufvoW" role="3cqZAp">
           <node concept="3clFbS" id="1EtdPNufvoX" role="2LFqv$">
-            <node concept="3cpWs8" id="1EtdPNufvoY" role="3cqZAp">
-              <node concept="3cpWsn" id="1EtdPNufvoZ" role="3cpWs9">
-                <property role="TrG5h" value="declaration" />
-                <node concept="3uibUv" id="1Qk62llKod4" role="1tU5fm">
-                  <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
-                </node>
-                <node concept="2YIFZM" id="1EtdPNugiDQ" role="33vP2m">
-                  <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
-                  <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                  <node concept="2YIFZM" id="1EtdPNufvp0" role="37wK5m">
-                    <ref role="37wK5l" to="jpli:~SModelUtil.findConceptDeclaration(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findConceptDeclaration" />
-                    <ref role="1Pybhc" to="jpli:~SModelUtil" resolve="SModelUtil" />
-                    <node concept="37vLTw" id="1EtdPNufvp1" role="37wK5m">
-                      <ref role="3cqZAo" node="1EtdPNufvpj" resolve="descendant" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="1EtdPNufvp3" role="3cqZAp">
               <node concept="3cpWsn" id="1EtdPNufvp4" role="3cpWs9">
                 <property role="TrG5h" value="lang" />
                 <node concept="2OqwBi" id="1EtdPNugkBn" role="33vP2m">
-                  <node concept="37vLTw" id="1EtdPNugknC" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1EtdPNufvoZ" resolve="declaration" />
+                  <node concept="37vLTw" id="6O6H9VQL$gi" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1EtdPNufvpj" resolve="descendant" />
                   </node>
                   <node concept="liA8E" id="1EtdPNugl1A" role="2OqNvi">
                     <ref role="37wK5l" to="t3eg:~SAbstractConcept.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
@@ -3632,8 +3609,8 @@
                   <node concept="2OqwBi" id="1EtdPNufvpf" role="3clFbG">
                     <node concept="liA8E" id="1EtdPNufvpg" role="2OqNvi">
                       <ref role="37wK5l" to="k7g3:~List.add(java.lang.Object):boolean" resolve="add" />
-                      <node concept="37vLTw" id="1EtdPNufvph" role="37wK5m">
-                        <ref role="3cqZAo" node="1EtdPNufvoZ" resolve="declaration" />
+                      <node concept="37vLTw" id="6O6H9VQL$pG" role="37wK5m">
+                        <ref role="3cqZAo" node="1EtdPNufvpj" resolve="descendant" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="1EtdPNufvpi" role="2Oq$k0">
@@ -3646,7 +3623,7 @@
           </node>
           <node concept="3cpWsn" id="1EtdPNufvpj" role="1Duv9x">
             <property role="TrG5h" value="descendant" />
-            <node concept="17QB3L" id="1EtdPNufvpk" role="1tU5fm" />
+            <node concept="3bZ5Sz" id="6O6H9VQLzUX" role="1tU5fm" />
           </node>
           <node concept="37vLTw" id="1EtdPNufvpl" role="1DdaDG">
             <ref role="3cqZAo" node="1EtdPNufvoH" resolve="descendants" />
