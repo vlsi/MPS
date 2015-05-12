@@ -260,7 +260,7 @@ class GenerationSession {
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {
         myLogger.handleException(e);
-        myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed (see exception)");
+        myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed");
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } finally {
         if (success) {
