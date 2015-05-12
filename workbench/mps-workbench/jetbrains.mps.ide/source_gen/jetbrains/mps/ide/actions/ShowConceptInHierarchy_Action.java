@@ -8,8 +8,10 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -19,8 +21,6 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.ide.editor.tabs.TabbedEditor;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowHierarchy;
@@ -47,8 +47,15 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
+      Project p = event.getData(PlatformDataKeys.PROJECT_CONTEXT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
       if (p == null) {
         return false;
       }
@@ -78,8 +85,8 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    HierarchyViewTool tool = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(HierarchyViewTool.class);
-    tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    HierarchyViewTool tool = ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(HierarchyViewTool.class);
+    tool.showItemInHierarchy(ShowConceptInHierarchy_Action.this.getConceptNode(_params));
     tool.openToolLater(true);
   }
   private SNode getConceptNode(final Map<String, Object> _params) {
@@ -102,7 +109,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       return null;
     }
     TabbedEditor tabbedEditor = (TabbedEditor) ((Editor) MapSequence.fromMap(_params).get("editor"));
-    SNode editedNode = ((SNodePointer) tabbedEditor.getCurrentlyEditedNode()).resolve(MPSModuleRepository.getInstance());
+    SNode editedNode = tabbedEditor.getCurrentlyEditedNode().resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository());
     if (!(SNodeOperations.isInstanceOf(editedNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
       return null;
     }
