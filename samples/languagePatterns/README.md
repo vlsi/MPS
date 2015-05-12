@@ -48,7 +48,19 @@ Scoping rules ensure that:
 or "introduce variable" refactoring).
 
 
-## fluent editing
+## dotexpression
+
+De-referencing elements by "dot" notation is a very common practise in many languages. BaseLanguage offers the DotExpression concept to mimics Java's
+"dot" operator and you can leverage it in your languages, if they're extending BaseLanguage's expressions.
+Let's assume a simple form with several addresses that need to be validated by validation expressions. The expressions need to refer to the street and zip code
+of each address in order to include their values in the validation expression. The sample defines:
+* Address concept to represent the actual address
+* AddressReference concept that extends Expression and represents an address in the validation expression
+* StreetOperation and ZipOperation, both extending the OperationOnAddress abstract concept, which form the right-side of DotExpressions and infer the correct type
+
+
+
+## fluent-editing
 
 An example of creating a text-like editing experience and implements many of the recommendations mentioned in
 the Editor cookbook (https://confluence.jetbrains.com/display/MPSD32/Editor+cookbook). It implements a simple language for specifying drawing commands (line, rectangle):

@@ -6,6 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -484,6 +485,78 @@
     <node concept="1TJgyi" id="1CEujLdGyhH" role="1TKVEl">
       <property role="TrG5h" value="detail" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAGZg6">
+    <property role="TrG5h" value="SomeForm" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="34LRSv" value="some form" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4yAESKAGZg9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addresses" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="4yAESKAGZgb" resolve="Address" />
+    </node>
+    <node concept="1TJgyj" id="4yAESKAGZhf" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="validation" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4yAESKAGZg7" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAGZgb">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="Address" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4yAESKAHfhO" role="1TKVEl">
+      <property role="TrG5h" value="kind" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4yAESKAGZgc" role="1TKVEl">
+      <property role="TrG5h" value="street" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4yAESKAGZge" role="1TKVEl">
+      <property role="TrG5h" value="zip" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAHjkP">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="AddressReference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="4yAESKAHjkQ" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4yAESKAGZgb" resolve="Address" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIbwt">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="ZipOperation" />
+    <property role="34LRSv" value="zip" />
+    <ref role="1TJDcQ" node="4yAESKAIRxw" resolve="OperationOnAddress" />
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIrbB">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="StreetOperation" />
+    <property role="34LRSv" value="street" />
+    <ref role="1TJDcQ" node="4yAESKAIRxw" resolve="OperationOnAddress" />
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIRxw">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="OperationOnAddress" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4yAESKAIRxx" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
 </model>

@@ -12,14 +12,16 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 2:
-        return new Performance_Constraints();
       case 3:
+        return new Performance_Constraints();
+      case 4:
         return new Singer_Constraints();
-      case 1:
+      case 2:
         return new Participant_Constraints();
       case 0:
         return new ComponentUsage_Constraints();
+      case 1:
+        return new OperationOnAddress_Constraints();
       default:
         return new BaseConstraintsDescriptor(fqName);
     }
@@ -38,7 +40,10 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x4ed97160b0a7fb71L) {
       return new ComponentUsage_Constraints();
     }
+    if (id == 0x48a6ab8c26bb7860L) {
+      return new OperationOnAddress_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer"};
 }
