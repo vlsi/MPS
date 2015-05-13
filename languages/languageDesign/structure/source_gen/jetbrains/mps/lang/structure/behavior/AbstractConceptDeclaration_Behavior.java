@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -245,6 +246,8 @@ public class AbstractConceptDeclaration_Behavior {
     }
     return null;
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean call_isDefaultSubstitutable_7429110134803670673(SNode thisNode) {
     return !(SNodeOperations.asSConcept(thisNode).isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(thisNode), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
