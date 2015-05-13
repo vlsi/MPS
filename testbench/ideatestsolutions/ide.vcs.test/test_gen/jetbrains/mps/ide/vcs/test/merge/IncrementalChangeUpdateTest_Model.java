@@ -9,9 +9,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.Change;
 import org.junit.Assert;
 import java.util.Arrays;
+import com.intellij.openapi.vcs.FileStatus;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
-import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -63,7 +63,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
 
     // commit 
     myGitVcs.getCheckinEnvironment().commit(Arrays.asList(change), "dumb commit");
-    myWaitHelper.waitForFileStatusChange(modelFile, null);
+    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
     Assert.assertNull(myDiff.getChangeSet());
 
