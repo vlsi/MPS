@@ -3549,47 +3549,6 @@
         </node>
       </node>
     </node>
-    <node concept="13i0hz" id="hEwILMy" role="13h7CS">
-      <property role="13i0is" value="false" />
-      <property role="TrG5h" value="isDefaultSubstitutableConcept" />
-      <node concept="10P_77" id="hEwILMz" role="3clF45" />
-      <node concept="3clFbS" id="hEwILM$" role="3clF47">
-        <node concept="3clFbJ" id="hEwILM_" role="3cqZAp">
-          <node concept="2OqwBi" id="6spw4TQeyqv" role="3clFbw">
-            <node concept="13iPFW" id="6spw4TQeyqw" role="2Oq$k0" />
-            <node concept="2qgKlT" id="6spw4TQeyqx" role="2OqNvi">
-              <ref role="37wK5l" node="6spw4TQeyqh" resolve="isDefaultSubstitutable" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="hEwILMJ" role="3clFbx">
-            <node concept="3cpWs6" id="hEwILMK" role="3cqZAp">
-              <node concept="2OqwBi" id="73yVtVm0UW5" role="3cqZAk">
-                <node concept="13iPFW" id="1oFmEVzbi8c" role="2Oq$k0" />
-                <node concept="2qgKlT" id="73yVtVm0XQE" role="2OqNvi">
-                  <ref role="37wK5l" node="73yVtVlWOga" resolve="isSubconceptOf" />
-                  <node concept="37vLTw" id="73yVtVm11xF" role="37wK5m">
-                    <ref role="3cqZAo" node="hEwILMS" resolve="expectedConcept" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="hEwILMQ" role="3cqZAp">
-          <node concept="3clFbT" id="hEwILMR" role="3cqZAk">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="hEwILMS" role="3clF46">
-        <property role="TrG5h" value="expectedConcept" />
-        <node concept="3THzug" id="hEwILMT" role="1tU5fm" />
-      </node>
-      <node concept="3Tm1VV" id="hJrm0B1" role="1B3o_S" />
-      <node concept="2AHcQZ" id="66k2xMoNsEP" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="13i0hz" id="73yVtVlWOga" role="13h7CS">
       <property role="TrG5h" value="isSubconceptOf" />
       <node concept="3Tm1VV" id="73yVtVlWOgb" role="1B3o_S" />
