@@ -8,6 +8,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -229,6 +230,7 @@
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -294,6 +296,9 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
+        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="1180457458947" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" flags="nn" index="3oJPKh" />
       <concept id="1180458444893" name="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" flags="nn" index="3oNA_f" />
@@ -414,30 +419,50 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="hMuznQk" role="3cqZAp">
-          <node concept="2OqwBi" id="hMuzuRk" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagT_wl" role="2Oq$k0">
-              <ref role="3cqZAo" node="hMuz4EB" resolve="result" />
-            </node>
-            <node concept="TSZUe" id="hMuzvtG" role="2OqNvi">
-              <node concept="3K4zz7" id="4SXqwBkbjLP" role="25WWJ7">
-                <node concept="2OqwBi" id="4SXqwBkbkwf" role="3K4GZi">
-                  <node concept="13iPFW" id="4SXqwBkbkhM" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="4SXqwBkbl64" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:f_TJDff" />
-                  </node>
+        <node concept="3clFbJ" id="5Q6nhO$i$Ko" role="3cqZAp">
+          <node concept="3clFbS" id="5Q6nhO$i$Kq" role="3clFbx">
+            <node concept="3clFbF" id="hMuznQk" role="3cqZAp">
+              <node concept="2OqwBi" id="hMuzuRk" role="3clFbG">
+                <node concept="37vLTw" id="3GM_nagT_wl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="hMuz4EB" resolve="result" />
                 </node>
-                <node concept="3B5_sB" id="4SXqwBkbjXq" role="3K4E3e">
-                  <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                </node>
-                <node concept="3clFbC" id="4SXqwBkbhJJ" role="3K4Cdx">
-                  <node concept="10Nm6u" id="4SXqwBkbhUq" role="3uHU7w" />
-                  <node concept="2OqwBi" id="hMuzNHc" role="3uHU7B">
-                    <node concept="13iPFW" id="hMuzMVB" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="hMuzPdW" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                <node concept="TSZUe" id="hMuzvtG" role="2OqNvi">
+                  <node concept="3K4zz7" id="4SXqwBkbjLP" role="25WWJ7">
+                    <node concept="2OqwBi" id="4SXqwBkbkwf" role="3K4GZi">
+                      <node concept="13iPFW" id="4SXqwBkbkhM" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4SXqwBkbl64" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                      </node>
+                    </node>
+                    <node concept="3B5_sB" id="4SXqwBkbjXq" role="3K4E3e">
+                      <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                    </node>
+                    <node concept="3clFbC" id="4SXqwBkbhJJ" role="3K4Cdx">
+                      <node concept="10Nm6u" id="4SXqwBkbhUq" role="3uHU7w" />
+                      <node concept="2OqwBi" id="hMuzNHc" role="3uHU7B">
+                        <node concept="13iPFW" id="hMuzMVB" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="hMuzPdW" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpce:f_TJDff" />
+                        </node>
+                      </node>
                     </node>
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="7vc5PjWrVtv" role="3clFbw">
+            <node concept="2OqwBi" id="7vc5PjWrVtx" role="3fr31v">
+              <node concept="2OqwBi" id="7vc5PjWrVty" role="2Oq$k0">
+                <node concept="13iPFW" id="7vc5PjWrVtz" role="2Oq$k0" />
+                <node concept="2qgKlT" id="7vc5PjWrVt$" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7vc5PjWrVt_" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="3nh3qo" id="7vc5PjWrVCw" role="37wK5m">
+                  <ref role="3nh3qp" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 </node>
               </node>
             </node>
@@ -3606,6 +3631,18 @@
         <ref role="2I9WkF" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       </node>
       <node concept="3clFbS" id="hMuxyK5" role="3clF47" />
+      <node concept="P$JXv" id="5Q6nhO$iwFp" role="lGtFl">
+        <node concept="TZ5HA" id="5Q6nhO$iwFq" role="TZ5H$">
+          <node concept="1dT_AC" id="5Q6nhO$iwFr" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns all immediate superconcepts, if no extended concept is specified for a concept, returns BaseConcept also." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5Q6nhO$ixG5" role="TZ5H$">
+          <node concept="1dT_AC" id="5Q6nhO$ixG6" role="1dT_Ay">
+            <property role="1dT_AB" value="Does not return BaseConcept for BaseConcept" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2A8AB0rAWpG" role="13h7CS">
       <property role="TrG5h" value="getAllSuperConcepts" />
