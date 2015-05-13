@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
@@ -35,7 +35,7 @@ public class EditWatchAction_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(PlatformDataKeys.PROJECT_CONTEXT);
+      Project p = event.getData(CommonDataKeys.PROJECT);
       MapSequence.fromMap(_params).put("ideaProject", p);
       if (p == null) {
         return false;

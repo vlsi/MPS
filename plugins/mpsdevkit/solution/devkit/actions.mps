@@ -7306,7 +7306,7 @@
     </node>
     <node concept="1DS2jV" id="ZVS8OJp8uw" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="ZVS8OJp8ux" role="1oa70y" />
     </node>
     <node concept="1QGGSu" id="6XsdSphRbac" role="3Uehp1">
@@ -7563,7 +7563,7 @@
     </node>
     <node concept="1DS2jV" id="4NF6yZZSDpk" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="4NF6yZZSDpl" role="1oa70y" />
     </node>
     <node concept="1QGGSu" id="6XsdSphQSXV" role="3Uehp1">

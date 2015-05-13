@@ -14,7 +14,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -66,7 +66,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(PlatformDataKeys.PROJECT_CONTEXT);
+      Project p = event.getData(CommonDataKeys.PROJECT);
       if (p == null) {
         return false;
       }
@@ -79,6 +79,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     final SearchQuery query = new SearchQuery(event.getData(MPSCommonDataKeys.MODULE), scope);
     final IResultProvider provider = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("There are no usages of language's concepts");
-    UsagesViewTool.showUsages(event.getData(PlatformDataKeys.PROJECT_CONTEXT), provider, query, opt);
+    UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
   }
 }

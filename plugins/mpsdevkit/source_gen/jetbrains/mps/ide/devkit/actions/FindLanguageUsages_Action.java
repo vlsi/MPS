@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -52,7 +52,7 @@ public class FindLanguageUsages_Action extends BaseAction {
       }
     }
     {
-      Project p = event.getData(PlatformDataKeys.PROJECT_CONTEXT);
+      Project p = event.getData(CommonDataKeys.PROJECT);
       if (p == null) {
         return false;
       }
@@ -65,6 +65,6 @@ public class FindLanguageUsages_Action extends BaseAction {
     final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
     final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
-    UsagesViewTool.showUsages(event.getData(PlatformDataKeys.PROJECT_CONTEXT), provider, query, opt);
+    UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
   }
 }
