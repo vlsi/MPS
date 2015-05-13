@@ -16,9 +16,11 @@ import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -111,8 +113,13 @@ public final class SNodeUtil {
   public static String getDetailedPresentation(SNode node) {
     return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getDetailedPresentation_2354269628709769373", new Object[]{});
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isDefaultSubstitutable(SNode node) {
     return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_isDefaultSubstitutable_7429110134803670673", new Object[]{});
+  }
+  public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
+    return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
   }
   public static List<SNode> findAllAspects(SNode node) {
     return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{});
