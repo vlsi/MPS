@@ -50,7 +50,11 @@ public class ModelRefMigration extends BaseProjectMigration {
       }
     }).toListSequence();
 
-    for (Language language : Sequence.fromIterable(modules).ofType(Language.class)) {
+    for (Language language : Sequence.fromIterable(modules).ofType(Language.class).where(new IWhereFilter<Language>() {
+      public boolean accept(Language it) {
+        return !(it.isReadOnly());
+      }
+    })) {
       for (Generator generator : CollectionSequence.fromCollection(language.getGenerators())) {
         generator.updateModuleReferences();
       }

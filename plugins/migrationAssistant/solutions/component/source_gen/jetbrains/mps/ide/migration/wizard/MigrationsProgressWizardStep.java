@@ -12,6 +12,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import org.apache.log4j.Level;
 import javax.swing.JComponent;
 import javax.swing.DefaultListModel;
 import java.util.Collections;
@@ -31,6 +32,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -40,6 +42,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MigrationsProgressWizardStep extends MigrationWizardStep {
   public static final String ID = "progress";
@@ -60,6 +64,10 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         PersistenceRegistry.getInstance().disableFastFindUsages();
         try {
           doRun(progress);
+        } catch (Throwable t) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("exception occured on migration", t);
+          }
         } finally {
           myIsComplete = true;
           setFraction(progress, 1.0);
@@ -149,7 +157,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList("Checking models... Please wait.");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
         if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
             setFraction(progress, ProgressEstimation.preCheck(fraction));
@@ -201,7 +209,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     addElementToMigrationList("Checking models... Please wait.");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Iterable<SModule> modules = ((Iterable<SModule>) ProjectHelper.toMPSProject(myProject).getModulesWithGenerators());
+        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject));
         final Wrappers._int moduleNum = new Wrappers._int(0);
         if (MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
           public void invoke(Double fraction) {
@@ -297,7 +305,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-      Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
+      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
       return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }
@@ -310,7 +318,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
     }
     public Iterable<Problem> getProblems() {
       jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-      Iterable<SModule> modules = ((Iterable<SModule>) mpsProject.getModulesWithGenerators());
+      Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(mpsProject);
       return MigrationCheckUtil.getProblems(modules, null, 100);
     }
   }
@@ -340,4 +348,5 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
       });
     }
   }
+  protected static Logger LOG = LogManager.getLogger(MigrationsProgressWizardStep.class);
 }
