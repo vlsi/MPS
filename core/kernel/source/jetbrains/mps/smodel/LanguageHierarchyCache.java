@@ -136,6 +136,9 @@ public class LanguageHierarchyCache implements CoreComponent {
     return children == null ? Collections.<String>emptySet() : Collections.unmodifiableSet(children);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS except conceptNode.conceptOp
   public Set<String> getAllDescendantsOfConcept(String conceptFqName) {
     Set<String> result = new LinkedHashSet<String>();
     collectDescendants(conceptFqName, result);
