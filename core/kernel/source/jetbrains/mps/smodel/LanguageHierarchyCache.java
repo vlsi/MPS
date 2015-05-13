@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
 import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -95,14 +96,23 @@ public class LanguageHierarchyCache implements CoreComponent {
     }
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static List<String> getParentsNames(String conceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static Set<String> getAncestorsNames(final String conceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getAncestorsNames();
   }
