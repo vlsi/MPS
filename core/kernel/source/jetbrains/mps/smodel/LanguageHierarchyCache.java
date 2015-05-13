@@ -34,6 +34,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+@Deprecated
+@ToRemove(version = 3.3)
+//no usages in MPS
 // todo: DO NOT USE if not sure, use ConceptDescendantsCache
 // todo: should be built based on nodes, useful for ConceptHierarchyTree?
 public class LanguageHierarchyCache implements CoreComponent {

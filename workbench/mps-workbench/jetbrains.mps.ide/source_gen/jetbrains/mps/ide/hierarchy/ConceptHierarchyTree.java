@@ -5,14 +5,27 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.List;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
+/**
+ * This works on concept nodes
+ */
 public class ConceptHierarchyTree extends AbstractHierarchyTree {
   private LanguageHierarchyCache myCache;
   public ConceptHierarchyTree(LanguageHierarchyCache cache, AbstractHierarchyView abstractHierarchyView, boolean isParentHierarchy) {
@@ -24,13 +37,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
     }
-    List<String> parents = LanguageHierarchyCache.getParentsNames(NameUtil.nodeFQName(node));
-    Set<SNode> result = new HashSet<SNode>();
-    for (String s : parents) {
-      SNode conceptDeclaration = SModelUtil.findConceptDeclaration(s);
-      result.add(conceptDeclaration);
-    }
-    return result;
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{}));
   }
   @Override
   protected SNode getParent(SNode node) {
@@ -46,16 +53,30 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     }
   }
   @Override
-  protected Set<SNode> getDescendants(SNode conceptDeclaration, Set<SNode> visited) throws CircularHierarchyException {
-    if (visited.contains(conceptDeclaration)) {
-      throw new CircularHierarchyException(conceptDeclaration, "circular concept hierarchy");
+  protected Set<SNode> getDescendants(final SNode conceptNode, Set<SNode> visited) throws CircularHierarchyException {
+    if (visited.contains(conceptNode)) {
+      throw new CircularHierarchyException(conceptNode, "circular concept hierarchy");
     }
-    Set<SNode> result = new HashSet<SNode>();
-    for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
-      SNode abstractConceptDeclaration = SModelUtil.findConceptDeclaration(s);
-      result.add(abstractConceptDeclaration);
-    }
-    return result;
+    Iterable<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
+    Iterable<SModel> structures = Sequence.fromIterable(languages).select(new ISelector<Language, SModel>() {
+      public SModel select(Language it) {
+        return LanguageAspect.STRUCTURE.get(it);
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it != null;
+      }
+    });
+    Iterable<SNode> ancestors = Sequence.fromIterable(structures).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return ListSequence.fromList(SModelOperations.roots(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{})).contains(conceptNode);
+          }
+        });
+      }
+    });
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), ancestors);
   }
   @Override
   protected String noNodeString() {
