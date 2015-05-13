@@ -34,6 +34,7 @@ import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
@@ -110,7 +111,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo imple
     getModelForTypechecking().addRootNode(copy);
 
     final SNode conceptDecl = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
-    boolean holeIsAType = MetaAdapterByDeclaration.getConcept(conceptDecl).isSubConceptOf(SNodeUtil.concept_IType);
+    final SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(conceptDecl);
+    boolean holeIsAType = concept != null && concept.isSubConceptOf(SNodeUtil.concept_IType);
     SNode parent = mapping.get(myParentNode);
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
     SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);

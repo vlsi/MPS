@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultSChildSetter;
 import jetbrains.mps.smodel.action.DefaultSChildSubstituteAction;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -123,11 +124,10 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo impl
     final SNode copy = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
     getModelForTypechecking().addRootNode(copy);
 
-    //todo use generated code here
-    boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(myLink.getDeclarationNode()), "jetbrains.mps.lang.core.structure.IType");
-    SNode hole = null;
+    final SAbstractConcept concept = myLink.getTargetConcept();
+    boolean holeIsAType = concept != null && concept.isSubConceptOf(SNodeUtil.concept_IType);
     SNode parent = mapping.get(myParentNode);
-    hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
       parent.insertChildBefore(myLink, hole, child);
