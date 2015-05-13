@@ -6,10 +6,10 @@ import org.junit.Test;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.changes.Change;
 import org.junit.Assert;
 import java.util.Arrays;
-import com.intellij.openapi.vcs.FileStatus;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -54,10 +54,11 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         getTestModel().save();
       }
     });
-    myChangeListManager.ensureUpToDate(false);
 
     // check change list 
     VirtualFile modelFile = getTestModelFile();
+    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.MODIFIED);
+    myChangeListManager.ensureUpToDate(false);
     Change change = myChangeListManager.getChange(modelFile);
     Assert.assertTrue(change != null);
 
@@ -75,9 +76,9 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     } catch (VcsException e) {
       throw new AssertionError(e);
     }
-    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
+    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.MODIFIED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a91a0(myDiff.getChangeSet())).isNotEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a02a0(myDiff.getChangeSet())).isNotEmpty());
     revertDiskChangesAndWait(getTestModelFile());
   }
 
@@ -169,7 +170,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a71a6(myDiff.getChangeSet())).isEmpty());
   }
-  private static List<ModelChange> check_2jv4hj_a0a91a0(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_2jv4hj_a0a02a0(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

@@ -7711,19 +7711,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3oUomEoMJvz" role="3cqZAp">
-          <node concept="2OqwBi" id="3oUomEoMJv$" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeu_8c" role="2Oq$k0">
-              <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
-            </node>
-            <node concept="liA8E" id="3oUomEoMJvA" role="2OqNvi">
-              <ref role="37wK5l" to="o84r:~ChangeListManagerImpl.ensureUpToDate(boolean):boolean" resolve="ensureUpToDate" />
-              <node concept="3clFbT" id="3oUomEoMJvB" role="37wK5m">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="7HgS$Vk9567" role="3cqZAp" />
         <node concept="3SKdUt" id="7HgS$Vk9qok" role="3cqZAp">
           <node concept="3SKdUq" id="7HgS$Vk9qA2" role="3SKWNk">
@@ -7738,6 +7725,36 @@
             </node>
             <node concept="1rXfSq" id="7HgS$Vk9hhH" role="33vP2m">
               <ref role="37wK5l" node="7HgS$Vk99dG" resolve="getTestModelFile" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="16G$2QdQui7" role="3cqZAp">
+          <node concept="2OqwBi" id="16G$2QdQuis" role="3clFbG">
+            <node concept="37vLTw" id="16G$2QdQuir" role="2Oq$k0">
+              <ref role="3cqZAo" node="56cvcsnFql$" resolve="myWaitHelper" />
+            </node>
+            <node concept="liA8E" id="16G$2QdQuit" role="2OqNvi">
+              <ref role="37wK5l" node="4DNDPQS2KSW" resolve="waitForFileStatusChange" />
+              <node concept="37vLTw" id="16G$2QdQui9" role="37wK5m">
+                <ref role="3cqZAo" node="7HgS$Vk9hhG" resolve="modelFile" />
+              </node>
+              <node concept="10M0yZ" id="16G$2QdQuk8" role="37wK5m">
+                <ref role="1PxDUh" to="3dcm:~FileStatus" resolve="FileStatus" />
+                <ref role="3cqZAo" to="3dcm:~FileStatus.MODIFIED" resolve="MODIFIED" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="16G$2QdQuib" role="3cqZAp">
+          <node concept="2OqwBi" id="16G$2QdQuiU" role="3clFbG">
+            <node concept="37vLTw" id="16G$2QdQuiT" role="2Oq$k0">
+              <ref role="3cqZAo" node="3oUomEoMAZS" resolve="myChangeListManager" />
+            </node>
+            <node concept="liA8E" id="16G$2QdQuiV" role="2OqNvi">
+              <ref role="37wK5l" to="o84r:~ChangeListManagerImpl.ensureUpToDate(boolean):boolean" resolve="ensureUpToDate" />
+              <node concept="3clFbT" id="16G$2QdQuid" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
             </node>
           </node>
         </node>
@@ -7940,7 +7957,7 @@
               </node>
               <node concept="10M0yZ" id="16G$2QdPfoo" role="37wK5m">
                 <ref role="1PxDUh" to="3dcm:~FileStatus" resolve="FileStatus" />
-                <ref role="3cqZAo" to="3dcm:~FileStatus.NOT_CHANGED" resolve="NOT_CHANGED" />
+                <ref role="3cqZAo" to="3dcm:~FileStatus.MODIFIED" resolve="MODIFIED" />
               </node>
             </node>
           </node>
