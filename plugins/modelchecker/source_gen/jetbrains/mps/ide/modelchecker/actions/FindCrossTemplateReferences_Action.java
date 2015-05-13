@@ -8,16 +8,17 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.GeneratorTemplatesChecker;
 
@@ -43,16 +44,22 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel md) {
-        return SModelStereotype.isGeneratorModel(md) && SNodeOperations.isGeneratable(md);
+        return SModelStereotype.isGeneratorModel(md) && GenerationFacade.canGenerate(md);
       }
     }));
 
-    ModelCheckerTool.getInstance(event.getData(CommonDataKeys.PROJECT)).checkModelsAndShowResult(modelDescriptors, new GeneratorTemplatesChecker());
+    ModelCheckerTool.getInstance(event.getData(CommonDataKeys.PROJECT)).checkModelsAndShowResult(models, new GeneratorTemplatesChecker());
   }
 }
