@@ -435,12 +435,10 @@ public class IntelligentInputUtil {
     EditorCell cellToSelect = cellInfo.findCell(component);
     if (cellToSelect != null) {
       EditorCell_Label label = CellFinderUtil.findFirstError(cellToSelect, true);
-      if (label != null) {
-        if (label.isEditable() && !(label instanceof EditorCell_Constant)) {
-          label.changeText(textToSet);
-          return true;
-        }
+      if (label != null && label != cellToSelect && label.isEditable() && !(label instanceof EditorCell_Constant)) {
+        label.changeText(textToSet);
         label.end();
+        return true;
       }
     }
     return false;

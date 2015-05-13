@@ -2932,6 +2932,9 @@
     <node concept="lpD6D" id="P9hc2Kf0pJ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:P9hc2K2Okf" resolve="SUBST_BooleanConstant_with_value" />
     </node>
+    <node concept="lpD6D" id="4Awu96F2Qmg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96F17J3" resolve="RedoIncorrectlyTypedValue" />
+    </node>
     <node concept="lpD6D" id="2ISwQnyeteK" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnybaQ$" resolve="RestoreRefCellAfterUndo" />
     </node>
@@ -2943,6 +2946,18 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8f" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3BRJPwFQ4xK" resolve="TrickyUndoTest" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2QIt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EFuV9" resolve="UndoChangesCursorPositionFirst" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2R6G" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EW4D_" resolve="UndoChangesCursorPositionFirstWithIncorrectValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RuX" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EJmGS" resolve="UndoIncorrectlyTypedValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RRg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EZynh" resolve="UndoIncorrectlyTypedValueWithFollowingCommand" />
     </node>
     <node concept="lpD6D" id="2ISwQnyet$b" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnxDk3v" resolve="UndoLocalVariableDeclarationCreation" />

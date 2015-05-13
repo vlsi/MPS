@@ -4,15 +4,15 @@ package jetbrains.mps.lang.test.matcher;
 
 
 public class ConceptDifference extends DifferanceItem {
-  public String myConcept1;
-  public String myConcept2;
-  public ConceptDifference(String concept1, String concept2) {
-    myConcept1 = concept1;
-    myConcept2 = concept2;
+  public String myActualConcept;
+  public String myExpectedConcept;
+  public ConceptDifference(String actualConcept, String expectedConcept) {
+    myActualConcept = actualConcept;
+    myExpectedConcept = expectedConcept;
   }
   @Override
   public String toString() {
-    return "Different concepts: " + myConcept1 + ", " + myConcept2;
+    return "Different concepts: [was: " + myActualConcept + ", expected: " + myExpectedConcept + "]";
   }
   @Override
   public boolean equals(Object obj) {
@@ -23,6 +23,6 @@ public class ConceptDifference extends DifferanceItem {
       return false;
     }
     ConceptDifference diff = (ConceptDifference) obj;
-    return myConcept1.equals(diff.myConcept1) && myConcept2.equals(diff.myConcept2);
+    return myActualConcept.equals(diff.myActualConcept) && myExpectedConcept.equals(diff.myExpectedConcept);
   }
 }
