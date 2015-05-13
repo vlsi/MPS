@@ -495,14 +495,6 @@
             <node concept="2ShNRf" id="32hQGdSI405" role="33vP2m">
               <node concept="1pGfFk" id="32hQGdSI406" role="2ShVmc">
                 <ref role="37wK5l" node="51NkKCgB44M" resolve="ConceptHierarchyTree" />
-                <node concept="2OqwBi" id="32hQGdSI407" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxeuyI8" role="2Oq$k0">
-                    <ref role="3cqZAo" node="YlfeaJOSiT" resolve="myCoreComponents" />
-                  </node>
-                  <node concept="liA8E" id="32hQGdSI409" role="2OqNvi">
-                    <ref role="37wK5l" to="86um:~MPSCoreComponents.getLanguageHierarchyCache():jetbrains.mps.smodel.LanguageHierarchyCache" resolve="getLanguageHierarchyCache" />
-                  </node>
-                </node>
                 <node concept="Xjq3P" id="32hQGdSI40a" role="37wK5m" />
                 <node concept="37vLTw" id="2BHiRxglB98" role="37wK5m">
                   <ref role="3cqZAo" node="51NkKCgB3aL" resolve="isParentHierarchy" />
@@ -9687,22 +9679,9 @@
     <node concept="3uibUv" id="51NkKCgB44H" role="1zkMxy">
       <ref role="3uigEE" node="51NkKCgB38Z" resolve="AbstractHierarchyTree" />
     </node>
-    <node concept="312cEg" id="51NkKCgB44J" role="jymVt">
-      <property role="TrG5h" value="myCache" />
-      <node concept="3uibUv" id="51NkKCgB44K" role="1tU5fm">
-        <ref role="3uigEE" to="cu2c:~LanguageHierarchyCache" resolve="LanguageHierarchyCache" />
-      </node>
-      <node concept="3Tm6S6" id="51NkKCgB44L" role="1B3o_S" />
-    </node>
     <node concept="3clFbW" id="51NkKCgB44M" role="jymVt">
       <node concept="3Tm1VV" id="51NkKCgB44N" role="1B3o_S" />
       <node concept="3cqZAl" id="51NkKCgB44O" role="3clF45" />
-      <node concept="37vLTG" id="51NkKCgB44P" role="3clF46">
-        <property role="TrG5h" value="cache" />
-        <node concept="3uibUv" id="51NkKCgB44Q" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~LanguageHierarchyCache" resolve="LanguageHierarchyCache" />
-        </node>
-      </node>
       <node concept="37vLTG" id="51NkKCgB44R" role="3clF46">
         <property role="TrG5h" value="abstractHierarchyView" />
         <node concept="3uibUv" id="51NkKCgB44S" role="1tU5fm">
@@ -9724,16 +9703,6 @@
           </node>
           <node concept="37vLTw" id="2BHiRxglRvr" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB44U" resolve="isParentHierarchy" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="51NkKCgB451" role="3cqZAp">
-          <node concept="37vLTI" id="51NkKCgB452" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeunhI" role="37vLTJ">
-              <ref role="3cqZAo" node="51NkKCgB44J" resolve="myCache" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgmFqp" role="37vLTx">
-              <ref role="3cqZAo" node="51NkKCgB44P" resolve="cache" />
-            </node>
           </node>
         </node>
       </node>
