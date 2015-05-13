@@ -261,6 +261,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -277,6 +280,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="hDMFHdz">
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="1M2myG" to="tpd4:hyX3wvL" resolve="WhenConcreteVariableReference" />
     <node concept="1N5Pfh" id="hDMFHd$" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:hyX3Bgo" />
@@ -376,6 +380,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFIWz">
+    <property role="3GE5qa" value="pattern" />
     <ref role="1M2myG" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="1N5Pfh" id="hDMFIW$" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h6iQtwW" />
@@ -677,6 +682,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFIZl">
+    <property role="3GE5qa" value="pattern" />
     <ref role="1M2myG" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="1N5Pfh" id="hDMFIZm" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h6iQynJ" />
@@ -978,6 +984,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFJt6">
+    <property role="3GE5qa" value="pattern" />
     <ref role="1M2myG" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="1N5Pfh" id="hDMFJt7" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h6iOnTw" />
@@ -1431,6 +1438,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFJ_w">
+    <property role="3GE5qa" value="definition" />
     <ref role="1M2myG" to="tpd4:h5Z$b1c" resolve="TypeVarReference" />
     <node concept="1N5Pfh" id="hDMFJ_x" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h5Z$eQz" />
@@ -1449,6 +1457,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFLXt">
+    <property role="3GE5qa" value="definition.condition" />
     <ref role="1M2myG" to="tpd4:h5YaCyN" resolve="ConceptReference" />
     <node concept="1N5Pfh" id="hDMFLXu" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h5YaFr9" />
@@ -1554,6 +1563,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFMrJ">
+    <property role="3GE5qa" value="definition.condition" />
     <ref role="1M2myG" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="1N5Pfh" id="hDMFMrK" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h5YBMDq" />
@@ -1918,6 +1928,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFMSa">
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="1M2myG" to="tpd4:hBCnSoC" resolve="TypesystemIntentionArgument" />
     <node concept="1N5Pfh" id="hGQnaFX" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:hGQkaiO" />
@@ -1999,6 +2010,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hGQxrPK">
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="1M2myG" to="tpd4:hGQwW09" resolve="QuickFixArgumentReference" />
     <node concept="1N5Pfh" id="hGQxyew" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:hGQwW0a" />
@@ -2074,6 +2086,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOaTIa">
+    <property role="3GE5qa" value="definition.rule" />
     <ref role="1M2myG" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="2NXJUA" id="hQOaUj2" role="2NY200">
       <node concept="3clFbS" id="hQOaUj3" role="2VODD2">
@@ -2102,6 +2115,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQObkmX">
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <ref role="1M2myG" to="tpd4:hjaFuhR" resolve="ComparisonRule" />
     <node concept="2NXJUA" id="hQObkIq" role="2NY200">
       <node concept="3clFbS" id="hQObkIr" role="2VODD2">
@@ -2130,6 +2144,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQObpSV">
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="1M2myG" to="tpd4:hGQ5zx_" resolve="TypesystemQuickFix" />
     <node concept="2NXJUA" id="hQObqxe" role="2NY200">
       <node concept="3clFbS" id="hQObqxf" role="2VODD2">
@@ -2158,6 +2173,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQObtF9">
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <ref role="1M2myG" to="tpd4:hv5pCJM" resolve="InequationReplacementRule" />
     <node concept="2NXJUA" id="hQObuaq" role="2NY200">
       <node concept="3clFbS" id="hQObuar" role="2VODD2">
@@ -2186,6 +2202,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOb$DL">
+    <property role="3GE5qa" value="definition.rule" />
     <ref role="1M2myG" to="tpd4:hp8kY3U" resolve="NonTypesystemRule" />
     <node concept="2NXJUA" id="hQOb$WA" role="2NY200">
       <node concept="3clFbS" id="hQOb$WB" role="2VODD2">
@@ -2214,6 +2231,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQObFt6">
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <ref role="1M2myG" to="tpd4:h6sgANa" resolve="SubtypingRule" />
     <node concept="2NXJUA" id="hQObFLo" role="2NY200">
       <node concept="3clFbS" id="hQObFLp" role="2VODD2">
@@ -2242,6 +2260,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOKGiv">
+    <property role="3GE5qa" value="definition.statement.target" />
     <ref role="1M2myG" to="tpd4:hQODE00" resolve="PropertyMessageTarget" />
     <node concept="1N5Pfh" id="hQOKHm4" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:hQODJJI" />
@@ -2344,6 +2363,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hQOV_nq">
+    <property role="3GE5qa" value="definition.statement.target" />
     <ref role="1M2myG" to="tpd4:hQOE7Mk" resolve="ReferenceMessageTarget" />
     <node concept="1N5Pfh" id="hQOVAot" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:hQOEe1K" />
@@ -2446,6 +2466,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="N2YCLhcy4R">
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="1M2myG" to="tpd4:hQOEHw2" resolve="MessageStatement" />
     <node concept="nKS2y" id="N2YCLhcy4S" role="1MLUbF">
       <node concept="3clFbS" id="N2YCLhcy4T" role="2VODD2">
@@ -2460,6 +2481,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6OatSpL$riv">
+    <property role="3GE5qa" value="definition.statement.inequality" />
     <ref role="1M2myG" to="tpd4:49g6ijgJh$j" resolve="InequationReference" />
     <node concept="1N5Pfh" id="6OatSpL$riw" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:49g6ijgJh$k" />
@@ -2522,6 +2544,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="718BIU4uEIy">
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="1M2myG" to="tpd4:718BIU4urlt" resolve="QuickFixFieldReference" />
     <node concept="1N5Pfh" id="718BIU4uEIz" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:718BIU4urlu" />
@@ -2597,6 +2620,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="VKl2IWeDkT">
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="1M2myG" to="tpd4:VKl2IWel1I" resolve="WasSelectedNodeOperation" />
     <node concept="nKS2y" id="VKl2IWeDkU" role="1MLUbF">
       <node concept="3clFbS" id="VKl2IWeDkV" role="2VODD2">
@@ -2626,6 +2650,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="VKl2IWeDlI">
+    <property role="3GE5qa" value="_obsolete" />
     <ref role="1M2myG" to="tpd4:VKl2IWel1C" resolve="CaretPositionOperation" />
     <node concept="nKS2y" id="VKl2IWeDlJ" role="1MLUbF">
       <node concept="3clFbS" id="VKl2IWeDlK" role="2VODD2">
