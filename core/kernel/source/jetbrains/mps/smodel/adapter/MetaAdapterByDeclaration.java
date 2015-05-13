@@ -38,6 +38,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * This allows to convert source-level (non-published code) entities to structure-level ids (published code ids)
  * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
+ *
+ * NOTE: todo: we should review all usages of this class and distinguish usages and meta-usages (sometimes we want e.g. inheritance info on "published" concept, sometimes on nodes)
+ * todo usage of this class is rather node-level information usage and should be rewritten
  */
 public class MetaAdapterByDeclaration {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MetaAdapterByDeclaration.class));
