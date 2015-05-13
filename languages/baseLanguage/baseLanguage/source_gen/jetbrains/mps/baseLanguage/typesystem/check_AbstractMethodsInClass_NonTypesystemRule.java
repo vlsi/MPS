@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,7 +29,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
             {
               SNode matchingNode_qfxa59_a0a1a0a = classifier;
               if (matchingNode_qfxa59_a0a1a0a != null) {
-                matches_qfxa59_a0a1a0a = SModelUtil_new.isAssignableConcept(matchingNode_qfxa59_a0a1a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+                matches_qfxa59_a0a1a0a = matchingNode_qfxa59_a0a1a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
               }
             }
             if (matches_qfxa59_a0a1a0a) {

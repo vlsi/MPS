@@ -8,14 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IsEmptyOperation_InferenceRule() {
@@ -29,7 +29,7 @@ public class typeof_IsEmptyOperation_InferenceRule extends AbstractInferenceRule
         {
           SNode matchingNode_sezqyh_a1a = parent;
           if (matchingNode_sezqyh_a1a != null) {
-            matches_sezqyh_a1a = SModelUtil_new.isAssignableConcept(matchingNode_sezqyh_a1a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.DotExpression");
+            matches_sezqyh_a1a = matchingNode_sezqyh_a1a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
           }
         }
         if (matches_sezqyh_a1a) {

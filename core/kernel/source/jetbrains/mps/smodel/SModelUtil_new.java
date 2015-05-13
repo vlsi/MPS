@@ -47,6 +47,7 @@ public class SModelUtil_new {
    */
   @Deprecated
   @ToRemove(version = 3.3)
+  //not used in MPS
   public static boolean isAssignableConcept(String fromConceptFqName, String toConceptFqName) {
     return SModelUtil.isAssignableConcept(fromConceptFqName, toConceptFqName);
   }

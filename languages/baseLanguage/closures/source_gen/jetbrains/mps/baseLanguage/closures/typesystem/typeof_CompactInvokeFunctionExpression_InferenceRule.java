@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_CompactInvokeFunctionExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -52,7 +52,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
               {
                 SNode matchingNode_1b5x3i_a0a4a = typeCheckingContext.getExpandedNode(reifiedRet);
                 if (matchingNode_1b5x3i_a0a4a != null) {
-                  matches_1b5x3i_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_1b5x3i_a0a4a.getConcept().getQualifiedName(), "jetbrains.mps.lang.typesystem.structure.MeetType");
+                  matches_1b5x3i_a0a4a = matchingNode_1b5x3i_a0a4a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"));
                 }
               }
               if (matches_1b5x3i_a0a4a) {

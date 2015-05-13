@@ -705,7 +705,7 @@
       <node id="1178725705148" at="25,5,26,43" concept="9" />
       <node id="1178725705150" at="27,7,28,43" concept="9" />
       <node id="1178725705150" at="29,9,30,49" concept="9" />
-      <node id="1178725705150" at="31,48,32,179" concept="4" />
+      <node id="1178725705150" at="31,48,32,228" concept="4" />
       <node id="1219443376597" at="36,11,37,50" concept="9" />
       <node id="1219443376597" at="37,50,38,215" concept="9" />
       <node id="1219443376597" at="38,215,39,300" concept="4" />
@@ -737,7 +737,7 @@
       <node id="1178725705148" at="24,49,48,5" concept="0" />
       <node id="1178725705141" at="23,0,50,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1178725705141" at="21,50,21,50" />
-      <scope id="1178725705150" at="31,48,32,179" />
+      <scope id="1178725705150" at="31,48,32,228" />
       <scope id="1178725705141" at="50,50,51,168" />
       <scope id="1178725705141" at="53,68,54,102" />
       <scope id="1178725705141" at="56,30,57,17" />
@@ -1670,7 +1670,7 @@
       <node id="1178725705667" at="24,5,25,66" concept="9" />
       <node id="1178725705671" at="26,7,27,43" concept="9" />
       <node id="1178725705671" at="28,9,29,72" concept="9" />
-      <node id="1178725705671" at="30,48,31,179" concept="4" />
+      <node id="1178725705671" at="30,48,31,228" concept="4" />
       <node id="1219443359859" at="35,11,36,50" concept="9" />
       <node id="1219443359859" at="36,50,37,215" concept="9" />
       <node id="1219443359859" at="37,215,38,300" concept="4" />
@@ -1702,7 +1702,7 @@
       <node id="1178725705667" at="23,115,47,5" concept="0" />
       <node id="1178725705665" at="23,0,49,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1178725705665" at="21,53,21,53" />
-      <scope id="1178725705671" at="30,48,31,179" />
+      <scope id="1178725705671" at="30,48,31,228" />
       <scope id="1178725705665" at="49,50,50,171" />
       <scope id="1178725705665" at="52,68,53,102" />
       <scope id="1178725705665" at="55,30,56,17" />
@@ -7148,13 +7148,13 @@
       <node id="1240152218576" at="32,11,33,89" concept="9" />
       <node id="1240152218578" at="34,13,35,51" concept="9" />
       <node id="1240152218578" at="36,15,37,95" concept="9" />
-      <node id="1240152218578" at="38,56,39,196" concept="4" />
+      <node id="1240152218578" at="38,56,39,245" concept="4" />
       <node id="1240152280223" at="43,17,44,62" concept="9" />
       <node id="1240152280223" at="44,62,45,221" concept="9" />
       <node id="1240152280223" at="45,221,46,380" concept="4" />
       <node id="1240152227796" at="48,22,49,53" concept="9" />
       <node id="1240152227796" at="50,17,51,97" concept="9" />
-      <node id="1240152227796" at="52,58,53,197" concept="4" />
+      <node id="1240152227796" at="52,58,53,246" concept="4" />
       <node id="1240152294406" at="57,19,58,64" concept="9" />
       <node id="1240152294406" at="58,64,59,223" concept="9" />
       <node id="1240152294406" at="59,223,60,385" concept="4" />
@@ -7241,8 +7241,8 @@
       <node id="2870391434971458918" at="27,5,72,5" concept="0" />
       <node id="1237470333097" at="21,0,74,0" concept="8" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1237470333097" at="19,54,19,54" />
-      <scope id="1240152218578" at="38,56,39,196" />
-      <scope id="1240152227796" at="52,58,53,197" />
+      <scope id="1240152218578" at="38,56,39,245" />
+      <scope id="1240152227796" at="52,58,53,246" />
       <scope id="1237470333097" at="74,50,75,172" />
       <scope id="1237470333097" at="77,68,78,102" />
       <scope id="1237470333097" at="80,30,81,17" />

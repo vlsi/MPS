@@ -16,9 +16,9 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -70,7 +70,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         {
           SNode matchingNode_lcu2lp_a4a = SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
           if (matchingNode_lcu2lp_a4a != null) {
-            matches_lcu2lp_a4a = SModelUtil_new.isAssignableConcept(matchingNode_lcu2lp_a4a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+            matches_lcu2lp_a4a = matchingNode_lcu2lp_a4a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"));
           }
         }
         if (matches_lcu2lp_a4a) {

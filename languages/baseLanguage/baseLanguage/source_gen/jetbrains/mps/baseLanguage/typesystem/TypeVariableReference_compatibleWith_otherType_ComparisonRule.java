@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -27,7 +26,7 @@ public class TypeVariableReference_compatibleWith_otherType_ComparisonRule exten
         {
           SNode matchingNode_p68yon_a2a = node2;
           if (matchingNode_p68yon_a2a != null) {
-            matches_p68yon_a2a = SModelUtil_new.isAssignableConcept(matchingNode_p68yon_a2a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+            matches_p68yon_a2a = matchingNode_p68yon_a2a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
           }
         }
         if (matches_p68yon_a2a) {

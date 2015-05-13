@@ -11,10 +11,10 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -30,7 +30,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
         {
           SNode matchingNode_q6q799_a1a = SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
           if (matchingNode_q6q799_a1a != null) {
-            matches_q6q799_a1a = SModelUtil_new.isAssignableConcept(matchingNode_q6q799_a1a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
+            matches_q6q799_a1a = matchingNode_q6q799_a1a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
           }
         }
         if (matches_q6q799_a1a) {

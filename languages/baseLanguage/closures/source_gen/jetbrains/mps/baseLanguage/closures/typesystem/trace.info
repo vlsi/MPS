@@ -2099,7 +2099,7 @@
       <node id="4359876593789720524" at="48,11,49,92" concept="8" />
       <node id="4359876593789720526" at="50,13,51,51" concept="8" />
       <node id="4359876593789720526" at="52,15,53,98" concept="8" />
-      <node id="4359876593789720526" at="54,56,55,187" concept="4" />
+      <node id="4359876593789720526" at="54,56,55,236" concept="4" />
       <node id="4359876593789720529" at="59,17,60,60" concept="8" />
       <node id="4359876593789720529" at="60,60,61,224" concept="8" />
       <node id="4359876593789720529" at="61,224,62,660" concept="4" />
@@ -2150,7 +2150,7 @@
       <node id="4359876593789720522" at="43,5,73,5" concept="0" />
       <node id="1235747312129" at="25,0,75,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1235747312129" at="23,65,23,65" />
-      <scope id="4359876593789720526" at="54,56,55,187" />
+      <scope id="4359876593789720526" at="54,56,55,236" />
       <scope id="1235747312129" at="75,50,76,180" />
       <scope id="1235747312129" at="78,68,79,102" />
       <scope id="1235747312129" at="81,30,82,17" />
