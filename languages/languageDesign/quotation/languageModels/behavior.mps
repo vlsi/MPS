@@ -158,9 +158,6 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
-    <language id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes">
-      <concept id="8077936094962911282" name="jetbrains.mps.lang.scopes.structure.ParentScope" flags="nn" index="iy90A" />
-    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -1115,7 +1112,21 @@
                     <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
                     <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
                     <node concept="3Tm1VV" id="1BC2tkV2de9" role="1B3o_S" />
-                    <node concept="iy90A" id="1BC2tkV3VKX" role="37wK5m" />
+                    <node concept="2ShNRf" id="6d2lQ01VlSE" role="37wK5m">
+                      <node concept="1pGfFk" id="6d2lQ01VlSF" role="2ShVmc">
+                        <ref role="37wK5l" to="o8zo:4k9eBec$QVW" resolve="ModelPlusImportedScope" />
+                        <node concept="2OqwBi" id="6d2lQ01VlSG" role="37wK5m">
+                          <node concept="13iPFW" id="6d2lQ01VlSH" role="2Oq$k0" />
+                          <node concept="I4A8Y" id="6d2lQ01VlSI" role="2OqNvi" />
+                        </node>
+                        <node concept="3clFbT" id="6d2lQ01VlSJ" role="37wK5m">
+                          <property role="3clFbU" value="true" />
+                        </node>
+                        <node concept="35c_gC" id="6d2lQ01VlSK" role="37wK5m">
+                          <ref role="35c_gD" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFb_" id="1BC2tkV2dky" role="jymVt">
                       <property role="TrG5h" value="isExcluded" />
                       <property role="1EzhhJ" value="false" />
