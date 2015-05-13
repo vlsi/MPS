@@ -18,13 +18,21 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloadedOpsTypesProvider {
   protected SNode myOperandType;
+  //make @NotNull after 3.1
+  protected SAbstractConcept myOperationConcept;
+
+  @Deprecated
+  @ToRemove(version = 3.3)
   protected String myOperationConceptFQName;
   protected boolean myTypeIsExact = false;
   protected boolean myIsStrong = false;
@@ -33,7 +41,17 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
   protected String myRuleNodeId;
 
   @Override
+  //body is needed for compatibility only
+  public SAbstractConcept getApplicableConcept() {
+    if (myOperationConcept != null) return myOperationConcept;
+    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName());
+  }
+
+  @Override
+  @Deprecated
+  @ToRemove(version = 3.3)
   public String getApplicableConceptFQName() {
+    if (myOperationConcept != null) return myOperationConcept.getQualifiedName();
     return myOperationConceptFQName;
   }
 
@@ -73,6 +91,6 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
 
   @Override
   public void reportConflict(IRuleConflictWarningProducer warningProducer) {
-    Logger.wrap(LogManager.getLogger(myOperationConceptFQName)).warning("conflicting rules for overloaded operation type detected " + String.valueOf(myOperandType));
+    Logger.wrap(LogManager.getLogger(getApplicableConcept().getQualifiedName())).warning("conflicting rules for overloaded operation type detected " + String.valueOf(myOperandType));
   }
 }

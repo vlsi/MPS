@@ -31,12 +31,7 @@ public class ModelsScope extends Scope {
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, String targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
     myRootsOnly = rootsOnly;
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(targetConcept);
-    if (cd == null) {
-      myTargetConcept = MetaAdapterFactoryByName.getConcept(targetConcept);
-    } else {
-      myTargetConcept = (cd.isInterfaceConcept() ? MetaAdapterFactoryByName.getInterfaceConcept(targetConcept) : MetaAdapterFactoryByName.getConcept(targetConcept));
-    }
+    myTargetConcept=MetaAdapterFactoryByName.getTypedConcept_DoNotUse(targetConcept);
   }
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, SAbstractConcept targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
