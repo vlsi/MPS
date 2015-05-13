@@ -199,14 +199,18 @@ public class EditorCell_Table extends EditorCell_Collection {
   public int getColumnCount() {
     return myModel.getColumnCount();
   }
-  public List<EditorCell> getColumnCells(int columnIntex) {
+  public List<EditorCell> getColumnCells(int columnIntex) throws ColumnNotFoundException {
     assert !(myEmpty);
     assert columnIntex >= 0 && columnIntex < myModel.getColumnCount();
     List<EditorCell> result = ListSequence.fromList(new ArrayList<EditorCell>());
     for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
       EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-      ListSequence.fromList(result).addElement(((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
+      EditorCell columnCell = ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow).getCellAt(columnIntex + 1);
+      if (columnCell == null) {
+        throw new ColumnNotFoundException(columnIntex);
+      }
+      ListSequence.fromList(result).addElement(columnCell);
     }
     return result;
   }
