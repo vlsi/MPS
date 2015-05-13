@@ -3540,7 +3540,7 @@
     </node>
     <node concept="1DS2jV" id="6rIkchcPPOY" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="6rIkchcPPOZ" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6rIkchcPPez" role="1NuT2Z">
