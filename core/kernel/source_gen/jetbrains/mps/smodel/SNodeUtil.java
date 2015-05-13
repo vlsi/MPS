@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
@@ -33,6 +33,9 @@ public final class SNodeUtil {
   public static final SConceptId conceptId_InterfaceConceptDeclaration = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")).getId();
   public static final SConceptId conceptId_RuntimeTypeVariable = ((SConceptAdapterById) MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x113f84956fbL, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")).getId();
   public static final SPropertyId propertyId_INamedConcept_name = ((SPropertyAdapterById) MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).getId();
+
+  public static final SAbstractConcept concept_PropertyAttribute = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
+  public static final SAbstractConcept concept_LinkAttribute = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute");
 
 
   /**

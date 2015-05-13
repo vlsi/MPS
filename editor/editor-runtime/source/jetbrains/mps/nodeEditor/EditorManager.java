@@ -37,11 +37,13 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -477,9 +479,9 @@ public class EditorManager {
     if (cellNode == node) {
       return cell;
     }
-    String cellNodeConcept = cellNode.getConcept().getQualifiedName();
-    if (!SModelUtil.isAssignableConcept(cellNodeConcept, "jetbrains.mps.lang.core.structure.PropertyAttribute") &&
-        !SModelUtil.isAssignableConcept(cellNodeConcept, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
+    SConcept nodeConcept = cellNode.getConcept();
+    if (!nodeConcept.isSubConceptOf(SNodeUtil.concept_PropertyAttribute) &&
+        !nodeConcept.isSubConceptOf(SNodeUtil.concept_LinkAttribute)) {
       // the only known possibility to get "wrapped" cell is when the cell is wrapped into a PropertyAttribute or LinkAttribute.
       return cell;
     }

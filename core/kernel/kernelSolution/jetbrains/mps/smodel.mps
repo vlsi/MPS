@@ -1359,6 +1359,29 @@
       </node>
     </node>
     <node concept="2tJIrI" id="7BIvS$tLebb" role="jymVt" />
+    <node concept="Wx3nA" id="4wG2MBHiEao" role="jymVt">
+      <property role="TrG5h" value="concept_PropertyAttribute" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4wG2MBHiEap" role="1B3o_S" />
+      <node concept="35c_gC" id="4wG2MBHiEaq" role="33vP2m">
+        <ref role="35c_gD" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
+      </node>
+      <node concept="3uibUv" id="4wG2MBHiEar" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="4wG2MBHiE$I" role="jymVt">
+      <property role="TrG5h" value="concept_LinkAttribute" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4wG2MBHiE$J" role="1B3o_S" />
+      <node concept="35c_gC" id="4wG2MBHiE$K" role="33vP2m">
+        <ref role="35c_gD" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
+      </node>
+      <node concept="3uibUv" id="4wG2MBHiE$L" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4wG2MBHiDJ2" role="jymVt" />
     <node concept="2tJIrI" id="3zKvvWw1Qkm" role="jymVt" />
     <node concept="Wx3nA" id="3zKvvWw1Igt" role="jymVt">
       <property role="TrG5h" value="concept_VoidType" />
