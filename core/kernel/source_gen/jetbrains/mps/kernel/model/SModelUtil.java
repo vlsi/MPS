@@ -122,6 +122,7 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, SNode to) {
+    // not used in MPS 
     assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
     assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
     if (from == to) {
@@ -142,6 +143,7 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, String toFqName) {
+    // not used in MPS 
     if (from == null) {
       return false;
     }
