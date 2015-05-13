@@ -61,10 +61,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.editor.MPSEditorOpener</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.editor.warningPanel.MPSEditorWarningsManager</implementation-class>
     </component>
 

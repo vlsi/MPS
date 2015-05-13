@@ -25,8 +25,7 @@ import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
@@ -114,10 +113,10 @@ public abstract class CurrentLinePositionComponentEx<S> {
             SNode node = newPainter.getSNode();
             if (node != null) {
               if (visible && focus) {
-                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(mpsProject), true, false).getCurrentEditorComponent();
-                currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent, myFileEditorManager);
-                if (currentEditorComponent != null) {
-                  attach(newPainter, currentEditorComponent);
+                jetbrains.mps.openapi.editor.EditorComponent currentEditorComponent = NavigationSupport.getInstance().openNode(mpsProject, node, true, false).getCurrentEditorComponent();
+                currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent);
+                if (currentEditorComponent instanceof EditorComponent) {
+                  attach(newPainter, (EditorComponent) currentEditorComponent);
                 }
               }
 
