@@ -37,6 +37,7 @@ import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -140,7 +141,16 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myComponent;
   }
 
+  /**
+   * @deprecated use {@link #inspect(SNode, FileEditor, String[])}  instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void inspect(SNode node, IOperationContext context, FileEditor fileEditor, String[] enabledHints) {
+    inspect(node, fileEditor, enabledHints);
+  }
+
+  public void inspect(SNode node, FileEditor fileEditor, String[] enabledHints) {
     if (node instanceof jetbrains.mps.smodel.SNode && !SNodeUtil.isAccessible(node, myInspectorComponent.getRepository())) {
       // Note: inspector does not support disposed nodes. If we get one, just clear the tool.
       // The editor holds references to nodes between read actions and these references are updated asynchronously.

@@ -82,12 +82,12 @@ public class MPSEditorOpener {
     final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
 
     //restore inspector state for opened editor (if exists)
-    if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
+    if (!restorePrevSelectionInInspector(nodeEditor)) {
       //open inspector (if no cell is selected in editor, inspector won't be opened)
       DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
       FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
       NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUpdater().getInitialEditorHints());
+      getInspector().inspect(node, fileEditor, nec.getUpdater().getInitialEditorHints());
     }
 
 
@@ -223,7 +223,7 @@ public class MPSEditorOpener {
     }
   }
 
-  private boolean restorePrevSelectionInInspector(Editor nodeEditor, IOperationContext context, InspectorTool inspectorTool) {
+  private boolean restorePrevSelectionInInspector(Editor nodeEditor) {
     if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
       return false;
     }
@@ -234,7 +234,7 @@ public class MPSEditorOpener {
 
     DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUpdater().getInitialEditorHints());
+    getInspector().inspect(nec.getLastInspectedNode(), fileEditor, nec.getUpdater().getInitialEditorHints());
     return true;
   }
 }
