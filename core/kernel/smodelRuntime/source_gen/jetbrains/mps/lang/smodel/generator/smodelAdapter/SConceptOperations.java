@@ -115,6 +115,7 @@ public final class SConceptOperations {
   @Deprecated
   @ToRemove(version = 3.3)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
+    // not used in MPS 
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
   /**
@@ -129,6 +130,7 @@ public final class SConceptOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {
+    // not used in MPS 
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }

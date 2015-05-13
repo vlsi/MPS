@@ -323,6 +323,12 @@
         <reference id="1174642800329" name="concept" index="1YaFvo" />
       </concept>
     </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+      </concept>
+    </language>
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal">
       <concept id="1173990517731" name="jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall" flags="nn" index="1niqFM">
         <property id="1173992444083" name="methodName" index="1npL6y" />
@@ -5685,9 +5691,15 @@
               <node concept="3clFbS" id="7iM8rO3UvGz" role="2VODD2">
                 <node concept="3clFbJ" id="7iM8rO3URf5" role="3cqZAp">
                   <node concept="3clFbS" id="7iM8rO3URf8" role="3clFbx">
+                    <node concept="34ab3g" id="1BC2tkV52vV" role="3cqZAp">
+                      <property role="35gtTG" value="warn" />
+                      <node concept="Xl_RD" id="1BC2tkV52vW" role="34bqiv">
+                        <property role="Xl_RC" value="do not use conceptNode&lt;&gt;.super-concepts/direct" />
+                      </node>
+                    </node>
                     <node concept="3cpWs6" id="7iM8rO3Vy56" role="3cqZAp">
                       <node concept="3fl2lp" id="7iM8rO3UPID" role="3cqZAk">
-                        <ref role="3fl3PK" to="i8bi:5IkW5anF8AP" resolve="getDirectSuperConcepts" />
+                        <ref role="3fl3PK" to="i8bi:5IkW5anF8B0" resolve="getDirectSuperConcepts" />
                         <node concept="3B5_sB" id="7iM8rO3UOqb" role="3fl3PI">
                           <ref role="3B5MYn" to="i8bi:5IkW5anF8_6" resolve="SConceptOperations" />
                         </node>
@@ -5778,6 +5790,12 @@
               <node concept="3clFbS" id="7iM8rO3VznI" role="2VODD2">
                 <node concept="3clFbJ" id="7iM8rO3VzGi" role="3cqZAp">
                   <node concept="3clFbS" id="7iM8rO3VzGj" role="3clFbx">
+                    <node concept="34ab3g" id="1BC2tkV52kY" role="3cqZAp">
+                      <property role="35gtTG" value="warn" />
+                      <node concept="Xl_RD" id="1BC2tkV52kZ" role="34bqiv">
+                        <property role="Xl_RC" value="do not use conceptNode&lt;&gt;.super-concepts/all" />
+                      </node>
+                    </node>
                     <node concept="3cpWs6" id="7iM8rO3VzGk" role="3cqZAp">
                       <node concept="3fl2lp" id="7iM8rO3VzGl" role="3cqZAk">
                         <ref role="3fl3PK" to="i8bi:5IkW5anF8C7" resolve="getAllSuperConcepts" />
@@ -5894,6 +5912,12 @@
               <node concept="3clFbS" id="7iM8rO3V$6a" role="2VODD2">
                 <node concept="3clFbJ" id="7iM8rO3V$hi" role="3cqZAp">
                   <node concept="3clFbS" id="7iM8rO3V$hj" role="3clFbx">
+                    <node concept="34ab3g" id="1BC2tkV4AsA" role="3cqZAp">
+                      <property role="35gtTG" value="warn" />
+                      <node concept="Xl_RD" id="1BC2tkV4AsC" role="34bqiv">
+                        <property role="Xl_RC" value="do not use conceptNode&lt;&gt;.sub-concepts" />
+                      </node>
+                    </node>
                     <node concept="3cpWs6" id="7iM8rO3V$hk" role="3cqZAp">
                       <node concept="3fl2lp" id="7iM8rO3V$hl" role="3cqZAk">
                         <ref role="3fl3PK" to="i8bi:6FS05yMg8nT" resolve="getAllSubConcepts" />
