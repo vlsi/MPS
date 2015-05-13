@@ -193,6 +193,12 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -1324,6 +1330,11 @@
       <node concept="10P_77" id="49NWpd$b1vM" role="3clF45" />
       <node concept="3Tm1VV" id="49NWpd$b1vK" role="1B3o_S" />
       <node concept="3clFbS" id="49NWpd$b1vL" role="3clF47">
+        <node concept="3SKdUt" id="4wG2MBHACYS" role="3cqZAp">
+          <node concept="3SKdUq" id="4wG2MBHACYT" role="3SKWNk">
+            <property role="3SKdUp" value="not used in MPS" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="49NWpd$b1vS" role="3cqZAp">
           <node concept="3clFbS" id="49NWpd$b1vU" role="3clFbx">
             <node concept="3cpWs6" id="49NWpd$b1wc" role="3cqZAp">
@@ -1400,6 +1411,11 @@
       <node concept="10P_77" id="6CIjHcu$EUc" role="3clF45" />
       <node concept="3Tm1VV" id="6CIjHcu$EUa" role="1B3o_S" />
       <node concept="3clFbS" id="6CIjHcu$EUb" role="3clF47">
+        <node concept="3SKdUt" id="4wG2MBHA9NH" role="3cqZAp">
+          <node concept="3SKdUq" id="4wG2MBHAa0Y" role="3SKWNk">
+            <property role="3SKdUp" value="not used in MPS" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="6CIjHcu$EUm" role="3cqZAp">
           <node concept="17R0WA" id="6CIjHcu$EUN" role="3clFbw">
             <node concept="37vLTw" id="2BHiRxgmyU8" role="3uHU7w">

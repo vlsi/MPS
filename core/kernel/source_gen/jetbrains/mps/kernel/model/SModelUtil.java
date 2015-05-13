@@ -155,7 +155,8 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0k(fromFqName, toFqName)) {
+    // not used in MPS 
+    if (eq_74see4_a0b0k(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -195,7 +196,7 @@ public class SModelUtil {
     }
     return null;
   }
-  private static boolean eq_74see4_a0a0k(Object a, Object b) {
+  private static boolean eq_74see4_a0b0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_74see4_a0b0b(Object o, Class<T> type) {

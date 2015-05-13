@@ -44,6 +44,7 @@
     <import index="vyt2" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.scope(MPS.Core/jetbrains.mps.scope@java_stub)" />
     <import index="ymbg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.constraints(MPS.Core/jetbrains.mps.smodel.constraints@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
+    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
@@ -393,6 +394,9 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
         <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
       </concept>
@@ -402,9 +406,6 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
-      </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
       </concept>
       <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
@@ -7825,14 +7826,19 @@
       </node>
       <node concept="3clFbS" id="2Jvt1sWfv5j" role="3clF47">
         <node concept="3clFbJ" id="2Jvt1sWfv5k" role="3cqZAp">
-          <node concept="2YIFZM" id="49NWpd$b1AE" role="3clFbw">
-            <ref role="37wK5l" to="iwwu:49NWpd$b1vI" resolve="isAssignableConcept" />
-            <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-            <node concept="37vLTw" id="2BHiRxglI9j" role="37wK5m">
-              <ref role="3cqZAo" node="2Jvt1sWfv5h" resolve="targetConcept" />
+          <node concept="2OqwBi" id="4wG2MBHAk3$" role="3clFbw">
+            <node concept="2YIFZM" id="4wG2MBHAj85" role="2Oq$k0">
+              <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+              <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+              <node concept="37vLTw" id="4wG2MBHAjWe" role="37wK5m">
+                <ref role="3cqZAo" node="2Jvt1sWfv5h" resolve="targetConcept" />
+              </node>
             </node>
-            <node concept="3nh3qo" id="49NWpd$b1AG" role="37wK5m">
-              <ref role="3nh3qp" to="tpee:g7pOWCK" resolve="Classifier" />
+            <node concept="liA8E" id="4wG2MBHAkFO" role="2OqNvi">
+              <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+              <node concept="35c_gC" id="4wG2MBHAgD4" role="37wK5m">
+                <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="2Jvt1sWfv5o" role="3clFbx">
