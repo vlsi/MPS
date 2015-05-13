@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class DebuggedtypeIsHighLevelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public DebuggedtypeIsHighLevelType_SubtypingRule() {
@@ -17,14 +17,11 @@ public class DebuggedtypeIsHighLevelType_SubtypingRule extends SubtypingRule_Run
   public SNode getSubOrSuperType(SNode debuggedType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(debuggedType, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, 0x3f11b1341fa25edaL, "highType"));
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x3f11b1341fa25ed8L, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return false;

@@ -11,8 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -37,14 +38,11 @@ public class typeof_VectorInitializer_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6219660258345567386", true), (SNode) SNodeOperations.copyNode(MathTypeUtil.qInt), false, true, _info_12389875345);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.math.structure.VectorInitializer";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

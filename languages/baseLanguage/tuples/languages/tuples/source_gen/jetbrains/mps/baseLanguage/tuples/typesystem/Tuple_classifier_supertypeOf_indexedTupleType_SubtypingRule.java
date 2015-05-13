@@ -18,8 +18,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -42,14 +43,11 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     }
     return result;
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1207157a8dcL, "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return true;

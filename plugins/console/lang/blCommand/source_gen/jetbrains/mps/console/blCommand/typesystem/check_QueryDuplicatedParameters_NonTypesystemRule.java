@@ -19,7 +19,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_QueryDuplicatedParameters_NonTypesystemRule() {
@@ -52,14 +52,11 @@ public class check_QueryDuplicatedParameters_NonTypesystemRule extends AbstractN
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.console.blCommand.structure.QueryParameterList";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217616ddf9L, "jetbrains.mps.console.blCommand.structure.QueryParameterList");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

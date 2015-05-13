@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_StringSwitchStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StringSwitchStatement_NonTypesystemRule() {
@@ -46,14 +46,11 @@ public class check_StringSwitchStatement_NonTypesystemRule extends AbstractNonTy
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Argument of string switch should be string", "r:ed059f83-fdac-4e67-8269-91684666291c(jetbrains.mps.baseLanguage.jdk7.typesystem)", "400642802550421743", null, errorTarget);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L, "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return true;

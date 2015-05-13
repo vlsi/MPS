@@ -15,7 +15,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class typeof_ITemplateCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ITemplateCall_InferenceRule() {
@@ -42,14 +42,11 @@ public class typeof_ITemplateCall_InferenceRule extends AbstractInferenceRule_Ru
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.generator.structure.ITemplateCall";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

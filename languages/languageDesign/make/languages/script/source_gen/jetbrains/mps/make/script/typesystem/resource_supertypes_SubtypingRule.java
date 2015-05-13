@@ -13,8 +13,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -33,14 +34,11 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     }
     return supertypes;
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.make.script.structure.ResourceType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return false;

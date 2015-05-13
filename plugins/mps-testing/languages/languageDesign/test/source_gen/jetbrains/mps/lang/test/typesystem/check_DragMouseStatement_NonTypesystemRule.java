@@ -11,7 +11,8 @@ import jetbrains.mps.lang.test.behavior.DragMouseStatement_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class check_DragMouseStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DragMouseStatement_NonTypesystemRule() {
@@ -24,14 +25,11 @@ public class check_DragMouseStatement_NonTypesystemRule extends AbstractNonTypes
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.test.structure.DragMouseStatement";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2ec0ea8c55ca0a3L, "jetbrains.mps.lang.test.structure.DragMouseStatement");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

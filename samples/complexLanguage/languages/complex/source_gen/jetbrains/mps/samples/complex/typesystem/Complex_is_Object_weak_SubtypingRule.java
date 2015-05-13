@@ -7,9 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -18,14 +19,11 @@ public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime 
   public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_f46hoj_a0a1();
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.samples.complex.structure.ComplexType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xff24ab03965e4d15L, 0x9aed52dc276658f4L, 0x11686a0422aL, "jetbrains.mps.samples.complex.structure.ComplexType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return true;

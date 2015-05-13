@@ -13,7 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule() {
@@ -27,14 +27,11 @@ public class check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule extends
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

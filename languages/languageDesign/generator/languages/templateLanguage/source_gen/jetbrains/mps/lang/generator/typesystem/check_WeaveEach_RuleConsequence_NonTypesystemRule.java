@@ -15,7 +15,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_WeaveEach_RuleConsequence_NonTypesystemRule() {
@@ -48,14 +48,11 @@ public class check_WeaveEach_RuleConsequence_NonTypesystemRule extends AbstractN
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

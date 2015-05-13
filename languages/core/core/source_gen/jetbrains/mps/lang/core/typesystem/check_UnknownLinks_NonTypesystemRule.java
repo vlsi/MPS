@@ -22,7 +22,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnknownLinks_NonTypesystemRule() {
@@ -77,14 +78,11 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

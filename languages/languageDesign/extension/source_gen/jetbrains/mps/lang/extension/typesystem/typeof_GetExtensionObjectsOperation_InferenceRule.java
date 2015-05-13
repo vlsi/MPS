@@ -9,9 +9,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -32,14 +33,11 @@ public class typeof_GetExtensionObjectsOperation_InferenceRule extends AbstractI
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "3175313036448577258", true), (SNode) _quotation_createNode_4o3874_a0d0b(typeCheckingContext.getRepresentative(OBJECT_TYPE_typevar_3175313036448577277)), _info_12389875345);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142ef747L, "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

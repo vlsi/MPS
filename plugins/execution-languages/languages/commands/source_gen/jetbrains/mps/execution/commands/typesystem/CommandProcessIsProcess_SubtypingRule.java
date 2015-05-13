@@ -7,9 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class CommandProcessIsProcess_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public CommandProcessIsProcess_SubtypingRule() {
@@ -17,14 +18,11 @@ public class CommandProcessIsProcess_SubtypingRule extends SubtypingRule_Runtime
   public SNode getSubOrSuperType(SNode commandProcessType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_y17zi2_a0a1();
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.execution.commands.structure.CommandProcessType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x87f99370d7e1ea3L, "jetbrains.mps.execution.commands.structure.CommandProcessType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return false;

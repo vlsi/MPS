@@ -8,9 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class typeof_MovingAverage_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,14 +24,11 @@ public class typeof_MovingAverage_InferenceRule extends AbstractInferenceRule_Ru
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "4001135958235924328", true), (SNode) _quotation_createNode_51zbuj_a0a0b(), _info_12389875345);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "org.jetbrains.mps.samples.Money.structure.MovingAverage";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x3786e3f480b1c19aL, "org.jetbrains.mps.samples.Money.structure.MovingAverage");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

@@ -9,8 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_EnumeratorType_IteratorType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -19,14 +20,11 @@ public class supertypesOf_EnumeratorType_IteratorType_SubtypingRule extends Subt
   public SNode getSubOrSuperType(SNode enumeratorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_8595bd_a0a1(SLinkOperations.getTarget(enumeratorType, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020864111L, 0x12020864112L, "elementType")));
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12020864111L, "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return false;

@@ -11,8 +11,9 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class typeof_Concept_GetAllSuperConcepts_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -53,14 +54,11 @@ public class typeof_Concept_GetAllSuperConcepts_InferenceRule extends AbstractIn
       }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7453996997715516800", false, false);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x112d8bf5d03L, "jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

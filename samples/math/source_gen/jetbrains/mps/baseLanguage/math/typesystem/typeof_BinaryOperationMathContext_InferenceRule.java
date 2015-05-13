@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -131,14 +132,11 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "8613885519962201025", false, false);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return true;

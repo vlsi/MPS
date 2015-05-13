@@ -11,8 +11,9 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -26,14 +27,11 @@ public class typeof_DataDependency_InferenceRule extends AbstractInferenceRule_R
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "4084841995419799530", true), (SNode) _quotation_createNode_mk6zss_a0a0b(MigrationScript_Behavior.call_getProducedData_8585153554445933384(SLinkOperations.getTarget(dD, MetaAdapterFactory.getReferenceLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, 0x4f6b4ac0cd6d4af5L, "script")))), _info_12389875345);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.migration.structure.DataDependency";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L, "jetbrains.mps.lang.migration.structure.DataDependency");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

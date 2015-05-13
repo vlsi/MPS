@@ -15,8 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -45,14 +46,11 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
     }
 
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

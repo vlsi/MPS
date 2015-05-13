@@ -13,7 +13,7 @@ import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildMpsLayout_TestModules_NonTypesystemRule() {
@@ -35,14 +35,11 @@ public class check_BuildMpsLayout_TestModules_NonTypesystemRule extends Abstract
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

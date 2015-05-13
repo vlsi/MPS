@@ -20,8 +20,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 
@@ -139,14 +140,11 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x118374464e4L, "jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return true;

@@ -12,8 +12,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -23,14 +24,11 @@ public class ExtensionPointType_supertypes_SubtypingRule extends SubtypingRule_R
   public List<SNode> getSubOrSuperTypes(SNode ept, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_bg8j1f_a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(ept, MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, 0x2c10fa62142eb539L, "extensionPoint")), MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x6f6f7f3b7a17bd0bL, "objectType"))));
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.extension.structure.ExtensionPointType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2c10fa62142eb538L, "jetbrains.mps.lang.extension.structure.ExtensionPointType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return true;

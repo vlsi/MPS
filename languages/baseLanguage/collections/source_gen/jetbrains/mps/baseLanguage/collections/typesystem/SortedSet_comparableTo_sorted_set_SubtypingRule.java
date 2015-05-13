@@ -8,10 +8,11 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -26,8 +27,8 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_9omwya_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_ELEMENT")));
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {

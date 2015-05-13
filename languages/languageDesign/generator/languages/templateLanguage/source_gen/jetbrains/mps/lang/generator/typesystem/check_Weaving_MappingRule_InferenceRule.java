@@ -14,7 +14,7 @@ import jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_Behavi
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public check_Weaving_MappingRule_InferenceRule() {
@@ -36,14 +36,11 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

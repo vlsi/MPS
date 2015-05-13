@@ -7,9 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
 public class WatchableListIsAListOrWatchables_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -18,14 +19,11 @@ public class WatchableListIsAListOrWatchables_SubtypingRule extends SubtypingRul
   public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return createClassifierType_izre6f_a0a1();
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x19926b3196c33bb3L, "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean isWeak() {
     return false;
