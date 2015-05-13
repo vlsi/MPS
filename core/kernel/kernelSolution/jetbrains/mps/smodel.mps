@@ -1413,6 +1413,18 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3zKvvWw1Lfv" role="jymVt" />
+    <node concept="Wx3nA" id="4wG2MBHiBII" role="jymVt">
+      <property role="TrG5h" value="concept_IType" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="4wG2MBHiBIJ" role="1B3o_S" />
+      <node concept="35c_gC" id="4wG2MBHiBIK" role="33vP2m">
+        <ref role="35c_gD" to="tpck:hYa1RjM" resolve="IType" />
+      </node>
+      <node concept="3uibUv" id="4wG2MBHiCaD" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4wG2MBHiBy0" role="jymVt" />
     <node concept="2tJIrI" id="4soTJTMNmN0" role="jymVt" />
     <node concept="Wx3nA" id="4soTJTMNmnL" role="jymVt">
       <property role="TrG5h" value="link_ConstructorDeclaration_returnType" />
