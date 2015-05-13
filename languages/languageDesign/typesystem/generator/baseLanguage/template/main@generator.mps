@@ -4181,7 +4181,9 @@
                       <node concept="liA8E" id="24cAaiVCaoj" role="2OqNvi">
                         <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                       </node>
-                      <node concept="30H73N" id="1R1KclLA1cY" role="2Oq$k0" />
+                      <node concept="2JrnkZ" id="6d2lQ01ViTi" role="2Oq$k0">
+                        <node concept="30H73N" id="1R1KclLA1cY" role="2JrQYb" />
+                      </node>
                     </node>
                     <node concept="liA8E" id="1R1KclLA1d0" role="2OqNvi">
                       <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
@@ -19736,7 +19738,7 @@
                           </node>
                         </node>
                         <node concept="liA8E" id="4qrAvIAgGue" role="2OqNvi">
-                          <ref role="37wK5l" to="cu2c:~SModel.toString():java.lang.String" resolve="toString" />
+                          <ref role="37wK5l" to="e2lb:~Object.toString():java.lang.String" resolve="toString" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="1R1KclLA1g2" role="37wK5m">
