@@ -113,7 +113,7 @@ public final class SConceptOperations {
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
   @Deprecated
-  @ToRemove(version = 3.2)
+  @ToRemove(version = 3.3)
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
