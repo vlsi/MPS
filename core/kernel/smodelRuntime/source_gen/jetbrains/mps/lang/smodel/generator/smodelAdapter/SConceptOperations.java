@@ -6,8 +6,8 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeUtil;
 import java.util.Collections;
@@ -42,36 +42,11 @@ public final class SConceptOperations {
     }
     return concept1.equals(concept2);
   }
-  @Deprecated
-  public static boolean isAssignableFrom(SNode conceptDeclarationNode, SNode fromConceptDeclarationNode) {
-    if (conceptDeclarationNode == null || fromConceptDeclarationNode == null) {
-      return false;
-    }
-    return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(fromConceptDeclarationNode), NameUtil.nodeFQName(conceptDeclarationNode));
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static boolean isSuperConceptOf(SNode superConcept, String subConceptFQName) {
-    if (superConcept == null) {
-      return false;
-    }
-    String superConceptFQName = NameUtil.nodeFQName(superConcept);
-    return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
-  }
   public static boolean isSuperConceptOf(SAbstractConcept superConcept, SAbstractConcept subConcept) {
     if (superConcept == null || subConcept == null) {
       return false;
     }
     return subConcept.isSubConceptOf(superConcept);
-  }
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static boolean isSubConceptOf(SNode subConcept, String superConceptFQName) {
-    if (subConcept == null) {
-      return false;
-    }
-    String subConceptFQName = NameUtil.nodeFQName(subConcept);
-    return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
   }
   public static boolean isSubConceptOf(SAbstractConcept subConcept, SAbstractConcept superConcept) {
     if (subConcept == null || superConcept == null) {
@@ -81,10 +56,6 @@ public final class SConceptOperations {
   }
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
     return SModelUtil.findConceptDeclaration(conceptFqName);
-  }
-  @Deprecated
-  public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode) {
-    return getDirectSuperConcepts(conceptDeclarationNode, false);
   }
   @Deprecated
   @ToRemove(version = 3.2)
