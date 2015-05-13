@@ -341,11 +341,6 @@
         <child id="1170075728144" name="expression" index="1HWFw0" />
         <child id="1170075736412" name="block" index="1HWHxc" />
       </concept>
-      <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
-        <child id="1163668914799" name="condition" index="3K4Cdx" />
-        <child id="1163668922816" name="ifTrue" index="3K4E3e" />
-        <child id="1163668934364" name="ifFalse" index="3K4GZi" />
-      </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
@@ -7157,26 +7152,6 @@
             <ref role="37wK5l" node="3oUomEoN5mg" resolve="waitForSomething" />
             <node concept="1bVj0M" id="4DNDPQS2L0t" role="37wK5m">
               <node concept="3clFbS" id="4DNDPQS2L0u" role="1bW5cS">
-                <node concept="3cpWs8" id="4DNDPQS2KZs" role="3cqZAp">
-                  <node concept="3cpWsn" id="4DNDPQS2KZt" role="3cpWs9">
-                    <property role="TrG5h" value="statusBefore" />
-                    <property role="3TUv4t" value="false" />
-                    <node concept="3uibUv" id="4DNDPQS2KZu" role="1tU5fm">
-                      <ref role="3uigEE" to="3dcm:~FileStatus" resolve="FileStatus" />
-                    </node>
-                    <node concept="2OqwBi" id="4DNDPQS2KZv" role="33vP2m">
-                      <node concept="37vLTw" id="56cvcsnGFEi" role="2Oq$k0">
-                        <ref role="3cqZAo" node="56cvcsnGFtI" resolve="fsm" />
-                      </node>
-                      <node concept="liA8E" id="4DNDPQS2KZx" role="2OqNvi">
-                        <ref role="37wK5l" to="3dcm:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                        <node concept="37vLTw" id="2BHiRxgmkHN" role="37wK5m">
-                          <ref role="3cqZAo" node="4DNDPQS2KT5" resolve="file" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="4DNDPQS2Lrc" role="3cqZAp">
                   <node concept="3cpWsn" id="4DNDPQS2Lrd" role="3cpWs9">
                     <property role="TrG5h" value="listener" />
@@ -7253,42 +7228,18 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3K4zz7" id="6s4KkEo19eI" role="3clFbw">
-                            <node concept="3clFbC" id="6s4KkEo19eC" role="3K4Cdx">
-                              <node concept="10Nm6u" id="6s4KkEo19eF" role="3uHU7w" />
-                              <node concept="37vLTw" id="2BHiRxgm_gH" role="3uHU7B">
-                                <ref role="3cqZAo" node="4DNDPQS2LgE" resolve="expectedFileStatus" />
-                              </node>
+                          <node concept="3clFbC" id="6s4KkEo19eS" role="3clFbw">
+                            <node concept="37vLTw" id="2BHiRxgm85c" role="3uHU7B">
+                              <ref role="3cqZAo" node="4DNDPQS2LgE" resolve="expectedFileStatus" />
                             </node>
-                            <node concept="3y3z36" id="6s4KkEo19eM" role="3K4E3e">
-                              <node concept="37vLTw" id="3GM_nagTBc1" role="3uHU7B">
-                                <ref role="3cqZAo" node="4DNDPQS2KZt" resolve="statusBefore" />
+                            <node concept="2OqwBi" id="6s4KkEo19eU" role="3uHU7w">
+                              <node concept="37vLTw" id="56cvcsnGFN2" role="2Oq$k0">
+                                <ref role="3cqZAo" node="56cvcsnGFtI" resolve="fsm" />
                               </node>
-                              <node concept="2OqwBi" id="6s4KkEo19eO" role="3uHU7w">
-                                <node concept="37vLTw" id="56cvcsnGG4_" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="56cvcsnGFtI" resolve="fsm" />
-                                </node>
-                                <node concept="liA8E" id="6s4KkEo19eQ" role="2OqNvi">
-                                  <ref role="37wK5l" to="3dcm:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                                  <node concept="37vLTw" id="2BHiRxglB8w" role="37wK5m">
-                                    <ref role="3cqZAo" node="4DNDPQS2KT5" resolve="file" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3clFbC" id="6s4KkEo19eS" role="3K4GZi">
-                              <node concept="37vLTw" id="2BHiRxgm85c" role="3uHU7B">
-                                <ref role="3cqZAo" node="4DNDPQS2LgE" resolve="expectedFileStatus" />
-                              </node>
-                              <node concept="2OqwBi" id="6s4KkEo19eU" role="3uHU7w">
-                                <node concept="37vLTw" id="56cvcsnGFN2" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="56cvcsnGFtI" resolve="fsm" />
-                                </node>
-                                <node concept="liA8E" id="6s4KkEo19eW" role="2OqNvi">
-                                  <ref role="37wK5l" to="3dcm:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
-                                  <node concept="37vLTw" id="2BHiRxghgum" role="37wK5m">
-                                    <ref role="3cqZAo" node="4DNDPQS2KT5" resolve="file" />
-                                  </node>
+                              <node concept="liA8E" id="6s4KkEo19eW" role="2OqNvi">
+                                <ref role="37wK5l" to="3dcm:~FileStatusManager.getStatus(com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vcs.FileStatus" resolve="getStatus" />
+                                <node concept="37vLTw" id="2BHiRxghgum" role="37wK5m">
+                                  <ref role="3cqZAo" node="4DNDPQS2KT5" resolve="file" />
                                 </node>
                               </node>
                             </node>
@@ -7436,7 +7387,7 @@
           <ref role="3uigEE" to="3dcm:~FileStatus" resolve="FileStatus" />
         </node>
         <node concept="2AHcQZ" id="4DNDPQS2LgH" role="2AJF6D">
-          <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
     </node>
@@ -7984,7 +7935,10 @@
               <node concept="37vLTw" id="7HgS$Vk9ome" role="37wK5m">
                 <ref role="3cqZAo" node="7HgS$Vk9hhG" resolve="modelFile" />
               </node>
-              <node concept="10Nm6u" id="4DNDPQS2LrQ" role="37wK5m" />
+              <node concept="10M0yZ" id="16G$2QdPfoo" role="37wK5m">
+                <ref role="1PxDUh" to="3dcm:~FileStatus" resolve="FileStatus" />
+                <ref role="3cqZAo" to="3dcm:~FileStatus.NOT_CHANGED" resolve="NOT_CHANGED" />
+              </node>
             </node>
           </node>
         </node>

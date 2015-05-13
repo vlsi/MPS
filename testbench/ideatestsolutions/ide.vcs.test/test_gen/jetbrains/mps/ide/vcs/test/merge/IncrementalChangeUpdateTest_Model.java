@@ -11,6 +11,7 @@ import org.junit.Assert;
 import java.util.Arrays;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
+import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -25,7 +26,6 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.io.IOException;
 import jetbrains.mps.persistence.PersistenceUtil;
@@ -75,7 +75,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     } catch (VcsException e) {
       throw new AssertionError(e);
     }
-    myWaitHelper.waitForFileStatusChange(modelFile, null);
+    myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a91a0(myDiff.getChangeSet())).isNotEmpty());
     revertDiskChangesAndWait(getTestModelFile());

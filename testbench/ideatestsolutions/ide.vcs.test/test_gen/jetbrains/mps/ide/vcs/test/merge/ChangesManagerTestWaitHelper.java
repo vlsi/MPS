@@ -6,7 +6,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -35,15 +34,14 @@ public class ChangesManagerTestWaitHelper {
     ReloadManager.getInstance().removeReloadListener(myReloadListener);
   }
 
-  public void waitForFileStatusChange(@NotNull final VirtualFile file, @Nullable final FileStatus expectedFileStatus) {
+  public void waitForFileStatusChange(@NotNull final VirtualFile file, @NotNull final FileStatus expectedFileStatus) {
     final FileStatusManager fsm = FileStatusManager.getInstance(myProject);
     waitForSomething(new Runnable() {
       public void run() {
-        final FileStatus statusBefore = fsm.getStatus(file);
         final Wrappers._T<FileStatusListener> listener = new Wrappers._T<FileStatusListener>();
         final _FunctionTypes._void_P0_E0 stopIfNeeded = new _FunctionTypes._void_P0_E0() {
           public void invoke() {
-            if ((expectedFileStatus == null ? statusBefore != fsm.getStatus(file) : expectedFileStatus == fsm.getStatus(file))) {
+            if (expectedFileStatus == fsm.getStatus(file)) {
               fsm.removeFileStatusListener(listener.value);
               // Wait until changes manager is notified about changed file status 
               try {
