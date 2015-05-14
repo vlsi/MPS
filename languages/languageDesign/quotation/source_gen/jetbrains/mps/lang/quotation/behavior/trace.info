@@ -35,7 +35,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderInitLink_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilderInitPart_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
@@ -53,7 +53,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" />
     </file>
     <file name="NodeBuilder_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
     </file>
     <file name="PropertyAntiquotation_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
@@ -103,6 +103,58 @@
         <var name="thisNode" id="1262430001741717386" />
       </scope>
       <unit id="1262430001741717386" at="7,0,11,0" name="jetbrains.mps.lang.quotation.behavior.Antiquotation_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1866752856968178589">
+    <file name="NodeBuilder_Behavior.java">
+      <node id="1866752856968181164" at="16,141,17,231" concept="6" />
+      <node id="1866752856968182019" at="18,5,19,183" concept="6" />
+      <node id="1866752856968178589" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1866752856968179021" at="15,101,18,5" concept="3" />
+      <node id="1866752856968178589" at="15,0,21,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="1866752856968178591" at="13,43,13,43" />
+      <scope id="1866752856968179023" at="16,141,17,231" />
+      <scope id="1866752856968178589" at="13,0,15,0">
+        <var name="thisNode" id="1866752856968178589" />
+      </scope>
+      <scope id="1866752856968178611" at="15,101,19,183" />
+      <scope id="1866752856968178589" at="15,0,21,0">
+        <var name="child" id="1866752856968178614" />
+        <var name="kind" id="1866752856968178612" />
+        <var name="thisNode" id="1866752856968178589" />
+      </scope>
+      <unit id="1866752856968178589" at="12,0,22,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilder_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/1866752856968185013">
+    <file name="NodeBuilderInitLink_Behavior.java">
+      <node id="1866752856968214092" at="19,141,20,338" concept="5" />
+      <node id="1866752856968190011" at="23,47,24,281" concept="6" />
+      <node id="1866752856968185522" at="27,5,28,183" concept="6" />
+      <node id="1866752856968185013" at="16,0,18,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1866752856968189218" at="22,0,26,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1866752856968185511" at="20,338,26,8" concept="6" />
+      <node id="1866752856968185509" at="18,101,27,5" concept="3" />
+      <node id="1866752856968185013" at="18,0,30,0" concept="7" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="1866752856968185015" at="16,43,16,43" />
+      <scope id="1866752856968189227" at="23,47,24,281" />
+      <scope id="1866752856968185013" at="16,0,18,0">
+        <var name="thisNode" id="1866752856968185013" />
+      </scope>
+      <scope id="1866752856968189218" at="22,0,26,0">
+        <var name="node" id="1866752856968189224" />
+      </scope>
+      <scope id="1866752856968185510" at="19,141,26,8">
+        <var name="target" id="1866752856968214093" />
+      </scope>
+      <scope id="1866752856968185035" at="18,101,28,183" />
+      <scope id="1866752856968185013" at="18,0,30,0">
+        <var name="child" id="1866752856968185038" />
+        <var name="kind" id="1866752856968185036" />
+        <var name="thisNode" id="1866752856968185013" />
+      </scope>
+      <unit id="1866752856968188808" at="21,17,26,7" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_Behavior$1" />
+      <unit id="1866752856968185013" at="15,0,31,0" name="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_Behavior" />
     </file>
   </root>
   <root nodeRef="r:1dca5eee-6e62-48f8-9e94-dbbe31be2456(jetbrains.mps.lang.quotation.behavior)/3981318653438276256">

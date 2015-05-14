@@ -26,7 +26,7 @@ public class BuildJavaPlugin_Behavior {
   }
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SAbstractConcept kind) {
     if (kind == MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
-      return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
+      return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
         @Override
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, "jetbrains.mps.build.structure.BuildSource_JavaOptions")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, 0xcdff0e1a96739c3L, "optionsName"));

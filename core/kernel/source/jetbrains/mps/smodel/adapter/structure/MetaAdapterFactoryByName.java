@@ -21,6 +21,11 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -36,6 +41,7 @@ public class MetaAdapterFactoryByName {
   public static SLanguage getLanguage(String langName) {
     return new SLanguageAdapterByName(langName);
   }
+
   public static SLanguage getLanguage(String langName, int version) {
     return new SLanguageAdapterByName(langName, version);
   }
@@ -69,4 +75,13 @@ public class MetaAdapterFactoryByName {
     return new SContainmentLinkAdapterByName(conceptName, linkName);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //not used in MPS
+  //this is to use only for compatibility reasons between 3.2 and 3.3. This code does not run normally at all
+  public static SAbstractConcept getTypedConcept_DoNotUse(String conceptName) {
+    final ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
+    if (cd instanceof IllegalConceptDescriptor) return MetaAdapterFactoryByName.getConcept(conceptName);
+    return MetaAdapterFactory.getAbstractConcept(cd);
+  }
 }

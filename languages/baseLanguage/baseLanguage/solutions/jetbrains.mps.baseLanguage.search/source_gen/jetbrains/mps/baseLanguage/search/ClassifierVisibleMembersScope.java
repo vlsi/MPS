@@ -13,7 +13,9 @@ import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -51,21 +53,23 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false)) && isVisible(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
   }
   @Override
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConceptNode) {
+    SAbstractConcept targetConcept = MetaAdapterByDeclaration.getConcept(targetConceptNode);
+
     if (this.myClassifierType != null) {
-      if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode())) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         SNode classifier = SLinkOperations.getTarget(this.myClassifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
         if (SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && SNodeOperations.isInstanceOf(referenceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
           return new StaticMethodReferenceInfoResolver(this.myClassifierScope, SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SLinkOperations.getChildren((SNodeOperations.cast(referenceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")));
         }
       } else
-      if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").getDeclarationNode())) {
+      if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
         if (SNodeOperations.isInstanceOf(referenceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
           return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, this.myClassifierType, SLinkOperations.getChildren((SNodeOperations.cast(referenceNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")));
         }
       }
     }
-    return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConcept);
+    return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConceptNode);
   }
   protected boolean isVisible(SNode member) {
     return VisibilityUtil.isVisible(myContextNode, member);

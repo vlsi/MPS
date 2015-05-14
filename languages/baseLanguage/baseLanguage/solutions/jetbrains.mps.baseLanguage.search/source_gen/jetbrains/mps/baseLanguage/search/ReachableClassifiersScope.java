@@ -10,7 +10,8 @@ import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -53,7 +54,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   }
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    if (MetaAdapterByDeclaration.getConcept(targetConcept).isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return new ReachableClassifiersScope.ClassifierReferenceInfoResolver(this.myModel);
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);

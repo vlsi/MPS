@@ -370,9 +370,6 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
-      </concept>
       <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
@@ -11175,8 +11172,8 @@
                         <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                         <ref role="359W_F" to="3ior:6qcrfIJFfrM" />
                       </node>
-                      <node concept="3nh3qo" id="13YBgBBRSOf" role="37wK5m">
-                        <ref role="3nh3qp" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
+                      <node concept="35c_gC" id="4wG2MBH_HXp" role="37wK5m">
+                        <ref role="35c_gD" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
                       </node>
                     </node>
                   </node>

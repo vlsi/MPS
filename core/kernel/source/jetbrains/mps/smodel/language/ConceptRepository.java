@@ -47,6 +47,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   @Deprecated
   @Override
   @NotNull
+  //not used in MPS
   public SConcept getInstanceConcept(@NotNull String fqName) {
     SAbstractConcept concept = getConcept(fqName);
     if (concept instanceof SInterfaceConcept) {

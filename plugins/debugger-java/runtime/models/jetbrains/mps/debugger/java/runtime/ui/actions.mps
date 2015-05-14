@@ -480,7 +480,7 @@
     <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="4pq21WIf4VE" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~PlatformDataKeys.PROJECT_CONTEXT" resolve="PROJECT_CONTEXT" />
+      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
       <node concept="1oajcY" id="4pq21WIf4VF" role="1oa70y" />
     </node>
     <node concept="tnohg" id="7vO$jtdT52Y" role="tncku">

@@ -14,57 +14,53 @@
   </root>
   <root nodeRef="r:450e06fb-ac8b-4ea9-abbf-87478c21328b(jetbrains.mps.calculator.typesystem)/1241364865026">
     <file name="typeof_InputFieldReference_InferenceRule.java">
-      <node id="1241364869216" at="19,5,20,51" concept="4" />
-      <node id="1241364869216" at="20,51,21,195" concept="4" />
-      <node id="1241364869216" at="21,195,22,272" concept="2" />
-      <node id="1241364865026" at="25,46,26,68" concept="5" />
-      <node id="1241364865026" at="29,5,30,130" concept="4" />
-      <node id="1241364865026" at="30,130,31,45" concept="5" />
-      <node id="1241364865026" at="34,30,35,17" concept="5" />
-      <node id="1241364883334" at="37,61,38,63" concept="4" />
-      <node id="1241364883334" at="38,63,39,30" concept="4" />
-      <node id="1241364883334" at="39,30,40,223" concept="0" />
-      <node id="1241364883334" at="39,30,40,223" concept="0" />
-      <node id="1241364883334" at="39,30,40,223" concept="2" />
-      <node id="1241364883334" at="40,223,41,24" concept="5" />
-      <node id="1241364865026" at="16,0,18,0" concept="1" trace="typeof_InputFieldReference_InferenceRule#()V" />
-      <node id="1241364865026" at="25,0,28,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1241364865026" at="34,0,37,0" concept="3" trace="overrides#()Z" />
-      <node id="1241364865026" at="28,68,32,5" concept="0" />
-      <node id="1241364869216" at="18,122,23,5" concept="0" />
-      <node id="1241364865026" at="28,0,34,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="1241364883334" at="37,0,43,0" concept="6" trace="_quotation_createNode_q8g7ld_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1241364865026" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="1241364865026" at="16,53,16,53" />
-      <scope id="1241364865026" at="25,46,26,68" />
-      <scope id="1241364865026" at="34,30,35,17" />
-      <scope id="1241364883334" at="39,30,40,223" />
-      <scope id="1241364865026" at="16,0,18,0" />
-      <scope id="1241364865026" at="29,5,31,45">
-        <var name="b" id="1241364865026" />
-      </scope>
-      <scope id="1241364869216" at="19,5,22,272">
+      <node id="1241364869216" at="20,5,21,51" concept="4" />
+      <node id="1241364869216" at="21,51,22,195" concept="4" />
+      <node id="1241364869216" at="22,195,23,272" concept="2" />
+      <node id="1241364865026" at="26,50,27,157" concept="5" />
+      <node id="1241364865026" at="29,68,30,102" concept="0" />
+      <node id="1241364865026" at="29,68,30,102" concept="5" />
+      <node id="1241364865026" at="32,30,33,17" concept="5" />
+      <node id="1241364883334" at="35,61,36,63" concept="4" />
+      <node id="1241364883334" at="36,63,37,30" concept="4" />
+      <node id="1241364883334" at="37,30,38,223" concept="0" />
+      <node id="1241364883334" at="37,30,38,223" concept="0" />
+      <node id="1241364883334" at="37,30,38,223" concept="2" />
+      <node id="1241364883334" at="38,223,39,24" concept="5" />
+      <node id="1241364865026" at="17,0,19,0" concept="1" trace="typeof_InputFieldReference_InferenceRule#()V" />
+      <node id="1241364865026" at="26,0,29,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1241364865026" at="29,0,32,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1241364865026" at="32,0,35,0" concept="3" trace="overrides#()Z" />
+      <node id="1241364869216" at="19,122,24,5" concept="0" />
+      <node id="1241364883334" at="35,0,41,0" concept="6" trace="_quotation_createNode_q8g7ld_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1241364865026" at="19,0,26,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1241364865026" at="17,53,17,53" />
+      <scope id="1241364865026" at="26,50,27,157" />
+      <scope id="1241364865026" at="29,68,30,102" />
+      <scope id="1241364865026" at="32,30,33,17" />
+      <scope id="1241364883334" at="37,30,38,223" />
+      <scope id="1241364865026" at="17,0,19,0" />
+      <scope id="1241364869216" at="20,5,23,272">
         <var name="_info_12389875345" id="1241364869216" />
         <var name="_nodeToCheck_1029348928467" id="1241364869216" />
       </scope>
-      <scope id="1241364865026" at="25,0,28,0" />
-      <scope id="1241364865026" at="34,0,37,0" />
-      <scope id="1241364865026" at="28,68,32,5" />
-      <scope id="1241364883334" at="37,61,41,24">
+      <scope id="1241364865026" at="26,0,29,0" />
+      <scope id="1241364865026" at="29,0,32,0">
+        <var name="argument" id="1241364865026" />
+      </scope>
+      <scope id="1241364865026" at="32,0,35,0" />
+      <scope id="1241364883334" at="35,61,39,24">
         <var name="facade" id="1241364883334" />
         <var name="quotedNode_1" id="1241364883334" />
       </scope>
-      <scope id="1241364865027" at="18,122,23,5" />
-      <scope id="1241364865026" at="28,0,34,0">
-        <var name="argument" id="1241364865026" />
-      </scope>
-      <scope id="1241364883334" at="37,0,43,0" />
-      <scope id="1241364865026" at="18,0,25,0">
+      <scope id="1241364865027" at="19,122,24,5" />
+      <scope id="1241364883334" at="35,0,41,0" />
+      <scope id="1241364865026" at="19,0,26,0">
         <var name="reference" id="1241364865026" />
         <var name="status" id="1241364865026" />
         <var name="typeCheckingContext" id="1241364865026" />
       </scope>
-      <unit id="1241364865026" at="15,0,44,0" name="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule" />
+      <unit id="1241364865026" at="16,0,42,0" name="jetbrains.mps.calculator.typesystem.typeof_InputFieldReference_InferenceRule" />
     </file>
   </root>
 </debug-info>

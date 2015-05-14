@@ -6,13 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -31,7 +31,7 @@ public class MathUtil {
         {
           SNode matchingNode_30uc9x_a0a2 = bmc;
           if (matchingNode_30uc9x_a0a2 != null) {
-            matches_30uc9x_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_a0a2.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression");
+            matches_30uc9x_a0a2 = matchingNode_30uc9x_a0a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697a328L, "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression"));
           }
         }
         if (matches_30uc9x_a0a2) {
@@ -41,7 +41,7 @@ public class MathUtil {
           {
             SNode matchingNode_30uc9x_b0a2 = bmc;
             if (matchingNode_30uc9x_b0a2 != null) {
-              matches_30uc9x_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a2.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
+              matches_30uc9x_b0a2 = matchingNode_30uc9x_b0a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12076988136L, "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression"));
             }
           }
           if (matches_30uc9x_b0a2) {
@@ -51,7 +51,7 @@ public class MathUtil {
             {
               SNode matchingNode_30uc9x_c0a2 = bmc;
               if (matchingNode_30uc9x_c0a2 != null) {
-                matches_30uc9x_c0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a2.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
+                matches_30uc9x_c0a2 = matchingNode_30uc9x_c0a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120769754c8L, "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression"));
               }
             }
             if (matches_30uc9x_c0a2) {
@@ -61,7 +61,7 @@ public class MathUtil {
               {
                 SNode matchingNode_30uc9x_d0a2 = bmc;
                 if (matchingNode_30uc9x_d0a2 != null) {
-                  matches_30uc9x_d0a2 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a2.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
+                  matches_30uc9x_d0a2 = matchingNode_30uc9x_d0a2.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1207697107bL, "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression"));
                 }
               }
               if (matches_30uc9x_d0a2) {
@@ -82,7 +82,7 @@ public class MathUtil {
         {
           SNode matchingNode_30uc9x_a0a3 = bmc;
           if (matchingNode_30uc9x_a0a3 != null) {
-            matches_30uc9x_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_a0a3.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+            matches_30uc9x_a0a3 = matchingNode_30uc9x_a0a3.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"));
           }
         }
         if (matches_30uc9x_a0a3) {
@@ -92,7 +92,7 @@ public class MathUtil {
           {
             SNode matchingNode_30uc9x_b0a3 = bmc;
             if (matchingNode_30uc9x_b0a3 != null) {
-              matches_30uc9x_b0a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a3.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+              matches_30uc9x_b0a3 = matchingNode_30uc9x_b0a3.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
             }
           }
           if (matches_30uc9x_b0a3) {
@@ -102,7 +102,7 @@ public class MathUtil {
             {
               SNode matchingNode_30uc9x_c0a3 = bmc;
               if (matchingNode_30uc9x_c0a3 != null) {
-                matches_30uc9x_c0a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c0a3.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+                matches_30uc9x_c0a3 = matchingNode_30uc9x_c0a3.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"));
               }
             }
             if (matches_30uc9x_c0a3) {
@@ -112,7 +112,7 @@ public class MathUtil {
               {
                 SNode matchingNode_30uc9x_d0a3 = bmc;
                 if (matchingNode_30uc9x_d0a3 != null) {
-                  matches_30uc9x_d0a3 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_d0a3.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.DivExpression");
+                  matches_30uc9x_d0a3 = matchingNode_30uc9x_d0a3.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xff2bbc13daL, "jetbrains.mps.baseLanguage.structure.DivExpression"));
                 }
               }
               if (matches_30uc9x_d0a3) {
@@ -134,7 +134,7 @@ public class MathUtil {
         {
           SNode matchingNode_30uc9x_a1a4 = node;
           if (matchingNode_30uc9x_a1a4 != null) {
-            matches_30uc9x_a1a4 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_a1a4.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
+            matches_30uc9x_a1a4 = matchingNode_30uc9x_a1a4.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"));
           }
         }
         if (matches_30uc9x_a1a4) {
@@ -144,7 +144,7 @@ public class MathUtil {
           {
             SNode matchingNode_30uc9x_b1a4 = node;
             if (matchingNode_30uc9x_b1a4 != null) {
-              matches_30uc9x_b1a4 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b1a4.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
+              matches_30uc9x_b1a4 = matchingNode_30uc9x_b1a4.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abdL, "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"));
             }
           }
           if (matches_30uc9x_b1a4) {
@@ -154,7 +154,7 @@ public class MathUtil {
             {
               SNode matchingNode_30uc9x_c1a4 = node;
               if (matchingNode_30uc9x_c1a4 != null) {
-                matches_30uc9x_c1a4 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_c1a4.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation");
+                matches_30uc9x_c1a4 = matchingNode_30uc9x_c1a4.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x13afebc2af505abcL, "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation"));
               }
             }
             if (matches_30uc9x_c1a4) {
@@ -210,7 +210,7 @@ public class MathUtil {
         {
           SNode matchingNode_30uc9x_a0a6 = t;
           if (matchingNode_30uc9x_a0a6 != null) {
-            matches_30uc9x_a0a6 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_a0a6.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            matches_30uc9x_a0a6 = matchingNode_30uc9x_a0a6.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"));
           }
         }
         if (matches_30uc9x_a0a6) {
@@ -220,7 +220,7 @@ public class MathUtil {
           {
             SNode matchingNode_30uc9x_b0a6 = t;
             if (matchingNode_30uc9x_b0a6 != null) {
-              matches_30uc9x_b0a6 = SModelUtil_new.isAssignableConcept(matchingNode_30uc9x_b0a6.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              matches_30uc9x_b0a6 = matchingNode_30uc9x_b0a6.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
             }
           }
           if (matches_30uc9x_b0a6) {

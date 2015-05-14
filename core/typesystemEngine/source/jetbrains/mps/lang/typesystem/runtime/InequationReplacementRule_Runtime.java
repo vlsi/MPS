@@ -67,12 +67,12 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
 
   //body is needed for compatibility purposes only
   public SAbstractConcept getApplicableSubtypeConcept(){
-     return MetaAdapterFactoryByName.getConcept(getApplicableSubtypeConceptFQName());
+     return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableSubtypeConceptFQName());
   }
 
   //body is needed for compatibility purposes only
   public SAbstractConcept getApplicableSupertypeConcept(){
-    return MetaAdapterFactoryByName.getConcept(getApplicableSupertypeConceptFQName());
+    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableSupertypeConceptFQName());
   }
 
   @Deprecated

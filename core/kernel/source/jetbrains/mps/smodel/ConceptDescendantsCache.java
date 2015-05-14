@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -110,11 +111,8 @@ public class ConceptDescendantsCache implements CoreComponent {
     List<String> pnames = concept.getParentsNames();
     assert pids.size() == pnames.size() : pids.size() + "/" + pnames.size();
 
-    Iterator<SConceptId> pi = pids.iterator();
-    Iterator<String> ni = pnames.iterator();
-
-    while (pi.hasNext()) {
-      SAbstractConcept parentConcept = MetaAdapterFactory.getConcept(pi.next(), ni.next());
+    for(SConceptId id:pids) {
+      SAbstractConcept parentConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
       Set<SAbstractConcept> descendants = new HashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.add(MetaAdapterFactory.getAbstractConcept(concept));
       myDescendantsCache.put(parentConcept, Collections.unmodifiableSet(descendants));
@@ -126,11 +124,8 @@ public class ConceptDescendantsCache implements CoreComponent {
     List<String> pnames = concept.getParentsNames();
     assert pids.size() == pnames.size() : pids.size() + "/" + pnames.size();
 
-    Iterator<SConceptId> pi = pids.iterator();
-    Iterator<String> ni = pnames.iterator();
-
-    while (pi.hasNext()) {
-      SAbstractConcept parentConcept = MetaAdapterFactory.getConcept(pi.next(), ni.next());
+    for(SConceptId id:pids) {
+      SAbstractConcept parentConcept = MetaAdapterFactory.getAbstractConcept(ConceptRegistry.getInstance().getConceptDescriptor(id));
       Set<SAbstractConcept> descendants = new HashSet<SAbstractConcept>(getDirectDescendants(parentConcept));
       descendants.remove(MetaAdapterFactory.getAbstractConcept(concept));
       myDescendantsCache.put(parentConcept, Collections.unmodifiableSet(descendants));
@@ -267,7 +262,7 @@ public class ConceptDescendantsCache implements CoreComponent {
   @ToRemove(version = 3.3)
   public Set<String> getDirectDescendants(String conceptFqName) {
     myModuleRepository.getModelAccess().checkReadAccess();
-    Set<SAbstractConcept> fromCache = myDescendantsCache.get(MetaAdapterFactoryByName.getConcept(conceptFqName));
+    Set<SAbstractConcept> fromCache = myDescendantsCache.get(MetaAdapterFactoryByName.getTypedConcept_DoNotUse(conceptFqName));
     if (fromCache==null) return Collections.emptySet();
 
     Set<String> result = new HashSet<String>();

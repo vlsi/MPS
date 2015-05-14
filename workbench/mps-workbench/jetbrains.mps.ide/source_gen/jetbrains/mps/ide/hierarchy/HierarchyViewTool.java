@@ -15,7 +15,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   }
   @Override
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
-    ConceptHierarchyTree tree = new ConceptHierarchyTree(myCoreComponents.getLanguageHierarchyCache(), this, isParentHierarchy);
+    ConceptHierarchyTree tree = new ConceptHierarchyTree(this, isParentHierarchy);
     TreeHighlighterExtension.attachHighlighters(tree, getProject());
     return tree;
   }

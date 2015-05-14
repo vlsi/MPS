@@ -14,13 +14,14 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -42,7 +43,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
             {
               SNode matchingNode_13ophr_a1a0b0b0 = SNodeOperations.getParent(catchClause);
               if (matchingNode_13ophr_a1a0b0b0 != null) {
-                matches_13ophr_a1a0b0b0 = SModelUtil_new.isAssignableConcept(matchingNode_13ophr_a1a0b0b0.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+                matches_13ophr_a1a0b0b0 = matchingNode_13ophr_a1a0b0b0.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f383e6771L, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"));
               }
             }
             if (matches_13ophr_a1a0b0b0) {
@@ -52,7 +53,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
               {
                 SNode matchingNode_13ophr_b1a0b0b0 = SNodeOperations.getParent(catchClause);
                 if (matchingNode_13ophr_b1a0b0b0 != null) {
-                  matches_13ophr_b1a0b0b0 = SModelUtil_new.isAssignableConcept(matchingNode_13ophr_b1a0b0b0.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+                  matches_13ophr_b1a0b0b0 = matchingNode_13ophr_b1a0b0b0.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, "jetbrains.mps.baseLanguage.structure.TryStatement"));
                 }
               }
               if (matches_13ophr_b1a0b0b0) {
@@ -75,14 +76,11 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.CatchClause";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, "jetbrains.mps.baseLanguage.structure.CatchClause");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

@@ -23,6 +23,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -121,6 +122,7 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, SNode to) {
+    // not used in MPS 
     assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
     assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
     if (from == to) {
@@ -132,7 +134,7 @@ public class SModelUtil {
     if (to == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
       return true;
     }
-    return isAssignableConcept(NameUtil.nodeFQName(from), NameUtil.nodeFQName(to));
+    return MetaAdapterByDeclaration.getConcept(from).isSubConceptOf(MetaAdapterByDeclaration.getConcept(to));
   }
   /**
    * 
@@ -141,6 +143,7 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, String toFqName) {
+    // not used in MPS 
     if (from == null) {
       return false;
     }
@@ -154,7 +157,8 @@ public class SModelUtil {
   @Deprecated
   @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0k(fromFqName, toFqName)) {
+    // not used in MPS 
+    if (eq_74see4_a0b0k(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -170,8 +174,8 @@ public class SModelUtil {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"));
   }
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
-    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
-    return isAssignableConcept(referentNode.getConcept().getQualifiedName(), NameUtil.nodeFQName(linkTargetConcept));
+    SAbstractConcept targetConcept = MetaAdapterByDeclaration.getConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));
+    return referentNode.getConcept().isSubConceptOf(targetConcept);
   }
   public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {
     return SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
@@ -194,7 +198,7 @@ public class SModelUtil {
     }
     return null;
   }
-  private static boolean eq_74see4_a0a0k(Object a, Object b) {
+  private static boolean eq_74see4_a0b0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_74see4_a0b0b(Object o, Class<T> type) {

@@ -13,12 +13,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DependenciesCollector {
@@ -48,7 +48,7 @@ public class DependenciesCollector {
             {
               SNode matchingNode_bcwvc2_a1a2a5a1 = parent;
               if (matchingNode_bcwvc2_a1a2a5a1 != null) {
-                matches_bcwvc2_a1a2a5a1 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a1a2a5a1.getConcept().getQualifiedName(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression");
+                matches_bcwvc2_a1a2a5a1 = matchingNode_bcwvc2_a1a2a5a1.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"));
               }
             }
             if (matches_bcwvc2_a1a2a5a1) {
@@ -60,7 +60,7 @@ public class DependenciesCollector {
               {
                 SNode matchingNode_bcwvc2_b1a2a5a1 = parent;
                 if (matchingNode_bcwvc2_b1a2a5a1 != null) {
-                  matches_bcwvc2_b1a2a5a1 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b1a2a5a1.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+                  matches_bcwvc2_b1a2a5a1 = matchingNode_bcwvc2_b1a2a5a1.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
                 }
               }
               if (matches_bcwvc2_b1a2a5a1) {
@@ -72,7 +72,7 @@ public class DependenciesCollector {
                 {
                   SNode matchingNode_bcwvc2_c1a2a5a1 = parent;
                   if (matchingNode_bcwvc2_c1a2a5a1 != null) {
-                    matches_bcwvc2_c1a2a5a1 = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_c1a2a5a1.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                    matches_bcwvc2_c1a2a5a1 = matchingNode_bcwvc2_c1a2a5a1.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
                   }
                 }
                 if (matches_bcwvc2_c1a2a5a1) {
@@ -86,7 +86,7 @@ public class DependenciesCollector {
                     {
                       SNode matchingNode_bcwvc2_a0b0c0f0b = node;
                       if (matchingNode_bcwvc2_a0b0c0f0b != null) {
-                        matches_bcwvc2_a0b0c0f0b = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_a0b0c0f0b.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                        matches_bcwvc2_a0b0c0f0b = matchingNode_bcwvc2_a0b0c0f0b.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
                       }
                     }
                     if (matches_bcwvc2_a0b0c0f0b) {
@@ -100,7 +100,7 @@ public class DependenciesCollector {
                       {
                         SNode matchingNode_bcwvc2_b0b0c0f0b = node;
                         if (matchingNode_bcwvc2_b0b0c0f0b != null) {
-                          matches_bcwvc2_b0b0c0f0b = SModelUtil_new.isAssignableConcept(matchingNode_bcwvc2_b0b0c0f0b.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
+                          matches_bcwvc2_b0b0c0f0b = matchingNode_bcwvc2_b0b0c0f0b.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                         }
                       }
                       if (matches_bcwvc2_b0b0c0f0b) {

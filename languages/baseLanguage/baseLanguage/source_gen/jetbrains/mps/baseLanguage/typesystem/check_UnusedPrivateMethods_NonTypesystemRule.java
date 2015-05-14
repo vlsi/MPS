@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -34,7 +33,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           {
             SNode matchingNode_sl9v9q_a0a0a = classifierMember;
             if (matchingNode_sl9v9q_a0a0a != null) {
-              matches_sl9v9q_a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_sl9v9q_a0a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              matches_sl9v9q_a0a0a = matchingNode_sl9v9q_a0a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
             }
           }
           if (matches_sl9v9q_a0a0a) {
@@ -70,14 +69,11 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

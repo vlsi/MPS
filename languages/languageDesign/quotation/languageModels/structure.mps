@@ -208,6 +208,9 @@
       <property role="20kJfa" value="modelToCreate" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="1BC2tkV2axS" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4IP40Bi38Sq">
     <property role="TrG5h" value="NodeBuilderInitLink" />
@@ -218,6 +221,9 @@
       <property role="20kJfa" value="link" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1BC2tkV2cim" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="76efOMRCfEj">
