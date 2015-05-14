@@ -23,6 +23,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.TypeSubstitution;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
@@ -31,6 +33,7 @@ import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
 import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
 import jetbrains.mps.newTypesystem.operation.ClearNodeTypeOperation;
 import jetbrains.mps.newTypesystem.operation.SolveInequalitiesOperation;
+import jetbrains.mps.newTypesystem.operation.SubstituteTypeOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
@@ -52,6 +55,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -241,15 +245,27 @@ public class State {
   }
 
   public void addEquation(SNode left, SNode right, EquationInfo info, boolean checkOnly) {
+
+    // substitute correct type
+    left = lookupTypeSubstitution(left);
+    right = lookupTypeSubstitution(right);
+
     if (!checkOnly) {
       addEquation(left, right, info);
-    } else {
+
+    }
+    else{
       if (myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
       addBlock(new CheckEquationBlock(this, left, right, RelationKind.CHECK_EQUATION, info));
     }
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
+
+    // substitute correct type
+    subType = lookupTypeSubstitution(subType);
+    superType = lookupTypeSubstitution(superType);
+
     if (check && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
@@ -343,7 +359,6 @@ public class State {
     myOperationStack.push(myOperation);
   }
 
-
   public void clearStateObjects() {
     if (!(myTypeCheckingContext instanceof TracingTypecheckingContext)/* && myInequalitySystem == null*/) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
@@ -355,6 +370,7 @@ public class State {
     }
     clearOperations();
   }
+
 
   public void solveInequalities() {
     if (!myInequalities.getRelationsToSolve().isEmpty()) {
@@ -470,6 +486,20 @@ public class State {
     } else if (fromIndex < toIndex) {
       executeOperationsFromTo(fromIndex, toIndex);
     }
+  }
+
+  @Nullable
+  private SNode lookupTypeSubstitution(SNode origType) {
+    if (origType == null) return null;
+
+    if (!TypesUtil.isVariable(origType)) {
+      SNode subsType = new TypeSubstitution(origType, myTypeCheckingContext).substitutedType();
+      if (subsType != origType) {
+        executeOperation(new SubstituteTypeOperation(origType, subsType));
+        origType = subsType;
+      }
+    }
+    return origType;
   }
 
   /** Nulls are not allowed. Not serializable. Not cloneable. */

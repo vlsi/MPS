@@ -3184,5 +3184,34 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="5zzawu2Jap5">
+    <property role="3GE5qa" value="definition.rule" />
+    <ref role="1M2myG" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+    <node concept="2NXJUA" id="5zzawu2Jap6" role="2NY200">
+      <node concept="3clFbS" id="5zzawu2Jap7" role="2VODD2">
+        <node concept="3clFbF" id="5zzawu2Japd" role="3cqZAp">
+          <node concept="22lmx$" id="5zzawu2Jape" role="3clFbG">
+            <node concept="2OqwBi" id="5zzawu2Japf" role="3uHU7B">
+              <node concept="Rm8GO" id="5zzawu2Japg" role="2Oq$k0">
+                <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+              </node>
+              <node concept="liA8E" id="5zzawu2Japh" role="2OqNvi">
+                <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                <node concept="2JrnkZ" id="5zzawu2Japi" role="37wK5m">
+                  <node concept="1Q6Npb" id="5zzawu2Japj" role="2JrQYb" />
+                </node>
+              </node>
+            </node>
+            <node concept="2YIFZM" id="5zzawu2Japk" role="3uHU7w">
+              <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+              <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+              <node concept="1Q6Npb" id="5zzawu2Japl" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

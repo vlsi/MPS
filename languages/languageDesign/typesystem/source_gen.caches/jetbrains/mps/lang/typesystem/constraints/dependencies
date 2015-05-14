@@ -92,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.QuickFixArgumentReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.QuickFixFieldReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.ReferenceMessageTarget_Constraints" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SubstituteTypeRule_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypeVarReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.constraints.TypesystemIntentionArgument_Constraints" />
@@ -351,6 +352,18 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.constraints.SubstituteTypeRule_Constraints" file="SubstituteTypeRule_Constraints.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.constraints.SubtypingRule_Constraints" file="SubtypingRule_Constraints.java">

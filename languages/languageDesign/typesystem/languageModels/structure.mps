@@ -1449,7 +1449,7 @@
     <property role="TrG5h" value="GetOperationType" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="operation type(..)" />
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="definition.rule.overload" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hZh4snw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1890,6 +1890,36 @@
         <ref role="trN6q" node="h$a7r4L" resolve="WarningStatement" />
       </node>
     </node>
+  </node>
+  <node concept="1TIwiD" id="5zzawu2JakE">
+    <property role="3GE5qa" value="definition.rule" />
+    <property role="TrG5h" value="SubstituteTypeRule" />
+    <property role="34LRSv" value="Substitute Type Rule" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="h5YuPLN" resolve="AbstractRule" />
+    <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="code" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2EOQLmJ9gll" resolve="SubstituteTypeRuleFunction" />
+    </node>
+    <node concept="PrWs8" id="5zzawu2JakF" role="PzmwI">
+      <ref role="PrY4T" node="3SW4jvYrbtS" resolve="IRuleWithOneNode" />
+    </node>
+    <node concept="PrWs8" id="5zzawu2JS8A" role="PzmwI">
+      <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9gll">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="2EOQLmJ9owp">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
+    <property role="34LRSv" value="originalNode" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 

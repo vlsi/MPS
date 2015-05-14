@@ -17,7 +17,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,83,0" name="jetbrains.mps.lang.typesystem.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,86,0" name="jetbrains.mps.lang.typesystem.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)/1076452857759831353">
@@ -1081,6 +1081,43 @@
         <var name="condition" id="1998873705041899604" />
       </scope>
       <unit id="1998873705041899571" at="16,0,77,0" name="jetbrains.mps.lang.typesystem.constraints.TypeVarScope" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)/6405009306797516357">
+    <file name="SubstituteTypeRule_Constraints.java">
+      <node id="6405009306797516357" at="16,43,17,98" concept="13" />
+      <node id="6405009306797516357" at="20,42,21,16" concept="9" />
+      <node id="6405009306797516357" at="24,120,25,55" concept="8" />
+      <node id="6405009306797516357" at="25,55,26,0" concept="10" />
+      <node id="6405009306797516357" at="27,51,28,66" concept="3" />
+      <node id="6405009306797516357" at="29,5,30,0" concept="10" />
+      <node id="6405009306797516357" at="30,0,31,18" concept="9" />
+      <node id="6405009306797516365" at="33,99,34,91" concept="9" />
+      <node id="6405009306797516357" at="36,0,37,0" concept="11" trace="canBeRootBreakingPoint" />
+      <node id="6405009306797516357" at="16,0,19,0" concept="2" trace="SubstituteTypeRule_Constraints#()V" />
+      <node id="6405009306797516357" at="26,0,29,5" concept="6" />
+      <node id="6405009306797516357" at="33,0,36,0" concept="12" trace="static_canBeARoot#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="6405009306797516357" at="19,0,23,0" concept="7" trace="hasOwnCanBeRootMethod#()Z" />
+      <node id="6405009306797516357" at="23,0,33,0" concept="7" trace="canBeRoot#(Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="6405009306797516357" at="16,43,17,98" />
+      <scope id="6405009306797516357" at="20,42,21,16" />
+      <scope id="6405009306797516357" at="27,51,28,66" />
+      <scope id="6405009306797516359" at="33,99,34,91" />
+      <scope id="6405009306797516357" at="16,0,19,0" />
+      <scope id="6405009306797516357" at="33,0,36,0">
+        <var name="model" id="6405009306797516357" />
+        <var name="operationContext" id="6405009306797516357" />
+      </scope>
+      <scope id="6405009306797516357" at="19,0,23,0" />
+      <scope id="6405009306797516357" at="24,120,31,18">
+        <var name="result" id="6405009306797516357" />
+      </scope>
+      <scope id="6405009306797516357" at="23,0,33,0">
+        <var name="checkingNodeContext" id="6405009306797516357" />
+        <var name="context" id="6405009306797516357" />
+        <var name="model" id="6405009306797516357" />
+      </scope>
+      <unit id="6405009306797516357" at="15,0,38,0" name="jetbrains.mps.lang.typesystem.constraints.SubstituteTypeRule_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)/7857223919215948959">

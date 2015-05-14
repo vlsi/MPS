@@ -2680,7 +2680,7 @@
   </node>
   <node concept="1YbPZF" id="hZh542M">
     <property role="TrG5h" value="typeof_GetOperationType" />
-    <property role="3GE5qa" value="definition.rule" />
+    <property role="3GE5qa" value="definition.rule.overload" />
     <node concept="3clFbS" id="hZh542N" role="18ibNy">
       <node concept="1Z5TYs" id="hZh589T" role="3cqZAp">
         <node concept="mw_s8" id="hZh59jq" role="1ZfhKB">
@@ -4413,6 +4413,35 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="18kY7G" id="5zzawu2JaGC">
+    <property role="TrG5h" value="check_SubstituteTypeRule" />
+    <property role="3GE5qa" value="definition.rule" />
+    <node concept="3clFbS" id="5zzawu2JaGD" role="18ibNy">
+      <node concept="3clFbF" id="5zzawu2Jc_H" role="3cqZAp">
+        <node concept="2YIFZM" id="5zzawu2Jc_I" role="3clFbG">
+          <ref role="37wK5l" to="tpeh:79XQS8VgL7r" resolve="checkDataFlow" />
+          <ref role="1Pybhc" to="tpeh:hNACUz_" resolve="DataFlowUtil" />
+          <node concept="2OqwBi" id="2EOQLmJbkQX" role="37wK5m">
+            <node concept="2OqwBi" id="5zzawu2Jc_J" role="2Oq$k0">
+              <node concept="1YBJjd" id="5zzawu2Jc_R" role="2Oq$k0">
+                <ref role="1YBMHb" node="5zzawu2JaGF" resolve="substituteTypeRule" />
+              </node>
+              <node concept="3TrEf2" id="2EOQLmJbkuJ" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpd4:2EOQLmJ9HZ$" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="2EOQLmJblqu" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:gyVODHa" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5zzawu2JaGF" role="1YuTPh">
+      <property role="TrG5h" value="substituteTypeRule" />
+      <ref role="1YaFvo" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
     </node>
   </node>
 </model>

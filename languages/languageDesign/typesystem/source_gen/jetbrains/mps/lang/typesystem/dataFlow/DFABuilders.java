@@ -29,6 +29,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", new PropertyNameTarget_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", new ReferenceRoleTarget_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", new ReportErrorStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule", new SubstituteTypeRule_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", new TypeOfExpression_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", new TypeVarDeclaration_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.TypeVarReference", new TypeVarReference_DataFlow());

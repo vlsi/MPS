@@ -1232,5 +1232,26 @@
       </node>
     </node>
   </node>
+  <node concept="3_zdsH" id="5zzawu2Jc_X">
+    <property role="3GE5qa" value="definition.rule" />
+    <ref role="3_znuS" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+    <node concept="3__wT9" id="5zzawu2Jc_Y" role="3_A6iZ">
+      <node concept="3clFbS" id="5zzawu2Jc_Z" role="2VODD2">
+        <node concept="3AgYrR" id="5zzawu2JcA3" role="3cqZAp">
+          <node concept="2OqwBi" id="2EOQLmJblID" role="3Ah4Yx">
+            <node concept="2OqwBi" id="5zzawu2JcA4" role="2Oq$k0">
+              <node concept="3__QtB" id="5zzawu2JcAW" role="2Oq$k0" />
+              <node concept="3TrEf2" id="2EOQLmJbked" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpd4:2EOQLmJ9HZ$" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="2EOQLmJbmjM" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:gyVODHa" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
