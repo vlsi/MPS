@@ -62,6 +62,8 @@ public class EditorManager {
 
   public static final String OLD_NODE_FOR_SUBSTITUTION = "oldNode";
 
+  private final EditorContext myEditorContext;
+
   private Deque<Map<ReferencedNodeContext, EditorCell>> myContextToOldCellMap = new LinkedList<Map<ReferencedNodeContext, EditorCell>>();
   private boolean myCreatingInspectedCell = false;
 
@@ -93,23 +95,39 @@ public class EditorManager {
     return context.getComponent(EditorManager.class);
   }
 
+  public EditorManager(EditorContext editorContext) {
+    myEditorContext = editorContext;
+  }
+
+  private EditorContext getEditorContext() {
+    return myEditorContext;
+  }
+
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
-  public EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext,
-      boolean isInspectorCell) {
+  public EditorCell createRootCell(SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext, boolean isInspectorCell) {
     try {
-      pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
-      EditorCell rootCell = context.getEditorComponent().getRootCell();
+      pushTask("Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
+      EditorCell rootCell = getEditorContext().getEditorComponent().getRootCell();
       assert myContextToOldCellMap.isEmpty();
       myContextToOldCellMap.push(new HashMap<ReferencedNodeContext, EditorCell>());
       if (rootCell != null && modifications != null) {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      return createEditorCell(context, modifications, refContext);
+      return createEditorCell(modifications, refContext);
     } finally {
       myContextToOldCellMap.pop();
-      popTask(context);
+      popTask();
     }
+  }
+
+  /**
+   * @deprecated since MPS 3.3 use createRootCell(SNode, List<Pair<SNode, SNodeReference>>, ReferencedNodeContext, boolean)
+   */
+  @Deprecated
+  public EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext,
+      boolean isInspectorCell) {
+    return createRootCell(node, modifications, refContext, isInspectorCell);
   }
 
   private static void fillContextToCellMap(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
@@ -139,10 +157,18 @@ public class EditorManager {
     }
   }
 
+  /**
+   * @deprecated since MPS 3.3 use createNodeRoleAttributeCell(SNode, Class, EditorCell)
+   */
+  @Deprecated
   public EditorCell createNodeRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
+    return createNodeRoleAttributeCell(roleAttribute, attributeKind, cellWithRole);
+  }
+
+  public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
     EditorCell attributeCell =
-        context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+        getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
     if (attributeCell == cellWithRole) {
       return cellWithRole;
@@ -151,7 +177,7 @@ public class EditorManager {
       attributeCell.getStyle().set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
 
-    UpdaterImpl updater = (UpdaterImpl) context.getEditorComponent().getUpdater();
+    UpdaterImpl updater = (UpdaterImpl) getEditorContext().getEditorComponent().getUpdater();
     UpdateSession updateSession = updater.getCurrentUpdateSession();
     Set<SNode> newAttributeCell_DependOn = new HashSet<SNode>();
     Set<SNode> attributeCell_DependOn = updater.getRelatedNodes(attributeCell);
@@ -219,6 +245,19 @@ public class EditorManager {
     return result;
   }
 
+  @NotNull
+  public EditorCell getCurrentAttributedCellWithRole(Class attributeKind, SNode node) {
+    EditorCell result = getCurrentAttributedCellWithRole(attributeKind);
+    if (result == null) {
+      result = new EditorCell_Error(getEditorContext(), node, "<attributed cell not found>");
+    }
+    return result;
+  }
+
+  /**
+   * @deprecated since MPS 3.3 use getCurrentAttributedCellWithRole(Class, SNode)
+   */
+  @Deprecated
   public EditorCell getCurrentAttributedCellWithRole(Class attributeKind) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
@@ -232,9 +271,17 @@ public class EditorManager {
     return !myCreatingInspectedCell;
   }
 
-  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  /**
+   * @deprecated since MPS 3.3 use createEditorCell(List<Pair<SNode, SNodeReference>> , ReferencedNodeContext)
+   */
+  @Deprecated
   public EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext) {
-    pushTask(context, getMessage(context, refContext, "?"));
+    return createEditorCell(modifications, refContext);
+  }
+
+  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  public EditorCell createEditorCell(List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext) {
+    pushTask(getMessage(refContext, "?"));
     try {
       SNode node = refContext.getNode();
 
@@ -246,21 +293,21 @@ public class EditorManager {
           if (!myAttributesStack.contains(attribute)) {
             myAttributesStack.push(attribute);
 
-            EditorCell nodeCell = createEditorCell(context, modifications, refContext);
+            EditorCell nodeCell = createEditorCell(modifications, refContext);
 
             SNode poppedAttribute = myAttributesStack.pop();
             LOG.assertLog(poppedAttribute == attribute, "Assertion failed.");
-            return createNodeRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
+            return createNodeRoleAttributeCell(attribute, AttributeKind.Node.class, nodeCell);
           }
         }
       }
 
-      UpdaterImpl updater = (UpdaterImpl) context.getEditorComponent().getUpdater();
+      UpdaterImpl updater = (UpdaterImpl) getEditorContext().getEditorComponent().getUpdater();
       Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       EditorCell oldCell = null;
       if (modifications != null) {
         oldCell = myContextToOldCellMap.peek().remove(refContext);
-        boolean nodeChanged = isNodeChanged(modifications, updater, oldCell, context.getCellFactory().getCellContext());
+        boolean nodeChanged = isNodeChanged(modifications, updater, oldCell, getEditorContext().getCellFactory().getCellContext());
 
         if (!nodeChanged) {
           if (oldCell != null) {
@@ -296,16 +343,16 @@ public class EditorManager {
           myContextToOldCellMap.push(childContextToCellMap);
         }
         if (oldCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) oldCell).canBeSynchronized() && isSynchronizable(node)) {
-          return syncEditorCell((SynchronizeableEditorCell) oldCell, context, refContext);
+          return syncEditorCell((SynchronizeableEditorCell) oldCell, refContext);
         }
-        return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
+        return createEditorCell_internal(myCreatingInspectedCell, refContext);
       } finally {
         if (childContextToCellMap != null) {
           myContextToOldCellMap.pop();
         }
       }
     } finally {
-      popTask(context);
+      popTask();
     }
   }
 
@@ -339,8 +386,8 @@ public class EditorManager {
     return myCreatingInspectedCell;
   }
 
-  private EditorCell syncEditorCell(SynchronizeableEditorCell editorCell, EditorContext context, ReferencedNodeContext refContext) {
-    pushTask(context, getMessage(context, refContext, "+"));
+  private EditorCell syncEditorCell(SynchronizeableEditorCell editorCell, ReferencedNodeContext refContext) {
+    pushTask(getMessage(refContext, "+"));
     EditorCell result = null;
     try {
       final SNode node = refContext.getNode();
@@ -358,7 +405,7 @@ public class EditorManager {
         }
       } catch (Throwable e) {
         LOG.error("Failed to synchronize cell for node " + SNodeOperations.getDebugText(node), e);
-        result = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
+        result = new EditorCell_Error(getEditorContext(), node, "!exception!:" + SNodeOperations.getDebugText(node));
         result.setBig(true);
       } finally {
         /**
@@ -380,23 +427,23 @@ public class EditorManager {
          */
         nodeAccessListener.nodeUnclassifiedReadAccess(node);
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
-        addNodeDependenciesToEditor(result, nodeAccessListener, context);
+        addNodeDependenciesToEditor(result, nodeAccessListener);
         if (!isAttributedCell(result)) {
           result.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(result, node);
           if (unwrappedNodeBigCell != null) {
-            context.getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
+            getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
           }
         }
       }
       return result;
     } finally {
-      popTask(context);
+      popTask();
     }
   }
 
-  private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
-    pushTask(context, getMessage(context, refContext, "+"));
+  private EditorCell createEditorCell_internal(boolean isInspectorCell, ReferencedNodeContext refContext) {
+    pushTask(getMessage(refContext, "+"));
     final SNode node = refContext.getNode();
 
     try {
@@ -407,14 +454,14 @@ public class EditorManager {
       NodeReadAccessInEditorListener nodeAccessListener = new NodeReadAccessInEditorListener();
       try {
         NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(nodeAccessListener);
-        nodeCell = context.getCellFactory().createEditorCell(node, isInspectorCell);
+        nodeCell = getEditorContext().getCellFactory().createEditorCell(node, isInspectorCell);
 
         if (!isAttributedCell(nodeCell)) {
           nodeCell = addSideTransformHintCell(nodeCell, node);
         }
       } catch (Throwable e) {
         LOG.error("Failed to create cell for node " + SNodeOperations.getDebugText(node), e);
-        nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
+        nodeCell = new EditorCell_Error(getEditorContext(), node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
       } finally {
         /**
@@ -441,9 +488,9 @@ public class EditorManager {
           nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
           EditorCell unwrappedNodeBigCell = getUnwrappedNodeBigCell(nodeCell, node);
           if (unwrappedNodeBigCell != null) {
-            context.getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
+            getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession().registerAsBigCell(unwrappedNodeBigCell);
           }
-          addNodeDependenciesToEditor(nodeCell, nodeAccessListener, context);
+          addNodeDependenciesToEditor(nodeCell, nodeAccessListener);
         }
       }
 
@@ -453,7 +500,7 @@ public class EditorManager {
 
       return nodeCell;
     } finally {
-      popTask(context);
+      popTask();
     }
   }
 
@@ -521,8 +568,8 @@ public class EditorManager {
     return myAttributedCells.peekLast() == nodeCell;
   }
 
-  private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener, EditorContext editorContext) {
-    UpdateSession updateSession = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession();
+  private void addNodeDependenciesToEditor(EditorCell cell, NodeReadAccessInEditorListener listener) {
+    UpdateSession updateSession = getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
     updateSession.registerDependencies(cell, listener.getNodesToDependOn(), listener.getRefTargetsToDependOn());
     for (Pair<SNodeReference, String> pair : listener.getDirtilyReadAccessedProperties()) {
       updateSession.registerDirtyDependency(cell, pair);
@@ -594,22 +641,22 @@ public class EditorManager {
     return selectedCell != null ? APICellAdapter.getCellInfo(selectedCell) : null;
   }
 
-  private void pushTask(EditorContext context, String message) {
-    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) context;
+  private void pushTask(String message) {
+    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) getEditorContext();
     if (editorContextImpl.isTracing()) {
       editorContextImpl.pushTracerTask(message, true);
     }
   }
 
-  private void popTask(EditorContext context) {
-    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) context;
+  private void popTask() {
+    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) getEditorContext();
     if (editorContextImpl.isTracing()) {
       editorContextImpl.popTracerTask();
     }
   }
 
-  private String getMessage(EditorContext editorContext, ReferencedNodeContext refContext, String prefix) {
-    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) editorContext;
+  private String getMessage(ReferencedNodeContext refContext, String prefix) {
+    jetbrains.mps.nodeEditor.EditorContext editorContextImpl = (jetbrains.mps.nodeEditor.EditorContext) getEditorContext();
     if (editorContextImpl.isTracing()) {
       return prefix + refContext.toString();
     }
