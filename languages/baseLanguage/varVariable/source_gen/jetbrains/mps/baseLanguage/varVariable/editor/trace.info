@@ -43,7 +43,7 @@
       <node id="1236693525856" at="49,73,50,57" concept="4" />
       <node id="1236693525856" at="50,57,51,59" concept="4" />
       <node id="1236693525856" at="52,35,53,82" concept="4" />
-      <node id="1236693525856" at="53,82,54,109" concept="5" />
+      <node id="1236693525856" at="53,82,54,94" concept="5" />
       <node id="1236693525856" at="55,10,56,22" concept="5" />
       <node id="1236693543178" at="58,88,59,87" concept="4" />
       <node id="1236693543178" at="59,87,60,47" concept="1" />
@@ -59,7 +59,7 @@
       <node id="1236693579084" at="73,73,74,57" concept="4" />
       <node id="1236693579084" at="74,57,75,59" concept="4" />
       <node id="1236693579084" at="76,35,77,82" concept="4" />
-      <node id="1236693579084" at="77,82,78,109" concept="5" />
+      <node id="1236693579084" at="77,82,78,94" concept="5" />
       <node id="1236693579084" at="79,10,80,22" concept="5" />
       <node id="1236693382339" at="20,0,23,0" concept="3" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1236693579084" at="69,58,72,5" concept="2" />
@@ -76,10 +76,10 @@
       <scope id="1236693382339" at="28,81,29,81" />
       <scope id="1236693382339" at="29,81,30,80" />
       <scope id="1236693579084" at="70,39,71,40" />
-      <scope id="1236693525856" at="52,35,54,109">
+      <scope id="1236693525856" at="52,35,54,94">
         <var name="manager" id="1236693525856" />
       </scope>
-      <scope id="1236693579084" at="76,35,78,109">
+      <scope id="1236693579084" at="76,35,78,94">
         <var name="manager" id="1236693579084" />
       </scope>
       <scope id="1236693382339" at="20,0,23,0">
