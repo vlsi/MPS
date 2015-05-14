@@ -6396,10 +6396,7 @@
                     <ref role="3cqZAo" node="g_CeiMJ" resolve="manager" />
                   </node>
                   <node concept="liA8E" id="h_XJ7y$" role="2OqNvi">
-                    <ref role="37wK5l" to="9a8:~EditorManager.createNodeRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
-                    <node concept="37vLTw" id="2BHiRxghiZN" role="37wK5m">
-                      <ref role="3cqZAo" node="g_CeiMc" resolve="editorContext" />
-                    </node>
+                    <ref role="37wK5l" to="9a8:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
                     <node concept="37vLTw" id="3GM_nagTwTK" role="37wK5m">
                       <ref role="3cqZAo" node="g_CeiMv" resolve="attributeConcept" />
                     </node>
@@ -17056,10 +17053,7 @@
                     <ref role="3cqZAo" node="i0tV1Fp" resolve="manager" />
                   </node>
                   <node concept="liA8E" id="i0tV1Fw" role="2OqNvi">
-                    <ref role="37wK5l" to="9a8:~EditorManager.createNodeRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
-                    <node concept="37vLTw" id="2BHiRxgm_oj" role="37wK5m">
-                      <ref role="3cqZAo" node="i0tV1Cu" resolve="editorContext" />
-                    </node>
+                    <ref role="37wK5l" to="9a8:~EditorManager.createNodeRoleAttributeCell(org.jetbrains.mps.openapi.model.SNode,java.lang.Class,jetbrains.mps.openapi.editor.cells.EditorCell):jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createNodeRoleAttributeCell" />
                     <node concept="37vLTw" id="3GM_nagTtIT" role="37wK5m">
                       <ref role="3cqZAo" node="i0tV1F2" resolve="attributeConcept" />
                     </node>

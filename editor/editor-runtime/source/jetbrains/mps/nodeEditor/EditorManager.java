@@ -33,8 +33,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.util.Pair;
@@ -75,24 +73,6 @@ public class EditorManager {
   public static EditorManager getInstanceFromContext(EditorContext editorContext) {
     // TODO: Create API interface for EditorManager & use this method always here
     return ((jetbrains.mps.nodeEditor.EditorContext) editorContext).getEditorManager();
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getInstanceFromContext(EditorContext editorContext) method
-   */
-  @Nullable
-  @Deprecated
-  public static EditorManager getInstanceFromContext(Project project) {
-    return null;
-  }
-
-  /**
-   * @deprecated since MPS 3.2 use getInstanceFromContext(EditorContext editorContext) method
-   */
-  @Nullable
-  @Deprecated
-  public static EditorManager getInstanceFromContext(IOperationContext context) {
-    return context.getComponent(EditorManager.class);
   }
 
   public EditorManager(EditorContext editorContext) {
@@ -210,9 +190,18 @@ public class EditorManager {
     return attributeCell;
   }
 
-  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  /**
+   * @deprecated since MPS 3.3 use doCreateRoleAttributeCell(Class, EditorCell, SNode, List<Pair<SNode, SNodeReference>>)
+   */
+  @Deprecated
   public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context,
       SNode roleAttribute, List<Pair<SNode, SNodeReference>> modifications) {
+    return doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute, modifications);
+  }
+
+  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
+      List<Pair<SNode, SNodeReference>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
@@ -234,7 +223,7 @@ public class EditorManager {
       nodeAttributeStack.push(cellWithRole);
     }
     myAttributedCells.addLast(cellWithRole);
-    EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
+    EditorCell result = createEditorCell(modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myAttributedCells.removeLast();
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");

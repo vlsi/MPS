@@ -31,8 +31,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanSPropertySubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultSChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultSReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -87,7 +87,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
     // TODO: add other SProperties declared in this node, not declared in the concept
 
     for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
-      if (!sReferenceLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)){
+      if (!sReferenceLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
         myReferenceLinks.add(sReferenceLink);
       }
     }
@@ -118,7 +118,8 @@ public class DefaultEditor extends AbstractDefaultEditor {
   @Override
   protected void addPropertyCell(SProperty property) {
     EditorCell_Property editorCell = new EditorCell_Property(myEditorContext, new SPropertyAccessor(mySNode, property, false, true), mySNode);
-    editorCell.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(editorCell, new Pair<SNodeReference, String>(new SNodePointer(mySNode), property.getName()));
+    editorCell.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(editorCell,
+        new Pair<SNodeReference, String>(new SNodePointer(mySNode), property.getName()));
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
       editorCell.setCellId("property_" + property);
@@ -265,7 +266,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
       if (manager != null) {
-        return manager.createNodeRoleAttributeCell(myEditorContext, attributeConcept, attributeKind, editorCell);
+        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
       }
     }
     return null;
