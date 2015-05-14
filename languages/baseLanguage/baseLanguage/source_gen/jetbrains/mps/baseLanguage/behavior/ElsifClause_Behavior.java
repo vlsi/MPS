@@ -27,9 +27,9 @@ public class ElsifClause_Behavior {
       return null;
     }
     if (value) {
-      return new NextNodeKeeper(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")), true, false);
+      return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
     } else {
-      return new NextNodeKeeper(thisNode, false, true);
+      return NextNodeKeeper.createJumpAfterNode(thisNode);
     }
   }
 }

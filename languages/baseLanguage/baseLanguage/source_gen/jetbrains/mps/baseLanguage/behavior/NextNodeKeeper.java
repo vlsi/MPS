@@ -6,15 +6,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public final class NextNodeKeeper {
   private final SNode myNextNode;
-  private final boolean myBefore;
+  private final boolean myIsAfter;
   private final boolean myWillJump;
-  public NextNodeKeeper(SNode nextNode, boolean before, boolean willJump) {
+  private NextNodeKeeper(SNode nextNode, boolean after, boolean willJump) {
     myNextNode = nextNode;
-    myBefore = before;
+    myIsAfter = after;
     myWillJump = willJump;
   }
-  public boolean isBefore() {
-    return myBefore;
+  public boolean isAfter() {
+    return myIsAfter;
   }
   public SNode getNextNode() {
     return myNextNode;
@@ -22,4 +22,14 @@ public final class NextNodeKeeper {
   public boolean willJump() {
     return myWillJump;
   }
+  public static NextNodeKeeper createJumpAfterNode(SNode node) {
+    return new NextNodeKeeper(node, true, true);
+  }
+  public static NextNodeKeeper createJumpBeforeNode(SNode node) {
+    return new NextNodeKeeper(node, false, true);
+  }
+  public static NextNodeKeeper createGoToNextNode(SNode node) {
+    return new NextNodeKeeper(node, false, false);
+  }
+
 }

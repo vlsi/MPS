@@ -22,10 +22,10 @@ public class OrExpression_DataFlow extends DataFlowBuilder {
       if (nextNodeKeeper != null) {
         SNode nodeToJump = nextNodeKeeper.getNextNode();
         if (nodeToJump != null) {
-          if (nextNodeKeeper.isBefore()) {
-            _context.getBuilder().emitIfJump(_context.getBuilder().before(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651524162");
-          } else {
+          if (nextNodeKeeper.isAfter()) {
             _context.getBuilder().emitIfJump(_context.getBuilder().after(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651524167");
+          } else {
+            _context.getBuilder().emitIfJump(_context.getBuilder().before(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651524162");
           }
         }
       }
