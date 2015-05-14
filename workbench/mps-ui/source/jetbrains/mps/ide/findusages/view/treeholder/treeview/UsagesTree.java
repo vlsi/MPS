@@ -70,7 +70,7 @@ public class UsagesTree extends MPSTree {
   private static final String COMMAND_INCLUDE = "include";
   private static final String COMMAND_EXCLUDE = "exclude";
 
-  private DataTree myContents = new DataTree();
+  private DataTree myContents;
   private HashSet<PathItemRole> myResultPathProvider = new HashSet<PathItemRole>();
 
   private boolean myAdditionalInfoNeeded;
@@ -260,7 +260,7 @@ public class UsagesTree extends MPSTree {
       @Override
       public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode();
-        if (myContents.getTreeRoot().getChildren().isEmpty()) {
+        if (myContents == null || myContents.getTreeRoot().getChildren().isEmpty()) {
           // FIXME refactor UsagesTree construction so that it doesn't try to show tree before any content supplied.
           // Now the tree is rebuilt on view options change (UsagesTreeComponent#setComponentsViewOptions())
           return root;
