@@ -28,6 +28,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -37,7 +38,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -134,32 +134,32 @@ public class MoveLinkUp_Action extends BaseAction {
         modelAccess.executeCommandInEDT(new Runnable() {
           public void run() {
             Set<SReference> usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
-            Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
-            if (SPropertyOperations.hasValue(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-              SContainmentLink oldLink = MetaAdapterByDeclaration.getContainmentLink(((SNode) MapSequence.fromMap(_params).get("target")));
-              ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-              SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(((SNode) MapSequence.fromMap(_params).get("target")));
-              for (SNode node : SetSequence.fromSet(instances)) {
-                List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), node.getChildren(oldLink));
-                for (SNode child : ListSequence.fromList(children)) {
-                  node.removeChild(child);
-                  node.addChild(newLink, child);
+            final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
+            RefactoringUtil.changeReferences(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Project) MapSequence.fromMap(_params).get("project")), usages, ((SNode) MapSequence.fromMap(_params).get("target")), new _FunctionTypes._void_P0_E0() {
+              public void invoke() {
+                if (SPropertyOperations.hasValue(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
+                  SContainmentLink oldLink = MetaAdapterByDeclaration.getContainmentLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
+                  SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  for (SNode node : SetSequence.fromSet(instances)) {
+                    List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), node.getChildren(oldLink));
+                    for (SNode child : ListSequence.fromList(children)) {
+                      node.removeChild(child);
+                      node.addChild(newLink, child);
+                    }
+                  }
+                } else {
+                  SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
+                  SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  for (SNode node : SetSequence.fromSet(instances)) {
+                    SNode referenceTarget = node.getReferenceTarget(oldLink);
+                    node.setReferenceTarget(newLink, referenceTarget);
+                    node.setReferenceTarget(oldLink, null);
+                  }
                 }
               }
-            } else {
-              SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
-              ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-              SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
-              for (SNode node : SetSequence.fromSet(instances)) {
-                SNode referenceTarget = node.getReferenceTarget(oldLink);
-                node.setReferenceTarget(newLink, referenceTarget);
-                node.setReferenceTarget(oldLink, null);
-              }
-
-            }
-            for (SReference usage : SetSequence.fromSet(usages)) {
-              usage.getSourceNode().setReferenceTarget(usage.getLink(), ((SNode) MapSequence.fromMap(_params).get("target")));
-            }
+            }, "Move link " + SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")));
           }
         });
       } else {
