@@ -30,10 +30,10 @@ import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -78,7 +78,15 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (myModelReference == null) {
       throw new SelectionStoreException("Model ID property missed");
     }
-    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(myModelReference));
+    SModel sModelDescriptor;
+    try {
+      final SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(myModelReference);
+      sModelDescriptor = modelRef.resolve(editorComponent.getEditorContext().getRepository());
+    } catch (Exception ex) {
+      SelectionRestoreException sre = new SelectionRestoreException();
+      sre.initCause(ex);
+      throw sre;
+    }
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
