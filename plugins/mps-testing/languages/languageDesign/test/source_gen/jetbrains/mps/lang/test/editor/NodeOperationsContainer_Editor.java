@@ -64,7 +64,7 @@ public class NodeOperationsContainer_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_62u4bw_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
   private EditorCell createRefNodeList_62u4bw_d0(EditorContext editorContext, SNode node) {

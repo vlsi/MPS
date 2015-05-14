@@ -76,7 +76,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedPropertyCell_y5igai_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class, node);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);

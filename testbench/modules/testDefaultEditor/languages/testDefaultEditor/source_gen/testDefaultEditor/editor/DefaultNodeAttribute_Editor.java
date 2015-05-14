@@ -31,7 +31,7 @@ public class DefaultNodeAttribute_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_gltv09_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
 }

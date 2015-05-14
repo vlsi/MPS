@@ -64,7 +64,7 @@ public class ListPattern_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_jko2wt_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     editorCell.getStyle().putAll(style);

@@ -110,7 +110,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_73o0fl_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));

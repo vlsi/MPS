@@ -32,7 +32,7 @@ public class SimplePropertyAttribute_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedPropertyCell_4slcfv_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Property.class, node);
     return editorCell;
   }
 }

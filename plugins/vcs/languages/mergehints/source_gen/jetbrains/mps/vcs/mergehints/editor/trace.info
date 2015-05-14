@@ -52,8 +52,8 @@
       <node id="8485200647808751661" at="63,82,64,109" concept="5" />
       <node id="8485200647808751661" at="65,10,66,22" concept="5" />
       <node id="7583059143814244607" at="68,98,69,80" concept="4" />
-      <node id="7583059143814244607" at="69,80,70,95" concept="4" />
-      <node id="7583059143814244607" at="70,95,71,22" concept="5" />
+      <node id="7583059143814244607" at="69,80,70,101" concept="4" />
+      <node id="7583059143814244607" at="70,101,71,22" concept="5" />
       <node id="7583059143814109971" at="22,0,25,0" concept="3" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="8485200647808751661" at="61,59,66,22" concept="2" />
       <node id="7583059143814244607" at="68,0,73,0" concept="3" trace="createAttributedNodeCell_txmqo6_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />

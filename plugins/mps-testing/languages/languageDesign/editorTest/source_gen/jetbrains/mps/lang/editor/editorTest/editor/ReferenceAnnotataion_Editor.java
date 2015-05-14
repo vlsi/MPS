@@ -35,7 +35,7 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedLinkCell_q5i94r_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class, node);
     return editorCell;
   }
   private EditorCell createConstant_q5i94r_c0(EditorContext editorContext, SNode node) {

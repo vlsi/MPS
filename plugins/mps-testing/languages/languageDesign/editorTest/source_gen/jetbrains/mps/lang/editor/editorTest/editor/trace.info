@@ -484,8 +484,8 @@
       <node id="3447504547918507697" at="29,83,30,34" concept="2" />
       <node id="3447504547918507697" at="30,34,31,22" concept="7" />
       <node id="3447504547918537549" at="33,102,34,80" concept="6" />
-      <node id="3447504547918537549" at="34,80,35,99" concept="6" />
-      <node id="3447504547918537549" at="35,99,36,22" concept="7" />
+      <node id="3447504547918537549" at="34,80,35,105" concept="6" />
+      <node id="3447504547918537549" at="35,105,36,22" concept="7" />
       <node id="3447504547918507688" at="15,0,18,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3447504547918537549" at="33,0,38,0" concept="5" trace="createAttributedPropertyCell_4slcfv_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3447504547918507697" at="26,0,33,0" concept="5" trace="createConstant_4slcfv_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -1858,8 +1858,8 @@
       <node id="7658393498702771304" at="32,47,33,34" concept="2" />
       <node id="7658393498702771304" at="33,34,34,22" concept="7" />
       <node id="7658393498702861284" at="36,98,37,80" concept="6" />
-      <node id="7658393498702861284" at="37,80,38,100" concept="6" />
-      <node id="7658393498702861284" at="38,100,39,22" concept="7" />
+      <node id="7658393498702861284" at="37,80,38,106" concept="6" />
+      <node id="7658393498702861284" at="38,106,39,22" concept="7" />
       <node id="7658393498702771306" at="41,88,42,87" concept="6" />
       <node id="7658393498702771306" at="42,87,43,47" concept="2" />
       <node id="7658393498702771306" at="43,47,44,34" concept="6" />

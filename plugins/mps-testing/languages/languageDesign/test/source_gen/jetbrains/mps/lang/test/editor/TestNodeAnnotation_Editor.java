@@ -64,7 +64,7 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_vitjmc_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
   private EditorCell createConstant_vitjmc_d0(EditorContext editorContext, SNode node) {

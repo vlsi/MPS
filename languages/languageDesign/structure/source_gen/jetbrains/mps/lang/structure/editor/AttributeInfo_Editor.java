@@ -188,7 +188,7 @@ public class AttributeInfo_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_w7w00h_c0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
 }

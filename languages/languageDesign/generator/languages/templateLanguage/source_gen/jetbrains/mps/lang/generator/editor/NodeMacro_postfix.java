@@ -157,7 +157,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
   }
   private EditorCell createAttributedNodeCell_crgygw_d0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);

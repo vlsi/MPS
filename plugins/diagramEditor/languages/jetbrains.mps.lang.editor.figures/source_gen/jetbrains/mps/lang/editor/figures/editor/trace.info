@@ -394,8 +394,8 @@
       <node id="5422656561930928633" at="33,40,34,76" concept="2" />
       <node id="5422656561930928633" at="34,76,35,22" concept="7" />
       <node id="5422656561926752228" at="37,98,38,80" concept="6" />
-      <node id="5422656561926752228" at="38,80,39,95" concept="6" />
-      <node id="5422656561926752228" at="39,95,40,22" concept="7" />
+      <node id="5422656561926752228" at="38,80,39,101" concept="6" />
+      <node id="5422656561926752228" at="39,101,40,22" concept="7" />
       <node id="5422656561926750065" at="17,0,20,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561926752228" at="37,0,42,0" concept="5" trace="createAttributedNodeCell_4m6xne_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561926750065" at="20,0,28,0" concept="5" trace="createCollection_4m6xne_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -517,8 +517,8 @@
       <node id="7319867929567527565" at="35,40,36,34" concept="2" />
       <node id="7319867929567527565" at="36,34,37,22" concept="7" />
       <node id="5422656561931608167" at="39,98,40,80" concept="6" />
-      <node id="5422656561931608167" at="40,80,41,95" concept="6" />
-      <node id="5422656561931608167" at="41,95,42,22" concept="7" />
+      <node id="5422656561931608167" at="40,80,41,101" concept="6" />
+      <node id="5422656561931608167" at="41,101,42,22" concept="7" />
       <node id="5422656561931607936" at="18,0,21,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561931608167" at="39,0,44,0" concept="5" trace="createAttributedNodeCell_rpz55m_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5422656561931607936" at="21,0,29,0" concept="5" trace="createCollection_rpz55m_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
