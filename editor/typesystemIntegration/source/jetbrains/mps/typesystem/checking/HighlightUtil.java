@@ -23,6 +23,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,21 +31,23 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, BaseEditorChecker checker, EditorContext editorContext) {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, BaseEditorChecker checker,
+      EditorContext editorContext) {
     return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getMessageStatus() : MessageStatus.ERROR, errorReporter, checker);
   }
 
-  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, IErrorReporter errorReporter, BaseEditorChecker checker) {
+  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, IErrorReporter errorReporter,
+      BaseEditorChecker checker) {
     if (errorReporter == null) {
       errorReporter = new SimpleErrorReporter(node, message, null, null, status, new NodeMessageTarget());
     }
     HighlighterMessage error = new HighlighterMessage(
-      node,
-      status,
-      errorReporter.getErrorTarget(),
-      getMessageColor(status),
-      message,
-      checker);
+        node,
+        status,
+        errorReporter.getErrorTarget(),
+        getMessageColor(status),
+        message,
+        checker);
     error.setErrorReporter(errorReporter);
     for (QuickFixProvider quickFixProvider : errorReporter.getIntentionProviders()) {
       quickFixProvider.setIsError(error.getStatus() == MessageStatus.ERROR);
@@ -62,9 +65,15 @@ public class HighlightUtil {
   }
 
   public static Color getMessageColor(MessageStatus messageStatus) {
-    if (messageStatus == MessageStatus.ERROR) return Color.RED;
-    if (messageStatus == MessageStatus.WARNING) return StyleRegistry.getInstance().isDarkTheme() ? new Color(140, 140, 0) : Color.YELLOW;
-    if (messageStatus == MessageStatus.OK) return Color.LIGHT_GRAY;
+    if (messageStatus == MessageStatus.ERROR) {
+      return new Color(ColorConstants.ERROR);
+    }
+    if (messageStatus == MessageStatus.WARNING) {
+      return new Color(StyleRegistry.getInstance().isDarkTheme() ? ColorConstants.WARNING_DARK : ColorConstants.WARNING);
+    }
+    if (messageStatus == MessageStatus.OK) {
+      return new Color(ColorConstants.OK);
+    }
     return Color.BLACK;
   }
 }

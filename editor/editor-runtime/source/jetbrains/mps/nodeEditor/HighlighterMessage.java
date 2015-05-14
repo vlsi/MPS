@@ -175,7 +175,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
    * In case of multi-line cells we are still drawing messages as merged cell regions in order to try to highlight editor lines..
    */
   private boolean highlightContainingCollection(List<Region> regions) {
-    return regions.isEmpty();
+    return regions.size() < 2;
   }
 
   private class Region {
@@ -216,10 +216,6 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     public void drawWaveUnderCell(Graphics g, Color color) {
       g.setColor(color);
       ColorAndGraphicsUtil.drawWave(g, myX + myLeftInset, myX + myLeftInset + myEffectiveWidth, myY - ColorAndGraphicsUtil.WAVE_HEIGHT);
-    }
-
-    public boolean isSameY(Region another) {
-      return myY == another.myY;
     }
   }
 

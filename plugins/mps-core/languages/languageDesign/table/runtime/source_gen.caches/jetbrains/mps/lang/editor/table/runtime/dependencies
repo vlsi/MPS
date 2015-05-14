@@ -5,6 +5,9 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" file="ColumnNotFoundException.java">
+    <classNode extendsClassName="java.lang.Exception" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" file="EditorCell_Table.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
@@ -20,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.TableComponent" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableColumnSelection" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
@@ -79,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellInfo" />

@@ -504,30 +504,30 @@
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228418">
     <file name="ConceptDifference.java">
-      <node id="8984393347190228421" at="8,0,9,0" concept="4" trace="myConcept1" />
-      <node id="8984393347190228424" at="9,0,10,0" concept="4" trace="myConcept2" />
-      <node id="8984393347190228435" at="10,66,11,26" concept="3" />
-      <node id="8984393347190228439" at="11,26,12,26" concept="3" />
-      <node id="8984393347190228447" at="15,28,16,67" concept="10" />
+      <node id="8984393347190228421" at="8,0,9,0" concept="4" trace="myActualConcept" />
+      <node id="8984393347190228424" at="9,0,10,0" concept="4" trace="myExpectedConcept" />
+      <node id="8984393347190228435" at="10,78,11,36" concept="3" />
+      <node id="8984393347190228439" at="11,36,12,40" concept="3" />
+      <node id="8984393347190228447" at="15,28,16,101" concept="10" />
       <node id="8984393347190228466" at="20,22,21,19" concept="10" />
       <node id="8984393347190228475" at="23,48,24,19" concept="10" />
       <node id="8984393347190228477" at="25,5,26,53" concept="9" />
-      <node id="8984393347190228483" at="26,53,27,84" concept="10" />
+      <node id="8984393347190228483" at="26,53,27,108" concept="10" />
       <node id="8984393347190228461" at="19,37,22,5" concept="7" />
       <node id="8984393347190228468" at="22,5,25,5" concept="7" />
       <node id="8984393347190228427" at="10,0,14,0" concept="1" trace="ConceptDifference#(Lorg/jetbrains/mps/openapi/language/SConcept;Lorg/jetbrains/mps/openapi/language/SConcept;)V" />
       <node id="8984393347190228443" at="14,0,18,0" concept="8" trace="toString#()Ljava/lang/String;" />
       <node id="8984393347190228455" at="18,0,29,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
-      <scope id="8984393347190228446" at="15,28,16,67" />
+      <scope id="8984393347190228446" at="15,28,16,101" />
       <scope id="8984393347190228465" at="20,22,21,19" />
       <scope id="8984393347190228474" at="23,48,24,19" />
-      <scope id="8984393347190228434" at="10,66,12,26" />
+      <scope id="8984393347190228434" at="10,78,12,40" />
       <scope id="8984393347190228427" at="10,0,14,0">
-        <var name="concept1" id="8984393347190228430" />
-        <var name="concept2" id="8984393347190228432" />
+        <var name="actualConcept" id="8984393347190228430" />
+        <var name="expectedConcept" id="8984393347190228432" />
       </scope>
       <scope id="8984393347190228443" at="14,0,18,0" />
-      <scope id="8984393347190228460" at="19,37,27,84">
+      <scope id="8984393347190228460" at="19,37,27,108">
         <var name="diff" id="8984393347190228478" />
       </scope>
       <scope id="8984393347190228455" at="18,0,29,0">
@@ -539,32 +539,32 @@
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228497">
     <file name="ChildrenCountDifference.java">
       <node id="8984393347190228500" at="8,0,9,0" concept="4" trace="myRole" />
-      <node id="8984393347190228503" at="9,0,10,0" concept="4" trace="myCount1" />
-      <node id="8984393347190228506" at="10,0,11,0" concept="4" trace="myCount2" />
-      <node id="8984393347190228519" at="11,73,12,18" concept="3" />
-      <node id="8984393347190228523" at="12,18,13,18" concept="3" />
-      <node id="8984393347190228527" at="13,18,14,18" concept="3" />
-      <node id="8984393347190228535" at="17,28,18,99" concept="10" />
+      <node id="8984393347190228503" at="9,0,10,0" concept="4" trace="myActualCount" />
+      <node id="8984393347190228506" at="10,0,11,0" concept="4" trace="myExpectedCount" />
+      <node id="8984393347190228519" at="11,93,12,18" concept="3" />
+      <node id="8984393347190228523" at="12,18,13,32" concept="3" />
+      <node id="8984393347190228527" at="13,32,14,36" concept="3" />
+      <node id="8984393347190228535" at="17,28,18,126" concept="10" />
       <node id="8984393347190228560" at="22,22,23,19" concept="10" />
       <node id="8984393347190228569" at="25,54,26,19" concept="10" />
       <node id="8984393347190228571" at="27,5,28,65" concept="9" />
-      <node id="8984393347190228577" at="28,65,29,96" concept="10" />
+      <node id="8984393347190228577" at="28,65,29,120" concept="10" />
       <node id="8984393347190228555" at="21,37,24,5" concept="7" />
       <node id="8984393347190228562" at="24,5,27,5" concept="7" />
       <node id="8984393347190228531" at="16,0,20,0" concept="8" trace="toString#()Ljava/lang/String;" />
       <node id="8984393347190228509" at="11,0,16,0" concept="1" trace="ChildrenCountDifference#(Lorg/jetbrains/mps/openapi/language/SContainmentLink;II)V" />
       <node id="8984393347190228549" at="20,0,31,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
-      <scope id="8984393347190228534" at="17,28,18,99" />
+      <scope id="8984393347190228534" at="17,28,18,126" />
       <scope id="8984393347190228559" at="22,22,23,19" />
       <scope id="8984393347190228568" at="25,54,26,19" />
-      <scope id="8984393347190228518" at="11,73,14,18" />
+      <scope id="8984393347190228518" at="11,93,14,36" />
       <scope id="8984393347190228531" at="16,0,20,0" />
       <scope id="8984393347190228509" at="11,0,16,0">
-        <var name="c1" id="8984393347190228514" />
-        <var name="c2" id="8984393347190228516" />
+        <var name="actualCount" id="8984393347190228514" />
+        <var name="expectedCount" id="8984393347190228516" />
         <var name="role" id="8984393347190228512" />
       </scope>
-      <scope id="8984393347190228554" at="21,37,29,96">
+      <scope id="8984393347190228554" at="21,37,29,120">
         <var name="diff" id="8984393347190228572" />
       </scope>
       <scope id="8984393347190228549" at="20,0,31,0">

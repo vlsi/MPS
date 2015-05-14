@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui.tree;
 
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
+import jetbrains.mps.openapi.editor.ColorConstants;
 
 import javax.swing.Icon;
 import javax.swing.JLabel;
@@ -117,9 +118,9 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
 
     if (myNode != null && myNode.getAggregatedErrorState() != ErrorState.NONE) {
       if (myNode.getAggregatedErrorState() == ErrorState.ERROR) {
-        g.setColor(Color.RED);
+        g.setColor(new Color(ColorConstants.ERROR));
       } else {
-        g.setColor(Color.YELLOW);
+        g.setColor(new Color(ColorConstants.WARNING));
       }
       ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
     }
