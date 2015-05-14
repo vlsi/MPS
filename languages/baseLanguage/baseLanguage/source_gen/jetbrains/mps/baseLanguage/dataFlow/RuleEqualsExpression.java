@@ -39,7 +39,7 @@ public class RuleEqualsExpression implements DataFlowConstructor {
           if (((Program) o).contains(object)) {
             boolean before = false;
             int position = ((Program) (o)).getEnd(object);
-            Instruction instruction = new nullableInstruction(otherThanNull);
+            Instruction instruction = new nullInstruction(otherThanNull);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189576263");
             instruction.setSource(node);
             ((Program) (o)).insert(instruction, position, true, before);
@@ -52,7 +52,7 @@ public class RuleEqualsExpression implements DataFlowConstructor {
             if (((Program) o).contains(object)) {
               boolean before = true;
               int position = ((Program) (o)).getStart(nextNodeKeeper.getNextNode());
-              Instruction instruction = new nullableInstruction(otherThanNull);
+              Instruction instruction = new nullInstruction(otherThanNull);
               instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189574816");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
@@ -64,7 +64,7 @@ public class RuleEqualsExpression implements DataFlowConstructor {
             if (((Program) o).contains(object)) {
               boolean before = false;
               int position = ((Program) (o)).getEnd(object);
-              Instruction instruction = new nullableInstruction(otherThanNull);
+              Instruction instruction = new nullInstruction(otherThanNull);
               instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600188780235");
               instruction.setSource(node);
               ((Program) (o)).insert(instruction, position, true, before);
