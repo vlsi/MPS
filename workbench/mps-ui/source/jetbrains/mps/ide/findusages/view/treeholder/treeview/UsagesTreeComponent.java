@@ -39,6 +39,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
@@ -83,7 +84,7 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   private INodeRepresentator myNodeRepresentator = null;
 
   private UsagesTree myTree;
-  private final DataTree myContents = new DataTree();
+  private final DataTree myContents;
   private Set<PathItemRole> myPathProvider = new HashSet<PathItemRole>();
 
   private ViewToolbar myViewToolbar;
@@ -96,9 +97,10 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
   private boolean myAdditionalInfoButtonVisible = true;
   private OccurenceNavigatorSupport myOccurrenceNavigator;
 
-  public UsagesTreeComponent(ViewOptions defaultOptions, Project mpsProject) {
+  public UsagesTreeComponent(ViewOptions defaultOptions, Project mpsProject, DataTreeChangesNotifier changeDispatch) {
     super(new BorderLayout());
     myProject = mpsProject;
+    myContents = new DataTree(changeDispatch);
 
     myTree = new UsagesTree(mpsProject);
     myOccurrenceNavigator = new OccurenceNavigatorSupport(myTree) {
@@ -148,13 +150,12 @@ public class UsagesTreeComponent extends JPanel implements IChangeListener {
     add(treePane, BorderLayout.CENTER);
 
     myContents.addChangeListener(this);
-    myContents.startListening();
   }
 
   public void dispose() {
-    myTree.dispose();
-    myContents.stopListening();
     myContents.removeChangeListeners(this);
+    myContents.dispose();
+    myTree.dispose();
   }
 
   public void setContents(final SearchResults contents) {
