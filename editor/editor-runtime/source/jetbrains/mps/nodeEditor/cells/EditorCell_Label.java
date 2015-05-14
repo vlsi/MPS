@@ -478,21 +478,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return textAction.getResult();
   }
 
-  private boolean processMutableKeyTyped(KeyEvent keyEvent, final boolean allowErrors) {
-    String newText = getTextOnEvent(keyEvent);
-    if (!allowErrors && !isValidText(newText)) {
-      return false;
-    }
-
-    int startSelection = myTextLine.getStartTextSelectionPosition();
-    changeText(newText);
-    setCaretPositionIfPossible(startSelection + 1);
-    myTextLine.resetSelection();
-    fireSelectionChanged();
-    ensureCaretVisible();
-    return true;
-  }
-
   /**
    * @param keyEvent "keyTyped" event, allowsIntelligentInputKeyStroke(keyEvent) should be true
    * @return the string contained in myTextLine updated in accordance with passed keyEvent
@@ -1048,6 +1033,21 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
         return true;
       }
       return isErrorState() && mySide == CellSide.LEFT && myKeyEvent.getKeyChar() == ' ';
+    }
+
+    private boolean processMutableKeyTyped(KeyEvent keyEvent, final boolean allowErrors) {
+      String newText = getTextOnEvent(keyEvent);
+      if (!allowErrors && !isValidText(newText)) {
+        return false;
+      }
+
+      int startSelection = myTextLine.getStartTextSelectionPosition();
+      changeText(newText);
+      setCaretPositionIfPossible(startSelection + 1);
+      myTextLine.resetSelection();
+      fireSelectionChanged();
+      ensureCaretVisible();
+      return true;
     }
 
     @Nullable
