@@ -21,12 +21,10 @@ public class AndExpression_DataFlow extends DataFlowBuilder {
       NextNodeKeeper nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{_context.getNode(), false});
       if (nextNodeKeeper != null) {
         SNode nodeToJump = nextNodeKeeper.getNextNode();
-        if (nodeToJump != null) {
-          if (nextNodeKeeper.isAfter()) {
-            _context.getBuilder().emitIfJump(_context.getBuilder().after(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649360025");
-          } else {
-            _context.getBuilder().emitIfJump(_context.getBuilder().before(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649359569");
-          }
+        if (nextNodeKeeper.isAfter()) {
+          _context.getBuilder().emitIfJump(_context.getBuilder().after(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649360025");
+        } else {
+          _context.getBuilder().emitIfJump(_context.getBuilder().before(nodeToJump), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288649359569");
         }
       }
     }

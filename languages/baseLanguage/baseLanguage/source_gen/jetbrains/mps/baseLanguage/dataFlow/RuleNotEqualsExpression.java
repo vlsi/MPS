@@ -32,7 +32,7 @@ public class RuleNotEqualsExpression implements DataFlowConstructor {
       return;
     }
     NextNodeKeeper nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{node, true});
-    if (nextNodeKeeper != null && nextNodeKeeper.getNextNode() != null) {
+    if (nextNodeKeeper != null) {
       if (nextNodeKeeper.willJump()) {
         {
           Object object = node;
@@ -61,7 +61,7 @@ public class RuleNotEqualsExpression implements DataFlowConstructor {
       }
     }
     nextNodeKeeper = BehaviorReflection.invokeVirtual(NextNodeKeeper.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextNode_4235809288648213009", new Object[]{node, false});
-    if (nextNodeKeeper != null && nextNodeKeeper.getNextNode() != null) {
+    if (nextNodeKeeper != null) {
       if (nextNodeKeeper.willJump()) {
         {
           Object object = node;

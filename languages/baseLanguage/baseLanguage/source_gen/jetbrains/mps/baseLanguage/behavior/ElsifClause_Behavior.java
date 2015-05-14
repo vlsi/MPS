@@ -27,7 +27,11 @@ public class ElsifClause_Behavior {
       return null;
     }
     if (value) {
-      return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
+      if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")) != null) {
+        return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
+      } else {
+        return NextNodeKeeper.createJumpAfterNode(thisNode);
+      }
     } else {
       return NextNodeKeeper.createJumpAfterNode(thisNode);
     }

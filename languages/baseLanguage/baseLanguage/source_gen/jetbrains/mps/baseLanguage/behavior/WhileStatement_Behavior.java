@@ -15,7 +15,11 @@ public class WhileStatement_Behavior {
       return null;
     }
     if (value) {
-      return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")));
+      if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")) != null) {
+        return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")));
+      } else {
+        return NextNodeKeeper.createJumpBeforeNode(thisNode);
+      }
     } else {
       return NextNodeKeeper.createJumpAfterNode(thisNode);
     }
