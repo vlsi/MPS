@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -66,7 +68,14 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * @Deprecated in 3.0
    */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    throw new UnsupportedOperationException();
+    if (InternalFlag.isSystemInternal()) {
+      throw new UnsupportedOperationException();
+    }
+    // I don't throw exception here as it might obscure any other error that lead
+    // to model reference change, e.g. if a reference of incomplete transient model
+    // is changed from finally{} block of GenerationSession (see MPS-21983)
+    // Generator code doesn't change reference's target model directly.
+    Logger.getLogger(PostponedReference.class).error("ATTEMPT TO CHANGE TARGET MODEL of PostponedReference", new UnsupportedOperationException());
   }
 
   @Override
