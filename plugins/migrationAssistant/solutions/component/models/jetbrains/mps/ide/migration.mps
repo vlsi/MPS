@@ -841,40 +841,14 @@
                                 <node concept="1QHqEM" id="7LVOmkXCl61" role="3cqZAp">
                                   <node concept="1QHqEC" id="7LVOmkXCl63" role="1QHqEI">
                                     <node concept="3clFbS" id="7LVOmkXCl65" role="1bW5cS">
-                                      <node concept="3clFbF" id="7LVOmkXClvJ" role="3cqZAp">
-                                        <node concept="2OqwBi" id="7LVOmkXClvK" role="3clFbG">
-                                          <node concept="2OqwBi" id="7LVOmkXClvL" role="2Oq$k0">
-                                            <node concept="2YIFZM" id="7LVOmkXClvM" role="2Oq$k0">
-                                              <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
-                                              <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
-                                              <node concept="37vLTw" id="7LVOmkXClvN" role="37wK5m">
-                                                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-                                              </node>
-                                            </node>
-                                            <node concept="UnYns" id="7LVOmkXClvO" role="2OqNvi">
-                                              <node concept="3uibUv" id="7LVOmkXClvP" role="UnYnz">
-                                                <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                                              </node>
-                                            </node>
-                                          </node>
-                                          <node concept="2es0OD" id="7LVOmkXClvQ" role="2OqNvi">
-                                            <node concept="1bVj0M" id="7LVOmkXClvR" role="23t8la">
-                                              <node concept="3clFbS" id="7LVOmkXClvS" role="1bW5cS">
-                                                <node concept="3clFbF" id="7LVOmkXClvT" role="3cqZAp">
-                                                  <node concept="2OqwBi" id="7LVOmkXClvU" role="3clFbG">
-                                                    <node concept="37vLTw" id="7LVOmkXClvV" role="2Oq$k0">
-                                                      <ref role="3cqZAo" node="7LVOmkXClvX" resolve="it" />
-                                                    </node>
-                                                    <node concept="liA8E" id="7LVOmkXClvW" role="2OqNvi">
-                                                      <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                              </node>
-                                              <node concept="Rh6nW" id="7LVOmkXClvX" role="1bW2Oz">
-                                                <property role="TrG5h" value="it" />
-                                                <node concept="2jxLKc" id="7LVOmkXClvY" role="1tU5fm" />
-                                              </node>
+                                      <node concept="3clFbF" id="1Ql1_c6MGLH" role="3cqZAp">
+                                        <node concept="1rXfSq" id="1Ql1_c6MGLF" role="3clFbG">
+                                          <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                                          <node concept="2YIFZM" id="1Ql1_c6ML2c" role="37wK5m">
+                                            <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                                            <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                                            <node concept="37vLTw" id="1Ql1_c6ML2d" role="37wK5m">
+                                              <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                                             </node>
                                           </node>
                                         </node>
@@ -1364,40 +1338,14 @@
             <node concept="1QHqEM" id="1Yn1nOeJP5x" role="3cqZAp">
               <node concept="1QHqEC" id="1Yn1nOeJP5z" role="1QHqEI">
                 <node concept="3clFbS" id="1Yn1nOeJP5_" role="1bW5cS">
-                  <node concept="3clFbF" id="7LVOmkXChGW" role="3cqZAp">
-                    <node concept="2OqwBi" id="7LVOmkXCiuj" role="3clFbG">
-                      <node concept="2OqwBi" id="7LVOmkXChSZ" role="2Oq$k0">
-                        <node concept="2YIFZM" id="7LVOmkXCdlK" role="2Oq$k0">
-                          <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
-                          <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
-                          <node concept="37vLTw" id="7LVOmkXCdlL" role="37wK5m">
-                            <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
-                          </node>
-                        </node>
-                        <node concept="UnYns" id="7LVOmkXCikz" role="2OqNvi">
-                          <node concept="3uibUv" id="7LVOmkXCim7" role="UnYnz">
-                            <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2es0OD" id="7LVOmkXCiUT" role="2OqNvi">
-                        <node concept="1bVj0M" id="7LVOmkXCiUV" role="23t8la">
-                          <node concept="3clFbS" id="7LVOmkXCiUW" role="1bW5cS">
-                            <node concept="3clFbF" id="7LVOmkXCiYU" role="3cqZAp">
-                              <node concept="2OqwBi" id="7LVOmkXCj2L" role="3clFbG">
-                                <node concept="37vLTw" id="7LVOmkXCiYT" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="7LVOmkXCiUX" resolve="it" />
-                                </node>
-                                <node concept="liA8E" id="7LVOmkXCjs9" role="2OqNvi">
-                                  <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="Rh6nW" id="7LVOmkXCiUX" role="1bW2Oz">
-                            <property role="TrG5h" value="it" />
-                            <node concept="2jxLKc" id="7LVOmkXCiUY" role="1tU5fm" />
-                          </node>
+                  <node concept="3clFbF" id="1Ql1_c6MEU0" role="3cqZAp">
+                    <node concept="1rXfSq" id="1Ql1_c6METZ" role="3clFbG">
+                      <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                      <node concept="2YIFZM" id="1Ql1_c6METH" role="37wK5m">
+                        <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                        <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                        <node concept="37vLTw" id="1Ql1_c6METI" role="37wK5m">
+                          <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
                         </node>
                       </node>
                     </node>
@@ -1423,6 +1371,59 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2tJIrI" id="1Ql1_c6N0gi" role="jymVt" />
+    <node concept="2YIFZL" id="1Ql1_c6N3AN" role="jymVt">
+      <property role="TrG5h" value="updateUsedLanguagesVersions" />
+      <property role="IEkAT" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="1Ql1_c6METD" role="3clF47">
+        <node concept="3clFbF" id="1Ql1_c6METE" role="3cqZAp">
+          <node concept="2OqwBi" id="1Ql1_c6METF" role="3clFbG">
+            <node concept="2OqwBi" id="1Ql1_c6METG" role="2Oq$k0">
+              <node concept="UnYns" id="1Ql1_c6METJ" role="2OqNvi">
+                <node concept="3uibUv" id="1Ql1_c6METK" role="UnYnz">
+                  <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="1Ql1_c6MKUE" role="2Oq$k0">
+                <ref role="3cqZAo" node="1Ql1_c6MIHZ" resolve="modules" />
+              </node>
+            </node>
+            <node concept="2es0OD" id="1Ql1_c6METL" role="2OqNvi">
+              <node concept="1bVj0M" id="1Ql1_c6METM" role="23t8la">
+                <node concept="3clFbS" id="1Ql1_c6METN" role="1bW5cS">
+                  <node concept="3clFbF" id="1Ql1_c6METO" role="3cqZAp">
+                    <node concept="2OqwBi" id="1Ql1_c6METP" role="3clFbG">
+                      <node concept="37vLTw" id="1Ql1_c6METQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1Ql1_c6METS" resolve="it" />
+                      </node>
+                      <node concept="liA8E" id="1Ql1_c6METR" role="2OqNvi">
+                        <ref role="37wK5l" to="vsqj:~AbstractModule.validateLanguageVersions():void" resolve="validateLanguageVersions" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="1Ql1_c6METS" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="1Ql1_c6METT" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1Ql1_c6MIHZ" role="3clF46">
+        <property role="TrG5h" value="modules" />
+        <node concept="A3Dl8" id="1Ql1_c6MIHX" role="1tU5fm">
+          <node concept="3uibUv" id="1Ql1_c6MJQn" role="A3Ik2">
+            <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="1Ql1_c6METY" role="3clF45" />
+      <node concept="3Tm1VV" id="1Ql1_c6N1GO" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1AzqgyAfh7n" role="jymVt" />
     <node concept="3clFb_" id="1AzqgyAfalv" role="jymVt">
@@ -1766,7 +1767,27 @@
             <ref role="3cqZAo" node="1AzqgyAfdcG" resolve="myMigrationQueued" />
           </node>
         </node>
-        <node concept="3clFbH" id="1AzqgyAfnxt" role="3cqZAp" />
+        <node concept="3clFbH" id="27ve8bWV10p" role="3cqZAp" />
+        <node concept="3SKdUt" id="27ve8bWV16A" role="3cqZAp">
+          <node concept="3SKdUq" id="27ve8bWV19h" role="3SKWNk">
+            <property role="3SKdUp" value="this is because of validateLanguageVersions, to fail ASAP" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="27ve8bWV0Uj" role="3cqZAp">
+          <node concept="2YIFZM" id="27ve8bWV0YD" role="3clFbG">
+            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="27ve8bWV0PU" role="3cqZAp" />
+        <node concept="3clFbF" id="1Ql1_c6MMTS" role="3cqZAp">
+          <node concept="1rXfSq" id="1Ql1_c6MMTQ" role="3clFbG">
+            <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+            <node concept="37vLTw" id="1Ql1_c6MNC_" role="37wK5m">
+              <ref role="3cqZAo" node="1AzqgyAfcMX" resolve="modules" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1AzqgyAg52l" role="3cqZAp">
           <node concept="3cpWsn" id="1AzqgyAg52o" role="3cpWs9">
             <property role="TrG5h" value="modules2Check" />
@@ -1845,6 +1866,18 @@
           </node>
         </node>
         <node concept="3clFbH" id="1AzqgyAgGM6" role="3cqZAp" />
+        <node concept="3SKdUt" id="27ve8bWV1nl" role="3cqZAp">
+          <node concept="3SKdUq" id="27ve8bWV1nm" role="3SKWNk">
+            <property role="3SKdUp" value="this is because of validateLanguageVersions, to fail ASAP" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="27ve8bWV1nn" role="3cqZAp">
+          <node concept="2YIFZM" id="27ve8bWV1no" role="3clFbG">
+            <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+            <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalWrite():void" resolve="assertLegalWrite" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="27ve8bWV1aG" role="3cqZAp" />
         <node concept="3SKdUt" id="1AzqgyAgwcB" role="3cqZAp">
           <node concept="3SKdUq" id="1AzqgyAgwcC" role="3SKWNk">
             <property role="3SKdUp" value="if a new language is added to a repo, all modules in project using it " />
@@ -1998,6 +2031,14 @@
               <node concept="37vLTw" id="39M2ISgsrcU" role="37wK5m">
                 <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Ql1_c6MQUP" role="3cqZAp">
+          <node concept="1rXfSq" id="1Ql1_c6MQUQ" role="3clFbG">
+            <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+            <node concept="37vLTw" id="1Ql1_c6MRqW" role="37wK5m">
+              <ref role="3cqZAo" node="1AzqgyAgQ$g" resolve="modules2Check" />
             </node>
           </node>
         </node>

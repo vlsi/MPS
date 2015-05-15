@@ -16,10 +16,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.migration.component.util.MigrationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
@@ -58,8 +58,9 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        MigrationTrigger.updateUsedLanguagesVersions(allModules);
         migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
       }
     });

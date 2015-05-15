@@ -155,7 +155,7 @@
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
-      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
+      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -234,9 +234,18 @@
             <node concept="10P_77" id="4x27oTRX0aQ" role="1tU5fm" />
           </node>
         </node>
-        <node concept="1QHqEK" id="4x27oTRXHZ1" role="3cqZAp">
-          <node concept="1QHqEC" id="4x27oTRXHZ3" role="1QHqEI">
-            <node concept="3clFbS" id="4x27oTRXHZ5" role="1bW5cS">
+        <node concept="1QHqEM" id="27ve8bWV06Y" role="3cqZAp">
+          <node concept="1QHqEC" id="27ve8bWV070" role="1QHqEI">
+            <node concept="3clFbS" id="27ve8bWV072" role="1bW5cS">
+              <node concept="3clFbF" id="1Ql1_c6N7pv" role="3cqZAp">
+                <node concept="2YIFZM" id="1Ql1_c6N7rw" role="3clFbG">
+                  <ref role="1Pybhc" to="bim2:5SsFeroaajZ" resolve="MigrationTrigger" />
+                  <ref role="37wK5l" to="bim2:1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                  <node concept="37vLTw" id="1Ql1_c6N7tp" role="37wK5m">
+                    <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbF" id="4x27oTRXIhg" role="3cqZAp">
                 <node concept="37vLTI" id="4x27oTRXIJN" role="3clFbG">
                   <node concept="37vLTw" id="4x27oTRXIhe" role="37vLTJ">

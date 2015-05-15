@@ -12,10 +12,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -28,12 +25,15 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.migration.check.Problem;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.project.AbstractModule;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -97,11 +97,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       addListeners();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-            public void visit(AbstractModule it) {
-              it.validateLanguageVersions();
-            }
-          });
+          updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
           checkMigrationNeeded();
         }
       });
@@ -123,11 +119,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
               ModelAccess.instance().runWriteAction(new Runnable() {
                 public void run() {
-                  Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-                    public void visit(AbstractModule it) {
-                      it.validateLanguageVersions();
-                    }
-                  });
+                  updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
                 }
               });
 
@@ -197,6 +189,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
   }
 
+  public static void updateUsedLanguagesVersions(Iterable<SModule> modules) {
+    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+      public void visit(AbstractModule it) {
+        it.validateLanguageVersions();
+      }
+    });
+  }
+
   public void projectClosed() {
     removeListeners();
   }
@@ -256,6 +256,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
+    // this is because of validateLanguageVersions, to fail ASAP 
+    ModelAccess.assertLegalWrite();
+
+    updateUsedLanguagesVersions(modules);
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
     if (!(MigrationComponent.isMigrationRequired(p, modules2Check))) {
       return;
@@ -268,6 +272,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     if (myMigrationQueued) {
       return;
     }
+
+    // this is because of validateLanguageVersions, to fail ASAP 
+    ModelAccess.assertLegalWrite();
 
     // if a new language is added to a repo, all modules in project using it  
     // should be checked for whether their migration is needed  
@@ -286,6 +293,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       }
     });
+    updateUsedLanguagesVersions(modules2Check);
     if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
       return;
     }
