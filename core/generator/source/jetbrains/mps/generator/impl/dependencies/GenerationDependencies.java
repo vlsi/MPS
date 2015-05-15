@@ -16,12 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,7 +57,7 @@ public class GenerationDependencies {
   private /* transient */ final int mySkippedCount;
   private /* transient */ final int myFromCacheCount;
 
-  private GenerationDependencies(String modelHash, String parametersHash) {
+  /*package*/ GenerationDependencies(String modelHash, String parametersHash) {
     this.containsIncrementalInfo = false;
     this.myModelHash = modelHash;
     this.myParametersHash = parametersHash;
@@ -75,7 +70,7 @@ public class GenerationDependencies {
     this.myFromCacheCount = 0;
   }
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes,
+  /*package*/ GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes,
       List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount, Map<String, String> dependenciesTraces) {
     this.containsIncrementalInfo = true;
     this.myRootDependencies = data;
@@ -204,42 +199,5 @@ public class GenerationDependencies {
       return new GenerationDependencies(modelHash, paramsHash);
     }
     return new GenerationDependencies(data, modelHash, paramsHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0, null);
-  }
-
-  public static GenerationDependencies fromIncremental(RootDependenciesBuilder[] roots, String modelHash,
-      String parametersHash, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
-      Map<String, String> dependenciesTraces) {
-
-    List<GenerationRootDependencies> unchanged = null;
-    List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(roots.length);
-    Map<String, String> externalHashes = new HashMap<String, String>();
-    for (RootDependenciesBuilder l : roots) {
-      SNode originalRoot = l.getOriginalRoot();
-      GenerationRootDependencies dep;
-      if (l.isUnchanged()) {
-        dep = l.getSavedDependencies();
-        if (unchanged == null) {
-          unchanged = new ArrayList<GenerationRootDependencies>();
-        }
-        unchanged.add(dep);
-      } else {
-        dep = GenerationRootDependencies.fromData(l);
-      }
-      rootDependencies.add(dep);
-      for (String modelReference : dep.getExternal()) {
-        if (!externalHashes.containsKey(modelReference)) {
-          SModel sm = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
-          Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, null);
-          String value = hashes != null ? hashes.get(GeneratableSModel.FILE) : null;
-          externalHashes.put(modelReference, value);
-        }
-      }
-    }
-    return new GenerationDependencies(rootDependencies, modelHash, parametersHash, externalHashes,
-        unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount, dependenciesTraces);
-  }
-
-  public static GenerationDependencies fromNonIncremental(String modelHash, String parametersHash) {
-    return new GenerationDependencies(modelHash, parametersHash);
   }
 }

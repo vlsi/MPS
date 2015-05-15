@@ -29,7 +29,6 @@ import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuild
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -183,7 +182,7 @@ public class IncrementalGenerationHandler {
     Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
-      SModel sm = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
+      SModel sm = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(myProject.getRepository());
       if (sm == null) {
         changedModels.add(modelReference);
         continue;

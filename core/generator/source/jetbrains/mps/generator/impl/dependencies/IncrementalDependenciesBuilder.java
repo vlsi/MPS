@@ -24,7 +24,6 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -34,11 +33,14 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -266,8 +268,44 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromIncremental(myAllBuilders, myModelHash, myParametersHash, incrementalStrategy, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
+    List<GenerationRootDependencies> unchanged = new ArrayList<GenerationRootDependencies>();
+    List<GenerationRootDependencies> rootDependencies = new ArrayList<GenerationRootDependencies>(myAllBuilders.length);
+    fillRootDependencies(rootDependencies, unchanged);
+    final Map<String, String> externalHashes = getGenerationHashes(rootDependencies, incrementalStrategy);
+    return new GenerationDependencies(rootDependencies, myModelHash, myParametersHash, externalHashes,
+        unchanged.isEmpty() ? Collections.<GenerationRootDependencies>emptyList() : unchanged, myUnchangedSet.size(), myRequiredSet.size(), myDependenciesTraces);
   }
+
+  private void fillRootDependencies(List<GenerationRootDependencies> rootDependencies, List<GenerationRootDependencies> unchanged) {
+    for (RootDependenciesBuilder l : myAllBuilders) {
+      GenerationRootDependencies dep;
+      if (l.isUnchanged()) {
+        dep = l.getSavedDependencies();
+        unchanged.add(dep);
+      } else {
+        dep = GenerationRootDependencies.fromData(l);
+      }
+      rootDependencies.add(dep);
+    }
+  }
+
+  private Map<String,String> getGenerationHashes(List<GenerationRootDependencies> rootDependencies, IncrementalGenerationStrategy incrementalStrategy) {
+    Map<String, String> externalHashes = new HashMap<String, String>();
+    final SRepository repo = originalInputModel.getRepository();
+    for (GenerationRootDependencies dep : rootDependencies) {
+      for (String modelReference : dep.getExternal()) {
+        if (!externalHashes.containsKey(modelReference)) {
+          SModel sm = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(repo);
+          Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, null);
+          String value = hashes != null ? hashes.get(GeneratableSModel.FILE) : null;
+          externalHashes.put(modelReference, value);
+        }
+      }
+    }
+    return externalHashes;
+  }
+
+
 
   /* working with cache */
 
