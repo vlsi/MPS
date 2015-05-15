@@ -61,6 +61,9 @@ public class ButtonTabsComponent extends BaseTabsComponent {
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
           public void run() {
+            if (isDisposed()) {
+              return;
+            }
             updateTabs();
           }
         });

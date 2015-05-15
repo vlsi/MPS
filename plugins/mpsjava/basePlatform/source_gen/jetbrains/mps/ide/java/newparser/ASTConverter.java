@@ -167,6 +167,11 @@ public class ASTConverter {
       for (TypeDeclaration innerTyp : x.memberTypes) {
         try {
           SNode nested = childConverter.convertTypeDecl(innerTyp);
+          if (SNodeOperations.isInstanceOf(cls, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+            // container type is interface: it means member type must public static 
+            SLinkOperations.setTarget(nested, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), createPublicVisibility_rbndtb_a0a1a1a0a2a91a6());
+            // no need to explicitly set static, as isStatic() handles this for interfaces 
+          }
           SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")).add(nested);
           MapSequence.fromMap(memberStartPositions).put(nested, innerTyp.sourceStart);
         } finally {
@@ -1074,6 +1079,11 @@ public class ASTConverter {
     public ASTConverter.State getState() {
       return myState;
     }
+  }
+  private static SNode createPublicVisibility_rbndtb_a0a1a1a0a2a91a6() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"), null, null, false);
+    return n1;
   }
   private static SNode _quotation_createNode_rbndtb_a0b0c0g0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

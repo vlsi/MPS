@@ -3135,12 +3135,12 @@
       <ref role="3uigEE" node="7MIYyntDZEE" resolve="DifferanceItem" />
     </node>
     <node concept="312cEg" id="7MIYyntE0n5" role="jymVt">
-      <property role="TrG5h" value="myConcept1" />
+      <property role="TrG5h" value="myActualConcept" />
       <node concept="17QB3L" id="5S0H0IZWUga" role="1tU5fm" />
       <node concept="3Tm1VV" id="7MIYyntE0n7" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="7MIYyntE0n8" role="jymVt">
-      <property role="TrG5h" value="myConcept2" />
+      <property role="TrG5h" value="myExpectedConcept" />
       <node concept="17QB3L" id="5S0H0IZWUgb" role="1tU5fm" />
       <node concept="3Tm1VV" id="7MIYyntE0na" role="1B3o_S" />
     </node>
@@ -3148,31 +3148,31 @@
       <node concept="3Tm1VV" id="7MIYyntE0nc" role="1B3o_S" />
       <node concept="3cqZAl" id="7MIYyntE0nd" role="3clF45" />
       <node concept="37vLTG" id="7MIYyntE0ne" role="3clF46">
-        <property role="TrG5h" value="concept1" />
+        <property role="TrG5h" value="actualConcept" />
         <node concept="17QB3L" id="7MIYyntE0qS" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="7MIYyntE0ng" role="3clF46">
-        <property role="TrG5h" value="concept2" />
+        <property role="TrG5h" value="expectedConcept" />
         <node concept="17QB3L" id="7MIYyntE0qR" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="7MIYyntE0ni" role="3clF47">
         <node concept="3clFbF" id="7MIYyntE0nj" role="3cqZAp">
           <node concept="37vLTI" id="7MIYyntE0nk" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeucU8" role="37vLTJ">
-              <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myConcept1" />
+              <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myActualConcept" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmutV" role="37vLTx">
-              <ref role="3cqZAo" node="7MIYyntE0ne" resolve="concept1" />
+              <ref role="3cqZAo" node="7MIYyntE0ne" resolve="actualConcept" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="7MIYyntE0nn" role="3cqZAp">
           <node concept="37vLTI" id="7MIYyntE0no" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuSvT" role="37vLTJ">
-              <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myConcept2" />
+              <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myExpectedConcept" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmxJG" role="37vLTx">
-              <ref role="3cqZAo" node="7MIYyntE0ng" resolve="concept2" />
+              <ref role="3cqZAo" node="7MIYyntE0ng" resolve="expectedConcept" />
             </node>
           </node>
         </node>
@@ -3184,22 +3184,27 @@
       <node concept="17QB3L" id="5S0H0IZWUgc" role="3clF45" />
       <node concept="3clFbS" id="7MIYyntE0nu" role="3clF47">
         <node concept="3cpWs6" id="7MIYyntE0nv" role="3cqZAp">
-          <node concept="3cpWs3" id="7MIYyntE0nw" role="3cqZAk">
-            <node concept="3cpWs3" id="7MIYyntE0nx" role="3uHU7B">
-              <node concept="3cpWs3" id="7MIYyntE0ny" role="3uHU7B">
-                <node concept="Xl_RD" id="7MIYyntE0nz" role="3uHU7B">
-                  <property role="Xl_RC" value="Different concepts: " />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeusra" role="3uHU7w">
-                  <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myConcept1" />
-                </node>
-              </node>
-              <node concept="Xl_RD" id="7MIYyntE0n_" role="3uHU7w">
-                <property role="Xl_RC" value=", " />
-              </node>
+          <node concept="3cpWs3" id="4Awu96EUbF6" role="3cqZAk">
+            <node concept="Xl_RD" id="4Awu96EUbFj" role="3uHU7w">
+              <property role="Xl_RC" value="]" />
             </node>
-            <node concept="37vLTw" id="2BHiRxeuyTn" role="3uHU7w">
-              <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myConcept2" />
+            <node concept="3cpWs3" id="7MIYyntE0nw" role="3uHU7B">
+              <node concept="3cpWs3" id="7MIYyntE0nx" role="3uHU7B">
+                <node concept="3cpWs3" id="7MIYyntE0ny" role="3uHU7B">
+                  <node concept="Xl_RD" id="7MIYyntE0nz" role="3uHU7B">
+                    <property role="Xl_RC" value="Different concepts: [was: " />
+                  </node>
+                  <node concept="37vLTw" id="2BHiRxeusra" role="3uHU7w">
+                    <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myActualConcept" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="7MIYyntE0n_" role="3uHU7w">
+                  <property role="Xl_RC" value=", expected: " />
+                </node>
+              </node>
+              <node concept="37vLTw" id="2BHiRxeuyTn" role="3uHU7w">
+                <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myExpectedConcept" />
+              </node>
             </node>
           </node>
         </node>
@@ -3271,13 +3276,13 @@
           <node concept="1Wc70l" id="7MIYyntE0o4" role="3cqZAk">
             <node concept="2OqwBi" id="7MIYyntE0o5" role="3uHU7B">
               <node concept="37vLTw" id="2BHiRxeuyJk" role="2Oq$k0">
-                <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myConcept1" />
+                <ref role="3cqZAo" node="7MIYyntE0n5" resolve="myActualConcept" />
               </node>
               <node concept="liA8E" id="7MIYyntE0o7" role="2OqNvi">
                 <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="7MIYyntE0o8" role="37wK5m">
                   <node concept="2OwXpG" id="7MIYyntE0o9" role="2OqNvi">
-                    <ref role="2Oxat5" node="7MIYyntE0n5" resolve="myConcept1" />
+                    <ref role="2Oxat5" node="7MIYyntE0n5" resolve="myActualConcept" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTsmj" role="2Oq$k0">
                     <ref role="3cqZAo" node="7MIYyntE0nY" resolve="diff" />
@@ -3287,13 +3292,13 @@
             </node>
             <node concept="2OqwBi" id="7MIYyntE0ob" role="3uHU7w">
               <node concept="37vLTw" id="2BHiRxeuW1T" role="2Oq$k0">
-                <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myConcept2" />
+                <ref role="3cqZAo" node="7MIYyntE0n8" resolve="myExpectedConcept" />
               </node>
               <node concept="liA8E" id="7MIYyntE0od" role="2OqNvi">
                 <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="7MIYyntE0oe" role="37wK5m">
                   <node concept="2OwXpG" id="7MIYyntE0of" role="2OqNvi">
-                    <ref role="2Oxat5" node="7MIYyntE0n8" resolve="myConcept2" />
+                    <ref role="2Oxat5" node="7MIYyntE0n8" resolve="myExpectedConcept" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagTuDi" role="2Oq$k0">
                     <ref role="3cqZAo" node="7MIYyntE0nY" resolve="diff" />
@@ -3321,12 +3326,12 @@
       <node concept="3Tm6S6" id="7MIYyntE0om" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="7MIYyntE0on" role="jymVt">
-      <property role="TrG5h" value="myCount1" />
+      <property role="TrG5h" value="myActualCount" />
       <node concept="10Oyi0" id="7MIYyntE0oo" role="1tU5fm" />
       <node concept="3Tm6S6" id="7MIYyntE0op" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="7MIYyntE0oq" role="jymVt">
-      <property role="TrG5h" value="myCount2" />
+      <property role="TrG5h" value="myExpectedCount" />
       <node concept="10Oyi0" id="7MIYyntE0or" role="1tU5fm" />
       <node concept="3Tm6S6" id="7MIYyntE0os" role="1B3o_S" />
     </node>
@@ -3338,11 +3343,11 @@
         <node concept="17QB3L" id="5S0H0IZWUg9" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="7MIYyntE0oy" role="3clF46">
-        <property role="TrG5h" value="c1" />
+        <property role="TrG5h" value="actualCount" />
         <node concept="10Oyi0" id="7MIYyntE0oz" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="7MIYyntE0o$" role="3clF46">
-        <property role="TrG5h" value="c2" />
+        <property role="TrG5h" value="expectedCount" />
         <node concept="10Oyi0" id="7MIYyntE0o_" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="7MIYyntE0oA" role="3clF47">
@@ -3359,20 +3364,20 @@
         <node concept="3clFbF" id="7MIYyntE0oF" role="3cqZAp">
           <node concept="37vLTI" id="7MIYyntE0oG" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuLam" role="37vLTJ">
-              <ref role="3cqZAo" node="7MIYyntE0on" resolve="myCount1" />
+              <ref role="3cqZAo" node="7MIYyntE0on" resolve="myActualCount" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmyw$" role="37vLTx">
-              <ref role="3cqZAo" node="7MIYyntE0oy" resolve="c1" />
+              <ref role="3cqZAo" node="7MIYyntE0oy" resolve="actualCount" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="7MIYyntE0oJ" role="3cqZAp">
           <node concept="37vLTI" id="7MIYyntE0oK" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuqSr" role="37vLTJ">
-              <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myCount2" />
+              <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myExpectedCount" />
             </node>
             <node concept="37vLTw" id="2BHiRxgmamr" role="37vLTx">
-              <ref role="3cqZAo" node="7MIYyntE0o$" resolve="c2" />
+              <ref role="3cqZAo" node="7MIYyntE0o$" resolve="expectedCount" />
             </node>
           </node>
         </node>
@@ -3398,19 +3403,19 @@
                       </node>
                     </node>
                     <node concept="Xl_RD" id="7MIYyntE0p0" role="3uHU7w">
-                      <property role="Xl_RC" value=" [" />
+                      <property role="Xl_RC" value=" [was: " />
                     </node>
                   </node>
                   <node concept="37vLTw" id="2BHiRxeul6$" role="3uHU7w">
-                    <ref role="3cqZAo" node="7MIYyntE0on" resolve="myCount1" />
+                    <ref role="3cqZAo" node="7MIYyntE0on" resolve="myActualCount" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="7MIYyntE0p2" role="3uHU7w">
-                  <property role="Xl_RC" value=", " />
+                  <property role="Xl_RC" value=", expected: " />
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxeuKl6" role="3uHU7w">
-                <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myCount2" />
+                <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myExpectedCount" />
               </node>
             </node>
             <node concept="Xl_RD" id="7MIYyntE0p4" role="3uHU7w">
@@ -3503,11 +3508,11 @@
               </node>
               <node concept="3clFbC" id="7MIYyntE0pE" role="3uHU7w">
                 <node concept="37vLTw" id="2BHiRxeuVu5" role="3uHU7B">
-                  <ref role="3cqZAo" node="7MIYyntE0on" resolve="myCount1" />
+                  <ref role="3cqZAo" node="7MIYyntE0on" resolve="myActualCount" />
                 </node>
                 <node concept="2OqwBi" id="7MIYyntE0pG" role="3uHU7w">
                   <node concept="2OwXpG" id="7MIYyntE0pH" role="2OqNvi">
-                    <ref role="2Oxat5" node="7MIYyntE0on" resolve="myCount1" />
+                    <ref role="2Oxat5" node="7MIYyntE0on" resolve="myActualCount" />
                   </node>
                   <node concept="37vLTw" id="3GM_nagT_Vi" role="2Oq$k0">
                     <ref role="3cqZAo" node="7MIYyntE0ps" resolve="diff" />
@@ -3517,11 +3522,11 @@
             </node>
             <node concept="3clFbC" id="7MIYyntE0pJ" role="3uHU7w">
               <node concept="37vLTw" id="2BHiRxeuuY3" role="3uHU7B">
-                <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myCount2" />
+                <ref role="3cqZAo" node="7MIYyntE0oq" resolve="myExpectedCount" />
               </node>
               <node concept="2OqwBi" id="7MIYyntE0pL" role="3uHU7w">
                 <node concept="2OwXpG" id="7MIYyntE0pM" role="2OqNvi">
-                  <ref role="2Oxat5" node="7MIYyntE0oq" resolve="myCount2" />
+                  <ref role="2Oxat5" node="7MIYyntE0oq" resolve="myExpectedCount" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTz48" role="2Oq$k0">
                   <ref role="3cqZAo" node="7MIYyntE0ps" resolve="diff" />

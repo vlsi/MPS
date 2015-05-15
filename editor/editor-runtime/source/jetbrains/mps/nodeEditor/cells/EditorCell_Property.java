@@ -35,11 +35,12 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   private ModelAccessor myModelAccessor;
   private boolean myCommitInProgress;
   private boolean myCommitInCommand = true;
+  private String myLastModelText;
 
   protected EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
-    setErrorState(!accessor.isValidText(getText()));
     myModelAccessor = accessor;
+    synchronizeViewWithModel();
   }
 
   public static EditorCell_Property create(jetbrains.mps.openapi.editor.EditorContext editorContext, ModelAccessor modelAccessor, SNode node) {
@@ -66,6 +67,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   @Override
   public void synchronizeViewWithModel() {
     String text = myModelAccessor.getText();
+    myLastModelText = text;
     setErrorState(!isValidText(text));
     setText(text);
   }
@@ -74,7 +76,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   public void setSelected(boolean selected) {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
-    if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
+    if (oldSelected && !selected && isTransactional()) {
       final Runnable commitCommand = new Runnable() {
         @Override
         public void run() {
@@ -106,7 +108,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     myCommitInProgress = true;
     try {
       boolean result = false;
-      if (myModelAccessor instanceof TransactionalModelAccessor) {
+      if (isTransactional()) {
         TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
         if (transactionalModelAccessor.hasValueToCommit()) {
           transactionalModelAccessor.commit();
@@ -132,10 +134,18 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
     if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
-    } else if (myModelAccessor instanceof TransactionalModelAccessor) {
+      synchronizeViewWithModel();
+      return;
+    }
+
+    if (isTransactional()) {
       ((TransactionalModelAccessor) myModelAccessor).resetUncommittedValue();
     }
     setErrorState(!isValidText(text));
+  }
+
+  public String getLastModelText() {
+    return myLastModelText;
   }
 
   @Override
@@ -184,6 +194,14 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     return getContext().getRepository().getModelAccess();
   }
 
+  private boolean isTransactional() {
+    return myModelAccessor instanceof TransactionalModelAccessor;
+  }
+
+  /**
+   * @deprecated since MPS 3.2 not used
+   */
+  @Deprecated
   public static interface SynchronizationListener {
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }

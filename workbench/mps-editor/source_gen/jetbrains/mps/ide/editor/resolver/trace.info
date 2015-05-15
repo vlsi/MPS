@@ -7,7 +7,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:e83eb82a-b3b8-4003-84af-b40cb742ea94(jetbrains.mps.ide.editor.resolver)/1802459475176570754">
     <file name="EditorResolverComponent.java">
@@ -38,34 +37,20 @@
     <file name="EditorResolver.java">
       <node id="1802459475176585196" at="21,117,22,92" concept="5" />
       <node id="4953860923773790232" at="23,30,24,19" concept="6" />
-      <node id="1802459475176582994" at="25,5,26,156" concept="5" />
-      <node id="5447047924422203920" at="27,9,28,121" concept="6" />
-      <node id="216787248379473153" at="29,15,30,27" concept="1" />
-      <node id="1802459475176582256" at="34,68,35,24" concept="7" />
-      <node id="1802459475176582292" at="35,24,36,21" concept="1" />
+      <node id="1802459475176582994" at="25,5,26,138" concept="5" />
+      <node id="5447047924422203920" at="27,9,28,125" concept="6" />
+      <node id="216787248379473153" at="29,15,30,31" concept="1" />
       <node id="1802459475176571475" at="17,0,19,0" concept="0" trace="EditorResolver#()V" />
       <node id="4953860923773790207" at="22,92,25,5" concept="3" />
-      <node id="1806760877632907064" at="39,0,42,0" concept="4" trace="attachListeners#()V" />
-      <node id="1806760877632926682" at="43,0,46,0" concept="4" trace="detachListeners#()V" />
-      <node id="1802459475176572298" at="34,0,38,0" concept="0" trace="FakeEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <node id="3391050862413798839" at="26,156,31,5" concept="8" />
+      <node id="3391050862413798839" at="26,138,31,5" concept="7" />
       <node id="1802459475176571480" at="19,0,33,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
       <scope id="1802459475176571478" at="17,27,17,27" />
-      <scope id="1806760877632907068" at="40,38,40,38" />
-      <scope id="1806760877632926686" at="44,38,44,38" />
       <scope id="4953860923773790208" at="23,30,24,19" />
-      <scope id="3391050862413798840" at="27,9,28,121" />
-      <scope id="3391050862413798842" at="29,15,30,27" />
+      <scope id="3391050862413798840" at="27,9,28,125" />
+      <scope id="3391050862413798842" at="29,15,30,31" />
       <scope id="1802459475176571475" at="17,0,19,0" />
-      <scope id="1802459475176572301" at="34,68,36,21" />
-      <scope id="1806760877632907064" at="39,0,42,0" />
-      <scope id="1806760877632926682" at="43,0,46,0" />
-      <scope id="1802459475176572298" at="34,0,38,0">
-        <var name="node" id="1802459475176582257" />
-        <var name="repository" id="817507406026968566" />
-      </scope>
       <scope id="1802459475176571503" at="21,117,31,5">
-        <var name="fakeEditor" id="1802459475176582995" />
+        <var name="headlessEditor" id="1802459475176582995" />
         <var name="resolveInfo" id="1802459475176585197" />
       </scope>
       <scope id="1802459475176571480" at="19,0,33,0">
@@ -73,8 +58,7 @@
         <var name="repository" id="1802459475176571487" />
         <var name="sourceNode" id="1802459475176571484" />
       </scope>
-      <unit id="1802459475176572296" at="33,0,47,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
-      <unit id="1802459475176571473" at="16,0,48,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
+      <unit id="1802459475176571473" at="16,0,34,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
     </file>
   </root>
 </debug-info>

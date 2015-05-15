@@ -220,6 +220,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   protected void processLoadedModel(jetbrains.mps.smodel.SModel loadedSModel) {
+    if (this.getPersistenceVersion() >= 9) return;
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getReference());

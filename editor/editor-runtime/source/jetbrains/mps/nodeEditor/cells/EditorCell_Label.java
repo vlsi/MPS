@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -26,7 +25,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
@@ -37,15 +35,15 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.AbstractComputeRunnable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
@@ -435,11 +433,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    final int wasPosition = getCaretPosition();
-    final CellSide side;
-    if (wasPosition == 0) {
+    if (!isTextTypedEvent(keyEvent)) {
+      return false;
+    }
+
+    int caretPosition = getCaretPosition();
+    CellSide side;
+    if (caretPosition == 0) {
       side = CellSide.LEFT;
-    } else if (wasPosition == getRenderedText().length()) {
+    } else if (caretPosition == getRenderedText().length()) {
       side = CellSide.RIGHT;
     } else {
       side = null;
@@ -447,78 +449,21 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     if (isEditable()) {
-      final boolean result[] = new boolean[1];
-      String groupId = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return getCellId() + "_" + getSNode().getNodeId().toString();
-        }
-      });
-      modelAccess.executeCommand(new UndoRunnable.Base(null, groupId) {
-        @Override
-        public void run() {
-          if (processMutableKeyTyped(keyEvent, allowErrors)) {
-            getContext().flushEvents();
-
-            if (isErrorState() && side != null) {
-              if (allowsIntelligentInputKeyStroke(keyEvent)) {
-                String pattern = getRenderedText();
-                IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), pattern, side);
-              }
-            }
-
-            result[0] = true;
-          } else if (isErrorState() && wasPosition == 0 && keyEvent.getKeyChar() == ' ') {
-            result[0] = true;
-          }
-        }
-      });
+      ProcessKeyTypedCommand keyTypedCommand = new ProcessKeyTypedCommand(keyEvent, allowErrors, side);
+      modelAccess.executeCommand(keyTypedCommand);
       getEditor().relayout();
-      if (result[0]) {
-        return true;
-      }
-    }
-    if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
-      String pattern = new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return getRenderedTextOn(keyEvent);
-        }
-      });
-      if (!pattern.equals(getRenderedText()) && side != null) {
+      return keyTypedCommand.getResult();
+    } else if (side != null) {
+      String pattern = getTextOnEvent(keyEvent);
+      if (!pattern.equals(getRenderedText())) {
         return IntelligentInputUtil.processCell(this, getContext(), pattern, side);
       }
     }
     return false;
   }
 
-  private boolean allowsIntelligentInputKeyStroke(KeyEvent keyEvent) {
-    return UIUtil.isReallyTypedEvent(keyEvent);
-  }
-
-  private String getRenderedTextOn(KeyEvent keyEvent) {
-    return emulateKeyType(keyEvent, new Computable<String>() {
-      @Override
-      public String compute() {
-        return getRenderedText();
-      }
-    });
-  }
-
-  private <T> T emulateKeyType(KeyEvent keyEvent, Computable<T> c) {
-    String oldString = getText();
-    String oldNullString = getNullText();
-    int caretPosition = myTextLine.getCaretPosition();
-    int nullCaretPosition = myNullTextLine.getCaretPosition();
-    boolean wasErrorState = isErrorState();
-    processMutableKeyTyped(keyEvent, true);
-    T result = c.compute();
-    myTextLine.setText(oldString);
-    myNullTextLine.setText(oldNullString);
-    myTextLine.setCaretPosition(caretPosition);
-    myNullTextLine.setCaretPosition(nullCaretPosition);
-    setErrorState(wasErrorState);
-    return result;
+  private void addChangeTextUndoableAction() {
+    UndoHelper.getInstance().addUndoableAction(new DummyUndoableAction());
   }
 
   @Override
@@ -533,30 +478,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     return textAction.getResult();
   }
 
-  private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
-    String oldText = myTextLine.getText();
-
+  /**
+   * @param keyEvent "keyTyped" event, allowsIntelligentInputKeyStroke(keyEvent) should be true
+   * @return the string contained in myTextLine updated in accordance with passed keyEvent
+   */
+  private String getTextOnEvent(KeyEvent keyEvent) {
+    String currentText = myTextLine.getText();
     int startSelection = myTextLine.getStartTextSelectionPosition();
     int endSelection = myTextLine.getEndTextSelectionPosition();
-
     char keyChar = keyEvent.getKeyChar();
-    if (UIUtil.isReallyTypedEvent(keyEvent)) {
-      String newText = oldText.substring(0, startSelection) + keyChar + oldText.substring(endSelection);
-
-      if (!allowErrors && !isValidText(newText)) {
-        return false;
-      }
-
-      changeText(newText);
-      setCaretPositionIfPossible(startSelection + 1);
-      myTextLine.resetSelection();
-      fireSelectionChanged();
-      ensureCaretVisible();
-      return true;
-    }
-    return false;
+    return currentText.substring(0, startSelection) + keyChar + currentText.substring(endSelection);
   }
-
 
   private boolean canDeleteFrom(EditorCell cell) {
     if (getText().length() == 0) return false;
@@ -603,11 +535,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   public void deleteSelection() {
     String myText = myTextLine.getText();
-    EditorComponent editor = getEditor();
     int stSel = myTextLine.getStartTextSelectionPosition();
     int endSel = myTextLine.getEndTextSelectionPosition();
     changeText(myText.substring(0, stSel) + myText.substring(endSel));
     myTextLine.setCaretPosition(stSel);
+    addChangeTextUndoableAction();
     fireSelectionChanged();
     ensureCaretVisible();
   }
@@ -615,26 +547,31 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   public void changeText(final String text) {
     String oldText = getText();
     setText(text);
-    addChangeTextUndoableAction(text, oldText);
+    updateVfsTimestamp(text, oldText);
   }
 
-  private void addChangeTextUndoableAction(String text, String oldText) {
-    SNode node = getSNode();
-    if (node == null) return;
+  private void updateVfsTimestamp(String text, String oldText) {
+    if (EqualUtil.equals(oldText, text) || isValidText(text)) return;
     if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
-    if (EqualUtil.equals(oldText, text)) return;
-    if (isValidText(text)) return;
 
-    if (node.getModel() == null) return;
+    SNode node = getSNode();
+    if (node == null || node.getModel() == null) return;
 
     MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {
+    int startSelectionPosition = myTextLine.getStartTextSelectionPosition();
+    int endSelectionPosition = myTextLine.getEndTextSelectionPosition();
+    if (startSelectionPosition >= endSelectionPosition) {
+      startSelectionPosition = myTextLine.getCaretPosition();
+      endSelectionPosition = myTextLine.getCaretPosition();
+    }
     String oldText = getText();
-    myTextLine.insertText(text);
-    changeText(myTextLine.getText());
-    addChangeTextUndoableAction(text, oldText);
+    changeText(oldText.substring(0, startSelectionPosition) + text + oldText.substring(endSelectionPosition));
+    myTextLine.setCaretPosition(startSelectionPosition);
+    myTextLine.setCaretPosition(startSelectionPosition + text.length(), true);
+    addChangeTextUndoableAction();
   }
 
   public boolean isValidText(String text) {
@@ -771,6 +708,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     EditorCell containingBigCell = getContainingBigCell();
     return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this &&
         getText().equals(getSelectedText());
+  }
+
+  public String getCommandGroupId() {
+    return getCellId() + "_" + String.valueOf(getSNodeId());
   }
 
   private class MoveLeft extends AbstractCellAction {
@@ -973,7 +914,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     }
   }
 
-  private class ProcessTextActionCommand extends EditorComputable<Boolean> {
+  private class ProcessTextActionCommand extends EditorComputable<Boolean> implements UndoRunnable {
 
     private CellActionType myActionType;
     private boolean myAllowErrors;
@@ -1002,6 +943,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
             return false;
           }
           changeText(newText);
+          addChangeTextUndoableAction();
           if (!isCaretPositionAllowed(caretPosition - 1)) return false;
           setCaretPosition(caretPosition - 1);
           ensureCaretVisible();
@@ -1028,6 +970,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
             return false;
           }
           changeText(newText);
+          addChangeTextUndoableAction();
           ensureCaretVisible();
           deleteIfPossible(myActionType);
           return true;
@@ -1044,6 +987,104 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       }
 
       return false;
+    }
+
+    @Nullable
+    @Override
+    public String getName() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public String getGroupId() {
+      return getCommandGroupId();
+    }
+  }
+
+  /**
+   * TODO: use EditorComputable instead of AbstractComputeRunnable as a superclass here?
+   */
+  private class ProcessKeyTypedCommand extends AbstractComputeRunnable<Boolean> implements UndoRunnable {
+    private final KeyEvent myKeyEvent;
+    private final boolean myAllowErrors;
+    private final CellSide mySide;
+
+    public ProcessKeyTypedCommand(KeyEvent keyEvent, boolean allowErrors, CellSide side) {
+      myKeyEvent = keyEvent;
+      myAllowErrors = allowErrors;
+      mySide = side;
+    }
+
+    @Override
+    protected Boolean compute() {
+      if (processMutableKeyTyped(myKeyEvent, myAllowErrors)) {
+        getContext().flushEvents();
+        addChangeTextUndoableAction();
+
+        if (isErrorState() && mySide != null && IntelligentInputUtil.processCell(EditorCell_Label.this, getContext(), getRenderedText(), mySide)) {
+          /**
+           * Resetting current command group ID if cell was side-transformed. In such situations
+           * side-transforming command as well as char typing command should be separate part of
+           * undo-redo process, not connected with eytyping events which are grouped together.
+           */
+          CommandProcessor.getInstance().setCurrentCommandGroupId(null);
+        }
+        return true;
+      }
+      return isErrorState() && mySide == CellSide.LEFT && myKeyEvent.getKeyChar() == ' ';
+    }
+
+    private boolean processMutableKeyTyped(KeyEvent keyEvent, final boolean allowErrors) {
+      String newText = getTextOnEvent(keyEvent);
+      if (!allowErrors && !isValidText(newText)) {
+        return false;
+      }
+
+      int startSelection = myTextLine.getStartTextSelectionPosition();
+      changeText(newText);
+      setCaretPositionIfPossible(startSelection + 1);
+      myTextLine.resetSelection();
+      fireSelectionChanged();
+      ensureCaretVisible();
+      return true;
+    }
+
+    @Nullable
+    @Override
+    public String getName() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public String getGroupId() {
+      return getCommandGroupId();
+    }
+  }
+
+  /**
+   * This action can be used to introduce empty action into the stack of actions within UndoHelper
+   * forcing it to add undoable command into IDEA undo stack: see {@link jetbrains.mps.ide.undo.WorkbenchUndoHandler}
+   * flushCommand() method implementation. This method will not add {@link jetbrains.mps.ide.undo.SNodeIdeaUndoableAction}
+   * action into IDEA undo stack if it has no own undoable actions.
+   * <p/>
+   * This is helpful in case of UI-only modifications performed upon the cells. For example, if textual cell is modified in
+   * order to reproduce invalid value, this value cannot be committed into the model wo will stay in the editor cell/memento
+   * objects. Empty command in this case will add a "mark" in IDEA undo stack, so corresponding editor memento will be restored
+   * on udo/redo of this empty command.
+   */
+  protected class DummyUndoableAction extends SNodeUndoableAction {
+    protected DummyUndoableAction() {
+      super(getSNode());
+    }
+
+    @Override
+    protected void doUndo() {
+    }
+
+    @Override
+    protected void doRedo() {
     }
   }
 }

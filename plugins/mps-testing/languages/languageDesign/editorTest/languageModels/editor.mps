@@ -11,9 +11,9 @@
     <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -672,6 +672,85 @@
           <property role="1413C4" value="body-brace" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="P9hc2Kf8Dd">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1XX52x" to="68nn:P9hc2Kf3kH" resolve="SubstTestBooleanPropertyChild" />
+    <node concept="3F0A7n" id="P9hc2Kf8Hj" role="2wV5jI">
+      <ref role="1NtTu8" to="68nn:P9hc2Kf75T" resolve="myProperty" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="P9hc2Kffzo">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1XX52x" to="68nn:P9hc2Kf3eR" resolve="SubstTestRoot" />
+    <node concept="3EZMnI" id="P9hc2Kffzq" role="2wV5jI">
+      <node concept="3F0ifn" id="P9hc2Kffzx" role="3EZMnx">
+        <property role="3F0ifm" value="root {" />
+        <node concept="ljvvj" id="P9hc2Kff_s" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="P9hc2KffCJ" role="3EZMnx">
+        <node concept="VPM3Z" id="P9hc2KffCL" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="P9hc2KffEF" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="P9hc2KffJK" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="P9hc2KffN9" role="3EZMnx">
+          <property role="3F0ifm" value="singe child:" />
+        </node>
+        <node concept="3F1sOY" id="P9hc2KffNl" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:P9hc2Kf3nJ" />
+        </node>
+        <node concept="l2Vlx" id="P9hc2KffCO" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="P9hc2KgOtf" role="3EZMnx">
+        <node concept="VPM3Z" id="P9hc2KgOth" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="lj46D" id="P9hc2KgOvf" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="P9hc2KgOwZ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="P9hc2KgO$u" role="3EZMnx">
+          <property role="3F0ifm" value="multi- children:" />
+          <node concept="ljvvj" id="P9hc2KgW1I" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F2HdR" id="P9hc2KgO$$" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:P9hc2KgOpM" />
+          <node concept="l2Vlx" id="P9hc2KgOCa" role="2czzBx" />
+          <node concept="VPM3Z" id="P9hc2KgO$C" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="pj6Ft" id="P9hc2KgOHl" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="lj46D" id="P9hc2Kh1BX" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="P9hc2KgOtk" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="P9hc2KffzB" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+      </node>
+      <node concept="l2Vlx" id="P9hc2Kffzt" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="P9hc2KfVPY">
+    <property role="3GE5qa" value="substitute" />
+    <ref role="1XX52x" to="68nn:P9hc2Kf3mI" resolve="SubstTestEnumPropertyChild" />
+    <node concept="3F0A7n" id="P9hc2KfVQB" role="2wV5jI">
+      <ref role="1NtTu8" to="68nn:P9hc2KfU0I" resolve="myEnumProperty" />
     </node>
   </node>
 </model>

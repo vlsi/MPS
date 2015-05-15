@@ -363,6 +363,18 @@
     <node concept="lpD6D" id="6LcR7GqywmP" role="lpD6w">
       <ref role="lpD7u" to="e6od:6LcR7GqvFCf" resolve="DelOnChild1ReplaceItWithLinkTarget" />
     </node>
+    <node concept="lpD6D" id="P9hc2KhcFg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgOoG" resolve="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcGf" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kh9KP" resolve="Subst_MultiChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcHg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
     </node>
@@ -2908,6 +2920,21 @@
     <node concept="lpD6D" id="434bMCwt41Z" role="lpD6w">
       <ref role="lpD7u" to="ryl9:434bMCwsQH8" resolve="WhileLoopUnwrap2" />
     </node>
+    <node concept="lpD6D" id="P9hc2KeZh4" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2K9otJ" resolve="SUBST_BooleanConstantArgiument_with_Expression" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KeZD9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2Kb14K" resolve="SUBST_BooleanConstantArgiument_with_vaue" />
+    </node>
+    <node concept="lpD6D" id="P9hc2Kf01A" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2JZwYJ" resolve="SUBST_BooleanConstant_with_Expression" />
+    </node>
+    <node concept="lpD6D" id="P9hc2Kf0pJ" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2K2Okf" resolve="SUBST_BooleanConstant_with_value" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2Qmg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96F17J3" resolve="RedoIncorrectlyTypedValue" />
+    </node>
     <node concept="lpD6D" id="2ISwQnyeteK" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnybaQ$" resolve="RestoreRefCellAfterUndo" />
     </node>
@@ -2919,6 +2946,18 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8f" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3BRJPwFQ4xK" resolve="TrickyUndoTest" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2QIt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EFuV9" resolve="UndoChangesCursorPositionFirst" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2R6G" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EW4D_" resolve="UndoChangesCursorPositionFirstWithIncorrectValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RuX" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EJmGS" resolve="UndoIncorrectlyTypedValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RRg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EZynh" resolve="UndoIncorrectlyTypedValueWithFollowingCommand" />
     </node>
     <node concept="lpD6D" id="2ISwQnyet$b" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnxDk3v" resolve="UndoLocalVariableDeclarationCreation" />

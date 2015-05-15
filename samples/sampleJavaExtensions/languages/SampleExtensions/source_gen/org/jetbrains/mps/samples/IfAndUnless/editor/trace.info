@@ -455,7 +455,7 @@
       <node id="954830572075974239" at="90,96,91,134" concept="2" />
       <node id="954830572075974239" at="92,34,93,95" concept="2" />
       <node id="954830572075974239" at="93,95,94,98" concept="2" />
-      <node id="954830572075974239" at="96,131,97,139" concept="2" />
+      <node id="954830572075974239" at="96,122,97,139" concept="2" />
       <node id="1262430001742033568" at="48,0,50,0" concept="4" trace="setText#(Ljava/lang/String;)V" />
       <node id="954830572075974239" at="32,0,35,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1262430001742033568" at="45,0,48,0" concept="4" trace="getText#()Ljava/lang/String;" />
@@ -479,7 +479,7 @@
       <scope id="1262430001742033571" at="45,31,46,186" />
       <scope id="1262430001742033568" at="50,44,51,46" />
       <scope id="954830572075974239" at="71,101,72,50" />
-      <scope id="954830572075974239" at="96,131,97,139" />
+      <scope id="954830572075974239" at="96,122,97,139" />
       <scope id="1262430001742033568" at="48,0,50,0">
         <var name="s" id="1262430001742033568" />
       </scope>

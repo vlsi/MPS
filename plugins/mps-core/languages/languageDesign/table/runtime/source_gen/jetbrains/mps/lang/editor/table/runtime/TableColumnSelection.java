@@ -48,7 +48,11 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     if (myColumnNumber >= myTableCell.getColumnCount()) {
       throw new SelectionRestoreException();
     }
-    initSelectedCells();
+    try {
+      initSelectedCells();
+    } catch (ColumnNotFoundException e) {
+      throw new SelectionRestoreException();
+    }
     initActionMap();
   }
   public TableColumnSelection(@NotNull EditorComponent editorComponent, @NotNull EditorCell_Table tableCell, int columnNumber) {
@@ -57,10 +61,14 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     myColumnNumber = columnNumber;
     assert myColumnNumber >= 0;
     assert myColumnNumber < myTableCell.getColumnCount();
-    initSelectedCells();
+    try {
+      initSelectedCells();
+    } catch (ColumnNotFoundException e) {
+      assert false : "Column " + e.getIndex() + " was not found in one of table rows";
+    }
     initActionMap();
   }
-  private void initSelectedCells() {
+  private void initSelectedCells() throws ColumnNotFoundException {
     setSelectedCells(myTableCell.getColumnCells(myColumnNumber));
   }
   private void initActionMap() {

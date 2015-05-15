@@ -5,16 +5,16 @@ package jetbrains.mps.lang.test.matcher;
 
 public class ChildrenCountDifference extends DifferanceItem {
   private String myRole;
-  private int myCount1;
-  private int myCount2;
-  public ChildrenCountDifference(String role, int c1, int c2) {
+  private int myActualCount;
+  private int myExpectedCount;
+  public ChildrenCountDifference(String role, int actualCount, int expectedCount) {
     myRole = role;
-    myCount1 = c1;
-    myCount2 = c2;
+    myActualCount = actualCount;
+    myExpectedCount = expectedCount;
   }
   @Override
   public String toString() {
-    return "Different children count in role: " + myRole + " [" + myCount1 + ", " + myCount2 + "]";
+    return "Different children count in role: " + myRole + " [was: " + myActualCount + ", expected: " + myExpectedCount + "]";
   }
   @Override
   public boolean equals(Object obj) {
@@ -25,6 +25,6 @@ public class ChildrenCountDifference extends DifferanceItem {
       return false;
     }
     ChildrenCountDifference diff = (ChildrenCountDifference) obj;
-    return myRole.equals(diff.myRole) && myCount1 == diff.myCount1 && myCount2 == diff.myCount2;
+    return myRole.equals(diff.myRole) && myActualCount == diff.myActualCount && myExpectedCount == diff.myExpectedCount;
   }
 }

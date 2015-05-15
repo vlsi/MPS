@@ -14,7 +14,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.EditorCell_Empty" file="EditorCell_Empty.java">
-    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Override" />
@@ -77,6 +76,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.editor.runtime.HeadlessEditorComponent" file="HeadlessEditorComponent.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.editor.runtime.SideTransformInfoUtil" file="SideTransformInfoUtil.java">
     <classNode dependClassName="java.lang.String" />

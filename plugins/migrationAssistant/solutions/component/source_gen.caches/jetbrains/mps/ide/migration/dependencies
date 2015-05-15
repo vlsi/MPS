@@ -92,6 +92,7 @@
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationPropertiesReloadListener" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationProperties" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
