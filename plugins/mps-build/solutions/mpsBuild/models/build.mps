@@ -24211,6 +24211,12 @@
             <ref role="3bR37D" node="6zEiAnm2Tr5" resolve="jetbrains.mps.lang.migration.pluginSolution" />
           </node>
         </node>
+        <node concept="1SiIV0" id="1H7TH3Czo8$" role="3bR37C">
+          <node concept="3bR9La" id="1H7TH3Czo8_" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5bqL32k0kuu" role="2G$12L">
         <property role="BnDLt" value="true" />

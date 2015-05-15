@@ -146,7 +146,7 @@ public class MoveLinkUp_Action extends BaseAction {
                   ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
                   SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(((SNode) MapSequence.fromMap(_params).get("target")));
                   for (SNode node : SetSequence.fromSet(instances)) {
-                    List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), node.getChildren(oldLink));
+                    List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), (Iterable<SNode>) node.getChildren(oldLink));
                     for (SNode child : ListSequence.fromList(children)) {
                       node.removeChild(child);
                       node.addChild(newLink, child);

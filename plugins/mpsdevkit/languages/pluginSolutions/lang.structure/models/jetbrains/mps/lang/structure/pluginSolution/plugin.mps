@@ -3890,14 +3890,19 @@
                                           <node concept="2ShNRf" id="5hxnWc14cZQ" role="33vP2m">
                                             <node concept="Tc6Ow" id="5hxnWc14cZA" role="2ShVmc">
                                               <node concept="3Tqbb2" id="5hxnWc16$hz" role="HW$YZ" />
-                                              <node concept="2OqwBi" id="5hxnWc14bAF" role="I$8f6">
-                                                <node concept="2GrUjf" id="5hxnWc14b_D" role="2Oq$k0">
-                                                  <ref role="2Gs0qQ" node="5hxnWc13CkR" resolve="node" />
+                                              <node concept="10QFUN" id="1H7TH3CzBav" role="I$8f6">
+                                                <node concept="A3Dl8" id="1H7TH3CzC5J" role="10QFUM">
+                                                  <node concept="3Tqbb2" id="1H7TH3CzD0v" role="A3Ik2" />
                                                 </node>
-                                                <node concept="liA8E" id="5hxnWc14c4E" role="2OqNvi">
-                                                  <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
-                                                  <node concept="37vLTw" id="5hxnWc14cl4" role="37wK5m">
-                                                    <ref role="3cqZAo" node="5hxnWc14135" resolve="oldLink" />
+                                                <node concept="2OqwBi" id="5hxnWc14bAF" role="10QFUP">
+                                                  <node concept="2GrUjf" id="5hxnWc14b_D" role="2Oq$k0">
+                                                    <ref role="2Gs0qQ" node="5hxnWc13CkR" resolve="node" />
+                                                  </node>
+                                                  <node concept="liA8E" id="5hxnWc14c4E" role="2OqNvi">
+                                                    <ref role="37wK5l" to="ec5l:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
+                                                    <node concept="37vLTw" id="5hxnWc14cl4" role="37wK5m">
+                                                      <ref role="3cqZAo" node="5hxnWc14135" resolve="oldLink" />
+                                                    </node>
                                                   </node>
                                                 </node>
                                               </node>
