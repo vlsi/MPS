@@ -2914,7 +2914,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class UpdaterEventDispatcher extends UpdaterListenerAdapter {
     @Override
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
+      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners.toArray(
+          new CellSynchronizationWithModelListener[myCellSynchronizationListeners.size()])) {
         listener.cellSynchronizedWithModel(cell);
       }
     }
