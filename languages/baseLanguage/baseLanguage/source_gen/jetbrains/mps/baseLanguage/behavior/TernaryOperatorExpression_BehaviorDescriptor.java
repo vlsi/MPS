@@ -11,8 +11,8 @@ public class TernaryOperatorExpression_BehaviorDescriptor extends Expression_Beh
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
     return IBinaryLike_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
-  public NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return TernaryOperatorExpression_Behavior.virtual_getNextNode_4235809288648213009(thisNode, child, value);
+  public SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return TernaryOperatorExpression_Behavior.virtual_getSucceedingProgramPointInfo_4235809288648213009(thisNode, child, value);
   }
   public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return TernaryOperatorExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_1742226163722653708(thisNode);

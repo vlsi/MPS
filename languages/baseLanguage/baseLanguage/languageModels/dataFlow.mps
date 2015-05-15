@@ -6422,9 +6422,9 @@
       </node>
       <node concept="3cpWs8" id="3F8BxGioaX5" role="3cqZAp">
         <node concept="3cpWsn" id="3F8BxGioaX6" role="3cpWs9">
-          <property role="TrG5h" value="nextNodeKeeper" />
+          <property role="TrG5h" value="info" />
           <node concept="3uibUv" id="3F8BxGioaX7" role="1tU5fm">
-            <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="NextNodeKeeper" />
+            <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
           </node>
           <node concept="2OqwBi" id="3F8BxGioaX8" role="33vP2m">
             <node concept="1PxgMI" id="3F8BxGioaX9" role="2Oq$k0">
@@ -6437,7 +6437,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="3F8BxGioaXd" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
               <node concept="3cqzBR" id="3F8BxGioaXe" role="37wK5m">
                 <ref role="3cqzBQ" node="3oRAjlIPzM9" resolve="nodeToAnalyze" />
               </node>
@@ -6467,7 +6467,7 @@
             </node>
             <node concept="2OqwBi" id="3F8BxGioaXp" role="3clFbw">
               <node concept="37vLTw" id="3F8BxGioaXq" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
               </node>
               <node concept="liA8E" id="3F8BxGioaXr" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:3F8BxGimJoD" resolve="willJump" />
@@ -6479,7 +6479,7 @@
                   <node concept="3fqX7Q" id="1e$ObwPp6t0" role="1gVkn0">
                     <node concept="2OqwBi" id="1e$ObwPp6t1" role="3fr31v">
                       <node concept="37vLTw" id="1e$ObwPp6t2" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
                       </node>
                       <node concept="liA8E" id="1e$ObwPp6t3" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -6497,10 +6497,10 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGioaX$" role="aPEfM">
                     <node concept="37vLTw" id="3F8BxGioaX_" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGioaXA" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                     </node>
                   </node>
                 </node>
@@ -6510,7 +6510,7 @@
         </node>
         <node concept="3y3z36" id="3F8BxGioaXO" role="3clFbw">
           <node concept="37vLTw" id="3F8BxGioaXP" role="3uHU7B">
-            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
           </node>
           <node concept="10Nm6u" id="3F8BxGioaXQ" role="3uHU7w" />
         </node>
@@ -6528,7 +6528,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="3F8BxGioaY3" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
               <node concept="3cqzBR" id="3F8BxGioaY4" role="37wK5m">
                 <ref role="3cqzBQ" node="3oRAjlIPzM9" resolve="nodeToAnalyze" />
               </node>
@@ -6536,7 +6536,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="3F8BxGioaY6" role="37vLTJ">
-            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
           </node>
         </node>
       </node>
@@ -6559,7 +6559,7 @@
             </node>
             <node concept="2OqwBi" id="3F8BxGioaYg" role="3clFbw">
               <node concept="37vLTw" id="3F8BxGioaYh" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
               </node>
               <node concept="liA8E" id="3F8BxGioaYi" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:3F8BxGimJoD" resolve="willJump" />
@@ -6571,7 +6571,7 @@
                   <node concept="3fqX7Q" id="1e$ObwPp6yV" role="1gVkn0">
                     <node concept="2OqwBi" id="1e$ObwPp6yW" role="3fr31v">
                       <node concept="37vLTw" id="1e$ObwPp6yX" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
                       </node>
                       <node concept="liA8E" id="1e$ObwPp6yY" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -6589,10 +6589,10 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGioaYr" role="aPEfM">
                     <node concept="37vLTw" id="3F8BxGioaYs" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGioaYt" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                     </node>
                   </node>
                 </node>
@@ -6602,7 +6602,7 @@
         </node>
         <node concept="3y3z36" id="3F8BxGioaYF" role="3clFbw">
           <node concept="37vLTw" id="3F8BxGioaYG" role="3uHU7B">
-            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGioaX6" resolve="info" />
           </node>
           <node concept="10Nm6u" id="3F8BxGioaYH" role="3uHU7w" />
         </node>
@@ -6626,9 +6626,9 @@
           <node concept="3clFbS" id="3F8BxGif$o_" role="3clFbx">
             <node concept="3cpWs8" id="3F8BxGifBBx" role="3cqZAp">
               <node concept="3cpWsn" id="3F8BxGifBBy" role="3cpWs9">
-                <property role="TrG5h" value="nextNodeKeeper" />
+                <property role="TrG5h" value="info" />
                 <node concept="3uibUv" id="3F8BxGinW0u" role="1tU5fm">
-                  <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="NextNodeKeeper" />
+                  <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                 </node>
                 <node concept="2OqwBi" id="3F8BxGifBBz" role="33vP2m">
                   <node concept="1PxgMI" id="3F8BxGifJpD" role="2Oq$k0">
@@ -6639,7 +6639,7 @@
                     </node>
                   </node>
                   <node concept="2qgKlT" id="3F8BxGifBBB" role="2OqNvi">
-                    <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+                    <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
                     <node concept="3__QtB" id="3F8BxGifBBC" role="37wK5m" />
                     <node concept="3clFbT" id="3F8BxGifBBD" role="37wK5m">
                       <property role="3clFbU" value="false" />
@@ -6656,10 +6656,10 @@
                     <node concept="3Tqbb2" id="3F8BxGifFEi" role="1tU5fm" />
                     <node concept="2OqwBi" id="3F8BxGinW7$" role="33vP2m">
                       <node concept="37vLTw" id="3F8BxGinW6z" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGifBBy" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGifBBy" resolve="info" />
                       </node>
                       <node concept="liA8E" id="3F8BxGinWdx" role="2OqNvi">
-                        <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                        <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                       </node>
                     </node>
                   </node>
@@ -6687,7 +6687,7 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGinWfs" role="3clFbw">
                     <node concept="37vLTw" id="3F8BxGinWeQ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGifBBy" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGifBBy" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGinWl5" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -6698,7 +6698,7 @@
               <node concept="3y3z36" id="3F8BxGifBZj" role="3clFbw">
                 <node concept="10Nm6u" id="3F8BxGifC0n" role="3uHU7w" />
                 <node concept="37vLTw" id="3F8BxGifBOZ" role="3uHU7B">
-                  <ref role="3cqZAo" node="3F8BxGifBBy" resolve="nextNodeKeeper" />
+                  <ref role="3cqZAo" node="3F8BxGifBBy" resolve="info" />
                 </node>
               </node>
             </node>
@@ -6743,9 +6743,9 @@
           <node concept="3clFbS" id="3F8BxGinWwE" role="3clFbx">
             <node concept="3cpWs8" id="3F8BxGinWwF" role="3cqZAp">
               <node concept="3cpWsn" id="3F8BxGinWwG" role="3cpWs9">
-                <property role="TrG5h" value="nextNodeKeeper" />
+                <property role="TrG5h" value="info" />
                 <node concept="3uibUv" id="3F8BxGinWwH" role="1tU5fm">
-                  <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="NextNodeKeeper" />
+                  <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                 </node>
                 <node concept="2OqwBi" id="3F8BxGinWwI" role="33vP2m">
                   <node concept="1PxgMI" id="3F8BxGinWwJ" role="2Oq$k0">
@@ -6756,7 +6756,7 @@
                     </node>
                   </node>
                   <node concept="2qgKlT" id="3F8BxGinWwN" role="2OqNvi">
-                    <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+                    <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
                     <node concept="3__QtB" id="3F8BxGinWwO" role="37wK5m" />
                     <node concept="3clFbT" id="3F8BxGinWwP" role="37wK5m">
                       <property role="3clFbU" value="true" />
@@ -6773,10 +6773,10 @@
                     <node concept="3Tqbb2" id="3F8BxGinWwU" role="1tU5fm" />
                     <node concept="2OqwBi" id="3F8BxGinWwV" role="33vP2m">
                       <node concept="37vLTw" id="3F8BxGinWwW" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGinWwG" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGinWwG" resolve="info" />
                       </node>
                       <node concept="liA8E" id="3F8BxGinWwX" role="2OqNvi">
-                        <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                        <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                       </node>
                     </node>
                   </node>
@@ -6804,7 +6804,7 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGinWxa" role="3clFbw">
                     <node concept="37vLTw" id="3F8BxGinWxb" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGinWwG" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGinWwG" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGinWxc" role="2OqNvi">
                       <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -6815,7 +6815,7 @@
               <node concept="3y3z36" id="3F8BxGinWxg" role="3clFbw">
                 <node concept="10Nm6u" id="3F8BxGinWxh" role="3uHU7w" />
                 <node concept="37vLTw" id="3F8BxGinWxi" role="3uHU7B">
-                  <ref role="3cqZAo" node="3F8BxGinWwG" resolve="nextNodeKeeper" />
+                  <ref role="3cqZAo" node="3F8BxGinWwG" resolve="info" />
                 </node>
               </node>
             </node>
@@ -6900,9 +6900,9 @@
       </node>
       <node concept="3cpWs8" id="3F8BxGio29V" role="3cqZAp">
         <node concept="3cpWsn" id="3F8BxGio29W" role="3cpWs9">
-          <property role="TrG5h" value="nextNodeKeeper" />
+          <property role="TrG5h" value="info" />
           <node concept="3uibUv" id="3F8BxGio29Q" role="1tU5fm">
-            <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="NextNodeKeeper" />
+            <ref role="3uigEE" to="tpek:3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
           </node>
           <node concept="2OqwBi" id="3F8BxGio29X" role="33vP2m">
             <node concept="1PxgMI" id="3F8BxGio29Y" role="2Oq$k0">
@@ -6915,7 +6915,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="3F8BxGio2a2" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
               <node concept="3cqzBR" id="3F8BxGio2a3" role="37wK5m">
                 <ref role="3cqzBQ" node="1cOzPA6KrFy" resolve="nodeToAnalyze" />
               </node>
@@ -6945,7 +6945,7 @@
             </node>
             <node concept="2OqwBi" id="3F8BxGio8mg" role="3clFbw">
               <node concept="37vLTw" id="3F8BxGio8bf" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
               </node>
               <node concept="liA8E" id="3F8BxGio8wV" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:3F8BxGimJoD" resolve="willJump" />
@@ -6957,7 +6957,7 @@
                   <node concept="3fqX7Q" id="1e$ObwPkcrQ" role="1gVkn0">
                     <node concept="2OqwBi" id="1e$ObwPkcrR" role="3fr31v">
                       <node concept="37vLTw" id="1e$ObwPkcrS" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
                       </node>
                       <node concept="liA8E" id="1e$ObwPkcAO" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -6975,10 +6975,10 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGio6f1" role="aPEfM">
                     <node concept="37vLTw" id="3F8BxGio6eA" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGio6pC" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                     </node>
                   </node>
                 </node>
@@ -6988,7 +6988,7 @@
         </node>
         <node concept="3y3z36" id="3F8BxGio2V$" role="3clFbw">
           <node concept="37vLTw" id="3F8BxGio2Li" role="3uHU7B">
-            <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
           </node>
           <node concept="10Nm6u" id="3F8BxGio2VJ" role="3uHU7w" />
         </node>
@@ -7006,7 +7006,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="3F8BxGio9AW" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getNextNode" />
+              <ref role="37wK5l" to="tpek:3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
               <node concept="3cqzBR" id="3F8BxGio9AX" role="37wK5m">
                 <ref role="3cqzBQ" node="1cOzPA6KrFy" resolve="nodeToAnalyze" />
               </node>
@@ -7014,7 +7014,7 @@
             </node>
           </node>
           <node concept="37vLTw" id="3F8BxGioa5w" role="37vLTJ">
-            <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
           </node>
         </node>
       </node>
@@ -7037,7 +7037,7 @@
             </node>
             <node concept="2OqwBi" id="3F8BxGio9B8" role="3clFbw">
               <node concept="37vLTw" id="3F8BxGio9B9" role="2Oq$k0">
-                <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
               </node>
               <node concept="liA8E" id="3F8BxGio9Ba" role="2OqNvi">
                 <ref role="37wK5l" to="tpek:3F8BxGimJoD" resolve="willJump" />
@@ -7049,7 +7049,7 @@
                   <node concept="3fqX7Q" id="1e$ObwPkcYn" role="1gVkn0">
                     <node concept="2OqwBi" id="1e$ObwPkcYo" role="3fr31v">
                       <node concept="37vLTw" id="1e$ObwPkcYp" role="2Oq$k0">
-                        <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                        <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
                       </node>
                       <node concept="liA8E" id="1e$ObwPkcYq" role="2OqNvi">
                         <ref role="37wK5l" to="tpek:3F8BxGimJot" resolve="isAfter" />
@@ -7067,10 +7067,10 @@
                   </node>
                   <node concept="2OqwBi" id="3F8BxGio9Bj" role="aPEfM">
                     <node concept="37vLTw" id="3F8BxGio9Bk" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+                      <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
                     </node>
                     <node concept="liA8E" id="3F8BxGio9Bl" role="2OqNvi">
-                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getNextNode" />
+                      <ref role="37wK5l" to="tpek:3F8BxGimJoz" resolve="getSucceedingNodeNode" />
                     </node>
                   </node>
                 </node>
@@ -7080,7 +7080,7 @@
         </node>
         <node concept="3y3z36" id="3F8BxGio9Bz" role="3clFbw">
           <node concept="37vLTw" id="3F8BxGio9B$" role="3uHU7B">
-            <ref role="3cqZAo" node="3F8BxGio29W" resolve="nextNodeKeeper" />
+            <ref role="3cqZAo" node="3F8BxGio29W" resolve="info" />
           </node>
           <node concept="10Nm6u" id="3F8BxGio9B_" role="3uHU7w" />
         </node>

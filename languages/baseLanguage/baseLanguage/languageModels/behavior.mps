@@ -23899,8 +23899,8 @@
     <node concept="13i0hz" id="3F8BxGiedtg" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGiedtm" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGiedts" role="3clF47">
         <node concept="3clFbJ" id="1e$ObwPv2mc" role="3cqZAp">
@@ -23925,16 +23925,17 @@
           <node concept="3clFbS" id="1e$ObwPv2mm" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPv2mn" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPv2mo" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPv2mp" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPv2mq" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPv2mr" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPv2ms" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPvh3B" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$xeB" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$xeC" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$xiw" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$xeD" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$xRK" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:hzeOfzX" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$xeE" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -23951,8 +23952,8 @@
                 <node concept="3clFbS" id="1e$ObwPv2m$" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPvk5O" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvk5P" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvk5Q" role="37wK5m" />
                     </node>
                   </node>
@@ -23967,8 +23968,8 @@
             <node concept="3clFbS" id="1e$ObwPv2mD" role="9aQI4">
               <node concept="3cpWs6" id="1e$ObwPv2mE" role="3cqZAp">
                 <node concept="2YIFZM" id="1e$ObwPv2mF" role="3cqZAk">
-                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
+                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
                   <node concept="13iPFW" id="1e$ObwPv2mG" role="37wK5m" />
                 </node>
               </node>
@@ -23988,7 +23989,7 @@
         <node concept="10P_77" id="3F8BxGiedtx" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinym7" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -38003,8 +38004,8 @@
     <node concept="13i0hz" id="3F8BxGicqUk" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGicqUp" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGicqUv" role="3clF47">
         <node concept="3clFbJ" id="3F8BxGidNna" role="3cqZAp">
@@ -38029,16 +38030,17 @@
           <node concept="3clFbS" id="3F8BxGicsmi" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPuT02" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPuT04" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPkXnI" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPkXGj" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPkXVn" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPkXN6" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPkYCW" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$yb9" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$yba" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$yku" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$ybb" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$z0X" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:fzclF8p" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$ybc" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -38055,8 +38057,8 @@
                 <node concept="3clFbS" id="1e$ObwPuUmE" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPvkoG" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvkoH" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvkoI" role="37wK5m" />
                     </node>
                   </node>
@@ -38073,8 +38075,8 @@
                 <node concept="3clFbS" id="3F8BxGidaeL" role="3clFbx">
                   <node concept="3cpWs6" id="1e$ObwPkYXf" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPkZrK" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="2OqwBi" id="1e$ObwPl1vE" role="37wK5m">
                         <node concept="2OqwBi" id="1e$ObwPkZH1" role="2Oq$k0">
                           <node concept="13iPFW" id="1e$ObwPkZyx" role="2Oq$k0" />
@@ -38083,6 +38085,9 @@
                           </node>
                         </node>
                         <node concept="1uHKPH" id="1e$ObwPl6oq" role="2OqNvi" />
+                      </node>
+                      <node concept="3clFbT" id="1e$ObwP$2oE" role="37wK5m">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -38123,13 +38128,16 @@
                   <node concept="3clFbS" id="3F8BxGidyem" role="3eOfB_">
                     <node concept="3cpWs6" id="1e$ObwPl6Fa" role="3cqZAp">
                       <node concept="2YIFZM" id="1e$ObwPl6Fb" role="3cqZAk">
-                        <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                        <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                         <node concept="2OqwBi" id="1e$ObwPl6Fd" role="37wK5m">
                           <node concept="13iPFW" id="1e$ObwPl6Fe" role="2Oq$k0" />
                           <node concept="3TrEf2" id="1e$ObwPl7q0" role="2OqNvi">
                             <ref role="3Tt5mk" to="tpee:fK9aQHQ" />
                           </node>
+                        </node>
+                        <node concept="3clFbT" id="1e$ObwP$2es" role="37wK5m">
+                          <property role="3clFbU" value="true" />
                         </node>
                       </node>
                     </node>
@@ -38139,8 +38147,8 @@
                   <node concept="3clFbS" id="3F8BxGid_L2" role="9aQI4">
                     <node concept="3cpWs6" id="3F8BxGid_S5" role="3cqZAp">
                       <node concept="2YIFZM" id="1e$ObwPl82P" role="3cqZAk">
-                        <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                        <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                         <node concept="13iPFW" id="1e$ObwPl86t" role="37wK5m" />
                       </node>
                     </node>
@@ -38163,7 +38171,7 @@
         <node concept="10P_77" id="3F8BxGicqUz" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinkr_" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -46672,8 +46680,8 @@
     <node concept="13i0hz" id="3F8BxGienvJ" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGienvP" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGienvV" role="3clF47">
         <node concept="3clFbJ" id="1e$ObwPuIKB" role="3cqZAp">
@@ -46698,16 +46706,17 @@
           <node concept="3clFbS" id="1e$ObwPuIKL" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPuIKM" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPuIKN" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPuIKO" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPuIKP" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPuIKQ" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPuIKR" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPuIKS" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$6jy" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$6jz" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP_hmB" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$6j$" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP_hMW" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:gMLFqrC" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$6j_" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -46724,9 +46733,12 @@
                 <node concept="3clFbS" id="1e$ObwPuIKZ" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPvnEA" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvnEB" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvnEC" role="37wK5m" />
+                      <node concept="3clFbT" id="1e$ObwP$61O" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -46740,8 +46752,8 @@
             <node concept="3clFbS" id="1e$ObwPuIL4" role="9aQI4">
               <node concept="3cpWs6" id="1e$ObwPuIL5" role="3cqZAp">
                 <node concept="2YIFZM" id="1e$ObwPuIL6" role="3cqZAk">
-                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
+                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
                   <node concept="13iPFW" id="1e$ObwPuIL7" role="37wK5m" />
                 </node>
               </node>
@@ -46761,7 +46773,7 @@
         <node concept="10P_77" id="3F8BxGienw0" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinCUp" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -46906,8 +46918,8 @@
     <node concept="13i0hz" id="3F8BxGinI9n" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGinI9o" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGinI9p" role="3clF47">
         <node concept="3clFbJ" id="3F8BxGinI9q" role="3cqZAp">
@@ -46930,33 +46942,22 @@
         </node>
         <node concept="3clFbJ" id="3F8BxGinI9z" role="3cqZAp">
           <node concept="3clFbS" id="3F8BxGinI9$" role="3clFbx">
-            <node concept="3cpWs8" id="3F8BxGinI9_" role="3cqZAp">
-              <node concept="3cpWsn" id="3F8BxGinI9A" role="3cpWs9">
-                <property role="TrG5h" value="nextNode" />
-                <node concept="3uibUv" id="3F8BxGinI9B" role="1tU5fm">
-                  <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                </node>
-                <node concept="2OqwBi" id="3F8BxGinI9C" role="33vP2m">
-                  <node concept="1PxgMI" id="3F8BxGinI9D" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
-                    <node concept="2OqwBi" id="3F8BxGinI9E" role="1PxMeX">
-                      <node concept="13iPFW" id="3F8BxGinI9F" role="2Oq$k0" />
-                      <node concept="1mfA1w" id="3F8BxGinI9G" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="3F8BxGinI9H" role="2OqNvi">
-                    <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
-                    <node concept="13iPFW" id="3F8BxGinI9I" role="37wK5m" />
-                    <node concept="37vLTw" id="3F8BxGinI9K" role="37wK5m">
-                      <ref role="3cqZAo" node="3F8BxGinI9Y" resolve="value" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs6" id="3F8BxGinI9L" role="3cqZAp">
-              <node concept="37vLTw" id="3F8BxGinI9M" role="3cqZAk">
-                <ref role="3cqZAo" node="3F8BxGinI9A" resolve="nextNode" />
+              <node concept="2OqwBi" id="1e$ObwP$PI_" role="3cqZAk">
+                <node concept="1PxgMI" id="1e$ObwP$PIA" role="2Oq$k0">
+                  <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
+                  <node concept="2OqwBi" id="1e$ObwP$PIB" role="1PxMeX">
+                    <node concept="13iPFW" id="1e$ObwP$PIC" role="2Oq$k0" />
+                    <node concept="1mfA1w" id="1e$ObwP$PID" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="1e$ObwP$PIE" role="2OqNvi">
+                  <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
+                  <node concept="13iPFW" id="1e$ObwP$PIF" role="37wK5m" />
+                  <node concept="37vLTw" id="1e$ObwP$PIG" role="37wK5m">
+                    <ref role="3cqZAo" node="3F8BxGinI9Y" resolve="value" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -46988,7 +46989,7 @@
         <node concept="10P_77" id="3F8BxGinI9Z" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinIa0" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -57900,24 +57901,25 @@
     <node concept="13i0hz" id="3F8BxGieUeC" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGieUeI" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGieUeO" role="3clF47">
         <node concept="3clFbJ" id="3F8BxGieUfD" role="3cqZAp">
           <node concept="3clFbS" id="3F8BxGieUfE" role="3clFbx">
             <node concept="3clFbJ" id="3F8BxGieVcB" role="3cqZAp">
               <node concept="3clFbS" id="3F8BxGieVcC" role="3clFbx">
-                <node concept="3cpWs6" id="3F8BxGieVcZ" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPkfdI" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPksVz" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPksOL" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPktYI" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$6t4" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$6t5" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP_hUW" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$6t6" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP_isb" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:fJuHU4r" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$6t7" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -57941,9 +57943,9 @@
                     <node concept="3clFbS" id="3F8BxGieW3V" role="3clFbx">
                       <node concept="3cpWs8" id="3F8BxGieZ6N" role="3cqZAp">
                         <node concept="3cpWsn" id="3F8BxGieZ6O" role="3cpWs9">
-                          <property role="TrG5h" value="nextNodeKeeper" />
+                          <property role="TrG5h" value="info" />
                           <node concept="3uibUv" id="3F8BxGin8HE" role="1tU5fm">
-                            <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                            <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                           </node>
                           <node concept="2OqwBi" id="3F8BxGieZ6P" role="33vP2m">
                             <node concept="1PxgMI" id="3F8BxGieZ6Q" role="2Oq$k0">
@@ -57954,7 +57956,7 @@
                               </node>
                             </node>
                             <node concept="2qgKlT" id="3F8BxGieZ6U" role="2OqNvi">
-                              <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
+                              <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
                               <node concept="13iPFW" id="3F8BxGieZ6V" role="37wK5m" />
                               <node concept="37vLTw" id="3F8BxGieZ6W" role="37wK5m">
                                 <ref role="3cqZAo" node="3F8BxGieUeS" resolve="value" />
@@ -57969,14 +57971,14 @@
                             <node concept="3clFbS" id="1e$ObwPk$uY" role="3clFbx">
                               <node concept="3cpWs6" id="1e$ObwPk$Fq" role="3cqZAp">
                                 <node concept="2YIFZM" id="1e$ObwPk$Rl" role="3cqZAk">
-                                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                                   <node concept="2OqwBi" id="1e$ObwPk_3I" role="37wK5m">
                                     <node concept="37vLTw" id="1e$ObwPk$Xl" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="nextNodeKeeper" />
+                                      <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="info" />
                                     </node>
                                     <node concept="liA8E" id="1e$ObwPk_f5" role="2OqNvi">
-                                      <ref role="37wK5l" node="3F8BxGimJoz" resolve="getNextNode" />
+                                      <ref role="37wK5l" node="3F8BxGimJoz" resolve="getSucceedingNode" />
                                     </node>
                                   </node>
                                 </node>
@@ -57984,7 +57986,7 @@
                             </node>
                             <node concept="2OqwBi" id="1e$ObwPk$_a" role="3clFbw">
                               <node concept="37vLTw" id="1e$ObwPk$$y" role="2Oq$k0">
-                                <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="nextNodeKeeper" />
+                                <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="info" />
                               </node>
                               <node concept="liA8E" id="1e$ObwPk$EO" role="2OqNvi">
                                 <ref role="37wK5l" node="3F8BxGimJot" resolve="isAfter" />
@@ -57994,15 +57996,18 @@
                               <node concept="3clFbS" id="1e$ObwPqRZ$" role="9aQI4">
                                 <node concept="3cpWs6" id="1e$ObwPqS5L" role="3cqZAp">
                                   <node concept="2YIFZM" id="1e$ObwPqS73" role="3cqZAk">
-                                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                                     <node concept="2OqwBi" id="1e$ObwPqS74" role="37wK5m">
                                       <node concept="37vLTw" id="1e$ObwPqS75" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="nextNodeKeeper" />
+                                        <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="info" />
                                       </node>
                                       <node concept="liA8E" id="1e$ObwPqS76" role="2OqNvi">
-                                        <ref role="37wK5l" node="3F8BxGimJoz" resolve="getNextNode" />
+                                        <ref role="37wK5l" node="3F8BxGimJoz" resolve="getSucceedingNode" />
                                       </node>
+                                    </node>
+                                    <node concept="3clFbT" id="1e$ObwPzX46" role="37wK5m">
+                                      <property role="3clFbU" value="true" />
                                     </node>
                                   </node>
                                 </node>
@@ -58013,7 +58018,7 @@
                         <node concept="3y3z36" id="3F8BxGieZG1" role="3clFbw">
                           <node concept="10Nm6u" id="3F8BxGieZH2" role="3uHU7w" />
                           <node concept="37vLTw" id="3F8BxGieZxM" role="3uHU7B">
-                            <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="nextNodeKeeper" />
+                            <ref role="3cqZAo" node="3F8BxGieZ6O" resolve="info" />
                           </node>
                         </node>
                       </node>
@@ -58060,33 +58065,22 @@
             <node concept="3clFbS" id="3F8BxGif1iu" role="3eOfB_">
               <node concept="3clFbJ" id="3F8BxGif26p" role="3cqZAp">
                 <node concept="3clFbS" id="3F8BxGif26q" role="3clFbx">
-                  <node concept="3cpWs8" id="3F8BxGif26r" role="3cqZAp">
-                    <node concept="3cpWsn" id="3F8BxGif26s" role="3cpWs9">
-                      <property role="TrG5h" value="nextNode" />
-                      <node concept="3uibUv" id="3F8BxGinizI" role="1tU5fm">
-                        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                      </node>
-                      <node concept="2OqwBi" id="3F8BxGif26x" role="33vP2m">
-                        <node concept="1PxgMI" id="3F8BxGif26y" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
-                          <node concept="2OqwBi" id="3F8BxGif26z" role="1PxMeX">
-                            <node concept="13iPFW" id="3F8BxGif26$" role="2Oq$k0" />
-                            <node concept="1mfA1w" id="3F8BxGif26_" role="2OqNvi" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="3F8BxGif26A" role="2OqNvi">
-                          <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
-                          <node concept="13iPFW" id="3F8BxGif26B" role="37wK5m" />
-                          <node concept="37vLTw" id="3F8BxGif26C" role="37wK5m">
-                            <ref role="3cqZAo" node="3F8BxGieUeS" resolve="value" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs6" id="3F8BxGif2IJ" role="3cqZAp">
-                    <node concept="37vLTw" id="3F8BxGif30u" role="3cqZAk">
-                      <ref role="3cqZAo" node="3F8BxGif26s" resolve="nextNode" />
+                    <node concept="2OqwBi" id="1e$ObwP$XPz" role="3cqZAk">
+                      <node concept="1PxgMI" id="1e$ObwP$XP$" role="2Oq$k0">
+                        <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
+                        <node concept="2OqwBi" id="1e$ObwP$XP_" role="1PxMeX">
+                          <node concept="13iPFW" id="1e$ObwP$XPA" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="1e$ObwP$XPB" role="2OqNvi" />
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="1e$ObwP$XPC" role="2OqNvi">
+                        <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
+                        <node concept="13iPFW" id="1e$ObwP$XPD" role="37wK5m" />
+                        <node concept="37vLTw" id="1e$ObwP$XPE" role="37wK5m">
+                          <ref role="3cqZAo" node="3F8BxGieUeS" resolve="value" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -58121,7 +58115,7 @@
         <node concept="10P_77" id="3F8BxGieUeT" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGimJLt" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -58281,24 +58275,25 @@
     <node concept="13i0hz" id="3F8BxGifanp" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGifanv" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGifan_" role="3clF47">
         <node concept="3clFbJ" id="1e$ObwPl8Ep" role="3cqZAp">
           <node concept="3clFbS" id="1e$ObwPl8Eq" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPl8Er" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPl8Es" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPl8Et" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPl8Eu" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPl8Ev" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPl8Ew" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPl8Ex" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$zkD" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$zkE" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$zu5" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$zkF" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$$1a" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:fJuHU4r" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$zkG" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -58313,9 +58308,9 @@
                     <node concept="3clFbS" id="1e$ObwPl8EA" role="3clFbx">
                       <node concept="3cpWs8" id="1e$ObwPl8EB" role="3cqZAp">
                         <node concept="3cpWsn" id="1e$ObwPl8EC" role="3cpWs9">
-                          <property role="TrG5h" value="nextNodeKeeper" />
+                          <property role="TrG5h" value="info" />
                           <node concept="3uibUv" id="1e$ObwPl8ED" role="1tU5fm">
-                            <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                            <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                           </node>
                           <node concept="2OqwBi" id="1e$ObwPl8EE" role="33vP2m">
                             <node concept="1PxgMI" id="1e$ObwPl8EF" role="2Oq$k0">
@@ -58326,7 +58321,7 @@
                               </node>
                             </node>
                             <node concept="2qgKlT" id="1e$ObwPl8EJ" role="2OqNvi">
-                              <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
+                              <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
                               <node concept="13iPFW" id="1e$ObwPl8EK" role="37wK5m" />
                               <node concept="37vLTw" id="1e$ObwPl8EL" role="37wK5m">
                                 <ref role="3cqZAo" node="3F8BxGifanD" resolve="value" />
@@ -58341,14 +58336,14 @@
                             <node concept="3clFbS" id="1e$ObwPl8EP" role="3clFbx">
                               <node concept="3cpWs6" id="1e$ObwPl8EQ" role="3cqZAp">
                                 <node concept="2YIFZM" id="1e$ObwPl8ER" role="3cqZAk">
-                                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
+                                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
                                   <node concept="2OqwBi" id="1e$ObwPl8ES" role="37wK5m">
                                     <node concept="37vLTw" id="1e$ObwPl8ET" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="nextNodeKeeper" />
+                                      <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="info" />
                                     </node>
                                     <node concept="liA8E" id="1e$ObwPl8EU" role="2OqNvi">
-                                      <ref role="37wK5l" node="3F8BxGimJoz" resolve="getNextNode" />
+                                      <ref role="37wK5l" node="3F8BxGimJoz" resolve="getSucceedingNode" />
                                     </node>
                                   </node>
                                 </node>
@@ -58356,7 +58351,7 @@
                             </node>
                             <node concept="2OqwBi" id="1e$ObwPl8EV" role="3clFbw">
                               <node concept="37vLTw" id="1e$ObwPl8EW" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="nextNodeKeeper" />
+                                <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="info" />
                               </node>
                               <node concept="liA8E" id="1e$ObwPl8EX" role="2OqNvi">
                                 <ref role="37wK5l" node="3F8BxGimJot" resolve="isAfter" />
@@ -58366,15 +58361,18 @@
                               <node concept="3clFbS" id="1e$ObwPqRFg" role="9aQI4">
                                 <node concept="3cpWs6" id="1e$ObwPqRLp" role="3cqZAp">
                                   <node concept="2YIFZM" id="1e$ObwPqRMF" role="3cqZAk">
-                                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                                     <node concept="2OqwBi" id="1e$ObwPqRMG" role="37wK5m">
                                       <node concept="37vLTw" id="1e$ObwPqRMH" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="nextNodeKeeper" />
+                                        <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="info" />
                                       </node>
                                       <node concept="liA8E" id="1e$ObwPqRMI" role="2OqNvi">
-                                        <ref role="37wK5l" node="3F8BxGimJoz" resolve="getNextNode" />
+                                        <ref role="37wK5l" node="3F8BxGimJoz" resolve="getSucceedingNode" />
                                       </node>
+                                    </node>
+                                    <node concept="3clFbT" id="1e$ObwP$z76" role="37wK5m">
+                                      <property role="3clFbU" value="true" />
                                     </node>
                                   </node>
                                 </node>
@@ -58385,7 +58383,7 @@
                         <node concept="3y3z36" id="1e$ObwPl8EY" role="3clFbw">
                           <node concept="10Nm6u" id="1e$ObwPl8EZ" role="3uHU7w" />
                           <node concept="37vLTw" id="1e$ObwPl8F0" role="3uHU7B">
-                            <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="nextNodeKeeper" />
+                            <ref role="3cqZAo" node="1e$ObwPl8EC" resolve="info" />
                           </node>
                         </node>
                       </node>
@@ -58443,33 +58441,22 @@
             <node concept="3clFbS" id="1e$ObwPl8Fi" role="3eOfB_">
               <node concept="3clFbJ" id="1e$ObwPl8Fj" role="3cqZAp">
                 <node concept="3clFbS" id="1e$ObwPl8Fk" role="3clFbx">
-                  <node concept="3cpWs8" id="1e$ObwPl8Fl" role="3cqZAp">
-                    <node concept="3cpWsn" id="1e$ObwPl8Fm" role="3cpWs9">
-                      <property role="TrG5h" value="nextNode" />
-                      <node concept="3uibUv" id="1e$ObwPl8Fn" role="1tU5fm">
-                        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                      </node>
-                      <node concept="2OqwBi" id="1e$ObwPl8Fo" role="33vP2m">
-                        <node concept="1PxgMI" id="1e$ObwPl8Fp" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
-                          <node concept="2OqwBi" id="1e$ObwPl8Fq" role="1PxMeX">
-                            <node concept="13iPFW" id="1e$ObwPl8Fr" role="2Oq$k0" />
-                            <node concept="1mfA1w" id="1e$ObwPl8Fs" role="2OqNvi" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="1e$ObwPl8Ft" role="2OqNvi">
-                          <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
-                          <node concept="13iPFW" id="1e$ObwPl8Fu" role="37wK5m" />
-                          <node concept="37vLTw" id="1e$ObwPl8Fv" role="37wK5m">
-                            <ref role="3cqZAo" node="3F8BxGifanD" resolve="value" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3cpWs6" id="1e$ObwPl8Fw" role="3cqZAp">
-                    <node concept="37vLTw" id="1e$ObwPl8Fx" role="3cqZAk">
-                      <ref role="3cqZAo" node="1e$ObwPl8Fm" resolve="nextNode" />
+                    <node concept="2OqwBi" id="1e$ObwP$Pr0" role="3cqZAk">
+                      <node concept="1PxgMI" id="1e$ObwP$Pr1" role="2Oq$k0">
+                        <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
+                        <node concept="2OqwBi" id="1e$ObwP$Pr2" role="1PxMeX">
+                          <node concept="13iPFW" id="1e$ObwP$Pr3" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="1e$ObwP$Pr4" role="2OqNvi" />
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="1e$ObwP$Pr5" role="2OqNvi">
+                        <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
+                        <node concept="13iPFW" id="1e$ObwP$Pr6" role="37wK5m" />
+                        <node concept="37vLTw" id="1e$ObwP$Pr7" role="37wK5m">
+                          <ref role="3cqZAo" node="3F8BxGifanD" resolve="value" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -58504,7 +58491,7 @@
         <node concept="10P_77" id="3F8BxGifanE" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinjq6" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -59854,8 +59841,8 @@
     <node concept="13i0hz" id="3F8BxGieLlA" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGieLlG" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGieLlM" role="3clF47">
         <node concept="3clFbJ" id="1e$ObwPkSY_" role="3cqZAp">
@@ -59880,16 +59867,17 @@
           <node concept="3clFbS" id="1e$ObwPkSYJ" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPvhwE" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPvhwG" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPkSYK" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPkSYL" role="3cqZAk">
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <node concept="2OqwBi" id="1e$ObwPkSYM" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPkSYN" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPkUKf" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$$fM" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$$fN" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$$lh" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$$fO" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$$KH" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:gVK4E70" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$$fP" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -59906,8 +59894,8 @@
                 <node concept="3clFbS" id="1e$ObwPvi_w" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPviBO" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvjEa" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvjH2" role="37wK5m" />
                     </node>
                   </node>
@@ -59924,13 +59912,16 @@
                 <node concept="3clFbS" id="1e$ObwPviHN" role="3clFbx">
                   <node concept="3cpWs6" id="1e$ObwPkSYS" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPkU20" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="2OqwBi" id="1e$ObwPkU6t" role="37wK5m">
                         <node concept="13iPFW" id="1e$ObwPkU21" role="2Oq$k0" />
                         <node concept="3TrEf2" id="1e$ObwPkUl8" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:gVK4GVs" />
                         </node>
+                      </node>
+                      <node concept="3clFbT" id="1e$ObwP$$8g" role="37wK5m">
+                        <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
@@ -59948,8 +59939,8 @@
                   <node concept="3clFbS" id="1e$ObwPvjKk" role="9aQI4">
                     <node concept="3cpWs6" id="1e$ObwPvjNr" role="3cqZAp">
                       <node concept="2YIFZM" id="1e$ObwPvjNs" role="3cqZAk">
-                        <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                        <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                        <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                         <node concept="13iPFW" id="1e$ObwPvjNt" role="37wK5m" />
                       </node>
                     </node>
@@ -59972,7 +59963,7 @@
         <node concept="10P_77" id="3F8BxGieLlR" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinIHY" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -60412,8 +60403,8 @@
     <node concept="13i0hz" id="3F8BxGifpCZ" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGifpD5" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGifpDb" role="3clF47">
         <node concept="3clFbJ" id="3F8BxGifpHw" role="3cqZAp">
@@ -60436,35 +60427,24 @@
         </node>
         <node concept="3clFbJ" id="3F8BxGifpHD" role="3cqZAp">
           <node concept="3clFbS" id="3F8BxGifpHE" role="3clFbx">
-            <node concept="3cpWs8" id="3F8BxGifpHF" role="3cqZAp">
-              <node concept="3cpWsn" id="3F8BxGifpHG" role="3cpWs9">
-                <property role="TrG5h" value="nextNode" />
-                <node concept="3uibUv" id="3F8BxGinHTO" role="1tU5fm">
-                  <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                </node>
-                <node concept="2OqwBi" id="3F8BxGifpHL" role="33vP2m">
-                  <node concept="1PxgMI" id="3F8BxGifpHM" role="2Oq$k0">
-                    <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
-                    <node concept="2OqwBi" id="3F8BxGifpHN" role="1PxMeX">
-                      <node concept="13iPFW" id="3F8BxGifpHO" role="2Oq$k0" />
-                      <node concept="1mfA1w" id="3F8BxGifpHP" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="3F8BxGifpHQ" role="2OqNvi">
-                    <ref role="37wK5l" node="3F8BxGibk8h" resolve="getNextNode" />
-                    <node concept="13iPFW" id="3F8BxGifpHR" role="37wK5m" />
-                    <node concept="3fqX7Q" id="3F8BxGifpP3" role="37wK5m">
-                      <node concept="37vLTw" id="3F8BxGifpP5" role="3fr31v">
-                        <ref role="3cqZAo" node="3F8BxGifpDf" resolve="value" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs6" id="3F8BxGifpHT" role="3cqZAp">
-              <node concept="37vLTw" id="3F8BxGifpHU" role="3cqZAk">
-                <ref role="3cqZAo" node="3F8BxGifpHG" resolve="nextNode" />
+              <node concept="2OqwBi" id="1e$ObwP$PkO" role="3cqZAk">
+                <node concept="1PxgMI" id="1e$ObwP$PkP" role="2Oq$k0">
+                  <ref role="1PxNhF" to="tpee:3F8BxGibdn2" resolve="IConditional" />
+                  <node concept="2OqwBi" id="1e$ObwP$PkQ" role="1PxMeX">
+                    <node concept="13iPFW" id="1e$ObwP$PkR" role="2Oq$k0" />
+                    <node concept="1mfA1w" id="1e$ObwP$PkS" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="1e$ObwP$PkT" role="2OqNvi">
+                  <ref role="37wK5l" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
+                  <node concept="13iPFW" id="1e$ObwP$PkU" role="37wK5m" />
+                  <node concept="3fqX7Q" id="1e$ObwP$PkV" role="37wK5m">
+                    <node concept="37vLTw" id="1e$ObwP$PkW" role="3fr31v">
+                      <ref role="3cqZAo" node="3F8BxGifpDf" resolve="value" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -60496,7 +60476,7 @@
         <node concept="10P_77" id="3F8BxGifpDg" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinHK6" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
@@ -60505,7 +60485,7 @@
     <node concept="13i0hz" id="3F8BxGibk8h" role="13h7CS">
       <property role="13i0iv" value="true" />
       <property role="13i0it" value="true" />
-      <property role="TrG5h" value="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
       <node concept="37vLTG" id="3F8BxGickf8" role="3clF46">
         <property role="TrG5h" value="child" />
         <node concept="3Tqbb2" id="3F8BxGickfg" role="1tU5fm" />
@@ -60520,7 +60500,7 @@
       <node concept="3Tm1VV" id="3F8BxGibk8i" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGibk8j" role="3clF47" />
       <node concept="3uibUv" id="3F8BxGimJtg" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
     <node concept="13hLZK" id="3F8BxGibdX2" role="13h7CW">
@@ -60533,8 +60513,8 @@
     <node concept="13i0hz" id="3F8BxGinF1u" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGinF1v" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGinF1w" role="3clF47">
         <node concept="3clFbJ" id="1e$ObwPuJMg" role="3cqZAp">
@@ -60559,16 +60539,17 @@
           <node concept="3clFbS" id="1e$ObwPuJMq" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPuJMr" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPuJMs" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPuJMt" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPuJMu" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPuJMv" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPuJMw" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPuJMx" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$$Q$" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$$Q_" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$$XV" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$$QA" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$_nZ" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:gMLFqrC" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$$QB" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -60585,9 +60566,12 @@
                 <node concept="3clFbS" id="1e$ObwPuJMC" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPvnNC" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvnND" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvnNE" role="37wK5m" />
+                      <node concept="3clFbT" id="1e$ObwP$2ZS" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -60601,8 +60585,8 @@
             <node concept="3clFbS" id="1e$ObwPuJMH" role="9aQI4">
               <node concept="3cpWs6" id="1e$ObwPuJMI" role="3cqZAp">
                 <node concept="2YIFZM" id="1e$ObwPuJMJ" role="3cqZAk">
-                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
+                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
                   <node concept="13iPFW" id="1e$ObwPuJMK" role="37wK5m" />
                 </node>
               </node>
@@ -60622,7 +60606,7 @@
         <node concept="10P_77" id="3F8BxGinF21" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinF22" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
     <node concept="13hLZK" id="3F8BxGidMCZ" role="13h7CW">
@@ -60638,8 +60622,8 @@
     <node concept="13i0hz" id="3F8BxGinFLx" role="13h7CS">
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <property role="TrG5h" value="getNextNode" />
-      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getNextNode" />
+      <property role="TrG5h" value="getSucceedingProgramPointInfo" />
+      <ref role="13i0hy" node="3F8BxGibk8h" resolve="getSucceedingProgramPointInfo" />
       <node concept="3Tm1VV" id="3F8BxGinFLy" role="1B3o_S" />
       <node concept="3clFbS" id="3F8BxGinFLz" role="3clF47">
         <node concept="3clFbJ" id="3F8BxGinFL$" role="3cqZAp">
@@ -60664,16 +60648,17 @@
           <node concept="3clFbS" id="3F8BxGinFLI" role="3clFbx">
             <node concept="3clFbJ" id="1e$ObwPuCPi" role="3cqZAp">
               <node concept="3clFbS" id="1e$ObwPuCPk" role="3clFbx">
-                <node concept="3cpWs6" id="1e$ObwPk_Wm" role="3cqZAp">
-                  <node concept="2YIFZM" id="1e$ObwPkA9B" role="3cqZAk">
-                    <ref role="37wK5l" node="1e$ObwPkaC1" resolve="createGoToNextNode" />
-                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-                    <node concept="2OqwBi" id="1e$ObwPkAkr" role="37wK5m">
-                      <node concept="13iPFW" id="1e$ObwPkAdC" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1e$ObwPkB4S" role="2OqNvi">
+                <node concept="3cpWs6" id="1e$ObwP$jsF" role="3cqZAp">
+                  <node concept="2YIFZM" id="1e$ObwP$jsG" role="3cqZAk">
+                    <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                    <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
+                    <node concept="2OqwBi" id="1e$ObwP$j$6" role="37wK5m">
+                      <node concept="13iPFW" id="1e$ObwP$jsH" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="1e$ObwP$ksq" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:gMLFqrC" />
                       </node>
                     </node>
+                    <node concept="3clFbT" id="1e$ObwP$jsI" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -60690,9 +60675,12 @@
                 <node concept="3clFbS" id="1e$ObwPuDUE" role="9aQI4">
                   <node concept="3cpWs6" id="1e$ObwPvky6" role="3cqZAp">
                     <node concept="2YIFZM" id="1e$ObwPvk_w" role="3cqZAk">
-                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="createJumpBeforeNode" />
-                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                      <ref role="37wK5l" node="1e$ObwPkaq2" resolve="knownPassBeforeCertainNode" />
+                      <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                       <node concept="13iPFW" id="1e$ObwPvk_x" role="37wK5m" />
+                      <node concept="3clFbT" id="1e$ObwPzXA6" role="37wK5m">
+                        <property role="3clFbU" value="true" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -60706,8 +60694,8 @@
             <node concept="3clFbS" id="3F8BxGinFLT" role="9aQI4">
               <node concept="3cpWs6" id="1e$ObwPkBfK" role="3cqZAp">
                 <node concept="2YIFZM" id="1e$ObwPkBrP" role="3cqZAk">
-                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="createJumpAfterNode" />
-                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+                  <ref role="37wK5l" node="1e$ObwPjXxM" resolve="unknownJumpAfterNode" />
+                  <ref role="1Pybhc" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
                   <node concept="13iPFW" id="1e$ObwPkBv4" role="37wK5m" />
                 </node>
               </node>
@@ -60727,17 +60715,17 @@
         <node concept="10P_77" id="3F8BxGinFM4" role="1tU5fm" />
       </node>
       <node concept="3uibUv" id="3F8BxGinFM5" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
     </node>
   </node>
   <node concept="312cEu" id="3F8BxGimGuN">
-    <property role="TrG5h" value="NextNodeKeeper" />
+    <property role="TrG5h" value="SucceedingProgramPointInfo" />
     <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="3F8BxGimIwl" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myNextNode" />
+      <property role="TrG5h" value="mySucceedingNodeNode" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3F8BxGimGvD" role="1B3o_S" />
       <node concept="3Tqbb2" id="3F8BxGimIwg" role="1tU5fm" />
@@ -60767,10 +60755,10 @@
         <node concept="3clFbF" id="3F8BxGimIAo" role="3cqZAp">
           <node concept="37vLTI" id="3F8BxGimIFg" role="3clFbG">
             <node concept="37vLTw" id="3F8BxGimIGW" role="37vLTx">
-              <ref role="3cqZAo" node="3F8BxGimI$z" resolve="nextNode" />
+              <ref role="3cqZAo" node="3F8BxGimI$z" resolve="succeedingNode" />
             </node>
             <node concept="37vLTw" id="3F8BxGimIAn" role="37vLTJ">
-              <ref role="3cqZAo" node="3F8BxGimIwl" resolve="myNextNode" />
+              <ref role="3cqZAo" node="3F8BxGimIwl" resolve="mySucceedingNodeNode" />
             </node>
           </node>
         </node>
@@ -60797,7 +60785,7 @@
       </node>
       <node concept="3Tm6S6" id="1e$ObwPjMRW" role="1B3o_S" />
       <node concept="37vLTG" id="3F8BxGimI$z" role="3clF46">
-        <property role="TrG5h" value="nextNode" />
+        <property role="TrG5h" value="succeedingNode" />
         <node concept="3Tqbb2" id="3F8BxGimI$y" role="1tU5fm" />
         <node concept="2AHcQZ" id="1e$ObwPugKj" role="2AJF6D">
           <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
@@ -60813,6 +60801,21 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3F8BxGimGuO" role="1B3o_S" />
+    <node concept="3clFb_" id="3F8BxGimJoz" role="jymVt">
+      <property role="TrG5h" value="getSucceedingNode" />
+      <node concept="3Tqbb2" id="3F8BxGimJo$" role="3clF45" />
+      <node concept="3Tm1VV" id="3F8BxGimJo_" role="1B3o_S" />
+      <node concept="3clFbS" id="3F8BxGimJoA" role="3clF47">
+        <node concept="3clFbF" id="3F8BxGimJoB" role="3cqZAp">
+          <node concept="37vLTw" id="3F8BxGimJoy" role="3clFbG">
+            <ref role="3cqZAo" node="3F8BxGimIwl" resolve="mySucceedingNodeNode" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1e$ObwPu$4r" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
     <node concept="3clFb_" id="3F8BxGimJot" role="jymVt">
       <property role="TrG5h" value="isAfter" />
       <node concept="10P_77" id="3F8BxGimJou" role="3clF45" />
@@ -60823,22 +60826,6 @@
             <ref role="3cqZAo" node="3F8BxGimIxz" resolve="myIsAfter" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="1e$ObwPuzYW" role="jymVt" />
-    <node concept="3clFb_" id="3F8BxGimJoz" role="jymVt">
-      <property role="TrG5h" value="getNextNode" />
-      <node concept="3Tqbb2" id="3F8BxGimJo$" role="3clF45" />
-      <node concept="3Tm1VV" id="3F8BxGimJo_" role="1B3o_S" />
-      <node concept="3clFbS" id="3F8BxGimJoA" role="3clF47">
-        <node concept="3clFbF" id="3F8BxGimJoB" role="3cqZAp">
-          <node concept="37vLTw" id="3F8BxGimJoy" role="3clFbG">
-            <ref role="3cqZAo" node="3F8BxGimIwl" resolve="myNextNode" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="1e$ObwPu$4r" role="2AJF6D">
-        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3clFb_" id="3F8BxGimJoD" role="jymVt">
@@ -60854,7 +60841,7 @@
       </node>
     </node>
     <node concept="2YIFZL" id="1e$ObwPjXxM" role="jymVt">
-      <property role="TrG5h" value="createJumpAfterNode" />
+      <property role="TrG5h" value="unknownJumpAfterNode" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
@@ -60862,7 +60849,7 @@
         <node concept="3cpWs6" id="1e$ObwPjXMl" role="3cqZAp">
           <node concept="2ShNRf" id="1e$ObwPjXMO" role="3cqZAk">
             <node concept="1pGfFk" id="1e$ObwPka9R" role="2ShVmc">
-              <ref role="37wK5l" node="3F8BxGimI$0" resolve="NextNodeKeeper" />
+              <ref role="37wK5l" node="3F8BxGimI$0" resolve="SucceedingProgramPointInfo" />
               <node concept="37vLTw" id="1e$ObwPkaan" role="37wK5m">
                 <ref role="3cqZAo" node="1e$ObwPjX$Z" resolve="node" />
               </node>
@@ -60878,7 +60865,7 @@
       </node>
       <node concept="3Tm1VV" id="1e$ObwPjXon" role="1B3o_S" />
       <node concept="3uibUv" id="1e$ObwPjXrs" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
       <node concept="37vLTG" id="1e$ObwPjX$Z" role="3clF46">
         <property role="TrG5h" value="node" />
@@ -60886,7 +60873,7 @@
       </node>
     </node>
     <node concept="2YIFZL" id="1e$ObwPkaq2" role="jymVt">
-      <property role="TrG5h" value="createJumpBeforeNode" />
+      <property role="TrG5h" value="knownPassBeforeCertainNode" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
@@ -60894,13 +60881,13 @@
         <node concept="3cpWs6" id="1e$ObwPkaq4" role="3cqZAp">
           <node concept="2ShNRf" id="1e$ObwPkaq5" role="3cqZAk">
             <node concept="1pGfFk" id="1e$ObwPkaq6" role="2ShVmc">
-              <ref role="37wK5l" node="3F8BxGimI$0" resolve="NextNodeKeeper" />
+              <ref role="37wK5l" node="3F8BxGimI$0" resolve="SucceedingProgramPointInfo" />
               <node concept="37vLTw" id="1e$ObwPkaq7" role="37wK5m">
                 <ref role="3cqZAo" node="1e$ObwPkaqc" resolve="node" />
               </node>
               <node concept="3clFbT" id="1e$ObwPkaq8" role="37wK5m" />
-              <node concept="3clFbT" id="1e$ObwPkaq9" role="37wK5m">
-                <property role="3clFbU" value="true" />
+              <node concept="37vLTw" id="1e$ObwP$_tk" role="37wK5m">
+                <ref role="3cqZAo" node="1e$ObwPzzbp" resolve="willJump" />
               </node>
             </node>
           </node>
@@ -60908,42 +60895,17 @@
       </node>
       <node concept="3Tm1VV" id="1e$ObwPkaqa" role="1B3o_S" />
       <node concept="3uibUv" id="1e$ObwPkaqb" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
+        <ref role="3uigEE" node="3F8BxGimGuN" resolve="SucceedingProgramPointInfo" />
       </node>
       <node concept="37vLTG" id="1e$ObwPkaqc" role="3clF46">
         <property role="TrG5h" value="node" />
         <node concept="3Tqbb2" id="1e$ObwPkaqd" role="1tU5fm" />
       </node>
-    </node>
-    <node concept="2YIFZL" id="1e$ObwPkaC1" role="jymVt">
-      <property role="TrG5h" value="createGoToNextNode" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="1e$ObwPkaC2" role="3clF47">
-        <node concept="3cpWs6" id="1e$ObwPkaC3" role="3cqZAp">
-          <node concept="2ShNRf" id="1e$ObwPkaC4" role="3cqZAk">
-            <node concept="1pGfFk" id="1e$ObwPkaC5" role="2ShVmc">
-              <ref role="37wK5l" node="3F8BxGimI$0" resolve="NextNodeKeeper" />
-              <node concept="37vLTw" id="1e$ObwPkaC6" role="37wK5m">
-                <ref role="3cqZAo" node="1e$ObwPkaCb" resolve="node" />
-              </node>
-              <node concept="3clFbT" id="1e$ObwPkaC7" role="37wK5m" />
-              <node concept="3clFbT" id="1e$ObwPkaC8" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="1e$ObwPkaC9" role="1B3o_S" />
-      <node concept="3uibUv" id="1e$ObwPkaCa" role="3clF45">
-        <ref role="3uigEE" node="3F8BxGimGuN" resolve="NextNodeKeeper" />
-      </node>
-      <node concept="37vLTG" id="1e$ObwPkaCb" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="1e$ObwPkaCc" role="1tU5fm" />
+      <node concept="37vLTG" id="1e$ObwPzzbp" role="3clF46">
+        <property role="TrG5h" value="willJump" />
+        <node concept="10P_77" id="1e$ObwPzzcc" role="1tU5fm" />
       </node>
     </node>
-    <node concept="2tJIrI" id="1e$ObwPkamf" role="jymVt" />
   </node>
 </model>
 

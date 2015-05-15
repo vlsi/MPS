@@ -10,7 +10,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.AndExpression_DataFlow" file="AndExpression_DataFlow.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextNodeKeeper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -505,7 +505,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.OrExpression_DataFlow" file="OrExpression_DataFlow.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextNodeKeeper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -622,7 +622,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.RuleEqualsExpression" file="RuleEqualsExpression.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextNodeKeeper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
@@ -664,7 +664,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.RuleNotEqualsExpression" file="RuleNotEqualsExpression.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextNodeKeeper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />

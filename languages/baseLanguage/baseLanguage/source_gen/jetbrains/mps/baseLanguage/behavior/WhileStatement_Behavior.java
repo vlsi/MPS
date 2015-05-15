@@ -10,18 +10,18 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class WhileStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+  public static SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
     if (child != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, 0xfaa4bf0f30L, "condition"))) {
       return null;
     }
     if (value) {
       if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")) != null) {
-        return NextNodeKeeper.createGoToNextNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")));
+        return SucceedingProgramPointInfo.knownPassBeforeCertainNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x10cb1ada6e8L, "body")), false);
       } else {
-        return NextNodeKeeper.createJumpBeforeNode(thisNode);
+        return SucceedingProgramPointInfo.knownPassBeforeCertainNode(thisNode, true);
       }
     } else {
-      return NextNodeKeeper.createJumpAfterNode(thisNode);
+      return SucceedingProgramPointInfo.unknownJumpAfterNode(thisNode);
     }
   }
 }

@@ -9,8 +9,8 @@ import org.jetbrains.annotations.NotNull;
 public class ElsifClause_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
   public ElsifClause_BehaviorDescriptor() {
   }
-  public NextNodeKeeper virtual_getNextNode_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return ElsifClause_Behavior.virtual_getNextNode_4235809288648213009(thisNode, child, value);
+  public SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return ElsifClause_Behavior.virtual_getSucceedingProgramPointInfo_4235809288648213009(thisNode, child, value);
   }
   @Override
   public String getConceptFqName() {
