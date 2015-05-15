@@ -300,6 +300,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
           EditorCell emptyCell = getEditorComponent().findNodeCellWithRole(myParentNode, myRole);
           if (emptyCell != null) {
+            assert myParentNode.getModel() != null : "The model of the parent node (" + myParentNode + ") in this selection is null.";
+            assert emptyCell.getSNode().getModel() != null : "The model is null for emptyCell node (" + emptyCell.getSNode() + ")";
             editorContext.selectWRTFocusPolicy(emptyCell);
             return;
           }
