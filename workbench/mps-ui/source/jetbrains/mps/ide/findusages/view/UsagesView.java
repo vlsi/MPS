@@ -41,7 +41,7 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.RepoListenerRegistrar;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;

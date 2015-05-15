@@ -15,7 +15,8 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -48,7 +49,8 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
@@ -67,7 +69,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyTreeNodeListener myTreeNodeListener = new TreeHighlighter.MyTreeNodeListener();
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
   private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
-  private TreeHighlighter.MyModelListener myGlobalModelListener;
+  private TreeHighlighter.MyModelDisposeListener myGlobalModelListener;
   private final TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("MPS Changes Manager RehighlightAll Watcher Queue", 500, true, null);
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
@@ -77,7 +79,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     myTree = tree;
     myFeatureExtractor = featureExtractor;
     if (removeNodesOnModelDisposal) {
-      myGlobalModelListener = new TreeHighlighter.MyModelListener();
+      myGlobalModelListener = new TreeHighlighter.MyModelDisposeListener();
     }
   }
   public synchronized void init() {
@@ -90,7 +92,8 @@ public class TreeHighlighter implements TreeMessageOwner {
     myTree.addTreeNodeListener(myTreeNodeListener);
     FileStatusManager.getInstance(myRegistry.getProject()).addFileStatusListener(myFileStatusListener);
     if (myGlobalModelListener != null) {
-      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelListener);
+      // FIXME shall use getProjectRepository(), however could not until its getModules() would return meaningful set of modules 
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myGlobalModelListener).attach();
     }
 
     getProjectRepository().getModelAccess().runReadInEDT(new Runnable() {
@@ -109,7 +112,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     myInitialized = false;
 
     if (myGlobalModelListener != null) {
-      GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelListener);
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myGlobalModelListener).detach();
     }
     FileStatusManager.getInstance(myRegistry.getProject()).removeFileStatusListener(myFileStatusListener);
     myTree.removeTreeNodeListener(myTreeNodeListener);
@@ -373,11 +376,18 @@ public class TreeHighlighter implements TreeMessageOwner {
       rehighlightAllFeaturesLater();
     }
   }
-  private class MyModelListener extends SModelAdapter {
-    public MyModelListener() {
+
+  /**
+   * In fact, shall listen to specific models only (FeaturesHolder.myModelRefToFeatures.keySet), whole repository is bit too much
+   */
+  private class MyModelDisposeListener extends SRepositoryContentAdapter {
+    @Override
+    protected boolean isIncluded(SModule module) {
+      return !(module.isReadOnly());
     }
     @Override
-    public void beforeModelDisposed(SModel model) {
+    public void beforeModelRemoved(SModule module, SModel model) {
+      super.beforeModelRemoved(module, model);
       SModelReference modelRef = model.getReference();
       List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
       synchronized (myFeaturesHolder) {
@@ -395,6 +405,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       });
     }
   }
+
   private class FeaturesHolder {
     private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
     private final MultiMap<SModelReference, Feature> myModelRefToFeatures = new MultiMap<SModelReference, Feature>();

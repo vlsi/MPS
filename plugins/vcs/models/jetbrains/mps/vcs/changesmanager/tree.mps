@@ -69,6 +69,9 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -207,6 +210,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
         <child id="1212687122400" name="typeParameter" index="1pMfVU" />
       </concept>
@@ -2385,7 +2389,7 @@
       <property role="TrG5h" value="myGlobalModelListener" />
       <node concept="3Tm6S6" id="1OS8OtPz6xY" role="1B3o_S" />
       <node concept="3uibUv" id="1OS8OtPz8Ws" role="1tU5fm">
-        <ref role="3uigEE" node="1OS8OtPz1QE" resolve="TreeHighlighter.MyModelListener" />
+        <ref role="3uigEE" node="1OS8OtPz1QE" resolve="TreeHighlighter.MyModelDisposeListener" />
       </node>
     </node>
     <node concept="312cEg" id="7TQDMXakHwV" role="jymVt">
@@ -2492,8 +2496,8 @@
             <node concept="3clFbF" id="1OS8OtPz6y2" role="3cqZAp">
               <node concept="37vLTI" id="1OS8OtPz6y4" role="3clFbG">
                 <node concept="2ShNRf" id="1OS8OtPz8Wz" role="37vLTx">
-                  <node concept="1pGfFk" id="1OS8OtPz8W$" role="2ShVmc">
-                    <ref role="37wK5l" node="1OS8OtPz1QG" resolve="TreeHighlighter.MyModelListener" />
+                  <node concept="HV5vD" id="tk8S9S$6yk" role="2ShVmc">
+                    <ref role="HV5vE" node="1OS8OtPz1QE" resolve="TreeHighlighter.MyModelDisposeListener" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxeuTxy" role="37vLTJ">
@@ -2623,17 +2627,27 @@
         </node>
         <node concept="3clFbJ" id="1OS8OtPz6y9" role="3cqZAp">
           <node concept="3clFbS" id="1OS8OtPz6ya" role="3clFbx">
-            <node concept="3clFbF" id="1OS8OtPz8Wk" role="3cqZAp">
-              <node concept="2OqwBi" id="1OS8OtPz8Wn" role="3clFbG">
-                <node concept="2YIFZM" id="1OS8OtPz8Wm" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~GlobalSModelEventsManager.getInstance():jetbrains.mps.smodel.GlobalSModelEventsManager" resolve="getInstance" />
-                  <ref role="1Pybhc" to="cu2c:~GlobalSModelEventsManager" resolve="GlobalSModelEventsManager" />
-                </node>
-                <node concept="liA8E" id="1OS8OtPz8Wr" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~GlobalSModelEventsManager.addGlobalModelListener(jetbrains.mps.smodel.event.SModelListener):void" resolve="addGlobalModelListener" />
-                  <node concept="37vLTw" id="2BHiRxeuW1v" role="37wK5m">
-                    <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
+            <node concept="3SKdUt" id="tk8S9S$k90" role="3cqZAp">
+              <node concept="3SKdUq" id="tk8S9S$kaU" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME shall use getProjectRepository(), however could not until its getModules() would return meaningful set of modules" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="tk8S9S$fIa" role="3cqZAp">
+              <node concept="2OqwBi" id="tk8S9S$jNq" role="3clFbG">
+                <node concept="2ShNRf" id="tk8S9S$fI6" role="2Oq$k0">
+                  <node concept="1pGfFk" id="tk8S9S$jMv" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                    <node concept="2YIFZM" id="tk8S9S$k5s" role="37wK5m">
+                      <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                      <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                    </node>
+                    <node concept="37vLTw" id="tk8S9S$jYe" role="37wK5m">
+                      <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
+                    </node>
                   </node>
+                </node>
+                <node concept="liA8E" id="tk8S9S$jXq" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~RepoListenerRegistrar.attach():void" resolve="attach" />
                 </node>
               </node>
             </node>
@@ -2730,17 +2744,22 @@
         <node concept="3clFbH" id="1OS8OtPz8WP" role="3cqZAp" />
         <node concept="3clFbJ" id="1OS8OtPz8WF" role="3cqZAp">
           <node concept="3clFbS" id="1OS8OtPz8WG" role="3clFbx">
-            <node concept="3clFbF" id="1OS8OtPz8WH" role="3cqZAp">
-              <node concept="2OqwBi" id="1OS8OtPz8WI" role="3clFbG">
-                <node concept="2YIFZM" id="1OS8OtPz8WJ" role="2Oq$k0">
-                  <ref role="37wK5l" to="cu2c:~GlobalSModelEventsManager.getInstance():jetbrains.mps.smodel.GlobalSModelEventsManager" resolve="getInstance" />
-                  <ref role="1Pybhc" to="cu2c:~GlobalSModelEventsManager" resolve="GlobalSModelEventsManager" />
-                </node>
-                <node concept="liA8E" id="1OS8OtPz8WK" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~GlobalSModelEventsManager.removeGlobalModelListener(jetbrains.mps.smodel.event.SModelListener):void" resolve="removeGlobalModelListener" />
-                  <node concept="37vLTw" id="2BHiRxeufrX" role="37wK5m">
-                    <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
+            <node concept="3clFbF" id="tk8S9S$mG0" role="3cqZAp">
+              <node concept="2OqwBi" id="tk8S9S$mG1" role="3clFbG">
+                <node concept="2ShNRf" id="tk8S9S$mG2" role="2Oq$k0">
+                  <node concept="1pGfFk" id="tk8S9S$mG3" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                    <node concept="2YIFZM" id="tk8S9S$mG4" role="37wK5m">
+                      <ref role="1Pybhc" to="cu2c:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      <ref role="37wK5l" to="cu2c:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                    </node>
+                    <node concept="37vLTw" id="tk8S9S$mG5" role="37wK5m">
+                      <ref role="3cqZAo" node="1OS8OtPz6xX" resolve="myGlobalModelListener" />
+                    </node>
                   </node>
+                </node>
+                <node concept="liA8E" id="tk8S9S$mG6" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~RepoListenerRegistrar.detach():void" resolve="detach" />
                 </node>
               </node>
             </node>
@@ -4894,32 +4913,72 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="tk8S9S$9D6" role="jymVt" />
     <node concept="312cEu" id="1OS8OtPz1QE" role="jymVt">
-      <property role="TrG5h" value="MyModelListener" />
+      <property role="TrG5h" value="MyModelDisposeListener" />
       <property role="2bfB8j" value="true" />
-      <node concept="3Tm6S6" id="1OS8OtPz1QK" role="1B3o_S" />
-      <node concept="3uibUv" id="1OS8OtPz1QL" role="1zkMxy">
-        <ref role="3uigEE" to="cu2c:~SModelAdapter" resolve="SModelAdapter" />
-      </node>
-      <node concept="3clFbW" id="1OS8OtPz1QG" role="jymVt">
-        <node concept="3cqZAl" id="1OS8OtPz1QH" role="3clF45" />
-        <node concept="3Tm1VV" id="1OS8OtPz1QI" role="1B3o_S" />
-        <node concept="3clFbS" id="1OS8OtPz1QJ" role="3clF47" />
-      </node>
-      <node concept="3clFb_" id="1OS8OtPz1QM" role="jymVt">
-        <property role="IEkAT" value="false" />
+      <node concept="3clFb_" id="tk8S9S$koX" role="jymVt">
         <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="beforeModelDisposed" />
+        <property role="TrG5h" value="isIncluded" />
         <property role="DiZV1" value="false" />
-        <node concept="3Tm1VV" id="1OS8OtPz1QN" role="1B3o_S" />
-        <node concept="3cqZAl" id="1OS8OtPz1QO" role="3clF45" />
-        <node concept="37vLTG" id="1OS8OtPz1QP" role="3clF46">
+        <property role="IEkAT" value="false" />
+        <node concept="3Tmbuc" id="tk8S9S$koY" role="1B3o_S" />
+        <node concept="10P_77" id="tk8S9S$kp0" role="3clF45" />
+        <node concept="37vLTG" id="tk8S9S$kp1" role="3clF46">
+          <property role="TrG5h" value="module" />
+          <node concept="3uibUv" id="tk8S9S$kp2" role="1tU5fm">
+            <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="tk8S9S$kp3" role="3clF47">
+          <node concept="3cpWs6" id="tk8S9S$kYl" role="3cqZAp">
+            <node concept="3fqX7Q" id="tk8S9S$lbO" role="3cqZAk">
+              <node concept="2OqwBi" id="tk8S9S$lUr" role="3fr31v">
+                <node concept="37vLTw" id="tk8S9S$lHZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="tk8S9S$kp1" resolve="module" />
+                </node>
+                <node concept="liA8E" id="tk8S9S$mdD" role="2OqNvi">
+                  <ref role="37wK5l" to="88zw:~SModule.isReadOnly():boolean" resolve="isReadOnly" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="tk8S9S$kp4" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="tk8S9S$6Jo" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="beforeModelRemoved" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="tk8S9S$6Jp" role="1B3o_S" />
+        <node concept="3cqZAl" id="tk8S9S$6Jr" role="3clF45" />
+        <node concept="37vLTG" id="tk8S9S$6Js" role="3clF46">
+          <property role="TrG5h" value="module" />
+          <node concept="3uibUv" id="tk8S9S$6Jt" role="1tU5fm">
+            <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="tk8S9S$6Ju" role="3clF46">
           <property role="TrG5h" value="model" />
-          <node concept="3uibUv" id="1OS8OtPz1QQ" role="1tU5fm">
+          <node concept="3uibUv" id="tk8S9S$6Jv" role="1tU5fm">
             <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
           </node>
         </node>
-        <node concept="3clFbS" id="1OS8OtPz1QR" role="3clF47">
+        <node concept="3clFbS" id="tk8S9S$6Jw" role="3clF47">
+          <node concept="3clFbF" id="tk8S9S$6J_" role="3cqZAp">
+            <node concept="3nyPlj" id="tk8S9S$6J$" role="3clFbG">
+              <ref role="37wK5l" to="88zw:~SRepositoryContentAdapter.beforeModelRemoved(org.jetbrains.mps.openapi.module.SModule,org.jetbrains.mps.openapi.model.SModel):void" resolve="beforeModelRemoved" />
+              <node concept="37vLTw" id="tk8S9S$6Jy" role="37wK5m">
+                <ref role="3cqZAo" node="tk8S9S$6Js" resolve="module" />
+              </node>
+              <node concept="37vLTw" id="tk8S9S$6Jz" role="37wK5m">
+                <ref role="3cqZAo" node="tk8S9S$6Ju" resolve="model" />
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="1OS8OtPz1S1" role="3cqZAp">
             <node concept="3cpWsn" id="1OS8OtPz1S2" role="3cpWs9">
               <property role="TrG5h" value="modelRef" />
@@ -4927,8 +4986,8 @@
                 <node concept="liA8E" id="2n9zn0CqNgt" role="2OqNvi">
                   <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                 </node>
-                <node concept="37vLTw" id="2BHiRxglTA5" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1OS8OtPz1QP" resolve="model" />
+                <node concept="37vLTw" id="tk8S9S$7yv" role="2Oq$k0">
+                  <ref role="3cqZAo" node="tk8S9S$6Ju" resolve="model" />
                 </node>
               </node>
               <node concept="3uibUv" id="1OS8OtPz1S3" role="1tU5fm">
@@ -5051,11 +5110,23 @@
             </node>
           </node>
         </node>
-        <node concept="2AHcQZ" id="1OS8OtPz1QS" role="2AJF6D">
+        <node concept="2AHcQZ" id="tk8S9S$6Jx" role="2AJF6D">
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
+      <node concept="3Tm6S6" id="1OS8OtPz1QK" role="1B3o_S" />
+      <node concept="3uibUv" id="tk8S9S$5CW" role="1zkMxy">
+        <ref role="3uigEE" to="88zw:~SRepositoryContentAdapter" resolve="SRepositoryContentAdapter" />
+      </node>
+      <node concept="3UR2Jj" id="tk8S9S$f9t" role="lGtFl">
+        <node concept="TZ5HA" id="tk8S9S$f9u" role="TZ5H$">
+          <node concept="1dT_AC" id="tk8S9S$f9v" role="1dT_Ay">
+            <property role="1dT_AB" value="In fact, shall listen to specific models only (FeaturesHolder.myModelRefToFeatures.keySet), whole repository is bit too much" />
+          </node>
+        </node>
+      </node>
     </node>
+    <node concept="2tJIrI" id="tk8S9S$7_3" role="jymVt" />
     <node concept="312cEu" id="7TQDMXakHwe" role="jymVt">
       <property role="TrG5h" value="FeaturesHolder" />
       <property role="2bfB8j" value="true" />

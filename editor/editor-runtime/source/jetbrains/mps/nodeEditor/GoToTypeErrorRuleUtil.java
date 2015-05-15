@@ -18,8 +18,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -51,8 +49,7 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    modelUID = PersistenceFacade.getInstance().createModelReference(SModelStereotype.withoutStereotype(modelUID.getModelName()));
-    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    final SModel modelDescriptor = modelUID.resolve(project.getRepository());
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;
