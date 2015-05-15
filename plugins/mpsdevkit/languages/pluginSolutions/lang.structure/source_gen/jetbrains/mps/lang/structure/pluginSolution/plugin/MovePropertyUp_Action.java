@@ -28,17 +28,17 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -130,19 +130,19 @@ public class MovePropertyUp_Action extends BaseAction {
         modelAccess.executeCommandInEDT(new Runnable() {
           public void run() {
             Set<SReference> usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
-            Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
-
-            SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
-            ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-            SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
-            for (SNode node : SetSequence.fromSet(instances)) {
-              String value = node.getProperty(oldProp);
-              node.setProperty(newProp, value);
-              node.setProperty(oldProp, null);
-            }
-            for (SReference usage : SetSequence.fromSet(usages)) {
-              usage.getSourceNode().setReferenceTarget(usage.getLink(), ((SNode) MapSequence.fromMap(_params).get("target")));
-            }
+            final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
+            RefactoringUtil.changeReferences(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Project) MapSequence.fromMap(_params).get("project")), usages, ((SNode) MapSequence.fromMap(_params).get("target")), new _FunctionTypes._void_P0_E0() {
+              public void invoke() {
+                SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+                ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
+                SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+                for (SNode node : SetSequence.fromSet(instances)) {
+                  String value = node.getProperty(oldProp);
+                  node.setProperty(newProp, value);
+                  node.setProperty(oldProp, null);
+                }
+              }
+            }, "Move property " + SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
         });
       } else {
