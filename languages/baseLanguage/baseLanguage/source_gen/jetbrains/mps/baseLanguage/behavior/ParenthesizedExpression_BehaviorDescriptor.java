@@ -12,8 +12,8 @@ public class ParenthesizedExpression_BehaviorDescriptor extends Expression_Behav
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return ParenthesizedExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
-  public SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return ParenthesizedExpression_Behavior.virtual_getSucceedingProgramPointInfo_4235809288648213009(thisNode, child, value);
+  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return ParenthesizedExpression_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
   }
   @Override
   public String getConceptFqName() {

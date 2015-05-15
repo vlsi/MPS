@@ -13,8 +13,8 @@ public class IfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     IfStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
-  public SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
-    return IfStatement_Behavior.virtual_getSucceedingProgramPointInfo_4235809288648213009(thisNode, child, value);
+  public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    return IfStatement_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
   }
   public boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return IContainsStatementList_Behavior.virtual_isStatementListCompact_1237546693016(thisNode);

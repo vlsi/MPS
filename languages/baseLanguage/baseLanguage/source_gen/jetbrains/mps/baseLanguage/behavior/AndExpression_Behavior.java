@@ -16,25 +16,21 @@ public class AndExpression_Behavior {
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 3;
   }
-  public static SucceedingProgramPointInfo virtual_getSucceedingProgramPointInfo_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+  public static NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
     if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))) {
       if (value && SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) != null) {
-        return SucceedingProgramPointInfo.knownPassBeforeCertainNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), false);
+        return NextProgramPoint.continueAt(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), false);
       } else {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))) {
-          SucceedingProgramPointInfo info = BehaviorReflection.invokeVirtual(SucceedingProgramPointInfo.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getSucceedingProgramPointInfo_4235809288648213009", new Object[]{thisNode, value});
-          if (info != null) {
-            if (info.isAfter()) {
-              return SucceedingProgramPointInfo.unknownJumpAfterNode(info.getSucceedingNode());
-            } else {
-              return SucceedingProgramPointInfo.knownPassBeforeCertainNode(info.getSucceedingNode(), true);
-            }
+          NextProgramPoint point = BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{thisNode, value});
+          if (point != null) {
+            return point.withJump();
           }
         }
       }
     } else if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"))) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))) {
-        return BehaviorReflection.invokeVirtual(SucceedingProgramPointInfo.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getSucceedingProgramPointInfo_4235809288648213009", new Object[]{thisNode, value});
+        return BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{thisNode, value});
       }
     }
     return null;

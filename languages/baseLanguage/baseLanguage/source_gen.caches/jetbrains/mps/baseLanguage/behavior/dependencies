@@ -99,7 +99,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.AndExpression_Behavior" file="AndExpression_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -114,7 +114,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AndExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1676,7 +1676,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.DoWhileStatement_Behavior" file="DoWhileStatement_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -1688,7 +1688,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.DoWhileStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -1746,7 +1746,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior" file="ElsifClause_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1759,7 +1759,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ElsifClause_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2109,7 +2109,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Scopes" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.ScopeUtils" />
@@ -2129,7 +2129,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ForStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -2345,7 +2345,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" file="IConditional_BehaviorDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -2626,9 +2626,9 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -2647,8 +2647,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -3287,6 +3287,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" file="NextProgramPoint.java">
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.NotEqualsExpression_Behavior" file="NotEqualsExpression_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -3301,7 +3305,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.NotExpression_Behavior" file="NotExpression_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -3316,8 +3320,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBinaryLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBinaryLike_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NotExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
@@ -3368,7 +3372,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.OrExpression_Behavior" file="OrExpression_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -3382,8 +3386,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.OrExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -3458,7 +3462,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" file="ParenthesizedExpression_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -3473,8 +3477,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ParenthesizedExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -4285,10 +4289,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" file="SucceedingProgramPointInfo.java">
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.SuperConstructorInvocation_Behavior" file="SuperConstructorInvocation_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -4409,7 +4409,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" file="TernaryOperatorExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -4422,7 +4422,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBinaryLike_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IBinaryLike_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -5037,7 +5037,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.WhileStatement_Behavior" file="WhileStatement_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -5048,7 +5048,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IConditional_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.WhileStatement_Behavior" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.baseLanguage.behavior.SucceedingProgramPointInfo;
+import jetbrains.mps.baseLanguage.behavior.NextProgramPoint;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
@@ -31,9 +31,9 @@ public class RuleEqualsExpression implements DataFlowConstructor {
     if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional"))))) {
       return;
     }
-    SucceedingProgramPointInfo info = BehaviorReflection.invokeVirtual(SucceedingProgramPointInfo.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getSucceedingProgramPointInfo_4235809288648213009", new Object[]{node, true});
-    if (info != null) {
-      if (info.willJump()) {
+    NextProgramPoint point = BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{node, true});
+    if (point != null) {
+      if (point.willJump()) {
         {
           Object object = node;
           if (((Program) o).contains(object)) {
@@ -46,12 +46,12 @@ public class RuleEqualsExpression implements DataFlowConstructor {
           }
         }
       } else {
-        assert !(info.isAfter());
+        assert !(point.isAfter());
         {
-          Object object = info.getSucceedingNode();
+          Object object = point.getSucceedingNode();
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(info.getSucceedingNode());
+            int position = ((Program) (o)).getStart(point.getSucceedingNode());
             Instruction instruction = new nullInstruction(otherThanNull);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1383888600189574816");
             instruction.setSource(node);
@@ -60,9 +60,9 @@ public class RuleEqualsExpression implements DataFlowConstructor {
         }
       }
     }
-    info = BehaviorReflection.invokeVirtual(SucceedingProgramPointInfo.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getSucceedingProgramPointInfo_4235809288648213009", new Object[]{node, false});
-    if (info != null) {
-      if (info.willJump()) {
+    point = BehaviorReflection.invokeVirtual(NextProgramPoint.class, SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3ac89e1b122cd5c2L, "jetbrains.mps.baseLanguage.structure.IConditional")), "virtual_getNextProgramPoint_4235809288648213009", new Object[]{node, false});
+    if (point != null) {
+      if (point.willJump()) {
         {
           Object object = node;
           if (((Program) o).contains(object)) {
@@ -75,12 +75,12 @@ public class RuleEqualsExpression implements DataFlowConstructor {
           }
         }
       } else {
-        assert !(info.isAfter());
+        assert !(point.isAfter());
         {
-          Object object = info.getSucceedingNode();
+          Object object = point.getSucceedingNode();
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(info.getSucceedingNode());
+            int position = ((Program) (o)).getStart(point.getSucceedingNode());
             Instruction instruction = new notNullInstruction(otherThanNull);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/4235809288651577807");
             instruction.setSource(node);
