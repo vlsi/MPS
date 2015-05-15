@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.lang.dataFlow.framework.instructions.IfJumpInstruction;
 import jetbrains.mps.baseLanguage.dataFlow.NullableUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -56,13 +57,15 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       String warning;
       SNode nodeToWarn;
 
-      checkingResult = NullableUtil.isNullableDotExpression(parent, source, varState);
-      if (checkingResult != null) {
-        warning = checkingResult._0();
-        nodeToWarn = checkingResult._1();
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343684", null, errorTarget);
+      if (!(instruction instanceof IfJumpInstruction)) {
+        checkingResult = NullableUtil.isNullableDotExpression(parent, source, varState);
+        if (checkingResult != null) {
+          warning = checkingResult._0();
+          nodeToWarn = checkingResult._1();
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3451033204592343684", null, errorTarget);
+          }
         }
       }
 
