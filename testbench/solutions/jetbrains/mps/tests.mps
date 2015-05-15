@@ -72,6 +72,7 @@
     <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
     <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
+    <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -3848,15 +3849,6 @@
       <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
     </node>
   </node>
-  <node concept="lpD6F" id="1lM6JtOM9Yh">
-    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
-      <property role="2R4zub" value="tests.testDepViewer" />
-      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
-    </node>
-    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
-      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
-    </node>
-  </node>
   <node concept="lpD6F" id="3ofMfJ4Yh7E">
     <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
       <property role="2R4zub" value="testPackagedLanguage.test" />
@@ -3874,6 +3866,24 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="1lM6JtOM9Yh">
+    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
+      <property role="2R4zub" value="tests.testDepViewer" />
+      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
+    </node>
+    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
+      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="5GF7bt500qz">
+    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
+      <property role="2R4zub" value="testSubstituteType" />
+      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
+    </node>
+    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
+      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
     </node>
   </node>
 </model>

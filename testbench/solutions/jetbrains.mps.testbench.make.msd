@@ -75,6 +75,7 @@
     <dependency reexport="false">4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d(tests.testDepViewer)</dependency>
     <dependency reexport="false">f2f32c65-17db-4e68-ad2f-8b0e2554dbd6(tests.testPersistence)</dependency>
     <dependency reexport="false">2f5af9e7-34c8-45f3-b417-4dcbb52409b8(testPackagedLanguage.test)</dependency>
+    <dependency reexport="false">f4227833-0d14-4ab5-8560-70880fd9d5ef(testSubstituteType)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
