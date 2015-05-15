@@ -38,6 +38,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -149,10 +153,21 @@ public class MoveLinkUp_Action extends BaseAction {
                     }
                   }
                 } else {
-                  SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  final SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
                   ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-                  SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
+                  final SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(((SNode) MapSequence.fromMap(_params).get("target")));
                   for (SNode node : SetSequence.fromSet(instances)) {
+                    Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+                    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+                      public boolean accept(SNode it) {
+                        return LinkAttribute_Behavior.call_getLink_1341860900489573894(it).equals(oldLink);
+                      }
+                    }).visitAll(new IVisitor<SNode>() {
+                      public void visit(SNode it) {
+                        LinkAttribute_Behavior.call_setLink_7714691473529772139(it, newLink);
+                      }
+                    });
+
                     SNode referenceTarget = node.getReferenceTarget(oldLink);
                     node.setReferenceTarget(newLink, referenceTarget);
                     node.setReferenceTarget(oldLink, null);

@@ -34,6 +34,10 @@ import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.core.behavior.PropertyAttribute_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -133,10 +137,21 @@ public class MovePropertyUp_Action extends BaseAction {
             final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
             RefactoringUtil.changeReferences(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Project) MapSequence.fromMap(_params).get("project")), usages, ((SNode) MapSequence.fromMap(_params).get("target")), new _FunctionTypes._void_P0_E0() {
               public void invoke() {
-                SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+                final SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
                 ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-                SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+                final SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
                 for (SNode node : SetSequence.fromSet(instances)) {
+                  Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+                  Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode it) {
+                      return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
+                    }
+                  }).visitAll(new IVisitor<SNode>() {
+                    public void visit(SNode it) {
+                      PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
+                    }
+                  });
+
                   String value = node.getProperty(oldProp);
                   node.setProperty(newProp, value);
                   node.setProperty(oldProp, null);
