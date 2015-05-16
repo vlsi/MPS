@@ -106,6 +106,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/reduced/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/source_gen" isTestSource="false" />
@@ -850,10 +851,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor/languages/testDefaultEditor/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer/test_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testDepViewer/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" isTestSource="false" />
@@ -866,23 +863,18 @@
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements/languages/testMoveElements/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testMoveElements/languages/testMoveElements/generator/classes_gen" />
     </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/testPackaged">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/test_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage.test/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPackaged/testPackagedLanguage/generator/classes_gen" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../testbench/modules/testPersistence">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testPersistence/test_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testPersistence/classes_gen" />
-    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testRead">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRead/classes_gen" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoring/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/languages/testRefactoringTargetLang/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testRefactoring/solutions/testRefactoring.sandbox/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" isTestSource="false" />
@@ -988,6 +980,7 @@
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="JMock" level="project" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
