@@ -46,6 +46,9 @@ public class MetaAdapterFactoryByName {
     return new SLanguageAdapterByName(langName, version);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS except SModelUtil.findConceptDeclaration
   public static SConcept getConcept(String conceptName) {
     return new SConceptAdapterByName(conceptName);
   }
