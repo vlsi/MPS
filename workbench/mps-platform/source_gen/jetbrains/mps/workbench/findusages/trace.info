@@ -988,5 +988,122 @@
       <unit id="3822554386093951004" at="36,0,490,0" name="jetbrains.mps.workbench.findusages.ClassifierCacher" />
     </file>
   </root>
+  <root nodeRef="r:9e8a9ffa-c450-4841-b749-c11aa0f49452(jetbrains.mps.workbench.findusages)/4897777221271802900">
+    <file name="InternalModelsFindUsagesParticipant.java">
+      <node id="4897777221271802921" at="27,137,28,37" concept="9" />
+      <node id="4897777221271802925" at="28,37,29,39" concept="9" />
+      <node id="4897777221271802932" at="30,27,31,34" concept="9" />
+      <node id="4897777221271802941" at="32,85,33,32" concept="4" />
+      <node id="4897777221271802951" at="35,77,36,34" concept="4" />
+      <node id="4897777221271802971" at="41,34,42,43" concept="4" />
+      <node id="4897777221271802984" at="46,36,47,43" concept="4" />
+      <node id="4897777221271803171" at="50,85,51,48" concept="11" />
+      <node id="4897777221271802994" at="51,48,52,41" concept="4" />
+      <node id="4897777221271803019" at="57,149,58,47" concept="9" />
+      <node id="4897777221271803035" at="60,193,61,42" concept="4" />
+      <node id="4897777221271803055" at="66,44,67,43" concept="4" />
+      <node id="4897777221271803173" at="70,85,71,48" concept="11" />
+      <node id="4897777221271803065" at="71,48,72,41" concept="4" />
+      <node id="4897777221271803175" at="79,85,80,52" concept="11" />
+      <node id="4897777221271803098" at="80,52,81,41" concept="4" />
+      <node id="4897777221271803177" at="83,85,84,48" concept="11" />
+      <node id="4897777221271803107" at="84,48,85,41" concept="4" />
+      <node id="4897777221271803120" at="91,36,92,43" concept="10" />
+      <node id="4897777221271803131" at="95,31,96,69" concept="4" />
+      <node id="4897777221271803141" at="99,34,100,72" concept="4" />
+      <node id="4897777221271802935" at="31,34,34,7" concept="7" />
+      <node id="4897777221271802945" at="34,7,37,7" concept="7" />
+      <node id="4897777221271802968" at="40,85,43,9" concept="7" />
+      <node id="4897777221271802981" at="45,77,48,9" concept="7" />
+      <node id="4897777221271803030" at="59,41,62,7" concept="7" />
+      <node id="4897777221271803052" at="65,85,68,9" concept="7" />
+      <node id="4897777221271802988" at="49,12,53,7" concept="7" />
+      <node id="4897777221271803059" at="69,12,73,7" concept="7" />
+      <node id="4897777221271803101" at="82,12,86,7" concept="7" />
+      <node id="4897777221271803128" at="94,0,98,0" concept="8" trace="initComponent#()V" />
+      <node id="4897777221271803138" at="98,0,102,0" concept="8" trace="disposeComponent#()V" />
+      <node id="4897777221271803022" at="58,47,63,5" concept="6" />
+      <node id="4897777221271803116" at="89,0,94,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="4897777221271803092" at="78,32,86,7" concept="7" />
+      <node id="4897777221271802928" at="29,39,38,5" concept="6" />
+      <node id="4897777221271802975" at="44,12,53,7" concept="7" />
+      <node id="4897777221271803046" at="64,32,73,7" concept="7" />
+      <node id="4897777221271803089" at="77,158,87,5" concept="6" />
+      <node id="4897777221271803043" at="63,5,74,5" concept="6" />
+      <node id="4897777221271803074" at="76,0,89,0" concept="8" trace="findModelUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+      <node id="4897777221271802962" at="39,32,53,7" concept="7" />
+      <node id="4897777221271802959" at="38,5,54,5" concept="6" />
+      <node id="4897777221271803003" at="56,0,76,0" concept="8" trace="findInstances#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+      <node id="4897777221271802905" at="26,0,56,0" concept="8" trace="findUsages#(Ljava/util/Collection;Ljava/util/Set;Lorg/jetbrains/mps/openapi/util/Consumer;Lorg/jetbrains/mps/openapi/util/Consumer;)V" />
+      <scope id="4897777221271802940" at="32,85,33,32" />
+      <scope id="4897777221271802950" at="35,77,36,34" />
+      <scope id="4897777221271802974" at="41,34,42,43" />
+      <scope id="4897777221271802987" at="46,36,47,43" />
+      <scope id="4897777221271803034" at="60,193,61,42" />
+      <scope id="4897777221271803058" at="66,44,67,43" />
+      <scope id="4897777221271803119" at="91,36,92,43" />
+      <scope id="4897777221271803130" at="95,31,96,69" />
+      <scope id="4897777221271803140" at="99,34,100,72" />
+      <scope id="4897777221271802993" at="50,85,52,41" />
+      <scope id="4897777221271803064" at="70,85,72,41" />
+      <scope id="4897777221271803097" at="79,85,81,41" />
+      <scope id="4897777221271803106" at="83,85,85,41" />
+      <scope id="4897777221271802967" at="40,85,43,9" />
+      <scope id="4897777221271802980" at="45,77,48,9" />
+      <scope id="4897777221271803024" at="59,41,62,7" />
+      <scope id="4897777221271803051" at="65,85,68,9" />
+      <scope id="4897777221271803128" at="94,0,98,0" />
+      <scope id="4897777221271803138" at="98,0,102,0" />
+      <scope id="4897777221271803022" at="58,47,63,5">
+        <var name="n" id="4897777221271803039" />
+      </scope>
+      <scope id="4897777221271803116" at="89,0,94,0" />
+      <scope id="4897777221271802930" at="30,27,37,7">
+        <var name="model" id="4897777221271802931" />
+      </scope>
+      <scope id="4897777221271803091" at="78,32,86,7" />
+      <scope id="4897777221271802928" at="29,39,38,5">
+        <var name="n" id="4897777221271802955" />
+      </scope>
+      <scope id="4897777221271803045" at="64,32,73,7" />
+      <scope id="4897777221271803088" at="77,158,87,5" />
+      <scope id="4897777221271803089" at="77,158,87,5">
+        <var name="model" id="4897777221271803110" />
+      </scope>
+      <scope id="4897777221271803043" at="63,5,74,5">
+        <var name="model" id="4897777221271803068" />
+      </scope>
+      <scope id="4897777221271803074" at="76,0,89,0">
+        <var name="consumer" id="4897777221271803082" />
+        <var name="modelReferences" id="4897777221271803079" />
+        <var name="processedConsumer" id="4897777221271803085" />
+        <var name="scope" id="4897777221271803076" />
+      </scope>
+      <scope id="4897777221271802961" at="39,32,53,7" />
+      <scope id="4897777221271802959" at="38,5,54,5">
+        <var name="model" id="4897777221271802997" />
+      </scope>
+      <scope id="4897777221271803017" at="57,149,74,5">
+        <var name="hasProjectLanguageConcepts" id="4897777221271803018" />
+      </scope>
+      <scope id="4897777221271803003" at="56,0,76,0">
+        <var name="concepts" id="4897777221271803008" />
+        <var name="consumer" id="4897777221271803011" />
+        <var name="processedConsumer" id="4897777221271803014" />
+        <var name="scope" id="4897777221271803005" />
+      </scope>
+      <scope id="4897777221271802919" at="27,137,54,5">
+        <var name="hasProjectModels" id="4897777221271802920" />
+        <var name="hasTransientModels" id="4897777221271802924" />
+      </scope>
+      <scope id="4897777221271802905" at="26,0,56,0">
+        <var name="consumer" id="4897777221271802913" />
+        <var name="nodes" id="4897777221271802910" />
+        <var name="processedConsumer" id="4897777221271802916" />
+        <var name="scope" id="4897777221271802907" />
+      </scope>
+      <unit id="4897777221271802900" at="22,0,103,0" name="jetbrains.mps.workbench.findusages.InternalModelsFindUsagesParticipant" />
+    </file>
+  </root>
 </debug-info>
 
