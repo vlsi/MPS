@@ -283,9 +283,6 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
@@ -462,13 +459,21 @@
           </node>
           <node concept="3fqX7Q" id="7vc5PjWrVtv" role="3clFbw">
             <node concept="2OqwBi" id="7vc5PjWrVtx" role="3fr31v">
-              <node concept="2JrnkZ" id="7UEyXn91Y_K" role="2Oq$k0">
-                <node concept="13iPFW" id="7vc5PjWrVtz" role="2JrQYb" />
+              <node concept="2OqwBi" id="4fSpAVASXRf" role="2Oq$k0">
+                <node concept="13iPFW" id="7vc5PjWrVtz" role="2Oq$k0" />
+                <node concept="2qgKlT" id="4fSpAVASYkl" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                </node>
               </node>
               <node concept="liA8E" id="7vc5PjWrVt_" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="3B5_sB" id="7UEyXn91WS8" role="37wK5m">
-                  <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="4fSpAVASYt0" role="37wK5m">
+                  <node concept="3B5_sB" id="7UEyXn91WS8" role="2Oq$k0">
+                    <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                  </node>
+                  <node concept="2qgKlT" id="4fSpAVASYVi" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                  </node>
                 </node>
               </node>
             </node>
