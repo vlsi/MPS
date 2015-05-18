@@ -414,12 +414,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class CreateRootRule0 extends CreateRootRuleBase implements TemplateCreateRootRule {
     public CreateRootRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return createRootRule_417xrn_a0a1z;
+      super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303917"));
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.createRootRule_Condition_8780540425167326385(new CreateRootRuleContext(context, createRootRule_417xrn_a0a1z)))) {
+      if (!(QueriesGenerated.createRootRule_Condition_8780540425167326385(new CreateRootRuleContext(context, getRuleNode())))) {
         return false;
       }
       return true;
@@ -446,5 +444,4 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0e0c0b91 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840072");
   private static SNodePointer loopMacroRef_417xrn_b0a0a1a3a2a1w = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840046");
   private static SNodePointer copySrcMacro_417xrn_b0a0e0c0d0c0b22 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1820665478710840050");
-  private static SNodePointer createRootRule_417xrn_a0a1z = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303917");
 }

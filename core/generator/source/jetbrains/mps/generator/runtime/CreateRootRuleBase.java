@@ -15,10 +15,34 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateCreateRootRule} to use as superclass in generated code
  * to facilitate future API changes
  * @author Artem Tikhomirov
  */
 public abstract class CreateRootRuleBase implements TemplateCreateRootRule {
+
+  // FIXME final once no-arg cons gone
+  private SNodeReference myRuleNode;
+
+  /**
+   * @deprecated compatibility for code generated with MPS 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected CreateRootRuleBase() {
+  }
+
+  protected CreateRootRuleBase(@NotNull SNodeReference ruleNode) {
+    myRuleNode = ruleNode;
+  }
+
+  @Override
+  public SNodeReference getRuleNode() {
+    return myRuleNode;
+  }
 }
