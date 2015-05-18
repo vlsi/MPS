@@ -69,6 +69,10 @@ public class PropertyAccessor implements ModelAccessor {
     return myNode;
   }
 
+  protected SRepository getRepository() {
+    return myRepository;
+  }
+
   public String getPropertyName() {
     return myPropertyName;
   }

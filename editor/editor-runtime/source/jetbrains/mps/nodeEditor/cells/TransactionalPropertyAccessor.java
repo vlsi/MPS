@@ -16,14 +16,19 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.UndoRunnable.Base;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
   private String myOldValue;
-  private String myUncommitedValue;
+  private String myUncommittedValue;
   private boolean myHasValueToCommit = false;
+
+  private EditorCell myEditorCell;
 
   public TransactionalPropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     super(node, propertyName, readOnly, allowEmptyText, editorContext);
@@ -33,18 +38,21 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     super(node, propertyName, readOnly, allowEmptyText, context);
   }
 
+  void setCell(EditorCell editorCell) {
+    myEditorCell = editorCell;
+  }
+
   @Override
   protected String doGetValue() {
     if (myHasValueToCommit) {
-      return myUncommitedValue;
+      return myUncommittedValue;
     }
     return super.doGetValue();
   }
 
   @Override
   protected void doSetValue(String newText) {
-    myHasValueToCommit = true;
-    myUncommitedValue = newText;
+    UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(newText, true));
     myOldValue = super.doGetValue();
   }
 
@@ -55,25 +63,68 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
 
   @Override
   public void resetUncommittedValue() {
-    myHasValueToCommit = false;
-    myUncommitedValue = null;
+    UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(null, false));
   }
 
   @Override
   public void commit() {
     if (myHasValueToCommit) {
-      doCommit(myOldValue, myUncommitedValue);
-      myUncommitedValue = null;
-      myHasValueToCommit = false;
-      ModelAccess.instance().runReadAction(new Runnable() {
+      doCommit(myOldValue, myUncommittedValue);
+
+      getRepository().getModelAccess().executeCommand(new Base(null, getGroupId()) {
         @Override
         public void run() {
-          myOldValue = doGetValue();
+          resetUncommittedValue();
         }
       });
+
+      myOldValue = null;
+      synchronizeCell();
     }
   }
 
   protected void doCommit(String oldValue, String newValue) {
+  }
+
+  private void synchronizeCell() {
+    if (myEditorCell instanceof SynchronizeableEditorCell) {
+      ((SynchronizeableEditorCell) myEditorCell).synchronize();
+    }
+  }
+
+  private String getGroupId() {
+    if (myEditorCell instanceof EditorCell_Label) {
+      return ((EditorCell_Label) myEditorCell).getCommandGroupId();
+    }
+    return null;
+  }
+
+  protected class ChangeValueUndoableAction extends SNodeUndoableAction {
+    private final String myOldValue;
+    private final boolean myOldHasValue;
+    private final String myNewValue;
+    private final boolean myNewHasValue;
+
+    protected ChangeValueUndoableAction(String text, boolean hasValueToCommit) {
+      super(getNode());
+      myOldValue = myUncommittedValue;
+      myOldHasValue = myHasValueToCommit;
+      myNewValue = myUncommittedValue = text;
+      myNewHasValue = myHasValueToCommit = hasValueToCommit;
+    }
+
+    @Override
+    protected void doUndo() {
+      myUncommittedValue = myOldValue;
+      myHasValueToCommit = myOldHasValue;
+      synchronizeCell();
+    }
+
+    @Override
+    protected void doRedo() {
+      myUncommittedValue = myNewValue;
+      myHasValueToCommit = myNewHasValue;
+      synchronizeCell();
+    }
   }
 }
