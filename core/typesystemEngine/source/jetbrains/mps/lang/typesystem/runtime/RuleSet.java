@@ -19,6 +19,8 @@ import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.SingleTermRules;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -32,6 +34,8 @@ import java.util.concurrent.ConcurrentMap;
  *  Synchronized.
  */
 public class RuleSet<T extends IApplicableToConcept> {
+
+  private Logger LOG = Logger.getLogger(RuleSet.class);
 
   private static final String TYPESYSTEM_SUFFIX = ".typesystem";
   private ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
@@ -57,7 +61,12 @@ public class RuleSet<T extends IApplicableToConcept> {
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      addRule_internal(rule);
+      try {
+        addRule_internal(rule);
+      }
+      catch (Throwable ex) {
+        LOG.error("Error initializing rule '"+String.valueOf(rule)+"'", ex);
+      }
     }
     mySingleTermRules.purgeCache();
   }
