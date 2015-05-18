@@ -306,9 +306,6 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
-      </concept>
       <concept id="6955116391921790598" name="jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName" flags="nn" index="1nuMs4">
         <property id="6955116391921791525" name="moduleId" index="1nuNIB" />
       </concept>
@@ -4014,20 +4011,15 @@
         <node concept="3cpWs8" id="4QkEfp6rmMi" role="3cqZAp">
           <node concept="3cpWsn" id="4QkEfp6rmMj" role="3cpWs9">
             <property role="TrG5h" value="conceptFqName" />
-            <node concept="17QB3L" id="4QkEfp6rmMk" role="1tU5fm" />
-            <node concept="2OqwBi" id="5sNl3sI_9A$" role="33vP2m">
-              <node concept="liA8E" id="24cAaiUz$rt" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+            <node concept="3bZ5Sz" id="7UEyXn91y2V" role="1tU5fm" />
+            <node concept="2OqwBi" id="5sNl3sI_9A_" role="33vP2m">
+              <node concept="2JrnkZ" id="5sNl3sI_9AA" role="2Oq$k0">
+                <node concept="37vLTw" id="2BHiRxgm_zS" role="2JrQYb">
+                  <ref role="3cqZAo" node="4QkEfp6rdO8" resolve="node" />
+                </node>
               </node>
-              <node concept="2OqwBi" id="5sNl3sI_9A_" role="2Oq$k0">
-                <node concept="2JrnkZ" id="5sNl3sI_9AA" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxgm_zS" role="2JrQYb">
-                    <ref role="3cqZAo" node="4QkEfp6rdO8" resolve="node" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="5sNl3sI_9AC" role="2OqNvi">
-                  <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-                </node>
+              <node concept="liA8E" id="5sNl3sI_9AC" role="2OqNvi">
+                <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
               </node>
             </node>
           </node>
@@ -4053,9 +4045,9 @@
               <ref role="3cqZAo" node="4QkEfp6rmMj" resolve="conceptFqName" />
             </node>
             <node concept="liA8E" id="4QkEfp6rmV4" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="3nh3qo" id="4QkEfp6rmV5" role="37wK5m">
-                <ref role="3nh3qp" to="tpf8:ghWS0B3" resolve="LoopMacro" />
+              <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="35c_gC" id="7UEyXn91y8Y" role="37wK5m">
+                <ref role="35c_gD" to="tpf8:ghWS0B3" resolve="LoopMacro" />
               </node>
             </node>
           </node>
@@ -4080,9 +4072,9 @@
                 <ref role="3cqZAo" node="4QkEfp6rmMj" resolve="conceptFqName" />
               </node>
               <node concept="liA8E" id="4QkEfp6rmVu" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="3nh3qo" id="4QkEfp6rmVv" role="37wK5m">
-                  <ref role="3nh3qp" to="tpf8:geb32N7" resolve="CopySrcListMacro" />
+                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="35c_gC" id="7UEyXn91ycH" role="37wK5m">
+                  <ref role="35c_gD" to="tpf8:geb32N7" resolve="CopySrcListMacro" />
                 </node>
               </node>
             </node>
@@ -4108,9 +4100,9 @@
                 <ref role="3cqZAo" node="4QkEfp6rmMj" resolve="conceptFqName" />
               </node>
               <node concept="liA8E" id="4QkEfp6rmVy" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="3nh3qo" id="4QkEfp6rmVz" role="37wK5m">
-                  <ref role="3nh3qp" to="tpf8:gvejVYo" resolve="MapSrcListMacro" />
+                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="35c_gC" id="7UEyXn91ygH" role="37wK5m">
+                  <ref role="35c_gD" to="tpf8:gvejVYo" resolve="MapSrcListMacro" />
                 </node>
               </node>
             </node>
@@ -4121,9 +4113,9 @@
                 <ref role="3cqZAo" node="4QkEfp6rmMj" resolve="conceptFqName" />
               </node>
               <node concept="liA8E" id="2NPspSrp4sW" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="3nh3qo" id="2NPspSrp4sX" role="37wK5m">
-                  <ref role="3nh3qp" to="tpf8:30c0HY8gznj" resolve="WeaveMacro" />
+                <ref role="37wK5l" to="e2lb:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="35c_gC" id="7UEyXn91ykR" role="37wK5m">
+                  <ref role="35c_gD" to="tpf8:30c0HY8gznj" resolve="WeaveMacro" />
                 </node>
               </node>
             </node>

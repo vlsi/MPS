@@ -328,14 +328,14 @@ public final class RuleUtil {
     if (node == null) {
       return null;
     }
-    String conceptFqName = node.getConcept().getQualifiedName();
-    if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.LoopMacro")) {
+    SAbstractConcept conceptFqName = node.getConcept();
+    if (conceptFqName.equals(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"))) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x10fef5e42d7L, "sourceNodesQuery"));
-    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
+    } else if (conceptFqName.equals(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"))) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, "jetbrains.mps.lang.generator.structure.CopySrcListMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1038b0c2cc7L, 0x11002d48f34L, "sourceNodesQuery"));
-    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
+    } else if (conceptFqName.equals(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"))) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11003977640L, "sourceNodesQuery"));
-    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.WeaveMacro")) {
+    } else if (conceptFqName.equals(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro"))) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, "jetbrains.mps.lang.generator.structure.WeaveMacro")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x300c02df884235d3L, 0x300c02df884261ebL, "nodesToWeaveQuery"));
     }
     return null;
