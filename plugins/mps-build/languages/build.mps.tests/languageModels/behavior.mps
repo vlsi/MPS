@@ -371,7 +371,7 @@
             <property role="TrG5h" value="plugins" />
             <node concept="2ShNRf" id="3qWAZKIrlL1" role="33vP2m">
               <node concept="1pGfFk" id="3qWAZKIrm1M" role="2ShVmc">
-                <ref role="37wK5l" to="zc50:3qWAZKHQO2B" resolve="ModulePlugins" />
+                <ref role="37wK5l" to="tken:3pzPpUFO9wL" resolve="ModulePlugins" />
                 <node concept="37vLTw" id="3qWAZKIrrUH" role="37wK5m">
                   <ref role="3cqZAo" node="3X9rC2XzJen" resolve="project" />
                 </node>
@@ -381,14 +381,14 @@
               </node>
             </node>
             <node concept="3uibUv" id="3qWAZKIrl6r" role="1tU5fm">
-              <ref role="3uigEE" to="zc50:3qWAZKHQJv0" resolve="ModulePlugins" />
+              <ref role="3uigEE" to="tken:3pzPpUFO9wy" resolve="ModulePlugins" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="3qWAZKIrtqD" role="3cqZAp">
           <node concept="2OqwBi" id="3qWAZKIrtD_" role="3clFbG">
             <node concept="liA8E" id="3qWAZKIruuj" role="2OqNvi">
-              <ref role="37wK5l" to="zc50:3qWAZKHQPOG" resolve="collect" />
+              <ref role="37wK5l" to="tken:3pzPpUFO9x9" resolve="collect" />
               <node concept="2OqwBi" id="3qWAZKIruBL" role="37wK5m">
                 <node concept="2OqwBi" id="3qWAZKIruBM" role="2Oq$k0">
                   <node concept="2ShNRf" id="3qWAZKIruBN" role="2Oq$k0">
@@ -444,7 +444,7 @@
               <ref role="3cqZAo" node="3qWAZKIrl6q" resolve="plugins" />
             </node>
             <node concept="liA8E" id="3X9rC2XzJeN" role="2OqNvi">
-              <ref role="37wK5l" to="zc50:3qWAZKIknO0" resolve="getDependency" />
+              <ref role="37wK5l" to="tken:3pzPpUFO9yt" resolve="getDependency" />
             </node>
           </node>
           <node concept="2GrKxI" id="3X9rC2XzJeO" role="2Gsz3X">

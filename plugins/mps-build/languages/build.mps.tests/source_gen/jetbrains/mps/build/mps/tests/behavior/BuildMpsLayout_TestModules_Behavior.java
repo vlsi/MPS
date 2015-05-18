@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.build.mps.tests.util.ModulePlugins;
+import jetbrains.mps.build.mps.util.ModulePlugins;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;

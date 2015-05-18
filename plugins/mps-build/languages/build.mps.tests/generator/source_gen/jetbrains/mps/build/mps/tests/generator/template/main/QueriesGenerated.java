@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
-import jetbrains.mps.build.mps.tests.util.ModulePlugins;
+import jetbrains.mps.build.mps.util.ModulePlugins;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -135,42 +135,12 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_4005526075833130408(final TemplateQueryContext _context) {
     return new MPSModulesClosure(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36dL, 0x3f496e80bd8ef370L, "modules"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.as(it, MetaAdapterFactory.getConcept(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef371L, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content")), "virtual_getModules_4560297596904469651", new Object[]{});
+        return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
     })).trackDevkits().designtimeClosure();
   }
   public static Object insertMacro_varValue_4005526075833129160(final TemplateQueryContext _context) {
-    SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-    final DependenciesHelper helper = new DependenciesHelper(_context, project);
-
-    ModulePlugins plugins = new ModulePlugins(project, _context);
-    return Sequence.fromIterable(plugins.getDependency()).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return DependenciesHelper.getOriginalNode(it, _context);
-      }
-    }).select(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        SNode layoutNode = helper.artifacts().get(it);
-        if ((layoutNode == null)) {
-          // <node> 
-          return null;
-        }
-        String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, it});
-        if (val == null) {
-          // <node> 
-          return null;
-        }
-        return val;
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return (it != null && it.length() > 0);
-      }
-    }).sort(new ISelector<String, String>() {
-      public String select(String it) {
-        return it;
-      }
-    }, true).toGenericArray(String.class);
+    return new ModulePlugins(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")), _context).getPluginPaths();
   }
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0p(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
