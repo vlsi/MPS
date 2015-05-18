@@ -27,4 +27,8 @@ public abstract class AbstractSubstituteType_Runtime implements SubstituteType_R
     return new IsApplicableStatus(false, null);
   }
 
+  @Override
+  public String getApplicableConceptFQName() {
+    return null;
+  }
 }

@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import testAnnotatedType.behavior.PresenceCondition_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class substituteType_SubstituteAnnotation_SubstituteTypeRule extends AbstractSubstituteType_Runtime implements SubstituteType_Runtime {
   public substituteType_SubstituteAnnotation_SubstituteTypeRule() {
@@ -21,13 +21,10 @@ public class substituteType_SubstituteAnnotation_SubstituteTypeRule extends Abst
     }
     return null;
   }
-  public String getApplicableConceptFQName() {
-    return "testAnnotatedType.structure.SubstituteAnnotation";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, "testAnnotatedType.structure.SubstituteAnnotation");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
 }
