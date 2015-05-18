@@ -18,6 +18,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
@@ -70,18 +71,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return rootMappingRule_417xrn_a0a1p;
-    }
-    public boolean applyToInheritors() {
-      return false;
-    }
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
-    }
-    public boolean keepSourceRoot() {
-      return false;
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645953ab3L, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), false, false);
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       if (!(QueriesGenerated.baseMappingRule_Condition_1209604575152(new MapRootRuleContext(context, getRuleNode())))) {
@@ -94,5 +84,4 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return result;
     }
   }
-  private static SNodePointer rootMappingRule_417xrn_a0a1p = new SNodePointer("r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)", "1209604563573");
 }

@@ -663,18 +663,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return rootMappingRule_417xrn_a0a1eb;
-    }
-    public boolean applyToInheritors() {
-      return false;
-    }
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot";
-    }
-    public boolean keepSourceRoot() {
-      return false;
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot"), false, false);
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return true;
@@ -736,7 +725,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer templArgCall_417xrn_b0a0a0a0a0b0c52 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4816349095291000367");
   private static SNodePointer propertyMacro_417xrn_c0a0c0b0b0b0b0c0b0b0c0c62 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913945866");
   private static SNodePointer templateSwitchNodeNoInput_417xrn_a0a0c0c0c92 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088655");
-  private static SNodePointer rootMappingRule_417xrn_a0a1eb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767");
   private static SNodePointer weavingRule_417xrn_a0a1fb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918064");
   private static SNodePointer weavingConseq_417xrn_b0a0a1a6fb = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918068");
 }

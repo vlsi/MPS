@@ -18,13 +18,13 @@ import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.List;
@@ -81,18 +81,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class RootMappingRule0 extends MapRootRuleBase implements TemplateRootMappingRule {
     public RootMappingRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return rootMappingRule_417xrn_a0a1r;
-    }
-    public boolean applyToInheritors() {
-      return false;
-    }
-    public String getApplicableConcept() {
-      return "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept";
-    }
-    public boolean keepSourceRoot() {
-      return true;
+      super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008486853"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"), false, true);
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return true;
@@ -259,7 +248,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  private static SNodePointer rootMappingRule_417xrn_a0a1r = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008486853");
   private static SNodePointer dropRule_417xrn_a0a1s = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008531363");
   private static SNodePointer weavingRule_417xrn_a0a1t = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490337");
   private static SNodePointer weavingConseq_417xrn_b0a0a1a6t = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490341");

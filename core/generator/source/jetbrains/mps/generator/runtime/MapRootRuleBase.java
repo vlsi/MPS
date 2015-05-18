@@ -15,10 +15,55 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateRootMappingRule} to use as superclass in generated code
  * to facilitate future API changes
  * @author Artem Tikhomirov
  */
 public abstract class MapRootRuleBase implements TemplateRootMappingRule {
+  // FIXME make final once no-arg cons is gone
+  private SNodeReference myRuleNode;
+  private SAbstractConcept myAppConcept;
+  private boolean myApplyToSubConcepts;
+  private boolean myKeepSourceRoot;
+
+  /**
+   * @deprecated compatibility for code generated with MPS 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected MapRootRuleBase() {
+  }
+
+  protected MapRootRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept, boolean applyToSubConcepts, boolean keepSourceRoot) {
+    myRuleNode = ruleNode;
+    myAppConcept = appConcept;
+    myApplyToSubConcepts = applyToSubConcepts;
+    myKeepSourceRoot = keepSourceRoot;
+  }
+
+  @Override
+  public String getApplicableConcept() {
+    return myAppConcept.getQualifiedName();
+  }
+
+  @Override
+  public boolean applyToInheritors() {
+    return myApplyToSubConcepts;
+  }
+
+  @Override
+  public SNodeReference getRuleNode() {
+    return myRuleNode;
+  }
+
+  @Override
+  public boolean keepSourceRoot() {
+    return myKeepSourceRoot;
+  }
 }

@@ -422,13 +422,10 @@ public class QueriesGenerated {
     }
     return "ReductionRule" + index;
   }
-  public static Object propertyMacro_GetPropertyValue_1949333268577590843(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3615289984452243753(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc6d8f674L, "applyToConceptInheritors"));
   }
-  public static Object propertyMacro_GetPropertyValue_1949333268577590856(final PropertyMacroContext _context) {
-    return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept")));
-  }
-  public static Object propertyMacro_GetPropertyValue_1949333268577590870(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3615289984452265167(final PropertyMacroContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fd54746dbL, 0x11243d5018aL, "keepSourceRoot"), "true", null);
   }
   public static Object propertyMacro_GetPropertyValue_9191117361655049511(final PropertyMacroContext _context) {
@@ -2276,6 +2273,9 @@ public class QueriesGenerated {
       return ((classifierType != null) ? classifierType : typeNode);
     }
     return typeNode;
+  }
+  public static SNode sourceNodeQuery_3615289984452243179(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b64647L, 0x10fc0b6e730L, "applicableConcept"));
   }
   public static SNode sourceNodeQuery_330395710727889086(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x1031947e414L, "modifiedSwitch"));
