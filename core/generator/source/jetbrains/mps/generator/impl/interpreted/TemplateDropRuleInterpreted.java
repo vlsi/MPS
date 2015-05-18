@@ -16,37 +16,24 @@
 package jetbrains.mps.generator.impl.interpreted;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.DropRuleCondition;
+import jetbrains.mps.generator.runtime.DropRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class TemplateDropRuleInterpreted implements TemplateDropRootRule {
-
+public class TemplateDropRuleInterpreted extends DropRootRuleBase implements TemplateDropRootRule {
   private final SNode myRuleNode;
-  private final SAbstractConcept myApplicableConcept;
   private DropRuleCondition myCondition;
 
-  public TemplateDropRuleInterpreted(SNode child) {
+  public TemplateDropRuleInterpreted(@NotNull SNode child) {
+    super(child.getReference(), MetaAdapterByDeclaration.getConcept(RuleUtil.getDropRuleApplicableConcept(child)));
     myRuleNode = child;
-    myApplicableConcept = MetaAdapterByDeclaration.getConcept(RuleUtil.getDropRuleApplicableConcept(myRuleNode));
-  }
-
-  @Override
-  public SNodeReference getRuleNode() {
-    return new jetbrains.mps.smodel.SNodePointer(myRuleNode);
-  }
-
-  @Override
-  public SAbstractConcept getApplicableSConcept() {
-    return myApplicableConcept;
   }
 
   @Override

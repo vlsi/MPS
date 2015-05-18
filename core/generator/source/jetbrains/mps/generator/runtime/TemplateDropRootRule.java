@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-
 public interface TemplateDropRootRule extends TemplateRuleWithCondition {
-  SAbstractConcept getApplicableSConcept();
+  String getApplicableConcept();
 }

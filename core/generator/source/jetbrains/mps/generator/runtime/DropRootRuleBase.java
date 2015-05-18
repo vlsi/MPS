@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateDropRootRule} to use as superclass in generated code
@@ -27,17 +26,36 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @author Artem Tikhomirov
  */
 public abstract class DropRootRuleBase implements TemplateDropRootRule {
+  // FIXME make final once no-arg cons is gone
+  private SNodeReference myRuleNode;
+  private SAbstractConcept myAppConcept;
+
+  /**
+   * @deprecated compatibility for code generated with MPS 3.2
+   */
   @Deprecated
   @ToRemove(version = 3.3)
-  //this method is needed for binary compatibility with 3.2-generated code
-  public String getApplicableConcept() {
-    return null;
+  protected DropRootRuleBase() {
+  }
+
+  /**
+   * @param ruleNode identifies rule for navigation/error reporting purposes
+   * @param appConcept concept to trigger rule
+   * @since 3.3
+   */
+  protected DropRootRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept) {
+    myRuleNode = ruleNode;
+    myAppConcept = appConcept;
   }
 
   @Override
-  //todo remove body of this method after 3.3 - needed only for binary compatibility with 3.2
-  public SAbstractConcept getApplicableSConcept() {
-    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(getApplicableConcept()));
+  public SNodeReference getRuleNode() {
+    return myRuleNode;
+  }
+
+  @Override
+  public String getApplicableConcept() {
+    return myAppConcept.getQualifiedName();
   }
 }
 

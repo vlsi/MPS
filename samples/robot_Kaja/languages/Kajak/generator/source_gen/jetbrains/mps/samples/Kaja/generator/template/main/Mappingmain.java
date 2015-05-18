@@ -26,7 +26,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 @Generated
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -334,19 +333,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class DropRootRule0 extends DropRootRuleBase implements TemplateDropRootRule {
     public DropRootRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return dropRule_417xrn_a0a1pb;
-    }
-    public String getApplicableConcept() {
-      return "jetbrains.mps.samples.Kaja.structure.Library";
-    }
-    public SAbstractConcept getApplicableSConcept() {
-      return MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library");
+      super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963716"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x3cfcda239f19d316L, "jetbrains.mps.samples.Kaja.structure.Library"));
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       return true;
     }
   }
-  private static SNodePointer dropRule_417xrn_a0a1pb = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "4394627182934963716");
 }
