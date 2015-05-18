@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.build.mps.runner.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BuildSolutionRunnerPlugin_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerPlugin_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

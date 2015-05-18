@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model ref="r:4e917293-f5b9-4023-b36a-fcf2132c435c(jetbrains.mps.build.mps.runner.accessories)">
+  <persistence version="9" />
+  <languages>
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+  </languages>
+  <imports>
+    <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
+    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+  </imports>
+  <registry>
+    <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
+      <concept id="7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" flags="ng" index="yghi3">
+        <child id="7306485738221455030" name="imports" index="yg1MB" />
+        <child id="7306485738221391508" name="parts" index="yghi5" />
+      </concept>
+      <concept id="7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" flags="ng" index="ygXWA">
+        <reference id="7306485738221471032" name="target" index="ygXWD" />
+      </concept>
+      <concept id="2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" flags="ng" index="2VaxJe">
+        <reference id="2769948622284574295" name="target" index="2VaxJf" />
+      </concept>
+      <concept id="2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" flags="ng" index="2VaFvF">
+        <child id="2769948622284574302" name="dependencies" index="2VaxJ6" />
+      </concept>
+    </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="yghi3" id="3BExUgsK9rC">
+    <property role="TrG5h" value="run-mps-code" />
+    <node concept="2VaFvF" id="3BExUgsK9tI" role="yghi5">
+      <property role="TrG5h" value="run-mps-code" />
+      <node concept="2VaxJe" id="3BExUgsK9x4" role="2VaxJ6">
+        <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      </node>
+    </node>
+    <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    </node>
+    <node concept="ygXWA" id="3umvbTBOJS$" role="yg1MB">
+      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+    </node>
+    <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
+      <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />
+    </node>
+  </node>
+</model>
+
