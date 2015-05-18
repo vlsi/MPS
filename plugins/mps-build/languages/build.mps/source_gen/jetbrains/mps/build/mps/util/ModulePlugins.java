@@ -58,7 +58,7 @@ public class ModulePlugins {
 
   public String[] getPluginPaths() {
     final DependenciesHelper helper = new DependenciesHelper(myContext, myInitialProject);
-    Sequence.fromIterable(this.getDependency()).select(new ISelector<SNode, SNode>() {
+    return Sequence.fromIterable(this.getDependency()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return DependenciesHelper.getOriginalNode(it, myContext);
       }
@@ -85,6 +85,5 @@ public class ModulePlugins {
         return it;
       }
     }, true).toGenericArray(String.class);
-    return null;
   }
 }

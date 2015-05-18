@@ -24,6 +24,10 @@
       <concept id="2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" flags="ng" index="2VaFvF">
         <child id="2769948622284574302" name="dependencies" index="2VaxJ6" />
       </concept>
+      <concept id="3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" flags="ng" index="3bMsLL">
+        <reference id="3961775458390032825" name="task" index="3bMsLK" />
+        <child id="3961775458390352322" name="additionalDependencies" index="3bNaKb" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -37,6 +41,12 @@
       <property role="TrG5h" value="run-mps-code" />
       <node concept="2VaxJe" id="3BExUgsK9x4" role="2VaxJ6">
         <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      </node>
+    </node>
+    <node concept="3bMsLL" id="3H7CugYbPms" role="yghi5">
+      <ref role="3bMsLK" to="tnlc:6l_Qx579h0X" resolve="build" />
+      <node concept="2VaxJe" id="3H7CugYbPrK" role="3bNaKb">
+        <ref role="2VaxJf" node="3BExUgsK9tI" resolve="run-mps-code" />
       </node>
     </node>
     <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">

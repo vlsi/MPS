@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:72c0b2cc-8a81-4a04-9e45-2c300201b444(jetbrains.mps.build.sandbox.testRun)/2220861080744748723">
+    <file name="TestRunClass.java">
+      <node id="2220861080744748832" at="7,42,8,33" concept="0" />
+      <node id="4271560773253989037" at="11,35,12,39" concept="0" />
+      <node id="2220861080744748739" at="7,0,10,0" concept="1" trace="main#([Ljava/lang/String;)V" />
+      <node id="4271560773253988877" at="11,0,14,0" concept="1" trace="runFromMPS#()V" />
+      <scope id="2220861080744748745" at="7,42,8,33" />
+      <scope id="4271560773253988880" at="11,35,12,39" />
+      <scope id="2220861080744748739" at="7,0,10,0">
+        <var name="args" id="2220861080744748740" />
+      </scope>
+      <scope id="4271560773253988877" at="11,0,14,0" />
+      <unit id="2220861080744748723" at="6,0,15,0" name="jetbrains.mps.build.sandbox.testRun.TestRunClass" />
+    </file>
+  </root>
+</debug-info>
+
