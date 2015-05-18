@@ -59,6 +59,8 @@ public final class SNodeUtil {
 
   public static final SInterfaceConcept concept_IResolveInfo = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo");
   public static final SInterfaceConcept concept_INamedConcept = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept");
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static final String conceptName_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static final SConcept concept_BaseConcept = BootstrapAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   public static final SConcept concept_AbstractConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
