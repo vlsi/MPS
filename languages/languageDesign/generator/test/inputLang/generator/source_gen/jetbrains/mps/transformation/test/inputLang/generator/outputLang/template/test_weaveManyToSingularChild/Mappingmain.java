@@ -90,18 +90,10 @@ public class Mappingmain implements TemplateMappingConfiguration {
   }
   public class WeavingRule0 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule0() {
-    }
-    public SNodeReference getRuleNode() {
-      return weavingRule_417xrn_a0a1r;
-    }
-    public String getApplicableConcept() {
-      return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
-    }
-    public boolean applyToInheritors() {
-      return false;
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"), false);
     }
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(new WeavingMappingRuleContext(context, weavingRule_417xrn_a0a1r)))) {
+      if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(new WeavingMappingRuleContext(context, getRuleNode())))) {
         return false;
       }
       return true;
@@ -114,5 +106,4 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  private static SNodePointer weavingRule_417xrn_a0a1r = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
 }

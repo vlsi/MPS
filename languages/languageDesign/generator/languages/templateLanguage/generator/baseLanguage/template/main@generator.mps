@@ -24491,52 +24491,24 @@
       <property role="2bfB8j" value="true" />
       <node concept="3clFbW" id="ilNinXgil$" role="jymVt">
         <node concept="3cqZAl" id="ilNinXgil_" role="3clF45" />
-        <node concept="3clFbS" id="ilNinXgilB" role="3clF47" />
-        <node concept="3Tm1VV" id="ilNinXgilA" role="1B3o_S" />
-      </node>
-      <node concept="3clFb_" id="ilNinXgilE" role="jymVt">
-        <property role="TrG5h" value="getRuleNode" />
-        <node concept="3clFbS" id="ilNinXgilH" role="3clF47">
-          <node concept="3clFbF" id="ilNinXgilI" role="3cqZAp">
-            <node concept="1dyn4i" id="ilNinXgilK" role="3clFbG">
-              <property role="1zomUR" value="true" />
-              <property role="1dyqJU" value="weavingRule" />
-              <node concept="10Nm6u" id="ilNinXgilM" role="1dyrYi">
-                <node concept="5jKBG" id="ilNinXgilO" role="lGtFl">
-                  <ref role="v9R2y" node="7RzTOCfxTnB" resolve="reduce_toSNodePointer" />
-                </node>
+        <node concept="3clFbS" id="ilNinXgilB" role="3clF47">
+          <node concept="XkiVB" id="38G5LojlNyQ" role="3cqZAp">
+            <ref role="37wK5l" to="icf3:~WeaveRuleBase.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNodeReference,org.jetbrains.mps.openapi.language.SAbstractConcept,boolean)" resolve="WeaveRuleBase" />
+            <node concept="10Nm6u" id="38G5LojlPV2" role="37wK5m">
+              <node concept="5jKBG" id="38G5LojlPV3" role="lGtFl">
+                <ref role="v9R2y" node="7RzTOCfxTnB" resolve="reduce_toSNodePointer" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3uibUv" id="ilNinXgilG" role="3clF45">
-          <ref role="3uigEE" to="ec5l:~SNodeReference" resolve="SNodeReference" />
-        </node>
-        <node concept="3Tm1VV" id="ilNinXgilF" role="1B3o_S" />
-      </node>
-      <node concept="3clFb_" id="3kaL0UoPCC" role="jymVt">
-        <property role="TrG5h" value="getApplicableConcept" />
-        <node concept="3uibUv" id="3kaL0UoPCE" role="3clF45">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
-        <node concept="3clFbS" id="3kaL0UoPCF" role="3clF47">
-          <node concept="3clFbF" id="3kaL0UoPCO" role="3cqZAp">
-            <node concept="Xl_RD" id="3kaL0UoTx9" role="3clFbG">
-              <property role="Xl_RC" value="" />
-              <node concept="17Uvod" id="3kaL0UoTxa" role="lGtFl">
-                <property role="2qtEX9" value="value" />
-                <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                <node concept="3zFVjK" id="3kaL0UoTxb" role="3zH0cK">
-                  <node concept="3clFbS" id="3kaL0UoTxc" role="2VODD2">
-                    <node concept="3clFbF" id="3kaL0UoTxm" role="3cqZAp">
-                      <node concept="2YIFZM" id="3kaL0UoTZn" role="3clFbG">
-                        <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                        <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                        <node concept="2OqwBi" id="3kaL0UoTZo" role="37wK5m">
-                          <node concept="3TrEf2" id="3kaL0UoTZq" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpf8:gZ0HIsK" />
-                          </node>
-                          <node concept="30H73N" id="3kaL0UoTZp" role="2Oq$k0" />
+            <node concept="10Nm6u" id="38G5LojlPN5" role="37wK5m">
+              <node concept="xERo3" id="38G5LojlPN6" role="lGtFl">
+                <ref role="xH3mL" to="tp27:5DcBNiM8Rtt" resolve="reduce_ConceptDeclaration2SAbstractConcept" />
+                <node concept="3NFfHV" id="38G5LojlPN7" role="xEYEz">
+                  <node concept="3clFbS" id="38G5LojlPN8" role="2VODD2">
+                    <node concept="3clFbF" id="38G5LojlPN9" role="3cqZAp">
+                      <node concept="2OqwBi" id="38G5LojlPNa" role="3clFbG">
+                        <node concept="30H73N" id="38G5LojlPNb" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="38G5LojlPNc" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpf8:gZ0HIsK" />
                         </node>
                       </node>
                     </node>
@@ -24544,16 +24516,7 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="3kaL0UoPCD" role="1B3o_S" />
-      </node>
-      <node concept="3clFb_" id="3kaL0UoPC$" role="jymVt">
-        <property role="TrG5h" value="applyToInheritors" />
-        <node concept="10P_77" id="3kaL0UoPCA" role="3clF45" />
-        <node concept="3clFbS" id="3kaL0UoPCB" role="3clF47">
-          <node concept="3clFbF" id="3kaL0UoPCM" role="3cqZAp">
-            <node concept="3clFbT" id="3kaL0UoPCN" role="3clFbG">
+            <node concept="3clFbT" id="3kaL0UoPCN" role="37wK5m">
               <node concept="17Uvod" id="3kaL0UoTZr" role="lGtFl">
                 <property role="2qtEX9" value="value" />
                 <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" />
@@ -24573,7 +24536,7 @@
             </node>
           </node>
         </node>
-        <node concept="3Tm1VV" id="3kaL0UoPC_" role="1B3o_S" />
+        <node concept="3Tm1VV" id="ilNinXgilA" role="1B3o_S" />
       </node>
       <node concept="3clFb_" id="3kaL0UoPCr" role="jymVt">
         <property role="TrG5h" value="isApplicable" />
@@ -24612,8 +24575,8 @@
                     <node concept="37vLTw" id="2BHiRxglt6d" role="37wK5m">
                       <ref role="3cqZAo" node="3kaL0UoPCw" resolve="context" />
                     </node>
-                    <node concept="2EFVgW" id="3kaL0UoU0R" role="37wK5m">
-                      <ref role="2EFVgZ" node="ilNinXgilK" />
+                    <node concept="1rXfSq" id="38G5LojlQM8" role="37wK5m">
+                      <ref role="37wK5l" to="icf3:~WeaveRuleBase.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
                     </node>
                   </node>
                 </node>
@@ -24709,7 +24672,7 @@
                     <ref role="3cqZAo" node="3kaL0UoPCo" resolve="context" />
                   </node>
                   <node concept="1rXfSq" id="50GoLNP1pBa" role="37wK5m">
-                    <ref role="37wK5l" node="ilNinXgilE" resolve="getRuleNode" />
+                    <ref role="37wK5l" to="icf3:~WeaveRuleBase.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
                   </node>
                 </node>
               </node>

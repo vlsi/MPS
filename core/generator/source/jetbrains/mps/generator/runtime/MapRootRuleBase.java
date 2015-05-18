@@ -40,6 +40,13 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   protected MapRootRuleBase() {
   }
 
+  /**
+   * @param ruleNode identifies rule for navigation/error reporting
+   * @param appConcept concept to trigger rule
+   * @param applyToSubConcepts <code>true</code> to apply to appConcept's sub-concepts
+   * @param keepSourceRoot <code>true</code> to preserve root in input model for further processing
+   * @since 3.3
+   */
   protected MapRootRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept, boolean applyToSubConcepts, boolean keepSourceRoot) {
     myRuleNode = ruleNode;
     myAppConcept = appConcept;
