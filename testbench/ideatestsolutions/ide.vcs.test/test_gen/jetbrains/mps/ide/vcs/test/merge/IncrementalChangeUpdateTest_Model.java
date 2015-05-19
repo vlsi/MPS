@@ -19,7 +19,6 @@ import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
@@ -28,6 +27,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.io.IOException;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -106,7 +106,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
   @Test
   public void testNoCreatedChangesForNewModel() {
     final Wrappers._T<EditableSModel> newModel = new Wrappers._T<EditableSModel>();
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         SModule module = myDiff.getModelDescriptor().getModule();
         ModelRoot modelRoot = module.getModelRoots().iterator().next();
@@ -115,7 +115,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         newModel.value.save();
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    ourEnvironment.flushAllEvents();
 
     CurrentDifference newModelDiff = CurrentDifferenceRegistry.getInstance(myIdeaProject).getCurrentDifference(newModel.value);
     newModelDiff.setEnabled(true);
@@ -125,7 +125,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a01a4(newModelDiff.getChangeSet())).isEmpty());
 
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         DeleteModelHelper.deleteModel(ProjectHelper.toMPSProject(myIdeaProject), newModel.value.getModule(), newModel.value, false, true);
       }
@@ -150,7 +150,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
       }
     });
 
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    ourProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         try {
           getTestModelFile().setBinaryContent(changedContent.value.getBytes(FileUtil.DEFAULT_CHARSET));
@@ -159,7 +159,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         }
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    ourEnvironment.flushAllEvents();
     myWaitHelper.waitForFileStatusChange(getTestModelFile(), FileStatus.MODIFIED);
     myWaitHelper.waitForChangesManager();
     Assert.assertTrue(ListSequence.fromList(check_2jv4hj_a0a11a6(myDiff.getChangeSet())).isNotEmpty());

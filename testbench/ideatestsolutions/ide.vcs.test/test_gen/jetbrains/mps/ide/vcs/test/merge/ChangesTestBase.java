@@ -6,16 +6,14 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import jetbrains.mps.vcs.changesmanager.CurrentDifference;
 import com.intellij.openapi.vcs.AbstractVcs;
+import jetbrains.mps.tool.environment.Environment;
 import org.junit.BeforeClass;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.io.File;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import org.junit.AfterClass;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import org.junit.Before;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
@@ -68,6 +66,7 @@ public abstract class ChangesTestBase {
   protected ChangeListManagerImpl myChangeListManager;
   protected CurrentDifference myDiff;
   protected AbstractVcs myGitVcs;
+  protected static Environment ourEnvironment;
 
   public ChangesTestBase() {
     // todo add group changes tests 
@@ -75,20 +74,20 @@ public abstract class ChangesTestBase {
 
   @BeforeClass
   public static void setUp() {
-    MpsTestsSupport.initEnv(true, EnvironmentConfig.defaultEnvironment());
-
+    ourEnvironment = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(true));
     SReference.disableLogging();
     Registry.get("vcs.showConsole").setValue(false);
 
-    ourProject = ActiveEnvironment.getInstance().openProject(new File("."));
-    FSChangesWatcher.instance().initComponent(true);
+    ourProject = ourEnvironment.openProject(new File("."));
   }
+
   @AfterClass
   public static void tearDown() {
     ourEnabled = false;
-    ProjectTestsSupport.waitUntilAllEventsFlushed();
-    ActiveEnvironment.getInstance().disposeProject(ourProject.getProjectFile());
+    ourEnvironment.flushAllEvents();
+    ourEnvironment.closeProject(ourProject);
   }
+
   @Before
   public void init() {
     myIdeaProject = ProjectHelper.toIdeaProject(ourProject);
@@ -162,7 +161,7 @@ public abstract class ChangesTestBase {
   protected void makeChangeAndWait(Runnable change) {
     ProjectHelper.toMPSProject(myIdeaProject).getRepository().getModelAccess().executeCommandInEDT(change);
 
-    ModelAccess.instance().flushEventQueue();
+    ourEnvironment.flushAllEvents();
     myWaitHelper.waitForChangesManager();
   }
 
@@ -186,7 +185,7 @@ public abstract class ChangesTestBase {
         ListSequence.fromList(SModelOperations.roots(model, null)).visitAll(new IVisitor<SNode>() {
           public void visit(final SNode r) {
             FileStatus actual = fsm.getStatus(r);
-            FileStatus expected = check_l1nwgz_a0b0a0a0a0g0z(Sequence.fromIterable(Sequence.fromArray(statuses)).findFirst(new IWhereFilter<RootStatusItem>() {
+            FileStatus expected = check_l1nwgz_a0b0a0a0a0g0cb(Sequence.fromIterable(Sequence.fromArray(statuses)).findFirst(new IWhereFilter<RootStatusItem>() {
               public boolean accept(RootStatusItem it) {
                 return it.rootName().equals(r.getName());
               }
@@ -204,9 +203,9 @@ public abstract class ChangesTestBase {
         getTestModel().reloadFromSource();
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    ourEnvironment.flushAllEvents();
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a3a72(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a3a03(myDiff.getChangeSet())).isEmpty());
   }
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
@@ -218,7 +217,7 @@ public abstract class ChangesTestBase {
 
     myWaitHelper.waitForFileStatusChange(modelFile, FileStatus.NOT_CHANGED);
     myWaitHelper.waitForChangesManager();
-    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a8a92(myDiff.getChangeSet())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(check_l1nwgz_a0a8a23(myDiff.getChangeSet())).isEmpty());
   }
 
   protected EditableSModel getTestModel() {
@@ -248,19 +247,19 @@ public abstract class ChangesTestBase {
   public String getDefaultExt() {
     return PersistenceRegistry.getInstance().getDefaultModelFactory().getFileExtension();
   }
-  private static FileStatus check_l1nwgz_a0b0a0a0a0g0z(RootStatusItem checkedDotOperand) {
+  private static FileStatus check_l1nwgz_a0b0a0a0a0g0cb(RootStatusItem checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.status();
     }
     return null;
   }
-  private static List<ModelChange> check_l1nwgz_a0a3a72(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_l1nwgz_a0a3a03(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-  private static List<ModelChange> check_l1nwgz_a0a8a92(ChangeSet checkedDotOperand) {
+  private static List<ModelChange> check_l1nwgz_a0a8a23(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }

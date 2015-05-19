@@ -18,15 +18,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.LinkedHashSet;
 import java.util.Collections;
 import jetbrains.mps.tool.environment.MpsEnvironment;
-import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.library.contributor.LibDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.net.URL;
@@ -36,14 +33,17 @@ import jetbrains.mps.library.LibraryInitializer;
 
 public class GeneratorWorker extends BaseGeneratorWorker {
   private final UrlClassLoader myClassLoader;
+
   public GeneratorWorker(Script whatToDo) {
     super(whatToDo);
     myClassLoader = createClassloader();
   }
+
   public GeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myClassLoader = createClassloader();
   }
+
   @Override
   public void work() {
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
@@ -96,23 +96,26 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     dispose();
     showStatistic();
   }
+
   public static void main(String[] args) {
     MpsWorker mpsWorker = new GeneratorWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
+
   protected class MyEnvironment extends MpsEnvironment {
     public MyEnvironment(EnvironmentConfig config) {
       super(config);
     }
+
     @Override
-    protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
+    public void init() {
+      super.init();
       registerFactory();
-      // todo: !next line was removed  <node> 
-      Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
-      for (String libPath : config.getLibs()) {
-        libraryPaths.add(new LibDescriptor(libPath, myClassLoader));
-      }
-      return Sequence.<LibraryContributor>singleton(new SetLibraryContributor(libraryPaths));
+    }
+
+    @Override
+    protected ClassLoader rootCLForLibs() {
+      return myClassLoader;
     }
 
     private void registerFactory() {
@@ -132,6 +135,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       });
     }
   }
+
   private UrlClassLoader createClassloader() {
     String pluginsPath = myWhatToDo.getProperty(ScriptProperties.PLUGIN_PATHS);
     Set<File> pluginsClasspath = SetSequence.fromSet(new LinkedHashSet<File>());

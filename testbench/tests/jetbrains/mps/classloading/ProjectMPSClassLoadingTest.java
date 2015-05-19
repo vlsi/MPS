@@ -67,7 +67,7 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
         }
       }
     });
-    disposeProject(project);
+    closeProject(project);
   }
 
   @Test

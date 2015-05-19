@@ -9,8 +9,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,6 +33,7 @@ public class ProjectTest {
     // module argument only for test name 
     this.generationHolder = generationHolder;
   }
+
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     initTestEnvironment();
@@ -38,9 +41,14 @@ public class ProjectTest {
   }
 
   public static void initTestEnvironment() throws InvocationTargetException, InterruptedException {
-    MpsTestsSupport.initEnv(false);
-    ourContextProject = ContextProjectSupport.loadContextProject();
+    Environment env = EnvironmentContainer.getOrCreate(ProjectTest.createConfig());
+    ourContextProject = env.createProject(new FromProjectPathProjectStrategy());
   }
+
+  private static EnvironmentConfig createConfig() {
+    return EnvironmentConfig.defaultConfig().loadIdea(false);
+  }
+
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (SModule module : modules) {
@@ -69,6 +77,7 @@ public class ProjectTest {
       Assert.fail(String.format("Make failed with %d errors and %d warnings", errors.size(), warns.size()));
     }
   }
+
   @Test
   @Order(value = 2)
   public void diffModule() throws Exception {

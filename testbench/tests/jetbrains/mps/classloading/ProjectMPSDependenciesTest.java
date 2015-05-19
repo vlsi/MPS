@@ -20,8 +20,8 @@ import com.intellij.openapi.diagnostic.Logger;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -49,22 +49,13 @@ public class ProjectMPSDependenciesTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
   private boolean myFailed = false;
 
-  private static void initLoggingSystem() {
-    Logger.setFactory(LoggerFactory.class);
-    assert Logger.isInitialized();
-    Logger.getInstance("");
-  }
 
-  static {
-    initLoggingSystem();
-  }
 
   @Test
   public void depsAreValid() {
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
-    Environment currentEnv = ActiveEnvironment.getInstance();
+    Environment currentEnv = EnvironmentContainer.get();
     if (currentEnv != null) currentEnv.dispose();
-    MpsEnvironment environment = new MpsEnvironment(config);
+    Environment environment = new MpsEnvironment(EnvironmentConfig.emptyEnvironment());
     try {
       LOG.info("ADDING CORE CONTRIBUTORS");
       addContributorWithPaths(getCorePaths());
@@ -92,7 +83,7 @@ public class ProjectMPSDependenciesTest {
     for (String path : paths) {
       libraryPaths.add(new LibDescriptor(path));
     }
-    addContributor(new SetLibraryContributor(libraryPaths));
+    addContributor(SetLibraryContributor.fromSet(libraryPaths));
   }
 
   private void addContributor(LibraryContributor contributor) {

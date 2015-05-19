@@ -24,7 +24,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -43,9 +42,8 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
   @BeforeClass
   public static void setUp() {
     myProject = openProject(PROJECT_PATH);
-    mySolution = ProjectTestsSupport.getSolution("TestCompileSolution");
+    mySolution = getSolution("TestCompileSolution");
   }
-
 
   @Test
   public void testOldVersion() throws Exception {
@@ -78,8 +76,6 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   @AfterClass
   public static void tearDown() {
-    WorkbenchMpsTest.disposeProject(myProject);
+    WorkbenchMpsTest.closeProject(myProject);
   }
-
-
 }

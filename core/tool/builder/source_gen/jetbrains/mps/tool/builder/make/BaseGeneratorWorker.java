@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.script.IScriptController;
@@ -30,6 +29,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import jetbrains.mps.make.MPSCompilationResult;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
@@ -114,7 +114,7 @@ public class BaseGeneratorWorker extends MpsWorker {
     }
     info(s.toString());
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, go)).toListSequence();
-    ModelAccess.instance().flushEventQueue();
+    myEnvironment.flushAllEvents();
     MakeSession session = new MakeSession(project, myMessageHandler, true);
     AbstractMakeService.DefaultMonitor defaultMonitor = new AbstractMakeService.DefaultMonitor(session);
     IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
@@ -134,8 +134,9 @@ public class BaseGeneratorWorker extends MpsWorker {
     } catch (ExecutionException e) {
       myErrors.add(e.toString());
     }
-    ModelAccess.instance().flushEventQueue();
+    myEnvironment.flushAllEvents();
   }
+
   @Override
   public void work() {
     setupEnvironment();
@@ -174,6 +175,7 @@ public class BaseGeneratorWorker extends MpsWorker {
     dispose();
     showStatistic();
   }
+
   protected void makeProject() {
     final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
@@ -188,6 +190,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       });
     }
   }
+
   private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -199,6 +202,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     }));
   }
+
   private Iterable<SModel> getModelsToGenerate(SModule mod) {
     return Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -210,6 +214,7 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     });
   }
+
   protected Iterable<MResource> collectResources(Project project, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     project.getModelAccess().runReadAction(new Runnable() {

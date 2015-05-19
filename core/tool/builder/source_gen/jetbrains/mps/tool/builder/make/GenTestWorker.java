@@ -78,6 +78,7 @@ public class GenTestWorker extends GeneratorWorker {
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
   private GenTestWorker.MyReporter myReporter = new GenTestWorker.MyReporter();
+
   public GenTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
@@ -91,6 +92,7 @@ public class GenTestWorker extends GeneratorWorker {
     }
     this.tmpPath = tmpDir.getAbsolutePath();
   }
+
   @Override
   public void work() {
     myReporter.init();

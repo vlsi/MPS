@@ -20,8 +20,9 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -81,7 +82,7 @@ public class ProjectCreationTest {
 
   @BeforeClass
   public static void init() {
-    CREATED_ENV = MpsTestsSupport.initEnv(true);
+    CREATED_ENV = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(true));
   }
 
   @AfterClass

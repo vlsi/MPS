@@ -5,6 +5,7 @@ package jetbrains.mps.tool.builder;
 import jetbrains.mps.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Set;
@@ -34,28 +35,33 @@ public class FileMPSProject extends Project {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
   private String myErrors;
   private FileMPSProject.ProjectDescriptor myDescriptor;
-  public FileMPSProject(File file) {
+
+  public FileMPSProject(@NotNull File file) {
     super(file);
   }
+
   @Override
   public String getName() {
     File projectFile = getProjectFile();
-    assert projectFile != null;
     return projectFile.getName();
   }
+
   @Override
   public void projectOpened() {
     super.projectOpened();
   }
+
   @Override
   public void projectClosed() {
     super.projectClosed();
   }
+
   @Deprecated
   @Override
   public <T> T getComponent(Class<T> cls) {
     return null;
   }
+
   @Override
   public void dispose() {
     super.dispose();
@@ -66,6 +72,7 @@ public class FileMPSProject extends Project {
       }
     });
   }
+
   protected void readModules(FileMPSProject.ProjectDescriptor projDesc) {
     myErrors = null;
     //  load solutions 
@@ -93,6 +100,7 @@ public class FileMPSProject extends Project {
       super.removeModule(ref);
     }
   }
+
   private void error(String text) {
     if (myErrors == null) {
       this.myErrors = text;
@@ -101,6 +109,7 @@ public class FileMPSProject extends Project {
     }
     LOG.error(text);
   }
+
   public void init(FileMPSProject.ProjectDescriptor desc) {
     this.myDescriptor = desc;
     if (getProjectFile() == null) {
@@ -118,13 +127,16 @@ public class FileMPSProject extends Project {
       }
     });
   }
+
   public FileMPSProject.ProjectDescriptor getDescriptor() {
     return myDescriptor;
   }
+
   @Override
   public List<String> getWatchedModulesPaths() {
     return Collections.emptyList();
   }
+
   public static class ProjectDescriptor {
     private String name;
     private List<Path> myModulePaths = new ArrayList<Path>();
@@ -169,9 +181,9 @@ public class FileMPSProject extends Project {
       }
     }
     private void load(File project, Element modulesXml) {
-      FileMPSProject.ProjectDescriptor result_dkknya_a0a5o = this;
-      final String result_dkknya_a0a0a5o = project.getName();
-      result_dkknya_a0a5o.setName(result_dkknya_a0a0a5o);
+      FileMPSProject.ProjectDescriptor result_dkknya_a0a5ab = this;
+      final String result_dkknya_a0a0a5ab = project.getName();
+      result_dkknya_a0a5ab.setName(result_dkknya_a0a0a5ab);
 
       if (modulesXml == null) {
         return;
@@ -184,13 +196,13 @@ public class FileMPSProject extends Project {
       ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(modulesXml, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
-        Path result_dkknya_a1a9a0a5o = modulePath;
+        Path result_dkknya_a1a9a0a5ab = modulePath;
         // todo: replace - wtf? @see ProjectDescriptorPersistence#saveProjectDescriptorToElement 
-        final String result_dkknya_a1a1a9a0a5o = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
-        result_dkknya_a1a9a0a5o.setPath(result_dkknya_a1a1a9a0a5o);
-        final String result_dkknya_a2a1a9a0a5o = moduleElement.getAttributeValue("folder");
-        result_dkknya_a1a9a0a5o.setMPSFolder(result_dkknya_a2a1a9a0a5o);
-        result_dkknya_a0a5o.addModule(modulePath);
+        final String result_dkknya_a1a1a9a0a5ab = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(project.getPath())).expandPath(moduleElement.getAttributeValue("path").replace("$PROJECT_DIR$", "${project}"));
+        result_dkknya_a1a9a0a5ab.setPath(result_dkknya_a1a1a9a0a5ab);
+        final String result_dkknya_a2a1a9a0a5ab = moduleElement.getAttributeValue("folder");
+        result_dkknya_a1a9a0a5ab.setMPSFolder(result_dkknya_a2a1a9a0a5ab);
+        result_dkknya_a0a5ab.addModule(modulePath);
       }
     }
     public void setName(String name) {

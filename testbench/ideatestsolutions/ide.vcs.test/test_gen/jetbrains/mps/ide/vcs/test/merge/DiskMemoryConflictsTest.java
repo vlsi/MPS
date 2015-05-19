@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import com.intellij.openapi.ui.TestDialog;
 import org.junit.BeforeClass;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.testbench.BaseMpsTest;
 import org.junit.Assert;
 import org.junit.Before;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,9 +46,6 @@ import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.IOException;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.ide.ThreadUtils;
 
 /**
  * * @author Evgeny Gerashchenko
@@ -79,7 +76,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setupProject() {
-    Project project = ProjectTestsSupport.startTestOnProjectCopy(PROJECT_LOCATION, DESTINATION_PROJECT_DIR, "");
+    Project project = BaseMpsTest.openClonedProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
     ourModelAccess = project.getModelAccess();
     Assert.assertNotNull(ourModelAccess);
     ourRepository = project.getRepository();
@@ -352,18 +349,9 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
+
   private static void waitEDT() {
-    jetbrains.mps.smodel.ModelAccess.instance().flushEventQueue();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        return;
-      }
-    }, ModalityState.NON_MODAL);
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        return;
-      }
-    });
+    BaseMpsTest.getEnvironment().flushAllEvents();
   }
 
   private class TestDialogImpl implements TestDialog {

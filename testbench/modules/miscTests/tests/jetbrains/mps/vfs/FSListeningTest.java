@@ -29,7 +29,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -60,9 +59,9 @@ public class FSListeningTest extends WorkbenchMpsTest {
   private Project myProject;
 
   @Before
-  public void setUp() {
+  public void beforeTest() {
     FSRecords.invalidateCaches();
-    myProject = ProjectTestsSupport.startTestOnProjectCopy(PROJECT_LOCATION, DESTINATION_PROJECT_DIR, "");
+    myProject = openClonedProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
     ourModelAccess = myProject.getModelAccess();
     Assert.assertNotNull(ourModelAccess);
     ourRepository = myProject.getRepository();
@@ -70,8 +69,8 @@ public class FSListeningTest extends WorkbenchMpsTest {
   }
 
   @After
-  public void tearDown() {
-    ProjectTestsSupport.finishTestOnProjectCopy(myProject, DESTINATION_PROJECT_DIR);
+  public void afterTest() {
+    closeClonedProject(myProject, DESTINATION_PROJECT_DIR);
     final Application application = ApplicationManager.getApplication();
     if (application != null) {
       ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -111,12 +110,5 @@ public class FSListeningTest extends WorkbenchMpsTest {
 
   private static void refreshFS(final File moduleFile) {
     LocalFileSystem.getInstance().refreshIoFiles(Collections.singletonList(moduleFile), false, false, null);
-  }
-
-  @NotNull
-  private Solution getSolution(@NotNull String name) {
-    Solution solution1 = ModuleRepositoryFacade.getInstance().getModule(name, Solution.class);
-    assert solution1 != null;
-    return solution1;
   }
 }

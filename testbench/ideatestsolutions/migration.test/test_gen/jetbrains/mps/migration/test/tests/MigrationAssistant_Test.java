@@ -19,11 +19,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import java.io.File;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 
 public class MigrationAssistant_Test extends TestCase {
+  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.assistant";
   private static final String PROJECT_PATH = "testbench/modules/migrationAssistant";
   private Project project;
   public void test_test() throws Exception {
@@ -60,8 +62,11 @@ public class MigrationAssistant_Test extends TestCase {
     Assert.assertTrue(value1.value.equals("239"));
   }
   public void setUp() {
-    MpsTestsSupport.initEnv(true, EnvironmentConfig.emptyEnvironment().addPlugin("jetbrains.mps.ide.migration.assistant"));
-    System.setProperty(ContextProjectSupport.PROJECT_PATH_PROPERTY, PROJECT_PATH);
-    project = ContextProjectSupport.loadContextProject();
+    Environment env = EnvironmentContainer.getOrCreate(createConfig());
+    project = env.openProject(new File(PROJECT_PATH));
+  }
+
+  private EnvironmentConfig createConfig() {
+    return EnvironmentConfig.emptyEnvironment().loadIdea(true).addPlugin(MIGRATION_ASSISTANT_PLUGIN);
   }
 }

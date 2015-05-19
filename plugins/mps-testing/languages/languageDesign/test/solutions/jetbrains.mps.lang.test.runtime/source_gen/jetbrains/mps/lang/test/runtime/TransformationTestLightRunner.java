@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import java.util.Collection;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -16,7 +17,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class TransformationTestLightRunner extends TransformationTestRunner {
-
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean reopenProject) throws Exception {
     final Project testProject = findProject(modelName);
@@ -35,11 +35,11 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
   @Nullable
   private Project findProject(String modelName) {
     SModel contextModel = findModel(modelName);
-    final SModule contextModule = check_1frbnp_a0b0f(contextModel);
+    final SModule contextModule = check_1frbnp_a0b0e(contextModel);
     if (contextModule == null) {
       return null;
     }
-    return ModelAccess.instance().runReadAction(new Computable<Project>() {
+    return new ModelAccessHelper(contextModule.getRepository()).runReadAction(new Computable<Project>() {
       public Project compute() {
         Collection<SModule> runtimeDeps = new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE);
         for (Project project : ProjectManager.getInstance().getOpenProjects()) {
@@ -58,7 +58,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
       }
     });
   }
-  private static SModule check_1frbnp_a0b0f(SModel checkedDotOperand) {
+  private static SModule check_1frbnp_a0b0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

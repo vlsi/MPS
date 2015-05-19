@@ -17,8 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import org.junit.Test;
@@ -56,8 +58,8 @@ public class ScopesTest {
     });
   }
   public static Project initTestEnvironmentAndLoadContextProject() throws InvocationTargetException, InterruptedException {
-    MpsTestsSupport.initEnv(false);
-    return ContextProjectSupport.loadContextProject();
+    Environment env = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(false));
+    return env.createProject(new FromDirWithModulesProjectStrategy());
   }
 
   private SNode myNode;

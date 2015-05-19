@@ -126,15 +126,6 @@
     <classNode dependClassName="jetbrains.mps.tool.common.util.Resource" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.util.ProjectUtil" file="ProjectUtil.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-  </dependency>
   <dependency className="jetbrains.mps.tool.common.util.Resource" file="Resource.java">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />

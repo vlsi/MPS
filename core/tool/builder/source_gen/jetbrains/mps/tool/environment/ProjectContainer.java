@@ -6,10 +6,14 @@ import java.util.Set;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import javax.swing.SwingUtilities;
-import java.io.File;
-import jetbrains.mps.tool.common.util.ProjectUtil;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import java.io.File;
+import jetbrains.mps.util.EqualUtil;
+import java.io.IOException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class ProjectContainer {
   private Set<Project> myProjects;
@@ -25,12 +29,8 @@ public class ProjectContainer {
   private void clear() {
     try {
       for (final Project project : myProjects) {
-        assert project != null && !(project.isDisposed()) : "Project was already disposed";
-        SwingUtilities.invokeAndWait(new Runnable() {
-          public void run() {
-            project.dispose();
-          }
-        });
+        assert project != null && !(project.isDisposed()) : "Project has been already disposed";
+        project.dispose();
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -42,15 +42,15 @@ public class ProjectContainer {
     return myProjects;
   }
 
-  public Project getProject(File anotherProjectFile) {
-    assert containsProject(anotherProjectFile);
+  @Nullable
+  public Project getProject(@NotNull File projectFile) {
+    assert myProjects != null;
     for (Project project : SetSequence.fromSet(myProjects)) {
-      if (ProjectUtil.projectHasPath(project, anotherProjectFile)) {
+      if (ProjectContainer.projectHasPath(project, projectFile)) {
         return project;
       }
     }
-    assert false : "Could not find the project";
-    return null;
+    throw new IllegalArgumentException("Could not find the project");
   }
 
   public void addProject(@NotNull Project project) {
@@ -68,14 +68,17 @@ public class ProjectContainer {
     SetSequence.fromSet(myProjects).count();
   }
 
-  public boolean containsProject(File anotherProjectFile) {
-    assert myProjects != null;
-    for (Project project : SetSequence.fromSet(myProjects)) {
-      if (ProjectUtil.projectHasPath(project, anotherProjectFile)) {
-        return true;
+  private static boolean projectHasPath(Project project, @NotNull File path) {
+    @NotNull File projectFile = project.getProjectFile();
+    try {
+      String myProjectPath = projectFile.getCanonicalPath();
+      return EqualUtil.equals(myProjectPath, path);
+    } catch (IOException e) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Cannot access the project file in container", e);
       }
     }
     return false;
   }
-
+  protected static Logger LOG = LogManager.getLogger(ProjectContainer.class);
 }

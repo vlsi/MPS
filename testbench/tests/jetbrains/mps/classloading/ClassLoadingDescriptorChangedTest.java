@@ -19,10 +19,6 @@ import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
-import jetbrains.mps.util.PathManager;
 import org.junit.Test;
 
 import java.io.File;
@@ -39,20 +35,20 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
   @Test
   public void testClassLoadingDescriptorChanged() {
     final Project project = openProject(new File(jetbrains.mps.tool.builder.util.PathManager.getHomePath()));
-    final Language language1 = ProjectTestsSupport.getLanguage("L1");
+    final Language language1 = getLanguage("L1");
     assert language1 != null;
-    final Language language2 = ProjectTestsSupport.getLanguage("L2");
+    final Language language2 = getLanguage("L2");
     assert language2 != null;
     Generator generator1 = language1.getGenerators().iterator().next();
     performCheck(generator1);
     reloadAfterDescriptorChange(language2);
     generator1 = language1.getGenerators().iterator().next();
     performCheck(generator1);
-    disposeProject(project);
+    closeProject(project);
   }
 
   private void reloadAfterDescriptorChange(final Language language2) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    language2.getRepository().getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         language2.reloadAfterDescriptorChange();

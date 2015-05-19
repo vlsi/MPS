@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.junit.runners;
 
 import org.junit.runners.Suite;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.environment.Environment;
 import java.util.List;
 import org.junit.runner.Runner;
 import org.junit.runners.model.RunnerBuilder;
@@ -13,12 +14,12 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -35,30 +36,29 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class MpsTestsSuite extends Suite {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
   private static final String MPS_MACRO_PREFIX = "mps.macro.";
-  private final Project contextProject;
 
-  private final List<Runner> children;
+  private final Project myContextProject;
+  private final Environment myEnvironment;
+  private final List<Runner> myChildren;
 
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, Collections.<Runner>emptyList());
     // todo: read config from annotations before start (project / ?) 
-    // todo: dispose env at the end 
-    initIdeaEnvironment();
-    contextProject = ContextProjectSupport.loadContextProject();
-    // <node> 
-    children = createChildRunners(builder);
+    myEnvironment = initIdeaEnvironment();
+    myContextProject = myEnvironment.createProject(new AntProjectStrategy());
+    myChildren = createChildRunners(myContextProject, builder);
   }
 
-  private static void initIdeaEnvironment() {
+  public Environment initIdeaEnvironment() {
     // FIXME: plugins are already loaded into plugin.path property used by idea plugin manager 
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
+    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment().loadIdea(true);
     for (IMapping<String, String> lib : MapSequence.fromMap(loadLibraries())) {
       config = config.addLib(lib.value());
     }
     for (IMapping<String, File> macro : MapSequence.fromMap(loadMacros())) {
       config = config.addMacro(macro.key(), macro.value());
     }
-    MpsTestsSupport.initEnv(true, config);
+    return EnvironmentContainer.getOrCreate(config);
   }
 
   private static Map<String, String> loadLibraries() {
@@ -95,14 +95,14 @@ public class MpsTestsSuite extends Suite {
 
   @Override
   protected List<Runner> getChildren() {
-    return children;
+    return myChildren;
   }
 
-  private List<Runner> createChildRunners(final RunnerBuilder builder) {
+  private List<Runner> createChildRunners(Project project, final RunnerBuilder builder) {
     final List<Runner> result = new ArrayList<Runner>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (SModule module : Sequence.fromIterable(contextProject.getModules())) {
+        for (SModule module : Sequence.fromIterable(myContextProject.getModules())) {
           for (SModel model : Sequence.fromIterable(module.getModels())) {
             for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
               result.add(new DelegatingRunner(builder, module.getModuleReference(), BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{})));
@@ -113,6 +113,4 @@ public class MpsTestsSuite extends Suite {
     });
     return result;
   }
-
-
 }

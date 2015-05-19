@@ -191,7 +191,6 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -209,12 +208,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
-    <classNode dependClassName="jetbrains.mps.library.contributor.LibDescriptor" />
-    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
@@ -257,7 +253,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />

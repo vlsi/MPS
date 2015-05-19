@@ -6,11 +6,14 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import java.util.Collections;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 
 public class SetLibraryContributor implements LibraryContributor {
   private final Set<LibDescriptor> myLibraryPaths;
 
-  public SetLibraryContributor(Set<LibDescriptor> libraryPaths) {
+  private SetLibraryContributor(Set<LibDescriptor> libraryPaths) {
     this.myLibraryPaths = libraryPaths;
   }
 
@@ -22,5 +25,17 @@ public class SetLibraryContributor implements LibraryContributor {
   @Override
   public boolean hiddenLanguages() {
     return false;
+  }
+
+  public static SetLibraryContributor fromMap(Map<String, ClassLoader> libToClassLoader) {
+    Set<LibDescriptor> libs = SetSequence.fromSet(new LinkedHashSet<LibDescriptor>());
+    for (String libPath : libToClassLoader.keySet()) {
+      SetSequence.fromSet(libs).addElement(new LibDescriptor(libPath, libToClassLoader.get(libPath)));
+    }
+    return new SetLibraryContributor(libs);
+  }
+
+  public static SetLibraryContributor fromSet(Set<LibDescriptor> libs) {
+    return new SetLibraryContributor(libs);
   }
 }

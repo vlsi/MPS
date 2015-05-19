@@ -12,12 +12,24 @@ import java.util.LinkedHashMap;
 import java.util.Collections;
 import jetbrains.mps.tool.builder.util.PathManager;
 
+/**
+ * Represents a configuration options list for an environment, used a Builder pattern
+ * 
+ * 
+ * @see jetbrains.mps.tool.environment.Environment 
+ * @see jetbrains.mps.tool.environment.EnvironmentContainer 
+ */
 public class EnvironmentConfig {
+  private boolean myLoadIdea = false;
   private final Set<String> myPlugins = SetSequence.fromSet(new LinkedHashSet<String>());
   private final Map<String, File> myMacros = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
   private final Set<String> myLibs = SetSequence.fromSet(new LinkedHashSet<String>());
 
   private EnvironmentConfig() {
+  }
+
+  public boolean doesLoadIdea() {
+    return myLoadIdea;
   }
 
   public Set<String> getPlugins() {
@@ -30,6 +42,11 @@ public class EnvironmentConfig {
 
   public Set<String> getLibs() {
     return SetSequence.fromSet(myLibs).asUnmodifiable();
+  }
+
+  public EnvironmentConfig loadIdea(boolean value) {
+    myLoadIdea = value;
+    return this;
   }
 
   public EnvironmentConfig addPlugin(String plugin) {
@@ -71,8 +88,12 @@ public class EnvironmentConfig {
     return this;
   }
 
-  public static EnvironmentConfig defaultEnvironment() {
+  public static EnvironmentConfig defaultConfig() {
     return new EnvironmentConfig().withDefaultSamples().withDefaultPlugins().withBootstrapLibraries().withWorkbenchPath();
+  }
+
+  public static EnvironmentConfig defaultWithIdea() {
+    return defaultConfig().loadIdea(true);
   }
 
   public static EnvironmentConfig emptyEnvironment() {

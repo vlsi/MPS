@@ -91,12 +91,12 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   };
 
   @Before
-  public void setUp() throws IOException {
+  public void beforeTest() throws IOException {
     createTmpModules();
   }
 
   @After
-  public void tearDown() throws Exception {
+  public void afterTest() throws Exception {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(myModuleOwner);

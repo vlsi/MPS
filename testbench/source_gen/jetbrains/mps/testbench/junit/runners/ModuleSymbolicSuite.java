@@ -10,9 +10,12 @@ import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
@@ -26,6 +29,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   private String myModuleRef;
   private RunnerBuilder myBuilder;
   private boolean initialized = false;
+
   public ModuleSymbolicSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     this(builder, klass);
     String[] tests = getAnnotatedTests(klass);
@@ -35,21 +39,26 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     this.myModuleRef = getAnnotatedModule(klass);
   }
+
   protected ModuleSymbolicSuite(RunnerBuilder builder, Class<?> klass) throws InitializationError {
     this(klass);
     this.myBuilder = builder;
   }
+
   protected ModuleSymbolicSuite(Class<?> klass) throws InitializationError {
     super(klass);
   }
+
   @Override
   protected List<Runner> getChildren() {
     return myRunners;
   }
+
   @Override
   protected Description describeChild(Runner child) {
     return child.getDescription();
   }
+
   @Override
   protected void runChild(Runner child, RunNotifier notifier) {
     if (!(initialized)) {
@@ -57,9 +66,10 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     child.run(notifier);
   }
+
   private void initialize() {
-    MpsTestsSupport.initEnv(true);
-    ContextProjectSupport.loadContextProject();
+    Environment env = EnvironmentContainer.getOrCreate(ModuleSymbolicSuite.createConfig());
+    env.createProject(new FromProjectPathProjectStrategy());
 
     SModule mod = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myModuleRef));
     for (Runner child : myRunners) {
@@ -67,6 +77,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     this.initialized = true;
   }
+
   private static String getAnnotatedModule(Class<?> klass) throws InitializationError {
     ModuleSymbolicSuite.ModuleReference mrefAnn = klass.getAnnotation(ModuleSymbolicSuite.ModuleReference.class);
     if (mrefAnn == null) {
@@ -74,6 +85,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     return mrefAnn.value();
   }
+
   private static String[] getAnnotatedClassNames(Class<?> klass) throws InitializationError {
     ModuleSymbolicSuite.ModuleClassSymbols symAnn = klass.getAnnotation(ModuleSymbolicSuite.ModuleClassSymbols.class);
     if (symAnn == null) {
@@ -81,6 +93,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     return symAnn.classes();
   }
+
   private static String[] getAnnotatedTests(Class<?> klass) throws InitializationError {
     ModuleSymbolicSuite.ModuleClassSymbols symAnn = klass.getAnnotation(ModuleSymbolicSuite.ModuleClassSymbols.class);
     if (symAnn == null) {
@@ -88,14 +101,21 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
     return symAnn.tests();
   }
+
+  private static EnvironmentConfig createConfig() {
+    return EnvironmentConfig.defaultConfig().loadIdea(true);
+  }
+
   public static class DelegatingRunner extends Runner {
     private Runner myDelegate;
     private String myClassName;
     private String[] myTests;
+
     public DelegatingRunner(String klassName, String[] tests) {
       this.myClassName = klassName;
       this.myTests = tests;
     }
+
     @Override
     public void run(RunNotifier notifier) {
       if (myTests == null) {
@@ -108,6 +128,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
         myDelegate.run(notifier);
       }
     }
+
     @Override
     public Description getDescription() {
       Description desc = Description.createSuiteDescription(myClassName);
@@ -120,6 +141,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
       return desc;
     }
+
     private void init(SModule mod, RunnerBuilder builder) {
       Class klass = getTestClass(mod, myClassName);
       if (klass != null) {
@@ -128,6 +150,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
         // todo: ? 
       }
     }
+
     private static Class getTestClass(SModule module, String className) {
       // todo: warning on null class loader and ClassNotFoundException? 
       // todo: execute only MPS tests here. move all unit tests to ant task 
@@ -141,22 +164,26 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
         return null;
       }
     }
+
     private void runFailure(Description failDesc, Throwable cause, RunNotifier notifier) {
       notifier.fireTestStarted(failDesc);
       notifier.fireTestFailure(new Failure(failDesc, cause));
       notifier.fireTestFinished(failDesc);
     }
+
     private Description createTestDescription(String text) {
       // this is the only way to construct Description from string 
       return Description.createSuiteDescription(String.format("%s(%s)", text, myClassName));
     }
   }
+
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
   public @interface ModuleClassSymbols {
     String[] classes();
     String[] tests();
   }
+
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
   public @interface ModuleReference {

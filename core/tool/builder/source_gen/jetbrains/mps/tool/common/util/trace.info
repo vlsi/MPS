@@ -1477,42 +1477,6 @@
       <unit id="6740693110299868293" at="10,0,35,0" name="jetbrains.mps.tool.common.util.ClasspathCache" />
     </file>
   </root>
-  <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/8406928085288798011">
-    <file name="ProjectUtil.java">
-      <node id="8406928085288813448" at="13,68,14,48" concept="12" />
-      <node id="8406928085288813459" at="15,30,16,19" concept="13" />
-      <node id="8406928085288813463" at="18,9,19,60" concept="12" />
-      <node id="8406928085288813469" at="19,60,20,54" concept="12" />
-      <node id="8406928085288813475" at="20,54,21,50" concept="13" />
-      <node id="8406928085288813482" at="23,42,24,68" concept="6" />
-      <node id="8406928085288813487" at="26,5,27,17" concept="13" />
-      <node id="8406928085288798011" at="29,0,30,0" concept="15" trace="LOG" />
-      <node id="8406928085288813454" at="14,48,17,5" concept="10" />
-      <node id="8406928085288813482" at="22,29,25,7" concept="1" />
-      <node id="8406928085288813482" at="22,29,25,7" concept="10" />
-      <node id="8406928085288813461" at="17,5,26,5" concept="21" />
-      <node id="8406928085288813446" at="13,0,29,0" concept="16" trace="projectHasPath#(Ljetbrains/mps/project/Project;Ljava/io/File;)Z" />
-      <scope id="8406928085288813458" at="15,30,16,19" />
-      <scope id="8406928085288813482" at="23,42,24,68" />
-      <scope id="8406928085288813462" at="18,9,21,50">
-        <var name="myProjectPath" id="8406928085288813464" />
-        <var name="newProjectPath" id="8406928085288813470" />
-      </scope>
-      <scope id="8406928085288813480" at="22,0,25,7">
-        <var name="e" id="8406928085288813485" />
-      </scope>
-      <scope id="8406928085288813481" at="22,29,25,7" />
-      <scope id="8406928085288813482" at="22,29,25,7" />
-      <scope id="8406928085288813447" at="13,68,27,17">
-        <var name="projectFile" id="8406928085288813449" />
-      </scope>
-      <scope id="8406928085288813446" at="13,0,29,0">
-        <var name="path" id="8406928085288813493" />
-        <var name="project" id="8406928085288813491" />
-      </scope>
-      <unit id="8406928085288798011" at="12,0,31,0" name="jetbrains.mps.tool.common.util.ProjectUtil" />
-    </file>
-  </root>
   <root nodeRef="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)/8544233748605344311">
     <file name="Resource.java">
       <node id="8544233748605351615" at="11,0,12,0" concept="11" trace="getURL#()Ljava/net/URL;" />

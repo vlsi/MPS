@@ -45,13 +45,12 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.project.Project" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.MpsWorker" file="MpsWorker.java">
-    <classNode dependClassName="com.intellij.idea.LoggerFactory" />
-    <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />
@@ -99,10 +98,9 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.AntLogger" />
     <classNode dependClassName="jetbrains.mps.tool.common.JavaCompilerProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.ActiveEnvironment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentConfig" />
-    <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
+    <classNode dependClassName="jetbrains.mps.tool.environment.EnvironmentContainer" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />

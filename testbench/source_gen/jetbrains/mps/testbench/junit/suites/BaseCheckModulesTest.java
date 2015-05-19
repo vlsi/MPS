@@ -9,8 +9,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.ProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,19 +36,23 @@ public class BaseCheckModulesTest {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation? 
     // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)? 
     // can be extended with right modules set 
-    initTestEnvironment(false);
+    initEnvironment(null);
     return createTestParametersFromModules(ourContextProject.getModules());
   }
 
-  public static void initTestEnvironment(boolean withIdea) throws InvocationTargetException, InterruptedException {
-    // todo: dispose env? 
-    MpsTestsSupport.initEnv(withIdea);
+  protected static void initEnvironment(@Nullable String dir) throws InvocationTargetException, InterruptedException {
+    Environment env = EnvironmentContainer.getOrCreate(BaseCheckModulesTest.createConfig());
 
     ourStatistic = new CheckingTestStatistic();
-    ourContextProject = ContextProjectSupport.loadContextProject();
+    ProjectStrategy strategy = (dir == null ? new FromDirWithModulesProjectStrategy() : new FromDirWithModulesProjectStrategy(dir));
+    ourContextProject = env.createProject(strategy);
   }
 
-  public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
+  private static EnvironmentConfig createConfig() {
+    return EnvironmentConfig.defaultConfig().loadIdea(false);
+  }
+
+  protected static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (SModule module : modules) {
       res.add(new Object[]{module});
@@ -58,7 +66,7 @@ public class BaseCheckModulesTest {
     return res;
   }
 
-  public static Set<SModule> excludeModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
+  protected static Set<SModule> excludeModules(Iterable<? extends SModule> modules, Set<String> excludedModules) {
     Set<SModule> result = new HashSet<SModule>();
     for (SModule module : modules) {
       if (!(excludedModules.contains(module.getModuleName()))) {
@@ -78,7 +86,6 @@ public class BaseCheckModulesTest {
 
   @AfterClass
   public static void cleanUp() {
-    // ActiveEnvironment.get().disposeProject(ourContextProject); 
     ourStatistic.printStatistic();
   }
 }
