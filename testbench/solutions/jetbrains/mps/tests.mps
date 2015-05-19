@@ -69,6 +69,7 @@
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -374,6 +375,30 @@
     </node>
     <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz4G" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsttl" resolve="RedoChangesOfTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz5N" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsvZz" resolve="RedoCommitedInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz8I" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsqew" resolve="RedoInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz6W" role="lpD6w">
+      <ref role="lpD7u" to="65l5:59gag9wlcDR" resolve="RedoTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz9l" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJzm$2" resolve="UndoChangesOfTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsza$" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJDNNg" resolve="UndoCommitedInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDszbP" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJDKMw" resolve="UndoInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDszd8" role="lpD6w">
+      <ref role="lpD7u" to="65l5:4ECnMeMhxat" resolve="UndoTypingInTransactionalPropertyCell" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />

@@ -63,7 +63,9 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
 
   @Override
   public void resetUncommittedValue() {
-    UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(null, false));
+    if (myHasValueToCommit) {
+      UndoHelper.getInstance().addUndoableAction(new ChangeValueUndoableAction(null, false));
+    }
   }
 
   @Override
