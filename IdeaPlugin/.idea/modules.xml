@@ -10,7 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/mps-core/jps-plugin/mps-jps-plugin.iml" filepath="$PROJECT_DIR$/mps-core/jps-plugin/mps-jps-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-startup/mps-startup.iml" filepath="$PROJECT_DIR$/mps-startup/mps-startup.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-vcs/mps-vcs.iml" filepath="$PROJECT_DIR$/mps-vcs/mps-vcs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests/tests.iml" filepath="$PROJECT_DIR$/tests/tests.iml" />
     </modules>
   </component>
 </project>
-

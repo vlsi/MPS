@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,24 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -41,6 +40,15 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperationContext;
 
+/**
+ * Abstraction to capture constraints-related stuff about references.
+ * Is a consumer of what ConstraintsAspectDescriptor->ConstraintsDescriptor->ReferenceConstraintsDescriptor
+ * provides, and is sort of facade for these classes to the rest of MPS.
+ * I'm not quite sure it deserves to stay, as we could use descriptors directly, however, descriptors need
+ * a change as well, and it might be reasonable to keep both for a while, to facilitate step by step refactoring
+ * (first, uses of this class, then new descriptors). API this class provides is of dubious quality
+ * (e.g. #getReferencePresentation() with booleans)
+ */
 public abstract class ReferenceDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ReferenceDescriptor.class));
   private static final BaseReferenceScopeProvider EMPTY_REFERENCE_SCOPE_PROVIDER = new BaseReferenceScopeProvider();
@@ -56,11 +64,18 @@ public abstract class ReferenceDescriptor {
   abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor);
 
   @Nullable
+  /**
+   * @deprecated this class shall not expose its implementation detail, otherwise there's no point in its presence.
+   * refactor the single use and remove this method, it's our internal api.
+   * Perhaps, we need a distinct validator object?
+   */
+  @ToRemove(version = 0)
+  @Deprecated
   abstract public ReferenceScopeProvider getScopeProvider();
 
   static class OkReferenceDescriptor extends ReferenceDescriptor {
     // main parameters for ScopeProvider calculating
-    private final SNode sourceNodeConcept;
+    private final SConcept sourceNodeConcept;
     private final String genuineRole;
 
     // parameters from scope concept method
@@ -84,7 +99,7 @@ public abstract class ReferenceDescriptor {
     private final ReferenceScopeProvider scopeProvider;
 
     OkReferenceDescriptor(
-        SNode sourceNodeConcept, String genuineRole,
+        SConcept sourceNodeConcept, String genuineRole,
         boolean exists, String contextRole, int position, SNode referenceNode, SNode linkTarget, SNode enclosingNode, SNode containingLink,
         @Nullable SReference reference
     ) {
@@ -110,27 +125,22 @@ public abstract class ReferenceDescriptor {
       final ReferentConstraintContext context =
           new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
 
-      return TypeContextManager.getInstance().runResolveAction(new Computable<Scope>() {
-        @Override
-        public Scope compute() {
-          try {
-            if (scopeProvider != null) {
-              Scope searchScope = scopeProvider.createScope(getOperationContext(getModule()), context);
-              if (searchScope != null) {
-                if (reference != null && searchScope instanceof Adapter) {
-                  return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
-                }
-                return searchScope;
-              }
+      try {
+        if (scopeProvider != null) {
+          Scope searchScope = scopeProvider.createScope(getOperationContext(getModule()), context);
+          if (searchScope != null) {
+            if (reference != null && searchScope instanceof Adapter) {
+              return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
             }
-            // global search scope
-            return new ModelPlusImportedScope(getModel(), false, NameUtil.nodeFQName(linkTarget));
-          } catch (Exception t) {
-            LOG.error(t, getContextNode());
-            return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+            return searchScope;
           }
         }
-      });
+        // global search scope
+        return new ModelPlusImportedScope(getModel(), false, NameUtil.nodeFQName(linkTarget));
+      } catch (Exception t) {
+        LOG.error(t, getContextNode());
+        return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+      }
     }
 
     @Override
@@ -155,21 +165,24 @@ public abstract class ReferenceDescriptor {
     }
 
     @Nullable
-    static ReferenceScopeProvider getScopeProvider(SNode nodeConcept, String referentRole) {
+    static ReferenceScopeProvider getScopeProvider(SConcept nodeConcept, String referentRole) {
       // todo: should be private
       ReferenceConstraintsDescriptor refConstraintsDescriptor =
-          ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(nodeConcept)).getReference(referentRole);
+          ConceptRegistryUtil.getConstraintsDescriptor(nodeConcept).getReference(referentRole);
+      // FIXME once I got SReferenceLink here, shall refactor SNodeAccessUtilImpl.getReferenceConstraintsDescriptor() as well
       if (refConstraintsDescriptor != null) {
         ReferenceScopeProvider result = refConstraintsDescriptor.getScopeProvider();
-        if (result != null) return result;
+        if (result != null) {
+          return result;
+        }
       }
-      SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
+      SAbstractLink linkDeclaration = nodeConcept.getLink(referentRole);
       if (linkDeclaration == null) {
-        LOG.error("No reference search scope provider was found. Concept: " + SNodeUtil.getConceptDeclarationAlias(nodeConcept) + "; refName: " + referentRole);
+        LOG.error("No reference search scope provider was found. Concept: " + nodeConcept + "; refName: " + referentRole);
         return EMPTY_REFERENCE_SCOPE_PROVIDER;
       }
-      SNode conceptForDefaultSearchScope = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-      return ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(conceptForDefaultSearchScope)).getDefaultScopeProvider();
+      SAbstractConcept conceptForDefaultSearchScope = linkDeclaration.getTargetConcept();
+      return ConceptRegistryUtil.getConstraintsDescriptor(conceptForDefaultSearchScope).getDefaultScopeProvider();
     }
 
     private SNode getContextNode() {

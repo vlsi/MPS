@@ -137,12 +137,7 @@ public class MPSModelsIndexer implements ApplicationComponent {
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
       final IndexCallback cb = new IndexCallback();
       try {
-        ModelPersistence.index(inputData.getContent(), new Consumer<String>() {
-          @Override
-          public void consume(String s) {
-            cb.index(s);
-          }
-        }, cb);
+        ModelPersistence.index(inputData.getContent(), cb);
       } catch (IOException ignored) {
       }
       return cb.getResult();

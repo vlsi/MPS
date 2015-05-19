@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import javax.swing.JComponent;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 
-public class CreateModeCallback {
-  public void exitCreateMode() {
-
-  }
-
-  public void enterCreateMode(JComponent replace) {
-
-  }
+public interface CreateModeCallback {
+  /**
+   * Request creation of an aspect
+   * @param tab describes an aspect to create
+   */
+  void create(RelationDescriptor tab);
 }

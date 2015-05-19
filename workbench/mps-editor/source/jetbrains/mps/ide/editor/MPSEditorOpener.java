@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -46,11 +45,10 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.awt.Component;
 
 public class MPSEditorOpener {
-  private Project myProject;
+  private final Project myProject;
 
-  public MPSEditorOpener(Project project) {
+  public MPSEditorOpener(@NotNull Project project) {
     myProject = project;
-    assert myProject != null;
   }
 
   public Editor createEditorFor(IOperationContext operationContext, SNode node) {
@@ -69,9 +67,9 @@ public class MPSEditorOpener {
    */
   public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     ThreadUtils.assertEDT();
-    ModelAccess.assertLegalWrite();
-
     final jetbrains.mps.project.Project mpsProject = context.getProject();
+    mpsProject.getModelAccess().checkWriteAccess();
+
     mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodeReference instead of SNode */
     return doOpenNode(node, context, focus, select);
@@ -84,12 +82,12 @@ public class MPSEditorOpener {
     final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
 
     //restore inspector state for opened editor (if exists)
-    if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
+    if (!restorePrevSelectionInInspector(nodeEditor)) {
       //open inspector (if no cell is selected in editor, inspector won't be opened)
       DataContext dataContext = DataManager.getInstance().getDataContext((Component) nodeEditor.getCurrentEditorComponent());
       FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
       NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-      getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor, nec.getUpdater().getInitialEditorHints());
+      getInspector().inspect(node, fileEditor, nec.getUpdater().getInitialEditorHints());
     }
 
 
@@ -225,7 +223,7 @@ public class MPSEditorOpener {
     }
   }
 
-  private boolean restorePrevSelectionInInspector(Editor nodeEditor, IOperationContext context, InspectorTool inspectorTool) {
+  private boolean restorePrevSelectionInInspector(Editor nodeEditor) {
     if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) {
       return false;
     }
@@ -236,7 +234,7 @@ public class MPSEditorOpener {
 
     DataContext dataContext = DataManager.getInstance().getDataContext(((BaseNodeEditor) nodeEditor).getComponent());
     FileEditor fileEditor = MPSCommonDataKeys.FILE_EDITOR.getData(dataContext);
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor, nec.getUpdater().getInitialEditorHints());
+    getInspector().inspect(nec.getLastInspectedNode(), fileEditor, nec.getUpdater().getInitialEditorHints());
     return true;
   }
 }

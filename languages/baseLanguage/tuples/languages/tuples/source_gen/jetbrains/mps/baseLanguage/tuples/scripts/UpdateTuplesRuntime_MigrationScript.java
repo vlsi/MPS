@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.tuples.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,16 +27,20 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   public UpdateTuplesRuntime_MigrationScript(IOperationContext operationContext) {
     super("Create runtime classes in the tuples runtime");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "TupleInterface";
       }
+      @Override
       public String getAdditionalInfo() {
         return "TupleInterface";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getFqName_1213877404258", new Object[]{})) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -43,6 +48,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode ifc = null;
         for (int i = 0; i < 10; i++) {
@@ -85,6 +91,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(ifc);
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

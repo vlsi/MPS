@@ -28,7 +28,7 @@ import java.util.Collection;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -90,7 +90,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
     return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
-        return SConceptRepository.getInstance().getLanguage(it.getModuleName());
+        return MetaAdapterByDeclaration.getLanguage(it);
       }
     }));
   }

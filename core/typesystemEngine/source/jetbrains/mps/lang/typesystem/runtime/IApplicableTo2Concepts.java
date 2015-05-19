@@ -15,8 +15,19 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-public interface IApplicableTo2Concepts {
-  public String getApplicableConceptFQName1();
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-  public String getApplicableConceptFQName2();
+public interface IApplicableTo2Concepts {
+  SAbstractConcept getApplicableConcept1();
+
+  SAbstractConcept getApplicableConcept2();
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  String getApplicableConceptFQName1();
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  String getApplicableConceptFQName2();
 }

@@ -2,19 +2,19 @@
 <model ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
-    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
+    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="0" />
   </languages>
   <imports>
     <import index="c1ko" ref="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
@@ -34,7 +34,6 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="rkxj" ref="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
-    <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="1d7m" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(jetbrains.mps.ide.editor@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <import index="b2mh" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
@@ -50,7 +49,6 @@
     <import index="auou" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(com.intellij.openapi@java_stub)" />
     <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
     <import index="5xh9" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(jetbrains.mps.ide.actions@java_stub)" />
-    <import index="n13f" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" />
     <import index="jrbx" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(javax.swing@java_stub)" />
@@ -60,10 +58,8 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
     <import index="kqhl" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
-    <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" />
     <import index="86um" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" />
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" />
-    <import index="mfhd" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.filechoosers.treefilechooser(jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" />
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="xabr" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.featureStatistics(com.intellij.featureStatistics@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
@@ -78,6 +74,7 @@
     <import index="y2s6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui.awt(MPS.IDEA/com.intellij.ui.awt@java_stub)" />
     <import index="8q6x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <import index="2mml" ref="r:74ecf5af-2b45-470e-b13c-a863221987cf(jetbrains.mps.ide.editor.util.renderer)" />
+    <import index="l077" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" implicit="true" />
     <import index="y596" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.selection(MPS.Editor/jetbrains.mps.openapi.editor.selection@java_stub)" implicit="true" />
   </imports>
@@ -107,6 +104,7 @@
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
         <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1205851242421" name="methodDeclaration" index="32lrUH" />
@@ -731,6 +729,7 @@
     <property role="TrG5h" value="PasteAsJavaClass" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfaW" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -848,6 +847,7 @@
     <property role="TrG5h" value="PasteAsJavaMethods" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Class Content" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfbe" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -972,6 +972,7 @@
     <property role="TrG5h" value="PasteAsJavaStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Paste as Java Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="2vs9_ygEfbv" role="1NuT2Z">
       <property role="TrG5h" value="operationContext" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
@@ -1097,15 +1098,11 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Get Model Contents from Source" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1bRM4HyGOHv" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
       <node concept="1oajcY" id="7HZe2EwZDne" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="1bRM4HyGOHw" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="7HZe2EwZDhK" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="1bRM4HyGOHx" role="1NuT2Z">
       <property role="TrG5h" value="model" />
@@ -1511,8 +1508,8 @@
         <node concept="3cpWs6" id="1bRM4HyGOKC" role="3cqZAp">
           <node concept="3fqX7Q" id="1bRM4HyGOKD" role="3cqZAk">
             <node concept="2ZW3vV" id="1bRM4HyGOKE" role="3fr31v">
-              <node concept="3uibUv" id="1bRM4HyGOKF" role="2ZW6by">
-                <ref role="3uigEE" to="y5px:~TransientModelsModule" resolve="TransientModelsModule" />
+              <node concept="3uibUv" id="6X2NSHvNZ_k" role="2ZW6by">
+                <ref role="3uigEE" to="l077:~TransientSModule" resolve="TransientSModule" />
               </node>
               <node concept="37vLTw" id="3GM_nagTzyp" role="2ZW6bz">
                 <ref role="3cqZAo" node="1bRM4HyGOKq" resolve="module" />
@@ -1537,6 +1534,7 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPS" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="1N_sel8h_Yv" role="1NuT2Z">
       <property role="TrG5h" value="models" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODELS" resolve="MODELS" />
@@ -1630,6 +1628,7 @@
     <property role="TrG5h" value="ResolveStubReferencesToMPSGlobal" />
     <property role="2uzpH1" value="Resolve Stub References to MPS Code in the Whole Project" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="3Kb8mGRKrfg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -1690,6 +1689,7 @@
     <property role="2uzpH1" value="Migrate Sources to MPS" />
     <property role="3GE5qa" value="Actions" />
     <property role="72QZ$" value="true" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="60HWYcsjXo3" role="1NuT2Z">
       <property role="TrG5h" value="frame" />
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
@@ -2065,6 +2065,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Convert Anonymous Class" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRiG" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRiH" role="1B3o_S" />
@@ -2315,6 +2316,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRlK" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRlL" role="1B3o_S" />
@@ -2663,6 +2665,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Make Field Final" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRnB" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRnC" role="1B3o_S" />
@@ -2792,6 +2795,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Make Field Static" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="cvGLnZnRof" role="tncku">
       <node concept="3clFbS" id="cvGLnZnRog" role="2VODD2">
         <node concept="3clFbF" id="3dReA4l3cdc" role="3cqZAp">
@@ -2918,6 +2922,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Static Field" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRoA" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRoB" role="1B3o_S" />
@@ -3007,6 +3012,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Move Static Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="cvGLnZnRpN" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="cvGLnZnRpO" role="1B3o_S" />
@@ -3377,6 +3383,7 @@
     <property role="TrG5h" value="GenerateConstructor" />
     <property role="2uzpH1" value="Constructor" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CD4Kj" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CD4Kl" role="3clF47">
@@ -4590,6 +4597,7 @@
     <property role="TrG5h" value="GenerateEqualsAndHashCode" />
     <property role="2uzpH1" value="equals() and hashCode" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLLY" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLLZ" role="3clF47">
@@ -7000,6 +7008,7 @@
     <property role="TrG5h" value="GenerateGetters" />
     <property role="3GE5qa" value="generate" />
     <property role="2uzpH1" value="Getter" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLHB" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLHC" role="3clF47">
@@ -7760,6 +7769,7 @@
     <property role="TrG5h" value="GenerateGettersAndSetters" />
     <property role="2uzpH1" value="Getter and Setter" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLIy" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLIz" role="3clF47">
@@ -9431,6 +9441,7 @@
     <property role="TrG5h" value="GenerateMainMethod" />
     <property role="2uzpH1" value="main(Strins[] args)" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLMw" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLMx" role="3clF47">
@@ -9705,6 +9716,7 @@
     <property role="TrG5h" value="GenerateSetters" />
     <property role="2uzpH1" value="Setter" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLI4" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLI5" role="3clF47">
@@ -10521,6 +10533,7 @@
     <property role="TrG5h" value="GenerateToString" />
     <property role="2uzpH1" value="toString()" />
     <property role="3GE5qa" value="generate" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="6G8o$3CDLMW" role="32lrUH">
       <property role="TrG5h" value="getClassConcept" />
       <node concept="3clFbS" id="6G8o$3CDLMX" role="3clF47">
@@ -14565,6 +14578,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Implement Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAHLU" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAHLV" role="1oa70y" />
@@ -14885,6 +14899,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Override Method..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAHMS" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAHMT" role="1oa70y" />
@@ -15221,6 +15236,7 @@
     <property role="TrG5h" value="ImplementMethodsAsIntention" />
     <property role="2uzpH1" value="Implement Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPAL9_" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPAL9A" role="1oa70y" />
@@ -15541,6 +15557,7 @@
     <property role="TrG5h" value="OverrideMethodsAsIntention" />
     <property role="2uzpH1" value="Override Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="7ECFGRPALan" role="1NuT2Z">
       <property role="TrG5h" value="selectedNode" />
       <node concept="1oajcY" id="7ECFGRPALao" role="1oa70y" />
@@ -15906,6 +15923,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Go to Overriden Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="2rUHgdX2EEM" role="32lrUH">
       <property role="TrG5h" value="getInstanceMethodDeclaration" />
       <node concept="3Tqbb2" id="2rUHgdX2EEN" role="3clF45">
@@ -16522,6 +16540,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="overridemethod" />
     <property role="2uzpH1" value="Go to Inherited Classifiers" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2rUHgdX2EIz" role="1NuT2Z">
       <property role="TrG5h" value="classifierNode" />
       <node concept="1oajcY" id="2rUHgdX2EI$" role="1oa70y" />
@@ -17064,6 +17083,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Go to Overriding Methods" />
     <property role="3GE5qa" value="overridemethod" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2rUHgdX2y0U" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="2rUHgdX2y0V" role="1oa70y" />
@@ -17222,6 +17242,7 @@
     <property role="TrG5h" value="CommentLine" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Comment Line" />
+    <property role="1teQrl" value="true" />
     <node concept="2XrIbr" id="5wICCZJ10z9" role="32lrUH">
       <property role="TrG5h" value="getStatement" />
       <node concept="3Tqbb2" id="5wICCZJ10za" role="3clF45">
@@ -17712,6 +17733,7 @@
     <property role="TrG5h" value="UncommentStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Uncomment Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5wICCZJ10_F" role="tncku">
       <node concept="3clFbS" id="5wICCZJ10_G" role="2VODD2">
         <node concept="3cpWs8" id="5wICCZJ10_H" role="3cqZAp">
@@ -17855,6 +17877,7 @@
     <property role="TrG5h" value="CommentStatements" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Comment Statements" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="5wICCZJ10Aw" role="tncku">
       <node concept="3clFbS" id="5wICCZJ10Ax" role="2VODD2">
         <node concept="3cpWs8" id="5wICCZJ10Ay" role="3cqZAp">
@@ -18000,6 +18023,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Show Members" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="beXdrGepvN" role="tncku">
       <node concept="3clFbS" id="beXdrGepvO" role="2VODD2">
         <node concept="3cpWs8" id="5hB0G_qDMX8" role="3cqZAp">
@@ -18242,6 +18266,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Extract Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbJ0" role="1NuT2Z">
       <property role="TrG5h" value="nodes" />
       <node concept="1oajcY" id="8qS5$SbJ1" role="1oa70y" />
@@ -18489,6 +18514,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Local Variable" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="8qS5$SbK8" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
@@ -18754,7 +18780,7 @@
                                         <ref role="3cqZAo" node="8qS5$SbLe" resolve="nodesCount" />
                                       </node>
                                       <node concept="Xl_RD" id="8qS5$SbLL" role="37wK5m">
-                                        <property role="Xl_RC" value="occurence" />
+                                        <property role="Xl_RC" value="occurrence" />
                                       </node>
                                     </node>
                                   </node>
@@ -19169,6 +19195,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Method" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbNx" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="8qS5$SbNy" role="1oa70y" />
@@ -19403,6 +19430,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Constant..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbOD" role="tncku">
       <node concept="3clFbS" id="8qS5$SbOE" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEPRN" role="3cqZAp">
@@ -19771,6 +19799,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Field..." />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbPX" role="tncku">
       <node concept="3clFbS" id="8qS5$SbPY" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEPRT" role="3cqZAp">
@@ -20322,6 +20351,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Introduce Variable..." />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="8qS5$SbRe" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="8qS5$SbRf" role="1oa70y" />
@@ -20697,6 +20727,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Rename Variable" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="8qS5$SbS_" role="tncku">
       <node concept="3clFbS" id="8qS5$SbSA" role="2VODD2">
         <node concept="3clFbF" id="3tjtvLxEaTB" role="3cqZAp">
@@ -21487,6 +21518,7 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Actions" />
     <property role="2uzpH1" value="Inline Field" />
+    <property role="1teQrl" value="true" />
     <node concept="1DS2jV" id="6XT2l8YhG$1" role="1NuT2Z">
       <property role="TrG5h" value="editorContext" />
       <ref role="1DUlNI" to="1d7m:~MPSEditorDataKeys.EDITOR_CONTEXT" resolve="EDITOR_CONTEXT" />
@@ -24199,6 +24231,7 @@
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Safe Delete Method" />
     <property role="3GE5qa" value="Actions" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="2o0RM2fztWG" role="1NuT2Z">
       <property role="TrG5h" value="target" />
       <node concept="3Tm6S6" id="2o0RM2fztWH" role="1B3o_S" />

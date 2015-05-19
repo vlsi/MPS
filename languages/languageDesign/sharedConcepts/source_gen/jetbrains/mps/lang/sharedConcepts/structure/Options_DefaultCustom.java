@@ -4,7 +4,7 @@ package jetbrains.mps.lang.sharedConcepts.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum Options_DefaultCustom {
   default_("default_", null),

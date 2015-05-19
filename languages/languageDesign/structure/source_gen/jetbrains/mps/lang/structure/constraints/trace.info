@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="10,0,70,0" name="jetbrains.mps.lang.structure.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.lang.structure.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1213104840465">
@@ -682,14 +682,14 @@
       <node id="609408910515126360" at="30,102,31,76" concept="6" />
       <node id="609408910515145488" at="32,27,33,37" concept="7" />
       <node id="609408910515061236" at="34,5,35,0" concept="9" />
-      <node id="6246554009624800883" at="35,0,36,91" concept="6" />
-      <node id="609408910513951905" at="36,91,37,82" concept="6" />
-      <node id="6246554009625499041" at="37,82,38,71" concept="2" />
-      <node id="6246554009626025255" at="38,71,39,63" concept="2" />
-      <node id="6246554009625811530" at="40,68,41,93" concept="6" />
+      <node id="6246554009624800883" at="35,0,36,94" concept="6" />
+      <node id="609408910513951905" at="36,94,37,82" concept="6" />
+      <node id="6246554009625499041" at="37,82,38,74" concept="2" />
+      <node id="6246554009626025255" at="38,74,39,63" concept="2" />
+      <node id="6246554009625811530" at="40,71,41,96" concept="6" />
       <node id="609408910514499015" at="42,108,43,128" concept="6" />
       <node id="609408910514609141" at="44,110,45,77" concept="2" />
-      <node id="609408910514640801" at="45,77,46,85" concept="2" />
+      <node id="609408910514640801" at="45,77,46,88" concept="2" />
       <node id="609408910513951973" at="51,41,52,48" concept="7" />
       <node id="609408910513951963" at="55,40,56,26" concept="7" />
       <node id="609408910513951983" at="59,51,60,51" concept="7" />
@@ -709,7 +709,7 @@
       <node id="609408910514521460" at="80,0,83,0" concept="11" trace="as_gt0k3c_a0a0a1a7a1#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="609408910514531194" at="43,128,47,9" concept="4" />
       <node id="609408910513952001" at="72,0,77,0" concept="5" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="609408910514436599" at="41,93,48,7" concept="3" />
+      <node id="609408910514436599" at="41,96,48,7" concept="3" />
       <node id="609408910514379395" at="39,63,49,5" concept="13" />
       <node id="609408910514695908" at="49,5,70,7" concept="7" />
       <node id="609408910514851487" at="30,0,72,0" concept="11" trace="getAvailableLanguageConcepts#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
@@ -723,7 +723,7 @@
       <scope id="609408910513952008" at="74,57,75,288" />
       <scope id="609408910515133588" at="77,66,78,47" />
       <scope id="609408910514521460" at="80,70,81,47" />
-      <scope id="609408910514531197" at="44,110,46,85" />
+      <scope id="609408910514531197" at="44,110,46,88" />
       <scope id="609408910513951876" at="27,0,30,0">
         <var name="metaConcept" id="609408910513951888" />
         <var name="model" id="609408910514708432" />
@@ -757,10 +757,10 @@
       <scope id="609408910513952001" at="72,0,77,0">
         <var name="target" id="609408910513952003" />
       </scope>
-      <scope id="609408910514436599" at="41,93,48,7">
+      <scope id="609408910514436599" at="41,96,48,7">
         <var name="extendedLangRef" id="609408910514436601" />
       </scope>
-      <scope id="609408910514379399" at="40,68,48,7">
+      <scope id="609408910514379399" at="40,71,48,7">
         <var name="nextLanguage" id="6246554009625811531" />
       </scope>
       <scope id="609408910513951894" at="30,102,70,7">

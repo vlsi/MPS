@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -30,12 +31,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
   private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
-  private static boolean ourLoggingOff = false;
+  private final static ThreadLocal<Boolean> ourLoggingOff = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
   private SReferenceLink myRoleId;
   private volatile String myResolveInfo;
@@ -46,10 +55,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
     mySourceNode = sourceNode;
-    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
-      throw new IllegalStateException();
-    }
-    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(sourceNode.getConcept().getQualifiedName(), role);
+    assert sourceNode != null;
+    myRoleId = ((ConceptMetaInfoConverter) sourceNode.getConcept()).convertAssociation(role);
   }
 
   protected SReference(SReferenceLink role, SNode sourceNode) {
@@ -78,6 +85,9 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
+  public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId, String resolveInfo) {
+    return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
+  }
 
   @Deprecated
   @ToRemove(version = 3.2)
@@ -99,20 +109,28 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  public static void disableLogging() {
-    ourLoggingOff = true;
+  /**
+   * @return Whether logging was really disabled by this call, i.e. it wasn't already disabled before
+   */
+  public static boolean disableLogging() {
+    boolean wasOff = ourLoggingOff.get();
+    ourLoggingOff.set(true);
+    return !wasOff;
   }
 
   public static void enableLogging() {
-    ourLoggingOff = false;
+    ourLoggingOff.set(false);
   }
 
   public static SNode getTargetNodeSilently(org.jetbrains.mps.openapi.model.SReference ref) {
+    boolean needToEnableLogging = false;
     try {
-      disableLogging();
+      needToEnableLogging = disableLogging();
       return ref.getTargetNode();
     } finally {
-      enableLogging();
+      if (needToEnableLogging) {
+        enableLogging();
+      }
     }
   }
 
@@ -126,10 +144,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   @ToRemove(version = 3.2)
   public void setRole(String newRole) {
-    if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
-      throw new IllegalStateException();
-    }
-    myRoleId = ((SReferenceLinkAdapterProvider) mySourceNode).createSReferenceLinkAdapterByName(mySourceNode.getConcept().getQualifiedName(), newRole);
+    myRoleId = ((ConceptMetaInfoConverter) mySourceNode.getConcept()).convertAssociation(newRole);
   }
 
   @Override
@@ -194,15 +209,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   protected abstract SNode getTargetNode_internal();
 
-  @Deprecated
-  /**
-   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
-   * @Deprecated in 3.0
-   */
-  public abstract boolean isExternal();
-
   protected final void error(String message, ProblemDescription... problems) {
-    if (ourLoggingOff) return;
+    if (ourLoggingOff.get()) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     SModel model = getSourceNode().getModel();

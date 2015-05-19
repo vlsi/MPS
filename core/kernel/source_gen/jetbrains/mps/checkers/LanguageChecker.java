@@ -8,8 +8,6 @@ import java.util.HashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class LanguageChecker implements INodeChecker {
@@ -17,23 +15,14 @@ public class LanguageChecker implements INodeChecker {
   public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
-    SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
   @Override
-  public Set<IErrorReporter> getErrors(final SNode rootNode, final SRepository repoitory) {
-    return TypeContextManager.getInstance().runResolveAction(new Computable<Set<IErrorReporter>>() {
-      public Set<IErrorReporter> compute() {
-        LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
-        errorsComponent.check(rootNode, myRules, repoitory);
-        Set<IErrorReporter> result = errorsComponent.getErrors();
-        errorsComponent.dispose();
-        return result;
-      }
-    });
-  }
-  @Override
-  public String getCategory() {
-    return "constraints and scopes";
+  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repoitory) {
+    LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
+    errorsComponent.check(rootNode, myRules, repoitory);
+    Set<IErrorReporter> result = errorsComponent.getErrors();
+    errorsComponent.dispose();
+    return result;
   }
 }

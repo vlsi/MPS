@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
 import jetbrains.mps.nodeEditor.DefaultEditor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -65,7 +66,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName());
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
 
     EditorCell result = null;
     try {
@@ -84,7 +85,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
 
     if (result == null) {
-      ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : new DefaultEditor();
+      ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : AbstractDefaultEditor.createEditor(node, conceptDescriptor);
       result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
@@ -148,8 +149,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {
-    SConcept concept = node.getConcept();
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
     ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(conceptDescriptor);
     if (conceptEditorComponent != null) {
       return conceptEditorComponent;

@@ -7,15 +7,15 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_dimensions_NonTypesystemRule() {
@@ -28,7 +28,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         {
           SNode matchingNode_n3qbw2_a0a = binaryOperation;
           if (matchingNode_n3qbw2_a0a != null) {
-            matches_n3qbw2_a0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+            matches_n3qbw2_a0a = matchingNode_n3qbw2_a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfe476b758fL, "jetbrains.mps.baseLanguage.structure.MulExpression"));
           }
         }
         if (matches_n3qbw2_a0a) {
@@ -49,7 +49,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           {
             SNode matchingNode_n3qbw2_b0a = binaryOperation;
             if (matchingNode_n3qbw2_b0a != null) {
-              matches_n3qbw2_b0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_b0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+              matches_n3qbw2_b0a = matchingNode_n3qbw2_b0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7fbL, "jetbrains.mps.baseLanguage.structure.PlusExpression"));
             }
           }
           if (matches_n3qbw2_b0a) {
@@ -64,7 +64,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
             {
               SNode matchingNode_n3qbw2_c0a = binaryOperation;
               if (matchingNode_n3qbw2_c0a != null) {
-                matches_n3qbw2_c0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_c0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+                matches_n3qbw2_c0a = matchingNode_n3qbw2_c0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f5L, "jetbrains.mps.baseLanguage.structure.MinusExpression"));
               }
             }
             if (matches_n3qbw2_c0a) {
@@ -80,14 +80,11 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

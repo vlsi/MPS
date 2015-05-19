@@ -7,12 +7,6 @@ import com.intellij.openapi.diff.DiffContent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import com.intellij.openapi.diff.SimpleContent;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
 public class SimpleDiffRequest extends DiffRequest {
   private String[] myContentTitles;
@@ -21,17 +15,6 @@ public class SimpleDiffRequest extends DiffRequest {
     super(project);
     myContentTitles = contentTitles;
     myContents = models;
-  }
-  public SimpleDiffRequest(@NotNull Project project, @Nullable SModel[] models, @NotNull String[] contentTitles) {
-    super(project);
-    myContentTitles = contentTitles;
-    if (models != null) {
-      myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<SModel, SimpleContent>() {
-        public SimpleContent select(SModel m) {
-          return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
-        }
-      }).toGenericArray(SimpleContent.class);
-    }
   }
   @Override
   public String getWindowTitle() {

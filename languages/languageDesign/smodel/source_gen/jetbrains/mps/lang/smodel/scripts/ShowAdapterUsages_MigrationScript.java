@@ -5,25 +5,30 @@ package jetbrains.mps.lang.smodel.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.NameUtil;
 
 public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
   public ShowAdapterUsages_MigrationScript(IOperationContext operationContext) {
     super("Show Adapter Usages");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "find java util refrences";
       }
+      @Override
       public String getAdditionalInfo() {
         return "find java util refrences";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
           String targetModelFQName = ref.getTargetSModelReference().getModelName();
@@ -33,22 +38,28 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         }
         return false;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "find adapter class usages";
       }
+      @Override
       public String getAdditionalInfo() {
         return "find adapter class usages";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == null)) {
           return false;
@@ -57,8 +68,10 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         String namespace = NameUtil.namespaceFromLongName(className);
         return namespace.endsWith(".structure");
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
@@ -67,14 +69,14 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public boolean updateReferences() {
+  public boolean updateReferences(SRepository repository) {
     if (myModelUID.equals("*")) {
       return false;
     }
-    jetbrains.mps.smodel.SModelReference ref = (jetbrains.mps.smodel.SModelReference) PersistenceFacade.getInstance().createModelReference(myModelUID);
-    jetbrains.mps.smodel.SModelReference newRef = ref.update();
-    if (ref.differs(newRef)) {
-      myModelUID = newRef.toString();
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(myModelUID);
+    final SModel model = modelReference.resolve(repository);
+    if (model != null && !modelReference.equals(model.getReference())) {
+      myModelUID = PersistenceFacade.getInstance().asString(model.getReference());
       return true;
     }
     return false;

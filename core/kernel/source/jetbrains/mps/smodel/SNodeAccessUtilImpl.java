@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,9 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -54,7 +52,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return hasPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
+    return hasPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(name));
   }
 
   @Override
@@ -67,7 +65,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
+      PropertyConstraintsDescriptor descriptor = PropertySupport.getPropertyConstraintsDescriptor(node, property);
       Object getterValue = descriptor != null ? descriptor.getValue(node) : node.getProperty(property);
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
@@ -78,30 +76,8 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     }
   }
 
-  private PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
-    ConstraintsDescriptor constraintsDescriptor;
-    if (node.getConcept() instanceof SAbstractConceptAdapterById) {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SAbstractConceptAdapterById) node.getConcept()).getId());
-    } else {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
-    }
-
-    PropertyConstraintsDescriptor descriptor;
-    if (property instanceof SPropertyAdapterById) {
-      descriptor = constraintsDescriptor.getProperty(((SPropertyAdapterById) property).getId());
-    } else {
-      descriptor = constraintsDescriptor.getProperty(property.getName());
-    }
-    return descriptor;
-  }
-
-  private ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
-    ConstraintsDescriptor constraintsDescriptor;
-    if (node.getConcept() instanceof SAbstractConceptAdapterById) {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SAbstractConceptAdapterById) node.getConcept()).getId());
-    } else {
-      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
-    }
+  private static ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
+    ConstraintsDescriptor constraintsDescriptor = ConceptRegistryUtil.getConstraintsDescriptor(node.getConcept());
     ReferenceConstraintsDescriptor descriptor;
     if (referenceLink instanceof SReferenceLinkAdapterById) {
       descriptor = constraintsDescriptor.getReference(((SReferenceLinkAdapterById) referenceLink).getRoleId());
@@ -113,7 +89,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    return getPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), name));
+    return getPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(name));
   }
 
   @Override
@@ -127,7 +103,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       return;
     }
 
-    PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
+    PropertyConstraintsDescriptor descriptor = PropertySupport.getPropertyConstraintsDescriptor(node, property);
     threadSet.add(pair);
     try {
       if (descriptor != null) {
@@ -146,7 +122,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
-    setPropertyImpl(node, MetaAdapterFactoryByName.getProperty(node.getConcept().getQualifiedName(), propertyName), propertyValue);
+    setPropertyImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName), propertyValue);
   }
 
 
@@ -185,7 +161,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
   @Override
   public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTargetImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), target);
+    setReferenceTargetImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role), target);
   }
 
   @Override
@@ -196,7 +172,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReferenceImpl(node, MetaAdapterFactoryByName.getReferenceLink(node.getConcept().getQualifiedName(), role), reference);
+    setReferenceImpl(node, ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role), reference);
   }
 
   private class InProgressThreadLocal<T> extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>>> {

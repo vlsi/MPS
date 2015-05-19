@@ -30,24 +30,14 @@ public interface IModelPersistence {
   int getVersion();
 
   /**
-   * @deprecated equivalent to {@link #getModelWriter(jetbrains.mps.smodel.SModelHeader) getModelWriter(null)}
-   * @return handler to serialize model date into XML DOM
-   */
-  IModelWriter getModelWriter();
-
-  /**
    * @param header optional parameter if there's auxiliary data to persist along with model
    * @return handler to serialize model date into XML DOM
    */
   IModelWriter getModelWriter(@Nullable SModelHeader header);
-
-  IModelReader getModelReader();
 
   IHashProvider getHashProvider();
 
   XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header);
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
-
-  void index(char[] data, Consumer<String> consumer);
 }

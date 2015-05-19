@@ -50,6 +50,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.nio.charset.Charset" />
+    <classNode dependClassName="jetbrains.mps.text.TextUnit" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -116,11 +117,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.WorkbenchMakeService" file="WorkbenchMakeService.java">
     <classNode dependClassName="com.intellij.ide.IdeEventQueue" />
-    <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="com.intellij.openapi.progress.PerformInBackgroundOption" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.project.DumbService" />
@@ -148,7 +148,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.compiler.JavaCompilerOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
+    <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.make.MakeTask" />
     <classNode dependClassName="jetbrains.mps.ide.make.UIFeedbackStrategy" />
@@ -158,7 +158,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
+    <classNode dependClassName="jetbrains.mps.internal.make.cfg.TextGenFacetInitializer" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FutureValue" />
     <classNode dependClassName="jetbrains.mps.make.IMakeNotificationListener" />
@@ -184,7 +186,6 @@
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

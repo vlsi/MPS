@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -31,7 +32,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -133,10 +133,11 @@ public class OptimizeImportsHelper {
       unusedModels.add(model);
     }
 
-    Set<SModuleReference> unusedLanguages = new HashSet<SModuleReference>();
-    for (SModuleReference languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguages()) {
-      SModuleReference ref = getUnusedLanguageRef(result, languageRef);
-      if (ref != null) unusedLanguages.add(ref);
+    Set<SLanguage> unusedLanguages = new HashSet<SLanguage>();
+    for (SLanguage languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguageIds()) {
+      if (isUnusedLanguageRef(result, languageRef)) {
+        unusedLanguages.add(languageRef);
+      }
     }
 
     Set<SModuleReference> unusedDevkits = new HashSet<SModuleReference>();
@@ -157,14 +158,18 @@ public class OptimizeImportsHelper {
   private Result collectModelDependencies(SModel model) {
     Result result = new Result();
 
+    /*
+    FIXME how come we take engaged languages into account as 'used'. I'd rather demand them explicitly added as 'used', rather
+    than implicitly taken from 'engaged'
     result.myUsedLanguages.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
+    */
     ModelDependencyScanner modelScanner = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true).walk(model);
-    result.myUsedLanguages.addAll(findModules(modelScanner.getUsedLanguages()));
+    result.myUsedLanguages.addAll(modelScanner.getUsedLanguages());
     result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
 
     // add auto imports as dependencies
-    for (Language l : ModelsAutoImportsManager.getAutoImportedLanguages(model.getModule(), model)) {
-      result.myUsedLanguages.add(l.getModuleReference());
+    for (SLanguage l : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
+      result.myUsedLanguages.add(l);
     }
     for (SModel m : ModelsAutoImportsManager.getAutoImportedModels(model.getModule(), model)) {
       result.addUsedModel(m.getReference());
@@ -179,22 +184,12 @@ public class OptimizeImportsHelper {
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
     for (Dependency d : module.getModuleDescriptor().getDependencies()) {
       Dependency dep = getUnusedDependency(result, d, module.getModuleReference());
-      if (dep != null) unusedDeps.add(dep);
+      if (dep != null) {
+        unusedDeps.add(dep);
+      }
     }
 
-    List<SModuleReference> unusedLanguages = new ArrayList<SModuleReference>();
-    for (SModuleReference langRef : module.getModuleDescriptor().getUsedLanguages()) {
-      SModuleReference ref = getUnusedLanguageRef(result, langRef);
-      if (ref != null) unusedLanguages.add(langRef);
-    }
-
-    List<SModuleReference> unusedDevkits = new ArrayList<SModuleReference>();
-    for (SModuleReference devkitRef : module.getModuleDescriptor().getUsedDevkits()) {
-      SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
-      if (ref != null) unusedDevkits.add(devkitRef);
-    }
-
-    return removeFromImports(module, unusedLanguages, unusedDevkits, unusedDeps);
+    return removeFromImports(module, unusedDeps);
   }
 
   private Dependency getUnusedDependency(Result result, Dependency dep, SModuleReference current) {
@@ -222,7 +217,9 @@ public class OptimizeImportsHelper {
     if (dk == null) return null;
 
     for (Language lang : dk.getAllExportedLanguages()) {
-      if (getUnusedLanguageRef(result, lang.getModuleReference()) == null) return null;
+      if (!isUnusedLanguageRef(result, MetaAdapterByDeclaration.getLanguage(lang))) {
+        return null;
+      }
     }
 
     for (Solution solution : dk.getAllExportedSolutions()) {
@@ -233,25 +230,28 @@ public class OptimizeImportsHelper {
     return dk.getModuleReference();
   }
 
-  private SModuleReference getUnusedLanguageRef(Result result, SModuleReference languageRef) {
-    if (result.myUsedLanguages.contains(languageRef)) return null;
-
-    Language language = ((Language) languageRef.resolve(MPSModuleRepository.getInstance()));
-    if (language == null) return null;
-    for (SModel md : language.getAccessoryModels()) {
-      if (result.myUsedModels.contains(md.getReference())) return null;
+  private boolean isUnusedLanguageRef(Result result, SLanguage languageRef) {
+    if (result.myUsedLanguages.contains(languageRef)) {
+      return false;
     }
 
-    return language.getModuleReference();
+    final SModule sourceModule = languageRef.getSourceModule();
+    if (sourceModule instanceof Language) {
+      for (SModel md : ((Language) sourceModule).getAccessoryModels()) {
+        if (result.myUsedModels.contains(md.getReference())) return false;
+      }
+    }
+
+    return true;
   }
 
-  private String removeFromImports(SModel modelDescriptor, Set<SModelReference> unusedModels, Set<SModuleReference> unusedLanguages,
+  private String removeFromImports(SModel modelDescriptor, Set<SModelReference> unusedModels, Set<SLanguage> unusedLanguages,
       Set<SModuleReference> unusedDevkits) {
     StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getReference() + " were optimized \n");
 
-    for (SModuleReference langRef : unusedLanguages) {
-      ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteLanguage(langRef);
-      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
+    for (SLanguage langRef : unusedLanguages) {
+      ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteLanguageId(langRef);
+      report.append("Language ").append(langRef.getQualifiedName()).append(" was removed from imports\n");
     }
 
     for (SModuleReference dkRef : unusedDevkits) {
@@ -267,19 +267,8 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
-  private String removeFromImports(AbstractModule module, List<SModuleReference> unusedLanguages, List<SModuleReference> unusedDevkits,
-      List<Dependency> unusedDeps) {
+  private String removeFromImports(AbstractModule module, List<Dependency> unusedDeps) {
     StringBuilder report = new StringBuilder("Import for module " + module.getModuleName() + " were optimized \n");
-
-    for (SModuleReference langRef : unusedLanguages) {
-      module.removeUsedLanguage(langRef);
-      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
-    }
-
-    for (SModuleReference dkRef : unusedDevkits) {
-      module.removeUsedDevkit(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
-    }
 
     for (Dependency dep : unusedDeps) {
       module.removeDependency(dep);
@@ -289,21 +278,11 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
-  private Set<SModuleReference> findModules(Collection<SLanguage> languages) {
-    HashSet<SModuleReference> rv = new HashSet<SModuleReference>();
-    for (SLanguage l : languages) {
-      final Language language = ModuleRepositoryFacade.getInstance().getModule(l.getQualifiedName(), Language.class);
-      if (language != null) {
-        rv.add(language.getModuleReference());
-      }
-    }
-    return rv;
-  }
 
   private static class Result {
     public String myReport = "";
-    public Set<SModuleReference> myUsedLanguages = new HashSet<SModuleReference>();
-    public Set<SModelReference> myUsedModels = new HashSet<SModelReference>();
+    public final Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
+    public final Set<SModelReference> myUsedModels = new HashSet<SModelReference>();
 
     public void add(Result addition) {
       myReport = myReport + addition.myReport + "\n";

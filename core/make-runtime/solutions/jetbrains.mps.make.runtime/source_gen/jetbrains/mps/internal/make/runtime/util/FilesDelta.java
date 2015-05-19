@@ -10,6 +10,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.make.delta.IDeltaVisitor;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Set;
@@ -19,9 +20,9 @@ import java.util.HashSet;
 public class FilesDelta implements IDelta {
   private static Logger LOG = LogManager.getLogger(FilesDelta.class);
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
-  private String key;
+  private final String key;
   public FilesDelta(IFile dir) {
-    this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getPath())));
+    this.key = DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getPath())));
   }
   private FilesDelta(FilesDelta copyFrom) {
     this.key = copyFrom.key;
@@ -41,6 +42,7 @@ public class FilesDelta implements IDelta {
       MapSequence.fromMap(files).put(file, FilesDelta.Status.STALE);
     }
   }
+
   @Override
   public boolean reconcile() {
     return acceptVisitor(new FilesDelta.Visitor() {
@@ -56,6 +58,7 @@ public class FilesDelta implements IDelta {
       }
     });
   }
+
   @Override
   public boolean acceptVisitor(IDeltaVisitor visitor) {
     if (!(visitor instanceof FilesDelta.Visitor)) {
@@ -63,16 +66,25 @@ public class FilesDelta implements IDelta {
     }
     return acceptFilesVisitor(((FilesDelta.Visitor) visitor));
   }
+
   @Override
   public IDelta merge(IDelta toMerge) {
     if (!(toMerge instanceof FilesDelta)) {
       throw new IllegalArgumentException();
     }
-    if (!(this.contains(toMerge))) {
-      throw new IllegalArgumentException();
+    FilesDelta that = (FilesDelta) toMerge;
+    if (this.contains(that)) {
+      return new FilesDelta(this).copy(that);
+    } else if (toMerge.contains(this)) {
+      return new FilesDelta(that).copy(this);
     }
-    return new FilesDelta(this).copy((FilesDelta) toMerge);
+    String commonPrefix = DirUtil.commonDirPrefix(this.key, that.key);
+    if (!(commonPrefix.isEmpty())) {
+      return new FilesDelta(FileSystem.getInstance().getFileByPath(commonPrefix)).copy(this).copy(that);
+    }
+    throw new IllegalArgumentException();
   }
+
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
     MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
       public void visit(IMapping<IFile, FilesDelta.Status> m) {
@@ -87,14 +99,14 @@ public class FilesDelta implements IDelta {
     });
     return true;
   }
+
   private FilesDelta copy(FilesDelta that) {
     // provided there's this.contains(that) call before copy() 
     // DirUtil.startsWith(that, this) == true 
-    if (DirUtil.startsWith(this.key, that.key)) {
-      this.key = that.key;
-    } else if (!(DirUtil.startsWith(that.key, this.key))) {
+    if (!(DirUtil.startsWith(that.key, this.key))) {
       throw new IllegalArgumentException();
     }
+
     Set<IFile> newlyTouchedDirs = SetSequence.fromSet(new HashSet<IFile>());
     // copy all but stale values, stale entries shall not override explicitly set 
     for (IFile file : MapSequence.fromMap(that.files).keySet()) {

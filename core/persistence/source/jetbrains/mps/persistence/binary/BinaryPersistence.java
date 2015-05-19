@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import jetbrains.mps.persistence.registry.IdInfoRegistry;
 import jetbrains.mps.persistence.registry.LangInfo;
 import jetbrains.mps.persistence.registry.PropertyInfo;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -60,7 +59,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -87,7 +85,7 @@ public final class BinaryPersistence {
   public static SModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(ensureMarkSupported(source.openInputStream()));
+      mis = new ModelInputStream(source.openInputStream());
       return loadHeader(mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
@@ -117,13 +115,6 @@ public final class BinaryPersistence {
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.toString(), e);
     }
-  }
-
-  private static InputStream ensureMarkSupported(InputStream is) {
-    if (is.markSupported()) {
-      return is;
-    }
-    return new BufferedInputStream(is);
   }
 
   public static void writeModel(@NotNull SModel model, @NotNull StreamDataSource dataSource) throws IOException {
@@ -215,7 +206,7 @@ public final class BinaryPersistence {
     SModelReference modelRef = is.readModelReference();
     SModelHeader result = new SModelHeader();
     result.setModelReference(modelRef);
-    result.setVersion(is.readInt());
+    is.readInt(); //left for compatibility: old version was here
     is.mark(4);
     if (is.readByte() == HEADER_ATTRIBUTES) {
       result.setDoNotGenerate(is.readBoolean());
@@ -235,17 +226,17 @@ public final class BinaryPersistence {
   private static ModelLoadResult loadModel(InputStream is, boolean interfaceOnly, @Nullable MetaModelInfoProvider mmiProvider) throws IOException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(ensureMarkSupported(is));
+      mis = new ModelInputStream(is);
       SModelHeader modelHeader = loadHeader(mis);
 
-      LazySModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
+      DefaultSModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       BinaryPersistence bp = new BinaryPersistence(mmiProvider == null ? new RegularMetaModelInfo() : mmiProvider, model);
       ReadHelper rh = bp.loadModelProperties(mis);
       rh.requestInterfaceOnly(interfaceOnly);
 
       NodesReader reader = new NodesReader(modelHeader.getModelReference(), mis, rh);
       reader.readNodesInto(model);
-      return new ModelLoadResult(model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
+      return new ModelLoadResult((SModel) model, reader.hasSkippedNodes() ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.FULLY_LOADED);
     } finally {
       FileUtil.closeFileSafe(mis);
     }
@@ -290,7 +281,7 @@ public final class BinaryPersistence {
     os.writeInt(HEADER_START);
     os.writeInt(STREAM_ID);
     os.writeModelReference(myModelData.getReference());
-    os.writeInt(myModelData.getVersion());
+    os.writeInt(-1);  //old model version
     if (myModelData instanceof DefaultSModel) {
       os.writeByte(HEADER_ATTRIBUTES);
       SModelHeader mh = ((DefaultSModel) myModelData).getSModelHeader();
@@ -429,13 +420,13 @@ public final class BinaryPersistence {
   }
 
   private void saveUsedLanguages(ModelOutputStream os) throws IOException {
-    Map<SLanguage, Integer> refs = myModelData.usedLanguagesWithVersions();
+    Collection<SLanguage> refs = myModelData.usedLanguages();
     os.writeShort(refs.size());
-    for (Entry<SLanguage, Integer> e : refs.entrySet()) {
+    for (SLanguage l : refs) {
       // id, name, version
-      os.writeUUID(IdHelper.getLanguageId(e.getKey()).getIdValue());
-      os.writeString(e.getKey().getQualifiedName());
-      os.writeInt(e.getValue());
+      os.writeUUID(IdHelper.getLanguageId(l).getIdValue());
+      os.writeString(l.getQualifiedName());
+      os.writeInt(l.getLanguageVersion());
     }
   }
 
@@ -445,8 +436,8 @@ public final class BinaryPersistence {
       SLanguageId id = new SLanguageId(is.readUUID());
       String name = is.readString();
       int version = is.readInt();
-      SLanguage l = MetaAdapterFactory.getLanguage(id, name);
-      myModelData.addLanguage(l, version);
+      SLanguage l = MetaAdapterFactory.getLanguage(id, name, version);
+      myModelData.addLanguage(l);
       myMetaInfoProvider.setLanguageName(id, name);
     }
   }

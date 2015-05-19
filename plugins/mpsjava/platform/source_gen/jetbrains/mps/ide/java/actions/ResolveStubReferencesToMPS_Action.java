@@ -4,22 +4,19 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.java.util.StubResolver;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.java.util.StubResolver;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ResolveStubReferencesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,42 +29,33 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ResolveStubReferencesToMPS", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    if (MapSequence.fromMap(_params).get("models") == null) {
-      return false;
+    {
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
+      MapSequence.fromMap(_params).put("models", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-      Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
-      for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
-        SetSequence.fromSet(modulesToReload).addElement(model.getModule());
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ResolveStubReferencesToMPS", t);
-      }
+    new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+    Set<SModule> modulesToReload = SetSequence.fromSet(new HashSet<SModule>());
+    for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+      SetSequence.fromSet(modulesToReload).addElement(model.getModule());
     }
   }
-  protected static Logger LOG = LogManager.getLogger(ResolveStubReferencesToMPS_Action.class);
 }

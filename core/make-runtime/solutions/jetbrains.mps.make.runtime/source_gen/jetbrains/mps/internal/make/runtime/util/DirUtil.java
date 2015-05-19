@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.io.File;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -54,6 +55,27 @@ public class DirUtil {
   public static boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
   }
+  /**
+   * Deduce common parent directory given two normalized/straighten paths
+   * 
+   * @param path1 first path
+   * @param path2 second path
+   * @return empty text if directory paths don't share common prefix, common prefix including trailing slash otherwise
+   */
+  @NotNull
+  /*package*/ static String commonDirPrefix(@NotNull String path1, @NotNull String path2) {
+    int lastMatchedSlash = -1;
+    for (int i = 0, x = Math.min(path1.length(), path2.length()); i < x; i++) {
+      char c = path1.charAt(i);
+      if (c != path2.charAt(i)) {
+        break;
+      }
+      if (c == SLASH_CHAR) {
+        lastMatchedSlash = i;
+      }
+    }
+    return (lastMatchedSlash == -1 ? "" : path1.substring(0, lastMatchedSlash + 1));
+  }
   public static String withoutPrefix(String path, String prefix) {
     if (!(startsWith(path, prefix))) {
       throw new IllegalArgumentException("invalid prefix");
@@ -76,9 +98,9 @@ public class DirUtil {
     }
     if (path1.length() > path2.length()) {
       {
-        Tuples._2<String, String> _tmp_rkp2iv_a0c0m = MultiTuple.<String,String>from(path2, path1);
-        path1 = _tmp_rkp2iv_a0c0m._0();
-        path2 = _tmp_rkp2iv_a0c0m._1();
+        Tuples._2<String, String> _tmp_rkp2iv_a0c0n = MultiTuple.<String,String>from(path2, path1);
+        path1 = _tmp_rkp2iv_a0c0n._0();
+        path2 = _tmp_rkp2iv_a0c0n._1();
       }
     }
     return path2.startsWith(path1) && path2.charAt(path1.length()) == SLASH_CHAR && (path2.length() - path1.length() == 1);

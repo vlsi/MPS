@@ -15,6 +15,13 @@
  */
 package jetbrains.mps.cleanup;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+/**
+ * @deprecated  Without any clear contract, add 2 dubious uses throughout MPS (BaseModelCache and BreakpointsIconCache), doesn't justify own existence
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public interface CleanupListener {
   void performCleanup();
 }

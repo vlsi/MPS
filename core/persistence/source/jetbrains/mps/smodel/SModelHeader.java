@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.persistence.MetaModelInfoProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.Nullable;
@@ -37,8 +36,6 @@ import java.util.Map;
  * for partial model loading and is in use by most persistence implementations supplied by MPS.
  */
 public class SModelHeader {
-
-  public static final String VERSION = "version";
   public static final String DO_NOT_GENERATE = "doNotGenerate";
 
   /*
@@ -50,7 +47,6 @@ public class SModelHeader {
    */
   private SModelReference myModelRef = null;
   private int myPersistenceVersion = -1;
-  private int myVersion = -1;
   private boolean doNotGenerate = false;
   private Map<String, String> myOptionalProperties = new HashMap<String, String>();
   private MetaModelInfoProvider myMetaInfoProvider;
@@ -66,39 +62,12 @@ public class SModelHeader {
     myPersistenceVersion = persistenceVersion;
   }
 
-  public int getVersion() {
-    return myVersion;
-  }
-
-  public void setVersion(int version) {
-    myVersion = version;
-  }
-
   public boolean isDoNotGenerate() {
     return doNotGenerate;
   }
 
   public void setDoNotGenerate(boolean doNotGenerate) {
     this.doNotGenerate = doNotGenerate;
-  }
-
-  /**
-   * @deprecated use {@link #setModelReference(org.jetbrains.mps.openapi.model.SModelReference)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void setUID(String UID) {
-    setModelReference(UID == null ? null : PersistenceFacade.getInstance().createModelReference(UID));
-  }
-
-  /**
-   * @deprecated use {@link #getModelReference()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public String getUID() {
-    SModelReference mr = getModelReference();
-    return mr == null ? null : mr.toString();
   }
 
   /**
@@ -125,9 +94,8 @@ public class SModelHeader {
   }
 
   public void setOptionalProperty(String key, String value) {
-    assert !VERSION.equals(key);
     assert !DO_NOT_GENERATE.equals(key);
-    assert !ModelPersistence.MODEL_UID.equals(key);
+    assert !ModelPersistence.REF.equals(key);
     // roughly following http://www.w3.org/TR/2008/PER-xml-20080205/#NT-Name
     assert key.matches("^[:A-Z_a-z][-:A-Z_a-z.0-9]*") : "bad key [" + key + "]";
 
@@ -170,7 +138,7 @@ public class SModelHeader {
     stream.writeByte(77);
     stream.writeString(myModelRef == null ? null : PersistenceFacade.getInstance().asString(myModelRef));
     stream.writeInt(myPersistenceVersion);
-    stream.writeInt(myVersion);
+    stream.writeInt(0); //version was here
     stream.writeBoolean(doNotGenerate);
     stream.writeInt(myOptionalProperties.size());
     for (Map.Entry<String, String> ss : myOptionalProperties.entrySet()) {
@@ -185,7 +153,7 @@ public class SModelHeader {
     final String s = stream.readString();
     result.setModelReference(s == null ? null : PersistenceFacade.getInstance().createModelReference(s));
     result.setPersistenceVersion(stream.readInt());
-    result.setVersion(stream.readInt());
+    stream.readInt(); //old model version was here
     result.setDoNotGenerate(stream.readBoolean());
     for (int size = stream.readInt(); size > 0; size--) {
       result.setOptionalProperty(stream.readString(), stream.readString());
@@ -197,7 +165,6 @@ public class SModelHeader {
     SModelHeader copy = new SModelHeader();
     copy.myModelRef = myModelRef;
     copy.myPersistenceVersion = myPersistenceVersion;
-    copy.myVersion = myVersion;
     copy.doNotGenerate = doNotGenerate;
     copy.myOptionalProperties.putAll(myOptionalProperties);
     return copy;

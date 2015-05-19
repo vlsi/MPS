@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +49,7 @@ public class TransientModelsProvider {
   }
 
   protected void clearAll() {
-    ModelAccess.instance().requireWrite(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
@@ -70,7 +69,7 @@ public class TransientModelsProvider {
   }
 
   public void publishAll() {
-    ModelAccess.instance().requireWrite(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         for (TransientModelsModule m : myModuleMap.values()) {
@@ -138,7 +137,7 @@ public class TransientModelsProvider {
   }
 
   public Iterable<TransientModelsModule> getModules() {
-    ModelAccess.assertLegalRead();
+    myProject.getModelAccess().checkReadAccess();
 
     List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
     for (TransientModelsModule m : myModuleMap.values()) {

@@ -20,19 +20,25 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -41,8 +47,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * evgeny, 11/21/12
@@ -51,11 +55,31 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(EditableSModelBase.class));
 
-  private final List<SModelChangeListener> myChangeListeners = new CopyOnWriteArrayList<SModelChangeListener>();
   private boolean myChanged = false;
 
   protected EditableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
+    getEventDispatch().addChangeListener(new SModelChangeListener() {
+      @Override
+      public void nodeAdded(SModel model, org.jetbrains.mps.openapi.model.SNode parent, String role, org.jetbrains.mps.openapi.model.SNode child) {
+        setChanged(true);
+      }
+
+      @Override
+      public void nodeRemoved(SModel model, org.jetbrains.mps.openapi.model.SNode parent, String role, org.jetbrains.mps.openapi.model.SNode child) {
+        setChanged(true);
+      }
+
+      @Override
+      public void propertyChanged(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String oldValue, String newValue) {
+        setChanged(true);
+      }
+
+      @Override
+      public void referenceChanged(org.jetbrains.mps.openapi.model.SNode node, String role, SReference oldRef, SReference newRef) {
+        setChanged(true);
+      }
+    });
   }
 
   @Override
@@ -71,17 +95,13 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModel().addRootNode(node);
-    fireNodeAdded(null, null, node);
-    setChanged(true);
+    getModelData().addRootNode(node);
   }
 
   @Override
   public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModel().removeRootNode(node);
-    fireNodeRemoved(null, null, node);
-    setChanged(true);
+    getModelData().removeRootNode(node);
   }
 
   @Override
@@ -105,7 +125,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void reloadFromSource() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     if (getSource().getTimestamp() == -1) {
       SModuleBase module = (SModuleBase) getModule();
@@ -122,7 +142,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void reloadFromDiskSafe() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     if (isChanged()) {
       resolveDiskConflict();
     } else {
@@ -150,7 +170,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
     if (!(getSource() instanceof FileDataSource)) {
       throw new UnsupportedOperationException("cannot change model file on non-file data source");
     }
@@ -168,7 +188,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public final void save() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     // probably should be changed to assert
     // see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
@@ -212,7 +232,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void rename(String newModelName, boolean changeFile) {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     SModelReference oldName = getReference();
     fireBeforeModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
@@ -275,44 +295,70 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
   @Override
   public void addChangeListener(SModelChangeListener l) {
-    myChangeListeners.add(l);
+    getEventDispatch().addChangeListener(l);
   }
 
   @Override
   public void removeChangeListener(SModelChangeListener l) {
-    myChangeListeners.remove(l);
+    getEventDispatch().removeChangeListener(l);
   }
 
+  @Override
+  public void addChangeListener(SNodeChangeListener l) {
+    getEventDispatch().addChangeListener(l);
+  }
+
+  @Override
+  public void removeChangeListener(SNodeChangeListener l) {
+    getEventDispatch().removeChangeListener(l);
+  }
+
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void fireReferenceChanged(SNode node, String role, SReference oldValue, SReference newValue) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    for (SModelChangeListener l : myChangeListeners) {
-      l.referenceChanged(node, role, oldValue, newValue);
-    }
-    setChanged(true);
+    SReferenceLink link = ((ConceptMetaInfoConverter) node.getConcept()).convertAssociation(role);
+    getEventDispatch().fireReferenceChange(node, link, oldValue, newValue);
   }
 
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void firePropertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    for (SModelChangeListener l : myChangeListeners) {
-      l.propertyChanged(node, propertyName, oldValue, newValue);
-    }
-    setChanged(true);
+    SProperty prop = ((ConceptMetaInfoConverter) node.getConcept()).convertProperty(propertyName);
+    getEventDispatch().firePropertyChange(node, prop, oldValue, newValue);
   }
 
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void fireNodeAdded(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    for (SModelChangeListener l : myChangeListeners) {
-      l.nodeAdded(this, node, role, child);
-    }
-    setChanged(true);
+    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
+    getEventDispatch().fireNodeAdd(node, link, child);
   }
 
+  /**
+   * It's unlikely subclasses or clients of the class shall forcefully fire events.
+   * @deprecated event firing, with smodel.SNode as argument, shall not be part of extapi.EditableSModelBase contract
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void fireNodeRemoved(SNode node, String role, org.jetbrains.mps.openapi.model.SNode child) {
     LOG.assertLog(!getSModelInternal().isUpdateMode());
-    for (SModelChangeListener l : myChangeListeners) {
-      l.nodeRemoved(this, node, role, child);
-    }
-    setChanged(true);
+    SContainmentLink link = role == null ? null : ((ConceptMetaInfoConverter) node.getConcept()).convertAggregation(role);
+    getEventDispatch().fireNodeRemove(node, link, child);
   }
 
   public String toString() {

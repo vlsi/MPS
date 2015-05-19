@@ -26,6 +26,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.migration.global.ProjectMigrationUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -82,7 +83,7 @@ public class ProjectFactory {
     StartupManager.getInstance(myCreatedProject).registerPostStartupActivity(new Runnable() {
       @Override
       public void run() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        mpsProject.getModelAccess().executeCommand(new Runnable() {
           @Override
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
@@ -96,14 +97,12 @@ public class ProjectFactory {
             }
 
             if (myCreatedSolution != null && myCreatedLanguage != null) {
-              myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
               myCreatedSolution.save();
-
               if (myOptions.getCreateModel()) {
                 EditableSModel model = SModuleOperations.createModelWithAdjustments(
                     myCreatedSolution.getModuleReference().getModuleName() + ".sandbox",
                     myCreatedSolution.getModelRoots().iterator().next());
-                ((SModelInternal) model).addLanguage(myCreatedLanguage.getModuleReference());
+                ((SModelInternal) model).addLanguage(MetaAdapterFactory.getLanguage(myCreatedLanguage.getModuleReference()));
                 model.save();
               }
             }

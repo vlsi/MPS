@@ -21,6 +21,7 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.resources.FResource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -56,8 +57,17 @@ public class GeneratorUtil {
                 if (!(unitName.endsWith(".java"))) {
                   continue;
                 }
-                javaCompiler.addSource(fres.packageName() + '.' + unitName.substring(0, unitName.length() - 5), String.valueOf(MapSequence.fromMap(contents).get(unitName)));
+                Object textGenOutcome = MapSequence.fromMap(contents).get(unitName);
+                if (textGenOutcome instanceof TextUnit) {
+                  TextUnit tu = (TextUnit) textGenOutcome;
+                  source = new String(tu.getBytes(), tu.getEncoding());
+                } else {
+                  // FIXME fallback, shall not happen with textGenToMemory using new j.m.text API 
+                  source = String.valueOf(textGenOutcome);
+                }
+                javaCompiler.addSource(fres.packageName() + '.' + unitName.substring(0, unitName.length() - 5), source);
                 if (unitName.equals(desiredSourceUnitName)) {
+                  // FIXME WTF? why unit name is treated as source, and do we really need to keep source at all? 
                   source = String.valueOf(unitName);
                 }
               }

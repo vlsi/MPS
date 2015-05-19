@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.check;
 
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.model.SReference;
 
 public class ConceptFeatureMissingProblem extends Problem {
   private SConceptFeature myFeature;
@@ -15,16 +13,7 @@ public class ConceptFeatureMissingProblem extends Problem {
   }
 
   public String getMessage() {
-    StringBuilder sb = new StringBuilder("Unknown ");
-    if (myFeature instanceof SProperty) {
-      sb.append("property");
-    } else if (myFeature instanceof SReference) {
-      sb.append("reference");
-    } else {
-      sb.append("child role");
-    }
-
-    return sb.toString();
+    return "Unknown " + myFeature.getPresentableKind();
   }
 
   public String getCategory() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.uiActions;
 import com.intellij.openapi.ui.Splitter;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -38,9 +39,13 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   private JComponent mySupertypesViewComponent;
 
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) {
-    super(operationContext.getProject(), getTitle(node));
+    this(operationContext.getProject(), node, type, error);
+  }
 
-    SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
+  public MyBaseNodeDialog(Project mpsProject, SNode node, SNode type, IErrorReporter error) {
+    super(mpsProject, getTitle(node));
+
+    SupertypesViewTool supertypesView = mpsProject.getComponent(SupertypesViewTool.class);
 
     mySupertypesViewComponent = supertypesView.getComponent();
     myMainComponent = new Splitter(false);
@@ -51,7 +56,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     myModel = myType.getModel();
 
     myError = error;
-    supertypesView.showItemInHierarchy(myType, operationContext);
+    supertypesView.showItemInHierarchy(myType);
 
     //setHorizontalStretch(1f);
     //setHorizontalStretch(1f);

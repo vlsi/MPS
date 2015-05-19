@@ -4,24 +4,23 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.refactoring.MoveUpDialog;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -43,8 +42,6 @@ import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -61,129 +58,118 @@ public class MovePropertyUp_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MovePropertyUp", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")))) {
-          node = null;
-        }
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")))) {
+        node = null;
       }
       MapSequence.fromMap(_params).put("target", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("target") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess();
-      if (targetConcept == null) {
-        return;
-      }
-      final Wrappers._T<SNode> currentConcept = new Wrappers._T<SNode>();
-      final Wrappers._T<Language> currentLanguage = new Wrappers._T<Language>();
+    final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess();
+    if (targetConcept == null) {
+      return;
+    }
+    final Wrappers._T<SNode> currentConcept = new Wrappers._T<SNode>();
+    final Wrappers._T<Language> currentLanguage = new Wrappers._T<Language>();
 
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        currentConcept.value = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
+        if (currentConcept.value == null) {
+          return;
+        }
+        if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()))) {
+          return;
+        }
+        if (!(SNodeUtil.isAccessible(targetConcept, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()))) {
+          return;
+        }
+        currentLanguage.value = Language.getLanguageFor(SNodeOperations.getModel(currentConcept.value));
+      }
+    });
+
+
+
+    int result = Messages.showYesNoCancelDialog(((Project) MapSequence.fromMap(_params).get("project")), "Do you want to run the refactoring locally?", "Execute refactoring", "Run locally", "Write migration", "Cancel", null);
+
+    if (result == Messages.CANCEL) {
+      return;
+    }
+    if (result == Messages.YES) {
       modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
-          currentConcept.value = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false, false);
-          if (currentConcept.value == null) {
-            return;
-          }
-          if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()))) {
-            return;
-          }
-          if (!(SNodeUtil.isAccessible(targetConcept, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()))) {
-            return;
-          }
-          currentLanguage.value = Language.getLanguageFor(SNodeOperations.getModel(currentConcept.value));
+          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
+          final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
+          RefactoringUtil.changeReferences(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Project) MapSequence.fromMap(_params).get("project")), usages, ((SNode) MapSequence.fromMap(_params).get("target")), new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              final SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+              ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
+              final SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
+              for (SNode node : SetSequence.fromSet(instances)) {
+                Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+                Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
+                  }
+                }).visitAll(new IVisitor<SNode>() {
+                  public void visit(SNode it) {
+                    PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
+                  }
+                });
+
+                String value = node.getProperty(oldProp);
+                node.setProperty(newProp, value);
+                node.setProperty(oldProp, null);
+              }
+            }
+          }, "Move property " + SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
+    } else {
+      modelAccess.executeCommandInEDT(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<MigrationScriptBuilder>() {
+        public MigrationScriptBuilder invoke() {
+          SNode newProperty = SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target")));
+          ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(newProperty);
+          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_vnzymo_a0c0a0a0a0n0a("The property was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+          String propName = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), propName + "_old");
 
-
-
-      int result = Messages.showYesNoCancelDialog(((Project) MapSequence.fromMap(_params).get("project")), "Do you want to run the refactoring locally?", "Execute refactoring", "Run locally", "Write migration", "Cancel", null);
-
-      if (result == Messages.CANCEL) {
-        return;
-      }
-      if (result == Messages.YES) {
-        modelAccess.executeCommandInEDT(new Runnable() {
-          public void run() {
-            Set<SReference> usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(((SNode) MapSequence.fromMap(_params).get("target"))), new EmptyProgressMonitor());
-            final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
-            RefactoringUtil.changeReferences(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Project) MapSequence.fromMap(_params).get("project")), usages, ((SNode) MapSequence.fromMap(_params).get("target")), new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                final SProperty oldProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
-                ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(((SNode) MapSequence.fromMap(_params).get("target")));
-                final SProperty newProp = MetaAdapterByDeclaration.getProperty(((SNode) MapSequence.fromMap(_params).get("target")));
-                for (SNode node : SetSequence.fromSet(instances)) {
-                  Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-                  Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
-                    }
-                  }).visitAll(new IVisitor<SNode>() {
-                    public void visit(SNode it) {
-                      PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
-                    }
-                  });
-
-                  String value = node.getProperty(oldProp);
-                  node.setProperty(newProp, value);
-                  node.setProperty(oldProp, null);
-                }
-              }
-            }, "Move property " + SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-          }
-        });
-      } else {
-        modelAccess.executeCommandInEDT(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<MigrationScriptBuilder>() {
-          public MigrationScriptBuilder invoke() {
-            SNode newProperty = SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target")));
-            ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(newProperty);
-            AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_vnzymo_a0c0a0a0a0n0a("The property was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
-            String propName = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-            SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), propName + "_old");
-
-            SNode refactorInstances;
-            refactorInstances = _quotation_createNode_vnzymo_a0h0a0a0a0n0a(newProperty, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
-            SNode executeMethod = _quotation_createNode_vnzymo_a0i0a0a0a0n0a(currentConcept.value, currentConcept.value, refactorInstances, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, newProperty);
-            return MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_property_" + propName).setExecuteMethod(executeMethod);
-          }
-        }));
-      }
-
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MovePropertyUp", t);
-      }
+          SNode refactorInstances;
+          refactorInstances = _quotation_createNode_vnzymo_a0h0a0a0a0n0a(newProperty, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
+          SNode executeMethod = _quotation_createNode_vnzymo_a0i0a0a0a0n0a(currentConcept.value, currentConcept.value, refactorInstances, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, newProperty);
+          return MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_property_" + propName).setExecuteMethod(executeMethod);
+        }
+      }));
     }
+
   }
-  protected static Logger LOG = LogManager.getLogger(MovePropertyUp_Action.class);
   private static SNode createDeprecatedNodeAnnotation_vnzymo_a0c0a0a0a0n0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);

@@ -2,13 +2,13 @@
 <model ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
   <imports>
     <import index="tpe3" ref="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
@@ -4440,25 +4440,8 @@
                 </node>
                 <node concept="liA8E" id="4_TMdeLkOn$" role="2OqNvi">
                   <ref role="37wK5l" to="yla8:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-                  <node concept="2ShNRf" id="4_TMdeLkOn_" role="37wK5m">
-                    <node concept="YeOm9" id="4_TMdeLkOnA" role="2ShVmc">
-                      <node concept="1Y3b0j" id="4_TMdeLkOnB" role="YeSDq">
-                        <property role="2bfB8j" value="true" />
-                        <property role="1sVAO0" value="false" />
-                        <property role="1EXbeo" value="false" />
-                        <ref role="1Y3XeK" to="e2lb:~Runnable" resolve="Runnable" />
-                        <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                        <node concept="3Tm1VV" id="4_TMdeLkOnC" role="1B3o_S" />
-                        <node concept="3clFb_" id="4_TMdeLkOnD" role="jymVt">
-                          <property role="TrG5h" value="run" />
-                          <property role="od$2w" value="false" />
-                          <property role="DiZV1" value="false" />
-                          <node concept="3clFbS" id="4_TMdeLkOnE" role="3clF47" />
-                          <node concept="3Tm1VV" id="4_TMdeLkOnF" role="1B3o_S" />
-                          <node concept="3cqZAl" id="4_TMdeLkOnG" role="3clF45" />
-                        </node>
-                      </node>
-                    </node>
+                  <node concept="1bVj0M" id="56cvcsnAlod" role="37wK5m">
+                    <node concept="3clFbS" id="56cvcsnAlom" role="1bW5cS" />
                   </node>
                   <node concept="10M0yZ" id="4_TMdeLlH9F" role="37wK5m">
                     <ref role="1PxDUh" to="yla8:~ModalityState" resolve="ModalityState" />
@@ -4481,7 +4464,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm6S6" id="4_TMdeLkOnP" role="1B3o_S" />
+      <node concept="3Tm1VV" id="56cvcsnAkSK" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkOnQ" role="3clF45" />
     </node>
     <node concept="2tJIrI" id="2ysqId17tvR" role="jymVt" />

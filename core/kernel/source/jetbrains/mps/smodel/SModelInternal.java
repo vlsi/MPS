@@ -44,14 +44,20 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   @Deprecated
   void addLanguage(SModuleReference ref);
 
+  // FIXME rename to importedLanguages once original is removed
   java.util.Collection<SLanguage> importedLanguageIds();
 
-  Map<SLanguage, Integer> importedLanguageIdsWithVersions();
-
+  // FIXME refactor, rename to removeLanguage(SLanguage), expose in SModel
   void deleteLanguageId(@NotNull SLanguage ref);
 
   void addLanguage(Language language);
 
+  void addLanguage(@NotNull SLanguage language);
+
+  /**
+   * SLanguage is the reference to a language, and it bears version (SLanguage.getLanguageVersion()), no need to specify it explicitly here
+   */
+  @Deprecated
   void addLanguageId(SLanguage ref, int version);
 
   List<SModuleReference> importedDevkits();
@@ -78,12 +84,6 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   void removeEngagedOnGenerationLanguage(SModuleReference ref);
 
   List<ImportElement> getAdditionalModelVersions();
-
-  int getVersion();
-
-  void setVersion(int version);
-
-  void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
 
   boolean updateSModelReferences();
 

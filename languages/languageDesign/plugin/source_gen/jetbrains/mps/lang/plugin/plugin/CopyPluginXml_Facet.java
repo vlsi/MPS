@@ -25,8 +25,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -95,17 +93,13 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                           }
                         });
                         if (pluginXml[0] != null) {
-                          ThreadUtils.runInUIThreadAndWait(new Runnable() {
+                          FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                            @Override
                             public void run() {
-                              ModelAccess.instance().requireWrite(new Runnable() {
-                                @Override
-                                public void run() {
-                                  if (!(metaInf.exists())) {
-                                    metaInf.mkdirs();
-                                  }
-                                  IFileUtils.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
-                                }
-                              });
+                              if (!(metaInf.exists())) {
+                                metaInf.mkdirs();
+                              }
+                              IFileUtils.copyFileContent(pluginXml[0], metaInf.getDescendant(pluginXml[0].getName()));
                             }
                           });
                         }

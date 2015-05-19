@@ -22,16 +22,13 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CorrectLanguageVersion_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,6 +41,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return false;
@@ -78,81 +76,73 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     }
     return lang.getLanguageVersion() != maxFrom + 1;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CorrectLanguageVersion", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      MapSequence.fromMap(_params).put("module", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-      SModel mig = LanguageAspect.MIGRATION.get(lang);
-      List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
-      if (ListSequence.fromList(scripts).isNotEmpty()) {
-        int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
-          public Integer select(SNode it) {
-            return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
-          }
-        }, false).first(), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
-        lang.setLanguageVersion(maxFrom + 1);
-      } else {
-        final int v = lang.getLanguageVersion();
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            InputValidator validator = new InputValidator() {
-              public boolean checkInput(String s) {
-                try {
-                  return Integer.parseInt(s) >= 0;
-                } catch (NumberFormatException e) {
-                  return false;
-                }
+    final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
+    SModel mig = LanguageAspect.MIGRATION.get(lang);
+    List<SNode> scripts = check_wnyb8b_a0c0a(((SModel) mig));
+    if (ListSequence.fromList(scripts).isNotEmpty()) {
+      int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
+        public Integer select(SNode it) {
+          return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+        }
+      }, false).first(), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
+      lang.setLanguageVersion(maxFrom + 1);
+    } else {
+      final int v = lang.getLanguageVersion();
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          InputValidator validator = new InputValidator() {
+            public boolean checkInput(String s) {
+              try {
+                return Integer.parseInt(s) >= 0;
+              } catch (NumberFormatException e) {
+                return false;
               }
-              public boolean canClose(String s) {
-                return checkInput(s);
-              }
-            };
-            final String result = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "No scripts found\n" + "Current language version is " + v + "\n" + "Please enter new version", "Set Language Version", null, "0", validator);
-            if (result == null) {
-              return;
             }
-
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                lang.setLanguageVersion(Integer.parseInt(result));
-              }
-            });
+            public boolean canClose(String s) {
+              return checkInput(s);
+            }
+          };
+          final String result = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "No scripts found\n" + "Current language version is " + v + "\n" + "Please enter new version", "Set Language Version", null, "0", validator);
+          if (result == null) {
+            return;
           }
-        });
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CorrectLanguageVersion", t);
-      }
+
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              lang.setLanguageVersion(Integer.parseInt(result));
+            }
+          });
+        }
+      });
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CorrectLanguageVersion_Action.class);
   private static List<SNode> check_wnyb8b_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SModelOperations.roots(checkedDotOperand, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));

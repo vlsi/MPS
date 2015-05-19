@@ -54,12 +54,6 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     calcInheritance();
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public BaseConstraintsDescriptor(String fqName) {
-    this(ConceptRegistry.getInstance().getConceptDescriptor(fqName).getId());
-  }
-
   protected Map<SPropertyId, PropertyConstraintsDescriptor> getNotDefaultSProperties() {
     Map<String, PropertyConstraintsDescriptor> notDefaultProperties = getNotDefaultProperties();
     Map<SPropertyId, PropertyConstraintsDescriptor> result = new HashMap<SPropertyId, PropertyConstraintsDescriptor>();

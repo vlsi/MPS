@@ -5,28 +5,36 @@ package jetbrains.mps.baseLanguage.collections.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MigrationToUpdateAllConstants_MigrationScript extends BaseMigrationScript {
   public MigrationToUpdateAllConstants_MigrationScript(IOperationContext operationContext) {
     super("AllConstantsMigration");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Re-inserts the AllConstants concept to fix the missing value property";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Re-inserts the AllConstants concept to fix the missing value property";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.collections.structure.AllConstant";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return node.getProperty("value") != null;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
-        SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.collections.structure.AllConstant");
+        SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x12031a066ecL, "jetbrains.mps.baseLanguage.collections.structure.AllConstant"));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

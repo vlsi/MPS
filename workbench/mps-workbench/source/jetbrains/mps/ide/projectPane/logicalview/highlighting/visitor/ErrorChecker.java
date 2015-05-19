@@ -20,18 +20,20 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.validation.ModelValidator;
-import jetbrains.mps.project.validation.ModuleValidator;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.MessageCollectProcessor;
+import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.util.Processor;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,12 +49,24 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         final SModel modelDescriptor = mr.resolve(myProject.getRepository());
-        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) return;
+        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
+          return;
+        }
 
-        final ModelValidator mv = new ModelValidator(modelDescriptor);
-        mv.validate(myProject.getRepository());
-
-        schedule(node, new ErrorReport(node, mv.errors(), mv.warnings()));
+        final List<String> errors = new ArrayList<String>();
+        final List<String> warnings = new ArrayList<String>();
+        ValidationUtil.validateModel(modelDescriptor, new Processor<ValidationProblem>() {
+          @Override
+          public boolean process(ValidationProblem problem) {
+            if (problem.getSeverity() == Severity.ERROR) {
+              errors.add(problem.getMessage());
+            } else {
+              warnings.add(problem.getMessage());
+            }
+            return true;
+          }
+        });
+        schedule(node, new ErrorReport(node, errors, warnings));
       }
     });
   }
@@ -64,15 +78,12 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         SModule module = mr.resolve(myProject.getRepository());
-        final List<String> errors, warnings;
-        if (module == null) {
-          errors = warnings = Collections.emptyList();
-        } else {
-          ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
-          errors = validator.getErrors();
-          warnings = validator.getWarnings();
+
+        MessageCollectProcessor collector = new MessageCollectProcessor(true);
+        if (module != null) {
+          ValidationUtil.validateModule(module, collector);
         }
-        schedule(node, new ErrorReport(node, errors, warnings));
+        schedule(node, new ErrorReport(node, collector.getErrors(), collector.getWarnings()));
       }
     });
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    setUserObject(SNodeOperations.getModelLongName(modelDescriptor));
+    setUserObject(NameUtil.getModelLongName(modelDescriptor));
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
     } else {
@@ -127,7 +127,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       return null;
     }
 
-    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
+    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
 
     if (nodePackage != null && !"".equals(nodePackage)) {
       String[] packages = nodePackage.split("\\.");
@@ -280,18 +280,23 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
     return myInitialized;
   }
 
-  public boolean isSubfolderModel(SModel candidate) {
-    if (myModelDescriptor == null) return false;
-    String modelName = SNodeOperations.getModelLongName(myModelDescriptor);
-    String candidateName = SNodeOperations.getModelLongName(candidate);
-    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName))
+  public boolean isSubfolderModel(@NotNull SModel candidate) {
+    if (myModelDescriptor == null) {
       return false;
+    }
+    final String modelName = NameUtil.getModelLongName(myModelDescriptor);
+    String candidateName = NameUtil.getModelLongName(candidate);
+    if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName)) {
+      return false;
+    }
     if (candidateName.charAt(modelName.length()) == '.') {
       String modelStereotype = SModelStereotype.getStereotype(myModelDescriptor);
       String candidateStereotype = SModelStereotype.getStereotype(candidate);
-      if (!modelStereotype.equals(candidateStereotype)) return false;
-      String shortName = candidateName.replace(modelName + ".", "");
-      if (shortName.contains(".")) {
+      if (!modelStereotype.equals(candidateStereotype)) {
+        return false;
+      }
+      String shortName = candidateName.substring(modelName.length() + 1);
+      if (shortName.indexOf('.') > 0) {
         String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
         SModel md = SModelRepository.getInstance().getModelDescriptor(maxPackage);
         if (md != null) {
@@ -346,7 +351,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
         treeModel.insertNodeInto(newChildModel, this, index);
       }
       org.jetbrains.mps.openapi.model.SModel model = getModel();
-      Iterable<SNode> iter = new ConditionalIterable(model.getRootNodes(), myNodesCondition);
+      Iterable<SNode> iter = new ConditionalIterable<SNode>(model.getRootNodes(), myNodesCondition);
 
       List<SNode> filteredRoots = new ArrayList<SNode>();
       for (SNode node : iter) {

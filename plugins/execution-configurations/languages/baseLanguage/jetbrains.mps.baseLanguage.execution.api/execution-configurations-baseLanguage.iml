@@ -20,7 +20,6 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module" module-name="debugger-api-api" />
@@ -30,4 +29,3 @@
     <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>
-

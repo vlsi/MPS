@@ -399,11 +399,11 @@
       <node id="5294483648489407938" at="88,96,89,32" concept="5" />
       <node id="2926331382165824872" at="89,32,90,77" concept="5" />
       <node id="5294483648489407958" at="90,77,91,36" concept="5" />
-      <node id="2926331382165782316" at="93,51,94,12" concept="13" />
+      <node id="2926331382165782316" at="93,50,94,12" concept="13" />
       <node id="5294483648489408986" at="95,60,96,51" concept="13" />
       <node id="5294483648489407984" at="100,34,101,47" concept="5" />
       <node id="5294483648489406810" at="106,0,107,0" concept="10" trace="execute#(Ljetbrains/mps/project/Project;)Z" />
-      <node id="5294483648489407977" at="98,0,100,0" concept="10" trace="run#()V" />
+      <node id="5876208808347915789" at="98,0,100,0" concept="10" trace="run#()V" />
       <node id="5294483648489407745" at="29,88,32,5" concept="9" />
       <node id="3904824243729079583" at="43,0,46,0" concept="16" trace="getModule#(Ljava/lang/String;Ljava/lang/Class;)null" />
       <node id="3904824243729107976" at="47,0,50,0" concept="16" trace="getSolution#(Ljava/lang/String;)Ljetbrains/mps/project/Solution;" />
@@ -421,7 +421,7 @@
       <node id="5294483648489407819" at="69,5,81,5" concept="9" />
       <node id="5294483648489407701" at="24,0,42,0" concept="16" trace="testOnProjectCopy#(Ljava/io/File;Ljava/io/File;Ljava/lang/String;Ljetbrains/mps/testbench/junit/runners/ProjectTestsSupport/ProjectRunnable;)Z" />
       <node id="5294483648489407779" at="63,0,85,0" concept="16" trace="startTestOnProjectCopy#(Ljava/io/File;Ljava/io/File;Ljava/lang/String;)Ljetbrains/mps/project/Project;" />
-      <scope id="5294483648489407978" at="98,27,98,27" />
+      <scope id="5876208808347915798" at="98,27,98,27" />
       <scope id="5294483648489407750" at="30,26,31,19" />
       <scope id="5294483648489407754" at="33,9,34,39" />
       <scope id="5294483648489407760" at="38,15,39,55" />
@@ -444,7 +444,7 @@
         <var name="e" id="5294483648489407841" />
       </scope>
       <scope id="5294483648489407845" at="77,31,79,20" />
-      <scope id="5294483648489407977" at="98,0,100,0" />
+      <scope id="5876208808347915789" at="98,0,100,0" />
       <scope id="3904824243729079583" at="43,0,46,0">
         <var name="cls" id="3904824243728567361" />
         <var name="moduleFqName" id="3904824243728567358" />
@@ -469,7 +469,7 @@
         <var name="destinationDir" id="5294483648489407935" />
         <var name="project" id="5294483648489407933" />
       </scope>
-      <scope id="5294483648489407967" at="93,51,102,5" />
+      <scope id="5294483648489407967" at="93,50,102,5" />
       <scope id="5294483648489407966" at="93,0,104,0" />
       <scope id="5294483648489407710" at="28,143,40,5">
         <var name="project" id="5294483648489407737" />
@@ -488,7 +488,7 @@
         <var name="projectName" id="5294483648489407784" />
         <var name="source" id="5294483648489407780" />
       </scope>
-      <unit id="5294483648489407975" at="97,60,100,7" name="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport$1" />
+      <unit id="5876208808347915789" at="97,60,100,7" name="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport$1" />
       <unit id="5294483648489406807" at="105,0,108,0" name="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport$ProjectRunnable" />
       <unit id="2926331382166450989" at="22,0,109,0" name="jetbrains.mps.testbench.junit.runners.ProjectTestsSupport" />
     </file>

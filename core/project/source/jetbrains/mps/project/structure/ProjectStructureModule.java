@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +33,10 @@ import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.ConceptRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -90,17 +88,19 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       refreshModule(module, true);
     }
   };
+  private final MPSModuleRepository myRepository;
 
   public static ProjectStructureModule getInstance() {
     return INSTANCE;
   }
 
-  public ProjectStructureModule(MPSModuleRepository repository, SModelRepository modelRepository) {
+  public ProjectStructureModule(MPSModuleRepository repository) {
+    myRepository = repository;
     setModuleReference(PersistenceFacade.getInstance().createModuleReference(MODULE_REF));
   }
 
   private void refreshModule(SModule module, boolean isDeleted) {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
       return;
@@ -121,7 +121,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public SModel getModelByModule(SModule module) {
-    ModelAccess.assertLegalRead();
+    myRepository.getModelAccess().checkReadAccess();
 
     if (module == null) return null;
     SModelReference ref = getSModelReference(module);
@@ -137,11 +137,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     INSTANCE = this;
-    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.addRepositoryListener(myListener);
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        MPSModuleRepository.getInstance().registerModule(ProjectStructureModule.this, myOwner);
+        myRepository.registerModule(ProjectStructureModule.this, myOwner);
       }
     });
   }
@@ -152,17 +152,17 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     if (INSTANCE == null) return;
     INSTANCE = null;
     clearAll();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
+        myRepository.unregisterModule(ProjectStructureModule.this, myOwner);
       }
     });
-    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
+    myRepository.removeRepositoryListener(myListener);
   }
 
   public void clearAll() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         removeAll();
@@ -181,8 +181,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return Collections.singleton(
-        ConceptRepository.getInstance().getLanguage(BootstrapLanguages.PROJECT_NAMESPACE));
+    return Collections.singleton(MetaAdapterFactoryByName.getLanguage(BootstrapLanguages.PROJECT_NAMESPACE));
   }
 
   private void removeModel(SModel md) {
@@ -275,20 +274,13 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     private void dropModel() {
-      if (mySModel == null) return;
+      if (mySModel == null) {
+        return;
+      }
 
       final jetbrains.mps.smodel.SModel oldModel = mySModel;
       mySModel = null;
-      if (ModelAccess.instance().canWrite()) {
-        replaceModelAndFireEvent(oldModel, null);
-      } else {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            replaceModelAndFireEvent(oldModel, null);
-          }
-        });
-      }
+      replaceModelAndFireEvent(oldModel, null);
     }
   }
 

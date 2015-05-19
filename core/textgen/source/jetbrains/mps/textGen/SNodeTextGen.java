@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,10 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.TextGenDescriptor;
+import jetbrains.mps.text.TextGenTransitionContext;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -39,11 +37,6 @@ public abstract class SNodeTextGen {
     return myBuffer;
   }
 
-  public IOperationContext getContext() {
-    // todo: write something else!
-    return null;
-  }
-
   public SNode getSNode() {
     return mySNode;
   }
@@ -54,7 +47,7 @@ public abstract class SNodeTextGen {
 
   //not to generate stub method in each MPS text gen
 
-  protected void doGenerateText(SNode node) {
+  public void doGenerateText(SNode node) {
   }
 
   public String getFilename(SNode node) {
@@ -88,13 +81,15 @@ public abstract class SNodeTextGen {
   public void appendNode(SNode node) {
     if (node == null) {
       myBuffer.append("???");
+
       if (mySNode != null) {
         myBuffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(mySNode), mySNode, null);
       }
+
       return;
     }
 
-    getTextGenForNode(node).doGenerateText(node, myBuffer);
+    TextGen.getTextGenForNode(node).generateText(new TextGenTransitionContext(node, myBuffer));
   }
 
   public void indentBuffer() {
@@ -107,14 +102,6 @@ public abstract class SNodeTextGen {
 
   public final void putUserObject(Object key, Object o) {
     myBuffer.putUserObject(key, o);
-  }
-
-  /**
-   * @deprecated Errors without explanation are not that much helpful
-   */
-  @Deprecated
-  public void foundError() {
-    foundError(null);
   }
 
   public void foundError(@Nullable String info) {
@@ -148,12 +135,26 @@ public abstract class SNodeTextGen {
     }
   }
 
+  /**
+   * @deprecated has been deprecated for 2,5 years. Shall drop, finally?
+   */
   @Deprecated
+  @ToRemove(version = 3.3)
   public String getReferentPresentation(SReference reference) {
     // todo: this method not working now
     return getReferentPresentation(reference, true);
   }
 
+  public String getDefaultNoTextGenErrorText(SNode node) {
+    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
+  }
+
+  /**
+   * @deprecated moved to BaseLanguageTextGen (where it belongs). Left for compatibility with existing generated
+   * textgen classes (those using $ref{} part, despite its vague contract)
+   */
+  @ToRemove(version = 3.3)
+  @Deprecated
   public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
       foundError("null reference");
@@ -199,14 +200,5 @@ public abstract class SNodeTextGen {
     } else {
       return shortName;
     }
-  }
-
-  public String getDefaultNoTextGenErrorText(SNode node) {
-    return "<!TextGen not found for '" + node.getConcept().getQualifiedName() + "'!>";
-  }
-
-  @NotNull
-  private static TextGenDescriptor getTextGenForNode(@NotNull SNode node) {
-    return ConceptRegistry.getInstance().getTextGenDescriptor(node);
   }
 }

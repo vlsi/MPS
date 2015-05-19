@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,17 +25,23 @@ import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalRepo
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
-import jetbrains.mps.generator.impl.textgen.TextFacility;
+import jetbrains.mps.generator.impl.textgen.TextFacility2;
+import jetbrains.mps.messages.IMessageHandler.LogHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.text.TextGenResult;
+import jetbrains.mps.text.TextGeneratorEngine;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.Status;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -149,12 +155,20 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
       CollectingStreamHandler toStringHandler = new CollectingStreamHandler(generatedContent, getExistingContent());
 
-      TextFacility tf = new TextFacility(status);
-      tf.failNoTextGen(false).generateDebug(false).generateBaseLangDeps(true);
-      tf.produceTextModel();
-      tf.serializeOutcome(toStringHandler);
-      tf.dispose();
-      Assert.assertTrue(tf.getErrors().isEmpty());
+      TextGeneratorEngine tgEngine = new TextGeneratorEngine(new LogHandler(Logger.getLogger(getClass())));
+      IStatus textGenStatus = new Status.ERROR("");
+      try {
+        final TextGenResult tgr = tgEngine.generateText(status.getOutputModel()).get();
+        TextFacility2 tf = new TextFacility2(status, tgr);
+        tf.prepare();
+        textGenStatus = tf.serializeOutcome(toStringHandler);
+      } catch (Exception ex) {
+        ex.printStackTrace();
+        Assert.fail(ex.toString());
+      } finally {
+        tgEngine.shutdown();
+      }
+      Assert.assertFalse(textGenStatus.isError());
     }
     return true;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,13 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -86,6 +90,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions =
       new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
+  private final DataTreeChangesNotifier myChangeTracker = new DataTreeChangesNotifier();
 
   //----CONSTRUCT STUFF----
 
@@ -98,9 +103,20 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     return myUsageViewsData.get(index).myUsagesView;
   }
 
+  private void register(UsageViewData viewData) {
+    if (myUsageViewsData.isEmpty()) {
+      // FIXME need ProjectRepository.getModules() to give non-empty set; meanwhile, resort to MPSModuleRepository
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).attach();
+    }
+    myUsageViewsData.add(viewData);
+  }
+
   @Override
   protected void onRemove(int index) {
     myUsageViewsData.remove(index);
+    if (myUsageViewsData.isEmpty()) {
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).detach();
+    }
   }
 
   //----TOOL STUFF----
@@ -116,15 +132,31 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   //---FIND USAGES STUFF----
 
-  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne,
-      final boolean forceNewTab,
-      final String notFoundMsg) {
+  /**
+   * Display usages in a tool window of a respective project, according to options supplied.
+   *
+   */
+  public static void showUsages(@NotNull Project project, @NotNull IResultProvider provider, @NotNull SearchQuery query, @NotNull UsageToolOptions options) {
+    project.getComponent(UsagesViewTool.class).findUsages(provider, query, options);
+  }
+
+  /**
+   * @deprecated Use {@link #showUsages(com.intellij.openapi.project.Project, jetbrains.mps.ide.findusages.model.IResultProvider, jetbrains.mps.ide.findusages.model.SearchQuery, UsageToolOptions)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean forceNewTab, String notFoundMsg) {
+    findUsages(provider, query, new UsageToolOptions().allowRunAgain(isRerunnable).navigateIfSingle(!showOne).forceNewTab(forceNewTab).notFoundMessage(notFoundMsg));
+  }
+
+  private void findUsages(IResultProvider provider, final SearchQuery query, final UsageToolOptions options) {
     final SearchTask searchTask = new SearchTask(provider, query);
-    SwingUtilities.invokeLater(new Runnable() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
       public void run() {
         new Backgroundable(getProject(), "Searching", true, PerformInBackgroundOption.DEAF) {
           private SearchResults searchResults;
+
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
             searchResults = searchTask.execute(ProjectHelper.toMPSProject(getProject()), new ProgressMonitorAdapter(indicator));
@@ -132,7 +164,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
           @Override
           public void onSuccess() {
-            showResults(searchTask, searchResults, showOne, forceNewTab, isRerunnable, notFoundMsg);
+            showResults(searchTask, searchResults, options);
           }
         }.queue();
       }
@@ -141,46 +173,49 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   public void show(SearchResults results, String notFoundMsg) {
     ThreadUtils.assertEDT();
-    showResults(null, results, true, true, false, notFoundMsg);
+    showResults(null, results, new UsageToolOptions().navigateIfSingle(false).forceNewTab(true).allowRunAgain(false).notFoundMessage(notFoundMsg));
   }
 
-  private void showResults(SearchTask searchTask, final SearchResults searchResults, final boolean showOne,
-      final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
+  private void showResults(SearchTask searchTask, final SearchResults<?> searchResults, UsageToolOptions options) {
     final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     int resCount = searchResults.getSearchResults().size();
     if (resCount == 0) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
-      manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
-    } else if (resCount == 1 && !showOne) {
-      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
-          // TODO: use node pointers here
-          if (node != null) {
+      manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, options.myNotFoundMessage, null, null);
+      return;
+    } else if (resCount == 1 && options.myNavigateIfSingle) {
+      final SearchResult<?> searchResult = searchResults.getSearchResults().get(0);
+      if (searchResult.getObject() instanceof SNode) {
+        final SNode node = (SNode) searchResult.getObject();
+        // FIXME need a dedicated command (NavigateNodeCommand?) to execute, which hides required runWriteInEDT complexity
+        mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
+          @Override
+          public void run() {
             NavigationSupport.getInstance().openNode(mpsProject, node, true, !(node.getModel() != null && node.getParent() == null));
           }
-        }
-      });
-    } else {
-      int index = getCurrentTabIndex();
-      UsagesView usagesView = createUsageView(isRerunnable ? searchTask : null);
-      UsageViewData usageViewData = new UsageViewData(usagesView, isRerunnable ? searchTask : null);
-      myUsageViewsData.add(usageViewData);
-
-      usagesView.setContents(searchResults);
-
-      Icon icon = usagesView.getIcon();
-      String caption = usagesView.getCaption();
-      JComponent component = usagesView.getComponent();
-      Content content = addContent(component, caption, icon, true);
-      getContentManager().setSelectedContent(content);
-
-      if (!forceNewTab) {
-        closeLastUnpinnedTab(index);
+        });
+        return;
       }
-      openTool(true);
+      // FALL THROUGH (single result we can't navigate to)
     }
+    int index = getCurrentTabIndex();
+    UsagesView usagesView = createUsageView(options.myRunAgain ? searchTask : null);
+    UsageViewData usageViewData = new UsageViewData(usagesView, options.myRunAgain ? searchTask : null);
+    usageViewData.setTransientView(options.myTransientView);
+    register(usageViewData);
+
+    usagesView.setContents(searchResults);
+
+    Icon icon = usagesView.getIcon();
+    String caption = usagesView.getCaption();
+    JComponent component = usagesView.getComponent();
+    Content content = addContent(component, caption, icon, true);
+    getContentManager().setSelectedContent(content);
+
+    if (!options.myForceNewTab) {
+      closeLastUnpinnedTab(index);
+    }
+    openTool(true);
   }
 
   //---END FIND STUFF----
@@ -200,7 +235,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         } catch (CantLoadSomethingException e) {
           continue;
         }
-        myUsageViewsData.add(usageViewData);
+        register(usageViewData);
 
         SwingUtilities.invokeLater(new Runnable() {
           @Override
@@ -233,14 +268,16 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     Element tabsXML = new Element(TABS);
     for (UsageViewData usageViewData : myUsageViewsData) {
+      if (usageViewData.isTransientView()) {
+        continue;
+      }
       Element tabXML = new Element(TAB);
-      boolean error = false;
       try {
         usageViewData.write(tabXML, project);
+        tabsXML.addContent(tabXML);
       } catch (CantSaveSomethingException e) {
-        error = true;
+        // ignore
       }
-      if (!error) tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
 
@@ -281,7 +318,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private UsagesView createUsageView(@Nullable SearchTask searchTask) {
-    final UsagesView view = new UsagesView(getProject(), myDefaultViewOptions);
+    final UsagesView view = new UsagesView(ProjectHelper.toMPSProject(getProject()), myDefaultViewOptions, myChangeTracker);
     ArrayList<AnAction> actions = new ArrayList<AnAction>();
     if (searchTask != null) {
       final RerunAction rerunAction = new RerunAction(view, "Run again");
@@ -320,12 +357,20 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public final UsagesView myUsagesView;
     public final SearchTask mySearchTask;
+    private boolean myIsTransientView = false;
     // now it's not in use, but will be used to implement constructable finders
 //    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public UsageViewData(@NotNull UsagesView view, @Nullable SearchTask searchTask) {
       myUsagesView = view;
       mySearchTask = searchTask;
+    }
+
+    /*package*/void setTransientView(boolean isTransientView) {
+      myIsTransientView = isTransientView;
+    }
+    /*package*/boolean isTransientView() {
+      return myIsTransientView;
     }
 
     @NotNull

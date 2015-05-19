@@ -51,6 +51,7 @@ public final class SPropertyAdapterByName extends SPropertyAdapter {
     return myPropertyName;
   }
 
+  @NotNull
   @Override
   public SPropertyId getId() {
     PropertyDescriptor d = getPropertyDescriptor();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
+/**
+ * Sort of selection change listener for a TabsComponent
+ */
 public interface NodeChangeCallback {
   /**
    * Will be called to change currently active/edited node (oldNode) to newNode.
@@ -24,5 +27,5 @@ public interface NodeChangeCallback {
    *
    * @param newNode the node to be selected in tabbed editor
    */
-  void changeNode(SNode newNode);
+  void changeNode(SNodeReference newNode);
 }

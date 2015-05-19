@@ -19,6 +19,7 @@ import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,9 +76,9 @@ public class ModuleClassLoaderSupport {
     return myClassPathItem.hasClass(name);
   }
 
-  public byte[] findClassBytes(String name) throws ModuleIsNotLoadableException {
+  public ClassBytes findClassBytes(String name) throws ModuleIsNotLoadableException {
     checkWillLoad();
-    return myClassPathItem.getClass(name);
+    return myClassPathItem.getClassBytes(name);
   }
 
   public URL findResource(String name) throws ModuleIsNotLoadableException {

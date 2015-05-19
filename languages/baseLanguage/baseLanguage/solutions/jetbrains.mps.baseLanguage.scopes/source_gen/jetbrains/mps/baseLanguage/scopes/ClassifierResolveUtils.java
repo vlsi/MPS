@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
@@ -39,7 +39,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -125,7 +125,7 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModel> models, String classifierFqName) {
     models = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return !((it.getModule() instanceof TransientModelsModule));
+        return !((it.getModule() instanceof TransientSModule));
       }
     });
 
@@ -347,7 +347,7 @@ public class ClassifierResolveUtils {
       // go through models which correspond to java imported packages 
       for (Object thing : javaImportedThings) {
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(thing.equals(contextNodeModel)) && thing instanceof SModel && (((SModel) thing).getModule() instanceof TransientModelsModule)) {
+        if (!(thing.equals(contextNodeModel)) && thing instanceof SModel && (((SModel) thing).getModule() instanceof TransientSModule)) {
           continue;
         }
 
@@ -487,7 +487,7 @@ public class ClassifierResolveUtils {
         }
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (m.getModule() instanceof TransientModelsModule)) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (m.getModule() instanceof TransientSModule)) {
           continue;
         }
 

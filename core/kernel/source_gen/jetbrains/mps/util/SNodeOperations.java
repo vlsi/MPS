@@ -7,13 +7,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -22,7 +19,7 @@ import java.util.LinkedList;
 import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Iterator;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -70,11 +67,6 @@ public class SNodeOperations {
     }
     return res;
   }
-  @Deprecated
-  public static Iterable<SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
-    // Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly 
-    return SNodeUtil.getDescendants(node, cond, includeFirst);
-  }
   /**
    * 
    * @deprecated use node/../.ancestors.where 
@@ -101,20 +93,6 @@ public class SNodeOperations {
       result.put(p.getName(), node.getProperty(p));
     }
     return result;
-  }
-  @Deprecated
-  public static List<SNode> getDescendants(SNode node, Condition<SNode> condition) {
-    // Deprecated: use openapi.model.SNodeUtil.getDescendants() instead 
-    return IterableUtil.asList(SNodeUtil.getDescendants(node, condition, false));
-  }
-  /**
-   * todo rewrite the code using this
-   * 
-   * @deprecated rewrite to SConcept, don't use concepts by name
-   */
-  @Deprecated
-  public static SAbstractConcept getConcept(String name) {
-    return SConceptRepository.getInstance().getInstanceConcept(name);
   }
   /**
    * todo rewrite the code using this
@@ -175,6 +153,7 @@ public class SNodeOperations {
   }
   /**
    * todo rewrite the code via snode methods
+   * @deprecated Use OpenAPI methods directly
    * 
    * @deprecated use SNode.insertChildBefore/insertChildAfter
    */
@@ -200,26 +179,14 @@ public class SNodeOperations {
     parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
   }
   /**
+   * Insert a child *after* specified anchor, or to the head of children list if anchor is null
    * todo rewrite the code via snode methods
    * 
    * @deprecated use SNode.insertChildBefore/insertChildAfter
    */
   @Deprecated
   public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
-    if (anchor != null) {
-      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
-      return;
-    }
-    Iterator<? extends SNode> it = parent.getChildren().iterator();
-    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
-  }
-  /**
-   * todo KILL IT! should not be used since nodes are not passed between read actions
-   * todo after killing it, correct migration script to return false instead
-   */
-  @Deprecated
-  public static boolean isDisposed(SNode node) {
-    return !(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()));
+    parent.insertChildAfter(role, child, anchor);
   }
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
@@ -236,15 +203,15 @@ public class SNodeOperations {
     String nameText = null;
     String modelName;
     try {
-      if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
-        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
+      if (node.getConcept().isSubConceptOf(SNodeUtil.concept_LinkDeclaration)) {
+        String role = SNodeAccessUtil.getProperty(node, SNodeUtil.property_LinkDeclaration_role);
         if ((role != null && role.length() > 0)) {
           nameText = '\"' + role + '\"';
         } else {
           nameText = "<no ref>";
         }
-      } else if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_INamedConcept)) {
-        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+      } else if (node.getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
+        String name = SNodeAccessUtil.getProperty(node, SNodeUtil.property_INamedConcept_name);
         if ((name != null && name.length() > 0)) {
           nameText = '\"' + name + '\"';
         } else {
@@ -305,7 +272,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static String getResolveInfo(SNode n) {
-    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo")));
+    String resolveInfo = SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo")));
     if (resolveInfo != null) {
       return resolveInfo;
     }
@@ -361,11 +328,14 @@ public class SNodeOperations {
    */
   @Deprecated
   public static SNode getTargetNodeSilently(SReference ref) {
+    boolean needToEnableLogging = false;
     try {
-      jetbrains.mps.smodel.SReference.disableLogging();
+      needToEnableLogging = jetbrains.mps.smodel.SReference.disableLogging();
       return ref.getTargetNode();
     } finally {
-      jetbrains.mps.smodel.SReference.enableLogging();
+      if (needToEnableLogging) {
+        jetbrains.mps.smodel.SReference.enableLogging();
+      }
     }
   }
   /**
@@ -384,6 +354,14 @@ public class SNodeOperations {
   public static String getModelLongName(SModel model) {
     return NameUtil.getModelLongName(model);
   }
+  /**
+   * Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage.
+   * Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway.
+   * 
+   * @deprecated If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static List<SModuleReference> getUsedLanguages(SModel model) {
     Iterable<SModuleReference> languages = ((SModelInternal) model).importedLanguages();
     return Sequence.fromIterable(languages).toListSequence();
@@ -402,7 +380,7 @@ public class SNodeOperations {
    */
   @Deprecated
   public static int nodesCount(SModel model) {
-    return IterableUtil.asCollection(SNodeUtil.getDescendants(model)).size();
+    return IterableUtil.asCollection(org.jetbrains.mps.openapi.model.SNodeUtil.getDescendants(model)).size();
   }
   /**
    * 

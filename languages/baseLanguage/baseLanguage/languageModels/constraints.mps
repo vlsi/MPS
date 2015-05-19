@@ -90,7 +90,6 @@
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
-      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -2312,37 +2311,6 @@
                 <node concept="chp4Y" id="hPN6qYW" role="cj9EA">
                   <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1M2fIO" id="4fVo5eW6IZB">
-    <property role="3GE5qa" value="classifiers.members" />
-    <ref role="1M2myG" to="tpee:4fVo5eW6vfm" resolve="PlaceholderMethodDeclaration" />
-    <node concept="EnEH3" id="ItZv2awgrX" role="1MhHOB">
-      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
-      <node concept="QB0g5" id="ItZv2awgrY" role="QCWH9">
-        <node concept="3clFbS" id="ItZv2awgrZ" role="2VODD2">
-          <node concept="3clFbF" id="ItZv2awniS" role="3cqZAp">
-            <node concept="2OqwBi" id="4LdIZ$r2EGU" role="3clFbG">
-              <node concept="1Wqviy" id="4LdIZ$r2EGT" role="2Oq$k0" />
-              <node concept="17RlXB" id="4LdIZ$r2ETB" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="nKS2y" id="4fVo5eW6IZC" role="1MLUbF">
-      <node concept="3clFbS" id="4fVo5eW6MU$" role="2VODD2">
-        <node concept="3clFbF" id="4fVo5eW6MU_" role="3cqZAp">
-          <node concept="2OqwBi" id="4fVo5eW6MUB" role="3clFbG">
-            <node concept="nLn13" id="4fVo5eW6MUA" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="4fVo5eW6MUF" role="2OqNvi">
-              <node concept="chp4Y" id="4fVo5eW6MUH" role="cj9EA">
-                <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
               </node>
             </node>
           </node>

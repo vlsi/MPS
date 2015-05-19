@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
@@ -31,10 +28,13 @@ import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPri
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -68,6 +68,11 @@ public class SModelRepository implements CoreComponent {
 
   private static SModelRepository INSTANCE;
 
+  /**
+   * @deprecated global collection of SModels doesn't allow us to move forward. Do not use.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SModelRepository getInstance() {
     return INSTANCE;
   }
@@ -166,6 +171,11 @@ public class SModelRepository implements CoreComponent {
     return IterableUtil.copyToList(models);
   }
 
+  /**
+   * @deprecated use {@link SModel#getModule()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModule getOwner(SModel modelDescriptor) {
     return modelDescriptor.getModule();
   }
@@ -345,12 +355,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public SModel getModelDescriptor(SModelFqName fqName) {
-    return getModelDescriptor(fqName.toString());
-  }
-
+  // FIXME Why this method is different in implementation from #getModelDescriptorsByModelName(String modelName)?
   public SModel getModelDescriptor(String modelName) {
     if (modelName == null) return null;
     return myFqNameToModelDescriptorMap.get(modelName);

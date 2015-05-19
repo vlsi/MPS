@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +32,8 @@ import java.util.Map;
 public class BinaryModelDigestIndex extends BaseModelDigestIndex {
   public static final ID<Integer, Map<String, String>> NAME = ID.create("BinaryModelDigest");
 
-  @NotNull
-  @Override
-  public ID<Integer, Map<String, String>> getName() {
-    return NAME;
+  public BinaryModelDigestIndex() {
+    super(NAME, 3);
   }
 
   @NotNull
@@ -50,18 +48,7 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
   }
 
   @Override
-  public int getVersion() {
-    return 3;
-  }
-
-  @Override
   protected Map<String, String> calculateDigest(final byte[] content) {
-    //todo remove this read after 3.2. Needed to get concept fq name from id in 3.2
-    return ModelAccess.instance().runReadAction(new Computable<Map<String, String>>() {
-      @Override
-      public Map<String, String> compute() {
-        return BinaryModelPersistence.getDigestMap(content);
-      }
-    });
+    return BinaryModelPersistence.getDigestMap(content);
   }
 }

@@ -18,6 +18,7 @@ package jetbrains.mps;
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeRegistry;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileFactory;
 import com.intellij.psi.PsiManager;
@@ -61,6 +62,12 @@ public class EmptyPsiFileFactory extends PsiFileFactory {
                     boolean physical,
                     boolean markAsCopy,
                     boolean noSizeLimit) {
+    return null;
+  }
+
+  @Override
+  public PsiFile createFileFromText(@NotNull String name, @NotNull Language language, @NotNull CharSequence text, boolean eventSystemEnabled,
+      boolean markAsCopy, boolean noSizeLimit, @Nullable VirtualFile original) {
     return null;
   }
 

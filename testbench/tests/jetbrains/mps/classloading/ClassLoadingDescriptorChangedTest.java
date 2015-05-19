@@ -30,8 +30,6 @@ import java.io.File;
 import static org.junit.Assert.assertTrue;
 
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
-  private static final String TEST_PROJECT = null;
-  private static final File PROJECT_PATH = new File("testbench/modules/testClassLoading");
 
   /**
    * We have languages L1 and L2. They have generators G1 and G2, correspondingly. G1 has a dependency on L2 and G2.
@@ -40,7 +38,7 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
    */
   @Test
   public void testClassLoadingDescriptorChanged() {
-    final Project project = openProject(PROJECT_PATH);
+    final Project project = openProject(new File(jetbrains.mps.tool.builder.util.PathManager.getHomePath()));
     final Language language1 = ProjectTestsSupport.getLanguage("L1");
     assert language1 != null;
     final Language language2 = ProjectTestsSupport.getLanguage("L2");

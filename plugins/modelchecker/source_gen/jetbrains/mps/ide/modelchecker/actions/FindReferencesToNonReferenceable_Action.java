@@ -7,22 +7,21 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.HashMap;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,8 +32,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Arrays;
 import java.util.Comparator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindReferencesToNonReferenceable_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,88 +44,85 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     // todo: temporary disabled, see MPS-18470 
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindReferencesToNonReferenceable", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel md) {
-          return SModelStereotype.isUserModel(md);
-        }
-      }));
+    final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel md) {
+        return SModelStereotype.isUserModel(md);
+      }
+    }));
 
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelDescriptors, new ReferenceableConceptsChecker());
+    ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelDescriptors, new ReferenceableConceptsChecker());
 
-      // extra debug 
-      final Wrappers._int total = new Wrappers._int();
-      final Wrappers._int referenceable = new Wrappers._int();
-      final Map<String, Integer> used = MapSequence.fromMap(new HashMap<String, Integer>());
+    // extra debug 
+    final Wrappers._int total = new Wrappers._int();
+    final Wrappers._int referenceable = new Wrappers._int();
+    final Map<String, Integer> used = MapSequence.fromMap(new HashMap<String, Integer>());
 
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ListSequence.fromList(modelDescriptors).visitAll(new IVisitor<SModel>() {
-            public void visit(SModel it) {
-              for (SNode n : it.getRootNodes()) {
-                for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
-                  SNode ccp = SNodeOperations.as(((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-                  if (ccp != null) {
-                    total.value++;
-                    if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null))) {
-                      referenceable.value++;
-                      String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
-                      if (MapSequence.fromMap(used).containsKey(cname)) {
-                        MapSequence.fromMap(used).put(cname, MapSequence.fromMap(used).get(cname) + 1);
-                      } else {
-                        MapSequence.fromMap(used).put(cname, 1);
-                      }
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        ListSequence.fromList(modelDescriptors).visitAll(new IVisitor<SModel>() {
+          public void visit(SModel it) {
+            for (SNode n : it.getRootNodes()) {
+              for (SNode i : SNodeOperations.getNodeDescendants(n, null, true, new SAbstractConcept[]{})) {
+                SNode ccp = SNodeOperations.asConcept(SNodeOperations.getConceptDeclaration(i), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+                if (ccp != null) {
+                  total.value++;
+                  if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null))) {
+                    referenceable.value++;
+                    String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
+                    if (MapSequence.fromMap(used).containsKey(cname)) {
+                      MapSequence.fromMap(used).put(cname, MapSequence.fromMap(used).get(cname) + 1);
+                    } else {
+                      MapSequence.fromMap(used).put(cname, 1);
                     }
                   }
                 }
               }
             }
-          });
-        }
-      });
-      String[] usedNames = SetSequence.fromSet(MapSequence.fromMap(used).keySet()).toGenericArray(String.class);
-      Arrays.sort(usedNames, new Comparator<String>() {
-        public int compare(String a, String b) {
-          return new Integer(MapSequence.fromMap(used).get(a)).compareTo(MapSequence.fromMap(used).get(b));
-        }
-      });
-      System.out.println("" + referenceable.value + " out of " + total.value + " nodes are referenceable");
-      for (String s : usedNames) {
-        System.out.println(MapSequence.fromMap(used).get(s) + "  " + s);
+          }
+        });
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindReferencesToNonReferenceable", t);
+    });
+    String[] usedNames = SetSequence.fromSet(MapSequence.fromMap(used).keySet()).toGenericArray(String.class);
+    Arrays.sort(usedNames, new Comparator<String>() {
+      public int compare(String a, String b) {
+        return new Integer(MapSequence.fromMap(used).get(a)).compareTo(MapSequence.fromMap(used).get(b));
       }
+    });
+    System.out.println("" + referenceable.value + " out of " + total.value + " nodes are referenceable");
+    for (String s : usedNames) {
+      System.out.println(MapSequence.fromMap(used).get(s) + "  " + s);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FindReferencesToNonReferenceable_Action.class);
 }

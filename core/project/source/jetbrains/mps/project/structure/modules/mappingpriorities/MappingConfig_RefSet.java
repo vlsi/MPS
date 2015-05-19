@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -53,11 +54,11 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public boolean updateReferences() {
+  public boolean updateReferences(SRepository repository) {
     boolean result = false;
 
     for (MappingConfig_AbstractRef ref : myRefs) {
-      boolean res = ref.updateReferences();
+      boolean res = ref.updateReferences(repository);
       result = result || res;
     }
 

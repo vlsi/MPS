@@ -4,14 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
@@ -30,8 +29,6 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,97 +41,86 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._int rootsCount = new Wrappers._int(0);
-      final Wrappers._long membersOverallTime = new Wrappers._long(0);
+    final Wrappers._int rootsCount = new Wrappers._int(0);
+    final Wrappers._long membersOverallTime = new Wrappers._long(0);
 
-      InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
-        public void invoke(final SNode node) {
-          if (SNodeOperations.isRoot(node)) {
-            rootsCount.value++;
+    InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(final SNode node) {
+        if (SNodeOperations.isRoot(node)) {
+          rootsCount.value++;
 
-            String nodeName = node + "@" + SNodeOperations.getModelLongName(node.getModel());
-            boolean somethingPrinted = false;
+          String nodeName = node + "@" + SNodeOperations.getModelLongName(node.getModel());
+          boolean somethingPrinted = false;
 
-            final Wrappers._T<List<SNode>> types = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
-            long typesCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                types.value = CalcClassifiersInRootsStatistic_Action.this.calcAllClassifierTypesInRoot(node, _params);
-              }
-            }, _params);
-
-            if (typesCalcTime > 1000) {
-              System.out.printf("%s: type calc time = %.3f%n", nodeName, typesCalcTime * 0.001);
-              somethingPrinted = true;
+          final Wrappers._T<List<SNode>> types = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
+          long typesCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              types.value = CalcClassifiersInRootsStatistic_Action.this.calcAllClassifierTypesInRoot(node, _params);
             }
+          }, _params);
 
-            final Set<SNode> classifiers = SetSequence.fromSet(new HashSet<SNode>());
-            SetSequence.fromSet(classifiers).addSequence(ListSequence.fromList(types.value).select(new ISelector<SNode, SNode>() {
-              public SNode select(SNode it) {
-                return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
-              }
-            }).where(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return (it != null);
-              }
-            }));
-            if (SetSequence.fromSet(classifiers).count() > 50) {
-              System.out.printf("%s: classifier types = %d; classifiers = %d%n", nodeName, ListSequence.fromList(types.value).count(), SetSequence.fromSet(classifiers).count());
-              somethingPrinted = true;
+          if (typesCalcTime > 1000) {
+            System.out.printf("%s: type calc time = %.3f%n", nodeName, typesCalcTime * 0.001);
+            somethingPrinted = true;
+          }
+
+          final Set<SNode> classifiers = SetSequence.fromSet(new HashSet<SNode>());
+          SetSequence.fromSet(classifiers).addSequence(ListSequence.fromList(types.value).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
             }
-
-            final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
-            long membersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
-              public void invoke() {
-                members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, _params);
-              }
-            }, _params);
-
-            if (ListSequence.fromList(members.value).count() > 4000) {
-              System.out.printf("%s: members count = %d%n", nodeName, ListSequence.fromList(members.value).count());
-              somethingPrinted = true;
+          }).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (it != null);
             }
+          }));
+          if (SetSequence.fromSet(classifiers).count() > 50) {
+            System.out.printf("%s: classifier types = %d; classifiers = %d%n", nodeName, ListSequence.fromList(types.value).count(), SetSequence.fromSet(classifiers).count());
+            somethingPrinted = true;
+          }
 
-            if (membersCalcTime > 500) {
-              System.out.printf("%s: members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
-              somethingPrinted = true;
+          final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));
+          long membersCalcTime = CalcClassifiersInRootsStatistic_Action.this.calculateElapsedTime(new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              members.value = CalcClassifiersInRootsStatistic_Action.this.calcAllMembersOfClassifiers(classifiers, _params);
             }
-            membersOverallTime.value += membersCalcTime;
+          }, _params);
 
-            if (somethingPrinted) {
-              System.out.println();
-            }
+          if (ListSequence.fromList(members.value).count() > 4000) {
+            System.out.printf("%s: members count = %d%n", nodeName, ListSequence.fromList(members.value).count());
+            somethingPrinted = true;
+          }
+
+          if (membersCalcTime > 500) {
+            System.out.printf("%s: members calc time = %.3f%n", nodeName, membersCalcTime * 0.001);
+            somethingPrinted = true;
+          }
+          membersOverallTime.value += membersCalcTime;
+
+          if (somethingPrinted) {
+            System.out.println();
           }
         }
-      });
-
-      System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CalcClassifiersInRootsStatistic", t);
       }
-    }
+    });
+
+    System.out.println("Members average time: " + membersOverallTime.value * 0.001 / rootsCount.value);
   }
   /*package*/ List<SNode> calcAllClassifierTypesInRoot(SNode rootNode, final Map<String, Object> _params) {
     TypeCheckingContext context = TypeContextManager.getInstance().createTypeCheckingContext(rootNode);
@@ -174,5 +160,4 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       return System.currentTimeMillis() - startTime;
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 }

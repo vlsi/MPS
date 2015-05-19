@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -51,7 +48,8 @@ public class FindUsagesDialog extends DialogWrapper {
     setOKButtonText("&Find");
     setCancelButtonText("Ca&ncel");
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
@@ -119,14 +117,14 @@ public class FindUsagesDialog extends DialogWrapper {
 
     @Override
     public void goToFinder(final ReloadableFinder finder) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+      mpsProject.getModelAccess().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode finderNode = finder.getNodeToNavigate();
           if (finderNode == null) return;
           FindUsagesDialog.this.doCancelAction();
-          IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
-          NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.getModel() != null && finderNode.getParent() == null));
+          NavigationSupport.getInstance().openNode(mpsProject, finderNode, true, !(finderNode.getModel() != null && finderNode.getParent() == null));
         }
       });
     }

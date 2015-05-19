@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -72,6 +73,11 @@ public interface EditorComponent {
 
   void dispose();
 
+  /**
+   * @deprecated use methods of {@link #getEditorContext() EditorContext} or a an MPSProject instance obtained elsewhere
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   IOperationContext getOperationContext();
 
   @NotNull

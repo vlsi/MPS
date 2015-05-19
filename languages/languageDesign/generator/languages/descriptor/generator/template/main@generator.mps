@@ -47,6 +47,7 @@
     <import index="zsa9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.actions.descriptor(MPS.Editor/jetbrains.mps.actions.descriptor@java_stub)" />
     <import index="bj1v" ref="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" />
     <import index="hxuy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" />
+    <import index="z9ad" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text.rt(MPS.Core/jetbrains.mps.text.rt@java_stub)" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -182,7 +183,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -4214,7 +4215,7 @@
             <node concept="3clFbJ" id="227lWzxUob1" role="3cqZAp">
               <node concept="3clFbC" id="227lWzxUob2" role="3clFbw">
                 <node concept="3VsKOn" id="227lWzxUoiV" role="3uHU7w">
-                  <ref role="3VsUkX" to="fwv2:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                  <ref role="3VsUkX" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
                 </node>
                 <node concept="37vLTw" id="227lWzxUob4" role="3uHU7B">
                   <ref role="3cqZAo" node="227lWzxUoaX" resolve="descriptorClass" />
@@ -4223,13 +4224,35 @@
               <node concept="3clFbS" id="227lWzxUob5" role="3clFbx">
                 <node concept="3cpWs6" id="227lWzxUob6" role="3cqZAp">
                   <node concept="10QFUN" id="227lWzxU_BY" role="3cqZAk">
+                    <node concept="1nCR9W" id="2aOQZH68nI3" role="10QFUP">
+                      <property role="1nD$Q0" value="textgen.TextGenAspectDescriptor" />
+                      <node concept="3uibUv" id="2aOQZH68oh9" role="2lIhxL">
+                        <ref role="3uigEE" to="z9ad:~TextGenAspectDescriptor" resolve="TextGenAspectDescriptor" />
+                      </node>
+                      <node concept="17Uvod" id="2aOQZH68ohZ" role="lGtFl">
+                        <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173996401517/1173996588177" />
+                        <property role="2qtEX9" value="fqClassName" />
+                        <node concept="3zFVjK" id="2aOQZH68oi0" role="3zH0cK">
+                          <node concept="3clFbS" id="2aOQZH68oi1" role="2VODD2">
+                            <node concept="3clFbF" id="2aOQZH68oo1" role="3cqZAp">
+                              <node concept="3cpWs3" id="2aOQZH68oo2" role="3clFbG">
+                                <node concept="Xl_RD" id="2aOQZH68oo3" role="3uHU7w">
+                                  <property role="Xl_RC" value=".TextGenAspectDescriptor" />
+                                </node>
+                                <node concept="2OqwBi" id="2aOQZH68oo4" role="3uHU7B">
+                                  <node concept="30H73N" id="2aOQZH68oo5" role="2Oq$k0" />
+                                  <node concept="3TrcHB" id="2aOQZH68oo6" role="2OqNvi">
+                                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSI" resolve="qualifiedName" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="16syzq" id="227lWzxU_En" role="10QFUM">
                       <ref role="16sUi3" node="227lWzxUobc" resolve="T" />
-                    </node>
-                    <node concept="2ShNRf" id="2bjbvjqV5A8" role="10QFUP">
-                      <node concept="1pGfFk" id="2bjbvjqVpgV" role="2ShVmc">
-                        <ref role="37wK5l" to="vwd8:~TextGenAspectInterpreted.&lt;init&gt;()" resolve="TextGenAspectInterpreted" />
-                      </node>
                     </node>
                   </node>
                 </node>

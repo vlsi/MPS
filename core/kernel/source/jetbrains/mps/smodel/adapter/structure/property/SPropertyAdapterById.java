@@ -43,6 +43,7 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
     myIsBootstrap = bootstrap;
   }
 
+  @NotNull
   public SPropertyId getId() {
     return myPropertyId;
   }

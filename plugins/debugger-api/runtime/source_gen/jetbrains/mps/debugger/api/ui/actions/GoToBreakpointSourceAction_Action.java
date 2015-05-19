@@ -11,13 +11,10 @@ import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.GoToSource;
@@ -30,45 +27,35 @@ public class GoToBreakpointSourceAction_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
-        event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToBreakpointSourceAction", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
+    event.getPresentation().setEnabled(breakpoint != null && breakpoint instanceof ILocationBreakpoint);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
-      if (breakpoint == null || !(breakpoint instanceof ILocationBreakpoint)) {
-        return;
-      }
-      BreakpointsBrowserDialog dialog = BreakpointsUtil.MPS_BREAKPOINTS_BROWSER_DIALOG.getData(event.getDataContext());
-      if (dialog != null) {
-        dialog.dispose();
-      }
-      BreakpointsUtil.openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), (ILocationBreakpoint) breakpoint, true, true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToBreakpointSourceAction", t);
-      }
+    IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
+    if (breakpoint == null || !(breakpoint instanceof ILocationBreakpoint)) {
+      return;
     }
+    BreakpointsBrowserDialog dialog = BreakpointsUtil.MPS_BREAKPOINTS_BROWSER_DIALOG.getData(event.getDataContext());
+    if (dialog != null) {
+      dialog.dispose();
+    }
+    BreakpointsUtil.openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), (ILocationBreakpoint) breakpoint, true, true);
   }
-  protected static Logger LOG = LogManager.getLogger(GoToBreakpointSourceAction_Action.class);
 }

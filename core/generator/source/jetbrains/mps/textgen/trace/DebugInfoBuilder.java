@@ -16,7 +16,7 @@
 
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -106,7 +106,7 @@ public class DebugInfoBuilder {
   private static SNode getOriginalInputNodeForNearestParent(SNode output, SRepository repository) {
     while (output != null) {
       SNode input = output;
-      while (input != null && (input.getModel().getModule() instanceof TransientModelsModule)) {
+      while (input != null && (input.getModel().getModule() instanceof TransientSModule)) {
         SNodeReference inputRef = TracingUtil.getInput(input);
         input = inputRef == null ? null : inputRef.resolve(repository);
       }

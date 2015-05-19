@@ -34,11 +34,11 @@
 
     <directoryIndexExcludePolicy implementation="jetbrains.mps.ide.vfs.ClassesGenPolicy"/>
 
-    <bundledColorScheme path="/colorSchemes/Darcula"/>
+    <!--<bundledColorScheme path="/colorSchemes/Darcula"/>-->
 
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>
-    <!--<projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
+    <!--<projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetec  tor"
                     serviceImplementation="jetbrains.mps.MPSPatchBaseDirectoryDetector"/>-->
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"

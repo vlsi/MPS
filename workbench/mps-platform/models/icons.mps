@@ -270,6 +270,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -641,13 +642,12 @@
                           <ref role="1Pybhc" to="n55e:~ConceptRegistry" resolve="ConceptRegistry" />
                         </node>
                         <node concept="liA8E" id="59X6FSQXKZj" role="2OqNvi">
-                          <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
-                          <node concept="2YIFZM" id="59X6FSQXKZk" role="37wK5m">
-                            <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                            <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                            <node concept="37vLTw" id="3GM_nagTzer" role="37wK5m">
-                              <ref role="3cqZAo" node="277Nzj6qTQF" resolve="concept" />
+                          <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
+                          <node concept="2OqwBi" id="6O6H9VQNBtr" role="37wK5m">
+                            <node concept="37vLTw" id="6O6H9VQNBqz" role="2Oq$k0">
+                              <ref role="3cqZAo" node="277Nzj6qTG0" resolve="node" />
                             </node>
+                            <node concept="2yIwOk" id="6O6H9VQNBF3" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -3005,14 +3005,13 @@
                       <ref role="1Pybhc" to="n55e:~ConceptRegistry" resolve="ConceptRegistry" />
                       <ref role="37wK5l" to="n55e:~ConceptRegistry.getInstance():jetbrains.mps.smodel.language.ConceptRegistry" resolve="getInstance" />
                     </node>
-                    <node concept="liA8E" id="394DX$hc_38" role="2OqNvi">
-                      <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(java.lang.String):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
-                      <node concept="2YIFZM" id="394DX$hc_39" role="37wK5m">
-                        <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                        <ref role="37wK5l" to="msyo:~NameUtil.nodeFQName(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="nodeFQName" />
-                        <node concept="37vLTw" id="394DX$hc_3a" role="37wK5m">
-                          <ref role="3cqZAo" node="2gYvKAyVBuS" resolve="concept" />
+                    <node concept="liA8E" id="6O6H9VQNoR2" role="2OqNvi">
+                      <ref role="37wK5l" to="n55e:~ConceptRegistry.getConstraintsDescriptor(org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.runtime.ConstraintsDescriptor" resolve="getConstraintsDescriptor" />
+                      <node concept="2OqwBi" id="6O6H9VQN9dO" role="37wK5m">
+                        <node concept="37vLTw" id="6O6H9VQN9aF" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2gYvKAyUcAf" resolve="node" />
                         </node>
+                        <node concept="2yIwOk" id="6O6H9VQN9qK" role="2OqNvi" />
                       </node>
                     </node>
                   </node>

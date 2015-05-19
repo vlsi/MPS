@@ -8,10 +8,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
@@ -19,8 +17,8 @@ import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.generator.JavaModelUtil_new;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import javax.swing.ListCellRenderer;
 import com.intellij.ui.ListCellRendererWrapper;
@@ -29,11 +27,13 @@ import org.jetbrains.annotations.NotNull;
 
 /*package*/ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
   private final Map<String, List<NavigationParticipant.NavigationTarget>> myPossibleNodes = new LinkedHashMap<String, List<NavigationParticipant.NavigationTarget>>();
-  /*package*/ ChooseFromStubsByNameModel(Project p) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+  private final Project myProject;
+  /*package*/ ChooseFromStubsByNameModel(final Project mpsProject) {
+    myProject = mpsProject;
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        List<SModel> mds = SModelRepository.getInstance().getModelDescriptors();
-        Iterable<SModel> stubModels = ListSequence.fromList(mds).where(new IWhereFilter<SModel>() {
+        Iterable<SModel> mds = mpsProject.getProjectModels();
+        Iterable<SModel> stubModels = Sequence.fromIterable(mds).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it));
           }
@@ -44,7 +44,7 @@ import org.jetbrains.annotations.NotNull;
           String name = getName(descriptor);
           List<NavigationParticipant.NavigationTarget> descriptorList = myPossibleNodes.get(name);
           if (descriptorList == null) {
-            descriptorList = new ArrayList<NavigationParticipant.NavigationTarget>();
+            descriptorList = new ArrayList<NavigationParticipant.NavigationTarget>(4);
             myPossibleNodes.put(name, descriptorList);
           }
           descriptorList.add(descriptor);
@@ -54,14 +54,12 @@ import org.jetbrains.annotations.NotNull;
   }
   protected abstract boolean isValid(SNode node);
   private boolean isValidClassifier(final NavigationParticipant.NavigationTarget descriptor) {
-    final Wrappers._boolean result = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode classifier = JavaModelUtil_new.findClassifier(getNamespace(descriptor), getName(descriptor), true);
-        result.value = (classifier != null) && isValid(classifier);
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        SNode classifier = descriptor.getNodeReference().resolve(myProject.getRepository());
+        return (classifier != null) && isValid(classifier);
       }
     });
-    return result.value;
   }
   private String getName(NavigationParticipant.NavigationTarget descriptor) {
     return descriptor.getPresentation();

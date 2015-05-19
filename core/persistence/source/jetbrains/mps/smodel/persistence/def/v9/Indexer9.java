@@ -39,15 +39,7 @@ public class Indexer9 implements Indexer{
   }
 
   public void index(@NotNull Reader input) throws IOException {
-    char buf[] = new char[8196];
-    CharArrayWriter w = new CharArrayWriter(buf.length * 10);
-    int x;
-    while ((x = input.read(buf, 0, buf.length)) != -1) {
-      w.write(buf, 0, x);
-    }
-    w.flush();
-    w.close();
-    char[] data = w.toCharArray();
+    char[] data = getChars(input);
 
     XmlFastScanner s = new XmlFastScanner(data);
     int token;
@@ -98,6 +90,18 @@ public class Indexer9 implements Indexer{
         }
       }
     }
+  }
+
+  public static char[] getChars(@NotNull Reader input) throws IOException {
+    char buf[] = new char[8196];
+    CharArrayWriter w = new CharArrayWriter(buf.length * 10);
+    int x;
+    while ((x = input.read(buf, 0, buf.length)) != -1) {
+      w.write(buf, 0, x);
+    }
+    w.flush();
+    w.close();
+    return w.toCharArray();
   }
 
   private void handleConceptId(SLanguageId lang, String conceptId) {

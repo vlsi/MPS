@@ -2,13 +2,13 @@
 <model ref="r:f5448de3-0d76-42bb-afa7-00b3b32de849(jetbrains.mps.debugger.java.runtime.evaluation.container)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -56,6 +56,8 @@
     <import index="odgu" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.make(MPS.Platform/jetbrains.mps.ide.make@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <import index="lv7v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text(MPS.Core/jetbrains.mps.text@java_stub)" />
+    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
     <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -2026,21 +2028,11 @@
                   <node concept="1bVj0M" id="7_a$FDO25V_" role="23t8la">
                     <node concept="3clFbS" id="7_a$FDO25VA" role="1bW5cS">
                       <node concept="3clFbF" id="7_a$FDO27nM" role="3cqZAp">
-                        <node concept="2OqwBi" id="19usIpyKWrD" role="3clFbG">
-                          <node concept="2YIFZM" id="19usIpyKV5y" role="2Oq$k0">
-                            <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                            <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                          </node>
-                          <node concept="liA8E" id="19usIpyKYmb" role="2OqNvi">
-                            <ref role="37wK5l" to="t3eg:~SConceptRepository.getLanguage(java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                            <node concept="2OqwBi" id="19usIpyL0o7" role="37wK5m">
-                              <node concept="37vLTw" id="19usIpyKZyQ" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7_a$FDO25VB" resolve="it" />
-                              </node>
-                              <node concept="liA8E" id="19usIpyL46X" role="2OqNvi">
-                                <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                              </node>
-                            </node>
+                        <node concept="2YIFZM" id="2RwlJ15X3n2" role="3clFbG">
+                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getLanguage(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                          <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                          <node concept="37vLTw" id="2RwlJ15X3Qv" role="37wK5m">
+                            <ref role="3cqZAo" node="7_a$FDO25VB" resolve="it" />
                           </node>
                         </node>
                       </node>
@@ -2357,6 +2349,101 @@
                                     </node>
                                   </node>
                                 </node>
+                                <node concept="3cpWs8" id="7kovBEzvD2I" role="3cqZAp">
+                                  <node concept="3cpWsn" id="7kovBEzvD2J" role="3cpWs9">
+                                    <property role="TrG5h" value="textGenOutcome" />
+                                    <node concept="3uibUv" id="7kovBEzvD1v" role="1tU5fm">
+                                      <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+                                    </node>
+                                    <node concept="3EllGN" id="7kovBEzvD2K" role="33vP2m">
+                                      <node concept="2GrUjf" id="7kovBEzvD2L" role="3ElVtu">
+                                        <ref role="2Gs0qQ" node="6zsZmIC2RSm" resolve="unitName" />
+                                      </node>
+                                      <node concept="37vLTw" id="7kovBEzvD2M" role="3ElQJh">
+                                        <ref role="3cqZAo" node="6zsZmIC3Q9v" resolve="contents" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3clFbJ" id="7kovBEzvH6J" role="3cqZAp">
+                                  <node concept="3clFbS" id="7kovBEzvH6L" role="3clFbx">
+                                    <node concept="3cpWs8" id="7kovBEzvV2q" role="3cqZAp">
+                                      <node concept="3cpWsn" id="7kovBEzvV2r" role="3cpWs9">
+                                        <property role="TrG5h" value="tu" />
+                                        <node concept="3uibUv" id="7kovBEzvV1Q" role="1tU5fm">
+                                          <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                                        </node>
+                                        <node concept="10QFUN" id="7kovBEzvV2s" role="33vP2m">
+                                          <node concept="3uibUv" id="7kovBEzvV2t" role="10QFUM">
+                                            <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                                          </node>
+                                          <node concept="37vLTw" id="7kovBEzvV2u" role="10QFUP">
+                                            <ref role="3cqZAo" node="7kovBEzvD2J" resolve="textGenOutcome" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="3clFbF" id="7kovBEzvJGt" role="3cqZAp">
+                                      <node concept="37vLTI" id="7kovBEzvKnZ" role="3clFbG">
+                                        <node concept="37vLTw" id="7kovBEzvJGr" role="37vLTJ">
+                                          <ref role="3cqZAo" node="6zsZmIC6eIh" resolve="source" />
+                                        </node>
+                                        <node concept="2ShNRf" id="7kovBEzvO3S" role="37vLTx">
+                                          <node concept="1pGfFk" id="7kovBEzvTvu" role="2ShVmc">
+                                            <ref role="37wK5l" to="e2lb:~String.&lt;init&gt;(byte[],java.nio.charset.Charset)" resolve="String" />
+                                            <node concept="2OqwBi" id="7kovBEzvLq5" role="37wK5m">
+                                              <node concept="37vLTw" id="7kovBEzvV2v" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="7kovBEzvV2r" resolve="tu" />
+                                              </node>
+                                              <node concept="liA8E" id="7kovBEzvLZo" role="2OqNvi">
+                                                <ref role="37wK5l" to="lv7v:~TextUnit.getBytes():byte[]" resolve="getBytes" />
+                                              </node>
+                                            </node>
+                                            <node concept="2OqwBi" id="7kovBEzvZH$" role="37wK5m">
+                                              <node concept="37vLTw" id="7kovBEzvX5d" role="2Oq$k0">
+                                                <ref role="3cqZAo" node="7kovBEzvV2r" resolve="tu" />
+                                              </node>
+                                              <node concept="liA8E" id="7kovBEzw0uc" role="2OqNvi">
+                                                <ref role="37wK5l" to="lv7v:~TextUnit.getEncoding():java.nio.charset.Charset" resolve="getEncoding" />
+                                              </node>
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2ZW3vV" id="7kovBEzvIbV" role="3clFbw">
+                                    <node concept="3uibUv" id="7kovBEzvJeE" role="2ZW6by">
+                                      <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                                    </node>
+                                    <node concept="37vLTw" id="7kovBEzvHHz" role="2ZW6bz">
+                                      <ref role="3cqZAo" node="7kovBEzvD2J" resolve="textGenOutcome" />
+                                    </node>
+                                  </node>
+                                  <node concept="9aQIb" id="7kovBEzw4cv" role="9aQIa">
+                                    <node concept="3clFbS" id="7kovBEzw4cw" role="9aQI4">
+                                      <node concept="3SKdUt" id="7kovBEzw4GX" role="3cqZAp">
+                                        <node concept="3SKdUq" id="7kovBEzw4Hx" role="3SKWNk">
+                                          <property role="3SKdUp" value="FIXME fallback, shall not happen with textGenToMemory using new j.m.text API" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbF" id="7kovBEzw5cO" role="3cqZAp">
+                                        <node concept="37vLTI" id="7kovBEzw5Lm" role="3clFbG">
+                                          <node concept="2YIFZM" id="7kovBEzw6Qa" role="37vLTx">
+                                            <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
+                                            <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                                            <node concept="37vLTw" id="7kovBEzw7mB" role="37wK5m">
+                                              <ref role="3cqZAo" node="7kovBEzvD2J" resolve="textGenOutcome" />
+                                            </node>
+                                          </node>
+                                          <node concept="37vLTw" id="7kovBEzw5cM" role="37vLTJ">
+                                            <ref role="3cqZAo" node="6zsZmIC6eIh" resolve="source" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3clFbF" id="6zsZmIC2Kr2" role="3cqZAp">
                                   <node concept="2OqwBi" id="6zsZmIC2Kt$" role="3clFbG">
                                     <node concept="37vLTw" id="6zsZmIC2Kr0" role="2Oq$k0">
@@ -2403,23 +2490,19 @@
                                           </node>
                                         </node>
                                       </node>
-                                      <node concept="2YIFZM" id="6zsZmIC3Oqk" role="37wK5m">
-                                        <ref role="37wK5l" to="e2lb:~String.valueOf(java.lang.Object):java.lang.String" resolve="valueOf" />
-                                        <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                                        <node concept="3EllGN" id="6zsZmIC3XqO" role="37wK5m">
-                                          <node concept="2GrUjf" id="6zsZmIC3YTy" role="3ElVtu">
-                                            <ref role="2Gs0qQ" node="6zsZmIC2RSm" resolve="unitName" />
-                                          </node>
-                                          <node concept="37vLTw" id="6zsZmIC3RIM" role="3ElQJh">
-                                            <ref role="3cqZAo" node="6zsZmIC3Q9v" resolve="contents" />
-                                          </node>
-                                        </node>
+                                      <node concept="37vLTw" id="7kovBEzw2y6" role="37wK5m">
+                                        <ref role="3cqZAo" node="6zsZmIC6eIh" resolve="source" />
                                       </node>
                                     </node>
                                   </node>
                                 </node>
                                 <node concept="3clFbJ" id="6zsZmIC6lKH" role="3cqZAp">
                                   <node concept="3clFbS" id="6zsZmIC6lKK" role="3clFbx">
+                                    <node concept="3SKdUt" id="7kovBEzw81s" role="3cqZAp">
+                                      <node concept="3SKdUq" id="7kovBEzw8EN" role="3SKWNk">
+                                        <property role="3SKdUp" value="FIXME WTF? why unit name is treated as source, and do we really need to keep source at all?" />
+                                      </node>
+                                    </node>
                                     <node concept="3clFbF" id="6zsZmIC6_N0" role="3cqZAp">
                                       <node concept="37vLTI" id="6zsZmIC6Bf2" role="3clFbG">
                                         <node concept="2YIFZM" id="6zsZmIC6Dr4" role="37vLTx">

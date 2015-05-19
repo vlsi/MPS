@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -54,8 +53,8 @@ public class ModelContentUtil {
       namespaces.add(language.getQualifiedName());
     }
     // e.g. empty behavior model should have its behavior aspect descriptor generated
-    for (Language language : ModelsAutoImportsManager.getAutoImportedLanguages(model.getModule(), model)) {
-      namespaces.add(language.getModuleName());
+    for (SLanguage language : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
+      namespaces.add(language.getQualifiedName());
     }
     return namespaces;
   }

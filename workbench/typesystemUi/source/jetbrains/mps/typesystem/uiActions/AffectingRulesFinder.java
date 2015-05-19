@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,19 +51,27 @@ public class AffectingRulesFinder implements IFinder {
     try {
       IncrementalTypechecking component = context.getBaseNodeTypesComponent();
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
-      if (component == null) return createResult(term, rules);
+      if (component == null) {
+        return createResult(term, rules);
+      }
 
       Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(term);
-      if (rulesIds == null) return createResult(term, rules);
+      if (rulesIds == null) {
+        return createResult(term, rules);
+      }
 
       for (Pair<String, String> ruleId : rulesIds) {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(ruleId.o1));
-        if (modelDescriptor == null) continue;
+        SModel modelDescriptor = query.getScope().resolve(PersistenceFacade.getInstance().createModelReference(ruleId.o1));
+        if (modelDescriptor == null) {
+          continue;
+        }
 
         SNodeId nodeId = SNodeId.fromString(ruleId.o2);
         assert nodeId != null : "wrong node id string";
         SNode rule = modelDescriptor.getNode(nodeId);
-        if (rule == null) continue;
+        if (rule == null) {
+          continue;
+        }
 
         rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));
       }

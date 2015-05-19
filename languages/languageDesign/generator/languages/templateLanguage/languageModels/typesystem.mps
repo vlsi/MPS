@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,6 +17,8 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -30,6 +32,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -436,7 +439,9 @@
               <node concept="3cpWs8" id="h9BXD_W" role="3cqZAp">
                 <node concept="3cpWsn" id="h9BXD_X" role="3cpWs9">
                   <property role="TrG5h" value="templateApplicableConcept" />
-                  <node concept="3THzug" id="hdTqo82" role="1tU5fm" />
+                  <node concept="3Tqbb2" id="4k9eBecvngw" role="1tU5fm">
+                    <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                  </node>
                   <node concept="2OqwBi" id="hxx_6iv" role="33vP2m">
                     <node concept="1PxgMI" id="h9BX$TJ" role="2Oq$k0">
                       <ref role="1PxNhF" to="tpf8:h0n94ik" resolve="RootTemplateAnnotation" />
@@ -453,7 +458,9 @@
               <node concept="3cpWs8" id="h9BXKdE" role="3cqZAp">
                 <node concept="3cpWsn" id="h9BXKdF" role="3cpWs9">
                   <property role="TrG5h" value="ruleApplicableConcept" />
-                  <node concept="3THzug" id="hdTqpeX" role="1tU5fm" />
+                  <node concept="3Tqbb2" id="4k9eBecvnvF" role="1tU5fm">
+                    <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                  </node>
                   <node concept="2OqwBi" id="hxx_2Eo" role="33vP2m">
                     <node concept="1YBJjd" id="h9BXGTd" role="2Oq$k0">
                       <ref role="1YBMHb" node="h9BOXJd" resolve="rule" />
@@ -494,11 +501,8 @@
                     </node>
                     <node concept="3fqX7Q" id="hdTswbf" role="3clFbw">
                       <node concept="2OqwBi" id="73yVtVm0olI" role="3fr31v">
-                        <node concept="2OqwBi" id="73yVtVm0nGm" role="2Oq$k0">
-                          <node concept="37vLTw" id="27AGqGE_7AL" role="2Oq$k0">
-                            <ref role="3cqZAo" node="h9BXKdF" resolve="ruleApplicableConcept" />
-                          </node>
-                          <node concept="FGMqu" id="73yVtVm0obt" role="2OqNvi" />
+                        <node concept="37vLTw" id="27AGqGE_7AL" role="2Oq$k0">
+                          <ref role="3cqZAo" node="h9BXKdF" resolve="ruleApplicableConcept" />
                         </node>
                         <node concept="2qgKlT" id="73yVtVm0phm" role="2OqNvi">
                           <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
@@ -2608,14 +2612,23 @@
                 </node>
               </node>
               <node concept="3fqX7Q" id="uktU6AWHQ1" role="3clFbw">
-                <node concept="2YIFZM" id="uktU6AWHQ2" role="3fr31v">
-                  <ref role="37wK5l" to="iwwu:i1dxEXv" resolve="isAssignableConcept" />
-                  <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-                  <node concept="37vLTw" id="3GM_nagTroT" role="37wK5m">
-                    <ref role="3cqZAo" node="uktU6AWHPO" resolve="nodeConcept" />
+                <node concept="2OqwBi" id="4wG2MBHCYVH" role="3fr31v">
+                  <node concept="2YIFZM" id="4wG2MBHCYUr" role="2Oq$k0">
+                    <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                    <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                    <node concept="37vLTw" id="4wG2MBHCYU_" role="37wK5m">
+                      <ref role="3cqZAo" node="uktU6AWHPO" resolve="nodeConcept" />
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTAyo" role="37wK5m">
-                    <ref role="3cqZAo" node="uktU6AWHPr" resolve="templateApplicableConcept" />
+                  <node concept="liA8E" id="4wG2MBHCZ3t" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                    <node concept="2YIFZM" id="4wG2MBHCZ6O" role="37wK5m">
+                      <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                      <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                      <node concept="37vLTw" id="4wG2MBHCZaq" role="37wK5m">
+                        <ref role="3cqZAo" node="uktU6AWHPr" resolve="templateApplicableConcept" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2801,11 +2814,11 @@
           <node concept="3clFbJ" id="1$dcvTE6OHb" role="3cqZAp">
             <node concept="3fqX7Q" id="1$dcvTE6OHc" role="3clFbw">
               <node concept="2OqwBi" id="73yVtVm07eC" role="3fr31v">
-                <node concept="2OqwBi" id="73yVtVm0lsz" role="2Oq$k0">
+                <node concept="2OqwBi" id="3p8IqUIG1Vg" role="2Oq$k0">
                   <node concept="37vLTw" id="1oFmEVza8A9" role="2Oq$k0">
                     <ref role="3cqZAo" node="1$dcvTE731u" resolve="applicableConcept" />
                   </node>
-                  <node concept="FGMqu" id="73yVtVm0miW" role="2OqNvi" />
+                  <node concept="FGMqu" id="3p8IqUIG26Q" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="73yVtVm0jTH" role="2OqNvi">
                   <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />

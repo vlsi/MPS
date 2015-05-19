@@ -15,21 +15,19 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
+import com.intellij.ide.actions.JetBrainsTvAction;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.wm.impl.welcomeScreen.JetBrainsTvAction;
 import jetbrains.mps.icons.MPSIcons.Help;
 
 /**
  * User: shatalin
  * Date: 5/28/12
+ * TODO: Remove after move to flat welcome screen and replace with JetBrainsTvAction
  */
+@Deprecated
 public class MPSJetBrainsTvAction extends JetBrainsTvAction {
-  private static final String CHANNEL = "mps";
-
   public MPSJetBrainsTvAction() {
-    super(CHANNEL);
-
     getTemplatePresentation().setText("JetBrains TV");
     getTemplatePresentation().setIcon(Help.JetbrainsTvMPS);
   }

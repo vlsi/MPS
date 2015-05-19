@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,9 @@ import java.util.List;
 public class PathProvider {
   private static final Logger LOG = LogManager.getLogger(PathProvider.class);
 
+  // FIXME bloody sh!t. Ever try to put anything into SearchResult this code does not expect, and no chance to see it. Besides, there's
+  // FIXME              symmetric code in DataTree.createPath() which needs to be fixed to get the stuff working. Great, yo!
+  // FIXME This code cries for refactoring. Why on earth does it resolve model references?
   public static List<PathItem> getPathForSearchResult(SearchResult<?> result) {
     List<PathItem> res = new ArrayList<PathItem>();
     Object o = result.getPathObject();
@@ -71,6 +74,10 @@ public class PathProvider {
     if (o instanceof SModule) {
       SModule module = (SModule) o;
       res.add(new PathItem(PathItemRole.ROLE_MODULE, module));
+    }
+
+    if (o instanceof SModuleReference) {
+      res.add(new PathItem(PathItemRole.ROLE_MODULE, o));
     }
 
     List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<Pair<CategoryKind, String>>(result.getCategories());

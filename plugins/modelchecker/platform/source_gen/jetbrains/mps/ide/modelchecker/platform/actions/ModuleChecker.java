@@ -5,8 +5,9 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.validation.ModuleValidator;
-import jetbrains.mps.project.validation.ModuleValidatorFactory;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.project.validation.ValidationProblem;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -15,19 +16,25 @@ public class ModuleChecker {
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
   public ModuleChecker() {
   }
-  public void checkModule(SModule module, ProgressMonitor monitor) {
-    String moduleName = module.getModuleName();
+  public void checkModule(final SModule module, ProgressMonitor monitor) {
+    final String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
-      ModuleValidator validator = ModuleValidatorFactory.createValidator(module);
-      for (String msg : validator.getErrors()) {
-        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_ERROR, "module properties"));
-
-      }
-      for (String msg : validator.getWarnings()) {
-        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + msg, null, ModelChecker.SEVERITY_WARNING, "module properties"));
-
-      }
+      ValidationUtil.validateModule(module, new Processor<ValidationProblem>() {
+        public boolean process(final ValidationProblem vp) {
+          String severity = (vp.getSeverity() == ValidationProblem.Severity.ERROR ? ModelChecker.SEVERITY_ERROR : ModelChecker.SEVERITY_WARNING);
+          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + vp.getMessage(), new IModelCheckerFix() {
+            public boolean doFix() {
+              if (!(vp.canFix())) {
+                return false;
+              }
+              vp.fix();
+              return true;
+            }
+          }, severity, "module properties"));
+          return true;
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error while " + moduleName + " module checking", t);

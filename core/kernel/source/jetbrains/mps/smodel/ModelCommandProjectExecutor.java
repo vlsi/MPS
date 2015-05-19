@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +32,6 @@ import org.jetbrains.annotations.Nullable;
 @ToRemove(version = 3.2)
 @Deprecated
 public interface ModelCommandProjectExecutor extends ModelCommandExecutor {
-
-  @ToRemove(version = 3.2)
-  @Deprecated
-  void runWriteActionWithProgressSynchronously(@NotNull RunnableWithProgress runnable, String progressTitle, boolean canBeCanceled,
-      jetbrains.mps.project.Project project);
 
   @ToRemove(version = 3.2)
   @Deprecated

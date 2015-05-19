@@ -2,10 +2,10 @@
 <model ref="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -161,6 +161,7 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -14119,52 +14120,13 @@
                   <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
                 </node>
                 <node concept="2ShNRf" id="8qS5$San6" role="33vP2m">
-                  <node concept="YeOm9" id="8qS5$San7" role="2ShVmc">
-                    <node concept="1Y3b0j" id="8qS5$San8" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="37wK5l" to="nx1:~AnAction.&lt;init&gt;(java.lang.String)" resolve="AnAction" />
-                      <ref role="1Y3XeK" to="nx1:~AnAction" resolve="AnAction" />
-                      <node concept="3Tm1VV" id="8qS5$San9" role="1B3o_S" />
-                      <node concept="Xl_RD" id="8qS5$Sann" role="37wK5m">
-                        <property role="Xl_RC" value="Replace this occurence only" />
-                      </node>
-                      <node concept="3clFb_" id="8qS5$Sana" role="jymVt">
-                        <property role="IEkAT" value="false" />
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="actionPerformed" />
-                        <property role="DiZV1" value="false" />
-                        <node concept="3Tm1VV" id="8qS5$Sanb" role="1B3o_S" />
-                        <node concept="3cqZAl" id="8qS5$Sanc" role="3clF45" />
-                        <node concept="37vLTG" id="8qS5$Sand" role="3clF46">
-                          <property role="TrG5h" value="e" />
-                          <node concept="3uibUv" id="8qS5$Sane" role="1tU5fm">
-                            <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
-                          </node>
-                        </node>
-                        <node concept="3clFbS" id="8qS5$Sanf" role="3clF47">
-                          <node concept="3clFbF" id="8qS5$Sang" role="3cqZAp">
-                            <node concept="2OqwBi" id="8qS5$Sanh" role="3clFbG">
-                              <node concept="37vLTw" id="2BHiRxeusrq" role="2Oq$k0">
-                                <ref role="3cqZAo" node="8qS5$SapC" resolve="myRefactoring" />
-                              </node>
-                              <node concept="liA8E" id="8qS5$Sanj" role="2OqNvi">
-                                <ref role="37wK5l" to="89o2:1S4GctIhgue" resolve="setReplacingAll" />
-                                <node concept="3clFbT" id="8qS5$Sank" role="37wK5m">
-                                  <property role="3clFbU" value="false" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="8qS5$Sanl" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyzbSI" role="3clFbG">
-                              <ref role="37wK5l" node="8qS5$Saoh" resolve="execute" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2AHcQZ" id="3tYsUK_S6fw" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                        </node>
-                      </node>
+                  <node concept="1pGfFk" id="AHtc5B5WCe" role="2ShVmc">
+                    <ref role="37wK5l" node="AHtc5B5Qiz" resolve="LocalVariableIntroducer.ExecuteAction" />
+                    <node concept="Xl_RD" id="8qS5$Sann" role="37wK5m">
+                      <property role="Xl_RC" value="Replace this occurrence only" />
+                    </node>
+                    <node concept="3clFbT" id="AHtc5B5W$S" role="37wK5m">
+                      <property role="3clFbU" value="false" />
                     </node>
                   </node>
                 </node>
@@ -14172,82 +14134,43 @@
             </node>
             <node concept="3cpWs8" id="8qS5$Sano" role="3cqZAp">
               <node concept="3cpWsn" id="8qS5$Sanp" role="3cpWs9">
-                <property role="TrG5h" value="allOccurences" />
+                <property role="TrG5h" value="allOccurrences" />
                 <node concept="3uibUv" id="8qS5$Sanq" role="1tU5fm">
                   <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
                 </node>
                 <node concept="2ShNRf" id="8qS5$Sanr" role="33vP2m">
-                  <node concept="YeOm9" id="8qS5$Sans" role="2ShVmc">
-                    <node concept="1Y3b0j" id="8qS5$Sant" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="37wK5l" to="nx1:~AnAction.&lt;init&gt;(java.lang.String)" resolve="AnAction" />
-                      <ref role="1Y3XeK" to="nx1:~AnAction" resolve="AnAction" />
-                      <node concept="3Tm1VV" id="8qS5$Sanu" role="1B3o_S" />
-                      <node concept="3cpWs3" id="8qS5$SanG" role="37wK5m">
-                        <node concept="2YIFZM" id="8qS5$SanH" role="3uHU7w">
-                          <ref role="37wK5l" to="msyo:~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolve="formatNumericalString" />
-                          <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
-                          <node concept="3cpWs3" id="8qS5$SanI" role="37wK5m">
-                            <node concept="3cmrfG" id="8qS5$SanJ" role="3uHU7w">
-                              <property role="3cmrfH" value="1" />
-                            </node>
-                            <node concept="2OqwBi" id="8qS5$SanK" role="3uHU7B">
-                              <node concept="2OqwBi" id="8qS5$SanL" role="2Oq$k0">
-                                <node concept="37vLTw" id="2BHiRxeuG_m" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="8qS5$SapC" resolve="myRefactoring" />
-                                </node>
-                                <node concept="liA8E" id="8qS5$SanN" role="2OqNvi">
-                                  <ref role="37wK5l" to="89o2:3u7EY3u213f" resolve="getDuplicates" />
-                                </node>
-                              </node>
-                              <node concept="34oBXx" id="8qS5$SanO" role="2OqNvi" />
-                            </node>
+                  <node concept="1pGfFk" id="AHtc5B5XsT" role="2ShVmc">
+                    <ref role="37wK5l" node="AHtc5B5Qiz" resolve="LocalVariableIntroducer.ExecuteAction" />
+                    <node concept="3cpWs3" id="8qS5$SanG" role="37wK5m">
+                      <node concept="2YIFZM" id="8qS5$SanH" role="3uHU7w">
+                        <ref role="37wK5l" to="msyo:~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolve="formatNumericalString" />
+                        <ref role="1Pybhc" to="msyo:~NameUtil" resolve="NameUtil" />
+                        <node concept="3cpWs3" id="8qS5$SanI" role="37wK5m">
+                          <node concept="3cmrfG" id="8qS5$SanJ" role="3uHU7w">
+                            <property role="3cmrfH" value="1" />
                           </node>
-                          <node concept="Xl_RD" id="8qS5$SanP" role="37wK5m">
-                            <property role="Xl_RC" value="occurence" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="8qS5$SanQ" role="3uHU7B">
-                          <property role="Xl_RC" value="Replace all " />
-                        </node>
-                      </node>
-                      <node concept="3clFb_" id="8qS5$Sanv" role="jymVt">
-                        <property role="IEkAT" value="false" />
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="actionPerformed" />
-                        <property role="DiZV1" value="false" />
-                        <node concept="3Tm1VV" id="8qS5$Sanw" role="1B3o_S" />
-                        <node concept="3cqZAl" id="8qS5$Sanx" role="3clF45" />
-                        <node concept="37vLTG" id="8qS5$Sany" role="3clF46">
-                          <property role="TrG5h" value="e" />
-                          <node concept="3uibUv" id="8qS5$Sanz" role="1tU5fm">
-                            <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
-                          </node>
-                        </node>
-                        <node concept="3clFbS" id="8qS5$San$" role="3clF47">
-                          <node concept="3clFbF" id="8qS5$San_" role="3cqZAp">
-                            <node concept="2OqwBi" id="8qS5$SanA" role="3clFbG">
-                              <node concept="37vLTw" id="2BHiRxeuTxU" role="2Oq$k0">
+                          <node concept="2OqwBi" id="8qS5$SanK" role="3uHU7B">
+                            <node concept="2OqwBi" id="8qS5$SanL" role="2Oq$k0">
+                              <node concept="37vLTw" id="2BHiRxeuG_m" role="2Oq$k0">
                                 <ref role="3cqZAo" node="8qS5$SapC" resolve="myRefactoring" />
                               </node>
-                              <node concept="liA8E" id="8qS5$SanC" role="2OqNvi">
-                                <ref role="37wK5l" to="89o2:1S4GctIhgue" resolve="setReplacingAll" />
-                                <node concept="3clFbT" id="8qS5$SanD" role="37wK5m">
-                                  <property role="3clFbU" value="true" />
-                                </node>
+                              <node concept="liA8E" id="8qS5$SanN" role="2OqNvi">
+                                <ref role="37wK5l" to="89o2:3u7EY3u213f" resolve="getDuplicates" />
                               </node>
                             </node>
-                          </node>
-                          <node concept="3clFbF" id="8qS5$SanE" role="3cqZAp">
-                            <node concept="1rXfSq" id="4hiugqyz56E" role="3clFbG">
-                              <ref role="37wK5l" node="8qS5$Saoh" resolve="execute" />
-                            </node>
+                            <node concept="34oBXx" id="8qS5$SanO" role="2OqNvi" />
                           </node>
                         </node>
-                        <node concept="2AHcQZ" id="3tYsUK_S5SA" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+                        <node concept="Xl_RD" id="8qS5$SanP" role="37wK5m">
+                          <property role="Xl_RC" value="occurrence" />
                         </node>
                       </node>
+                      <node concept="Xl_RD" id="8qS5$SanQ" role="3uHU7B">
+                        <property role="Xl_RC" value="Replace all " />
+                      </node>
+                    </node>
+                    <node concept="3clFbT" id="AHtc5B5XU4" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
@@ -14267,7 +14190,7 @@
                   <node concept="liA8E" id="8qS5$SanW" role="2OqNvi">
                     <ref role="37wK5l" to="yqci:~JBPopupFactory.createActionGroupPopup(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,com.intellij.openapi.actionSystem.DataContext,com.intellij.openapi.ui.popup.JBPopupFactory$ActionSelectionAid,boolean):com.intellij.openapi.ui.popup.ListPopup" resolve="createActionGroupPopup" />
                     <node concept="Xl_RD" id="8qS5$SanX" role="37wK5m">
-                      <property role="Xl_RC" value="Multiple occurences found" />
+                      <property role="Xl_RC" value="Multiple occurrences found" />
                     </node>
                     <node concept="2YIFZM" id="8qS5$SanY" role="37wK5m">
                       <ref role="37wK5l" to="pvwh:~ActionUtils.groupFromActions(com.intellij.openapi.actionSystem.AnAction...):com.intellij.openapi.actionSystem.DefaultActionGroup" resolve="groupFromActions" />
@@ -14276,7 +14199,7 @@
                         <ref role="3cqZAo" node="8qS5$San4" resolve="thisOnly" />
                       </node>
                       <node concept="37vLTw" id="3GM_nagTx3k" role="37wK5m">
-                        <ref role="3cqZAo" node="8qS5$Sanp" resolve="allOccurences" />
+                        <ref role="3cqZAo" node="8qS5$Sanp" resolve="allOccurrences" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="2BHiRxgmGQ5" role="37wK5m">
@@ -14317,6 +14240,9 @@
               <node concept="3clFbF" id="8qS5$Saoe" role="3cqZAp">
                 <node concept="1rXfSq" id="4hiugqyzh_3" role="3clFbG">
                   <ref role="37wK5l" node="8qS5$Saoh" resolve="execute" />
+                  <node concept="3clFbT" id="AHtc5B5OD$" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -14330,6 +14256,19 @@
       <node concept="3cqZAl" id="8qS5$Saoi" role="3clF45" />
       <node concept="3Tm6S6" id="8qS5$Saoj" role="1B3o_S" />
       <node concept="3clFbS" id="8qS5$Saok" role="3clF47">
+        <node concept="3clFbF" id="AHtc5B5NYn" role="3cqZAp">
+          <node concept="2OqwBi" id="AHtc5B5OaB" role="3clFbG">
+            <node concept="37vLTw" id="AHtc5B5NYl" role="2Oq$k0">
+              <ref role="3cqZAo" node="8qS5$SapC" resolve="myRefactoring" />
+            </node>
+            <node concept="liA8E" id="AHtc5B5OBe" role="2OqNvi">
+              <ref role="37wK5l" to="89o2:1S4GctIhgue" resolve="setReplacingAll" />
+              <node concept="37vLTw" id="AHtc5B5OCw" role="37wK5m">
+                <ref role="3cqZAo" node="AHtc5B5Ng3" resolve="replaceAllDuplicates" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="8qS5$Saol" role="3cqZAp">
           <node concept="2OqwBi" id="8qS5$Saom" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeuL9X" role="2Oq$k0">
@@ -14372,14 +14311,23 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1KUoCiqb6PW" role="3cqZAp">
-          <node concept="2OqwBi" id="1KUoCiqb6PX" role="3clFbG">
-            <node concept="2YIFZM" id="1KUoCiqb6PY" role="2Oq$k0">
-              <ref role="37wK5l" to="cu2c:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-              <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
+        <node concept="3clFbF" id="AHtc5B5CWB" role="3cqZAp">
+          <node concept="2OqwBi" id="AHtc5B5DK7" role="3clFbG">
+            <node concept="2OqwBi" id="AHtc5B5Dqj" role="2Oq$k0">
+              <node concept="2OqwBi" id="AHtc5B5D86" role="2Oq$k0">
+                <node concept="37vLTw" id="AHtc5B5CW_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="8qS5$SapI" resolve="myEditorContext" />
+                </node>
+                <node concept="liA8E" id="AHtc5B5Dpo" role="2OqNvi">
+                  <ref role="37wK5l" to="srng:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="AHtc5B5DIZ" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
-            <node concept="liA8E" id="1KUoCiqb6PZ" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolve="runWriteActionInCommand" />
+            <node concept="liA8E" id="AHtc5B5E8M" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
               <node concept="1bVj0M" id="1KUoCiqb6Q0" role="37wK5m">
                 <node concept="3clFbS" id="1KUoCiqb6Q2" role="1bW5cS">
                   <node concept="3clFbF" id="1KUoCiqb6Q3" role="3cqZAp">
@@ -14549,6 +14497,10 @@
           </node>
         </node>
       </node>
+      <node concept="37vLTG" id="AHtc5B5Ng3" role="3clF46">
+        <property role="TrG5h" value="replaceAllDuplicates" />
+        <node concept="10P_77" id="AHtc5B5Ng2" role="1tU5fm" />
+      </node>
     </node>
     <node concept="3clFb_" id="8qS5$Saqa" role="jymVt">
       <property role="TrG5h" value="getRelativePoint" />
@@ -14593,7 +14545,7 @@
                   </node>
                   <node concept="2OqwBi" id="4SRQPWV$Zrf" role="37wK5m">
                     <node concept="liA8E" id="4SRQPWV_090" role="2OqNvi">
-                      <ref role="37wK5l" to="nu8v:~EditorCell.getY():int" resolve="getY" />
+                      <ref role="37wK5l" to="nu8v:~EditorCell.getBottom():int" resolve="getBottom" />
                     </node>
                     <node concept="37vLTw" id="4SRQPWV$Znn" role="2Oq$k0">
                       <ref role="3cqZAo" node="4SRQPWV$H6b" resolve="cell" />
@@ -14606,6 +14558,82 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="8qS5$Saqo" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="AHtc5B5PJC" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="1sVAO0" value="false" />
+      <property role="1EXbeo" value="false" />
+      <property role="TrG5h" value="ExecuteAction" />
+      <node concept="312cEg" id="AHtc5B5Qkn" role="jymVt">
+        <property role="TrG5h" value="myReplaceAllDuplicates" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3Tm6S6" id="AHtc5B5Qko" role="1B3o_S" />
+        <node concept="10P_77" id="AHtc5B5Qkq" role="1tU5fm" />
+      </node>
+      <node concept="3clFbW" id="AHtc5B5Qiz" role="jymVt">
+        <node concept="3cqZAl" id="AHtc5B5Qi$" role="3clF45" />
+        <node concept="3clFbS" id="AHtc5B5QiA" role="3clF47">
+          <node concept="XkiVB" id="AHtc5B5WHj" role="3cqZAp">
+            <ref role="37wK5l" to="nx1:~AnAction.&lt;init&gt;(java.lang.String)" resolve="AnAction" />
+            <node concept="37vLTw" id="AHtc5B5WIB" role="37wK5m">
+              <ref role="3cqZAo" node="AHtc5B5QiJ" resolve="text" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="AHtc5B5Qkr" role="3cqZAp">
+            <node concept="37vLTI" id="AHtc5B5Qkt" role="3clFbG">
+              <node concept="37vLTw" id="AHtc5B5Qk_" role="37vLTx">
+                <ref role="3cqZAo" node="AHtc5B5Qj7" resolve="replaceAllDuplicates" />
+              </node>
+              <node concept="37vLTw" id="AHtc5B5S5L" role="37vLTJ">
+                <ref role="3cqZAo" node="AHtc5B5Qkn" resolve="myReplaceAllDuplicates" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="AHtc5B5Qip" role="1B3o_S" />
+        <node concept="37vLTG" id="AHtc5B5QiJ" role="3clF46">
+          <property role="TrG5h" value="text" />
+          <node concept="3uibUv" id="AHtc5B5QiI" role="1tU5fm">
+            <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="AHtc5B5Qj7" role="3clF46">
+          <property role="TrG5h" value="replaceAllDuplicates" />
+          <node concept="10P_77" id="AHtc5B5QjS" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="AHtc5B5S6d" role="jymVt" />
+      <node concept="3clFb_" id="AHtc5B5S73" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="actionPerformed" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="AHtc5B5S74" role="1B3o_S" />
+        <node concept="3cqZAl" id="AHtc5B5S76" role="3clF45" />
+        <node concept="37vLTG" id="AHtc5B5S77" role="3clF46">
+          <property role="TrG5h" value="event" />
+          <node concept="3uibUv" id="AHtc5B5S78" role="1tU5fm">
+            <ref role="3uigEE" to="nx1:~AnActionEvent" resolve="AnActionEvent" />
+          </node>
+          <node concept="2AHcQZ" id="AHtc5B5S79" role="2AJF6D">
+            <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="AHtc5B5S7a" role="3clF47">
+          <node concept="3clFbF" id="AHtc5B5Wl$" role="3cqZAp">
+            <node concept="1rXfSq" id="AHtc5B5Wlz" role="3clFbG">
+              <ref role="37wK5l" node="8qS5$Saoh" resolve="execute" />
+              <node concept="37vLTw" id="AHtc5B5WmD" role="37wK5m">
+                <ref role="3cqZAo" node="AHtc5B5Qkn" resolve="myReplaceAllDuplicates" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="AHtc5B5PdY" role="1B3o_S" />
+      <node concept="3uibUv" id="AHtc5B5Qgj" role="1zkMxy">
+        <ref role="3uigEE" to="nx1:~AnAction" resolve="AnAction" />
+      </node>
     </node>
   </node>
 </model>

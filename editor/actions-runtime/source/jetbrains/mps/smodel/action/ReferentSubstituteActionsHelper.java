@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,13 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -37,40 +35,37 @@ import java.util.List;
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
-  public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
-    // proceed with custom builders
-    SNode referenceNodeConcept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
-    Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
-    if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + SNodeOperations.getDebugText(referenceNodeConcept));
-      return Collections.emptyList();
-    }
-
+  public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration) {
     // search scope
-    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration));
+    SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(linkDeclaration);
+    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, association);
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
       return Collections.emptyList();
     }
-
-    return createActions(referenceNode, currentReferent, linkDeclaration, refDescriptor);
+    // XXX not quite sure this is the right approach, to take specialized link, if any, use its scope, and then find genuine link
+    // but this is most close to the original code.
+    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    if (linkDeclaration != genuineLinkDeclaration) {
+      association = MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
+    }
+    return createActions(referenceNode, currentReferent, association, refDescriptor);
   }
 
   private static List<SubstituteAction> createActions(
-      SNode referenceNode, SNode currentReferent, SNode linkDeclaration, ReferenceDescriptor descriptor) {
+      SNode referenceNode, SNode currentReferent, SReferenceLink association, ReferenceDescriptor descriptor) {
 
-    final SNode referentConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
-    if (referentConcept == null) {
+    final SAbstractConcept targetConcept = association.getTargetConcept();
+    if (targetConcept == null) {
       return Collections.emptyList();
     }
-    String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
     Iterable<SNode> nodes = descriptor.getScope().getAvailableElements(null);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
-      if (node == null || !node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(referentConceptFqName)))
+      if (node == null || !node.getConcept().isSubConceptOf(targetConcept))
         continue;
-      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, descriptor));
+      actions.add(new DefaultSReferenceSubstituteAction(node, referenceNode, currentReferent, association));
     }
     return actions;
   }

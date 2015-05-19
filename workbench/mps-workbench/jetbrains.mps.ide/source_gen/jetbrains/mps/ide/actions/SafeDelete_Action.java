@@ -4,18 +4,15 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -28,48 +25,34 @@ public class SafeDelete_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SafeDelete", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
-      if (nodes != null) {
-      }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("nodes", null);
       } else {
         MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
-    }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
+      if (nodes == null) {
+        return false;
+      }
+
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteNodes(true, true, false);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SafeDelete", t);
-      }
-    }
+    new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteNodes(true, true, false);
   }
-  protected static Logger LOG = LogManager.getLogger(SafeDelete_Action.class);
 }

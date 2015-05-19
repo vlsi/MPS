@@ -135,6 +135,30 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TextGenAspectDescriptor" file="TextGenAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClassCreator_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalAnonymousClass_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassCreator_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassExpression_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassifierType_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialFieldReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialInstanceMethodCall_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticFieldReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalSuperMethodCallOperation_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalThisExpression_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.InternalVariableReference_TextGen" />
+    <classNode dependClassName="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
+    <classNode dependClassName="jetbrains.mps.text.LegacyTextGenAdapter" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.BaseTextGenAspectDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen" file="TypeHintExpression_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

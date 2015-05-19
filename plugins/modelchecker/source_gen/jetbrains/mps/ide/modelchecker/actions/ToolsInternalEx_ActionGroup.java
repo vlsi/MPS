@@ -14,9 +14,7 @@ public class ToolsInternalEx_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindAllBrokenReferences_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action");
-      ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindAllAdapterUsages_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindCrossTemplateReferences_Action");
       ToolsInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action");
     } catch (Throwable t) {

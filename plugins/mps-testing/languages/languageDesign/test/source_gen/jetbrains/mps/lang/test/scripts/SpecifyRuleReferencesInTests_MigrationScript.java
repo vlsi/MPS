@@ -5,27 +5,35 @@ package jetbrains.mps.lang.test.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationScript {
   public SpecifyRuleReferencesInTests_MigrationScript(IOperationContext operationContext) {
     super("Specify rule references in tests for tags 'has error' and 'has warning'");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Specify Rule References";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Specify Rule References";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return (SpecifyUtil.getOperationsContainer(node) != null);
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SpecifyUtil.fillContainerWithRuleMessages(node);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -71,7 +71,7 @@ public class ClassifierScopeUtils {
     return getClassifierAndSuperClassifiersData(classifier).isCyclic;
   }
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull final SNode classifier) {
-    if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientModelsModule) {
+    if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientSModule) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
     } else {
       return RepositoryStateCacheUtils.getFromCache(ClassifierScopeUtils.class, classifier, new _FunctionTypes._return_P0_E0<ClassifierScopeUtils.ClassifierAndSuperClassifiersData>() {

@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="10,0,155,0" name="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,95,0" name="jetbrains.mps.build.mps.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)/1224588814561889089">
@@ -726,7 +726,7 @@
       <node id="4034578608468929484" at="44,63,45,58" concept="6" />
       <node id="4034578608468929517" at="49,13,50,676" concept="5" />
       <node id="4034578608468929712" at="51,36,52,40" concept="6" />
-      <node id="4034578608468929721" at="53,15,54,387" concept="6" />
+      <node id="4034578608468929721" at="53,15,54,350" concept="6" />
       <node id="4034578608468929484" at="59,7,60,22" concept="6" />
       <node id="4034578608468929484" at="62,0,63,0" concept="8" trace="breakingNode_q09jue_a0a0a0a0a1a0b0a1a1" />
       <node id="4034578608468929484" at="28,0,31,0" concept="1" trace="BuildMps_IdeaPluginGroupCustomModule_Constraints#()V" />
@@ -746,7 +746,7 @@
       <scope id="4034578608468929484" at="28,0,31,0" />
       <scope id="4034578608468929484" at="35,0,39,0" />
       <scope id="4034578608468929484" at="43,0,47,0" />
-      <scope id="4034578608468929487" at="49,13,54,387">
+      <scope id="4034578608468929487" at="49,13,54,350">
         <var name="group" id="4034578608468929518" />
       </scope>
       <scope id="4034578608468929484" at="48,122,55,13" />

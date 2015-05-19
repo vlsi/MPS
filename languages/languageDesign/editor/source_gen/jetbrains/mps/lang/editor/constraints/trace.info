@@ -15,7 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="10,0,155,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,95,0" name="jetbrains.mps.lang.editor.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/1213104840151">
@@ -913,58 +913,58 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4088952938557443050">
     <file name="AttributeStyleClassItem_Constraints.java">
-      <node id="4088952938557443050" at="31,48,32,98" concept="12" />
-      <node id="4088952938557443050" at="35,98,36,135" concept="6" />
-      <node id="4088952938557443050" at="39,44,40,20" concept="7" />
-      <node id="4088952938557443050" at="47,63,48,58" concept="7" />
-      <node id="4088952938557477085" at="52,13,53,92" concept="6" />
-      <node id="4088952938557505273" at="53,92,54,83" concept="6" />
-      <node id="6609104295326400348" at="54,83,55,76" concept="2" />
-      <node id="4088952938557520640" at="55,76,56,136" concept="2" />
-      <node id="4088952938557582613" at="58,51,59,55" concept="7" />
-      <node id="4088952938557613745" at="61,18,62,117" concept="7" />
-      <node id="4088952938557443050" at="67,7,68,22" concept="7" />
-      <node id="4088952938557443050" at="70,0,71,0" concept="10" trace="breakingNode_ydnl2u_a0a0a0a0a1a0b0a1a1" />
-      <node id="4088952938557443050" at="31,0,34,0" concept="1" trace="AttributeStyleClassItem_Constraints#()V" />
-      <node id="4088952938557578322" at="58,0,61,0" concept="5" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="4088952938557443050" at="38,0,42,0" concept="5" trace="hasOwnScopeProvider#()Z" />
-      <node id="4088952938557443050" at="46,0,50,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="4088952938557548339" at="56,136,61,18" concept="2" />
-      <node id="4088952938557443050" at="51,122,63,13" concept="0" />
-      <node id="4088952938557443050" at="50,0,65,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-      <node id="4088952938557443050" at="44,56,65,10" concept="7" />
-      <node id="4088952938557443050" at="42,0,67,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="4088952938557443050" at="36,135,67,7" concept="2" />
-      <node id="4088952938557443050" at="34,0,70,0" concept="5" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
-      <scope id="4088952938557443050" at="31,48,32,98" />
-      <scope id="4088952938557443050" at="39,44,40,20" />
-      <scope id="4088952938557443050" at="47,63,48,58" />
-      <scope id="4088952938557578323" at="58,51,59,55" />
-      <scope id="4088952938557443050" at="31,0,34,0" />
-      <scope id="4088952938557578322" at="58,0,61,0">
+      <node id="4088952938557443050" at="32,48,33,98" concept="12" />
+      <node id="4088952938557443050" at="36,98,37,135" concept="6" />
+      <node id="4088952938557443050" at="40,44,41,20" concept="7" />
+      <node id="4088952938557443050" at="48,63,49,58" concept="7" />
+      <node id="4088952938557477085" at="53,13,54,92" concept="6" />
+      <node id="4088952938557505273" at="54,92,55,83" concept="6" />
+      <node id="6609104295326400348" at="55,83,56,76" concept="2" />
+      <node id="4088952938557520640" at="56,76,57,136" concept="2" />
+      <node id="4088952938557582613" at="59,51,60,55" concept="7" />
+      <node id="4088952938557613745" at="62,18,63,211" concept="7" />
+      <node id="4088952938557443050" at="68,7,69,22" concept="7" />
+      <node id="4088952938557443050" at="71,0,72,0" concept="10" trace="breakingNode_ydnl2u_a0a0a0a0a1a0b0a1a1" />
+      <node id="4088952938557443050" at="32,0,35,0" concept="1" trace="AttributeStyleClassItem_Constraints#()V" />
+      <node id="4088952938557578322" at="59,0,62,0" concept="5" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="4088952938557443050" at="39,0,43,0" concept="5" trace="hasOwnScopeProvider#()Z" />
+      <node id="4088952938557443050" at="47,0,51,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4088952938557548339" at="57,136,62,18" concept="2" />
+      <node id="4088952938557443050" at="52,122,64,13" concept="0" />
+      <node id="4088952938557443050" at="51,0,66,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="4088952938557443050" at="45,56,66,10" concept="7" />
+      <node id="4088952938557443050" at="43,0,68,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="4088952938557443050" at="37,135,68,7" concept="2" />
+      <node id="4088952938557443050" at="35,0,71,0" concept="5" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <scope id="4088952938557443050" at="32,48,33,98" />
+      <scope id="4088952938557443050" at="40,44,41,20" />
+      <scope id="4088952938557443050" at="48,63,49,58" />
+      <scope id="4088952938557578323" at="59,51,60,55" />
+      <scope id="4088952938557443050" at="32,0,35,0" />
+      <scope id="4088952938557578322" at="59,0,62,0">
         <var name="it" id="4088952938557578322" />
       </scope>
-      <scope id="4088952938557443050" at="38,0,42,0" />
-      <scope id="4088952938557443050" at="46,0,50,0" />
-      <scope id="4088952938557469502" at="52,13,62,117">
+      <scope id="4088952938557443050" at="39,0,43,0" />
+      <scope id="4088952938557443050" at="47,0,51,0" />
+      <scope id="4088952938557469502" at="53,13,63,211">
         <var name="languages" id="4088952938557477088" />
         <var name="models" id="4088952938557505276" />
       </scope>
-      <scope id="4088952938557443050" at="51,122,63,13" />
-      <scope id="4088952938557443050" at="50,0,65,0">
+      <scope id="4088952938557443050" at="52,122,64,13" />
+      <scope id="4088952938557443050" at="51,0,66,0">
         <var name="_context" id="4088952938557443050" />
         <var name="operationContext" id="4088952938557443050" />
       </scope>
-      <scope id="4088952938557443050" at="44,56,65,10" />
-      <scope id="4088952938557443050" at="42,0,67,0" />
-      <scope id="4088952938557443050" at="35,98,68,22">
+      <scope id="4088952938557443050" at="45,56,66,10" />
+      <scope id="4088952938557443050" at="43,0,68,0" />
+      <scope id="4088952938557443050" at="36,98,69,22">
         <var name="references" id="4088952938557443050" />
       </scope>
-      <scope id="4088952938557443050" at="34,0,70,0" />
-      <unit id="4088952938557578322" at="57,100,61,15" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$3" />
-      <unit id="4088952938557443050" at="45,19,65,9" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$2" />
-      <unit id="4088952938557443050" at="37,128,67,5" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$1" />
-      <unit id="4088952938557443050" at="30,0,72,0" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" />
+      <scope id="4088952938557443050" at="35,0,71,0" />
+      <unit id="4088952938557578322" at="58,100,62,15" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$3" />
+      <unit id="4088952938557443050" at="46,19,66,9" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$2" />
+      <unit id="4088952938557443050" at="38,128,68,5" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints$1" />
+      <unit id="4088952938557443050" at="31,0,73,0" name="jetbrains.mps.lang.editor.constraints.AttributeStyleClassItem_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)/4323500428148828478">

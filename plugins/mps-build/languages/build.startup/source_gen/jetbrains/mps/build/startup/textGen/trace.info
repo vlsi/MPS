@@ -5,6 +5,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,34,0" name="jetbrains.mps.build.startup.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:920bc876-6f94-40e8-b2db-7e978827efe9(jetbrains.mps.build.startup.textGen)/1731640411964623579">
     <file name="TextFile_TextGen.java">
       <node id="1731640411964625389" at="12,5,13,201" concept="4" />

@@ -2,11 +2,11 @@
 <model ref="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -2222,12 +2222,11 @@
             <node concept="1bVj0M" id="42hl10VHbqh" role="37wK5m">
               <node concept="3clFbS" id="42hl10VHbqi" role="1bW5cS">
                 <node concept="3clFbF" id="42hl10VHbqj" role="3cqZAp">
-                  <node concept="2OqwBi" id="42hl10VHbqk" role="3clFbG">
-                    <node concept="37vLTw" id="7uQYadQc5W8" role="2Oq$k0">
+                  <node concept="2YIFZM" id="419l6RFsJDP" role="3clFbG">
+                    <ref role="37wK5l" to="unno:3IONCthJ3TP" resolve="getUsedLanguages" />
+                    <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
+                    <node concept="37vLTw" id="419l6RFsJWx" role="37wK5m">
                       <ref role="3cqZAo" node="42hl10VHbqo" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="42hl10VHbqn" role="2OqNvi">
-                      <ref role="37wK5l" to="51te:~SModelDescriptorStub.importedLanguages():java.util.List" resolve="importedLanguages" />
                     </node>
                   </node>
                 </node>
@@ -2371,55 +2370,6 @@
                     <ref role="37wK5l" to="51te:~GeneratableSModel.isDoNotGenerate():boolean" resolve="isDoNotGenerate" />
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="42hl10VHbr9" role="3cqZAp">
-          <node concept="3clFbS" id="42hl10VHbra" role="3clFbx">
-            <node concept="3clFbF" id="42hl10VHbrb" role="3cqZAp">
-              <node concept="2OqwBi" id="42hl10VHbrc" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuW2B" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1XuTulVDK_Y" resolve="myNewChanges" />
-                </node>
-                <node concept="TSZUe" id="1XuTulVDKAR" role="2OqNvi">
-                  <node concept="2ShNRf" id="42hl10VHbrf" role="25WWJ7">
-                    <node concept="1pGfFk" id="42hl10VHbrg" role="2ShVmc">
-                      <ref role="37wK5l" to="btf5:3DFYCjfl45P" resolve="ModelVersionChange" />
-                      <node concept="37vLTw" id="2BHiRxeuksX" role="37wK5m">
-                        <ref role="3cqZAo" node="42hl10VHbu$" resolve="myChangeSet" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="42hl10VHbri" role="3clFbw">
-            <node concept="2OqwBi" id="42hl10VHbrj" role="3uHU7B">
-              <node concept="0kSF2" id="5OnZ9ck71Xk" role="2Oq$k0">
-                <node concept="3uibUv" id="5OnZ9ck79sg" role="0kSFW">
-                  <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                </node>
-                <node concept="37vLTw" id="7uQYadQcJVF" role="0kSFX">
-                  <ref role="3cqZAo" node="42hl10VHbux" resolve="myNewModel" />
-                </node>
-              </node>
-              <node concept="liA8E" id="42hl10VHbro" role="2OqNvi">
-                <ref role="37wK5l" to="51te:~SModelDescriptorStub.getVersion():int" resolve="getVersion" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="42hl10VHbrp" role="3uHU7w">
-              <node concept="0kSF2" id="5OnZ9ck7_4n" role="2Oq$k0">
-                <node concept="3uibUv" id="5OnZ9ck7GyZ" role="0kSFW">
-                  <ref role="3uigEE" to="51te:~SModelBase" resolve="SModelBase" />
-                </node>
-                <node concept="37vLTw" id="7uQYadQcVie" role="0kSFX">
-                  <ref role="3cqZAo" node="42hl10VHbuu" resolve="myOldModel" />
-                </node>
-              </node>
-              <node concept="liA8E" id="42hl10VHbru" role="2OqNvi">
-                <ref role="37wK5l" to="51te:~SModelDescriptorStub.getVersion():int" resolve="getVersion" />
               </node>
             </node>
           </node>
@@ -3407,13 +3357,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="69abr3Go1n2" role="3clFbx">
-            <node concept="3clFbF" id="69abr3Go1n3" role="3cqZAp">
-              <node concept="2YIFZM" id="69abr3Go1n4" role="3clFbG">
-                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-              </node>
-            </node>
-            <node concept="3clFbH" id="69abr3Go1n5" role="3cqZAp" />
             <node concept="3clFbF" id="69abr3Go1n6" role="3cqZAp">
               <node concept="37vLTI" id="69abr3Go1n7" role="3clFbG">
                 <node concept="2ShNRf" id="69abr3Go1n8" role="37vLTx">

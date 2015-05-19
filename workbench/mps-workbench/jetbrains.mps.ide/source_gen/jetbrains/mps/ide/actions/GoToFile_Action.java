@@ -8,10 +8,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToFile_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,25 +23,14 @@ public class GoToFile_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GoToFile_Action.this.action.update(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToFile", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    GoToFile_Action.this.action.update(event);
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
-      GoToFile_Action.this.action.actionPerformed(event);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToFile", t);
-      }
-    }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
+    GoToFile_Action.this.action.actionPerformed(event);
   }
   @NotNull
   public String getActionId() {
@@ -58,5 +44,4 @@ public class GoToFile_Action extends BaseAction {
   public static String action_State(AnAction object) {
     return "";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToFile_Action.class);
 }

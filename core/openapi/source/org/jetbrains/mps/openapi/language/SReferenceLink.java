@@ -27,6 +27,8 @@ public interface SReferenceLink extends SAbstractLink, SConceptFeature {
    * Returns a name of this reference
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
    */
+  @Deprecated //use SConceptFeature.getPresentableName
+  //ToRemove after 3.3
   String getRoleName();
 
   /**
@@ -39,6 +41,7 @@ public interface SReferenceLink extends SAbstractLink, SConceptFeature {
 
   /**
    * The concept for the nodes that this link points to.
+   * FIXME explain whether null/not null
    */
   SAbstractConcept getTargetConcept();
 

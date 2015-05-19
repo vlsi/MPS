@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -87,12 +88,16 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myNeedsOpContext = value;
   }
 
+  /**
+   * Expects at least model read access (although likely no reason to invoke in any other case but from write that modified smth)
+   */
   @Override
   public boolean updateModuleRefs() {
+    // FIXME pass SRepository to resolve references in from outside (AbstractModule)
     return RefUpdateUtil.composeUpdates(
       super.updateModuleRefs(),
       RefUpdateUtil.updateModuleRefs(myDepGenerators),
-      RefUpdateUtil.updateMappingPriorityRules(myPriorityRules));
+      RefUpdateUtil.updateMappingPriorityRules(myPriorityRules, MPSModuleRepository.getInstance()));
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,5 +29,5 @@ public interface ModelValidator {
 
   ExtensionPointName<ModelValidator> EP_NAME = ExtensionPointName.create("com.intellij.mps.ModelValidator");
 
-  boolean check(Project p, IOperationContext operationContext, List<SModel> modelDescriptors);
+  boolean check(Project p, List<SModel> modelDescriptors);
 }

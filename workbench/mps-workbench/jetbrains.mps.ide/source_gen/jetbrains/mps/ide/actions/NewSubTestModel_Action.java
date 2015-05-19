@@ -13,17 +13,17 @@ import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
+import org.apache.log4j.Level;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
@@ -42,6 +42,7 @@ public class NewSubTestModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
@@ -49,71 +50,70 @@ public class NewSubTestModel_Action extends BaseAction {
     return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")))) && ((SModel) MapSequence.fromMap(_params).get("model")).getModelRoot().canCreateModel(SModelStereotype.withStereotype(((SModel) MapSequence.fromMap(_params).get("model")).getModelName(), SModelStereotype.TESTS));
 
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewSubTestModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
-      return false;
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("treeNode", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<SModel> createdModel = new Wrappers._T<SModel>(null);
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          createdModel.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
-          if (createdModel.value == null) {
-            if (LOG.isEnabledFor(Level.WARN)) {
-              LOG.warn("Can't create submodel " + SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS) + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
-            }
-            return;
+    final Wrappers._T<SModel> createdModel = new Wrappers._T<SModel>(null);
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        createdModel.value = SModuleOperations.createModelWithAdjustments(SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
+        if (createdModel.value == null) {
+          if (LOG.isEnabledFor(Level.WARN)) {
+            LOG.warn("Can't create submodel " + SModelStereotype.withStereotype(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS) + " for model " + ((SModel) MapSequence.fromMap(_params).get("model")).getModelName());
           }
-          ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
-          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedModels()) {
-            ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
-          }
-          for (SLanguage importedLanguageId : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
-            ((SModelInternal) createdModel.value).addLanguageId(importedLanguageId, importedLanguageId.getLanguageVersion());
-          }
-          for (SModuleReference devKit : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedDevkits()) {
-            ((SModelInternal) createdModel.value).addDevKit(devKit);
-          }
-          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(createdModel.value, false);
+          return;
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
+        ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
+        for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedModels()) {
+          ((SModelInternal) createdModel.value).addModelImport(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), false);
+        }
+        for (SLanguage importedLanguage : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedLanguageIds()) {
+          ((SModelInternal) createdModel.value).addLanguage(importedLanguage);
+        }
+        for (SModuleReference devKit : ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("model"))).importedDevkits()) {
+          ((SModelInternal) createdModel.value).addDevKit(devKit);
+        }
+        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(createdModel.value, false);
       }
-    }
+    });
   }
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();

@@ -673,5 +673,10 @@
       <unit id="7544464876071207476" at="9,0,14,0" name="jetbrains.mps.smodel.resources.IMResource" />
     </file>
   </root>
+  <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/8118537977657118022">
+    <file name="CleanupActivityResource.java">
+      <unit id="8118537977657118022" at="7,0,14,0" name="jetbrains.mps.smodel.resources.CleanupActivityResource" />
+    </file>
+  </root>
 </debug-info>
 

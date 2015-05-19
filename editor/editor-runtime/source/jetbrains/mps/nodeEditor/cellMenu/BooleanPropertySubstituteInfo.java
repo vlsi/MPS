@@ -25,8 +25,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
+/**
+ * @deprecated use BooleanSPropertySubstituteInfo
+ */
 
+@Deprecated
+public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
+  
   private SNode myNode;
   private String myPropertyName;
 

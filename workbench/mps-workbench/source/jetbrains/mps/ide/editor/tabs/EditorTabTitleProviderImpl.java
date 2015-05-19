@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,25 +18,32 @@ package jetbrains.mps.ide.editor.tabs;
 import com.intellij.openapi.fileEditor.impl.EditorTabTitleProvider;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
   @Override
   public String getEditorTabTitle(final Project project, final VirtualFile file) {
-    if (!(file instanceof MPSNodeVirtualFile)) return null;
-    return ModelAccess.instance().runReadAction(new Computable<String>() {
+    if (!(file instanceof MPSNodeVirtualFile)) {
+      return null;
+    }
+    final org.jetbrains.mps.openapi.module.ModelAccess modelAccess = ProjectHelper.getModelAccess(project);
+    if (modelAccess == null) {
+      return null;
+    }
+    if (!ThreadUtils.isInEDT()) {
+      return null;
+    }
+    return new ModelAccessHelper(modelAccess).runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        if (!ModelAccess.instance().isInEDT()) {
-          return "";
-        }
         SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
-        if (node == null) return null;
-        return node.getPresentation();
+        return node == null ? null : node.getPresentation();
       }
     });
   }

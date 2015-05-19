@@ -48,17 +48,18 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -78,7 +79,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by: Sergey Dmitriev
@@ -92,7 +92,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final RuleManager myRuleManager;
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
-  private final Map<SNode, Object> myAdditionalInputNodes = new ConcurrentHashMap<SNode, Object>();
+  /**
+   * Input nodes coming from a model other than input model (or no model at all), e.g. if
+   * input node query follows a reference from an input model to some outer model.
+   * We track these nodes, including children, to facilitate reference resolution (i.e. if there's
+   * a reference in an input model pointing somewhere to subtree of a foreign node, we redirect
+   * that reference to the copied counterpart). Generally, this approach might not be everyone's
+   * desire, but it's the way it was so far.
+   */
+  private final Set<SNode> myAdditionalInputNodes = new HashSet<SNode>();
   protected final List<SNode> myOutputRoots;
 
   private final QueryExecutionContext myExecutionContext;
@@ -152,7 +160,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // prepare weaving
     ttrace.push("weavings", false);
     myWeavingProcessor = new WeavingProcessor(this);
-    myWeavingProcessor.prepareWeavingRules(getInputModel(), myRuleManager.getWeaving_MappingRules());
+    myWeavingProcessor.prepareWeavingRules(getInputModel());
     ttrace.pop();
 
     myTemplateProcessor = new TemplateProcessor(this);
@@ -498,7 +506,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     ArrayList<SNode> outputNodes = new ArrayList<SNode>();
     while(it.hasNext()) {
-      SNode newInputNode = adoptIfForeign(it.next());
+      SNode newInputNode = it.next();
+      trackIfForeign(newInputNode);
 
       if (myDeltaBuilder != null) {
         myDeltaBuilder.enterNestedCopySrc(newInputNode);
@@ -512,7 +521,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
           outputNodes.addAll(_outputNodes);
         } else {
-          FullCopyFacility copyFacility = new FullCopyFacility(env, new HashSet<SNode>(myAdditionalInputNodes.keySet()));
+          FullCopyFacility copyFacility = new FullCopyFacility(env, new HashSet<SNode>(getForeignNodes()));
           SNode copiedNode = copyFacility.copyInputNode(newInputNode);
           addOutputNodeByInputAndTemplateNode(newInputNode, templateId, copiedNode);
           if (mappingName != null) {
@@ -530,27 +539,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   }
 
-  @NotNull
-  SNode adoptIfForeign(@NotNull SNode inputNode) {
+  private Set<SNode> getForeignNodes() {
+    synchronized (myAdditionalInputNodes) {
+      return new HashSet<SNode>(myAdditionalInputNodes);
+    }
+  }
+
+  private void trackIfForeign(@NotNull SNode inputNode) {
     SModel model = inputNode.getModel();
     if (model != getInputModel() || model == null) {
-
-      // adapt external node
-      if (model != null) {
-        // TODO fail in strict mode
-        inputNode = CopyUtil.copy(inputNode);
-        // TODO inputNode.changeModel();
-      }
-
       synchronized (myAdditionalInputNodes) {
-        if (!myAdditionalInputNodes.containsKey(inputNode)) {
+        if (!myAdditionalInputNodes.contains(inputNode)) {
           for (SNode n : SNodeUtil.getDescendants(inputNode, null, true)) {
-            myAdditionalInputNodes.put(n, Boolean.TRUE);
+            myAdditionalInputNodes.add(n);
           }
         }
       }
     }
-    return inputNode;
   }
 
   BlockedReductionsData getBlockedReductionsData() {
@@ -633,7 +638,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     SNode parent = placeholder.getParent();
     if (parent != null) {
       // check new child
-      String childRole = placeholder.getRoleInParent();
+      SContainmentLink childRole = placeholder.getContainmentLink();
       final Status status = getChildRoleValidator(parent, childRole).validate(actual);
       if (status != null) {
         getLogger().warning(templateNode, status.getMessage("delayed changes"), status.describe(
@@ -707,7 +712,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return false;
       }
 
-      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
+      if (inputRootNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(applicableConcept)))) {
         return myEnv.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnv, inputRootNode, null));
       }
       return false;
@@ -781,7 +786,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       myEnv.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
       for (SNode inputChildNode : inputNode.getChildren()) {
-        String childRole = inputChildNode.getRoleInParent();
+        SContainmentLink childRole = inputChildNode.getContainmentLink();
         assert childRole != null;
 
         Collection<SNode> outputChildNodes = myEnv.tryToReduce(inputChildNode);
@@ -865,12 +870,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
               }
 
               SReference reference = new StaticReference(
-                  inputReference.getRole(),
+                  inputReference.getLink(),
                   outputNode,
                   targetModelReference,
                   inputReference.getTargetNodeId(),
                   ((StaticReference) inputReference).getResolveInfo());
-              outputNode.setReference(reference.getRole(), reference);
+              outputNode.setReference(reference.getLink(), reference);
             } else if (inputReference instanceof DynamicReference) {
               DynamicReference outputReference = new DynamicReference(
                   inputReference.getRole(),
@@ -878,7 +883,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                   targetModelReference,
                   ((DynamicReference) inputReference).getResolveInfo());
               outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-              outputNode.setReference(outputReference.getRole(), outputReference);
+              outputNode.setReference(outputReference.getLink(), outputReference);
             } else {
               String msg = "internal error: can't clone reference '%s' in %s. Reference class: %s";
               getLogger().error(inputNode.getReference(),
@@ -888,29 +893,24 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
         }
 
-        SNode inputTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
-        if (inputTargetNode == null) {
+        SNode refTarget = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(inputReference);
+        if (refTarget == null) {
           reportBrokenRef(inputNode, inputReference);
           continue;
         }
 
-        if (inputTargetNode.getModel() != null && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(inputTargetNode)) {
-          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-              inputReference.getRole(),
-              outputNode,
-              inputReference.getSourceNode(),
-              inputTargetNode);
-          PostponedReference reference = myEnv.getGenerator().register(new PostponedReference(refInfo));
-          reference.setReferenceInOutputSourceNode();
-        } else if (inputTargetNode.getModel() != null) {
-          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
+        if (refTarget.getModel() != null && refTarget.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(refTarget)) {
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
+          new PostponedReference(inputReference.getLink(), outputNode, refInfo).setAndRegister(myEnv.getGenerator());
+        } else if (refTarget.getModel() != null) {
+          SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
         } else {
           reportBrokenRef(inputNode, inputReference);
         }
       }
 
       for (SNode inputChildNode : inputNode.getChildren()) {
-        String childRole = inputChildNode.getRoleInParent();
+        SContainmentLink childRole = inputChildNode.getContainmentLink();
         assert childRole != null;
 
         Collection<SNode> outputChildNodes = myEnv.tryToReduce(inputChildNode);

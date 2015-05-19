@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,17 +22,17 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -40,40 +40,66 @@ import java.util.Collections;
 import java.util.List;
 
 public class CreateGroupsBuilder {
-  public static List<DefaultActionGroup> getCreateGroups(SNodeReference baseNode, Collection<RelationDescriptor> possibleTabs, @Nullable RelationDescriptor currentAspect, NodeChangeCallback callback) {
-    List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
+  private final Project myProject;
+  private final SNodeReference myBaseNode;
+  private final NodeChangeCallback myCallback;
 
-    List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
-    Collections.sort(tabs, new RelationComparator());
+  public CreateGroupsBuilder(@NotNull Project mpsProject, @NotNull SNodeReference baseNode, @NotNull NodeChangeCallback callback) {
+    myProject = mpsProject;
+    myBaseNode = baseNode;
+    myCallback = callback;
+  }
 
-    if (currentAspect != null) {
-      tabs.remove(currentAspect);
-      tabs.add(0, currentAspect);
-    }
+  public List<DefaultActionGroup> getCreateGroups(final Collection<RelationDescriptor> possibleTabs, @Nullable final RelationDescriptor currentAspect) {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<DefaultActionGroup>>() {
+      @Override
+      public List<DefaultActionGroup> compute() {
+        List<DefaultActionGroup> groups = new ArrayList<DefaultActionGroup>();
 
-    for (final RelationDescriptor d : tabs) {
-      List<SNode> nodes = d.getNodes(baseNode.resolve(MPSModuleRepository.getInstance()));
-      if (!nodes.isEmpty() && d.isSingle()) continue;
+        List<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(possibleTabs);
+        Collections.sort(tabs, new RelationComparator());
 
-      DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
+        if (currentAspect != null) {
+          tabs.remove(currentAspect);
+          tabs.add(0, currentAspect);
+        }
 
-      if (tabs.indexOf(d) == 0) {
-        group.setPopup(false);
+        for (final RelationDescriptor d : tabs) {
+          List<SNode> nodes = d.getNodes(myBaseNode.resolve(myProject.getRepository()));
+          if (!nodes.isEmpty() && d.isSingle()) {
+            continue;
+          }
+
+          DefaultActionGroup group = doGetCreateGroup(d);
+
+          if (tabs.indexOf(d) == 0) {
+            group.setPopup(false);
+          }
+
+          groups.add(group);
+        }
+        return groups;
       }
-
-      groups.add(group);
-    }
-    return groups;
+    });
   }
 
   @NotNull
-  public static DefaultActionGroup getCreateGroup(SNodeReference baseNode, NodeChangeCallback callback, RelationDescriptor d) {
-    List<SNode> concepts = d.getConcepts(baseNode.resolve(MPSModuleRepository.getInstance()));
+  public DefaultActionGroup getCreateGroup(final RelationDescriptor d) {
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<DefaultActionGroup>() {
+      @Override
+      public DefaultActionGroup compute() {
+        return doGetCreateGroup(d);
+      }
+    });
+  }
+
+  /*package*/ DefaultActionGroup doGetCreateGroup(RelationDescriptor d) {
+    List<SNode> concepts = d.getConcepts(myBaseNode.resolve(myProject.getRepository()));
     if (concepts.isEmpty()) return new DefaultActionGroup();
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), true);
     for (final SNode concept : concepts) {
-      group.add(new CreateAction(concept, d, baseNode, callback));
+      group.add(new CreateAction(concept, d));
     }
     return group;
   }
@@ -87,31 +113,28 @@ public class CreateGroupsBuilder {
     }
   }
 
-  private static class CreateAction extends AnAction {
+  private class CreateAction extends AnAction {
     private final SNode myConcept;
     private final RelationDescriptor myDescriptor;
-    private SNodeReference myBaseNode;
-    private NodeChangeCallback myCallback;
 
-    public CreateAction(SNode concept, RelationDescriptor descriptor, SNodeReference baseNode, NodeChangeCallback callback) {
+    public CreateAction(SNode concept, RelationDescriptor descriptor) {
       super(getConceptAlias(concept).replaceAll("_", "__"), "", IconManager.getIconForConceptFQName(NameUtil.nodeFQName(concept)));
       myConcept = concept;
       myDescriptor = descriptor;
-      myBaseNode = baseNode;
-      myCallback = callback;
     }
 
     @Override
     public void actionPerformed(AnActionEvent e) {
+      // FIXME bloody sh!t, two commands depending on boolean; package name set with a separate command - ORLY?
       final SNode[] created = new SNode[1];
 
       final Runnable r1 = new Runnable() {
         @Override
         public void run() {
-          SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+          SNode node = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<SNode>() {
             @Override
             public SNode compute() {
-              return myBaseNode.resolve(MPSModuleRepository.getInstance());
+              return myBaseNode.resolve(myProject.getRepository());
             }
           });
           created[0] = myDescriptor.createNode(node, myConcept);
@@ -121,24 +144,21 @@ public class CreateGroupsBuilder {
       final Runnable r2 = new Runnable() {
         @Override
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), SNodeUtil.propertyName_BaseConcept_virtualPackage);
-          SNodeAccessUtil.setProperty(created[0], SNodeUtil.propertyName_BaseConcept_virtualPackage, mainPack);
-          myCallback.changeNode(created[0]);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(myProject.getRepository()), SNodeUtil.property_BaseConcept_virtualPackage);
+          SNodeAccessUtil.setProperty(created[0], SNodeUtil.property_BaseConcept_virtualPackage, mainPack);
+          myCallback.changeNode(created[0].getReference());
         }
       };
 
       if (myDescriptor.commandOnCreate()) {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            r1.run();
-          }
-        });
+        myProject.getModelAccess().executeCommand(r1);
       } else {
         r1.run();
       }
-      if (created[0] == null) return;
-      ModelAccess.instance().runWriteActionInCommand(r2);
+      if (created[0] == null) {
+        return;
+      }
+      myProject.getModelAccess().executeCommand(r2);
     }
   }
 }

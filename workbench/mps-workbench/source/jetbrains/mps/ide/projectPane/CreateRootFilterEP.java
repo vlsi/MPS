@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.util.Condition;
@@ -37,7 +38,8 @@ public class CreateRootFilterEP {
   private CreateRootFilterEP() {
   }
 
-  private Set<Condition<SAbstractConcept>> myFilters = new HashSet<Condition<SAbstractConcept>>();
+  private final Set<Condition<SAbstractConcept>> myFilters = new HashSet<Condition<SAbstractConcept>>();
+  private final Set<CreateNodeExtension> myCreateExtensions = new HashSet<CreateNodeExtension>();
 
   public void addFilter(Condition<SAbstractConcept> filter){
     myFilters.add(filter);
@@ -45,6 +47,39 @@ public class CreateRootFilterEP {
 
   public void removeFilter(Condition<SAbstractConcept> filter){
     myFilters.remove(filter);
+  }
+
+  /*
+   * These are to extend CreateRootAction with external code. There used to be
+   * RootTemplateAnnotator, global model listener just to attach proper annotation
+   * to roots created inside template model. This is wrong for 2 reasons:
+   * (a) it affects any model authoring, and may be quite unexpected if you add a node
+   *     model.add root(N) and get a new annotation attached to your N. Apparently,
+   *     intention was to affect roots coming from user interaction
+   * (b) listening to all changes in all models is a bit too much for a task to augment
+   *     particular node in specific model.
+   * <p/>
+   * THIS IS INDEED A HACK. Once CreateRootFilterEP becomes a full-fledged extension point,
+   * either shall share EP, or become a separate one. At the moment, I can't use
+   * ExtensionDeclaration as it requires either a plugin aspect of a language, or a plugin solution,
+   * neither of which are available for j.m.ide or ide.ui. Since I found no better way to
+   * register extension and I don't want to keep RootTemplateAnnotator nor to use platform's (IDEA)
+   * extension point mechanism, this hack was introduced, until I find out proper way to do that.
+   */
+  public void addCreateExtension(@NotNull CreateNodeExtension extension) {
+    myCreateExtensions.add(extension);
+  }
+
+  public void removeCreateExtension(@NotNull CreateNodeExtension extension) {
+    myCreateExtensions.remove(extension);
+  }
+
+  /**
+   * There's no specific order, all CreateNodeExtension get a chance to act.
+   */
+  @NotNull
+  Collection<CreateNodeExtension> getCreateNodeExtensions() {
+    return new ArrayList<CreateNodeExtension>(myCreateExtensions);
   }
 
   public boolean shouldBeRemoved(SAbstractConcept c){

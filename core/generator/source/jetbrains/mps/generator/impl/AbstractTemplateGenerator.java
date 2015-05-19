@@ -21,6 +21,9 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -132,11 +135,22 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return getOutputModel().getNode(nodeId);
   }
 
+  @Deprecated
+  @ToRemove(version = 0)
   public RoleValidator getChildRoleValidator(SNode parent, String role) {
     return myValidation.getValidator(parent, role, true);
   }
+  public RoleValidator getChildRoleValidator(SNode parent, SContainmentLink role) {
+    return myValidation.getValidator(parent, role.getRoleName(), true);
+  }
 
+  @Deprecated
+  @ToRemove(version = 0)
   public RoleValidator getReferentRoleValidator(SNode source, String role) {
     return myValidation.getValidator(source, role, false);
+  }
+
+  public RoleValidator getReferentRoleValidator(SNode source, SReferenceLink role) {
+    return myValidation.getValidator(source, role.getRoleName(), false);
   }
 }

@@ -4,25 +4,22 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.OptimizeImportsHelper;
-import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class OptimizeModuleImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,59 +32,53 @@ public class OptimizeModuleImports_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "OptimizeModuleImports", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
-      return false;
+    {
+      List<SModule> p = event.getData(MPSCommonDataKeys.MODULES);
+      MapSequence.fromMap(_params).put("modules", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<String> report = new Wrappers._T<String>("");
+    final Wrappers._T<String> report = new Wrappers._T<String>("");
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          OptimizeImportsHelper helper = new OptimizeImportsHelper();
-          for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
-            if (module instanceof Solution) {
-              report.value += helper.optimizeSolutionImports(((Solution) module));
-            } else if (module instanceof Language) {
-              report.value += helper.optimizeLanguageImports(((Language) module));
-            }
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        OptimizeImportsHelper helper = new OptimizeImportsHelper();
+        for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
+          if (module instanceof Solution) {
+            report.value += helper.optimizeSolutionImports(((Solution) module));
+          } else if (module instanceof Language) {
+            report.value += helper.optimizeLanguageImports(((Language) module));
           }
-
-          SModelRepository.getInstance().saveAll();
-          MPSModuleRepository.getInstance().saveAll();
         }
-      });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "OptimizeModuleImports", t);
+
+        SModelRepository.getInstance().saveAll();
+        MPSModuleRepository.getInstance().saveAll();
       }
-    }
+    });
+    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
   }
-  protected static Logger LOG = LogManager.getLogger(OptimizeModuleImports_Action.class);
 }

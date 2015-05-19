@@ -13,16 +13,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class OptimizeModelImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,6 +32,7 @@ public class OptimizeModelImports_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
@@ -43,52 +41,47 @@ public class OptimizeModelImports_Action extends BaseAction {
       }
     }).isNotEmpty();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "OptimizeModelImports", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    if (MapSequence.fromMap(_params).get("models") == null) {
-      return false;
+    {
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
+      MapSequence.fromMap(_params).put("models", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<String> report = new Wrappers._T<String>();
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          report.value = new OptimizeImportsHelper().optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-          SModelRepository.getInstance().saveAll();
-        }
-      });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ? "Nothing to optimize" : report.value), "Optimize Imports", Messages.getInformationIcon());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);
+    final Wrappers._T<String> report = new Wrappers._T<String>();
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        report.value = new OptimizeImportsHelper().optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+        SModelRepository.getInstance().saveAll();
       }
-    }
+    });
+    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), (report.value.equals("") ? "Nothing to optimize" : report.value), "Optimize Imports", Messages.getInformationIcon());
   }
-  protected static Logger LOG = LogManager.getLogger(OptimizeModelImports_Action.class);
 }

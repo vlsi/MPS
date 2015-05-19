@@ -18,8 +18,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.make.resources.IResource;
@@ -52,10 +50,12 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.internal.make.cfg.GenerateFacetInitializer;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.make.script.IOption;
@@ -80,12 +80,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     INSTANCE = this;
     IMakeService.INSTANCE.set(this);
     reloadManager.setMakeService(this);
-    GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
 
   @Override
   public void disposeComponent() {
-    GenerationSettingsProvider.getInstance().setGenerationSettings(null);
     reloadManager.setMakeService(null);
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;
@@ -147,7 +145,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
   }
-  private MakeSession getSession() {
+  /*package*/ MakeSession getSession() {
     return currentSessionStickyMark.getReference();
   }
   @Override
@@ -322,15 +320,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
     @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
       } catch (RuntimeException e) {
         WorkbenchMakeService.LOG.debug("Error running job", e);
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
         throw e;
-      } finally {
-        ApplicationImpl.setExceptionalThreadWithReadAccessFlag(false);
       }
     }
     @Override
@@ -338,12 +333,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       // todo: why should we specify project only for Generate facet? 
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
-      Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean> vars = (Tuples._3<jetbrains.mps.project.Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-      if (vars != null) {
-        vars._0(getSession().getProject());
-        vars._1(getSession().getContext());
-        vars._2(getSession().isCleanMake());
-      }
+      new GenerateFacetInitializer(getSession()).populate(ppool);
 
       // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
       Tuples._2<jetbrains.mps.project.Project, Boolean> varsForJavaCompile = (Tuples._2<jetbrains.mps.project.Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
@@ -352,11 +342,8 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
       // end of hack 
 
-      Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
-      if (tparams != null) {
-        tparams._0(GenerationSettings.getInstance().isFailOnMissingTextGen());
-        tparams._1(GenerationSettings.getInstance().isGenerateDebugInfo());
-      }
+      IModifiableGenerationSettings genSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+      new TextGenFacetInitializer(getSession()).failNoTextGen(genSettings.isFailOnMissingTextGen()).generateDebugInfo(genSettings.isGenerateDebugInfo()).populate(ppool);
 
       new JavaCompileFacetInitializer().setJavaCompileOptions(JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(getSession().getProject())).populate(ppool);
 
@@ -376,7 +363,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           if (delegateConfMon != null) {
             opt = delegateConfMon.relayQuery(query);
           }
-          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getContext()));
+          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getProject()));
         }
       };
       this.jobMon = new IJobMonitor.Stub() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
@@ -28,19 +28,14 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.module.ReloadableModule;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,13 +47,15 @@ public class FindUtils {
 
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
-    List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClassNames.length);
+    List<IFinder> finders = new ArrayList<IFinder>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
-      GeneratedFinder finder = getFinderByClassName(finderClassName);
-      if (finder != null) finders.add(finder);
+      IFinder finder = getFinderByClassName(finderClassName);
+      if (finder != null) {
+        finders.add(finder);
+      }
     }
 
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IFinder[finders.size()]));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
@@ -109,36 +106,8 @@ public class FindUtils {
 
   @Deprecated
   @Nullable
-  public static GeneratedFinder getFinderByClassName(String className) {
-    try {
-      String modelName = NameUtil.namespaceFromLongName(className);
-      List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
-
-      Class aClass = null;
-      for (SModel model : models) {
-        SModule module = model.getModule();
-        if (module instanceof ReloadableModule) {
-          ReloadableModule module1 = (ReloadableModule) module;
-          if (!module1.willLoad()) continue;
-          try {
-            aClass = module1.getOwnClass(className);
-          } catch (ClassNotFoundException ignored) {
-            aClass = null;
-          }
-          if (aClass != null) break;
-        }
-      }
-
-      if (aClass == null) {
-        LOG.error("Class " + className + " not found");
-        return null;
-      }
-
-      return (GeneratedFinder) aClass.newInstance();
-    } catch (Exception t) {
-      LOG.error("Error instantiating finder \"" + className + "\". Returning empty results.  Message:" + t.getMessage(), t);
-      return null;
-    }
+  public static IInterfacedFinder getFinderByClassName(String className) {
+    return FindersManager.getInstance().getFinderByClassName(className);
   }
 
   public static GeneratedFinder getFinderByClass(ModuleClassReference<GeneratedFinder> finderClass) {

@@ -28,7 +28,7 @@ public class GenerationHelperAnnotation_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_r9dw63_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
 }

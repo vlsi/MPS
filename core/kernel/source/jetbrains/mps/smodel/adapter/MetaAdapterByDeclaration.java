@@ -38,6 +38,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /**
  * This allows to convert source-level (non-published code) entities to structure-level ids (published code ids)
  * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
+ *
+ * NOTE: todo: we should review all usages of this class and distinguish usages and meta-usages (sometimes we want e.g. inheritance info on "published" concept, sometimes on nodes)
+ * todo usage of this class is rather node-level information usage and should be rewritten
  */
 public class MetaAdapterByDeclaration {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MetaAdapterByDeclaration.class));
@@ -46,16 +49,16 @@ public class MetaAdapterByDeclaration {
     return MetaAdapterFactory.getLanguage(MetaIdByDeclaration.getLanguageId(l), l.getModuleName());
   }
 
-  public static SAbstractConcept getConcept(SNode node) {
-    SConcept concept = node.getConcept();
+  public static SAbstractConcept getConcept(SNode conceptNode) {
+    SConcept concept = conceptNode.getConcept();
     boolean cd = concept.equals(SNodeUtil.concept_ConceptDeclaration);
     boolean icd = concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
     if (cd || icd) {
-      String name = NameUtil.getModelLongName(node.getModel()) + "." + getNormalizedName(node);
+      String name = NameUtil.getModelLongName(conceptNode.getModel()) + "." + getNormalizedName(conceptNode);
       if (cd) {
-        return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(node), name);
+        return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
       } else {
-        return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(node), name);
+        return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
       }
     }
     return null;

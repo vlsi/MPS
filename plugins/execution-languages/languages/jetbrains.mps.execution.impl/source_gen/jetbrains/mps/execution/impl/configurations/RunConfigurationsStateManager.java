@@ -34,8 +34,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.openapi.util.WriteExternalException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -206,9 +204,9 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
       assert myState != null && mySharedState != null;
       getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
       try {
-        getRunManager().readExternal(myState);
-        getSharedConfigurationManager().readExternal(mySharedState);
-      } catch (InvalidDataException e) {
+        getRunManager().loadState(myState);
+        getSharedConfigurationManager().loadState(mySharedState);
+      } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't read execution configurations state", e);
         }
@@ -217,14 +215,10 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
     public void saveState() {
       try {
-        Element newState = new Element("root");
-        getRunManager().writeExternal(newState);
-        myState = newState;
+        myState = getRunManager().getState();
 
-        Element newSharedState = new Element("root");
-        getSharedConfigurationManager().writeExternal(newSharedState);
-        mySharedState = newSharedState;
-      } catch (WriteExternalException e) {
+        mySharedState = getSharedConfigurationManager().getState();
+      } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't save run configurations state", e);
         }

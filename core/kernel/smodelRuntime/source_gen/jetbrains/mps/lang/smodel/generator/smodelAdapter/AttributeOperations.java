@@ -15,7 +15,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.persistence.IdHelper;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -55,7 +55,12 @@ public class AttributeOperations {
     return value;
   }
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
-    jetbrains.mps.util.SNodeOperations.insertChild(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), value, anchor);
+    // shall insert value *after* anchor 
+    if (anchor == null || !(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).contains(anchor))) {
+      addAttribute(node, descriptor, value);
+    } else {
+      SNodeOperations.insertNextSiblingChild(anchor, value);
+    }
     descriptor.update(value);
     return value;
   }
@@ -125,8 +130,7 @@ public class AttributeOperations {
     String linkId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId"));
     String linkName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"));
     if (linkId == null) {
-      String conceptName = attribute.getParent().getConcept().getQualifiedName();
-      return MetaAdapterFactoryByName.getReferenceLink(conceptName, linkName);
+      return ((ConceptMetaInfoConverter) attribute.getParent().getConcept()).convertAssociation(linkName);
     }
     SReferenceLinkId lid = SReferenceLinkId.deserialize(linkId);
     return MetaAdapterFactory.getReferenceLink(lid, linkName);
@@ -149,8 +153,7 @@ public class AttributeOperations {
     String propertyId = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId"));
     String propertyName = attribute.getProperty(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"));
     if (propertyId == null) {
-      String conceptName = attribute.getParent().getConcept().getQualifiedName();
-      return MetaAdapterFactoryByName.getProperty(conceptName, propertyName);
+      return ((ConceptMetaInfoConverter) attribute.getParent().getConcept()).convertProperty(propertyName);
     }
     SPropertyId pid = SPropertyId.deserialize(propertyId);
     return MetaAdapterFactory.getProperty(pid, propertyName);

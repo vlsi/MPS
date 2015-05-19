@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="10,0,70,0" name="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)/203908296139530389">
@@ -34,7 +34,7 @@
       <node id="5365453833390705323" at="30,51,31,67" concept="2" />
       <node id="5365453833390705323" at="32,5,33,0" concept="7" />
       <node id="5365453833390705323" at="33,0,34,18" concept="6" />
-      <node id="5365453833390705328" at="36,148,37,798" concept="6" />
+      <node id="5365453833390705328" at="36,148,37,885" concept="6" />
       <node id="5365453833390705323" at="39,0,40,0" concept="8" trace="canBeChildBreakingPoint" />
       <node id="5365453833390705323" at="19,0,22,0" concept="1" trace="GetEditorOperation_Constraints#()V" />
       <node id="5365453833390705323" at="29,0,32,5" concept="3" />
@@ -44,7 +44,7 @@
       <scope id="5365453833390705323" at="19,43,20,98" />
       <scope id="5365453833390705323" at="23,43,24,16" />
       <scope id="5365453833390705323" at="30,51,31,67" />
-      <scope id="5365453833390705325" at="36,148,37,798" />
+      <scope id="5365453833390705325" at="36,148,37,885" />
       <scope id="5365453833390705323" at="19,0,22,0" />
       <scope id="5365453833390705323" at="36,0,39,0">
         <var name="childConcept" id="5365453833390705323" />
@@ -196,14 +196,14 @@
       <node id="946964771156067088" at="33,98,34,135" concept="5" />
       <node id="946964771156067088" at="37,44,38,20" concept="6" />
       <node id="946964771156067092" at="45,142,46,373" concept="5" />
-      <node id="946964771156067099" at="46,373,47,265" concept="5" />
+      <node id="946964771156067099" at="46,373,47,352" concept="5" />
       <node id="946964771156067109" at="48,252,49,75" concept="6" />
       <node id="946964771156067122" at="50,13,51,383" concept="6" />
       <node id="946964771156067088" at="54,63,55,58" concept="6" />
       <node id="946964771156067088" at="59,7,60,22" concept="6" />
       <node id="946964771156067088" at="62,0,63,0" concept="8" trace="breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1" />
       <node id="946964771156067088" at="29,0,32,0" concept="1" trace="PersistentPropertyReferenceOperation_Constraints#()V" />
-      <node id="946964771156067107" at="47,265,50,13" concept="3" />
+      <node id="946964771156067107" at="47,352,50,13" concept="3" />
       <node id="946964771156067088" at="36,0,40,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="946964771156067088" at="53,0,57,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="946964771156067088" at="44,0,53,0" concept="4" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
@@ -336,7 +336,7 @@
       <node id="946964771156067148" at="38,98,39,135" concept="5" />
       <node id="946964771156067148" at="42,44,43,20" concept="6" />
       <node id="946964771156067152" at="50,142,51,373" concept="5" />
-      <node id="946964771156067159" at="51,373,52,248" concept="5" />
+      <node id="946964771156067159" at="51,373,52,335" concept="5" />
       <node id="946964771156067169" at="53,226,54,75" concept="6" />
       <node id="203908296139531197" at="55,13,56,440" concept="5" />
       <node id="203908296139531247" at="58,47,59,566" concept="6" />
@@ -344,7 +344,7 @@
       <node id="946964771156067148" at="69,7,70,22" concept="6" />
       <node id="946964771156067148" at="72,0,73,0" concept="8" trace="breakingNode_ow8wt3_a0a1a0a0a1a0b0a1a1" />
       <node id="946964771156067148" at="34,0,37,0" concept="1" trace="EditorOperationCall_Constraints#()V" />
-      <node id="946964771156067167" at="52,248,55,13" concept="3" />
+      <node id="946964771156067167" at="52,335,55,13" concept="3" />
       <node id="203908296139531236" at="58,0,61,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="946964771156067148" at="41,0,45,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="946964771156067148" at="63,0,67,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />

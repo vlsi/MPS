@@ -25,12 +25,13 @@ import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -52,9 +53,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -162,8 +163,8 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            ((SModelBase) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-            ((SModelBase) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1));
 
             Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
             SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
@@ -192,9 +193,6 @@ public class JavaToMpsConverter {
           ((SModelBase) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
           module = myModel.getModule();
         }
-
-        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
       }
@@ -552,10 +550,10 @@ public class JavaToMpsConverter {
     runCommand("Code transforms", new Runnable() {
       public void run() {
         for (SNode fieldRefOp : ListSequence.fromList(toReplaceWithArrayLength)) {
-          SNodeOperations.replaceWithNewChild(fieldRefOp, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation");
+          SNodeOperations.replaceWithNewChild(fieldRefOp, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1197781411dL, "jetbrains.mps.baseLanguage.structure.ArrayLengthOperation"));
         }
         for (SNode imco : ListSequence.fromList(toReplaceWithArrayClone)) {
-          SNodeOperations.replaceWithNewChild(imco, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation");
+          SNodeOperations.replaceWithNewChild(imco, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x483ee9d7f09580d6L, "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation"));
         }
         for (IMapping<SNode, SNode> pair : MapSequence.fromMap(enumConstRefs)) {
           SNodeOperations.replaceWithAnother(pair.key(), pair.value());
@@ -834,12 +832,12 @@ public class JavaToMpsConverter {
     boolean dynRefsPresent = false;
     Set<SNode> retain = SetSequence.fromSet(new HashSet<SNode>());
 
-    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
-    DequeSequence.fromDeque(stack).pushElement(root);
+    Deque<SNode> stack = DequeSequence.fromDequeNew(new LinkedList<SNode>());
+    DequeSequence.fromDequeNew(stack).pushElement(root);
 
-    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
-      SNode node = DequeSequence.fromDeque(stack).popElement();
-      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+    while (DequeSequence.fromDequeNew(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDequeNew(stack).popElement();
+      DequeSequence.fromDequeNew(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x70ea1dc4c5721865L, "jetbrains.mps.baseLanguage.structure.IYetUnresolved"))) {
         unknownPresent = true;

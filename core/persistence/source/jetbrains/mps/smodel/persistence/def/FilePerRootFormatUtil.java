@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -71,10 +69,9 @@ public class FilePerRootFormatUtil {
   }
 
   public static ModelLoadResult readModel(SModelHeader header, MultiStreamDataSource dataSource, ModelLoadingState targetState) throws ModelReadException {
-    IModelPersistence mp = ModelPersistence.getModelPersistence(header.getPersistenceVersion());
-    if (mp == null) {
-      throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
-    }
+    IModelPersistence mp = ModelPersistence.getPersistence(header.getPersistenceVersion());
+    if (mp == null) throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
+
     // load .model file
     DefaultSModel result;
     XMLSAXHandler<ModelLoadResult> headerHandler = mp.getModelReaderHandler(targetState, header);
@@ -114,7 +111,7 @@ public class FilePerRootFormatUtil {
           headerHandler.getResult().setState(ModelLoadingState.INTERFACE_LOADED);
         }
         int count = 0;
-        LazySModel model = rootHandler.getResult().getModel();
+        SModel model = rootHandler.getResult().getModel();
         model.setUpdateMode(true);
         for (SNode rootNode : model.getRootNodes()) {
           if (count != 0) {
@@ -137,9 +134,9 @@ public class FilePerRootFormatUtil {
   }
 
   public static int actualPersistenceVersion(int desiredPersistenceVersion) {
-    IModelPersistence modelPersistence = ModelPersistence.getModelPersistence(Math.max(desiredPersistenceVersion, 8));
+    IModelPersistence modelPersistence = ModelPersistence.getPersistence(Math.max(desiredPersistenceVersion, 8));
     if (modelPersistence == null) {
-      modelPersistence = ModelPersistence.getCurrentModelPersistence();
+      modelPersistence = ModelPersistence.getPersistence(ModelPersistence.LAST_VERSION);
     }
     return modelPersistence.getVersion();
   }
@@ -165,7 +162,7 @@ public class FilePerRootFormatUtil {
     if (persistenceVersion < 9) {
       modelData.getImplicitImportsSupport().calculateImplicitImports();
     }
-    Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
+    Map<String, Document> result = ModelPersistence.getPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
 
     // write to storage
     Set<String> toRemove = new HashSet<String>();

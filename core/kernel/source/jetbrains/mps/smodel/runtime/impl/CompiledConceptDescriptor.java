@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -50,28 +49,18 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final SConceptId[] myParents;
   private final String[] myParentNames;
   private final PropertyDescriptor[] myOwnProperties;
-  private final String[] myOwnPropertyNames;
   private final ReferenceDescriptor[] myOwnReferences;
-  private final String[] myOwnReferenceNames;
   private final LinkDescriptor[] myOwnLinks;
-  private final String[] myOwnChildNames;
-  private final boolean[] myMultiple;
-  private final String[] myUnorderedChildren;
   private final boolean myAbstract;
   private final boolean myFinal;
   private final String myConceptAlias;
   private final String myConceptShortDescription;
   private final String myHelpUrl;
   private final StaticScope myStaticScope;
-  private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private final Object myLock = "";
   // to be initialized
   private Set<String> ancestors;
   private List<String> parentNames;
-  private Set<String> propertyNames;
-  private Set<String> referenceNames;
-  private Set<String> childNames;
-  private Set<String> unorderedNames;
   private List<SConceptId> parents;
   private Set<SConceptId> ancestorsIds;
   private Map<SPropertyId, PropertyDescriptor> properties;
@@ -90,13 +79,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       SConceptId[] parents,
       String[] parentNames,
       PropertyDescriptor[] ownProperties,
-      String[] ownPropertyNames,
       ReferenceDescriptor[] ownReferences,
-      String[] ownReferenceNames,
       LinkDescriptor[] ownLinks,
-      String[] ownChildNames,
-      boolean[] multiple,
-      String[] unorderedChildren,
       boolean isAbstract,
       boolean isFinal,
       String conceptAlias,
@@ -112,13 +96,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
     myParentNames = parentNames;
     myOwnProperties = ownProperties;
-    myOwnPropertyNames = ownPropertyNames;
     myOwnReferences = ownReferences;
-    myOwnReferenceNames = ownReferenceNames;
     myOwnLinks = ownLinks;
-    myOwnChildNames = ownChildNames;
-    myMultiple = multiple;
-    myUnorderedChildren = unorderedChildren;
 
     myAbstract = isAbstract;
     myFinal = isFinal;
@@ -131,13 +110,15 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   private void init() {
-    if (myInitialized)
+    if (myInitialized) {
       return;
+    }
     synchronized (myLock) {
-      if (myInitialized)
+      if (myInitialized) {
         return;
+      }
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParentNames.length);
-      for (String parent : myParentNames) {
+      for (SConceptId parent : myParents) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         parentDescriptors.add(descriptor);
       }
@@ -173,13 +154,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initPropertyNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    Set<String> prs = new LinkedHashSet<String>();
-    Collections.addAll(prs, myOwnPropertyNames);
-    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      prs.addAll(parentDescriptor.getPropertyNames());
-    }
-    propertyNames = Collections.unmodifiableSet(prs);
-
     Map<SPropertyId, PropertyDescriptor> propsMap = new HashMap<SPropertyId, PropertyDescriptor>();
     HashMap<String, PropertyDescriptor> propByNameMap = new HashMap<String, PropertyDescriptor>();
     for (PropertyDescriptor p : myOwnProperties) {
@@ -200,13 +174,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
 
-    LinkedHashSet<String> rfs = new LinkedHashSet<String>();
-    rfs.addAll(Arrays.asList(myOwnReferenceNames));
-    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      rfs.addAll(parentDescriptor.getReferenceNames());
-    }
-    referenceNames = Collections.unmodifiableSet(rfs);
-
     Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
     HashMap<String, ReferenceDescriptor> refsByNameMap = new HashMap<String, ReferenceDescriptor>();
     for (ReferenceDescriptor r : myOwnReferences) {
@@ -226,21 +193,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
   private void initChildNames(List<ConceptDescriptor> parentDescriptors) {
     assert !myInitialized;
-    assert myOwnChildNames.length == myMultiple.length;
-    for (int i = 0; i != myOwnChildNames.length; ++i) {
-      childMap.put(myOwnChildNames[i], myMultiple[i]);
-    }
-
-    Set<String> unorderedNamesNew = new HashSet<String>(Arrays.asList(myUnorderedChildren));
-    for (ConceptDescriptor parentDescriptor : parentDescriptors) {
-      unorderedNamesNew.addAll(parentDescriptor.getUnorderedChildrenNames());
-      for (String child : parentDescriptor.getChildrenNames()) {
-        childMap.put(child, parentDescriptor.isMultipleChild(child));
-      }
-    }
-
-    unorderedNames = Collections.unmodifiableSet(unorderedNamesNew);
-    childNames = Collections.unmodifiableSet(childMap.keySet());
 
     //ids
     Map<SContainmentLinkId, LinkDescriptor> linksMap = new HashMap<SContainmentLinkId, LinkDescriptor>();
@@ -261,30 +213,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
-  public Set<String> getUnorderedChildrenNames() {
-    init();
-    return unorderedNames;
-  }
-
-  @Override
-  public Set<String> getPropertyNames() {
-    init();
-    return propertyNames;
-  }
-
-  @Override
-  public Set<String> getReferenceNames() {
-    init();
-    return referenceNames;
-  }
-
-  @Override
-  public Set<String> getChildrenNames() {
-    init();
-    return childNames;
-  }
-
-  @Override
   public List<String> getParentsNames() {
     init();
     return parentNames;
@@ -294,13 +222,6 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public Set<String> getAncestorsNames() {
     init();
     return ancestors;
-  }
-
-  @Override
-  public boolean isMultipleChild(String name) {
-    init();
-    Boolean result = childMap.get(name);
-    return result == null ? false : result;
   }
 
   @Override

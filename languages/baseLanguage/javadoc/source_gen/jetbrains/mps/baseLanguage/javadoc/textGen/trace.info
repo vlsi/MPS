@@ -10,6 +10,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TextGenAspectDescriptor.java">
+      <unit at="13,0,103,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/2099616960330110596">
     <file name="HTMLElement_TextGen.java">
       <node id="2099616960330116574" at="14,208,15,23" concept="1" />

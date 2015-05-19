@@ -16,10 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class ClassLikeUtil {
   public static SNode createNewClassLike(SNode descr, SModel model) {
@@ -35,10 +32,7 @@ public class ClassLikeUtil {
     ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(descr, newClass);
 
     SModelInternal m = ((SModelInternal) model);
-    AbstractModule mod = ((AbstractModule) model.getModule());
-
-    m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class));
-    mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)"), Language.class).getModuleReference());
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L), "jetbrains.mps.lang.classLike", -1));
     return newClass;
   }
 }

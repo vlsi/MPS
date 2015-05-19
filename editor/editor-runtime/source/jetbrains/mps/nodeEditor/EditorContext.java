@@ -427,7 +427,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public EditorManager getEditorManager() {
     if (myEditorManager == null) {
-      myEditorManager = new EditorManager();
+      myEditorManager = new EditorManager(this);
     }
     return myEditorManager;
   }

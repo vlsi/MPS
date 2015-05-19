@@ -15,13 +15,25 @@
  */
 package jetbrains.mps.errors;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class QuickFix_Runtime {
-  private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
+  private final Map<String, Object[]> myMap = new HashMap<String, Object[]>();
+  private final SNodeReference myFixDeclaration;
+
+  protected QuickFix_Runtime() {
+    myFixDeclaration = null;
+  }
+
+  protected QuickFix_Runtime(@Nullable SNodeReference declarationNodeRef) {
+    myFixDeclaration = declarationNodeRef;
+  }
 
   public Object[] getField(String key) {
     Object[] value = this.myMap.get(key);
@@ -41,5 +53,13 @@ public abstract class QuickFix_Runtime {
   public String getDescription(SNode node) {
     //quickFix w/o description was added to intentions menu
     return "<ERROR>: " + this.getClass().getName();
+  }
+
+  /**
+   * @return pointer to quick fix declaration, if known
+   */
+  @Nullable
+  public SNodeReference getDeclarationNode() {
+    return myFixDeclaration;
   }
 }

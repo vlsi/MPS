@@ -13,9 +13,14 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
+import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.NodeValidationProblem;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import org.jetbrains.annotations.Nullable;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -50,16 +55,6 @@ public class TestsErrorsChecker {
     return result;
   }
 
-  private Iterable<IErrorReporter> getTypeSystemErrors() {
-    INodeChecker checker = new TypesystemChecker();
-    return checker.getErrors(myRoot, null);
-  }
-
-  private Iterable<IErrorReporter> getConstraintsErrors() {
-    INodeChecker checker = new LanguageChecker();
-    return checker.getErrors(myRoot, null);
-  }
-
   private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode aNode) {
     return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
@@ -75,17 +70,22 @@ public class TestsErrorsChecker {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
 
-    Set<IErrorReporter> result = collectRootErrors();
-    return result;
-  }
-
-  private Set<IErrorReporter> collectRootErrors() {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
-    Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrors()));
+    final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new LanguageChecker().getErrors(myRoot, null)));
+    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new SuppressingAwareProcessorDecorator(new Processor<ValidationProblem>() {
+      public boolean process(ValidationProblem vp) {
+        if (!((vp instanceof NodeValidationProblem))) {
+          return true;
+        }
+        SNode node = ((NodeValidationProblem) vp).getNode();
+        SetSequence.fromSet(result).addElement(new SimpleErrorReporter(node, vp.getMessage(), null, null));
+        return true;
+      }
+    }));
     modelErrorsHolder.set(myRoot, result);
     return result;
   }

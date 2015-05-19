@@ -6,13 +6,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import java.awt.Component;
 import javax.swing.JList;
-import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import java.awt.Color;
 import jetbrains.mps.project.dependency.VisibilityUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ModelRenderer extends ProjectLevelRenderer {
   public ModelRenderer(SModule moduleScope, Project projectScope) {
@@ -21,7 +18,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
   @Override
   public String getItemLabel(Object value) {
     final SModelReference modelReference = (SModelReference) value;
-    SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModel model = modelReference.resolve(getProject().getRepository());
     if (model == null) {
       String longName = modelReference.getModelName();
       return (longName.equals("") ? "<no name>" : longName);
@@ -34,9 +31,10 @@ public class ModelRenderer extends ProjectLevelRenderer {
     final SModelReference modelReference = (SModelReference) value;
     setText(getItemLabel(value));
     if (!(isSelected)) {
-      if (!(StateUtil.isAvailable(modelReference))) {
+      SModel model = modelReference.resolve(getProject().getRepository());
+      if (model == null) {
         setForeground(Color.RED);
-      } else if (!(VisibilityUtil.isVisible(getModule(), modelReference.resolve(MPSModuleRepository.getInstance())))) {
+      } else if (!(VisibilityUtil.isVisible(getModule(), model))) {
         setForeground(new Color(128, 0, 128));
       }
     }

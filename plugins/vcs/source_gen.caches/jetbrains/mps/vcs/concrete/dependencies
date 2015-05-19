@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.concrete.GitUtils" file="GitUtils.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="git4idea.commands.GitCommand" />
-    <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.concrete.MPSSourceRevision" file="MPSSourceRevision.java">
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

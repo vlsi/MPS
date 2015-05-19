@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.vfs;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -90,41 +90,62 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
         newFiles.add(file);
       }
     }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        // Recreate files using VFS
-        for (IFile file : newFiles) {
-          OutputStream out = null;
-          try {
-            // No need to close InputStream: it will be closed by loadFromStream()
-            byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
+    ApplicationManager.getApplication().invokeLater(new IdeaWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            // Recreate files using VFS
+            for (IFile file : newFiles) {
+              OutputStream out = null;
+              try {
+                // No need to close InputStream: it will be closed by loadFromStream()
+                byte[] content = StreamUtil.loadFromStream(new FileInputStream(file.getPath()));
 
-            out = file.openOutputStream();
-            out.write(content);
-          } catch (IOException e) {
-            LOG.error(null, e);
-          } finally {
-            FileUtil.closeFileSafe(out);
+                out = file.openOutputStream();
+                out.write(content);
+              } catch (IOException e) {
+                LOG.error(null, e);
+              } finally {
+                FileUtil.closeFileSafe(out);
+              }
+            }
+
+            // Refresh added files
+            for (IFile file : updatedFiles) {
+              FileSystem.getInstance().refresh(file);
+            }
           }
-        }
-
-        // Refresh added files
-        for (IFile file : updatedFiles) {
-          FileSystem.getInstance().refresh(file);
-        }
-      }
-    });
+        })
+    );
   }
 
   @Override
-  public boolean runWriteTransaction(final Runnable r) {
-    return ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
-      public void run() {
-        ModelAccess.instance().requireWrite(r);
+  public boolean runWriteTransaction(@NotNull Runnable r) {
+    final IdeaWriteAction action = new IdeaWriteAction(r);
+    ApplicationManager.getApplication().invokeAndWait(action, ModalityState.any());
+    return action.getFailure() == null;
+  }
+
+  private static class IdeaWriteAction implements Runnable {
+    private final Runnable myDelegate;
+    private Exception myException;
+
+    public IdeaWriteAction(@NotNull Runnable delegate) {
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() {
+      try {
+        ApplicationManager.getApplication().runWriteAction(myDelegate);
+      } catch (Exception ex) {
+        LOG.error(ex.getMessage(), ex);
+        myException = ex;
       }
-    });
+    }
+
+    public Exception getFailure() {
+      return myException;
+    }
   }
 
   @NotNull

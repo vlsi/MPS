@@ -15,23 +15,36 @@
  */
 package jetbrains.mps.lang.script.runtime;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * Igor Alshannikov
- * Date: Apr 24, 2007
- */
 public abstract class AbstractMigrationRefactoring {
-  
+  @Deprecated
   public AbstractMigrationRefactoring(IOperationContext context) {
+  }
+
+  public AbstractMigrationRefactoring() {
   }
 
   public abstract String getName();
 
   public abstract String getAdditionalInfo();
 
-  public abstract String getFqNameOfConceptToSearchInstances();
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //this method is needed for binary compatibility with 3.2-generated code
+  public String getFqNameOfConceptToSearchInstances(){
+    return null;
+  }
+
+  //todo remove body of this method after 3.3 - needed only for binary compatibility with 3.2
+  public SAbstractConcept getApplicableConcept(){
+    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(getFqNameOfConceptToSearchInstances()));
+  }
 
   public abstract boolean isApplicableInstanceNode(SNode instanceNode);
 

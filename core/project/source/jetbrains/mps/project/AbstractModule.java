@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,11 +36,13 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
@@ -116,13 +118,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   //----reference
   @Override
   public SModuleId getModuleId() {
-    assertCanRead();
+//    assertCanRead(); @see getModuleReference()
     return getModuleReference().getModuleId();
   }
 
   @Override
   public String getModuleName() {
-    assertCanRead();
+//    assertCanRead(); @see getModuleReference()
     return getModuleReference().getModuleName();
   }
 
@@ -156,51 +158,27 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return result;
   }
 
+
+  /**
+   * @deprecated it's just a short-hand for <code>new SLanguageHierarchy(getUsedLanguages())</code>, it's hardly a justification for a cast to AbstractModule
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public Set<SLanguage> getAllUsedLanguages() {
-    Set<SLanguage> directlyUsed = getUsedLanguages();
-    Set<SLanguage> result = getUsedLanguages();
-    for (SLanguage direct : directlyUsed) {
-      result.add(direct);
-      for (Language ext : ((Language) direct.getSourceModule()).getAllExtendedLanguages()) {
-        result.add(MetaAdapterByDeclaration.getLanguage(ext));
-      }
-    }
-    return result;
+    return new SLanguageHierarchy(getUsedLanguages()).getExtended();
   }
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-    // todo: collect languages for now? and convert to SLanguages in the end?
-    if (getModuleDescriptor() == null) {
-      return Collections.emptySet();
-    }
 
-    Set<SLanguage> languages = new HashSet<SLanguage>();
-    for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
-      if (language != null) {
-        languages.add(MetaAdapterByDeclaration.getLanguage(language));
-      }
+    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
+    for (SModel m : getModels()) {
+      usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
     }
+    usedLanguages.add(BootstrapLanguages.getLangCore());
 
-    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
-      if (devKit != null) {
-        for (Language language : devKit.getAllExportedLanguages()) {
-          if (language != null) {
-            languages.add(MetaAdapterByDeclaration.getLanguage(language));
-          }
-        }
-      }
-    }
-
-    if (BootstrapLanguages.coreLanguage() != null) {
-      // todo: ???
-      languages.add(MetaAdapterByDeclaration.getLanguage(BootstrapLanguages.coreLanguage()));
-    }
-
-    return languages; // todo: maybe collect extended languages here
+    return usedLanguages;
   }
 
   @Override
@@ -230,7 +208,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @NotNull
   //module reference is immutable, so we cn return original
   public SModuleReference getModuleReference() {
-    assertCanRead();
+//    assertCanRead(); ClassLoaderManager needs module reference. Do we need CLM to obtain read lock?
     return myModuleReference;
   }
 
@@ -312,68 +290,40 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     setChanged();
   }
 
-  public void addUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().add(langRef);
-
-    dependenciesChanged();
-    setChanged();
-  }
-
-  public void removeUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().remove(langRef);
-
-    dependenciesChanged();
-    setChanged();
-  }
-
-  public void addUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().add(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
-  }
-
-  public void removeUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().remove(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
-  }
-
-  //----get deps
-
   /**
-   * @deprecated use {@link #getDeclaredDependencies()} instead
+   * @deprecated set of used languages for a module is derived from used languages of owned models
    */
   @Deprecated
-  @ToRemove(version = 3.2)
-  public final List<Dependency> getDependencies() {
-    assertCanRead();
-    ArrayList<Dependency> rv = new ArrayList<Dependency>();
-    for (SDependency dep : getDeclaredDependencies()) {
-      rv.add(new Dependency(dep.getTargetModule(), dep.isReexport()));
-    }
-    return rv;
+  @ToRemove(version = 3.3)
+  public void addUsedLanguage(SModuleReference langRef) {
+    // no-op
+  }
+
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public void removeUsedLanguage(SModuleReference langRef) {
+    // no-op
+  }
+
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public void addUsedDevkit(SModuleReference devkitRef) {
+    // no-op
+  }
+
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public void removeUsedDevkit(SModuleReference devkitRef) {
+    // no-op
   }
 
   //----languages & devkits
@@ -532,6 +482,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<ModelRoot> getModelRoots() {
+    // We check read lock here because mySModelRoots is updated inside write.
     assertCanRead();
     return Collections.unmodifiableCollection(mySModelRoots);
   }
@@ -573,7 +524,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   protected void updateFacets() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) {
@@ -622,13 +573,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public boolean isReadOnly() {
-    assertCanRead();
+//    assertCanRead(); getModuleSourceDir() doesn't require read, why isPackaged() does?
     return isPackaged();
   }
 
   @Override
   public boolean isPackaged() {
-    assertCanRead();
+//    assertCanRead(); getModuleSourceDir() doesn't require read, why isPackaged() does?
     return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
@@ -644,8 +595,30 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public IFile getDescriptorFile() {
-    assertCanRead();
+//    assertCanRead();   if getModuleSourceDir doesn't require read, why getDescriptorFile does?
     return myDescriptorFile;
+  }
+
+  public void rename(String newName) {
+    //if module name is a prefix of it's model's name - rename the model, too
+    for (SModel m : getModels()) {
+      if (m.isReadOnly()) continue;
+      if (!m.getModelName().startsWith(getModuleName() + ".")) continue;
+      if (!(m instanceof EditableSModel)) continue;
+
+      ((EditableSModel) m).rename(newName + m.getModelName().substring(getModuleName().length()), true);
+    }
+
+    //see MPS-18743, need to save before setting descriptor
+    getRepository().saveAll();
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (myDescriptorFile != null) {
+      myDescriptorFile.rename(newName + MPSExtentions.DOT_LANGUAGE);
+    }
+
+    descriptor.setNamespace(newName);
+    setModuleDescriptor(descriptor);
   }
 
   @NotNull
@@ -761,7 +734,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   private void doUpdateModelsSet() {
-    ModelAccess.assertLegalWrite();
+    assertCanChange();
 
     for (SModel model : getModels()) {
       if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
@@ -955,9 +928,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (res == null) {
       LOG.error(
           "getUsedLanguageVersion can't find a version for language " + usedLanguage.getQualifiedName() +
-          " in module " + getModuleName() + "." +
-          " This can either mean that the language is not imported into this module or that " +
-          "validateLanguageVersions was not called on this module in appropriate moment.",
+              " in module " + getModuleName() + "." +
+              " This can either mean that the language is not imported into this module or that " +
+              "validateLanguageVersions was not called on this module in appropriate moment.",
           new Throwable());
       return usedLanguage.getLanguageVersion();
     }

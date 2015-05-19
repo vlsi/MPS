@@ -32,6 +32,9 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
+        <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
+      </concept>
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -394,6 +397,11 @@
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" node="hz_DuTG" resolve="Instruction" />
+        <node concept="OXEIz" id="2dZyOCJQZP3" role="P5bDN">
+          <node concept="UkePV" id="2dZyOCJQZP5" role="OY2wv">
+            <ref role="Ul1FP" to="tp41:hz_J8Ep" resolve="BaseEmitJumpStatement" />
+          </node>
+        </node>
       </node>
       <node concept="3F1sOY" id="hz_Jhk0" role="3EZMnx">
         <ref role="1NtTu8" to="tp41:hz_JbE4" />

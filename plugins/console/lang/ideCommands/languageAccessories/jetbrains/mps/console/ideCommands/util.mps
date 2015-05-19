@@ -1112,17 +1112,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="4dzOCaryA3T" role="3cqZAp">
-          <node concept="2OqwBi" id="4dzOCaryA3U" role="3clFbG">
-            <node concept="37vLTw" id="4dzOCaryA3V" role="2Oq$k0">
-              <ref role="3cqZAo" node="4dzOCaryA3N" resolve="messagesView" />
-            </node>
-            <node concept="liA8E" id="4dzOCaryA3W" role="2OqNvi">
-              <ref role="37wK5l" to="pdak:~MessagesViewTool.resetAutoscrollOption():void" resolve="resetAutoscrollOption" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="4dzOCaryKBr" role="3cqZAp" />
         <node concept="3clFbF" id="4dzOCaryOMI" role="3cqZAp">
           <node concept="2OqwBi" id="4dzOCarz3qU" role="3clFbG">
             <node concept="2ShNRf" id="4dzOCaryOME" role="2Oq$k0">

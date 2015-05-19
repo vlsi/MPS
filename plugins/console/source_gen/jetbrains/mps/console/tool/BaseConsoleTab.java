@@ -10,14 +10,17 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import java.util.Collections;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -50,7 +53,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -74,8 +76,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -113,30 +113,31 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected void addBuiltInImports() {
-    Language base = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("de1ad86d-6e50-4a02-b306-d4d17f64c375(jetbrains.mps.console.base)"), Language.class);
-    Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
-    for (Language l : CollectionSequence.fromCollection(languages)) {
-      if (l != base && !(LanguageDependenciesManager.getAllExtendedLanguages(l).contains(base))) {
+    SLanguage base = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L), "jetbrains.mps.console.base", -1);
+    Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(Collections.singleton(base)).getExtending();
+    SModelInternal modelInternal = ((SModelInternal) myModel);
+    for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {
+      modelInternal.addLanguage(l);
+      Language sourceLangModule = (Language) l.getSourceModule();
+      if (sourceLangModule == null) {
         continue;
       }
-      ((SModelInternal) myModel).addLanguage(l.getModuleReference());
-      ((AbstractModule) myModel.getModule()).addUsedLanguage(l.getModuleReference());
-      ((SModelInternal) (myModel)).addModelImport(l.getStructureModelDescriptor().getReference(), false);
-      ((AbstractModule) myModel.getModule()).addDependency(l.getModuleReference(), false);
+      modelInternal.addModelImport(sourceLangModule.getStructureModelDescriptor().getReference(), false);
+      ((AbstractModule) myModel.getModule()).addDependency(sourceLangModule.getModuleReference(), false);
     }
-    ((SModelInternal) myModel).addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
-    ((AbstractModule) myModel.getModule()).addUsedDevkit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+    modelInternal.addDevKit(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
   }
 
   protected void validateImports() {
-    for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), ((SModelInternal) myModel).importedDevkits())) {
-      ((SModelInternal) myModel).deleteDevKit(devKit);
+    SModelInternal modelInternal = (SModelInternal) myModel;
+    for (SModuleReference devKit : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), modelInternal.importedDevkits())) {
+      modelInternal.deleteDevKit(devKit);
     }
-    for (SModuleReference language : ListSequence.fromListWithValues(new ArrayList<SModuleReference>(), ((SModelInternal) myModel).importedLanguages())) {
-      ((SModelInternal) myModel).deleteLanguage(language);
+    for (SLanguage language : ListSequence.fromListWithValues(new ArrayList<SLanguage>(), modelInternal.importedLanguageIds())) {
+      modelInternal.deleteLanguageId(language);
     }
-    for (jetbrains.mps.smodel.SModel.ImportElement model : ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), ((SModelInternal) myModel).importedModels())) {
-      ((SModelInternal) myModel).deleteModelImport(model.getModelReference());
+    for (jetbrains.mps.smodel.SModel.ImportElement model : ListSequence.fromListWithValues(new ArrayList<jetbrains.mps.smodel.SModel.ImportElement>(), modelInternal.importedModels())) {
+      modelInternal.deleteModelImport(model.getModelReference());
     }
     addBuiltInImports();
     TemporaryModels.getInstance().addMissingImports(myModel);
@@ -296,17 +297,19 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected void addNodeImports(SNode node) {
+    final SModelInternal modelInternal = (SModelInternal) myModel;
+    final AbstractModule module = ((AbstractModule) myModel.getModule());
+    final Collection<SLanguage> importedLanguages = modelInternal.importedLanguageIds();
     for (SNode subNode : ListSequence.fromList(SNodeOperations.getNodeDescendants(node, null, true, new SAbstractConcept[]{}))) {
-      SModuleReference usedLanguage = subNode.getConcept().getLanguage().getSourceModule().getModuleReference();
-      if (!(((SModelInternal) myModel).importedLanguages().contains(usedLanguage))) {
-        ((SModelInternal) myModel).addLanguage(usedLanguage);
-        ((AbstractModule) myModel.getModule()).addUsedLanguage(usedLanguage);
+      SLanguage usedLanguage = subNode.getConcept().getLanguage();
+      if (!(importedLanguages.contains(usedLanguage))) {
+        modelInternal.addLanguage(usedLanguage);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(subNode))) {
         SModel usedModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(ref));
-        if (usedModel != null && !(((SModelInternal) myModel).importedModels().contains(usedModel))) {
-          ((SModelInternal) myModel).addModelImport(usedModel.getReference(), false);
-          ((AbstractModule) myModel.getModule()).addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
+        if (usedModel != null && !(modelInternal.importedModels().contains(usedModel))) {
+          modelInternal.addModelImport(usedModel.getReference(), false);
+          module.addDependency(SNodeOperations.getModel(SLinkOperations.getTargetNode(ref)).getModule().getModuleReference(), false);
         }
       }
     }
@@ -436,7 +439,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
         final Wrappers._T<SModel> loadedModel = new Wrappers._T<SModel>(PersistenceUtil.loadBinaryModel(Base64Converter.decode(state.getBytes())));
         ListSequence.fromList(SModelOperations.nodes(loadedModel.value, null)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ConceptRegistry.getInstance().getConceptDescriptor(it.getConcept().getQualifiedName()) instanceof IllegalConceptDescriptor;
+            return !(it.getConcept().isValid());
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {

@@ -25,7 +25,6 @@ package jetbrains.mps;
 public final class RuntimeFlags {
   private static TestMode ourTestMode = TestMode.NONE;
   private static boolean ourMergeDriverMode = false;
-  private static Boolean ourPlayRefactoringMode = null;
   private static Boolean ourCastException = null;
   private static Boolean ourUseIOFile = null;
 
@@ -55,22 +54,6 @@ public final class RuntimeFlags {
 
   public static void setMergeDriverMode(boolean mergeDriverMode) {
     ourMergeDriverMode = mergeDriverMode;
-  }
-
-  /**
-   * Default value: system property <code>"mps.playRefactorings"</code>
-   *
-   * @return <code>true</code> if refactorings are to be run.
-   */
-  public static boolean isPlayRefactoringsMode() {
-    if (ourPlayRefactoringMode == null) {
-      ourPlayRefactoringMode = !"false".equals(System.getProperty("mps.playRefactorings"));
-    }
-    return ourPlayRefactoringMode;
-  }
-
-  public static void setPlayRefactoringsMode(boolean value) {
-    ourPlayRefactoringMode = value;
   }
 
   /**

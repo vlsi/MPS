@@ -3,6 +3,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="AbstractRequestDescription_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AbstractRequestDescription_BehaviorDescriptor" />
+    </file>
+    <file name="AddressReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AddressReference_BehaviorDescriptor" />
+    </file>
+    <file name="Address_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_BehaviorDescriptor" />
+    </file>
     <file name="AgendaItem_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AgendaItem_BehaviorDescriptor" />
     </file>
@@ -10,7 +19,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,64,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,82,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Car_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" />
@@ -45,6 +54,9 @@
     <file name="EmptyLine_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.EmptyLine_BehaviorDescriptor" />
     </file>
+    <file name="FormDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FormDescription_BehaviorDescriptor" />
+    </file>
     <file name="FruitPlate_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.FruitPlate_BehaviorDescriptor" />
     </file>
@@ -59,6 +71,9 @@
     </file>
     <file name="ListOfDrawCommands_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ListOfDrawCommands_BehaviorDescriptor" />
+    </file>
+    <file name="OperationOnAddress_BehaviorDescriptor.java">
+      <unit at="11,0,34,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.OperationOnAddress_BehaviorDescriptor" />
     </file>
     <file name="Orange_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Orange_BehaviorDescriptor" />
@@ -75,21 +90,55 @@
     <file name="RaceParticipant_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.RaceParticipant_BehaviorDescriptor" />
     </file>
+    <file name="Request_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Request_BehaviorDescriptor" />
+    </file>
+    <file name="SimplifiedFormDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SimplifiedFormDescription_BehaviorDescriptor" />
+    </file>
     <file name="Singer_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Singer_BehaviorDescriptor" />
     </file>
     <file name="SolidLine_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SolidLine_BehaviorDescriptor" />
     </file>
+    <file name="SomeForm_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.SomeForm_BehaviorDescriptor" />
+    </file>
+    <file name="StreetOperation_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.StreetOperation_BehaviorDescriptor" />
+    </file>
+    <file name="StringDescription_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.StringDescription_BehaviorDescriptor" />
+    </file>
     <file name="Truck_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Truck_BehaviorDescriptor" />
+    </file>
+    <file name="ZipOperation_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ZipOperation_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/5235060235298116961">
+    <file name="Address_Behavior.java">
+      <node id="5235060235298117104" at="12,78,13,175" concept="0" />
+      <node id="5235060235298116961" at="10,0,12,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5235060235298116961" at="12,0,15,0" concept="1" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5235060235298116963" at="10,43,10,43" />
+      <scope id="5235060235298117037" at="12,78,13,175" />
+      <scope id="5235060235298116961" at="10,0,12,0">
+        <var name="thisNode" id="5235060235298116961" />
+      </scope>
+      <scope id="5235060235298116961" at="12,0,15,0">
+        <var name="thisNode" id="5235060235298116961" />
+      </scope>
+      <unit id="5235060235298116961" at="9,0,16,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_Behavior" />
     </file>
   </root>
   <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/5681697064999291989">
     <file name="Component_Behavior.java">
       <node id="5681697064999350436" at="13,74,14,524" concept="0" />
       <node id="5681697064999291989" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5681697064999291989" at="13,0,16,0" concept="1" trace="call_fullNsme_5681697064999291992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5681697064999291989" at="13,0,16,0" concept="1" trace="call_fullName_5681697064999291992#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="5681697064999291991" at="11,43,11,43" />
       <scope id="5681697064999291995" at="13,74,14,524" />
       <scope id="5681697064999291989" at="11,0,13,0">

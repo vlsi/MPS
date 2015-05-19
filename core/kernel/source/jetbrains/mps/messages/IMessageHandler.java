@@ -25,7 +25,14 @@ public interface IMessageHandler {
     @Override
     public void handle(IMessage msg) {
     }
+
+    /**
+     * @deprecated clear() is vague in the context of message handling. Clients of this interface shall not care to clear the handler
+     * (nor it's always possible, e.g. with handlers backed with a log), and suppliers of the API may use whatever needed to ensure clean message output
+     */
     @Override
+    @Deprecated
+    @ToRemove(version = 3.3)
     public void clear() {
     }
   };
@@ -33,14 +40,6 @@ public interface IMessageHandler {
   public final static class LogHandler implements IMessageHandler {
     private final Logger myLog;
 
-    /**
-     * @deprecated jetbrains.mps.logging.Logger is abandoned in favor of apache's log4j or native java.util.logging.Logger.
-     */
-    @Deprecated
-    @ToRemove(version = 3.2)
-    public LogHandler(@NotNull jetbrains.mps.logging.Logger log) {
-      this(Logger.getLogger(IMessageHandler.class));
-    }
     public LogHandler(@NotNull Logger log) {
       myLog = log;
     }

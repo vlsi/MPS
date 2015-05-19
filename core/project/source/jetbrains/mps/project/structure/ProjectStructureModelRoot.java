@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -126,7 +125,6 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     private jetbrains.mps.smodel.SModel createModel() {
       final jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference());
-      model.addLanguage(BootstrapLanguages.projectLanguageRef());
       final IFile file = getSource().getFile();
 
       final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);
@@ -143,8 +141,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       return model;
     }
 
-    private void loadModels(Set<org.jetbrains.mps.openapi.model.SModelReference> result, ModelRootDescriptor root,
-        ModuleDescriptor md) {
+    private void loadModels(Set<org.jetbrains.mps.openapi.model.SModelReference> result, ModelRootDescriptor root, ModuleDescriptor md) {
       try {
         SModule module = ModuleRepositoryFacade.getInstance().getModule(md.getModuleReference());
         ModelRootFactory modelRootFactory = PersistenceFacade.getInstance().getModelRootFactory(root.getType());
@@ -163,6 +160,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       if (myModel == null) {
         myModel = createModel();
         myModel.setModelDescriptor(this);
+        addLanguage(BootstrapLanguages.projectLanguageRef());
         fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
       }
       return myModel;
@@ -175,7 +173,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     @Override
     public void unload() {
-      ModelAccess.assertLegalWrite();
+      assertCanChange();
 
       jetbrains.mps.smodel.SModel oldModel = myModel;
       if (oldModel != null) {
@@ -187,7 +185,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     @Override
     public void reloadFromDiskSafe() {
-      ModelAccess.assertLegalWrite();
+      assertCanChange();
       if (getSource().getTimestamp() == -1) {
         SModelRepository.getInstance().deleteModel(this);
         return;

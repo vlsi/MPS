@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
@@ -97,7 +97,7 @@ public class DevKit extends AbstractModule {
     Set<SLanguage> result = new HashSet<SLanguage>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
-        SLanguage lang = MetaIdByDeclaration.ref2Id(l);
+        SLanguage lang = MetaAdapterFactory.getLanguage(l);
         if (!result.contains(lang)) {
           result.add(lang);
         }

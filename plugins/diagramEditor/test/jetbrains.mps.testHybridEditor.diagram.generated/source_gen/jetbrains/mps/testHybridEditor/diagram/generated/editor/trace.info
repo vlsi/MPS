@@ -519,62 +519,62 @@
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/2336278055261474786">
     <file name="MyMainActionGroup.java">
-      <node id="2336278055264277083" at="26,0,27,0" concept="3" trace="tagToGroupMap" />
-      <node id="2336278055261520506" at="27,0,28,0" concept="3" trace="myDiagramCell" />
-      <node id="2336278055262901150" at="29,53,30,32" concept="2" />
-      <node id="2336278055263147130" at="33,41,34,89" concept="7" />
-      <node id="2336278055263037119" at="34,89,35,296" concept="7" />
-      <node id="2336278055263121774" at="37,39,38,196" concept="8" />
-      <node id="2336278055264560079" at="40,9,41,349" concept="7" />
-      <node id="2336278055264516579" at="42,67,43,99" concept="2" />
-      <node id="2336278055264545031" at="44,7,45,90" concept="2" />
-      <node id="2336278055263153141" at="47,68,48,329" concept="2" />
-      <node id="8174815986114409771" at="49,5,50,91" concept="2" />
-      <node id="2336278055263244245" at="50,91,51,78" concept="8" />
-      <node id="2336278055262911933" at="53,28,54,17" concept="8" />
-      <node id="2336278055262911941" at="56,25,57,16" concept="8" />
-      <node id="2336278055262913912" at="59,27,60,14" concept="8" />
-      <node id="2336278055261475341" at="29,0,32,0" concept="1" trace="MyMainActionGroup#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
-      <node id="2336278055263049046" at="37,0,40,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="2336278055263126254" at="41,349,44,7" concept="5" />
-      <node id="2336278055264591072" at="46,5,49,5" concept="4" />
-      <node id="2336278055262911927" at="53,0,56,0" concept="6" trace="isPopup#()Z" />
-      <node id="2336278055262911934" at="56,0,59,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="2336278055262911942" at="59,0,62,0" concept="6" trace="getText#()Ljava/lang/String;" />
-      <node id="2336278055262945556" at="35,296,46,5" concept="4" />
-      <node id="2336278055262907550" at="33,0,53,0" concept="6" trace="getElements#()[Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/openapi/PaletteElement;" />
-      <scope id="2336278055261475345" at="29,53,30,32" />
-      <scope id="2336278055263049047" at="37,39,38,196" />
-      <scope id="2336278055263126255" at="42,67,43,99" />
-      <scope id="2336278055264591078" at="47,68,48,329" />
-      <scope id="2336278055262911931" at="53,28,54,17" />
-      <scope id="2336278055262911939" at="56,25,57,16" />
-      <scope id="2336278055262911947" at="59,27,60,14" />
-      <scope id="2336278055261475341" at="29,0,32,0">
+      <node id="2336278055264277083" at="25,0,26,0" concept="3" trace="tagToGroupMap" />
+      <node id="2336278055261520506" at="26,0,27,0" concept="3" trace="myDiagramCell" />
+      <node id="2336278055262901150" at="28,53,29,32" concept="2" />
+      <node id="2336278055263147130" at="32,41,33,89" concept="7" />
+      <node id="2336278055263037119" at="33,89,34,254" concept="7" />
+      <node id="2336278055263121774" at="36,39,37,196" concept="8" />
+      <node id="2336278055264560079" at="39,9,40,349" concept="7" />
+      <node id="2336278055264516579" at="41,67,42,99" concept="2" />
+      <node id="2336278055264545031" at="43,7,44,90" concept="2" />
+      <node id="2336278055263153141" at="46,68,47,329" concept="2" />
+      <node id="8174815986114409771" at="48,5,49,91" concept="2" />
+      <node id="2336278055263244245" at="49,91,50,78" concept="8" />
+      <node id="2336278055262911933" at="52,28,53,17" concept="8" />
+      <node id="2336278055262911941" at="55,25,56,16" concept="8" />
+      <node id="2336278055262913912" at="58,27,59,14" concept="8" />
+      <node id="2336278055261475341" at="28,0,31,0" concept="1" trace="MyMainActionGroup#(Ljetbrains/mps/nodeEditor/cells/jetpad/DiagramCell;)V" />
+      <node id="2336278055263049046" at="36,0,39,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2336278055263126254" at="40,349,43,7" concept="5" />
+      <node id="2336278055264591072" at="45,5,48,5" concept="4" />
+      <node id="2336278055262911927" at="52,0,55,0" concept="6" trace="isPopup#()Z" />
+      <node id="2336278055262911934" at="55,0,58,0" concept="6" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="2336278055262911942" at="58,0,61,0" concept="6" trace="getText#()Ljava/lang/String;" />
+      <node id="2336278055262945556" at="34,254,45,5" concept="4" />
+      <node id="2336278055262907550" at="32,0,52,0" concept="6" trace="getElements#()[Ljetbrains/mps/lang/editor/diagram/runtime/jetpad/palette/openapi/PaletteElement;" />
+      <scope id="2336278055261475345" at="28,53,29,32" />
+      <scope id="2336278055263049047" at="36,39,37,196" />
+      <scope id="2336278055263126255" at="41,67,42,99" />
+      <scope id="2336278055264591078" at="46,68,47,329" />
+      <scope id="2336278055262911931" at="52,28,53,17" />
+      <scope id="2336278055262911939" at="55,25,56,16" />
+      <scope id="2336278055262911947" at="58,27,59,14" />
+      <scope id="2336278055261475341" at="28,0,31,0">
         <var name="diagramCell" id="2336278055261519590" />
       </scope>
-      <scope id="2336278055263049046" at="37,0,40,0">
+      <scope id="2336278055263049046" at="36,0,39,0">
         <var name="it" id="2336278055263049046" />
       </scope>
-      <scope id="2336278055264591072" at="46,5,49,5">
+      <scope id="2336278055264591072" at="45,5,48,5">
         <var name="tag" id="2336278055264591074" />
       </scope>
-      <scope id="2336278055262911927" at="53,0,56,0" />
-      <scope id="2336278055262911934" at="56,0,59,0" />
-      <scope id="2336278055262911942" at="59,0,62,0" />
-      <scope id="2336278055262945559" at="40,9,45,90">
+      <scope id="2336278055262911927" at="52,0,55,0" />
+      <scope id="2336278055262911934" at="55,0,58,0" />
+      <scope id="2336278055262911942" at="58,0,61,0" />
+      <scope id="2336278055262945559" at="39,9,44,90">
         <var name="key" id="2336278055264560080" />
       </scope>
-      <scope id="2336278055262945556" at="35,296,46,5">
+      <scope id="2336278055262945556" at="34,254,45,5">
         <var name="node" id="2336278055262945557" />
       </scope>
-      <scope id="2336278055262907555" at="33,41,51,78">
+      <scope id="2336278055262907555" at="32,41,50,78">
         <var name="groups" id="2336278055263147133" />
         <var name="scope" id="2336278055263037120" />
       </scope>
-      <scope id="2336278055262907550" at="33,0,53,0" />
-      <unit id="2336278055263049046" at="36,88,40,5" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup$1" />
-      <unit id="2336278055261474786" at="25,0,63,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup" />
+      <scope id="2336278055262907550" at="32,0,52,0" />
+      <unit id="2336278055263049046" at="35,88,39,5" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup$1" />
+      <unit id="2336278055261474786" at="24,0,62,0" name="jetbrains.mps.testHybridEditor.diagram.generated.editor.MyMainActionGroup" />
     </file>
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/2353136177975278085">
@@ -1566,7 +1566,7 @@
       <node id="2547454759988708542" at="88,73,89,57" concept="7" />
       <node id="2547454759988708542" at="89,57,90,59" concept="7" />
       <node id="2547454759988708542" at="91,35,92,82" concept="7" />
-      <node id="2547454759988708542" at="92,82,93,109" concept="8" />
+      <node id="2547454759988708542" at="92,82,93,94" concept="8" />
       <node id="2547454759988708542" at="94,10,95,22" concept="8" />
       <node id="1220375669566298384" at="97,88,98,96" concept="7" />
       <node id="1220375669566298384" at="98,96,99,47" concept="2" />
@@ -1800,7 +1800,7 @@
       <scope id="939897302409885543" at="381,84,382,46" />
       <scope id="2574029987318582440" at="384,74,385,46" />
       <scope id="939897302409885543" at="387,82,388,46" />
-      <scope id="2547454759988708542" at="91,35,93,109">
+      <scope id="2547454759988708542" at="91,35,93,94">
         <var name="manager" id="2547454759988708542" />
       </scope>
       <scope id="7801692200918031070" at="123,90,125,347" />

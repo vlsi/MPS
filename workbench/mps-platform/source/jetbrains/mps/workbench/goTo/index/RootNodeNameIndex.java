@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,24 +29,24 @@ import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FolderModelFactory;
-import jetbrains.mps.project.MPSExtentions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,7 +97,9 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
   }
 
   public static Iterable<SNode> getRootsToIterate(SModel model) {
-    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return new EmptyIterable<SNode>();
+    if (SModelStereotype.isStubModel(model)) {
+      return new EmptyIterable<SNode>();
+    }
     return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
@@ -124,7 +126,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
   @Override
   public int getVersion() {
-    return 7;
+    return 8;
   }
 
   @Override
@@ -147,7 +149,9 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     }
   }
 
-  private class MyIndexer extends SingleEntryIndexer<List<SNodeDescriptor>> {
+  // FIXME (1) ModelAccess? Perhaps, shall extend xml.persistence.Indexer with proper methods (name, concept)?
+  // FIXME (2) modelReference with each root node?! it's the same for all elements in the list!
+  private static class MyIndexer extends SingleEntryIndexer<List<SNodeDescriptor>> {
     private MyIndexer() {
       super(false);
     }
@@ -166,10 +170,9 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
             for (final SNode node : getRootsToIterate(model)) {
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
-              String conceptFqName = node.getConcept().getQualifiedName();
               SModelReference modelRef = model.getReference();
               SNodeId id = node.getNodeId();
-              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, node.getConcept(), modelRef, id);
               descriptors.add(value);
             }
           }

@@ -2,8 +2,8 @@
 <model ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
   </languages>
   <imports />
   <registry>
@@ -37,7 +37,7 @@
     <property role="9BnSZ" value="jetbrains.mps.execution.languages" />
     <property role="TrG5h" value="Execution Languages" />
     <property role="9BnSL" value="Languages and libraries for implementing execution configurations for MPS" />
-    <property role="9BnSK" value="3.2.1" />
+    <property role="9BnSK" value="3.3" />
     <property role="9BnSM" value="JetBrains" />
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSO" value="139.1" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,14 +25,18 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
-public class SLanguageAdapterById extends SLanguageAdapter {
-  private SLanguageId myLanguage;
+public final class SLanguageAdapterById extends SLanguageAdapter {
+  private final SLanguageId myLanguage;
 
   public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
-    super(fqName);
+    this(language, fqName, -1);
+  }
+  public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName, int version) {
+    super(fqName, version);
     this.myLanguage = language;
   }
 
+  @NotNull
   public SLanguageId getId() {
     return myLanguage;
   }

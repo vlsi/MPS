@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -63,7 +64,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
       } else {
@@ -99,7 +100,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
         errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
         errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
         return errorCell;

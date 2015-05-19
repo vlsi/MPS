@@ -454,6 +454,9 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       this.show = show;
     }
 
+    /**
+     * @return <code>true</code> when each (potential) use of an edited node get own tab, <code>false</code> means aspect has own tab
+     */
     public boolean isShowPlain() {
       return showPlain;
     }
@@ -462,6 +465,9 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
       return showGrayed;
     }
 
+    /**
+     * @return <code>true</code> to indicate use of tabs with aspects inside node editor
+     */
     public boolean isShow() {
       return show;
     }

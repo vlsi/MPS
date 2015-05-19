@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.structure" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${module}/source_gen" version="0">
   <models>
-    <modelRoot contentPath="${module}" type="java_classes">
-      <sourceRoot location="classes_gen" />
-    </modelRoot>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
     </modelRoot>
@@ -14,9 +11,6 @@
   <generators>
     <generator name="main" generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
-        <modelRoot contentPath="${module}" type="java_classes">
-          <sourceRoot location="classes_gen" />
-        </modelRoot>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator_new" />
         </modelRoot>

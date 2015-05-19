@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,29 @@ package jetbrains.mps.ide.findusages;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
-import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.util.InternUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class FindersManager implements CoreComponent, LanguageRegistryListener {
+public final class FindersManager implements CoreComponent, LanguageRegistryListener {
   private static final Logger LOG = LogManager.getLogger(FindersManager.class.getName());
 
   private static FindersManager INSTANCE;
@@ -44,8 +49,9 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     return INSTANCE;
   }
 
-  private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
-  private Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
+  private final Map<SAbstractConcept, Set<GeneratedFinder>> myFinders = new HashMap<SAbstractConcept, Set<GeneratedFinder>>();
+  private final Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
+  private final Map<GeneratedFinder, SModuleReference> myModulesByFinder = new HashMap<GeneratedFinder, SModuleReference>();
   private boolean myLoaded = false;
 
   private LanguageRegistry myLanguageRegistry;
@@ -72,30 +78,24 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
     checkLoaded();
-    return
-      ModelAccess.instance().runReadAction(new Computable<Set<ReloadableFinder>>() {
-        @Override
-        public Set<ReloadableFinder> compute() {
-          Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
+    Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
-          for (String conceptFQName : myFinders.keySet()) {
-            if (node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFQName))) {
-              for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
-                try {
-                  if (finder.isVisible(node)) {
-                    if (finder.isApplicable(node)) {
-                      result.add(new ReloadableFinder(getFinderModule(finder), finder));
-                    }
-                  }
-                } catch (Throwable t) {
-                  LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);
-                }
+    for (SAbstractConcept concept : myFinders.keySet()) {
+      if (node.getConcept().isSubConceptOf(concept)) {
+        for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(concept))) {
+          try {
+            if (finder.isVisible(node)) {
+              if (finder.isApplicable(node)) {
+                result.add(new ReloadableFinder(getFinderModule(finder), finder));
               }
             }
+          } catch (Throwable t) {
+            LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);
           }
-          return Collections.unmodifiableSet(result);
         }
-      });
+      }
+    }
+    return Collections.unmodifiableSet(result);
   }
 
   public ReloadableFinder getFinderByClassName(String className) {
@@ -121,9 +121,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private SModuleReference getFinderModule(GeneratedFinder finder) {
-    SModel finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
-    Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
-    return finderLanguage.getModuleReference();
+    return myModulesByFinder.get(finder);
   }
 
   //-------------reloading stuff----------------
@@ -135,14 +133,15 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
-    String conceptName = finder.getConcept();
-    Set<GeneratedFinder> finders = myFinders.get(conceptName);
+    SAbstractConcept concept = finder.getSConcept();
+    Set<GeneratedFinder> finders = myFinders.get(concept);
     if (finders == null) {
       finders = new HashSet<GeneratedFinder>();
-      myFinders.put(InternUtil.intern(conceptName), finders);
+      myFinders.put(concept, finders);
     }
     finders.add(finder);
     myNodesByFinder.put(finder, np);
+    myModulesByFinder.put(finder, moduleRef);
   }
 
   private void load() {
@@ -156,14 +155,10 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private void clear() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        myFinders.clear();
-        myNodesByFinder.clear();
-        myLoaded = false;
-      }
-    });
+    myFinders.clear();
+    myNodesByFinder.clear();
+    myModulesByFinder.clear();
+    myLoaded = false;
   }
 
   private void initFindersDescriptor(LanguageRuntime language) {

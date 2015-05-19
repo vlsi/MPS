@@ -26,13 +26,13 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelsEventsCollector;
 import com.intellij.util.containers.MultiMap;
+import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
+import java.util.ArrayList;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
@@ -71,7 +71,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = model.getReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
-        MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate();
+        MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate(false);
         return;
       }
       CurrentDifference cd = new CurrentDifference(this, (EditableSModel) model);
@@ -104,16 +104,6 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelReference)) {
         MapSequence.fromMap(myCurrentDifferences).get(modelReference).dispose();
         MapSequence.fromMap(myCurrentDifferences).removeKey(modelReference);
-      }
-    }
-  }
-  private void scheduleFullUpdate(Iterable<SModelReference> modelRefs) {
-    synchronized (myCurrentDifferences) {
-      for (SModelReference mr : modelRefs) {
-        CurrentDifference difference = MapSequence.fromMap(myCurrentDifferences).get(mr);
-        if (difference != null) {
-          difference.getChangesTracker().scheduleFullUpdate();
-        }
       }
     }
   }
@@ -168,13 +158,20 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
     @Override
     public void modelsReplaced(Set<SModel> set) {
-      List<SModelReference> editableModels = new ArrayList<SModelReference>();
-      for (SModel m : set) {
-        if (m instanceof EditableSModel) {
-          editableModels.add(m.getReference());
+      synchronized (myCurrentDifferences) {
+        for (SModel m : set) {
+          if (!(m instanceof EditableSModel)) {
+            continue;
+          }
+
+          CurrentDifference difference = MapSequence.fromMap(myCurrentDifferences).get(m.getReference());
+          if (difference == null) {
+            continue;
+          }
+
+          difference.getChangesTracker().scheduleFullUpdate(true);
         }
       }
-      scheduleFullUpdate(editableModels);
     }
     @Override
     public void beforeModelRemoved(SModel descriptor) {

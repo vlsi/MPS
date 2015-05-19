@@ -40,6 +40,8 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -49,6 +51,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -86,6 +89,9 @@ public class UsagesView implements IExternalizeable {
   private String myCaption = "Usages";
   private Icon myIcon = Toolwindows.ToolWindowFind;
 
+  private DataTreeChangesNotifier myChangeTracker;
+  private boolean myOwnChangeTracker = false; // true indicates this class shall manage repository listener (myChangeTracker)
+
   // note: this field is not restored from XML
   private SearchResults myLastResults;
 
@@ -94,9 +100,16 @@ public class UsagesView implements IExternalizeable {
   }
 
   public UsagesView(Project mpsProject, ViewOptions defaultOptions) {
+    this(mpsProject, defaultOptions, new DataTreeChangesNotifier());
+    myOwnChangeTracker = true;
+    // FIXME ProjectRepository.getModules() doesn't give actual modules yet.
+    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).attach();
+  }
+
+  public UsagesView(Project mpsProject, ViewOptions defaultOptions, DataTreeChangesNotifier changeTracker) {
     myProject = mpsProject;
 
-    myTreeComponent = new UsagesTreeComponent(defaultOptions, myProject);
+    myTreeComponent = new UsagesTreeComponent(defaultOptions, myProject, changeTracker);
     myPanel = new RootPanel(myTreeComponent.getOccurenceNavigator());
 
     JPanel treeWrapperPanel = new JPanel(new BorderLayout());
@@ -107,10 +120,15 @@ public class UsagesView implements IExternalizeable {
     myPanel.add(treeWrapperPanel, BorderLayout.CENTER);
 
     myPanel.setMinimumSize(new Dimension());
+    myChangeTracker = changeTracker;
   }
 
   public void dispose() {
     myTreeComponent.dispose();
+    if (myOwnChangeTracker) {
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).detach();
+    }
+    myChangeTracker = null;
   }
 
   //----RUN STUFF----

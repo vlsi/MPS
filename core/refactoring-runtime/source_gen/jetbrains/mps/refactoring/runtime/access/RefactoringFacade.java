@@ -7,6 +7,4 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 public interface RefactoringFacade {
   public void executeSimple(final RefactoringContext context);
   public void execute(final RefactoringContext refactoringContext);
-  public void writeIntoLog(RefactoringContext context);
-  public void updateLoadedModels(RefactoringContext context);
 }

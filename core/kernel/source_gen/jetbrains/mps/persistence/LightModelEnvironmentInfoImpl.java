@@ -102,10 +102,6 @@ public class LightModelEnvironmentInfoImpl implements LightModelEnvironmentInfo 
   public SNodeReference getPropertyId(SNode node, String propertyName) {
     return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(node.getConcept().getQualifiedName(), propertyName));
   }
-  @Override
-  public int getModelVersion(SModelReference reference) {
-    return MapSequence.fromMap(myModelVersions).get(reference);
-  }
   public boolean isConsistent() {
     return myConsistent;
   }

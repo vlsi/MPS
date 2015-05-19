@@ -821,9 +821,10 @@
           <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/jam-support/openapi" />
           <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/refactoring/tests" />
           <root url="jar://$APPLICATION_HOME_DIR$/lib/sources.zip!/refactoring/src" />
+          <root url="jar://$MODULE_DIR$/../../lib/src/log4j.zip!/java" />
+          <root url="jar://$MODULE_DIR$/../../lib/src/log4j.zip!/javadoc" />
         </SOURCES>
       </library>
     </orderEntry>
   </component>
 </module>
-

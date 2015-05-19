@@ -30,8 +30,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -68,15 +66,6 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
     setExecuteOutsideCommand(true);
   }
 
-  /**
-   * @deprecated use {@link #NewRootNodeAction(org.jetbrains.mps.openapi.language.SAbstractConcept, org.jetbrains.mps.openapi.model.SModel, String)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public NewRootNodeAction(final SNode nodeConcept, SModel model, String virtualPackage) {
-    this(MetaAdapterByDeclaration.getConcept(nodeConcept), model, virtualPackage);
-  }
-
   @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!super.collectActionData(e, _params)) return false;
@@ -94,6 +83,11 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
         final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
         SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
         myModel.addRootNode(node);
+        for (CreateNodeExtension ext : CreateRootFilterEP.getInstance().getCreateNodeExtensions()) {
+          if (ext.isApplicable(myModel)) {
+            ext.setupRoot(node);
+          }
+        }
 
         modelAccess.runWriteInEDT(new Runnable() {
           @Override

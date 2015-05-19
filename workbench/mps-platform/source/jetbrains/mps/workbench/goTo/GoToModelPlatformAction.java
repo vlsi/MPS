@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,23 +20,26 @@ import com.intellij.ide.impl.ProjectPaneSelectInTarget;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.DumbAware;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +48,7 @@ import java.util.Map;
 public class GoToModelPlatformAction extends BaseAction implements DumbAware {
   @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-    final Project project = e.getData(PlatformDataKeys.PROJECT);
+    final MPSProject project = e.getData(MPSCommonDataKeys.MPS_PROJECT);
     assert project != null;
 
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
@@ -57,21 +60,24 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         return new BaseModelItem(modelReference) {
           @Override
           public void navigate(boolean requestFocus) {
-            final SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            final SModel md = modelReference.resolve(project.getRepository());
 
-            VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+            VirtualFile modelFile = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
               @Override
               public VirtualFile compute() {
                 return ModelUtil.getFileByModel(md);
               }
             });
 
-            PsiElement modelElement = PsiManager.getInstance(project).findFile(modelFile);
+            final PsiManager psiManager = PsiManager.getInstance(project.getProject());
+            PsiElement modelElement = psiManager.findFile(modelFile);
             if (modelElement == null) {
-              modelElement = PsiManager.getInstance(project).findDirectory(modelFile);
+              modelElement = psiManager.findDirectory(modelFile);
             }
-            if (modelElement == null) return;
-            new ProjectPaneSelectInTarget(project).select(modelElement, true);
+            if (modelElement == null) {
+              return;
+            }
+            new ProjectPaneSelectInTarget(project.getProject()).select(modelElement, true);
           }
         };
       }
@@ -95,7 +101,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         return result.toArray(new SModelReference[result.size()]);
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, null);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project.getProject(), goToModelModel, null);
     popup.setShowListForEmptyPattern(true);
     popup.setCheckBoxShortcut(getShortcutSet());
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);

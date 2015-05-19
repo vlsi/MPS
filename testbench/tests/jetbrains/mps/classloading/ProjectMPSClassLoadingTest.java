@@ -31,10 +31,7 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.tool.builder.util.PathManager;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.junit.Test;
 
 import java.io.File;
@@ -47,14 +44,13 @@ import java.util.TreeMap;
 import static org.junit.Assert.fail;
 
 public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
-  private static final String PROJECT_PATH = PathManager.getHomePath();
   private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
 
   @Test
   public void ClassesAreLoaded() {
-    Project project = openProject(new File(PROJECT_PATH));
+    Project project = openProject(new File(PathManager.getHomePath()));
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {

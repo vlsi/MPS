@@ -4,19 +4,17 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -24,8 +22,6 @@ import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,49 +34,37 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())).where(new IWhereFilter<SModule>() {
-        public boolean accept(SModule it) {
-          return FindWrongAspectDependencies_Action.this.needsProcessing(it, _params);
-        }
-      }).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel md) {
-          return SModelStereotype.isUserModel(md);
-        }
-      }));
-      ModelCheckerTool.getInstance(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModule>) event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules())).where(new IWhereFilter<SModule>() {
+      public boolean accept(SModule it) {
+        return FindWrongAspectDependencies_Action.this.needsProcessing(it, event);
       }
-    }
+    }).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
+      }
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel md) {
+        return SModelStereotype.isUserModel(md);
+      }
+    }));
+    ModelCheckerTool.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()).checkModelsAndShowResult(models, new AspectDependenciesChecker(event.getData(MPSCommonDataKeys.MPS_PROJECT)));
   }
-  /*package*/ boolean needsProcessing(SModule module, final Map<String, Object> _params) {
+  /*package*/ boolean needsProcessing(SModule module, final AnActionEvent event) {
     if (module instanceof Language) {
       return true;
     } else if (module instanceof Solution) {
@@ -88,5 +72,4 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     }
     return false;
   }
-  protected static Logger LOG = LogManager.getLogger(FindWrongAspectDependencies_Action.class);
 }

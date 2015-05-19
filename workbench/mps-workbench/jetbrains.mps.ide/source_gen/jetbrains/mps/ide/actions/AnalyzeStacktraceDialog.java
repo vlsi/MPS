@@ -6,7 +6,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JPanel;
@@ -22,7 +21,7 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
   private JComponent myComponent;
   private JTextArea myText;
   private Project myProject;
-  public AnalyzeStacktraceDialog(Project project, final IOperationContext context) {
+  public AnalyzeStacktraceDialog(Project project) {
     super(project);
     setTitle("Analyze Stacktrace");
     setOKButtonText("&OK");

@@ -52,6 +52,7 @@ public final class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
     return myName;
   }
 
+  @NotNull
   @Override
   public SReferenceLinkId getRoleId() {
     ReferenceDescriptor d = getReferenceDescriptor();

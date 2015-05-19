@@ -4,6 +4,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,10 +48,6 @@ public class MetaIdByDeclaration {
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SPropertyId(getConceptId(c.getContainingRoot()), id);
-  }
-
-  public static SLanguage ref2Id(@NotNull SModuleReference ref) {
-    return MetaAdapterFactory.getLanguage(ref2LangId(ref), ref.getModuleName());
   }
 
   public static SLanguageId ref2LangId(@NotNull SModuleReference ref) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,13 @@ public interface FileSystemProvider {
   IFile getFile(@NotNull String path);
   boolean isFileIgnored(String name);
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
-  boolean runWriteTransaction(Runnable r);
+
+  /**
+   * @see FileSystem#runWriteTransaction(Runnable)
+   * @param r code to execute within platform write lock
+   * @return <code>false</code> if something went wrong (yeah, stupid contract, I know)
+   */
+  boolean runWriteTransaction(@NotNull Runnable r);
 
   void addListener(FileSystemListener listener);
   void removeListener(FileSystemListener listener);

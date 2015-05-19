@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,26 +17,36 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.List;
 
 /**
+ * Mediator between template/rule and the generation process, provides access to facilities not specific to particular template being executed.
+ * With delegation mechanism to resort to other generator rules/templates (i.e. not part of the active generator; whether interpreted or generated),
+ * {@link jetbrains.mps.generator.runtime.TemplateExecutionEnvironment} is inherently associated with an active
+ * generation thread (IMPLEMENTATION NOTE: at the moment, there's one instance per thread/per root).
+ *
+ * It's deemed to serve as a mediator between generated and interpreted templates, although present implementation of interpreted templates not always
+ * resort to facilities provided by this class.
+ *
+ * Unlike {@link jetbrains.mps.generator.runtime.TemplateContext}, which is call stack for particular template/rule, this class is of broader scope/life-cycle.
+
+ * @see jetbrains.mps.generator.runtime.TemplateContext
  * Evgeny Gryaznov, 10/22/10
  */
 public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Source {
@@ -45,8 +55,21 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   SModel getOutputModel();
 
+  /**
+   * @deprecated shall use {@link #createOutputNode(SConcept)}
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.3)
   SNode createOutputNode(@NotNull String conceptName);
+
+  /**
+   *
+   * @param concept we don't expect templates to instantiate interface concepts.
+   * @return instance of the concept, instantiated using output model as a factory, not belonging to the model, though.
+   */
+  @NotNull
+  SNode createOutputNode(@NotNull SConcept concept);
 
   @NotNull
   TemplateGenerator getGenerator();
@@ -58,14 +81,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   @NotNull
   GenerationTrace getTrace();
 
-  /**
-   * @deprecated use new trace mechanism instead
-   * @return always NullGenerationTracer
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  IGenerationTracer getTracer();
-
   IGeneratorLogger getLogger();
 
   @NotNull
@@ -74,7 +89,7 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   @NotNull
   ITemplateProcessor getTemplateProcessor();
 
-  // FIXME remove mappingName parameter where TemlateContext is available
+  // FIXME remove mappingName parameter where TemplateContext is available
 
   /**
    * Copies nodes from input model, trying to apply reduction rules
@@ -87,6 +102,9 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   List<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateNodeId, @NotNull TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
+  /**
+   * Support for $INSERT$ macro, adopt a node, prepare it to get inserted into output model
+   */
   SNode insertNode(SNode node, SNodeReference templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException;
 
   @Nullable
@@ -102,15 +120,33 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel);
 
+  /**
+   * Support for references between template nodes
+   */
   void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference templateSourceNode, String templateTargetNodeId, @Nullable String resolveInfo, TemplateContext context);
 
+  /**
+   * ReferenceMacro support
+   * @deprecated replaced with {@link #resolve(ReferenceResolver2)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void resolve(@NotNull ReferenceResolver resolver, @NotNull SNode outputNode, @NotNull String role, @NotNull TemplateContext context);
 
-  /*
-   *  returns temporary node
+  /**
+   * ReferenceMacro support
+   */
+  void resolve(@NotNull ReferenceResolver2 resolver);
+
+  /**
+   * Support for $MAP-SRC$ macro's mapping function
+   * @return temporary node
    */
   SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
+  /**
+   * Support for $MAP-SRC$ macro's post-process function
+   */
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
   void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);

@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.io.File;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import java.util.Collections;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -22,6 +25,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
@@ -37,7 +41,6 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -68,10 +71,9 @@ public class NewModuleUtil {
 
     Solution sandbox = NewModuleUtil.createSolution(namespace, basePath, project);
     SModelInternal sandboxModel = (SModelInternal) createModel(sandbox, namespace);
-    sandbox.addUsedLanguage(language.getModuleReference());
-    sandboxModel.addLanguage(language.getModuleReference());
-    for (SModuleReference extendedLanguage : language.getExtendedLanguageRefs()) {
-      sandbox.addUsedLanguage(extendedLanguage);
+    SLanguage l = MetaAdapterFactory.getLanguage(language.getModuleReference());
+    sandboxModel.addLanguage(l);
+    for (SLanguage extendedLanguage : new SLanguageHierarchy(Collections.singleton(l)).getExtended()) {
       sandboxModel.addLanguage(extendedLanguage);
     }
 

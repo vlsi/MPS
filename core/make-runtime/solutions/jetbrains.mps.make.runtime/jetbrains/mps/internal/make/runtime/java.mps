@@ -2,7 +2,7 @@
 <model ref="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -22,7 +22,6 @@
     <import index="wmh4" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.generationTypes(MPS.Core/jetbrains.mps.generator.generationTypes@java_stub)" />
     <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" />
     <import index="hb0s" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.make(MPS.Core/jetbrains.mps.make@java_stub)" />
-    <import index="rhwp" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.descriptor(MPS.Core/jetbrains.mps.smodel.descriptor@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="ep0o" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.persistence(MPS.Core/jetbrains.mps.extapi.persistence@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -121,6 +120,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -176,6 +176,9 @@
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -1881,8 +1884,13 @@
       <node concept="3clFbS" id="3zGGVE6UWPE" role="3clF47">
         <node concept="3clFbF" id="3zGGVE6VfaZ" role="3cqZAp">
           <node concept="37vLTI" id="3zGGVE6Vfb1" role="3clFbG">
-            <node concept="37vLTw" id="3zGGVE6Vfb9" role="37vLTx">
-              <ref role="3cqZAo" node="3zGGVE6Vf3S" resolve="deltaCollector" />
+            <node concept="2ShNRf" id="3QuLV9OzDiq" role="37vLTx">
+              <node concept="1pGfFk" id="3QuLV9OzE0C" role="2ShVmc">
+                <ref role="37wK5l" to="rk9m:s2Jv$gDl8u" resolve="FilesDelta" />
+                <node concept="37vLTw" id="3QuLV9OzE1s" role="37wK5m">
+                  <ref role="3cqZAo" node="3zGGVE6ViQC" resolve="outputDir" />
+                </node>
+              </node>
             </node>
             <node concept="37vLTw" id="3zGGVE6VhNp" role="37vLTJ">
               <ref role="3cqZAo" node="3zGGVE6VfaV" resolve="myDelta" />
@@ -1917,17 +1925,29 @@
           <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
         </node>
       </node>
-      <node concept="37vLTG" id="3zGGVE6Vf3S" role="3clF46">
-        <property role="TrG5h" value="deltaCollector" />
-        <node concept="3uibUv" id="3zGGVE6Vf3R" role="1tU5fm">
-          <ref role="3uigEE" to="rk9m:s2Jv$gDl8s" resolve="FilesDelta" />
-        </node>
-      </node>
       <node concept="37vLTG" id="3zGGVE6VCCB" role="3clF46">
         <property role="TrG5h" value="fileProcessor" />
         <node concept="3uibUv" id="3zGGVE6VCNX" role="1tU5fm">
           <ref role="3uigEE" node="3KiLc2_D15v" resolve="FileProcessor" />
         </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="3QuLV9OzCRN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getDelta" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3QuLV9OzCRQ" role="3clF47">
+        <node concept="3cpWs6" id="3QuLV9OzD6P" role="3cqZAp">
+          <node concept="37vLTw" id="3QuLV9OzD7e" role="3cqZAk">
+            <ref role="3cqZAo" node="3zGGVE6VfaV" resolve="myDelta" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3QuLV9OzCEi" role="1B3o_S" />
+      <node concept="3uibUv" id="3QuLV9OzCRL" role="3clF45">
+        <ref role="3uigEE" to="rk9m:s2Jv$gDl8s" resolve="FilesDelta" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3zGGVE6UVeR" role="1B3o_S" />

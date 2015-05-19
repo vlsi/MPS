@@ -4,7 +4,7 @@ package jetbrains.mps.generator.test.crossmodel.entity.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
 
 public enum Kind {
   _1("ONE", 1),

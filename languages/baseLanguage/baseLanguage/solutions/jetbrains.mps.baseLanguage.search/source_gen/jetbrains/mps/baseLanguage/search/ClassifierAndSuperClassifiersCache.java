@@ -302,9 +302,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       this.myOverriddenMethods = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
 forEachInAllMethods:
       for (SNode currMethod : allMethods) {
-        if (SNodeOperations.isInstanceOf(currMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x43fb6053bc19f3d6L, "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration"))) {
-          continue;
-        }
         String name = SPropertyOperations.getString(currMethod, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         if (name == null) {
           name = "";

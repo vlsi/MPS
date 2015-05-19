@@ -34,15 +34,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.internal.collections.runtime.backports.Deque;
+import java.util.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import java.util.LinkedList;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
@@ -333,14 +333,10 @@ public class JavaParser {
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);
 
             // FIXME maybe it's better to re-use auto model import 
-            Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).where(new IWhereFilter<SReference>() {
-              public boolean accept(SReference it) {
-                return (SReference) it instanceof StaticReference;
-              }
-            }).visitAll(new IVisitor<SReference>() {
-              public void visit(SReference it) {
+            Sequence.fromIterable(JavaToMpsConverter.deepReferences(theRightNode)).ofType(StaticReference.class).visitAll(new IVisitor<StaticReference>() {
+              public void visit(StaticReference it) {
                 SModel sourceModel = theRightNode.getModel();
-                SModelReference targetModel = ((StaticReference) it).getTargetSModelReference();
+                SModelReference targetModel = it.getTargetSModelReference();
                 if (!(sourceModel.getReference().equals(targetModel))) {
                   ((SModelInternal) sourceModel).addModelImport(targetModel, true);
 
@@ -354,13 +350,13 @@ public class JavaParser {
     }
   }
   public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
-    Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
-    DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));
+    Deque<SNode> stack = DequeSequence.fromDequeNew(new LinkedList<SNode>());
+    DequeSequence.fromDequeNew(stack).addSequence(Sequence.fromIterable(nodes));
 
-    while (DequeSequence.fromDeque(stack).isNotEmpty()) {
-      SNode node = DequeSequence.fromDeque(stack).popElement();
+    while (DequeSequence.fromDequeNew(stack).isNotEmpty()) {
+      SNode node = DequeSequence.fromDequeNew(stack).popElement();
       SModel ourModel = node.getModel();
-      DequeSequence.fromDeque(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
+      DequeSequence.fromDequeNew(stack).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)));
 
       Iterable<? extends SReference> refs = node.getReferences();
       for (SReference ref : Sequence.fromIterable(refs)) {

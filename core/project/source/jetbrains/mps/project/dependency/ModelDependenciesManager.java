@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import org.jetbrains.annotations.NotNull;
@@ -265,8 +264,8 @@ public class ModelDependenciesManager {
 
     private void invalidateIfWatching(SModule module) {
       if ((module instanceof Language)) {
-        SLanguage languageId = MetaIdByDeclaration.ref2Id(module.getModuleReference());
-        if (languageId != null && myDepManager.isDependency(languageId)) {
+        SLanguage languageId = MetaAdapterFactory.getLanguage(module.getModuleReference());
+        if (myDepManager.isDependency(languageId)) {
           myDepManager.invalidate();
         }
       }

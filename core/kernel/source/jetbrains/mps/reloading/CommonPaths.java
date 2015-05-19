@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -229,7 +229,6 @@ public class CommonPaths {
   private static void addWorkbenchJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-workbench.jar");
     addIfExists(result, "/lib/junit-4.11.jar");
-    addIfExists(result, "/lib/beansbinding-1.2.1.jar");
   }
 
   private static void addTestJars(CompositeClassPathItem result) {

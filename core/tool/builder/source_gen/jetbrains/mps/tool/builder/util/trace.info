@@ -811,41 +811,36 @@
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/878521226300613674">
     <file name="MpsPlatform.java">
-      <node id="1186687992399646112" at="12,0,13,0" concept="6" trace="myMPSCore" />
-      <node id="2155989524110326984" at="13,0,14,0" concept="6" trace="myMPSPersistence" />
-      <node id="3139729503293638908" at="14,0,15,0" concept="6" trace="myMPSTypesystem" />
-      <node id="3139729503293640511" at="15,0,16,0" concept="6" trace="myMPSGenerator" />
-      <node id="3139729503293715862" at="16,0,17,0" concept="6" trace="myMPSBaseLanguage" />
-      <node id="1186687992399646894" at="19,22,20,30" concept="5" />
-      <node id="2155989524110327860" at="20,30,21,44" concept="5" />
-      <node id="3139729503293641762" at="21,44,22,42" concept="5" />
-      <node id="3139729503293676885" at="22,42,23,40" concept="5" />
-      <node id="3139729503293717882" at="23,40,24,46" concept="5" />
-      <node id="878521226300613683" at="24,46,25,21" concept="5" />
-      <node id="878521226300613687" at="25,21,26,28" concept="5" />
-      <node id="3139729503293679492" at="26,28,27,27" concept="5" />
-      <node id="3139729503293681040" at="27,27,28,26" concept="5" />
-      <node id="3139729503293720130" at="28,26,29,29" concept="5" />
-      <node id="3139729503293722436" at="31,25,32,32" concept="5" />
-      <node id="3139729503293687117" at="32,32,33,29" concept="5" />
-      <node id="3139729503293689403" at="33,29,34,30" concept="5" />
-      <node id="878521226300613719" at="34,30,35,31" concept="5" />
-      <node id="878521226300613723" at="35,31,36,24" concept="5" />
-      <node id="3139729503293724905" at="36,24,37,29" concept="5" />
-      <node id="3139729503293684106" at="37,29,38,26" concept="5" />
-      <node id="3139729503293685541" at="38,26,39,27" concept="5" />
-      <node id="2155989524110335412" at="39,27,40,28" concept="5" />
-      <node id="1186687992399652355" at="40,28,41,21" concept="5" />
-      <node id="878521226300613676" at="17,0,19,0" concept="2" trace="MpsPlatform#()V" />
-      <node id="1186687992399646519" at="19,0,31,0" concept="10" trace="init#()V" />
-      <node id="1186687992399648909" at="31,0,43,0" concept="10" trace="dispose#()V" />
-      <scope id="878521226300613679" at="17,24,17,24" />
-      <scope id="878521226300613676" at="17,0,19,0" />
-      <scope id="878521226300613682" at="19,22,29,29" />
-      <scope id="878521226300613706" at="31,25,41,21" />
-      <scope id="1186687992399646519" at="19,0,31,0" />
-      <scope id="1186687992399648909" at="31,0,43,0" />
-      <unit id="878521226300613674" at="11,0,44,0" name="jetbrains.mps.tool.builder.util.MpsPlatform" />
+      <node id="1186687992399646112" at="11,0,12,0" concept="6" trace="myMPSCore" />
+      <node id="2155989524110326984" at="12,0,13,0" concept="6" trace="myMPSPersistence" />
+      <node id="3139729503293638908" at="13,0,14,0" concept="6" trace="myMPSTypesystem" />
+      <node id="3139729503293640511" at="14,0,15,0" concept="6" trace="myMPSGenerator" />
+      <node id="1186687992399646894" at="17,22,18,30" concept="5" />
+      <node id="2155989524110327860" at="18,30,19,44" concept="5" />
+      <node id="3139729503293641762" at="19,44,20,42" concept="5" />
+      <node id="3139729503293676885" at="20,42,21,40" concept="5" />
+      <node id="878521226300613683" at="21,40,22,21" concept="5" />
+      <node id="878521226300613687" at="22,21,23,28" concept="5" />
+      <node id="3139729503293679492" at="23,28,24,27" concept="5" />
+      <node id="3139729503293681040" at="24,27,25,26" concept="5" />
+      <node id="3139729503293687117" at="27,25,28,29" concept="5" />
+      <node id="3139729503293689403" at="28,29,29,30" concept="5" />
+      <node id="878521226300613719" at="29,30,30,31" concept="5" />
+      <node id="878521226300613723" at="30,31,31,24" concept="5" />
+      <node id="3139729503293684106" at="31,24,32,26" concept="5" />
+      <node id="3139729503293685541" at="32,26,33,27" concept="5" />
+      <node id="2155989524110335412" at="33,27,34,28" concept="5" />
+      <node id="1186687992399652355" at="34,28,35,21" concept="5" />
+      <node id="878521226300613676" at="15,0,17,0" concept="2" trace="MpsPlatform#()V" />
+      <node id="1186687992399646519" at="17,0,27,0" concept="10" trace="init#()V" />
+      <node id="1186687992399648909" at="27,0,37,0" concept="10" trace="dispose#()V" />
+      <scope id="878521226300613679" at="15,24,15,24" />
+      <scope id="878521226300613676" at="15,0,17,0" />
+      <scope id="878521226300613682" at="17,22,25,26" />
+      <scope id="878521226300613706" at="27,25,35,21" />
+      <scope id="1186687992399646519" at="17,0,27,0" />
+      <scope id="1186687992399648909" at="27,0,37,0" />
+      <unit id="878521226300613674" at="10,0,38,0" name="jetbrains.mps.tool.builder.util.MpsPlatform" />
     </file>
   </root>
 </debug-info>

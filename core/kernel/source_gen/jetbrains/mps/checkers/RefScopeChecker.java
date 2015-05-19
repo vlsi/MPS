@@ -9,14 +9,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -34,7 +32,6 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (module == null) {
       return;
     }
-    SNode concept = SNodeOperations.getConceptDeclaration(node);
     boolean executeImmediately = ReferenceResolverUtils.canExecuteImmediately(SNodeOperations.getModel(node), repository);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
@@ -51,15 +48,16 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      Scope refScope = ModelConstraints.getScope(ref);
+      ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
+      Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
-        ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
+        ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
         SNode ruleNode = null;
         if (scopeProvider != null) {
-          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) : null);
+          ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ? scopeProvider.getSearchScopeValidatorNode().resolve(repository) : null);
         }
         component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
@@ -87,7 +85,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         }
         @Override
         public String getDescription(SNode node) {
-          return "Resolve \"" + myReference.getRole() + "\" reference";
+          return "Resolve \"" + myReference.getLink().getRoleName() + "\" reference";
         }
       };
     }

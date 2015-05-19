@@ -5,7 +5,7 @@ package jetbrains.mps.lang.behavior.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class B_Behavior {
   public static void init(SNode thisNode) {
@@ -36,7 +36,7 @@ public class B_Behavior {
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "from A", 0);
     A_Behavior.call_nonVirtualMethod_4731970554577184968(thisNode, "from A", 0);
     // 
-    A_Behavior.virtual_staticVirtualMethod_4731970554577185580(SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.behavior.test.structure.A"), "from A", 0);
+    A_Behavior.virtual_staticVirtualMethod_4731970554577185580(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), "from A", 0);
     // 
     // FIXME it's possible to declare static virtual abstract method, but impossible to call it 
     // staticAbstractVirtualMethod() 

@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.BaseConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -53,21 +54,21 @@ abstract class AbstractEditorRegistry<T extends BaseConceptEditor> {
 
   T getEditor(ConceptDescriptor conceptDescriptor) {
     Queue<ConceptDescriptor> queue = new LinkedList<ConceptDescriptor>();
-    Set<String> processedConcepts = new HashSet<String>();
+    Set<SConceptId> processedConcepts = new HashSet<SConceptId>();
     queue.add(conceptDescriptor);
-    processedConcepts.add(conceptDescriptor.getConceptFqName());
+    processedConcepts.add(conceptDescriptor.getId());
     while (!queue.isEmpty()) {
       ConceptDescriptor nextConcept = queue.remove();
       T conceptEditor = getEditorForConcept(nextConcept);
       if (conceptEditor != null) {
         return conceptEditor;
       }
-      for (String ancestorName : nextConcept.getParentsNames()) {
-        if (processedConcepts.contains(ancestorName)) {
+      for (SConceptId ancestorId : nextConcept.getParentsIds()) {
+        if (processedConcepts.contains(ancestorId)) {
           continue;
         }
-        processedConcepts.add(ancestorName);
-        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorName));
+        processedConcepts.add(ancestorId);
+        queue.add(ConceptRegistry.getInstance().getConceptDescriptor(ancestorId));
       }
     }
     return null;

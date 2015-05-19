@@ -7,22 +7,18 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.editor.util.GoToHelper;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.event.InputEvent;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToOverridingBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,62 +31,50 @@ public class GoToOverridingBehaviorMethod_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return GoToHelper.hasApplicableFinder(((SNode) MapSequence.fromMap(_params).get("methodNode")), GoToOverridingBehaviorMethod_Action.this.getFinderName(_params));
+    return GoToHelper.hasApplicableFinder(event.getData(MPSCommonDataKeys.NODE), GoToOverridingBehaviorMethod_Action.this.getFinderName(event));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToOverridingBehaviorMethod", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
-          node = null;
-        }
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
+        node = null;
       }
-      MapSequence.fromMap(_params).put("methodNode", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("methodNode") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-      EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
-      InputEvent inputEvent = event.getInputEvent();
-      GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingBehaviorMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToOverridingBehaviorMethod", t);
-      }
-    }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
+    EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+    InputEvent inputEvent = event.getInputEvent();
+    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(CommonDataKeys.PROJECT), GoToOverridingBehaviorMethod_Action.this.getFinderName(event), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
-  private String getFinderName(final Map<String, Object> _params) {
+  private String getFinderName(final AnActionEvent event) {
     return "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToOverridingBehaviorMethod_Action.class);
 }

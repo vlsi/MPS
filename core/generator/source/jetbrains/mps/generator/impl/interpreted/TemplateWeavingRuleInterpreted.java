@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,36 +29,34 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
+import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
  */
-public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
+public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements TemplateWeavingRule {
 
   private final SNode myRuleNode;
-  private final String myApplicableConcept;
   private final Consequence myConsequence;
   private final SNode myConsequenceNode;
   private final SNode myTemplate;
   private final String myMappingName;
-  private final boolean myApplyToInheritors;
   private WeaveTemplateContainer myWeaveTemplates;
   private WeaveRuleCondition myCondition;
   private WeaveRuleQuery myContentNodeQuery;
 
   public TemplateWeavingRuleInterpreted(SNode rule) {
+    super(rule.getReference(), MetaAdapterByDeclaration.getConcept(RuleUtil.getBaseRuleApplicableConcept(rule)), RuleUtil.getBaseRuleApplyToConceptInheritors(rule));
     myRuleNode = rule;
-    myApplicableConcept = GeneratorUtil.getConceptQualifiedName(RuleUtil.getBaseRuleApplicableConcept(rule));
     myConsequenceNode = RuleUtil.getWeaving_Consequence(rule);
-    myApplyToInheritors = RuleUtil.getBaseRuleApplyToConceptInheritors(rule);
     if (myConsequenceNode == null) {
       myConsequence = null;
       myTemplate = null;
@@ -79,21 +77,6 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   @Override
-  public SNodeReference getRuleNode() {
-    return new jetbrains.mps.smodel.SNodePointer(myRuleNode);
-  }
-
-  @Override
-  public String getApplicableConcept() {
-    return myApplicableConcept;
-  }
-
-  @Override
-  public boolean applyToInheritors() {
-    return myApplyToInheritors;
-  }
-
-  @Override
   public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
     if (myContentNodeQuery == null) {
       myContentNodeQuery = environment.getQueryProvider(getRuleNode()).getWeaveRuleQuery(myRuleNode);
@@ -102,9 +85,9 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = environment.getQueryProvider(getRuleNode()).getWeaveRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getWeaveRuleCondition(myRuleNode);
     }
     return myCondition.check(new WeavingMappingRuleContext(context, getRuleNode()));
   }

@@ -30,13 +30,13 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Deque" />
+    <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.checking.BaseEditorChecker" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
@@ -58,7 +58,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.MethodResolveUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.TransientSModule" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

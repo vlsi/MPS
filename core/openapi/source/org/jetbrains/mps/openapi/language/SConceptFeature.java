@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface SConceptFeature {
   /**
    * Return the concept that contains the declaration of this concept feature.
@@ -22,4 +24,20 @@ public interface SConceptFeature {
    * exactly the concept from which you've obtained this property.
    */
   SAbstractConcept getContainingConcept();
+
+  /**
+   * Presentable name of this kind of features, e.g. "link", "reference", "property"
+   * It is not guaranteed that return values will remain the same in future
+   * Should be used only to be shown in UI
+   */
+  @NotNull
+  String getPresentableKind();
+
+  /**
+   * Presentable name of this feature, e.g. "myUserDefinedName"
+   * It is not guaranteed that return values will remain the same in future
+   * Should be used only to be shown in UI
+   */
+  @NotNull
+  String getPresentableName();
 }

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
@@ -24,12 +24,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationWithContextContainer;
 
 public class EvaluationProvider implements IEvaluationProvider {
@@ -78,11 +78,11 @@ public class EvaluationProvider implements IEvaluationProvider {
     return myDebugSession.isStepEnabled();
   }
   @Override
-  public void showEvaluationDialog(IOperationContext context) {
-    showEvaluationDialog(context, ListSequence.fromList(new ArrayList<SNodeReference>()));
+  public void showEvaluationDialog(Project mpsProject) {
+    showEvaluationDialog(mpsProject, ListSequence.fromList(new ArrayList<SNodeReference>()));
   }
   @Override
-  public void showEvaluationDialog(final IOperationContext context, final List<SNodeReference> selectedNodes) {
+  public void showEvaluationDialog(final Project mpsProject, final List<SNodeReference> selectedNodes) {
     final JavaUiState state = myDebugSession.getUiState();
     myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -90,7 +90,7 @@ public class EvaluationProvider implements IEvaluationProvider {
           createEvaluationContainer(Properties.IS_DEVELOPER_MODE, selectedNodes, new _FunctionTypes._void_P1_E0<IEvaluationContainer>() {
             public void invoke(IEvaluationContainer container) {
               ApplicationManager.getApplication().assertIsDispatchThread();
-              EvaluationDialog evaluationDialog = new EvaluationDialog(context, EvaluationProvider.this, container);
+              EvaluationDialog evaluationDialog = new EvaluationDialog(ProjectHelper.toIdeaProject(mpsProject), EvaluationProvider.this, container);
               evaluationDialog.show();
             }
           });
@@ -98,9 +98,9 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     }, state.getThread().getThread());
   }
-  public void showEditWatchDialog(IOperationContext context, final IEvaluationContainer model) {
+  public void showEditWatchDialog(@NotNull com.intellij.openapi.project.Project ideaProject, final IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
+    final EditWatchDialog editWatchDialog = new EditWatchDialog(ideaProject, this, model);
     editWatchDialog.getWindow().addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosed(WindowEvent e) {
@@ -134,7 +134,7 @@ public class EvaluationProvider implements IEvaluationProvider {
         createEvaluationContainer(true, new _FunctionTypes._void_P1_E0<IEvaluationContainer>() {
           public void invoke(final IEvaluationContainer container) {
             ApplicationManager.getApplication().assertIsDispatchThread();
-            EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(myDebugSession.getProject()), EvaluationProvider.this, container, new _FunctionTypes._void_P0_E0() {
+            EditWatchDialog editWatchDialog = new EditWatchDialog(myDebugSession.getIdeaProject(), EvaluationProvider.this, container, new _FunctionTypes._void_P0_E0() {
               public void invoke() {
                 addWatch(container);
               }

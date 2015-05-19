@@ -34,78 +34,81 @@
       <node id="4101850974336643771" at="11,0,12,0" concept="4" trace="myDelta" />
       <node id="4101850974336661839" at="12,0,13,0" concept="4" trace="myOutputDir" />
       <node id="4101850974336746541" at="13,0,14,0" concept="4" trace="myProcessor" />
-      <node id="4101850974336643775" at="15,102,16,29" concept="3" />
-      <node id="4101850974336662902" at="16,29,17,28" concept="3" />
+      <node id="4101850974336643775" at="15,75,16,40" concept="3" />
+      <node id="4101850974336662902" at="16,40,17,28" concept="3" />
       <node id="4101850974336749028" at="17,28,18,32" concept="3" />
-      <node id="4101850974336825637" at="21,55,22,31" concept="8" />
-      <node id="4101850974336814553" at="23,49,24,28" concept="3" />
-      <node id="4101850974336814566" at="25,12,26,25" concept="3" />
-      <node id="4101850974336850572" at="30,56,31,31" concept="8" />
-      <node id="4101850974336850579" at="32,49,33,28" concept="3" />
-      <node id="4101850974336850591" at="34,12,35,25" concept="3" />
-      <node id="4101850974336851672" at="39,55,40,31" concept="8" />
-      <node id="4101850974336851679" at="41,49,42,28" concept="3" />
-      <node id="4101850974336851691" at="43,12,44,25" concept="3" />
-      <node id="4101850974336844431" at="48,37,49,31" concept="8" />
-      <node id="4101850974336844437" at="49,31,50,23" concept="3" />
-      <node id="4101850974336844443" at="50,23,51,25" concept="9" />
-      <node id="4101850974336738548" at="53,38,54,43" concept="9" />
-      <node id="4101850974336814564" at="25,10,27,5" concept="1" />
-      <node id="4101850974336850589" at="34,10,36,5" concept="1" />
-      <node id="4101850974336851689" at="43,10,45,5" concept="1" />
-      <node id="4101850974336738532" at="53,0,56,0" concept="7" trace="getFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-      <node id="4101850974336568679" at="15,0,20,0" concept="2" trace="FileDeltaCollector#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/util/FilesDelta;Ljetbrains/mps/internal/make/runtime/java/FileProcessor;)V" />
-      <node id="4101850974336814551" at="22,31,27,5" concept="6" />
-      <node id="4101850974336850577" at="31,31,36,5" concept="6" />
-      <node id="4101850974336851677" at="40,31,45,5" concept="6" />
-      <node id="4101850974336563175" at="47,0,53,0" concept="7" trace="touch#(Ljava/lang/String;)Z" />
-      <node id="4101850974336562989" at="20,0,29,0" concept="7" trace="saveStream#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="4101850974336563156" at="29,0,38,0" concept="7" trace="saveStream#(Ljava/lang/String;Lorg/jdom/Element;)V" />
-      <node id="4101850974336563165" at="38,0,47,0" concept="7" trace="saveStream#(Ljava/lang/String;[B)V" />
-      <scope id="4101850974336814552" at="23,49,24,28" />
-      <scope id="4101850974336814565" at="25,12,26,25" />
-      <scope id="4101850974336850578" at="32,49,33,28" />
-      <scope id="4101850974336850590" at="34,12,35,25" />
-      <scope id="4101850974336851678" at="41,49,42,28" />
-      <scope id="4101850974336851690" at="43,12,44,25" />
-      <scope id="4101850974336738539" at="53,38,54,43" />
-      <scope id="4101850974336568682" at="15,102,18,32" />
-      <scope id="4101850974336563181" at="48,37,51,25">
+      <node id="4440205851907494325" at="20,32,21,19" concept="9" />
+      <node id="4101850974336825637" at="24,55,25,31" concept="8" />
+      <node id="4101850974336814553" at="26,49,27,28" concept="3" />
+      <node id="4101850974336814566" at="28,12,29,25" concept="3" />
+      <node id="4101850974336850572" at="33,56,34,31" concept="8" />
+      <node id="4101850974336850579" at="35,49,36,28" concept="3" />
+      <node id="4101850974336850591" at="37,12,38,25" concept="3" />
+      <node id="4101850974336851672" at="42,55,43,31" concept="8" />
+      <node id="4101850974336851679" at="44,49,45,28" concept="3" />
+      <node id="4101850974336851691" at="46,12,47,25" concept="3" />
+      <node id="4101850974336844431" at="51,37,52,31" concept="8" />
+      <node id="4101850974336844437" at="52,31,53,23" concept="3" />
+      <node id="4101850974336844443" at="53,23,54,25" concept="9" />
+      <node id="4101850974336738548" at="56,38,57,43" concept="9" />
+      <node id="4101850974336814564" at="28,10,30,5" concept="1" />
+      <node id="4101850974336850589" at="37,10,39,5" concept="1" />
+      <node id="4101850974336851689" at="46,10,48,5" concept="1" />
+      <node id="4440205851907493363" at="20,0,23,0" concept="7" trace="getDelta#()Ljetbrains/mps/internal/make/runtime/util/FilesDelta;" />
+      <node id="4101850974336738532" at="56,0,59,0" concept="7" trace="getFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+      <node id="4101850974336568679" at="15,0,20,0" concept="2" trace="FileDeltaCollector#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/java/FileProcessor;)V" />
+      <node id="4101850974336814551" at="25,31,30,5" concept="6" />
+      <node id="4101850974336850577" at="34,31,39,5" concept="6" />
+      <node id="4101850974336851677" at="43,31,48,5" concept="6" />
+      <node id="4101850974336563175" at="50,0,56,0" concept="7" trace="touch#(Ljava/lang/String;)Z" />
+      <node id="4101850974336562989" at="23,0,32,0" concept="7" trace="saveStream#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4101850974336563156" at="32,0,41,0" concept="7" trace="saveStream#(Ljava/lang/String;Lorg/jdom/Element;)V" />
+      <node id="4101850974336563165" at="41,0,50,0" concept="7" trace="saveStream#(Ljava/lang/String;[B)V" />
+      <scope id="4440205851907493366" at="20,32,21,19" />
+      <scope id="4101850974336814552" at="26,49,27,28" />
+      <scope id="4101850974336814565" at="28,12,29,25" />
+      <scope id="4101850974336850578" at="35,49,36,28" />
+      <scope id="4101850974336850590" at="37,12,38,25" />
+      <scope id="4101850974336851678" at="44,49,45,28" />
+      <scope id="4101850974336851690" at="46,12,47,25" />
+      <scope id="4101850974336738539" at="56,38,57,43" />
+      <scope id="4101850974336568682" at="15,75,18,32" />
+      <scope id="4440205851907493363" at="20,0,23,0" />
+      <scope id="4101850974336563181" at="51,37,54,25">
         <var name="file" id="4101850974336844432" />
       </scope>
-      <scope id="4101850974336738532" at="53,0,56,0">
+      <scope id="4101850974336738532" at="56,0,59,0">
         <var name="name" id="4101850974336738535" />
       </scope>
       <scope id="4101850974336568679" at="15,0,20,0">
-        <var name="deltaCollector" id="4101850974336643320" />
         <var name="fileProcessor" id="4101850974336748071" />
         <var name="outputDir" id="4101850974336658856" />
       </scope>
-      <scope id="4101850974336562997" at="21,55,27,5">
+      <scope id="4101850974336562997" at="24,55,30,5">
         <var name="file" id="4101850974336825638" />
       </scope>
-      <scope id="4101850974336563164" at="30,56,36,5">
+      <scope id="4101850974336563164" at="33,56,39,5">
         <var name="file" id="4101850974336850573" />
       </scope>
-      <scope id="4101850974336563174" at="39,55,45,5">
+      <scope id="4101850974336563174" at="42,55,48,5">
         <var name="file" id="4101850974336851673" />
       </scope>
-      <scope id="4101850974336563175" at="47,0,53,0">
+      <scope id="4101850974336563175" at="50,0,56,0">
         <var name="name" id="4101850974336563179" />
       </scope>
-      <scope id="4101850974336562989" at="20,0,29,0">
+      <scope id="4101850974336562989" at="23,0,32,0">
         <var name="content" id="4101850974336562995" />
         <var name="name" id="4101850974336562993" />
       </scope>
-      <scope id="4101850974336563156" at="29,0,38,0">
+      <scope id="4101850974336563156" at="32,0,41,0">
         <var name="element" id="4101850974336563162" />
         <var name="name" id="4101850974336563160" />
       </scope>
-      <scope id="4101850974336563165" at="38,0,47,0">
+      <scope id="4101850974336563165" at="41,0,50,0">
         <var name="content" id="4101850974336563171" />
         <var name="name" id="4101850974336563169" />
       </scope>
-      <unit id="4101850974336562102" at="10,0,57,0" name="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
+      <unit id="4101850974336562102" at="10,0,60,0" name="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
     </file>
   </root>
   <root nodeRef="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)/4328738523548225887">

@@ -75,6 +75,6 @@
     <orderEntry type="module" module-name="console" scope="RUNTIME" />
     <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="migrations-runtime" scope="TEST" />
+    <orderEntry type="library" name="Idea-vcs" level="project" />
   </component>
 </module>
-

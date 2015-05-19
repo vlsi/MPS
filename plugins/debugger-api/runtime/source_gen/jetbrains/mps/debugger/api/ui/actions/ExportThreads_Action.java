@@ -10,20 +10,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.api.programState.IThread;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExportThreads_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Export;
@@ -36,72 +34,65 @@ public class ExportThreads_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null);
-        event.getPresentation().setVisible(true);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExportThreads", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    event.getPresentation().setEnabled(debugSession != null);
+    event.getPresentation().setVisible(true);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-      AbstractUiState uiState = ((AbstractUiState) debugSession.getUiState());
-      StringBuffer sb = new StringBuffer();
-      for (IThread thread : ListSequence.fromList(uiState.getThreads())) {
-        sb.append(thread.getPresentation());
-        sb.append('\n');
-        for (IStackFrame frame : ListSequence.fromList(thread.getFrames())) {
-          ILocation location = frame.getLocation();
-          sb.append('\t');
-          sb.append("at ");
-          sb.append(location.getUnitName());
-          sb.append(".");
-          sb.append(location.getRoutineName());
-          sb.append("(");
-          sb.append(frame.getLocation().getFileName());
-          sb.append(":");
-          sb.append(location.getLineNumber());
-          sb.append(")");
-          sb.append('\n');
-        }
+    AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+    AbstractUiState uiState = ((AbstractUiState) debugSession.getUiState());
+    StringBuffer sb = new StringBuffer();
+    for (IThread thread : ListSequence.fromList(uiState.getThreads())) {
+      sb.append(thread.getPresentation());
+      sb.append('\n');
+      for (IStackFrame frame : ListSequence.fromList(thread.getFrames())) {
+        ILocation location = frame.getLocation();
+        sb.append('\t');
+        sb.append("at ");
+        sb.append(location.getUnitName());
+        sb.append(".");
+        sb.append(location.getRoutineName());
+        sb.append("(");
+        sb.append(frame.getLocation().getFileName());
+        sb.append(":");
+        sb.append(location.getLineNumber());
+        sb.append(")");
         sb.append('\n');
       }
-
-      final ExportThreadsDialog dialog = new ExportThreadsDialog(((Project) MapSequence.fromMap(_params).get("project")), sb);
-
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          dialog.show();
-        }
-      }, ModalityState.NON_MODAL);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExportThreads", t);
-      }
+      sb.append('\n');
     }
+
+    final ExportThreadsDialog dialog = new ExportThreadsDialog(((Project) MapSequence.fromMap(_params).get("project")), sb);
+
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        dialog.show();
+      }
+    }, ModalityState.NON_MODAL);
   }
-  protected static Logger LOG = LogManager.getLogger(ExportThreads_Action.class);
 }

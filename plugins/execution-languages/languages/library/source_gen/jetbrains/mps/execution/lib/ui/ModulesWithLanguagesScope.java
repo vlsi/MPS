@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 
@@ -30,7 +30,7 @@ public class ModulesWithLanguagesScope extends FilteredScope {
   }
   @Override
   protected boolean acceptModule(SModule module) {
-    if (module instanceof TransientModelsModule || module instanceof Generator) {
+    if (module instanceof TransientSModule || module instanceof Generator) {
       return false;
     }
     for (Language requiredLanguage : SetSequence.fromSet(requiredLanguages)) {

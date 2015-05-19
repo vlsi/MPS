@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -24,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,8 +62,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   public void setFile(@NotNull IFile file) {
-    ModelAccess.assertLegalWrite();
-
     myFile = file;
     synchronized (LOCK) {
       if (!(myListeners.isEmpty())) {

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -45,7 +44,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
-    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept());
 
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
@@ -55,12 +54,12 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (SNodeOperations.getParent(node) != null && SNodeOperations.getParent(node).getConcept().isValid()) {
       final SNode link = SNodeOperations.getContainingLinkDeclaration(node);
       if (link == null) {
-        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.asNode(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node))), "virtual_getFqName_1213877404258", new Object[]{}), null);
+        component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), null);
         return;
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeChild(node.getConcept().getQualifiedName(), SNodeOperations.getParent(node), link, node, checkingNodeContext);
+          return ModelConstraints.canBeChild(node.getConcept(), SNodeOperations.getParent(node), link, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
@@ -72,7 +71,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeRoot(node.getConcept().getQualifiedName(), SNodeOperations.getModel(node), checkingNodeContext);
+          return ModelConstraints.canBeRoot(node.getConcept(), SNodeOperations.getModel(node));
         }
       });
       if (!(canBeRoot)) {
@@ -80,7 +79,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         component.addError(node, "Not rootable concept added as root", rule);
       }
     }
-    if (SNodeOperations.getConceptDeclaration(node) == null) {
+    if (!(SNodeOperations.getConcept(node).isValid())) {
       component.addError(node, "Concept of a node was not found", null);
     }
 

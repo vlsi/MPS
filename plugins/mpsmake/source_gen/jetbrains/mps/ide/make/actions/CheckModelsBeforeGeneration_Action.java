@@ -10,10 +10,7 @@ import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
-import org.apache.log4j.Level;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,32 +23,18 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
-        if (optionEnabled) {
-          event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
-        } else {
-          event.getPresentation().setIcon(new EmptyIcon(18, 18));
-        }
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
-      }
-      this.disable(event.getPresentation());
+    boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
+    if (optionEnabled) {
+      event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
+    } else {
+      event.getPresentation().setIcon(new EmptyIcon(18, 18));
     }
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      IModifiableGenerationSettings settings = GenerationSettings.getInstance();
-      settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
-      }
-    }
+    IModifiableGenerationSettings settings = GenerationSettings.getInstance();
+    settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
   }
-  protected static Logger LOG = LogManager.getLogger(CheckModelsBeforeGeneration_Action.class);
 }

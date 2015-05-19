@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -37,7 +37,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   public EditorCellListHandler(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
+    myLinkDeclaration = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
     myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
     if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
@@ -85,7 +85,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
-    SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
+    SNode realAnchor = insertBefore ? anchorNode : anchorNode == null ? getOwner().getFirstChild() : anchorNode.getNextSibling();
+    getOwner().insertChildBefore(getElementRole(), myInsertedNode, realAnchor);
   }
 
   @Override

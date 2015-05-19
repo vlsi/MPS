@@ -2,10 +2,10 @@
 <model ref="r:b856319b-d8da-48ce-9e51-862a82504ef3(jetbrains.mps.console.ideCommands.runtime.util)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -276,23 +276,6 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="2uclMud5Tqh" role="3clF47">
-        <node concept="3cpWs8" id="2uclMud6IFF" role="3cqZAp">
-          <node concept="3cpWsn" id="2uclMud6IFG" role="3cpWs9">
-            <property role="TrG5h" value="context" />
-            <node concept="3uibUv" id="2uclMud6IFH" role="1tU5fm">
-              <ref role="3uigEE" to="vsqj:~ProjectOperationContext" resolve="ProjectOperationContext" />
-            </node>
-            <node concept="2ShNRf" id="2uclMud6Gm6" role="33vP2m">
-              <node concept="1pGfFk" id="2uclMud6HfS" role="2ShVmc">
-                <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                <node concept="37vLTw" id="2uclMud6HIJ" role="37wK5m">
-                  <ref role="3cqZAo" node="2uclMud6HEh" resolve="project" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2uclMud9ASM" role="3cqZAp" />
         <node concept="3cpWs8" id="2uclMud8PMk" role="3cqZAp">
           <node concept="3cpWsn" id="2uclMud8PMn" role="3cpWs9">
             <property role="TrG5h" value="modelsToGenerate" />

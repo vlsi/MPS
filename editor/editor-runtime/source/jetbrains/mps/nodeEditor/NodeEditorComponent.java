@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import jetbrains.mps.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -39,7 +38,7 @@ public class NodeEditorComponent extends EditorComponent {
       @Override
       protected void selectionChangedTo(jetbrains.mps.openapi.editor.EditorComponent editorComponent, SingularSelection newSelection) {
         final SNode[] toSelect = new SNode[]{newSelection.getEditorCell().getSNode()};
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getRepository().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             if (isShowing() || RuntimeFlags.getTestMode() != TestMode.NONE)
@@ -67,7 +66,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   private void adjustInspector() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         SNode selectedNode = getSelectedNode();
@@ -94,7 +93,7 @@ public class NodeEditorComponent extends EditorComponent {
     if (getInspector() == null) return;
 
     FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(this).getData(MPSCommonDataKeys.FILE_EDITOR.getName());
-    getInspectorTool().inspect(toSelect, getOperationContext(), fileEditor, getUpdater().getInitialEditorHints());
+    getInspectorTool().inspect(toSelect, fileEditor, getUpdater().getInitialEditorHints());
   }
 
   @Override
@@ -120,7 +119,7 @@ public class NodeEditorComponent extends EditorComponent {
     InspectorTool inspectorTool = getInspectorTool();
     if (inspectorTool != null) {
       if (inspectorTool.getInspector().getEditedNode() == this.getLastInspectedNode()) {
-        inspectorTool.inspect(null, null, null, null);
+        inspectorTool.inspect(null, null, null);
       }
     }
     myLastInspectedNode = null;

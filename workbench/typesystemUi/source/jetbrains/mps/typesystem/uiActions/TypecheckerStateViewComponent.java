@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,24 @@
 package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -56,14 +55,13 @@ import java.util.List;
 
 public class TypecheckerStateViewComponent extends JPanel {
   private static final Logger LOG = LogManager.getLogger(TypecheckerStateViewComponent.class);
-
-  private IOperationContext myOperationContext;
+  private final Project myProject;
 
   private SNode myNodeToSliceWith = null;
   private List<EquationLogItem> myCurrentSlice = new ArrayList<EquationLogItem>();
 
-  public TypecheckerStateViewComponent(IOperationContext operationContext) {
-    myOperationContext = operationContext;
+  public TypecheckerStateViewComponent(@NotNull Project mpsProject) {
+    myProject = mpsProject;
     rebuild();
   }
 
@@ -82,7 +80,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        Project project = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+        com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
         Editor currentEditor = EditorsHelper.getSelectedEditors(FileEditorManager.getInstance(project)).get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
@@ -173,13 +171,13 @@ public class TypecheckerStateViewComponent extends JPanel {
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;
     final SModelReference modelUID = PersistenceFacade.getInstance().createModelReference(ruleModel);
-    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(modelUID.getModelName()));
+    final SModel modelDescriptor = modelUID.resolve(myProject.getRepository());
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
 
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
@@ -189,7 +187,7 @@ public class TypecheckerStateViewComponent extends JPanel {
           LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
           return;
         }
-        NavigationSupport.getInstance().openNode(myOperationContext, rule, true, !(rule.getModel() != null && rule.getParent() == null));
+        NavigationSupport.getInstance().openNode(myProject, rule, true, !(rule.getModel() != null && rule.getParent() == null));
       }
     });
   }
@@ -327,7 +325,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     }
 
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("causes", myOperationContext);
+      TextTreeNode root = new TextTreeNode("causes");
       for (final Pair<String, String> cause : myCauses) {
         TextTreeNode child = new TextTreeNode(cause.o1 + " : " + cause.o2) {
           public void doubleClick() {

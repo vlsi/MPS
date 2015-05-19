@@ -7,19 +7,14 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,41 +29,26 @@ public class GoToRootNode_Action extends BaseAction {
   public boolean isDumbAware() {
     return false;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToRootNode", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 
-      Project project = event.getData(PlatformDataKeys.PROJECT);
-      assert project != null;
+    MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    assert mpsProject != null;
 
-      RootChooseModel chooseSNodeResult = new RootChooseModel(project, new RootNodeNameIndex());
-      final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
+    RootChooseModel chooseSNodeResult = new RootChooseModel(mpsProject);
+    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
-      popup.invoke(new ChooseByNamePopupComponent.Callback() {
-        @Override
-        public void onClose() {
-          GoToRootNode_Action.this.savedText = popup.getEnteredText();
-        }
-        @Override
-        public void elementChosen(Object element) {
-          ((NavigationItem) element).navigate(true);
-        }
-      }, ModalityState.current(), true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToRootNode", t);
+    popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
+      public void onClose() {
+        GoToRootNode_Action.this.savedText = popup.getEnteredText();
       }
-    }
+      @Override
+      public void elementChosen(Object element) {
+        ((NavigationItem) element).navigate(true);
+      }
+    }, ModalityState.current(), true);
   }
   @NotNull
   public String getActionId() {
@@ -82,5 +62,4 @@ public class GoToRootNode_Action extends BaseAction {
   public static String savedText_State(String object) {
     return "";
   }
-  protected static Logger LOG = LogManager.getLogger(GoToRootNode_Action.class);
 }

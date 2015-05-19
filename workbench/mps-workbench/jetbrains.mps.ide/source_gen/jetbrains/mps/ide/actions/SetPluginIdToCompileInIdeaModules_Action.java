@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.AbstractModule;
@@ -20,8 +19,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import java.util.Iterator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.IFile;
 
 public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
@@ -35,38 +32,23 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SetPluginIdToCompileInIdeaModules", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-        if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {
-          System.out.println("Strange module: " + module.getModuleName());
-          continue;
-        }
-
-        if (module.getFacet(JavaModuleFacet.class) == null || module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
-          continue;
-        }
-
-        String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(module, _params);
-        if (pluginId != null) {
-          SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, _params);
-        } else {
-          SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, PluginManager.CORE_PLUGIN_ID, _params);
-        }
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (!(module instanceof AbstractModule) || (((AbstractModule) module).getModuleDescriptor() == null)) {
+        System.out.println("Strange module: " + module.getModuleName());
+        continue;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SetPluginIdToCompileInIdeaModules", t);
+
+      if (module.getFacet(JavaModuleFacet.class) == null || module.getFacet(JavaModuleFacet.class).isCompileInMps()) {
+        continue;
+      }
+
+      String pluginId = SetPluginIdToCompileInIdeaModules_Action.this.getPluginIdForModule(module, _params);
+      if (pluginId != null) {
+        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, pluginId, _params);
+      } else {
+        SetPluginIdToCompileInIdeaModules_Action.this.setPluginId(module, PluginManager.CORE_PLUGIN_ID, _params);
       }
     }
   }
@@ -104,7 +86,6 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().add(facetDescriptor);
     ((AbstractModule) module).save();
   }
-  protected static Logger LOG = LogManager.getLogger(SetPluginIdToCompileInIdeaModules_Action.class);
   private static String check_ta15vl_a0a0a(IFile checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPath();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,86 +15,55 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.impl.TemplateGenerator;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
+ * Encapsulates resolution logic for postponed references, i.e. implement algorithms of delayed reference resolution.
  * Created by: Sergey Dmitriev
  * Date: Jan 25, 2007
+ * @author Artem Tikhomirov
  */
 public abstract class ReferenceInfo {
-  protected final SNode myOutputSourceNode;
-  protected final String myReferenceRole;
-  protected final SNode myInputNode;
+
+  protected ReferenceInfo() {
+  }
+
+  @Nullable
+  public abstract SReference create(@NotNull PostponedReference ref);
+
+  @NotNull
+  protected SReference createInvalidReference(@NotNull PostponedReference ref, @Nullable String anyHint) {
+    final jetbrains.mps.smodel.SReference rv =
+        jetbrains.mps.smodel.SReference.create(ref.getLink(), ref.getSourceNode(), ref.getGenerator().getOutputModel().getReference(), null);
+    rv.setResolveInfo(anyHint);
+    return rv;
+  }
 
   /**
-   * @param referenceRole should be interned
+   * @param ref reference to replace
+   * @param resolveInfo reference resolution information
+   * @param origin merely an indication where the reference comes from, optional
    */
-  protected ReferenceInfo(SNode outputSourceNode, String referenceRole, @Nullable SNode inputNode) {
-    myOutputSourceNode = outputSourceNode;
-    myReferenceRole = referenceRole;
-    myInputNode = inputNode;
-  }
-
-  public final SNode getOutputSourceNode() {
-    return myOutputSourceNode;
-  }
-
-  @Nullable
-  protected final SModelReference getTargetModelReference(ITemplateGenerator generator) {
-    // local references only
-    if (myOutputSourceNode != null && myOutputSourceNode.getModel() != null) {
-      return myOutputSourceNode.getModel().getReference();
-    }
-    return generator.getOutputModel().getReference();
-  }
-
-  public String getReferenceRole() {
-    return myReferenceRole;
-  }
-
-  @Nullable
-  public SNode getInputNode() {
-    return myInputNode;
-  }
-
-  @Nullable
-  protected final SNodeReference getInputNodeReference() {
-    return myInputNode == null || myInputNode.getModel() == null ? null : new SNodePointer(myInputNode);
-  }
-
-  @Nullable
-  public abstract SReference create(@NotNull TemplateGenerator generator);
-
   @NotNull
-  protected SReference createInvalidReference(@NotNull ITemplateGenerator generator, @Nullable String anyHint) {
-    return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), generator.getOutputModel().getReference(), null, anyHint);
-  }
-
-  @NotNull
-  protected final SReference createDynamicReference(@NotNull String resolveInfo, @Nullable SModelReference targetModelRef,
-      @Nullable SNodeReference templateNode) {
-    final DynamicReference dr =
-        new DynamicReference(getReferenceRole(), getOutputSourceNode(), targetModelRef, resolveInfo);
-    final SNodeReference inputRef = getInputNodeReference();
-    if (templateNode != null || inputRef != null) {
-      // origin is merely an indication where the reference comes from
-      dr.setOrigin(new DynamicReferenceOrigin(templateNode, inputRef));
-    }
+  protected final SReference createDynamicReference(@NotNull PostponedReference ref, @NotNull String resolveInfo, @Nullable DynamicReferenceOrigin origin) {
+    // null for target model, as we expect resolveInfo to be created according to needs of the reference (i.e. include 'modelName' if needed)
+    // otherwise, attempt to use outputSourceNode's model and fallback to output model or null makes the code hard to understand and unpredictable.
+    // DR cons suggests it's relevant for links to classifiers only, and I don't want to guess here whether it's needed or not, let resolveInfo
+    // source to decide what to include there - it looks resolveInfo always comes as a result of a query to another node (i.e. not manually constructed),
+    // and thus we don't need to introduce anything extra here.
+    final DynamicReference dr = new DynamicReference(ref.getLink(), ref.getSourceNode(), null, resolveInfo);
+    dr.setOrigin(origin);
     return dr;
   }
 
   @NotNull
-  protected final SReference createStaticReference(@NotNull SNode target) {
-    return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), target);
+  protected final SReference createStaticReference(@NotNull PostponedReference ref, @NotNull SNode target) {
+    return jetbrains.mps.smodel.SReference.create(ref.getLink(), ref.getSourceNode(), target);
   }
 }

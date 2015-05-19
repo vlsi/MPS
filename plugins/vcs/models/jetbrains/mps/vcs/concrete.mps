@@ -2,7 +2,7 @@
 <model ref="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -763,86 +763,6 @@
         </node>
       </node>
       <node concept="3uibUv" id="3Lj0jv7ELvz" role="Sfmx6">
-        <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="3Lj0jv7EExb">
-    <property role="TrG5h" value="GitUtils" />
-    <node concept="3Tm1VV" id="3Lj0jv7EExc" role="1B3o_S" />
-    <node concept="3clFbW" id="3Lj0jv7EExd" role="jymVt">
-      <node concept="3cqZAl" id="3Lj0jv7EExe" role="3clF45" />
-      <node concept="3Tm6S6" id="3Lj0jv7EF9H" role="1B3o_S" />
-      <node concept="3clFbS" id="3Lj0jv7EExg" role="3clF47" />
-    </node>
-    <node concept="2YIFZL" id="3Lj0jv7EF9I" role="jymVt">
-      <property role="TrG5h" value="uncommmit" />
-      <node concept="37vLTG" id="3Lj0jv7EF9P" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="3Lj0jv7EF9R" role="1tU5fm">
-          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="3Lj0jv7EF9M" role="3clF46">
-        <property role="TrG5h" value="gitRoot" />
-        <node concept="3uibUv" id="3Lj0jv7EF9O" role="1tU5fm">
-          <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
-        </node>
-      </node>
-      <node concept="3cqZAl" id="3Lj0jv7EF9J" role="3clF45" />
-      <node concept="3Tm1VV" id="3Lj0jv7EF9K" role="1B3o_S" />
-      <node concept="3clFbS" id="3Lj0jv7EF9L" role="3clF47">
-        <node concept="3cpWs8" id="3Lj0jv7EFVI" role="3cqZAp">
-          <node concept="3cpWsn" id="3Lj0jv7EFVJ" role="3cpWs9">
-            <property role="TrG5h" value="h" />
-            <node concept="3uibUv" id="3Lj0jv7EFVK" role="1tU5fm">
-              <ref role="3uigEE" to="xl3n:~GitSimpleHandler" resolve="GitSimpleHandler" />
-            </node>
-            <node concept="2ShNRf" id="3Lj0jv7EFVL" role="33vP2m">
-              <node concept="1pGfFk" id="3Lj0jv7EFVM" role="2ShVmc">
-                <ref role="37wK5l" to="xl3n:~GitSimpleHandler.&lt;init&gt;(com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile,git4idea.commands.GitCommand)" resolve="GitSimpleHandler" />
-                <node concept="37vLTw" id="2BHiRxgha5R" role="37wK5m">
-                  <ref role="3cqZAo" node="3Lj0jv7EF9P" resolve="project" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmxJ4" role="37wK5m">
-                  <ref role="3cqZAo" node="3Lj0jv7EF9M" resolve="gitRoot" />
-                </node>
-                <node concept="10M0yZ" id="3Lj0jv7EFVP" role="37wK5m">
-                  <ref role="1PxDUh" to="xl3n:~GitCommand" resolve="GitCommand" />
-                  <ref role="3cqZAo" to="xl3n:~GitCommand.RESET" resolve="RESET" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3Lj0jv7EFV_" role="3cqZAp">
-          <node concept="2OqwBi" id="3Lj0jv7EFVR" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTt5l" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Lj0jv7EFVJ" resolve="h" />
-            </node>
-            <node concept="liA8E" id="3Lj0jv7EFVV" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitHandler.addParameters(java.lang.String...):void" resolve="addParameters" />
-              <node concept="Xl_RD" id="3Lj0jv7EFVW" role="37wK5m">
-                <property role="Xl_RC" value="--mixed" />
-              </node>
-              <node concept="Xl_RD" id="3Lj0jv7EFVY" role="37wK5m">
-                <property role="Xl_RC" value="HEAD^" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3Lj0jv7EFW0" role="3cqZAp">
-          <node concept="2OqwBi" id="3Lj0jv7EFW2" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTtE$" role="2Oq$k0">
-              <ref role="3cqZAo" node="3Lj0jv7EFVJ" resolve="h" />
-            </node>
-            <node concept="liA8E" id="3Lj0jv7EFW6" role="2OqNvi">
-              <ref role="37wK5l" to="xl3n:~GitSimpleHandler.run():java.lang.String" resolve="run" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="3Lj0jv7EFW7" role="Sfmx6">
         <ref role="3uigEE" to="3dcm:~VcsException" resolve="VcsException" />
       </node>
     </node>

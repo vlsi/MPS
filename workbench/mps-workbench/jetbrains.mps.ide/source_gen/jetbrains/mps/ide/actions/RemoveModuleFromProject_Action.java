@@ -11,10 +11,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -23,8 +22,6 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JLabel;
 import jetbrains.mps.project.StandaloneMPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,6 +34,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     if (module == null) {
@@ -44,68 +42,63 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     }
     return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(module);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RemoveModuleFromProject", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("mpsproject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsproject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsproject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
-      final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
-      DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {
-        {
-          setTitle("Remove Module From Project");
-          init();
-        }
-        @Nullable
-        @Override
-        protected JComponent createCenterPanel() {
-          JPanel panel = new JPanel(new GridBagLayout());
-          GridBagConstraints gbc = new GridBagConstraints();
-          gbc.insets = new Insets(4, 8, 40, 4);
-          JLabel label = new JLabel(message);
-          panel.add(label, gbc);
-          return panel;
-        }
-      };
-      dialogWrapper.show();
-      if (!(dialogWrapper.isOK())) {
-        return;
+    SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
+    final String message = "Are you sure you want to remove selected module from a project? This operation is not undoable.";
+    DialogWrapper dialogWrapper = new DialogWrapper(((Project) MapSequence.fromMap(_params).get("project")), true) {
+      {
+        setTitle("Remove Module From Project");
+        init();
       }
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
-      ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RemoveModuleFromProject", t);
+      @Nullable
+      @Override
+      protected JComponent createCenterPanel() {
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(4, 8, 40, 4);
+        JLabel label = new JLabel(message);
+        panel.add(label, gbc);
+        return panel;
       }
+    };
+    dialogWrapper.show();
+    if (!(dialogWrapper.isOK())) {
+      return;
     }
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).removeModule(module.getModuleReference());
+    ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))).update();
   }
-  protected static Logger LOG = LogManager.getLogger(RemoveModuleFromProject_Action.class);
 }

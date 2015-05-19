@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -41,7 +42,13 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
 
   @Override
   public ItemPresentation getPresentation() {
-    return new NodeTreeElementPresentation();
+    return new NodePointerPresentation(myNode) {
+      @Nullable
+      @Override
+      public String getLocationString() {
+        return null;
+      }
+    };
   }
 
   @Override
@@ -72,16 +79,5 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
         });
       }
     });
-  }
-
-  protected class NodeTreeElementPresentation extends NodePointerPresentation {
-    public NodeTreeElementPresentation() {
-      super(NodeTreeElement.this.myNode);
-    }
-
-    @Override
-    public String doGetLocationString() {
-      return null;
-    }
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,21 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,6 +57,7 @@ public class ReferenceConceptUtil {
    * @param concept with is possibly 'pure reference' concept.
    * @return characteristic reference or NULL
    */
+  @Deprecated
   public static SNode getCharacteristicReference(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       @Override
@@ -89,12 +96,57 @@ public class ReferenceConceptUtil {
     });
   }
 
+
+  public static SReferenceLink getCharacteristicReference(final SConcept concept) {
+    String expectedReferentRole = null;
+    String alias = concept.getConceptAlias();
+    if (alias != null) {
+      // handle pattern 'xxx <{_referent_role_}> yyy'
+      final Matcher matcher = SMART_ALIAS.matcher(alias);
+      if (!matcher.matches()) {
+        // trick (why?): has an alias but it doesn't match pattern - no characteristic reference
+        return null;
+      }
+      expectedReferentRole = matcher.group(2);
+    }
+
+    Iterable<SReferenceLink> links = concept.getReferenceLinks();
+    if (expectedReferentRole != null) {
+      for (SReferenceLink link : links) {
+        if (expectedReferentRole.equals(link.getRoleName())) {
+          return link;
+        }
+      }
+      LOG.warn("the '" + alias + "' doesn't match any reference link in " + concept.getName());
+    } else {
+      // if concept declares exactly ONE REQUIRED reference link...
+      Iterator<SReferenceLink> iterator = links.iterator();
+      if (iterator.hasNext()) {
+        SReferenceLink result = iterator.next();
+        if (iterator.hasNext()) {
+          return null;
+        } else {
+          return result;
+        }
+      }
+    }
+    return null;
+  }
+
+  @Deprecated
   public static boolean hasSmartAlias(SNode concept) {
     String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
     // matches pattern 'xxx <{_referent_role_}> yyy' ?
     return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
   }
 
+  public static boolean hasSmartAlias(SConcept concept) {
+    String conceptAlias = concept.getConceptAlias();
+    // matches pattern 'xxx <{_referent_role_}> yyy' ?
+    return conceptAlias != null && SMART_ALIAS.matcher(conceptAlias).matches();
+  }
+
+@Deprecated
   public static String getPresentationFromSmartAlias(SNode concept, String referentPresentation) {
     String conceptAlias = SPropertyOperations.getString(concept, "conceptAlias");
     // handle pattern 'xxx <{_referent_role_}> yyy'
@@ -105,8 +157,18 @@ public class ReferenceConceptUtil {
     return matcher.group(1) + referentPresentation + matcher.group(3);
   }
 
+  public static String getPresentationFromSmartAlias(SConcept concept, String referentPresentation) {
+    String conceptAlias = concept.getConceptAlias();
+    // handle pattern 'xxx <{_referent_role_}> yyy'
+    final Matcher matcher = SMART_ALIAS.matcher(conceptAlias);
+    if (!matcher.matches()) {
+      return referentPresentation;
+    }
+    return matcher.group(1) + referentPresentation + matcher.group(3);
+  }
+
   public static String getPresentation(SNode node) {
-    SNode nodeConcept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
+    SNode nodeConcept = new SNodeLegacy(node).getConceptDeclarationNode();
     SNode characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
     String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);

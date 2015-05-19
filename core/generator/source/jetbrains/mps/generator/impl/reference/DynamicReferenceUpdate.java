@@ -55,6 +55,11 @@ public final class DynamicReferenceUpdate {
         myGenerator.getLogger().warning(String.format("Attempt to replace dynamic reference '%s' with static counterpart failed: no source node; resolveInfo=%s. Dynamic reference is left intact.", dr.getLink().getRoleName(), resolveInfo));
         continue;
       }
+      if (srcNode.getModel() == null) {
+        // this accounts for a valid situation when a node which had reference macro in it was removed from the output node
+        // by MAPSRC node macro
+        continue;
+      }
       SNode target = jetbrains.mps.smodel.SReference.getTargetNodeSilently(dr);
       if (target == null) {
         myGenerator.getLogger().warning(srcNode.getReference(), String.format("Failed to replace dynamic reference '%s' with static counterpart: no target; resolveInfo=%s. Dynamic reference is left intact.", dr.getLink().getRoleName(), resolveInfo));

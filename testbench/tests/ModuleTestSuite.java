@@ -19,7 +19,13 @@ import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+/**
+ * Please use MPS build language to inject new tests.
+ * The tests below are supposed to be migrated to the MPS build scripts
+ * @deprecated since 3.2
+ */
 // todo: !!!should be WatchingSuite!!!
+@Deprecated
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     TestModule_closures_test.class,
@@ -52,6 +58,7 @@ import org.junit.runners.Suite;
     TestModule_jetbrains_mps_traceInfo_test.class,
     TestModule_jetbrains_mps_traceInfo_testWeaving.class,
     TestModule_jetbrains_mps_transformation_test_inputModels.class,
-    TestModule_testSubtypingTest.class})
+    TestModule_testSubtypingTest.class,
+    TestModule_testSubstituteType.class})
 public class ModuleTestSuite extends TestSuite {
 }

@@ -76,14 +76,11 @@ public class CloneUtil {
     for (ImportElement model : inputModel.importedModels()) {
       outputModel.addModelImport(model.getModelReference(), false);
     }
-    for (SModuleReference lang : inputModel.importedLanguages()) {
-      outputModel.addLanguage(lang);
-    }
     for (SModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);
     }
-    for (Entry<SLanguage, Integer> lang : inputModel.importedLanguageIdsWithVersions().entrySet()) {
-      outputModel.addLanguageId(lang.getKey(), lang.getValue());
+    for (SLanguage lang : inputModel.importedLanguageIds()) {
+      outputModel.addLanguage(lang);
     }
   }
 
@@ -98,12 +95,6 @@ public class CloneUtil {
     AbstractModule outputModule = (AbstractModule) myOutputModel.getModule();
     for (Dependency dependency : moduleDescriptor.getDependencies()) {
       outputModule.addDependency(dependency.getModuleRef(), dependency.isReexport());
-    }
-    for (SModuleReference language : moduleDescriptor.getUsedLanguages()) {
-      outputModule.addUsedLanguage(language);
-    }
-    for (SModuleReference devkit : moduleDescriptor.getUsedDevkits()){
-      outputModule.addUsedDevkit(devkit);
     }
   }
 
@@ -159,10 +150,7 @@ public class CloneUtil {
 
     @Override
     public SNode create(SNode prototype) {
-      final jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(prototype.getConcept());
-
-      outputNode.setId(prototype.getNodeId());
-      return outputNode;
+      return new jetbrains.mps.smodel.SNode(prototype.getConcept(), prototype.getNodeId());
     }
 
     @Override

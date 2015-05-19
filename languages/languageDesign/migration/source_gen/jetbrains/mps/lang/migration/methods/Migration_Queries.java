@@ -11,9 +11,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -32,10 +33,8 @@ public class Migration_Queries {
     SModelInternal m = ((SModelInternal) (SModel) SNodeOperations.getModel(c));
     AbstractModule mod = ((AbstractModule) module);
 
-    m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class));
-    mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class).getModuleReference());
-    m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)"), Language.class));
-    mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)"), Language.class).getModuleReference());
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin", -1));
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern", -1));
 
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);

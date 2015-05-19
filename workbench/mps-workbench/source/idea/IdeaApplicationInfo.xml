@@ -1,5 +1,5 @@
 <component>
-  <version codename="MPS" major="3" minor="2.1" eap="true" update-channel="MPS32"/>
+  <version codename="MPS" major="3" minor="3" eap="true" update-channel="MPS33"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--TODO: add and adjust progress bar? -->
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387" /><!--progressColor="f49514" progressY="298"-->
@@ -16,4 +16,5 @@
                   slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
   <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
+  <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 </component>

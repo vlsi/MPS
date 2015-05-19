@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 /**
+ * Model deemed for editing. Dispatches change events.
  * evgeny, 2/14/13
  */
 public interface EditableSModel extends SModel {
@@ -42,7 +43,17 @@ public interface EditableSModel extends SModel {
   // FIXME why load and DataSource are exposed in SModel, but reloadFromSource() is limited to EditableSModel?
   void reloadFromSource();
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModel#addChangeListener(SNodeChangeListener)} instead
+   */
+  @Deprecated
   void addChangeListener(SModelChangeListener l);
 
+  /**
+   * This method will be removed after 3.3 release.
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModel#removeChangeListener(SNodeChangeListener)} instead
+   */
+  @Deprecated
   void removeChangeListener(SModelChangeListener l);
 }

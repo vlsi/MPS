@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -55,6 +56,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Applies template to input node.
+ * Generally, there's single template processor per generation step as it keeps runtime presentation of template model being applied.
+ * Rule that need to apply template might access instance of {@link jetbrains.mps.generator.impl.TemplateProcessor} via
+ * {@link jetbrains.mps.generator.runtime.TemplateExecutionEnvironment#getTemplateProcessor()}
  * TODO make MacroNode aware of container TemplateNode and don't pass both arguments when only one is sufficient
  */
 public final class TemplateProcessor implements ITemplateProcessor {
@@ -110,15 +114,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
   /*package*/List<SNode> applyTemplate(@NotNull TemplateNode rtTemplateNode, @NotNull TemplateContext context)
       throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
-    // XXX same code is in TEE.createNode. If, however, primary use for TEE is
-    // generated code (as opposed to 'apply templates to root' context), it's unreasonable(?)
-    // to expect SConcept to get passed to TEE.createNode() (generated templates are likely to know
-    // strings only)
-    SNode outputNode = myOutputModel.createNode(rtTemplateNode.getConcept());
+    final TemplateExecutionEnvironment env = context.getEnvironment();
+    SNode outputNode = env.createOutputNode(rtTemplateNode.getConcept());
 
     // use same env method as reduce_TemplateNode does
-    context.getEnvironment().nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
-    myGenerator.registerMappingLabel(context.getInput(), context.getInputName(), outputNode); // XXX reduce_TemplateNode doesn't do that
+    env.nodeCopied(context, outputNode, rtTemplateNode.getTemplateNodeId());
+    env.registerLabel(context.getInput(), outputNode, context.getInputName()); // XXX reduce_TemplateNode doesn't do that
 
     rtTemplateNode.apply(context, outputNode);
 
@@ -133,7 +134,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         outputChildNodes = applyTemplate(rtTemplateChildNode, context);
       }
       SConcept originalConcept = rtTemplateChildNode.getConcept();
-      String role = rtTemplateChildNode.getRoleInParent();
+      SContainmentLink role = rtTemplateChildNode.getRoleInParent();
       RoleValidator validator = myGenerator.getChildRoleValidator(outputNode, role);
       for (SNode outputChildNode : outputChildNodes) {
         // returned node is subconcept of template node => fine
@@ -610,12 +611,12 @@ public final class TemplateProcessor implements ITemplateProcessor {
         return Collections.emptyList();
       }
       ArrayList<SNode> outputNodes = new ArrayList<SNode>(newInputNodes.size());
+      final TemplateExecutionEnvironment env = templateContext.getEnvironment();
       for (SNode newInputNode : newInputNodes) {
-
         TemplateContext newcontext = templateContext.subContext(newInputNode);
-        final TemplateExecutionEnvironment env = templateContext.getEnvironment();
         if (macro_mapperFunction != null) {
-          SNode childToReplaceLater = myTemplateProcessor.myOutputModel.createNode(templateNode.getConcept());
+          // XXX why TEEI.insertLater() uses NodeMapper.getConceptFqName, and here we use concept of templateNode?
+          SNode childToReplaceLater = env.createOutputNode(templateNode.getConcept());
           outputNodes.add(childToReplaceLater);
           // execute the 'mapper' function later
           myTemplateProcessor.getGenerator().getDelayedChanges().addExecuteMapSrcNodeMacroChange(macro, childToReplaceLater, newcontext, env.getQueryExecutor());

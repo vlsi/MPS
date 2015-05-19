@@ -34,8 +34,8 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -247,11 +247,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
   }
 
-  @Deprecated
-  public int getVersion() {
-    return ((RefactorableSModelDescriptor) getStructureModelDescriptor()).getVersion();
-  }
-
   public int getLanguageVersion() {
     return getModuleDescriptor().getVersion();
   }
@@ -265,6 +260,13 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   public Collection<Generator> getGenerators() {
     // TODO: use myGenerators collection instead?
     return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
+  }
+
+  public void rename(String newNamespace) {
+    super.rename(newNamespace);
+    for (Generator g : getGenerators()) {
+      g.rename(newNamespace);
+    }
   }
 
   public List<SNode> getConceptDeclarations() {
@@ -315,7 +317,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   public List<SModel> getAccessoryModels() {
     List<SModel> result = new LinkedList<SModel>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+      SModel modelDescriptor = model.resolve(getRepository());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -372,7 +374,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public static boolean isLanguageOwnedAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
-    SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
+    SModule modelOwner = sm.getModule();
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
       if (l.isAccessoryModel(sm.getReference())) {
@@ -383,7 +385,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public static Language getLanguageFor(org.jetbrains.mps.openapi.model.SModel sm) {
-    SModule owner = SModelRepository.getInstance().getOwner(sm);
+    SModule owner = sm.getModule();
     if (owner instanceof Language) {
       return (Language) owner;
     }
@@ -427,10 +429,11 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
       assert facet != null;
       IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-      byte[] bytes = classPathItem.getClass(name);
-      if (bytes == null) return null;
+      ClassBytes classBytes = classPathItem.getClassBytes(name);
+      if (classBytes == null) return null;
+      byte[] bytes = classBytes.getBytes();
       definePackageIfNecessary(name);
-      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
+      return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
     }
 
     private void definePackageIfNecessary(String name) {

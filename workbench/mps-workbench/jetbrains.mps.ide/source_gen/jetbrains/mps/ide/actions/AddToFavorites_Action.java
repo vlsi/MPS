@@ -7,17 +7,14 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
+import java.util.List;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import com.intellij.openapi.project.Project;
-import java.util.List;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
-import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class AddToFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,47 +29,43 @@ public class AddToFavorites_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText(AddToFavorites_Action.this.name);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AddToFavorites", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText(AddToFavorites_Action.this.name);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("treeNodes", event.getData(MPSCommonDataKeys.TREE_NODES));
-    if (MapSequence.fromMap(_params).get("treeNodes") == null) {
-      return false;
+    {
+      List<TreeNode> p = event.getData(MPSCommonDataKeys.TREE_NODES);
+      MapSequence.fromMap(_params).put("treeNodes", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
-      if (favoritesManager == null) {
-        return;
-      }
-      List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
-      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
-      if (pane != null) {
-        favoritesManager.removeRoots(pane.getSubId(), toMove);
-      }
-      favoritesManager.addRoots(AddToFavorites_Action.this.name, toMove);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AddToFavorites", t);
-      }
+    MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
+    if (favoritesManager == null) {
+      return;
     }
+    List<Object> toMove = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
+    FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
+    if (pane != null) {
+      favoritesManager.removeRoots(pane.getSubId(), toMove);
+    }
+    favoritesManager.addRoots(AddToFavorites_Action.this.name, toMove);
   }
   @NotNull
   public String getActionId() {
@@ -86,5 +79,4 @@ public class AddToFavorites_Action extends BaseAction {
   public static String name_State(String object) {
     return object;
   }
-  protected static Logger LOG = LogManager.getLogger(AddToFavorites_Action.class);
 }

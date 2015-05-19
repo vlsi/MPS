@@ -1297,35 +1297,6 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
     </node>
-    <node concept="3clFb_" id="3vvhEQxVnu8" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getModelVersion" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="3vvhEQxVnu9" role="1B3o_S" />
-      <node concept="10Oyi0" id="3vvhEQxVnua" role="3clF45" />
-      <node concept="37vLTG" id="3vvhEQxVnub" role="3clF46">
-        <property role="TrG5h" value="reference" />
-        <node concept="3uibUv" id="3vvhEQxVnuc" role="1tU5fm">
-          <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3vvhEQxVnud" role="3clF47">
-        <node concept="3clFbF" id="3vvhEQxVnue" role="3cqZAp">
-          <node concept="3EllGN" id="3vvhEQxVnuf" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm9HV" role="3ElVtu">
-              <ref role="3cqZAo" node="3vvhEQxVnub" resolve="reference" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeuyXx" role="3ElQJh">
-              <ref role="3cqZAo" node="3vvhEQxVnnO" resolve="myModelVersions" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="3vvhEQxVnui" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
     <node concept="3clFb_" id="3vvhEQxVnuj" role="jymVt">
       <property role="TrG5h" value="isConsistent" />
       <node concept="10P_77" id="3vvhEQxVnuk" role="3clF45" />

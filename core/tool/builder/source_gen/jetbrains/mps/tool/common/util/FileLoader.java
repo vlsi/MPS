@@ -6,12 +6,10 @@ import java.io.File;
 import java.net.URL;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
-import sun.misc.Resource;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import org.jetbrains.annotations.NonNls;
 import java.io.InputStream;
-import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 
 /*package*/ class FileLoader extends Loader {
@@ -69,7 +67,7 @@ import java.io.FileInputStream;
       }
       final File file = new File(myRootDir, name.replace('/', File.separatorChar));
       if (file.exists()) {
-        return new FileLoader.MyResource(name, url, file);
+        return new FileLoader.MyResource(url, file);
       }
     } catch (Exception exception) {
       return null;
@@ -104,37 +102,29 @@ import java.io.FileInputStream;
     return "FileLoader [" + myRootDir + "]";
   }
   private class MyResource extends Resource {
-    private final String myName;
     private final URL myUrl;
     private final File myFile;
-    public MyResource(String name, URL url, File file) {
-      myName = name;
+    public MyResource(URL url, File file) {
       myUrl = url;
       myFile = file;
-    }
-    @Override
-    public String getName() {
-      return myName;
     }
     @Override
     public URL getURL() {
       return myUrl;
     }
     @Override
-    public URL getCodeSourceURL() {
-      return getBaseURL();
-    }
-    @Override
-    public InputStream getInputStream() throws IOException {
-      return new BufferedInputStream(new FileInputStream(myFile));
-    }
-    @Override
-    public int getContentLength() throws IOException {
-      return -1;
-    }
-    @Override
     public String toString() {
       return myFile.getAbsolutePath();
+    }
+
+    @Override
+    protected InputStream getInputStream() throws IOException {
+      return new FileInputStream(myFile);
+    }
+
+    @Override
+    protected int getContentLength() throws IOException {
+      return (int) myFile.length();
     }
   }
 }

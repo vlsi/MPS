@@ -59,7 +59,15 @@ public class Generator extends ReloadableModuleBase {
 
   public Generator(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     mySourceLanguage = sourceLanguage;
-    updateGeneratorDescriptor(generatorDescriptor);
+    initGeneratorDescriptor(generatorDescriptor);
+  }
+  
+  @Override
+  //models will be named like xxx.modelName, where xxx is a part of newName before sharp symbol
+  public void rename(String newName) {
+    int sharp = newName.indexOf("#");
+    super.rename(sharp < 0 ? newName : newName.substring(sharp));
+    myGeneratorDescriptor.setGeneratorUID(newName);
   }
 
   @Override
@@ -201,6 +209,11 @@ public class Generator extends ReloadableModuleBase {
    * @param generatorDescriptor
    */
   final void updateGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
+    initGeneratorDescriptor(generatorDescriptor);
+    reloadAfterDescriptorChange();
+  }
+
+  private void initGeneratorDescriptor(GeneratorDescriptor generatorDescriptor) {
     myGeneratorDescriptor = generatorDescriptor;
 
     String uid = myGeneratorDescriptor.getGeneratorUID();
@@ -215,8 +228,6 @@ public class Generator extends ReloadableModuleBase {
     }
     SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
-
-    reloadAfterDescriptorChange();
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

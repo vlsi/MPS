@@ -11,18 +11,19 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import javax.swing.tree.TreeNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import javax.swing.JOptionPane;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
@@ -44,10 +45,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.tree.module.StereotypeProvider;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewModelFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,6 +58,7 @@ public class NewModelFromSource_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
@@ -76,113 +75,120 @@ public class NewModelFromSource_Action extends BaseAction {
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
+      MapSequence.fromMap(_params).put("module", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
-      return false;
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("treeNode", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
-      final ModelAccess modelAccess = repository.getModelAccess();
+    final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    Computable<Boolean> checkModelRoots = new Computable<Boolean>() {
+      public Boolean compute() {
+        return ((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext();
+      }
+    };
+    ModelAccessHelper maHelper = new ModelAccessHelper(repository);
 
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
-        int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
-        if (code == JOptionPane.YES_OPTION) {
-          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-          final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
-          configurableEditor.show();
-        }
+    if (!(maHelper.runReadAction(checkModelRoots))) {
+      int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
+      if (code == JOptionPane.YES_OPTION) {
+        MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+        final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+        configurableEditor.show();
+      } else {
         return;
       }
-
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
+      if (!(maHelper.runReadAction(checkModelRoots))) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
         return;
       }
-
-      FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
-      FileChooserDialog fileDialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Project) MapSequence.fromMap(_params).get("ideaProject")), ((Frame) MapSequence.fromMap(_params).get("frame")));
-
-      VirtualFile[] chosen = fileDialog.choose(null, ((Project) MapSequence.fromMap(_params).get("ideaProject")));
-
-      if (chosen.length == 0) {
-        return;
-      }
-
-      List<IFile> chosenIFiles = ListSequence.fromList(new ArrayList<IFile>(chosen.length));
-      for (VirtualFile vfile : chosen) {
-        ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
-      }
-      final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
-
-      final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), repository);
-      final Ref<JavaParseException> parseException = new Ref<JavaParseException>();
-
-      ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-
-          try {
-            parser.convertToMps(ifilesToParse, new ProgressMonitorAdapter(indicator));
-
-          } catch (JavaParseException e) {
-            parseException.set(e);
-
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        }
-      });
-
-      if (!(parseException.isNull())) {
-        JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.get().getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
-      }
-
-      List<SModel> resulting = parser.getModels();
-      if (ListSequence.fromList(resulting).isNotEmpty()) {
-        SModel firstModel = ListSequence.fromList(resulting).first();
-        ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(firstModel, false);
-      }
-
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
-      }
     }
+
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, false, false, false, true);
+    FileChooserDialog fileDialog = FileChooserFactory.getInstance().createFileChooser(descriptor, ((Project) MapSequence.fromMap(_params).get("ideaProject")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+
+    VirtualFile[] chosen = fileDialog.choose(null, ((Project) MapSequence.fromMap(_params).get("ideaProject")));
+
+    if (chosen.length == 0) {
+      return;
+    }
+
+    List<IFile> chosenIFiles = ListSequence.fromList(new ArrayList<IFile>(chosen.length));
+    for (VirtualFile vfile : chosen) {
+      ListSequence.fromList(chosenIFiles).addElement(FileSystem.getInstance().getFileByPath(vfile.getPath()));
+    }
+    final List<IFile> ifilesToParse = Sequence.fromIterable(JavaConvertUtil.openDirs(chosenIFiles)).toListSequence();
+
+    final JavaToMpsConverter parser = new JavaToMpsConverter(((SModule) MapSequence.fromMap(_params).get("module")), repository);
+    final Ref<JavaParseException> parseException = new Ref<JavaParseException>();
+
+    ProgressManager.getInstance().run(new Task.Modal(null, "Convert to MPS", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+
+        try {
+          parser.convertToMps(ifilesToParse, new ProgressMonitorAdapter(indicator));
+
+        } catch (JavaParseException e) {
+          parseException.set(e);
+
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+    });
+
+    if (!(parseException.isNull())) {
+      JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.get().getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
+    }
+
+    List<SModel> resulting = parser.getModels();
+    if (ListSequence.fromList(resulting).isNotEmpty()) {
+      SModel firstModel = ListSequence.fromList(resulting).first();
+      ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(firstModel, false);
+    }
+
   }
   protected String getStereotype(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
@@ -199,5 +205,4 @@ public class NewModelFromSource_Action extends BaseAction {
   protected String getNamespace(final Map<String, Object> _params) {
     return null;
   }
-  protected static Logger LOG = LogManager.getLogger(NewModelFromSource_Action.class);
 }

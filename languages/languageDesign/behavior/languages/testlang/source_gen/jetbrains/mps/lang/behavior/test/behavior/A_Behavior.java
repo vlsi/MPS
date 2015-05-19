@@ -5,7 +5,7 @@ package jetbrains.mps.lang.behavior.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class A_Behavior {
   public static void init(SNode thisNode) {
@@ -35,8 +35,8 @@ public class A_Behavior {
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});
     // 
-    A_Behavior.call_staticMethod_4731970554577185180(SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
+    A_Behavior.call_staticMethod_4731970554577185180(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
     // 
-    A_Behavior.virtual_staticVirtualMethod_4731970554577185580(SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
+    A_Behavior.virtual_staticVirtualMethod_4731970554577185580(MetaAdapterFactory.getConcept(0xa18fb831fb54541L, 0x97c9a13312451954L, 0x41ab5625f92e5b2aL, "jetbrains.mps.lang.behavior.test.structure.A"), "", 0);
   }
 }

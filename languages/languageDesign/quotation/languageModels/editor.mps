@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -391,12 +391,14 @@
     </language>
   </registry>
   <node concept="24kQdi" id="hqc4$eu">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1XX52x" to="tp3r:hqc44pm" resolve="AbstractAntiquotation" />
     <node concept="1xolST" id="hqc4$ev" role="2wV5jI">
       <property role="1xolSY" value="abstract antiquotation" />
     </node>
   </node>
   <node concept="24kQdi" id="hqc4$ew">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1XX52x" to="tp3r:hqc44po" resolve="Antiquotation" />
     <node concept="3EZMnI" id="hqc4$ex" role="2wV5jI">
       <node concept="3F0ifn" id="hqc4$ey" role="3EZMnx">
@@ -581,6 +583,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hqc4$fO">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1XX52x" to="tp3r:hqc44pu" resolve="ListAntiquotation" />
     <node concept="3EZMnI" id="hqc4$fP" role="2wV5jI">
       <node concept="3F0ifn" id="hqc4$fQ" role="3EZMnx">
@@ -759,6 +762,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hqc4$h8">
+    <property role="3GE5qa" value="container" />
     <ref role="1XX52x" to="tp3r:hqc44pp" resolve="Quotation" />
     <node concept="3EZMnI" id="hqc4$h9" role="2wV5jI">
       <ref role="34QXea" node="hqc4$is" resolve="_CreateAntiquotationKeyMap" />
@@ -940,6 +944,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="hqc4$hp">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1XX52x" to="tp3r:hqc44pt" resolve="ReferenceAntiquotation" />
     <node concept="3EZMnI" id="hqc4$hq" role="2wV5jI">
       <node concept="3F0ifn" id="hqc4$hr" role="3EZMnx">
@@ -2006,6 +2011,7 @@
     <node concept="3Tm1VV" id="hqc5iHc" role="1B3o_S" />
   </node>
   <node concept="24kQdi" id="hqENWrS">
+    <property role="3GE5qa" value="quotation" />
     <ref role="1XX52x" to="tp3r:hqEMmm7" resolve="PropertyAntiquotation" />
     <node concept="3EZMnI" id="hqEO1RK" role="2wV5jI">
       <node concept="3F0ifn" id="hqEO1RL" role="3EZMnx">
@@ -2587,7 +2593,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4IP40Bi2$Ey">
-    <property role="3GE5qa" value="builder" />
+    <property role="3GE5qa" value="container" />
     <ref role="1XX52x" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
     <node concept="3EZMnI" id="4IP40Bi2Gwu" role="2wV5jI">
       <ref role="34QXea" node="hqc4$is" resolve="_CreateAntiquotationKeyMap" />

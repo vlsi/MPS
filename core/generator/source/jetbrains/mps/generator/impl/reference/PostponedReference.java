@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -30,25 +34,21 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
 
   private ReferenceInfo myReferenceInfo;
   private SReference myReplacementReference;
+  private TemplateGenerator myGenerator;
 
-
-  public PostponedReference(ReferenceInfo referenceInfo) {
-    super(referenceInfo.getReferenceRole(), referenceInfo.getOutputSourceNode());
+  public PostponedReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @NotNull ReferenceInfo referenceInfo) {
+    super(role, sourceNode);
     myReferenceInfo = referenceInfo;
   }
 
-  // shorthand:
-  // ReferenceInfo ri = new ReferenceInfo(outputSourceNode, role);
-  // PostponedReference pr = new PostponedReference(ri);
-  // outputSourceNode.setReference(role, pr);
-  public void setReferenceInOutputSourceNode() {
-    getSourceNode().setReference(getRole(), this);
+  public void setAndRegister(@NotNull TemplateGenerator generator) {
+    myGenerator = generator;
+    getSourceNode().setReference(getLink(), this);
+    generator.register(this);
   }
 
-  @Override
-  @Deprecated
-  public boolean isExternal() {
-    return false;
+  /*package*/ TemplateGenerator getGenerator() {
+    return myGenerator;
   }
 
   @Override
@@ -68,7 +68,14 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * @Deprecated in 3.0
    */
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
-    throw new UnsupportedOperationException();
+    if (InternalFlag.isSystemInternal()) {
+      throw new UnsupportedOperationException();
+    }
+    // I don't throw exception here as it might obscure any other error that lead
+    // to model reference change, e.g. if a reference of incomplete transient model
+    // is changed from finally{} block of GenerationSession (see MPS-21983)
+    // Generator code doesn't change reference's target model directly.
+    Logger.getLogger(PostponedReference.class).error("ATTEMPT TO CHANGE TARGET MODEL of PostponedReference", new UnsupportedOperationException());
   }
 
   @Override
@@ -92,7 +99,7 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
         return myReplacementReference; // already processed
       }
 
-      myReplacementReference = myReferenceInfo.create(generator);
+      myReplacementReference = myReferenceInfo.create(this);
       // release resources
       myReferenceInfo = null;
     }
@@ -104,6 +111,6 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
    * removes reference in case of error.
    */
   public void replace() {
-    getSourceNode().setReference(getRole(), myReplacementReference);
+    getSourceNode().setReference(getLink(), myReplacementReference);
   }
 }

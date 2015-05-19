@@ -18,11 +18,13 @@ package jetbrains.mps.workbench.goTo.index;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -42,21 +44,21 @@ public final class SNodeDescriptor implements NavigationTarget {
   private String myNodeName;
   private SModelReference myModelReference;
   private SNodeId myId;
-  protected String myConceptFqName;
+  protected SConcept myConcept;
 
   public SNodeDescriptor() {
 
   }
 
-  public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, SNodeId id) {
-    return new SNodeDescriptor(nodeName, fqName, ref, id);
+  public static SNodeDescriptor fromModelReference(String nodeName, SConcept concept, SModelReference ref, SNodeId id) {
+    return new SNodeDescriptor(nodeName, concept, ref, id);
   }
 
-  public SNodeDescriptor(String nodeName, String fqName, SModelReference modelReference, SNodeId id) {
+  public SNodeDescriptor(String nodeName, SConcept concept, SModelReference modelReference, SNodeId id) {
     myNodeName = InternUtil.intern(nodeName);
     myModelReference = modelReference;
     myId = id;
-    myConceptFqName = InternUtil.intern(fqName);
+    myConcept = concept;
   }
 
   @Override
@@ -66,7 +68,7 @@ public final class SNodeDescriptor implements NavigationTarget {
 
   @Override
   public SConcept getConcept() {
-    return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
+    return myConcept;
   }
 
   @Override
@@ -99,7 +101,8 @@ public final class SNodeDescriptor implements NavigationTarget {
       writeString(out, id.toString());
     }
 
-    writeString(out, myConceptFqName);
+    writeString(out, MetaIdHelper.getConcept(myConcept).serialize());
+    writeString(out, myConcept.getQualifiedName());
     writeString(out, myNodeName);
   }
 
@@ -121,7 +124,7 @@ public final class SNodeDescriptor implements NavigationTarget {
       myId = jetbrains.mps.smodel.SNodeId.fromString(readString(in));
     }
 
-    myConceptFqName = readString(in);
+    myConcept = MetaAdapterFactory.getConcept(SConceptId.deserialize(readString(in)), readString(in));
     myNodeName = readString(in);
   }
 
@@ -131,7 +134,7 @@ public final class SNodeDescriptor implements NavigationTarget {
     return
         sd.myModelReference.equals(myModelReference)
             && EqualUtil.equals(sd.myId, myId)
-            && sd.myConceptFqName.equals(myConceptFqName)
+            && sd.myConcept.equals(myConcept)
             && sd.myNodeName.equals(myNodeName);
   }
 

@@ -941,35 +941,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="36t87nSQNHs" role="jymVt">
-      <property role="TrG5h" value="getApplicableConcept" />
-      <node concept="3Tm1VV" id="36t87nSQNHt" role="1B3o_S" />
-      <node concept="3uibUv" id="36t87nSQNHu" role="3clF45">
-        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
-      </node>
-      <node concept="37vLTG" id="36t87nSQNHv" role="3clF46">
-        <property role="TrG5h" value="migrationRefactoring" />
-        <node concept="3uibUv" id="36t87nSQNHw" role="1tU5fm">
-          <ref role="3uigEE" to="cmon:~AbstractMigrationRefactoring" resolve="AbstractMigrationRefactoring" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="36t87nSQNHx" role="3clF47">
-        <node concept="3cpWs6" id="36t87nSQNHy" role="3cqZAp">
-          <node concept="2YIFZM" id="36t87nSQNHz" role="3cqZAk">
-            <ref role="1Pybhc" to="jpli:~SModelUtil" resolve="SModelUtil" />
-            <ref role="37wK5l" to="jpli:~SModelUtil.findConceptDeclaration(java.lang.String):org.jetbrains.mps.openapi.model.SNode" resolve="findConceptDeclaration" />
-            <node concept="2OqwBi" id="36t87nSQNH$" role="37wK5m">
-              <node concept="37vLTw" id="2BHiRxghcwu" role="2Oq$k0">
-                <ref role="3cqZAo" node="36t87nSQNHv" resolve="migrationRefactoring" />
-              </node>
-              <node concept="liA8E" id="36t87nSQNHA" role="2OqNvi">
-                <ref role="37wK5l" to="cmon:~AbstractMigrationRefactoring.getFqNameOfConceptToSearchInstances():java.lang.String" resolve="getFqNameOfConceptToSearchInstances" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2YIFZL" id="36t87nSQNHC" role="jymVt">
       <property role="TrG5h" value="isApplicableRefactoring" />
       <node concept="3Tm1VV" id="36t87nSQNHD" role="1B3o_S" />

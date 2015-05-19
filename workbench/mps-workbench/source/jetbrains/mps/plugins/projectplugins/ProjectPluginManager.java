@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.plugins.prefs.BaseProjectPrefsComponent;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.ide.editorTabs.TabbedEditor;
+import jetbrains.mps.ide.editor.tabs.TabbedEditor;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -356,7 +356,8 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
         }
       }
 
-      return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context);
+      // could use myMpsProject here, but generally project should come through EditorOpenHandler
+      return new TabbedEditor(new jetbrains.mps.smodel.SNodePointer(node), tabs, context.getProject());
     }
   }
 }

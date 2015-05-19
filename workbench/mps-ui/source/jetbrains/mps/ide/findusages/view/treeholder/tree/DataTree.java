@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,37 +34,36 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class DataTree implements IExternalizeable, IChangeListener {
-  private DataNode myTreeRoot = build(new SearchResults(), null);
-  private List<IChangeListener> myListeners = new ArrayList<IChangeListener>();
-  private DataTreeChangesNotifier myChangesNotifier = new DataTreeChangesNotifier(this);
+  private DataNode myTreeRoot = createTreeRoot();
+  private final List<IChangeListener> myListeners = new ArrayList<IChangeListener>(2);
+  private final DataTreeChangesNotifier myChangesNotifier;
 
   //this is only used in 3.2 to make rebuild faster in case of many nodes.
   //in 3.3 it will be fixed by introducing path providers
-  //this cache is onlly alive during read action in build() method
+  //this cache is only alive during read action in build() method
   private Map<Pair<DataNode, Object>, DataNode> myRebuildCache;
 
-  public DataTree() {
-  }
-
-  public DataTree(Element element, Project project) throws CantLoadSomethingException {
-    read(element, project);
+  public DataTree(@NotNull DataTreeChangesNotifier changeDispatch) {
+    myChangesNotifier = changeDispatch;
   }
 
   public DataNode getTreeRoot() {
@@ -137,121 +136,129 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   protected void setContents(DataNode root) {
     myTreeRoot = root;
-    updateNotifier();
+    stopListening();
+    startListening();
     notifyChangeListeners();
   }
 
-  public void startListening() {
-    myChangesNotifier.startListening(myTreeRoot);
+  private void startListening() {
+    HashSet<SNodeReference> nodes = new HashSet<SNodeReference>();
+    HashSet<SModelReference> models = new HashSet<SModelReference>();
+    HashSet<SModuleReference> modules = new HashSet<SModuleReference>();
+
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(NodeNodeData.class)) {
+      NodeNodeData nodeData = (NodeNodeData) node.getData();
+      nodes.add(nodeData.getNodePointer());
+    }
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModelNodeData.class)) {
+      ModelNodeData modelData = (ModelNodeData) node.getData();
+      models.add(modelData.getModelReference());
+    }
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModuleNodeData.class)) {
+      ModuleNodeData moduleData = (ModuleNodeData) node.getData();
+      modules.add(moduleData.getModuleReference());
+    }
+    myChangesNotifier.trackNodes(this, nodes);
+    myChangesNotifier.trackModels(this, models);
+    myChangesNotifier.trackModules(this, modules);
   }
 
-  public void stopListening() {
-    myChangesNotifier.stopListening();
+  private void stopListening() {
+    myChangesNotifier.unregister(this);
   }
 
-  private void updateNotifier() {
-    myChangesNotifier.stopListening();
-    myChangesNotifier.startListening(myTreeRoot);
+  public void dispose() {
+    stopListening();
   }
+
 
   //----TREE BUILD STUFF----
 
-  public DataNode build(final SearchResults results, final INodeRepresentator nodeRepresentator) {
-    return ModelAccess.instance().runReadAction(new Computable<DataNode>() {
-      @Override
-      public DataNode compute() {
-        myRebuildCache = new HashMap<Pair<DataNode, Object>, DataNode>();
+  private static DataNode createTreeRoot() {
+    return new DataNode(new MainNodeData(PathItemRole.ROLE_MAIN_ROOT));
+  }
 
-        DataNode root = new DataNode(new MainNodeData(PathItemRole.ROLE_MAIN_ROOT));
+  private DataNode build(final SearchResults<?> results, final INodeRepresentator nodeRepresentator) {
+      myRebuildCache = new HashMap<Pair<DataNode, Object>, DataNode>();
 
-        DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
-        for (Object node : results.getAliveNodes()) {
-          addSearchedNode(nodesRoot, node);
-        }
-        root.add(nodesRoot);
+      DataNode root = createTreeRoot();
 
-        DataNode resultsRoot = new DataNode(new ResultsNodeData(PathItemRole.ROLE_MAIN_RESULTS, nodeRepresentator));
-        for (SearchResult result : (List<SearchResult>) results.getAliveResults()) {
-          addResultWithPresentation(resultsRoot, result, nodeRepresentator);
-        }
-        root.add(resultsRoot);
-
-        myRebuildCache = null;
-        return root;
+      DataNode nodesRoot = new DataNode(new SearchedNodesNodeData(PathItemRole.ROLE_MAIN_SEARCHED_NODES));
+      for (Object node : results.getAliveNodes()) {
+        addSearchedNode(nodesRoot, node);
       }
-    });
+      root.add(nodesRoot);
+
+      DataNode resultsRoot = new DataNode(new ResultsNodeData(PathItemRole.ROLE_MAIN_RESULTS, nodeRepresentator));
+      for (SearchResult<?> result : results.getAliveResults()) {
+        addResultWithPresentation(resultsRoot, result, nodeRepresentator);
+      }
+      root.add(resultsRoot);
+
+      myRebuildCache = null;
+      return root;
   }
 
   private void addSearchedNode(DataNode root, Object node) {
-    List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult(node, SearchedNodesNodeData.CATEGORY_NAME));
-    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, null, false, null);
+    List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult<Object>(node, SearchedNodesNodeData.CATEGORY_NAME));
+    createPath(path, root, null, false, null);
   }
 
   private void addResultWithPresentation(DataNode root, SearchResult result, INodeRepresentator nodeRepresentator) {
     List<PathItem> path = PathProvider.getPathForSearchResult(result);
-    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
-    createPath(pathCopy, 0, root, nodeRepresentator, true, result);
+    createPath(path, root, nodeRepresentator, true, result);
   }
 
-  //the first argument's type is exact for performance reasons
-  private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator,
-      boolean results, SearchResult result) {
-    DataNode next = null;
-    PathItem currentPathItem = path.get(index);
-    Object currentIdObject = currentPathItem.getIdObject();
+  private void createPath(List<PathItem> path, DataNode parent, @Nullable INodeRepresentator<Object> nodeRepresentator,
+      boolean results, @Nullable SearchResult result) {
 
-    DataNode child = myRebuildCache.get(new Pair<DataNode, Object>(root, currentIdObject));
-    if (child != null) {
-      next = child;
+    assert !path.isEmpty();
+    final PathItem pathTail = path.get(path.size() - 1);
+
+    final String tailCustomCaption;
+    if (result != null && nodeRepresentator != null) {
+      tailCustomCaption = nodeRepresentator.getPresentation(result.getObject());
+    } else {
+      tailCustomCaption = null;
     }
 
-    if (next == null) {
-      PathItemRole creator = path.get(index).getRole();
-      BaseNodeData data = null;
 
-      boolean isResult = index == path.size() - 1;
-      if (currentIdObject instanceof SModule) {
-        if (result != null && isResult) {
-          data = new ModuleNodeData(creator, result, true, nodeRepresentator, results);
-        } else {
-          data = new ModuleNodeData(creator, (SModule) currentIdObject, isResult, results);
+    for (PathItem currentPathItem : path) {
+      Object currentIdObject = currentPathItem.getIdObject();
+      final boolean isResult = currentPathItem == pathTail;
+
+      DataNode next = myRebuildCache.get(new Pair<DataNode, Object>(parent, currentIdObject));
+
+      if (next == null) {
+        PathItemRole creator = currentPathItem.getRole();
+        BaseNodeData data = null;
+
+        final String caption = isResult ? tailCustomCaption : null;
+
+        if (currentIdObject instanceof SModule) {
+          data = new ModuleNodeData(creator, caption, ((SModule) currentIdObject).getModuleReference(), isResult, results);
+        } else if (currentIdObject instanceof SModuleReference) {
+          data = new ModuleNodeData(creator, caption, (SModuleReference) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof SModelReference) {
+          data = new ModelNodeData(creator, caption, (SModelReference) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof SNode) {
+          data = new NodeNodeData(creator, caption, (SNode) currentIdObject, isResult, results);
+        } else if (currentIdObject instanceof Pair) {
+          Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
+          data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
         }
-      } else if (currentIdObject instanceof SModelReference) {
-        if (result != null && isResult) {
-          data = new ModelNodeData(creator, result, true, nodeRepresentator, results);
-        } else {
-          data = new ModelNodeData(creator, (SModelReference) currentIdObject, isResult, results);
+
+        assert data != null : currentIdObject;
+
+        next = new DataNode(data);
+        parent.add(next);
+        myRebuildCache.put(new Pair<DataNode, Object>(parent, data.getIdObject()), next);
+      } else {
+        if (isResult) {
+          next.getData().setIsResultNode_internal(true);
         }
-      } else if (currentIdObject instanceof SNode) {
-        if (result != null && isResult) {
-          data = new NodeNodeData(creator, result, isResult, nodeRepresentator, results);
-        } else {
-          data = new NodeNodeData(creator, (SNode) currentIdObject, isResult, nodeRepresentator, results);
-        }
-      } else if (currentIdObject instanceof Pair) {
-        Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
-        data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
-
-      assert data != null : currentIdObject;
-
-      next = new DataNode(data);
-      root.add(next);
-      myRebuildCache.put(new Pair<DataNode, Object>(root, data.getIdObject()), next);
-    } else {
-      adjustNode(next, path, index);
-    }
-    if (index == path.size() - 1) {
-      return next;
-    } else {
-      return createPath(path, index + 1, next, nodeRepresentator, results, result);
-    }
-  }
-
-  private void adjustNode(DataNode next, ArrayList<PathItem> path, int index) {
-    if (index == path.size() - 1) {
-      next.getData().setIsResultNode_internal(true);
+      parent = next;
     }
   }
 
@@ -260,8 +267,6 @@ public class DataTree implements IExternalizeable, IChangeListener {
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myTreeRoot.read(element, project);
-    notifyChangeListeners();
-    updateNotifier();
   }
 
   @Override

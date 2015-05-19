@@ -15,7 +15,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -23,14 +22,16 @@ import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
+import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.ModelDigestUtil;
@@ -48,6 +49,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource)) {
       return false;
@@ -62,72 +64,66 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
     return manager.getVcsFor(file) != null && Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params)).isNotEmpty();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
+        return false;
+      }
     }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
-        try {
-          String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(backupFile, MergeVersion.values());
-          String mine = modelsAsText[MergeVersion.MINE.ordinal()];
-          String base = modelsAsText[MergeVersion.BASE.ordinal()];
-          String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
+    for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
+      try {
+        String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(backupFile, MergeVersion.values());
+        String mine = modelsAsText[MergeVersion.MINE.ordinal()];
+        String base = modelsAsText[MergeVersion.BASE.ordinal()];
+        String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
-          SModelReference uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
-          if (uid == null || !(uid.equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
-            continue;
-          }
-
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
-          if (mine == null) {
-            return;
-          }
-          MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null, null);
-          mergeRequest.setVersionTitles(new String[]{"Mine", "Base version", "Repository"});
-          DiffManager.getInstance().getDiffTool().show(mergeRequest);
-          return;
-        } catch (IOException e) {
-          if (LOG.isEnabledFor(Level.WARN)) {
-            LOG.warn("", e);
-          }
-          // Skip this backup 
+        SModelReference uid = VCSPersistenceSupport.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
+        if (uid == null || !(uid.equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
           continue;
         }
-      }
-      Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
+
+        // this.model came from repo, so it must be supported by ModelPersistence 
+        mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
+        if (mine == null) {
+          return;
+        }
+        MergeRequest mergeRequest = DiffRequestFactory.getInstance().createMergeRequest(mine, repository, base, VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params)), ((Project) MapSequence.fromMap(_params).get("project")), null, null);
+        mergeRequest.setVersionTitles(new String[]{"Mine", "Base version", "Repository"});
+        DiffManager.getInstance().getDiffTool().show(mergeRequest);
+        return;
+      } catch (IOException e) {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("", e);
+        }
+        // Skip this backup 
+        continue;
       }
     }
+    Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
   }
   private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
     return MergeBackupUtil.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());

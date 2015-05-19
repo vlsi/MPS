@@ -90,7 +90,7 @@ public class ProjectTestsSupport {
     ActiveEnvironment.getInstance().disposeProject(project.getProjectFile());
     FileUtil.delete(destinationDir);
   }
-  private static void waitUntilAllEventsFlushed() {
+  public static void waitUntilAllEventsFlushed() {
     // todo 
     if (ActiveEnvironment.getInstance().hasIdeaInstance()) {
       // Wait until last invokeLater() is executed 

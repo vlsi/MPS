@@ -21,7 +21,7 @@ import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.vcspersistence.VCSPersistenceSupport;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -111,7 +111,7 @@ public class MergeBackupUtil {
     }
     SModel[] models = new SModel[modelsAsText.length];
     for (int i = 0; i < models.length; i++) {
-      models[i] = ModelPersistence.readModel(modelsAsText[i], false);
+      models[i] = VCSPersistenceSupport.readModel(modelsAsText[i], false);
     }
     return models;
   }

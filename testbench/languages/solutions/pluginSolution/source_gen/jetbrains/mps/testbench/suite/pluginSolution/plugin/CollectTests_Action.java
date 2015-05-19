@@ -6,20 +6,21 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.InternalFlag;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
@@ -33,7 +34,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -57,58 +57,53 @@ public class CollectTests_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(PersistenceFacade.getInstance().createModuleReference("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite", -1);
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CollectTests", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("modelDesc", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("modelDesc") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("modelDesc", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._boolean done = new Wrappers._boolean(false);
-      IdeEventQueue.getInstance().flushQueue();
-      ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-        public void run() {
-          ProgressIndicator proInd = ProgressManager.getInstance().getProgressIndicator();
-          proInd.pushState();
-          try {
-            done.value = CollectTests_Action.this.doExecute(proInd, _params);
-          } finally {
-            proInd.popState();
-          }
+    final Wrappers._boolean done = new Wrappers._boolean(false);
+    IdeEventQueue.getInstance().flushQueue();
+    ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+      public void run() {
+        ProgressIndicator proInd = ProgressManager.getInstance().getProgressIndicator();
+        proInd.pushState();
+        try {
+          done.value = CollectTests_Action.this.doExecute(proInd, _params);
+        } finally {
+          proInd.popState();
         }
-      }, "Collecting Tests", true, ((Project) MapSequence.fromMap(_params).get("project")));
-      if (!(done.value)) {
-        CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CollectTests", t);
-      }
+    }, "Collecting Tests", true, ((Project) MapSequence.fromMap(_params).get("project")));
+    if (!(done.value)) {
+      CollectTests_Action.this.displayInfo("Collect Tests action cancelled", _params);
     }
   }
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
@@ -199,5 +194,4 @@ public class CollectTests_Action extends BaseAction {
       }
     }).toListSequence();
   }
-  protected static Logger LOG = LogManager.getLogger(CollectTests_Action.class);
 }

@@ -2,10 +2,11 @@
 <model ref="r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -407,6 +408,155 @@
     <ref role="1TJDcQ" node="34YubGAnh0y" resolve="DrawCommand" />
     <node concept="PrWs8" id="7O9XACj05gh" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1CEujLdGydh">
+    <property role="TrG5h" value="Request" />
+    <property role="19KtqR" value="true" />
+    <property role="34LRSv" value="request" />
+    <property role="3GE5qa" value="seamless-substitution" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1CEujLdGyeb" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="description" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1CEujLdGyea" resolve="AbstractRequestDescription" />
+    </node>
+    <node concept="PrWs8" id="1CEujLdGye8" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1CEujLdGyea">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="AbstractRequestDescription" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="1CEujLdGyfl">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="StringDescription" />
+    <property role="34LRSv" value="string description" />
+    <ref role="1TJDcQ" node="1CEujLdGyea" resolve="AbstractRequestDescription" />
+    <node concept="1TJgyi" id="1CEujLdGyfm" role="1TKVEl">
+      <property role="TrG5h" value="value" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1CEujLdGyfO">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="SimplifiedFormDescription" />
+    <property role="34LRSv" value="simplified form description" />
+    <ref role="1TJDcQ" node="1CEujLdGyea" resolve="AbstractRequestDescription" />
+    <node concept="1TJgyi" id="1CEujLdGyfP" role="1TKVEl">
+      <property role="TrG5h" value="requestor" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyfR" role="1TKVEl">
+      <property role="TrG5h" value="firstTimeApplicant" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyfU" role="1TKVEl">
+      <property role="TrG5h" value="detail" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1CEujLdGyhu">
+    <property role="3GE5qa" value="seamless-substitution" />
+    <property role="TrG5h" value="FormDescription" />
+    <property role="34LRSv" value="form description" />
+    <ref role="1TJDcQ" node="1CEujLdGyea" resolve="AbstractRequestDescription" />
+    <node concept="1TJgyi" id="1CEujLdGyhv" role="1TKVEl">
+      <property role="TrG5h" value="requestor" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyhx" role="1TKVEl">
+      <property role="TrG5h" value="age" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyh$" role="1TKVEl">
+      <property role="TrG5h" value="firstTimeApplicant" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyhC" role="1TKVEl">
+      <property role="TrG5h" value="purpose" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="1CEujLdGyhH" role="1TKVEl">
+      <property role="TrG5h" value="detail" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAGZg6">
+    <property role="TrG5h" value="SomeForm" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="34LRSv" value="some form" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4yAESKAGZg9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="addresses" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="4yAESKAGZgb" resolve="Address" />
+    </node>
+    <node concept="1TJgyj" id="4yAESKAGZhf" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="validation" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="4yAESKAGZg7" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAGZgb">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="Address" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4yAESKAHfhO" role="1TKVEl">
+      <property role="TrG5h" value="kind" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4yAESKAGZgc" role="1TKVEl">
+      <property role="TrG5h" value="street" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="4yAESKAGZge" role="1TKVEl">
+      <property role="TrG5h" value="zip" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAHjkP">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="AddressReference" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="4yAESKAHjkQ" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4yAESKAGZgb" resolve="Address" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIbwt">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="ZipOperation" />
+    <property role="34LRSv" value="zip" />
+    <ref role="1TJDcQ" node="4yAESKAIRxw" resolve="OperationOnAddress" />
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIrbB">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="StreetOperation" />
+    <property role="34LRSv" value="street" />
+    <ref role="1TJDcQ" node="4yAESKAIRxw" resolve="OperationOnAddress" />
+  </node>
+  <node concept="1TIwiD" id="4yAESKAIRxw">
+    <property role="3GE5qa" value="dotexpression" />
+    <property role="TrG5h" value="OperationOnAddress" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="4yAESKAIRxx" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
 </model>

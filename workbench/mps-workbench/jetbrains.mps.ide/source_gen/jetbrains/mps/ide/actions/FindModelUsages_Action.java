@@ -5,24 +5,21 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
+import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindModelUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -35,53 +32,33 @@ public class FindModelUsages_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindModelUsages", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SearchQuery[] query = new SearchQuery[1];
-      final IResultProvider[] provider = new IResultProvider[1];
-      final SModel model = ((SModel) MapSequence.fromMap(_params).get("model"));
-      final SearchScope scope = GlobalScope.getInstance();
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          query[0] = new SearchQuery(model.getReference(), scope);
-          provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
-        }
-      });
-      ((Project) MapSequence.fromMap(_params).get("ideaProject")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "Model has no usages");
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
-      }
-    }
+    SearchScope scope = GlobalScope.getInstance();
+    final SearchQuery query = new SearchQuery(((SModel) MapSequence.fromMap(_params).get("model")).getReference(), scope);
+    final IResultProvider provider = FindUtils.makeProvider(new ModelImportsUsagesFinder());
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).navigateIfSingle(false).forceNewTab(false).notFoundMessage("Model has no usages");
+    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
   }
-  protected static Logger LOG = LogManager.getLogger(FindModelUsages_Action.class);
 }

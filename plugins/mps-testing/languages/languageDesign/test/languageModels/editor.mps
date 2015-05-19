@@ -317,8 +317,8 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
@@ -605,17 +605,8 @@
                     <node concept="3uibUv" id="1KUoCipv$hb" role="1tU5fm">
                       <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
                     </node>
-                    <node concept="2OqwBi" id="1KUoCipv$hc" role="33vP2m">
-                      <node concept="liA8E" id="1KUoCipv$hd" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                        <node concept="3nh3qo" id="1KUoCipv$he" role="37wK5m">
-                          <ref role="3nh3qp" to="tpd4:h6MkqoE" resolve="ReportErrorStatement" />
-                        </node>
-                      </node>
-                      <node concept="2YIFZM" id="1KUoCipv$hf" role="2Oq$k0">
-                        <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                        <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                      </node>
+                    <node concept="35c_gC" id="7JBhbjir3IJ" role="33vP2m">
+                      <ref role="35c_gD" to="tpd4:h6MkqoE" resolve="ReportErrorStatement" />
                     </node>
                   </node>
                 </node>
@@ -865,17 +856,8 @@
                     <node concept="3uibUv" id="1e$gelAFdTH" role="1tU5fm">
                       <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
                     </node>
-                    <node concept="2OqwBi" id="1e$gelAFdTI" role="33vP2m">
-                      <node concept="liA8E" id="1e$gelAFdTJ" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SConceptRepository.getConcept(java.lang.String):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
-                        <node concept="3nh3qo" id="1e$gelAFdTK" role="37wK5m">
-                          <ref role="3nh3qp" to="tpd4:h$a7r4L" resolve="WarningStatement" />
-                        </node>
-                      </node>
-                      <node concept="2YIFZM" id="1e$gelAFdTL" role="2Oq$k0">
-                        <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                        <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                      </node>
+                    <node concept="35c_gC" id="7JBhbjismAo" role="33vP2m">
+                      <ref role="35c_gD" to="tpd4:h$a7r4L" resolve="WarningStatement" />
                     </node>
                   </node>
                 </node>

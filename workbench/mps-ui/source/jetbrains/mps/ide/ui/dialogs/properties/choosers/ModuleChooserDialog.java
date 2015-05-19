@@ -31,7 +31,7 @@ class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
 
   ModuleChooserDialog(Project project, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String title, boolean multiSelection) throws HeadlessException {
     super(project, modules, nonProjectModules, multiSelection);
-    setTitle(title);
+    setTitle(title == null ? "Choose module" : title);
   }
 
   @Override

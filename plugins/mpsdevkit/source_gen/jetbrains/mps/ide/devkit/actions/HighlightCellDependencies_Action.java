@@ -4,16 +4,15 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.actions.HighlightConstants;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -21,8 +20,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,16 +32,7 @@ public class HighlightCellDependencies_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "HighlightCellDependencies", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -55,41 +43,38 @@ public class HighlightCellDependencies_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("editorCell", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
-      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-      highlightManager.mark(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
-      Set<SNode> nodes = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodesCellDependOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-      if (nodes != null) {
-        for (SNode node : SetSequence.fromSet(nodes)) {
-          highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
-        }
-      }
-      Set<SNodeReference> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-      if (copyOfRefTargets != null) {
-        for (SNodeReference nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
-          if (((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()) != null) {
-            highlightManager.mark(((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()), HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
-          }
-        }
-      }
-      highlightManager.repaintAndRebuildEditorMessages();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);
+    NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
+    EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+    highlightManager.mark(((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
+    Set<SNode> nodes = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodesCellDependOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+    if (nodes != null) {
+      for (SNode node : SetSequence.fromSet(nodes)) {
+        highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
       }
     }
+    Set<SNodeReference> copyOfRefTargets = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getCopyOfRefTargetsCellDependsOn(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+    if (copyOfRefTargets != null) {
+      for (SNodeReference nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
+        if (((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()) != null) {
+          highlightManager.mark(((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()), HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
+        }
+      }
+    }
+    highlightManager.repaintAndRebuildEditorMessages();
   }
-  protected static Logger LOG = LogManager.getLogger(HighlightCellDependencies_Action.class);
 }

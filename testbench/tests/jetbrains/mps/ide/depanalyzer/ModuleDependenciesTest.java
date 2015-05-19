@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,29 @@
  */
 package jetbrains.mps.ide.depanalyzer;
 
+import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.persistence.PersistenceUtil.InMemoryStreamDataSource;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.testbench.ModuleMpsTest;
 import jetbrains.mps.testbench.WriteAction;
+import jetbrains.mps.util.annotation.Hack;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,7 +45,7 @@ import static junit.framework.Assert.assertEquals;
 
 public class ModuleDependenciesTest extends ModuleMpsTest {
   @Rule
-  public WriteAction wa = new WriteAction();
+  public WriteAction wa = new WriteAction(); // FIXME shall pass proper ModelAccess in there
 
   //------------module depends on solution------------
 
@@ -68,6 +80,60 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
       }
     }
     assertEquals(numPaths, paths.size());
+  }
+
+  @Hack
+  @Override
+  protected void populate(AbstractModule module) {
+    try {
+      if (module instanceof Language || module instanceof Solution) {
+        // HACK. With used languages of a module being derived from that of owned models,
+        // we need a model to keep this imports
+        InMemoryStreamDataSource ds = new InMemoryStreamDataSource();
+        SModelBase m = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().create(ds, Collections.singletonMap(
+            ModelFactory.OPTION_MODELNAME, "model-for-language-imports"));
+        module.registerModel(m);
+      }
+    } catch (IOException ex) {
+      throw new RuntimeException(ex);
+    }
+  }
+
+  private void addUsedLanguage(AbstractModule client, Language toUse) {
+    addUsedLanguageImpl(client, toUse.getModuleReference(), false);
+  }
+
+  private void addUsedDevKit(AbstractModule client, DevKit toUse) {
+    addUsedLanguageImpl(client, toUse.getModuleReference(), true);
+  }
+
+  @Hack
+  private void addUsedLanguageImpl(final AbstractModule client, final SModuleReference toUse, boolean isDevKit) {
+      for (SModel m : client.getModels()) {
+        if ("model-for-language-imports".equals(m.getModelName())) {
+          // HACK. We set update mode of model data to prevent event dispatching
+          // which otherwise fails in ModelsEventsCollector, registered as command listener, with a check that changes happen inside command.
+          // however, GlobalModelAccess, active during tests, doesn't support commands and listeners, and thus ModelsEventsCollector treats
+          // any change as 'outside command' change, and fails.
+          ((SModelBase) m).getSModel().setUpdateMode(true);
+          if (isDevKit) {
+            ((SModelInternal) m).addDevKit(toUse);
+          } else {
+            ((SModelInternal) m).addLanguage(MetaAdapterFactory.getLanguage(toUse));
+          }
+          ((SModelBase) m).getSModel().setUpdateMode(false);
+          // HACK.
+          // DependencyUtil.build looks into dependencies between module descriptors, so we mimic them there,
+          // although the right solution is to <strikeout>throw DependencyUtil away</strikeout> rewrite DependencyUtil to use SModule API
+          if (isDevKit) {
+            client.getModuleDescriptor().getUsedDevkits().add(toUse);
+          } else {
+            client.getModuleDescriptor().getUsedLanguages().add(toUse);
+          }
+          return;
+        }
+      }
+      Assert.fail("No model to keep used language in the module " + client.getModuleName());
   }
 
   @Test
@@ -111,11 +177,11 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
       languages[i] = createLanguage();
     }
 
-    solutions[0].addUsedLanguage(languages[0].getModuleReference());
+    addUsedLanguage(solutions[0], languages[0]);
     languages[0].getModuleDescriptor().getRuntimeModules().add(solutions[1].getModuleReference());
     languages[0].addExtendedLanguage(languages[1].getModuleReference());
     languages[1].getModuleDescriptor().getRuntimeModules().add(solutions[2].getModuleReference());
-    languages[0].addUsedLanguage(languages[2].getModuleReference());
+    addUsedLanguage(languages[0], languages[2]);
     languages[2].getModuleDescriptor().getRuntimeModules().add(solutions[3].getModuleReference());
     /*
     s[0]---uses--->l[0]----runtime----->s[1]
@@ -145,13 +211,13 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
     for (int i = 0; i < devkits.length; i++)  devkits[i] = createDevKit();
 
     solutions[0].addDependency(solutions[4].getModuleReference(), false);
-    solutions[4].addUsedLanguage(languages[0].getModuleReference());
+    addUsedLanguage(solutions[4], languages[0]);
     languages[0].getModuleDescriptor().getRuntimeModules().add(solutions[1].getModuleReference());
     languages[0].addExtendedLanguage(languages[1].getModuleReference());
     languages[1].getModuleDescriptor().getRuntimeModules().add(solutions[2].getModuleReference());
-    languages[0].addUsedLanguage(languages[2].getModuleReference());
+    addUsedLanguage(languages[0], languages[2]);
     languages[2].getModuleDescriptor().getRuntimeModules().add(solutions[3].getModuleReference());
-    solutions[4].addUsedDevkit(devkits[0].getModuleReference());
+    addUsedDevKit(solutions[4], devkits[0]);
     devkits[0].getModuleDescriptor().getExportedLanguages().add(languages[3].getModuleReference());
     languages[3].getModuleDescriptor().getRuntimeModules().add(solutions[7].getModuleReference());
     devkits[0].getModuleDescriptor().getExtendedDevkits().add(devkits[1].getModuleReference());
@@ -195,13 +261,13 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
                    |
                   l[4]
      */
-    languages[0].addUsedLanguage(languages[1].getModuleReference());
+    addUsedLanguage(languages[0], languages[1]);
     languages[1].addExtendedLanguage(languages[2].getModuleReference());
-    languages[2].addUsedLanguage(languages[3].getModuleReference());
+    addUsedLanguage(languages[2], languages[3]);
     devKit.getModuleDescriptor().getExportedLanguages().add(languages[4].getModuleReference());
     devKit.getModuleDescriptor().getExtendedDevkits().add(devKit2.getModuleReference());
     devKit2.getModuleDescriptor().getExportedLanguages().add(languages[5].getModuleReference());
-    languages[1].addUsedDevkit(devKit.getModuleReference());
+    addUsedDevKit(languages[1], devKit);
     languages[5].addExtendedLanguage(languages[6].getModuleReference());
 
     final DepLink l0 = new DependencyUtil(getTestRepository()).trackRuntime(false).build(languages[0]);
@@ -210,9 +276,9 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
     testUsedLanguage(l0, languages[1], 1);    //simple
     testUsedLanguage(l0, languages[2], 1);    //extended language is usedLanguage
     testUsedLanguage(l0, languages[3], 0);
-    testUsedLanguage(l1, languages[4], 2); // One indirectly via devKit, 2nd through module.getUsedLanguages which unwraps all languages from devkits
+    testUsedLanguage(l1, languages[4], 1); // indirectly via devKit
     testUsedLanguage(l0, languages[4], 0); //extended lang + devKit
-    testUsedLanguage(l1, languages[5], 2); // One via extended DevKit, another throughmodule.getUsedLanguages which walks closure of devkits
+    testUsedLanguage(l1, languages[5], 1); // One via extended DevKit
     testUsedLanguage(l1, languages[6], 1); //if one uses a language, it takes it as a whole, with all extended languages
   }
 

@@ -7,14 +7,11 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.bookmark.BookmarkManager;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.bookmark.BookmarkManager;
 
 public class SetBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,38 +26,34 @@ public class SetBookmark_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText("Set Bookmark " + SetBookmark_Action.this.num);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SetBookmark", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText("Set Bookmark " + SetBookmark_Action.this.num);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
+      MapSequence.fromMap(_params).put("node", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), SetBookmark_Action.this.num);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SetBookmark", t);
-      }
-    }
+    ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).setBookmark(((SNode) MapSequence.fromMap(_params).get("node")), SetBookmark_Action.this.num);
   }
   @NotNull
   public String getActionId() {
@@ -71,5 +64,4 @@ public class SetBookmark_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-  protected static Logger LOG = LogManager.getLogger(SetBookmark_Action.class);
 }

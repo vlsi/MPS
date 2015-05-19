@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -25,19 +23,29 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * evgeny, 11/3/12
  */
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
 
-  private final Object LOCK = new Object();
-  private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
-  private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>();
+  private final ReadWriteLock myLock = new ReentrantReadWriteLock();
+  private final List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>(4);
+  private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>(8);
 
-  private final Set<FileSystemListener> myListenerDependencies = new ConcurrentHashSet<FileSystemListener>();
+  private final Set<FileSystemListener> myListenerDependencies = new HashSet<FileSystemListener>(8);
 
   public FolderSetDataSource() {
   }
@@ -48,65 +56,79 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public void addPath(@NotNull String path, ModelRoot modelRoot) {
     ModelAccess.assertLegalRead();
 
-    if(myPaths.containsKey(path)) return;
+    myLock.writeLock().lock();
+    try {
 
-    if (modelRoot instanceof FileSystemListener) {
-      myListenerDependencies.add((FileSystemListener) modelRoot);
-    } else if (modelRoot != null && modelRoot.getModule() instanceof FileSystemListener) {
-      myListenerDependencies.add((FileSystemListener) modelRoot.getModule());
-    }
+      if (myPaths.containsKey(path)) {
+        return;
+      }
 
-    IFile file = FileSystem.getInstance().getFileByPath(path);
-    PathListener listener = new PathListener(file);
-    synchronized (LOCK) {
+      if (modelRoot instanceof FileSystemListener) {
+        myListenerDependencies.add((FileSystemListener) modelRoot);
+      } else if (modelRoot != null && modelRoot.getModule() instanceof FileSystemListener) {
+        myListenerDependencies.add((FileSystemListener) modelRoot.getModule());
+      }
+
+      IFile file = FileSystem.getInstance().getFileByPath(path);
+      PathListener listener = new PathListener(file, this);
+
       myPaths.put(path, listener);
       if (!(myListeners.isEmpty())) {
         FileSystem.getInstance().addListener(listener);
       }
+    } finally {
+      myLock.writeLock().unlock();
     }
   }
 
   public Collection<String> getPaths() {
-    List<String> result;
-    synchronized (LOCK) {
-      result = new ArrayList<String>(myPaths.keySet());
+    myLock.readLock().lock();
+    try {
+      return new ArrayList<String>(myPaths.keySet());
+    } finally {
+      myLock.readLock().unlock();
     }
-    return result;
+  }
+
+  private Collection<IFile> getFiles() {
+    myLock.readLock().lock();
+    try {
+      Collection<IFile> rv = new ArrayList<IFile>(myPaths.size());
+      for (PathListener l : myPaths.values()) {
+        rv.add(l.myFile);
+      }
+      return rv;
+    } finally {
+      myLock.readLock().unlock();
+    }
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder("FolderSetDataSource(");
-    synchronized (LOCK) {
-      boolean first = true;
-      for (String s : myPaths.keySet()) {
-        if (first) {
-          first = false;
-        } else {
-          sb.append(",");
-        }
-        if (sb.length() > 200) {
-          sb.append("....");
-          break;
-        } else {
-          sb.append(s);
-        }
+    boolean first = true;
+    for (String s : getPaths()) {
+      if (first) {
+        first = false;
+      } else {
+        sb.append(",");
+      }
+      if (sb.length() > 200) {
+        sb.append("....");
+        break;
+      } else {
+        sb.append(s);
       }
     }
-    sb.append(")");
+    sb.append(')');
     return sb.toString();
   }
 
   @Override
   public void refresh() {
+    Collection<IFile> toRefresh = getFiles();
     FileSystem fs = FileSystem.getInstance();
-    Collection<IFile> toRefresh = new ArrayList<IFile>();
-    synchronized (LOCK) {
-      for (PathListener l : myPaths.values()) {
-        toRefresh.add(l.path);
-      }
-    }
     for (IFile f : toRefresh) {
       fs.refresh(f);
     }
@@ -115,19 +137,15 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @Override
   public long getTimestamp() {
     long max = -1;
-    List<IFile> paths = new ArrayList<IFile>();
-    synchronized (LOCK) {
-      for (PathListener pl : myPaths.values()) {
-        paths.add(pl.path);
-      }
-    }
+    Collection<IFile> paths = getFiles();
     for (IFile path : paths) {
       String fsPath = path.getPath();
       //at least some programs don't change timestamp of a directory inside jar file after deleting a file in it
       if (fsPath.contains("!/")){
         IFile jarFile = FileSystem.getInstance().getFileByPath(fsPath.substring(0, fsPath.lastIndexOf("!/")));
-        if (jarFile!=null){
+        if (jarFile != null){
           max = Math.max(max, jarFile.lastModified());
+          continue; // no need to go deep into jar contents
         }
       }
       long ts = getTimestampRecursive(path);
@@ -149,26 +167,43 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   @Override
   public void addListener(DataSourceListener listener) {
-    synchronized (LOCK) {
+    myLock.writeLock().lock();
+    try {
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
           FileSystem.getInstance().addListener(pathListener);
         }
       }
       myListeners.add(listener);
+    } finally {
+      myLock.writeLock().unlock();
     }
   }
 
   @Override
   public void removeListener(DataSourceListener listener) {
-    synchronized (LOCK) {
+    myLock.writeLock().lock();
+    try {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
         for (PathListener pathListener : myPaths.values()) {
           FileSystem.getInstance().removeListener(pathListener);
         }
       }
+    } finally {
+      myLock.writeLock().unlock();
     }
+  }
+
+  private List<DataSourceListener> getDataSourceListeners() {
+    List<DataSourceListener> listeners;
+    myLock.readLock().lock();
+    try {
+      listeners = new ArrayList<DataSourceListener>(myListeners);
+    } finally {
+      myLock.readLock().unlock();
+    }
+    return listeners;
   }
 
   @Override
@@ -178,7 +213,12 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
-    return myListenerDependencies;
+    myLock.readLock().lock();
+    try {
+      return new ArrayList<FileSystemListener>(myListenerDependencies);
+    } finally {
+      myLock.readLock().unlock();
+    }
   }
 
   @Override
@@ -187,10 +227,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   private void fireChanged(ProgressMonitor monitor) {
-    List<DataSourceListener> listeners;
-    synchronized (LOCK) {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
-    }
+    List<DataSourceListener> listeners = getDataSourceListeners();
     monitor.start("Reloading", listeners.size());
     try {
       for (DataSourceListener l : listeners) {
@@ -217,35 +254,31 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   @Override
   public Collection<IFile> getAffectedFiles() {
-    Collection<IFile> result = new ArrayList<IFile>();
-    synchronized (LOCK) {
-      for (PathListener l : myPaths.values()) {
-        result.add(l.path);
-      }
-    }
-    return result;
+    return getFiles();
   }
 
-  private class PathListener implements FileSystemListener {
-    private IFile path;
+  private static class PathListener implements FileSystemListener {
+    private final IFile myFile;
+    private final FileSystemListener myDelegate;
 
-    private PathListener(IFile path) {
-      this.path = path;
+    private PathListener(IFile path, FileSystemListener delegate) {
+      myFile = path;
+      myDelegate = delegate;
     }
 
     @Override
     public IFile getFileToListen() {
-      return path;
+      return myFile;
     }
 
     @Override
     public Iterable<FileSystemListener> getListenerDependencies() {
-      return myListenerDependencies;
+      return myDelegate.getListenerDependencies();
     }
 
     @Override
     public void update(ProgressMonitor monitor, FileSystemEvent event) {
-      event.notify(FolderSetDataSource.this);
+      event.notify(myDelegate);
     }
   }
 }

@@ -55,6 +55,7 @@ public final class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
+  @NotNull
   public SConceptId getId() {
     return myConceptId;
   }

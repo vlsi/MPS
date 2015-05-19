@@ -30,13 +30,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.util.ToStringComparator;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -265,14 +265,14 @@ public class ModelWriter9 implements IModelWriter {
     final SContainmentLink roleInParent = node.getContainmentLink();
     if (roleInParent != null) {
       final AggregationLinkInfo aggregationLinkInfo = myMetaInfo.find(roleInParent);
-      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, aggregationLinkInfo.getIndex());
+      setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, aggregationLinkInfo.getIndex());
     }
 
     for (SProperty pid : node.getProperties()) {
       Element propertyElement = new Element(ModelPersistence9.NODE_PROPERTY);
       final PropertyInfo propertyInfo = myMetaInfo.find(pid);
       propertyElement.setAttribute(ModelPersistence9.ROLE_ID, propertyInfo.getIndex());
-      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
+      setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
       nodeElement.addContent(propertyElement);
     }
 
@@ -286,7 +286,7 @@ public class ModelWriter9 implements IModelWriter {
       } else {
         linkElement.setAttribute(ModelPersistence9.TO, myIdEncoder.toTextExternal(myImportsHelper, reference));
       }
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE, genResolveInfo(reference));
+      setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE, genResolveInfo(reference));
       nodeElement.addContent(linkElement);
     }
 
@@ -362,5 +362,14 @@ public class ModelWriter9 implements IModelWriter {
       }
     }
     return ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+  }
+
+  public static void setNotNullAttribute(
+      @NotNull Element element,
+      @NotNull String attrName,
+      @Nullable String attrValue) {
+    if (attrValue != null) {
+      element.setAttribute(attrName, attrValue);
+    }
   }
 }

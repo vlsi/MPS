@@ -10,7 +10,6 @@ import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -33,7 +32,7 @@ public class TypeVarScope extends SearchScopeWithNode {
     if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))) {
       statementList = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
     } else {
-      statementList = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      statementList = SNodeOperations.getNodeAncestor(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
     }
     if ((statementList != null)) {
       SNode currentStatement;
@@ -42,7 +41,7 @@ public class TypeVarScope extends SearchScopeWithNode {
       } else if (SNodeOperations.isInstanceOf(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))) {
         currentStatement = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"));
       } else {
-        currentStatement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(enclosingNode, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+        currentStatement = SNodeOperations.getNodeAncestor(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
       }
       populateLocalVariables(statementList, currentStatement, vars);
     }
@@ -66,9 +65,9 @@ public class TypeVarScope extends SearchScopeWithNode {
         result.add(statement);
       }
     }
-    SNode containingStatement = (SNode) jetbrains.mps.util.SNodeOperations.findParent(statementList, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.Statement"));
+    SNode containingStatement = SNodeOperations.getNodeAncestor(statementList, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false);
     if ((containingStatement != null)) {
-      statementList = (SNode) jetbrains.mps.util.SNodeOperations.findParent(containingStatement, new IsInstanceCondition("jetbrains.mps.baseLanguage.structure.StatementList"));
+      statementList = SNodeOperations.getNodeAncestor(containingStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"), false, false);
       if (statementList != null) {
         populateLocalVariables(statementList, containingStatement, result);
       }

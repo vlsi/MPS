@@ -36,7 +36,7 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedNodeCell_lnoz1c_a0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
     return editorCell;
   }
   private EditorCell createReadOnlyModelAccessor_lnoz1c_b0(final EditorContext editorContext, final SNode node) {

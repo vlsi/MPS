@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,10 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
-import jetbrains.mps.generator.impl.RootTemplateAnnotator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -44,7 +42,6 @@ public final class MPSGenerator extends ComponentPlugin {
     final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, clManager, mgsm));
     mgsm.setModelHashSource(depsCache);
     init(new GeneratorPathsComponent());
-    init(new RootTemplateAnnotator(GlobalSModelEventsManager.getInstance()));
     init(new GenerationSettingsProvider());
   }
 }

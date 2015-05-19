@@ -19,10 +19,16 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
           return Collections.<NodeFactory>singletonList(new ConvertLinesToRectAndBack.NodeFactory_3548406301613038524());
         case 1:
           return Collections.<NodeFactory>singletonList(new ConvertLinesToRectAndBack.NodeFactory_3548406301613072220());
+        case 2:
+          return Collections.<NodeFactory>singletonList(new Converters.NodeFactory_6918512748467409696());
+        case 3:
+          return Collections.<NodeFactory>singletonList(new Converters.NodeFactory_6918512748467367934());
+        case 4:
+          return Collections.<NodeFactory>singletonList(new Converters.NodeFactory_6918512748467539647());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"DrawLine", "DrawRect"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"DrawLine", "DrawRect", "FormDescription", "SimplifiedFormDescription", "StringDescription"};
 }

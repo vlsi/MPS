@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.closures.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
@@ -28,16 +29,20 @@ import jetbrains.mps.smodel.SReference;
 public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
   public UpdateClosuresRuntime_MigrationScript(IOperationContext operationContext) {
     super("Create runtime classes in the closures runtime");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_FunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_FunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -45,6 +50,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -85,20 +91,25 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0a("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_FunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_FunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -106,6 +117,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -149,20 +161,25 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0b("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -170,6 +187,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -215,20 +233,25 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0c("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -236,6 +259,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -292,20 +316,25 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0d("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -313,6 +342,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -369,20 +399,25 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0e("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "_UnrestrictedFunctionTypes";
       }
+      @Override
       public String getAdditionalInfo() {
         return "_UnrestrictedFunctionTypes";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes".equals(NameUtil.nodeFQName(node)) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -390,6 +425,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> paramTypeVars = new ArrayList<SNode>();
         for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
@@ -444,6 +480,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(paramTypeVars).addElement(_quotation_createNode_awiph7_a0a2a1a0f("P" + (params + 1)));
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

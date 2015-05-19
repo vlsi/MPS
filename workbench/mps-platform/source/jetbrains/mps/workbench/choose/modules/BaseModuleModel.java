@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.choose.modules;
 
+import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -35,7 +36,7 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<SModuleReferenc
   }
 
   @Override
-  public String doGetFullName(Object element) {
+  public String doGetFullName(NavigationItem element) {
     SModuleReference module = ((BaseModuleItem) element).getModuleReference();
     return getModuleLongName(module);
   }

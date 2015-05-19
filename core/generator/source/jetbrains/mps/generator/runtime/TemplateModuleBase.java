@@ -17,6 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -87,7 +88,7 @@ public abstract class TemplateModuleBase implements TemplateModule {
   public Set<SLanguage> getTargetLanguages() {
     HashSet<SLanguage> rv = new HashSet<SLanguage>();
     for (String l : getUsedLanguages()) {
-      rv.add(ConceptRepository.getInstance().getLanguage(l));
+      rv.add(MetaAdapterFactoryByName.getLanguage(l));
     }
     return rv;
   }

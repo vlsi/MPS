@@ -18,9 +18,9 @@
   <id>jetbrains.mps.ide.modelchecker</id>
   <name>Model Checker</name>
   <description>Audit tool for MPS models</description>
-  <version>3.2.1</version>
+  <version>3.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="139.1" until-build="140.1"/>
+  <idea-version since-build="139.1" until-build="142.1"/>
 
   <application-components>
     <component>
@@ -43,7 +43,7 @@
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
     <mps.ModelValidator implementation="jetbrains.mps.ide.modelchecker.ModelValidatorAdapter"/>
-    <applicationConfigurable groupId="build" groupWeight="160" instance="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" id="preferences.modelCheckerSettings"/>
+    <applicationConfigurable groupId="tools" groupWeight="160" instance="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" id="preferences.modelCheckerSettings"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>

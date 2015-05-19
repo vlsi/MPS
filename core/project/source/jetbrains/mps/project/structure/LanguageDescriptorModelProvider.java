@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
@@ -31,11 +30,12 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -119,11 +119,10 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         return;
       }
       if (model instanceof EditableSModel) {
-        EditableSModel editableSModel = (EditableSModel) model;
         for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
           if (aspect.is(model)) {
-            editableSModel.addChangeListener(this);
-            editableSModel.addModelListener(this);
+            model.addChangeListener(this);
+            model.addModelListener(this);
             return;
           }
         }
@@ -136,15 +135,15 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
         return;
       }
       if (model instanceof EditableSModel) {
-        ((EditableSModel) model).removeChangeListener(this);
+        model.removeChangeListener(this);
         model.removeModelListener(this);
       }
     }
 
     @Override
-    public void nodeAdded(SModel model, SNode parent, String role, SNode child) {
-      if (parent == null) {
-        final Language language = Language.getLanguageFor(model);
+    public void nodeAdded(@NotNull SNodeAddEvent event) {
+      if (event.isRoot()) {
+        final Language language = Language.getLanguageFor(event.getModel());
         if (language != null) {
           refreshModule(language);
         }
@@ -152,9 +151,9 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     @Override
-    public void nodeRemoved(SModel model, SNode parent, String role, SNode child) {
-      if (parent == null) {
-        final Language language = Language.getLanguageFor(model);
+    public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+      if (event.isRoot()) {
+        final Language language = Language.getLanguageFor(event.getModel());
         if (language != null) {
           refreshModule(language);
         }

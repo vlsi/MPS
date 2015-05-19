@@ -27,154 +27,154 @@ public class Templatereduce__Pick extends TemplateDeclarationBase implements Tem
     return new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436170020");
   }
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
+    final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170948");
       {
-        final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170949");
           {
-            final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.IfStatement");
+            final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
             try {
               environment.nodeCopied(context, tnode3, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170950");
               {
-                final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
+                final SNode tnode4 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                 try {
                   environment.nodeCopied(context, tnode4, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073215014");
                   tnode4.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode4, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039569953")));
                 } finally {
                 }
                 if (tnode4 != null) {
-                  tnode3.addChild("condition", tnode4);
+                  tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnode4);
                 }
                 // TODO validate child 
               }
               {
-                final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StatementList");
+                final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
                 try {
                   environment.nodeCopied(context, tnode5, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170953");
                   {
-                    final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+                    final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context, tnode6, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436210200");
                       {
-                        final SNode tnode7 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
+                        final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                         try {
                           environment.nodeCopied(context, tnode7, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073256516");
                           tnode7.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode7, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039570119")));
                         } finally {
                         }
                         if (tnode7 != null) {
-                          tnode6.addChild("expression", tnode7);
+                          tnode6.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnode7);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode6 != null) {
-                      tnode5.addChild("statement", tnode6);
+                      tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode6);
                     }
                     // TODO validate child 
                   }
                   {
-                    final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+                    final SNode tnode8 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context, tnode8, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170958");
                       {
-                        final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
+                        final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                         try {
                           environment.nodeCopied(context, tnode9, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073256412");
                           tnode9.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode9, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039570144")));
                         } finally {
                         }
                         if (tnode9 != null) {
-                          tnode8.addChild("expression", tnode9);
+                          tnode8.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnode9);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode8 != null) {
-                      tnode5.addChild("statement", tnode8);
+                      tnode5.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode8);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode5 != null) {
-                  tnode3.addChild("ifTrue", tnode5);
+                  tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b219L, "ifTrue"), tnode5);
                 }
                 // TODO validate child 
               }
               {
-                final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
+                final SNode tnode10 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
                 try {
                   environment.nodeCopied(context, tnode10, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170960");
                   {
-                    final SNode tnode11 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StatementList");
+                    final SNode tnode11 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"));
                     try {
                       environment.nodeCopied(context, tnode11, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170961");
                       {
-                        final SNode tnode12 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+                        final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                         try {
                           environment.nodeCopied(context, tnode12, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170962");
                           {
-                            final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
+                            final SNode tnode13 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                             try {
                               environment.nodeCopied(context, tnode13, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4923130412073236853");
                               tnode13.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), tnode13, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039580739")));
                               {
-                                final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final SNode tnode14 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                                 try {
                                   environment.nodeCopied(context, tnode14, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/6405700485436170964");
                                   SNodeAccessUtil.setProperty(tnode14, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "Nothing to pick. The cell is empty.");
                                 } finally {
                                 }
                                 if (tnode14 != null) {
-                                  tnode13.addChild("actualArgument", tnode14);
+                                  tnode13.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), tnode14);
                                 }
                                 // TODO validate child 
                               }
                             } finally {
                             }
                             if (tnode13 != null) {
-                              tnode12.addChild("expression", tnode13);
+                              tnode12.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnode13);
                             }
                             // TODO validate child 
                           }
                         } finally {
                         }
                         if (tnode12 != null) {
-                          tnode11.addChild("statement", tnode12);
+                          tnode11.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode12);
                         }
                         // TODO validate child 
                       }
                     } finally {
                     }
                     if (tnode11 != null) {
-                      tnode10.addChild("statements", tnode11);
+                      tnode10.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements"), tnode11);
                     }
                     // TODO validate child 
                   }
                 } finally {
                 }
                 if (tnode10 != null) {
-                  tnode3.addChild("ifFalseStatement", tnode10);
+                  tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement"), tnode10);
                 }
                 // TODO validate child 
               }
             } finally {
             }
             if (tnode3 != null) {
-              tnode2.addChild("statement", tnode3);
+              tnode2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnode3);
             }
             // TODO validate child 
           }
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("statements", tnode2);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements"), tnode2);
         }
         // TODO validate child 
       }
