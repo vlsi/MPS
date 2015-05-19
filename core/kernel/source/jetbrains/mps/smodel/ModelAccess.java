@@ -39,7 +39,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
-public abstract class ModelAccess implements ModelCommandProjectExecutor {
+public abstract class ModelAccess implements ModelCommandProjectExecutor, org.jetbrains.mps.openapi.module.ModelAccess {
   protected final WriteActionDispatcher myWriteActionDispatcher = new WriteActionDispatcher();
 
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
@@ -159,6 +159,26 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
     if (!canWrite()) {
       throw new IllegalModelAccessError("You can write model only inside write actions");
     }
+  }
+
+  @Override
+  public void executeCommand(Runnable r) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void executeCommandInEDT(Runnable r) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void executeUndoTransparentCommand(Runnable r) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean isCommandAction() {
+    return isInsideCommand();
   }
 
   /**

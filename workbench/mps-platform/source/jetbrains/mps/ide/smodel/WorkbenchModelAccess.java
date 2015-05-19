@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.ArrayList;
@@ -404,7 +405,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void executeCommand(Runnable r, Project project) {
+  public void executeCommand(Runnable r, @Nullable Project project) {
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }

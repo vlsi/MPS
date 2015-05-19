@@ -98,20 +98,6 @@ public interface ModelCommandExecutor {
   boolean isInsideCommand();
 
   /**
-   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#addCommandListener} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void addCommandListener(CommandListener l);
-
-  /**
-   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeCommandListener} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  void removeCommandListener(CommandListener l);
-
-  /**
    * Returns true iff the locking and the operation were successful.
    *
    * XXX [artem] The only justification for the method I see is that we may use it from UI events like 'show tooltip', where we can ignore
