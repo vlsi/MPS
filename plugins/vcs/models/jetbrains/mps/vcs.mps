@@ -3034,8 +3034,8 @@
       <property role="TrG5h" value="ENV" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2ysqId120Cs" role="1B3o_S" />
-      <node concept="3uibUv" id="24dvNo_7KII" role="1tU5fm">
-        <ref role="3uigEE" to="hznm:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+      <node concept="3uibUv" id="5A5jZrz3Ffv" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6m1MVDkVd2a" role="1B3o_S" />
@@ -3291,28 +3291,25 @@
         </node>
         <node concept="3clFbF" id="2ysqId125ai" role="3cqZAp">
           <node concept="37vLTI" id="2ysqId125iC" role="3clFbG">
-            <node concept="2ShNRf" id="2ysqId125VY" role="37vLTx">
-              <node concept="1pGfFk" id="2ysqId12uoQ" role="2ShVmc">
-                <ref role="37wK5l" to="hznm:6rx4kZDkRjb" resolve="IdeaEnvironment" />
-                <node concept="2YIFZM" id="2ysqId12vhm" role="37wK5m">
-                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultEnvironment" />
+            <node concept="2YIFZM" id="5A5jZrz3EWM" role="37vLTx">
+              <ref role="37wK5l" to="79ha:3Pdq2IL$rEs" resolve="getOrCreate" />
+              <ref role="1Pybhc" to="79ha:3Pdq2IL$qR3" resolve="EnvironmentContainer" />
+              <node concept="2OqwBi" id="5A5jZrz3F2K" role="37wK5m">
+                <node concept="2YIFZM" id="5A5jZrz3F14" role="2Oq$k0">
+                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
                   <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                </node>
+                <node concept="liA8E" id="5A5jZrz3Fbd" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:3eUNqOk6UlR" resolve="loadIdea" />
+                  <node concept="3clFbT" id="5A5jZrz3FcR" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="7Psq8BycfpL" role="37vLTJ">
               <ref role="3cqZAo" node="2ysqId120Ld" resolve="ENV" />
               <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="53lh2wVkuX5" role="3cqZAp">
-          <node concept="2YIFZM" id="3w8hPtGBBg4" role="3clFbG">
-            <ref role="37wK5l" to="1p1s:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
-            <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
-            <node concept="Rm8GO" id="3w8hPtGBBT6" role="37wK5m">
-              <ref role="Rm8GQ" to="1p1s:~TestMode.USUAL" resolve="USUAL" />
-              <ref role="1Px2BO" to="1p1s:~TestMode" resolve="TestMode" />
             </node>
           </node>
         </node>

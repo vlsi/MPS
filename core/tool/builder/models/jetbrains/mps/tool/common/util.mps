@@ -2,7 +2,6 @@
 <model ref="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)">
   <persistence version="9" />
   <languages>
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -16,7 +15,6 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
     <import index="ajxo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(org.apache.log4j@java_stub)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
-    <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -311,14 +309,6 @@
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
-    </language>
-    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
-        <property id="1167228628751" name="hasException" index="34fQS0" />
-        <property id="1167245565795" name="severity" index="35gtTG" />
-        <child id="1167227463056" name="logExpression" index="34bqiv" />
-        <child id="1167227561449" name="exception" index="34bMjA" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -10535,132 +10525,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="312cEu" id="7iFq8OZTcsV">
-    <property role="TrG5h" value="ProjectUtil" />
-    <node concept="2YIFZL" id="7iFq8OZTge6" role="jymVt">
-      <property role="TrG5h" value="projectHasPath" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="3clFbS" id="7iFq8OZTge7" role="3clF47">
-        <node concept="3cpWs8" id="7iFq8OZTge8" role="3cqZAp">
-          <node concept="3cpWsn" id="7iFq8OZTge9" role="3cpWs9">
-            <property role="TrG5h" value="projectFile" />
-            <node concept="3uibUv" id="7iFq8OZTgea" role="1tU5fm">
-              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
-            </node>
-            <node concept="2OqwBi" id="7iFq8OZTgeb" role="33vP2m">
-              <node concept="37vLTw" id="7iFq8OZTgec" role="2Oq$k0">
-                <ref role="3cqZAo" node="7iFq8OZTgeN" resolve="project" />
-              </node>
-              <node concept="liA8E" id="7iFq8OZTged" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7iFq8OZTgee" role="3cqZAp">
-          <node concept="3clFbC" id="7iFq8OZTgef" role="3clFbw">
-            <node concept="10Nm6u" id="7iFq8OZTgeg" role="3uHU7w" />
-            <node concept="37vLTw" id="7iFq8OZTgeh" role="3uHU7B">
-              <ref role="3cqZAo" node="7iFq8OZTge9" resolve="projectFile" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="7iFq8OZTgei" role="3clFbx">
-            <node concept="3cpWs6" id="7iFq8OZTgej" role="3cqZAp">
-              <node concept="3clFbT" id="7iFq8OZTgek" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="SfApY" id="7iFq8OZTgel" role="3cqZAp">
-          <node concept="3clFbS" id="7iFq8OZTgem" role="SfCbr">
-            <node concept="3cpWs8" id="7iFq8OZTgen" role="3cqZAp">
-              <node concept="3cpWsn" id="7iFq8OZTgeo" role="3cpWs9">
-                <property role="TrG5h" value="myProjectPath" />
-                <node concept="17QB3L" id="7iFq8OZTgep" role="1tU5fm" />
-                <node concept="2OqwBi" id="7iFq8OZTgeq" role="33vP2m">
-                  <node concept="37vLTw" id="7iFq8OZTger" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7iFq8OZTge9" resolve="projectFile" />
-                  </node>
-                  <node concept="liA8E" id="7iFq8OZTges" role="2OqNvi">
-                    <ref role="37wK5l" to="fxg7:~File.getCanonicalPath():java.lang.String" resolve="getCanonicalPath" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="7iFq8OZTget" role="3cqZAp">
-              <node concept="3cpWsn" id="7iFq8OZTgeu" role="3cpWs9">
-                <property role="TrG5h" value="newProjectPath" />
-                <node concept="17QB3L" id="7iFq8OZTgev" role="1tU5fm" />
-                <node concept="2OqwBi" id="7iFq8OZTgew" role="33vP2m">
-                  <node concept="liA8E" id="7iFq8OZTgex" role="2OqNvi">
-                    <ref role="37wK5l" to="fxg7:~File.getCanonicalPath():java.lang.String" resolve="getCanonicalPath" />
-                  </node>
-                  <node concept="37vLTw" id="7iFq8OZTgey" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7iFq8OZTgeP" resolve="path" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs6" id="7iFq8OZTgez" role="3cqZAp">
-              <node concept="2OqwBi" id="7iFq8OZTge$" role="3cqZAk">
-                <node concept="37vLTw" id="7iFq8OZTge_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7iFq8OZTgeo" resolve="myProjectPath" />
-                </node>
-                <node concept="liA8E" id="7iFq8OZTgeA" role="2OqNvi">
-                  <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="37vLTw" id="7iFq8OZTgeB" role="37wK5m">
-                    <ref role="3cqZAo" node="7iFq8OZTgeu" resolve="newProjectPath" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="TDmWw" id="7iFq8OZTgeC" role="TEbGg">
-            <node concept="3clFbS" id="7iFq8OZTgeD" role="TDEfX">
-              <node concept="34ab3g" id="7iFq8OZTgeE" role="3cqZAp">
-                <property role="35gtTG" value="error" />
-                <property role="34fQS0" value="true" />
-                <node concept="Xl_RD" id="7iFq8OZTgeF" role="34bqiv">
-                  <property role="Xl_RC" value="Cannot access the project file in container" />
-                </node>
-                <node concept="37vLTw" id="7iFq8OZTgeG" role="34bMjA">
-                  <ref role="3cqZAo" node="7iFq8OZTgeH" resolve="e" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWsn" id="7iFq8OZTgeH" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="7iFq8OZTgeI" role="1tU5fm">
-                <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7iFq8OZTgeJ" role="3cqZAp">
-          <node concept="3clFbT" id="7iFq8OZTgeK" role="3cqZAk">
-            <property role="3clFbU" value="false" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="7iFq8OZTxMf" role="1B3o_S" />
-      <node concept="10P_77" id="7iFq8OZTgeM" role="3clF45" />
-      <node concept="37vLTG" id="7iFq8OZTgeN" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="7iFq8OZTgeO" role="1tU5fm">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7iFq8OZTgeP" role="3clF46">
-        <property role="TrG5h" value="path" />
-        <node concept="3uibUv" id="7iFq8OZTgeQ" role="1tU5fm">
-          <ref role="3uigEE" to="fxg7:~File" resolve="File" />
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="7iFq8OZTcsW" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="7qjdPcRxDCR">
     <property role="TrG5h" value="Resource" />

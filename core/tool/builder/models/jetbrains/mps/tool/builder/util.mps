@@ -5,6 +5,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
   </languages>
   <imports>
     <import index="d4yz" ref="r:9aacb4c5-da89-46f5-8c41-93d864945583(jetbrains.mps.tool.common.util)" />
@@ -291,6 +292,19 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+    </language>
+    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
+        <child id="540871147943773366" name="argument" index="25WWJ7" />
+      </concept>
+      <concept id="1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" flags="in" index="2hMVRd">
+        <child id="1226511765987" name="elementType" index="2hN53Y" />
+      </concept>
+      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
+        <child id="1237721435807" name="elementType" index="HW$YZ" />
+      </concept>
+      <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
+      <concept id="1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" flags="nn" index="32HrFt" />
     </language>
   </registry>
   <node concept="312cEu" id="4937uxYQn6D">
@@ -3506,7 +3520,7 @@
     <node concept="2tJIrI" id="2Koq9V0qOGl" role="jymVt" />
     <node concept="3clFbW" id="57xhZj4tkXH" role="jymVt">
       <node concept="3cqZAl" id="57xhZj4tkXI" role="3clF45" />
-      <node concept="3Tm1VV" id="57xhZj4tkXJ" role="1B3o_S" />
+      <node concept="3Tm6S6" id="3eUNqOk8Gj4" role="1B3o_S" />
       <node concept="3clFbS" id="57xhZj4tkXK" role="3clF47">
         <node concept="3clFbF" id="57xhZj4tkXL" role="3cqZAp">
           <node concept="37vLTI" id="57xhZj4tkXM" role="3clFbG">
@@ -3575,6 +3589,133 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_p79Z" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3eUNqOk8v1k" role="jymVt" />
+    <node concept="2YIFZL" id="3eUNqOk8vfn" role="jymVt">
+      <property role="TrG5h" value="fromMap" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="2Koq9V0qXbf" role="3clF46">
+        <property role="TrG5h" value="libToClassLoader" />
+        <node concept="3uibUv" id="2Koq9V0qXbe" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~Map" resolve="Map" />
+          <node concept="17QB3L" id="DMIDDhkfrt" role="11_B2D" />
+          <node concept="3uibUv" id="2Koq9V0qYjd" role="11_B2D">
+            <ref role="3uigEE" to="e2lb:~ClassLoader" resolve="ClassLoader" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbS" id="3eUNqOk8vfq" role="3clF47">
+        <node concept="3cpWs8" id="2Koq9V0qYzi" role="3cqZAp">
+          <node concept="3cpWsn" id="2Koq9V0qYzj" role="3cpWs9">
+            <property role="TrG5h" value="libs" />
+            <node concept="2hMVRd" id="DMIDDhkj0v" role="1tU5fm">
+              <node concept="3uibUv" id="6SLhIWeIiB" role="2hN53Y">
+                <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="2Koq9V0qYzm" role="33vP2m">
+              <node concept="32HrFt" id="DMIDDhkJuS" role="2ShVmc">
+                <node concept="3uibUv" id="6SLhIWeIps" role="HW$YZ">
+                  <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="2Koq9V0qYzp" role="3cqZAp">
+          <node concept="2OqwBi" id="2Koq9V0r29_" role="1DdaDG">
+            <node concept="37vLTw" id="2Koq9V0qYzq" role="2Oq$k0">
+              <ref role="3cqZAo" node="2Koq9V0qXbf" resolve="libToClassLoader" />
+            </node>
+            <node concept="liA8E" id="2Koq9V0r3tr" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Map.keySet():java.util.Set" resolve="keySet" />
+            </node>
+          </node>
+          <node concept="3cpWsn" id="2Koq9V0qYzr" role="1Duv9x">
+            <property role="TrG5h" value="libPath" />
+            <property role="3TUv4t" value="false" />
+            <node concept="17QB3L" id="DMIDDhkg7P" role="1tU5fm" />
+          </node>
+          <node concept="3clFbS" id="2Koq9V0qYzt" role="2LFqv$">
+            <node concept="3clFbF" id="2Koq9V0qYzu" role="3cqZAp">
+              <node concept="2OqwBi" id="DMIDDhkLCt" role="3clFbG">
+                <node concept="37vLTw" id="2Koq9V0qYzw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2Koq9V0qYzj" resolve="libs" />
+                </node>
+                <node concept="TSZUe" id="DMIDDhkMjT" role="2OqNvi">
+                  <node concept="2ShNRf" id="2Koq9V0qYzy" role="25WWJ7">
+                    <node concept="1pGfFk" id="2Koq9V0qYzz" role="2ShVmc">
+                      <ref role="37wK5l" to="c762:~LibDescriptor.&lt;init&gt;(java.lang.String,java.lang.ClassLoader)" resolve="LibDescriptor" />
+                      <node concept="37vLTw" id="DMIDDhkh6t" role="37wK5m">
+                        <ref role="3cqZAo" node="2Koq9V0qYzr" resolve="libPath" />
+                      </node>
+                      <node concept="2OqwBi" id="2Koq9V0r8RZ" role="37wK5m">
+                        <node concept="37vLTw" id="2Koq9V0r3DV" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2Koq9V0qXbf" resolve="libToClassLoader" />
+                        </node>
+                        <node concept="liA8E" id="2Koq9V0r9XD" role="2OqNvi">
+                          <ref role="37wK5l" to="k7g3:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
+                          <node concept="37vLTw" id="2Koq9V0ra3S" role="37wK5m">
+                            <ref role="3cqZAo" node="2Koq9V0qYzr" resolve="libPath" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2Koq9V0qYzC" role="3cqZAp">
+          <node concept="2ShNRf" id="2Koq9V0qYzD" role="3clFbG">
+            <node concept="1pGfFk" id="2Koq9V0qYzE" role="2ShVmc">
+              <ref role="37wK5l" node="57xhZj4tkXH" resolve="SetLibraryContributor" />
+              <node concept="37vLTw" id="2Koq9V0qYzF" role="37wK5m">
+                <ref role="3cqZAo" node="2Koq9V0qYzj" resolve="libs" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3eUNqOk8v9L" role="1B3o_S" />
+      <node concept="3uibUv" id="3eUNqOk8ve3" role="3clF45">
+        <ref role="3uigEE" node="57xhZj4tkXA" resolve="SetLibraryContributor" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3eUNqOk8Dqy" role="jymVt" />
+    <node concept="2YIFZL" id="3eUNqOk8DM1" role="jymVt">
+      <property role="TrG5h" value="fromSet" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="3eUNqOk8DM4" role="3clF47">
+        <node concept="3clFbF" id="3eUNqOk8DXH" role="3cqZAp">
+          <node concept="2ShNRf" id="3eUNqOk8DXF" role="3clFbG">
+            <node concept="1pGfFk" id="3eUNqOk8Eki" role="2ShVmc">
+              <ref role="37wK5l" node="57xhZj4tkXH" resolve="SetLibraryContributor" />
+              <node concept="37vLTw" id="3eUNqOk8EnY" role="37wK5m">
+                <ref role="3cqZAo" node="3eUNqOk8DTE" resolve="libs" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3eUNqOk8DC2" role="1B3o_S" />
+      <node concept="3uibUv" id="3eUNqOk8DKA" role="3clF45">
+        <ref role="3uigEE" node="57xhZj4tkXA" resolve="SetLibraryContributor" />
+      </node>
+      <node concept="37vLTG" id="3eUNqOk8DTE" role="3clF46">
+        <property role="TrG5h" value="libs" />
+        <node concept="3uibUv" id="3eUNqOk8DTD" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~Set" resolve="Set" />
+          <node concept="3uibUv" id="3eUNqOk8DV_" role="11_B2D">
+            <ref role="3uigEE" to="c762:~LibDescriptor" resolve="LibDescriptor" />
+          </node>
+        </node>
       </node>
     </node>
   </node>
