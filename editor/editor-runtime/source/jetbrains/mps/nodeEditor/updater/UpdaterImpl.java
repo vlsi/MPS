@@ -78,6 +78,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void update() {
+    assert !myDisposed;
     doUpdate(null);
     myModelListenersController.clearCollectedEvents();
     fireEditorUpdated();
@@ -112,6 +113,7 @@ public class UpdaterImpl implements Updater, CommandContext {
    */
   @Deprecated
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
+    assert !myDisposed;
     myUpdateSession = createUpdateSession(node, events);
     EditorCell result = null;
     try {
@@ -135,6 +137,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void flushModelEvents() {
+    assert !myDisposed;
     LOG.assertLog(ModelAccess.instance().isInEDT(), "This method should be called in EDT");
     myModelListenersController.flush();
   }
@@ -151,6 +154,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public boolean setInitialEditorHints(@Nullable String[] hints) {
+    assert !myDisposed;
     boolean changed = !Arrays.equals(myInitialHints, hints);
     myInitialHints = hints;
     return changed;
@@ -159,8 +163,9 @@ public class UpdaterImpl implements Updater, CommandContext {
   @Nullable
   @Override
   public String[] getInitialEditorHints() {
+    assert !myDisposed;
     if (myInitialHints == null) {
-      return myInitialHints;
+      return null;
     }
     String[] result = new String[myInitialHints.length];
     System.arraycopy(myInitialHints, 0, result, 0, myInitialHints.length);
@@ -208,28 +213,33 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   public EditorCell getBigCell(SNode node) {
+    assert !myDisposed;
     WeakReference<EditorCell> editorCellWeakReference = myBigCellsMap.get(node);
     return editorCellWeakReference == null ? null : editorCellWeakReference.get();
   }
 
   public void clearDependencies(EditorCell cell) {
+    assert !myDisposed;
     myRelatedNodes.remove(cell);
     myRelatedRefTargets.remove(cell);
   }
 
   public Set<SNode> getRelatedNodes(EditorCell cell) {
+    assert !myDisposed;
     Set<SNode> nodes = myRelatedNodes.get(cell);
     if (nodes == null) return null;
     return Collections.unmodifiableSet(nodes);
   }
 
   public Set<SNodeReference> getRelatedRefTargets(EditorCell cell) {
+    assert !myDisposed;
     Set<SNodeReference> nodeProxies = myRelatedRefTargets.get(cell);
     if (nodeProxies == null) return null;
     return Collections.unmodifiableSet(nodeProxies);
   }
 
   public boolean isRelated(EditorCell cell, Pair<SNode, SNodeReference> modification) {
+    assert !myDisposed;
     Set<SNode> sNodes = myRelatedNodes.get(cell);
     if (sNodes != null && sNodes.contains(modification.o1)) {
       return true;
