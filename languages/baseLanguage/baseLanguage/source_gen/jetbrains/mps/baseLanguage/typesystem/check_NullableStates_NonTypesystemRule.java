@@ -24,6 +24,7 @@ import jetbrains.mps.baseLanguage.dataFlow.NullableUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -94,15 +95,17 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
 
 
       // Find Nullable assignements to NotNull variables 
-      checkingResult = NullableUtil.checkNullableAssignment(instruction, result);
-      if (checkingResult != null) {
-        warning = checkingResult._0();
-        nodeToWarn = checkingResult._1();
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4235809288654207287", null, errorTarget);
+      if (instruction instanceof WriteInstruction) {
+        checkingResult = NullableUtil.checkNullableAssignment(((WriteInstruction) instruction), result);
+        if (checkingResult != null) {
+          warning = checkingResult._0();
+          nodeToWarn = checkingResult._1();
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToWarn, warning, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4235809288654207287", null, errorTarget);
+          }
+          continue;
         }
-        continue;
       }
 
     }
