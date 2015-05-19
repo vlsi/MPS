@@ -120,7 +120,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8900764248744322637"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"), false);
     }
     @Override
-    public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_8900764248744322639(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
@@ -310,7 +310,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -330,7 +329,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -416,7 +414,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -458,7 +455,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -478,7 +474,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -560,7 +555,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -580,7 +574,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -635,7 +628,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       if (pattern == null) {
         return null;
       }
-
       return super.tryToApply(environment, context.subContext(pattern));
     }
     @Override
@@ -665,9 +657,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot"), false, false);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateRootCustom().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "rootcustom");
@@ -678,11 +667,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "3571912445009918064"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), false);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      if (!(QueriesGenerated.baseMappingRule_Condition_3571912445009978241(new WeavingMappingRuleContext(context, getRuleNode())))) {
-        return false;
-      }
-      return true;
+    @Override
+    public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+      return QueriesGenerated.baseMappingRule_Condition_3571912445009978241(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_3571912445009918066(new WeavingMappingRuleContext(context, getRuleNode()));

@@ -19,7 +19,6 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,16 +29,6 @@ import java.util.Arrays;
 
 
 public class GeneratorUtil {
-
-  /**
-   * XXX this is merely a single location for future refactoring of the approach to get concept name
-   * when we've got a concept node. I don't like present NameUtil.nodeFQName, but unaware of any better way
-   * to get concept fqn given the concept's node (not an instance of the concept, where node.getContainingConcept().getQualifiedName is possible)
-   */
-  public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
-    // FIXME there's MetaAdapterByDeclaration, but it deals with smodel.SNode
-    return NameUtil.nodeFQName(applicableConceptOfRule);
-  }
 
   public static ProblemDescription describeInput(TemplateContext ctx) {
     return ctx == null ? null : describeIfExists(ctx.getInput(), "input node");

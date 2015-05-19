@@ -45,6 +45,25 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
     myApplyToSubConcepts = applyToSubConcepts;
   }
 
+  /**
+   * Compatibility with new MPS 3.3 API method, always <code>true</code>
+   */
+  @ToRemove(version = 3.3)
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return true;
+  }
+
+  /**
+   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
+   * Subclasses can rely on default implementation to return <code>true</code>.
+   */
+  @Override
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+    return isApplicable(context.getEnvironment(), context);
+  }
+
+  @NotNull
   @Override
   public SNodeReference getRuleNode() {
     return myRuleNode;

@@ -19,10 +19,10 @@ import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.DropRootRuleBase;
 import jetbrains.mps.generator.runtime.WeaveRuleBase;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -82,9 +82,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public RootMappingRule0() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008486853"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"), false, true);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new Templatemap__RootConcept().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "map_RootConcept");
@@ -95,23 +92,17 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public DropRootRule0() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008531363"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"));
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
   }
   public class WeavingRule0 extends WeaveRuleBase implements TemplateWeavingRule {
     public WeavingRule0() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490337"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64f39cL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeave"), false);
-    }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
     }
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008490339(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008490342(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a3t));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008490342(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a2t));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -130,15 +121,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule1() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522527"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"), false);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008522529(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008522532(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a3u));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008522532(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a2u));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -157,15 +145,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule2() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533375"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c681159L, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany"), false);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533384(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533377(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a3v));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533377(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a2v));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -184,15 +169,12 @@ public class Mappingmain implements TemplateMappingConfiguration {
     public WeavingRule3() {
       super(new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533360"), MetaAdapterFactory.getConcept(0xce517356fc9a4e78L, 0x86066e7a36ff0671L, 0x55da9f701c64caccL, "jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept"), false);
     }
-    public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-      return true;
-    }
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_6186432342008533368(new WeavingMappingRuleContext(context, getRuleNode()));
     }
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       final List<SNode> tlist1 = new ArrayList<SNode>();
-      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533362(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a3w));
+      Iterable<SNode> weaveEachList1 = QueriesGenerated.sourceNodesQuery_6186432342008533362(new SourceSubstituteMacroNodesContext(context, weavingConseq_417xrn_b0a0a1a2w));
       for (SNode itnode1 : weaveEachList1) {
         if (itnode1 == null) {
           continue;
@@ -207,8 +189,8 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-  private static SNodePointer weavingConseq_417xrn_b0a0a1a3t = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490341");
-  private static SNodePointer weavingConseq_417xrn_b0a0a1a3u = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522531");
-  private static SNodePointer weavingConseq_417xrn_b0a0a1a3v = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533376");
-  private static SNodePointer weavingConseq_417xrn_b0a0a1a3w = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533361");
+  private static SNodePointer weavingConseq_417xrn_b0a0a1a2t = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008490341");
+  private static SNodePointer weavingConseq_417xrn_b0a0a1a2u = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522531");
+  private static SNodePointer weavingConseq_417xrn_b0a0a1a2v = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533376");
+  private static SNodePointer weavingConseq_417xrn_b0a0a1a2w = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533361");
 }

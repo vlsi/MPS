@@ -84,4 +84,27 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
   }
 
   protected abstract Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException;
+
+  /*
+   * Next two isApplicable methods provided here to facilitate migration of generated reduction rules, conditionally implementing TemplateRuleWithCondition.
+   * They used to generate isApplicable(TEE,TC), while new code generates isApplicable(TC), which is invoked by generator
+   * FIXME worth to get back to the idea of any rule being 'with condition', merely telling true if no explicit condition specified
+   */
+
+
+  /**
+   * Compatibility with new MPS 3.3 API method, always <code>true</code>
+   */
+  @ToRemove(version = 3.3)
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return true;
+  }
+
+  /**
+   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
+   * Subclasses can rely on default implementation to return <code>true</code>.
+   */
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+    return isApplicable(context.getEnvironment(), context);
+  }
 }

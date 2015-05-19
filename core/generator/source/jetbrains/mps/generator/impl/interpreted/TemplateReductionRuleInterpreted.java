@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl.interpreted;
 
-import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleConsequenceProcessor;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -24,11 +23,9 @@ import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
@@ -52,12 +49,13 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
     if (myCondition == null) {
-      myCondition = env.getQueryProvider(getRuleNode()).getReductionRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getReductionRuleCondition(myRuleNode);
     }
     return myCondition.check(new ReductionRuleQueryContext(context, getRuleNode()));
   }
+
 
   @Override
   @NotNull
@@ -65,7 +63,6 @@ public class TemplateReductionRuleInterpreted extends ReductionRuleBase implemen
     if (myRuleConsequence == null) {
       throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(context));
     }
-
     return myRuleConsequence.processRuleConsequence(context.subContext(myMappingName));
   }
 }

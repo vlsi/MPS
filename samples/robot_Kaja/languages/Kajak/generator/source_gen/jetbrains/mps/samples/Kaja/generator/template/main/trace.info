@@ -218,11 +218,9 @@
       <node id="3308300503039570163" at="317,80,318,96" concept="8" />
       <node id="3308300503039570163" at="318,96,319,20" concept="9" />
       <node id="3308300503039570163" at="323,31,324,311" concept="13" />
-      <node id="3308300503039570163" at="326,127,327,18" concept="9" />
-      <node id="3308300503039570163" at="329,142,330,87" concept="8" />
-      <node id="3308300503039570163" at="330,87,331,20" concept="9" />
-      <node id="3308300503039570163" at="335,28,336,298" concept="13" />
-      <node id="3308300503039570163" at="338,127,339,18" concept="9" />
+      <node id="3308300503039570163" at="326,142,327,87" concept="8" />
+      <node id="3308300503039570163" at="327,87,328,20" concept="9" />
+      <node id="3308300503039570163" at="332,28,333,298" concept="13" />
       <node id="3308300503039570163" at="44,0,47,0" concept="7" trace="getName#()Ljava/lang/String;" />
       <node id="3308300503039570163" at="47,0,50,0" concept="7" trace="getModel#()Ljetbrains/mps/generator/runtime/TemplateModel;" />
       <node id="3308300503039570163" at="50,0,53,0" concept="7" trace="getMappingNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -258,10 +256,8 @@
       <node id="3308300503039570163" at="301,0,304,0" concept="1" trace="ReductionRule20#()V" />
       <node id="3308300503039570163" at="312,0,315,0" concept="1" trace="ReductionRule21#()V" />
       <node id="3308300503039570163" at="323,0,326,0" concept="1" trace="RootMappingRule0#()V" />
-      <node id="3308300503039570163" at="326,0,329,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="3308300503039570163" at="335,0,338,0" concept="1" trace="DropRootRule0#()V" />
-      <node id="3308300503039570163" at="338,0,341,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="3308300503039570163" at="329,0,333,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3308300503039570163" at="332,0,335,0" concept="1" trace="DropRootRule0#()V" />
+      <node id="3308300503039570163" at="326,0,330,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039570163" at="84,0,90,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039570163" at="95,0,101,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3308300503039570163" at="106,0,112,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
@@ -320,10 +316,8 @@
       <scope id="3308300503039570163" at="301,30,302,309" />
       <scope id="3308300503039570163" at="312,30,313,310" />
       <scope id="3308300503039570163" at="323,31,324,311" />
-      <scope id="3308300503039570163" at="326,127,327,18" />
-      <scope id="3308300503039570163" at="335,28,336,298" />
-      <scope id="3308300503039570163" at="338,127,339,18" />
-      <scope id="3308300503039570163" at="329,142,331,20">
+      <scope id="3308300503039570163" at="332,28,333,298" />
+      <scope id="3308300503039570163" at="326,142,328,20">
         <var name="result" id="3308300503039570163" />
       </scope>
       <scope id="3308300503039570163" at="44,0,47,0" />
@@ -451,16 +445,8 @@
         <var name="tlist1" id="3308300503039570163" />
       </scope>
       <scope id="3308300503039570163" at="323,0,326,0" />
-      <scope id="3308300503039570163" at="326,0,329,0">
-        <var name="context" id="3308300503039570163" />
-        <var name="environment" id="3308300503039570163" />
-      </scope>
-      <scope id="3308300503039570163" at="335,0,338,0" />
-      <scope id="3308300503039570163" at="338,0,341,0">
-        <var name="context" id="3308300503039570163" />
-        <var name="environment" id="3308300503039570163" />
-      </scope>
-      <scope id="3308300503039570163" at="329,0,333,0">
+      <scope id="3308300503039570163" at="332,0,335,0" />
+      <scope id="3308300503039570163" at="326,0,330,0">
         <var name="context" id="3308300503039570163" />
         <var name="environment" id="3308300503039570163" />
       </scope>
@@ -534,7 +520,8 @@
       <scope id="3308300503039570163" at="37,0,44,0">
         <var name="model" id="3308300503039570163" />
       </scope>
-      <unit id="3308300503039570163" at="334,0,342,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$DropRootRule0" />
+      <unit id="3308300503039570163" at="331,0,336,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$DropRootRule0" />
+      <unit id="3308300503039570163" at="322,0,331,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$RootMappingRule0" />
       <unit id="3308300503039570163" at="80,0,91,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule0" />
       <unit id="3308300503039570163" at="91,0,102,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule1" />
       <unit id="3308300503039570163" at="102,0,113,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule2" />
@@ -557,8 +544,7 @@
       <unit id="3308300503039570163" at="289,0,300,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule19" />
       <unit id="3308300503039570163" at="300,0,311,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule20" />
       <unit id="3308300503039570163" at="311,0,322,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$ReductionRule21" />
-      <unit id="3308300503039570163" at="322,0,334,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain$RootMappingRule0" />
-      <unit id="3308300503039570163" at="30,0,343,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain" />
+      <unit id="3308300503039570163" at="30,0,337,0" name="jetbrains.mps.samples.Kaja.generator.template.main.Mappingmain" />
     </file>
   </root>
   <root nodeRef="r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)/3308300503039570165">
@@ -3454,7 +3440,7 @@
       <node id="7060824959896164452" at="37,62,38,17" concept="9" />
       <node id="7060824959896164452" at="40,172,41,16" concept="9" />
       <node id="7060824959896164452" at="46,29,47,305" concept="13" />
-      <node id="7060824959896164452" at="50,131,51,131" concept="9" />
+      <node id="7060824959896164452" at="50,94,51,131" concept="9" />
       <node id="7060824959896164452" at="54,108,55,80" concept="8" />
       <node id="7060824959896164452" at="55,80,56,206" concept="8" />
       <node id="7060824959896164452" at="57,11,58,114" concept="3" />
@@ -3462,7 +3448,7 @@
       <node id="7060824959896164452" at="59,510,60,484" concept="3" />
       <node id="7060824959896164452" at="62,7,63,48" concept="9" />
       <node id="7060824959896164452" at="67,29,68,305" concept="13" />
-      <node id="7060824959896164452" at="71,131,72,131" concept="9" />
+      <node id="7060824959896164452" at="71,94,72,131" concept="9" />
       <node id="7060824959896164452" at="75,108,76,80" concept="8" />
       <node id="7060824959896164452" at="76,80,77,206" concept="8" />
       <node id="7060824959896164452" at="78,11,79,114" concept="3" />
@@ -3470,7 +3456,7 @@
       <node id="7060824959896164452" at="80,510,81,484" concept="3" />
       <node id="7060824959896164452" at="83,7,84,48" concept="9" />
       <node id="7060824959896164452" at="88,29,89,305" concept="13" />
-      <node id="7060824959896164452" at="92,131,93,131" concept="9" />
+      <node id="7060824959896164452" at="92,94,93,131" concept="9" />
       <node id="7060824959896164452" at="96,108,97,80" concept="8" />
       <node id="7060824959896164452" at="97,80,98,206" concept="8" />
       <node id="7060824959896164452" at="99,11,100,114" concept="3" />
@@ -3478,7 +3464,7 @@
       <node id="7060824959896164452" at="101,510,102,484" concept="3" />
       <node id="7060824959896164452" at="104,7,105,48" concept="9" />
       <node id="7060824959896164452" at="109,29,110,305" concept="13" />
-      <node id="7060824959896164452" at="113,131,114,131" concept="9" />
+      <node id="7060824959896164452" at="113,94,114,131" concept="9" />
       <node id="7060824959896164452" at="117,108,118,80" concept="8" />
       <node id="7060824959896164452" at="118,80,119,206" concept="8" />
       <node id="7060824959896164452" at="120,11,121,114" concept="3" />
@@ -3495,10 +3481,10 @@
       <node id="7060824959896164452" at="67,0,70,0" concept="1" trace="ReductionRule1#()V" />
       <node id="7060824959896164452" at="88,0,91,0" concept="1" trace="ReductionRule2#()V" />
       <node id="7060824959896164452" at="109,0,112,0" concept="1" trace="ReductionRule3#()V" />
-      <node id="7060824959896164452" at="49,0,53,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="7060824959896164452" at="70,0,74,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="7060824959896164452" at="91,0,95,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="7060824959896164452" at="112,0,116,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="7060824959896164452" at="49,0,53,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="7060824959896164452" at="70,0,74,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="7060824959896164452" at="91,0,95,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="7060824959896164452" at="112,0,116,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="7060824959896164452" at="56,206,62,7" concept="15" />
       <node id="7060824959896164452" at="77,206,83,7" concept="15" />
       <node id="7060824959896164452" at="98,206,104,7" concept="15" />
@@ -3518,13 +3504,13 @@
       <scope id="7060824959896164452" at="37,62,38,17" />
       <scope id="7060824959896164452" at="40,172,41,16" />
       <scope id="7060824959896164452" at="46,29,47,305" />
-      <scope id="7060824959896164452" at="50,131,51,131" />
+      <scope id="7060824959896164452" at="50,94,51,131" />
       <scope id="7060824959896164452" at="67,29,68,305" />
-      <scope id="7060824959896164452" at="71,131,72,131" />
+      <scope id="7060824959896164452" at="71,94,72,131" />
       <scope id="7060824959896164452" at="88,29,89,305" />
-      <scope id="7060824959896164452" at="92,131,93,131" />
+      <scope id="7060824959896164452" at="92,94,93,131" />
       <scope id="7060824959896164452" at="109,29,110,305" />
-      <scope id="7060824959896164452" at="113,131,114,131" />
+      <scope id="7060824959896164452" at="113,94,114,131" />
       <scope id="7060824959896164452" at="43,0,45,0">
         <var name="context" id="7060824959896164452" />
         <var name="environment" id="7060824959896164452" />
@@ -3550,19 +3536,15 @@
       <scope id="7060824959896164452" at="120,11,123,484" />
       <scope id="7060824959896164452" at="49,0,53,0">
         <var name="context" id="7060824959896164452" />
-        <var name="env" id="7060824959896164452" />
       </scope>
       <scope id="7060824959896164452" at="70,0,74,0">
         <var name="context" id="7060824959896164452" />
-        <var name="env" id="7060824959896164452" />
       </scope>
       <scope id="7060824959896164452" at="91,0,95,0">
         <var name="context" id="7060824959896164452" />
-        <var name="env" id="7060824959896164452" />
       </scope>
       <scope id="7060824959896164452" at="112,0,116,0">
         <var name="context" id="7060824959896164452" />
-        <var name="env" id="7060824959896164452" />
       </scope>
       <scope id="7060824959896164452" at="54,108,63,48">
         <var name="environment" id="7060824959896164452" />

@@ -160,7 +160,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // prepare weaving
     ttrace.push("weavings", false);
     myWeavingProcessor = new WeavingProcessor(this);
-    myWeavingProcessor.prepareWeavingRules(getInputModel(), myRuleManager.getWeaving_MappingRules());
+    myWeavingProcessor.prepareWeavingRules(getInputModel());
     ttrace.pop();
 
     myTemplateProcessor = new TemplateProcessor(this);

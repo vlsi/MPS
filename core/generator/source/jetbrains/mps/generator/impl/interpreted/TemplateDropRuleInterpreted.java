@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,9 +37,9 @@ public class TemplateDropRuleInterpreted extends DropRootRuleBase implements Tem
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = environment.getQueryProvider(getRuleNode()).getDropRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getDropRuleCondition(myRuleNode);
     }
     return myCondition.check(new DropRootRuleContext(context, getRuleNode()));
   }

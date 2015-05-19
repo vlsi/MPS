@@ -6166,7 +6166,7 @@
       <node id="8274572146452539018" at="73,60,74,34" concept="10" />
       <node id="8274572146452539018" at="76,34,77,16" concept="10" />
       <node id="8274572146452539018" at="80,29,81,337" concept="14" />
-      <node id="8274572146452539018" at="84,131,85,131" concept="10" />
+      <node id="8274572146452539018" at="84,94,85,131" concept="10" />
       <node id="8274572146452539018" at="88,108,89,80" concept="9" />
       <node id="8274572146452539018" at="89,80,90,214" concept="9" />
       <node id="8274572146452539018" at="91,11,92,114" concept="4" />
@@ -6206,7 +6206,7 @@
       <node id="8274572146452539018" at="118,15,121,15" concept="7" />
       <node id="8274572146452539018" at="125,11,128,11" concept="7" />
       <node id="8274572146452539018" at="39,0,43,0" concept="2" trace="Mappingpreprocess#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
-      <node id="8274572146452539018" at="83,0,87,0" concept="8" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="8274572146452539018" at="83,0,87,0" concept="8" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="8274572146452539018" at="96,118,101,15" concept="4" />
       <node id="8274572146452539018" at="107,573,116,17" concept="0" />
       <node id="8274572146452539018" at="103,209,118,15" concept="15" />
@@ -6231,7 +6231,7 @@
       <scope id="8274572146452539018" at="73,60,74,34" />
       <scope id="8274572146452539018" at="76,34,77,16" />
       <scope id="8274572146452539018" at="80,29,81,337" />
-      <scope id="8274572146452539018" at="84,131,85,131" />
+      <scope id="8274572146452539018" at="84,94,85,131" />
       <scope id="8274572146452539018" at="98,39,99,109" />
       <scope id="8274572146452539018" at="112,71,113,174" />
       <scope id="8274572146452539018" at="119,35,120,171" />
@@ -6261,7 +6261,6 @@
       </scope>
       <scope id="8274572146452539018" at="83,0,87,0">
         <var name="context" id="8274572146452539018" />
-        <var name="env" id="8274572146452539018" />
       </scope>
       <scope id="8274572146452539018" at="108,17,115,41">
         <var name="copySrcInput4" id="8274572146452539018" />

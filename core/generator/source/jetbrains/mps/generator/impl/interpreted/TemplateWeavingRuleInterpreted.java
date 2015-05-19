@@ -85,9 +85,9 @@ public class TemplateWeavingRuleInterpreted extends WeaveRuleBase implements Tem
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = environment.getQueryProvider(getRuleNode()).getWeaveRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getWeaveRuleCondition(myRuleNode);
     }
     return myCondition.check(new WeavingMappingRuleContext(context, getRuleNode()));
   }

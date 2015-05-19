@@ -27,6 +27,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
@@ -50,9 +51,9 @@ public class TemplateRootMappingRuleInterpreted extends MapRootRuleBase implemen
   }
 
   @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = environment.getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
     }
     return myCondition.check(new MapRootRuleContext(context, getRuleNode()));
   }

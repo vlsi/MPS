@@ -67,7 +67,7 @@
       <node id="7980748436587788164" at="133,7,134,80" concept="2" />
       <node id="7980748436587788164" at="134,80,135,48" concept="7" />
       <node id="7980748436587788164" at="139,29,140,347" concept="10" />
-      <node id="7980748436587788164" at="143,131,144,131" concept="7" />
+      <node id="7980748436587788164" at="143,94,144,131" concept="7" />
       <node id="7980748436587788164" at="147,108,148,80" concept="6" />
       <node id="7980748436587788164" at="148,80,149,222" concept="6" />
       <node id="7980748436587788164" at="150,11,151,114" concept="2" />
@@ -97,7 +97,7 @@
       <node id="7980748436587788164" at="139,0,142,0" concept="1" trace="ReductionRule1#()V" />
       <node id="7980748436587788164" at="153,0,156,0" concept="5" trace="resolve#()Ljava/lang/Object;" />
       <node id="7980748436587788164" at="40,0,44,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
-      <node id="7980748436587788164" at="142,0,146,0" concept="5" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="7980748436587788164" at="142,0,146,0" concept="5" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="7980748436587788164" at="114,219,119,13" concept="11" />
       <node id="7980748436587788164" at="151,114,156,11" concept="2" />
       <node id="7980748436587788164" at="89,114,98,9" concept="0" />
@@ -130,7 +130,7 @@
       <scope id="7980748436587788164" at="122,80,123,179" />
       <scope id="7980748436587788164" at="127,63,128,161" />
       <scope id="7980748436587788164" at="139,29,140,347" />
-      <scope id="7980748436587788164" at="143,131,144,131" />
+      <scope id="7980748436587788164" at="143,94,144,131" />
       <scope id="7980748436587788164" at="153,35,154,105" />
       <scope id="7980748436587788164" at="40,43,42,129" />
       <scope id="7980748436587788164" at="115,17,117,340" />
@@ -168,7 +168,6 @@
       </scope>
       <scope id="7980748436587788164" at="142,0,146,0">
         <var name="context" id="7980748436587788164" />
-        <var name="env" id="7980748436587788164" />
       </scope>
       <scope id="7980748436587788164" at="150,11,156,11" />
       <scope id="7980748436587788164" at="90,9,97,33">
