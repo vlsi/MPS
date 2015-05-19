@@ -69,6 +69,7 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
     return myRuleNode;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myAppConcept.getQualifiedName();

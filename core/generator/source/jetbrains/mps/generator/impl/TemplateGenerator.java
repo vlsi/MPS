@@ -340,17 +340,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
-    String applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-      return;
-    }
-    boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(rule.getApplicableConcept(), rule.applyToInheritors());
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) continue;
+      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+        continue;
+      }
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
@@ -416,7 +412,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       copyProcessor = new PartialCopyFacility(env, myDeltaBuilder);
     }
     // check if can drop
-    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules())) {
+    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules(inputRootNode))) {
       setChanged();
       return;
     }
@@ -691,9 +687,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     /**
      * @return true if one of drop rules matched
      */
-    public final boolean checkDropRules(SNode inputRootNode, Iterable<TemplateDropRootRule> rules) throws GenerationFailureException {
+    public final boolean checkDropRules(SNode inputRootNode, List<TemplateDropRootRule> rules) throws GenerationFailureException {
+      final DefaultTemplateContext tc = new DefaultTemplateContext(myEnv, inputRootNode, null);
       for (TemplateDropRootRule dropRootRule : rules) {
-        if (isApplicableDropRootRule(inputRootNode, dropRootRule)) {
+        if (myEnv.getQueryExecutor().isApplicable(dropRootRule, tc)) {
           drop(inputRootNode, dropRootRule);
           return true;
         }
@@ -704,19 +701,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     protected abstract void drop(SNode inputRootNode, TemplateDropRootRule rule);
 
     public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
-
-    private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
-      String applicableConcept = rule.getApplicableConcept();
-      if (applicableConcept == null) {
-        getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-        return false;
-      }
-
-      if (inputRootNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(applicableConcept)))) {
-        return myEnv.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnv, inputRootNode, null));
-      }
-      return false;
-    }
   }
 
   static class GeneratedRootDescriptor {

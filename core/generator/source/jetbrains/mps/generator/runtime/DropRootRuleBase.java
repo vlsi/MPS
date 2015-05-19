@@ -54,9 +54,16 @@ public abstract class DropRootRuleBase implements TemplateDropRootRule {
     return myRuleNode;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myAppConcept.getQualifiedName();
+  }
+
+  @Override
+  public final boolean applyToInheritors() {
+    // drop rules are always applicable to sub-concepts
+    return true;
   }
 
   /**

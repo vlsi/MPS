@@ -67,6 +67,7 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
     return myRule;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myConcept;

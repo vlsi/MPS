@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * @deprecated Use {@link jetbrains.mps.generator.runtime.TemplateModelBase}. Unfortunate naming.
+ * Captures aspect of template rules that depend on input node's concept.
+ * <p/>
+ * In fact, might have been independent from rule (i.e. not part of a rule's API), MapConfig could have
+ * register rule against concept at startup/init, and then rules don't need to know (except for trace/debug/log purposes) concept they run against
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-@Deprecated
-@ToRemove(version = 3.2)
-public abstract class BaseTemplateModel extends TemplateModelBase {
-  protected BaseTemplateModel(TemplateModule module) {
-    super(module);
-  }
+public interface TemplateRuleForConcept {
+  @NotNull
+  String getApplicableConcept();
+
+  boolean applyToInheritors();
 }

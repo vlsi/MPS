@@ -54,6 +54,7 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
     myKeepSourceRoot = keepSourceRoot;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myAppConcept.getQualifiedName();
@@ -76,20 +77,19 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   }
 
   /**
-   * Compatibility with new MPS 3.3 API method, always <code>true</code>
+   * Compatibility with code generated in MPS 3.2, delegate to new method.
    */
   @ToRemove(version = 3.3)
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return true;
+    return isApplicable(context);
   }
 
   /**
-   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
-   * Subclasses can rely on default implementation to return <code>true</code>.
+   * Default implementation subclasses can rely on, always <code>true</code>
    */
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-    return isApplicable(context.getEnvironment(), context);
+    return true;
   }
 }

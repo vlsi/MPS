@@ -42,7 +42,6 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -164,7 +163,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Nullable
   @Override
   public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
-    FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
+    FastRuleFinder rf = generator.getRuleManager().getSwitchRules(_switch);
     Collection<SNode> outputNodes = tryToReduce(rf, context);
     if (outputNodes != null) {
       if (outputNodes.size() == 1 && context.getInputName() != null) {
@@ -303,7 +302,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Nullable
   Collection<SNode> tryToReduce(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    FastRuleFinder rf = generator.getRuleManager().getRuleFinder();
+    FastRuleFinder rf = generator.getRuleManager().getReductionRules();
     Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(this, inputNode, null));
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
@@ -329,11 +328,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
    * returns null if no reductions found
    */
   @Nullable
-  Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(FastRuleFinder<TemplateReductionRule> ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
     final SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
     // find rule
-    TemplateReductionRule[] conceptRules = ruleFinder.findReductionRules(inputNode);
+    List<TemplateReductionRule> conceptRules = ruleFinder.findReductionRules(inputNode);
     if (conceptRules == null) {
       return null;
     }

@@ -50,10 +50,6 @@ public class WeavingProcessor {
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
       String applicableConcept = rule.getApplicableConcept();
-      if (applicableConcept == null) {
-        myGenerator.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-        continue;
-      }
       boolean includeInheritors = rule.applyToInheritors();
       for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {

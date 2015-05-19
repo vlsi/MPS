@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,9 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.util.FlattenIterable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -45,53 +47,47 @@ public class RuleManager {
   private FlattenIterable<TemplateCreateRootRule> myCreateRootRules;
   private FlattenIterable<TemplateRootMappingRule> myRoot_MappingRules;
   private FlattenIterable<TemplateWeavingRule> myWeaving_MappingRules;
-  private FlattenIterable<TemplateDropRootRule> myDropRootRules;
 
-  private TemplateSwitchGraph myTemplateSwitchGraph;
+  private final TemplateSwitchGraph myTemplateSwitchGraph;
 
-  private Map<SModelReference, TemplateModel> myModelMap;
+  private final Map<SModelReference, TemplateModel> myModelMap;
 
-  private ScriptManager myPreScripts, myPostScripts;
+  private final ScriptManager myPreScripts, myPostScripts;
 
-  private final FastRuleFinder myRuleFinder;
+  private final FastRuleFinder<TemplateReductionRule> myReductionRuleFinder;
+  private final FastRuleFinder<TemplateDropRootRule> myDropRuleFinder;
 
   public RuleManager(GenerationPlan plan, List<TemplateMappingConfiguration> configurations, IGeneratorLogger logger) {
     myTemplateSwitchGraph = plan.getTemplateSwitchGraph();
-    if (myTemplateSwitchGraph == null) throw new IllegalStateException("switch graph is not initialized");
-    initialize(configurations, logger);
-    myRuleFinder = initRules(configurations);
-
-    myModelMap = new HashMap<SModelReference, TemplateModel>();
-    for (TemplateModel m : plan.getTemplateModels()) {
-      myModelMap.put(m.getSModelReference(), m);
+    if (myTemplateSwitchGraph == null) {
+      throw new IllegalStateException("switch graph is not initialized");
     }
-  }
 
-  private void initialize(List<TemplateMappingConfiguration> list, IGeneratorLogger logger) {
-    myCreateRootRules = new FlattenIterable<TemplateCreateRootRule>(list.size());
-    myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(list.size());
-    myWeaving_MappingRules = new FlattenIterable<TemplateWeavingRule>(list.size());
-    myDropRootRules = new FlattenIterable<TemplateDropRootRule>(list.size());
-
-    for (TemplateMappingConfiguration mappingConfig : list) {
-      myCreateRootRules.add(mappingConfig.getCreateRules());
-      myRoot_MappingRules.add(mappingConfig.getRootRules());
-      myWeaving_MappingRules.add(mappingConfig.getWeavingRules());
-      myDropRootRules.add(mappingConfig.getDropRules());
-    }
+    myCreateRootRules = new FlattenIterable<TemplateCreateRootRule>(configurations.size());
+    myRoot_MappingRules = new FlattenIterable<TemplateRootMappingRule>(configurations.size());
+    myWeaving_MappingRules = new FlattenIterable<TemplateWeavingRule>(configurations.size());
+    FlattenIterable<TemplateDropRootRule> dropRootRules = new FlattenIterable<TemplateDropRootRule>(configurations.size());
+    FlattenIterable<TemplateReductionRule> reductionRules = new FlattenIterable<TemplateReductionRule>();
 
     LinkedList<TemplateMappingScript> postScripts = new LinkedList<TemplateMappingScript>();
     LinkedList<TemplateMappingScript> preScripts = new LinkedList<TemplateMappingScript>();
-    String warnMsg = "skip script %s - wrong script kind";
-    for (TemplateMappingConfiguration mappingConfigs : list) {
-      for (TemplateMappingScript postMappingScript : mappingConfigs.getPostScripts()) {
+
+    final String warnMsg = "skip script %s - wrong script kind";
+    for (TemplateMappingConfiguration mappingConfig : configurations) {
+      myCreateRootRules.add(mappingConfig.getCreateRules());
+      myRoot_MappingRules.add(mappingConfig.getRootRules());
+      myWeaving_MappingRules.add(mappingConfig.getWeavingRules());
+
+      dropRootRules.add(mappingConfig.getDropRules());
+      reductionRules.add(mappingConfig.getReductionRules());
+      for (TemplateMappingScript postMappingScript : mappingConfig.getPostScripts()) {
         if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
           logger.warning(postMappingScript.getScriptNode(), String.format(warnMsg, postMappingScript.getLongName()));
           continue;
         }
         postScripts.add(postMappingScript);
       }
-      for (TemplateMappingScript preMappingScript : mappingConfigs.getPreScripts()) {
+      for (TemplateMappingScript preMappingScript : mappingConfig.getPreScripts()) {
         if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
           logger.warning(preMappingScript.getScriptNode(), String.format(warnMsg, preMappingScript.getLongName()));
           continue;
@@ -99,41 +95,46 @@ public class RuleManager {
         preScripts.add(preMappingScript);
       }
     }
+
+    myReductionRuleFinder = new FastRuleFinder<TemplateReductionRule>(reductionRules);
+    myDropRuleFinder = new FastRuleFinder<TemplateDropRootRule>(dropRootRules);
+
     myPreScripts = new ScriptManager(preScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(preScripts));
     myPostScripts = new ScriptManager(postScripts.isEmpty() ? Collections.<TemplateMappingScript>emptyList() : new ArrayList<TemplateMappingScript>(postScripts));
-  }
 
-
-  private FastRuleFinder initRules(List<TemplateMappingConfiguration> configuration) {
-    FlattenIterable<TemplateReductionRule> rules = new FlattenIterable<TemplateReductionRule>();
-    for (TemplateMappingConfiguration c : configuration) {
-      rules.add(c.getReductionRules());
+    myModelMap = new HashMap<SModelReference, TemplateModel>();
+    for (TemplateModel m : plan.getTemplateModels()) {
+      myModelMap.put(m.getSModelReference(), m);
     }
-
-    return new FastRuleFinder(rules);
   }
 
+  @NotNull
   public Iterable<TemplateCreateRootRule> getCreateRootRules() {
     return myCreateRootRules;
   }
 
+  @NotNull
   public Iterable<TemplateRootMappingRule> getRoot_MappingRules() {
     return myRoot_MappingRules;
   }
 
+  @NotNull
   public FlattenIterable<TemplateWeavingRule> getWeaving_MappingRules() {
     return myWeaving_MappingRules;
   }
 
-  public FlattenIterable<TemplateDropRootRule> getDropRootRules() {
-    return myDropRootRules;
+  @NotNull
+  public List<TemplateDropRootRule> getDropRootRules(SNode inputRootNode) {
+    final List<TemplateDropRootRule> rv = myDropRuleFinder.findReductionRules(inputRootNode);
+    return rv == null ? Collections.<TemplateDropRootRule>emptyList() : rv;
   }
 
-  public FastRuleFinder getRuleFinder() {
-    return myRuleFinder;
+  @NotNull
+  public FastRuleFinder<TemplateReductionRule> getReductionRules() {
+    return myReductionRuleFinder;
   }
 
-  public FastRuleFinder getRuleFinder(SNodeReference switch_) {
+  public FastRuleFinder getSwitchRules(SNodeReference switch_) {
     return myTemplateSwitchGraph.getRuleFinder(switch_);
   }
 
