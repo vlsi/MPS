@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -82,8 +83,12 @@ public class NewModelDialog extends DialogWrapper {
     myProject = project;
     myModule = module;
     myNamespace = (namespace == null ? "" : namespace);
-    assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
-    initContentPane();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
+        initContentPane();
+      }
+    });
     if (stereotype != null) {
       myModelStereotype.setSelectedItem(stereotype);
       myModelStereotype.setEnabled(!(strict));
@@ -270,12 +275,16 @@ public class NewModelDialog extends DialogWrapper {
         }
       });
 
-      for (ModelRoot modelRoot : myModule.getModelRoots()) {
-        if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
-          myModelRoots.addItem(modelRoot);
-          myModelRoots.setSelectedItem(modelRoot);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (ModelRoot modelRoot : myModule.getModelRoots()) {
+            if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
+              myModelRoots.addItem(modelRoot);
+              myModelRoots.setSelectedItem(modelRoot);
+            }
+          }
         }
-      }
+      });
     }
 
     myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<SModel>() {
