@@ -50,7 +50,6 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages", BootstrapLanguages.findUsagesLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Find+usages"),
 
-  @Deprecated
   PLUGIN("plugin", BootstrapLanguages.pluginLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Plugin"),
 
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
