@@ -21,6 +21,42 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/2220861080746402276">
+    <file name="MpsRunnerProperties.java">
+      <node id="4271560773254039635" at="7,0,8,0" concept="14" trace="START_CLASS" />
+      <node id="2220861080746371301" at="8,0,9,0" concept="14" trace="START_METHOD" />
+      <node id="2220861080746419346" at="10,0,11,0" concept="5" trace="myScript" />
+      <node id="2220861080746418552" at="12,45,13,22" concept="4" />
+      <node id="2220861080746420230" at="16,63,17,50" concept="4" />
+      <node id="2220861080746420235" at="17,50,18,16" concept="11" />
+      <node id="2220861080746420243" at="20,33,21,45" concept="11" />
+      <node id="2220861080746424425" at="23,65,24,52" concept="4" />
+      <node id="2220861080746424430" at="24,52,25,16" concept="11" />
+      <node id="2220861080746424440" at="27,34,28,46" concept="11" />
+      <node id="2220861080746418547" at="12,0,15,0" concept="3" trace="MpsRunnerProperties#(Ljetbrains/mps/tool/common/Script;)V" />
+      <node id="2220861080746420241" at="20,0,23,0" concept="9" trace="getStartClass#()Ljava/lang/String;" />
+      <node id="2220861080746424438" at="27,0,30,0" concept="9" trace="getStartMethod#()Ljava/lang/String;" />
+      <node id="2220861080746420226" at="16,0,20,0" concept="9" trace="setStartClass#(Ljava/lang/String;)Ljetbrains/mps/tool/common/MpsRunnerProperties;" />
+      <node id="2220861080746424421" at="23,0,27,0" concept="9" trace="setStartMethod#(Ljava/lang/String;)Ljetbrains/mps/tool/common/MpsRunnerProperties;" />
+      <scope id="2220861080746418551" at="12,45,13,22" />
+      <scope id="2220861080746420242" at="20,33,21,45" />
+      <scope id="2220861080746424439" at="27,34,28,46" />
+      <scope id="2220861080746420229" at="16,63,18,16" />
+      <scope id="2220861080746424424" at="23,65,25,16" />
+      <scope id="2220861080746418547" at="12,0,15,0">
+        <var name="script" id="2220861080746418549" />
+      </scope>
+      <scope id="2220861080746420241" at="20,0,23,0" />
+      <scope id="2220861080746424438" at="27,0,30,0" />
+      <scope id="2220861080746420226" at="16,0,20,0">
+        <var name="startClass" id="2220861080746420227" />
+      </scope>
+      <scope id="2220861080746424421" at="23,0,27,0">
+        <var name="startMethod" id="2220861080746424422" />
+      </scope>
+      <unit id="2220861080746402276" at="6,0,32,0" name="jetbrains.mps.tool.common.MpsRunnerProperties" />
+    </file>
+  </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/2546981710035421490">
     <file name="IMessageFormat.java">
       <node id="2546981710035421492" at="8,0,9,0" concept="9" trace="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />

@@ -1157,5 +1157,200 @@
     </node>
     <node concept="3Tm1VV" id="JPOEsurtc4" role="1B3o_S" />
   </node>
+  <node concept="312cEu" id="3H7CugYd5nw">
+    <property role="TrG5h" value="MpsRunnerTask" />
+    <node concept="312cEg" id="1Vi5mb_opw$" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myProperties" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="1Vi5mb_op2v" role="1B3o_S" />
+      <node concept="3uibUv" id="1Vi5mb_opjQ" role="1tU5fm">
+        <ref role="3uigEE" to="asz6:1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
+      </node>
+    </node>
+    <node concept="3clFbW" id="1Vi5mb_opSC" role="jymVt">
+      <node concept="3cqZAl" id="1Vi5mb_opSE" role="3clF45" />
+      <node concept="3Tm1VV" id="1Vi5mb_opSF" role="1B3o_S" />
+      <node concept="3clFbS" id="1Vi5mb_opSG" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_opYR" role="3cqZAp">
+          <node concept="37vLTI" id="1Vi5mb_oq0o" role="3clFbG">
+            <node concept="2ShNRf" id="1Vi5mb_oq2e" role="37vLTx">
+              <node concept="1pGfFk" id="1Vi5mb_oq2d" role="2ShVmc">
+                <ref role="37wK5l" to="asz6:1Vi5mb_om5N" resolve="MpsRunnerProperties" />
+                <node concept="37vLTw" id="1Vi5mb_oq3B" role="37wK5m">
+                  <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="1Vi5mb_opYQ" role="37vLTJ">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1Vi5mb_oJC1" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_oJDU" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_oJBZ" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_oJHJ" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:1Vi5mb_onx_" resolve="setStartMethod" />
+              <node concept="Xl_RD" id="1Vi5mb_oJIW" role="37wK5m">
+                <property role="Xl_RC" value="runFromMPS" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1Vi5mb_oqs1" role="jymVt" />
+    <node concept="3clFb_" id="3H7CugYdMHL" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getWorkerClass" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tmbuc" id="3H7CugYdMHM" role="1B3o_S" />
+      <node concept="3clFbS" id="3H7CugYdMHN" role="3clF47">
+        <node concept="3clFbF" id="3H7CugYdMHO" role="3cqZAp">
+          <node concept="Xl_RD" id="3H7CugYdMHP" role="3clFbG">
+            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.MpsRunnerWorker" />
+          </node>
+        </node>
+      </node>
+      <node concept="17QB3L" id="3H7CugYdMHQ" role="3clF45" />
+      <node concept="2AHcQZ" id="3H7CugYdMHR" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3H7CugYdMwg" role="jymVt" />
+    <node concept="3clFb_" id="3H7CugYdMN6" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getStartClass" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="3H7CugYdMN7" role="3clF47">
+        <node concept="3cpWs6" id="1Vi5mb_osJU" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_osWK" role="3cqZAk">
+            <node concept="37vLTw" id="1Vi5mb_osSm" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_ot3B" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:1Vi5mb_omwh" resolve="getStartClass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3H7CugYdMNe" role="1B3o_S" />
+      <node concept="17QB3L" id="3H7CugYdP6c" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="3H7CugYdMNi" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setStartClass" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="3H7CugYdMNj" role="1B3o_S" />
+      <node concept="3cqZAl" id="3H7CugYdMNk" role="3clF45" />
+      <node concept="3clFbS" id="3H7CugYdMNl" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_otd9" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_otfo" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_otd7" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_otjH" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:1Vi5mb_omw2" resolve="setStartClass" />
+              <node concept="37vLTw" id="1Vi5mb_otlo" role="37wK5m">
+                <ref role="3cqZAo" node="3H7CugYdMNt" resolve="startClass" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="3H7CugYdMNt" role="3clF46">
+        <property role="TrG5h" value="startClass" />
+        <property role="3TUv4t" value="false" />
+        <node concept="17QB3L" id="3H7CugYdP8w" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_ofpb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getStartMethod" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="1Vi5mb_ofpc" role="3clF47">
+        <node concept="3cpWs6" id="1Vi5mb_ofpd" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_otuk" role="3cqZAk">
+            <node concept="37vLTw" id="1Vi5mb_otqr" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_ot$G" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:1Vi5mb_onxQ" resolve="getStartMethod" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_ofph" role="1B3o_S" />
+      <node concept="17QB3L" id="1Vi5mb_ofpi" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_ofpo" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setStartMethod" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="1Vi5mb_ofpp" role="1B3o_S" />
+      <node concept="3cqZAl" id="1Vi5mb_ofpq" role="3clF45" />
+      <node concept="3clFbS" id="1Vi5mb_ofpr" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_otDJ" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_otF1" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_otDH" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_otIQ" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:1Vi5mb_onx_" resolve="setStartMethod" />
+              <node concept="37vLTw" id="1Vi5mb_otKx" role="37wK5m">
+                <ref role="3cqZAo" node="1Vi5mb_ofpx" resolve="startMethod" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1Vi5mb_ofpx" role="3clF46">
+        <property role="TrG5h" value="startMethod" />
+        <property role="3TUv4t" value="false" />
+        <node concept="17QB3L" id="1Vi5mb_ofpy" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3H7CugYf_Ro" role="jymVt" />
+    <node concept="3clFb_" id="3H7CugYf_Nq" role="jymVt">
+      <property role="TrG5h" value="addConfiguredModule" />
+      <node concept="37vLTG" id="3H7CugYf_Nr" role="3clF46">
+        <property role="TrG5h" value="module" />
+        <node concept="3uibUv" id="3H7CugYf_Ns" role="1tU5fm">
+          <ref role="3uigEE" node="7SWBkX45CM0" resolve="ModuleChunkPart" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3H7CugYf_Nt" role="1B3o_S" />
+      <node concept="3clFbS" id="3H7CugYf_Nu" role="3clF47">
+        <node concept="3clFbF" id="3H7CugYf_Nv" role="3cqZAp">
+          <node concept="2OqwBi" id="3H7CugYf_Nw" role="3clFbG">
+            <node concept="37vLTw" id="3H7CugYf_Nx" role="2Oq$k0">
+              <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+            </node>
+            <node concept="liA8E" id="3H7CugYf_Ny" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:KL8Aql8epR" resolve="addModuleFile" />
+              <node concept="2OqwBi" id="3H7CugYf_Nz" role="37wK5m">
+                <node concept="liA8E" id="3H7CugYf_N$" role="2OqNvi">
+                  <ref role="37wK5l" node="7SWBkX45CX1" resolve="getFile" />
+                </node>
+                <node concept="37vLTw" id="3H7CugYf_N_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3H7CugYf_Nr" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="3H7CugYf_NA" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="3H7CugYdMLR" role="jymVt" />
+    <node concept="3Tm1VV" id="3H7CugYd5nx" role="1B3o_S" />
+    <node concept="3uibUv" id="3H7CugYdcXd" role="1zkMxy">
+      <ref role="3uigEE" node="3GGnItM970V" resolve="GenerateTask" />
+    </node>
+  </node>
 </model>
 
