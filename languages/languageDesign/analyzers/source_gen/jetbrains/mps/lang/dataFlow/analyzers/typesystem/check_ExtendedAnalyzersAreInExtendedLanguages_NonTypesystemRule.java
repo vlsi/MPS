@@ -22,19 +22,23 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class check_ExtendedAnalyzersAreInExtendedLanguages_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ExtendedAnalyzersAreInExtendedLanguages_NonTypesystemRule() {
   }
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SModule module = SNodeOperations.getModel(rule).getModule();
+    SModule module = check_b4f08s_a0a0b(SNodeOperations.getModel(rule));
     if (!(module instanceof Language)) {
       return;
     }
     Language ruleLanguage = ((Language) module);
     Set<Language> extendedLanguages = LanguageDependenciesManager.getAllExtendedLanguages(ruleLanguage);
     SNode analyzer = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer"));
-    SModule analyzerModule = SNodeOperations.getModel(analyzer).getModule();
+    if (analyzer == null) {
+      return;
+    }
+    SModule analyzerModule = check_b4f08s_a0g0b(SNodeOperations.getModel(analyzer));
     if (!(analyzerModule instanceof Language)) {
       return;
     }
@@ -61,5 +65,17 @@ public class check_ExtendedAnalyzersAreInExtendedLanguages_NonTypesystemRule ext
   }
   public boolean overrides() {
     return false;
+  }
+  private static SModule check_b4f08s_a0a0b(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModule check_b4f08s_a0g0b(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }
