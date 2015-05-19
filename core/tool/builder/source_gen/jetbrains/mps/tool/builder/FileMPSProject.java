@@ -35,8 +35,7 @@ public class FileMPSProject extends Project {
   private String myErrors;
   private FileMPSProject.ProjectDescriptor myDescriptor;
   public FileMPSProject(File file) {
-    super();
-    setProjectFile(file);
+    super(file);
   }
   @Override
   public String getName() {

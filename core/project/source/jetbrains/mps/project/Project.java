@@ -42,15 +42,15 @@ import java.util.Set;
  * Core MPS Project.
  */
 public abstract class Project implements MPSModuleOwner {
-
-  protected File myProjectFile;
-  protected final Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
+  private final File myProjectFile;
+  private final Set<SModuleReference> myModules = new LinkedHashSet<SModuleReference>();
   private final ProjectScope myScope = new ProjectScope();
   private boolean isDisposed;
   private final SRepository myRepository;
 
-  protected Project() {
+  protected Project(@NotNull File projectFile) {
     myRepository = new ProjectRepository(this);
+    myProjectFile = projectFile;
   }
 
   public ProjectScope getScope() {
@@ -100,13 +100,9 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  @Nullable
+  @NotNull
   public File getProjectFile() {
     return myProjectFile;
-  }
-
-  public void setProjectFile(File file) {
-    myProjectFile = file;
   }
 
   public boolean isProjectModule(@NotNull SModule module) {

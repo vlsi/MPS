@@ -27,6 +27,7 @@ public class MPSProject extends Project implements ProjectComponent {
   protected com.intellij.openapi.project.Project myProject;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project) {
+    super(new File(project.getProjectFilePath()));
     myProject = project;
   }
 
@@ -49,14 +50,11 @@ public class MPSProject extends Project implements ProjectComponent {
 
   @Override
   public void initComponent() {
-    String url = myProject.getPresentableUrl();
-    myProjectFile = url == null ? null : new File(url);
   }
 
   @Override
   public void disposeComponent() {
     dispose();
-    myProjectFile = null;
   }
 
   //-----------project holder end
