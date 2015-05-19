@@ -17,13 +17,14 @@ package jetbrains.mps.components;
 
 import jetbrains.mps.smodel.ModelAccess;
 
+import java.util.Deque;
 import java.util.LinkedList;
 
 /**
  * evgeny, 10/14/11
  */
 public class ComponentPlugin {
-  private LinkedList<CoreComponent> myComponents;
+  private Deque<CoreComponent> myComponents;
 
   private static ModelAccess getModelAccess() {
     return ModelAccess.instance();
