@@ -3885,6 +3885,9 @@
     <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
       <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
     </node>
+    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
+      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
+    </node>
   </node>
 </model>
 
