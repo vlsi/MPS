@@ -185,7 +185,9 @@ public class ModulesWatcher {
     return result;
   }
 
-  // FIXME : rewrite!! need to extract some common class for validity checking
+  // FIXME rewrite!! need to extract some common API class for validity checking (errorMode looks very hacky)
+  // FIXME currently Migration also wants to know which languages are invalid for loading and why
+  // FIXME probably makes sense to transfer part of this functionality to the project.dependency package
   boolean isModuleInvalid(SModuleReference mRef, boolean errorMode) {
     assert !isChanged();
     if (isModuleDisposed(mRef)) {

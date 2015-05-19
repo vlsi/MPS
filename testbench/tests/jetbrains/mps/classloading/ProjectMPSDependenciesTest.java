@@ -34,7 +34,6 @@ import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -42,6 +41,10 @@ import java.util.Set;
 
 import jetbrains.mps.library.contributor.LibDescriptor;
 
+/**
+ * Internal consistency check of module dependencies between different layers of MPS hierarchy:
+ * core, workbench and plugin
+ */
 public class ProjectMPSDependenciesTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
   private boolean myFailed = false;
@@ -57,7 +60,7 @@ public class ProjectMPSDependenciesTest {
   }
 
   @Test
-  public void DepsAreValid() {
+  public void depsAreValid() {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     Environment currentEnv = ActiveEnvironment.getInstance();
     if (currentEnv != null) currentEnv.dispose();
@@ -67,10 +70,10 @@ public class ProjectMPSDependenciesTest {
       addContributorWithPaths(getCorePaths());
       checkDeps();
       LOG.info("ADDING WORKBENCH CONTRIBUTORS");
-      addContributorWithPaths(Arrays.asList(PathManager.getWorkbenchPath()));
+      addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
       checkDeps();
       LOG.info("ADDING PLUGINS CONTRIBUTORS");
-      addContributorWithPaths(Arrays.asList(PathManager.getHomePath() + File.separator + "plugins"));
+      addContributorWithPaths(Collections.singletonList(PathManager.getHomePath() + File.separator + "plugins"));
       checkDeps();
     } finally {
       environment.dispose();
