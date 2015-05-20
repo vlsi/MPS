@@ -13,6 +13,64 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.ide.platform.actions.core.ExtensionDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/1234464120782876865">
+    <file name="MoveNodesDefault.java">
+      <node id="1234464120782876865" at="21,29,22,55" concept="12" />
+      <node id="1234464120782876865" at="28,102,29,183" concept="6" />
+      <node id="1234464120782876865" at="29,183,30,116" concept="6" />
+      <node id="1234464120782876865" at="30,116,31,22" concept="7" />
+      <node id="1234464120782876865" at="33,109,34,151" concept="7" />
+      <node id="1234464120782877577" at="36,73,37,20" concept="7" />
+      <node id="1234464120782888884" at="39,65,40,44" concept="6" />
+      <node id="1234464120782886142" at="40,44,41,44" concept="6" />
+      <node id="8243426175555490023" at="43,47,44,246" concept="2" />
+      <node id="1234464120782947395" at="46,11,47,20" concept="7" />
+      <node id="4097787708682006043" at="47,20,48,0" concept="9" />
+      <node id="1234464120782876865" at="21,0,24,0" concept="1" trace="MoveNodesDefault#()V" />
+      <node id="1234464120782876865" at="33,0,36,0" concept="5" trace="getAllExtensionObjects#()Ljava/lang/Iterable;" />
+      <node id="1234464120782876869" at="36,0,39,0" concept="5" trace="applicable#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+      <node id="8243426175555490021" at="43,0,46,0" concept="5" trace="run#(Ljava/lang/Object;)V" />
+      <node id="8243426175555462156" at="41,44,46,11" concept="2" />
+      <node id="1234464120782876865" at="27,0,33,0" concept="5" trace="getOverridden#()Ljava/util/Collection;" />
+      <node id="1234464120782876877" at="39,0,50,0" concept="5" trace="apply#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/Void;" />
+      <node id="1234464120782876865" at="25,76,50,6" concept="7" />
+      <node id="1234464120782876865" at="25,0,52,0" concept="5" trace="get#()Ljetbrains/mps/smodel/structure/ExtensionFunction;" />
+      <scope id="1234464120782876865" at="21,29,22,55" />
+      <scope id="1234464120782876865" at="33,109,34,151" />
+      <scope id="1234464120782876873" at="36,73,37,20" />
+      <scope id="8243426175555490022" at="43,47,44,246" />
+      <scope id="1234464120782876865" at="21,0,24,0" />
+      <scope id="1234464120782876865" at="28,102,31,22">
+        <var name="extensions" id="1234464120782876865" />
+        <var name="result" id="1234464120782876865" />
+      </scope>
+      <scope id="1234464120782876865" at="33,0,36,0" />
+      <scope id="1234464120782876869" at="36,0,39,0">
+        <var name="arg" id="1234464120782876875" />
+      </scope>
+      <scope id="8243426175555490021" at="43,0,46,0">
+        <var name="newLocation" id="8243426175555490021" />
+      </scope>
+      <scope id="1234464120782876865" at="27,0,33,0" />
+      <scope id="1234464120782876881" at="39,65,48,0">
+        <var name="project" id="1234464120782886143" />
+        <var name="target" id="1234464120782888890" />
+      </scope>
+      <scope id="1234464120782876877" at="39,0,50,0">
+        <var name="arg" id="1234464120782876883" />
+      </scope>
+      <scope id="1234464120782876865" at="25,76,50,6" />
+      <scope id="1234464120782876865" at="25,0,52,0" />
+      <unit id="8243426175555490021" at="42,54,46,9" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$2" />
+      <unit id="1234464120782876865" at="26,15,50,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault$1" />
+      <unit id="1234464120782876865" at="20,0,53,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodesDefault" />
+    </file>
+  </root>
   <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/8243426175555293482">
     <file name="MoveNodesExecute.java">
       <node id="8243426175555295766" at="19,138,20,80" concept="6" />
@@ -98,22 +156,18 @@
       <node id="830211401282058525" at="59,66,60,53" concept="2" />
       <node id="830211401282058525" at="61,22,62,21" concept="7" />
       <node id="830211401282058525" at="64,5,65,16" concept="7" />
-      <node id="8243426175555393950" at="68,96,69,0" concept="9" />
-      <node id="8243426175555490023" at="71,43,72,345" concept="2" />
-      <node id="8243426175555491878" at="74,7,75,0" concept="9" />
+      <node id="1234464120782929130" at="68,96,69,285" concept="2" />
       <node id="830211401282058525" at="50,12,52,7" concept="0" />
       <node id="830211401282058525" at="42,95,45,5" concept="4" />
       <node id="830211401282058525" at="52,7,55,7" concept="4" />
       <node id="830211401282058525" at="60,53,63,7" concept="4" />
-      <node id="8243426175555490021" at="71,0,74,0" concept="5" trace="run#(Ljava/lang/Object;)V" />
       <node id="830211401282058525" at="29,0,33,0" concept="5" trace="isDumbAware#()Z" />
       <node id="830211401282058525" at="33,0,37,0" concept="5" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="830211401282058525" at="37,0,41,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="830211401282058525" at="67,0,71,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="830211401282058525" at="24,0,29,0" concept="1" trace="MoveNodes_Action#()V" />
       <node id="830211401282058525" at="47,65,52,7" concept="4" />
-      <node id="8243426175555462156" at="69,0,74,7" concept="2" />
       <node id="830211401282058525" at="57,5,64,5" concept="0" />
-      <node id="830211401282058525" at="67,0,77,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="830211401282058525" at="45,5,57,5" concept="0" />
       <node id="830211401282058525" at="41,0,67,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="830211401282058525" at="30,32,31,16" />
@@ -124,11 +178,8 @@
       <scope id="830211401282058525" at="50,14,51,115" />
       <scope id="830211401282058525" at="53,26,54,21" />
       <scope id="830211401282058525" at="61,22,62,21" />
-      <scope id="8243426175555490022" at="71,43,72,345" />
+      <scope id="830211401282058525" at="68,96,69,285" />
       <scope id="830211401282058525" at="24,29,27,40" />
-      <scope id="8243426175555490021" at="71,0,74,0">
-        <var name="newLocation" id="8243426175555490021" />
-      </scope>
       <scope id="830211401282058525" at="29,0,33,0" />
       <scope id="830211401282058525" at="33,0,37,0">
         <var name="_params" id="830211401282058525" />
@@ -138,25 +189,23 @@
         <var name="_params" id="830211401282058525" />
         <var name="event" id="830211401282058525" />
       </scope>
+      <scope id="830211401282058525" at="67,0,71,0">
+        <var name="_params" id="830211401282058525" />
+        <var name="event" id="830211401282058525" />
+      </scope>
       <scope id="830211401282058525" at="24,0,29,0" />
       <scope id="830211401282058525" at="58,5,63,7">
         <var name="p" id="830211401282058525" />
       </scope>
-      <scope id="830211401282058525" at="68,96,75,0" />
       <scope id="830211401282058525" at="46,5,56,0">
         <var name="nodes" id="830211401282058525" />
-      </scope>
-      <scope id="830211401282058525" at="67,0,77,0">
-        <var name="_params" id="830211401282058525" />
-        <var name="event" id="830211401282058525" />
       </scope>
       <scope id="830211401282058525" at="42,95,65,16" />
       <scope id="830211401282058525" at="41,0,67,0">
         <var name="_params" id="830211401282058525" />
         <var name="event" id="830211401282058525" />
       </scope>
-      <unit id="8243426175555490021" at="70,153,74,5" name="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action$1" />
-      <unit id="830211401282058525" at="22,0,78,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" />
+      <unit id="830211401282058525" at="22,0,72,0" name="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" />
     </file>
   </root>
   <root nodeRef="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)/8784230320738943353">
