@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -147,7 +148,7 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
     reachAspect(languageRuntime, EditorAspectDescriptor.class);
   }
 
-  private void reachAspect(LanguageRuntime languageRuntime, Class<? extends LanguageAspectDescriptor> aspect) throws AssertionFailedException {
+  private void reachAspect(LanguageRuntime languageRuntime, Class<? extends ILanguageAspect> aspect) throws AssertionFailedException {
     try {
       languageRuntime.getAspect(aspect);
     } catch (Throwable t) {
