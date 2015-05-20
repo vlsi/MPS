@@ -67,6 +67,11 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   }
 
   @Override
+  public int getVersion() {
+    return -1;
+  }
+
+  @Override
   public Collection<? extends GeneratorRuntime> getGenerators() {
     return Collections.emptyList();
   }
