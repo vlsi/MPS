@@ -7,8 +7,11 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
+    <file name="ApplyOverlappingExtensionOperation_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.ApplyOverlappingExtensionOperation_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,48,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,50,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ExtensionDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
@@ -119,8 +122,8 @@
       <node id="4954277195814075732" at="21,30,22,30" concept="3" />
       <node id="4954277195814075732" at="22,30,23,30" concept="3" />
       <node id="4954277195814075732" at="23,30,24,227" concept="1" />
-      <node id="4954277195814075732" at="24,227,25,523" concept="1" />
-      <node id="4954277195814075732" at="25,523,26,39" concept="1" />
+      <node id="4954277195814075732" at="24,227,25,556" concept="1" />
+      <node id="4954277195814075732" at="25,556,26,39" concept="1" />
       <node id="4954277195814075732" at="27,31,28,191" concept="1" />
       <node id="4954277195814075732" at="29,5,30,39" concept="1" />
       <node id="4954277195814075732" at="31,31,32,191" concept="1" />
@@ -129,8 +132,8 @@
       <node id="195736285283083840" at="16,0,19,0" concept="5" trace="virtual_getExtensionType_195736285283075115#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4954277195814075732" at="26,39,29,5" concept="2" />
       <node id="4954277195814075732" at="30,39,33,5" concept="2" />
-      <node id="4954277195814075732" at="25,523,29,5" concept="0" />
-      <node id="4954277195814075732" at="25,523,29,5" concept="0" />
+      <node id="4954277195814075732" at="25,556,29,5" concept="0" />
+      <node id="4954277195814075732" at="25,556,29,5" concept="0" />
       <node id="4954277195814075732" at="29,5,33,5" concept="0" />
       <node id="4954277195814075732" at="29,5,33,5" concept="0" />
       <node id="4954277195814075732" at="23,30,33,5" concept="0" />
@@ -146,7 +149,7 @@
       <scope id="195736285283083840" at="16,0,19,0">
         <var name="thisNode" id="195736285283083840" />
       </scope>
-      <scope id="4954277195814075732" at="25,523,29,5" />
+      <scope id="4954277195814075732" at="25,556,29,5" />
       <scope id="4954277195814075732" at="29,5,33,5" />
       <scope id="4954277195814075732" at="23,30,33,5" />
       <scope id="4954277195814075732" at="19,98,34,24">

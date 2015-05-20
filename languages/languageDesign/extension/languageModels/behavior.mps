@@ -716,7 +716,7 @@
         <node concept="3cpWs6" id="4j18dLnkfFs" role="3cqZAp">
           <node concept="2c44tf" id="4j18dLnkfPk" role="3cqZAk">
             <node concept="3uibUv" id="4CJGQjIvnjs" role="2c44tc">
-              <ref role="3uigEE" to="msyo:~Function" resolve="Function" />
+              <ref role="3uigEE" to="bltl:~ExtensionFunction" resolve="ExtensionFunction" />
               <node concept="33vP2l" id="4CJGQjIvnjQ" role="11_B2D">
                 <node concept="2c44te" id="4CJGQjIvnkf" role="lGtFl">
                   <node concept="2OqwBi" id="4CJGQjIvnne" role="2c44t1">

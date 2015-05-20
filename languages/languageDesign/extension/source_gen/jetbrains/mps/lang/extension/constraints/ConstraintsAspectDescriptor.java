@@ -29,6 +29,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x1db73bac2ebb00e3L) {
       return new OverridesReference_Constraints();
     }
+    if (id == 0x2070f52fe8ba7b20L) {
+      return new ApplyOverlappingExtensionOperation_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

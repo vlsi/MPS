@@ -15,28 +15,30 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new Extension_Editor());
+        return Collections.<ConceptEditor>singletonList(new ApplyOverlappingExtensionOperation_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ExtensionDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new Extension_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ExtensionFieldDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionDeclaration_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new ExtensionFieldReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionFieldDeclaration_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ExtensionOverlapping_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionFieldReference_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new ExtensionPointDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionOverlapping_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ExtensionPointExpression_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointDeclaration_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new ExtensionPointOverlappingDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointExpression_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new ExtensionPointType_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointOverlappingDeclaration_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new GetExtensionObjectsOperation_Editor());
+        return Collections.<ConceptEditor>singletonList(new ExtensionPointType_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new OverridesItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new GetExtensionObjectsOperation_Editor());
       case 11:
+        return Collections.<ConceptEditor>singletonList(new OverridesItem_Editor());
+      case 12:
         return Collections.<ConceptEditor>singletonList(new OverridesReference_Editor());
       default:
     }
@@ -47,5 +49,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionOverlapping", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.OverridesItem", "jetbrains.mps.lang.extension.structure.OverridesReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.ApplyOverlappingExtensionOperation", "jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionOverlapping", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.OverridesItem", "jetbrains.mps.lang.extension.structure.OverridesReference"};
 }

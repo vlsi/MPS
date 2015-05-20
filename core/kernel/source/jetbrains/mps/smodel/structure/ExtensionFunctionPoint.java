@@ -26,7 +26,7 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
     super(id);
   }
 
-  R apply(T arg) {
+  public R apply(T arg) {
     List<ExtensionFunction<T, R>> allExtensions = IterableUtil.copyToList(getObjects());
     for (ExtensionFunction<T, R> ext : allExtensions) {
       if (!ext.applicable(arg)) {

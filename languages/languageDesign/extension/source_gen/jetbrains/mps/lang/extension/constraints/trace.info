@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,35,0" name="jetbrains.mps.lang.extension.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,38,0" name="jetbrains.mps.lang.extension.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)/195736285282739743">
@@ -101,6 +101,138 @@
       <unit id="2141245758542394657" at="39,19,51,9" name="jetbrains.mps.lang.extension.constraints.OverridesReference_Constraints$2" />
       <unit id="2141245758542394657" at="31,128,53,5" name="jetbrains.mps.lang.extension.constraints.OverridesReference_Constraints$1" />
       <unit id="2141245758542394657" at="24,0,58,0" name="jetbrains.mps.lang.extension.constraints.OverridesReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)/2337637792722145505">
+    <file name="ApplyOverlappingExtensionOperation_Constraints.java">
+      <node id="2337637792722145505" at="27,59,28,98" concept="10" />
+      <node id="2337637792722145505" at="31,43,32,16" concept="6" />
+      <node id="2337637792722145505" at="35,200,36,96" concept="5" />
+      <node id="2337637792722145505" at="36,96,37,0" concept="7" />
+      <node id="2337637792722145505" at="38,51,39,67" concept="2" />
+      <node id="2337637792722145505" at="40,5,41,0" concept="7" />
+      <node id="2337637792722145505" at="41,0,42,18" concept="6" />
+      <node id="2337637792722159231" at="45,372,46,19" concept="6" />
+      <node id="2337637792722160281" at="47,5,48,0" concept="7" />
+      <node id="2337637792722160905" at="48,0,49,632" concept="5" />
+      <node id="2337637792722161588" at="49,632,50,0" concept="7" />
+      <node id="2337637792722169080" at="51,22,52,19" concept="6" />
+      <node id="2337637792722170430" at="53,5,54,0" concept="7" />
+      <node id="2337637792722207277" at="54,0,55,464" concept="6" />
+      <node id="2337637792722181782" at="60,34,61,156" concept="6" />
+      <node id="2337637792722181782" at="64,7,65,56" concept="5" />
+      <node id="2337637792722181782" at="66,209,67,23" concept="6" />
+      <node id="2337637792722181782" at="69,9,70,80" concept="5" />
+      <node id="2337637792722181782" at="71,235,72,25" concept="6" />
+      <node id="2337637792722181782" at="75,9,76,172" concept="5" />
+      <node id="2337637792722181782" at="77,95,78,25" concept="6" />
+      <node id="2337637792722181782" at="80,11,81,126" concept="5" />
+      <node id="2337637792722181782" at="83,11,84,126" concept="5" />
+      <node id="2337637792722181782" at="87,7,88,18" concept="6" />
+      <node id="2337637792722181782" at="90,40,91,19" concept="6" />
+      <node id="2337637792722181782" at="95,51,96,18" concept="6" />
+      <node id="2337637792722145505" at="101,0,102,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="2337637792722145505" at="102,0,103,0" concept="8" trace="SNODE_POINTER_nhvk45_a0a0a0a0b0b0a0b0b0a0g0d" />
+      <node id="2337637792722181782" at="58,0,60,0" concept="1" trace="Pattern_nhvk45_a1a0a6a3#()V" />
+      <node id="2337637792722181782" at="93,0,95,0" concept="4" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+      <node id="2337637792722181782" at="98,0,100,0" concept="4" trace="performActions#(Ljava/lang/Object;)V" />
+      <node id="2337637792722145505" at="27,0,30,0" concept="1" trace="ApplyOverlappingExtensionOperation_Constraints#()V" />
+      <node id="2337637792722145505" at="37,0,40,5" concept="3" />
+      <node id="2337637792722155971" at="44,148,47,5" concept="3" />
+      <node id="2337637792722166740" at="50,0,53,5" concept="3" />
+      <node id="2337637792722181782" at="60,0,63,0" concept="4" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
+      <node id="2337637792722181782" at="65,56,68,9" concept="3" />
+      <node id="2337637792722181782" at="70,80,73,11" concept="3" />
+      <node id="2337637792722181782" at="76,172,79,11" concept="3" />
+      <node id="2337637792722181782" at="79,11,82,11" concept="0" />
+      <node id="2337637792722181782" at="82,11,85,11" concept="0" />
+      <node id="2337637792722181782" at="90,0,93,0" concept="4" trace="hasAntiquotations#()Z" />
+      <node id="2337637792722181782" at="95,0,98,0" concept="4" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+      <node id="2337637792722145505" at="30,0,34,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="2337637792722181782" at="68,9,74,9" concept="0" />
+      <node id="2337637792722181782" at="68,9,74,9" concept="0" />
+      <node id="2337637792722181782" at="76,172,85,11" concept="0" />
+      <node id="2337637792722145505" at="34,0,44,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="2337637792722181782" at="74,9,86,9" concept="0" />
+      <node id="2337637792722145505" at="44,0,57,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="2337637792722181782" at="68,9,86,9" concept="0" />
+      <node id="2337637792722181782" at="65,56,86,9" concept="0" />
+      <node id="2337637792722181782" at="63,45,87,7" concept="0" />
+      <node id="2337637792722181782" at="63,0,90,0" concept="4" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2337637792722181782" at="58,38,58,38" />
+      <scope id="2337637792722181782" at="93,71,93,71" />
+      <scope id="2337637792722181782" at="98,42,98,42" />
+      <scope id="2337637792722145505" at="27,59,28,98" />
+      <scope id="2337637792722145505" at="31,43,32,16" />
+      <scope id="2337637792722145505" at="38,51,39,67" />
+      <scope id="2337637792722155973" at="45,372,46,19" />
+      <scope id="2337637792722166742" at="51,22,52,19" />
+      <scope id="2337637792722181782" at="60,34,61,156" />
+      <scope id="2337637792722181782" at="66,209,67,23" />
+      <scope id="2337637792722181782" at="71,235,72,25" />
+      <scope id="2337637792722181782" at="77,95,78,25" />
+      <scope id="2337637792722181782" at="80,11,81,126">
+        <var name="childVar_nhvk45_a0a0a0g0a" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722181782" at="83,11,84,126">
+        <var name="childVar_nhvk45_b0a0a0g0a" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722181782" at="90,40,91,19" />
+      <scope id="2337637792722181782" at="95,51,96,18" />
+      <scope id="2337637792722181782" at="58,0,60,0" />
+      <scope id="2337637792722181782" at="93,0,95,0">
+        <var name="pattern" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722181782" at="98,0,100,0">
+        <var name="o" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722145505" at="27,0,30,0" />
+      <scope id="2337637792722181782" at="60,0,63,0" />
+      <scope id="2337637792722181782" at="90,0,93,0" />
+      <scope id="2337637792722181782" at="95,0,98,0">
+        <var name="fieldName" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722145505" at="30,0,34,0" />
+      <scope id="2337637792722181782" at="69,9,73,11">
+        <var name="pointer" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722181782" at="68,9,74,9" />
+      <scope id="2337637792722145505" at="35,200,42,18">
+        <var name="result" id="2337637792722145505" />
+      </scope>
+      <scope id="2337637792722181782" at="76,172,85,11" />
+      <scope id="2337637792722145505" at="34,0,44,0">
+        <var name="checkingNodeContext" id="2337637792722145505" />
+        <var name="childConcept" id="2337637792722145505" />
+        <var name="link" id="2337637792722145505" />
+        <var name="node" id="2337637792722145505" />
+        <var name="operationContext" id="2337637792722145505" />
+        <var name="parentNode" id="2337637792722145505" />
+      </scope>
+      <scope id="2337637792722181782" at="75,9,85,11">
+        <var name="childRole_nhvk45_" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722145522" at="44,148,55,464">
+        <var name="ept" id="2337637792722160906" />
+      </scope>
+      <scope id="2337637792722145505" at="44,0,57,0">
+        <var name="childConcept" id="2337637792722145505" />
+        <var name="link" id="2337637792722145505" />
+        <var name="node" id="2337637792722145505" />
+        <var name="operationContext" id="2337637792722145505" />
+        <var name="parentNode" id="2337637792722145505" />
+      </scope>
+      <scope id="2337637792722181782" at="68,9,86,9" />
+      <scope id="2337637792722181782" at="65,56,86,9" />
+      <scope id="2337637792722181782" at="64,7,86,9">
+        <var name="nodeToMatch_nhvk45_a0a0a6a0" id="2337637792722181782" />
+      </scope>
+      <scope id="2337637792722181782" at="63,45,88,18" />
+      <scope id="2337637792722181782" at="63,0,90,0">
+        <var name="nodeToMatch" id="2337637792722181782" />
+      </scope>
+      <unit id="2337637792722181782" at="57,0,101,0" name="jetbrains.mps.lang.extension.constraints.ApplyOverlappingExtensionOperation_Constraints$Pattern_nhvk45_a1a0a6a3" />
+      <unit id="2337637792722145505" at="26,0,104,0" name="jetbrains.mps.lang.extension.constraints.ApplyOverlappingExtensionOperation_Constraints" />
     </file>
   </root>
   <root nodeRef="r:34afaabb-1c5b-40d4-ae6d-6f5312d7475d(jetbrains.mps.lang.extension.constraints)/3175313036448596715">
