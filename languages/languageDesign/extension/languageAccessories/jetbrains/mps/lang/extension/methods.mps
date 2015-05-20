@@ -107,6 +107,9 @@
   <node concept="q3mft" id="3zLwYDe0svo">
     <property role="TrG5h" value="Extension" />
     <ref role="2qG0Lo" to="v54s:7335HkeYeM" resolve="Extension" />
+    <node concept="30mAcN" id="5t_qJH4M3gw" role="lGtFl">
+      <ref role="30mx6e" to="ztcw:4auf8pY9YGM" resolve="ClassLikeDescriptor" />
+    </node>
     <node concept="qMXn0" id="3zLwYDe0Brf" role="QNr5C" />
     <node concept="q3mfq" id="3zLwYDe0CPy" role="QNr5C">
       <property role="TrG5h" value="activate" />
@@ -161,6 +164,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3tTeZs" id="5t_qJH4M3i5" role="jymVt">
+      <property role="3tTeZt" value="&lt;no initializer&gt;" />
+      <ref role="3tTeZr" to="ztcw:4auf8pY9SK6" resolve="init" />
     </node>
   </node>
   <node concept="q3mft" id="7z8Vrj4Zy7l">

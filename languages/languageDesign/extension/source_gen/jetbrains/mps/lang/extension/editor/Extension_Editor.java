@@ -118,6 +118,7 @@ public class Extension_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_s04tli_e0");
     Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -133,6 +134,9 @@ public class Extension_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_s04tli_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_s04tli_g0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
