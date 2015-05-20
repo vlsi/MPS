@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
@@ -37,7 +38,6 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
 
   public InterpretedLanguageRuntime(@NotNull Language l) {
     myLang = l;
-    setId(MetaIdByDeclaration.getLanguageId(l));
     myName = myLang.getModuleName();
   }
 
@@ -59,6 +59,11 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   @Override
   public String getNamespace() {
     return myName;
+  }
+
+  @Override
+  public SLanguageId getId() {
+    return MetaIdByDeclaration.getLanguageId(myLang);
   }
 
   @Override
