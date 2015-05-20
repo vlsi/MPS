@@ -63,6 +63,10 @@
     <component>
       <implementation-class>jetbrains.mps.persistence.ModelFactoryRegister</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.platform.actions.core.RefactoringActionsExtensionComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
