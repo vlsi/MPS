@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,18 +27,23 @@ import java.util.Collection;
 import java.util.Collections;
 
 public abstract class LanguageAspectDescriptor {
+  @NotNull
   public abstract Collection<SModel> getAspectModels(SModule language);
 
   public abstract boolean hasAspect(SModule language);
 
+  @NotNull
   public abstract Collection<SLanguage> getMainLanguages();
 
+  @NotNull
   public Collection<SLanguage> getAdditionalLanguages(){
     return Collections.emptyList();
   }
 
+  @NotNull
   public abstract SNode getInterfaceClassDeclaration();
 
+  @NotNull
   public abstract String getImplementationClassName();
 
   @Nullable
