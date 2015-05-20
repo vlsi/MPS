@@ -12,9 +12,11 @@
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspectDescriptor.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
@@ -42,6 +44,9 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+        <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -58,6 +63,18 @@
   <node concept="q3mft" id="ghIDlF6CZM">
     <property role="TrG5h" value="LanguageAspect" />
     <ref role="2qG0Lo" to="hfbu:2PMNsNJsb26" resolve="LanguageAspectDescriptor" />
+    <node concept="q3mfq" id="4r8JClTmU4i" role="QNr5C">
+      <property role="TrG5h" value="hasAspect" />
+      <node concept="q3mfp" id="4r8JClTmU4H" role="q3mfl">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="4r8JClTmU4L" role="q3mfr">
+          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="10P_77" id="4r8JClTmU4S" role="q3mfk" />
+      <node concept="2IRzkw" id="4r8JClTmU4U" role="2IRzpu" />
+    </node>
+    <node concept="qMXn0" id="4r8JClTmU5v" role="QNr5C" />
     <node concept="q3mfq" id="ghIDlF6GD9" role="QNr5C">
       <property role="TrG5h" value="getAspectModels" />
       <node concept="q3mfp" id="ghIDlF6GDr" role="q3mfl">
@@ -91,6 +108,21 @@
       </node>
       <node concept="QcxE9" id="ghIDlF6Hf$" role="2IRzpu">
         <property role="QcwnP" value="&lt;no additional languages&gt;" />
+      </node>
+    </node>
+    <node concept="qMXn0" id="4r8JClTmU7T" role="QNr5C" />
+    <node concept="q3mfq" id="4r8JClTmU6H" role="QNr5C">
+      <property role="TrG5h" value="getInterfaceClassDeclaration" />
+      <node concept="3Tqbb2" id="4r8JClTmU7e" role="q3mfk">
+        <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
+      </node>
+      <node concept="2IRzkw" id="4r8JClTmU7g" role="2IRzpu" />
+    </node>
+    <node concept="qMXn0" id="4r8JClTmU99" role="QNr5C" />
+    <node concept="q3mfq" id="4r8JClTmUai" role="QNr5C">
+      <property role="TrG5h" value="getImplementationClassName" />
+      <node concept="3uibUv" id="4r8JClTmUaS" role="q3mfk">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
     </node>
     <node concept="qMXn0" id="ghIDlF6Hhv" role="QNr5C" />
