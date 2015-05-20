@@ -13,17 +13,9 @@
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <import index="2y7w" ref="r:72c0b2cc-8a81-4a04-9e45-2c300201b444(jetbrains.mps.build.sandbox.testRun)" />
   </imports>
   <registry>
-    <language id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests">
-      <concept id="4560297596904469357" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules" flags="nn" index="22LTRH">
-        <child id="4560297596904469360" name="modules" index="22LTRK" />
-      </concept>
-      <concept id="4560297596904469362" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule" flags="nn" index="22LTRM">
-        <reference id="4560297596904469363" name="module" index="22LTRN" />
-      </concept>
-      <concept id="4005526075820600484" name="jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin" flags="ng" index="1gjT0q" />
-    </language>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
       <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
@@ -45,7 +37,9 @@
         <child id="4380385936562148502" name="containerName" index="Nbhlr" />
       </concept>
       <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
-      <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT" />
+      <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT">
+        <child id="7389400916848144618" name="defaultPath" index="398pKh" />
+      </concept>
       <concept id="7389400916848153117" name="jetbrains.mps.build.structure.BuildSourceMacroRelativePath" flags="ng" index="398BVA">
         <reference id="7389400916848153130" name="macro" index="398BVh" />
       </concept>
@@ -71,8 +65,8 @@
     </language>
     <language id="427a473d-5177-432c-9905-bcbceb71b996" name="jetbrains.mps.build.mps.runner">
       <concept id="4173297143638950526" name="jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerAspect" flags="ng" index="_awnq">
-        <property id="4173297143638951497" name="mainclass" index="_aw7H" />
-        <reference id="4173297143638951502" name="solution" index="_aw7E" />
+        <reference id="2220861080748470430" name="startClass" index="3VkEnW" />
+        <reference id="2220861080748814601" name="startMethod" index="3VlYhF" />
       </concept>
       <concept id="4173297143638832582" name="jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerPlugin" flags="ng" index="_l39y" />
     </language>
@@ -113,20 +107,42 @@
     <property role="turDy" value="runTest.xml" />
     <node concept="398rNT" id="3BExUgsPqwr" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
-    </node>
-    <node concept="22LTRH" id="rLyN$Ox_Jv" role="1hWBAP">
-      <property role="TrG5h" value="xaxaxa" />
-      <node concept="22LTRM" id="rLyN$OxKFo" role="22LTRK">
-        <ref role="22LTRN" node="rLyN$Ox_HE" resolve="jetbrains.mps.build.tests" />
+      <node concept="55IIr" id="1Vi5mb_zIP$" role="398pKh">
+        <node concept="2Ry0Ak" id="1Vi5mb_zIQ1" role="iGT6I">
+          <property role="2Ry0Am" value=".." />
+          <node concept="2Ry0Ak" id="1Vi5mb_zIQq" role="2Ry0An">
+            <property role="2Ry0Am" value=".." />
+            <node concept="2Ry0Ak" id="1Vi5mb_zIQP" role="2Ry0An">
+              <property role="2Ry0Am" value=".." />
+              <node concept="2Ry0Ak" id="1Vi5mb_zIRi" role="2Ry0An">
+                <property role="2Ry0Am" value=".." />
+                <node concept="2Ry0Ak" id="1Vi5mb_zIRL" role="2Ry0An">
+                  <property role="2Ry0Am" value=".." />
+                  <node concept="2Ry0Ak" id="1Vi5mb_zISi" role="2Ry0An">
+                    <property role="2Ry0Am" value=".." />
+                    <node concept="2Ry0Ak" id="1Vi5mb_zISP" role="2Ry0An">
+                      <property role="2Ry0Am" value=".." />
+                      <node concept="2Ry0Ak" id="1Vi5mb_zITq" role="2Ry0An">
+                        <property role="2Ry0Am" value="Program Files (x86)" />
+                        <node concept="2Ry0Ak" id="1Vi5mb_zITF" role="2Ry0An">
+                          <property role="2Ry0Am" value="JetBrains" />
+                          <node concept="2Ry0Ak" id="1Vi5mb_zITW" role="2Ry0An">
+                            <property role="2Ry0Am" value="MPS 3.2 EAP" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
-    <node concept="_awnq" id="3BExUgsLy6m" role="1hWBAP">
-      <property role="_aw7H" value="test.asdf" />
-      <ref role="_aw7E" node="rLyN$Ox_HE" resolve="jetbrains.mps.build.tests" />
-    </node>
-    <node concept="_awnq" id="1Vi5mb_hgjY" role="1hWBAP">
-      <property role="_aw7H" value="jetbrains.mps.build.sandbox.testRun.TestRunClass" />
-      <ref role="_aw7E" node="3BExUgsLy6o" resolve="jetbrains.mps.build.sandbox" />
+    <node concept="_awnq" id="1Vi5mb_AZ3d" role="1hWBAP">
+      <ref role="3VkEnW" to="2y7w:1Vi5mb_hYqN" resolve="TestRunClass" />
+      <ref role="3VlYhF" to="2y7w:3H7CugYj08d" resolve="runFromMPS" />
     </node>
     <node concept="2sgV4H" id="3BExUgsLy6n" role="1l3spa">
       <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
@@ -239,7 +255,6 @@
     <node concept="10PD9b" id="rLyN$OxB82" role="10PD9s" />
     <node concept="3b7kt6" id="3BExUgsLy6E" role="10PD9s" />
     <node concept="_l39y" id="3BExUgsLy6F" role="10PD9s" />
-    <node concept="1gjT0q" id="rLyN$OxB8e" role="10PD9s" />
     <node concept="55IIr" id="3BExUgsLy6G" role="auvoZ" />
     <node concept="1l3spV" id="3BExUgsLy6H" role="1l3spN">
       <node concept="L2wRC" id="rLyN$Ox_IZ" role="39821P">

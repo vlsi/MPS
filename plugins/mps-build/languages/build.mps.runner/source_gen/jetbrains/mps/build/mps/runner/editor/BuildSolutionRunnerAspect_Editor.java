@@ -12,10 +12,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 
 public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,25 +26,25 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xi87ym_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xi87ym_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xi87ym_c0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_xi87ym_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_xi87ym_d0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_xi87ym_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run code from solution");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run code from class");
     editorCell.setCellId("Constant_xi87ym_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createRefCell_xi87ym_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("solution");
-    provider.setNoTargetText("<no solution>");
+    provider.setRole("startClass");
+    provider.setNoTargetText("<no startClass>");
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildSolutionRunnerAspect_Editor._Inline_xi87ym_a1a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setRole("solution");
+      editorCell.setRole("startClass");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -65,42 +63,31 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_xi87ym_a0b0(editorContext, node);
+      return this.createReferencePresentation_xi87ym_a0b0(editorContext, node);
     }
-    private EditorCell createProperty_xi87ym_a0b0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-        return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
+    private EditorCell createReferencePresentation_xi87ym_a0b0(EditorContext editorContext, SNode node) {
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "startClass");
+      editorCell.setCellId("ReferencePresentation_xi87ym_a0b0");
       return editorCell;
     }
   }
   private EditorCell createConstant_xi87ym_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class=");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " call static method");
     editorCell.setCellId("Constant_xi87ym_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_xi87ym_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("mainclass");
-    provider.setNoTargetText("<no mainclass>");
+  private EditorCell createRefCell_xi87ym_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("startMethod");
+    provider.setNoTargetText("<no startMethod>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new BuildSolutionRunnerAspect_Editor._Inline_xi87ym_a3a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_mainclass");
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("startMethod");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -109,5 +96,21 @@ public class BuildSolutionRunnerAspect_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  public static class _Inline_xi87ym_a3a extends InlineCellProvider {
+    public _Inline_xi87ym_a3a() {
+      super();
+    }
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createReferencePresentation_xi87ym_a0d0(editorContext, node);
+    }
+    private EditorCell createReferencePresentation_xi87ym_a0d0(EditorContext editorContext, SNode node) {
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "startMethod");
+      editorCell.setCellId("ReferencePresentation_xi87ym_a0d0");
+      return editorCell;
+    }
   }
 }

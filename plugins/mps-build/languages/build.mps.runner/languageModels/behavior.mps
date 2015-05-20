@@ -114,8 +114,16 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
+      <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -149,10 +157,6 @@
       <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
-      </concept>
-      <concept id="1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" flags="nn" index="2HTt$P">
-        <child id="1235573175711" name="elementType" index="2HTBi0" />
-        <child id="1235573187520" name="singletonValue" index="2HTEbv" />
       </concept>
     </language>
   </registry>
@@ -217,15 +221,21 @@
                 <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
               </node>
             </node>
-            <node concept="2ShNRf" id="1Vi5mb_gKlT" role="33vP2m">
-              <node concept="2HTt$P" id="1Vi5mb_gKlR" role="2ShVmc">
-                <node concept="3Tqbb2" id="1Vi5mb_gKlS" role="2HTBi0">
-                  <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+            <node concept="2OqwBi" id="1Vi5mb__3gC" role="33vP2m">
+              <node concept="2OqwBi" id="1Vi5mb__3gD" role="2Oq$k0">
+                <node concept="13iPFW" id="1Vi5mb_ANIZ" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="1Vi5mb__3gF" role="2OqNvi">
+                  <node concept="1xMEDy" id="1Vi5mb__3gG" role="1xVPHs">
+                    <node concept="chp4Y" id="1Vi5mb__3gH" role="ri$Ld">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="2OqwBi" id="1Vi5mb_gKPf" role="2HTEbv">
-                  <node concept="13iPFW" id="1Vi5mb_gK_H" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="1Vi5mb_gLo0" role="2OqNvi">
-                    <ref role="3Tt5mk" to="as3y:3BExUgsK8pe" />
+              </node>
+              <node concept="2Rf3mk" id="1Vi5mb__3gI" role="2OqNvi">
+                <node concept="1xMEDy" id="1Vi5mb__3gJ" role="1xVPHs">
+                  <node concept="chp4Y" id="1Vi5mb__3gK" role="ri$Ld">
+                    <ref role="cht4Q" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                   </node>
                 </node>
               </node>
