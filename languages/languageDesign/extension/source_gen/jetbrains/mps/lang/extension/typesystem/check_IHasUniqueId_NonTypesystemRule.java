@@ -16,7 +16,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_IHasUniqueId_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_IHasUniqueId_NonTypesystemRule() {
@@ -31,14 +31,11 @@ public class check_IHasUniqueId_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.extension.structure.IRootWithUniqueName";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getInterfaceConcept(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2b7651d49ee9d72L, "jetbrains.mps.lang.extension.structure.IRootWithUniqueName");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

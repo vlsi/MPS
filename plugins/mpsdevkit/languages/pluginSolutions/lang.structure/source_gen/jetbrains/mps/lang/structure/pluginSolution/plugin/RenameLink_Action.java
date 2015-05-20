@@ -74,7 +74,7 @@ public class RenameLink_Action extends BaseAction {
 
     modelAccess.executeCommand(new Runnable() {
       public void run() {
-        if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
+        if (!(Sequence.fromIterable(new ExtensionPoint<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>("jetbrains.mps.lang.structure.NodeRenamer").getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
           public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
             return it.invoke(null, ((SNode) MapSequence.fromMap(_params).get("target")), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), newName);
           }

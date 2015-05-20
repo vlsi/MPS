@@ -23,6 +23,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x2c10fa62142ef747L) {
       return new GetExtensionObjectsOperation_Constraints();
     }
+    if (id == 0x2b7651d49ee9d72L) {
+      return new IRootWithUniqueName_Constraints();
+    }
+    if (id == 0x1db73bac2ebb00e3L) {
+      return new OverridesReference_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -67,9 +68,14 @@ public class NewAccessoryModel_Action extends BaseAction {
     }
 
     final Language language = ((Language) event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    NewModelDialog d = new NewModelDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), ((AbstractModule) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), language.getModuleName(), SModelStereotype.NONE, true);
-    d.show();
-    final SModel result = d.getResult();
+    final Wrappers._T<NewModelDialog> d = new Wrappers._T<NewModelDialog>();
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        d.value = new NewModelDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), ((AbstractModule) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), language.getModuleName(), SModelStereotype.NONE, true);
+      }
+    });
+    d.value.show();
+    final SModel result = d.value.getResult();
 
     if (result == null) {
       return;
