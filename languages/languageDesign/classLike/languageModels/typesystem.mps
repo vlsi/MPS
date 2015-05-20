@@ -692,6 +692,48 @@
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="check_ClassLikeMethod" />
     <node concept="3clFbS" id="3m06JgsoXxa" role="18ibNy">
+      <node concept="3clFbJ" id="21KXiZCFFxw" role="3cqZAp">
+        <node concept="3clFbS" id="21KXiZCFFxy" role="3clFbx">
+          <node concept="2MkqsV" id="21KXiZCGxfF" role="3cqZAp">
+            <node concept="1YBJjd" id="21KXiZCGxfG" role="2OEOjV">
+              <ref role="1YBMHb" node="3m06JgsoYZb" resolve="classLikeMethod" />
+            </node>
+            <node concept="Xl_RD" id="21KXiZCGxfH" role="2MkJ7o">
+              <property role="Xl_RC" value="Method name is not the same as in descriptor" />
+            </node>
+            <node concept="3Cnw8n" id="21KXiZCGxfI" role="2OEOjU">
+              <ref role="QpYPw" node="EaAe82wBgI" resolve="fix_SignatureMismatch" />
+            </node>
+            <node concept="2ODE4t" id="21KXiZCGxfJ" role="2OEWyd">
+              <ref role="2ODJFN" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="17QLQc" id="21KXiZCFHWF" role="3clFbw">
+          <node concept="2OqwBi" id="21KXiZCFKEw" role="3uHU7w">
+            <node concept="2OqwBi" id="21KXiZCFIxT" role="2Oq$k0">
+              <node concept="1YBJjd" id="21KXiZCFIil" role="2Oq$k0">
+                <ref role="1YBMHb" node="3m06JgsoYZb" resolve="classLikeMethod" />
+              </node>
+              <node concept="3TrEf2" id="21KXiZCFJBJ" role="2OqNvi">
+                <ref role="3Tt5mk" to="oubp:14fCAVcxkR" />
+              </node>
+            </node>
+            <node concept="3TrcHB" id="21KXiZCFL9l" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="21KXiZCFFWj" role="3uHU7B">
+            <node concept="1YBJjd" id="21KXiZCFFJf" role="2Oq$k0">
+              <ref role="1YBMHb" node="3m06JgsoYZb" resolve="classLikeMethod" />
+            </node>
+            <node concept="3TrcHB" id="21KXiZCFH1V" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="21KXiZCGwk2" role="3cqZAp" />
       <node concept="3cpWs8" id="1Dz4WsDBFtu" role="3cqZAp">
         <node concept="3cpWsn" id="1Dz4WsDBFtx" role="3cpWs9">
           <property role="TrG5h" value="error" />
@@ -1166,6 +1208,48 @@
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="check_ClassLikeProperty" />
     <node concept="3clFbS" id="3m06Jgsp0Rz" role="18ibNy">
+      <node concept="3clFbJ" id="21KXiZCGrkX" role="3cqZAp">
+        <node concept="3clFbS" id="21KXiZCGrkY" role="3clFbx">
+          <node concept="2MkqsV" id="21KXiZCGrkZ" role="3cqZAp">
+            <node concept="1YBJjd" id="21KXiZCGrl0" role="2OEOjV">
+              <ref role="1YBMHb" node="3m06Jgsp0Uy" resolve="classLikeProperty" />
+            </node>
+            <node concept="Xl_RD" id="21KXiZCGrl1" role="2MkJ7o">
+              <property role="Xl_RC" value="Property name is not the same as in descriptor" />
+            </node>
+            <node concept="3Cnw8n" id="21KXiZCGrl2" role="2OEOjU">
+              <ref role="QpYPw" node="EaAe82wBgI" resolve="fix_SignatureMismatch" />
+            </node>
+            <node concept="2ODE4t" id="21KXiZCGrl3" role="2OEWyd">
+              <ref role="2ODJFN" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="17QLQc" id="21KXiZCGtCJ" role="3clFbw">
+          <node concept="2OqwBi" id="21KXiZCGv8j" role="3uHU7w">
+            <node concept="2OqwBi" id="21KXiZCGtTL" role="2Oq$k0">
+              <node concept="1YBJjd" id="21KXiZCGtHF" role="2Oq$k0">
+                <ref role="1YBMHb" node="3m06Jgsp0Uy" resolve="classLikeProperty" />
+              </node>
+              <node concept="3TrEf2" id="21KXiZCGuuP" role="2OqNvi">
+                <ref role="3Tt5mk" to="oubp:7s$_UJMTR_D" />
+              </node>
+            </node>
+            <node concept="3TrcHB" id="21KXiZCGvmq" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="21KXiZCGsiS" role="3uHU7B">
+            <node concept="1YBJjd" id="21KXiZCGs9i" role="2Oq$k0">
+              <ref role="1YBMHb" node="3m06Jgsp0Uy" resolve="classLikeProperty" />
+            </node>
+            <node concept="3TrcHB" id="21KXiZCGsVg" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="21KXiZCGrk3" role="3cqZAp" />
       <node concept="3clFbJ" id="3m06JgsqMLN" role="3cqZAp">
         <node concept="3clFbS" id="3m06JgsqMLQ" role="3clFbx">
           <node concept="2MkqsV" id="3m06JgsqN2k" role="3cqZAp">
