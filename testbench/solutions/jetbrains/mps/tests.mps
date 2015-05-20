@@ -1733,6 +1733,9 @@
       <ref role="lpD7u" to="ryl9:2o160AxalHm" resolve="RemoveVolatileInStaticFieldBackspace" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3e9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:73g2kXOrpX2" resolve="UnusedFields" />
+    </node>
+    <node concept="lpD6D" id="73g2kXOrQg_" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1IrcZZXTiKR" resolve="SurroundExpressionWithParenthesis" />
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8A" role="lpD6w">

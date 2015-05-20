@@ -17,6 +17,16 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import java.util.Iterator;
+import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 
 public class VariableReferenceUtil {
   public VariableReferenceUtil() {
@@ -93,5 +103,71 @@ public class VariableReferenceUtil {
         }
       }
     }
+  }
+
+  @CheckingMethod
+  public static void checkPrecedingWriteInstructions(final TypeCheckingContext typeCheckingContext, SNode contextReference, SNode currentBody, SNode field) {
+
+    Program program = DataFlowManager.getInstance().buildProgramFor(currentBody);
+    Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(program);
+    if (uninitializedReads.contains(contextReference)) {
+      final boolean onlyInstanceInitializers = VariableReferenceUtil.isReferredFromThisInvocation(currentBody, contextReference);
+      if (isInitializedInPrecedingInitializersOrConstructors(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody), field, onlyInstanceInitializers)) {
+        return;
+      }
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(contextReference, "Field " + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " used before initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6516159782899570422", null, errorTarget);
+      }
+    }
+  }
+  private static boolean isReferredFromThisInvocation(SNode currentBody, SNode contextReference) {
+    return SNodeOperations.isInstanceOf(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) && ListSequence.fromList(SNodeOperations.getNodeAncestors(contextReference, null, false)).contains(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody));
+  }
+
+  private static boolean isInitializedInPrecedingInitializersOrConstructors(SNode firstStatement, SNode field) {
+    return isInitializedInPrecedingInitializersOrConstructors(firstStatement, field, false);
+  }
+  private static boolean isInitializedInPrecedingInitializersOrConstructors(SNode firstStatement, final SNode field, boolean instanceInitializersOnly) {
+
+    if (SNodeOperations.isInstanceOf(firstStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) && !(instanceInitializersOnly)) {
+      SNode thisConstructor = SLinkOperations.getTarget(SNodeOperations.cast(firstStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
+      return containsWrite(SLinkOperations.getTarget(thisConstructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), field) || isInitializedInPrecedingInitializersOrConstructors(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisConstructor, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first(), field);
+    } else {
+      SNode myInitializer = SNodeOperations.getNodeAncestor(firstStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), false, false);
+      final int myIndexInClass = ((myInitializer != null) ? SNodeOperations.getIndexInParent(myInitializer) : Integer.MAX_VALUE);
+
+      Iterable<SNode> initializers = Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(SNodeOperations.cast(SNodeOperations.getParent(field), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer")) && SNodeOperations.getIndexInParent(it) < myIndexInClass;
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"));
+        }
+      });
+
+      return Sequence.fromIterable(initializers).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode initializer) {
+          return containsWrite(SLinkOperations.getTarget(initializer, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118f0b909f7L, 0x118f0b95a3bL, "statementList")), field);
+        }
+      });
+    }
+  }
+
+  private static boolean containsWrite(SNode statements, SNode field) {
+    Program body = DataFlowManager.getInstance().buildProgramFor(statements);
+    List<Instruction> instructions = body.getInstructions();
+    Iterator<Instruction> iterator = instructions.iterator();
+    while (iterator.hasNext()) {
+      Instruction next = iterator.next();
+      if (next instanceof WriteInstruction && eq_oxnfbs_a0a1a3a21(((WriteInstruction) next).getVariable(), field)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  private static boolean eq_oxnfbs_a0a1a3a21(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

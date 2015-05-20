@@ -35,6 +35,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.ElsifClause", new ElsifClause_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.Expression", new Expression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ExpressionStatement", new ExpressionStatement_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", new FieldReferenceOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ForStatement", new ForStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ForeachStatement", new ForeachStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.GenericNewExpression", new GenericNewExpression_DataFlow());
