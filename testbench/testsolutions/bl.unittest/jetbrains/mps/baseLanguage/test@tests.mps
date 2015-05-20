@@ -2,13 +2,13 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
@@ -5244,6 +5244,9 @@
                 <node concept="17QB3L" id="6UtDUq0tkBD" role="1tU5fm" />
                 <node concept="37vLTw" id="2BHiRxeuVvG" role="33vP2m">
                   <ref role="3cqZAo" node="3rohxPV7IbQ" resolve="s3" />
+                  <node concept="7CXmI" id="73g2kXOuEV1" role="lGtFl">
+                    <node concept="29bkU" id="73g2kXOuEV2" role="7EUXB" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -7639,6 +7642,9 @@
                       <node concept="3cpWs3" id="5KCJzeB2aoI" role="37wK5m">
                         <node concept="37vLTw" id="5KCJzeB2aoS" role="3uHU7w">
                           <ref role="3cqZAo" node="3rohxPV7Ihv" resolve="d" />
+                          <node concept="7CXmI" id="73g2kXOuEL6" role="lGtFl">
+                            <node concept="29bkU" id="73g2kXOuEL7" role="7EUXB" />
+                          </node>
                         </node>
                         <node concept="Xl_RD" id="5KCJzeB2a2p" role="3uHU7B">
                           <property role="Xl_RC" value="" />

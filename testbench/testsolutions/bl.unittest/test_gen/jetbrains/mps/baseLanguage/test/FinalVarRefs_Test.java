@@ -24,6 +24,11 @@ public class FinalVarRefs_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeVariableHasNotBeenInitializedCheck6923385624929711095", true);
   }
   @Test
+  public void test_NodeWarningCheck8129007564265008199() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeWarningCheck8129007564265008199", true);
+  }
+  @Test
   public void test_NodeCannotAssignValueToFinalCheck6923385624928162026() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.FinalVarRefs_Test$TestBody", "test_NodeCannotAssignValueToFinalCheck6923385624928162026", true);
@@ -57,6 +62,10 @@ public class FinalVarRefs_Test extends BaseTransformationTest {
     public void test_NodeVariableHasNotBeenInitializedCheck6923385624929711095() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624929711095"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451228255")});
+    }
+    public void test_NodeWarningCheck8129007564265008199() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8129007564265008199"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6640766779612767800")});
     }
     public void test_NodeCannotAssignValueToFinalCheck6923385624928162026() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624928162026"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
