@@ -33,6 +33,9 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
         allExtensions.remove(ext);
       }
     }
+    if (allExtensions.isEmpty()) {
+      throw new IllegalStateException("No applicable extensions for extension point " + toString());
+    }
     for (ExtensionFunction<T, R> ext1 : allExtensions) {
       boolean ext1OverridesAll = true;
       for (ExtensionFunction<T, R> ext2 : allExtensions) {
