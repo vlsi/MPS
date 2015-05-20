@@ -738,7 +738,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
-
   protected void notifyCreation() {
     jetbrains.mps.project.Project project = ProjectHelper.getProject(myRepository);
     if (project == null) {
