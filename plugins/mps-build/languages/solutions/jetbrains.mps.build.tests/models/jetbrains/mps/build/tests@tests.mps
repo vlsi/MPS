@@ -84,7 +84,6 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
@@ -814,12 +813,8 @@
         <node concept="3cqZAl" id="5FtnUVJQP$J" role="3clF45" />
         <node concept="3Tm1VV" id="5FtnUVJQP$K" role="1B3o_S" />
         <node concept="3clFbS" id="5FtnUVJQP$L" role="3clF47">
-          <node concept="XkiVB" id="5FtnUVJQPIe" role="3cqZAp">
-            <ref role="37wK5l" to="q383:~TemplateQueryContext.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.generator.runtime.TemplateContext,jetbrains.mps.generator.template.ITemplateGenerator)" resolve="TemplateQueryContext" />
-            <node concept="10Nm6u" id="5FtnUVJQPIf" role="37wK5m" />
-            <node concept="10Nm6u" id="1UmlZV9RMgp" role="37wK5m" />
-            <node concept="10Nm6u" id="1UmlZV9RMj8" role="37wK5m" />
-            <node concept="10Nm6u" id="5FtnUVJQPIl" role="37wK5m" />
+          <node concept="XkiVB" id="6sZ8RJMNnch" role="3cqZAp">
+            <ref role="37wK5l" to="q383:~TemplateQueryContext.&lt;init&gt;()" resolve="TemplateQueryContext" />
           </node>
           <node concept="3clFbF" id="5FtnUVJQRt3" role="3cqZAp">
             <node concept="37vLTI" id="5FtnUVJQRt4" role="3clFbG">
