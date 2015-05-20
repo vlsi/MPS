@@ -118,7 +118,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
 
   @Override
   public SNodeReference getMappingNode() {
-    return new jetbrains.mps.smodel.SNodePointer(myMappingConfiguration);
+    return myMappingConfiguration.getReference();
   }
 
   @Override
@@ -127,7 +127,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       if (myCondition == null) {
         myCondition = generator.getGeneratorSessionContext().getQueryProvider(getMappingNode()).getMapConfigurationCondition(myMappingConfiguration);
       }
-      return myCondition.check(new TemplateQueryContext(null, null, null, generator));
+      return myCondition.check(new TemplateQueryContext(getMappingNode(), generator));
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch(Throwable th) {

@@ -273,10 +273,10 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_747214206848678950(final PropertyMacroContext _context) {
     return GenUtil.asIdentifier("Template" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static Object propertyMacro_GetPropertyValue_9196441569928351552(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1104862325080102158(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_7141985354395202013(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1104862325080104985(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x113e48b50faL, "topPriorityGroup"));
   }
   public static Object propertyMacro_GetPropertyValue_4429320018138031261(final PropertyMacroContext _context) {
@@ -1450,28 +1450,28 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_9196441569928526569(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597e20a5L, "postMappingScript"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_7440135992755201738(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080138621(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x6cab949e66d5b3bbL, "condition")) != null);
   }
-  public static boolean ifMacro_Condition_330395710727938120(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080237997(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x190d31fe6a177473L, "patternReductionRule"))).isNotEmpty() || ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fca310cd5L, "reductionMappingRule"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_330395710727938147(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080243253(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fbbe00519L, "createRootRule"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_330395710727938165(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080248538(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fd54c33e7L, "rootMappingRule"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_330395710727938183(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080262578(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x10fc0e18af2L, "weavingMappingRule"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_330395710727938201(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080267918(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x11c0adbe243L, "dropRootRule"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_9196441569928526587(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080273323(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597e20a5L, "postMappingScript"))).isNotEmpty();
   }
-  public static boolean ifMacro_Condition_9196441569928526600(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_1104862325080289486(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x116597a610dL, "preMappingScript"))).isNotEmpty();
   }
   public static boolean ifMacro_Condition_2197859704660389774(final IfMacroContext _context) {

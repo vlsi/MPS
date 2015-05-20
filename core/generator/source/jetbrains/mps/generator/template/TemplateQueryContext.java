@@ -47,12 +47,26 @@ public class TemplateQueryContext {
   private final ITemplateGenerator myGenerator;
 
   /**
+   * Context for queries when an input node is not known yet (queries of an MC or a script).
+   * @since 3.3
+   */
+  public TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
+    myTemplateNode = templateNode;
+    myContext = null;
+    myGenerator = generator;
+  }
+
+  /**
    * @deprecated Use  alternative with SNodeReference, without explicit input node and ITemplateGenerator
+   * Kept in 3.3 as there might be generated code in MC.isApplicable methods that call it
    */
   @Deprecated
   @ToRemove(version = 3.1)
   public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
-    this(templateNode == null ? null : templateNode.getReference(), context == null ? new DefaultTemplateContext(inputNode) : context.subContext(inputNode), generator);
+    this(templateNode == null ? null : templateNode.getReference(), generator);
+    if (context != null) {
+     myContext = context.subContext(inputNode);
+    }
   }
 
   protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context) {
@@ -62,13 +76,12 @@ public class TemplateQueryContext {
   }
 
   /**
-   * Cons for code migration purposes - cases when TemplateContext is 'fake' and doesn't know its environment, and, hence, its generator
+   * Cons for internal/tests use, generally subclasses shall not call it.
    */
-  @ToRemove(version = 3.1)
-  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    myContext = context;
-    myTemplateNode = templateNode;
-    myGenerator = generator;
+  protected TemplateQueryContext() {
+    myContext = null;
+    myTemplateNode = null;
+    myGenerator = null;
   }
 
   /**
@@ -80,7 +93,7 @@ public class TemplateQueryContext {
 
 
   public SNode getInputNode() {
-    return myContext.getInput();
+    return myContext == null ? null : myContext.getInput();
   }
 
   public SNode getOutputNode() {
