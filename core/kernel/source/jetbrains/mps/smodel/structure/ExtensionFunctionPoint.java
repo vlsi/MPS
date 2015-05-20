@@ -20,19 +20,14 @@ import jetbrains.mps.util.IterableUtil;
 
 import java.util.List;
 
-public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<Function<T, R>> {
+public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFunction<T, R>> {
 
   public ExtensionFunctionPoint(String id) {
     super(id);
   }
 
-  @Override
-  public Iterable<ExtensionFunction<T, R>> getExtensions() {
-    return (Iterable<ExtensionFunction<T, R>>) super.getExtensions();
-  }
-
   R apply(T arg) {
-    List<ExtensionFunction<T, R>> allExtensions = IterableUtil.copyToList(getExtensions());
+    List<ExtensionFunction<T, R>> allExtensions = IterableUtil.copyToList(getObjects());
     for (ExtensionFunction<T, R> ext : allExtensions) {
       if (!ext.applicable(arg)) {
         allExtensions.remove(ext);
@@ -48,7 +43,7 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<Function<T, R>>
       }
       if (ext1OverridesAll) {
         allExtensions.remove(ext1);
-        return ext1.get().fun(arg);
+        return ext1.apply(arg);
       }
     }
     throw new IllegalStateException("Multiple applicable extensions for extension point " + toString());

@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import jetbrains.mps.util.Function;
-
 import java.util.Collection;
 
-public interface ExtensionFunction<T, R> extends Extension<Function<T, R>> {
+public interface ExtensionFunction<T, R> {
   boolean applicable(T argument);
   Collection<ExtensionFunction<T, R>> getOverridden();
+  R apply(T argument);
 }
