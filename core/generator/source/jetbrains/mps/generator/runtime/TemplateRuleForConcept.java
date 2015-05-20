@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 /**
  * Captures aspect of template rules that depend on input node's concept.
@@ -26,8 +28,21 @@ import org.jetbrains.annotations.NotNull;
  * @since 3.3
  */
 public interface TemplateRuleForConcept {
+  /**
+   * @deprecated this method is to be replaced with {@link #getApplicableConcept2()}
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.3)
   String getApplicableConcept();
+
+  /**
+   * THIS IS INTERNAL API. NAME OF THE METHOD WOULD CHANGE ONCE {@link #getApplicableConcept()} IS GONE
+   * @return concept to trigger this rule
+   * @since 3.3
+   */
+  @NotNull
+  SAbstractConcept getApplicableConcept2();
 
   boolean applyToInheritors();
 }

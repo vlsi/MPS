@@ -49,9 +49,8 @@ public class WeavingProcessor {
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
-      String applicableConcept = rule.getApplicableConcept();
       boolean includeInheritors = rule.applyToInheritors();
-      for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
+      for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept2(), includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
           continue;
         }
@@ -166,7 +165,7 @@ public class WeavingProcessor {
 
     @Override
     public String toString() {
-      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept(), myApplicableNode);
+      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept2().getQualifiedName(), myApplicableNode);
     }
   }
  }

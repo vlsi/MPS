@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateRuleForConcept;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Cache of rules for a given concept.
+ * IMPLEMENTATION NOTE:
+ * Despite switch to SConcept instead of concept names, we still use concept fqn as key, not SAbstractConcept object,
+ * as hashCode/equals methods of SAbstractConcept are ineffective now (SConceptAdapter#hashCode == 0 always).
  */
 public class FastRuleFinder<T extends TemplateRuleForConcept> {
 
@@ -48,7 +52,8 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
     Map<String, List<T>> inheritedRules = new HashMap<String, List<T>>();
 
     for (T rule : reductionRules) {
-      String applicableConceptFqName = rule.getApplicableConcept();
+      final SAbstractConcept applicableConcept = rule.getApplicableConcept2();
+      String applicableConceptFqName = applicableConcept.getQualifiedName();
 
       List<T> rules = specificRules.get(applicableConceptFqName);
       if (rules == null) {
@@ -58,10 +63,11 @@ public class FastRuleFinder<T extends TemplateRuleForConcept> {
       rules.add(rule);
 
       if (rule.applyToInheritors()) {
-        final Set<String> allDescendantConcepts = ConceptDescendantsCache.getInstance().getDescendants(applicableConceptFqName);
+        final Set<SAbstractConcept> allDescendantConcepts = ConceptDescendantsCache.getInstance().getDescendants(applicableConcept);
         // don't duplicate the rule for the initial concept in inheritedRules - it already is in specificRules
-        allDescendantConcepts.remove(applicableConceptFqName);
-        for (String conceptFqName : allDescendantConcepts) {
+        allDescendantConcepts.remove(applicableConcept);
+        for (SAbstractConcept descendant : allDescendantConcepts) {
+          final String conceptFqName = descendant.getQualifiedName();
           rules = inheritedRules.get(conceptFqName);
           if (rules == null) {
             rules = new LinkedList<T>();
