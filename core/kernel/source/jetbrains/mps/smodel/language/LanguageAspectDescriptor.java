@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.language;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
@@ -27,11 +28,17 @@ import java.util.Collections;
 public abstract class LanguageAspectDescriptor {
   public abstract Collection<SModel> getAspectModels(SModule language);
 
+  public abstract boolean hasAspect(SModule language);
+
   public abstract Collection<SLanguage> getMainLanguages();
 
   public Collection<SLanguage> getAdditionalLanguages(){
     return Collections.emptyList();
   }
+
+  public abstract SNode getInterfaceClassDeclaration();
+
+  public abstract String getImplementationClassName(SModule language);
 
   @Nullable
   public Icon getIcon(){
