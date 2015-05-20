@@ -33,12 +33,15 @@ public abstract class SConceptRepository {
   }
 
   @Deprecated // since 3.2
+  //remove after 3.3
   @NotNull
   public abstract SConcept getInstanceConcept(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
+  //remove after 3.3
   public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
+  //remove after 3.3
   public abstract SLanguage getLanguage(@NotNull String qualifiedName);
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,16 +18,9 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -36,7 +29,7 @@ public class QuickFixAdapter extends BaseIntentionFactory {
   private QuickFix_Runtime myQuickFix;
   private boolean myIsError;
 
-  public QuickFixAdapter(QuickFix_Runtime quickFix, boolean isError) {
+  public QuickFixAdapter(@NotNull QuickFix_Runtime quickFix, boolean isError) {
     myQuickFix = quickFix;
     myIsError = isError;
   }
@@ -78,29 +71,9 @@ public class QuickFixAdapter extends BaseIntentionFactory {
     //return IntentionType.QUICKFIX;
   }
 
-  //if generated returns source, if not returns null
-  private SNode getQuickFixSourceNode() {
-    String classFQName = myQuickFix.getClass().getName();
-    SModelReference reference = PersistenceFacade.getInstance().createModelReference(NameUtil.namespaceFromLongName(classFQName));
-    SModel model = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (model != null) {
-      String shortName = NameUtil.shortNameFromLongName(classFQName);
-      String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
-      return SModelOperations.getRootByName(model, rootName);
-    }
-    return null;
-  }
-
   @Override
   public SNodeReference getIntentionNodeReference() {
-    //TODO: generate getQuickFixNodeReference() method into quickfix class
-    return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
-      @Override
-      public SNodeReference compute() {
-        SNode node = getQuickFixSourceNode();
-        return node != null ? node.getReference() : null;
-      }
-    });
+    return myQuickFix.getDeclarationNode();
   }
 
   @Override

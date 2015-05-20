@@ -5,22 +5,15 @@ package jetbrains.mps.refactoring.framework;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import jetbrains.mps.project.GlobalScope;
-import java.util.Collections;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -48,18 +41,6 @@ public class RefactoringUtil {
       }
     }
     return null;
-  }
-  public static List<SNode> getAllRefactoringNodes() {
-    final List<SNode> availableRefactorings = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SAbstractConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
-        Set<SNode> newRefactorings = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c1), false, new EmptyProgressMonitor());
-        availableRefactorings.addAll(newRefactorings);
-      }
-    });
-    return availableRefactorings;
   }
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();

@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -62,11 +63,12 @@ public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends
       return new IsApplicableStatus(b, pattern);
     }
   }
-  public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.lang.smodel.structure.SNodeListType";
+
+  public SAbstractConcept getApplicableSubtypeConcept() {
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType");
   }
-  public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.SequenceType";
+  public SAbstractConcept getApplicableSupertypeConcept() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
   }
   public static class Pattern_j2zomq_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_CONCEPT;

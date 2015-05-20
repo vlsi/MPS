@@ -16,9 +16,17 @@
 package jetbrains.mps.workbench;
 
 import com.intellij.openapi.application.ApplicationInfo;
+import org.jetbrains.annotations.NotNull;
 
 public final class DocumentationHelper {
   public static String getConfluenceBase() {
-    return "http://confluence.jetbrains.com/display/MPSD" + ApplicationInfo.getInstance().getMajorVersion() + ApplicationInfo.getInstance().getMinorVersion() + "/";
+    return "http://confluence.jetbrains.com/display/MPSD" + ApplicationInfo.getInstance().getMajorVersion() +
+        removeTrailingBugfixVersion(ApplicationInfo.getInstance().getMinorVersion()) + "/";
+  }
+
+  @NotNull
+  private static String removeTrailingBugfixVersion(@NotNull final String minorVersion) {
+    final int index = minorVersion.indexOf('.');
+    return (index > 0) ? minorVersion.substring(0, index) : minorVersion;
   }
 }

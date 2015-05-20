@@ -645,11 +645,11 @@
   </root>
   <root nodeRef="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)/173672751428923189">
     <file name="UIQueryRelayStrategy.java">
-      <node id="173672751428923198" at="20,99,21,78" concept="10" />
+      <node id="173672751428923198" at="20,92,21,78" concept="10" />
       <node id="173672751428923217" at="23,33,24,27" concept="11" />
       <node id="173672751428923224" at="26,36,27,85" concept="10" />
       <node id="173672751428923233" at="27,85,28,52" concept="10" />
-      <node id="173672751428923241" at="30,25,31,171" concept="5" />
+      <node id="173672751428923241" at="30,25,31,161" concept="5" />
       <node id="173672751428923260" at="34,24,35,32" concept="11" />
       <node id="173672751428923267" at="36,5,37,64" concept="11" />
       <node id="173672751428923280" at="40,0,41,0" concept="9" trace="beforeDialogShown#()V" />
@@ -659,10 +659,10 @@
       <node id="173672751428923258" at="33,7,36,5" concept="8" />
       <node id="173672751428923207" at="21,78,26,36" concept="10" />
       <node id="173672751428923237" at="28,52,33,7" concept="5" />
-      <node id="173672751428923190" at="20,0,39,0" concept="9" trace="relayQuery#(Ljetbrains/mps/make/script/IQuery;Ljetbrains/mps/smodel/IOperationContext;)null" />
+      <node id="173672751428923190" at="20,0,39,0" concept="9" trace="relayQuery#(Ljetbrains/mps/make/script/IQuery;Ljetbrains/mps/project/Project;)null" />
       <scope id="173672751428923278" at="18,33,18,33" />
       <scope id="173672751428923216" at="23,33,24,27" />
-      <scope id="173672751428923240" at="30,25,31,171" />
+      <scope id="173672751428923240" at="30,25,31,161" />
       <scope id="173672751428923259" at="34,24,35,32" />
       <scope id="173672751428923280" at="40,0,41,0" />
       <scope id="173672751428923275" at="18,0,20,0" />
@@ -670,14 +670,14 @@
         <var name="o" id="173672751428923215" />
       </scope>
       <scope id="173672751428923239" at="30,0,33,0" />
-      <scope id="173672751428923197" at="20,99,37,64">
+      <scope id="173672751428923197" at="20,92,37,64">
         <var name="defopt" id="173672751428923225" />
         <var name="optList" id="173672751428923199" />
         <var name="options" id="173672751428923208" />
         <var name="res" id="173672751428923234" />
       </scope>
       <scope id="173672751428923190" at="20,0,39,0">
-        <var name="context" id="173672751428923194" />
+        <var name="mpsProject" id="173672751428923194" />
         <var name="query" id="173672751428923191" />
       </scope>
       <unit id="173672751428923279" at="39,0,42,0" name="jetbrains.mps.ide.make.UIQueryRelayStrategy$DialogListener" />

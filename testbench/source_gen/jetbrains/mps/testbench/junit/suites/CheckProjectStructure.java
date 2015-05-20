@@ -6,34 +6,196 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 import jetbrains.mps.testbench.junit.Order;
 import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.validation.MessageCollectProcessor;
+import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.NodeValidationProblem;
+import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.extapi.model.GeneratableSModel;
+import java.util.Collection;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class CheckProjectStructure extends BaseCheckModulesTest {
   public CheckProjectStructure(SModule module) {
     super(module);
   }
+
   @Test
   @Order(value = 1)
-  public void checkReferences() {
-    List<String> errors = CheckingTestsUtil.checkReferences(myModule);
-    Assert.assertTrue("Reference errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  public void checkModuleProperties() {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
+        if (myModule instanceof Language) {
+          ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
+        }
+
+        for (SModule sm : modules) {
+          MessageCollectProcessor processor = new MessageCollectProcessor(false);
+          ValidationUtil.validateModule(sm, processor);
+          if (processor.getErrors().isEmpty()) {
+            continue;
+          }
+
+          StringBuilder errorMessages = new StringBuilder();
+          for (String item : processor.getErrors()) {
+            errorMessages.append("\t").append(item).append("\n");
+          }
+          errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+        }
+
+      }
+    });
+    Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
+
   @Test
   @Order(value = 2)
-  public void checkStructure() {
-    List<String> errors = CheckingTestsUtil.checkStructure(myModule);
-    Assert.assertTrue("Structure errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  public void checkModels() {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModel sm : extractModels(true)) {
+          MessageCollectProcessor collector = new MessageCollectProcessor(false);
+          ValidationUtil.validateModel(sm, collector);
+          if (collector.getErrors().isEmpty()) {
+            continue;
+          }
+
+          final StringBuilder errorMessages = new StringBuilder();
+          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+          ListSequence.fromList(((List<String>) collector.getErrors())).visitAll(new IVisitor<String>() {
+            public void visit(String it) {
+              errorMessages.append("\t").append(it).append("\n");
+            }
+          });
+          errors.add(errorMessages.toString());
+        }
+      }
+    });
+    Assert.assertTrue("Model errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
+
   @Test
   @Order(value = 3)
-  public void checkGenerationStatus() {
-    List<String> errors = CheckingTestsUtil.checkGenerationStatus(myModule);
-    Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  public void checkStructure() {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModel sm : extractModels(true)) {
+          MessageCollectProcessor collector = new MessageCollectProcessor(false) {
+            @Override
+            protected String formatMessage(ValidationProblem problem) {
+              String err = super.formatMessage(problem);
+              if (!((problem instanceof NodeValidationProblem))) {
+                return err;
+              }
+              return err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
+            }
+          };
+          ValidationUtil.validateModelContent(sm.getRootNodes(), new SuppressingAwareProcessorDecorator(collector));
+          if (collector.getErrors().isEmpty()) {
+            continue;
+          }
+
+          final StringBuilder errorMessages = new StringBuilder();
+          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+          ListSequence.fromList(((List<String>) collector.getErrors())).visitAll(new IVisitor<String>() {
+            public void visit(String it) {
+              errorMessages.append("\t").append(it).append("\n");
+            }
+          });
+          errors.add(errorMessages.toString());
+        }
+      }
+    });
+    Assert.assertTrue("Structure errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
+
   @Test
   @Order(value = 4)
-  public void checkModuleProperties() {
-    List<String> errors = CheckingTestsUtil.checkModule(myModule);
-    Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  public void checkReferences() {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModel sm : extractModels(true)) {
+          StringBuilder errorMessages = new StringBuilder();
+          errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
+          boolean withErrors = false;
+
+          for (SNode node : SNodeUtil.getDescendants(sm)) {
+            for (SReference ref : node.getReferences()) {
+              if (jetbrains.mps.smodel.SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
+                continue;
+              }
+              if (SNodeOperations.getTargetNodeSilently(ref) != null) {
+                continue;
+              }
+
+              withErrors = true;
+              errorMessages.append("Broken reference in model {").append(SNodeOperations.getModelLongName(node.getModel())).append("}").append(" node ").append(node.getNodeId().toString()).append("(").append(node).append(")\n");
+            }
+          }
+
+          if (withErrors) {
+            errors.add("Broken References: " + errorMessages.toString());
+          }
+        }
+      }
+    });
+    Assert.assertTrue("Reference errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  }
+
+  @Test
+  @Order(value = 5)
+  public void checkGenerationStatus() {
+    final List<String> errors = new ArrayList<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModel sm : extractModels(false)) {
+          SModule module = sm.getModule();
+          if (module == null) {
+            errors.add("Model without a module: " + sm.getReference().toString());
+            continue;
+          }
+          String genHash = ModelGenerationStatusManager.getLastGenerationHash(((GeneratableSModel) sm));
+          if (genHash == null) {
+            errors.add("No generated hash for " + sm.getReference().toString());
+            continue;
+          }
+          String realHash = ((GeneratableSModel) sm).getModelHash();
+          if (realHash == null) {
+            errors.add("cannot gen cache for " + sm.getReference().toString());
+            continue;
+          }
+          if (!(realHash.equals(genHash))) {
+            errors.add("model requires generation: " + sm.getReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
+          }
+        }
+      }
+    });
+
+    Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
+  }
+
+  private Collection<SModel> extractModels(boolean includeDontGenerate) {
+    Collection<SModel> models = new ModelsExtractor(myModule, includeDontGenerate).includingGenerators().getModels();
+    // todo this was made because cardinalities check fail. This hack should be removed 
+    models.remove(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.baseLanguage.test@tests"));
+    return models;
   }
 }

@@ -30,7 +30,5 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
  * @see jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor
  */
 public interface ConstraintsAspectDescriptor extends LanguageAspectDescriptor {
-  @Deprecated
-  ConstraintsDescriptor getDescriptor(String fqName);
   ConstraintsDescriptor getDescriptor(SConceptId conceptId);
 }

@@ -4,33 +4,30 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.featureStatistics.FeatureUsageTracker;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class HighlightUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,16 +40,7 @@ public class HighlightUsages_Action extends BaseAction {
   public boolean isDumbAware() {
     return false;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "HighlightUsages", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,62 +51,65 @@ public class HighlightUsages_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("editorCell", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("editorCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("editorCell") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.highlightUsages");
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
-          EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-          SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
-          Set<SReference> usages = FindUsagesFacade.getInstance().findUsages(new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
-          boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
-          if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.highlightUsages");
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
+        EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+        SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
+        Set<SReference> usages = FindUsagesFacade.getInstance().findUsages(new ModelsScope(((SModel) MapSequence.fromMap(_params).get("model"))), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+        boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
+        if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
+          if (highlight) {
+            highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
+          } else {
+            for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+              highlightManager.unmark(message);
+            }
+          }
+        }
+        for (SReference ref : SetSequence.fromSet(usages)) {
+          if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
-              highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
+              highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
             } else {
-              for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+              for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
                 highlightManager.unmark(message);
               }
             }
           }
-          for (SReference ref : SetSequence.fromSet(usages)) {
-            if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
-              if (highlight) {
-                highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
-              } else {
-                for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
-                  highlightManager.unmark(message);
-                }
-              }
-            }
-          }
-          highlightManager.repaintAndRebuildEditorMessages();
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "HighlightUsages", t);
+        highlightManager.repaintAndRebuildEditorMessages();
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(HighlightUsages_Action.class);
 }

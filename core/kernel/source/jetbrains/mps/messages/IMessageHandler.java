@@ -16,6 +16,7 @@
 package jetbrains.mps.messages;
 
 import jetbrains.mps.logging.Log4jUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,7 +25,14 @@ public interface IMessageHandler {
     @Override
     public void handle(IMessage msg) {
     }
+
+    /**
+     * @deprecated clear() is vague in the context of message handling. Clients of this interface shall not care to clear the handler
+     * (nor it's always possible, e.g. with handlers backed with a log), and suppliers of the API may use whatever needed to ensure clean message output
+     */
     @Override
+    @Deprecated
+    @ToRemove(version = 3.3)
     public void clear() {
     }
   };

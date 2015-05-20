@@ -15,7 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 @Deprecated
@@ -145,8 +147,9 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     return list;
   }
   @Override
-  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
-    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration").getDeclarationNode())) {
+  public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConceptNode) {
+    SAbstractConcept targetConcept = MetaAdapterByDeclaration.getConcept(targetConceptNode);
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
@@ -157,7 +160,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration").getDeclarationNode())) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
@@ -168,7 +171,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    if (SModelUtil.isAssignableConcept(targetConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration").getDeclarationNode())) {
+    if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
       return new IReferenceInfoResolver() {
         @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
@@ -179,6 +182,6 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
         }
       };
     }
-    return super.getReferenceInfoResolver(referenceNode, targetConcept);
+    return super.getReferenceInfoResolver(referenceNode, targetConceptNode);
   }
 }

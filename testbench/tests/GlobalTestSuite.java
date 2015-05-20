@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,21 +33,22 @@ import org.junit.runners.Suite;
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,
     jetbrains.mps.classloading.ModulesReloadTestStress.class,
-    jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
-    jetbrains.mps.packaged.PackagedLanguageTest.class,
     jetbrains.mps.ide.vcs.test.merge.DiskMemoryConflictsTest.class,
-//  jetbrains.mps.ide.vcs.test.merge.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
-    jetbrains.mps.ide.vcs.test.merge.MergeCoreTest.class,
+    jetbrains.mps.ide.vcs.test.merge.ChangesCalculationTest.class,
+    jetbrains.mps.ide.vcs.test.merge.RootStatusTest.class,
+    jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Nodes.class,
+    //temporary disabled as after last enabling it is hanging builds, need more accurate waits
+    //jetbrains.mps.ide.vcs.test.merge.IncrementalChangeUpdateTest_Model.class,
+    jetbrains.mps.ide.vcs.test.merge.ChangesRollbackTest.class,
+    jetbrains.mps.ide.vcs.test.merge.MergeTest.class,
     jetbrains.mps.vfs.VfsTest.class,
 //    jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,  //TODO: move this test to closed repository
-    jetbrains.mps.PersistenceTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
-    jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class,

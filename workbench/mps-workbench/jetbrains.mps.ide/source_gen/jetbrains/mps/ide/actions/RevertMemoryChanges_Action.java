@@ -10,9 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -25,43 +22,33 @@ public class RevertMemoryChanges_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RevertMemoryChanges", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
-    }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
-      }
-    }
+    ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
   }
-  protected static Logger LOG = LogManager.getLogger(RevertMemoryChanges_Action.class);
 }

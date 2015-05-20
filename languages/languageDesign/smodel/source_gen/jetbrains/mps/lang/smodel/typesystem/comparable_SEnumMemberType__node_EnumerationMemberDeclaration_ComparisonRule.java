@@ -7,7 +7,8 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -26,10 +27,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     return true;
   }
   public IsApplicableStatus isApplicableFirst(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableConcept1()), null);
   }
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
@@ -39,11 +37,12 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
       return new IsApplicableStatus(b, pattern);
     }
   }
-  public String getApplicableConceptFQName1() {
-    return "jetbrains.mps.lang.smodel.structure.SEnumMemberType";
+
+  public SAbstractConcept getApplicableConcept1() {
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120bfe51421L, "jetbrains.mps.lang.smodel.structure.SEnumMemberType");
   }
-  public String getApplicableConceptFQName2() {
-    return "jetbrains.mps.lang.smodel.structure.SNodeType";
+  public SAbstractConcept getApplicableConcept2() {
+    return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
   public static class Pattern_vbthi0_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_vbthi0_a0a0a0a5() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,10 +33,8 @@ import java.util.Map;
 public class LanguageModelDigestIndex extends BaseModelDigestIndex {
   public static final ID<Integer, Map<String, String>> NAME = ID.create("LanguageModelDigest");
 
-  @NotNull
-  @Override
-  public ID<Integer, Map<String, String>> getName() {
-    return NAME;
+  public LanguageModelDigestIndex() {
+    super(NAME, 2);
   }
 
   @NotNull
@@ -48,11 +46,6 @@ public class LanguageModelDigestIndex extends BaseModelDigestIndex {
         return file.getFileType().equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE);
       }
     };
-  }
-
-  @Override
-  public int getVersion() {
-    return 2;
   }
 
   @Override

@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -32,10 +33,13 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -99,6 +103,17 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptsInLoading.get().remove(new Pair<Object, LanguageAspect>(fqName, aspect));
   }
 
+  @NotNull
+  public ConceptDescriptor getConceptDescriptor(@NotNull SAbstractConcept concept) {
+    if (concept instanceof SConceptAdapterById){
+      return getConceptDescriptor(((SConceptAdapterById) concept).getId());
+    }else{
+      return getConceptDescriptor(concept.getQualifiedName());
+    }
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.3)
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
@@ -226,8 +241,20 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
-  @Deprecated
+
   @NotNull
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
+    if (concept instanceof SConceptAdapterById){
+      return getConstraintsDescriptor(((SConceptAdapterById) concept).getId());
+    }else{
+      return getConstraintsDescriptor(concept.getQualifiedName());
+    }
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  @NotNull
+  //no usages in MPS
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
     ConceptDescriptor conceptDescriptor = getConceptDescriptor(fqName);
     return getConstraintsDescriptor(conceptDescriptor.getId());

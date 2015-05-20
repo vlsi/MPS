@@ -8,11 +8,11 @@ import javax.swing.JScrollPane;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
@@ -37,19 +37,20 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   private SModel myBaseModel;
   public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
-    repository.getModelAccess().runReadAction(new Runnable() {
+    final ModelAccess modelAccess = repository.getModelAccess();
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
-        final jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0a0a0a0a0b0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
+        final jetbrains.mps.smodel.SModel baseModel = as_i3w5ys_a0a0a0a0a0a0c0c(ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel(), SModelBase.class).getSModelInternal();
         myBaseModel = new MergeTemporaryModel(CopyUtil.copyModel(baseModel), true);
       }
     });
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    modelAccess.runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.renameModelAndRegister(myBaseModel, null);
       }
     });
     final Wrappers._T<Bounds> verticalBounds = new Wrappers._T<Bounds>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    modelAccess.runReadAction(new Runnable() {
       public void run() {
         SNode baseRooot = myBaseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
         editNode(baseRooot);
@@ -98,7 +99,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
   @Override
   public void dispose() {
-    ModelAccess.instance().requireWrite(new Runnable() {
+    getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         DiffModelUtil.unregisterModel(myBaseModel);
       }
@@ -108,7 +109,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   public JScrollPane getScrollPane() {
     return myScrollPane;
   }
-  private static <T> T as_i3w5ys_a0a0a0a0a0a0b0c(Object o, Class<T> type) {
+  private static <T> T as_i3w5ys_a0a0a0a0a0a0c0c(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

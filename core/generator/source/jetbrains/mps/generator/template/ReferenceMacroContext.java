@@ -19,20 +19,38 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 
-public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
-  private SNode myOutputNode;
-  private String myRole;
+/**
+ * What Reference Macro resolution code could expect to know about outer world.
+ */
+public final class ReferenceMacroContext extends TemplateQueryContextWithMacro {
+  private final SNode myOutputNode;
+  private final SReferenceLink myRole;
 
   /**
+   * @deprecated there's code generated with MPS 3.2 that instantiates this context
    * @since 3.1
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public ReferenceMacroContext(@NotNull TemplateContext context, SNode outputNode, @NotNull SNodeReference macroNode, @NotNull String role) {
+    super(context, macroNode);
+    myOutputNode = outputNode;
+    myRole = ((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role);
+  }
+
+  /**
+   * @since 3.3
+   */
+  public ReferenceMacroContext(@NotNull TemplateContext context, @NotNull SNode outputNode, @NotNull SNodeReference macroNode, @NotNull SReferenceLink role) {
     super(context, macroNode);
     myOutputNode = outputNode;
     myRole = role;
@@ -49,10 +67,10 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   @Override
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
-    if(outputNodes == null) return null;
-    SNode referenceSourceNode = getOutputNode();
-    String referenceRole = myRole;
-    final Scope scope = ModelConstraints.getReferenceDescriptor(referenceSourceNode, referenceRole).getScope();
+    if(outputNodes == null) {
+      return null;
+    }
+    final Scope scope = ModelConstraints.getReferenceDescriptor(getOutputNode(), myRole).getScope();
     for (SNode outputNode : outputNodes) {
       if (scope.contains(outputNode)) {
         return outputNode;

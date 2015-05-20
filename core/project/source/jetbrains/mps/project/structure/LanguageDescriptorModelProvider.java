@@ -352,6 +352,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     public void invalidate() {
+      if (getSModel().isDisposed()) {
+        // SModelBase.detach() dispose a model, but doesn't null the reference.
+        // When we delete a language module, models are deleted one by one, and if @descriptor is deleted first,
+        // beforeRemove(other models) fails with NPE on update to change reference of disposed model
+        // Not sure though, if it's the right approach, if we won't get to invalidate() with disposed descriptor, but
+        // there is a need to re-init descriptor model.
+        return;
+      }
       changeModelReference(getSModelReference(myModule));
       myHash = null;
     }

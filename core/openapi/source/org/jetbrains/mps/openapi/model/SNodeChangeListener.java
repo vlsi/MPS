@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
  * Change listeners get notified regardless of model being attached to a repository.
  * If, however, model is attached to a repository, all notifications are delivered inside a write lock on the repository <em>after</em> a real change.
  *
+ * @see SNodeChangeListenerAdapter
  * @see org.jetbrains.mps.openapi.model.SModel#addChangeListener(SNodeChangeListener)
  * @since 3.3
  * @author Artem Tikhomirov

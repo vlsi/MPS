@@ -171,7 +171,7 @@ public class TypecheckerStateViewComponent extends JPanel {
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;
     final SModelReference modelUID = PersistenceFacade.getInstance().createModelReference(ruleModel);
-    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(modelUID.getModelName()));
+    final SModel modelDescriptor = modelUID.resolve(myProject.getRepository());
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;

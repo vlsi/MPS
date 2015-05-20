@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class supertypesOfLowerBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public supertypesOfLowerBoundType_InequationReplacementRule() {
@@ -50,21 +50,16 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
     return true;
   }
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSubtypeConcept()), null);
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSupertypeConcept()), null);
   }
-  public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LowerBoundType";
+
+  public SAbstractConcept getApplicableSubtypeConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
   }
-  public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.Type";
+  public SAbstractConcept getApplicableSupertypeConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
   }
 }

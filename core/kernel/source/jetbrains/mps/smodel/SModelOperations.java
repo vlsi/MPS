@@ -20,7 +20,6 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -86,7 +85,6 @@ public class SModelOperations {
 
     final SModule module = model.getModule();
     final Collection<SModule> moduleDeclaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
-    final Collection<SLanguage> moduleDeclaredUsedLanguages = module != null ? module.getUsedLanguages() : null;
     Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -98,12 +96,6 @@ public class SModelOperations {
     modelScanner.crossModelReferences(true).usedLanguages(true).walk(model);
     for (SLanguage language : modelScanner.getUsedLanguages()) {
       if (!modelDeclaredUsedLanguages.contains(language)) {
-        if (module != null) {
-          if (updateModuleImports && !moduleDeclaredUsedLanguages.contains(language)) {
-            ((AbstractModule) module).addUsedLanguage(language);
-          }
-        }
-
         modelDeclaredUsedLanguages.add(language);
         ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
       }

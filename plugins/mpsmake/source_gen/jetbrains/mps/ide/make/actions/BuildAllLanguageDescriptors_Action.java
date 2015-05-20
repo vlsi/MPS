@@ -4,16 +4,14 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,8 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class BuildAllLanguageDescriptors_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,53 +33,40 @@ public class BuildAllLanguageDescriptors_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "BuildAllLanguageDescriptors", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
-      ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          Iterable<? extends SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
-            public SModel select(Language it) {
-              return Sequence.fromIterable(((Iterable<SModel>) it.getModels())).findFirst(new IWhereFilter<SModel>() {
-                public boolean accept(SModel it) {
-                  return "descriptor".equals(SModelStereotype.getStereotype(it));
-                }
-              });
-            }
-          }).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it) {
-              return it != null && SNodeOperations.isGeneratable(it);
-            }
-          }));
-        }
-      });
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).models(models.value).cleanMake(true)).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "BuildAllLanguageDescriptors", t);
+    final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModules();
+        models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).ofType(Language.class).select(new ISelector<Language, SModel>() {
+          public SModel select(Language it) {
+            return Sequence.fromIterable(((Iterable<SModel>) it.getModels())).findFirst(new IWhereFilter<SModel>() {
+              public boolean accept(SModel it) {
+                return "descriptor".equals(SModelStereotype.getStereotype(it));
+              }
+            });
+          }
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return it != null && SNodeOperations.isGeneratable(it);
+          }
+        }));
       }
-    }
+    });
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).models(models.value).cleanMake(true)).executeAction();
   }
-  protected static Logger LOG = LogManager.getLogger(BuildAllLanguageDescriptors_Action.class);
 }

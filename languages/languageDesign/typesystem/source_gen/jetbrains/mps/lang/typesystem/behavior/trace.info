@@ -46,7 +46,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,228,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,234,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CaretPositionOperation_BehaviorDescriptor.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
@@ -305,6 +305,15 @@
     </file>
     <file name="SelectionType_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.SelectionType_BehaviorDescriptor" />
+    </file>
+    <file name="SubstituteTypeRuleFunction_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRuleFunction_BehaviorDescriptor" />
+    </file>
+    <file name="SubstituteTypeRuleFunction_OriginalNode_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRuleFunction_OriginalNode_BehaviorDescriptor" />
+    </file>
+    <file name="SubstituteTypeRule_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRule_BehaviorDescriptor" />
     </file>
     <file name="SubtypingRule_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.SubtypingRule_BehaviorDescriptor" />
@@ -1135,6 +1144,71 @@
       <unit id="3044950653914723938" at="15,0,36,0" name="jetbrains.mps.lang.typesystem.behavior.VariableConverterItem_ApplicableBlock_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3077325331580126550">
+    <file name="SubstituteTypeRuleFunction_Behavior.java">
+      <node id="3077325331580153462" at="18,125,19,268" concept="2" />
+      <node id="3077325331580161338" at="19,268,20,208" concept="8" />
+      <node id="3077325331580159845" at="22,83,23,47" concept="8" />
+      <node id="3077325331580159846" at="25,60,26,63" concept="7" />
+      <node id="3077325331580159846" at="26,63,27,30" concept="7" />
+      <node id="3077325331580159846" at="27,30,28,221" concept="0" />
+      <node id="3077325331580159846" at="27,30,28,221" concept="0" />
+      <node id="3077325331580159846" at="27,30,28,221" concept="2" />
+      <node id="3077325331580159846" at="28,221,29,24" concept="8" />
+      <node id="3077325331580126550" at="16,0,18,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3077325331580126550" at="22,0,25,0" concept="10" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3077325331580126550" at="18,0,22,0" concept="10" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="3077325331580159846" at="25,0,31,0" concept="10" trace="_quotation_createNode_cjlt90_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3077325331580126552" at="16,43,16,43" />
+      <scope id="3077325331580153482" at="22,83,23,47" />
+      <scope id="3077325331580159846" at="27,30,28,221" />
+      <scope id="3077325331580126550" at="16,0,18,0">
+        <var name="thisNode" id="3077325331580126550" />
+      </scope>
+      <scope id="3077325331580153456" at="18,125,20,208" />
+      <scope id="3077325331580126550" at="22,0,25,0">
+        <var name="thisNode" id="3077325331580126550" />
+      </scope>
+      <scope id="3077325331580126550" at="18,0,22,0">
+        <var name="thisConcept" id="3077325331580126550" />
+      </scope>
+      <scope id="3077325331580159846" at="25,60,29,24">
+        <var name="facade" id="3077325331580159846" />
+        <var name="quotedNode_1" id="3077325331580159846" />
+      </scope>
+      <scope id="3077325331580159846" at="25,0,31,0" />
+      <unit id="3077325331580126550" at="15,0,32,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRuleFunction_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3077325331580160026">
+    <file name="SubstituteTypeRuleFunction_OriginalNode_Behavior.java">
+      <node id="3077325331580161226" at="13,75,14,47" concept="8" />
+      <node id="3077325331580161224" at="16,60,17,63" concept="7" />
+      <node id="3077325331580161224" at="17,63,18,30" concept="7" />
+      <node id="3077325331580161224" at="18,30,19,221" concept="0" />
+      <node id="3077325331580161224" at="18,30,19,221" concept="0" />
+      <node id="3077325331580161224" at="18,30,19,221" concept="2" />
+      <node id="3077325331580161224" at="19,221,20,24" concept="8" />
+      <node id="3077325331580160026" at="11,0,13,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3077325331580160026" at="13,0,16,0" concept="10" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3077325331580161224" at="16,0,22,0" concept="10" trace="_quotation_createNode_ogjxib_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3077325331580160028" at="11,43,11,43" />
+      <scope id="3077325331580161206" at="13,75,14,47" />
+      <scope id="3077325331580161224" at="18,30,19,221" />
+      <scope id="3077325331580160026" at="11,0,13,0">
+        <var name="thisNode" id="3077325331580160026" />
+      </scope>
+      <scope id="3077325331580160026" at="13,0,16,0">
+        <var name="thisNode" id="3077325331580160026" />
+      </scope>
+      <scope id="3077325331580161224" at="16,60,20,24">
+        <var name="facade" id="3077325331580161224" />
+        <var name="quotedNode_1" id="3077325331580161224" />
+      </scope>
+      <scope id="3077325331580161224" at="16,0,22,0" />
+      <unit id="3077325331580160026" at="10,0,23,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRuleFunction_OriginalNode_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3350570190399391695">
     <file name="WhenConcreteVariableDeclaration_Behavior.java">
       <node id="3350570190399462396" at="11,43,12,356" concept="2" />
@@ -1571,6 +1645,24 @@
         <var name="thisNode" id="590757823759247528" />
       </scope>
       <unit id="590757823759247528" at="10,0,18,0" name="jetbrains.mps.lang.typesystem.behavior.NonTypesystemRule_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/6405009306797517164">
+    <file name="SubstituteTypeRule_Behavior.java">
+      <node id="6405009306797517201" at="13,100,14,186" concept="2" />
+      <node id="6405009306797517549" at="14,186,15,330" concept="2" />
+      <node id="6405009306797517164" at="11,0,13,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6405009306797517164" at="13,0,17,0" concept="10" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6405009306797517166" at="11,43,11,43" />
+      <scope id="6405009306797517164" at="11,0,13,0">
+        <var name="thisNode" id="6405009306797517164" />
+      </scope>
+      <scope id="6405009306797517193" at="13,100,15,330" />
+      <scope id="6405009306797517164" at="13,0,17,0">
+        <var name="baseConcept" id="6405009306797517194" />
+        <var name="thisNode" id="6405009306797517164" />
+      </scope>
+      <unit id="6405009306797517164" at="10,0,18,0" name="jetbrains.mps.lang.typesystem.behavior.SubstituteTypeRule_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/658365993682020113">

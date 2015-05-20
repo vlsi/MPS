@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class JavaStubNodeDescriptor implements NavigationParticipant.NavigationTarget {
   private final IClassPathItem myItem;
@@ -34,18 +34,17 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
   }
   @Override
   public SConcept getConcept() {
-    String name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
     ClassifierKind kind = JavaStubNodeDescriptor.this.myItem.getClassifierKind(("".equals(JavaStubNodeDescriptor.this.myPName) ? JavaStubNodeDescriptor.this.myCls : JavaStubNodeDescriptor.this.myPName + "." + JavaStubNodeDescriptor.this.myCls));
     if (kind == ClassifierKind.CLASS) {
-      name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     } else if (kind == ClassifierKind.INTERFACE) {
-      name = "jetbrains.mps.baseLanguage.structure.Interface";
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
     } else if (kind == ClassifierKind.ANNOTATIONS) {
-      name = "jetbrains.mps.baseLanguage.structure.Annotation";
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation");
     } else if (kind == ClassifierKind.ENUM) {
-      name = "jetbrains.mps.baseLanguage.structure.EnumClass";
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass");
     }
-    return ((SConcept) SConceptRepository.getInstance().getConcept(name));
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
   @Override
   public boolean equals(Object o) {

@@ -10,17 +10,13 @@ import jetbrains.mps.make.IMakeService;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
-import jetbrains.mps.ide.make.TextPreviewUtil;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
+import jetbrains.mps.ide.make.TextPreviewUtil;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,62 +29,57 @@ public class TextPreviewModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    SModel md = TextPreviewModel_Action.this.modelToGenerate(_params);
+    SModel md = TextPreviewModel_Action.this.modelToGenerate(event);
     return md != null && SNodeOperations.isGeneratable(md);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "TextPreviewModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("cnode", event.getData(MPSCommonDataKeys.NODE));
-    MapSequence.fromMap(_params).put("cmodel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("cmodel") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
+    }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      MakeSession session = new MakeSession(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), new DefaultMakeMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))), true);
-      if (IMakeService.INSTANCE.get().openNewSession(session)) {
-        TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(_params), ((SNode) MapSequence.fromMap(_params).get("cnode")));
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "TextPreviewModel", t);
-      }
+    MakeSession session = new MakeSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), new DefaultMakeMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT)), true);
+    if (IMakeService.INSTANCE.get().openNewSession(session)) {
+      TextPreviewUtil.previewModelText(session, TextPreviewModel_Action.this.modelToGenerate(event), event.getData(MPSCommonDataKeys.NODE));
     }
   }
-  private SModel modelToGenerate(final Map<String, Object> _params) {
+  private SModel modelToGenerate(final AnActionEvent event) {
     SModel md = null;
-    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
-      md = ((SModel) MapSequence.fromMap(_params).get("cmodel"));
-    } else if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() > 0) {
-      md = ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0);
+    if (event.getData(MPSCommonDataKeys.CONTEXT_MODEL) != null) {
+      md = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+    } else if (event.getData(MPSCommonDataKeys.MODELS) != null && event.getData(MPSCommonDataKeys.MODELS).size() > 0) {
+      md = event.getData(MPSCommonDataKeys.MODELS).get(0);
     }
     return md;
   }
-  protected static Logger LOG = LogManager.getLogger(TextPreviewModel_Action.class);
 }

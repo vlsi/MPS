@@ -135,7 +135,6 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
-    ModelAccess.assertLegalRead();
     if (myTypeChecker.isGenerationMode()) {
       return new TargetTypecheckingContext(node, myTypeChecker);
     } else {
@@ -144,17 +143,14 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public HoleTypecheckingContext createHoleTypecheckingContext(SNode node) {
-    ModelAccess.assertLegalRead();
     return new HoleTypecheckingContext(node, myTypeChecker);
   }
 
   public TypeCheckingContext createInferenceTypeCheckingContext(SNode node) {
-    ModelAccess.assertLegalRead();
     return new InferenceTypecheckingContext(node, myTypeChecker);
   }
 
   public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
-    ModelAccess.assertLegalRead();
     return new TracingTypecheckingContext(node, myTypeChecker);
   }
 
@@ -168,7 +164,6 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void releaseTypecheckingContext(ITypeContextOwner contextOwner) {
-    ModelAccess.assertLegalRead();
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
       TypecheckingContextHolder contextHolder = myTypeCheckingContexts.get(contextOwner);
@@ -288,8 +283,6 @@ public class TypeContextManager implements CoreComponent {
 
 
   private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner) {
-    ModelAccess.assertLegalRead();
-
     if (node == null) return null;
     final SModel model = node.getModel();
     assert model != null;
@@ -337,7 +330,6 @@ public class TypeContextManager implements CoreComponent {
 
   @Nullable
   /*package*/ SNode getTypeOf(final SNode node) {
-    ModelAccess.assertLegalRead();
     if (node == null) return null;
 
     if (myTypeChecker.isGenerationMode()) {

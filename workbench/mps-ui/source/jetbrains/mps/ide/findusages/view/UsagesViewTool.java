@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,9 +47,12 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.RebuildAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.RerunAction;
 import jetbrains.mps.ide.findusages.view.UsagesView.SearchTask;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -87,6 +90,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
   private jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions myDefaultViewOptions =
       new jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions();
+  private final DataTreeChangesNotifier myChangeTracker = new DataTreeChangesNotifier();
 
   //----CONSTRUCT STUFF----
 
@@ -99,9 +103,20 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     return myUsageViewsData.get(index).myUsagesView;
   }
 
+  private void register(UsageViewData viewData) {
+    if (myUsageViewsData.isEmpty()) {
+      // FIXME need ProjectRepository.getModules() to give non-empty set; meanwhile, resort to MPSModuleRepository
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).attach();
+    }
+    myUsageViewsData.add(viewData);
+  }
+
   @Override
   protected void onRemove(int index) {
     myUsageViewsData.remove(index);
+    if (myUsageViewsData.isEmpty()) {
+      new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myChangeTracker).detach();
+    }
   }
 
   //----TOOL STUFF----
@@ -187,7 +202,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     UsagesView usagesView = createUsageView(options.myRunAgain ? searchTask : null);
     UsageViewData usageViewData = new UsageViewData(usagesView, options.myRunAgain ? searchTask : null);
     usageViewData.setTransientView(options.myTransientView);
-    myUsageViewsData.add(usageViewData);
+    register(usageViewData);
 
     usagesView.setContents(searchResults);
 
@@ -220,7 +235,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         } catch (CantLoadSomethingException e) {
           continue;
         }
-        myUsageViewsData.add(usageViewData);
+        register(usageViewData);
 
         SwingUtilities.invokeLater(new Runnable() {
           @Override
@@ -303,7 +318,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private UsagesView createUsageView(@Nullable SearchTask searchTask) {
-    final UsagesView view = new UsagesView(getProject(), myDefaultViewOptions);
+    final UsagesView view = new UsagesView(ProjectHelper.toMPSProject(getProject()), myDefaultViewOptions, myChangeTracker);
     ArrayList<AnAction> actions = new ArrayList<AnAction>();
     if (searchTask != null) {
       final RerunAction rerunAction = new RerunAction(view, "Run again");

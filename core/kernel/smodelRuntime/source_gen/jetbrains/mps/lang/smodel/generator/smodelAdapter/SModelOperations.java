@@ -6,85 +6,63 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Collections;
 import java.util.ArrayList;
 import org.jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.util.InstanceOfCondition;
 import jetbrains.mps.util.ConditionalIterable;
-import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.FastNodeFinderManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class SModelOperations {
+public final class SModelOperations {
   public SModelOperations() {
   }
   public static List<SNode> roots(SModel model, final SAbstractConcept concept) {
     if (model == null) {
-      return new ArrayList<SNode>();
-    }
-    if (concept == null) {
-      ArrayList<SNode> result = new ArrayList<SNode>();
-      for (SNode root : model.getRootNodes()) {
-        result.add(root);
-      }
-      return result;
+      return Collections.emptyList();
     }
     List<SNode> list = new ArrayList<SNode>();
-    Condition<SNode> cond = new Condition<SNode>() {
-      @Override
-      public boolean met(SNode node) {
-        return SNodeUtil.isInstanceOf(node, concept);
-      }
-    };
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.getRootNodes(), cond);
+    Iterable<SNode> iterable = model.getRootNodes();
+    if (concept != null) {
+      Condition<SNode> cond = new InstanceOfCondition(concept).tolerateNulls();
+      iterable = new ConditionalIterable<SNode>(iterable, cond);
+    }
     for (SNode node : iterable) {
       list.add(node);
     }
     return list;
   }
-  public static List<SNode> rootsIncludingImported(SModel model, SAbstractConcept concept) {
+  @NotNull
+  public static List<SNode> rootsIncludingImported(@Nullable SModel model, @Nullable SAbstractConcept concept) {
     if (model == null) {
       return Collections.emptyList();
     }
-    if (concept == null) {
-      return allNodesIncludingImported(model, true, null);
-    }
-    SNode conceptNode = (SNode) concept.getDeclarationNode();
-    if (conceptNode == null) {
-      return Collections.emptyList();
-    }
-
-    return allNodesIncludingImported(model, true, conceptNode);
+    return allNodesIncludingImported(model, true, concept);
   }
-  public static List<SNode> nodesIncludingImported(SModel model, SAbstractConcept concept) {
+  @NotNull
+  public static List<SNode> nodesIncludingImported(@Nullable SModel model, @Nullable SAbstractConcept concept) {
     if (model == null) {
       return Collections.emptyList();
     }
-    if (concept == null) {
-      return allNodesIncludingImported(model, false, null);
-    }
-    final SNode conceptNode = (SNode) concept.getDeclarationNode();
-    if (conceptNode == null) {
-      return Collections.emptyList();
-    }
-    return allNodesIncludingImported(model, false, conceptNode);
+    return allNodesIncludingImported(model, false, concept);
   }
-  private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable final SNode concept) {
+  private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable SAbstractConcept concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
     List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel);
@@ -92,18 +70,13 @@ public class SModelOperations {
       modelsList.add(descriptor);
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
+    final Condition<SNode> instanceCondition = (concept == null ? null : new InstanceOfCondition(concept));
     for (SModel aModel : modelsList) {
-      Iterable<SNode> nodes = (roots ? aModel.getRootNodes() : SNodeUtil.getDescendants(aModel));
-      if (concept == null) {
+      if (concept == null || roots) {
+        ConditionalIterable<SNode> nodes = new ConditionalIterable<SNode>((roots ? aModel.getRootNodes() : SNodeUtil.getDescendants(aModel)), instanceCondition);
         resultNodes.addAll(IterableUtil.asList(nodes));
-      } else if (roots) {
-        ListSequence.fromList(resultNodes).addSequence(Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(((SNode) it), SNodeOperations.asSConcept(concept));
-          }
-        }));
       } else {
-        resultNodes.addAll(IterableUtil.asList(FastNodeFinderManager.get(aModel).getNodes(NameUtil.nodeFQName(concept), true)));
+        resultNodes.addAll(jetbrains.mps.smodel.SModelOperations.getNodes(aModel, concept));
       }
     }
     return resultNodes;
@@ -113,7 +86,7 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (concept != null) {
-      return jetbrains.mps.smodel.SModelOperations.getNodes(model, concept.getQualifiedName());
+      return jetbrains.mps.smodel.SModelOperations.getNodes(model, concept);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : SNodeUtil.getDescendants(model)) {
@@ -154,7 +127,7 @@ public class SModelOperations {
     if (model == null) {
       return null;
     }
-    return jetbrains.mps.util.SNodeOperations.getModelLongName(model);
+    return SNodeOperations.getModelLongName(model);
   }
   public static SNode getModuleStub(SModel model) {
     final SModule module = model.getModule();

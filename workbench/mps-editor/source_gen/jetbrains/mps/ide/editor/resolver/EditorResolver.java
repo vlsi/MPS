@@ -9,9 +9,9 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
+import jetbrains.mps.editor.runtime.HeadlessEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils;
-import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class EditorResolver implements IResolver {
   public EditorResolver() {
@@ -23,25 +23,11 @@ public class EditorResolver implements IResolver {
     if (resolveInfo == null) {
       return false;
     }
-    final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), repository);
+    final HeadlessEditorComponent headlessEditor = new HeadlessEditorComponent(SNodeOperations.getContainingRoot(sourceNode), repository);
     try {
-      return EditorBasedReferenceResolverUtils.resolveInEditor(fakeEditor, sourceNode, resolveInfo, reference.getRole());
+      return EditorBasedReferenceResolverUtils.resolveInEditor(headlessEditor, sourceNode, resolveInfo, reference.getRole());
     } finally {
-      fakeEditor.dispose();
-    }
-  }
-  private class FakeEditorComponent extends EditorComponent {
-    public FakeEditorComponent(SNode node, SRepository repository) {
-      super(repository);
-      editNode(node);
-    }
-
-    @Override
-    protected void attachListeners() {
-    }
-
-    @Override
-    protected void detachListeners() {
+      headlessEditor.dispose();
     }
   }
 }

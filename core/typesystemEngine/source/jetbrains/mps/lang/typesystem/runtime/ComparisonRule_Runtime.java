@@ -15,9 +15,32 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNodes {
+  @Override
+  //todo remove body after 3.3, needed for compatibility only
+  public SAbstractConcept getApplicableConcept1() {
+    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName1());
+  }
+
+  @Override
+  //todo remove body after 3.3, needed for compatibility only
+  public SAbstractConcept getApplicableConcept2() {
+    return MetaAdapterFactoryByName.getTypedConcept_DoNotUse(getApplicableConceptFQName2());
+  }
+
+  @Override
+  public String getApplicableConceptFQName1() {
+    return null;
+  }
+
+  @Override
+  public String getApplicableConceptFQName2() {
+    return null;
+  }
 
   //todo generate this method
   public boolean areComparable(SNode type1, SNode type2, IsApplicable2Status status) {

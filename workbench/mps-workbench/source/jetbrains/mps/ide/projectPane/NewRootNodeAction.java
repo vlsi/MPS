@@ -83,6 +83,11 @@ public class NewRootNodeAction extends BaseAction implements DumbAware {
         final SNode node = NodeFactoryManager.createNode(myNodeConcept, null, null, myModel);
         SNodeAccessUtil.setProperty(node, SNodeUtil.property_BaseConcept_virtualPackage, myVirtualPackage);
         myModel.addRootNode(node);
+        for (CreateNodeExtension ext : CreateRootFilterEP.getInstance().getCreateNodeExtensions()) {
+          if (ext.isApplicable(myModel)) {
+            ext.setupRoot(node);
+          }
+        }
 
         modelAccess.runWriteInEDT(new Runnable() {
           @Override

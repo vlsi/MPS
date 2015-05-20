@@ -43,6 +43,18 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @NotNull
   public abstract SContainmentLinkId getRoleId();
 
+  @NotNull
+  @Override
+  public String getPresentableKind() {
+    return "link";
+  }
+
+  @NotNull
+  @Override
+  public String getPresentableName() {
+    return getRole();
+  }
+
   @Override
   public String getRole() {
     return getRoleName();

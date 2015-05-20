@@ -23,8 +23,8 @@
   </root>
   <root nodeRef="r:d91dc8be-68f3-42d9-b558-87a2756c080a(jetbrains.mps.execution.configurations.generator.template.main@generator)/1529002684853883835">
     <file name="QueriesGenerated.java">
-      <node id="8147019390234548187" at="285,109,286,265" concept="5" />
-      <node id="8147019390234548196" at="286,265,287,276" concept="6" />
+      <node id="8147019390234548187" at="285,109,286,352" concept="5" />
+      <node id="8147019390234548196" at="286,352,287,276" concept="6" />
       <scope id="8147019390234496485" at="285,109,287,276">
         <var name="configurationType" id="8147019390234548188" />
       </scope>

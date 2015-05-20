@@ -10,17 +10,18 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
+import com.intellij.openapi.application.ApplicationManager;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
+import jetbrains.mps.checkers.LanguageChecker;
 
 @State(name = "ModelCheckerSettings", storages = {@Storage(id = "other", file = "$APP_CONFIG$/modelCheckerSettings.xml")
 })
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
-  private ModelCheckerPreferencesPage myPreferences;
   public ModelCheckerSettings() {
   }
   @NonNls
@@ -42,64 +43,54 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   @Override
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
+    if (!(myState.myCheckTypesystem)) {
+      myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.CONSTRAINTS;
+      if (!(myState.myCheckConstraints)) {
+        myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.STRUCTURE;
+      }
+    }
+    myState.myCheckTypesystem = true;
+    myState.myCheckConstraints = true;
   }
   @Nullable
   public Icon getIcon() {
     return null;
   }
-  private ModelCheckerPreferencesPage getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new ModelCheckerPreferencesPage(this);
-    }
-    return myPreferences;
+  public static ModelCheckerSettings getInstance() {
+    return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
   public List<SpecificChecker> getSpecificCheckers(@NotNull Project mpsProject) {
-    List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+    List<SpecificChecker> checkers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+    switch (myState.myCheckingLevel) {
+      case TYPESYSTEM:
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker()));
+      case CONSTRAINTS:
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker()));
+      case STRUCTURE:
+        ListSequence.fromList(checkers).addElement(new StructureChecker());
+      default:
+        ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
+        ListSequence.fromList(checkers).addElement(new ModelPersistenceVersionChecker());
+        ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));
+    }
 
-    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-    if (isCheckModelProperties()) {
-      ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+    if (isCheckSpecific()) {
+      ListSequence.fromList(checkers).addElement(new GeneratorTemplatesChecker());
     }
-    ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
-    if (isCheckUnresolvedReferences()) {
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(mpsProject));
-    }
-    ListSequence.fromList(specificCheckers).addElement(new SpecificModelChecker(mpsProject));
-    ListSequence.fromList(specificCheckers).addElement(new ModelPersistenceVersionChecker());
-    return specificCheckers;
+    return checkers;
   }
-  public boolean checkerIsOn(String category) {
-    if (category.equals("type system")) {
-      return isCheckTypesystem();
-    }
-    if (category.equals("constraints and scopes")) {
-      return isCheckConstraints();
-    }
-    return false;
+
+  public ModelCheckerSettings.CheckingLevel getCheckingLevel() {
+    return myState.myCheckingLevel;
   }
-  public boolean isCheckUnresolvedReferences() {
-    return myState.myCheckUnresolvedReferences;
+  public void setCheckingLevel(ModelCheckerSettings.CheckingLevel checkingLevel) {
+    myState.myCheckingLevel = checkingLevel;
   }
-  public void setCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
-    myState.myCheckUnresolvedReferences = checkUnresolvedReferences;
+  public boolean isCheckSpecific() {
+    return myState.myCheckSpecific;
   }
-  public boolean isCheckConstraints() {
-    return myState.myCheckConstraints;
-  }
-  public void setCheckConstraints(boolean checkConstraints) {
-    myState.myCheckConstraints = checkConstraints;
-  }
-  public boolean isCheckModelProperties() {
-    return myState.myCheckModelProperties;
-  }
-  public void setCheckModelProperties(boolean check) {
-    myState.myCheckModelProperties = check;
-  }
-  public boolean isCheckTypesystem() {
-    return myState.myCheckTypesystem;
-  }
-  public void setCheckTypesystem(boolean checkTypesystem) {
-    myState.myCheckTypesystem = checkTypesystem;
+  public void setCheckSpecific(boolean checkSpecific) {
+    myState.myCheckSpecific = checkSpecific;
   }
   public boolean isCheckStubs() {
     return myState.myCheckStubs;
@@ -113,17 +104,41 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public void setCheckBeforeCommit(boolean checkBeforeCommit) {
     myState.myCheckBeforeCommit = checkBeforeCommit;
   }
-  public static ModelCheckerSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
-  }
+
   public static class MyState {
+    /**
+     * 
+     * @deprecated remove following 4 fields after 3.3, left just to make settings compatible
+     */
+    @Deprecated
     public boolean myCheckUnresolvedReferences = true;
+    @Deprecated
     public boolean myCheckConstraints = true;
+    @Deprecated
     public boolean myCheckModelProperties = true;
+    @Deprecated
     public boolean myCheckTypesystem = true;
+
+    public ModelCheckerSettings.CheckingLevel myCheckingLevel = ModelCheckerSettings.CheckingLevel.TYPESYSTEM;
+    public boolean myCheckSpecific = true;
     public boolean myCheckBeforeCommit = true;
     public boolean myCheckStubs = false;
     public MyState() {
+    }
+  }
+  public static   enum CheckingLevel {
+    BASIC("Basic"),
+    STRUCTURE("Structure"),
+    CONSTRAINTS("Constraints"),
+    TYPESYSTEM("Typesystem");
+
+
+    private String myPresentation;
+    CheckingLevel(String presentation) {
+      myPresentation = presentation;
+    }
+    public String getPresentation() {
+      return myPresentation;
     }
   }
 }

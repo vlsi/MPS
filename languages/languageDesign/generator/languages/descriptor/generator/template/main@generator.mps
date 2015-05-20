@@ -2,11 +2,11 @@
 <model ref="r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="0" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
+    <use id="f4ad079d-bc71-4ffb-9600-9328705cf998" name="jetbrains.mps.lang.descriptor" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="86ef8290-12bb-4ca7-947f-093788f263a9" name="jetbrains.mps.lang.project" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -183,7 +183,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3382,9 +3382,6 @@
               <node concept="35c_gC" id="1_Iic4WUlrP" role="37wK5m">
                 <ref role="35c_gD" to="bj1v:nUEAIXlVr8" resolve="Rule" />
               </node>
-              <node concept="35c_gC" id="1_Iic4WUpgm" role="37wK5m">
-                <ref role="35c_gD" to="bj1v:5JpT3MjX6u9" resolve="Analyzer" />
-              </node>
             </node>
           </node>
         </node>
@@ -4227,9 +4224,6 @@
               <node concept="3clFbS" id="227lWzxUob5" role="3clFbx">
                 <node concept="3cpWs6" id="227lWzxUob6" role="3cqZAp">
                   <node concept="10QFUN" id="227lWzxU_BY" role="3cqZAk">
-                    <node concept="16syzq" id="227lWzxU_En" role="10QFUM">
-                      <ref role="16sUi3" node="227lWzxUobc" resolve="T" />
-                    </node>
                     <node concept="1nCR9W" id="2aOQZH68nI3" role="10QFUP">
                       <property role="1nD$Q0" value="textgen.TextGenAspectDescriptor" />
                       <node concept="3uibUv" id="2aOQZH68oh9" role="2lIhxL">
@@ -4256,6 +4250,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node concept="16syzq" id="227lWzxU_En" role="10QFUM">
+                      <ref role="16sUi3" node="227lWzxUobc" resolve="T" />
                     </node>
                   </node>
                 </node>

@@ -19,14 +19,22 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-class ImportSelfWarning extends ValidationProblem {
+public class ImportSelfWarning extends ValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
 
   public ImportSelfWarning(SModel model, SModelReference reference) {
-    super(Severity.WARNING, "Model should not import itself");
+    super(Severity.WARNING, "Model should not import itself: " + model.getModelName());
     myModel = model;
     myReference = reference;
+  }
+
+  public SModel getModel() {
+    return myModel;
+  }
+
+  public SModelReference getReference() {
+    return myReference;
   }
 
   @Override

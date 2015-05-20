@@ -7,6 +7,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ReSaveModulesMigration extends BaseProjectMigration {
@@ -22,7 +23,11 @@ public class ReSaveModulesMigration extends BaseProjectMigration {
   @Override
   public boolean doExecute(Project p) {
     Iterable<? extends SModule> modules = p.getModulesWithGenerators();
-    for (AbstractModule module : Sequence.fromIterable(modules).ofType(AbstractModule.class)) {
+    for (AbstractModule module : Sequence.fromIterable(modules).ofType(AbstractModule.class).where(new IWhereFilter<AbstractModule>() {
+      public boolean accept(AbstractModule it) {
+        return !(it.isReadOnly());
+      }
+    })) {
       if (!(module.getModuleDescriptor().hasLanguageVersions())) {
         module.setChanged();
       }

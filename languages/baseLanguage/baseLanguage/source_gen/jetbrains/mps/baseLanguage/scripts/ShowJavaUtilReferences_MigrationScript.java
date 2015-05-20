@@ -5,22 +5,28 @@ package jetbrains.mps.baseLanguage.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript {
   public ShowJavaUtilReferences_MigrationScript(IOperationContext operationContext) {
     super("Show java.util.* References");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "find java util refrences";
       }
+      @Override
       public String getAdditionalInfo() {
         return "find java util refrences";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
           String targetModelFQName = ref.getTargetSModelReference().getModelName();
@@ -30,8 +36,10 @@ public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript 
         }
         return false;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

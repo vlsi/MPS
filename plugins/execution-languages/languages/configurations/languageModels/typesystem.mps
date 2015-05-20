@@ -2,9 +2,9 @@
 <model ref="r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -113,9 +113,6 @@
       <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
         <reference id="5455284157993910961" name="concept" index="2pJxaS" />
         <child id="5455284157993911099" name="values" index="2pJxcM" />
-      </concept>
-      <concept id="8182547171709738802" name="jetbrains.mps.lang.quotation.structure.NodeBuilderList" flags="nn" index="36be1Y">
-        <child id="8182547171709738803" name="nodes" index="36be1Z" />
       </concept>
       <concept id="8182547171709614739" name="jetbrains.mps.lang.quotation.structure.NodeBuilderRef" flags="nn" index="36bGnv">
         <reference id="8182547171709614741" name="target" index="36bGnp" />
@@ -725,21 +722,22 @@
           <node concept="2pJPEk" id="67V23qSRO6m" role="mwGJk">
             <node concept="2pJPED" id="67V23qSRO6n" role="2pJPEn">
               <ref role="2pJxaS" to="tpd4:hausRW2" resolve="JoinType" />
-              <node concept="2pIpSj" id="67V23qSRO6o" role="2pJxcM">
+              <node concept="2pIpSj" id="7a3n6lJjEXL" role="2pJxcM">
                 <ref role="2pIpSl" to="tpd4:hausUtE" />
-                <node concept="36be1Y" id="67V23qSRO6p" role="2pJxcZ">
-                  <node concept="2pJPED" id="67V23qSRO6q" role="36be1Z">
-                    <ref role="2pJxaS" to="cx9y:i2pR1d_" resolve="NamedTupleType" />
-                    <node concept="2pIpSj" id="67V23qSRO6r" role="2pJxcM">
-                      <ref role="2pIpSl" to="cx9y:i2pR8DE" />
-                      <node concept="36bGnv" id="67V23qSRO6s" role="2pJxcZ">
-                        <ref role="36bGnp" to="awpe:1HMPpNJqv3x" resolve="ExecutionTool" />
-                      </node>
+                <node concept="2pJPED" id="67V23qSRO6q" role="2pJxcZ">
+                  <ref role="2pJxaS" to="cx9y:i2pR1d_" resolve="NamedTupleType" />
+                  <node concept="2pIpSj" id="67V23qSRO6r" role="2pJxcM">
+                    <ref role="2pIpSl" to="cx9y:i2pR8DE" />
+                    <node concept="36bGnv" id="67V23qSRO6s" role="2pJxcZ">
+                      <ref role="36bGnp" to="awpe:1HMPpNJqv3x" resolve="ExecutionTool" />
                     </node>
                   </node>
-                  <node concept="2pJPED" id="67V23qSRO6t" role="36be1Z">
-                    <ref role="2pJxaS" to="uhxm:1ovLDatOqMj" resolve="ConsoleType" />
-                  </node>
+                </node>
+              </node>
+              <node concept="2pIpSj" id="7a3n6lJjEZj" role="2pJxcM">
+                <ref role="2pIpSl" to="tpd4:hausUtE" />
+                <node concept="2pJPED" id="67V23qSRO6t" role="2pJxcZ">
+                  <ref role="2pJxaS" to="uhxm:1ovLDatOqMj" resolve="ConsoleType" />
                 </node>
               </node>
             </node>

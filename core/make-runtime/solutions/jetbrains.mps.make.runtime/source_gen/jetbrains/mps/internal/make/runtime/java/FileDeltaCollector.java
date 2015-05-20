@@ -12,10 +12,13 @@ public class FileDeltaCollector implements StreamHandler {
   private final IFile myOutputDir;
   private final FileProcessor myProcessor;
 
-  public FileDeltaCollector(IFile outputDir, FilesDelta deltaCollector, FileProcessor fileProcessor) {
-    myDelta = deltaCollector;
+  public FileDeltaCollector(IFile outputDir, FileProcessor fileProcessor) {
+    myDelta = new FilesDelta(outputDir);
     myOutputDir = outputDir;
     myProcessor = fileProcessor;
+  }
+  public FilesDelta getDelta() {
+    return myDelta;
   }
   @Override
   public void saveStream(String name, String content) {

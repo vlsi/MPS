@@ -59,7 +59,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -86,7 +85,7 @@ public final class BinaryPersistence {
   public static SModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(ensureMarkSupported(source.openInputStream()));
+      mis = new ModelInputStream(source.openInputStream());
       return loadHeader(mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
@@ -116,13 +115,6 @@ public final class BinaryPersistence {
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.toString(), e);
     }
-  }
-
-  private static InputStream ensureMarkSupported(InputStream is) {
-    if (is.markSupported()) {
-      return is;
-    }
-    return new BufferedInputStream(is);
   }
 
   public static void writeModel(@NotNull SModel model, @NotNull StreamDataSource dataSource) throws IOException {
@@ -234,7 +226,7 @@ public final class BinaryPersistence {
   private static ModelLoadResult loadModel(InputStream is, boolean interfaceOnly, @Nullable MetaModelInfoProvider mmiProvider) throws IOException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(ensureMarkSupported(is));
+      mis = new ModelInputStream(is);
       SModelHeader modelHeader = loadHeader(mis);
 
       DefaultSModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);

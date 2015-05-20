@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -15,16 +17,20 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMigrationScript {
   public EscapeSpecialCharactersInProperties_MigrationScript(IOperationContext operationContext) {
     super("Escape special characters in property values");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Escape special characters in property values";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Escape special characters in property values";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
           if (property.value() != null && !(property.value().equals(NameUtil.escapeInvisibleCharacters(property.value())))) {
@@ -33,6 +39,7 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
         }
         return false;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
           if (property.value() == null) {
@@ -44,6 +51,7 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
           }
         }
       }
+      @Override
       public boolean isShowAsIntention() {
         return true;
       }

@@ -17,7 +17,9 @@
 
   <target name="signed" depends="base">
     <ant antfile="mpsExe.xml" inheritAll="true" useNativeBasedir="true"/>
-    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true"/>
+    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="dmg-mac"/>
+    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="dmg-mac-jdk"/>
+    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" target="zip-mac-delete"/>
   </target>
 
   <target name="clean">

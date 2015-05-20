@@ -212,7 +212,7 @@
     <file name="QueriesGenerated.java">
       <node id="1175609466956" at="113,187,114,93" concept="5" />
       <node id="1199876270870" at="117,42,118,273" concept="5" />
-      <node id="1227876798671" at="120,45,121,133" concept="6" />
+      <node id="1227876798671" at="120,45,121,58" concept="6" />
       <node id="1199876619383" at="129,100,130,122" concept="5" />
       <node id="1199876647027" at="130,122,131,242" concept="5" />
       <node id="1199876674375" at="132,38,133,28" concept="6" />
@@ -239,7 +239,7 @@
       <node id="1175609466956" at="114,93,151,5" concept="0" />
       <node id="1175609466956" at="114,93,151,5" concept="0" />
       <node id="1175609466956" at="113,0,154,0" concept="8" trace="sideTransform_ActionsFactory_Expression_1175609466956#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformActionsBuilderContext;)Ljava/util/List;" />
-      <scope id="1227876798670" at="120,45,121,133" />
+      <scope id="1227876798670" at="120,45,121,58" />
       <scope id="1199876662632" at="132,38,133,28" />
       <scope id="1227876798667" at="120,0,123,0">
         <var name="it" id="1227876798667" />

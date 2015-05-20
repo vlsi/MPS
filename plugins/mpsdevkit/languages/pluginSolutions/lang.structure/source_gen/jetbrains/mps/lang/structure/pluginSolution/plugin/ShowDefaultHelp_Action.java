@@ -7,16 +7,12 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.actions.ContextHelpAction;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.Level;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ShowDefaultHelp_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,59 +26,48 @@ public class ShowDefaultHelp_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
-        if (defaultHelp == null) {
-          ContextHelpAction contextHelpAction = new ContextHelpAction();
-          contextHelpAction.update(event);
-          if (event.getPresentation().isEnabled()) {
-            return;
-          }
-          ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
-          return;
-        }
-        ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
-        event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
+    HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(event.getData(MPSCommonDataKeys.CONTEXT_MODULE), event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE));
+    if (defaultHelp == null) {
+      ContextHelpAction contextHelpAction = new ContextHelpAction();
+      contextHelpAction.update(event);
+      if (event.getPresentation().isEnabled()) {
+        return;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowDefaultHelp", t);
-      }
-      this.disable(event.getPresentation());
+      ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
+      return;
     }
+    ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
+    event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    {
+      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
+    }
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
-      MapSequence.fromMap(_params).put("node", node);
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if (HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) == null) {
-        ContextHelpAction contextHelpAction = new ContextHelpAction();
-        contextHelpAction.update(event);
-        if (event.getPresentation().isEnabled()) {
-          contextHelpAction.actionPerformed(event);
-        }
-        return;
+    if (HelpHelper.getDefaultHelpFor(event.getData(MPSCommonDataKeys.CONTEXT_MODULE), event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE)) == null) {
+      ContextHelpAction contextHelpAction = new ContextHelpAction();
+      contextHelpAction.update(event);
+      if (event.getPresentation().isEnabled()) {
+        contextHelpAction.actionPerformed(event);
       }
-      HelpHelper.showHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
-      }
+      return;
     }
+    HelpHelper.showHelpFor(event.getData(MPSCommonDataKeys.CONTEXT_MODULE), event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE));
   }
   @NotNull
   public String getActionId() {
@@ -90,5 +75,4 @@ public class ShowDefaultHelp_Action extends BaseAction {
     res.append("ContextHelp");
     return res.toString();
   }
-  protected static Logger LOG = LogManager.getLogger(ShowDefaultHelp_Action.class);
 }

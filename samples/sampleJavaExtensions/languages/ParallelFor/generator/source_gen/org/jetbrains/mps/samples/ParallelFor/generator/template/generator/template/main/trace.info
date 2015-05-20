@@ -18,8 +18,8 @@
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/7865129668866902787">
     <file name="QueriesGenerated.java">
-      <node id="7865129668867016085" at="33,110,34,230" concept="3" />
-      <scope id="7865129668867016084" at="33,110,34,230" />
+      <node id="7865129668867016085" at="33,110,34,312" concept="3" />
+      <scope id="7865129668867016084" at="33,110,34,312" />
     </file>
   </root>
   <root nodeRef="r:0a0b7fa3-dd15-453f-9320-7d451510a2e7(org.jetbrains.mps.samples.ParallelFor.generator.template.generator.template.main@generator)/8923957828369584138">

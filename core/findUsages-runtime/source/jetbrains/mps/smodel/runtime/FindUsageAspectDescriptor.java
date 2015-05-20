@@ -19,7 +19,7 @@ package jetbrains.mps.smodel.runtime;
  * Marker interface for a usage finder for a language.
  * It's not intentionally marker, once there's anything to expect from this descriptor, it might get some API.
  * FIXME We might have exposed {@link jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor#init()} here, but I'd rather
- * change the API first, e.g. to pass object to populate to init(), rather than using FindersManager.getInstance() in
+ * change the API first, e.g. to pass object to populate to init(), rather than using FindersManager.getInstance() in
  * BaseFindUsagesDescriptor.add()
  *
  * @author Artem Tikhomirov

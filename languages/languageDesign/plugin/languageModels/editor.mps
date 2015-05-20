@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -91,6 +91,9 @@
       <concept id="1214406454886" name="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" flags="ln" index="30gYXW" />
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
+      <concept id="1235999440492" name="jetbrains.mps.lang.editor.structure.HorizontalAlign" flags="ln" index="37jFXN">
+        <property id="1235999920262" name="align" index="37lx6p" />
+      </concept>
       <concept id="1103016434866" name="jetbrains.mps.lang.editor.structure.CellModel_JComponent" flags="sg" stub="8104358048506731196" index="3gTLQM">
         <child id="1176475119347" name="componentProvider" index="3FoqZy" />
       </concept>
@@ -3845,20 +3848,82 @@
         <property role="VOm3f" value="true" />
       </node>
     </node>
-    <node concept="3EZMnI" id="3taKAfxfPcg" role="6VMZX">
-      <property role="3EZMnw" value="false" />
-      <node concept="3F0ifn" id="3taKAfxfPch" role="3EZMnx">
-        <property role="3F0ifm" value="ID:" />
+    <node concept="3EZMnI" id="RmlFTgVj1T" role="6VMZX">
+      <node concept="2EHx9g" id="RmlFTgVjgo" role="2iSdaV" />
+      <node concept="3EZMnI" id="3taKAfxfPcg" role="3EZMnx">
+        <property role="3EZMnw" value="false" />
+        <node concept="3F0ifn" id="3taKAfxfPch" role="3EZMnx">
+          <property role="3F0ifm" value="ID" />
+          <node concept="VPM3Z" id="RmlFTgVjdD" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="37jFXN" id="RmlFTgVFtQ" role="3F10Kt">
+            <property role="37lx6p" value="RIGHT" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="RmlFTgVj47" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="VPM3Z" id="RmlFTgVjfk" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="3taKAfxfPci" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <property role="1$x2rV" value="&lt;auto generated from fq name and params&gt;" />
+          <ref role="1NtTu8" to="tp4k:3taKAfxfOEY" resolve="ID" />
+        </node>
+        <node concept="VPM3Z" id="3taKAfxfPcj" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2iRfu4" id="3taKAfxfPck" role="2iSdaV" />
       </node>
-      <node concept="3F0A7n" id="3taKAfxfPci" role="3EZMnx">
-        <property role="1O74Pk" value="true" />
-        <property role="1$x2rV" value="&lt;auto generated from fq name and params&gt;" />
-        <ref role="1NtTu8" to="tp4k:3taKAfxfOEY" resolve="ID" />
+      <node concept="3EZMnI" id="RmlFTgVj2e" role="3EZMnx">
+        <property role="3EZMnw" value="false" />
+        <node concept="3F0ifn" id="RmlFTgVj2f" role="3EZMnx">
+          <property role="3F0ifm" value="Keep action context" />
+          <node concept="VPM3Z" id="RmlFTgVjaS" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="RmlFTgVj4i" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="VPM3Z" id="RmlFTgVjbY" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="RmlFTgVj2g" role="3EZMnx">
+          <property role="1O74Pk" value="true" />
+          <ref role="1NtTu8" to="tp4k:RmlFTgVj1F" resolve="fillActionContext" />
+        </node>
+        <node concept="VPM3Z" id="RmlFTgVj2h" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2iRfu4" id="RmlFTgVj2i" role="2iSdaV" />
       </node>
-      <node concept="VPM3Z" id="3taKAfxfPcj" role="3F10Kt">
-        <property role="VOm3f" value="false" />
+      <node concept="3EZMnI" id="RmlFTgVFuE" role="3EZMnx">
+        <property role="3EZMnw" value="false" />
+        <node concept="3F0ifn" id="RmlFTgVFuF" role="3EZMnx">
+          <node concept="VPM3Z" id="RmlFTgVFuG" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="RmlFTgVFuH" role="3EZMnx">
+          <node concept="VPM3Z" id="RmlFTgVFuI" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="VPM3Z" id="RmlFTgVFuK" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="2iRfu4" id="RmlFTgVFuL" role="2iSdaV" />
+        <node concept="3F0ifn" id="RmlFTgVFuO" role="3EZMnx">
+          <property role="3F0ifm" value="true to use a copy of action context parameters" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+          <node concept="VPM3Z" id="RmlFTgVFuP" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
       </node>
-      <node concept="2iRfu4" id="3taKAfxfPck" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="1InOx6V0wuN">

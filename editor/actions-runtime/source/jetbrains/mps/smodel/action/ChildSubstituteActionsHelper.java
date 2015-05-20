@@ -19,6 +19,7 @@ import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -38,10 +40,13 @@ import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -153,48 +158,43 @@ public class ChildSubstituteActionsHelper {
     return resultActions;
   }
 
-  private static List<SubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept,
+  private static List<SubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConceptNode,
       IChildNodeSetter childSetter) {
-    assert childConcept != null;
+    assert childConceptNode != null;
 
-    String childConceptFqName = NameUtil.nodeFQName(childConcept);
-    Set<String> concepts = new HashSet<String>();
-    for (Language l : SModelOperations.getLanguages(parentNode.getModel())) {
-      concepts.addAll(LanguageHierarchyCache.getInstance().getDefaultSubstitutableDescendantsOf(childConceptFqName, l));
+    List<Language> importedLangs = SModelOperations.getLanguages(parentNode.getModel());
+    SAbstractConcept childConcept = MetaAdapterByDeclaration.getConcept(childConceptNode);
+    final Set<SAbstractConcept> desc = ConceptDescendantsCache.getInstance().getDescendants(childConcept);
+    Set<SConcept> concepts = new HashSet<SConcept>();
+    for (SAbstractConcept concept: desc){
+      if (!(concept instanceof SConcept)) continue;
+      if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
+
+      SModule language = concept.getLanguage().getSourceModule();
+      if (language ==null || !importedLangs.contains(language)) continue;
+
+      concepts.add((SConcept) concept);
     }
 
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
-    for (String fqName : concepts) {
-      SNode applicableConcept = SModelUtil.findConceptDeclaration(fqName);
-      assert applicableConcept != null : "No concept " + fqName;
+    for (SConcept concept : concepts) {
+      SNode applicableConcept = concept.getDeclarationNode();
+      assert applicableConcept != null : "No concept " + concept;
       actions.addAll(createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, childSetter));
     }
 
     return actions;
   }
 
-  /**
-   * @deprecated since MPS 3.2 use:
-   * createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter)
-   *
-   * Should be removed when all user code is migrated to new method
-   */
-  @Deprecated
-  public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
-      IChildNodeSetter setter, IOperationContext operationContext) {
-    return createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, setter);
-  }
-
   public static List<SubstituteAction> createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild,
       IChildNodeSetter setter) {
-    String conceptFqName = NameUtil.nodeFQName(applicableConcept);
     SNode link = null;
     if (setter instanceof DefaultChildNodeSetter) {
       DefaultChildNodeSetter defaultSetter = (DefaultChildNodeSetter) setter;
       link = defaultSetter.getLinkDeclaration();
     }
 
-    if (!ModelConstraints.canBeChild(conceptFqName, parentNode, link, null, null)) {
+    if (!ModelConstraints.canBeChild(MetaAdapterByDeclaration.getConcept(applicableConcept), parentNode, link, null, null)) {
       return Collections.emptyList();
     }
 
@@ -239,11 +239,10 @@ public class ChildSubstituteActionsHelper {
         linkDeclaration == null ? null : SModelUtil.getLinkDeclarationRole(linkDeclaration), index, smartConcept);
 
     // create smart actions
-    final String targetConcept = NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(smartReference));
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      if (referentNode == null || !referentNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(targetConcept)))
+      if (referentNode == null || !referentNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(smartReference))))
         continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
           currentChild, childSetter, smartConcept, smartReference, refDescriptor));
@@ -320,7 +319,7 @@ public class ChildSubstituteActionsHelper {
 
     @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-      SNode childNode = NodeFactoryManager.createNode(NameUtil.nodeFQName(mySmartConcept), myCurrentChild, myParentNode, model);
+      SNode childNode = NodeFactoryManager.createNode(MetaAdapterByDeclaration.getConcept(mySmartConcept), myCurrentChild, myParentNode, model);
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
       SNodeAccessUtil.setReferenceTarget(childNode, referentRole, myReferentNode);
       return childNode;

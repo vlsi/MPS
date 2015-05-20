@@ -20,8 +20,10 @@ import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import jetbrains.mps.generator.impl.reference.MacroResolver;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
+import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -106,7 +108,7 @@ class TemplateNode {
     for (Map.Entry<SReferenceLink,MacroResolver> e : myMold.myMacroRefs.entrySet()) {
       final SReferenceLink refMacroRole = e.getKey();
       final MacroResolver mr = e.getValue();
-      ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(mr, context);
+      ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(new RefResolverAdapter(outputNode, refMacroRole, context, mr));
       new PostponedReference(refMacroRole, outputNode, refInfo).setAndRegister(generator);
     }
     for (RefInfo r : myMold.myStaticRefs) {

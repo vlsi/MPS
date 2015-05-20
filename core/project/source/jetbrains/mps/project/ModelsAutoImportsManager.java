@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -43,11 +46,26 @@ public class ModelsAutoImportsManager {
     return result;
   }
 
+  /**
+   * @deprecated use {@link #getLanguages(SModule, SModel)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static Set<Language> getAutoImportedLanguages(SModule contextModule, SModel model) {
     Set<Language> result = new HashSet<Language>();
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getAutoImportedLanguages(contextModule, model));
+      }
+    }
+    return result;
+  }
+
+  public static Set<SLanguage> getLanguages(SModule contextModule, SModel model) {
+    Set<SLanguage> result = new HashSet<SLanguage>();
+    for (AutoImportsContributor contributor : contributors) {
+      if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
+        result.addAll(contributor.getLanguages(contextModule, model));
       }
     }
     return result;
@@ -72,29 +90,40 @@ public class ModelsAutoImportsManager {
       // todo: ! what's up with module? add model module to module dependencies?
       ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(modelToImport.getReference(), false);
     }
-    for (Language language : getAutoImportedLanguages(module, model)) {
-      if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
-        module.addUsedLanguage(language.getModuleReference());
-      }
-      ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language.getModuleReference());
+    for (SLanguage language : getLanguages(module, model)) {
+      ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
     }
     for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-      if (!module.getModuleDescriptor().getUsedDevkits().contains(devKit.getModuleReference())) {
-        module.addUsedDevkit(devKit.getModuleReference());
-      }
       ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());
     }
   }
 
   public static abstract class AutoImportsContributor<ModuleType extends SModule> {
+    @NotNull
     public abstract Class<ModuleType> getApplicableSModuleClass();
 
     public Set<SModel> getAutoImportedModels(ModuleType contextModule, SModel model) {
       return Collections.emptySet();
     }
 
+    /**
+     * @deprecated override {@link #getLanguages(SModule, SModel)} instead
+     */
+    @Deprecated
+    @ToRemove(version = 3.3)
     public Set<Language> getAutoImportedLanguages(ModuleType contextModule, SModel model) {
       return Collections.emptySet();
+    }
+
+    // FIXME update subclasses to utilize new API. For a while, old implementation left to check if compatibility is ok (just in case there other contributors out there).
+    @NotNull
+    public Set<SLanguage> getLanguages(ModuleType contextModule, SModel model) {
+      // XXX transition: delegate to legacy code, drop along with the delegate method
+      Set<SLanguage> rv = new HashSet<SLanguage>();
+      for (Language l : getAutoImportedLanguages(contextModule, model)) {
+        rv.add(MetaAdapterFactory.getLanguage(l.getModuleReference()));
+      }
+      return rv;
     }
 
     public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {

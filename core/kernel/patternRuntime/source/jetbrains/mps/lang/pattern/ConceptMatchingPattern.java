@@ -15,26 +15,25 @@
  */
 package jetbrains.mps.lang.pattern;
 
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptMatchingPattern implements IMatchingPattern {
-  private String myConceptFQName;
+  private SAbstractConcept myConcept;
 
-  public ConceptMatchingPattern(String conceptFQName) {
-    myConceptFQName = conceptFQName;
+  public ConceptMatchingPattern(SAbstractConcept concept) {
+    myConcept = concept;
   }
 
   @Override
   public boolean match(SNode nodeToMatch) {
     if (nodeToMatch == null) return false;
-    return SNodeUtil.isInstanceOf(nodeToMatch, SNodeOperations.getConcept(myConceptFQName));
+    return nodeToMatch.isInstanceOfConcept(myConcept);
   }
 
   @Override
   public String getConceptFQName() {
-    return myConceptFQName;
+    return myConcept.getQualifiedName();
   }
-
 }

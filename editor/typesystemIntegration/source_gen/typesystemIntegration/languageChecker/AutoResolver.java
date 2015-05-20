@@ -127,7 +127,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     });
   }
   private Set<SReference> collectBadReferences(SNode cellNode) {
-    jetbrains.mps.smodel.SReference.disableLogging();
+    boolean needToEnableLogging = jetbrains.mps.smodel.SReference.disableLogging();
     try {
       Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
       for (SNode node : SNodeUtil.getDescendants(cellNode)) {
@@ -139,7 +139,9 @@ public class AutoResolver extends EditorCheckerAdapter {
       }
       return result;
     } finally {
-      jetbrains.mps.smodel.SReference.enableLogging();
+      if (needToEnableLogging) {
+        jetbrains.mps.smodel.SReference.enableLogging();
+      }
     }
   }
   private boolean isAutofix(SModel model, SRepository repository) {

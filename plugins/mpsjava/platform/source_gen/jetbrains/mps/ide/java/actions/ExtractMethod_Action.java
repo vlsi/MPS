@@ -16,20 +16,17 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.java.platform.refactorings.ExtractMethodDialog;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,6 +39,7 @@ public class ExtractMethod_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).select(new ISelector<SNode, EditorCell>() {
       public EditorCell select(SNode it) {
@@ -49,40 +47,33 @@ public class ExtractMethod_Action extends BaseAction {
       }
     }))) && ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExtractMethod", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
-      if (nodes != null) {
-      }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("nodes", null);
       } else {
         MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
+      if (nodes == null) {
+        return false;
+      }
+
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
@@ -90,35 +81,32 @@ public class ExtractMethod_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
-      final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
-      final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
-      ((EditorContext) MapSequence.fromMap(_params).get("context")).getRepository().getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
-          refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
-          params.value.setReturnType(refactoring.value.getMethodType());
-        }
-      });
-      ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
-      dialog.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
+    final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
+    final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
+    ((EditorContext) MapSequence.fromMap(_params).get("context")).getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        params.value = ExtractMethodFactory.createParameters(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
+        refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
+        params.value.setReturnType(refactoring.value.getMethodType());
       }
-    }
+    });
+    ExtractMethodDialog dialog = new ExtractMethodDialog(((Project) MapSequence.fromMap(_params).get("project")), ((EditorContext) MapSequence.fromMap(_params).get("context")), params.value, refactoring.value);
+    dialog.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ExtractMethod_Action.class);
 }

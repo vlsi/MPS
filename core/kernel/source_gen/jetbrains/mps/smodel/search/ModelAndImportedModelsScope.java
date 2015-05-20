@@ -53,14 +53,9 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
           if (model == null) {
             continue;
           }
-          if (condition instanceof IsInstanceCondition) {
-            IsInstanceCondition isInstance = (IsInstanceCondition) condition;
-            result.addAll(SModelOperations.getNodes(model, isInstance.getConceptFqName()));
-          } else {
-            for (SNode node : SNodeUtil.getDescendants(model)) {
-              if (condition.met(node)) {
-                result.add(node);
-              }
+          for (SNode node : SNodeUtil.getDescendants(model)) {
+            if (condition.met(node)) {
+              result.add(node);
             }
           }
         } catch (Throwable t) {

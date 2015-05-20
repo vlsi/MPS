@@ -168,8 +168,8 @@ public class OptimizeImportsHelper {
     result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
 
     // add auto imports as dependencies
-    for (Language l : ModelsAutoImportsManager.getAutoImportedLanguages(model.getModule(), model)) {
-      result.myUsedLanguages.add(MetaAdapterByDeclaration.getLanguage(l));
+    for (SLanguage l : ModelsAutoImportsManager.getLanguages(model.getModule(), model)) {
+      result.myUsedLanguages.add(l);
     }
     for (SModel m : ModelsAutoImportsManager.getAutoImportedModels(model.getModule(), model)) {
       result.addUsedModel(m.getReference());
@@ -189,20 +189,7 @@ public class OptimizeImportsHelper {
       }
     }
 
-    List<SLanguage> unusedLanguages = new ArrayList<SLanguage>();
-    for (SLanguage langRef : module.getUsedLanguages()) {
-      if (isUnusedLanguageRef(result, langRef)) {
-        unusedLanguages.add(langRef);
-      }
-    }
-
-    List<SModuleReference> unusedDevkits = new ArrayList<SModuleReference>();
-    for (SModuleReference devkitRef : module.getModuleDescriptor().getUsedDevkits()) {
-      SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
-      if (ref != null) unusedDevkits.add(devkitRef);
-    }
-
-    return removeFromImports(module, unusedLanguages, unusedDevkits, unusedDeps);
+    return removeFromImports(module, unusedDeps);
   }
 
   private Dependency getUnusedDependency(Result result, Dependency dep, SModuleReference current) {
@@ -280,19 +267,8 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
-  private String removeFromImports(AbstractModule module, List<SLanguage> unusedLanguages, List<SModuleReference> unusedDevkits,
-      List<Dependency> unusedDeps) {
+  private String removeFromImports(AbstractModule module, List<Dependency> unusedDeps) {
     StringBuilder report = new StringBuilder("Import for module " + module.getModuleName() + " were optimized \n");
-
-    for (SLanguage langRef : unusedLanguages) {
-      module.removeUsedLanguage(langRef);
-      report.append("Language ").append(langRef.getQualifiedName()).append(" was removed from imports\n");
-    }
-
-    for (SModuleReference dkRef : unusedDevkits) {
-      module.removeUsedDevkit(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
-    }
 
     for (Dependency dep : unusedDeps) {
       module.removeDependency(dep);

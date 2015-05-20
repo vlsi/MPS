@@ -10,10 +10,7 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
-import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToBookmark_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -28,35 +25,28 @@ public class GoToBookmark_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
-      event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToBookmark", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText("Go to Bookmark " + GoToBookmark_Action.this.num);
+    event.getPresentation().setEnabled(((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).getBookmark(GoToBookmark_Action.this.num) != null);
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToBookmark", t);
-      }
-    }
+    ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarkManager.class).navigateToBookmark(GoToBookmark_Action.this.num);
   }
   @NotNull
   public String getActionId() {
@@ -67,5 +57,4 @@ public class GoToBookmark_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-  protected static Logger LOG = LogManager.getLogger(GoToBookmark_Action.class);
 }

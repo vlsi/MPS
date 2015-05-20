@@ -28,7 +28,7 @@ import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-// FIME myModel and myModule are DEFAULT_VALUE - why do we serialize this, and why
+// FIXME myModel and myModule are DEFAULT_VALUE - why do we serialize this
 public class ScopeOptions extends BaseOptions {
   private static final Logger LOG = LogManager.getLogger(ScopeOptions.class);
   private static final String SCOPE_TYPE = "scope_type";

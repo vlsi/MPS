@@ -19,8 +19,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -49,19 +47,17 @@ public class MigrationScriptFinder implements IFinder {
           break;
         }
         List<AbstractMigrationRefactoring> refactorings = scriptInstance.getRefactorings();
-        for (AbstractMigrationRefactoring migrationRefactoring : refactorings) {
+        for (AbstractMigrationRefactoring ref : refactorings) {
           if (monitor.isCanceled()) {
             break;
           }
-          monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
-          String cname = migrationRefactoring.getFqNameOfConceptToSearchInstances();
-          SAbstractConcept concept = SConceptRepository.getInstance().getConcept(cname);
-          Set<SNode> instances = FindUsagesFacade.getInstance().findInstances(queryScope, Collections.singleton(concept), false, new EmptyProgressMonitor());
+          monitor.step(scriptInstance.getName() + " [" + ref.getAdditionalInfo() + "]");
+          Set<SNode> instances = FindUsagesFacade.getInstance().findInstances(queryScope, Collections.singleton(ref.getApplicableConcept()), false, new EmptyProgressMonitor());
           for (SNode instance : instances) {
-            if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
-              String category = StringUtil.escapeXml(scriptInstance.getName()) + " </b>[" + StringUtil.escapeXml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
+            if (MigrationScriptUtil.isApplicableRefactoring(instance, ref)) {
+              String category = StringUtil.escapeXml(scriptInstance.getName()) + " </b>[" + StringUtil.escapeXml(ref.getAdditionalInfo()) + "]<b>";
               SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
-              myMigrationBySearchResult.put(result, migrationRefactoring);
+              myMigrationBySearchResult.put(result, ref);
               myResults.getSearchResults().add(result);
             }
           }

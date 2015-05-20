@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,25 +16,38 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
 import com.intellij.icons.AllIcons.General;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionPopupMenu;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Separator;
+import com.intellij.openapi.project.DumbAware;
+import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import java.util.Iterator;
 import java.util.Set;
 
-public abstract class AddAspectAction extends AnAction {
+public abstract class AddAspectAction extends AnAction implements DumbAware {
   public static final Icon ADD_ICON = General.Add;
 
+  private final Project myProject;
   private SNodeReference myBaseNode;
   private Set<RelationDescriptor> myPossibleTabs;
   private NodeChangeCallback myCallback;
 
-  public AddAspectAction(SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
+  public AddAspectAction(Project mpsProject, SNodeReference baseNode, Set<RelationDescriptor> possibleTabs, NodeChangeCallback callback) {
     super("Add Aspect", "", ADD_ICON);
+    myProject = mpsProject;
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myCallback = callback;
@@ -47,14 +60,14 @@ public abstract class AddAspectAction extends AnAction {
 
   @Override
   public void actionPerformed(final AnActionEvent e) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
-        JPopupMenu popupComponent = popup.getComponent();
-        popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
-      }
-    });
+    final DumbService dumbService = DumbService.getInstance(ProjectHelper.toIdeaProject(myProject));
+    if (dumbService.isDumb()) {
+      dumbService.showDumbModeNotification("Please wait while index is being updated");
+      return;
+    }
+    ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
+    JPopupMenu popupComponent = popup.getComponent();
+    popupComponent.show(e.getInputEvent().getComponent(), 0, 0);
   }
 
   protected abstract RelationDescriptor getCurrentAspect();
@@ -62,7 +75,7 @@ public abstract class AddAspectAction extends AnAction {
   private ActionGroup getCreateGroup() {
     DefaultActionGroup result = new DefaultActionGroup();
 
-    Iterator<DefaultActionGroup> it = CreateGroupsBuilder.getCreateGroups(myBaseNode, myPossibleTabs, getCurrentAspect(), myCallback).iterator();
+    Iterator<DefaultActionGroup> it = new CreateGroupsBuilder(myProject, myBaseNode, myCallback).getCreateGroups(myPossibleTabs, getCurrentAspect()).iterator();
     while (it.hasNext()) {
       DefaultActionGroup g = it.next();
       result.add(g);

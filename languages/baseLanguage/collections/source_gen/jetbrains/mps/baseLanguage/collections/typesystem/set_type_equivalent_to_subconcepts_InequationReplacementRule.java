@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class set_type_equivalent_to_subconcepts_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public set_type_equivalent_to_subconcepts_InequationReplacementRule() {
@@ -47,21 +47,16 @@ public class set_type_equivalent_to_subconcepts_InequationReplacementRule extend
     return true;
   }
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSubtypeConcept()), null);
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSupertypeConcept()), null);
   }
-  public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.SetType";
+
+  public SAbstractConcept getApplicableSubtypeConcept() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType");
   }
-  public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.collections.structure.SetType";
+  public SAbstractConcept getApplicableSupertypeConcept() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType");
   }
 }

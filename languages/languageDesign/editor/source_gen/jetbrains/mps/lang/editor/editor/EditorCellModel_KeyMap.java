@@ -8,11 +8,10 @@ import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class EditorCellModel_KeyMap extends KeyMapImpl {
   public EditorCellModel_KeyMap() {
@@ -42,7 +41,7 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       if (contextNode == null) {
         return false;
       }
-      if (!(SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+      if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return false;
       }
       return true;
@@ -81,7 +80,7 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       if (contextNode == null) {
         return false;
       }
-      if (!(SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+      if (!(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return false;
       }
       return true;

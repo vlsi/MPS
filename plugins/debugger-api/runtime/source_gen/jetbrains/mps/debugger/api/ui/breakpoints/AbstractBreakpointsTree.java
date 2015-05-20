@@ -20,7 +20,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -29,7 +28,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -172,9 +170,9 @@ import javax.swing.UIManager;
     public SModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
-        if (modelDescriptor != null) {
-          return modelDescriptor.getModule();
+        SModel model = ((ILocationBreakpoint) breakpoint).getLocation().getModelReference().resolve(myProject.getRepository());
+        if (model != null) {
+          return model.getModule();
         }
       }
       return null;
@@ -210,7 +208,7 @@ import javax.swing.UIManager;
     }
     @Override
     public Icon getIcon(SModelReference model) {
-      return IconManager.getIconFor(SModelRepository.getInstance().getModelDescriptor(model));
+      return IconManager.getIconFor(model.resolve(myProject.getRepository()));
     }
   }
   private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNodeReference> {
@@ -229,7 +227,7 @@ import javax.swing.UIManager;
     }
     @Override
     public Icon getIcon(SNodeReference group) {
-      return IconManager.getIconFor(((SNodePointer) group).resolve(MPSModuleRepository.getInstance()));
+      return IconManager.getIconFor(group.resolve(myProject.getRepository()));
     }
   }
   protected class BreakpointNodeData implements CheckBoxNodeRenderer.NodeData {

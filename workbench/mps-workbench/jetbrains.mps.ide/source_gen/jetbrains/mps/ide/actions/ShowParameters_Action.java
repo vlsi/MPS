@@ -7,13 +7,13 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.Point;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.ParametersInformation;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import java.awt.Component;
@@ -24,7 +24,6 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.tooltips.ToolTip;
 import javax.swing.border.EmptyBorder;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import javax.swing.JTextPane;
@@ -33,8 +32,6 @@ import com.intellij.ui.JBColor;
 import java.awt.Color;
 import com.intellij.ui.Gray;
 import java.awt.GridBagConstraints;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,25 +44,18 @@ public class ShowParameters_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ShowParameters_Action.this.getCellNode(_params) == null) {
       return false;
     }
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowParameters", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -76,38 +66,39 @@ public class ShowParameters_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editor", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editor") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("cell", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
+    {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      MapSequence.fromMap(_params).put("editorContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.showParameters");
-      Point p = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getHeight());
-      EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
-      while (currentCell != null) {
-        ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
-        if (parametersInformation != null) {
-          Component component = ShowParameters_Action.this.createComponent(parametersInformation, currentCell.getSNode(), _params);
-          MPSToolTipManager.getInstance().showToolTip(new ToolTipData(component), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
-          return;
-        }
-        currentCell = currentCell.getParent();
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.showParameters");
+    Point p = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getHeight());
+    EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
+    while (currentCell != null) {
+      ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
+      if (parametersInformation != null) {
+        Component component = ShowParameters_Action.this.createComponent(parametersInformation, currentCell.getSNode(), _params);
+        MPSToolTipManager.getInstance().showToolTip(new ToolTipData(component), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
+        return;
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);
-      }
+      currentCell = currentCell.getParent();
     }
   }
   /*package*/ SNode getCellNode(final Map<String, Object> _params) {
@@ -146,5 +137,4 @@ public class ShowParameters_Action extends BaseAction {
     }
     return panel;
   }
-  protected static Logger LOG = LogManager.getLogger(ShowParameters_Action.class);
 }

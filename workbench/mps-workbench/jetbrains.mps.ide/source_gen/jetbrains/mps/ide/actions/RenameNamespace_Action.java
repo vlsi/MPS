@@ -10,18 +10,15 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import jetbrains.mps.project.MPSProject;
+import java.awt.Frame;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
-import java.awt.Frame;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RenameNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,67 +31,63 @@ public class RenameNamespace_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenameNamespace", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
-      return false;
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("treeNode", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
-      final Wrappers._T<String> newFolder = new Wrappers._T<String>(JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName()));
-      if (newFolder.value == null) {
-        return;
-      }
-      if (newFolder.value.equals("")) {
-        newFolder.value = null;
-      }
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
-            ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder.value);
-          }
-          RenameNamespace_Action.this.getProjectPane(_params).rebuild();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenameNamespace", t);
-      }
+    final NamespaceTextNode node = ((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode")));
+    final Wrappers._T<String> newFolder = new Wrappers._T<String>(JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter New Folder", node.getName()));
+    if (newFolder.value == null) {
+      return;
     }
+    if (newFolder.value.equals("")) {
+      newFolder.value = null;
+    }
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder.value);
+        }
+        RenameNamespace_Action.this.getProjectPane(_params).rebuild();
+      }
+    });
   }
   private ProjectPane getProjectPane(final Map<String, Object> _params) {
     return ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
   }
-  protected static Logger LOG = LogManager.getLogger(RenameNamespace_Action.class);
 }

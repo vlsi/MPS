@@ -12,6 +12,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -32,12 +33,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.application.ModalityState;
+import jetbrains.mps.project.AbstractModule;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -96,11 +97,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       addListeners();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
+          updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
           checkMigrationNeeded();
         }
       });
     } else {
-      saveAnsSetTipsState();
+      saveAndSetTipsState();
       StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
@@ -114,6 +116,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               myState.migrationRequired = false;
+
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                public void run() {
+                  updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+                }
+              });
 
               final MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, MigrationTrigger.this);
               // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
@@ -130,7 +138,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0i0a0a0a1a0a0a0a1a0a0s(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0s(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -181,11 +189,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
   }
 
+  public static void updateUsedLanguagesVersions(Iterable<SModule> modules) {
+    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+      public void visit(AbstractModule it) {
+        it.validateLanguageVersions();
+      }
+    });
+  }
+
   public void projectClosed() {
     removeListeners();
   }
 
-  private void saveAnsSetTipsState() {
+  private void saveAndSetTipsState() {
     if (myState.tips == null) {
       myState.tips = GeneralSettings.getInstance().showTipsOnStartup();
     }
@@ -240,6 +256,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
+    // this is because of validateLanguageVersions, to fail ASAP 
+    ModelAccess.assertLegalWrite();
+
+    updateUsedLanguagesVersions(modules);
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
     if (!(MigrationComponent.isMigrationRequired(p, modules2Check))) {
       return;
@@ -252,6 +272,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     if (myMigrationQueued) {
       return;
     }
+
+    // this is because of validateLanguageVersions, to fail ASAP 
+    ModelAccess.assertLegalWrite();
 
     // if a new language is added to a repo, all modules in project using it  
     // should be checked for whether their migration is needed  
@@ -270,6 +293,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       }
     });
+    updateUsedLanguagesVersions(modules2Check);
     if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
       return;
     }
@@ -280,7 +304,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public synchronized void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
 
-    saveAnsSetTipsState();
+    saveAndSetTipsState();
 
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(ideaProject).runWhenProjectIsInitialized(new Runnable() {
@@ -388,7 +412,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0i0a0a0a1a0a0a0a1a0a0s(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0s(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

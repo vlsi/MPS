@@ -187,12 +187,11 @@ public final class GenerationFacade {
   private boolean process(@NotNull final ProgressMonitor monitor, @NotNull final List<? extends SModel> inputModels) {
     final boolean[] result = new boolean[1];
 
-    // Calls requireWrite at some point
     myTransientModelsProvider.startGeneration(myGenerationOptions.getNumberOfModelsToKeep());
 
     final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(myMessageHandler, myGenerationOptions.isShowInfo(), myGenerationOptions.isShowWarnings());
 
-    ModelAccess.instance().requireWrite(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         for (SModel d : inputModels) {
@@ -207,7 +206,7 @@ public final class GenerationFacade {
 
     GenControllerContext ctx = new GenControllerContext(myProject, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
     final GenerationController gc = new GenerationController(inputModels, ctx, myGenerationHandler, logger);
-    ModelAccess.instance().requireRead(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
@@ -218,21 +217,10 @@ public final class GenerationFacade {
         });
       }
     });
-    ModelAccess.instance().requireWrite(new Runnable() {
-      @Override
-      public void run() {
-        CleanupManager.getInstance().cleanup();
-      }
-    });
 
-    ModelAccess.instance().requireWrite(new Runnable() {
-      @Override
-      public void run() {
-        //fireAfterGeneration(inputModels, options, invocationContext);
-        myTransientModelsProvider.publishAll();
-        CleanupManager.getInstance().cleanup();
-      }
-    });
+    // XXX removeAllTransients done from make facet, perhaps publish shall be part of external code as well?
+    myTransientModelsProvider.publishAll();
+    CleanupManager.getInstance().cleanup();
 
     myGenerationHandler.generationCompleted();
     return result[0];

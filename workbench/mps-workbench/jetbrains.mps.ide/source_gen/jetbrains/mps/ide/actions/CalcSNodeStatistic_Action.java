@@ -4,18 +4,18 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -30,66 +30,55 @@ public class CalcSNodeStatistic_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CalcSNodeStatistic", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      final Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      final Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      final Wrappers._int zeros = new Wrappers._int(0);
+    final Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+    final Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+    final Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+    final Wrappers._int zeros = new Wrappers._int(0);
 
-      InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
-        public void invoke(SNode node) {
-          int propertiesCount = SNodeOperations.getProperties(node).keySet().size();
-          MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ? MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 : 1));
+    InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
+      public void invoke(SNode node) {
+        int propertiesCount = SNodeOperations.getProperties(node).keySet().size();
+        MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ? MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 : 1));
 
-          int refsCount = SNodeOperations.getReferences(node).size();
-          MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ? MapSequence.fromMap(refsStatistic).get(refsCount) + 1 : 1));
+        int refsCount = SNodeOperations.getReferences(node).size();
+        MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ? MapSequence.fromMap(refsStatistic).get(refsCount) + 1 : 1));
 
-          int childrenCount = SNodeOperations.getChildren(node).size();
-          MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ? MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 : 1));
+        int childrenCount = SNodeOperations.getChildren(node).size();
+        MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ? MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 : 1));
 
-          if (propertiesCount + refsCount + childrenCount == 0) {
-            zeros.value++;
-          }
+        if (propertiesCount + refsCount + childrenCount == 0) {
+          zeros.value++;
         }
-      });
+      }
+    });
 
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Property size statistic: " + propertiesStatistic);
-      }
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Refs size statistic: " + refsStatistic);
-      }
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Children size statistic: " + childrenStatistic);
-      }
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Zeros statistic: " + zeros.value);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
-      }
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Property size statistic: " + propertiesStatistic);
+    }
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Refs size statistic: " + refsStatistic);
+    }
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Children size statistic: " + childrenStatistic);
+    }
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Zeros statistic: " + zeros.value);
     }
   }
   protected static Logger LOG = LogManager.getLogger(CalcSNodeStatistic_Action.class);

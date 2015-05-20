@@ -21,13 +21,13 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
@@ -69,7 +69,7 @@ public class QueriesGenerated {
             {
               SNode matchingNode_fo7if3_a1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
               if (matchingNode_fo7if3_a1a0a0a != null) {
-                matches_fo7if3_a1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_a1a0a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+                matches_fo7if3_a1a0a0a = matchingNode_fo7if3_a1a0a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"));
               }
             }
             if (matches_fo7if3_a1a0a0a) {
@@ -79,7 +79,7 @@ public class QueriesGenerated {
               {
                 SNode matchingNode_fo7if3_b1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
                 if (matchingNode_fo7if3_b1a0a0a != null) {
-                  matches_fo7if3_b1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_b1a0a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+                  matches_fo7if3_b1a0a0a = matchingNode_fo7if3_b1a0a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"));
                 }
               }
               if (matches_fo7if3_b1a0a0a) {

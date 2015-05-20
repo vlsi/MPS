@@ -14,12 +14,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
@@ -29,8 +28,6 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,6 +40,7 @@ public class SetNodePackage_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
@@ -50,83 +48,77 @@ public class SetNodePackage_Action extends BaseAction {
       }
     });
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "SetNodePackage", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
-      boolean error = false;
       if (nodes != null) {
+        boolean error = false;
         for (SNode node : ListSequence.fromList(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")))) {
             error = true;
             break;
           }
         }
+        if (error) {
+          nodes = null;
+        }
       }
-      if (error || nodes == null) {
+      if (nodes == null) {
         MapSequence.fromMap(_params).put("nodes", null);
       } else {
         MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
+      if (nodes == null) {
+        return false;
+      }
+
     }
-    if (MapSequence.fromMap(_params).get("nodes") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
-      final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
-      ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-      modelAccess.runReadAction(new Runnable() {
-        public void run() {
-          packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
-          oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
-        }
-      });
-      final SetNodePackageDialog dialog = new SetNodePackageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), packages.value);
-      dialog.setPackage(oldPackage.value);
-      dialog.show();
-      if (dialog.isCancelled()) {
-        return;
+    final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
+    final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
+    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
+    modelAccess.runReadAction(new Runnable() {
+      public void run() {
+        packages.value = SetNodePackage_Action.this.fetchExistingPackages(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), _params);
+        oldPackage.value = SPropertyOperations.getString(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"));
       }
-      modelAccess.executeCommandInEDT(new Runnable() {
-        public void run() {
-          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
-            SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
-            if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-              for (SNode aspect : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{}))) {
-                SPropertyOperations.set(((SNode) aspect), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
-              }
+    });
+    final SetNodePackageDialog dialog = new SetNodePackageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), packages.value);
+    dialog.setPackage(oldPackage.value);
+    dialog.show();
+    if (dialog.isCancelled()) {
+      return;
+    }
+    modelAccess.executeCommandInEDT(new Runnable() {
+      public void run() {
+        for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
+          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+            for (SNode aspect : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{}))) {
+              SPropertyOperations.set(((SNode) aspect), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
             }
           }
         }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "SetNodePackage", t);
       }
-    }
+    });
   }
   /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
     Set<SModel> models = SetSequence.fromSetWithValues(new HashSet<SModel>(), ListSequence.fromList(nlist).select(new ISelector<SNode, SModel>() {
@@ -151,5 +143,4 @@ public class SetNodePackage_Action extends BaseAction {
     Collections.sort(result);
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(SetNodePackage_Action.class);
 }

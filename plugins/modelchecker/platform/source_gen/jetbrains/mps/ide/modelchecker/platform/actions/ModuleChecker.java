@@ -6,8 +6,8 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -20,10 +20,10 @@ public class ModuleChecker {
     final String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
-      ValidationUtil.validateModule(module, new _Adapters._return_P1_E0_to_Consumer_adapter<ValidationProblem>(new _FunctionTypes._return_P1_E0<Boolean, ValidationProblem>() {
-        public Boolean invoke(final ValidationProblem vp) {
+      ValidationUtil.validateModule(module, new Processor<ValidationProblem>() {
+        public boolean process(final ValidationProblem vp) {
           String severity = (vp.getSeverity() == ValidationProblem.Severity.ERROR ? ModelChecker.SEVERITY_ERROR : ModelChecker.SEVERITY_WARNING);
-          return myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + vp.getMessage(), new IModelCheckerFix() {
+          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, moduleName + ": " + vp.getMessage(), new IModelCheckerFix() {
             public boolean doFix() {
               if (!(vp.canFix())) {
                 return false;
@@ -32,8 +32,9 @@ public class ModuleChecker {
               return true;
             }
           }, severity, "module properties"));
+          return true;
         }
-      }));
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error while " + moduleName + " module checking", t);

@@ -10,7 +10,6 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -22,8 +21,6 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewElement_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,54 +34,47 @@ public class NewElement_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((TreeNode) MapSequence.fromMap(_params).get("node")) != null || ((ActionGroup) MapSequence.fromMap(_params).get("group")) != null;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewElement", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.TREE_NODE));
-    MapSequence.fromMap(_params).put("group", event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP));
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      MapSequence.fromMap(_params).put("node", p);
+    }
+    {
+      ActionGroup p = event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP);
+      MapSequence.fromMap(_params).put("group", p);
+    }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ActionGroup group = (((TreeNode) MapSequence.fromMap(_params).get("node")) != null ? ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))) : ((ActionGroup) MapSequence.fromMap(_params).get("group")));
+    final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ActionGroup group = (((TreeNode) MapSequence.fromMap(_params).get("node")) != null ? ProjectPaneActionGroups.getQuickCreateGroup((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))) : ((ActionGroup) MapSequence.fromMap(_params).get("group")));
 
-          if (group != null) {
-            Presentation pres = new Presentation();
-            AnActionEvent e = new AnActionEvent(event.getInputEvent(), event.getDataContext(), ActionPlaces.UNKNOWN, pres, ActionManager.getInstance(), 0);
-            ActionUtils.updateGroup(group, e);
-            popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
-          }
+        if (group != null) {
+          Presentation pres = new Presentation();
+          AnActionEvent e = new AnActionEvent(event.getInputEvent(), event.getDataContext(), ActionPlaces.UNKNOWN, pres, ActionManager.getInstance(), 0);
+          ActionUtils.updateGroup(group, e);
+          popup.value = JBPopupFactory.getInstance().createActionGroupPopup("New", group, event.getDataContext(), JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
         }
-      });
-      if (popup.value == null) {
-        return;
       }
-      popup.value.showInBestPositionFor(event.getDataContext());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewElement", t);
-      }
+    });
+    if (popup.value == null) {
+      return;
     }
+    popup.value.showInBestPositionFor(event.getDataContext());
   }
-  protected static Logger LOG = LogManager.getLogger(NewElement_Action.class);
 }

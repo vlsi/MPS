@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -35,7 +34,6 @@ public class FeatureForestMap<V> {
   public FeatureForestMap() {
   }
   public void put(@NotNull Feature feature, @NotNull V value) {
-    ModelAccess.assertLegalRead();
     if (MapSequence.fromMap(myFeatureToValue).containsKey(feature)) {
       log("Trying to put already present feature " + feature);
     }
@@ -83,7 +81,6 @@ public class FeatureForestMap<V> {
   }
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
-    ModelAccess.assertLegalRead();
     return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Feature>() {
       public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);

@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -62,7 +61,7 @@ public class CachingIconManager {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     if (SNodeOperations.isInstanceOf(concept, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode cd = ((SNode) concept);
-      String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(NameUtil.nodeFQName(concept)).getAlternativeIcon(node);
+      String alternativeIconPath = ConceptRegistry.getInstance().getConstraintsDescriptor(SNodeOperations.getConcept(node)).getAlternativeIcon(node);
       if (alternativeIconPath != null) {
         mainIcon = getIcon(SModelUtil.getDeclaringLanguage(concept), alternativeIconPath);
       }

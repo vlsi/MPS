@@ -4,26 +4,23 @@ package jetbrains.mps.migration.component.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.migration.component.util.MigrationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,55 +33,47 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteMigrationAssistant", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-      final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
+    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MigrationTrigger.updateUsedLanguagesVersions(allModules);
+        migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
+      }
+    });
+    if (!(migrationRequired.value)) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
+          Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
         }
       });
-      if (!(migrationRequired.value)) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
-          }
-        });
-        return;
-      }
-
-      MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
-      mt.postponeMigration();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExecuteMigrationAssistant", t);
-      }
+      return;
     }
+
+    MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
+    mt.postponeMigration();
   }
-  protected static Logger LOG = LogManager.getLogger(ExecuteMigrationAssistant_Action.class);
 }

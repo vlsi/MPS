@@ -5,15 +5,15 @@ package jetbrains.mps.lang.test.matcher;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 /*package*/ class ConceptDifference extends DifferenceItem {
-  public final SConcept myConcept1;
-  public final SConcept myConcept2;
-  public ConceptDifference(SConcept concept1, SConcept concept2) {
-    myConcept1 = concept1;
-    myConcept2 = concept2;
+  public final SConcept myActualConcept;
+  public final SConcept myExpectedConcept;
+  public ConceptDifference(SConcept actualConcept, SConcept expectedConcept) {
+    myActualConcept = actualConcept;
+    myExpectedConcept = expectedConcept;
   }
   @Override
   public String toString() {
-    return "Different concepts: " + myConcept1 + ", " + myConcept2;
+    return "Different concepts: [was: " + myActualConcept + ", expected: " + myExpectedConcept + "]";
   }
   @Override
   public boolean equals(Object obj) {
@@ -24,6 +24,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return false;
     }
     ConceptDifference diff = (ConceptDifference) obj;
-    return myConcept1.equals(diff.myConcept1) && myConcept2.equals(diff.myConcept2);
+    return myActualConcept.equals(diff.myActualConcept) && myExpectedConcept.equals(diff.myExpectedConcept);
   }
 }

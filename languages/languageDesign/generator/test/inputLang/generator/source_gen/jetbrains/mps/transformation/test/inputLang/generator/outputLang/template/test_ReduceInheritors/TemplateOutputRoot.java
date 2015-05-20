@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -29,7 +29,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
     return template_q702qm_a0a1;
   }
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
+    final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot"));
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460153890");
       SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "OutputRoot");
@@ -59,7 +59,7 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         } finally {
         }
         for (SNode child4 : TemplateUtil.asNotNull(tlist2)) {
-          tnode1.addChild("outputChild", child4);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child4);
         }
         // TODO validate child 
       }
@@ -68,19 +68,19 @@ public class TemplateOutputRoot extends TemplateDeclarationBase implements Templ
         final Iterable<SNode> copyListInput5 = QueriesGenerated.sourceNodesQuery_1206460249786(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_b0a0a1a4a1a2));
         tlist5 = environment.copyNodes(copyListInput5, copySrcListMacro_q702qm_b0a0a1a4a1a2, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460235939", context);
         for (SNode child6 : TemplateUtil.asNotNull(tlist5)) {
-          tnode1.addChild("outputChild", child6);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), child6);
         }
         // TODO validate child 
       }
       {
-        final SNode tnode7 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+        final SNode tnode7 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
         try {
           environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");
           SNodeAccessUtil.setProperty(tnode7, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(new PropertyMacroContext(context, "foobar", propertyMacro_q702qm_c0a0c0b0b0f0b0c))));
         } finally {
         }
         if (tnode7 != null) {
-          tnode1.addChild("outputChild", tnode7);
+          tnode1.addChild(MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x116455d922fL, 0x11645a94e4aL, "outputChild"), tnode7);
         }
         // TODO validate child 
       }

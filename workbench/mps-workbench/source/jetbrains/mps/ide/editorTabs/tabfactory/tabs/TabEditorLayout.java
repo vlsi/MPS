@@ -31,6 +31,9 @@ import java.util.List;
 public class TabEditorLayout {
   private final List<Entry> myEntries = new ArrayList<Entry>();
 
+  /**
+   * @return <code>true</code> if there's a node to edit for a given aspect
+   */
   public boolean covers(RelationDescriptor aspect) {
     for (Entry e : myEntries) {
       if (e.getDescriptor().equals(aspect)) {
@@ -40,6 +43,10 @@ public class TabEditorLayout {
     return false;
   }
 
+  /**
+   * There might be few nodes to edit for a given aspect, e.g. generator templates associated with a concept, or typesystem rules
+   */
+  @NotNull
   public Collection<Entry> get(RelationDescriptor aspect) {
     ArrayList<Entry> rv = new ArrayList<Entry>();
     for (Entry e : myEntries) {
@@ -54,6 +61,9 @@ public class TabEditorLayout {
     myEntries.add(new Entry(tab, editorNode, selectionNodes));
   }
 
+  /**
+   * Describes an edited node of a particular aspect, with associated selection
+   */
   public static class Entry {
     private final RelationDescriptor myDescriptor;
     private final SNodeReference myEditorNode;
@@ -65,14 +75,17 @@ public class TabEditorLayout {
       mySelection = selectionNodes == null ? Collections.<SNodeReference>emptyList() : selectionNodes;
     }
 
+    @NotNull
     public SNodeReference getEditNode() {
       return myEditorNode;
     }
 
+    @NotNull
     public RelationDescriptor getDescriptor() {
       return myDescriptor;
     }
 
+    @NotNull
     public Collection<SNodeReference> getSelection() {
       return mySelection;
     }

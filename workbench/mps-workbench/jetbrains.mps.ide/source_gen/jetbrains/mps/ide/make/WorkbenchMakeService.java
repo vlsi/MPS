@@ -363,7 +363,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
           if (delegateConfMon != null) {
             opt = delegateConfMon.relayQuery(query);
           }
-          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getContext()));
+          return (opt != null ? opt : new UIQueryRelayStrategy().relayQuery(query, getSession().getProject()));
         }
       };
       this.jobMon = new IJobMonitor.Stub() {

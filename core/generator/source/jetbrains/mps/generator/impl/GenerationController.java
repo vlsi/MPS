@@ -85,7 +85,6 @@ public class GenerationController implements ITaskPoolProvider {
   }
 
   public boolean generate(ProgressMonitor monitor) {
-    myLogger.clear();
     long startJobTime = System.currentTimeMillis();
 
     myGenerationHandler.startGeneration(myLogger);
@@ -265,10 +264,12 @@ public class GenerationController implements ITaskPoolProvider {
 
   @Override
   public IGenerationTaskPool getTaskPool() {
+    // not too much sense to abstract away ITaskPoolProvider if we have distinct ParallelTemplateGenerator.
+    // either shall merge PTG with TG and use ITaskPoolProvider, or drop SimpleGenerationTaskPool which is dead code otherwise.
     if (myParallelTaskPool == null) {
-      myParallelTaskPool = myOptions.isGenerateInParallel() && GenerationOptions.USE_PARALLEL_POOL
-        ? new GenerationTaskPool(myOptions.getNumberOfThreads())
-        : new SimpleGenerationTaskPool();
+      myParallelTaskPool = myOptions.isGenerateInParallel()
+        ? new GenerationTaskPool(myOptions.getNumberOfThreads(), myContext.getProject().getModelAccess())
+        : new SimpleGenerationTaskPool(myContext.getProject().getModelAccess());
     }
     return myParallelTaskPool;
   }

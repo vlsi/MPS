@@ -17,6 +17,14 @@
       <unit id="1538369951873468539" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_execution_impl_tests" />
     </file>
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/1545327272260050833">
+    <file name="TestModule_tests_testDepViewer.java">
+      <node id="1545327272260050833" at="12,0,14,0" concept="0" trace="TestModule_tests_testDepViewer#()V" />
+      <scope id="1545327272260050833" at="12,43,12,43" />
+      <scope id="1545327272260050833" at="12,0,14,0" />
+      <unit id="1545327272260050833" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_tests_testDepViewer" />
+    </file>
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/2215829679762166364">
     <file name="TestModule_testSubtypingTest.java">
       <node id="2215829679762166364" at="12,0,14,0" concept="0" trace="TestModule_testSubtypingTest#()V" />
@@ -201,6 +209,22 @@
       <unit id="3611349286777542940" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_testActions" />
     </file>
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3895553186365772266">
+    <file name="TestModule_testPackagedLanguage_test.java">
+      <node id="3895553186365772266" at="12,0,14,0" concept="0" trace="TestModule_testPackagedLanguage_test#()V" />
+      <scope id="3895553186365772266" at="12,49,12,49" />
+      <scope id="3895553186365772266" at="12,0,14,0" />
+      <unit id="3895553186365772266" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_testPackagedLanguage_test" />
+    </file>
+  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/3895553186365772275">
+    <file name="TestModule_tests_testPersistence.java">
+      <node id="3895553186365772275" at="12,0,14,0" concept="0" trace="TestModule_tests_testPersistence#()V" />
+      <scope id="3895553186365772275" at="12,45,12,45" />
+      <scope id="3895553186365772275" at="12,0,14,0" />
+      <unit id="3895553186365772275" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_tests_testPersistence" />
+    </file>
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/4195712261513837590">
     <file name="TestModule_jetbrains_mps_testRead.java">
       <node id="4195712261513837590" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_testRead#()V" />
@@ -287,6 +311,14 @@
       <scope id="5934496548013521234" at="12,69,12,69" />
       <scope id="5934496548013521234" at="12,0,14,0" />
       <unit id="5934496548013521234" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels" />
+    </file>
+  </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/6569376054912222883">
+    <file name="TestModule_testSubstituteType.java">
+      <node id="6569376054912222883" at="12,0,14,0" concept="0" trace="TestModule_testSubstituteType#()V" />
+      <scope id="6569376054912222883" at="12,42,12,42" />
+      <scope id="6569376054912222883" at="12,0,14,0" />
+      <unit id="6569376054912222883" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_testSubstituteType" />
     </file>
   </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7092489630493754343">

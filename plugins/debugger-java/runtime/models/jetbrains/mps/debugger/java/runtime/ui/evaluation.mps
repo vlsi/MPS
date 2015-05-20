@@ -2,12 +2,12 @@
 <model ref="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -342,11 +342,13 @@
     </node>
     <node concept="3clFbW" id="54InwJ0wSaX" role="jymVt">
       <node concept="3Tm1VV" id="54InwJ0wSaY" role="1B3o_S" />
-      <node concept="37vLTG" id="54InwJ0wSaZ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="54InwJ0wSb0" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+      <node concept="37vLTG" id="4pq21WIf6mT" role="3clF46">
+        <property role="TrG5h" value="ideaProject" />
+        <node concept="3uibUv" id="4pq21WIf6mU" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="4pq21WIf6mV" role="2AJF6D">
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="37vLTG" id="2sgI38LNUBA" role="3clF46">
@@ -367,8 +369,8 @@
       <node concept="3clFbS" id="54InwJ0wSb3" role="3clF47">
         <node concept="XkiVB" id="54InwJ0wSb4" role="3cqZAp">
           <ref role="37wK5l" node="3Y6CQ86$x2S" resolve="AbstractEvaluationDialog" />
-          <node concept="37vLTw" id="2BHiRxgm$aQ" role="37wK5m">
-            <ref role="3cqZAo" node="54InwJ0wSaZ" resolve="context" />
+          <node concept="37vLTw" id="4pq21WIf6pG" role="37wK5m">
+            <ref role="3cqZAo" node="4pq21WIf6mT" resolve="ideaProject" />
           </node>
           <node concept="37vLTw" id="2BHiRxgmGUB" role="37wK5m">
             <ref role="3cqZAo" node="2sgI38LNUBA" resolve="provider" />
@@ -4732,8 +4734,8 @@
       <node concept="3clFbS" id="3Y6CQ86$v9d" role="3clF47">
         <node concept="1VxSAg" id="4LcUu7wCkku" role="3cqZAp">
           <ref role="37wK5l" node="4LcUu7wChfQ" resolve="EditWatchDialog" />
-          <node concept="37vLTw" id="2BHiRxgl3jL" role="37wK5m">
-            <ref role="3cqZAo" node="3Y6CQ86$x2E" resolve="context" />
+          <node concept="37vLTw" id="4pq21WIeUWS" role="37wK5m">
+            <ref role="3cqZAo" node="4pq21WIeUU5" resolve="ideaProject" />
           </node>
           <node concept="37vLTw" id="2BHiRxgm5Xe" role="37wK5m">
             <ref role="3cqZAo" node="3Y6CQ86$x2H" resolve="provider" />
@@ -4744,12 +4746,12 @@
           <node concept="10Nm6u" id="4LcUu7wCkk_" role="37wK5m" />
         </node>
       </node>
-      <node concept="37vLTG" id="3Y6CQ86$x2E" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="3Y6CQ86$x2F" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+      <node concept="37vLTG" id="4pq21WIeUU5" role="3clF46">
+        <property role="TrG5h" value="ideaProject" />
+        <node concept="3uibUv" id="4pq21WIeUU6" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
         </node>
-        <node concept="2AHcQZ" id="3Y6CQ86$x2G" role="2AJF6D">
+        <node concept="2AHcQZ" id="4pq21WIeUU7" role="2AJF6D">
           <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
@@ -4779,7 +4781,7 @@
         <node concept="XkiVB" id="4LcUu7wChfU" role="3cqZAp">
           <ref role="37wK5l" node="3Y6CQ86$x2S" resolve="AbstractEvaluationDialog" />
           <node concept="37vLTw" id="2BHiRxgmI8h" role="37wK5m">
-            <ref role="3cqZAo" node="4LcUu7wChfZ" resolve="context" />
+            <ref role="3cqZAo" node="4LcUu7wChfZ" resolve="ideaProject" />
           </node>
           <node concept="37vLTw" id="2BHiRxgl3FB" role="37wK5m">
             <ref role="3cqZAo" node="4LcUu7wChg2" resolve="provider" />
@@ -4803,9 +4805,9 @@
         </node>
       </node>
       <node concept="37vLTG" id="4LcUu7wChfZ" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="4LcUu7wChg0" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+        <property role="TrG5h" value="ideaProject" />
+        <node concept="3uibUv" id="4pq21WIeUQe" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
         </node>
         <node concept="2AHcQZ" id="4LcUu7wChg1" role="2AJF6D">
           <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
@@ -4973,17 +4975,8 @@
       <node concept="3clFbS" id="3Y6CQ86$x2V" role="3clF47">
         <node concept="XkiVB" id="3Y6CQ86$x35" role="3cqZAp">
           <ref role="37wK5l" to="810:~DialogWrapper.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="DialogWrapper" />
-          <node concept="2YIFZM" id="1n2T$Ij92EG" role="37wK5m">
-            <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-            <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-            <node concept="2OqwBi" id="1n2T$Ij92Ep" role="37wK5m">
-              <node concept="37vLTw" id="1n2T$Ij92E4" role="2Oq$k0">
-                <ref role="3cqZAo" node="3Y6CQ86$x2X" resolve="context" />
-              </node>
-              <node concept="liA8E" id="1n2T$Ij92E_" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-              </node>
-            </node>
+          <node concept="37vLTw" id="4pq21WIeX9v" role="37wK5m">
+            <ref role="3cqZAo" node="4pq21WIeWVT" resolve="ideaProject" />
           </node>
         </node>
         <node concept="3clFbF" id="2juexGD4qP0" role="3cqZAp">
@@ -5034,17 +5027,8 @@
             <node concept="2ShNRf" id="3Y6CQ86$x3O" role="37vLTx">
               <node concept="1pGfFk" id="3Y6CQ86$x3P" role="2ShVmc">
                 <ref role="37wK5l" node="N5Kj01sBBG" resolve="EvaluationPanel" />
-                <node concept="2YIFZM" id="37Qm68tuKE4" role="37wK5m">
-                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toIdeaProject(jetbrains.mps.project.Project):com.intellij.openapi.project.Project" resolve="toIdeaProject" />
-                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                  <node concept="2OqwBi" id="3Y6CQ86$x3Q" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxglCts" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3Y6CQ86$x2X" resolve="context" />
-                    </node>
-                    <node concept="liA8E" id="3Y6CQ86$x3S" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="4pq21WIeXki" role="37wK5m">
+                  <ref role="3cqZAo" node="4pq21WIeWVT" resolve="ideaProject" />
                 </node>
                 <node concept="37vLTw" id="3GM_nagTvsE" role="37wK5m">
                   <ref role="3cqZAo" node="3Y6CQ86$x3H" resolve="debugSession" />
@@ -5202,10 +5186,13 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="3Y6CQ86$x2X" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="3Y6CQ86$x2Y" role="1tU5fm">
-          <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
+      <node concept="37vLTG" id="4pq21WIeWVT" role="3clF46">
+        <property role="TrG5h" value="ideaProject" />
+        <node concept="3uibUv" id="4pq21WIeWVU" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+        <node concept="2AHcQZ" id="4pq21WIeWVV" role="2AJF6D">
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="37vLTG" id="3Y6CQ86$x2Z" role="3clF46">

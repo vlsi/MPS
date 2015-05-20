@@ -40,7 +40,7 @@ public class MigrationRefactoringAdapter extends BaseIntentionFactory {
 
   @Override
   public String getConcept() {
-    return myRefactoring.getFqNameOfConceptToSearchInstances();
+    return myRefactoring.getApplicableConcept().getQualifiedName();
   }
 
   @Override

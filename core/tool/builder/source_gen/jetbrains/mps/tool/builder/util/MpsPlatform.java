@@ -6,14 +6,12 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.generator.MPSGenerator;
-import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 
 public final class MpsPlatform {
   private MPSCore myMPSCore;
   private MPSPersistence myMPSPersistence;
   private MPSTypesystem myMPSTypesystem;
   private MPSGenerator myMPSGenerator;
-  private MPSBaseLanguage myMPSBaseLanguage;
   public MpsPlatform() {
   }
   public void init() {
@@ -21,20 +19,16 @@ public final class MpsPlatform {
     myMPSPersistence = new MPSPersistence();
     myMPSTypesystem = new MPSTypesystem();
     myMPSGenerator = new MPSGenerator();
-    myMPSBaseLanguage = new MPSBaseLanguage();
     myMPSCore.init();
     myMPSPersistence.init();
     myMPSTypesystem.init();
     myMPSGenerator.init();
-    myMPSBaseLanguage.init();
   }
   public void dispose() {
-    myMPSBaseLanguage.dispose();
     myMPSGenerator.dispose();
     myMPSTypesystem.dispose();
     myMPSPersistence.dispose();
     myMPSCore.dispose();
-    myMPSBaseLanguage = null;
     myMPSGenerator = null;
     myMPSTypesystem = null;
     myMPSPersistence = null;

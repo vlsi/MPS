@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -77,8 +76,6 @@ public class ChangeSetImpl implements ModelChangeSet {
   }
   public void buildOppositeChangeSet() {
     if (myOppositeChangeSet == null) {
-      ModelAccess.assertLegalRead();
-
       myOppositeChangeSet = new ChangeSetImpl(myNewModel, myOldModel);
       myOppositeChangeSet.myOppositeChangeSet = this;
 

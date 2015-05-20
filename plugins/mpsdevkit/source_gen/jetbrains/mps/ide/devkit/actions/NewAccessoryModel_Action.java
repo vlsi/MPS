@@ -8,23 +8,17 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import javax.swing.tree.TreeNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
@@ -37,70 +31,56 @@ public class NewAccessoryModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText(((event.getData(MPSCommonDataKeys.TREE_NODE) instanceof ProjectModuleTreeNode ? "" : "New ")) + "Accesory Model");
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("treeNode", event.getData(MPSCommonDataKeys.TREE_NODE));
-    if (MapSequence.fromMap(_params).get("treeNode") == null) {
-      return false;
+    {
+      TreeNode p = event.getData(MPSCommonDataKeys.TREE_NODE);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
-        return;
-      }
-
-      final Language language = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
-      final Wrappers._T<NewModelDialog> d = new Wrappers._T<NewModelDialog>();
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          d.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))), language.getModuleName(), SModelStereotype.NONE, true);
-        }
-      });
-      d.value.show();
-      final SModel result = d.value.getResult();
-
-      if (result == null) {
-        return;
-      }
-
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          LanguageDescriptor descriptor = language.getModuleDescriptor();
-          descriptor.getAccessoryModels().add(result.getReference());
-          language.save();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
-      }
+    if (!(event.getData(MPSCommonDataKeys.CONTEXT_MODULE) instanceof AbstractModule)) {
+      return;
     }
+
+    final Language language = ((Language) event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
+    NewModelDialog d = new NewModelDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), ((AbstractModule) event.getData(MPSCommonDataKeys.CONTEXT_MODULE)), language.getModuleName(), SModelStereotype.NONE, true);
+    d.show();
+    final SModel result = d.getResult();
+
+    if (result == null) {
+      return;
+    }
+
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        LanguageDescriptor descriptor = language.getModuleDescriptor();
+        descriptor.getAccessoryModels().add(result.getReference());
+        language.save();
+      }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(NewAccessoryModel_Action.class);
 }

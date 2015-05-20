@@ -20,7 +20,6 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
@@ -132,7 +131,6 @@ public class ModelProperties {
     languagesInProps.removeAll(languagesInModel);
 
     for (SLanguage lang : languagesInProps) {
-      ((AbstractModule) myModelDescriptor.getModule()).addUsedLanguage(lang);
       ((SModelInternal) myModelDescriptor).addLanguage(lang);
     }
 

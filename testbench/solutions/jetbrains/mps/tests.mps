@@ -2,7 +2,7 @@
 <model ref="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)">
   <persistence version="9" />
   <languages>
-    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="-1" />
+    <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" name="jetbrains.mps.testbench.suite" version="0" />
   </languages>
   <imports>
     <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
@@ -69,6 +69,10 @@
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
+    <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
+    <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
+    <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -362,6 +366,18 @@
     </node>
     <node concept="lpD6D" id="6LcR7GqywmP" role="lpD6w">
       <ref role="lpD7u" to="e6od:6LcR7GqvFCf" resolve="DelOnChild1ReplaceItWithLinkTarget" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcFg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgOoG" resolve="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcGf" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kh9KP" resolve="Subst_MultiChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcHg" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2Kf3cS" resolve="Subst_SingleChild_OnlyBooleanProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
+      <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
@@ -2905,6 +2921,21 @@
     <node concept="lpD6D" id="434bMCwt41Z" role="lpD6w">
       <ref role="lpD7u" to="ryl9:434bMCwsQH8" resolve="WhileLoopUnwrap2" />
     </node>
+    <node concept="lpD6D" id="P9hc2KeZh4" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2K9otJ" resolve="SUBST_BooleanConstantArgiument_with_Expression" />
+    </node>
+    <node concept="lpD6D" id="P9hc2KeZD9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2Kb14K" resolve="SUBST_BooleanConstantArgiument_with_vaue" />
+    </node>
+    <node concept="lpD6D" id="P9hc2Kf01A" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2JZwYJ" resolve="SUBST_BooleanConstant_with_Expression" />
+    </node>
+    <node concept="lpD6D" id="P9hc2Kf0pJ" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:P9hc2K2Okf" resolve="SUBST_BooleanConstant_with_value" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2Qmg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96F17J3" resolve="RedoIncorrectlyTypedValue" />
+    </node>
     <node concept="lpD6D" id="2ISwQnyeteK" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnybaQ$" resolve="RestoreRefCellAfterUndo" />
     </node>
@@ -2916,6 +2947,18 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8f" role="lpD6w">
       <ref role="lpD7u" to="ryl9:3BRJPwFQ4xK" resolve="TrickyUndoTest" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2QIt" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EFuV9" resolve="UndoChangesCursorPositionFirst" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2R6G" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EW4D_" resolve="UndoChangesCursorPositionFirstWithIncorrectValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RuX" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EJmGS" resolve="UndoIncorrectlyTypedValue" />
+    </node>
+    <node concept="lpD6D" id="4Awu96F2RRg" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:4Awu96EZynh" resolve="UndoIncorrectlyTypedValueWithFollowingCommand" />
     </node>
     <node concept="lpD6D" id="2ISwQnyet$b" role="lpD6w">
       <ref role="lpD7u" to="ryl9:2ISwQnxDk3v" resolve="UndoLocalVariableDeclarationCreation" />
@@ -3744,12 +3787,6 @@
     </node>
   </node>
   <node concept="lpD6F" id="7Psq8BycRoy">
-    <node concept="lpD6A" id="3P7Hp8k5FCr" role="lpD6w">
-      <ref role="lpD7v" to="j5ir:oJ77aNIJob" resolve="MergeCoreTest" />
-    </node>
-    <node concept="lpD6A" id="3P7Hp8k5FCx" role="lpD6w">
-      <ref role="lpD7v" to="j5ir:2FxQamhcX1N" resolve="ChangesManagerTest" />
-    </node>
     <node concept="lpD6A" id="3P7Hp8k5FC_" role="lpD6w">
       <ref role="lpD7v" to="j5ir:6m1MVDkUPWT" resolve="DiskMemoryConflictsTest" />
     </node>
@@ -3810,6 +3847,46 @@
     </node>
     <node concept="lpD6D" id="1V0dlEgZt9x" role="lpD6w">
       <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="3ofMfJ4Yh7E">
+    <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
+      <property role="2R4zub" value="testPackagedLanguage.test" />
+      <property role="2R4zu8" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
+    </node>
+    <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
+      <property role="1wBEbI" value="true" />
+      <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="3ofMfJ4Yh7N">
+    <node concept="2R4zua" id="3ofMfJ4Yh7O" role="2R4z3u">
+      <property role="2R4zub" value="tests.testPersistence" />
+      <property role="2R4zu8" value="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6" />
+    </node>
+    <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
+      <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="1lM6JtOM9Yh">
+    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
+      <property role="2R4zub" value="tests.testDepViewer" />
+      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
+    </node>
+    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
+      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="5GF7bt500qz">
+    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
+      <property role="2R4zub" value="testSubstituteType" />
+      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
+    </node>
+    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
+      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
+    </node>
+    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
+      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
     </node>
   </node>
 </model>

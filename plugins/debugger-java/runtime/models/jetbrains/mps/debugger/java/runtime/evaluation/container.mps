@@ -57,6 +57,7 @@
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="lv7v" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.text(MPS.Core/jetbrains.mps.text@java_stub)" />
+    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
     <import index="gvpw" ref="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -2027,21 +2028,11 @@
                   <node concept="1bVj0M" id="7_a$FDO25V_" role="23t8la">
                     <node concept="3clFbS" id="7_a$FDO25VA" role="1bW5cS">
                       <node concept="3clFbF" id="7_a$FDO27nM" role="3cqZAp">
-                        <node concept="2OqwBi" id="19usIpyKWrD" role="3clFbG">
-                          <node concept="2YIFZM" id="19usIpyKV5y" role="2Oq$k0">
-                            <ref role="37wK5l" to="t3eg:~SConceptRepository.getInstance():org.jetbrains.mps.openapi.language.SConceptRepository" resolve="getInstance" />
-                            <ref role="1Pybhc" to="t3eg:~SConceptRepository" resolve="SConceptRepository" />
-                          </node>
-                          <node concept="liA8E" id="19usIpyKYmb" role="2OqNvi">
-                            <ref role="37wK5l" to="t3eg:~SConceptRepository.getLanguage(java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
-                            <node concept="2OqwBi" id="19usIpyL0o7" role="37wK5m">
-                              <node concept="37vLTw" id="19usIpyKZyQ" role="2Oq$k0">
-                                <ref role="3cqZAo" node="7_a$FDO25VB" resolve="it" />
-                              </node>
-                              <node concept="liA8E" id="19usIpyL46X" role="2OqNvi">
-                                <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                              </node>
-                            </node>
+                        <node concept="2YIFZM" id="2RwlJ15X3n2" role="3clFbG">
+                          <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getLanguage(jetbrains.mps.smodel.Language):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+                          <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                          <node concept="37vLTw" id="2RwlJ15X3Qv" role="37wK5m">
+                            <ref role="3cqZAo" node="7_a$FDO25VB" resolve="it" />
                           </node>
                         </node>
                       </node>

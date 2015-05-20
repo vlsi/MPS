@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -63,7 +63,7 @@ public class IoFileSystemProvider implements FileSystemProvider {
   }
 
   @Override
-  public boolean runWriteTransaction(Runnable r) {
+  public boolean runWriteTransaction(@NotNull Runnable r) {
     try {
       r.run();
     } catch (Exception e) {

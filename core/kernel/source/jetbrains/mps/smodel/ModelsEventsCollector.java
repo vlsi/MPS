@@ -84,6 +84,9 @@ public abstract class ModelsEventsCollector {
     });
   }
 
+  /**
+   * invoked with a write lock
+   */
   protected abstract void eventsHappened(List<SModelEvent> events);
 
   protected void clearCollectedEvents() {

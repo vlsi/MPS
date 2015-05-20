@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,11 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelAdapter;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashSet;
 import java.util.List;
@@ -39,19 +35,15 @@ import java.util.Set;
  */
 public class NodeIconUpdater extends AbstractProjectComponent {
   private SModelCommandListener myCommandListener = new MyCommandListener();
-  private SModelListener myModelListener = new MyModelListener();
-  private final Set<SNodeReference> myUpdatedRoots = new HashSet<SNodeReference>();
   private FileEditorManagerEx myFileEditorManagerEx;
 
   @Override
   public void initComponent() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
   }
 
   @Override
   public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
   }
 
@@ -60,37 +52,20 @@ public class NodeIconUpdater extends AbstractProjectComponent {
     myFileEditorManagerEx = fileEditorManager;
   }
 
-  private class MyModelListener extends SModelAdapter {
-    @Override
-    public void eventFired(SModelEvent event) {
-      SNode root = event.getAffectedRoot();
-      if (root == null) return;
-      if (root.getModel() == null) return;
-      synchronized (myUpdatedRoots) {
-        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), root.getNodeId()));
-      }
-    }
-  }
-
   private class MyCommandListener implements SModelCommandListener {
     @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        @Override
-        public void run() {
-          synchronized (myUpdatedRoots) {
-            for (SNodeReference root : myUpdatedRoots) {
-              if (root.resolve(MPSModuleRepository.getInstance()) != null) {
-                MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
-                if (nodeVfs.hasVirtualFileFor(root)) {
-                  myFileEditorManagerEx.updateFilePresentation(nodeVfs.getFileFor(root));
-                }
-              }
-            }
-            myUpdatedRoots.clear();
-          }
+      final MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
+      for (SModelEvent event : events) {
+        SNode root = event.getAffectedRoot();
+        if (root == null || root.getModel() == null) {
+          continue;
         }
-      });
+        final SNodeReference ptr = root.getReference();
+        if (nodeVfs.hasVirtualFileFor(ptr)) {
+          myFileEditorManagerEx.updateFilePresentation(nodeVfs.getFileFor(ptr));
+        }
+      }
     }
   }
 }

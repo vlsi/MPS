@@ -198,19 +198,15 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
             }
           });
         } else {
-          if (contentConflict) {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            public void run() {
+              if (contentConflict) {
                 model.reloadFromSource();
-              }
-            });
-          } else {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
+              } else {
                 ((SModuleBase) model.getModule()).unregisterModel((SModelBase) model);
               }
-            });
-          }
+            }
+          });
         }
       }
     });
@@ -251,6 +247,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
   private static File doBackup(IFile modelFile, SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
+      // as the model is already in repo, we can assume it's in supported persistence 
       MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, ModelStorageProblemsListener.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
         com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + ModelStorageProblemsListener.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));

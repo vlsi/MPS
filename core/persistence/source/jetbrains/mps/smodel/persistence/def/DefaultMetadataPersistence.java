@@ -27,14 +27,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class DefaultMetadataPersistence {
+public class DefaultMetadataPersistence {
   private static final Logger LOG = LogManager.getLogger(DefaultMetadataPersistence.class);
 
   private static final String ENTRY = "entry";
   private static final String KEY = "key";
   private static final String VALUE = "value";
 
-  static Map<String, String> load(IFile file) {
+  public static Map<String, String> load(IFile file) {
     try {
       Map<String, String> result = new HashMap<String, String>();
       Element root = JDOMUtil.loadDocument(file).getRootElement();

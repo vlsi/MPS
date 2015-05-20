@@ -4,22 +4,18 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.awt.Frame;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
-import java.awt.Frame;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.IOperationContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,54 +28,42 @@ public class GoToRules_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoToRules", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      if (p == null) {
+        return false;
+      }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
-          node = null;
-        }
+      if (node != null && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")))) {
+        node = null;
       }
-      MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+      if (node == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoToRules", t);
-      }
-    }
+    GoToRulesHelper.go(event.getData(MPSCommonDataKeys.FRAME), event.getData(MPSEditorDataKeys.EDITOR_CELL), event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(MPSCommonDataKeys.NODE));
   }
-  protected static Logger LOG = LogManager.getLogger(GoToRules_Action.class);
 }

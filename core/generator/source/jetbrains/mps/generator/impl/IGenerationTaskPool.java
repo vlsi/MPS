@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.impl.ParallelTemplateGenerator.CompositeGenerationTask;
+import jetbrains.mps.util.Callback;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Deque;
-import java.util.LinkedList;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
  * Evgeny Gryaznov, Mar 4, 2010
@@ -38,46 +37,36 @@ public interface IGenerationTaskPool {
   void dispose();
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
-    private Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
+    private final CompositeGenerationTask myQueue = new CompositeGenerationTask();
+    private final ModelAccess myModelAccess;
+
+    public SimpleGenerationTaskPool(@NotNull ModelAccess modelAccess) {
+      myModelAccess = modelAccess;
+    }
 
     @Override
     public void addTask(GenerationTask r) {
-      queue.addFirst(r);
+      myQueue.addTask(r);
     }
 
     @Override
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
-      GenerationTask next;
-      try {
-        while ((next = queue.poll()) != null) {
-          next.run();
+      final Throwable[] exception = new Throwable[1];
+      // XXX I assume SimpleGenerationTaskPool is used from 'main' generation thread which already holds
+      // read lock, so that read lock fairness (GenerationTaskAdapter#run()) won't cause any deadlock here
+      myModelAccess.runReadAction(new GenerationTaskAdapter(myQueue, new Callback<Throwable>() {
+        @Override
+        public void call(Throwable param) {
+          exception[0] = param;
         }
-      } finally {
-        queue.clear();
+      }));
+      if (exception[0] != null) {
+        GenerationTaskAdapter.rethrow(exception[0]);
       }
     }
 
     @Override
     public void dispose() {
-    }
-  }
-
-  public static final class ModelReadTask implements GenerationTask {
-    @NotNull
-    private final GenerationTask myDelegate;
-
-    public ModelReadTask(@NotNull GenerationTask delegate) {
-      myDelegate = delegate;
-    }
-
-    @Override
-    public void run() throws GenerationCanceledException, GenerationFailureException {
-      boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-      try {
-        myDelegate.run();
-      } finally {
-        ModelAccess.instance().setReadEnabledFlag(oldFlag);
-      }
     }
   }
 

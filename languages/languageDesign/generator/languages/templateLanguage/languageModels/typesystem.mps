@@ -17,6 +17,8 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="75ov" ref="r:cdd4fc54-626c-4040-b1f7-5bc8bfd2ee53(jetbrains.mps.lang.generator.helper)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
+    <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -30,6 +32,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -2609,14 +2612,23 @@
                 </node>
               </node>
               <node concept="3fqX7Q" id="uktU6AWHQ1" role="3clFbw">
-                <node concept="2YIFZM" id="uktU6AWHQ2" role="3fr31v">
-                  <ref role="37wK5l" to="iwwu:i1dxEXv" resolve="isAssignableConcept" />
-                  <ref role="1Pybhc" to="iwwu:i0YipgJ" resolve="SModelUtil" />
-                  <node concept="37vLTw" id="3GM_nagTroT" role="37wK5m">
-                    <ref role="3cqZAo" node="uktU6AWHPO" resolve="nodeConcept" />
+                <node concept="2OqwBi" id="4wG2MBHCYVH" role="3fr31v">
+                  <node concept="2YIFZM" id="4wG2MBHCYUr" role="2Oq$k0">
+                    <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                    <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                    <node concept="37vLTw" id="4wG2MBHCYU_" role="37wK5m">
+                      <ref role="3cqZAo" node="uktU6AWHPO" resolve="nodeConcept" />
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTAyo" role="37wK5m">
-                    <ref role="3cqZAo" node="uktU6AWHPr" resolve="templateApplicableConcept" />
+                  <node concept="liA8E" id="4wG2MBHCZ3t" role="2OqNvi">
+                    <ref role="37wK5l" to="t3eg:~SAbstractConcept.isSubConceptOf(org.jetbrains.mps.openapi.language.SAbstractConcept):boolean" resolve="isSubConceptOf" />
+                    <node concept="2YIFZM" id="4wG2MBHCZ6O" role="37wK5m">
+                      <ref role="37wK5l" to="62l1:~MetaAdapterByDeclaration.getConcept(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getConcept" />
+                      <ref role="1Pybhc" to="62l1:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                      <node concept="37vLTw" id="4wG2MBHCZaq" role="37wK5m">
+                        <ref role="3cqZAo" node="uktU6AWHPr" resolve="templateApplicableConcept" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

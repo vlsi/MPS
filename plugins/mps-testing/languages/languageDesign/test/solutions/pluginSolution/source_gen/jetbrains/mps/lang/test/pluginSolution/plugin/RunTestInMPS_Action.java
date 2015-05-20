@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -24,10 +24,7 @@ import java.util.List;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RunTestInMPS_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,59 +37,48 @@ public class RunTestInMPS_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase"));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RunTestInMPS", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
-      SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-      MapSequence.fromMap(_params).put("model", modelDescriptor);
-    }
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+      SModel model = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", model);
+      if (model == null) {
+        return false;
+      }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
       MapSequence.fromMap(_params).put("node", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(tests).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")), "virtual_getTestSet_1216130724401", new Object[]{})).toListSequence());
-      for (SNode test : SetSequence.fromSet(tests)) {
-        RunTestInMPS_Action.this.runTest(test, _params);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RunTestInMPS", t);
-      }
+    final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(tests).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")), "virtual_getTestSet_1216130724401", new Object[]{})).toListSequence());
+    for (SNode test : SetSequence.fromSet(tests)) {
+      RunTestInMPS_Action.this.runTest(test, _params);
     }
   }
   /*package*/ void runTest(final SNode test, final Map<String, Object> _params) {
@@ -119,5 +105,4 @@ public class RunTestInMPS_Action extends BaseAction {
       e.printStackTrace();
     }
   }
-  protected static Logger LOG = LogManager.getLogger(RunTestInMPS_Action.class);
 }

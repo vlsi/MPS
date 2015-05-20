@@ -4,16 +4,12 @@ package jetbrains.mps.ide.mpsmigration.migration32;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.mpsmigration.migration32.migrations.Name2IdMigration;
 
 public class MigrateIds_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,34 +22,21 @@ public class MigrateIds_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MigrateIds", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new Name2IdMigration().doExecute(((MPSProject) MapSequence.fromMap(_params).get("project")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MigrateIds", t);
-      }
-    }
+    new Name2IdMigration().doExecute(event.getData(MPSCommonDataKeys.MPS_PROJECT));
   }
-  protected static Logger LOG = LogManager.getLogger(MigrateIds_Action.class);
 }

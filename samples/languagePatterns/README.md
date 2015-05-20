@@ -44,8 +44,23 @@ Scoping rules ensure that:
 
 * each singer can only be listed once in a combined performance
 
+* a handy intention (IntroduceSinger) is available to create a singer from a string typed in the performance (frequently known as "create from usage"
+or "introduce variable" refactoring).
 
-## fluent editing
+
+## dotexpression
+
+De-referencing elements by "dot" notation is a very common practise in many languages. BaseLanguage offers the DotExpression concept to mimics Java's
+"dot" operator and you can leverage it in your languages, if they're extending BaseLanguage's expressions.
+Let's assume a simple form with several addresses that need to be validated by validation expressions. The expressions need to refer to the street and zip code
+of each address in order to include their values in the validation expression. The sample defines:
+* Address concept to represent the actual address
+* AddressReference concept that extends Expression and represents an address in the validation expression
+* StreetOperation and ZipOperation, both extending the OperationOnAddress abstract concept, which form the right-side of DotExpressions and infer the correct type
+
+
+
+## fluent-editing
 
 An example of creating a text-like editing experience and implements many of the recommendations mentioned in
 the Editor cookbook (https://confluence.jetbrains.com/display/MPSD32/Editor+cookbook). It implements a simple language for specifying drawing commands (line, rectangle):
@@ -68,3 +83,16 @@ the Editor cookbook (https://confluence.jetbrains.com/display/MPSD32/Editor+cook
 An example of using editor components that get overriden in a sub-concept (Truck). An editor in Car uses an editor component CarProperties also defined in Car.
 A sub-concept (Truck) overrides the CarProperties editor component with the TruckProperties editor component to contain its own properties. The editor in Car
 will use the Truck’s variant of the editor component for Trucks and the Car variant for Cars.
+
+
+## seamless-substitution
+
+
+
+An example that seamlessly switches (substitutes) between different related subconcepts. A Request contains a "description", which may be either a string,
+a simple form or a complex form. A completion-menu lets the user pick the requested description type. If the user simply types text, the "string"-based
+description is picked automatically in the "PickTheRightDescriptionType" substitute action.
+The first cell of editors for each of the description concepts is sensitive to substitution (set through the "menu" property of the cell)
+and so offers the option to switch between description types with completion-menu.
+The "Converters" node factories contain code that preserves parts of the description information and propagates it into the newly instantiated
+description concept.

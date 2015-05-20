@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
+import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -93,7 +94,9 @@ public class ModelProblemsChecker extends EditorCheckerAdapter {
       SNode node = p.getNode();
       if (node == null) continue;
 
-      Color color = p.isError() ? Color.RED : (StyleRegistry.getInstance().isDarkTheme() ? new Color(140, 140, 0) : Color.YELLOW);
+      Color color =
+          p.isError() ? new Color(ColorConstants.ERROR) :
+              (StyleRegistry.getInstance().isDarkTheme() ? new Color(ColorConstants.WARNING_DARK) : new Color(ColorConstants.WARNING));
       result.add(new ModelProblemMessage(node, p.isError() ? MessageStatus.ERROR : MessageStatus.WARNING,
           color, p.getText(), this));
     }

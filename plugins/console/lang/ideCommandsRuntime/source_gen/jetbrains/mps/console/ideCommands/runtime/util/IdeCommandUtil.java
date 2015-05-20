@@ -5,7 +5,6 @@ package jetbrains.mps.console.ideCommands.runtime.util;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
@@ -48,8 +47,6 @@ import org.jetbrains.annotations.NonNls;
 
 public class IdeCommandUtil {
   public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
-    ProjectOperationContext context = new ProjectOperationContext(project);
-
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -68,7 +65,7 @@ public class IdeCommandUtil {
           do {
             dependencies = Sequence.fromIterable(dependencies).translate(new ITranslator2<SModel, SModel>() {
               public Iterable<SModel> translate(SModel it) {
-                return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a3a0(it, SModelInternal.class).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModel>() {
+                return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0(it, SModelInternal.class).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModel>() {
                   public SModel select(jetbrains.mps.smodel.SModel.ImportElement it) {
                     return it.getModelReference().resolve(MPSModuleRepository.getInstance());
                   }
@@ -249,7 +246,7 @@ public class IdeCommandUtil {
     }
     return null;
   }
-  private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a3a0(Object o, Class<T> type) {
+  private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a1a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

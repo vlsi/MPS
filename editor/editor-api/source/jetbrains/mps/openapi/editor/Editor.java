@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -28,6 +29,11 @@ public interface Editor {
 
   EditorContext getEditorContext();
 
+  /**
+   * @deprecated use other means to find out context of the editor, e.g. with {@link #getEditorContext()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   IOperationContext getOperationContext();
 
   boolean isTabbed();

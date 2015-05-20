@@ -10,15 +10,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewClassLike_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,42 +29,36 @@ public class NewClassLike_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " class");
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewClassLike", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " class");
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      SNode newClass = ClassLikeUtil.createNewClassLike(NewClassLike_Action.this.descr, ((SModel) MapSequence.fromMap(_params).get("model")));
-      if (!(NewRootNodeAction.trySelectInCurrentPane(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass))) {
-        NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, false);
-      }
-      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), newClass, true, false);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewClassLike", t);
-      }
+    SNode newClass = ClassLikeUtil.createNewClassLike(NewClassLike_Action.this.descr, event.getData(MPSCommonDataKeys.MODEL));
+    if (!(NewRootNodeAction.trySelectInCurrentPane(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass))) {
+      NavigationSupport.getInstance().selectInTree(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, false);
     }
+    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, true, false);
   }
   @NotNull
   public String getActionId() {
@@ -82,5 +72,4 @@ public class NewClassLike_Action extends BaseAction {
   public static String descr_State(SNode object) {
     return object.getNodeId().toString();
   }
-  protected static Logger LOG = LogManager.getLogger(NewClassLike_Action.class);
 }

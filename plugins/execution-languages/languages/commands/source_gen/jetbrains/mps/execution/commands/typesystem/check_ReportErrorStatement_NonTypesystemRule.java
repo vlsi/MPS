@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_ReportErrorStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ReportErrorStatement_NonTypesystemRule() {
@@ -23,14 +23,11 @@ public class check_ReportErrorStatement_NonTypesystemRule extends AbstractNonTyp
       RulesFunctions_BaseLanguage.check(typeCheckingContext, SetSequence.fromSetAndArray(new HashSet<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), reportStatement, "virtual_getException_856705193941282181", new Object[]{})), reportStatement);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.execution.commands.structure.ReportErrorStatement";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L, "jetbrains.mps.execution.commands.structure.ReportErrorStatement");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

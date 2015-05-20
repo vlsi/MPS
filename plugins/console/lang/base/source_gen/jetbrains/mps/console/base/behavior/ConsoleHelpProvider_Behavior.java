@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class ConsoleHelpProvider_Behavior {
   public static void init(SNode thisNode) {
@@ -31,6 +30,6 @@ public class ConsoleHelpProvider_Behavior {
     }
   }
   public static String virtual_getDisplayString_6891027939994892943(SAbstractConcept thisConcept) {
-    return ConsoleHelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(SConceptRepository.getInstance().getConcept("jetbrains.mps.console.base.structure.ConsoleHelpProvider"));
+    return ConsoleHelpProvider_Behavior.virtual_getShortDisplayString_7006261637493126103(MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x690b986730edd07L, "jetbrains.mps.console.base.structure.ConsoleHelpProvider"));
   }
 }

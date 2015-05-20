@@ -4,9 +4,11 @@ package jetbrains.mps.scope;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
@@ -17,42 +19,44 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public abstract class SimpleRoleScope extends Scope {
   private final SNode myNode;
   private final SContainmentLink myLink;
-  private final String conceptFqName;
+  private final SAbstractConcept concept;
   /**
    * 
-   * @deprecated use SContainmentLink variant, to remove after 3.3
+   * @deprecated use SContainmentLink variant
    */
   @Deprecated
+  @ToRemove(version = 3.3)
   public SimpleRoleScope(SNode node, SNode link, String conceptFqName) {
     this.myNode = node;
     this.myLink = MetaAdapterByDeclaration.getContainmentLink(link);
-    this.conceptFqName = conceptFqName;
+    this.concept = MetaAdapterFactoryByName.getTypedConcept_DoNotUse(conceptFqName);
   }
-  public SimpleRoleScope(SNode node, SContainmentLink link, String conceptFqName) {
+  public SimpleRoleScope(SNode node, SContainmentLink link, SAbstractConcept concept) {
     this.myNode = node;
     this.myLink = link;
-    this.conceptFqName = conceptFqName;
+    this.concept = concept;
   }
   /**
    * 
-   * @deprecated use SContainmentLink variant, to remove after 3.3
+   * @deprecated use SContainmentLink variant
    */
   @Deprecated
+  @ToRemove(version = 3.3)
   public SimpleRoleScope(SNode node, SNode link) {
     this.myNode = node;
     this.myLink = MetaAdapterByDeclaration.getContainmentLink(link);
-    this.conceptFqName = null;
+    this.concept = null;
   }
   public SimpleRoleScope(SNode node, SContainmentLink link) {
     this.myNode = node;
     this.myLink = link;
-    this.conceptFqName = null;
+    this.concept = null;
   }
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getQualifiedName(), conceptFqName))) {
+      if (this.concept != null && !(n.getConcept().isSubConceptOf(concept))) {
         continue;
       }
       if (getName(n).equals(refText)) {
@@ -68,7 +72,7 @@ public abstract class SimpleRoleScope extends Scope {
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getQualifiedName(), conceptFqName))) {
+      if (this.concept != null && !(n.getConcept().isSubConceptOf(concept))) {
         continue;
       }
       String name = getName(n);
@@ -83,7 +87,7 @@ public abstract class SimpleRoleScope extends Scope {
     if (node == null || SNodeOperations.getParent(node) != myNode) {
       return null;
     }
-    if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(node.getConcept().getQualifiedName(), conceptFqName))) {
+    if (this.concept != null && !(node.getConcept().isSubConceptOf(concept))) {
       return null;
     }
 
@@ -92,7 +96,7 @@ public abstract class SimpleRoleScope extends Scope {
       if (n == node) {
         continue;
       }
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getQualifiedName(), conceptFqName))) {
+      if (this.concept != null && !(n.getConcept().isSubConceptOf(concept))) {
         continue;
       }
       String name = getName(n);

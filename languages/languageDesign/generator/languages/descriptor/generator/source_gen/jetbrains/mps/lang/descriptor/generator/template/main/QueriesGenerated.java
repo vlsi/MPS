@@ -82,7 +82,7 @@ public class QueriesGenerated {
 
   }
   public static boolean baseMappingRule_Condition_1832482093174183662(final BaseMappingRuleContext _context) {
-    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.DATA_FLOW, _context, MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5bd9e43c93f46789L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer"));
+    return LanguageRuntimeGeneratorUtils.isAspectOfLanguage(_context.getNode(), LanguageAspect.DATA_FLOW, _context, MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"));
   }
   public static boolean baseMappingRule_Condition_1832482093174183705(final BaseMappingRuleContext _context) {
     SModel aspectModel = LanguageAspect.DATA_FLOW.get(((Language) _context.getVariable("langModule")));

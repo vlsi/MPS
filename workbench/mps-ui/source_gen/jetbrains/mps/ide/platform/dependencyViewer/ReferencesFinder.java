@@ -12,141 +12,119 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.ModelAccess;
-import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-/*package*/ class ReferencesFinder {
+public class ReferencesFinder {
   private Map<SModel, List<SReference>> myModelsRefsCache = new HashMap<SModel, List<SReference>>();
-  /*package*/ ReferencesFinder() {
+
+  public ReferencesFinder() {
   }
-  /*package*/ SearchResults getTargetSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
+
+  public SearchResults findRefsFromScopeToOuter(Iterable<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     Set<SNode> targets = new HashSet<SNode>();
-    try {
-      monitor.start("computing references' targets", ListSequence.fromList(nodes).count());
-      for (SNode node : nodes) {
-        for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
-          SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
-          if (target == null || scope.contains(target)) {
-            continue;
-          }
-          if (targets.add(target)) {
-            results.getSearchResults().add(new SearchResult(target, "target"));
-          }
+    for (SNode node : nodes) {
+      for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
+        SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
+        if (target == null) {
+          continue;
         }
-        monitor.advance(1);
-        if (monitor.isCanceled()) {
-          return results;
+        if (scope.contains(target)) {
+          continue;
+        }
+
+        if (targets.add(target)) {
+          results.getSearchResults().add(new SearchResult(target, "target"));
         }
       }
-    } finally {
-      monitor.done();
+      monitor.advance(1);
+      if (monitor.isCanceled()) {
+        return results;
+      }
     }
     return results;
   }
-  /*package*/ SearchResults getUsedLanguagesSearchResults(List<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
+
+  public SearchResults getUsedConcepts(Iterable<SNode> nodes, DependencyViewerScope scope, ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
-    Set<SNode> concepts = new HashSet<SNode>();
-    try {
-      monitor.start("computing used languages", ListSequence.fromList(nodes).count());
-      for (SNode node : nodes) {
-        SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName());
-        if (concepts.add(concept)) {
-          results.getSearchResults().add(new SearchResult(concept, "concept"));
-        }
-        monitor.advance(1);
-        if (monitor.isCanceled()) {
-          return results;
-        }
+    Set<SConcept> concepts = new HashSet<SConcept>();
+    for (SNode node : nodes) {
+      SConcept concept = node.getConcept();
+      if (concepts.add(concept)) {
+        results.getSearchResults().add(new SearchResult(concept.getDeclarationNode(), "concept"));
       }
-    } finally {
-      monitor.done();
+      monitor.advance(1);
+      if (monitor.isCanceled()) {
+        return results;
+      }
     }
     return results;
   }
-  /*package*/ SearchResults getUsagesSearchResults(List<SNode> references, final DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
-    final SearchResults<SNode> results = new SearchResults<SNode>();
-    try {
-      monitor.start("filtering references", ListSequence.fromList(references).count());
-      for (final SNode node : ListSequence.fromList(references)) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
-              SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
-              if (targetNode == null || !(targetScope.contains(targetNode)) || sourceScope.contains(targetNode)) {
-                continue;
-              }
-              results.getSearchResults().add(new SearchResult(node, "references"));
-              break;
-            }
-          }
-        });
-        if (monitor.isCanceled()) {
-          return results;
+
+  public SearchResults getRefsBetweenScopes(Iterable<SNode> references, DependencyViewerScope from, DependencyViewerScope to, ProgressMonitor monitor) {
+    SearchResults<SNode> results = new SearchResults<SNode>();
+    for (SNode node : Sequence.fromIterable(references)) {
+      for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
+        SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
+        if (targetNode == null) {
+          continue;
         }
-        monitor.advance(1);
+        if (from.contains(targetNode)) {
+          continue;
+        }
+        if (!(to.contains(targetNode))) {
+          continue;
+        }
+
+        results.getSearchResults().add(new SearchResult(node, "references"));
+        break;
       }
-    } finally {
-      monitor.done();
+      if (monitor.isCanceled()) {
+        return results;
+      }
+      monitor.advance(1);
     }
     return results;
   }
-  /*package*/ SearchResults getLanguageUsagesSearchResults(List<SNode> nodes, DependencyViewerScope sourceScope, final DependencyViewerScope targetScope, ProgressMonitor monitor) {
-    final SearchResults<SNode> results = new SearchResults<SNode>();
-    try {
-      monitor.start("filtering nodes", ListSequence.fromList(nodes).count());
-      for (final SNode node : ListSequence.fromList(nodes)) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName());
-            if (concept != null && targetScope.contains(concept)) {
-              results.getSearchResults().add(new SearchResult(node, "language"));
-            }
-          }
-        });
-        if (monitor.isCanceled()) {
-          return results;
-        }
-        monitor.advance(1);
+
+  public SearchResults getLanguageUsagesSearchResults(Iterable<SNode> nodes, DependencyViewerScope sourceScope, DependencyViewerScope targetScope, ProgressMonitor monitor) {
+    SearchResults<SNode> results = new SearchResults<SNode>();
+    for (SNode node : Sequence.fromIterable(nodes)) {
+      SConcept concept = node.getConcept();
+      // todo replace targetScope.contains with SConcept check 
+      if (concept.isValid() && targetScope.contains(concept.getDeclarationNode())) {
+        results.getSearchResults().add(new SearchResult(node, "language"));
       }
-    } finally {
-      monitor.done();
+      if (monitor.isCanceled()) {
+        return results;
+      }
+      monitor.advance(1);
     }
     return results;
   }
-  /*package*/ List<SNode> getNodes(DependencyViewerScope scope, ProgressMonitor monitor) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    try {
-      Iterable<SModel> models = CollectionSequence.fromCollection(scope.getModules()).translate(new ITranslator2<SModule, SModel>() {
-        public Iterable<SModel> translate(SModule it) {
-          return it.getModels();
-        }
-      }).concat(CollectionSequence.fromCollection(scope.getModels()));
-      List<SNode> roots = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
-        public Iterable<SNode> translate(SModel it) {
-          return (Iterable<SNode>) (Iterable) it.getRootNodes();
-        }
-      }).concat(CollectionSequence.fromCollection(scope.getRoots())).toListSequence();
-      monitor.start("searching references in " + scope.getPresentation(), ListSequence.fromList(roots).count());
-      for (SNode root : ListSequence.fromList(roots)) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(((SNode) root), null, true, new SAbstractConcept[]{})));
-        if (monitor.isCanceled()) {
-          return result;
-        }
-        monitor.advance(1);
+
+  public Iterable<SNode> getNodes(DependencyViewerScope scope) {
+    Iterable<SModel> models = CollectionSequence.fromCollection(scope.getModules()).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
       }
-    } finally {
-      monitor.done();
-    }
-    return result;
+    }).concat(CollectionSequence.fromCollection(scope.getModels()));
+    Iterable<SNode> roots = Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
+        return it.getRootNodes();
+      }
+    }).concat(CollectionSequence.fromCollection(scope.getRoots()));
+    return Sequence.fromIterable(roots).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getNodeDescendants(((SNode) it), null, true, new SAbstractConcept[]{});
+      }
+    });
   }
 }

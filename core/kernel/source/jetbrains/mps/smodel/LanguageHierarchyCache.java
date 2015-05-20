@@ -18,10 +18,9 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternAwareStringSet;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -35,6 +34,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+@Deprecated
+@ToRemove(version = 3.3)
+//no usages in MPS
 // todo: DO NOT USE if not sure, use ConceptDescendantsCache
 // todo: should be built based on nodes, useful for ConceptHierarchyTree?
 public class LanguageHierarchyCache implements CoreComponent {
@@ -97,14 +99,23 @@ public class LanguageHierarchyCache implements CoreComponent {
     }
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static List<String> getParentsNames(String conceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   public static Set<String> getAncestorsNames(final String conceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getAncestorsNames();
   }
@@ -125,6 +136,9 @@ public class LanguageHierarchyCache implements CoreComponent {
     return children == null ? Collections.<String>emptySet() : Collections.unmodifiableSet(children);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS except conceptNode.conceptOp
   public Set<String> getAllDescendantsOfConcept(String conceptFqName) {
     Set<String> result = new LinkedHashSet<String>();
     collectDescendants(conceptFqName, result);
@@ -156,11 +170,8 @@ public class LanguageHierarchyCache implements CoreComponent {
         for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModel structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
-          Iterable<SNode> iterable =
-              new ConditionalIterable<SNode>(
-                  structureDescriptor.getRootNodes(),
-                  new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration.getQualifiedName()));
-          for (SNode root : iterable) {
+          for (SNode root : structureDescriptor.getRootNodes()) {
+            if (!root.isInstanceOfConcept(SNodeUtil.concept_AbstractConceptDeclaration)) continue;
             addToCache(NameUtil.nodeFQName(root));
           }
         }
@@ -181,6 +192,9 @@ public class LanguageHierarchyCache implements CoreComponent {
     return result;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   // FIXME there's only one use of the method (ChildSubstituteActionsHelper), which is likely to be refactored in 3.2, and we can drop LanguageCache then
   public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language l) {
     Set<String> result;

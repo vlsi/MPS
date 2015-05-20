@@ -25,12 +25,13 @@ import java.io.IOException;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -162,8 +163,8 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            ((SModelBase) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-            ((SModelBase) model).addLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1));
 
             Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
             SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {
@@ -188,11 +189,10 @@ public class JavaToMpsConverter {
             myModel.addRootNode(root);
           }
           myAttachedRoots = myRoots;
+          ((SModelBase) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+          ((SModelBase) myModel).addLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
           module = myModel.getModule();
         }
-
-        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-        ((AbstractModule) module).addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"));
 
         JavaParser.tryResolveUnknowns(myAttachedRoots);
       }

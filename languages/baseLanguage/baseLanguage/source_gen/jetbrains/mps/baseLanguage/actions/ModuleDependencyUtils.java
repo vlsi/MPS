@@ -4,28 +4,24 @@ package jetbrains.mps.baseLanguage.actions;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class ModuleDependencyUtils {
   /*package*/ static void addDependencyOnJDKIfMissing(SModule currentModule) {
     if (currentModule instanceof AbstractModule) {
-      SModuleReference reference = PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
-      if (reference != null) {
-        ((AbstractModule) currentModule).addDependency(reference, false);
-      }
+      ((AbstractModule) currentModule).addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
     }
   }
   public static void addDependencyOnJavaDocIfMissing(SModel currentModel) {
-    SModule currentModule = currentModel.getModule();
-    if (currentModule instanceof AbstractModule) {
-      SModuleReference reference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
-      if (reference != null) {
-        ((SModelInternal) currentModel).addLanguage(reference);
-        ((AbstractModule) currentModule).addUsedLanguage(reference);
-      }
+    SModelInternal model = (SModelInternal) currentModel;
+    SLanguage javadocLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1);
+    if (!(model.importedLanguageIds().contains(javadocLang))) {
+      model.addLanguage(javadocLang);
     }
   }
 }

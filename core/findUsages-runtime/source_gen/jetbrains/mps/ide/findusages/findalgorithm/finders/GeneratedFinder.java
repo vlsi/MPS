@@ -5,6 +5,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.FindersManager;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -12,11 +13,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(GeneratedFinder.class);
@@ -40,14 +42,13 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   }
   @Override
   public SNode getNodeToNavigate() {
-    final SNode[] finderNode = new SNode[]{null};
+    final Wrappers._T<SNode> finderNode = new Wrappers._T<SNode>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
       public void run() {
-        finderNode[0] = FindersManager.getInstance().getNodeByFinder(GeneratedFinder.this);
+        finderNode.value = FindersManager.getInstance().getNodeByFinder(GeneratedFinder.this);
       }
     });
-    return finderNode[0];
+    return finderNode.value;
   }
   @Override
   public boolean canNavigate() {
@@ -68,7 +69,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       return results;
     }
     SNode node = (SNode) value;
-    SConcept c = SConceptRepository.getInstance().getInstanceConcept(getConcept());
+    SAbstractConcept c = getSConcept();
     if (node.getConcept().isSubConceptOf(c) && isApplicable(node)) {
       List<SNode> resSN = ListSequence.fromList(new ArrayList<SNode>());
       getSearchedNodes(node, query.getScope(), resSN);
@@ -84,5 +85,18 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConcept().getQualifiedName());
     }
     return results;
+  }
+
+  @Override
+  public SAbstractConcept getSConcept() {
+    // this is needed as in 3.2-generated finders we don't have this method, needed for binary compatibility 
+    // todo remove after 3.3 
+    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(getConcept()));
+  }
+
+  public String getConcept() {
+    // this is needed as in 3.2 we had @Override annotations on the same method in generated classes, needed for binary compatibility 
+    // todo remove after 3.3, use getSConcept 
+    return null;
   }
 }

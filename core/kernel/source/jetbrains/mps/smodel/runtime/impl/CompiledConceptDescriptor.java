@@ -118,7 +118,7 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
         return;
       }
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParentNames.length);
-      for (String parent : myParentNames) {
+      for (SConceptId parent : myParents) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         parentDescriptors.add(descriptor);
       }

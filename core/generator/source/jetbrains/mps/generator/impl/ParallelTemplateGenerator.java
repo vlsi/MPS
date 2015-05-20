@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
-import jetbrains.mps.generator.impl.IGenerationTaskPool.ModelReadTask;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
@@ -28,6 +27,7 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -53,8 +53,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private Map<SNode, DefaultQueryExecutionContext> myRootContext;
   private final Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
-  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, StepArguments args) {
-    super(operationContext, args);
+  public ParallelTemplateGenerator(ITaskPoolProvider taskPoolProvider, GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments args) {
+    super(operationContext, inputModel, outputModel, args);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
@@ -137,7 +137,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     myInputToTask.put(pair, task);
     myTasks.add(task);
     if (executionContext.isMultithreaded()) {
-      myPool.addTask(new ModelReadTask(task));
+      myPool.addTask(task);
     } else {
       runTaskWithContext(task, executionContext);
     }
@@ -154,7 +154,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       compositeTask.addTask(task);
       contextToTask.put(executionContext, compositeTask);
     }
-    myPool.addTask(new ModelReadTask(compositeTask));
+    myPool.addTask(compositeTask);
   }
 
   @Override
@@ -194,7 +194,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public static class CompositeGenerationTask implements GenerationTask {
 
-    private Queue<GenerationTask> list = new LinkedList<GenerationTask>();
+    private final Queue<GenerationTask> list = new LinkedList<GenerationTask>();
     private boolean isInShutdownMode = false;
 
     public synchronized boolean addTask(GenerationTask task) {

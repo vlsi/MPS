@@ -280,7 +280,7 @@ public class PersistenceUtil {
     }
   }
 
-  private static class InMemoryStreamDataSource extends StreamDataSourceBase {
+  public static class InMemoryStreamDataSource extends StreamDataSourceBase {
     private ByteArrayOutputStream myStream;
 
     @Override
@@ -351,7 +351,7 @@ public class PersistenceUtil {
     }
   }
 
-  private static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
+  public static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
     private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
 
     @Override

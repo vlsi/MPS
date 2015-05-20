@@ -186,7 +186,7 @@ public class DeleteModelHelper {
     @Override
     public void refactor(RefactoringContext refactoringContext) {
       SModel modelDescriptor = refactoringContext.getSelectedModel();
-      SModule modelOwner = SModelRepository.getInstance().getOwner(modelDescriptor);
+      SModule modelOwner = modelDescriptor.getModule();
       if (modelOwner instanceof Language) {
         deleteModelFromLanguage((Language) modelOwner, modelDescriptor);
       } else if (modelOwner instanceof Solution) {

@@ -19,7 +19,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.text.impl.JavaTextUnit;
@@ -29,26 +29,32 @@ import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Re-work of jetbrains.mps.generator.textGen.TextGeneratorEngine
+ * Facility to run parallel text generation for text units given model breaks down to.
+ * <p/>
+ * For the time being, text units correspond to model root nodes, the way it used to be in the past MPS history.
+ * Pending API changes to bring control over text units to user and j.m.lang.textgen.
+ * <p/>
+ * Re-work of what used to be jetbrains.mps.generator.textGen.TextGeneratorEngine
  * @author Artem Tikhomirov
  * @since 3.3
  */
 public final class TextGeneratorEngine {
   private final ExecutorService myExecutor;
   private final IMessageHandler myMessages;
-
-  public TextGeneratorEngine() {
-    this(IMessageHandler.NULL_HANDLER);
-  }
 
   public TextGeneratorEngine(@NotNull IMessageHandler messageHandler) {
     myMessages = messageHandler;
@@ -61,7 +67,24 @@ public final class TextGeneratorEngine {
   }
 
   /**
+   * Contract: same as {@link #schedule(SModel, BlockingQueue)}
+   * @param model input for model-to-text transformation
+   * @return future result, use {@link Future#get()} to retrieve
+   */
+  public Future<TextGenResult> generateText(@NotNull final SModel model) {
+    final ArrayBlockingQueue<TextGenResult> queue = new ArrayBlockingQueue<TextGenResult>(1);
+    schedule(model, queue);
+    return new FutureTask<TextGenResult>(new Callable<TextGenResult>() {
+      @Override
+      public TextGenResult call() throws Exception {
+        return queue.take();
+      }
+    });
+  }
+
+  /**
    * requires read access
+   * Contract: for each model there'd be a TextGenResult instance in the queue (unless interrupted)
    * <p/>
    * might add schedule(SModel):Future&lt;Result&gt; (one more async alternative) and generate(SModel):Result (synchronous alternative)
    * @param model model to produce text for
@@ -71,30 +94,27 @@ public final class TextGeneratorEngine {
     if (textUnits.size() == 0) {
       resultQueue.offer(new TextGenResult(model, textUnits));
     }
+    final ModelAccess modelAccess = model.getRepository() != null ? model.getRepository().getModelAccess() : null;
     final AtomicInteger unitsCount = new AtomicInteger(textUnits.size());
     for (final TextUnit tu : textUnits) {
-      myExecutor.execute(new Runnable() {
+      final Runnable tuGenerate = new Runnable() {
         @Override
         public void run() {
-          // FIXME honest read action. Need project/repository to grap access from
-          final boolean oldFlag = ModelAccess.instance().setReadEnabledFlag(true);
-          try {
-            // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
-            tu.generate();
-            // once the last unit of the model is completed, notify consumer
-            if (unitsCount.decrementAndGet() == 0) {
-              try {
-                resultQueue.put(new TextGenResult(model, textUnits));
-              } catch (InterruptedException ex) {
-                // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
-                myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getModelName())).setException(ex));
-              }
+          // XXX shall path settings, e.g. needDebug, IMessageHandler, etc.
+          tu.generate();
+          // once the last unit of the model is completed, notify consumer
+          if (unitsCount.decrementAndGet() == 0) {
+            try {
+              resultQueue.put(new TextGenResult(model, textUnits));
+            } catch (InterruptedException ex) {
+              // it's ok, it's likely caller to stop the queue, thus it knows how to deal with incomplete state
+              myMessages.handle(new Message(MessageKind.WARNING, String.format("TextGen interrupted for model %s", model.getModelName())).setException(ex));
             }
-          } finally {
-            ModelAccess.instance().setReadEnabledFlag(oldFlag);
           }
         }
-      });
+      };
+
+      myExecutor.execute(modelAccess == null ? tuGenerate : new ModelReadRunnable(modelAccess, tuGenerate));
     }
   }
 

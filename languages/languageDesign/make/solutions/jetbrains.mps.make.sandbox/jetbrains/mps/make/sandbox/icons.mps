@@ -17,6 +17,7 @@
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="8976425910813834639" name="icon" index="3Uehp1" />
       </concept>
@@ -52,6 +53,7 @@
   <node concept="sE7Ow" id="3BOp1_KDMvb">
     <property role="TrG5h" value="DummyAction" />
     <property role="2uzpH1" value="Dummy" />
+    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="3BOp1_KDMvc" role="tncku">
       <node concept="3clFbS" id="3BOp1_KDMvd" role="2VODD2" />
     </node>

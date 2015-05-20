@@ -13,9 +13,6 @@ Anders Moeller
 http://www.brics.dk/automaton/index.html
 Copyright (c) 2001-2011
 
-Beansbinding project
-https://java.net/projects/beansbinding
-
 BeanShell project
 http://www.beanshell.org/home.html
 

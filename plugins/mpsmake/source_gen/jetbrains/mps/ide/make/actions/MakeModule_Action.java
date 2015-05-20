@@ -7,18 +7,14 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,45 +27,36 @@ public class MakeModule_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SModuleOperations.isCompileInMps(((SModule) MapSequence.fromMap(_params).get("module")));
+    return SModuleOperations.isCompileInMps(event.getData(MPSCommonDataKeys.MODULE));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeModule", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      Set<SModule> modules = Collections.<SModule>singleton(((SModule) MapSequence.fromMap(_params).get("module")));
-      ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, false));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeModule", t);
-      }
-    }
+    Set<SModule> modules = Collections.<SModule>singleton(event.getData(MPSCommonDataKeys.MODULE));
+    ProgressManager.getInstance().run(new DefaultMakeTask(event.getData(CommonDataKeys.PROJECT), "Compiling", modules, false));
   }
-  protected static Logger LOG = LogManager.getLogger(MakeModule_Action.class);
 }

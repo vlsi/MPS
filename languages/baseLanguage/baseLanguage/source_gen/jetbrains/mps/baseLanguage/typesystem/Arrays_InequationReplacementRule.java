@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Arrays_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public Arrays_InequationReplacementRule() {
@@ -48,21 +48,16 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
     return true;
   }
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSubtypeConcept()), null);
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSupertypeConcept()), null);
   }
-  public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ArrayType";
+
+  public SAbstractConcept getApplicableSubtypeConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType");
   }
-  public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ArrayType";
+  public SAbstractConcept getApplicableSupertypeConcept() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType");
   }
 }

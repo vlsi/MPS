@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -189,7 +188,10 @@ public class SModuleOperations {
 
   public static boolean needReloading(AbstractModule module) {
     // todo: ?
-    ModelAccess.assertLegalRead();
+    SRepository repo = module.getRepository();
+    if (repo != null) {
+      repo.getModelAccess().checkReadAccess();
+    }
 
     IFile descriptorFile = module.getDescriptorFile();
     if ((descriptorFile == null) || !descriptorFile.exists()) {

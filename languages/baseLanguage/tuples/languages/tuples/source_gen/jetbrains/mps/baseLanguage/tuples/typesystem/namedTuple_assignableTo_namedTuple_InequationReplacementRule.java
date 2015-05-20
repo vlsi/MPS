@@ -18,7 +18,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public namedTuple_assignableTo_namedTuple_InequationReplacementRule() {
@@ -94,21 +94,16 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
     return true;
   }
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSubtypeConcept()), null);
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableSupertypeConcept()), null);
   }
-  public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
+
+  public SAbstractConcept getApplicableSubtypeConcept() {
+    return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
   }
-  public String getApplicableSupertypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
+  public SAbstractConcept getApplicableSupertypeConcept() {
+    return MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
   }
 }

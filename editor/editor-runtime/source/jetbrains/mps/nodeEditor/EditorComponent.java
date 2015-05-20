@@ -2868,11 +2868,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       super("" + action.getDescriptionText());
       myAction = action;
       myEditorContext = editorContext;
-      String keyStroke = action.getKeyStroke();
-      if (keyStroke != null && keyStroke.length() != 0) {
-        KeyboardShortcut shortcut = new KeyboardShortcut(KeyStroke.getKeyStroke(keyStroke), null);
-        KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
+      String keyStrokeString = action.getKeyStroke();
+      if (keyStrokeString == null || keyStrokeString.length() == 0) {
+        return;
       }
+      KeyStroke keyStroke = KeyStroke.getKeyStroke(keyStrokeString);
+      if (keyStroke == null) {
+        LOG.error("Invalid keystroke (" + keyStrokeString + ") specified for the action: " + action.getClass().getName());
+        return;
+      }
+      KeyboardShortcut shortcut = new KeyboardShortcut(keyStroke, null);
+      KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
     }
 
     @Override

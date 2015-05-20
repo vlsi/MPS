@@ -12,13 +12,11 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import java.awt.Frame;
+import jetbrains.mps.ide.refactoring.RenameModelDialog;
 
 public class RenameModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,6 +29,7 @@ public class RenameModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return true;
@@ -40,56 +39,57 @@ public class RenameModel_Action extends BaseAction {
     }
     return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "RenameModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
+      if (!(p instanceof EditableSModel) || p.isReadOnly()) {
+        return false;
+      }
     }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
+      MapSequence.fromMap(_params).put("module", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
-      }
-    }
+    new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).show();
   }
-  protected static Logger LOG = LogManager.getLogger(RenameModel_Action.class);
 }

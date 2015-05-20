@@ -10,7 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class CheckTestMethodDataflow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckTestMethodDataflow_NonTypesystemRule() {
@@ -18,14 +18,11 @@ public class CheckTestMethodDataflow_NonTypesystemRule extends AbstractNonTypesy
   public void applyRule(final SNode nodesTestMethod, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodesTestMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")));
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.test.structure.NodesTestMethod";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b54d88L, "jetbrains.mps.lang.test.structure.NodesTestMethod");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

@@ -14,14 +14,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
 
 public class OverrideMethodsAsIntention_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,54 +31,45 @@ public class OverrideMethodsAsIntention_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("selectedNode")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "virtual_getMethodsToOverride_5418393554803767537", new Object[]{})).isNotEmpty();
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "OverrideMethodsAsIntention", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
       MapSequence.fromMap(_params).put("selectedNode", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("selectedNode") == null) {
-      return false;
+    {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      MapSequence.fromMap(_params).put("editorContext", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("operationContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
-      new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "OverrideMethodsAsIntention", t);
-      }
-    }
+    final Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
+    new OverrideImplementMethodAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
   }
-  protected static Logger LOG = LogManager.getLogger(OverrideMethodsAsIntention_Action.class);
 }

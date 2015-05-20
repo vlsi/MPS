@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import javax.swing.JComponent;
 import java.util.Collection;
 import java.util.List;
 
-// FIXME odd contract - getCurrentTabAspect, setLastNode. Reasonable: getComponent, next/prevTab, dispose. selection - depends on the rest
+// FIXME odd contract - getCurrentTabAspect, editNode. Reasonable: getComponent, next/prevTab, dispose. selection - depends on the rest
 public interface TabsComponent {
   void dispose();
 
@@ -37,9 +37,24 @@ public interface TabsComponent {
   @NotNull
   Collection<SNodeReference> getSelectionFor(RelationDescriptor tabDescriptor, SNodeReference editedNode);
 
-  void setLastNode(SNodeReference sNodePointer);
+  /**
+   * Set a node to edit. Activates appropriate tab and notifies listeners
+   */
+  void editNode(SNodeReference sNodePointer);
 
   JComponent getComponent();
+
+  /**
+   * Refresh visible tabs, bring them into up-to-date state (add/remove missing/new).
+   * Expects EDT and model read.
+   */
+  void updateTabs();
+
+  /**
+   * Update visual presentation of present tabs, do not add/remove tabs.
+   * Expects EDT and model read.
+   */
+  void updateTabColors();
 
   ///-------------tab navigation----------------
   abstract void nextTab();

@@ -60,7 +60,6 @@ import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -236,13 +235,14 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           new ModelTableCellRender() {
             @Override
             protected DependencyCellState getDependencyCellState(final org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-              DependencyCellState res = ModelAccess.instance().runReadAction(new Computable<DependencyCellState>() {
+              DependencyCellState res = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<DependencyCellState>() {
                 @Override
                 public DependencyCellState compute() {
-                  if (!StateUtil.isAvailable(modelReference)) {
+                  final SModel model = modelReference.resolve(myProject.getRepository());
+                  if (model == null) {
                     return DependencyCellState.NOT_AVAILABLE;
                   }
-                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), modelReference.resolve(MPSModuleRepository.getInstance()))) {
+                  if (!VisibilityUtil.isVisible(myModelDescriptor.getModule(), model)) {
                     return DependencyCellState.NOT_IN_SCOPE;
                   }
                   if ((myModelProperties.getImportedModelsRemoveCondition().met(modelReference))) {
@@ -349,10 +349,50 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       forceCancelCloseDialog();
     }
 
-    @Nullable
     @Override
-    protected FindAnActionButton getFindAnAction(JBTable table) {
-      return new FindAnActionButton(table) {
+    protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
+      ToolbarDecorator decorator =  super.createToolbar(usedLangsTable);
+      decorator.setAddAction(new AnActionButtonRunnable() {
+        @Override
+        public void run(AnActionButton anActionButton) {
+          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
+          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
+          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
+          myProject.getModelAccess().runReadAction(c);
+          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
+          for (SModuleReference reference : list) {
+            myUsedLangsTableModel.addItem(reference);
+          }
+          myUsedLangsTableModel.fireTableDataChanged();
+        }
+      }).setRemoveAction(new RemoveEntryAction(usedLangsTable) {
+        @Override
+        protected boolean confirmRemove(int row) {
+          Object value = myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN);
+          final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
+          boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
+            @Override
+            public Boolean compute() {
+              return myInUseCondition.met(entry);
+            }
+          });
+          if (inActualUse) {
+            ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
+                ProjectHelper.toIdeaProject(myProject), "Delete used language",
+                "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
+              @Override
+              public void doViewAction() {
+                findUsages(entry);
+              }
+            };
+            viewUsagesDeleteDialog.show();
+            return viewUsagesDeleteDialog.isOK();
+          }
+          return true;
+        }
+      });
+
+      decorator.addExtraAction(new FindAnActionButton(usedLangsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
           final SearchScope scope = new ModelsScope(myModelDescriptor);
@@ -384,31 +424,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           showUsageImpl(query, provider);
           forceCancelCloseDialog();
         }
-      };
-    }
-
-    @Override
-    protected boolean confirmRemove(final Object value) {
-      final UsedLangsTableModel.Import entry = (UsedLangsTableModel.Import) value;
-      boolean inActualUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return myInUseCondition.met(entry);
-        }
       });
-      if (inActualUse) {
-        ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
-            ProjectHelper.toIdeaProject(myProject), "Delete used language",
-            "This language is used by model. Do you really what to delete it?", "Model state will become inconsistent") {
-          @Override
-          public void doViewAction() {
-            findUsages(value);
-          }
-        };
-        viewUsagesDeleteDialog.show();
-        return viewUsagesDeleteDialog.isOK();
-      }
-      return true;
+      return decorator;
     }
   }
 

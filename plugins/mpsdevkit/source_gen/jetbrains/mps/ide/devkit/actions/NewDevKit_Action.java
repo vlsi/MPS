@@ -5,23 +5,17 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewDevKit_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.DevKit;
@@ -34,56 +28,39 @@ public class NewDevKit_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      String p = event.getData(MPSDataKeys.NAMESPACE);
+      MapSequence.fromMap(_params).put("namespace", p);
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      NewDevKitDialog dialog = new NewDevKitDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
-      dialog.show();
-      final DevKit devkit = dialog.getResult();
-      if (devkit == null) {
-        return;
-      }
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(devkit, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
-        }
-      });
-      ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
-      projectPane.rebuildTree();
-      projectPane.selectModule(devkit, false);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);
-      }
+    NewDevKitDialog dialog = new NewDevKitDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
+    dialog.show();
+    final DevKit devkit = dialog.getResult();
+    if (devkit == null) {
+      return;
     }
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(devkit, (((String) MapSequence.fromMap(_params).get("namespace")) == null ? "" : ((String) MapSequence.fromMap(_params).get("namespace"))));
+      }
+    });
+    ProjectPane projectPane = ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project")));
+    projectPane.rebuildTree();
+    projectPane.selectModule(devkit, false);
   }
-  protected static Logger LOG = LogManager.getLogger(NewDevKit_Action.class);
 }

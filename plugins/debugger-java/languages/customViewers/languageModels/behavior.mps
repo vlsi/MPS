@@ -2,8 +2,8 @@
 <model ref="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -113,9 +113,6 @@
       <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
         <reference id="5455284157993910961" name="concept" index="2pJxaS" />
         <child id="5455284157993911099" name="values" index="2pJxcM" />
-      </concept>
-      <concept id="8182547171709738802" name="jetbrains.mps.lang.quotation.structure.NodeBuilderList" flags="nn" index="36be1Y">
-        <child id="8182547171709738803" name="nodes" index="36be1Z" />
       </concept>
       <concept id="8182547171709614739" name="jetbrains.mps.lang.quotation.structure.NodeBuilderRef" flags="nn" index="36bGnv">
         <reference id="8182547171709614741" name="target" index="36bGnp" />
@@ -278,10 +275,8 @@
                 </node>
                 <node concept="2pIpSj" id="7U4XhjnRMt7" role="2pJxcM">
                   <ref role="2pIpSl" to="tpee:g91_B6F" />
-                  <node concept="36be1Y" id="7U4XhjnRMt8" role="2pJxcZ">
-                    <node concept="2pJPED" id="7U4XhjnRMt6" role="36be1Z">
-                      <ref role="2pJxaS" to="kisg:4s4uRp_lDhd" resolve="WatchableType" />
-                    </node>
+                  <node concept="2pJPED" id="7U4XhjnRMt6" role="2pJxcZ">
+                    <ref role="2pJxaS" to="kisg:4s4uRp_lDhd" resolve="WatchableType" />
                   </node>
                 </node>
               </node>

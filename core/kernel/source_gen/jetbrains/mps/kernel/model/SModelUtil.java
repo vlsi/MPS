@@ -5,7 +5,6 @@ package jetbrains.mps.kernel.model;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,7 +21,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -32,17 +33,11 @@ public class SModelUtil {
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
     return MetaAdapterFactoryByName.getConcept(conceptFQName).getDeclarationNode();
   }
-  @NotNull
-  @Deprecated
-  public static SNode getBaseConcept() {
-    // Deprecated, use SNodeUtil.concept_BaseConcept nstead! 
-    return (SNode) SNodeUtil.concept_BaseConcept.getDeclarationNode();
-  }
   public static Language getDeclaringLanguage(final SNode concept) {
     if (concept == null) {
       return null;
     }
-    return as_74see4_a0b0c(check_74see4_a0b0c(concept.getModel()), Language.class);
+    return as_74see4_a0b0b(check_74see4_a0b0b(concept.getModel()), Language.class);
   }
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {
     while (linkDeclaration != null && SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null) {
@@ -120,7 +115,14 @@ public class SModelUtil {
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>(resultSet);
     return result;
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, SNode to) {
+    // not used in MPS 
     assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
     assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
     if (from == to) {
@@ -132,17 +134,31 @@ public class SModelUtil {
     if (to == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
       return true;
     }
-    return isAssignableConcept(NameUtil.nodeFQName(from), NameUtil.nodeFQName(to));
+    return MetaAdapterByDeclaration.getConcept(from).isSubConceptOf(MetaAdapterByDeclaration.getConcept(to));
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(SNode from, String toFqName) {
+    // not used in MPS 
     if (from == null) {
       return false;
     }
     String fromFqName = NameUtil.nodeFQName(from);
     return isAssignableConcept(fromFqName, toFqName);
   }
+  /**
+   * 
+   * @deprecated use SConcept.isSubConceptOf
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0l(fromFqName, toFqName)) {
+    // not used in MPS 
+    if (eq_74see4_a0b0k(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -158,8 +174,8 @@ public class SModelUtil {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"));
   }
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
-    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
-    return isAssignableConcept(referentNode.getConcept().getQualifiedName(), NameUtil.nodeFQName(linkTargetConcept));
+    SAbstractConcept targetConcept = MetaAdapterByDeclaration.getConcept(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")));
+    return referentNode.getConcept().isSubConceptOf(targetConcept);
   }
   public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {
     return SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1..n", "0..1");
@@ -176,16 +192,16 @@ public class SModelUtil {
   public static String getLinkDeclarationRole(SNode link) {
     return SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
   }
-  private static SModule check_74see4_a0b0c(SModel checkedDotOperand) {
+  private static SModule check_74see4_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static boolean eq_74see4_a0a0l(Object a, Object b) {
+  private static boolean eq_74see4_a0b0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static <T> T as_74see4_a0b0c(Object o, Class<T> type) {
+  private static <T> T as_74see4_a0b0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

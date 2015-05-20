@@ -59,6 +59,9 @@ import static jetbrains.mps.smodel.constraints.ModelConstraintsUtils.getOperatio
 public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   // is it possible: replace node -> node with concept conceptFqName?
   public static boolean canBeReplaced(@NotNull SNode node, @NotNull String conceptFqName) {
     if (node.getModel() != null && node.getParent() == null) {
@@ -74,8 +77,6 @@ public class ModelConstraints {
 
   // canBe* section
   public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, @Nullable CheckingNodeContext checkingNodeContext) {
-    ModelAccess.assertLegalRead();
-
     SNode currentNode = node;
 
     IOperationContext context = getOperationContext(getModule(node));
@@ -94,15 +95,23 @@ public class ModelConstraints {
   }
 
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
-    ModelAccess.assertLegalRead();
-
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
-  public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
-    ModelAccess.assertLegalRead();
+  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
+    SModule module = getModule(parentNode);
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(concept);
+    return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
+  }
 
+  /**
+   * @deprecated use {@link #canBeChild(SAbstractConcept, SNode, SNode, SNode, CheckingNodeContext)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
+  public static boolean canBeChild(String fqName, SNode parentNode, SNode link, @Nullable SNode childNode, @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(fqName);
     return descriptor.canBeChild(childNode, parentNode, link, SModelUtil.findConceptDeclaration(fqName), getOperationContext(module), checkingNodeContext);
@@ -113,9 +122,8 @@ public class ModelConstraints {
    */
   @Deprecated
   @ToRemove(version = 3.3)
+  //no usages in MPS
   public static boolean canBeRoot(String conceptFqName, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
-    ModelAccess.assertLegalRead();
-
     // todo: use concept descriptor here?
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName);
     if (!SNodeUtil.isInstanceOfConceptDeclaration(concept) || !SNodeUtil.getConceptDeclaration_IsRootable(concept)) {
@@ -167,7 +175,6 @@ public class ModelConstraints {
   @ToRemove(version = 3.3)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
     // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
-    ModelAccess.assertLegalRead();
     return getReferenceDescriptorForReferenceNode(null, referenceNode, role);
   }
 
@@ -188,8 +195,6 @@ public class ModelConstraints {
 
   @NotNull
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    ModelAccess.assertLegalRead();
-
     SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
     if (smartReference == null) {
       return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
@@ -204,14 +209,6 @@ public class ModelConstraints {
       false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
       null // reference
     );
-  }
-
-  // other things
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(
-        ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
   }
 
   public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {

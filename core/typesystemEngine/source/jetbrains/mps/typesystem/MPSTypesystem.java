@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.typesystem;
 
-import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent;
 
-/**
- * evgeny, 10/14/11
- */
 public final class MPSTypesystem extends ComponentPlugin {
 
   public MPSTypesystem() {
@@ -39,7 +34,6 @@ public final class MPSTypesystem extends ComponentPlugin {
 
     TypeChecker typeChecker = init(new TypeChecker(languageRegistry));
     init(new TypeContextManager(typeChecker, classLoaderManager));
-    init(new TypesystemCheckerComponent(CheckersComponent.getInstance()));
   }
 }
 

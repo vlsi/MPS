@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.EditorState;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -52,13 +54,13 @@ public abstract class BaseNodeEditor implements Editor {
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();
   private JComponent myEditorPanel = new JPanel();
-  private IOperationContext myContext;
+  private Project myProject;
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
   protected Map<TaskType, PrioritizedTask> myType2TaskMap = new HashMap<TaskType, PrioritizedTask>();
 
-  public BaseNodeEditor(IOperationContext context) {
-    myContext = context;
+  public BaseNodeEditor(@NotNull Project mpsProject) {
+    myProject = mpsProject;
     myEditorPanel.setLayout(new BorderLayout());
     myEditorPanel.setBorder(new EmptyBorder(JBUI.emptyInsets()));
     myComponent.add(myEditorPanel, BorderLayout.CENTER);
@@ -87,8 +89,9 @@ public abstract class BaseNodeEditor implements Editor {
 
   @Override
   @NotNull
+  @Deprecated
   public IOperationContext getOperationContext() {
-    return myContext;
+    return new ProjectOperationContext(myProject);
   }
 
   @Override
@@ -159,7 +162,7 @@ public abstract class BaseNodeEditor implements Editor {
       myEditorPanel.remove(myReplace);
       myReplace = null;
     }
-    myEditorComponent = new NodeEditorComponent(myContext.getProject().getRepository());
+    myEditorComponent = new NodeEditorComponent(myProject.getRepository());
     JComponent externalComponent = myEditorComponent.getExternalComponent();
     //HACK to avoid strange gray border in ScrollPane after empty aspect tab
     if(externalComponent.getComponent(0) instanceof JBScrollPane) {

@@ -2,8 +2,8 @@
 <model ref="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
@@ -79,6 +79,7 @@
       </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -257,6 +258,21 @@
   <node concept="312cEu" id="3NL5ivGjjTJ">
     <property role="TrG5h" value="EnumPropertySubstituteInfo" />
     <property role="IEkAT" value="true" />
+    <node concept="3uibUv" id="4AnoT$g6Gxu" role="EKbjA">
+      <ref role="3uigEE" to="nu8v:~DefaultSubstituteInfo" resolve="DefaultSubstituteInfo" />
+    </node>
+    <node concept="2AHcQZ" id="2klkXdpsoRw" role="2AJF6D">
+      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="3UR2Jj" id="2klkXdpsoRt" role="lGtFl">
+      <node concept="TZ5HI" id="2klkXdpsoRu" role="TZ5Hx">
+        <node concept="TZ5HA" id="2klkXdpsoRv" role="3HnX3l">
+          <node concept="1dT_AC" id="2klkXdpspFK" role="1dT_Ay">
+            <property role="1dT_AB" value="use EnumSPropertySubstituteInfo" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="3NL5ivGj$wR" role="jymVt">
       <property role="TrG5h" value="myNode" />
       <node concept="3Tm6S6" id="3NL5ivGj$wS" role="1B3o_S" />
@@ -627,18 +643,6 @@
     <node concept="3Tm1VV" id="3NL5ivGjjTK" role="1B3o_S" />
     <node concept="3uibUv" id="3NL5ivGjk8K" role="1zkMxy">
       <ref role="3uigEE" to="4ky7:~AbstractNodeSubstituteInfo" resolve="AbstractNodeSubstituteInfo" />
-    </node>
-    <node concept="3UR2Jj" id="2klkXdpsoRt" role="lGtFl">
-      <node concept="TZ5HI" id="2klkXdpsoRu" role="TZ5Hx">
-        <node concept="TZ5HA" id="2klkXdpsoRv" role="3HnX3l">
-          <node concept="1dT_AC" id="2klkXdpspFK" role="1dT_Ay">
-            <property role="1dT_AB" value="use EnumSPropertySubstituteInfo" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2AHcQZ" id="2klkXdpsoRw" role="2AJF6D">
-      <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="2UXArULvaez">
@@ -1425,6 +1429,9 @@
     <node concept="3Tm1VV" id="6k4lHAwHQ56" role="1B3o_S" />
     <node concept="3uibUv" id="6k4lHAwHQ57" role="1zkMxy">
       <ref role="3uigEE" to="4ky7:~AbstractNodeSubstituteInfo" resolve="AbstractNodeSubstituteInfo" />
+    </node>
+    <node concept="3uibUv" id="7icd9qKFoHT" role="EKbjA">
+      <ref role="3uigEE" to="nu8v:~DefaultSubstituteInfo" resolve="DefaultSubstituteInfo" />
     </node>
   </node>
 </model>

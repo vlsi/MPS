@@ -7,13 +7,12 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -21,9 +20,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FindLanguageUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
@@ -36,48 +32,39 @@ public class FindLanguageUsages_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
+    return event.getData(MPSCommonDataKeys.MODULE) instanceof Language;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageUsages", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT_CONTEXT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final SModule module = ((SModule) MapSequence.fromMap(_params).get("module"));
-      final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
-      final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
-      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
-      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query, opt);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
-      }
-    }
+    final SModule module = event.getData(MPSCommonDataKeys.MODULE);
+    final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
+    final IResultProvider provider = FindUtils.makeProvider(new LanguageImportFinder());
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage("Language has no usages");
+    UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
   }
-  protected static Logger LOG = LogManager.getLogger(FindLanguageUsages_Action.class);
 }

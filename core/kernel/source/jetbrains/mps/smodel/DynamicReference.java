@@ -121,8 +121,7 @@ public class DynamicReference extends SReferenceBase {
     if (lnkTarget == null) {
       return false;
     }
-    final SConcept classifierConcept = SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.baseLanguage.structure.Classifier");
-    return lnkTarget.isSubConceptOf(classifierConcept);
+    return lnkTarget.isSubConceptOf(SNodeUtil.concept_Classifier);
   }
 
   private static boolean isTargetClassifier(@NotNull SReferenceLink role) {
@@ -130,8 +129,7 @@ public class DynamicReference extends SReferenceBase {
     if (lnkTarget == null) {
       return false;
     }
-    final SConcept classifierConcept = SConceptRepository.getInstance().getInstanceConcept("jetbrains.mps.baseLanguage.structure.Classifier");
-    return lnkTarget.isSubConceptOf(classifierConcept);
+    return lnkTarget.isSubConceptOf(SNodeUtil.concept_Classifier);
   }
 
   @Override

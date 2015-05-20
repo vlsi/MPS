@@ -17,10 +17,14 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -30,40 +34,25 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 
 public class HUtil {
-
   //todo: this method can be called from inference rules - by calling behavior methods,
   // todo: in which there are no typechecking context(
   public static SNode copyIfNecessary(SNode node) {
-    if (node != null && (node.getParent() != null || node.getModel() != null && node.getParent() == null)) {
+    if (node != null && (node.getParent() != null || node.getModel() != null)) {
       // this copies all the atributes, because can be used in migration scripts
-      SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
-      return copy;
+      return CopyUtil.copy(node, new THashMap<SNode, SNode>(1), true);
     } else {
       return node;
     }
   }
 
-  public static SNode copyIfNecessary(SNode node, TypeCheckingContext typeCheckingContext) {
-    if (node != null && (node.getParent() != null || node.getModel() != null && node.getParent() == null)) {
-
-      // this method is used only when quotations create a type
-      // so it should not copy attributes, for instance generator macros of a certain type
-      SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), false);
-
-// DEADC0DE
-//      if (typeCheckingContext != null) {
-//        if (isRuntimeTypeVariable(copy)) {
-//          typeCheckingContext.registerTypeVariable(copy);
-//        }
-//      }
-      return copy;
-    } else {
-      return node;
-    }
-  }
-
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
-    return new ConceptMatchingPattern(conceptFQName);
+    return new ConceptMatchingPattern(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(conceptFQName)));
+  }
+
+  public static IMatchingPattern createMatchingPatternByConcept(SConcept concept) {
+    return new ConceptMatchingPattern(concept);
   }
 
   public static boolean isRuntimeTypeVariable(SNode node) {
@@ -72,49 +61,10 @@ public class HUtil {
     return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName);
   }
 
-  public static boolean isRuntimeListVariable(SNode node) {
-    if (node == null) return false;
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable".equals(conceptFqName);
-  }
-
-  public static boolean hasVariablesInside(SNode node) {
-    if (isRuntimeTypeVariable(node)) {
-      return true;
-    }
-    for (SNode child : node.getChildren()) {
-      if (hasVariablesInside(child)) {
-        return true;
-      }
-    }
-    for (SNode referent : TypesUtil.getNodeReferents(node)) {
-      if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  @Deprecated
-  public static boolean isRuntimeErrorType(SNode node) {
-    if (node == null) return false;
-    String conceptFqName = node.getConcept().getQualifiedName();
-    return "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
-  }
-
   public static boolean isRuntimeHoleType(SNode node) {
     if (node == null) return false;
     String conceptFqName = node.getConcept().getQualifiedName();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName);
-  }
-
-  @Deprecated
-  public static String getErrorText(SNode node) {
-    if (isRuntimeErrorType(node)) {
-      return SNodeAccessUtil.getProperty(node, "errorText");
-    } else {
-      return null;
-    }
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {
@@ -124,5 +74,4 @@ public class HUtil {
     }
     errorReporter.addAdditionalRuleId(equationInfo.getRuleModel(), equationInfo.getRuleId());
   }
-
 }

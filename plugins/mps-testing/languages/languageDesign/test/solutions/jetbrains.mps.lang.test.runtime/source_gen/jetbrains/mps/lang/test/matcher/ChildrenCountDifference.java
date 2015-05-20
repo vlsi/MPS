@@ -6,16 +6,16 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 /*package*/ class ChildrenCountDifference extends DifferenceItem {
   private final SContainmentLink myRole;
-  private final int myCount1;
-  private final int myCount2;
-  public ChildrenCountDifference(SContainmentLink role, int c1, int c2) {
+  private final int myActualCount;
+  private final int myExpectedCount;
+  public ChildrenCountDifference(SContainmentLink role, int actualCount, int expectedCount) {
     myRole = role;
-    myCount1 = c1;
-    myCount2 = c2;
+    myActualCount = actualCount;
+    myExpectedCount = expectedCount;
   }
   @Override
   public String toString() {
-    return "Different children count in role: " + myRole + " [" + myCount1 + ", " + myCount2 + "]";
+    return "Different children count in role: " + myRole + " [was: " + myActualCount + ", expected: " + myExpectedCount + "]";
   }
   @Override
   public boolean equals(Object obj) {
@@ -26,6 +26,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
       return false;
     }
     ChildrenCountDifference diff = (ChildrenCountDifference) obj;
-    return myRole.equals(diff.myRole) && myCount1 == diff.myCount1 && myCount2 == diff.myCount2;
+    return myRole.equals(diff.myRole) && myActualCount == diff.myActualCount && myExpectedCount == diff.myExpectedCount;
   }
 }

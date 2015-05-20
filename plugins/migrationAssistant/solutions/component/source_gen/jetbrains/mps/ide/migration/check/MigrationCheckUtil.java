@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Collection;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -14,58 +15,52 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.project.validation.ValidationUtil;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.LanguageMissingError;
+import jetbrains.mps.project.validation.ConceptMissingError;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.project.validation.ConceptFeatureMissingError;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SDependency;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
-import org.jetbrains.annotations.NotNull;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.internal.collections.runtime.IMapping;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MigrationCheckUtil {
   public static boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
     return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable final _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
-    List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
+    final Wrappers._int _maxErrors = new Wrappers._int(maxErrors);
+    final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
-    Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
+    Collection<DependencyProblem> badModuleProblems = findBadModules(modules, _maxErrors.value);
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModuleProblems));
 
-    maxErrors -= CollectionSequence.fromCollection(badModuleProblems).count();
-    if (maxErrors == 0) {
+    _maxErrors.value -= CollectionSequence.fromCollection(badModuleProblems).count();
+    if (_maxErrors.value == 0) {
       return result;
     }
 
-    Collection<BinaryModelProblem> badModelProblems = findBinaryModels(modules, maxErrors);
+    Collection<BinaryModelProblem> badModelProblems = findBinaryModels(modules, _maxErrors.value);
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModelProblems));
 
-    maxErrors -= CollectionSequence.fromCollection(badModelProblems).count();
-    if (maxErrors == 0) {
+    _maxErrors.value -= CollectionSequence.fromCollection(badModelProblems).count();
+    if (_maxErrors.value == 0) {
       return result;
     }
 
@@ -73,102 +68,65 @@ public class MigrationCheckUtil {
       progressCallback.invoke(0.1);
     }
 
-    // find missing languages 
-    Collection<LanguageMissingProblem> missingLangProblems = findMissingLanguages(modules, maxErrors, new _FunctionTypes._void_P1_E0<Double>() {
-      public void invoke(Double fraction) {
-        if (progressCallback != null) {
-          progressCallback.invoke(0.1 + 0.45 * fraction);
-        }
+    final Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
+    final Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
+    final Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
+
+    Iterable<SModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+      public Iterable<SModel> translate(SModule it) {
+        return it.getModels();
       }
     });
-    ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(missingLangProblems));
-
-    maxErrors -= CollectionSequence.fromCollection(missingLangProblems).count();
-    if (maxErrors == 0) {
-      return result;
-    }
-
-    Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
-    SetSequence.fromSet(missingLangs).addSequence(CollectionSequence.fromCollection(missingLangProblems).select(new ISelector<LanguageMissingProblem, SLanguage>() {
-      public SLanguage select(LanguageMissingProblem it) {
-        return it.getLanguage();
-      }
-    }));
+    int modelsCount = Sequence.fromIterable(models).count();
+    int processedModels = 0;
 
     // find missing concepts, when language's not missing 
     // find missing concept features when concept's not mising 
-    Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
-    Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
-
-    int modulesCount = Sequence.fromIterable(modules).count();
-    int processedModules = 0;
-    for (SModule module : Sequence.fromIterable(modules)) {
-      for (SNode node : Sequence.fromIterable(MigrationCheckUtil.allNodes(module.getModels()))) {
-        SConcept concept = node.getConcept();
-        if (!(concept.isValid())) {
-          if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
-            continue;
+    for (SModel model : Sequence.fromIterable(models)) {
+      ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
+        public boolean process(ValidationProblem vp) {
+          if (vp instanceof LanguageMissingError) {
+            LanguageMissingError err = (LanguageMissingError) vp;
+            if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
+              return true;
+            }
+            SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
+            if (err.isCompletelyAbsent()) {
+              ListSequence.fromList(result).addElement(new LanguageAbsentInRepoProblem(err.getLanguage(), err.getNode()));
+            } else {
+              ListSequence.fromList(result).addElement(new LanguageNotLoadedProblem(err.getLanguage(), err.getNode()));
+            }
+          } else if (vp instanceof ConceptMissingError) {
+            ConceptMissingError err = (ConceptMissingError) vp;
+            SConcept concept = err.getConcept();
+            if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
+              return true;
+            }
+            SetSequence.fromSet(missingConcepts).addElement(concept);
+            ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
+          } else if (vp instanceof ConceptFeatureMissingError) {
+            ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
+            SAbstractConcept concept = err.getFeature().getContainingConcept();
+            if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getFeature())) {
+              return true;
+            }
+            SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
+            ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode()));
+          } else {
+            // ignore other errors 
           }
-          SetSequence.fromSet(missingConcepts).addElement(concept);
-          ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, node));
 
-          maxErrors--;
-          if (maxErrors == 0) {
-            return result;
-          }
-
-          continue;
+          _maxErrors.value--;
+          return _maxErrors.value > 0;
         }
-
-        // in case of props, refs, links, list should be better than set 
-        List<SProperty> props = IterableUtil.asList(concept.getProperties());
-        for (SProperty p : Sequence.fromIterable(node.getProperties())) {
-          if (props.contains(p) || SetSequence.fromSet(missingFeatures).contains(p)) {
-            continue;
-          }
-          SetSequence.fromSet(missingFeatures).addElement(p);
-          ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(p, node));
-
-          maxErrors--;
-          if (maxErrors == 0) {
-            return result;
-          }
-        }
-
-        List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
-        for (SNode n : Sequence.fromIterable(node.getChildren())) {
-          SContainmentLink l = n.getContainmentLink();
-          if (links.contains(l) || SetSequence.fromSet(missingFeatures).contains(l)) {
-            continue;
-          }
-          SetSequence.fromSet(missingFeatures).addElement(l);
-          ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(l, node));
-
-          maxErrors--;
-          if (maxErrors == 0) {
-            return result;
-          }
-        }
-
-        List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
-        for (SReference r : Sequence.fromIterable(node.getReferences())) {
-          SReferenceLink l = r.getLink();
-          if (refs.contains(l) || SetSequence.fromSet(missingFeatures).contains(l)) {
-            continue;
-          }
-          SetSequence.fromSet(missingFeatures).addElement(l);
-          ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(l, node));
-
-          maxErrors--;
-          if (maxErrors == 0) {
-            return result;
-          }
-        }
+      });
+      if (_maxErrors.value == 0) {
+        return result;
       }
 
-      processedModules++;
+      processedModels++;
       if (progressCallback != null) {
-        progressCallback.invoke(0.55 + 0.45 * processedModules / modulesCount);
+        progressCallback.invoke(0.1 + 0.9 * processedModels / modelsCount);
       }
     }
 
@@ -231,47 +189,5 @@ public class MigrationCheckUtil {
     }));
 
     return rv;
-  }
-
-  private static Collection<LanguageMissingProblem> findMissingLanguages(Iterable<SModule> modules, int maxErrors, @NotNull _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    // we can add here an additional chank for "used", "exported", "generated into" languages etc.,  
-    // but I'm not sure this is needed. All we need in migration is working concepts. 
-
-    // the node in the map is an example of language use to show it to the user 
-    final Map<SLanguage, SNode> problemLangs = MapSequence.fromMap(new HashMap<SLanguage, SNode>());
-    int modulesCount = Sequence.fromIterable(modules).count();
-    int processedModules = 0;
-    for (SModule module : Sequence.fromIterable(modules)) {
-      Sequence.fromIterable(allNodes(module.getModels())).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          SLanguage lang = it.getConcept().getLanguage();
-          if (((SLanguageAdapter) lang).getLanguageDescriptor() == null) {
-            MapSequence.fromMap(problemLangs).put(lang, it);
-          }
-        }
-      });
-      processedModules++;
-      progressCallback.invoke(1.0 * processedModules / modulesCount);
-    }
-
-    final Set<LanguageMissingProblem> problems = SetSequence.fromSet(new HashSet<LanguageMissingProblem>());
-    MapSequence.fromMap(problemLangs).take(maxErrors).visitAll(new IVisitor<IMapping<SLanguage, SNode>>() {
-      public void visit(IMapping<SLanguage, SNode> it) {
-        if (it.key().getSourceModule() == null) {
-          SetSequence.fromSet(problems).addElement(new LanguageAbsentInRepoProblem(it.key(), it.value()));
-        } else {
-          SetSequence.fromSet(problems).addElement(new LanguageNotLoadedProblem(it.key(), it.value()));
-        }
-      }
-    });
-    return problems;
-  }
-
-  private static Iterable<SNode> allNodes(Iterable<SModel> mods) {
-    return Sequence.fromIterable(mods).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
-      public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, null);
-      }
-    });
   }
 }

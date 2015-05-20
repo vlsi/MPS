@@ -198,7 +198,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-    int persistenceVersion = model instanceof PersistenceVersionAware ? ((PersistenceVersionAware) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+    int persistenceVersion =
+        model instanceof PersistenceVersionAware ? ((PersistenceVersionAware) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
 
     ModelPersistence.saveModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource, persistenceVersion);
   }
@@ -257,7 +258,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
    */
   public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    assert modelFactory instanceof  DefaultModelPersistence;
+    assert modelFactory instanceof DefaultModelPersistence;
     return new DefaultSModelDescriptor(new PersistenceFacility((DefaultModelPersistence) modelFactory, dataSource), header.createCopy());
   }
 
@@ -294,8 +295,8 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
     @Override
     public boolean doesSaveUpgradePersistence(@NotNull SModelHeader header) {
-      final int pv = ModelPersistence.actualPersistenceVersion(header.getPersistenceVersion());
-      return pv != header.getPersistenceVersion();
+      //not sure !=-1 is really needed, just left to be ensured about compatibility
+      return header.getPersistenceVersion() != ModelPersistence.LAST_VERSION && header.getPersistenceVersion() != -1;
     }
 
     @Override

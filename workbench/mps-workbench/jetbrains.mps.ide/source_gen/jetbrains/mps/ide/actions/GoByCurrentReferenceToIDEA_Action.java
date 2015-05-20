@@ -14,9 +14,9 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,8 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,6 +41,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
     if (targetNode == null) {
@@ -55,19 +54,11 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     return eq_xgilk9_a0f0d(stubSter, targetSter);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -78,57 +69,61 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("cell", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
-      return false;
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("context", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
+      MapSequence.fromMap(_params).put("node", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
-      final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-      SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
-      SModel model = node.getModel();
-      SModule module = model.getModule();
-      assert module != null;
-      if (module instanceof Generator) {
-        module = ((Generator) module).getSourceLanguage();
-      } else if (!(module instanceof AbstractModule) || ((AbstractModule) module).getModuleSourceDir() == null) {
-        assert false;
-      }
-      final String modulePath = ((AbstractModule) module).getModuleSourceDir().getPath();
-
-      new Thread() {
-        @Override
-        public void run() {
-          // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
-              if (!(GoByCurrentReferenceToIDEA_Action.this.navigateToJavaStub(modulePath, targetNode, _params))) {
-                // TODO show popup notification "cannot navigate" 
-              }
-            }
-          });
-        }
-      }.start();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
-      }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
+    final SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
+    SNode node = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
+    SModel model = node.getModel();
+    SModule module = model.getModule();
+    assert module != null;
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    } else if (!(module instanceof AbstractModule) || ((AbstractModule) module).getModuleSourceDir() == null) {
+      assert false;
     }
+    final String modulePath = ((AbstractModule) module).getModuleSourceDir().getPath();
+
+    new Thread() {
+      @Override
+      public void run() {
+        // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            if (!(GoByCurrentReferenceToIDEA_Action.this.navigateToJavaStub(modulePath, targetNode, _params))) {
+              // TODO show popup notification "cannot navigate" 
+            }
+          }
+        });
+      }
+    }.start();
   }
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
     SModelReference ref = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode).getReference();
@@ -179,7 +174,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     assert classifier != null;
     return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  protected static Logger LOG = LogManager.getLogger(GoByCurrentReferenceToIDEA_Action.class);
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

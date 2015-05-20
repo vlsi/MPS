@@ -11,7 +11,6 @@ import java.util.HashMap;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -29,6 +28,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -53,8 +53,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
   public FeatureForestMap<ModelChange> getMap() {
     return myMap;
   }
-  private static Feature[] getFeaturesForChange(@NotNull ModelChange change) {
-    ModelAccess.assertLegalRead();
+  /*package*/ static Feature[] getFeaturesForChange(@NotNull ModelChange change) {
     List<Feature> result = ListSequence.fromList(new ArrayList<Feature>());
     SModelReference modelReference = change.getChangeSet().getNewModel().getReference();
     if (change instanceof AddRootChange) {
@@ -90,7 +89,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     }
     @Override
     public void changeAdded(@NotNull final ModelChange change) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
         public void run() {
           Feature[] features = FeatureForestMapSupport.getFeaturesForChange(change);
           MapSequence.fromMap(myChangeToFeaturesMap).put(change, features);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,132 +15,160 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.smodel.CommandListenerAdapter;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.repository.CommandListener;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
-public class DataTreeChangesNotifier {
-  private IChangeListener myTree;
-  private boolean myChanged = false;
-  private CommandListener myCommandListener = new MyCommandListener();
+/**
+ * Despite the name, not specific to DataTree any longer. Generic change notifier for elements supplied.
+ * Use {@link #subscribeTo(SRepository)}/{@link #unsubscribeFrom(SRepository)} to activate/deactivate change tracking
+ */
+public class DataTreeChangesNotifier extends SRepositoryContentAdapter {
+  private final MyCommandListener myChangeDispatch = new MyCommandListener();
 
-  private MyModelCommandListener myModelListener = new MyModelCommandListener();
-  private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
-  private MyModuleRepositoryListener myModuleRepositoryListener = new MyModuleRepositoryListener();
+  private final Map<IChangeListener, Set<SNodeReference>> myNodeListeners = new HashMap<IChangeListener, Set<SNodeReference>>();
+  private final Map<IChangeListener, Set<SModelReference>> myModelListeners = new HashMap<IChangeListener, Set<SModelReference>>();
+  private final Map<IChangeListener, Set<SModuleReference>> myModuleListeners = new HashMap<IChangeListener, Set<SModuleReference>>();
 
-  private Set<SNodeReference> myNodes = new HashSet<SNodeReference>();
-  private Set<SModelReference> myModels = new HashSet<SModelReference>();
-  private Set<SModuleReference> myModules = new HashSet<SModuleReference>();
-
-  public DataTreeChangesNotifier(IChangeListener tree) {
-    myTree = tree;
+  public DataTreeChangesNotifier() {
   }
 
-  public void startListening(DataNode root) {
-    ModelAccess.instance().addCommandListener(myCommandListener);
-
-    for (DataNode node : root.getDescendantsByDataClass(NodeNodeData.class)) {
-      NodeNodeData nodeData = (NodeNodeData) node.getData();
-      myNodes.add(nodeData.getNodePointer());
+  /**
+   * Tells to notify given listener once any node from the supplied set is changed.
+   * Sets of nodes do not add up, two subsequent trackNodes() calls for the same listener would
+   * result in first registration being void.
+   */
+  public void trackNodes(@NotNull IChangeListener l, @Nullable Set<SNodeReference> nodes) {
+    if (nodes == null || nodes.isEmpty()) {
+      myNodeListeners.remove(l);
+    } else {
+      myNodeListeners.put(l, nodes);
     }
-
-    for (DataNode node : root.getDescendantsByDataClass(ModelNodeData.class)) {
-      ModelNodeData modelData = (ModelNodeData) node.getData();
-      myModels.add(modelData.getModelReference());
-    }
-
-    for (DataNode node : root.getDescendantsByDataClass(ModuleNodeData.class)) {
-      ModuleNodeData moduleData = (ModuleNodeData) node.getData();
-      myModules.add(moduleData.getModuleReference());
-    }
-
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myModelListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    MPSModuleRepository.getInstance().addRepositoryListener(myModuleRepositoryListener);
   }
 
-  public void stopListening() {
-    ModelAccess.instance().removeCommandListener(myCommandListener);
-
-    myNodes.clear();
-    myModels.clear();
-    myModules.clear();
-
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myModelListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    MPSModuleRepository.getInstance().removeRepositoryListener(myModuleRepositoryListener);
+  public void trackModels(@NotNull IChangeListener l, @Nullable Set<SModelReference> models) {
+    if (models == null || models.isEmpty()) {
+      myModelListeners.remove(l);
+    } else {
+      myModelListeners.put(l, models);
+    }
   }
 
-  private class MyModelCommandListener implements SModelCommandListener {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent event : events) {
-        if (event.getModelDescriptor() == null) continue;
-        if (!myModels.contains(event.getModelDescriptor().getReference())) continue;
+  public void trackModules(@NotNull IChangeListener l, @Nullable Set<SModuleReference> modules) {
+    if (modules == null || modules.isEmpty()) {
+      myModuleListeners.remove(l);
+    } else {
+      myModuleListeners.put(l, modules);
+    }
+  }
 
-        if (event instanceof SModelRootEvent) {
-          SModelRootEvent modelRootEvent = (SModelRootEvent) event;
-          SNodeReference rootPointer = new jetbrains.mps.smodel.SNodePointer(modelRootEvent.getRoot());
-          if (modelRootEvent.isRemoved() && myNodes.contains(rootPointer)) {
-            myChanged = true;
-            return;
-          }
-        } else if (event instanceof SModelChildEvent) {
-          SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getReference(),
-              modelChildEvent.getChild().getNodeId());
-          if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
-            myChanged = true;
-            return;
-          }
-        }
+  public void unregister(@NotNull IChangeListener l) {
+    myNodeListeners.remove(l);
+    myModelListeners.remove(l);
+    myModuleListeners.remove(l);
+  }
+
+
+  @Override
+  public void startListening(SRepository repository) {
+    super.startListening(repository);
+    repository.getModelAccess().addCommandListener(myChangeDispatch);
+  }
+
+  @Override
+  public void stopListening(SRepository repository) {
+    repository.getModelAccess().removeCommandListener(myChangeDispatch);
+    super.stopListening(repository);
+  }
+
+  @Override
+  protected boolean isIncluded(SModule module) {
+    return !module.isReadOnly();
+  }
+
+  @Override
+  protected void startListening(SModel model) {
+    model.addChangeListener(this);
+  }
+
+  @Override
+  protected void stopListening(SModel model) {
+    model.removeChangeListener(this);
+  }
+
+  @Override
+  public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+    final SNodeReference ptr = event.getChild().getReference();
+    ArrayList<IChangeListener> toNotify = new ArrayList<IChangeListener>();
+    for (IChangeListener l : myNodeListeners.keySet()) {
+      if (myNodeListeners.get(l).contains(ptr)) {
+        toNotify.add(l);
       }
     }
+    myChangeDispatch.changed(toNotify);
   }
 
-  private class MyModelRepositoryListener extends SModelRepositoryAdapter {
-    @Override
-    public void modelRemoved(SModel model) {
-      if (!myModels.contains(model.getReference())) return;
-      myChanged = true;
+  @Override
+  public void modelRemoved(SModule module, SModelReference ref) {
+    super.modelRemoved(module, ref);
+    ArrayList<IChangeListener> toNotify = new ArrayList<IChangeListener>();
+    for (IChangeListener l : myModelListeners.keySet()) {
+      if (myModelListeners.get(l).contains(ref)) {
+        toNotify.add(l);
+      }
     }
+    myChangeDispatch.changed(toNotify);
   }
 
-  private class MyCommandListener extends CommandListenerAdapter {
+  @Override
+  public void moduleRemoved(@NotNull SModuleReference module) {
+    super.moduleRemoved(module);
+    ArrayList<IChangeListener> toNotify = new ArrayList<IChangeListener>();
+    for (IChangeListener l : myModuleListeners.keySet()) {
+      if (myModuleListeners.get(l).contains(module)) {
+        toNotify.add(l);
+      }
+    }
+    myChangeDispatch.changed(toNotify);
+  }
+
+  private static class MyCommandListener extends CommandListenerAdapter {
+    private final Set<IChangeListener> myListeners2Notify = new HashSet<IChangeListener>();
+
+    public void changed(Collection<IChangeListener> toNotify) {
+      if (toNotify.isEmpty()) {
+        return;
+      }
+      synchronized (this) {
+        myListeners2Notify.addAll(toNotify);
+      }
+    }
+
     @Override
     public void commandFinished() {
-      if (!myChanged) return;
-      myChanged = false;
-      myTree.changed();
-    }
-  }
-
-  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
-    @Override
-    public void moduleRemoved(@NotNull SModuleReference module) {
-      if (!myModules.contains(module)) return;
-      myChanged = true;
+      ArrayList<IChangeListener> toNotify = new ArrayList<IChangeListener>();
+      synchronized (this) {
+        toNotify.addAll(myListeners2Notify);
+        myListeners2Notify.clear();
+      }
+      for (IChangeListener l : toNotify) {
+        l.changed();
+      }
     }
   }
 }

@@ -11,15 +11,12 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
-import org.apache.log4j.Level;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
@@ -34,52 +31,38 @@ public class CopyValueAction_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-        event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
-      if (value == null || !(value instanceof JavaValue)) {
-        return;
-      }
+    final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
+    if (value == null || !(value instanceof JavaValue)) {
+      return;
+    }
 
-      AbstractUiState uiState = check_d54g7t_a0d0a(DebugActionsUtil.getDebugSession(event));
-      if (uiState == null || !(uiState instanceof JavaUiState)) {
-        return;
-      }
-      JavaUiState javaUiState = (JavaUiState) uiState;
+    AbstractUiState uiState = check_d54g7t_a0d0a(DebugActionsUtil.getDebugSession(event));
+    if (uiState == null || !(uiState instanceof JavaUiState)) {
+      return;
+    }
+    JavaUiState javaUiState = (JavaUiState) uiState;
 
-      final ThreadReference thread = check_d54g7t_a0h0a(javaUiState.getThread());
-      if (thread == null) {
-        return;
-      }
+    final ThreadReference thread = check_d54g7t_a0h0a(javaUiState.getThread());
+    if (thread == null) {
+      return;
+    }
 
-      String result = javaUiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<String>() {
-        public String invoke() {
-          return EvaluationUtils.getInstance().getStringPresentation(((JavaValue) value).getValue().getJDIValue(), thread);
-        }
-      });
-      if ((result != null && result.length() > 0)) {
-        CopyPasteUtil.copyTextToClipboard(result);
+    String result = javaUiState.invokeEvaluationSynchronously(new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return EvaluationUtils.getInstance().getStringPresentation(((JavaValue) value).getValue().getJDIValue(), thread);
       }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
-      }
+    });
+    if ((result != null && result.length() > 0)) {
+      CopyPasteUtil.copyTextToClipboard(result);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CopyValueAction_Action.class);
   private static AbstractUiState check_d54g7t_a0d0a(AbstractDebugSession checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUiState();

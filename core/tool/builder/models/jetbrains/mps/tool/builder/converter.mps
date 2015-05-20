@@ -272,15 +272,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7gEybyEwHZ" role="3cqZAp">
-          <node concept="2YIFZM" id="7gEybyEyYq" role="3clFbG">
-            <ref role="37wK5l" to="1p1s:~RuntimeFlags.setPlayRefactoringsMode(boolean):void" resolve="setPlayRefactoringsMode" />
-            <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
-            <node concept="3clFbT" id="7gEybyE$5R" role="37wK5m">
-              <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
         <node concept="2GUZhq" id="35PnRaEYmqv" role="3cqZAp">
           <node concept="3clFbS" id="6NgXkpAWLJe" role="2GV8ay">
             <node concept="3clFbF" id="2ChbwmMhP0g" role="3cqZAp">

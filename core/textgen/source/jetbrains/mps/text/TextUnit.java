@@ -44,4 +44,26 @@ public interface TextUnit {
    * combine under single API, and what to do in case of binary file with encoding?
    */
   Charset getEncoding();
+
+  Status getState();
+
+  // State? Initial, Blank, Failure, Valid?
+  enum Status {
+    /**
+     * No attempt to generate has been made yet.
+     */
+    Undefined,
+    /**
+     * No outcome after generation
+     */
+    Empty,
+    /**
+     * Error during generation
+     */
+    Failed,
+    /**
+     * Generated outcome present
+     */
+    Generated,
+  }
 }

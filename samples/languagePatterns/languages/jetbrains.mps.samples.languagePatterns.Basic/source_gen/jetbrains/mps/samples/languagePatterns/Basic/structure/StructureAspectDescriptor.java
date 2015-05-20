@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAbstractRequestDescription = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptAddress = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Address", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5235060235297944692L, "kind"), new ConceptDescriptorBuilder.Prop(5235060235297879052L, "street"), new ConceptDescriptorBuilder.Prop(5235060235297879054L, "zip")).properties("kind", "street", "zip").create();
+  /*package*/ final ConceptDescriptor myConceptAddressReference = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b53535L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(5235060235297961270L, "target", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL), false)).references("target").create();
   /*package*/ final ConceptDescriptor myConceptAgendaItem = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78db30bL)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptApple = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786badaL)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3803436373353347876L, "kind")).properties("kind").alias("apple", "").create();
   /*package*/ final ConceptDescriptor myConceptCar = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Car", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3803436373354958320L, "make"), new ConceptDescriptorBuilder.Prop(3803436373354958322L, "age"), new ConceptDescriptorBuilder.Prop(3803436373354958325L, "power")).properties("make", "age", "power").alias("car", "").create();
@@ -32,6 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIncompleteCommand = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7d09f66a13005410L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).create();
   /*package*/ final ConceptDescriptor myConceptLineStyle = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptListOfDrawCommands = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d07e6L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(3548406301612380195L, "commands", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L), true, true, false)).children(new String[]{"commands"}, new boolean[]{true}).alias("paint commands", "").create();
+  /*package*/ final ConceptDescriptor myConceptOperationOnAddress = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptOrange = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786bb3aL)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae786b2fbL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3803436373353348026L, "taste")).properties("taste").alias("orange", "").create();
   /*package*/ final ConceptDescriptor myConceptParticipant = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3803436373353847292L, "singer", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL), false)).references("singer").create();
   /*package*/ final ConceptDescriptor myConceptPerformance = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78db30bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3803436373353520354L, "singer", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL), false)).references("singer").create();
@@ -41,83 +44,98 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSimplifiedFormDescription = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223f4L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1885452693916492789L, "requestor"), new ConceptDescriptorBuilder.Prop(1885452693916492791L, "firstTimeApplicant"), new ConceptDescriptorBuilder.Prop(1885452693916492794L, "detail")).properties("requestor", "firstTimeApplicant", "detail").alias("simplified form description", "").create();
   /*package*/ final ConceptDescriptor myConceptSinger = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895c8dL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).alias("singer", "").create();
   /*package*/ final ConceptDescriptor myConceptSolidLine = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc55L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb2666fc54L)).alias("solid", "").create();
+  /*package*/ final ConceptDescriptor myConceptSomeForm = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f406L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(5235060235297879049L, "addresses", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL), true, true, false), new ConceptDescriptorBuilder.Link(5235060235297879119L, "validation", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"addresses", "validation"}, new boolean[]{true, false}).alias("some form", "").create();
+  /*package*/ final ConceptDescriptor myConceptStreetOperation = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.StreetOperation", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b9b2e7L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L)).alias("street", "").create();
   /*package*/ final ConceptDescriptor myConceptStringDescription = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1885452693916492758L, "value")).properties("value").alias("string description", "").create();
   /*package*/ final ConceptDescriptor myConceptTruck = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.Truck", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4fc1L)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.Car").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.Car").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae79f4defL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3803436373354958786L, "weight")).properties("weight").alias("truck", "").create();
+  /*package*/ final ConceptDescriptor myConceptZipOperation = new ConceptDescriptorBuilder("jetbrains.mps.samples.languagePatterns.Basic.structure.ZipOperation", MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b8b81dL)).super_("jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress").super_(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L)).parents("jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress").parentIds(MetaIdFactory.conceptId(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26bb7860L)).alias("zip", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractRequestDescription, myConceptAgendaItem, myConceptApple, myConceptCar, myConceptCombinedPerformance, myConceptComponent, myConceptComponentUsage, myConceptConcert, myConceptContainer, myConceptDottedLine, myConceptDrawCommand, myConceptDrawLine, myConceptDrawRect, myConceptEmptyLine, myConceptFormDescription, myConceptFruit, myConceptFruitPlate, myConceptIncompleteCommand, myConceptLineStyle, myConceptListOfDrawCommands, myConceptOrange, myConceptParticipant, myConceptPerformance, myConceptPerformanceWithTitle, myConceptRaceParticipant, myConceptRequest, myConceptSimplifiedFormDescription, myConceptSinger, myConceptSolidLine, myConceptStringDescription, myConceptTruck);
+    return Arrays.asList(myConceptAbstractRequestDescription, myConceptAddress, myConceptAddressReference, myConceptAgendaItem, myConceptApple, myConceptCar, myConceptCombinedPerformance, myConceptComponent, myConceptComponentUsage, myConceptConcert, myConceptContainer, myConceptDottedLine, myConceptDrawCommand, myConceptDrawLine, myConceptDrawRect, myConceptEmptyLine, myConceptFormDescription, myConceptFruit, myConceptFruitPlate, myConceptIncompleteCommand, myConceptLineStyle, myConceptListOfDrawCommands, myConceptOperationOnAddress, myConceptOrange, myConceptParticipant, myConceptPerformance, myConceptPerformanceWithTitle, myConceptRaceParticipant, myConceptRequest, myConceptSimplifiedFormDescription, myConceptSinger, myConceptSolidLine, myConceptSomeForm, myConceptStreetOperation, myConceptStringDescription, myConceptTruck, myConceptZipOperation);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0pb, conceptFqName)) {
       case 0:
         return myConceptAbstractRequestDescription;
       case 1:
-        return myConceptAgendaItem;
+        return myConceptAddress;
       case 2:
-        return myConceptApple;
+        return myConceptAddressReference;
       case 3:
-        return myConceptCar;
+        return myConceptAgendaItem;
       case 4:
-        return myConceptCombinedPerformance;
+        return myConceptApple;
       case 5:
-        return myConceptComponent;
+        return myConceptCar;
       case 6:
-        return myConceptComponentUsage;
+        return myConceptCombinedPerformance;
       case 7:
-        return myConceptConcert;
+        return myConceptComponent;
       case 8:
-        return myConceptContainer;
+        return myConceptComponentUsage;
       case 9:
-        return myConceptDottedLine;
+        return myConceptConcert;
       case 10:
-        return myConceptDrawCommand;
+        return myConceptContainer;
       case 11:
-        return myConceptDrawLine;
+        return myConceptDottedLine;
       case 12:
-        return myConceptDrawRect;
+        return myConceptDrawCommand;
       case 13:
-        return myConceptEmptyLine;
+        return myConceptDrawLine;
       case 14:
-        return myConceptFormDescription;
+        return myConceptDrawRect;
       case 15:
-        return myConceptFruit;
+        return myConceptEmptyLine;
       case 16:
-        return myConceptFruitPlate;
+        return myConceptFormDescription;
       case 17:
-        return myConceptIncompleteCommand;
+        return myConceptFruit;
       case 18:
-        return myConceptLineStyle;
+        return myConceptFruitPlate;
       case 19:
-        return myConceptListOfDrawCommands;
+        return myConceptIncompleteCommand;
       case 20:
-        return myConceptOrange;
+        return myConceptLineStyle;
       case 21:
-        return myConceptParticipant;
+        return myConceptListOfDrawCommands;
       case 22:
-        return myConceptPerformance;
+        return myConceptOperationOnAddress;
       case 23:
-        return myConceptPerformanceWithTitle;
+        return myConceptOrange;
       case 24:
-        return myConceptRaceParticipant;
+        return myConceptParticipant;
       case 25:
-        return myConceptRequest;
+        return myConceptPerformance;
       case 26:
-        return myConceptSimplifiedFormDescription;
+        return myConceptPerformanceWithTitle;
       case 27:
-        return myConceptSinger;
+        return myConceptRaceParticipant;
       case 28:
-        return myConceptSolidLine;
+        return myConceptRequest;
       case 29:
-        return myConceptStringDescription;
+        return myConceptSimplifiedFormDescription;
       case 30:
+        return myConceptSinger;
+      case 31:
+        return myConceptSolidLine;
+      case 32:
+        return myConceptSomeForm;
+      case 33:
+        return myConceptStreetOperation;
+      case 34:
+        return myConceptStringDescription;
+      case 35:
         return myConceptTruck;
+      case 36:
+        return myConceptZipOperation;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem", "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Request", "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck"};
+  private static String[] stringSwitchCases_1htk8d_a0a0pb = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Address", "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem", "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Fruit", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.LineStyle", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.OperationOnAddress", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Request", "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm", "jetbrains.mps.samples.languagePatterns.Basic.structure.StreetOperation", "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck", "jetbrains.mps.samples.languagePatterns.Basic.structure.ZipOperation"};
 }

@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.CopyUtil;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultSChildSetter;
 import jetbrains.mps.smodel.action.DefaultSChildSubstituteAction;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -47,7 +49,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
 
   private SNode myParentNode;
   private SNode myCurrentChild;
@@ -81,11 +83,10 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   @Override
   public List<SubstituteAction> createActions() {
-    String conceptFqName = NameUtil.nodeFQName(myTargetConcept.getDeclarationNode());
     SContainmentLink link = mySetter.getLink();
 
     //todo: get rid of declaration node
-    if (!ModelConstraints.canBeChild(conceptFqName, myParentNode, link.getDeclarationNode(), null, null)) {
+    if (!ModelConstraints.canBeChild(myTargetConcept, myParentNode, link.getDeclarationNode(), null, null)) {
       return Collections.emptyList();
     }
     if (myTargetConcept instanceof SConcept) {
@@ -123,11 +124,10 @@ public class DefaultSChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     final SNode copy = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
     getModelForTypechecking().addRootNode(copy);
 
-    //todo use generated code here
-    boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(myLink.getDeclarationNode()), "jetbrains.mps.lang.core.structure.IType");
-    SNode hole = null;
+    final SAbstractConcept concept = myLink.getTargetConcept();
+    boolean holeIsAType = concept != null && concept.isSubConceptOf(SNodeUtil.concept_IType);
     SNode parent = mapping.get(myParentNode);
-    hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
       parent.insertChildBefore(myLink, hole, child);

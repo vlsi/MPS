@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class MeetType_comparable_with_arguments_ComparisonRule extends ComparisonRule_Runtime {
   public MeetType_comparable_with_arguments_ComparisonRule() {
@@ -26,21 +26,16 @@ public class MeetType_comparable_with_arguments_ComparisonRule extends Compariso
     return true;
   }
   public IsApplicableStatus isApplicableFirst(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableConcept1()), null);
   }
   public IsApplicableStatus isApplicableSecond(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableConcept2()), null);
   }
-  public String getApplicableConceptFQName1() {
-    return "jetbrains.mps.baseLanguage.structure.Type";
+
+  public SAbstractConcept getApplicableConcept1() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
   }
-  public String getApplicableConceptFQName2() {
-    return "jetbrains.mps.lang.typesystem.structure.MeetType";
+  public SAbstractConcept getApplicableConcept2() {
+    return MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType");
   }
 }

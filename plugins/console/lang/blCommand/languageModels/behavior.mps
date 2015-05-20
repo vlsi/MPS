@@ -2,7 +2,7 @@
 <model ref="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -355,18 +355,6 @@
                 <ref role="37wK5l" to="tprs:3EnpNH2zGjR" resolve="AnalyzeStacktraceDialog" />
                 <node concept="37vLTw" id="5G2W3aWBqvO" role="37wK5m">
                   <ref role="3cqZAo" node="5G2W3aWAQ0x" resolve="project" />
-                </node>
-                <node concept="2ShNRf" id="2lR2lzqz44D" role="37wK5m">
-                  <node concept="1pGfFk" id="2lR2lzqz956" role="2ShVmc">
-                    <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-                    <node concept="2YIFZM" id="5G2W3aWBqMv" role="37wK5m">
-                      <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                      <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                      <node concept="37vLTw" id="5G2W3aWBqPx" role="37wK5m">
-                        <ref role="3cqZAo" node="5G2W3aWAQ0x" resolve="project" />
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
             </node>

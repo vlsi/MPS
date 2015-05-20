@@ -6,18 +6,14 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 
 public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,44 +26,35 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) event.getData(MPSCommonDataKeys.NODE)), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
+      if (!(SNodeOperations.isInstanceOf(p, MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder")))) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"))), "virtual_execute_8517397753922085153", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ExecuteActionAttachedToCurrentNode", t);
-      }
-    }
+    BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x7633e0214d3a5856L, "jetbrains.mps.console.base.structure.IActionHolder"))), "virtual_execute_8517397753922085153", new Object[]{event.getData(CommonDataKeys.PROJECT)});
   }
-  protected static Logger LOG = LogManager.getLogger(ExecuteActionAttachedToCurrentNode_Action.class);
 }

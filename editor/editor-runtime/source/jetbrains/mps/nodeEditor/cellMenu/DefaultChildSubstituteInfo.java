@@ -18,17 +18,24 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeLegacy;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,7 +46,7 @@ import java.util.List;
  */
 
 @Deprecated
-public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultChildSubstituteInfo.class));
 
   private SNode myParentNode;
@@ -60,7 +67,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         myParentNode = sourceNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(),
+            SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         Iterable<? extends SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
@@ -79,7 +87,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
           LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration);
         }
         myParentNode = parentNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(new SNodeLegacy(myParentNode).getConceptDeclarationNode(),
+            SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }
@@ -89,9 +98,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   @Override
   public List<SubstituteAction> createActions() {
     List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(myParentNode, myCurrentChild,
-      SModelUtil.getLinkDeclarationTarget(myLinkDeclaration),
-      createDefaultNodeSetter(),
-      getOperationContext());
+        SModelUtil.getLinkDeclarationTarget(myLinkDeclaration),
+        createDefaultNodeSetter(),
+        getOperationContext());
     return actions;
   }
 
@@ -101,11 +110,12 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     final SNode copy = CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
     getModelForTypechecking().addRootNode(copy);
 
-    boolean holeIsAType = SModelUtil.isAssignableConcept(NameUtil.nodeFQName(SModelUtil.getLinkDeclarationTarget(myLinkDeclaration)), "jetbrains.mps.lang.core.structure.IType");
-    SNode hole = null;
+    final SNode conceptDecl = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
+    final SAbstractConcept concept = MetaAdapterByDeclaration.getConcept(conceptDecl);
+    boolean holeIsAType = concept != null && concept.isSubConceptOf(SNodeUtil.concept_IType);
     SNode parent = mapping.get(myParentNode);
     String role = SModelUtil.getGenuineLinkRole(myLinkDeclaration);
-    hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
+    SNode hole = SModelUtil_new.instantiateConceptDeclaration(SNodeUtil.concept_BaseConcept, null, null, true);
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
       parent.insertChildBefore(role, hole, child);

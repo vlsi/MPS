@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.FilterIterator;
 
@@ -24,7 +26,7 @@ public class ConditionalIterable<T> implements Iterable<T> {
   private final Condition<T> myCondition;
   private final Iterable<T> myIter;
 
-  public ConditionalIterable(Iterable<T> iter, Condition<T> condition) {
+  public ConditionalIterable(@NotNull Iterable<T> iter, @Nullable Condition<T> condition) {
     myCondition = condition;
     myIter = iter;
   }

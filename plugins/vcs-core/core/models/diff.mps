@@ -3357,13 +3357,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="69abr3Go1n2" role="3clFbx">
-            <node concept="3clFbF" id="69abr3Go1n3" role="3cqZAp">
-              <node concept="2YIFZM" id="69abr3Go1n4" role="3clFbG">
-                <ref role="1Pybhc" to="cu2c:~ModelAccess" resolve="ModelAccess" />
-                <ref role="37wK5l" to="cu2c:~ModelAccess.assertLegalRead():void" resolve="assertLegalRead" />
-              </node>
-            </node>
-            <node concept="3clFbH" id="69abr3Go1n5" role="3cqZAp" />
             <node concept="3clFbF" id="69abr3Go1n6" role="3cqZAp">
               <node concept="37vLTI" id="69abr3Go1n7" role="3clFbG">
                 <node concept="2ShNRf" id="69abr3Go1n8" role="37vLTx">

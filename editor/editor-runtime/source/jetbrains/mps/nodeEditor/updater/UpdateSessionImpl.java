@@ -135,7 +135,7 @@ public class UpdateSessionImpl implements UpdateSession {
     editorContext.getCellFactory().pushCellContext();
     try {
       editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
-      return EditorManager.getInstanceFromContext(editorContext).createRootCell(editorContext, getNode(), getModelModifications(), currentContext,
+      return EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), currentContext,
           editorContext.isInspector());
     } finally {
       editorContext.getCellFactory().popCellContext();
@@ -167,7 +167,7 @@ public class UpdateSessionImpl implements UpdateSession {
     myContextStack.push(currentContext);
     try {
       EditorContext editorContext = getUpdater().getEditorContext();
-      EditorCell nodeCell = EditorManager.getInstanceFromContext(editorContext).createEditorCell(editorContext, getModelModifications(), currentContext);
+      EditorCell nodeCell = EditorManager.getInstanceFromContext(editorContext).createEditorCell(getModelModifications(), currentContext);
       return nodeCell;
     } finally {
       myContextStack.pop();
@@ -181,7 +181,7 @@ public class UpdateSessionImpl implements UpdateSession {
       return cellWithRole;
     }
     EditorContext editorContext = getUpdater().getEditorContext();
-    return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, editorContext, roleAttribute,
+    return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, roleAttribute,
         myModelModifications);
   }
 

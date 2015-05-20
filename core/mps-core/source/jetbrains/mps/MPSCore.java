@@ -16,7 +16,6 @@
 package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
-import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
@@ -59,9 +58,6 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-/**
- * Evgeny Gryaznov, Sep 1, 2010
- */
 public final class MPSCore extends ComponentPlugin {
 
   public MPSCore() {
@@ -107,14 +103,13 @@ public final class MPSCore extends ComponentPlugin {
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
     init(new CachesManager(classLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider(moduleRepository));
-    init(new ProjectStructureModule(moduleRepository, modelRepository));
+    init(new ProjectStructureModule(moduleRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
     init(new BLDependenciesCache(moduleRepository, cleanupManager));
     init(new DataFlowManager(moduleRepository, classLoaderManager));
 
     init(new ResolverComponent());
-    init(new CheckersComponent());
     init(new ValidationSettings());
 
     init(new BootstrapMakeFacets());

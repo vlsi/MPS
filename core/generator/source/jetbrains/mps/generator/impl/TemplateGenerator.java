@@ -48,16 +48,17 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -122,21 +123,20 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final GenerationTrace myNewTrace;
 
   static final class StepArguments {
-    public final SModel inputModel, outputModel;
     public final DependenciesBuilder dependenciesBuilder;
     public final RuleManager ruleManager;
     public final GenerationTrace genTrace;
-    public StepArguments(RuleManager ruleManager, SModel inputModel, SModel outputModel, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace) {
-      this.inputModel = inputModel;
-      this.outputModel = outputModel;
+    public final GeneratorMappings mappingLabels;
+    public StepArguments(RuleManager ruleManager, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels) {
       this.dependenciesBuilder = dependenciesBuilder;
       this.ruleManager = ruleManager;
       this.genTrace = genTrace;
+      this.mappingLabels = mapLabels;
     }
   }
 
-  public TemplateGenerator(GenerationSessionContext operationContext, StepArguments stepArgs) {
-    super(operationContext, stepArgs.inputModel, stepArgs.outputModel);
+  public TemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel, StepArguments stepArgs) {
+    super(operationContext, inputModel, outputModel, stepArgs.mappingLabels);
     myRuleManager = stepArgs.ruleManager;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
@@ -160,7 +160,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // prepare weaving
     ttrace.push("weavings", false);
     myWeavingProcessor = new WeavingProcessor(this);
-    myWeavingProcessor.prepareWeavingRules(getInputModel(), myRuleManager.getWeaving_MappingRules());
+    myWeavingProcessor.prepareWeavingRules(getInputModel());
     ttrace.pop();
 
     myTemplateProcessor = new TemplateProcessor(this);
@@ -712,7 +712,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return false;
       }
 
-      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
+      if (inputRootNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(applicableConcept)))) {
         return myEnv.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnv, inputRootNode, null));
       }
       return false;

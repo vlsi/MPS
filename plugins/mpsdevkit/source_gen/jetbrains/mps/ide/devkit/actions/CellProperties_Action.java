@@ -4,18 +4,15 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.ide.devkit.cellExplorer.CellPropertiesWindow;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.devkit.cellExplorer.CellPropertiesWindow;
 
 public class CellProperties_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -28,38 +25,29 @@ public class CellProperties_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CellProperties", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("cell") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("cell", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new CellPropertiesWindow(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((Frame) MapSequence.fromMap(_params).get("frame")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CellProperties", t);
-      }
-    }
+    new CellPropertiesWindow(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((Frame) MapSequence.fromMap(_params).get("frame")));
   }
-  protected static Logger LOG = LogManager.getLogger(CellProperties_Action.class);
 }

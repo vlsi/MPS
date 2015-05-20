@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-class MissingModelError extends ValidationProblem {
+public class MissingModelError extends ValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
 
@@ -28,6 +28,14 @@ class MissingModelError extends ValidationProblem {
     super(Severity.ERROR, msg);
     myModel = model;
     myReference = reference;
+  }
+
+  public SModel getModel() {
+    return myModel;
+  }
+
+  public SModelReference getReference() {
+    return myReference;
   }
 
   @Override

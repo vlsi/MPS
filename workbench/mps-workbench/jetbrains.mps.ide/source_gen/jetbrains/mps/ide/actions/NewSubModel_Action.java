@@ -13,16 +13,13 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
@@ -35,6 +32,7 @@ public class NewSubModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
@@ -50,64 +48,62 @@ public class NewSubModel_Action extends BaseAction {
     }
     return correctStereotype;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "NewSubModel", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      MapSequence.fromMap(_params).put("module", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
+    final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
+    final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
-          dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), namespace, stereotype, true);
-        }
-      });
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
+        dialog.value = new NewModelDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), (AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module")), namespace, stereotype, true);
+      }
+    });
 
-      dialog.value.show();
-      SModel result = dialog.value.getResult();
-      if (result != null) {
-        SModel modelDescriptor = result;
-        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "NewSubModel", t);
-      }
+    dialog.value.show();
+    SModel result = dialog.value.getResult();
+    if (result != null) {
+      SModel modelDescriptor = result;
+      ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
     }
   }
-  protected static Logger LOG = LogManager.getLogger(NewSubModel_Action.class);
 }

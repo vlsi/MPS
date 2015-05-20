@@ -89,6 +89,9 @@
     <node concept="PrWs8" id="4WQQT1VPPnx" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="3PYSXOr72s8" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX2" resolve="ICanSuppressErrors" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1U0BydTaHd">
     <property role="TrG5h" value="ChildSubConcept" />
@@ -118,6 +121,9 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="rightChild" />
       <ref role="20lvS9" node="ftl0ImzDYZ" resolve="Child" />
+    </node>
+    <node concept="PrWs8" id="3PYSXOr72yV" role="PzmwI">
+      <ref role="PrY4T" to="tpck:2WmWrdnSpX2" resolve="ICanSuppressErrors" />
     </node>
   </node>
   <node concept="1TIwiD" id="2urHzIcEbvY">

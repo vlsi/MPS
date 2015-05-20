@@ -7,40 +7,40 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.project.Project;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
-import java.util.Collections;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final List<SModelReference> myCheckedModels = ListSequence.fromList(new ArrayList<SModelReference>());
-  public ModelChooser() {
+  public ModelChooser(final Project mpsProject) {
     addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
-        ModelChooser.this.collectModels();
-        SModelReference modelRef = CommonChoosers.showDialogModelChooser(null, ModelChooser.this.myCheckedModels, Collections.EMPTY_LIST);
+        ModelChooser.this.collectModels(mpsProject);
+        SModelReference modelRef = CommonChoosers.showModelChooser(mpsProject, null, ModelChooser.this.myCheckedModels);
         if (modelRef != null) {
-          ModelChooser.this.setText(modelRef.getModelName().toString());
+          ModelChooser.this.setText(modelRef.getModelName());
         }
       }
     });
   }
-  private void collectModels() {
+  private void collectModels(Project mpsProject) {
     ListSequence.fromList(this.myCheckedModels).clear();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SAbstractConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+        SAbstractConcept concept = MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
         Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(concept), false, new EmptyProgressMonitor());
         for (SNode node : usages) {
           SModel model = SNodeOperations.getModel(node);

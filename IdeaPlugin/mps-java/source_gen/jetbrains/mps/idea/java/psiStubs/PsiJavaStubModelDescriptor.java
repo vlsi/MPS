@@ -14,6 +14,11 @@ import java.util.HashMap;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.Arrays;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import com.intellij.openapi.progress.NonCancelableSection;
@@ -24,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiClass;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -73,6 +77,11 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
   public void detach() {
     super.detach();
     myDataSource.removeListener(this);
+  }
+
+  @Override
+  public Collection<SLanguage> importedLanguageIds() {
+    return Arrays.asList(new SLanguage[]{MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", 1), MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", 1)});
   }
 
   @Override

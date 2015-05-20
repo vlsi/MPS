@@ -32,6 +32,7 @@ public class ExpectedType_FactoryUtil {
     }
     return originalExpression;
   }
+
   public static SNode getCorrespondingInstanceOf(SNode expressionOrItsParent) {
     SNode outer = expressionOrItsParent;
     while (SNodeOperations.isInstanceOf(outer, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {

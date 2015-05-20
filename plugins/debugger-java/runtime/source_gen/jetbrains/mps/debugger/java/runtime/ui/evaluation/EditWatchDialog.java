@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.evaluation;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import javax.swing.Action;
@@ -14,11 +14,11 @@ import org.jetbrains.annotations.NonNls;
 public class EditWatchDialog extends AbstractEvaluationDialog {
   @Nullable
   private final _FunctionTypes._void_P0_E0 myOkAction;
-  public EditWatchDialog(@NotNull IOperationContext context, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model) {
-    this(context, provider, model, null);
+  public EditWatchDialog(@NotNull Project ideaProject, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model) {
+    this(ideaProject, provider, model, null);
   }
-  public EditWatchDialog(@NotNull IOperationContext context, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model, _FunctionTypes._void_P0_E0 okAction) {
-    super(context, provider, model, "Edit Watch");
+  public EditWatchDialog(@NotNull Project ideaProject, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model, _FunctionTypes._void_P0_E0 okAction) {
+    super(ideaProject, provider, model, "Edit Watch");
     myOkAction = okAction;
   }
   @Override

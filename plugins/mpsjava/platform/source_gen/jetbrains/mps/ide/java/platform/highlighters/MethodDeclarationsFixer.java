@@ -22,7 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
@@ -78,7 +78,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>();
     }
     SModel model = SNodeOperations.getModel(rootNode);
-    if (!(model instanceof EditableSModel) || model.getModule() instanceof TransientModelsModule || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
+    if (!(model instanceof EditableSModel) || model.getModule() instanceof TransientSModule || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
       return new HashSet<EditorMessage>(0);
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();

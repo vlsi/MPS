@@ -41,12 +41,12 @@ public class ModelEnvironmentInfoImpl implements ModelEnvironmentInfo {
 
   @Override
   public StaticScope getConceptScope(SNode node) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getStaticScope();
+    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept()).getStaticScope();
   }
 
   @Override
   public ConceptKind getConceptKind(SNode node) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getConceptKind();
+    return ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept()).getConceptKind();
   }
 
   @Override

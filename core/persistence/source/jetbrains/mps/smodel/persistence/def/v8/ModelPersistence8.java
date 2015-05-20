@@ -15,23 +15,28 @@
  */
 package jetbrains.mps.smodel.persistence.def.v8;
 
+import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
+import jetbrains.mps.persistence.xml.XMLPersistence;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
+import jetbrains.mps.smodel.persistence.def.v9.Indexer9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.util.List;
 
-/**
- * evgeny, 4/29/13
- */
-public class ModelPersistence8 extends ModelPersistence7 {
+public class ModelPersistence8 implements IModelPersistence, XMLPersistence {
+  public static final String ROOT_NODE = "root";
+
   @Override
   public int getVersion() {
     return 8;
@@ -39,11 +44,6 @@ public class ModelPersistence8 extends ModelPersistence7 {
 
   @Override
   public IModelWriter getModelWriter(@Nullable SModelHeader header) {
-    return new ModelWriter8(header);
-  }
-
-  @Override
-  public IModelReader getModelReader() {
     return null;
   }
 
@@ -60,5 +60,16 @@ public class ModelPersistence8 extends ModelPersistence7 {
   @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader8Handler();
+  }
+
+  @Nullable
+  @Override
+  public Indexer getIndexSupport(@NotNull final Callback callback) {
+    return new Indexer() {
+      @Override
+      public void index(@NotNull Reader input) throws IOException {
+        PersistenceUtil.index(Indexer9.getChars(input), callback);
+      }
+    };
   }
 }

@@ -36,6 +36,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -46,6 +47,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -53,18 +55,15 @@ import java.util.Set;
 public class DataTree implements IExternalizeable, IChangeListener {
   private DataNode myTreeRoot = createTreeRoot();
   private final List<IChangeListener> myListeners = new ArrayList<IChangeListener>(2);
-  private final DataTreeChangesNotifier myChangesNotifier = new DataTreeChangesNotifier(this);
+  private final DataTreeChangesNotifier myChangesNotifier;
 
   //this is only used in 3.2 to make rebuild faster in case of many nodes.
   //in 3.3 it will be fixed by introducing path providers
   //this cache is only alive during read action in build() method
   private Map<Pair<DataNode, Object>, DataNode> myRebuildCache;
 
-  public DataTree() {
-  }
-
-  public DataTree(Element element, Project project) throws CantLoadSomethingException {
-    read(element, project);
+  public DataTree(@NotNull DataTreeChangesNotifier changeDispatch) {
+    myChangesNotifier = changeDispatch;
   }
 
   public DataNode getTreeRoot() {
@@ -137,22 +136,41 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   protected void setContents(DataNode root) {
     myTreeRoot = root;
-    updateNotifier();
+    stopListening();
+    startListening();
     notifyChangeListeners();
   }
 
-  public void startListening() {
-    myChangesNotifier.startListening(myTreeRoot);
+  private void startListening() {
+    HashSet<SNodeReference> nodes = new HashSet<SNodeReference>();
+    HashSet<SModelReference> models = new HashSet<SModelReference>();
+    HashSet<SModuleReference> modules = new HashSet<SModuleReference>();
+
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(NodeNodeData.class)) {
+      NodeNodeData nodeData = (NodeNodeData) node.getData();
+      nodes.add(nodeData.getNodePointer());
+    }
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModelNodeData.class)) {
+      ModelNodeData modelData = (ModelNodeData) node.getData();
+      models.add(modelData.getModelReference());
+    }
+    for (DataNode node : myTreeRoot.getDescendantsByDataClass(ModuleNodeData.class)) {
+      ModuleNodeData moduleData = (ModuleNodeData) node.getData();
+      modules.add(moduleData.getModuleReference());
+    }
+    myChangesNotifier.trackNodes(this, nodes);
+    myChangesNotifier.trackModels(this, models);
+    myChangesNotifier.trackModules(this, modules);
   }
 
-  public void stopListening() {
-    myChangesNotifier.stopListening();
+  private void stopListening() {
+    myChangesNotifier.unregister(this);
   }
 
-  private void updateNotifier() {
-    myChangesNotifier.stopListening();
-    myChangesNotifier.startListening(myTreeRoot);
+  public void dispose() {
+    stopListening();
   }
+
 
   //----TREE BUILD STUFF----
 
@@ -205,7 +223,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
     }
 
 
-      for (PathItem currentPathItem : path) {
+    for (PathItem currentPathItem : path) {
       Object currentIdObject = currentPathItem.getIdObject();
       final boolean isResult = currentPathItem == pathTail;
 
@@ -249,8 +267,6 @@ public class DataTree implements IExternalizeable, IChangeListener {
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myTreeRoot.read(element, project);
-    notifyChangeListeners();
-    updateNotifier();
   }
 
   @Override

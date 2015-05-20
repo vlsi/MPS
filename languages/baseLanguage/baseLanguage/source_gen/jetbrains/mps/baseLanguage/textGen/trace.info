@@ -21,7 +21,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="13,0,448,0" name="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
+      <unit at="13,0,445,0" name="jetbrains.mps.baseLanguage.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1214046978376812376">
@@ -5640,60 +5640,6 @@
         <var name="packageName" id="7671513720556427318" />
       </scope>
       <unit id="6136230684045923685" at="19,0,117,0" name="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
-    </file>
-  </root>
-  <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/6227066020986630956">
-    <file name="PlaceholderMethodDeclaration_TextGen.java">
-      <node id="6227066020986630956" at="19,44,20,61" concept="4" />
-      <node id="6227066020986630956" at="20,61,21,58" concept="4" />
-      <node id="6227066020986645916" at="22,5,23,25" concept="1" />
-      <node id="6227066020986645916" at="22,5,23,25" concept="4" />
-      <node id="6227066020986630956" at="25,7,26,38" concept="10" />
-      <node id="6227066020986630956" at="27,13,28,335" concept="4" />
-      <node id="6227066020986630956" at="30,46,31,88" concept="4" />
-      <node id="6227066020986630956" at="33,9,34,80" concept="4" />
-      <node id="6227066020986630956" at="36,7,37,60" concept="10" />
-      <node id="6227066020986630956" at="38,13,39,356" concept="4" />
-      <node id="6227066020986630956" at="41,46,42,85" concept="4" />
-      <node id="6227066020986630956" at="44,9,45,74" concept="4" />
-      <node id="6227066020986630956" at="49,0,50,0" concept="14" trace="LOG" />
-      <node id="6227066020986630956" at="29,31,32,11" concept="1" />
-      <node id="6227066020986630956" at="29,31,32,11" concept="8" />
-      <node id="6227066020986630956" at="40,31,43,11" concept="1" />
-      <node id="6227066020986630956" at="40,31,43,11" concept="8" />
-      <node id="6227066020986630956" at="18,42,22,5" concept="8" />
-      <node id="6227066020986630956" at="26,38,33,9" concept="17" />
-      <node id="6227066020986630956" at="37,60,44,9" concept="17" />
-      <node id="6227066020986630956" at="24,44,35,7" concept="1" />
-      <node id="6227066020986630956" at="35,7,46,7" concept="1" />
-      <node id="6227066020986630956" at="23,25,47,5" concept="8" />
-      <node id="6227066020986630956" at="18,0,49,0" concept="9" trace="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6227066020986645916" at="22,5,23,25" />
-      <scope id="6227066020986630956" at="27,13,28,335" />
-      <scope id="6227066020986630956" at="30,46,31,88" />
-      <scope id="6227066020986630956" at="38,13,39,356" />
-      <scope id="6227066020986630956" at="41,46,42,85" />
-      <scope id="6227066020986630956" at="19,44,21,58" />
-      <scope id="6227066020986630956" at="29,0,32,11">
-        <var name="t" id="6227066020986630956" />
-      </scope>
-      <scope id="6227066020986630956" at="29,31,32,11" />
-      <scope id="6227066020986630956" at="40,0,43,11">
-        <var name="t" id="6227066020986630956" />
-      </scope>
-      <scope id="6227066020986630956" at="40,31,43,11" />
-      <scope id="6227066020986630956" at="25,7,34,80">
-        <var name="traceableProperty" id="6227066020986630956" />
-      </scope>
-      <scope id="6227066020986630956" at="36,7,45,74">
-        <var name="scopeVariables" id="6227066020986630956" />
-      </scope>
-      <scope id="6227066020986630956" at="24,44,46,7" />
-      <scope id="6227066020986630956" at="18,42,47,5" />
-      <scope id="6227066020986630956" at="18,0,49,0">
-        <var name="node" id="6227066020986630956" />
-      </scope>
-      <unit id="6227066020986630956" at="17,0,51,0" name="jetbrains.mps.baseLanguage.textGen.PlaceholderMethodDeclaration_TextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/6329021646629175165">

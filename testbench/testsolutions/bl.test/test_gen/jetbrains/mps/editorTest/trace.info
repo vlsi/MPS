@@ -7922,6 +7922,169 @@
       <unit id="5264300948588175006" at="10,0,30,0" name="jetbrains.mps.editorTest.ParameterRemovedFinalCaret_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5305372928071560905">
+    <file name="UndoChangesCursorPositionFirst_Test.java">
+      <node id="5305372928071560905" at="15,70,16,107" concept="2" />
+      <node id="5305372928071560905" at="16,107,17,111" concept="2" />
+      <node id="5305372928071560905" at="24,51,25,63" concept="2" />
+      <node id="5305372928071661185" at="25,63,26,74" concept="2" />
+      <node id="5305372928071661907" at="26,74,27,30" concept="2" />
+      <node id="5305372928071662686" at="27,30,28,74" concept="2" />
+      <node id="5305372928074695948" at="28,74,29,76" concept="2" />
+      <node id="5305372928074695978" at="29,76,30,76" concept="2" />
+      <node id="5305372928074696014" at="30,76,31,76" concept="2" />
+      <node id="5305372928072104728" at="31,76,32,33" concept="2" />
+      <node id="5305372928071560905" at="12,0,14,0" concept="1" trace="UndoChangesCursorPositionFirst_Test#()V" />
+      <node id="5305372928071560905" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5305372928071560905" at="14,0,19,0" concept="5" trace="test_UndoChangesCursorPositionFirst#()V" />
+      <node id="5305372928071560905" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5305372928071560905" at="12,48,12,48" />
+      <scope id="5305372928071560905" at="21,23,21,23" />
+      <scope id="5305372928071560905" at="12,0,14,0" />
+      <scope id="5305372928071560905" at="15,70,17,111" />
+      <scope id="5305372928071560905" at="21,0,23,0" />
+      <scope id="5305372928071560905" at="14,0,19,0" />
+      <scope id="5305372928071560905" at="24,51,32,33" />
+      <scope id="5305372928071560905" at="23,0,34,0" />
+      <unit id="5305372928071560905" at="19,0,35,0" name="jetbrains.mps.editorTest.UndoChangesCursorPositionFirst_Test$TestBody" />
+      <unit id="5305372928071560905" at="10,0,36,0" name="jetbrains.mps.editorTest.UndoChangesCursorPositionFirst_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5305372928072575800">
+    <file name="UndoIncorrectlyTypedValue_Test.java">
+      <node id="5305372928072575800" at="15,65,16,107" concept="2" />
+      <node id="5305372928072575800" at="16,107,17,106" concept="2" />
+      <node id="5305372928072575800" at="24,51,25,63" concept="2" />
+      <node id="5305372928072575819" at="25,63,26,74" concept="2" />
+      <node id="5305372928072575821" at="26,74,27,32" concept="2" />
+      <node id="5305372928072812274" at="27,32,28,76" concept="2" />
+      <node id="5305372928072812300" at="28,76,29,76" concept="2" />
+      <node id="5305372928072812326" at="29,76,30,76" concept="2" />
+      <node id="5305372928072812354" at="30,76,31,76" concept="2" />
+      <node id="5305372928072575822" at="31,76,32,74" concept="2" />
+      <node id="5305372928072576563" at="32,74,33,35" concept="2" />
+      <node id="5305372928072593546" at="33,35,34,33" concept="2" />
+      <node id="5305372928072610526" at="34,33,35,33" concept="2" />
+      <node id="5305372928072981141" at="35,33,36,33" concept="2" />
+      <node id="5305372928072981173" at="36,33,37,33" concept="2" />
+      <node id="5305372928072575800" at="12,0,14,0" concept="1" trace="UndoIncorrectlyTypedValue_Test#()V" />
+      <node id="5305372928072575800" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5305372928072575800" at="14,0,19,0" concept="5" trace="test_UndoIncorrectlyTypedValue#()V" />
+      <node id="5305372928072575800" at="23,0,39,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5305372928072575800" at="12,43,12,43" />
+      <scope id="5305372928072575800" at="21,23,21,23" />
+      <scope id="5305372928072575800" at="12,0,14,0" />
+      <scope id="5305372928072575800" at="15,65,17,106" />
+      <scope id="5305372928072575800" at="21,0,23,0" />
+      <scope id="5305372928072575800" at="14,0,19,0" />
+      <scope id="5305372928072575800" at="24,51,37,33" />
+      <scope id="5305372928072575800" at="23,0,39,0" />
+      <unit id="5305372928072575800" at="19,0,40,0" name="jetbrains.mps.editorTest.UndoIncorrectlyTypedValue_Test$TestBody" />
+      <unit id="5305372928072575800" at="10,0,41,0" name="jetbrains.mps.editorTest.UndoIncorrectlyTypedValue_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5305372928075909733">
+    <file name="UndoChangesCursorPositionFirstWithIncorrectValue_Test.java">
+      <node id="5305372928075909733" at="15,88,16,107" concept="2" />
+      <node id="5305372928075909733" at="16,107,17,129" concept="2" />
+      <node id="5305372928075909733" at="24,51,25,63" concept="2" />
+      <node id="5305372928076528687" at="25,63,26,28" concept="2" />
+      <node id="5305372928076528737" at="26,28,27,76" concept="2" />
+      <node id="5305372928076528739" at="27,76,28,76" concept="2" />
+      <node id="5305372928076528769" at="28,76,29,76" concept="2" />
+      <node id="5305372928076528771" at="29,76,30,76" concept="2" />
+      <node id="5305372928075960002" at="30,76,31,35" concept="2" />
+      <node id="5305372928075909755" at="31,35,32,76" concept="2" />
+      <node id="5305372928075909757" at="32,76,33,76" concept="2" />
+      <node id="5305372928075909759" at="33,76,34,76" concept="2" />
+      <node id="5305372928075909766" at="34,76,35,33" concept="2" />
+      <node id="5305372928075909768" at="35,33,36,33" concept="2" />
+      <node id="5305372928075909733" at="12,0,14,0" concept="1" trace="UndoChangesCursorPositionFirstWithIncorrectValue_Test#()V" />
+      <node id="5305372928075909733" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5305372928075909733" at="14,0,19,0" concept="5" trace="test_UndoChangesCursorPositionFirstWithIncorrectValue#()V" />
+      <node id="5305372928075909733" at="23,0,38,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5305372928075909733" at="12,66,12,66" />
+      <scope id="5305372928075909733" at="21,23,21,23" />
+      <scope id="5305372928075909733" at="12,0,14,0" />
+      <scope id="5305372928075909733" at="15,88,17,129" />
+      <scope id="5305372928075909733" at="21,0,23,0" />
+      <scope id="5305372928075909733" at="14,0,19,0" />
+      <scope id="5305372928075909733" at="24,51,36,33" />
+      <scope id="5305372928075909733" at="23,0,38,0" />
+      <unit id="5305372928075909733" at="19,0,39,0" name="jetbrains.mps.editorTest.UndoChangesCursorPositionFirstWithIncorrectValue_Test$TestBody" />
+      <unit id="5305372928075909733" at="10,0,40,0" name="jetbrains.mps.editorTest.UndoChangesCursorPositionFirstWithIncorrectValue_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5305372928076817873">
+    <file name="UndoIncorrectlyTypedValueWithFollowingCommand_Test.java">
+      <node id="5305372928076817873" at="15,85,16,107" concept="2" />
+      <node id="5305372928076817873" at="16,107,17,126" concept="2" />
+      <node id="5305372928076817873" at="24,51,25,63" concept="2" />
+      <node id="5305372928076867825" at="25,63,26,28" concept="2" />
+      <node id="5305372928076817895" at="26,28,27,76" concept="2" />
+      <node id="5305372928076817897" at="27,76,28,76" concept="2" />
+      <node id="5305372928076817899" at="28,76,29,76" concept="2" />
+      <node id="5305372928076817901" at="29,76,30,76" concept="2" />
+      <node id="5305372928076817905" at="30,76,31,35" concept="2" />
+      <node id="5305372928076817892" at="31,35,32,74" concept="2" />
+      <node id="5305372928076817906" at="32,74,33,33" concept="2" />
+      <node id="5305372928076817908" at="33,33,34,33" concept="2" />
+      <node id="5305372928076817910" at="34,33,35,33" concept="2" />
+      <node id="5305372928076817873" at="12,0,14,0" concept="1" trace="UndoIncorrectlyTypedValueWithFollowingCommand_Test#()V" />
+      <node id="5305372928076817873" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5305372928076817873" at="14,0,19,0" concept="5" trace="test_UndoIncorrectlyTypedValueWithFollowingCommand#()V" />
+      <node id="5305372928076817873" at="23,0,37,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5305372928076817873" at="12,63,12,63" />
+      <scope id="5305372928076817873" at="21,23,21,23" />
+      <scope id="5305372928076817873" at="12,0,14,0" />
+      <scope id="5305372928076817873" at="15,85,17,126" />
+      <scope id="5305372928076817873" at="21,0,23,0" />
+      <scope id="5305372928076817873" at="14,0,19,0" />
+      <scope id="5305372928076817873" at="24,51,35,33" />
+      <scope id="5305372928076817873" at="23,0,37,0" />
+      <unit id="5305372928076817873" at="19,0,38,0" name="jetbrains.mps.editorTest.UndoIncorrectlyTypedValueWithFollowingCommand_Test$TestBody" />
+      <unit id="5305372928076817873" at="10,0,39,0" name="jetbrains.mps.editorTest.UndoIncorrectlyTypedValueWithFollowingCommand_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5305372928077233091">
+    <file name="RedoIncorrectlyTypedValue_Test.java">
+      <node id="5305372928077233091" at="15,65,16,107" concept="2" />
+      <node id="5305372928077233091" at="16,107,17,106" concept="2" />
+      <node id="5305372928077233091" at="24,51,25,63" concept="2" />
+      <node id="5305372928077283010" at="25,63,26,28" concept="2" />
+      <node id="5305372928077299574" at="26,28,27,76" concept="2" />
+      <node id="5305372928077299576" at="27,76,28,76" concept="2" />
+      <node id="5305372928077299578" at="28,76,29,76" concept="2" />
+      <node id="5305372928077299580" at="29,76,30,76" concept="2" />
+      <node id="5305372928077233123" at="30,76,31,35" concept="2" />
+      <node id="5305372928077233124" at="31,35,32,33" concept="2" />
+      <node id="5305372928077317158" at="32,33,33,33" concept="2" />
+      <node id="5305372928077317246" at="33,33,34,33" concept="2" />
+      <node id="5305372928077317340" at="34,33,35,33" concept="2" />
+      <node id="5305372928077300244" at="35,33,36,33" concept="2" />
+      <node id="5305372928077317524" at="36,33,37,33" concept="2" />
+      <node id="5305372928077317576" at="37,33,38,33" concept="2" />
+      <node id="5305372928077317630" at="38,33,39,33" concept="2" />
+      <node id="5305372928077233113" at="39,33,40,76" concept="2" />
+      <node id="5305372928077233115" at="40,76,41,76" concept="2" />
+      <node id="5305372928077233117" at="41,76,42,76" concept="2" />
+      <node id="5305372928077351478" at="42,76,43,77" concept="2" />
+      <node id="5305372928077233091" at="12,0,14,0" concept="1" trace="RedoIncorrectlyTypedValue_Test#()V" />
+      <node id="5305372928077233091" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="5305372928077233091" at="14,0,19,0" concept="5" trace="test_RedoIncorrectlyTypedValue#()V" />
+      <node id="5305372928077233091" at="23,0,45,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="5305372928077233091" at="12,43,12,43" />
+      <scope id="5305372928077233091" at="21,23,21,23" />
+      <scope id="5305372928077233091" at="12,0,14,0" />
+      <scope id="5305372928077233091" at="15,65,17,106" />
+      <scope id="5305372928077233091" at="21,0,23,0" />
+      <scope id="5305372928077233091" at="14,0,19,0" />
+      <scope id="5305372928077233091" at="24,51,43,77" />
+      <scope id="5305372928077233091" at="23,0,45,0" />
+      <unit id="5305372928077233091" at="19,0,46,0" name="jetbrains.mps.editorTest.RedoIncorrectlyTypedValue_Test$TestBody" />
+      <unit id="5305372928077233091" at="10,0,47,0" name="jetbrains.mps.editorTest.RedoIncorrectlyTypedValue_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5331479185384370996">
     <file name="LT_PlusExpressionRArgument_with_Plus_Test.java">
       <node id="5331479185384370996" at="15,76,16,107" concept="2" />
@@ -14724,6 +14887,98 @@
       <scope id="953450985260813910" at="23,0,28,0" />
       <unit id="953450985260813910" at="19,0,29,0" name="jetbrains.mps.editorTest.MoveStatementToIf_Test$TestBody" />
       <unit id="953450985260813910" at="10,0,30,0" name="jetbrains.mps.editorTest.MoveStatementToIf_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/957371990170013615">
+    <file name="SUBST_BooleanConstant_with_Expression_Test.java">
+      <node id="957371990170013615" at="17,77,18,107" concept="2" />
+      <node id="957371990170013615" at="18,107,19,118" concept="2" />
+      <node id="957371990170013615" at="26,51,27,61" concept="2" />
+      <node id="957371990170320068" at="27,61,28,28" concept="2" />
+      <node id="957371990170286906" at="28,28,29,91" concept="2" />
+      <node id="957371990170013615" at="14,0,16,0" concept="1" trace="SUBST_BooleanConstant_with_Expression_Test#()V" />
+      <node id="957371990170013615" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="957371990170013615" at="16,0,21,0" concept="5" trace="test_SUBST_BooleanConstant_with_Expression#()V" />
+      <node id="957371990170013615" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="957371990170013615" at="14,55,14,55" />
+      <scope id="957371990170013615" at="23,23,23,23" />
+      <scope id="957371990170013615" at="14,0,16,0" />
+      <scope id="957371990170013615" at="17,77,19,118" />
+      <scope id="957371990170013615" at="23,0,25,0" />
+      <scope id="957371990170013615" at="26,51,29,91" />
+      <scope id="957371990170013615" at="16,0,21,0" />
+      <scope id="957371990170013615" at="25,0,31,0" />
+      <unit id="957371990170013615" at="21,0,32,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstant_with_Expression_Test$TestBody" />
+      <unit id="957371990170013615" at="12,0,33,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstant_with_Expression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/957371990170879247">
+    <file name="SUBST_BooleanConstant_with_value_Test.java">
+      <node id="957371990170879247" at="17,72,18,107" concept="2" />
+      <node id="957371990170879247" at="18,107,19,113" concept="2" />
+      <node id="957371990170879247" at="26,51,27,61" concept="2" />
+      <node id="957371990170879273" at="27,61,28,31" concept="2" />
+      <node id="957371990170879271" at="28,31,29,91" concept="2" />
+      <node id="957371990170879247" at="14,0,16,0" concept="1" trace="SUBST_BooleanConstant_with_value_Test#()V" />
+      <node id="957371990170879247" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="957371990170879247" at="16,0,21,0" concept="5" trace="test_SUBST_BooleanConstant_with_value#()V" />
+      <node id="957371990170879247" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="957371990170879247" at="14,50,14,50" />
+      <scope id="957371990170879247" at="23,23,23,23" />
+      <scope id="957371990170879247" at="14,0,16,0" />
+      <scope id="957371990170879247" at="17,72,19,113" />
+      <scope id="957371990170879247" at="23,0,25,0" />
+      <scope id="957371990170879247" at="26,51,29,91" />
+      <scope id="957371990170879247" at="16,0,21,0" />
+      <scope id="957371990170879247" at="25,0,31,0" />
+      <unit id="957371990170879247" at="21,0,32,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstant_with_value_Test$TestBody" />
+      <unit id="957371990170879247" at="12,0,33,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstant_with_value_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/957371990172600175">
+    <file name="SUBST_BooleanConstantArgiument_with_Expression_Test.java">
+      <node id="957371990172600175" at="17,86,18,107" concept="2" />
+      <node id="957371990172600175" at="18,107,19,127" concept="2" />
+      <node id="957371990172600175" at="26,51,27,61" concept="2" />
+      <node id="957371990172600191" at="27,61,28,34" concept="2" />
+      <node id="957371990172600192" at="28,34,29,91" concept="2" />
+      <node id="957371990172600175" at="14,0,16,0" concept="1" trace="SUBST_BooleanConstantArgiument_with_Expression_Test#()V" />
+      <node id="957371990172600175" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="957371990172600175" at="16,0,21,0" concept="5" trace="test_SUBST_BooleanConstantArgiument_with_Expression#()V" />
+      <node id="957371990172600175" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="957371990172600175" at="14,64,14,64" />
+      <scope id="957371990172600175" at="23,23,23,23" />
+      <scope id="957371990172600175" at="14,0,16,0" />
+      <scope id="957371990172600175" at="17,86,19,127" />
+      <scope id="957371990172600175" at="23,0,25,0" />
+      <scope id="957371990172600175" at="26,51,29,91" />
+      <scope id="957371990172600175" at="16,0,21,0" />
+      <scope id="957371990172600175" at="25,0,31,0" />
+      <unit id="957371990172600175" at="21,0,32,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_Expression_Test$TestBody" />
+      <unit id="957371990172600175" at="12,0,33,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_Expression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/957371990173028656">
+    <file name="SUBST_BooleanConstantArgiument_with_vaue_Test.java">
+      <node id="957371990173028656" at="17,80,18,107" concept="2" />
+      <node id="957371990173028656" at="18,107,19,121" concept="2" />
+      <node id="957371990173028656" at="26,51,27,61" concept="2" />
+      <node id="957371990173028658" at="27,61,28,31" concept="2" />
+      <node id="957371990173028659" at="28,31,29,91" concept="2" />
+      <node id="957371990173028656" at="14,0,16,0" concept="1" trace="SUBST_BooleanConstantArgiument_with_vaue_Test#()V" />
+      <node id="957371990173028656" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="957371990173028656" at="16,0,21,0" concept="5" trace="test_SUBST_BooleanConstantArgiument_with_vaue#()V" />
+      <node id="957371990173028656" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="957371990173028656" at="14,58,14,58" />
+      <scope id="957371990173028656" at="23,23,23,23" />
+      <scope id="957371990173028656" at="14,0,16,0" />
+      <scope id="957371990173028656" at="17,80,19,121" />
+      <scope id="957371990173028656" at="23,0,25,0" />
+      <scope id="957371990173028656" at="26,51,29,91" />
+      <scope id="957371990173028656" at="16,0,21,0" />
+      <scope id="957371990173028656" at="25,0,31,0" />
+      <unit id="957371990173028656" at="21,0,32,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_vaue_Test$TestBody" />
+      <unit id="957371990173028656" at="12,0,33,0" name="jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_vaue_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/992603586001620095">

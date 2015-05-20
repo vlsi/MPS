@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import java.awt.event.KeyEvent;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -67,7 +66,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
   @Override
   protected boolean doProcessKeyTyped(final KeyEvent event, boolean allowErrors) {
     final EditorContext editorContext = getContext();
-    if (!(UIUtil.isReallyTypedEvent(event))) {
+    if (!(isTextTypedEvent(event))) {
       return false;
     }
 

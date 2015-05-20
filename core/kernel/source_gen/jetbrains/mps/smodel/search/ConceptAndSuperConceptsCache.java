@@ -12,10 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 
 /**
@@ -43,19 +39,10 @@ import java.util.List;
       //  http://youtrack.jetbrains.net/issue/MPS-8362 
       //  http://youtrack.jetbrains.net/issue/MPS-8556 
       SModel descriptor = concept.getModel();
-      if (descriptor == null) {
-        LOG.error(getAssertionMessage(element, concept));
-      } else {
-        dependsOnModel.add(descriptor);
-      }
+      assert descriptor != null;
+      dependsOnModel.add(descriptor);
     }
     return dependsOnModel;
-  }
-  private String getAssertionMessage(Object element, SNode concept) {
-    String conceptFQName = NameUtil.nodeFQName(concept);
-    SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
-    SAbstractConcept sconcept = SConceptRepository.getInstance().getConcept(conceptFQName);
-    return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from SConceptRepository:" + sconcept + "(" + System.identityHashCode(sconcept) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(myTopConcept) + ")";
   }
   @NotNull
   public SNode getTopConcept() {

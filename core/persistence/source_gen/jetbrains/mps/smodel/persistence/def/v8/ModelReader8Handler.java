@@ -8,7 +8,7 @@ import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.persistence.def.v7.ReadHelper;
+import jetbrains.mps.smodel.persistence.def.ReadHelper;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;

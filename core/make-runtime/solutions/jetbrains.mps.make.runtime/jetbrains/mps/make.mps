@@ -179,10 +179,6 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
@@ -207,12 +203,6 @@
       <concept id="6612597108003615641" name="jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement" flags="ng" index="2U$1Ah">
         <property id="6612597108003615642" name="name" index="2U$1Ai" />
         <child id="6612597108003615643" name="line" index="2U$1Aj" />
-      </concept>
-      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
-        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
-      </concept>
-      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
-        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -788,49 +778,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="7yGn3z4N4Np" role="jymVt">
-      <property role="TrG5h" value="getContext" />
-      <property role="IEkAT" value="true" />
-      <node concept="3uibUv" id="7yGn3z4N4Nv" role="3clF45">
-        <ref role="3uigEE" to="cu2c:~IOperationContext" resolve="IOperationContext" />
-      </node>
-      <node concept="3Tm1VV" id="7yGn3z4N4Nr" role="1B3o_S" />
-      <node concept="3clFbS" id="7yGn3z4N4Ns" role="3clF47">
-        <node concept="3cpWs6" id="2BjwmTxU2wI" role="3cqZAp">
-          <node concept="2ShNRf" id="2BjwmTxU45F" role="3cqZAk">
-            <node concept="1pGfFk" id="2BjwmTxU4KV" role="2ShVmc">
-              <ref role="37wK5l" to="vsqj:~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ProjectOperationContext" />
-              <node concept="37vLTw" id="2BjwmTxU4Px" role="37wK5m">
-                <ref role="3cqZAo" node="2BjwmTxTg7m" resolve="myProject" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="2BjwmTxTey2" role="lGtFl">
-        <node concept="TZ5HI" id="2BjwmTxTey3" role="TZ5Hx">
-          <node concept="TZ5HA" id="2BjwmTxTey4" role="3HnX3l">
-            <node concept="1dT_AC" id="2BjwmTxTeLu" role="1dT_Ay">
-              <property role="1dT_AB" value="use " />
-            </node>
-            <node concept="1dT_AA" id="2BjwmTxTjtG" role="1dT_Ay">
-              <node concept="92FcH" id="2BjwmTxTjtM" role="qph3F">
-                <node concept="VXe0Z" id="2BjwmTxTR$K" role="92FcQ">
-                  <ref role="VXe0S" node="2BjwmTxTf34" resolve="getProject" />
-                </node>
-                <node concept="TZ5HA" id="2BjwmTxTjtQ" role="2XjZqd" />
-              </node>
-            </node>
-            <node concept="1dT_AC" id="2BjwmTxTjtF" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2BjwmTxTey5" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-    </node>
     <node concept="3clFb_" id="2BjwmTxTf34" role="jymVt">
       <property role="TrG5h" value="getProject" />
       <node concept="3uibUv" id="2BjwmTxTfRZ" role="3clF45">
@@ -893,7 +840,7 @@
         <node concept="TZ5HI" id="2BjwmTy5Cq2" role="TZ5Hx">
           <node concept="TZ5HA" id="2BjwmTy5Cq3" role="3HnX3l">
             <node concept="1dT_AC" id="2BjwmTy5CKd" role="1dT_Ay">
-              <property role="1dT_AB" value="according to Fedor, obsolete functionality" />
+              <property role="1dT_AB" value="according to Fedor, obsolete functionality. There are usecases when we can benefit from sticky make session and its explicit shutdown, perhaps shall resurrect." />
             </node>
           </node>
         </node>

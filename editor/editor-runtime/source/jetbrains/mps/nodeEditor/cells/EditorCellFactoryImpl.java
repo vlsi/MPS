@@ -66,7 +66,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   @Override
   public EditorCell createEditorCell(SNode node, boolean isInspector) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName());
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
 
     EditorCell result = null;
     try {
@@ -149,8 +149,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {
-    SConcept concept = node.getConcept();
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(concept.getQualifiedName());
+    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept());
     ConceptEditorComponent conceptEditorComponent = new ConceptEditorComponentRegistry(editorComponentId).getEditor(conceptDescriptor);
     if (conceptEditorComponent != null) {
       return conceptEditorComponent;

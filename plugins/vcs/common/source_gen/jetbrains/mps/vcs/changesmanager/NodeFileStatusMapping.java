@@ -13,11 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
@@ -58,7 +56,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = nodePointer.resolve(MPSModuleRepository.getInstance());
+        SNode currentNode = nodePointer.resolve(myMPSProject.getRepository());
         if (currentNode == null) {
           return;
         }
@@ -81,7 +79,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private boolean calcStatus(@NotNull final SNodeReference root) {
     ComputeRunnable<FileStatus> cr = new ComputeRunnable<FileStatus>(new Computable<FileStatus>() {
       public FileStatus compute() {
-        SModel m = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
+        SModel m = root.getModelReference().resolve(myMPSProject.getRepository());
         if (m instanceof EditableSModel && m.getSource() instanceof FileDataSource && !(m.isReadOnly())) {
           EditableSModel model = (EditableSModel) m;
           if (ConflictsUtil.isModelOrModuleConflicting(model, myProject)) {
@@ -130,7 +128,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
         myMPSProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             SModel md = null;
-            SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
+            SNode node = nodePointer.resolve(myMPSProject.getRepository());
             if (node != null) {
               md = SNodeOperations.getModel(root);
             }

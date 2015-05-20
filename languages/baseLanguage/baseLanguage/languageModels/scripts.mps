@@ -1538,43 +1538,6 @@
       </node>
     </node>
   </node>
-  <node concept="_UgoZ" id="6rFwSjR1G5C">
-    <property role="TrG5h" value="ReplacePlaceholderMethodDeclaration" />
-    <property role="_Wzho" value="Replace PlaceholderMethodDeclaration with PlaceholderMember" />
-    <node concept="_XfAh" id="6rFwSjR1LN9" role="_YvDr">
-      <property role="_XH9r" value="Find and replace empty lines in Interfaces represented by PlaceholderMethodDeclaration" />
-      <ref role="_XDHR" to="tpee:4fVo5eW6vfm" resolve="PlaceholderMethodDeclaration" />
-      <node concept="_ZGcI" id="6rFwSjR1LNa" role="_XPhp">
-        <node concept="3clFbS" id="6rFwSjR1LNb" role="2VODD2">
-          <node concept="3clFbF" id="6rFwSjR1Ucm" role="3cqZAp">
-            <node concept="2OqwBi" id="6rFwSjR1Uw9" role="3clFbG">
-              <node concept="_YI3z" id="6rFwSjR1Ucl" role="2Oq$k0" />
-              <node concept="1_qnLN" id="6rFwSjR217h" role="2OqNvi">
-                <ref role="1_rbq0" to="tpee:1hodSy9TH5A" resolve="PlaceholderMember" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="_Y34e" id="6rFwSjR1LNf" role="_XDHO">
-        <node concept="3clFbS" id="6rFwSjR1LNg" role="2VODD2">
-          <node concept="3clFbF" id="6rFwSjR1LXU" role="3cqZAp">
-            <node concept="2OqwBi" id="6rFwSjR1ToW" role="3clFbG">
-              <node concept="2OqwBi" id="6rFwSjR1MpF" role="2Oq$k0">
-                <node concept="_YI3z" id="6rFwSjR1LXT" role="2Oq$k0" />
-                <node concept="1mfA1w" id="6rFwSjR1PS4" role="2OqNvi" />
-              </node>
-              <node concept="1mIQ4w" id="6rFwSjR1TMk" role="2OqNvi">
-                <node concept="chp4Y" id="6rFwSjR1TYv" role="cj9EA">
-                  <ref role="cht4Q" to="tpee:g7HP654" resolve="Interface" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="_UgoZ" id="qIwpvPL2Zj">
     <property role="TrG5h" value="UpdateCastExpressionParens" />
     <property role="_Wzho" value="Add missing parentheses to CastExpressions" />

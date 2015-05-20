@@ -11,25 +11,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)/4346819404427339851">
-    <file name="GitUtils.java">
-      <node id="4346819404427345646" at="14,90,15,82" concept="5" />
-      <node id="4346819404427345637" at="15,82,16,40" concept="2" />
-      <node id="4346819404427345664" at="16,40,17,12" concept="2" />
-      <node id="4346819404427339853" at="12,0,14,0" concept="1" trace="GitUtils#()V" />
-      <node id="4346819404427342446" at="14,0,19,0" concept="9" trace="uncommmit#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-      <scope id="4346819404427339856" at="12,22,12,22" />
-      <scope id="4346819404427339853" at="12,0,14,0" />
-      <scope id="4346819404427342449" at="14,90,17,12">
-        <var name="h" id="4346819404427345647" />
-      </scope>
-      <scope id="4346819404427342446" at="14,0,19,0">
-        <var name="gitRoot" id="4346819404427342450" />
-        <var name="project" id="4346819404427342453" />
-      </scope>
-      <unit id="4346819404427339851" at="11,0,20,0" name="jetbrains.mps.vcs.concrete.GitUtils" />
-    </file>
-  </root>
   <root nodeRef="r:35a4b074-cc8b-4e81-89c0-bb4cef49e017(jetbrains.mps.vcs.concrete)/4346819404427368280">
     <file name="MPSSourceRevision.java">
       <node id="4346819404427368425" at="21,30,22,101" concept="7" />

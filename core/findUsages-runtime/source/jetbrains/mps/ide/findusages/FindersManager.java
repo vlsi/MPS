@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -47,7 +49,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return INSTANCE;
   }
 
-  private final Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
+  private final Map<SAbstractConcept, Set<GeneratedFinder>> myFinders = new HashMap<SAbstractConcept, Set<GeneratedFinder>>();
   private final Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
   private final Map<GeneratedFinder, SModuleReference> myModulesByFinder = new HashMap<GeneratedFinder, SModuleReference>();
   private boolean myLoaded = false;
@@ -78,9 +80,9 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     checkLoaded();
     Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
-    for (String conceptFQName : myFinders.keySet()) {
-      if (node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFQName))) {
-        for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
+    for (SAbstractConcept concept : myFinders.keySet()) {
+      if (node.getConcept().isSubConceptOf(concept)) {
+        for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(concept))) {
           try {
             if (finder.isVisible(node)) {
               if (finder.isApplicable(node)) {
@@ -131,11 +133,11 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   }
 
   public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
-    String conceptName = finder.getConcept();
-    Set<GeneratedFinder> finders = myFinders.get(conceptName);
+    SAbstractConcept concept = finder.getSConcept();
+    Set<GeneratedFinder> finders = myFinders.get(concept);
     if (finders == null) {
       finders = new HashSet<GeneratedFinder>();
-      myFinders.put(InternUtil.intern(conceptName), finders);
+      myFinders.put(concept, finders);
     }
     finders.add(finder);
     myNodesByFinder.put(finder, np);

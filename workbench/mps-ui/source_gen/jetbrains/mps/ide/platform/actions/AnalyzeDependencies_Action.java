@@ -8,19 +8,15 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowInspection;
@@ -33,68 +29,66 @@ public class AnalyzeDependencies_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(AnalyzeDependencies_Action.this.computeScope(_params).isEmpty());
+    return !(AnalyzeDependencies_Action.this.computeScope(event).isEmpty());
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AnalyzeDependencies", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      List<SModule> p = event.getData(MPSCommonDataKeys.MODULES);
+    }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      SNode p = event.getData(MPSCommonDataKeys.NODE);
+    }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      DependencyViewerScope scope = AnalyzeDependencies_Action.this.computeScope(_params);
-      if (scope.isEmpty()) {
-        return;
-      }
-      DependenciesUtil.openDependenciesTool(((Project) MapSequence.fromMap(_params).get("ideaProject")), scope, true);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AnalyzeDependencies", t);
-      }
+    DependencyViewerScope scope = AnalyzeDependencies_Action.this.computeScope(event);
+    if (scope.isEmpty()) {
+      return;
     }
+    DependenciesUtil.openDependenciesTool(event.getData(CommonDataKeys.PROJECT), scope, true);
   }
-  /*package*/ DependencyViewerScope computeScope(final Map<String, Object> _params) {
+  /*package*/ DependencyViewerScope computeScope(final AnActionEvent event) {
     final DependencyViewerScope scope = new DependencyViewerScope();
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
-          for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+        if (event.getData(MPSCommonDataKeys.MODELS) != null) {
+          for (SModel model : event.getData(MPSCommonDataKeys.MODELS)) {
             scope.add(model);
           }
         }
-        if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
-          for (SModule module : ((List<SModule>) MapSequence.fromMap(_params).get("modules"))) {
+        if (event.getData(MPSCommonDataKeys.MODULES) != null) {
+          for (SModule module : event.getData(MPSCommonDataKeys.MODULES)) {
             scope.add(module);
           }
         }
         if (scope.isEmpty()) {
-          SNode node = check_rkpdtm_a0a0c0a0a1a0(((SNode) MapSequence.fromMap(_params).get("node")));
+          SNode node = check_rkpdtm_a0a0c0a0a1a0(event.getData(MPSCommonDataKeys.NODE));
           if (node != null) {
             scope.add(node);
           }
@@ -103,7 +97,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
     });
     return scope;
   }
-  protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
   private static SNode check_rkpdtm_a0a0c0a0a1a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();

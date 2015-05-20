@@ -38,9 +38,11 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
@@ -169,36 +171,14 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public Set<SLanguage> getUsedLanguages() {
     assertCanRead();
-    // todo: collect languages for now? and convert to SLanguages in the end?
-    if (getModuleDescriptor() == null) {
-      return Collections.emptySet();
-    }
 
-    Set<SLanguage> languages = new HashSet<SLanguage>();
-    for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
-      if (language != null) {
-        languages.add(MetaAdapterByDeclaration.getLanguage(language));
-      }
+    LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
+    for (SModel m : getModels()) {
+      usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
     }
+    usedLanguages.add(BootstrapLanguages.getLangCore());
 
-    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
-      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
-      if (devKit != null) {
-        for (Language language : devKit.getAllExportedLanguages()) {
-          if (language != null) {
-            languages.add(MetaAdapterByDeclaration.getLanguage(language));
-          }
-        }
-      }
-    }
-
-    if (BootstrapLanguages.coreLanguage() != null) {
-      // todo: ???
-      languages.add(MetaAdapterByDeclaration.getLanguage(BootstrapLanguages.coreLanguage()));
-    }
-
-    return languages; // todo: maybe collect extended languages here
+    return usedLanguages;
   }
 
   @Override
@@ -311,65 +291,39 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   /**
-   * Register language to use in module's models
-   * @since 3.3
+   * @deprecated set of used languages for a module is derived from used languages of owned models
    */
-  public void addUsedLanguage(@NotNull SLanguage language) {
-    // FIXME SLanguage->SModuleReference transition
-    addUsedLanguage(language.getSourceModule().getModuleReference());
-  }
-
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void addUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().add(langRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
-  public void removeUsedLanguage(SLanguage lang) {
-    // FIXME SLanguage->SModuleReference transition
-    removeUsedLanguage(lang.getSourceModule().getModuleReference());
-  }
-
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void removeUsedLanguage(SModuleReference langRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedLanguages().contains(langRef)) return;
-
-    descriptor.getUsedLanguages().remove(langRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void addUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().add(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
+  /**
+   * @deprecated set of used language for a module is derived from used languages of owned models
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void removeUsedDevkit(SModuleReference devkitRef) {
-    assertCanChange();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
-
-    descriptor.getUsedDevkits().remove(devkitRef);
-
-    dependenciesChanged();
-    setChanged();
+    // no-op
   }
 
   //----languages & devkits

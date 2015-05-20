@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.samples.languagePatterns.Basic.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.samples.languagePatterns.Basic.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "7a6f7ef7-3988-464b-8cc5-1182671c136e(jetbrains.mps.samples.languagePatterns.Basic)";
@@ -36,7 +38,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+    return new String[]{"jetbrains.mps.baseLanguage"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
@@ -58,6 +60,9 @@ public class Language extends LanguageRuntime {
     }
     if (descriptorClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.languagePatterns.Basic.structure.StructureAspectDescriptor();
+    }
+    if (descriptorClass == IHelginsDescriptor.class) {
+      return (T) new TypesystemDescriptor();
     }
     return super.createAspectDescriptor(descriptorClass);
   }

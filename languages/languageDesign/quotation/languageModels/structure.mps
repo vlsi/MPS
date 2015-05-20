@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -58,6 +58,7 @@
   </registry>
   <node concept="PlHQZ" id="hqc44pm">
     <property role="TrG5h" value="AbstractAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <node concept="1TJgyi" id="5CeLOEbPqUM" role="1TKVEl">
       <property role="TrG5h" value="label" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -80,6 +81,7 @@
   </node>
   <node concept="1TIwiD" id="hqc44po">
     <property role="TrG5h" value="Antiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhj" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -97,6 +99,7 @@
     <property role="TrG5h" value="Quotation" />
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="&lt;quotation&gt;" />
+    <property role="3GE5qa" value="container" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hqc44pq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -123,6 +126,7 @@
   </node>
   <node concept="1TIwiD" id="hqc44pt">
     <property role="TrG5h" value="ReferenceAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDh" resolve="LinkAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhm" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -136,6 +140,7 @@
   </node>
   <node concept="1TIwiD" id="hqc44pu">
     <property role="TrG5h" value="ListAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhk" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -149,6 +154,7 @@
   </node>
   <node concept="1TIwiD" id="hqEMmm7">
     <property role="TrG5h" value="PropertyAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <ref role="1TJDcQ" to="tpck:2ULFgo8_XDm" resolve="PropertyAttribute" />
     <node concept="PrWs8" id="4s_QN23zOhl" role="PzmwI">
       <ref role="PrY4T" node="hqc44pm" resolve="AbstractAntiquotation" />
@@ -188,7 +194,7 @@
   <node concept="1TIwiD" id="4IP40Bi2$Et">
     <property role="TrG5h" value="NodeBuilder" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="builder" />
+    <property role="3GE5qa" value="container" />
     <property role="34LRSv" value="&lt;light quotation&gt;" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="4IP40Bi2$Eu" role="1TKVEi">
@@ -202,6 +208,9 @@
       <property role="20kJfa" value="modelToCreate" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="1BC2tkV2axS" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4IP40Bi38Sq">
     <property role="TrG5h" value="NodeBuilderInitLink" />
@@ -212,6 +221,9 @@
       <property role="20kJfa" value="link" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1BC2tkV2cim" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="76efOMRCfEj">
@@ -274,6 +286,7 @@
   </node>
   <node concept="1TIwiD" id="7hIo0WbQAv7">
     <property role="TrG5h" value="GeneratorInternal_PropertyDescriptor" />
+    <property role="3GE5qa" value="quotation.generation" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7hIo0WbQDUr" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -291,6 +304,7 @@
   </node>
   <node concept="1TIwiD" id="2jfSSa$vTsX">
     <property role="TrG5h" value="GeneratorInternal_ReferenceDescriptor" />
+    <property role="3GE5qa" value="quotation.generation" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2jfSSa$vTsZ" role="1TKVEl">
       <property role="TrG5h" value="targetNodeId" />
@@ -312,6 +326,7 @@
   </node>
   <node concept="1TIwiD" id="1Lb1CYjFf8C">
     <property role="TrG5h" value="GeneratorInternal_InternalReferenceHolder" />
+    <property role="3GE5qa" value="quotation.generation" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1Lb1CYjFf8D" role="1TKVEi">
       <property role="20lmBu" value="reference" />

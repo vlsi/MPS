@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -49,7 +48,7 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-          SAbstractConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
+          SAbstractConcept c = MetaAdapterByDeclaration.getConcept(concept);
           Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(c), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
         }

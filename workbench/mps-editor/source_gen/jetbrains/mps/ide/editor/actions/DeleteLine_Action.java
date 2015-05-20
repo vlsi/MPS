@@ -9,10 +9,9 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -30,8 +29,6 @@ import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class DeleteLine_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -44,22 +41,15 @@ public class DeleteLine_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().getSelectedCells());
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "DeleteLine", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -70,84 +60,81 @@ public class DeleteLine_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("currentCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
-    if (MapSequence.fromMap(_params).get("currentCell") == null) {
-      return false;
+    {
+      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
+      MapSequence.fromMap(_params).put("currentCell", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.deleteLine");
-      if (((EditorCell) MapSequence.fromMap(_params).get("currentCell")) instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection) ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
-        Queue<EditorCell_Collection> collections = QueueSequence.fromQueue(new LinkedList<EditorCell_Collection>());
-        QueueSequence.fromQueue(collections).addLastElement(collection);
-        while (QueueSequence.fromQueue(collections).isNotEmpty()) {
-          EditorCell_Collection nextCollection = QueueSequence.fromQueue(collections).removeFirstElement();
-          if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
-            return;
-          }
-          for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
-            if (childCell instanceof EditorCell_Collection) {
-              QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
-            }
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.deleteLine");
+    if (((EditorCell) MapSequence.fromMap(_params).get("currentCell")) instanceof EditorCell_Collection) {
+      EditorCell_Collection collection = (EditorCell_Collection) ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
+      Queue<EditorCell_Collection> collections = QueueSequence.fromQueue(new LinkedList<EditorCell_Collection>());
+      QueueSequence.fromQueue(collections).addLastElement(collection);
+      while (QueueSequence.fromQueue(collections).isNotEmpty()) {
+        EditorCell_Collection nextCollection = QueueSequence.fromQueue(collections).removeFirstElement();
+        if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
+          return;
+        }
+        for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
+          if (childCell instanceof EditorCell_Collection) {
+            QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
           }
         }
-      }
-      EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
-      List<SNode> nodesToDelete = new ArrayList<SNode>();
-      EditorCell cellToSelect = null;
-      while (true) {
-        if (current.getParent() == null) {
-          break;
-        }
-        CellLayout layout = current.getParent().getCellLayout();
-        if (layout instanceof CellLayout_Indent) {
-          SNode currentNode = current.getSNode();
-          if (SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")) || (SNodeOperations.getNodeAncestor(currentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false) == null)) {
-            EditorCell root = current.getRootParent();
-            if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), root)) {
-              return;
-            }
-            ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
-            if (CellLayout_Indent.isNewLineAfter(root, current)) {
-              cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
-            } else {
-              cellToSelect = CellTraversalUtil.getNextLeaf(current.getParent().lastCell(), CellConditions.SELECTABLE);
-            }
-            break;
-          }
-        } else if (layout instanceof CellLayout_Vertical) {
-          if (current.isBig()) {
-            if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), current)) {
-              return;
-            }
-            ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
-            cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
-            break;
-          }
-        }
-        current = current.getParent();
-      }
-      for (SNode nodeToDelete : nodesToDelete) {
-        if ((nodeToDelete != null) && SNodeOperations.getParent(nodeToDelete) != null) {
-          SNodeOperations.deleteNode(nodeToDelete);
-        }
-      }
-      if (cellToSelect != null) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).changeSelection(cellToSelect);
-        cellToSelect.home();
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "DeleteLine", t);
       }
     }
+    EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
+    List<SNode> nodesToDelete = new ArrayList<SNode>();
+    EditorCell cellToSelect = null;
+    while (true) {
+      if (current.getParent() == null) {
+        break;
+      }
+      CellLayout layout = current.getParent().getCellLayout();
+      if (layout instanceof CellLayout_Indent) {
+        SNode currentNode = current.getSNode();
+        if (SNodeOperations.isInstanceOf(currentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")) || (SNodeOperations.getNodeAncestor(currentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false) == null)) {
+          EditorCell root = current.getRootParent();
+          if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), root)) {
+            return;
+          }
+          ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
+          if (CellLayout_Indent.isNewLineAfter(root, current)) {
+            cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
+          } else {
+            cellToSelect = CellTraversalUtil.getNextLeaf(current.getParent().lastCell(), CellConditions.SELECTABLE);
+          }
+          break;
+        }
+      } else if (layout instanceof CellLayout_Vertical) {
+        if (current.isBig()) {
+          if (ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), current)) {
+            return;
+          }
+          ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
+          cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
+          break;
+        }
+      }
+      current = current.getParent();
+    }
+    for (SNode nodeToDelete : nodesToDelete) {
+      if ((nodeToDelete != null) && SNodeOperations.getParent(nodeToDelete) != null) {
+        SNodeOperations.deleteNode(nodeToDelete);
+      }
+    }
+    if (cellToSelect != null) {
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).changeSelection(cellToSelect);
+      cellToSelect.home();
+    }
   }
-  protected static Logger LOG = LogManager.getLogger(DeleteLine_Action.class);
 }

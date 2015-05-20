@@ -15,10 +15,67 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateWeavingRule} to use as superclass in generated code
  * to facilitate future API changes
  * @author Artem Tikhomirov
  */
 public abstract class WeaveRuleBase implements TemplateWeavingRule {
+  // FIXME make final once no-arg cons is gone
+  private SNodeReference myRuleNode;
+  private SAbstractConcept myAppConcept;
+  private boolean myApplyToSubConcepts;
+
+  /**
+   * @deprecated compatibility
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected WeaveRuleBase() {
+  }
+
+  protected WeaveRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept, boolean applyToSubConcepts) {
+    myRuleNode = ruleNode;
+    myAppConcept = appConcept;
+    myApplyToSubConcepts = applyToSubConcepts;
+  }
+
+  /**
+   * Compatibility with new MPS 3.3 API method, always <code>true</code>
+   */
+  @ToRemove(version = 3.3)
+  @Override
+  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    return true;
+  }
+
+  /**
+   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
+   * Subclasses can rely on default implementation to return <code>true</code>.
+   */
+  @Override
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
+    return isApplicable(context.getEnvironment(), context);
+  }
+
+  @NotNull
+  @Override
+  public SNodeReference getRuleNode() {
+    return myRuleNode;
+  }
+
+  @Override
+  public String getApplicableConcept() {
+    return myAppConcept.getQualifiedName();
+  }
+
+  @Override
+  public boolean applyToInheritors() {
+    return myApplyToSubConcepts;
+  }
 }

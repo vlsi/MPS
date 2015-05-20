@@ -17,16 +17,17 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Wraps NodeChangeCallback into Runnable
  * @author Artem Tikhomirov
 */
 /*package*/ class NodeChangeRunnable implements Runnable {
-  private final SNode myNode;
+  private final SNodeReference myNode;
   private final NodeChangeCallback myCallback;
 
-  public NodeChangeRunnable(SNode node, NodeChangeCallback callback) {
+  public NodeChangeRunnable(SNodeReference node, NodeChangeCallback callback) {
     myNode = node;
     myCallback = callback;
   }

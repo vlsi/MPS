@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -251,6 +251,7 @@
   </registry>
   <node concept="1YbPZF" id="hqcaXKM">
     <property role="TrG5h" value="typeof_Quotation" />
+    <property role="3GE5qa" value="container" />
     <node concept="3clFbS" id="hqcaXKN" role="18ibNy">
       <node concept="3cpWs8" id="hqcaXKO" role="3cqZAp">
         <node concept="3cpWsn" id="hqcaXKP" role="3cpWs9">
@@ -343,6 +344,7 @@
   </node>
   <node concept="1YbPZF" id="hqEDcSb">
     <property role="TrG5h" value="typeof_Antiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <node concept="3clFbS" id="hqEDcSc" role="18ibNy">
       <node concept="1ZobV4" id="hqEDftW" role="3cqZAp">
         <property role="Ob790" value="0" />
@@ -372,6 +374,7 @@
   </node>
   <node concept="1YbPZF" id="hqEEd5N">
     <property role="TrG5h" value="typeof_ReferenceAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <node concept="3clFbS" id="hqEEd5O" role="18ibNy">
       <node concept="1ZobV4" id="hqEEeD9" role="3cqZAp">
         <property role="Ob790" value="0" />
@@ -401,6 +404,7 @@
   </node>
   <node concept="1YbPZF" id="hqEEiw0">
     <property role="TrG5h" value="typeof_ListAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <node concept="3clFbS" id="hqEEiw1" role="18ibNy">
       <node concept="1ZobV4" id="hqEEl7c" role="3cqZAp">
         <property role="Ob790" value="0" />
@@ -432,6 +436,7 @@
   </node>
   <node concept="1YbPZF" id="hqEOBdC">
     <property role="TrG5h" value="typeof_PropertyAntiquotation" />
+    <property role="3GE5qa" value="quotation" />
     <node concept="3clFbS" id="hqEOBdD" role="18ibNy">
       <node concept="1ZobV4" id="hqEOEs6" role="3cqZAp">
         <property role="Ob790" value="0" />
@@ -1051,7 +1056,7 @@
   </node>
   <node concept="1YbPZF" id="4IP40Bi33r8">
     <property role="TrG5h" value="typeof_LightQuotation" />
-    <property role="3GE5qa" value="builder" />
+    <property role="3GE5qa" value="container" />
     <node concept="3clFbS" id="4IP40Bi33r9" role="18ibNy">
       <node concept="1Z5TYs" id="4IP40Bi34D0" role="3cqZAp">
         <node concept="mw_s8" id="4IP40Bi34D3" role="1ZfhK$">

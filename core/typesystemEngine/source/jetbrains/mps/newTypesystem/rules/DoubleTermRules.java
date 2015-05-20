@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem.rules;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -39,19 +41,18 @@ public abstract class DoubleTermRules<K> {
 
     final LanguageScope langScope = LanguageScope.getCurrent();
 
-    final String leftConceptFQName = leftTerm.getConcept().getQualifiedName();
-    final String rightConceptFQName = rightTerm.getConcept().getQualifiedName();
+    final SAbstractConcept leftConcept = leftTerm.getConcept();
+    final SAbstractConcept rightConcept = rightTerm.getConcept();
 
-    final Object compoundKey = new Triplet<Object, String, String>(langScope, leftConceptFQName, rightConceptFQName);
+    final Object compoundKey = new Triplet<Object, SAbstractConcept, SAbstractConcept>(langScope, leftConcept, rightConcept);
 
     Set<K> cachedRules = myCachedRules.get(compoundKey);
-    if (cachedRules != null) {
-      return cachedRules;
-    }
+    if (cachedRules != null) return cachedRules;
+
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Set<K>>() {
       @Override
       public Set<K> compute() {
-        Set<K> computedRules = computeRules(leftConceptFQName, rightConceptFQName, langScope);
+        Set<K> computedRules = computeRules(leftConcept, rightConcept, langScope);
         myCachedRules.put(compoundKey, computedRules);
 
         return computedRules;
@@ -63,31 +64,31 @@ public abstract class DoubleTermRules<K> {
     myCachedRules.clear();
   }
 
-  private Set<K> computeRules(String leftConceptFQName, String rightConceptFQName, LanguageScope langScope) {
+  private Set<K> computeRules(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope) {
     THashSet<K> result = new THashSet<K>();
 
-    LinkedList<Pair<String, String>> queue = new LinkedList<Pair<String, String>>();
-    queue.add(new Pair<String, String>(leftConceptFQName, rightConceptFQName));
-    for (String leftSuperConcept : allSuperConcepts(leftConceptFQName)) {
-      queue.add(new Pair<String, String>(leftSuperConcept, rightConceptFQName));
+    LinkedList<Pair<SAbstractConcept, SAbstractConcept>> queue = new LinkedList<Pair<SAbstractConcept, SAbstractConcept>>();
+    queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftConcept, rightConcept));
+    for (SAbstractConcept leftSuperConcept : allSuperConcepts(leftConcept)) {
+      queue.add(new Pair<SAbstractConcept, SAbstractConcept>(leftSuperConcept, rightConcept));
     }
 
     while (!queue.isEmpty()) {
-      Pair<String, String> nextConceptPair = queue.remove();
+      Pair<SAbstractConcept, SAbstractConcept> nextConceptPair = queue.remove();
       for (K applicableRule : allForConceptPair(nextConceptPair.o1, nextConceptPair.o2, langScope)) {
         result.add(applicableRule);
       }
 
-      for (String rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
-        queue.add(new Pair<String, String>(nextConceptPair.o1, rightSuperConcept));
+      for (SAbstractConcept rightSuperConcept : allSuperConcepts(nextConceptPair.o2)) {
+        queue.add(new Pair<SAbstractConcept, SAbstractConcept>(nextConceptPair.o1, rightSuperConcept));
       }
     }
 
     return Collections.unmodifiableSet(result);
   }
 
-  abstract protected Iterable<String> allSuperConcepts(String conceptFQName);
+  abstract protected Iterable<SAbstractConcept> allSuperConcepts(SAbstractConcept conceptFQName);
 
-  abstract protected Iterable<K> allForConceptPair(String leftConceptFQName, String rightConceptFQName, LanguageScope langScope);
+  abstract protected Iterable<K> allForConceptPair(SAbstractConcept leftConcept, SAbstractConcept rightConcept, LanguageScope langScope);
 
 }

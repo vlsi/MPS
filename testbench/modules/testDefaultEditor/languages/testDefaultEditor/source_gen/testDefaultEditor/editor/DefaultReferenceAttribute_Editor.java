@@ -31,7 +31,7 @@ public class DefaultReferenceAttribute_Editor extends DefaultNodeEditor {
   }
   private EditorCell createAttributedLinkCell_nltvu5_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Reference.class, node);
     return editorCell;
   }
 }

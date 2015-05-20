@@ -25,6 +25,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<InferenceRule_Runtime> myInferenceRules = new THashSet<InferenceRule_Runtime>();
   protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new THashSet<NonTypesystemRule_Runtime>();
   protected Set<SubtypingRule_Runtime> mySubtypingRules = new THashSet<SubtypingRule_Runtime>();
+  protected Set<SubstituteType_Runtime> mySubstituteTypeRules = new THashSet<SubstituteType_Runtime>();
   protected Set<ComparisonRule_Runtime> myComparisonRules = new THashSet<ComparisonRule_Runtime>();
   protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new THashSet<InequationReplacementRule_Runtime>();
   protected Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
@@ -43,6 +44,11 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   @Override
   public Set<SubtypingRule_Runtime> getSubtypingRules() {
     return Collections.unmodifiableSet(this.mySubtypingRules);
+  }
+
+  @Override
+  public Set<SubstituteType_Runtime> getSubstituteTypeRules() {
+    return Collections.unmodifiableSet(this.mySubstituteTypeRules);
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,8 @@ import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
-import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
@@ -41,8 +40,8 @@ public class NonIncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public GenerationDependencies getResult(IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromNonIncremental(myModelHash, myParametersHash);
+  public GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy) {
+    return new GenerationDependencies(myModelHash, myParametersHash);
   }
 
   @Override

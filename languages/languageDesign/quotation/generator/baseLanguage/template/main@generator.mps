@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -448,6 +448,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
@@ -2671,6 +2672,7 @@
   <node concept="bUwia" id="hqc8hz4">
     <property role="TrG5h" value="main" />
     <property role="3$yP7D" value="true" />
+    <property role="3GE5qa" value="container" />
     <node concept="3aamgX" id="hqc8hzr" role="3acgRq">
       <ref role="30HIoZ" to="tp3r:hqc44pp" resolve="Quotation" />
       <node concept="gft3U" id="7kq1ReKp0oO" role="1lVwrX">
@@ -2780,6 +2782,7 @@
   </node>
   <node concept="13MO4I" id="SVCbzOGqde">
     <property role="TrG5h" value="Quotation_to_staticMethodCall" />
+    <property role="3GE5qa" value="container" />
     <ref role="3gUMe" to="tp3r:hqc44pp" resolve="Quotation" />
     <node concept="1N15co" id="7kq1ReKzeIv" role="1s_3oS">
       <property role="TrG5h" value="transientQuotation" />
@@ -3972,6 +3975,7 @@
   </node>
   <node concept="13MO4I" id="RRzwLnBq6a">
     <property role="TrG5h" value="NodeBuilder_to_methodCall" />
+    <property role="3GE5qa" value="container" />
     <ref role="3gUMe" to="tp3r:4IP40Bi2$Et" resolve="NodeBuilder" />
     <node concept="2Tav94" id="nQfYv_gi_W" role="13RCb5">
       <node concept="2YIFZL" id="nQfYv_gi_X" role="2Tav96">

@@ -4,20 +4,16 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class FixModuleImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -30,48 +26,35 @@ public class FixModuleImportsInProject_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "FixModuleImportsInProject", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      for (SModule module : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
-        if (module.isReadOnly()) {
+    for (SModule module : Sequence.fromIterable(event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators())) {
+      if (module.isReadOnly()) {
+        continue;
+      }
+      for (SModel model : Sequence.fromIterable(module.getModels())) {
+        if (!(SModelStereotype.isUserModel(model))) {
           continue;
         }
-        for (SModel model : Sequence.fromIterable(module.getModels())) {
-          if (!(SModelStereotype.isUserModel(model))) {
-            continue;
-          }
-          if (!(model instanceof EditableSModel)) {
-            continue;
-          }
-
-          new MissingDependenciesFixer(model).fixModuleDependencies();
+        if (!(model instanceof EditableSModel)) {
+          continue;
         }
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "FixModuleImportsInProject", t);
+
+        new MissingDependenciesFixer(model).fixModuleDependencies();
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(FixModuleImportsInProject_Action.class);
 }

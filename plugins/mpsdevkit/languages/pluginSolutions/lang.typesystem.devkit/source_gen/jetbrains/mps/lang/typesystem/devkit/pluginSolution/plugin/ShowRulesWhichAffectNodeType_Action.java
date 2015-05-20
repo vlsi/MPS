@@ -4,14 +4,14 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,9 +23,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.typesystem.uiActions.AffectingRulesFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,52 +35,38 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
       MapSequence.fromMap(_params).put("node", node);
+      if (node == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SearchScope scope = ((AbstractModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getModule()).getScope();
-          query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), scope);
-        }
-      });
-      IResultProvider provider = FindUtils.makeProvider(new AffectingRulesFinder());
-      UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("no rules found");
-      UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query.value, opt);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
+    final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SearchScope scope = ((AbstractModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getModule()).getScope();
+        query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), scope);
       }
-    }
+    });
+    IResultProvider provider = FindUtils.makeProvider(new AffectingRulesFinder());
+    UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("no rules found");
+    UsagesViewTool.showUsages(((Project) MapSequence.fromMap(_params).get("ideaProject")), provider, query.value, opt);
   }
-  protected static Logger LOG = LogManager.getLogger(ShowRulesWhichAffectNodeType_Action.class);
 }

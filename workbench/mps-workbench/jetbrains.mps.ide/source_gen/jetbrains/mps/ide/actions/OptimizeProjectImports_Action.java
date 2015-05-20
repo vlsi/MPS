@@ -4,22 +4,20 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
+import java.awt.Frame;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class OptimizeProjectImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,52 +30,46 @@ public class OptimizeProjectImports_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
+    {
+      Frame p = event.getData(MPSCommonDataKeys.FRAME);
+      MapSequence.fromMap(_params).put("frame", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<String> report = new Wrappers._T<String>();
+    final Wrappers._T<String> report = new Wrappers._T<String>();
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          report.value = new OptimizeImportsHelper().optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
-          MPSModuleRepository.getInstance().saveAll();
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
-      });
-
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        report.value = new OptimizeImportsHelper().optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
+        MPSModuleRepository.getInstance().saveAll();
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
-    }
+    });
+
+    Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
   }
-  protected static Logger LOG = LogManager.getLogger(OptimizeProjectImports_Action.class);
 }

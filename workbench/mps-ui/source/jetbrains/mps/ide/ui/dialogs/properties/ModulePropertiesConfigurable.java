@@ -105,6 +105,7 @@ import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -149,6 +150,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.EventObject;
@@ -762,29 +764,28 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
+  /**
+   * FIXME needs Find button to look up uses of particular language within the module
+   */
   public class ModuleUsedLanguagesTab extends UsedLanguagesTab {
 
     @Override
     protected UsedLangsTableModel getUsedLangsTableModel() {
+      final List<SLanguage> usedLanguages = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<SLanguage>>() {
+        @Override
+        public List<SLanguage> compute() {
+          return new ArrayList<SLanguage>(myModule.getUsedLanguages());
+        }
+      });
       final UsedLangsTableModel rv = new UsedLangsTableModel(myProject.getRepository());
-      ArrayList<SLanguage> languages = new ArrayList<SLanguage>();
-      for (SModuleReference mr : myModuleDescriptor.getUsedLanguages()) {
-        languages.add(MetaAdapterFactory.getLanguage(mr));
-      }
-      rv.init(languages, myModuleDescriptor.getUsedDevkits());
+      Collections.sort(usedLanguages, new ToStringComparator());
+      rv.init(usedLanguages, Collections.<SModuleReference>emptySet());
       return rv;
     }
 
     @Override
     public void apply() {
-      myModuleDescriptor.getUsedLanguages().clear();
-      myModuleDescriptor.getUsedDevkits().clear();
-      ArrayList<SLanguage> usedLanguages = new ArrayList<SLanguage>();
-      myUsedLangsTableModel.fillResult(usedLanguages, myModuleDescriptor.getUsedDevkits());
-      for (SLanguage l : usedLanguages) {
-        // FIXME SLanguage <-> SModuleReference
-        myModuleDescriptor.getUsedLanguages().add(l.getSourceModule().getModuleReference());
-      }
+      // no-op
     }
   }
 

@@ -436,30 +436,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, getTableCellRender());
 
-      ToolbarDecorator decorator = ToolbarDecorator.createDecorator(usedLangsTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Language.class, DevKit.class));
-          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
-          myProject.getModelAccess().runReadAction(c);
-          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose Language or DevKit", c.getResult());
-          for (SModuleReference reference : list) {
-            myUsedLangsTableModel.addItem(reference);
-          }
-          myUsedLangsTableModel.fireTableDataChanged();
-        }
-      }).setRemoveAction(new RemoveEntryAction(usedLangsTable) {
-        @Override
-        protected boolean confirmRemove(int row) {
-          return UsedLanguagesTab.this.confirmRemove(myUsedLangsTableModel.getValueAt(row, UsedLangsTableModel.ITEM_COLUMN));
-        }
-      });
-
-      FindAnActionButton findAnActionButton = getFindAnAction(usedLangsTable);
-      if(findAnActionButton != null)
-        decorator.addExtraAction(findAnActionButton);
+      ToolbarDecorator decorator = createToolbar(usedLangsTable);
 
       decorator.setPreferredSize(new Dimension(500, 300));
 
@@ -472,18 +449,13 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       new TableColumnSearch(usedLangsTable, UsedLangsTableModel.ITEM_COLUMN).setComparator(new SpeedSearchComparator(false, true));
     }
 
+    protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
+      return ToolbarDecorator.createDecorator(usedLangsTable);
+    }
+
 
     protected TableCellRenderer getTableCellRender() {
       return new LanguageTableCellRenderer(myProject.getRepository());
-    }
-
-    @Nullable
-    protected FindAnActionButton getFindAnAction(JBTable table) {
-      return null;
-    }
-
-    protected boolean confirmRemove(Object value) {
-      return true;
     }
 
     @Override

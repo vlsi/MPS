@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,7 +52,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                   {
                     SNode matchingNode_5upoaw_a0a2a0a = n;
                     if (matchingNode_5upoaw_a0a2a0a != null) {
-                      matches_5upoaw_a0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_a0a2a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
+                      matches_5upoaw_a0a2a0a = matchingNode_5upoaw_a0a2a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240a048L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer"));
                     }
                   }
                   if (matches_5upoaw_a0a2a0a) {
@@ -64,7 +63,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                     {
                       SNode matchingNode_5upoaw_b0a2a0a = n;
                       if (matchingNode_5upoaw_b0a2a0a != null) {
-                        matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConcept().getQualifiedName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+                        matches_5upoaw_b0a2a0a = matchingNode_5upoaw_b0a2a0a.getConcept().isSubConceptOf(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d424d0fb5L, "jetbrains.mps.baseLanguage.math.structure.VectorInitializer"));
                       }
                     }
                     if (matches_5upoaw_b0a2a0a) {

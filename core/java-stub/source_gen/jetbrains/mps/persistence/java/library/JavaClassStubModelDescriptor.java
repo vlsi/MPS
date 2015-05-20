@@ -15,6 +15,7 @@ import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.Collection;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
@@ -76,6 +77,11 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   }
   private Set<SLanguage> getLanguagesToImport() {
     return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
+  }
+
+  @Override
+  public Collection<SLanguage> importedLanguageIds() {
+    return getLanguagesToImport();
   }
   @Override
   public void reloadFromDiskSafe() {

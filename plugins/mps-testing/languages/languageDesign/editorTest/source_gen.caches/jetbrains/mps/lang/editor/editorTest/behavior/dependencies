@@ -33,6 +33,9 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestBooleanPropertyChild_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestEnumPropertyChild_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestRoot_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationReference_BehaviorDescriptor" />
@@ -175,6 +178,34 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestAbstractChild_BehaviorDescriptor" file="SubstTestAbstractChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestBooleanPropertyChild_BehaviorDescriptor" file="SubstTestBooleanPropertyChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestAbstractChild_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestEnumPropertyChild_BehaviorDescriptor" file="SubstTestEnumPropertyChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestAbstractChild_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.SubstTestRoot_BehaviorDescriptor" file="SubstTestRoot_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" file="TestBlockList_BehaviorDescriptor.java">

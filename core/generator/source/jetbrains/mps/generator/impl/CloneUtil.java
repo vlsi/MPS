@@ -96,12 +96,6 @@ public class CloneUtil {
     for (Dependency dependency : moduleDescriptor.getDependencies()) {
       outputModule.addDependency(dependency.getModuleRef(), dependency.isReexport());
     }
-    for (SModuleReference language : moduleDescriptor.getUsedLanguages()) {
-      outputModule.addUsedLanguage(language);
-    }
-    for (SModuleReference devkit : moduleDescriptor.getUsedDevkits()){
-      outputModule.addUsedDevkit(devkit);
-    }
   }
 
   public void cloneModel() {

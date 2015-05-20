@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,29 +15,25 @@
  */
 package jetbrains.mps.ide.generator;
 
+import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
 /**
- * DON'T USE THIS CODE AS IT'S SCHEDULED FOR REFACTORING/REMOVAL
- * FIXME MakeActionImpl could use ModelValidator directly, there's little sense in static instance of this class
+ * Utility code to run model check prior to generation according to settings
  */
-@ToRemove(version = 3.2)
 public class GenerationCheckHelper {
 
-  private static GenerationCheckHelper INSTANCE = new GenerationCheckHelper();
-
-  public static GenerationCheckHelper getInstance() {
-    return INSTANCE;
-  }
-
-  public boolean checkModelsBeforeGenerationIfNeeded(Project p, IOperationContext operationContext, List<SModel> modelDescriptors) {
+  public boolean checkModelsBeforeGenerationIfNeeded(Project p, List<SModel> modelDescriptors) {
+    final IModifiableGenerationSettings generationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
+    if (!generationSettings.isCheckModelsBeforeGeneration()) {
+      return true;
+    }
     for (ModelValidator modelValidator : ModelValidator.EP_NAME.getExtensions()) {
-      if (!modelValidator.check(p, operationContext, modelDescriptors)) {
+      if (!modelValidator.check(p, modelDescriptors)) {
         return false;
       }
     }

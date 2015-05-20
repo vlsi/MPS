@@ -10,15 +10,11 @@ import jetbrains.mps.make.IMakeService;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class MakeSelectedModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,68 +27,61 @@ public class MakeSelectedModules_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
     }
-    List<SModule> list = MakeSelectedModules_Action.this.getModules(_params);
+    List<SModule> list = MakeSelectedModules_Action.this.getModules(event);
     if (ListSequence.fromList(list).isEmpty()) {
       return false;
     }
-    String text = new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(list).actionText();
+    String text = new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(list).actionText();
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
     }
     return false;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MakeSelectedModules", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
-    MapSequence.fromMap(_params).put("cmodule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
-    return true;
-  }
-  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      new MakeActionImpl(new MakeActionParameters(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).modules(MakeSelectedModules_Action.this.getModules(_params))).executeAction();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MakeSelectedModules", t);
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
       }
     }
+    {
+      List<SModule> p = event.getData(MPSCommonDataKeys.MODULES);
+    }
+    {
+      SModule p = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
+    }
+    return true;
   }
-  private List<SModule> getModules(final Map<String, Object> _params) {
-    SModule cmd = ((SModule) MapSequence.fromMap(_params).get("cmodule"));
+  @Override
+  public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
+    new MakeActionImpl(new MakeActionParameters(event.getData(MPSCommonDataKeys.MPS_PROJECT)).modules(MakeSelectedModules_Action.this.getModules(event))).executeAction();
+  }
+  private List<SModule> getModules(final AnActionEvent event) {
+    SModule cmd = event.getData(MPSCommonDataKeys.CONTEXT_MODULE);
     if (cmd instanceof Generator) {
       cmd = ((Generator) cmd).getSourceLanguage();
     }
     List<SModule> rv = ListSequence.fromList(new ArrayList<SModule>());
-    if (((List<SModule>) MapSequence.fromMap(_params).get("modules")) != null) {
-      ListSequence.fromList(rv).addSequence(ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules"))));
+    if (event.getData(MPSCommonDataKeys.MODULES) != null) {
+      ListSequence.fromList(rv).addSequence(ListSequence.fromList(event.getData(MPSCommonDataKeys.MODULES)));
     }
     if (cmd != null && !(ListSequence.fromList(rv).contains(cmd))) {
       ListSequence.fromList(rv).addElement(cmd);
     }
     return rv;
   }
-  protected static Logger LOG = LogManager.getLogger(MakeSelectedModules_Action.class);
 }

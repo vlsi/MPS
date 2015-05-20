@@ -9,18 +9,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModelProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -33,66 +31,68 @@ public class ModelProperties_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((Integer) MapSequence.fromMap(_params).get("size")) == 1;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ModelProperties", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("size", event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE));
-    if (MapSequence.fromMap(_params).get("size") == null) {
-      return false;
+    {
+      Integer p = event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE);
+      MapSequence.fromMap(_params).put("size", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("place", event.getData(MPSCommonDataKeys.PLACE));
-    if (MapSequence.fromMap(_params).get("place") == null) {
-      return false;
+    {
+      ActionPlace p = event.getData(MPSCommonDataKeys.PLACE);
+      MapSequence.fromMap(_params).put("place", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      // see ModuleProperties_Action for reason to save all models prior to property change 
-      new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()).execute();
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
-      configurable.setParentForCallBack(configurableEditor);
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          configurableEditor.show();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);
+    // see ModuleProperties_Action for reason to save all models prior to property change 
+    new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()).execute();
+    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+    configurable.setParentForCallBack(configurableEditor);
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        configurableEditor.show();
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ModelProperties_Action.class);
 }

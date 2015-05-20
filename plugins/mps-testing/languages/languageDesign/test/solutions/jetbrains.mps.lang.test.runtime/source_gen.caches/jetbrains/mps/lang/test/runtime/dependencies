@@ -250,14 +250,18 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.checkers.INodeChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageChecker" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
+    <classNode dependClassName="jetbrains.mps.errors.SimpleErrorReporter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.validation.NodeValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.typesystemEngine.checker.TypesystemChecker" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -265,6 +269,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.TransformationTest" file="TransformationTest.java">
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestRunner" />

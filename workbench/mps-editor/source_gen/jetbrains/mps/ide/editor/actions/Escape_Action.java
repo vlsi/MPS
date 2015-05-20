@@ -11,12 +11,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,6 +26,7 @@ public class Escape_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
@@ -38,19 +36,11 @@ public class Escape_Action extends BaseAction {
     return selectionStackSize > 1 || (selectionStackSize == 1 && selection != null && selection.canExecuteAction(CellActionType.CLEAR_SELECTION)) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
 
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "Escape", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,41 +51,38 @@ public class Escape_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("isModalContext", event.getData(PlatformDataKeys.IS_MODAL_CONTEXT));
-    if (MapSequence.fromMap(_params).get("isModalContext") == null) {
-      return false;
+    {
+      Boolean p = event.getData(PlatformDataKeys.IS_MODAL_CONTEXT);
+      MapSequence.fromMap(_params).put("isModalContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible()) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().deactivate();
-      }
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner())) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
-      }
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
-      SelectionManager selectionManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager();
-      int selectionStackSize = selectionManager.getSelectionStackSize();
-
-      if (selectionStackSize > 1) {
-        selectionManager.setSelection(selectionManager.getDeepestSelection());
-      } else {
-        check_h8krww_a0a0g0a(selectionManager.getSelection());
-      }
-
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "Escape", t);
-      }
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible()) {
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().deactivate();
     }
+    if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner())) {
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
+    }
+    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
+    SelectionManager selectionManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager();
+    int selectionStackSize = selectionManager.getSelectionStackSize();
+
+    if (selectionStackSize > 1) {
+      selectionManager.setSelection(selectionManager.getDeepestSelection());
+    } else {
+      check_h8krww_a0a0g0a(selectionManager.getSelection());
+    }
+
   }
-  protected static Logger LOG = LogManager.getLogger(Escape_Action.class);
   private static void check_h8krww_a0a0g0a(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.executeAction(CellActionType.CLEAR_SELECTION);

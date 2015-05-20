@@ -10,7 +10,6 @@ import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -59,7 +58,7 @@ public class ShowImplementationComponent extends JPanel {
   private Project myProject;
   private List<ShowImplementationComponent.ImplementationNode> myImplNodes;
   public ShowImplementationComponent(List<SNode> nodes, Project project) {
-    ModelAccess.assertLegalRead();
+    project.getModelAccess().checkReadAccess();
     myImplNodes = new ArrayList<ShowImplementationComponent.ImplementationNode>(nodes.size());
     for (SNode node : nodes) {
       myImplNodes.add(new ShowImplementationComponent.ImplementationNode(node));

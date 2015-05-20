@@ -11,8 +11,6 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -95,15 +93,6 @@ public class SNodeOperations {
       result.put(p.getName(), node.getProperty(p));
     }
     return result;
-  }
-  /**
-   * todo rewrite the code using this
-   * 
-   * @deprecated rewrite to SConcept, don't use concepts by name
-   */
-  @Deprecated
-  public static SAbstractConcept getConcept(String name) {
-    return SConceptRepository.getInstance().getInstanceConcept(name);
   }
   /**
    * todo rewrite the code using this
@@ -339,11 +328,14 @@ public class SNodeOperations {
    */
   @Deprecated
   public static SNode getTargetNodeSilently(SReference ref) {
+    boolean needToEnableLogging = false;
     try {
-      jetbrains.mps.smodel.SReference.disableLogging();
+      needToEnableLogging = jetbrains.mps.smodel.SReference.disableLogging();
       return ref.getTargetNode();
     } finally {
-      jetbrains.mps.smodel.SReference.enableLogging();
+      if (needToEnableLogging) {
+        jetbrains.mps.smodel.SReference.enableLogging();
+      }
     }
   }
   /**

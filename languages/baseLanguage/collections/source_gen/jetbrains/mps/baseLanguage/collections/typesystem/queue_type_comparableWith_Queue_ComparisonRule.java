@@ -7,11 +7,11 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -27,10 +27,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
     return true;
   }
   public IsApplicableStatus isApplicableFirst(SNode node) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(node.getConcept().isSubConceptOf(getApplicableConcept1()), null);
   }
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
@@ -40,11 +37,12 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
       return new IsApplicableStatus(b, pattern);
     }
   }
-  public String getApplicableConceptFQName1() {
-    return "jetbrains.mps.baseLanguage.collections.structure.QueueType";
+
+  public SAbstractConcept getApplicableConcept1() {
+    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf74491L, "jetbrains.mps.baseLanguage.collections.structure.QueueType");
   }
-  public String getApplicableConceptFQName2() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+  public SAbstractConcept getApplicableConcept2() {
+    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
   public static class Pattern_ma7wq5_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT_TYPE;

@@ -11,18 +11,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ShowMembers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -35,38 +32,32 @@ public class ShowMembers_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false) != null);
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ShowMembers", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
-      }
       MapSequence.fromMap(_params).put("node", node);
-    }
-    if (MapSequence.fromMap(_params).get("node") == null) {
-      return false;
+      if (node == null) {
+        return false;
+      }
     }
     {
       EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
@@ -74,44 +65,41 @@ public class ShowMembers_Action extends BaseAction {
         editorComponent = null;
       }
       MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+      if (editorComponent == null) {
+        return false;
+      }
     }
-    if (MapSequence.fromMap(_params).get("editorComponent") == null) {
-      return false;
-    }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      final Wrappers._T<String> title = new Wrappers._T<String>();
-      // model contains only SNodePointers 
-      final Wrappers._T<MemberContainerStructureModel> model = new Wrappers._T<MemberContainerStructureModel>();
+    final Wrappers._T<String> title = new Wrappers._T<String>();
+    // model contains only SNodePointers 
+    final Wrappers._T<MemberContainerStructureModel> model = new Wrappers._T<MemberContainerStructureModel>();
 
-      ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
-          title.value = container.getPresentation();
-          model.value = new MemberContainerStructureModel(container);
-        }
-      });
-
-      Disposable auxDisposable = new Disposable() {
-        @Override
-        public void dispose() {
-        }
-      };
-
-      FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("ideaProject")), auxDisposable, false);
-      popup.setTitle(title.value);
-      popup.show();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ShowMembers", t);
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
+        title.value = container.getPresentation();
+        model.value = new MemberContainerStructureModel(container);
       }
-    }
+    });
+
+    Disposable auxDisposable = new Disposable() {
+      @Override
+      public void dispose() {
+      }
+    };
+
+    FileStructurePopup popup = new FileStructurePopup(model.value, ((Project) MapSequence.fromMap(_params).get("ideaProject")), auxDisposable, false);
+    popup.setTitle(title.value);
+    popup.show();
   }
-  protected static Logger LOG = LogManager.getLogger(ShowMembers_Action.class);
 }

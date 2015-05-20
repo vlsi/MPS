@@ -17,12 +17,15 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
@@ -34,7 +37,7 @@ import java.util.List;
  */
 
 @Deprecated
-public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
+public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private SNode mySourceNode;
   private DefaultReferenceSubstituteInfoActionsFactory myActionFactory;
 

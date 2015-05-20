@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.List;
@@ -31,8 +33,8 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     return "";
   }
   @Override
-  public String getConcept() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+  public SConcept getSConcept() {
+    return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   }
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {

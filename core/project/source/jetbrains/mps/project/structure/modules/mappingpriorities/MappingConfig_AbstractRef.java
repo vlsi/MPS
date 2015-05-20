@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfigRef;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,7 +36,7 @@ public class MappingConfig_AbstractRef implements TemplateMappingConfigRef {
     return true;
   }
 
-  public boolean updateReferences() {
+  public boolean updateReferences(SRepository repository) {
     return false;
   }
 

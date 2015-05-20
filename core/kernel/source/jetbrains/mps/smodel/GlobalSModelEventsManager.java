@@ -120,6 +120,9 @@ public class GlobalSModelEventsManager implements CoreComponent {
     myGlobalListenersList.get(l.getPriority().ordinal()).remove(l);
   }
 
+  /**
+   * Listener is notified within model write action
+   */
   public void addGlobalCommandListener(@NotNull SModelCommandListener l) {
     myGlobalCommandListeners.add(l);
   }

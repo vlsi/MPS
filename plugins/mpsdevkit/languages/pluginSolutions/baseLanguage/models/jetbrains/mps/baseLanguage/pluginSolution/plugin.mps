@@ -42,6 +42,7 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
+        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -146,6 +147,7 @@
     <property role="TrG5h" value="ShowNullDFA" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Show Nullable DFA" />
+    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="5GUQLVLhj1D" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="5GUQLVLhj1E" role="1oa70y" />

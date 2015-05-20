@@ -8,13 +8,9 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CopyOldNodes_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Copy;
@@ -27,40 +23,29 @@ public class CopyOldNodes_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ChangesStripActionsHelper.areOldNodesAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+    return ChangesStripActionsHelper.areOldNodesAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CopyOldNodes", t);
-      }
-      this.disable(event.getPresentation());
-    }
+    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    if (MapSequence.fromMap(_params).get("editorContext") == null) {
-      return false;
+    {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      ChangesStripActionsHelper.copyOldNodes(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CopyOldNodes", t);
-      }
-    }
+    ChangesStripActionsHelper.copyOldNodes(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
   }
-  protected static Logger LOG = LogManager.getLogger(CopyOldNodes_Action.class);
 }

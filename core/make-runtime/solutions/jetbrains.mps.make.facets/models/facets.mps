@@ -2,11 +2,11 @@
 <model ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="-1" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
+    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -2002,6 +2002,47 @@
         </node>
       </node>
     </node>
+    <node concept="15KeUm" id="72EPOrtLo_c" role="15LFul">
+      <property role="TrG5h" value="cleanup" />
+      <property role="3xojQC" value="true" />
+      <property role="2w7fpF" value="CONSUME" />
+      <node concept="15KeVb" id="72EPOrtLqmf" role="15LFui">
+        <property role="3HPxAp" value="AFTER" />
+        <ref role="15KeV8" node="taepSZ9r$W" resolve="reconcile" />
+      </node>
+      <node concept="15KeVb" id="72EPOrtLp8q" role="15LFui">
+        <ref role="15KeV8" node="taepSZ9rBr" resolve="make" />
+      </node>
+      <node concept="2aLE7I" id="72EPOrtLo_d" role="ElM8M">
+        <node concept="ElOhj" id="72EPOrtLo_e" role="2aLE7H">
+          <node concept="3clFbS" id="72EPOrtLo_f" role="2VODD2">
+            <node concept="2Gpval" id="72EPOrtLpdh" role="3cqZAp">
+              <node concept="2GrKxI" id="72EPOrtLpdi" role="2Gsz3X">
+                <property role="TrG5h" value="activity" />
+              </node>
+              <node concept="3clFbS" id="72EPOrtLpdj" role="2LFqv$">
+                <node concept="3clFbF" id="72EPOrtLpeY" role="3cqZAp">
+                  <node concept="2OqwBi" id="72EPOrtLpij" role="3clFbG">
+                    <node concept="2GrUjf" id="72EPOrtLpeX" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="72EPOrtLpdi" resolve="activity" />
+                    </node>
+                    <node concept="liA8E" id="72EPOrtLpvU" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Runnable.run():void" resolve="run" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="ElOhk" id="72EPOrtLpdR" role="2GsD0m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3D36IL" id="72EPOrtLoTm" role="3D36I5">
+        <node concept="3D27Fh" id="72EPOrtLp0P" role="3D36IM">
+          <ref role="3uigEE" to="fn29:72EPOrtLkP6" resolve="CleanupActivityResource" />
+        </node>
+      </node>
+    </node>
     <node concept="15KeUm" id="taepSZ9rBr" role="15LFul">
       <property role="1xVfUM" value="1" />
       <property role="TrG5h" value="make" />
@@ -2063,6 +2104,10 @@
       <node concept="15KeVb" id="taepSZ9rBQ" role="15LFui">
         <property role="3HPxAp" value="AFTER" />
         <ref role="15KeV8" node="taepSZ9r$W" resolve="reconcile" />
+      </node>
+      <node concept="15KeVb" id="72EPOrtLpaR" role="15LFui">
+        <property role="3HPxAp" value="AFTER" />
+        <ref role="15KeV8" node="72EPOrtLo_c" resolve="cleanup" />
       </node>
       <node concept="3D36IL" id="taepSZ9rBR" role="3D36I5">
         <node concept="3D27Fh" id="taepSZ9rBS" role="3D36IM">

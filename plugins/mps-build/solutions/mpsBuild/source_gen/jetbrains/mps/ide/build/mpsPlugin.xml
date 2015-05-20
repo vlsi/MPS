@@ -83,7 +83,7 @@
           <replaceregex pattern="../../../workbench/mps-editor/source/META-INF/" replace="" flags="gi" />
         </tokenfilter>
         <tokenfilter>
-          <replaceregex pattern="../../../workbench/mps-platform/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
+          <replaceregex pattern="../../../workbench/mps-ui/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
         <tokenfilter>
           <replaceregex pattern="../../../workbench/mps-editor/source_gen/jetbrains/" replace="../jetbrains/" flags="gi" />
@@ -92,7 +92,7 @@
     </copy>
     <jar destfile="${build.layout}/mps-core/lib/mps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin" />
-      <fileset dir="${mps_home}/workbench/mps-platform/source_gen">
+      <fileset dir="${mps_home}/workbench/mps-ui/source_gen">
         <include name="jetbrains/mps/ide/platform/actions/PlatformActions.xml" />
       </fileset>
       <fileset dir="${mps_home}/workbench/mps-editor/source_gen">
@@ -371,6 +371,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -602,10 +603,10 @@
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />

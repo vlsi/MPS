@@ -5,22 +5,19 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
-import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class ModuleProperties_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Settings;
@@ -33,55 +30,49 @@ public class ModuleProperties_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
-  public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      this.enable(event.getPresentation());
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
-      }
-      this.disable(event.getPresentation());
-    }
-  }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
-      return false;
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("ideaProject", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
-      return false;
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
+    {
+      SModule p = event.getData(MPSCommonDataKeys.MODULE);
+      MapSequence.fromMap(_params).put("module", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      // save all is sort of hack - changes to a module might lead to module re-load 
-      // (happens for Generator) and close of all respective modified editors (and changes lost) 
-      // The best way to fix would be Generator module not changing its language (which in turn triggers  
-      // removal of all generator models), but preserving everything intact as it is for e.g. language module changes 
-      new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).execute();
-      MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-      final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
-      configurable.setParentForCallBack(configurableEditor);
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          configurableEditor.show();
-        }
-      });
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "ModuleProperties", t);
+    // save all is sort of hack - changes to a module might lead to module re-load 
+    // (happens for Generator) and close of all respective modified editors (and changes lost) 
+    // The best way to fix would be Generator module not changing its language (which in turn triggers  
+    // removal of all generator models), but preserving everything intact as it is for e.g. language module changes 
+    new SaveRepositoryCommand(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()).execute();
+    MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((SModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+    final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
+    configurable.setParentForCallBack(configurableEditor);
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        configurableEditor.show();
       }
-    }
+    });
   }
-  protected static Logger LOG = LogManager.getLogger(ModuleProperties_Action.class);
 }

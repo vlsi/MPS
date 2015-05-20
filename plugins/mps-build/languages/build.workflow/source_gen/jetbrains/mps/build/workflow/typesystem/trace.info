@@ -24,43 +24,39 @@
       <node id="1117643560963218991" at="35,63,36,70" concept="6" />
       <node id="1117643560963219163" at="38,11,39,64" concept="6" />
       <node id="1117643560963219163" at="39,64,40,258" concept="6" />
-      <node id="1117643560963218862" at="46,46,47,67" concept="7" />
-      <node id="1117643560963218862" at="50,5,51,130" concept="6" />
-      <node id="1117643560963218862" at="51,130,52,45" concept="7" />
-      <node id="1117643560963218862" at="55,30,56,17" concept="7" />
+      <node id="1117643560963218862" at="46,50,47,161" concept="7" />
+      <node id="1117643560963218862" at="49,68,50,102" concept="0" />
+      <node id="1117643560963218862" at="49,68,50,102" concept="7" />
+      <node id="1117643560963218862" at="52,30,53,17" concept="7" />
       <node id="1117643560963218862" at="24,0,26,0" concept="1" trace="check_BwfTaskLibrary_NonTypesystemRule#()V" />
       <node id="1117643560963147833" at="28,21,31,5" concept="3" />
-      <node id="1117643560963218862" at="46,0,49,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
-      <node id="1117643560963218862" at="55,0,58,0" concept="5" trace="overrides#()Z" />
+      <node id="1117643560963218862" at="46,0,49,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="1117643560963218862" at="49,0,52,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1117643560963218862" at="52,0,55,0" concept="5" trace="overrides#()Z" />
       <node id="1117643560963219163" at="37,88,41,11" concept="0" />
-      <node id="1117643560963218862" at="49,68,53,5" concept="0" />
       <node id="1117643560963218997" at="36,70,42,9" concept="4" />
-      <node id="1117643560963218862" at="49,0,55,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1117643560963218983" at="34,51,43,7" concept="3" />
       <node id="1117643560963218973" at="33,41,44,5" concept="3" />
       <node id="1117643560963218862" at="26,0,46,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1117643560963218862" at="24,51,24,51" />
       <scope id="1117643560963147834" at="29,192,30,183" />
-      <scope id="1117643560963218862" at="46,46,47,67" />
-      <scope id="1117643560963218862" at="55,30,56,17" />
+      <scope id="1117643560963218862" at="46,50,47,161" />
+      <scope id="1117643560963218862" at="49,68,50,102" />
+      <scope id="1117643560963218862" at="52,30,53,17" />
       <scope id="1117643560963218862" at="24,0,26,0" />
       <scope id="1117643560963219163" at="38,11,40,258">
         <var name="_reporter_2309309498" id="1117643560963219163" />
         <var name="errorTarget" id="1117643560963219163" />
       </scope>
-      <scope id="1117643560963218862" at="50,5,52,45">
-        <var name="b" id="1117643560963218862" />
-      </scope>
       <scope id="1117643560963147833" at="28,21,31,5">
         <var name="tldep" id="1117643560963147836" />
       </scope>
       <scope id="1117643560963218862" at="46,0,49,0" />
-      <scope id="1117643560963218862" at="55,0,58,0" />
-      <scope id="1117643560963218998" at="37,88,41,11" />
-      <scope id="1117643560963218862" at="49,68,53,5" />
-      <scope id="1117643560963218862" at="49,0,55,0">
+      <scope id="1117643560963218862" at="49,0,52,0">
         <var name="argument" id="1117643560963218862" />
       </scope>
+      <scope id="1117643560963218862" at="52,0,55,0" />
+      <scope id="1117643560963218998" at="37,88,41,11" />
       <scope id="1117643560963218990" at="35,63,42,9">
         <var name="targetNode" id="1117643560963218992" />
       </scope>
@@ -79,7 +75,7 @@
         <var name="status" id="1117643560963218862" />
         <var name="typeCheckingContext" id="1117643560963218862" />
       </scope>
-      <unit id="1117643560963218862" at="23,0,59,0" name="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" />
+      <unit id="1117643560963218862" at="23,0,56,0" name="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" />
     </file>
   </root>
 </debug-info>

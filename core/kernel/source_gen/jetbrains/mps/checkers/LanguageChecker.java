@@ -15,7 +15,6 @@ public class LanguageChecker implements INodeChecker {
   public LanguageChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(new RefScopeChecker());
-    SetSequence.fromSet(myRules).addElement(new CardinalitiesChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
   @Override
@@ -25,9 +24,5 @@ public class LanguageChecker implements INodeChecker {
     Set<IErrorReporter> result = errorsComponent.getErrors();
     errorsComponent.dispose();
     return result;
-  }
-  @Override
-  public String getCategory() {
-    return "constraints and scopes";
   }
 }

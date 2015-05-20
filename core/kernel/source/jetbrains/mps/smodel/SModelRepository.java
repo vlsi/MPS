@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPri
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -67,6 +68,11 @@ public class SModelRepository implements CoreComponent {
 
   private static SModelRepository INSTANCE;
 
+  /**
+   * @deprecated global collection of SModels doesn't allow us to move forward. Do not use.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SModelRepository getInstance() {
     return INSTANCE;
   }
@@ -165,6 +171,11 @@ public class SModelRepository implements CoreComponent {
     return IterableUtil.copyToList(models);
   }
 
+  /**
+   * @deprecated use {@link SModel#getModule()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModule getOwner(SModel modelDescriptor) {
     return modelDescriptor.getModule();
   }

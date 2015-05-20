@@ -9,5 +9,4 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 public interface INodeChecker {
   public Set<IErrorReporter> getErrors(SNode node, SRepository repoitory);
-  public String getCategory();
 }

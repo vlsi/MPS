@@ -5,400 +5,508 @@ package jetbrains.mps.baseLanguage.collections.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
   public MigrationToCollections_MigrationScript(IOperationContext operationContext) {
     super("Migration from List to Collections");
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "ListMigration";
       }
+      @Override
       public String getAdditionalInfo() {
         return "ListMigration";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~ArrayList"), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedList")));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, 0x10c25fe95c5L, "elementType"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).first()));
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Size ";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Size ";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForAll(node, "size", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10ec4627e6fL, "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"))));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Get";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Get";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode access = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6213c318L, "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression")));
         SLinkOperations.setTarget(access, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6213c318L, 0x11d621460b5L, "list"), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand")));
         SLinkOperations.setTarget(access, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d6213c318L, 0x11d621484e5L, "index"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), access);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Clear";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Clear";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db03915deL, "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation"))));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add element to List";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add element to List";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.ANY));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e39e3ff80L, "jetbrains.mps.baseLanguage.collections.structure.AddElementOperation")));
         SLinkOperations.setTarget(opration, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add element to pos";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add element to pos";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, 0x11d5cc2f695L, "index"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5cc25c8fL, 0x11d5cc2b50dL, "element"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).last()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "isEmpty";
       }
+      @Override
       public String getAdditionalInfo() {
         return "isEmpty";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForAll(node, "isEmpty", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10f5f053dc7L, "jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation"))));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "set";
       }
+      @Override
       public String getAdditionalInfo() {
         return "set";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "set", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT, ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5e2fc7c1L, "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5e2fc7c1L, 0x11d5e302908L, "index"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d5e2fc7c1L, 0x11d5e30290aL, "element"), SNodeOperations.copyNode(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).toListSequence()).getElement(1)));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "remove";
       }
+      @Override
       public String getAdditionalInfo() {
         return "remove";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db038dd8cL, "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db038dd8cL, 0x11db03a0e95L, "index"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "removeObject";
       }
+      @Override
       public String getAdditionalInfo() {
         return "removeObject";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10fcd477695L, "jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "removeAll";
       }
+      @Override
       public String getAdditionalInfo() {
         return "removeAll";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11154a8aed3L, "jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "indexOf";
       }
+      @Override
       public String getAdditionalInfo() {
         return "indexOf";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "indexOf", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x110bc593e18L, "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "contains";
       }
+      @Override
       public String getAdditionalInfo() {
         return "contains";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForAll(node, "contains", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x110efd61311L, "jetbrains.mps.baseLanguage.collections.structure.ContainsOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "addAll";
       }
+      @Override
       public String getAdditionalInfo() {
         return "addAll";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e3d20dbefL, "jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add First";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add First";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "addFirst", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0384e32L, "jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add Last";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add Last";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "addLast", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0389d32L, "jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation")));
         SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x7818f71827244b5L, 0x7818f71827244b6L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, operation);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Remove first";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Remove first";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "removeFirst", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11db0742a49L, "jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation"))));
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "ArrayList";
       }
+      @Override
       public String getAdditionalInfo() {
         return "ArrayList";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return eq_2ocuwj_a0a0a0d0a0a0a0s0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "ArrayList") && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).count() == 1 && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).count() <= 1;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10e39306c2eL, "jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType"), ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).first());
@@ -407,155 +515,197 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "LinkedList";
       }
+      @Override
       public String getAdditionalInfo() {
         return "LinkedList";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return eq_2ocuwj_a0a0a0d0a0a0a0t0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "LinkedList") && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).count() == 1;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11daf69a138L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType"), ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).first());
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "SetMigration";
       }
+      @Override
       public String getAdditionalInfo() {
         return "SetMigration";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set"), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashSet"), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~LinkedHashSet")));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, 0x11d91cc51e3L, "elementType"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).first()));
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Add element to Set";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Add element to Set";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForSet(node, "add", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9514ebd8L, "jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation")));
         SLinkOperations.setTarget(opration, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9514ebd8L, 0x11d951a651bL, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "AddAll elements to Set";
       }
+      @Override
       public String getAdditionalInfo() {
         return "AddAll elements to Set";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForSet(node, "addAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L, "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation")));
         SLinkOperations.setTarget(opration, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L, 0x11d969e1c69L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "RemoveAll elements to Set";
       }
+      @Override
       public String getAdditionalInfo() {
         return "RemoveAll elements to Set";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForSet(node, "removeAll", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d96b14ae4L, "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation")));
         SLinkOperations.setTarget(opration, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d96b14ae4L, 0x11d96b1a226L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Remove element from Set";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Remove element from Set";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForSet(node, "remove", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d968cae32L, "jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation")));
         SLinkOperations.setTarget(opration, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d968cae32L, 0x11d968cfea4L, "argument"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).first()));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "HashSet migration";
       }
+      @Override
       public String getAdditionalInfo() {
         return "HashSet migration";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return eq_2ocuwj_a0a0a0d0a0a0a0z0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "HashSet") && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).count() <= 1 && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).count() == 1;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d9210de65L, "jetbrains.mps.baseLanguage.collections.structure.HashSetCreator")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType"), ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).first());
@@ -564,23 +714,29 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "LinkedHashSet migration";
       }
+      @Override
       public String getAdditionalInfo() {
         return "LinkedHashSet migration";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return eq_2ocuwj_a0a0a0d0a0a0a0ab0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "LinkedHashSet") && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).count() <= 1 && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).count() == 1;
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c2b5bbfdL, "jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24e9fL, "elementType"), ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).first());
@@ -589,91 +745,116 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
         }
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "hasNext";
       }
+      @Override
       public String getAdditionalInfo() {
         return "hasNext";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForIterator(node, "hasNext", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f035df4L, "jetbrains.mps.baseLanguage.collections.structure.HasNextOperation")));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "next";
       }
+      @Override
       public String getAdditionalInfo() {
         return "next";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForIterator(node, "next", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201f05703dL, "jetbrains.mps.baseLanguage.collections.structure.GetNextOperation")));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "getIterator";
       }
+      @Override
       public String getAdditionalInfo() {
         return "getIterator";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForLists(node, "iterator", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode opration = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ecef58aL, "jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation")));
         SNodeOperations.replaceWithAnother(node, opration);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+    this.addRefactoring(new AbstractMigrationRefactoring() {
+      @Override
       public String getName() {
         return "Iterator";
       }
+      @Override
       public String getAdditionalInfo() {
         return "Iterator";
       }
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      @Override
+      public SAbstractConcept getApplicableConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
       }
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForType(node, 1, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Iterator")));
       }
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ed2b158L, "jetbrains.mps.baseLanguage.collections.structure.IteratorType")));
         SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1201ed2b158L, 0x1201ed311a7L, "elementType"), SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).first()));
         SNodeOperations.replaceWithAnother(node, result);
       }
+      @Override
       public boolean isShowAsIntention() {
         return false;
       }

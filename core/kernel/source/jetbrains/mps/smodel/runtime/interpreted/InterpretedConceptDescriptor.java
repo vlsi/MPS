@@ -220,7 +220,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       // get parent descriptors
       List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.size());
-      for (String parent : parents) {
+      for (SConceptId parent : parentsIds) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         if (!(descriptor instanceof IllegalConceptDescriptor)) {
           parentDescriptors.add(descriptor);

@@ -47,7 +47,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -318,7 +317,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   public List<SModel> getAccessoryModels() {
     List<SModel> result = new LinkedList<SModel>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+      SModel modelDescriptor = model.resolve(getRepository());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -375,7 +374,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public static boolean isLanguageOwnedAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
-    SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
+    SModule modelOwner = sm.getModule();
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
       if (l.isAccessoryModel(sm.getReference())) {
@@ -386,7 +385,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public static Language getLanguageFor(org.jetbrains.mps.openapi.model.SModel sm) {
-    SModule owner = SModelRepository.getInstance().getOwner(sm);
+    SModule owner = sm.getModule();
     if (owner instanceof Language) {
       return (Language) owner;
     }

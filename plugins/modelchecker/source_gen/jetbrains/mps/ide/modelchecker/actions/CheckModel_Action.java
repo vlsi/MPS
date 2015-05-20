@@ -12,16 +12,14 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
-import com.intellij.openapi.project.Project;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CheckModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
@@ -35,79 +33,78 @@ public class CheckModel_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      {
-        List<SModel> modelsToCheck = new ArrayList<SModel>();
-        if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
-          modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-        }
-        if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
-          modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
-        }
-
-        String whatToCheck = "Model";
-        if (modelsToCheck.size() > 1) {
-          whatToCheck = modelsToCheck.size() + " Models";
-        }
-
-        event.getPresentation().setText("Check " + whatToCheck);
-        event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
-      }
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "CheckModel", t);
-      }
-      this.disable(event.getPresentation());
+    List<SModel> modelsToCheck = new ArrayList<SModel>();
+    if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
     }
+    if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+      modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
+    }
+
+    String whatToCheck = "Model";
+    if (modelsToCheck.size() > 1) {
+      whatToCheck = modelsToCheck.size() + " Models";
+    }
+
+    event.getPresentation().setText("Check " + whatToCheck);
+    event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
   }
+  @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
-    MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
-    if (MapSequence.fromMap(_params).get("project") == null) {
-      return false;
+    {
+      SModel p = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      MapSequence.fromMap(_params).put("model", p);
     }
-    MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("operationContext") == null) {
-      return false;
+    {
+      List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
+      MapSequence.fromMap(_params).put("models", p);
+    }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("project", p);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
+      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MapSequence.fromMap(_params).put("operationContext", p);
+      if (p == null) {
+        return false;
+      }
     }
     return true;
   }
+  @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    try {
-      // check all models in model 
-      List<SModel> modelsToCheck = new ArrayList<SModel>();
-      if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
-        modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      }
-      if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
-        modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
-      }
-      if (modelsToCheck.isEmpty()) {
-        return;
-      }
+    // check all models in model 
+    List<SModel> modelsToCheck = new ArrayList<SModel>();
+    if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+    }
+    if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+      modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
+    }
+    if (modelsToCheck.isEmpty()) {
+      return;
+    }
 
-      for (SModel model : modelsToCheck.toArray(new SModel[modelsToCheck.size()])) {
-        String name = SNodeOperations.getModelLongName(model);
-        boolean isStub = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
-        for (SModel innerModel : Sequence.fromIterable(model.getModule().getModels())) {
-          if (SNodeOperations.getModelLongName(innerModel).startsWith(name + ".")) {
-            if (isStub == SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(innerModel))) {
-              modelsToCheck.add(innerModel);
-            }
+    for (SModel model : modelsToCheck.toArray(new SModel[modelsToCheck.size()])) {
+      String name = SNodeOperations.getModelLongName(model);
+      boolean isStub = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
+      for (SModel innerModel : Sequence.fromIterable(model.getModule().getModels())) {
+        if (SNodeOperations.getModelLongName(innerModel).startsWith(name + ".")) {
+          if (isStub == SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(innerModel))) {
+            modelsToCheck.add(innerModel);
           }
         }
       }
-      ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelsToCheck);
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "CheckModel", t);
-      }
     }
+    ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelsToCheck);
   }
-  protected static Logger LOG = LogManager.getLogger(CheckModel_Action.class);
 }

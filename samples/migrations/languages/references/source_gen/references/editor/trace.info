@@ -40,7 +40,7 @@
       <node id="1233082194732315055" at="46,73,47,57" concept="5" />
       <node id="1233082194732315055" at="47,57,48,59" concept="5" />
       <node id="1233082194732315055" at="49,35,50,82" concept="5" />
-      <node id="1233082194732315055" at="50,82,51,109" concept="6" />
+      <node id="1233082194732315055" at="50,82,51,94" concept="6" />
       <node id="1233082194732315055" at="52,10,53,22" concept="6" />
       <node id="7709929535541053073" at="56,33,57,14" concept="7" />
       <node id="7709929535541053073" at="59,69,60,67" concept="6" />
@@ -56,7 +56,7 @@
       <node id="7709929535541053074" at="73,75,74,59" concept="5" />
       <node id="7709929535541053074" at="74,59,75,61" concept="5" />
       <node id="7709929535541053074" at="76,37,77,84" concept="5" />
-      <node id="7709929535541053074" at="77,84,78,111" concept="6" />
+      <node id="7709929535541053074" at="77,84,78,96" concept="6" />
       <node id="7709929535541053074" at="79,12,80,24" concept="6" />
       <node id="1233082194732315055" at="18,0,21,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="7709929535541053073" at="56,0,59,0" concept="1" trace="_Inline_ubdrej_a1a#()V" />
@@ -76,10 +76,10 @@
       <scope id="7709929535541053073" at="59,69,60,67" />
       <scope id="7709929535541053073" at="62,81,63,66" />
       <scope id="1233082194732315055" at="42,39,44,35" />
-      <scope id="1233082194732315055" at="49,35,51,109">
+      <scope id="1233082194732315055" at="49,35,51,94">
         <var name="manager" id="1233082194732315055" />
       </scope>
-      <scope id="7709929535541053074" at="76,37,78,111">
+      <scope id="7709929535541053074" at="76,37,78,96">
         <var name="manager" id="7709929535541053074" />
       </scope>
       <scope id="1233082194732315055" at="18,0,21,0">
@@ -159,7 +159,7 @@
       <node id="1233082194732318626" at="46,73,47,57" concept="5" />
       <node id="1233082194732318626" at="47,57,48,59" concept="5" />
       <node id="1233082194732318626" at="49,35,50,82" concept="5" />
-      <node id="1233082194732318626" at="50,82,51,109" concept="6" />
+      <node id="1233082194732318626" at="50,82,51,94" concept="6" />
       <node id="1233082194732318626" at="52,10,53,22" concept="6" />
       <node id="7709929535540733627" at="56,33,57,14" concept="7" />
       <node id="7709929535540733627" at="59,69,60,67" concept="6" />
@@ -175,7 +175,7 @@
       <node id="7709929535540733638" at="73,75,74,59" concept="5" />
       <node id="7709929535540733638" at="74,59,75,61" concept="5" />
       <node id="7709929535540733638" at="76,37,77,84" concept="5" />
-      <node id="7709929535540733638" at="77,84,78,111" concept="6" />
+      <node id="7709929535540733638" at="77,84,78,96" concept="6" />
       <node id="7709929535540733638" at="79,12,80,24" concept="6" />
       <node id="1233082194732318626" at="18,0,21,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="7709929535540733627" at="56,0,59,0" concept="1" trace="_Inline_iwbapz_a1a#()V" />
@@ -195,10 +195,10 @@
       <scope id="7709929535540733627" at="59,69,60,67" />
       <scope id="7709929535540733627" at="62,81,63,66" />
       <scope id="1233082194732318626" at="42,39,44,35" />
-      <scope id="1233082194732318626" at="49,35,51,109">
+      <scope id="1233082194732318626" at="49,35,51,94">
         <var name="manager" id="1233082194732318626" />
       </scope>
-      <scope id="7709929535540733638" at="76,37,78,111">
+      <scope id="7709929535540733638" at="76,37,78,96">
         <var name="manager" id="7709929535540733638" />
       </scope>
       <scope id="1233082194732318626" at="18,0,21,0">

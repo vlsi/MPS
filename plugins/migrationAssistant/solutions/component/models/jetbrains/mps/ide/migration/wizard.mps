@@ -90,6 +90,7 @@
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
+        <child id="1164903700860" name="catchClause" index="TEXxN" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -106,6 +107,10 @@
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
@@ -295,6 +300,14 @@
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1149,6 +1162,26 @@
                         </node>
                       </node>
                       <node concept="2GUZhq" id="2htE_P_NHLz" role="3cqZAp">
+                        <node concept="TDmWw" id="4pYGyBVuTXl" role="TEXxN">
+                          <node concept="3clFbS" id="4pYGyBVuTXm" role="TDEfX">
+                            <node concept="34ab3g" id="4pYGyBVuU58" role="3cqZAp">
+                              <property role="35gtTG" value="error" />
+                              <property role="34fQS0" value="true" />
+                              <node concept="Xl_RD" id="4pYGyBVuU5a" role="34bqiv">
+                                <property role="Xl_RC" value="exception occured on migration" />
+                              </node>
+                              <node concept="37vLTw" id="4pYGyBVuU5c" role="34bMjA">
+                                <ref role="3cqZAo" node="4pYGyBVuTXn" resolve="t" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3cpWsn" id="4pYGyBVuTXn" role="TDEfY">
+                            <property role="TrG5h" value="t" />
+                            <node concept="3uibUv" id="4pYGyBVuU0A" role="1tU5fm">
+                              <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3clFbS" id="2htE_P_NHL_" role="2GV8ay">
                           <node concept="3clFbF" id="7rK8qWGEWRo" role="3cqZAp">
                             <node concept="1rXfSq" id="7rK8qWGEWRn" role="3clFbG">
@@ -1875,30 +1908,20 @@
               <node concept="3cpWs8" id="6Sxc5MiBujJ" role="3cqZAp">
                 <node concept="3cpWsn" id="6Sxc5MiBujK" role="3cpWs9">
                   <property role="TrG5h" value="modules" />
+                  <node concept="2YIFZM" id="2hu8fhm432V" role="33vP2m">
+                    <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                    <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                    <node concept="2YIFZM" id="6Sxc5MiBujQ" role="37wK5m">
+                      <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                      <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <node concept="37vLTw" id="6Sxc5MiBujR" role="37wK5m">
+                        <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="A3Dl8" id="6Sxc5MiBujL" role="1tU5fm">
                     <node concept="3uibUv" id="6Sxc5MiBujM" role="A3Ik2">
                       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                    </node>
-                  </node>
-                  <node concept="1eOMI4" id="6Sxc5MiBujN" role="33vP2m">
-                    <node concept="10QFUN" id="6Sxc5MiBujO" role="1eOMHV">
-                      <node concept="2OqwBi" id="6Sxc5MiBujP" role="10QFUP">
-                        <node concept="2YIFZM" id="6Sxc5MiBujQ" role="2Oq$k0">
-                          <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                          <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                          <node concept="37vLTw" id="6Sxc5MiBujR" role="37wK5m">
-                            <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6Sxc5MiBujS" role="2OqNvi">
-                          <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                        </node>
-                      </node>
-                      <node concept="A3Dl8" id="6Sxc5MiBujT" role="10QFUM">
-                        <node concept="3uibUv" id="6Sxc5MiBujU" role="A3Ik2">
-                          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                        </node>
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -2271,30 +2294,20 @@
               <node concept="3cpWs8" id="6Sxc5MitX7i" role="3cqZAp">
                 <node concept="3cpWsn" id="6Sxc5MitX7j" role="3cpWs9">
                   <property role="TrG5h" value="modules" />
+                  <node concept="2YIFZM" id="2hu8fhm43d_" role="33vP2m">
+                    <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                    <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                    <node concept="2YIFZM" id="2hu8fhm43dA" role="37wK5m">
+                      <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
+                      <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                      <node concept="37vLTw" id="2hu8fhm43dB" role="37wK5m">
+                        <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="A3Dl8" id="6Sxc5MitXLl" role="1tU5fm">
                     <node concept="3uibUv" id="6Sxc5MizJUC" role="A3Ik2">
                       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                    </node>
-                  </node>
-                  <node concept="1eOMI4" id="6Sxc5MizKbs" role="33vP2m">
-                    <node concept="10QFUN" id="6Sxc5MizKbt" role="1eOMHV">
-                      <node concept="2OqwBi" id="6Sxc5MizKbo" role="10QFUP">
-                        <node concept="2YIFZM" id="6Sxc5MizKbp" role="2Oq$k0">
-                          <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                          <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                          <node concept="37vLTw" id="6Sxc5MizKbq" role="37wK5m">
-                            <ref role="3cqZAo" node="5SsFeroaaco" resolve="myProject" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6Sxc5MizKbr" role="2OqNvi">
-                          <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                        </node>
-                      </node>
-                      <node concept="A3Dl8" id="6Sxc5MizKbm" role="10QFUM">
-                        <node concept="3uibUv" id="6Sxc5MizKbn" role="A3Ik2">
-                          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                        </node>
-                      </node>
                     </node>
                   </node>
                 </node>
@@ -2871,30 +2884,19 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="2htE_P_LHc7" role="3cqZAp">
-            <node concept="3cpWsn" id="2htE_P_LHc8" role="3cpWs9">
+          <node concept="3cpWs8" id="2hu8fhm1z2P" role="3cqZAp">
+            <node concept="3cpWsn" id="2hu8fhm1z2Q" role="3cpWs9">
               <property role="TrG5h" value="modules" />
-              <node concept="A3Dl8" id="2htE_P_LHc9" role="1tU5fm">
-                <node concept="3uibUv" id="2htE_P_LHca" role="A3Ik2">
+              <node concept="A3Dl8" id="2hu8fhm1z2J" role="1tU5fm">
+                <node concept="3uibUv" id="2hu8fhm1z2M" role="A3Ik2">
                   <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                 </node>
               </node>
-              <node concept="1eOMI4" id="2htE_P_LHcb" role="33vP2m">
-                <node concept="10QFUN" id="2htE_P_LHcc" role="1eOMHV">
-                  <node concept="2OqwBi" id="2htE_P_LHcd" role="10QFUP">
-                    <node concept="37vLTw" id="2htE_P_LHce" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2htE_P_LHc3" resolve="mpsProject" />
-                    </node>
-                    <node concept="liA8E" id="2htE_P_LHcf" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="2htE_P_LHcg" role="10QFUM">
-                    <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-                    <node concept="3uibUv" id="2htE_P_LHch" role="11_B2D">
-                      <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                    </node>
-                  </node>
+              <node concept="2YIFZM" id="2hu8fhm1z2R" role="33vP2m">
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                <node concept="37vLTw" id="2hu8fhm1z2S" role="37wK5m">
+                  <ref role="3cqZAo" node="2htE_P_LHc3" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -2903,8 +2905,8 @@
             <node concept="2YIFZM" id="2htE_P_LHcj" role="3cqZAk">
               <ref role="37wK5l" to="t99v:3n7MNzO_xEA" resolve="getProblems" />
               <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-              <node concept="37vLTw" id="2htE_P_LHck" role="37wK5m">
-                <ref role="3cqZAo" node="2htE_P_LHc8" resolve="modules" />
+              <node concept="37vLTw" id="2hu8fhm1z2T" role="37wK5m">
+                <ref role="3cqZAo" node="2hu8fhm1z2Q" resolve="modules" />
               </node>
               <node concept="10Nm6u" id="6JtYk_H7HDW" role="37wK5m" />
               <node concept="3cmrfG" id="2htE_P_LHcl" role="37wK5m">
@@ -2984,30 +2986,19 @@
               </node>
             </node>
           </node>
-          <node concept="3cpWs8" id="2htE_P_LFN1" role="3cqZAp">
-            <node concept="3cpWsn" id="2htE_P_LFN2" role="3cpWs9">
+          <node concept="3cpWs8" id="2hu8fhm1zyX" role="3cqZAp">
+            <node concept="3cpWsn" id="2hu8fhm1zyY" role="3cpWs9">
               <property role="TrG5h" value="modules" />
-              <node concept="A3Dl8" id="2htE_P_LFN3" role="1tU5fm">
-                <node concept="3uibUv" id="2htE_P_LFN4" role="A3Ik2">
+              <node concept="A3Dl8" id="2hu8fhm1zyT" role="1tU5fm">
+                <node concept="3uibUv" id="2hu8fhm1zyW" role="A3Ik2">
                   <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                 </node>
               </node>
-              <node concept="1eOMI4" id="2htE_P_LFN5" role="33vP2m">
-                <node concept="10QFUN" id="2htE_P_LFN6" role="1eOMHV">
-                  <node concept="2OqwBi" id="2htE_P_LFN7" role="10QFUP">
-                    <node concept="37vLTw" id="2htE_P_LFN8" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2htE_P_LEqi" resolve="mpsProject" />
-                    </node>
-                    <node concept="liA8E" id="2htE_P_LFN9" role="2OqNvi">
-                      <ref role="37wK5l" to="vsqj:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                    </node>
-                  </node>
-                  <node concept="3uibUv" id="2htE_P_LFNa" role="10QFUM">
-                    <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-                    <node concept="3uibUv" id="2htE_P_LFNb" role="11_B2D">
-                      <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
-                    </node>
-                  </node>
+              <node concept="2YIFZM" id="2hu8fhm1zyZ" role="33vP2m">
+                <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                <node concept="37vLTw" id="2hu8fhm1zz0" role="37wK5m">
+                  <ref role="3cqZAo" node="2htE_P_LEqi" resolve="mpsProject" />
                 </node>
               </node>
             </node>
@@ -3016,8 +3007,8 @@
             <node concept="2YIFZM" id="2htE_P_LEJ2" role="3cqZAk">
               <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
               <ref role="37wK5l" to="t99v:3n7MNzO_xEA" resolve="getProblems" />
-              <node concept="37vLTw" id="2htE_P_LGc0" role="37wK5m">
-                <ref role="3cqZAo" node="2htE_P_LFN2" resolve="modules" />
+              <node concept="37vLTw" id="2hu8fhm1zz1" role="37wK5m">
+                <ref role="3cqZAo" node="2hu8fhm1zyY" resolve="modules" />
               </node>
               <node concept="10Nm6u" id="6JtYk_H7G74" role="37wK5m" />
               <node concept="3cmrfG" id="2htE_P_LEJ6" role="37wK5m">
