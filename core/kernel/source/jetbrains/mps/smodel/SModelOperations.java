@@ -52,17 +52,13 @@ public class SModelOperations {
 
   /**
    * Plain code (i.e. BaseLanguage and SModel) counterpart for model.nodes(Concept) (i.e. from smodel language) which is translated into
-   * {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations#getNodes(org.jetbrains.mps.openapi.model.SModel, String)}
+   * {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations#nodes(SModel, SAbstractConcept)}
    * <p/>
    * Primary purpose of this method is to prevent using of FastNodeFinderManager from BL code.
+   * @param model where to look for concept instances, tolerate <code>null</code>
+   * @param concept concept (with sub-concepts) to look up
+   * @return empty collection if model is <code>null</code> or no concept instances found.
    */
-  public static List<SNode> getNodes(SModel model, @NotNull String conceptFqName) {
-    if (model == null) {
-      return Collections.emptyList();
-    }
-    return FastNodeFinderManager.get(model).getNodes(conceptFqName, true);
-  }
-
   public static List<SNode> getNodes(SModel model, @NotNull SAbstractConcept concept) {
     if (model == null) {
       return Collections.emptyList();
