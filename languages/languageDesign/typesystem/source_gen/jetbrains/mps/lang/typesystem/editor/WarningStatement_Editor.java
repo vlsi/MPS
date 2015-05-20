@@ -11,6 +11,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -49,7 +53,22 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WarningStatement_Editor.ReplaceWith_InfoStatement_cellMenu_spok58_a0a0(), new WarningStatement_Editor.ReplaceWith_ReportErrorStatement_cellMenu_spok58_b0a0()}));
     return editorCell;
+  }
+  public static class ReplaceWith_InfoStatement_cellMenu_spok58_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_InfoStatement_cellMenu_spok58_a0a0() {
+    }
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.typesystem.structure.InfoStatement";
+    }
+  }
+  public static class ReplaceWith_ReportErrorStatement_cellMenu_spok58_b0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ReportErrorStatement_cellMenu_spok58_b0a0() {
+    }
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
+    }
   }
   private EditorCell createRefNode_spok58_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
