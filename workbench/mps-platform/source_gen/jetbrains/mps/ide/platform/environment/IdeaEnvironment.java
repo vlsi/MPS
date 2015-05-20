@@ -120,7 +120,7 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Nullable
   @Override
-  public Project getOpenedProject(File projectFile) {
+  public Project getOpenedProject(@NotNull File projectFile) {
     return myContainer.getProject(projectFile);
   }
 
@@ -173,7 +173,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     final String filePath = projectFile.getAbsolutePath();
     // this is a workaround for MPS-8840 
     final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
-    final Exception[] exc = new Exception[]{null};
+    final Throwable[] exc = new Throwable[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
@@ -184,7 +184,7 @@ public class IdeaEnvironment extends EnvironmentBase {
           // calling sync refresh for FS in order to update all modules/models loaded from the project 
           // if unit-test is executed with the "reuse caches" option. 
           VirtualFileManager.getInstance().syncRefresh();
-        } catch (Exception e) {
+        } catch (Throwable e) {
           exc[0] = e;
         }
       }

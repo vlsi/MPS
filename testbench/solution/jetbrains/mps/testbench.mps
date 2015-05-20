@@ -151,9 +151,6 @@
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -916,25 +913,6 @@
   <node concept="312cEu" id="3eUNqOk3QI8">
     <property role="TrG5h" value="BaseMpsTest" />
     <property role="1sVAO0" value="true" />
-    <node concept="2YIFZL" id="1RTSjGsxmhm" role="jymVt">
-      <property role="TrG5h" value="checkEnvironmentExists" />
-      <property role="IEkAT" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3clFbS" id="4cccx5vImbc" role="3clF47">
-        <node concept="1gVbGN" id="4cccx5vImi_" role="3cqZAp">
-          <node concept="3y3z36" id="4cccx5vImkt" role="1gVkn0">
-            <node concept="10Nm6u" id="4cccx5vImlc" role="3uHU7w" />
-            <node concept="1rXfSq" id="5A5jZrz6f00" role="3uHU7B">
-              <ref role="37wK5l" node="5A5jZrz6eRi" resolve="getEnvironment" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3cqZAl" id="4cccx5vImi3" role="3clF45" />
-      <node concept="3Tm6S6" id="4cccx5vIm4_" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="3eUNqOk4dAC" role="jymVt" />
     <node concept="2YIFZL" id="5A5jZrz6eRi" role="jymVt">
       <property role="TrG5h" value="getEnvironment" />
       <property role="IEkAT" value="false" />
@@ -994,11 +972,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="Az_EN8Pv6Z" role="3clF47">
-        <node concept="3clFbF" id="4cccx5vIw3R" role="3cqZAp">
-          <node concept="1rXfSq" id="4cccx5vIw3Q" role="3clFbG">
-            <ref role="37wK5l" node="1RTSjGsxmhm" resolve="checkEnvironmentExists" />
-          </node>
-        </node>
         <node concept="3clFbF" id="4cccx5vIlSN" role="3cqZAp">
           <node concept="2OqwBi" id="Az_EN8Pv71" role="3clFbG">
             <node concept="1rXfSq" id="5A5jZrz6f1u" role="2Oq$k0">
@@ -1035,11 +1008,6 @@
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="Az_EN8Pv7b" role="3clF47">
-        <node concept="3clFbF" id="4cccx5vIw7R" role="3cqZAp">
-          <node concept="1rXfSq" id="4cccx5vIw7Q" role="3clFbG">
-            <ref role="37wK5l" node="1RTSjGsxmhm" resolve="checkEnvironmentExists" />
-          </node>
-        </node>
         <node concept="3clFbF" id="1RTSjGsv84j" role="3cqZAp">
           <node concept="2OqwBi" id="1RTSjGsv85r" role="3clFbG">
             <node concept="1rXfSq" id="1RTSjGsv84h" role="2Oq$k0">

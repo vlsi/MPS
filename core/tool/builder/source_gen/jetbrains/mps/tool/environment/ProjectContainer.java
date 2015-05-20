@@ -50,7 +50,7 @@ public class ProjectContainer {
         return project;
       }
     }
-    throw new IllegalArgumentException("Could not find the project");
+    return null;
   }
 
   public void addProject(@NotNull Project project) {

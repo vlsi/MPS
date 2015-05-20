@@ -4,6 +4,7 @@ package jetbrains.mps.tool.environment;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.PathMacrosProvider;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
@@ -24,17 +25,17 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.tool.builder.util.PathManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public abstract class EnvironmentBase implements Environment {
   private static final String PLUGINS_PATH = "plugin.path";
 
   protected final EnvironmentConfig myConfig;
-  private LibraryInitializer myLibInitiazer;
+  private LibraryInitializer myLibInitializer;
   private PathMacrosProvider myMacrosProvider;
 
   static {
     new Log4jInitializer().init();
+    LogManager.getLogger(EnvironmentBase.class).info("Initializing environment");
   }
 
   public EnvironmentBase(@NotNull EnvironmentConfig config) {
@@ -43,7 +44,7 @@ public abstract class EnvironmentBase implements Environment {
   }
 
   public void init(LibraryInitializer libraryInitializer) {
-    myLibInitiazer = libraryInitializer;
+    myLibInitializer = libraryInitializer;
     initMacros();
     initLibraries();
     EnvironmentContainer.setCurrent(this);
@@ -80,7 +81,7 @@ public abstract class EnvironmentBase implements Environment {
     LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, rootCLForLibs());
     ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
     ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
-    myLibInitiazer.load(libContribs);
+    myLibInitializer.load(libContribs);
     return libContribs;
   }
 

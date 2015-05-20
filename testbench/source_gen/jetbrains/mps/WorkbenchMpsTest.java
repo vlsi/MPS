@@ -13,7 +13,6 @@ public class WorkbenchMpsTest extends BaseMpsTest {
   @BeforeClass
   public static void setUp() {
     Environment env = EnvironmentContainer.getOrCreate(EnvironmentConfig.defaultConfig().loadIdea(true));
-    env.make();
   }
 
   @AfterClass

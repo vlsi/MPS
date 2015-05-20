@@ -584,7 +584,7 @@
             <node concept="3K4zz7" id="1RTSjGsvflv" role="33vP2m">
               <node concept="2ShNRf" id="1RTSjGsvg99" role="3K4GZi">
                 <node concept="1pGfFk" id="1RTSjGsvgIN" role="2ShVmc">
-                  <ref role="37wK5l" to="oh7r:2BGPXkEvcy4" resolve="FromDirWithModulesProjectStrategy" />
+                  <ref role="37wK5l" to="oh7r:5A5jZrz76JI" resolve="FromProjectPathProjectStrategy" />
                   <node concept="37vLTw" id="1RTSjGsvgL0" role="37wK5m">
                     <ref role="3cqZAo" node="1RTSjGsvf3u" resolve="dir" />
                   </node>
@@ -592,7 +592,7 @@
               </node>
               <node concept="2ShNRf" id="1RTSjGsvfmU" role="3K4E3e">
                 <node concept="1pGfFk" id="1RTSjGsvg8x" role="2ShVmc">
-                  <ref role="37wK5l" to="oh7r:2BGPXkEvcyg" resolve="FromDirWithModulesProjectStrategy" />
+                  <ref role="37wK5l" to="oh7r:2BGPXkEv60R" resolve="FromProjectPathProjectStrategy" />
                 </node>
               </node>
               <node concept="3clFbC" id="1RTSjGsvfhD" role="3K4Cdx">

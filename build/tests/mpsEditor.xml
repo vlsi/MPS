@@ -685,7 +685,7 @@
   <target name="java.compile.jetbrains.mps.lang.actions.testLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions.testLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" />
@@ -722,7 +722,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.tableTests" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tableTests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tableTests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tableTests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.tableTests.testLang/source_gen" />
@@ -764,7 +764,7 @@
   <target name="java.compile.testDefaultEditor" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testDefaultEditor" />
-    <javac2 destdir="${build.tmp}/java/out/testDefaultEditor" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testDefaultEditor" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/source_gen" />
@@ -813,7 +813,7 @@
   <target name="java.compile.testDefaultEditor#938834323431407324" depends="java.compile.testDefaultEditor, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" />
-    <javac2 destdir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testDefaultEditor#938834323431407324" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" />
@@ -851,7 +851,7 @@
   <target name="java.compile.testMoveElements" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testMoveElements" />
-    <javac2 destdir="${build.tmp}/java/out/testMoveElements" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testMoveElements" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
@@ -892,7 +892,7 @@
   <target name="java.compile.testMoveElements#7465696304914465848" depends="java.compile.testMoveElements, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testMoveElements#7465696304914465848" />
-    <javac2 destdir="${build.tmp}/java/out/testMoveElements#7465696304914465848" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testMoveElements#7465696304914465848" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/generator/source_gen" />
@@ -934,7 +934,7 @@
   <target name="java.compile.testSpaceCompletion" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSpaceCompletion" />
-    <javac2 destdir="${build.tmp}/java/out/testSpaceCompletion" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSpaceCompletion" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />
@@ -975,7 +975,7 @@
   <target name="java.compile.testSpaceCompletion#3586175963764950873" depends="java.compile.testSpaceCompletion, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" />
-    <javac2 destdir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testSpaceCompletion#3586175963764950873" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/generator/source_gen" />
@@ -1017,7 +1017,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.styleTests" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.style.testLang/source_gen" />
@@ -1060,7 +1060,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.testLanguage" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" />
@@ -1097,7 +1097,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" depends="java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/generator/source_gen" />
@@ -1135,7 +1135,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage" depends="java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" />
@@ -1173,7 +1173,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" depends="java.compile.jetbrains.mps.lang.editor.multiple.extension.testLanguage, java.compile.jetbrains.mps.lang.editor.multiple.testLanguage, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/generator/source_gen" />
@@ -1211,7 +1211,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.editor.table.tests" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/editor.table.test/test_gen/" />
       <classpath>
@@ -1258,7 +1258,7 @@
   
   <target name="java.compile.jetbrains.mps.lang.actions.test" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.actions.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/actions.test/test_gen/" />
       <classpath>
@@ -1304,7 +1304,7 @@
   <target name="java.compile.jetbrains.mps.baseLanguage.test" depends="java.compile.testDefaultEditor, java.compile.testSpaceCompletion, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/bl.test/source_gen" />
@@ -1369,7 +1369,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.multiple.tests" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.multiple.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
@@ -1416,7 +1416,7 @@
   <target name="java.compile.jetbrains.mps.lang.editor.tests" depends="java.compile.jetbrains.mps.lang.editor.styleTests, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/testsolutions/editor.test/source_gen" />

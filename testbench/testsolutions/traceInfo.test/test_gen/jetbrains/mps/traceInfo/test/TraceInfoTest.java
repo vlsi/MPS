@@ -19,9 +19,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.testbench.BaseMpsTest;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.testbench.BaseMpsTest;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 
@@ -128,7 +128,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    Project project = openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
+    Project project = BaseMpsTest.openProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo"));
     try {
       project.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
@@ -157,7 +157,7 @@ public class TraceInfoTest extends WorkbenchMpsTest {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
-        TraceInfoTest.this.closeProject(p);
+        BaseMpsTest.closeProject(p);
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }

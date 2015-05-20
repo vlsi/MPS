@@ -86,9 +86,6 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
-        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
-      </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -1318,8 +1315,9 @@
             <node concept="3uibUv" id="1jvPZ1MMobV" role="1tU5fm">
               <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
             </node>
-            <node concept="1rXfSq" id="5A5jZrz3Y1W" role="33vP2m">
-              <ref role="37wK5l" to="3ebz:3eUNqOk4dEj" resolve="openProject" />
+            <node concept="2YIFZM" id="1RTSjGsFQls" role="33vP2m">
+              <ref role="1Pybhc" to="3ebz:3eUNqOk3QI8" resolve="BaseMpsTest" />
+              <ref role="37wK5l" to="3ebz:1RTSjGsxmmw" resolve="openProject" />
               <node concept="2ShNRf" id="75ChKjLGNa4" role="37wK5m">
                 <node concept="1pGfFk" id="75ChKjLGNa5" role="2ShVmc">
                   <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
@@ -1530,16 +1528,12 @@
                     <node concept="3Tm1VV" id="3efb7k2$emb" role="1B3o_S" />
                     <node concept="3cqZAl" id="3efb7k2$emc" role="3clF45" />
                     <node concept="3clFbS" id="3efb7k2$emd" role="3clF47">
-                      <node concept="3clFbF" id="1RTSjGsx651" role="3cqZAp">
-                        <node concept="2OqwBi" id="1RTSjGsx66G" role="3clFbG">
-                          <node concept="Xjq3P" id="1RTSjGsx650" role="2Oq$k0">
-                            <ref role="1HBi2w" node="3efb7k2$8ZJ" resolve="TraceInfoTest" />
-                          </node>
-                          <node concept="liA8E" id="1RTSjGsx6lR" role="2OqNvi">
-                            <ref role="37wK5l" to="3ebz:3eUNqOk4dFJ" resolve="closeProject" />
-                            <node concept="37vLTw" id="1RTSjGsx6oa" role="37wK5m">
-                              <ref role="3cqZAo" node="3efb7k2$e7h" resolve="p" />
-                            </node>
+                      <node concept="3clFbF" id="1RTSjGsFQAs" role="3cqZAp">
+                        <node concept="2YIFZM" id="1RTSjGsFQDF" role="3clFbG">
+                          <ref role="37wK5l" to="3ebz:1RTSjGsxmsA" resolve="closeProject" />
+                          <ref role="1Pybhc" to="3ebz:3eUNqOk3QI8" resolve="BaseMpsTest" />
+                          <node concept="37vLTw" id="1RTSjGsFQFX" role="37wK5m">
+                            <ref role="3cqZAo" node="3efb7k2$e7h" resolve="p" />
                           </node>
                         </node>
                       </node>

@@ -50,7 +50,7 @@ public class MpsEnvironment extends EnvironmentBase {
 
   @Nullable
   @Override
-  public Project getOpenedProject(File projectFile) {
+  public Project getOpenedProject(@NotNull File projectFile) {
     return myContainer.getProject(projectFile);
   }
 

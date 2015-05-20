@@ -383,7 +383,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.Constants" depends="fetchDependencies">
     <mkdir dir="${project_home}/languages/Constants/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/Constants/source_gen" />
@@ -423,7 +423,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.Constants#1494751830319061782" depends="java.compile.org.jetbrains.mps.samples.Constants, fetchDependencies">
     <mkdir dir="${project_home}/languages/Constants/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants#1494751830319061782" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants#1494751830319061782" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants#1494751830319061782" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/Constants/generator/source_gen" />
@@ -464,7 +464,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.IfAndUnless" depends="fetchDependencies">
     <mkdir dir="${project_home}/languages/SampleExtensions/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/SampleExtensions/source_gen" />
@@ -504,7 +504,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.IfAndUnless#393299394024627256" depends="java.compile.org.jetbrains.mps.samples.IfAndUnless, fetchDependencies">
     <mkdir dir="${project_home}/languages/SampleExtensions/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless#393299394024627256" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless#393299394024627256" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.IfAndUnless#393299394024627256" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/SampleExtensions/generator/source_gen" />
@@ -545,7 +545,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.MoneyRuntime" depends="fetchDependencies">
     <mkdir dir="${project_home}/solutions/MoneyRuntime/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.MoneyRuntime" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/solutions/MoneyRuntime/source_gen" />
@@ -574,7 +574,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.ParallelForUtils" depends="fetchDependencies">
     <mkdir dir="${project_home}/solutions/ParallelForUtils/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelForUtils" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelForUtils" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelForUtils" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/solutions/ParallelForUtils/source_gen" />
@@ -592,7 +592,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.Money" depends="java.compile.org.jetbrains.mps.samples.MoneyRuntime, fetchDependencies">
     <mkdir dir="${project_home}/languages/Money/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/Money/source_gen" />
@@ -633,7 +633,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.Money#5447719361346496650" depends="java.compile.org.jetbrains.mps.samples.Money, java.compile.org.jetbrains.mps.samples.MoneyRuntime, fetchDependencies">
     <mkdir dir="${project_home}/languages/Money/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money#5447719361346496650" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money#5447719361346496650" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.Money#5447719361346496650" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/Money/generator/source_gen" />
@@ -675,7 +675,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.ParallelFor" depends="fetchDependencies">
     <mkdir dir="${project_home}/languages/ParallelFor/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/ParallelFor/source_gen" />
@@ -718,7 +718,7 @@
   <target name="java.compile.org.jetbrains.mps.samples.ParallelFor#8923957828369584137" depends="java.compile.org.jetbrains.mps.samples.ParallelFor, fetchDependencies">
     <mkdir dir="${project_home}/languages/ParallelFor/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor#8923957828369584137" />
-    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor#8923957828369584137" fork="true" includeantruntime="false" source="1.6" target="1.6">
+    <javac destdir="${build.tmp}/java/out/org.jetbrains.mps.samples.ParallelFor#8923957828369584137" fork="false" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${project_home}/languages/ParallelFor/generator/source_gen" />

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.tool.environment.ProjectStrategy;
-import jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy;
+import jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,7 +44,7 @@ public class BaseCheckModulesTest {
     Environment env = EnvironmentContainer.getOrCreate(BaseCheckModulesTest.createConfig());
 
     ourStatistic = new CheckingTestStatistic();
-    ProjectStrategy strategy = (dir == null ? new FromDirWithModulesProjectStrategy() : new FromDirWithModulesProjectStrategy(dir));
+    ProjectStrategy strategy = (dir == null ? new FromProjectPathProjectStrategy() : new FromProjectPathProjectStrategy(dir));
     ourContextProject = env.createProject(strategy);
   }
 

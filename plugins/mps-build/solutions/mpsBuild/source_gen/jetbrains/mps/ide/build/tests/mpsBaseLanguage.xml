@@ -264,7 +264,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.unittest" depends="java.compile.testExtendingAnalyzer, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/bl.unittest/test_gen/" />
       <classpath>
@@ -323,7 +323,7 @@
   <target name="java.compile.testExtendingAnalyzer" depends="fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testExtendingAnalyzer" />
-    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" />
@@ -364,7 +364,7 @@
   <target name="java.compile.testExtendingAnalyzer#1417601170173057095" depends="java.compile.testExtendingAnalyzer, fetchDependencies">
     <mkdir dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/testExtendingAnalyzer#1417601170173057095" />
-    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer#1417601170173057095" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/testExtendingAnalyzer#1417601170173057095" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/generator/source_gen" />
@@ -405,7 +405,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.closures.unittest" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/bl.closures.unittest/test_gen/" />
       <classpath>

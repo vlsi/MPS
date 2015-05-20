@@ -8,6 +8,7 @@ import jetbrains.mps.vfs.IFile;
 import java.util.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.util.List;
@@ -31,7 +32,7 @@ public class FromDirWithModulesProjectStrategy extends ProjectStrategyBase {
 
   private final String myModulesRootPath;
 
-  public FromDirWithModulesProjectStrategy(@NotNull String modulesRootPath) {
+  public FromDirWithModulesProjectStrategy(@Nullable String modulesRootPath) {
     myModulesRootPath = modulesRootPath;
   }
 

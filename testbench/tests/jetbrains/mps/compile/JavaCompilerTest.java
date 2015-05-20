@@ -35,12 +35,13 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class JavaCompilerTest extends WorkbenchMpsTest {
-  private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
+  private static final File PROJECT_PATH = new File("modules/testCompilation");
   private static Project myProject;
   private static Solution mySolution;
 
   @BeforeClass
   public static void setUp() {
+    WorkbenchMpsTest.setUp();
     myProject = openProject(PROJECT_PATH);
     mySolution = getSolution("TestCompileSolution");
   }

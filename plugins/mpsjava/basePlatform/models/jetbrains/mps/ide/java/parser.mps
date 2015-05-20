@@ -242,7 +242,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -13991,7 +13991,7 @@
                                                             <ref role="3cqZAo" node="4TtYrYGuWhR" resolve="dir" />
                                                           </node>
                                                           <node concept="liA8E" id="6CKW2FPjXXU" role="2OqNvi">
-                                                            <ref role="37wK5l" to="59et:~IFile.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                                            <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
                                                           </node>
                                                         </node>
                                                       </node>
@@ -14051,8 +14051,8 @@
                                                         <node concept="37vLTw" id="2BHiRxglp5D" role="2Oq$k0">
                                                           <ref role="3cqZAo" node="4TtYrYGuWhR" resolve="dir" />
                                                         </node>
-                                                        <node concept="liA8E" id="6CKW2FPjXSq" role="2OqNvi">
-                                                          <ref role="37wK5l" to="59et:~IFile.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                                        <node concept="liA8E" id="1RTSjGsAw26" role="2OqNvi">
+                                                          <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -14366,12 +14366,12 @@
                   <node concept="liA8E" id="6CKW2FPjY3A" role="2OqNvi">
                     <ref role="37wK5l" to="ajxo:~Category.info(java.lang.Object):void" resolve="info" />
                     <node concept="3cpWs3" id="6CKW2FPjY3W" role="37wK5m">
-                      <node concept="2OqwBi" id="6CKW2FPjY4k" role="3uHU7w">
+                      <node concept="2OqwBi" id="1RTSjGsAxwv" role="3uHU7w">
                         <node concept="37vLTw" id="2BHiRxghfyf" role="2Oq$k0">
                           <ref role="3cqZAo" node="4TtYrYGuWhR" resolve="dir" />
                         </node>
-                        <node concept="liA8E" id="6CKW2FPjY4q" role="2OqNvi">
-                          <ref role="37wK5l" to="59et:~IFile.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                        <node concept="liA8E" id="1RTSjGsAxFD" role="2OqNvi">
+                          <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
                         </node>
                       </node>
                       <node concept="Xl_RD" id="6CKW2FPjY3B" role="3uHU7B">

@@ -5,8 +5,6 @@ package jetbrains.mps.tool.environment;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.platform.environment.IdeaEnvironment;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public final class EnvironmentContainer {
   private static Environment ourCurrent;
@@ -41,11 +39,8 @@ public final class EnvironmentContainer {
   @NotNull
   public static Environment getOrCreate(@NotNull EnvironmentConfig config) {
     if (ourCurrent == null) {
-      if (LOG.isInfoEnabled()) {
-        LOG.info("Initializing environment");
-      }
-      ourCurrent = (config.doesLoadIdea() ? new IdeaEnvironment(config) : new MpsEnvironment(config));
-      ourCurrent.init();
+      Environment env = (config.doesLoadIdea() ? new IdeaEnvironment(config) : new MpsEnvironment(config));
+      env.init();
     } else {
       // todo fix 
       if (config.doesLoadIdea() && !(ourCurrent instanceof IdeaEnvironment)) {
@@ -55,5 +50,4 @@ public final class EnvironmentContainer {
 
     return EnvironmentContainer.ourCurrent;
   }
-  protected static Logger LOG = LogManager.getLogger(EnvironmentContainer.class);
 }

@@ -19,10 +19,6 @@ import jetbrains.mps.util.UnzipUtil;
 import java.io.IOException;
 
 public abstract class BaseMpsTest {
-  private static void checkEnvironmentExists() {
-    assert getEnvironment() != null;
-  }
-
   @NotNull
   protected static Environment getEnvironment() {
     Environment env = EnvironmentContainer.get();
@@ -33,12 +29,10 @@ public abstract class BaseMpsTest {
   }
 
   protected static Project openProject(@NotNull File projectFile) {
-    checkEnvironmentExists();
     return getEnvironment().openProject(projectFile);
   }
 
   protected static void closeProject(@NotNull Project project) {
-    checkEnvironmentExists();
     getEnvironment().closeProject(project);
   }
 

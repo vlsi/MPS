@@ -510,18 +510,13 @@
             </node>
           </node>
           <node concept="3clFbS" id="2ysqId10CQj" role="3clFbx">
-            <node concept="34ab3g" id="2HmhDwzjzYP" role="3cqZAp">
-              <property role="35gtTG" value="info" />
-              <node concept="Xl_RD" id="2HmhDwzjzYR" role="34bqiv">
-                <property role="Xl_RC" value="Initializing environment" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="2ysqId11jf9" role="3cqZAp">
-              <node concept="37vLTI" id="2ysqId11jjD" role="3clFbG">
-                <node concept="37vLTw" id="3eUNqOk4E87" role="37vLTJ">
-                  <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
+            <node concept="3cpWs8" id="1RTSjGszRlF" role="3cqZAp">
+              <node concept="3cpWsn" id="1RTSjGszRlG" role="3cpWs9">
+                <property role="TrG5h" value="env" />
+                <node concept="3uibUv" id="1RTSjGszRlH" role="1tU5fm">
+                  <ref role="3uigEE" node="HKKzfMjqRV" resolve="Environment" />
                 </node>
-                <node concept="3K4zz7" id="5UWB9tmx9m" role="37vLTx">
+                <node concept="3K4zz7" id="5UWB9tmx9m" role="33vP2m">
                   <node concept="2OqwBi" id="3eUNqOk7efn" role="3K4Cdx">
                     <node concept="37vLTw" id="3eUNqOk7edU" role="2Oq$k0">
                       <ref role="3cqZAo" node="3eUNqOk6opo" resolve="config" />
@@ -551,8 +546,8 @@
             </node>
             <node concept="3clFbF" id="3eUNqOk4TYo" role="3cqZAp">
               <node concept="2OqwBi" id="3eUNqOk4TZC" role="3clFbG">
-                <node concept="37vLTw" id="3eUNqOk4TYm" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
+                <node concept="37vLTw" id="1RTSjGszRu5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1RTSjGszRlG" resolve="env" />
                 </node>
                 <node concept="liA8E" id="3eUNqOk4U3m" role="2OqNvi">
                   <ref role="37wK5l" node="3eUNqOk4TkZ" resolve="init" />
@@ -586,7 +581,7 @@
                       <node concept="3uibUv" id="3eUNqOk4UnO" role="2ZW6by">
                         <ref role="3uigEE" to="hznm:6rx4kZDk5Br" resolve="IdeaEnvironment" />
                       </node>
-                      <node concept="37vLTw" id="3eUNqOk4UnP" role="2ZW6bz">
+                      <node concept="37vLTw" id="1RTSjGszRv$" role="2ZW6bz">
                         <ref role="3cqZAo" node="3Pdq2IL$rf2" resolve="ourCurrent" />
                       </node>
                     </node>
@@ -1641,6 +1636,9 @@
         <node concept="3uibUv" id="yBZlauNf32" role="1tU5fm">
           <ref role="3uigEE" to="fxg7:~File" resolve="File" />
         </node>
+        <node concept="2AHcQZ" id="1RTSjGszTtu" role="2AJF6D">
+          <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+        </node>
       </node>
       <node concept="2AHcQZ" id="2BGPXkEvU66" role="2AJF6D">
         <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
@@ -2227,15 +2225,8 @@
             </node>
           </node>
         </node>
-        <node concept="YS8fn" id="2BGPXkEvBGe" role="3cqZAp">
-          <node concept="2ShNRf" id="2BGPXkEvBGR" role="YScLw">
-            <node concept="1pGfFk" id="2BGPXkEvIgu" role="2ShVmc">
-              <ref role="37wK5l" to="e2lb:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
-              <node concept="Xl_RD" id="2BGPXkEvIhp" role="37wK5m">
-                <property role="Xl_RC" value="Could not find the project" />
-              </node>
-            </node>
-          </node>
+        <node concept="3cpWs6" id="1RTSjGs$07X" role="3cqZAp">
+          <node concept="10Nm6u" id="1RTSjGs$1mf" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="yBZlauH8_g" role="1B3o_S" />
@@ -2507,7 +2498,7 @@
     <node concept="312cEg" id="5A5jZryYSWd" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myLibInitiazer" />
+      <property role="TrG5h" value="myLibInitializer" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="5A5jZryYSFT" role="1B3o_S" />
       <node concept="3uibUv" id="5A5jZryYSVR" role="1tU5fm">
@@ -2536,6 +2527,23 @@
             </node>
             <node concept="liA8E" id="5A5jZrz5E3y" role="2OqNvi">
               <ref role="37wK5l" node="5A5jZrz5c0T" resolve="init" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1RTSjGszMde" role="3cqZAp">
+          <node concept="2OqwBi" id="1RTSjGszMjK" role="3clFbG">
+            <node concept="2YIFZM" id="1RTSjGszMe0" role="2Oq$k0">
+              <ref role="37wK5l" to="ajxo:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+              <ref role="1Pybhc" to="ajxo:~LogManager" resolve="LogManager" />
+              <node concept="3VsKOn" id="1RTSjGszMhf" role="37wK5m">
+                <ref role="3VsUkX" node="3eUNqOk4feo" resolve="EnvironmentBase" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1RTSjGszMsM" role="2OqNvi">
+              <ref role="37wK5l" to="ajxo:~Category.info(java.lang.Object):void" resolve="info" />
+              <node concept="Xl_RD" id="1RTSjGszMvL" role="37wK5m">
+                <property role="Xl_RC" value="Initializing environment" />
+              </node>
             </node>
           </node>
         </node>
@@ -2591,7 +2599,7 @@
               <ref role="3cqZAo" node="5A5jZryYTCG" resolve="libraryInitializer" />
             </node>
             <node concept="37vLTw" id="5A5jZryYTPV" role="37vLTJ">
-              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitiazer" />
+              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitializer" />
             </node>
           </node>
         </node>
@@ -2955,7 +2963,7 @@
         <node concept="3clFbF" id="1vtSNIfMwTV" role="3cqZAp">
           <node concept="2OqwBi" id="1vtSNIfMxdF" role="3clFbG">
             <node concept="37vLTw" id="5A5jZryYU5K" role="2Oq$k0">
-              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitiazer" />
+              <ref role="3cqZAo" node="5A5jZryYSWd" resolve="myLibInitializer" />
             </node>
             <node concept="liA8E" id="1vtSNIfMy0P" role="2OqNvi">
               <ref role="37wK5l" to="ztul:~LibraryInitializer.load(java.util.List):void" resolve="load" />

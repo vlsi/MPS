@@ -3910,40 +3910,6 @@
     </copy>
   </target>
   
-<<<<<<< HEAD
-=======
-  <target name="java.compile.baselang-kernel" depends="java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.kernel-resources, java.compile.mps-make-rt, fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/baselang-kernel" />
-    <javac2 destdir="${build.tmp}/java/out/baselang-kernel" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
-        <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
-      </src>
-      <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-openapi" />
-        <pathelement path="${build.tmp}/java/out/mps-smodel" />
-        <pathelement path="${build.tmp}/java/out/mps-closures" />
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
-        <pathelement path="${build.tmp}/java/out/mps-tuples" />
-        <pathelement path="${build.tmp}/java/out/mps-project" />
-        <pathelement path="${build.tmp}/java/out/mps-kernel" />
-        <pathelement path="${build.tmp}/java/out/kernel-resources" />
-        <pathelement path="${build.tmp}/java/out/mps-make-rt" />
-        <path refid="path.java.library.annotations-lib" />
-        <path refid="path.java.library.jdom-lib" />
-        <path refid="path.java.library.log4j-lib" />
-        <path refid="path.java.library.core-libraries" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/baselang-kernel">
-      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
->>>>>>> Fork parameter at javac task can be specified by user in the MPS build script. Default value is false for MPS modules
   <target name="java.compile.mps-editor-api" depends="java.compile.mps-openapi, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, fetchDependencies">
     <mkdir dir="${mps_home}/editor/editor-api/source" />
     <mkdir dir="${build.tmp}/java/out/mps-editor-api" />

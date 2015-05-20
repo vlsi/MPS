@@ -44,7 +44,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromDirWithModulesProjectStrategy" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.FromProjectPathProjectStrategy" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
     <classNode dependClassName="jetbrains.mps.tool.environment.Environment" />
