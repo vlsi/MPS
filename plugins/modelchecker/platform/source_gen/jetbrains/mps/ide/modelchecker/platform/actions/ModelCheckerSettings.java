@@ -129,7 +129,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public static   enum CheckingLevel {
     BASIC("Basic", "Project structure is correct", "Each reference has target"),
     STRUCTURE("Structure", "Code conforms with languages' structure"),
-    CONSTRAINTS("Constraints", "Code satisfies languages' constrints"),
+    CONSTRAINTS("Constraints", "Code satisfies languages' constraints"),
     TYPESYSTEM("Typesystem", "Code passes typesystem checks");
 
 

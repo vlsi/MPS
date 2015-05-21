@@ -1239,7 +1239,7 @@
           <property role="Xl_RC" value="Constraints" />
         </node>
         <node concept="Xl_RD" id="5bed3YcLDK7" role="37wK5m">
-          <property role="Xl_RC" value="Code satisfies languages' constrints" />
+          <property role="Xl_RC" value="Code satisfies languages' constraints" />
         </node>
       </node>
       <node concept="QsSxf" id="3J4tNviCblZ" role="Qtgdg">
