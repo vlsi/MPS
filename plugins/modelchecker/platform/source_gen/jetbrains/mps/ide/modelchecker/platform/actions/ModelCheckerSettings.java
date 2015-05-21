@@ -127,18 +127,29 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
   }
   public static   enum CheckingLevel {
-    BASIC("Basic"),
-    STRUCTURE("Structure"),
-    CONSTRAINTS("Constraints"),
-    TYPESYSTEM("Typesystem");
+    BASIC("Basic", "Project structure is correct", "Each reference has target"),
+    STRUCTURE("Structure", "Code conforms with languages' structure"),
+    CONSTRAINTS("Constraints", "Code satisfies languages' constrints"),
+    TYPESYSTEM("Typesystem", "Code passes typesystem checks");
 
 
     private String myPresentation;
-    CheckingLevel(String presentation) {
+    private String[] myChecks;
+    CheckingLevel(String presentation, String... checks) {
       myPresentation = presentation;
+      myChecks = checks;
     }
     public String getPresentation() {
       return myPresentation;
+    }
+    public String getLongDescription() {
+      StringBuilder sb = new StringBuilder("Checks that:\n");
+      for (int i = 0; i <= this.ordinal(); i++) {
+        for (String s : ModelCheckerSettings.CheckingLevel.values()[i].myChecks) {
+          sb.append("-").append(s).append("\n");
+        }
+      }
+      return sb.toString();
     }
   }
 }
