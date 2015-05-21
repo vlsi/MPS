@@ -20,12 +20,30 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> {
   public MoveNodesDefault() {
@@ -42,14 +60,21 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
       return ExtensionRegistry.getInstance().getExtensions(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
     }
     public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
-      return true;
+      MPSProject project = arg._1();
+      final List<SNode> nodes = arg._0();
+      final Wrappers._boolean result = new Wrappers._boolean();
+      project.getModelAccess().runReadAction(new Runnable() {
+        public void run() {
+          result.value = canBeMoved(nodes);
+        }
+      });
+      return result.value;
     }
     public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
       List<SNode> target = arg._0();
       MPSProject project = arg._1();
       execute(project, target);
       return null;
-
     }
   };
 
@@ -60,7 +85,7 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
   public void execute(final MPSProject project, final List<SNode> target) {
     final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
     final SRepository repository = project.getRepository();
-    ModelAccess modelAccess = repository.getModelAccess();
+    final ModelAccess modelAccess = repository.getModelAccess();
 
     modelAccess.runReadAction(new Runnable() {
       public void run() {
@@ -97,11 +122,48 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
           return;
         }
 
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), target, project));
+        final Map<SNode, List<SReference>> usages = MapSequence.fromMap(new HashMap<SNode, List<SReference>>());
+        Set<SReference> allUsages = findUsages(project, target);
+        for (SReference ref : SetSequence.fromSet(allUsages)) {
+          if (MapSequence.fromMap(usages).get(ref.getTargetNode()) == null) {
+            MapSequence.fromMap(usages).put(ref.getTargetNode(), ListSequence.fromList(new ArrayList<SReference>()));
+          }
+          ListSequence.fromList(MapSequence.fromMap(usages).get(ref.getTargetNode())).addElement(ref);
+        }
+        SearchResults<SNode> searchResults = usagesToSearchResults(target, usages);
+
+        RefactoringAccessEx.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(project), new RefactoringViewAction() {
+          public void performAction(RefactoringViewItem refactoringViewItem) {
+            modelAccess.executeCommand(new Runnable() {
+              public void run() {
+                moveNodes(newLocation, target);
+                for (SNode node : SetSequence.fromSet(MapSequence.fromMap(usages).keySet())) {
+                  updateUsages(MapSequence.fromMap(usages).get(node), node);
+                }
+              }
+            });
+            refactoringViewItem.close();
+          }
+        }, searchResults, false, "Move nodes");
+
       }
     });
   }
 
+  public boolean canBeMoved(List<SNode> nodesToMove) {
+    if (ListSequence.fromList(nodesToMove).isEmpty()) {
+      return false;
+    }
+    SNode firstNode = ListSequence.fromList(nodesToMove).first();
+    final SContainmentLink containmentLink = firstNode.getContainmentLink();
+    final SNode parent = firstNode.getParent();
+    final SModel model = firstNode.getModel();
+    return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_92fyi8_a0a0a0a0a0a0f0h(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
+      }
+    });
+  }
 
   public boolean canBeInserted(final Object newLocation, List<SNode> nodesToMove) {
     if (newLocation instanceof SNode) {
@@ -116,7 +178,57 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
           return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
         }
       });
+    } else {
+      throw new IllegalStateException("expected SNode or SModel, found: " + newLocation);
     }
-    throw new IllegalStateException("expected SNode or SModel, found: " + newLocation);
+  }
+
+  public Set<SReference> findUsages(MPSProject project, List<SNode> node) {
+    return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(node).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
+      }
+    })), new EmptyProgressMonitor());
+  }
+
+  public SearchResults usagesToSearchResults(Collection<SNode> originalNodes, Map<SNode, List<SReference>> usages) {
+    SearchResults<SNode> searchResults = new SearchResults<SNode>();
+    searchResults.getSearchedNodes().addAll(originalNodes);
+    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(usages).keySet())) {
+      searchResults.getSearchResults().addAll(ListSequence.fromList(MapSequence.fromMap(usages).get(node)).select(new ISelector<SReference, SearchResult<SNode>>() {
+        public SearchResult<SNode> select(SReference it) {
+          return new SearchResult<SNode>(it.getSourceNode(), "");
+        }
+      }).toListSequence());
+    }
+    return searchResults;
+  }
+
+  public void moveNodes(Object newLocation, List<SNode> nodesToMove) {
+    if (newLocation instanceof SNode) {
+      for (SNode node : ListSequence.fromList(nodesToMove)) {
+        node.getParent().removeChild(node);
+        ((SNode) newLocation).addChild(ListSequence.fromList(nodesToMove).first().getContainmentLink(), node);
+      }
+    } else if (newLocation instanceof SModel) {
+      for (SNode node : ListSequence.fromList(nodesToMove)) {
+        node.getModel().removeRootNode(node);
+        ((SModel) newLocation).addRootNode(node);
+      }
+    } else {
+      throw new IllegalStateException("expected SNode or SModel, found: " + newLocation);
+    }
+  }
+
+  public void updateUsages(Iterable<SReference> usages, final SNode newTarget) {
+    Sequence.fromIterable(usages).visitAll(new IVisitor<SReference>() {
+      public void visit(SReference it) {
+        it.getSourceNode().setReferenceTarget(it.getLink(), newTarget);
+      }
+    });
+  }
+
+  private static boolean eq_92fyi8_a0a0a0a0a0a0f0h(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
