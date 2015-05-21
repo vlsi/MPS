@@ -175,7 +175,7 @@
                   <node concept="3Tm1VV" id="4r8JClTmVGo" role="1B3o_S" />
                   <node concept="10P_77" id="4r8JClTmVGq" role="3clF45" />
                   <node concept="37vLTG" id="4r8JClTmVGr" role="3clF46">
-                    <property role="TrG5h" value="module" />
+                    <property role="TrG5h" value="language" />
                     <node concept="3uibUv" id="4r8JClTmVGs" role="1tU5fm">
                       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                     </node>
@@ -249,7 +249,7 @@
                     </node>
                   </node>
                   <node concept="37vLTG" id="2Sw9hCAHQck" role="3clF46">
-                    <property role="TrG5h" value="p0" />
+                    <property role="TrG5h" value="language" />
                     <node concept="3uibUv" id="2Sw9hCAHQcl" role="1tU5fm">
                       <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
                     </node>
