@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.Collection;
-
 /**
- * XXX why this rule doesn't extend TemplateRuleWithCondition?
- * Evgeny Gryaznov, 10/27/10
+ * Root of template rules hierarchy
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-public interface TemplateReductionRule extends TemplateRuleForConcept {
+public interface TemplateRule {
 
-  Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  @NotNull
+  SNodeReference getRuleNode();
 }

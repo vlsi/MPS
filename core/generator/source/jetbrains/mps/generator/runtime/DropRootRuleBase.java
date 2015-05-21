@@ -63,7 +63,7 @@ public abstract class DropRootRuleBase implements TemplateDropRootRule {
 
   @NotNull
   @Override
-  public SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept2() {
     return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
   }
 

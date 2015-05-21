@@ -63,7 +63,7 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
 
   @NotNull
   @Override
-  public SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept2() {
     return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
   }
 
@@ -89,7 +89,7 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   @ToRemove(version = 3.3)
   @Override
   public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return isApplicable(context);
+    return true;
   }
 
   /**
@@ -97,6 +97,6 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
    */
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
-    return true;
+    return isApplicable(context.getEnvironment(), context);
   }
 }

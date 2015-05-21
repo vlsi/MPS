@@ -33,7 +33,7 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
   private boolean myApplyToSubConcepts;
 
   /**
-   * @deprecated compatibility
+   * @deprecated compatibility with MPS 3.2 code
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -78,7 +78,7 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
 
   @NotNull
   @Override
-  public SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept2() {
     return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
   }
 

@@ -63,6 +63,7 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
     myIncludeInheritors = withInheritors;
   }
 
+  @NotNull
   @Override
   public SNodeReference getRuleNode() {
     return myRule;
@@ -76,7 +77,7 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
 
   @NotNull
   @Override
-  public SAbstractConcept getApplicableConcept2() {
+  public final SAbstractConcept getApplicableConcept2() {
     // the reason why this class if different from other XXXRuleBase classes in concept field handing is
     // that there were no subclasses of RRB in MPS 3.2 to override #getApplicableConcept method (there's cons with args already, while
     // other base classes had no-arg cons in MPS 3.2

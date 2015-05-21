@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public interface TemplateRuleForConcept {
+public interface TemplateRuleForConcept extends TemplateRule {
   /**
    * @deprecated this method is to be replaced with {@link #getApplicableConcept2()}
    */
@@ -37,7 +37,8 @@ public interface TemplateRuleForConcept {
   String getApplicableConcept();
 
   /**
-   * THIS IS INTERNAL API. NAME OF THE METHOD WOULD CHANGE ONCE {@link #getApplicableConcept()} IS GONE
+   * THIS IS INTERNAL API. NAME OF THE METHOD WOULD CHANGE ONCE {@link #getApplicableConcept()} IS GONE.
+   * This is also the reason why implementation of the method in base classes is final, to prevent accidental override in generated rules
    * @return concept to trigger this rule
    * @since 3.3
    */
