@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import jetbrains.mps.util.Function;
-import jetbrains.mps.util.IterableUtil;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFunction<T, R>> {
@@ -27,25 +25,26 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
   }
 
   public R apply(T arg) {
-    List<ExtensionFunction<T, R>> allExtensions = IterableUtil.copyToList(getObjects());
-    for (ExtensionFunction<T, R> ext : allExtensions) {
-      if (!ext.applicable(arg)) {
-        allExtensions.remove(ext);
+    Iterable<ExtensionFunction<T, R>> objects = getObjects();
+    List<ExtensionFunction<T, R>> allApplicable = new ArrayList<ExtensionFunction<T, R>>();
+    for (ExtensionFunction<T, R> ext : objects) {
+      if (ext.applicable(arg)) {
+        allApplicable.add(ext);
       }
     }
-    if (allExtensions.isEmpty()) {
+    if (allApplicable.isEmpty()) {
       throw new IllegalStateException("No applicable extensions for extension point " + toString());
     }
-    for (ExtensionFunction<T, R> ext1 : allExtensions) {
+    for (ExtensionFunction<T, R> ext1 : allApplicable) {
       boolean ext1OverridesAll = true;
-      for (ExtensionFunction<T, R> ext2 : allExtensions) {
+      for (ExtensionFunction<T, R> ext2 : allApplicable) {
         if (ext2 != ext1 && !ext1.getOverridden().contains(ext2)) {
           ext1OverridesAll = false;
           break;
         }
       }
       if (ext1OverridesAll) {
-        allExtensions.remove(ext1);
+        allApplicable.remove(ext1);
         return ext1.apply(arg);
       }
     }
