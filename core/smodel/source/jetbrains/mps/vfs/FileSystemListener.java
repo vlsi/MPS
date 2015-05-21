@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.vfs;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
  * evgeny, 11/2/12
  */
 public interface FileSystemListener {
+  @Nullable
   IFile getFileToListen();
 
   Iterable<FileSystemListener> getListenerDependencies();
@@ -28,13 +30,9 @@ public interface FileSystemListener {
   void update(ProgressMonitor monitor, FileSystemEvent event);
 
   public interface FileSystemEvent {
-
     Iterable<IFile> getCreated();
-
     Iterable<IFile> getRemoved();
-
     Iterable<IFile> getChanged();
-
     void notify(FileSystemListener listener);
   }
 }

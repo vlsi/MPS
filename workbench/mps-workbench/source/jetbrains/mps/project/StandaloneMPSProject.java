@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -25,18 +24,13 @@ import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -55,7 +49,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -76,6 +69,8 @@ import java.util.Set;
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
+  private final WatchedRoots myWatchedRoots;
+
   // project data
   private String myErrors = null;
   private Element myProjectElement;
@@ -83,10 +78,9 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
-  private WatchRequestor myWatchRequestor;
-
-  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, WatchedRoots watchedRoots) {
     super(project);
+    myWatchedRoots = watchedRoots;
   }
 
   @Override
@@ -122,13 +116,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   @Override
   public void initComponent() {
     super.initComponent();
-    myWatchRequestor = new WatchRequestor() {
-      private String path = myProject.getBaseDir().getPath();
-      @Override
-      public String getDirectory() {
-        return path;
-      }
-    };
   }
 
   @Override
@@ -315,11 +302,11 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   private void startWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addGlobalWatch(myWatchRequestor);
+    myWatchedRoots.addWatchRequest(myProject.getBaseDir().getPath());
   }
 
   private void stopWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeGlobalWatch(myWatchRequestor);
+    myWatchedRoots.removeWatchRequest(myProject.getBaseDir().getPath());
   }
 
   private Path getPathForModule(SModule module) {
@@ -346,6 +333,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     return null;
   }
 
+  @Nullable
   @Override
   public IFile getFileToListen() {
     VirtualFile projectFile = myProject.getProjectFile();

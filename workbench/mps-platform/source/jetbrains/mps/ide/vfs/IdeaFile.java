@@ -24,6 +24,8 @@ import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.*;
 import jetbrains.mps.vfs.ex.IFileEx;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,6 +39,7 @@ import java.util.List;
  * @author Evgeny Gerashchenko
  */
 class IdeaFile implements IFileEx {
+  private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -151,7 +154,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile = directory.createChildData(ourRequestor(), fileName);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.error(null, e);
+        LOG.error(null, e);
         return false;
       }
     }
@@ -185,7 +188,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile = null;
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("Could not delete file: ", e);
+        LOG.warn("Could not delete file: ", e);
         return false;
       }
     } else {
@@ -199,7 +202,7 @@ class IdeaFile implements IFileEx {
       myVirtualFile.rename(ourRequestor(), newName);
       return true;
     } catch (IOException e) {
-      IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
+      LOG.warn("Could not rename file: ", e);
       return false;
     }
   }
@@ -211,7 +214,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile.move(ourRequestor(), ((IdeaFile) newParent).myVirtualFile);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
+        LOG.warn("Could not rename file: ", e);
         return false;
       }
     } else {
@@ -264,7 +267,7 @@ class IdeaFile implements IFileEx {
         ((NewVirtualFile) myVirtualFile).setTimeStamp(time);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("", e);
+        LOG.warn("", e);
       }
     }
     return false;
@@ -395,11 +398,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public int hashCode() {
-    if (getPath() == null) {
-      return 0;
-    } else {
-      return getSystemIndependentPath().hashCode();
-    }
+    return getSystemIndependentPath().hashCode();
   }
 
   @Override
@@ -416,5 +415,4 @@ class IdeaFile implements IFileEx {
     assert provider instanceof IdeaFileSystemProvider;
     return (IdeaFileSystemProvider) provider;
   }
-
 }

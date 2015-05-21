@@ -14,29 +14,27 @@ import org.jetbrains.annotations.NotNull;
  * danilla 8/7/13
  */
 public class WatchingIdeaFileSystemProvider extends IdeaFileSystemProvider {
+  private final WatchedRoots myWatchedRoots;
 
-  private WatchedRoots myWatchedRoots;
-
-  public WatchingIdeaFileSystemProvider(WatchedRoots watchedRoots) {
+  public WatchingIdeaFileSystemProvider(@NotNull WatchedRoots watchedRoots) {
     myWatchedRoots = watchedRoots;
   }
 
   @Override
-  public void addListener(FileSystemListener listener) {
+  public void addListener(@NotNull FileSystemListener listener) {
+    if (listener.getFileToListen() == null) return;
     super.addListener(listener);
     myWatchedRoots.addWatchRequest(lfsPath(listener.getFileToListen().getPath()));
   }
 
   @Override
-  public void removeListener(FileSystemListener listener) {
-    super.removeListener(listener);
-    if (listener == null || listener.getFileToListen() == null) {
-      return;
-    }
+  public void removeListener(@NotNull FileSystemListener listener) {
+    if (listener.getFileToListen() == null) return;
     myWatchedRoots.removeWatchRequest(lfsPath(listener.getFileToListen().getPath()));
+    super.removeListener(listener);
   }
 
-  private String lfsPath(String path) {
+  private String lfsPath(@NotNull String path) {
     int jarRootIdx = path.indexOf(JarFileSystem.JAR_SEPARATOR);
     return jarRootIdx < 0 ? path : path.substring(0, jarRootIdx);
   }

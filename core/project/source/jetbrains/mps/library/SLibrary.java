@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.library;
 
-import jetbrains.mps.fs.MPSDirectoryWatcher;
-import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
-import jetbrains.mps.library.contributor.RepositoryPathDescriptor;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -48,22 +45,16 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
+  @NotNull
   private final IFile myFile;
   private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
   private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
-  private final WatchRequestor myWatchRequestor;
 
   public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
     myFile = FileSystem.getInstance().getFileByPath(pathDescriptor.getPath());
     myHidden = hidden;
-    myWatchRequestor = new WatchRequestor() {
-      @Override
-      public String getDirectory() {
-        return SLibrary.this.myFile.getPath();
-      }
-    };
   }
 
   @NotNull
@@ -89,20 +80,19 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
   void attach(boolean refreshFiles) {
     LOG.debug("Attaching " + this);
     FileSystem.getInstance().addListener(this);
-    MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
     collectAndRegisterModules(refreshFiles);
   }
 
   void dispose() {
     LOG.debug("Disposing " + this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
     FileSystem.getInstance().removeListener(this);
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
-    return myFile;
+    return getFile();
   }
 
   @Override
