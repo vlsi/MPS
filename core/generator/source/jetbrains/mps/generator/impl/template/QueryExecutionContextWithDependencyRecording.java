@@ -268,10 +268,21 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
+    // FIXME why there's code above not to listen when interpreted rule is applied? Should I do the same here?
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getContextNode(rule, environment, context);
+      return wrapped.applyRule(rule, context, outputContextNode);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.getContextNode(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

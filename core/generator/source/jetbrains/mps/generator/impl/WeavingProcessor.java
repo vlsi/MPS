@@ -99,14 +99,14 @@ public class WeavingProcessor {
     public boolean apply() throws GenerationFailureException, GenerationCanceledException {
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(myEnv, myApplicableNode, null);
-        SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
+        final QueryExecutionContext queryExecutor = myEnv.getQueryExecutor();
+        SNode outputContextNode = queryExecutor.getContextNode(myRule, context);
         if (!checkContext(outputContextNode)) {
           return false;
         }
 
         try {
-          myRule.apply(myEnv, context, outputContextNode);
-
+          queryExecutor.applyRule(myRule, context, outputContextNode);
         } catch (DismissTopMappingRuleException e) {
           myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeInput(context));
         } catch (TemplateProcessingFailureException e) {

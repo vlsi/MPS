@@ -264,10 +264,20 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
+    try {
+      tracer.push(taskName("weave rule", rule.getRuleNode()), true);
+      return wrapped.applyRule(rule, context, outputContextNode);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("context for weaving", rule.getRuleNode()), true);
-      return wrapped.getContextNode(rule, environment, context);
+      return wrapped.getContextNode(rule, context);
     } finally {
       tracer.pop();
     }

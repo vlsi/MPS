@@ -77,7 +77,9 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
 
-  SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
+  boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException;
+
+  SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException;
 
   void executeScript(TemplateMappingScript mappingScript, SModel model) throws GenerationFailureException;
 }
