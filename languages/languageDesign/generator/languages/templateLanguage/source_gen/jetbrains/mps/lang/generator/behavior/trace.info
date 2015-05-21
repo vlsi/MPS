@@ -313,7 +313,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.WeaveEach_RuleConsequence_BehaviorDescriptor" />
     </file>
     <file name="WeaveMacro_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_BehaviorDescriptor" />
     </file>
     <file name="Weaving_MappingRule_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
@@ -2290,12 +2290,111 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3462145372628083275">
     <file name="WeaveMacro_Behavior.java">
-      <node id="3462145372628083275" at="8,0,10,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3462145372628083277" at="8,43,8,43" />
-      <scope id="3462145372628083275" at="8,0,10,0">
+      <node id="3850501259760041187" at="19,91,20,239" concept="9" />
+      <node id="3850501259760043553" at="21,5,22,102" concept="9" />
+      <node id="3850501259760043553" at="22,102,23,122" concept="9" />
+      <node id="3850501259760043556" at="24,43,25,80" concept="10" />
+      <node id="3850501259760043553" at="26,12,27,7" concept="0" />
+      <node id="3850501259760044032" at="28,5,29,214" concept="10" />
+      <node id="3850501259760043559" at="32,0,33,0" concept="5" trace="patternVar_concept" />
+      <node id="3850501259760043559" at="36,7,37,54" concept="9" />
+      <node id="3850501259760043559" at="38,147,39,23" concept="10" />
+      <node id="3850501259760043559" at="41,9,42,174" concept="9" />
+      <node id="3850501259760043559" at="43,93,44,25" concept="10" />
+      <node id="3850501259760043559" at="46,11,47,122" concept="9" />
+      <node id="3850501259760043559" at="48,13,49,73" concept="9" />
+      <node id="3850501259760043559" at="50,138,51,29" concept="10" />
+      <node id="3850501259760043559" at="52,15,53,203" concept="0" />
+      <node id="3850501259760043559" at="52,15,53,203" concept="4" />
+      <node id="3850501259760043559" at="57,7,58,18" concept="10" />
+      <node id="3850501259760043559" at="60,40,61,19" concept="10" />
+      <node id="3850501259760043559" at="64,69,65,81" concept="4" />
+      <node id="3850501259760043559" at="69,51,70,34" concept="10" />
+      <node id="3850501259760043559" at="71,7,72,18" concept="10" />
+      <node id="3462145372628083275" at="17,0,19,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3850501259760043559" at="33,0,35,0" concept="2" trace="Pattern_bvvctf_a0a0a1a1#()V" />
+      <node id="3850501259760043559" at="74,0,76,0" concept="8" trace="performActions#(Ljava/lang/Object;)V" />
+      <node id="3850501259760043559" at="37,54,40,9" concept="7" />
+      <node id="3850501259760043559" at="42,174,45,11" concept="7" />
+      <node id="3850501259760043559" at="49,73,52,15" concept="7" />
+      <node id="3850501259760043559" at="60,0,63,0" concept="8" trace="hasAntiquotations#()Z" />
+      <node id="3850501259760043559" at="63,71,66,7" concept="7" />
+      <node id="3850501259760043559" at="68,51,71,7" concept="0" />
+      <node id="3850501259760043559" at="68,51,71,7" concept="7" />
+      <node id="3850501259760043553" at="23,122,27,7" concept="7" />
+      <node id="3850501259760043559" at="49,73,53,203" concept="0" />
+      <node id="3850501259760043559" at="63,0,68,0" concept="8" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+      <node id="3850501259760043559" at="68,0,74,0" concept="8" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+      <node id="3850501259760043559" at="47,122,54,13" concept="0" />
+      <node id="3850501259760043553" at="20,239,28,5" concept="0" />
+      <node id="3850501259760043559" at="45,11,55,11" concept="0" />
+      <node id="3462145372628083275" at="19,0,31,0" concept="13" trace="virtual_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3850501259760043559" at="42,174,55,11" concept="0" />
+      <node id="3850501259760043559" at="40,9,56,9" concept="0" />
+      <node id="3850501259760043559" at="40,9,56,9" concept="0" />
+      <node id="3850501259760043559" at="37,54,56,9" concept="0" />
+      <node id="3850501259760043559" at="35,45,57,7" concept="0" />
+      <node id="3850501259760043559" at="35,0,60,0" concept="8" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="3462145372628083277" at="17,43,17,43" />
+      <scope id="3850501259760043559" at="33,38,33,38" />
+      <scope id="3850501259760043559" at="74,42,74,42" />
+      <scope id="3850501259760043555" at="24,43,25,80" />
+      <scope id="3850501259760043559" at="38,147,39,23" />
+      <scope id="3850501259760043559" at="43,93,44,25" />
+      <scope id="3850501259760043559" at="50,138,51,29" />
+      <scope id="3850501259760043559" at="52,15,53,203" />
+      <scope id="3850501259760043559" at="60,40,61,19" />
+      <scope id="3850501259760043559" at="64,69,65,81" />
+      <scope id="3850501259760043559" at="69,51,70,34" />
+      <scope id="3462145372628083275" at="17,0,19,0">
         <var name="thisNode" id="3462145372628083275" />
       </scope>
-      <unit id="3462145372628083275" at="7,0,11,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
+      <scope id="3850501259760043559" at="33,0,35,0" />
+      <scope id="3850501259760043559" at="74,0,76,0">
+        <var name="o" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043559" at="60,0,63,0" />
+      <scope id="3850501259760043559" at="63,71,66,7" />
+      <scope id="3850501259760043559" at="68,51,71,7" />
+      <scope id="3850501259760043559" at="49,73,53,203" />
+      <scope id="3850501259760043559" at="68,51,72,18" />
+      <scope id="3850501259760043559" at="48,13,53,203">
+        <var name="nodeToMatch_bvvctf_a0a0b0a" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043559" at="63,0,68,0">
+        <var name="pattern" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043553" at="21,5,27,7">
+        <var name="coercedNode_bvvctf_b0a" id="3850501259760043553" />
+        <var name="pattern_bvvctf_b0a" id="3850501259760043553" />
+      </scope>
+      <scope id="3850501259760043559" at="68,0,74,0">
+        <var name="fieldName" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043559" at="46,11,54,13">
+        <var name="childVar_bvvctf_a0a0b0a" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760033472" at="19,91,29,214">
+        <var name="queryType" id="3850501259760041188" />
+      </scope>
+      <scope id="3462145372628083275" at="19,0,31,0">
+        <var name="thisNode" id="3462145372628083275" />
+      </scope>
+      <scope id="3850501259760043559" at="42,174,55,11" />
+      <scope id="3850501259760043559" at="41,9,55,11">
+        <var name="childRole_bvvctf_" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043559" at="40,9,56,9" />
+      <scope id="3850501259760043559" at="37,54,56,9" />
+      <scope id="3850501259760043559" at="36,7,56,9">
+        <var name="nodeToMatch_bvvctf_a0a1a0" id="3850501259760043559" />
+      </scope>
+      <scope id="3850501259760043559" at="35,45,58,18" />
+      <scope id="3850501259760043559" at="35,0,60,0">
+        <var name="nodeToMatch" id="3850501259760043559" />
+      </scope>
+      <unit id="3850501259760043559" at="31,0,77,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior$Pattern_bvvctf_a0a0a1a1" />
+      <unit id="3462145372628083275" at="16,0,78,0" name="jetbrains.mps.lang.generator.behavior.WeaveMacro_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/4035562641222622440">
