@@ -242,13 +242,13 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException {
     if(rule instanceof TemplateRootMappingRuleInterpreted) {
-      return wrapped.applyRule(rule, environment, context);
+      return wrapped.applyRule(rule, context);
     }
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.applyRule(rule, environment, context);
+      return wrapped.applyRule(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

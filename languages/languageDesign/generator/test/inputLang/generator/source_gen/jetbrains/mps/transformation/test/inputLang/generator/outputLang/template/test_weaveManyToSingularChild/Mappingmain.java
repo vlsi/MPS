@@ -47,7 +47,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_1218738676457(new MapRootRuleContext(context, getRuleNode()));
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new Templatemap__outputNode().apply(environment, context);
       return result;
     }

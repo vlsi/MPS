@@ -234,26 +234,24 @@
       <node id="3893401255414084744" at="54,96,55,20" concept="9" />
       <node id="3893401255414084744" at="59,31,60,371" concept="13" />
       <node id="3893401255414084744" at="63,94,64,124" concept="9" />
-      <node id="3893401255414084744" at="66,142,67,86" concept="8" />
-      <node id="3893401255414084744" at="67,86,68,20" concept="9" />
+      <node id="3893401255414084744" at="67,103,68,80" concept="8" />
+      <node id="3893401255414084744" at="68,80,69,86" concept="8" />
+      <node id="3893401255414084744" at="69,86,70,20" concept="9" />
       <node id="3893401255414084744" at="44,0,47,0" concept="1" trace="ReductionRule0#()V" />
       <node id="3893401255414084744" at="59,0,62,0" concept="1" trace="RootMappingRule0#()V" />
       <node id="3893401255414084744" at="35,0,39,0" concept="7" trace="getReductionRules#()Ljava/util/Collection;" />
       <node id="3893401255414084744" at="39,0,43,0" concept="7" trace="getRootRules#()Ljava/util/Collection;" />
       <node id="3893401255414084744" at="47,0,51,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="3893401255414084744" at="62,0,66,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="3893401255414084744" at="66,0,70,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3893401255414084744" at="30,0,35,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="3893401255414084744" at="51,0,57,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="66,0,72,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="3893401255414084744" at="36,64,37,17" />
       <scope id="3893401255414084744" at="40,61,41,21" />
       <scope id="3893401255414084744" at="44,29,45,366" />
       <scope id="3893401255414084744" at="48,94,49,131" />
       <scope id="3893401255414084744" at="59,31,60,371" />
       <scope id="3893401255414084744" at="63,94,64,124" />
-      <scope id="3893401255414084744" at="66,142,68,20">
-        <var name="result" id="3893401255414084744" />
-      </scope>
       <scope id="3893401255414084744" at="30,52,33,103" />
       <scope id="3893401255414084744" at="44,0,47,0" />
       <scope id="3893401255414084744" at="52,103,55,20">
@@ -261,6 +259,10 @@
         <var name="tlist1" id="3893401255414084744" />
       </scope>
       <scope id="3893401255414084744" at="59,0,62,0" />
+      <scope id="3893401255414084744" at="67,103,70,20">
+        <var name="environment" id="3893401255414084744" />
+        <var name="result" id="3893401255414084744" />
+      </scope>
       <scope id="3893401255414084744" at="35,0,39,0" />
       <scope id="3893401255414084744" at="39,0,43,0" />
       <scope id="3893401255414084744" at="47,0,51,0">
@@ -269,19 +271,18 @@
       <scope id="3893401255414084744" at="62,0,66,0">
         <var name="context" id="3893401255414084744" />
       </scope>
-      <scope id="3893401255414084744" at="66,0,70,0">
-        <var name="context" id="3893401255414084744" />
-        <var name="environment" id="3893401255414084744" />
-      </scope>
       <scope id="3893401255414084744" at="30,0,35,0">
         <var name="model" id="3893401255414084744" />
       </scope>
       <scope id="3893401255414084744" at="51,0,57,0">
         <var name="context" id="3893401255414084744" />
       </scope>
-      <unit id="3893401255414084744" at="58,0,71,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
+      <scope id="3893401255414084744" at="66,0,72,0">
+        <var name="context" id="3893401255414084744" />
+      </scope>
       <unit id="3893401255414084744" at="43,0,58,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
-      <unit id="3893401255414084744" at="26,0,72,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
+      <unit id="3893401255414084744" at="58,0,73,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
+      <unit id="3893401255414084744" at="26,0,74,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="3893401255414132236" at="20,110,21,419" concept="9" />

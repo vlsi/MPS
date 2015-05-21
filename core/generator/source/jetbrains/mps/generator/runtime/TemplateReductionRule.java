@@ -40,7 +40,8 @@ public interface TemplateReductionRule extends TemplateRuleForConcept {
    * Try to apply rule in the given context
    * @param context execution context
    * @return <code>null</code> to indicate this rule could not do anything to active input node
-   * @throws GenerationException
+   * @throws GenerationException failure/cancellation/control flow. Both {@link jetbrains.mps.generator.impl.DismissTopMappingRuleException} and
+   * {@link jetbrains.mps.generator.impl.AbandonRuleInputException} exceptions are honoured.
    */
   @Nullable
   Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException;

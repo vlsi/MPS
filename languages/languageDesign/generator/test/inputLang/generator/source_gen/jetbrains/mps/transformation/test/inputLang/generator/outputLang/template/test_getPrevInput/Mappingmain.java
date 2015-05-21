@@ -38,7 +38,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_1202255161954(new MapRootRuleContext(context, getRuleNode()));
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new TemplateOutputRoot__1().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "ROOT INPUT");
       return result;
@@ -52,7 +54,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_1202338801829(new MapRootRuleContext(context, getRuleNode()));
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new TemplateOutputRoot__2().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "ROOT INPUT");
       return result;

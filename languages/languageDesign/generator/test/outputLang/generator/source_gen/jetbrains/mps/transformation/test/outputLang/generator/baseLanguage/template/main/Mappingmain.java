@@ -603,7 +603,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public RootMappingRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412767"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x398b8e251df78584L, "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot"), false, false);
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new TemplateRootCustom().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "rootcustom");
       return result;

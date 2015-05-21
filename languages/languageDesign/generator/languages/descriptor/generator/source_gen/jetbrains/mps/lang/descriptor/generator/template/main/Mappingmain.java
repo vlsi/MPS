@@ -358,7 +358,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public RootMappingRule0() {
       super(new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303786"), MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x7d2f7947ef1533a5L, "jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"), false, false);
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new TemplateLanguage().apply(environment, context);
       return result;
     }
@@ -371,7 +373,9 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
     public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_6655394244919371015(new MapRootRuleContext(context, getRuleNode()));
     }
-    public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> result = new TemplateGenerator().apply(environment, context);
       environment.registerLabel(context.getInput(), result, "generator.descriptor");
       return result;

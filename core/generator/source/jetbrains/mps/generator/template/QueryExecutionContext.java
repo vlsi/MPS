@@ -73,7 +73,7 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException;
 
-  Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+  Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException;
 
   Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException;
 

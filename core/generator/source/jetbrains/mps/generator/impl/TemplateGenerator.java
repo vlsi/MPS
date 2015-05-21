@@ -48,12 +48,10 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -368,7 +366,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure)
     throws GenerationCanceledException, GenerationFailureException {
     try {
-      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, env, new DefaultTemplateContext(env, inputNode, null));
+      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, new DefaultTemplateContext(env, inputNode, null));
       if (outputNodes == null) {
         return;
       }

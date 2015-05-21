@@ -21127,22 +21127,32 @@
             <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
           </node>
         </node>
-        <node concept="37vLTG" id="1Gdr4uuqLQg" role="3clF46">
-          <property role="TrG5h" value="environment" />
-          <property role="3TUv4t" value="true" />
-          <node concept="3uibUv" id="1Gdr4uuqLQh" role="1tU5fm">
-            <ref role="3uigEE" to="icf3:~TemplateExecutionEnvironment" resolve="TemplateExecutionEnvironment" />
-          </node>
-        </node>
         <node concept="3clFbS" id="1Gdr4uuqLQk" role="3clF47">
+          <node concept="3cpWs8" id="3_lW72jdjwA" role="3cqZAp">
+            <node concept="3cpWsn" id="3_lW72jdjw$" role="3cpWs9">
+              <property role="3TUv4t" value="true" />
+              <property role="TrG5h" value="environment" />
+              <node concept="3uibUv" id="3_lW72jdk54" role="1tU5fm">
+                <ref role="3uigEE" to="icf3:~TemplateExecutionEnvironment" resolve="TemplateExecutionEnvironment" />
+              </node>
+              <node concept="2OqwBi" id="3_lW72jdkbq" role="33vP2m">
+                <node concept="37vLTw" id="3_lW72jdk7i" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1Gdr4uuqLQi" resolve="context" />
+                </node>
+                <node concept="liA8E" id="3_lW72jdkiE" role="2OqNvi">
+                  <ref role="37wK5l" to="icf3:~TemplateContext.getEnvironment():jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" resolve="getEnvironment" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="7Ydq8GQnYNW" role="3cqZAp">
             <node concept="3cpWsn" id="7Ydq8GQnYNX" role="3cpWs9">
               <property role="TrG5h" value="result" />
               <node concept="2OqwBi" id="7Ydq8GQnYO0" role="33vP2m">
                 <node concept="liA8E" id="7Ydq8GQnYOn" role="2OqNvi">
                   <ref role="37wK5l" node="4puqa71E7Wz" resolve="apply" />
-                  <node concept="37vLTw" id="2BHiRxgl1_4" role="37wK5m">
-                    <ref role="3cqZAo" node="1Gdr4uuqLQg" resolve="environment" />
+                  <node concept="37vLTw" id="3_lW72jdkmF" role="37wK5m">
+                    <ref role="3cqZAo" node="3_lW72jdjw$" resolve="environment" />
                   </node>
                   <node concept="37vLTw" id="2BHiRxgmvJw" role="37wK5m">
                     <ref role="3cqZAo" node="1Gdr4uuqLQi" resolve="context" />
@@ -21222,9 +21232,6 @@
               </node>
             </node>
             <node concept="2OqwBi" id="7Ydq8GQnYOw" role="3clFbG">
-              <node concept="37vLTw" id="2BHiRxgmI7A" role="2Oq$k0">
-                <ref role="3cqZAo" node="1Gdr4uuqLQg" resolve="environment" />
-              </node>
               <node concept="liA8E" id="7Ydq8GQnYOy" role="2OqNvi">
                 <ref role="37wK5l" to="icf3:~TemplateExecutionEnvironment.registerLabel(org.jetbrains.mps.openapi.model.SNode,java.lang.Iterable,java.lang.String):void" resolve="registerLabel" />
                 <node concept="2OqwBi" id="4aI4LaAQH_h" role="37wK5m">
@@ -21263,6 +21270,9 @@
                   </node>
                 </node>
               </node>
+              <node concept="37vLTw" id="3_lW72jdl5h" role="2Oq$k0">
+                <ref role="3cqZAo" node="3_lW72jdjw$" resolve="environment" />
+              </node>
             </node>
           </node>
           <node concept="3cpWs6" id="7Ydq8GQnYOr" role="3cqZAp">
@@ -21277,6 +21287,12 @@
           <node concept="3uibUv" id="1Gdr4uuqLQj" role="1tU5fm">
             <ref role="3uigEE" to="icf3:~TemplateContext" resolve="TemplateContext" />
           </node>
+          <node concept="2AHcQZ" id="6j1nfBd_ope" role="2AJF6D">
+            <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="1U08SVz9QPb" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3Tm1VV" id="1Gdr4uuqD7f" role="1B3o_S" />
