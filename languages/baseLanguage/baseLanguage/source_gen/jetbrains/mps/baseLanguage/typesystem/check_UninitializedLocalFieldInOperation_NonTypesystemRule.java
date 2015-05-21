@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class check_NonFinalUninitializedLocalFieldInOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_NonFinalUninitializedLocalFieldInOperation_NonTypesystemRule() {
+public class check_UninitializedLocalFieldInOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_UninitializedLocalFieldInOperation_NonTypesystemRule() {
   }
   public void applyRule(final SNode fieldReferenceOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode field = SLinkOperations.getTarget(fieldReferenceOperation, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration"));
@@ -25,7 +25,7 @@ public class check_NonFinalUninitializedLocalFieldInOperation_NonTypesystemRule 
       }
     }
 
-    if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && eq_syzl11_a0a4a1(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
+    if ((SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) == null) && eq_uz0p75_a0a4a1(SNodeOperations.getNodeAncestor(body, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false), SNodeOperations.getParent(field))) {
       VariableReferenceUtil.checkPrecedingWriteInstructions(typeCheckingContext, fieldReferenceOperation, body, field);
     }
 
@@ -39,7 +39,7 @@ public class check_NonFinalUninitializedLocalFieldInOperation_NonTypesystemRule 
   public boolean overrides() {
     return false;
   }
-  private static boolean eq_syzl11_a0a4a1(Object a, Object b) {
+  private static boolean eq_uz0p75_a0a4a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -115,9 +115,16 @@ public class VariableReferenceUtil {
       if (isInitializedInPrecedingInitializersOrConstructors(StatementList_Behavior.call_getFirstStatement_5420652334935371934(currentBody), field, onlyInstanceInitializers)) {
         return;
       }
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(contextReference, "Field " + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " used before initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6516159782899570422", null, errorTarget);
+      if (SPropertyOperations.getBoolean(field, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0x111f9e9f00cL, "isFinal"))) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(contextReference, "Field " + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " used before initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8129007564265130269", null, errorTarget);
+        }
+      } else {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(contextReference, "Field " + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " used before initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6516159782899570422", null, errorTarget);
+        }
       }
     }
   }
@@ -155,7 +162,7 @@ public class VariableReferenceUtil {
     }
   }
 
-  private static boolean containsWrite(SNode statements, SNode field) {
+  public static boolean containsWrite(SNode statements, SNode field) {
     Program body = DataFlowManager.getInstance().buildProgramFor(statements);
     List<Instruction> instructions = body.getInstructions();
     Iterator<Instruction> iterator = instructions.iterator();
