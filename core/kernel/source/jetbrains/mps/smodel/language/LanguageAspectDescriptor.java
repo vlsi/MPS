@@ -30,7 +30,9 @@ public abstract class LanguageAspectDescriptor {
   @NotNull
   public abstract Collection<SModel> getAspectModels(SModule language);
 
-  public abstract boolean hasAspect(SModule language);
+  public boolean hasAspect(SModule language){
+    return !getAspectModels(language).isEmpty();
+  }
 
   @NotNull
   public abstract Collection<SLanguage> getMainLanguages();

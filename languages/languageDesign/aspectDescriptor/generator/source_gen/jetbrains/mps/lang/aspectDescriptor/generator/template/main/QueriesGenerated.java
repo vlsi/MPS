@@ -14,6 +14,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
+  public static boolean ifMacro_Condition_4504202565774905127(final IfMacroContext _context) {
+    return (LanguageAspectDescriptor_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)", "5100536058473062674")) != null);
+  }
   public static boolean ifMacro_Condition_3323697319248359126(final IfMacroContext _context) {
     return (LanguageAspectDescriptor_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)", "293220601665606579")) != null);
   }
