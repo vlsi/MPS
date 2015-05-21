@@ -15,6 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="ExtensionDescriptor.java">
@@ -1688,7 +1689,7 @@
       <node id="5487985028841902891" at="24,118,25,53" concept="3" />
       <node id="5487985028841902889" at="27,27,28,39" concept="3" />
       <node id="5487985028841902891" at="20,9,26,7" concept="0" />
-      <node id="5487985028841902889" at="19,25,29,5" concept="15" />
+      <node id="5487985028841902889" at="19,25,29,5" concept="16" />
       <node id="5487985028841902889" at="16,0,31,0" concept="2" trace="Structure_ActionGroup#()V" />
       <scope id="5487985028841902889" at="27,0,28,39">
         <var name="t" id="5487985028841902889" />
@@ -1871,7 +1872,7 @@
       <node id="5487985028841903000" at="18,119,19,119" concept="3" />
       <node id="5487985028841903001" at="19,119,20,121" concept="3" />
       <node id="5487985028841902996" at="21,27,22,39" concept="3" />
-      <node id="5487985028841902996" at="15,25,23,5" concept="15" />
+      <node id="5487985028841902996" at="15,25,23,5" concept="16" />
       <node id="5487985028841902996" at="12,0,25,0" concept="2" trace="ShowHelp_ActionGroup#()V" />
       <scope id="5487985028841902996" at="21,0,22,39">
         <var name="t" id="5487985028841902996" />
@@ -3116,7 +3117,7 @@
       <node id="5487985028841904099" at="20,126,21,130" concept="3" />
       <node id="5487985028841904100" at="21,130,22,128" concept="3" />
       <node id="5487985028841904090" at="23,27,24,39" concept="3" />
-      <node id="5487985028841904090" at="15,25,25,5" concept="15" />
+      <node id="5487985028841904090" at="15,25,25,5" concept="16" />
       <node id="5487985028841904090" at="12,0,27,0" concept="2" trace="RefactoringAdditions_ActionGroup#()V" />
       <scope id="5487985028841904090" at="23,0,24,39">
         <var name="t" id="5487985028841904090" />
@@ -5937,6 +5938,74 @@
       <unit id="2133534697612380842" at="104,51,118,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action$3" />
       <unit id="46729075932138510" at="123,114,137,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action$4" />
       <unit id="5487985028841904387" at="33,0,148,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action" />
+    </file>
+  </root>
+  <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/6297557281370553226">
+    <file name="MoveContainmentLinksUp.java">
+      <node id="6297557281370553226" at="25,35,26,56" concept="14" />
+      <node id="6297557281370553226" at="30,100,31,181" concept="8" />
+      <node id="6297557281370553226" at="31,181,32,119" concept="8" />
+      <node id="6297557281370553226" at="34,106,35,48" concept="9" />
+      <node id="6297557281370553226" at="37,24,38,20" concept="9" />
+      <node id="6297557281370553226" at="40,112,41,152" concept="9" />
+      <node id="1234464120782888884" at="43,71,44,42" concept="8" />
+      <node id="6595510218040207464" at="44,42,45,36" concept="8" />
+      <node id="6595510218040219499" at="45,36,46,63" concept="8" />
+      <node id="6595510218040219506" at="50,45,51,549" concept="9" />
+      <node id="6297557281370554113" at="55,9,56,26" concept="9" />
+      <node id="6297557281371553463" at="58,63,59,48" concept="15" />
+      <node id="6297557281370553226" at="63,76,64,22" concept="9" />
+      <node id="6297557281370553226" at="25,0,28,0" concept="2" trace="MoveContainmentLinksUp#()V" />
+      <node id="6297557281370553226" at="34,0,37,0" concept="7" trace="accept#(Ljetbrains/mps/smodel/structure/Extension;)Z" />
+      <node id="6297557281370553226" at="40,0,43,0" concept="7" trace="getAllExtensions#()Ljava/lang/Iterable;" />
+      <node id="6595510218040219504" at="50,0,53,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6297557281370553238" at="58,0,61,0" concept="7" trace="apply#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/Void;" />
+      <node id="6297557281370553226" at="63,0,66,0" concept="7" trace="get#()Ljetbrains/mps/smodel/structure/ExtensionFunction;" />
+      <node id="6297557281370553226" at="32,119,37,24" concept="3" />
+      <node id="6595510218040221714" at="48,27,53,13" concept="3" />
+      <node id="6595510218040218635" at="48,0,55,0" concept="7" trace="run#()V" />
+      <node id="6595510218040213067" at="46,63,55,9" concept="3" />
+      <node id="6297557281370553226" at="29,0,40,0" concept="7" trace="getOverridden#()Ljava/util/Collection;" />
+      <node id="6297557281370553230" at="43,0,58,0" concept="7" trace="applicable#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+      <node id="6297557281370553226" at="28,0,62,0" concept="4" trace="myFunction" />
+      <scope id="6297557281370553226" at="25,35,26,56" />
+      <scope id="6297557281370553226" at="34,106,35,48" />
+      <scope id="6297557281370553226" at="40,112,41,152" />
+      <scope id="6595510218040219505" at="50,45,51,549" />
+      <scope id="6297557281370553242" at="58,63,59,48" />
+      <scope id="6297557281370553226" at="63,76,64,22" />
+      <scope id="6297557281370553226" at="25,0,28,0" />
+      <scope id="6297557281370553226" at="34,0,37,0">
+        <var name="it" id="6297557281370553226" />
+      </scope>
+      <scope id="6297557281370553226" at="40,0,43,0" />
+      <scope id="6595510218040219504" at="50,0,53,0">
+        <var name="it" id="6595510218040219504" />
+      </scope>
+      <scope id="6297557281370553238" at="58,0,61,0">
+        <var name="arg" id="6297557281370553244" />
+      </scope>
+      <scope id="6297557281370553226" at="63,0,66,0" />
+      <scope id="6595510218040218636" at="48,27,53,13" />
+      <scope id="6595510218040218635" at="48,0,55,0" />
+      <scope id="6297557281370553226" at="30,100,38,20">
+        <var name="extensions" id="6297557281370553226" />
+        <var name="result" id="6297557281370553226" />
+      </scope>
+      <scope id="6297557281370553226" at="29,0,40,0" />
+      <scope id="6297557281370553234" at="43,71,56,26">
+        <var name="project" id="6595510218040207465" />
+        <var name="result" id="6595510218040219500" />
+        <var name="target" id="1234464120782888890" />
+      </scope>
+      <scope id="6297557281370553230" at="43,0,58,0">
+        <var name="arg" id="6297557281370553236" />
+      </scope>
+      <unit id="6297557281370553226" at="33,91,37,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinksUp$2" />
+      <unit id="6595510218040219504" at="49,63,53,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinksUp$3" />
+      <unit id="6595510218040218635" at="47,65,55,7" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinksUp$2" />
+      <unit id="6297557281370553226" at="28,87,61,3" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinksUp$1" />
+      <unit id="6297557281370553226" at="24,0,67,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveContainmentLinksUp" />
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/7162597690967702201">

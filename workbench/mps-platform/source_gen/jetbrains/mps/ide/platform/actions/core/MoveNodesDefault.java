@@ -13,40 +13,110 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> {
   public MoveNodesDefault() {
-    super("jetbrains.mps.ide.platform.MoveNodeAction");
+    super("jetbrains.mps.ide.platform.MoveNodesAction");
   }
+  private ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> myFunction = new ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>() {
+    @Override
+    public Collection<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> getOverridden() {
+      List<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> result = ListSequence.fromList(new ArrayList<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>());
+      Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> extensions = getAllExtensions();
+      return result;
+    }
+    public Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> getAllExtensions() {
+      return ExtensionRegistry.getInstance().getExtensions(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
+    }
+    public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
+      return true;
+    }
+    public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
+      List<SNode> target = arg._0();
+      MPSProject project = arg._1();
+      execute(project, target);
+      return null;
+
+    }
+  };
 
   public ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> get() {
-    return new ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>() {
-      @Override
-      public Collection<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> getOverridden() {
-        List<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> result = ListSequence.fromList(new ArrayList<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>());
-        Iterable<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> extensions = getAllExtensionObjects();
-        return result;
-      }
-      public Iterable<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> getAllExtensionObjects() {
-        return ExtensionRegistry.getInstance().getObjects(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
-      }
-      public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
-        return true;
-      }
-      public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
-        final List<SNode> target = arg._0();
-        final MPSProject project = arg._1();
-        MoveNodesExecute.execute(project, target, new MoveNodesExecute.ExecuteRefactoring() {
-          public void run(Object newLocation) {
-            RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), target, project));
-          }
-        });
-        return null;
+    return myFunction;
+  }
 
+  public void execute(final MPSProject project, final List<SNode> target) {
+    final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
+    final SRepository repository = project.getRepository();
+    ModelAccess modelAccess = repository.getModelAccess();
+
+    modelAccess.runReadAction(new Runnable() {
+      public void run() {
+        targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(target).first());
       }
-    };
+    });
+
+    final Object newLocation = MoveNodesDialog.getSelectedObject(project.getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
+      @Override
+      public boolean check(Object selectedObject, SModel model) {
+        return selectedObject instanceof SNode || selectedObject instanceof SModel;
+      }
+    });
+    if (newLocation == null) {
+      return;
+    }
+
+    modelAccess.runReadAction(new Runnable() {
+      public void run() {
+        for (SNode node : ListSequence.fromList(target)) {
+          if (!(SNodeUtil.isAccessible(node, repository))) {
+            return;
+          }
+        }
+        if (newLocation instanceof SNode && !(SNodeUtil.isAccessible(((SNode) newLocation), repository))) {
+          return;
+        }
+
+        if (newLocation instanceof SModel && (((SModel) newLocation).getReference().resolve(repository) != newLocation)) {
+          return;
+        }
+
+        if (!(canBeInserted(newLocation, target))) {
+          return;
+        }
+
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), target, project));
+      }
+    });
+  }
+
+
+  public boolean canBeInserted(final Object newLocation, List<SNode> nodesToMove) {
+    if (newLocation instanceof SNode) {
+      return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ((jetbrains.mps.smodel.SNode) newLocation).getConcept().getContainmentLinks().contains(it.getContainmentLink());
+        }
+      });
+    } else if (newLocation instanceof SModel) {
+      return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.asNode(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"));
+        }
+      });
+    }
+    throw new IllegalStateException("expected SNode or SModel, found: " + newLocation);
   }
 }

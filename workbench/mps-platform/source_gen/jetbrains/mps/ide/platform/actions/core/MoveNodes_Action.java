@@ -66,6 +66,6 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodeAction").apply(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").apply(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
   }
 }
