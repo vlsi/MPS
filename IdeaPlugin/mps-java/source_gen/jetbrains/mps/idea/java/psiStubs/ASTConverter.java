@@ -14,10 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.intellij.psi.PsiClassType;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import com.intellij.psi.PsiClassType;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiEnumConstant;
@@ -110,13 +110,16 @@ public class ASTConverter {
     final ASTConverter currConverter = addTypeParams(x, classifier.value);
 
     // class's super types and implemented ifaces 
+    PsiClassType[] extendz = x.getExtendsListTypes();
+    PsiClassType[] implementz = x.getImplementsListTypes();
+
     {
       final SNode reallyClass = classifier.value;
       if (SNodeOperations.isInstanceOf(reallyClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-        if (x.getSuperTypes().length > 0) {
-          SLinkOperations.setTarget(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), currConverter.resolveClass(x.getSuperTypes()[0]));
+        if (extendz.length != 0) {
+          SLinkOperations.setTarget(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), currConverter.resolveClass(extendz[0]));
         }
-        ListSequence.fromList(SLinkOperations.getChildren(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getImplementsListTypes())).select(new ISelector<PsiClassType, SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(reallyClass, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(implementz)).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
             return currConverter.resolveClass(it);
           }
@@ -131,7 +134,7 @@ public class ASTConverter {
     {
       final SNode iface = classifier.value;
       if (SNodeOperations.isInstanceOf(iface, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-        ListSequence.fromList(SLinkOperations.getChildren(iface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getSuperTypes())).select(new ISelector<PsiClassType, SNode>() {
+        ListSequence.fromList(SLinkOperations.getChildren(iface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"))).addSequence(Sequence.fromIterable(Sequence.fromArray(extendz)).select(new ISelector<PsiClassType, SNode>() {
           public SNode select(PsiClassType it) {
             return currConverter.resolveClass(it);
           }

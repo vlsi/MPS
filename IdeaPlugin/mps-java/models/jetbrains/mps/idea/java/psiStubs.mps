@@ -3042,6 +3042,43 @@
             <property role="3SKdUp" value="class's super types and implemented ifaces" />
           </node>
         </node>
+        <node concept="3cpWs8" id="6$aMxwnaJts" role="3cqZAp">
+          <node concept="3cpWsn" id="6$aMxwnaJtt" role="3cpWs9">
+            <property role="TrG5h" value="extendz" />
+            <node concept="10Q1$e" id="6$aMxwnaJtu" role="1tU5fm">
+              <node concept="3uibUv" id="6$aMxwnaJtv" role="10Q1$1">
+                <ref role="3uigEE" to="yj1e:~PsiClassType" resolve="PsiClassType" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6$aMxwnb1Z1" role="33vP2m">
+              <node concept="37vLTw" id="6$aMxwnb1Z2" role="2Oq$k0">
+                <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
+              </node>
+              <node concept="liA8E" id="6$aMxwnb1Z3" role="2OqNvi">
+                <ref role="37wK5l" to="yj1e:~PsiClass.getExtendsListTypes():com.intellij.psi.PsiClassType[]" resolve="getExtendsListTypes" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6$aMxwnaUJt" role="3cqZAp">
+          <node concept="3cpWsn" id="6$aMxwnaUJw" role="3cpWs9">
+            <property role="TrG5h" value="implementz" />
+            <node concept="10Q1$e" id="6$aMxwnaUJx" role="1tU5fm">
+              <node concept="3uibUv" id="6$aMxwnaUJy" role="10Q1$1">
+                <ref role="3uigEE" to="yj1e:~PsiClassType" resolve="PsiClassType" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="6$aMxwnb215" role="33vP2m">
+              <node concept="liA8E" id="6$aMxwnb216" role="2OqNvi">
+                <ref role="37wK5l" to="yj1e:~PsiClass.getImplementsListTypes():com.intellij.psi.PsiClassType[]" resolve="getImplementsListTypes" />
+              </node>
+              <node concept="37vLTw" id="6$aMxwnb217" role="2Oq$k0">
+                <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6$aMxwnaO0G" role="3cqZAp" />
         <node concept="Jncv_" id="13LU1wg_E5n" role="3cqZAp">
           <ref role="JncvD" to="tpee:fz12cDA" resolve="ClassConcept" />
           <node concept="37vLTw" id="13LU1wg_Gyr" role="JncvB">
@@ -3049,19 +3086,14 @@
           </node>
           <node concept="3clFbS" id="13LU1wg_E5r" role="Jncv$">
             <node concept="3clFbJ" id="13LU1wgAM_T" role="3cqZAp">
-              <node concept="3eOSWO" id="13LU1wgB6o3" role="3clFbw">
-                <node concept="3cmrfG" id="13LU1wgB6ou" role="3uHU7w">
+              <node concept="3y3z36" id="6$aMxwnabr8" role="3clFbw">
+                <node concept="3cmrfG" id="6$aMxwnawss" role="3uHU7w">
                   <property role="3cmrfH" value="0" />
                 </node>
                 <node concept="2OqwBi" id="13LU1wgB0tD" role="3uHU7B">
                   <node concept="1Rwk04" id="13LU1wgB2UJ" role="2OqNvi" />
-                  <node concept="2OqwBi" id="13LU1wgARWA" role="2Oq$k0">
-                    <node concept="37vLTw" id="13LU1wgAORU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
-                    </node>
-                    <node concept="liA8E" id="13LU1wgAY25" role="2OqNvi">
-                      <ref role="37wK5l" to="yj1e:~PsiClass.getSuperTypes():com.intellij.psi.PsiClassType[]" resolve="getSuperTypes" />
-                    </node>
+                  <node concept="37vLTw" id="6$aMxwnb26j" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6$aMxwnaJtt" resolve="extendz" />
                   </node>
                 </node>
               </node>
@@ -3078,13 +3110,8 @@
                           <node concept="3cmrfG" id="13LU1wgAI71" role="AHEQo">
                             <property role="3cmrfH" value="0" />
                           </node>
-                          <node concept="2OqwBi" id="13LU1wgAqRn" role="AHHXb">
-                            <node concept="37vLTw" id="13LU1wgAnFU" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
-                            </node>
-                            <node concept="liA8E" id="13LU1wgAx1W" role="2OqNvi">
-                              <ref role="37wK5l" to="yj1e:~PsiClass.getSuperTypes():com.intellij.psi.PsiClassType[]" resolve="getSuperTypes" />
-                            </node>
+                          <node concept="37vLTw" id="6$aMxwnb2gG" role="AHHXb">
+                            <ref role="3cqZAo" node="6$aMxwnaJtt" resolve="extendz" />
                           </node>
                         </node>
                       </node>
@@ -3131,13 +3158,8 @@
                     </node>
                     <node concept="2OqwBi" id="13LU1wgBNTA" role="2Oq$k0">
                       <node concept="39bAoz" id="13LU1wgBQQb" role="2OqNvi" />
-                      <node concept="2OqwBi" id="13LU1wgBHrg" role="2Oq$k0">
-                        <node concept="liA8E" id="13LU1wgBLdD" role="2OqNvi">
-                          <ref role="37wK5l" to="yj1e:~PsiClass.getImplementsListTypes():com.intellij.psi.PsiClassType[]" resolve="getImplementsListTypes" />
-                        </node>
-                        <node concept="37vLTw" id="13LU1wgBEkn" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
-                        </node>
+                      <node concept="37vLTw" id="6$aMxwnb45z" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6$aMxwnaUJw" resolve="implementz" />
                       </node>
                     </node>
                   </node>
@@ -3237,13 +3259,8 @@
                     </node>
                     <node concept="2OqwBi" id="13LU1wgCPoh" role="2Oq$k0">
                       <node concept="39bAoz" id="13LU1wgCPoi" role="2OqNvi" />
-                      <node concept="2OqwBi" id="13LU1wgCPoj" role="2Oq$k0">
-                        <node concept="liA8E" id="13LU1wgCPok" role="2OqNvi">
-                          <ref role="37wK5l" to="yj1e:~PsiClass.getSuperTypes():com.intellij.psi.PsiClassType[]" resolve="getSuperTypes" />
-                        </node>
-                        <node concept="37vLTw" id="13LU1wgCPol" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2H6usAyIfZz" resolve="x" />
-                        </node>
+                      <node concept="37vLTw" id="6$aMxwnb6I9" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6$aMxwnaJtt" resolve="extendz" />
                       </node>
                     </node>
                   </node>
