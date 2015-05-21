@@ -745,6 +745,9 @@
                             <ref role="37wK5l" to="k8ev:4yqv8vrxVuu" resolve="TypesystemChecker" />
                           </node>
                         </node>
+                        <node concept="Xl_RD" id="6zkSwmUKc4h" role="37wK5m">
+                          <property role="Xl_RC" value="typesystem" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -771,6 +774,9 @@
                           <node concept="1pGfFk" id="63oasX2fexC" role="2ShVmc">
                             <ref role="37wK5l" to="wsw7:2UMCgvoqxz3" resolve="LanguageChecker" />
                           </node>
+                        </node>
+                        <node concept="Xl_RD" id="6zkSwmUKchX" role="37wK5m">
+                          <property role="Xl_RC" value="constraints" />
                         </node>
                       </node>
                     </node>
@@ -9662,7 +9668,14 @@
         <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="INodeChecker" />
       </node>
     </node>
-    <node concept="2tJIrI" id="63oasX2f7vo" role="jymVt" />
+    <node concept="312cEg" id="6zkSwmUJV8a" role="jymVt">
+      <property role="TrG5h" value="myCategory" />
+      <node concept="3Tm6S6" id="6zkSwmUJV8b" role="1B3o_S" />
+      <node concept="3uibUv" id="6zkSwmUJV8d" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6zkSwmUJVD$" role="jymVt" />
     <node concept="3clFbW" id="63oasX2f83M" role="jymVt">
       <node concept="3cqZAl" id="63oasX2f83N" role="3clF45" />
       <node concept="3Tm1VV" id="63oasX2f83O" role="1B3o_S" />
@@ -9677,11 +9690,27 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6zkSwmUJV8e" role="3cqZAp">
+          <node concept="37vLTI" id="6zkSwmUJV8g" role="3clFbG">
+            <node concept="37vLTw" id="6zkSwmUJW60" role="37vLTJ">
+              <ref role="3cqZAo" node="6zkSwmUJV8a" resolve="myCategory" />
+            </node>
+            <node concept="37vLTw" id="6zkSwmUJV8o" role="37vLTx">
+              <ref role="3cqZAo" node="6zkSwmUJFdV" resolve="category" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="63oasX2f83T" role="3clF46">
         <property role="TrG5h" value="checker" />
         <node concept="3uibUv" id="63oasX2f83S" role="1tU5fm">
           <ref role="3uigEE" to="wsw7:7z7Xs6Zeka" resolve="INodeChecker" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6zkSwmUJFdV" role="3clF46">
+        <property role="TrG5h" value="category" />
+        <node concept="3uibUv" id="6zkSwmUJV7x" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
         </node>
       </node>
     </node>
@@ -9738,8 +9767,8 @@
           <node concept="2OqwBi" id="3etVqSRT$Gb" role="3clFbG">
             <node concept="liA8E" id="3etVqSRT$Gc" role="2OqNvi">
               <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="sQz2V6o$OO" role="37wK5m">
-                <property role="Xl_RC" value="typesystem" />
+              <node concept="37vLTw" id="6zkSwmUJWbh" role="37wK5m">
+                <ref role="3cqZAo" node="6zkSwmUJV8a" resolve="myCategory" />
               </node>
               <node concept="3cmrfG" id="63oasX2cCj3" role="37wK5m">
                 <property role="3cmrfH" value="1" />

@@ -18,18 +18,20 @@ import jetbrains.mps.errors.QuickFixProvider;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
   private INodeChecker myChecker;
+  private String myCategory;
 
-  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker) {
+  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category) {
     myChecker = checker;
+    myCategory = category;
   }
 
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    monitor.start("typesystem", 1);
+    monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
       for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, model.getRepository()))) {
-        final QuickFix_Runtime quickFix = check_m7souj_a0a0a0d0e(check_m7souj_a0a0a0a3a4(errorReporter));
+        final QuickFix_Runtime quickFix = check_m7souj_a0a0a0d0f(check_m7souj_a0a0a0a3a5(errorReporter));
         IModelCheckerFix fix = null;
         if (quickFix != null) {
           fix = new IModelCheckerFix() {
@@ -45,13 +47,13 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     monitor.done();
     return results;
   }
-  private static QuickFix_Runtime check_m7souj_a0a0a0d0e(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_m7souj_a0a0a0d0f(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
-  private static QuickFixProvider check_m7souj_a0a0a0a3a4(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_m7souj_a0a0a0a3a5(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

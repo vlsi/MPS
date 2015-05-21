@@ -63,9 +63,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     List<SpecificChecker> checkers = ListSequence.fromList(new ArrayList<SpecificChecker>());
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
-        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker()));
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker(), "typesystem"));
       case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker()));
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker(), "constraints"));
       case STRUCTURE:
         ListSequence.fromList(checkers).addElement(new StructureChecker());
       default:
