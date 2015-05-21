@@ -8,6 +8,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", new AbstractUnaryNumberOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.AndExpression", new AndExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", new AnonymousClassCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", new ArrayAccessExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayCreator", new ArrayCreator_DataFlow());
@@ -47,6 +48,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", new LocalVariableDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", new LocalVariableDeclarationStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.NotExpression", new NotExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.OrExpression", new OrExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new ParameterDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", new ParenthesizedExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", new PostfixDecrementExpression_DataFlow());

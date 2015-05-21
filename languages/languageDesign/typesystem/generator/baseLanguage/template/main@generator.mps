@@ -158,7 +158,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -332,6 +332,9 @@
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
       <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
+      <concept id="8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" flags="lg" index="1Koe21">
+        <child id="8900764248744213871" name="contentNode" index="1Koe22" />
+      </concept>
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
       <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
         <child id="1194989344771" name="alternativeConsequence" index="UU_$l" />
@@ -534,7 +537,7 @@
   </registry>
   <node concept="bUwia" id="h5KnhZj">
     <property role="TrG5h" value="main" />
-    <property role="3GE5qa" value="dependency" />
+    <property role="3GE5qa" value="" />
     <property role="3$yP7D" value="true" />
     <node concept="1puMqW" id="yQy1695GMX" role="1puA0r">
       <ref role="1puQsG" node="2A0HSGJ0UjH" resolve="setOriginalNode" />
@@ -2334,6 +2337,11 @@
       <ref role="2rTdP9" to="tpd4:hZciAgv" resolve="OverloadedOperatorTypeRule" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
+    <node concept="2rT7sh" id="2EOQLmJbVe_" role="2rTMjI">
+      <property role="TrG5h" value="substituteType_originalNode" />
+      <ref role="2rTdP9" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+      <ref role="2rZz_L" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+    </node>
     <node concept="1puMqW" id="hNnJEux" role="1pvy6N">
       <ref role="1puQsG" node="hNnFlF9" resolve="insertTypeContextIntoMethods" />
     </node>
@@ -2343,9 +2351,64 @@
         <ref role="v9R2y" node="tFif797EhG" resolve="reduce_PrintToTrace" />
       </node>
     </node>
+    <node concept="3aamgX" id="5zzawu2JVCj" role="3acgRq">
+      <ref role="30HIoZ" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+      <node concept="j$656" id="5zzawu2JVCk" role="1lVwrX">
+        <ref role="v9R2y" node="5zzawu2JVCh" resolve="Rule_to_main_method_SubstituteTypeRule" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="2EOQLmJbVf4" role="3acgRq">
+      <ref role="30HIoZ" to="tpd4:2EOQLmJ9owp" resolve="SubstituteTypeRuleFunction_OriginalNode" />
+      <node concept="1Koe21" id="2EOQLmJbVql" role="1lVwrX">
+        <node concept="3clFb_" id="2EOQLmJbVqr" role="1Koe22">
+          <property role="TrG5h" value="context" />
+          <node concept="37vLTG" id="2EOQLmJbVq_" role="3clF46">
+            <property role="TrG5h" value="originalNode" />
+            <node concept="3Tqbb2" id="2EOQLmJbVqD" role="1tU5fm" />
+          </node>
+          <node concept="3cqZAl" id="2EOQLmJbVqt" role="3clF45" />
+          <node concept="3Tm1VV" id="2EOQLmJbVqu" role="1B3o_S" />
+          <node concept="3clFbS" id="2EOQLmJbVqv" role="3clF47">
+            <node concept="3clFbF" id="2EOQLmJbVqH" role="3cqZAp">
+              <node concept="37vLTw" id="2EOQLmJbVqG" role="3clFbG">
+                <ref role="3cqZAo" node="2EOQLmJbVq_" resolve="originalNode" />
+                <node concept="raruj" id="2EOQLmJbVqL" role="lGtFl" />
+                <node concept="1ZhdrF" id="2EOQLmJbXlz" role="lGtFl">
+                  <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" />
+                  <property role="2qtEX8" value="variableDeclaration" />
+                  <node concept="3$xsQk" id="2EOQLmJbXl$" role="3$ytzL">
+                    <node concept="3clFbS" id="2EOQLmJbXl_" role="2VODD2">
+                      <node concept="3clFbF" id="2EOQLmJbZhL" role="3cqZAp">
+                        <node concept="2OqwBi" id="2EOQLmJbZjf" role="3clFbG">
+                          <node concept="1iwH7S" id="2EOQLmJbZhK" role="2Oq$k0" />
+                          <node concept="1iwH70" id="2EOQLmJbZmi" role="2OqNvi">
+                            <ref role="1iwH77" node="2EOQLmJbVe_" resolve="substituteType_originalNode" />
+                            <node concept="2OqwBi" id="2EOQLmJbZre" role="1iwH7V">
+                              <node concept="30H73N" id="2EOQLmJbZmO" role="2Oq$k0" />
+                              <node concept="2Xjw5R" id="2EOQLmJbZPt" role="2OqNvi">
+                                <node concept="1xMEDy" id="2EOQLmJbZPv" role="1xVPHs">
+                                  <node concept="chp4Y" id="2EOQLmJbZPO" role="ri$Ld">
+                                    <ref role="cht4Q" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="h5Ydn31">
     <property role="TrG5h" value="abstractRule_class" />
+    <property role="3GE5qa" value="definition.rule" />
     <node concept="312cEg" id="h6jmLzi" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern" />
       <node concept="1W57fq" id="h6jmZU$" role="lGtFl">
@@ -2395,6 +2458,7 @@
     </node>
     <node concept="3clFb_" id="h5Yeqo$" role="jymVt">
       <property role="TrG5h" value="getApplicableConcept" />
+      <node concept="3bZ5Sz" id="6iwIiwKBR9X" role="3clF45" />
       <node concept="3clFbS" id="h5YeqoA" role="3clF47">
         <node concept="3cpWs6" id="6iwIiwKBSTy" role="3cqZAp">
           <node concept="35c_gC" id="6iwIiwKBUjp" role="3cqZAk">
@@ -2505,7 +2569,6 @@
           </node>
         </node>
       </node>
-      <node concept="3bZ5Sz" id="6iwIiwKBR9X" role="3clF45" />
       <node concept="3Tm1VV" id="h9AO$i$" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="h5Ytyg9" role="jymVt">
@@ -2935,6 +2998,34 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="5zzawu2JVRa" role="3cqZAp">
+              <node concept="2OqwBi" id="5zzawu2JVRb" role="3clFbw">
+                <node concept="30H73N" id="5zzawu2JVRc" role="2Oq$k0" />
+                <node concept="1mIQ4w" id="5zzawu2JVRd" role="2OqNvi">
+                  <node concept="chp4Y" id="5zzawu2JVS$" role="cj9EA">
+                    <ref role="cht4Q" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="5zzawu2JVRf" role="3clFbx">
+                <node concept="3cpWs6" id="5zzawu2JVRg" role="3cqZAp">
+                  <node concept="2OqwBi" id="5zzawu2JVRh" role="3cqZAk">
+                    <node concept="2c44tf" id="5zzawu2JVRi" role="2Oq$k0">
+                      <node concept="3uibUv" id="5zzawu2JVSN" role="2c44tc">
+                        <ref role="3uigEE" to="7d2t:~SubstituteType_Runtime" resolve="SubstituteType_Runtime" />
+                      </node>
+                      <node concept="2OqwBi" id="5zzawu2JVRk" role="2c44td">
+                        <node concept="1iwH7S" id="5zzawu2JVRl" role="2Oq$k0" />
+                        <node concept="1FEO0x" id="5zzawu2JVRm" role="2OqNvi" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="5zzawu2JVRn" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs6" id="h6j_mM3" role="3cqZAp">
               <node concept="2OqwBi" id="hxx$UZl" role="3cqZAk">
                 <node concept="2c44tf" id="hqJV35m" role="2Oq$k0">
@@ -3048,6 +3139,7 @@
   </node>
   <node concept="jVnub" id="h5YHtXW">
     <property role="TrG5h" value="Rule_to_main_method_switch" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <node concept="3aamgX" id="h5YHD1g" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpd4:hp8hY$D" resolve="AbstractCheckingRule" />
@@ -3093,9 +3185,17 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="5zzawu2JV$S" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+      <node concept="j$656" id="5zzawu2JVQ2" role="1lVwrX">
+        <ref role="v9R2y" node="5zzawu2JVCh" resolve="Rule_to_main_method_SubstituteTypeRule" />
+      </node>
+    </node>
   </node>
   <node concept="13MO4I" id="h5YHvcO">
     <property role="TrG5h" value="Rule_to_main_method_inference" />
+    <property role="3GE5qa" value="definition.rule" />
     <ref role="3gUMe" to="tpd4:hp8hY$D" resolve="AbstractCheckingRule" />
     <node concept="3clFb_" id="h5YHQzf" role="13RCb5">
       <property role="TrG5h" value="applyRule" />
@@ -3161,6 +3261,7 @@
   </node>
   <node concept="13MO4I" id="h5Z2w5g">
     <property role="TrG5h" value="Typeof_to_expression" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:h5Z2H4a" resolve="TypeOfExpression" />
     <node concept="2OqwBi" id="hFvxVYm" role="13RCb5">
       <node concept="3VmV3z" id="hNAndd7" role="2Oq$k0">
@@ -3747,6 +3848,7 @@
   </node>
   <node concept="jVnub" id="h5ZeEiw">
     <property role="TrG5h" value="FindNodeToCheck_switch" />
+    <property role="3GE5qa" value="definition.statement" />
     <node concept="3aamgX" id="h5ZmGPk" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
@@ -4036,6 +4138,7 @@
   </node>
   <node concept="13MO4I" id="h5ZiCX7">
     <property role="TrG5h" value="FindNodeToCheck_leftTypeOf" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="10Nm6u" id="h5Zjc1j" role="13RCb5">
       <node concept="raruj" id="h5ZjcP5" role="lGtFl" />
@@ -4084,6 +4187,7 @@
   </node>
   <node concept="13MO4I" id="h5ZjDOr">
     <property role="TrG5h" value="FindNodeToCheck_rightTypeOf" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="10Nm6u" id="h5ZjDOs" role="13RCb5">
       <node concept="raruj" id="h5ZjDOt" role="lGtFl" />
@@ -4132,6 +4236,7 @@
   </node>
   <node concept="13MO4I" id="h5Zn1yp">
     <property role="TrG5h" value="FindNodeToCheck_explicit" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="10Nm6u" id="h5Zn8CM" role="13RCb5">
       <node concept="raruj" id="h5Zn8RG" role="lGtFl" />
@@ -4153,6 +4258,7 @@
   </node>
   <node concept="13MO4I" id="h5ZyKMq">
     <property role="TrG5h" value="TypeVarDeclaration_to_localVar" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:h5ZxtXV" resolve="TypeVarDeclaration" />
     <node concept="3cpWs8" id="h5Zz1IT" role="13RCb5">
       <node concept="3cpWsn" id="h5Zz1IU" role="3cpWs9">
@@ -4178,11 +4284,11 @@
                 <node concept="3cpWs3" id="h5Zztil" role="3clFbG">
                   <node concept="2OqwBi" id="1R1KclLA1cW" role="3uHU7w">
                     <node concept="2OqwBi" id="1R1KclLA1cX" role="2Oq$k0">
-                      <node concept="liA8E" id="24cAaiVCaoj" role="2OqNvi">
-                        <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
-                      </node>
                       <node concept="2JrnkZ" id="6d2lQ01ViTi" role="2Oq$k0">
                         <node concept="30H73N" id="1R1KclLA1cY" role="2JrQYb" />
+                      </node>
+                      <node concept="liA8E" id="24cAaiVCaoj" role="2OqNvi">
+                        <ref role="37wK5l" to="ec5l:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                       </node>
                     </node>
                     <node concept="liA8E" id="1R1KclLA1d0" role="2OqNvi">
@@ -4212,6 +4318,7 @@
   </node>
   <node concept="13MO4I" id="h5Z$I4O">
     <property role="TrG5h" value="TypeVarReference_to_localVarRef" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:h5Z$b1c" resolve="TypeVarReference" />
     <node concept="3clFbS" id="h5Z$NsO" role="13RCb5">
       <node concept="3cpWs8" id="h5Z$P0V" role="3cqZAp">
@@ -4282,6 +4389,7 @@
   </node>
   <node concept="13MO4I" id="h6jizbq">
     <property role="TrG5h" value="PatternVariableReference_to_expression_in_rule" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="312cEu" id="h6jj5Cm" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -4404,6 +4512,7 @@
   </node>
   <node concept="13MO4I" id="h6jsHyZ">
     <property role="TrG5h" value="LinkPatternVariableReference_to_expression_in_rule" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="312cEu" id="h6jsHz0" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -4516,6 +4625,7 @@
   </node>
   <node concept="13MO4I" id="h6jsVHK">
     <property role="TrG5h" value="PropertyPatternVariableReference_to_expression_in_rule" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="312cEu" id="h6jsVHL" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -4638,6 +4748,7 @@
   </node>
   <node concept="13MO4I" id="h6soau4">
     <property role="TrG5h" value="Rule_to_main_method_subtyping_list" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <ref role="3gUMe" to="tpd4:h6sgdYK" resolve="AbstractSubtypingRule" />
     <node concept="3clFb_" id="h6soau5" role="13RCb5">
       <property role="TrG5h" value="getSubOrSuperTypes" />
@@ -4705,6 +4816,7 @@
   </node>
   <node concept="13MO4I" id="h6soN9A">
     <property role="TrG5h" value="Rule_to_main_method_subtyping_node" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <ref role="3gUMe" to="tpd4:h6sgdYK" resolve="AbstractSubtypingRule" />
     <node concept="3clFb_" id="h6soN9B" role="13RCb5">
       <property role="TrG5h" value="getSubOrSuperType" />
@@ -5066,6 +5178,106 @@
                   <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
                   <node concept="37vLTw" id="3GM_nagTBRp" role="37wK5m">
                     <ref role="3cqZAo" node="h6HGS7i" resolve="subtypingRule" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="9aQIb" id="5zzawu2Ky0C" role="3cqZAp">
+          <node concept="1WS0z7" id="5zzawu2Ky0D" role="lGtFl">
+            <node concept="3JmXsc" id="5zzawu2Ky0E" role="3Jn$fo">
+              <node concept="3clFbS" id="5zzawu2Ky0F" role="2VODD2">
+                <node concept="3clFbF" id="5zzawu2Ky0G" role="3cqZAp">
+                  <node concept="2OqwBi" id="5zzawu2Ky0H" role="3clFbG">
+                    <node concept="2OqwBi" id="5zzawu2Ky0I" role="2Oq$k0">
+                      <node concept="2OqwBi" id="5zzawu2Ky0J" role="2Oq$k0">
+                        <node concept="1r8y6K" id="5zzawu2Ky0K" role="2OqNvi" />
+                        <node concept="1iwH7S" id="5zzawu2Ky0L" role="2Oq$k0" />
+                      </node>
+                      <node concept="2RRcyG" id="5zzawu2Ky0M" role="2OqNvi">
+                        <ref role="2RRcyH" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+                      </node>
+                    </node>
+                    <node concept="2S7cBI" id="5zzawu2Ky0N" role="2OqNvi">
+                      <node concept="1nlBCl" id="5zzawu2Ky0O" role="2S7zOq">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="1bVj0M" id="5zzawu2Ky0P" role="23t8la">
+                        <node concept="Rh6nW" id="5zzawu2Ky0Q" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="5zzawu2Ky0R" role="1tU5fm" />
+                        </node>
+                        <node concept="3clFbS" id="5zzawu2Ky0S" role="1bW5cS">
+                          <node concept="3clFbF" id="5zzawu2Ky0T" role="3cqZAp">
+                            <node concept="2OqwBi" id="5zzawu2Ky0U" role="3clFbG">
+                              <node concept="3TrcHB" id="5zzawu2Ky0V" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                              <node concept="37vLTw" id="5zzawu2Ky0W" role="2Oq$k0">
+                                <ref role="3cqZAo" node="5zzawu2Ky0Q" resolve="it" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="5zzawu2Ky0X" role="9aQI4">
+            <node concept="3cpWs8" id="5zzawu2Ky0Y" role="3cqZAp">
+              <node concept="3cpWsn" id="5zzawu2Ky0Z" role="3cpWs9">
+                <property role="TrG5h" value="substituteTypeRule" />
+                <node concept="3uibUv" id="5zzawu2Kydw" role="1tU5fm">
+                  <ref role="3uigEE" to="7d2t:~SubstituteType_Runtime" resolve="SubstituteType_Runtime" />
+                </node>
+                <node concept="2ShNRf" id="5zzawu2Ky11" role="33vP2m">
+                  <node concept="1pGfFk" id="5zzawu2Ky12" role="2ShVmc">
+                    <ref role="37wK5l" to="7d2t:~AbstractSubtypingRule_Runtime.&lt;init&gt;()" resolve="AbstractSubtypingRule_Runtime" />
+                    <node concept="1ZhdrF" id="5zzawu2Ky13" role="lGtFl">
+                      <property role="2qtEX8" value="baseMethodDeclaration" />
+                      <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
+                      <node concept="3$xsQk" id="5zzawu2Ky14" role="3$ytzL">
+                        <node concept="3clFbS" id="5zzawu2Ky15" role="2VODD2">
+                          <node concept="3clFbF" id="5zzawu2Ky16" role="3cqZAp">
+                            <node concept="2OqwBi" id="5zzawu2Ky17" role="3clFbG">
+                              <node concept="1uHKPH" id="5zzawu2Ky18" role="2OqNvi" />
+                              <node concept="2OqwBi" id="5zzawu2Ky19" role="2Oq$k0">
+                                <node concept="2OqwBi" id="5zzawu2Ky1a" role="2Oq$k0">
+                                  <node concept="1iwH7S" id="5zzawu2Ky1b" role="2Oq$k0" />
+                                  <node concept="1iwH70" id="5zzawu2Ky1c" role="2OqNvi">
+                                    <ref role="1iwH77" node="hG00JLH" resolve="classForRule" />
+                                    <node concept="30H73N" id="5zzawu2Ky1d" role="1iwH7V" />
+                                  </node>
+                                </node>
+                                <node concept="2qgKlT" id="5zzawu2Ky1e" role="2OqNvi">
+                                  <ref role="37wK5l" to="tpek:4_LVZ3pCvsd" resolve="constructors" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5zzawu2Ky1f" role="3cqZAp">
+              <node concept="2OqwBi" id="5zzawu2Ky1g" role="3clFbG">
+                <node concept="2OqwBi" id="5zzawu2Ky1h" role="2Oq$k0">
+                  <node concept="2OwXpG" id="5zzawu2K$h4" role="2OqNvi">
+                    <ref role="2Oxat5" to="7d2t:~BaseHelginsDescriptor.mySubstituteTypeRules" resolve="mySubstituteTypeRules" />
+                  </node>
+                  <node concept="Xjq3P" id="5zzawu2Ky1j" role="2Oq$k0" />
+                </node>
+                <node concept="liA8E" id="5zzawu2Ky1k" role="2OqNvi">
+                  <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="37vLTw" id="5zzawu2Ky1l" role="37wK5m">
+                    <ref role="3cqZAo" node="5zzawu2Ky0Z" resolve="substituteTypeRule" />
                   </node>
                 </node>
               </node>
@@ -5674,12 +5886,6 @@
                               </node>
                               <node concept="3clFbF" id="72ZQJIMMkks" role="3cqZAp">
                                 <node concept="37vLTI" id="72ZQJIMMkkt" role="3clFbG">
-                                  <node concept="2OqwBi" id="72ZQJIMMkkE" role="37vLTJ">
-                                    <node concept="Xjq3P" id="72ZQJIMMkkG" role="2Oq$k0" />
-                                    <node concept="2OwXpG" id="PyyXQH788g" role="2OqNvi">
-                                      <ref role="2Oxat5" to="7d2t:~OverloadedOpsProvider_OneTypeSpecified.myOperationConcept" resolve="myOperationConcept" />
-                                    </node>
-                                  </node>
                                   <node concept="35c_gC" id="PyyXQH7940" role="37vLTx">
                                     <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
                                     <node concept="1ZhdrF" id="PyyXQH7955" role="lGtFl">
@@ -5698,6 +5904,12 @@
                                         </node>
                                       </node>
                                     </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="72ZQJIMMkkE" role="37vLTJ">
+                                    <node concept="2OwXpG" id="PyyXQH788g" role="2OqNvi">
+                                      <ref role="2Oxat5" to="7d2t:~OverloadedOpsProvider_OneTypeSpecified.myOperationConcept" resolve="myOperationConcept" />
+                                    </node>
+                                    <node concept="Xjq3P" id="72ZQJIMMkkG" role="2Oq$k0" />
                                   </node>
                                 </node>
                               </node>
@@ -6261,10 +6473,10 @@
                 <ref role="3cqZAo" node="6LmMlYf_vLD" resolve="concept" />
               </node>
               <node concept="2OqwBi" id="6LmMlYf_vKj" role="37vLTJ">
-                <node concept="Xjq3P" id="6LmMlYf_vKl" role="2Oq$k0" />
                 <node concept="2OwXpG" id="PyyXQH73fh" role="2OqNvi">
                   <ref role="2Oxat5" to="7d2t:~OverloadedOperationsTypesProvider.myOperationConcept" resolve="myOperationConcept" />
                 </node>
+                <node concept="Xjq3P" id="6LmMlYf_vKl" role="2Oq$k0" />
               </node>
             </node>
           </node>
@@ -6726,6 +6938,7 @@
   </node>
   <node concept="13MO4I" id="h6MmZBk">
     <property role="TrG5h" value="Assert_to_statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h6Mj0No" resolve="AssertStatement" />
     <node concept="3clFbJ" id="h6Mnb8p" role="13RCb5">
       <node concept="3fqX7Q" id="h6Mnepi" role="3clFbw">
@@ -7794,6 +8007,7 @@
   </node>
   <node concept="13MO4I" id="h6MnGq1">
     <property role="TrG5h" value="ReportError_to_Statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h6MkqoE" resolve="ReportErrorStatement" />
     <node concept="9aQIb" id="hBFzPn5" role="13RCb5">
       <node concept="3clFbS" id="hBFzPn6" role="9aQI4">
@@ -8848,6 +9062,7 @@
   </node>
   <node concept="13MO4I" id="h6QV$wC">
     <property role="TrG5h" value="TypeCheckerAccess_to_Expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h6QUAIr" resolve="TypeCheckerAccessExpression" />
     <node concept="2YIFZM" id="h6QVGMw" role="13RCb5">
       <ref role="37wK5l" to="ua2a:~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolve="getInstance" />
@@ -8857,6 +9072,7 @@
   </node>
   <node concept="13MO4I" id="h7JybCu">
     <property role="TrG5h" value="TypeOperation_to_expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h7JvlS3" resolve="Node_TypeOperation" />
     <node concept="2OqwBi" id="hHmEV3S" role="13RCb5">
       <node concept="2YIFZM" id="h7JyJAC" role="2Oq$k0">
@@ -8887,6 +9103,7 @@
   </node>
   <node concept="13MO4I" id="h7Jz9uZ">
     <property role="TrG5h" value="IsSubtype_to_Expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h7JuTYR" resolve="IsSubtypeExpression" />
     <node concept="2OqwBi" id="hHmETy4" role="13RCb5">
       <node concept="2OqwBi" id="hHmETAF" role="2Oq$k0">
@@ -8938,6 +9155,7 @@
   </node>
   <node concept="13MO4I" id="h7Zq0o4">
     <property role="TrG5h" value="CoerceWithPattern_to_statement" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h7Knyhh" resolve="CoerceStatement" />
     <node concept="3clFb_" id="2agfY_euP9s" role="13RCb5">
       <property role="TrG5h" value="method" />
@@ -9189,6 +9407,7 @@
   </node>
   <node concept="13MO4I" id="h7ZNWDn">
     <property role="TrG5h" value="ApplicableNodeReference_to_VarReference_Coerce" />
+    <property role="3GE5qa" value="definition.condition" />
     <ref role="3gUMe" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="3clFbS" id="h7ZO4CR" role="13RCb5">
       <node concept="3cpWs8" id="h7ZO67B" role="3cqZAp">
@@ -9252,6 +9471,7 @@
   </node>
   <node concept="13MO4I" id="h8eNd18">
     <property role="TrG5h" value="ImmediateSupertypes_to_expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h8eJokL" resolve="ImmediateSupertypesExpression" />
     <node concept="2OqwBi" id="hHmEUwy" role="13RCb5">
       <node concept="2OqwBi" id="hHmETTc" role="2Oq$k0">
@@ -9287,6 +9507,7 @@
   </node>
   <node concept="13MO4I" id="h8uzwdP">
     <property role="TrG5h" value="PatternVariableReference_to_expression_in_coerce" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="312cEu" id="h8uzO4G" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -9463,6 +9684,7 @@
   </node>
   <node concept="13MO4I" id="h8yTqin">
     <property role="TrG5h" value="IsStrongSubtype_to_Expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h8yS_7L" resolve="IsStrongSubtypeExpression" />
     <node concept="2OqwBi" id="hHmEUpG" role="13RCb5">
       <node concept="2OqwBi" id="hHmEUYa" role="2Oq$k0">
@@ -9517,6 +9739,7 @@
   </node>
   <node concept="13MO4I" id="h8MSEUm">
     <property role="TrG5h" value="ApplicableNodeReference_to_VarReference_Match" />
+    <property role="3GE5qa" value="definition.condition" />
     <ref role="3gUMe" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="3clFbS" id="h8MSOXY" role="13RCb5">
       <node concept="3cpWs8" id="h8MSPxq" role="3cqZAp">
@@ -9580,6 +9803,7 @@
   </node>
   <node concept="13MO4I" id="h9Up0ve">
     <property role="TrG5h" value="CoerceWithConcept_to_statement" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h7Knyhh" resolve="CoerceStatement" />
     <node concept="3clFb_" id="3UQPuZEO$pZ" role="13RCb5">
       <property role="TrG5h" value="foo" />
@@ -9874,6 +10098,7 @@
   </node>
   <node concept="13MO4I" id="h9Utj49">
     <property role="TrG5h" value="CoerceWithConcept_to_expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h9UaxiI" resolve="CoerceExpression" />
     <node concept="3clFb_" id="wAtL4UNv2M" role="13RCb5">
       <property role="TrG5h" value="method" />
@@ -10026,6 +10251,7 @@
   </node>
   <node concept="13MO4I" id="h9UwxEM">
     <property role="TrG5h" value="CoerceWithPattern_to_expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h9UaxiI" resolve="CoerceExpression" />
     <node concept="3clFb_" id="wAtL4UMOwP" role="13RCb5">
       <property role="TrG5h" value="method" />
@@ -10192,6 +10418,7 @@
   </node>
   <node concept="13MO4I" id="hgmzpKA">
     <property role="TrG5h" value="NormalTypeClause_to_Expression" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:hgmw_os" resolve="NormalTypeClause" />
     <node concept="10QFUN" id="i398qh5" role="13RCb5">
       <node concept="3uibUv" id="i398wfy" role="10QFUM">
@@ -10218,6 +10445,7 @@
   </node>
   <node concept="13MO4I" id="hgnyfCu">
     <property role="TrG5h" value="WhenConcreteStatement_to_Statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hgnverd" resolve="WhenConcreteStatement" />
     <node concept="9aQIb" id="hyXaHe7" role="13RCb5">
       <node concept="3clFbS" id="hyXaHe8" role="9aQI4">
@@ -10482,6 +10710,7 @@
   </node>
   <node concept="312cEu" id="hjbEjyr">
     <property role="TrG5h" value="comparisonRule_class" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <node concept="312cEg" id="hjbSrhc" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern1" />
       <node concept="1W57fq" id="hjbSrhr" role="lGtFl">
@@ -11326,6 +11555,7 @@
   </node>
   <node concept="13MO4I" id="hqKm2Fl">
     <property role="TrG5h" value="PatternVariableReference_to_expression_in_match" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="312cEu" id="hqKm2Fm" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -11502,6 +11732,7 @@
   </node>
   <node concept="13MO4I" id="hqKtwXl">
     <property role="TrG5h" value="LinkPatternVariableReference_to_expression_in_coerce" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="312cEu" id="hqKtwXm" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -11678,6 +11909,7 @@
   </node>
   <node concept="13MO4I" id="hqKtLP3">
     <property role="TrG5h" value="LinkPatternVariableReference_to_expression_in_match" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="312cEu" id="hqKtLP4" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -11854,6 +12086,7 @@
   </node>
   <node concept="13MO4I" id="hqKuYLT">
     <property role="TrG5h" value="PropertyPatternVariableReference_to_expression_in_match" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="312cEu" id="hqKuYLU" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -12030,6 +12263,7 @@
   </node>
   <node concept="13MO4I" id="hqKvkD8">
     <property role="TrG5h" value="PropertyPatternVariableReference_to_expression_in_coerce" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="312cEu" id="hqKvkD9" role="13RCb5">
       <property role="TrG5h" value="PatternClass1" />
@@ -12206,6 +12440,7 @@
   </node>
   <node concept="312cEu" id="hv5wmVu">
     <property role="TrG5h" value="replacementRule_class" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <node concept="312cEg" id="hv5wmVz" role="jymVt">
       <property role="TrG5h" value="myMatchingPattern1" />
       <node concept="3uibUv" id="5ptsAP$ukCx" role="1tU5fm">
@@ -13149,6 +13384,7 @@
   </node>
   <node concept="13MO4I" id="hv5Wltl">
     <property role="TrG5h" value="FindNodeToCheck_EliminationRule" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="3clFb_" id="hv5W_HF" role="13RCb5">
       <property role="TrG5h" value="processInequation" />
@@ -13185,6 +13421,7 @@
   </node>
   <node concept="13MO4I" id="hv63bE1">
     <property role="TrG5h" value="reduce_ErrorInfoExpression" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:hv622I5" resolve="ErrorInfoExpression" />
     <node concept="3clFb_" id="hv63nGh" role="13RCb5">
       <property role="TrG5h" value="processInequation" />
@@ -13216,6 +13453,7 @@
   </node>
   <node concept="13MO4I" id="hyXgMUm">
     <property role="TrG5h" value="WhenConcreteVariableReference_to_Expression" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hyX3wvL" resolve="WhenConcreteVariableReference" />
     <node concept="2OqwBi" id="hyXhxhF" role="13RCb5">
       <node concept="3VmV3z" id="hNVhlCq" role="2Oq$k0">
@@ -13258,6 +13496,7 @@
   </node>
   <node concept="13MO4I" id="h$a86Hn">
     <property role="TrG5h" value="Warning_to_Statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h$a7r4L" resolve="WarningStatement" />
     <node concept="9aQIb" id="hBFG399" role="13RCb5">
       <node concept="3clFbS" id="hBFG39a" role="9aQI4">
@@ -14307,6 +14546,7 @@
   </node>
   <node concept="13MO4I" id="hFv8Ql1">
     <property role="TrG5h" value="AbstractEquation_to_Statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="3clFb_" id="1uLEB8KTynz" role="13RCb5">
       <property role="TrG5h" value="method" />
@@ -15559,6 +15799,7 @@
   </node>
   <node concept="bUwia" id="hG38PTG">
     <property role="TrG5h" value="Inequations" />
+    <property role="3GE5qa" value="definition.type" />
     <node concept="2rT7sh" id="7jiwuOy7Frx" role="2rTMjI">
       <property role="TrG5h" value="quickFix" />
       <ref role="2rTdP9" to="tpd4:hGQ5zx_" resolve="TypesystemQuickFix" />
@@ -16115,6 +16356,7 @@
   </node>
   <node concept="13MO4I" id="hG3aGRC">
     <property role="TrG5h" value="AbstractInequation_to_Statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="9aQIb" id="hG3aN7A" role="13RCb5">
       <node concept="3clFbS" id="hG3aN7B" role="9aQI4">
@@ -16258,6 +16500,7 @@
   </node>
   <node concept="13MO4I" id="hG3kYpO">
     <property role="TrG5h" value="Equation_to_Statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="9aQIb" id="hG3l74M" role="13RCb5">
       <node concept="3clFbS" id="hG3l74N" role="9aQI4">
@@ -16328,6 +16571,7 @@
   </node>
   <node concept="13MO4I" id="hG3qxKV">
     <property role="TrG5h" value="ReportError_to_Statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h6MkqoE" resolve="ReportErrorStatement" />
     <node concept="3clFbF" id="hG3tPrh" role="13RCb5">
       <node concept="37vLTI" id="hG3tQ2A" role="3clFbG">
@@ -16410,6 +16654,7 @@
   </node>
   <node concept="312cEu" id="hH5pXmT">
     <property role="TrG5h" value="QuickFix" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <node concept="3clFbW" id="hH5pXmV" role="jymVt">
       <node concept="3clFbS" id="hH5pXmY" role="3clF47">
         <node concept="XkiVB" id="5QXN3cJjhw8" role="3cqZAp">
@@ -16623,6 +16868,7 @@
   </node>
   <node concept="13MO4I" id="hH5$GQ$">
     <property role="TrG5h" value="reduce_QuickFixArgumentReference" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="3gUMe" to="tpd4:hGQwW09" resolve="QuickFixArgumentReference" />
     <node concept="312cEu" id="hH5$P3O" role="13RCb5">
       <property role="TrG5h" value="C" />
@@ -16741,6 +16987,7 @@
   </node>
   <node concept="13MO4I" id="hKz0PEt">
     <property role="TrG5h" value="reduce_AddDependencyStatement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hKyXG_$" resolve="AddDependencyStatement" />
     <node concept="3clFbF" id="hKz23jM" role="13RCb5">
       <node concept="2OqwBi" id="hKz23BP" role="3clFbG">
@@ -16775,6 +17022,7 @@
   </node>
   <node concept="13MO4I" id="hKGC1Tm">
     <property role="TrG5h" value="WhenConcreteStatement_to_Statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hgnverd" resolve="WhenConcreteStatement" />
     <node concept="9aQIb" id="hKGCvIO" role="13RCb5">
       <node concept="3clFbS" id="hKGCvIP" role="9aQI4">
@@ -16898,6 +17146,7 @@
   </node>
   <node concept="jVnub" id="hMfC_Dw">
     <property role="TrG5h" value="ExtendedClass_switch" />
+    <property role="3GE5qa" value="definition.rule.subtyping" />
     <node concept="3aamgX" id="hMfCNKB" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpd4:h6sgdYK" resolve="AbstractSubtypingRule" />
@@ -16990,6 +17239,15 @@
       <node concept="gft3U" id="hMfJ_pI" role="1lVwrX">
         <node concept="3uibUv" id="4S5VXJjDQ$E" role="gfFT$">
           <ref role="3uigEE" to="7d2t:~AbstractNonTypesystemRule_Runtime" resolve="AbstractNonTypesystemRule_Runtime" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="5zzawu2JVzl" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+      <node concept="gft3U" id="5zzawu2JV$d" role="1lVwrX">
+        <node concept="3uibUv" id="5zzawu2KPil" role="gfFT$">
+          <ref role="3uigEE" to="7d2t:~AbstractSubstituteType_Runtime" resolve="AbstractSubstituteType_Runtime" />
         </node>
       </node>
     </node>
@@ -17504,6 +17762,7 @@
   </node>
   <node concept="13MO4I" id="hNRt_bu">
     <property role="TrG5h" value="TypeVarReference_to_localVarRef_special" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:h5Z$b1c" resolve="TypeVarReference" />
     <node concept="3clFbS" id="hNRtYmZ" role="13RCb5">
       <node concept="3cpWs8" id="hNRtYn0" role="3cqZAp">
@@ -17563,6 +17822,7 @@
   </node>
   <node concept="13MO4I" id="hNRuVms">
     <property role="TrG5h" value="TypeVarDeclaration_to_localVar_special" />
+    <property role="3GE5qa" value="definition" />
     <ref role="3gUMe" to="tpd4:h5ZxtXV" resolve="TypeVarDeclaration" />
     <node concept="3cpWs8" id="hNRv63$" role="13RCb5">
       <node concept="3cpWsn" id="hNRv63_" role="3cpWs9">
@@ -17606,6 +17866,7 @@
   </node>
   <node concept="13MO4I" id="hNVkNGo">
     <property role="TrG5h" value="WhenConcreteVariableReference_to_Expression_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hyX3wvL" resolve="WhenConcreteVariableReference" />
     <node concept="3VmV3z" id="hNVl280" role="13RCb5">
       <node concept="3uibUv" id="hNVl281" role="3Vn4Tt">
@@ -17637,6 +17898,7 @@
   </node>
   <node concept="13MO4I" id="hNVQMEW">
     <property role="TrG5h" value="Assert_to_Statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h6Mj0No" resolve="AssertStatement" />
     <node concept="3clFbJ" id="hNVQTq7" role="13RCb5">
       <node concept="3fqX7Q" id="hNVR4Af" role="3clFbw">
@@ -18741,6 +19003,7 @@
   </node>
   <node concept="13MO4I" id="hODtIw8">
     <property role="TrG5h" value="Info_to_statement" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hODpp5F" resolve="InfoStatement" />
     <node concept="9aQIb" id="hODuh1E" role="13RCb5">
       <node concept="3clFbS" id="hODuh1F" role="9aQI4">
@@ -19790,6 +20053,7 @@
   </node>
   <node concept="13MO4I" id="hPLun3W">
     <property role="TrG5h" value="WarningToStatement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h$a7r4L" resolve="WarningStatement" />
     <node concept="3SKdUt" id="6pumIWoCFW9" role="13RCb5">
       <node concept="3SKdUq" id="6pumIWoCFWa" role="3SKWNk">
@@ -19800,6 +20064,7 @@
   </node>
   <node concept="13MO4I" id="hPLDz5E">
     <property role="TrG5h" value="Info_to_statement_special" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:hODpp5F" resolve="InfoStatement" />
     <node concept="3SKdUt" id="6pumIWoCFZx" role="13RCb5">
       <node concept="3SKdUq" id="6pumIWoCFZy" role="3SKWNk">
@@ -19810,6 +20075,7 @@
   </node>
   <node concept="13MO4I" id="hZh5lo7">
     <property role="TrG5h" value="reduce_GetOperationType" />
+    <property role="3GE5qa" value="definition.rule.overload" />
     <ref role="3gUMe" to="tpd4:hZh4oqR" resolve="GetOperationType" />
     <node concept="2OqwBi" id="hZh5vJC" role="13RCb5">
       <node concept="3VmV3z" id="hZh5x2M" role="2Oq$k0">
@@ -19973,6 +20239,7 @@
   </node>
   <node concept="13MO4I" id="5x0erXP9TXl">
     <property role="TrG5h" value="InferTypeOperation_to_expression" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:5x0erXP9MLB" resolve="Node_InferTypeOperation" />
     <node concept="2OqwBi" id="5x0erXP9Ut1" role="13RCb5">
       <node concept="2YIFZM" id="5x0erXP9Ut2" role="2Oq$k0">
@@ -20243,6 +20510,7 @@
   </node>
   <node concept="13MO4I" id="718BIU4uEJL">
     <property role="TrG5h" value="reduce_QuickFixFieldReference" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="3gUMe" to="tpd4:718BIU4urlt" resolve="QuickFixFieldReference" />
     <node concept="312cEu" id="718BIU4uEJQ" role="13RCb5">
       <property role="TrG5h" value="C" />
@@ -20356,6 +20624,7 @@
   </node>
   <node concept="13MO4I" id="718BIU4vkmK">
     <property role="TrG5h" value="reduce_QuickFixFieldReference_LValue" />
+    <property role="3GE5qa" value="definition.quickfix" />
     <ref role="3gUMe" to="tpd4:718BIU4urlt" resolve="QuickFixFieldReference" />
     <node concept="312cEu" id="718BIU4vkmL" role="13RCb5">
       <property role="TrG5h" value="C" />
@@ -20443,6 +20712,7 @@
   </node>
   <node concept="13MO4I" id="64uvs5aqmeJ">
     <property role="TrG5h" value="reduce_SelectionType" />
+    <property role="3GE5qa" value="definition.type" />
     <ref role="3gUMe" to="tpd4:64uvs5aqir8" resolve="SelectionType" />
     <node concept="3uibUv" id="64uvs5aqnE$" role="13RCb5">
       <ref role="3uigEE" to="msyo:~Pair" resolve="Pair" />
@@ -20553,6 +20823,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrIOw">
     <property role="TrG5h" value="PatternVariableReference_to_expression_in_rule1" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrIOx" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -20675,6 +20946,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrKIN">
     <property role="TrG5h" value="PatternVariableReference_to_expression_in_rule2" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iOg0Q" resolve="PatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrKIO" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -20797,6 +21069,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrKJC">
     <property role="TrG5h" value="LinkPatternVariableReference_to_expression_in_rule2" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrKJD" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -20909,6 +21182,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrKM_">
     <property role="TrG5h" value="LinkPatternVariableReference_to_expression_in_rule1" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQiFj" resolve="LinkPatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrKMA" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -21021,6 +21295,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrKNo">
     <property role="TrG5h" value="PropertyPatternVariableReference_to_expression_in_rule1" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrKNp" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -21144,6 +21419,7 @@
   </node>
   <node concept="13MO4I" id="3SW4jvYrKOd">
     <property role="TrG5h" value="PropertyPatternVariableReference_to_expression_in_rule2" />
+    <property role="3GE5qa" value="pattern" />
     <ref role="3gUMe" to="tpd4:h6iQnZT" resolve="PropertyPatternVariableReference" />
     <node concept="312cEu" id="3SW4jvYrKOe" role="13RCb5">
       <property role="TrG5h" value="PatternClass" />
@@ -21267,6 +21543,7 @@
   </node>
   <node concept="13MO4I" id="3D1EYnXQsmX">
     <property role="TrG5h" value="reduce_ReplacementRuleReference" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:4NZHKx96Bdc" resolve="ReplacementRuleReference" />
     <node concept="5Tsh4" id="3D1EYnXQJfW" role="13RCb5">
       <property role="37A6Tq" value="n" />
@@ -21296,6 +21573,7 @@
   </node>
   <node concept="13MO4I" id="2ROV8e08tyr">
     <property role="TrG5h" value="MatchStatement_to_Statement" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h8DkJGt" resolve="MatchStatement" />
     <node concept="9aQIb" id="2ROV8e08tyz" role="13RCb5">
       <node concept="3clFbS" id="2ROV8e08ty$" role="9aQI4">
@@ -21442,6 +21720,7 @@
   </node>
   <node concept="13MO4I" id="2ROV8e08tAd">
     <property role="TrG5h" value="MatchStatementItem_reduce" />
+    <property role="3GE5qa" value="query" />
     <ref role="3gUMe" to="tpd4:h8DmCZG" resolve="MatchStatementItem" />
     <node concept="3clFbS" id="2ROV8e08tCK" role="13RCb5">
       <node concept="3cpWs8" id="2ROV8e08tCM" role="3cqZAp">
@@ -21689,9 +21968,6 @@
                 <node concept="3clFbS" id="2ROV8e08tEd" role="3clFbx">
                   <node concept="3clFbF" id="2ROV8e08tEe" role="3cqZAp">
                     <node concept="37vLTI" id="2ROV8e08tEf" role="3clFbG">
-                      <node concept="37vLTw" id="3GM_nagTv6F" role="37vLTJ">
-                        <ref role="3cqZAo" node="2ROV8e08tCV" resolve="_566" />
-                      </node>
                       <node concept="2OqwBi" id="4wG2MBHjztB" role="37vLTx">
                         <node concept="2OqwBi" id="1R1KclLA189" role="2Oq$k0">
                           <node concept="2JrnkZ" id="1R1KclLA18a" role="2Oq$k0">
@@ -21736,6 +22012,9 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTv6F" role="37vLTJ">
+                        <ref role="3cqZAo" node="2ROV8e08tCV" resolve="_566" />
                       </node>
                     </node>
                   </node>
@@ -21915,6 +22194,7 @@
   </node>
   <node concept="13MO4I" id="tFif797EhG">
     <property role="TrG5h" value="reduce_PrintToTrace" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:tFif797DRC" resolve="PrintToTrace" />
     <node concept="3clFbS" id="tFif797EhK" role="13RCb5">
       <node concept="3clFbF" id="1iV$AJeqqLL" role="3cqZAp">
@@ -21951,6 +22231,7 @@
   </node>
   <node concept="13MO4I" id="10FJKeJB26R">
     <property role="TrG5h" value="reduce_GetOperationTypeNoExpand" />
+    <property role="3GE5qa" value="definition.rule.overload" />
     <ref role="3gUMe" to="tpd4:hZh4oqR" resolve="GetOperationType" />
     <node concept="2OqwBi" id="10FJKeJB2sg" role="13RCb5">
       <node concept="2OqwBi" id="10FJKeJB27l" role="2Oq$k0">
@@ -22117,6 +22398,7 @@
   </node>
   <node concept="13MO4I" id="6HodqY5sUZF">
     <property role="TrG5h" value="AbstractEquation_If" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="3gUMe" to="tpd4:h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="3clFb_" id="6HodqY5sUZG" role="13RCb5">
       <property role="TrG5h" value="method" />
@@ -22176,6 +22458,7 @@
   </node>
   <node concept="13MO4I" id="h7JK52$">
     <property role="TrG5h" value="MultipleForeach_to_whileLoop" />
+    <property role="3GE5qa" value="_obsolete" />
     <ref role="3gUMe" to="tpd4:h7JHHhJ" resolve="MultipleForeachLoop" />
     <node concept="9aQIb" id="h7JKfyb" role="13RCb5">
       <node concept="3clFbS" id="h7JKfyc" role="9aQI4">
@@ -22484,6 +22767,82 @@
         </node>
       </node>
       <node concept="raruj" id="h7JKgCL" role="lGtFl" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="5zzawu2JVCh">
+    <property role="TrG5h" value="Rule_to_main_method_SubstituteTypeRule" />
+    <property role="3GE5qa" value="definition.rule" />
+    <ref role="3gUMe" to="tpd4:5zzawu2JakE" resolve="SubstituteTypeRule" />
+    <node concept="3clFb_" id="5zzawu2JVNz" role="13RCb5">
+      <property role="TrG5h" value="substitution" />
+      <node concept="37vLTG" id="5zzawu2JVNP" role="3clF46">
+        <property role="TrG5h" value="name" />
+        <node concept="3Tqbb2" id="5zzawu2JVO0" role="1tU5fm" />
+        <node concept="17Uvod" id="5zzawu2JVO6" role="lGtFl">
+          <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+          <property role="2qtEX9" value="name" />
+          <node concept="3zFVjK" id="5zzawu2JVO7" role="3zH0cK">
+            <node concept="3clFbS" id="5zzawu2JVO8" role="2VODD2">
+              <node concept="3clFbF" id="5zzawu2JVOi" role="3cqZAp">
+                <node concept="2OqwBi" id="5zzawu2JVOj" role="3clFbG">
+                  <node concept="2OqwBi" id="5zzawu2JVOk" role="2Oq$k0">
+                    <node concept="30H73N" id="5zzawu2JVOl" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="5zzawu2JVOm" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="5zzawu2JVOn" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2EOQLmJbngQ" role="3clF46">
+        <property role="TrG5h" value="originalType" />
+        <node concept="3Tqbb2" id="2EOQLmJbnh9" role="1tU5fm" />
+        <node concept="2ZBi8u" id="2EOQLmJbVep" role="lGtFl">
+          <ref role="2rW$FS" node="2EOQLmJbVe_" resolve="substituteType_originalNode" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5zzawu2JVOL" role="3clF46">
+        <property role="TrG5h" value="typeCheckingContext" />
+        <node concept="3uibUv" id="5zzawu2JVOM" role="1tU5fm">
+          <ref role="3uigEE" to="ua2a:~TypeCheckingContext" resolve="TypeCheckingContext" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5zzawu2JVON" role="3clF46">
+        <property role="TrG5h" value="status" />
+        <node concept="3uibUv" id="5zzawu2JVOO" role="1tU5fm">
+          <ref role="3uigEE" to="7d2t:~IsApplicableStatus" resolve="IsApplicableStatus" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="UuWK9XTcpA" role="3clF45" />
+      <node concept="3Tm1VV" id="5zzawu2JVNA" role="1B3o_S" />
+      <node concept="3clFbS" id="5zzawu2JVNB" role="3clF47">
+        <node concept="29HgVG" id="5zzawu2JVPp" role="lGtFl">
+          <node concept="3NFfHV" id="5zzawu2JVPq" role="3NFExx">
+            <node concept="3clFbS" id="5zzawu2JVPr" role="2VODD2">
+              <node concept="3clFbF" id="5zzawu2JVPx" role="3cqZAp">
+                <node concept="2OqwBi" id="2EOQLmJbmYt" role="3clFbG">
+                  <node concept="2OqwBi" id="5zzawu2JVPs" role="2Oq$k0">
+                    <node concept="3TrEf2" id="2EOQLmJbmEH" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpd4:2EOQLmJ9HZ$" />
+                    </node>
+                    <node concept="30H73N" id="5zzawu2JVPw" role="2Oq$k0" />
+                  </node>
+                  <node concept="3TrEf2" id="2EOQLmJbngJ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="raruj" id="5zzawu2JVNH" role="lGtFl" />
     </node>
   </node>
 </model>

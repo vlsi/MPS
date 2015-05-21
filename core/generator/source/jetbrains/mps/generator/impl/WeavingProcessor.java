@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,18 +43,14 @@ public class WeavingProcessor {
     myReadyRules = new ArrayList<ArmedWeavingRule>();
   }
 
-  public void prepareWeavingRules(SModel inputModel, Iterable<TemplateWeavingRule> rules) throws GenerationCanceledException, GenerationFailureException {
+  public void prepareWeavingRules(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
+    Iterable<TemplateWeavingRule> rules = myGenerator.getRuleManager().getWeaving_MappingRules();
     myReadyRules.clear();
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
-      String applicableConcept = rule.getApplicableConcept();
-      if (applicableConcept == null) {
-        myGenerator.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-        continue;
-      }
       boolean includeInheritors = rule.applyToInheritors();
-      for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
+      for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept2(), includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
           continue;
         }
@@ -169,7 +165,7 @@ public class WeavingProcessor {
 
     @Override
     public String toString() {
-      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept(), myApplicableNode);
+      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept2().getQualifiedName(), myApplicableNode);
     }
   }
  }

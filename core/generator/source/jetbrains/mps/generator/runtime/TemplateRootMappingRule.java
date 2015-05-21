@@ -22,11 +22,7 @@ import java.util.Collection;
 /**
  * Evgeny Gryaznov, 10/27/10
  */
-public interface TemplateRootMappingRule extends TemplateRuleWithCondition {
-
-  String getApplicableConcept();
-
-  boolean applyToInheritors();
+public interface TemplateRootMappingRule extends TemplateRuleWithCondition, TemplateRuleForConcept {
 
   Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 

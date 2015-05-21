@@ -27,6 +27,8 @@ public interface IHelginsDescriptor extends LanguageAspectDescriptor {
 
   Set<SubtypingRule_Runtime> getSubtypingRules();
 
+  Set<SubstituteType_Runtime> getSubstituteTypeRules();
+
   Set<ComparisonRule_Runtime> getComparisonRules();
 
   Set<InequationReplacementRule_Runtime> getEliminationRules();

@@ -8168,7 +8168,7 @@
           <property role="2GAjPV" value="false" />
           <node concept="1SiIV0" id="7YI57w6K0lx" role="3bR37C">
             <node concept="3bR9La" id="7YI57w6K0ly" role="1SiIV1">
-              <property role="3bR36h" value="false" />
+              <property role="3bR36h" value="true" />
               <ref role="3bR37D" node="1TaHNgiIbIQ" resolve="MPS.Core" />
             </node>
           </node>

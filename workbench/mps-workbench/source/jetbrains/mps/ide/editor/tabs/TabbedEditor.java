@@ -84,21 +84,21 @@ public class TabbedEditor extends BaseNodeEditor {
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
     public void settingsChanged() {
-      SNodeReference node = getCurrentlyEditedNode();
+      final SNodeReference node = getCurrentlyEditedNode();
       JComponent comp = myTabsComponent.getComponent();
       if (comp != null) {
         myTabsPanel.remove(comp);
       }
-      myProject.getModelAccess().runReadAction(new Runnable() {
+      myProject.getModelAccess().runReadInEDT(new Runnable() {
         @Override
         public void run() {
           installTabsComponent();
+          if (node != null) {
+            myTabsComponent.updateTabs();
+            myTabsComponent.editNode(node);
+          }
         }
       });
-      if (node != null) {
-        myTabsComponent.updateTabs();
-        myTabsComponent.editNode(node);
-      }
     }
   };
   private MPSNodeVirtualFile myVirtualFile;

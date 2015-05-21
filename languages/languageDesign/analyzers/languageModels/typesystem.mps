@@ -7,6 +7,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -42,6 +43,7 @@
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -56,6 +58,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -89,6 +92,9 @@
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+    </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -576,7 +582,7 @@
           <node concept="3uibUv" id="5420fVrSLxv" role="1tU5fm">
             <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
           </node>
-          <node concept="2OqwBi" id="5420fVrSLxC" role="33vP2m">
+          <node concept="2EnYce" id="fTB4jwI2KP" role="33vP2m">
             <node concept="2JrnkZ" id="5420fVrSLxD" role="2Oq$k0">
               <node concept="2OqwBi" id="5420fVrSLxE" role="2JrQYb">
                 <node concept="1YBJjd" id="5420fVrSLxF" role="2Oq$k0">
@@ -657,13 +663,24 @@
           </node>
         </node>
       </node>
+      <node concept="3clFbJ" id="fTB4jwHZEQ" role="3cqZAp">
+        <node concept="3clFbS" id="fTB4jwHZES" role="3clFbx">
+          <node concept="3cpWs6" id="fTB4jwHZTs" role="3cqZAp" />
+        </node>
+        <node concept="3clFbC" id="fTB4jwHZSQ" role="3clFbw">
+          <node concept="10Nm6u" id="fTB4jwHZTb" role="3uHU7w" />
+          <node concept="37vLTw" id="fTB4jwHZQZ" role="3uHU7B">
+            <ref role="3cqZAo" node="5420fVrT2gp" resolve="analyzer" />
+          </node>
+        </node>
+      </node>
       <node concept="3cpWs8" id="5420fVrT3TO" role="3cqZAp">
         <node concept="3cpWsn" id="5420fVrT3TP" role="3cpWs9">
           <property role="TrG5h" value="analyzerModule" />
           <node concept="3uibUv" id="5420fVrT3TQ" role="1tU5fm">
             <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
           </node>
-          <node concept="2OqwBi" id="5420fVrT3TR" role="33vP2m">
+          <node concept="2EnYce" id="fTB4jwI40g" role="33vP2m">
             <node concept="2JrnkZ" id="5420fVrT3TS" role="2Oq$k0">
               <node concept="2OqwBi" id="5420fVrT3TT" role="2JrQYb">
                 <node concept="37vLTw" id="5420fVrT4kN" role="2Oq$k0">

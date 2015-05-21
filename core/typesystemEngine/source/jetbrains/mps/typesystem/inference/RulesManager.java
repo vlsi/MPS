@@ -28,6 +28,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsManager;
 import jetbrains.mps.lang.typesystem.runtime.RuleSet;
+import jetbrains.mps.lang.typesystem.runtime.SubstituteType_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
@@ -44,6 +45,7 @@ public class RulesManager {
 
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
+  private RuleSet<SubstituteType_Runtime> mySubstituteTypeRules = new RuleSet<SubstituteType_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
@@ -97,6 +99,7 @@ public class RulesManager {
         try {
           myInferenceRules.addRuleSetItem(typesystem.getInferenceRules());
           mySubtypingRules.addRuleSetItem(typesystem.getSubtypingRules());
+          mySubstituteTypeRules.addRuleSetItem(typesystem.getSubstituteTypeRules());
           Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
           myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
           myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
@@ -131,6 +134,7 @@ public class RulesManager {
     // TODO: cleanup
     myInferenceRules.clear();
     mySubtypingRules.clear();
+    mySubstituteTypeRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();
     myVariableConverters.clear();
@@ -191,6 +195,18 @@ public class RulesManager {
       }
       return true;
     }       */
+
+  public List<Pair<SubstituteType_Runtime, IsApplicableStatus>> getSubstituteTypeRules(final SNode node) {
+    ensureAllRulesLoaded();
+    List<Pair<SubstituteType_Runtime, IsApplicableStatus>> result = new LinkedList<Pair<SubstituteType_Runtime, IsApplicableStatus>>();
+    for (SubstituteType_Runtime rule : mySubstituteTypeRules.getRules(node)) {
+      IsApplicableStatus status = rule.isApplicableAndPattern(node);
+      if (status.isApplicable()) {
+        result.add(new Pair<SubstituteType_Runtime, IsApplicableStatus>(rule, status));
+      }
+    }
+    return result;
+  }
 
   public List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     ensureAllRulesLoaded();

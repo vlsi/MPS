@@ -192,6 +192,9 @@ public class LanguageHierarchyCache implements CoreComponent {
     return result;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no usages in MPS
   // FIXME there's only one use of the method (ChildSubstituteActionsHelper), which is likely to be refactored in 3.2, and we can drop LanguageCache then
   public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language l) {
     Set<String> result;

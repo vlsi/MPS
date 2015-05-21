@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.annotations.NotNull;
 
 public class TernaryOperatorExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -20,5 +21,23 @@ public class TernaryOperatorExpression_Behavior {
   }
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse"));
+  }
+  public static NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
+    if (child != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition"))) {
+      return null;
+    }
+    if (value) {
+      if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012a1c0L, "ifTrue")) != null) {
+        return NextProgramPoint.continueAt(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012a1c0L, "ifTrue")), false);
+      } else {
+        return NextProgramPoint.continueAfter(thisNode);
+      }
+    } else {
+      if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse")) != null) {
+        return NextProgramPoint.continueAt(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse")), true);
+      } else {
+        return NextProgramPoint.continueAfter(thisNode);
+      }
+    }
   }
 }

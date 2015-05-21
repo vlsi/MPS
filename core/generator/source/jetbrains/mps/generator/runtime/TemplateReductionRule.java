@@ -24,13 +24,9 @@ import java.util.Collection;
  * XXX why this rule doesn't extend TemplateRuleWithCondition?
  * Evgeny Gryaznov, 10/27/10
  */
-public interface TemplateReductionRule {
+public interface TemplateReductionRule extends TemplateRuleForConcept {
 
   SNodeReference getRuleNode();
-
-  String getApplicableConcept();
-
-  boolean applyToInheritors();
 
   Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 }

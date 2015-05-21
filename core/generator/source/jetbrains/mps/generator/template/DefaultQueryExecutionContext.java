@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
-import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.query.IfMacroCondition;
 import jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
@@ -264,13 +263,12 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
 
   @Override
   public boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException {
-    final TemplateExecutionEnvironment environment = context.getEnvironment();
     try {
-      return rule.isApplicable(environment, context);
+      return rule.isApplicable(context);
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable t) {
-      environment.getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error executing condition (see exception)");
       throw new GenerationFailureException(t);
     }
   }

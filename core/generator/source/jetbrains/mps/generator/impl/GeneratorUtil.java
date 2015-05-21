@@ -19,10 +19,13 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -32,13 +35,12 @@ import java.util.Arrays;
 public class GeneratorUtil {
 
   /**
-   * XXX this is merely a single location for future refactoring of the approach to get concept name
-   * when we've got a concept node. I don't like present NameUtil.nodeFQName, but unaware of any better way
-   * to get concept fqn given the concept's node (not an instance of the concept, where node.getContainingConcept().getQualifiedName is possible)
+   * Single location to clean once we drop legacy code that deals with string concept fqn
    */
-  public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
-    // FIXME there's MetaAdapterByDeclaration, but it deals with smodel.SNode
-    return NameUtil.nodeFQName(applicableConceptOfRule);
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static SAbstractConcept toSConcept(String conceptQualifiedName) {
+    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(conceptQualifiedName));
   }
 
   public static ProblemDescription describeInput(TemplateContext ctx) {

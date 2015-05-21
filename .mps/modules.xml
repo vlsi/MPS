@@ -339,6 +339,9 @@
       <modulePath path="$PROJECT_DIR$/testbench/languages/jetbrains.mps.testbench.suite.mpl" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/jetbrains.mps.testbench.suite.pluginSolution.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/simpleProject.msd" folder="tests.diskMemoryConflict" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/languages/testAnnotatedType/testAnnotatedType.mpl" folder="tests.substituteType" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/languages/testWrappedType/testWrappedType.mpl" folder="tests.substituteType" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/solutions/testSubstituteType/testSubstituteType.msd" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testActions/jetbrains.mps.testActions.msd" folder="tests" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L1/L1.mpl" folder="tests.testClassLoading" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L2/L2.mpl" folder="tests.testClassLoading" />

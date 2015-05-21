@@ -82,7 +82,7 @@
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507395260">
     <file name="MockTemplateQueryContext.java">
       <node id="7178287329507546914" at="11,0,12,0" concept="3" trace="sessionObjects" />
-      <node id="7178287329507396063" at="12,37,13,34" concept="8" />
+      <node id="7439704124700861033" at="12,37,13,12" concept="8" />
       <node id="7178287329507551690" at="22,60,23,35" concept="2" />
       <node id="7178287329507551715" at="23,35,24,17" concept="6" />
       <node id="7178287329507551717" at="27,46,28,35" concept="6" />
@@ -93,7 +93,7 @@
       <node id="7178287329507400224" at="21,0,26,0" concept="4" trace="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
       <scope id="7178287329507395274" at="16,61,16,61" />
       <scope id="7178287329507395287" at="19,59,19,59" />
-      <scope id="7178287329507395265" at="12,37,13,34" />
+      <scope id="7178287329507395265" at="12,37,13,12" />
       <scope id="7178287329507400244" at="27,46,28,35" />
       <scope id="7178287329507400231" at="22,60,24,17" />
       <scope id="7178287329507395262" at="12,0,15,0" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,63 +21,39 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.query.MapRootRuleCondition;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.MapRootRuleBase;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.MapRootRuleContext;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
 /**
  * Evgeny Gryaznov, Nov 30, 2010
  */
-public class TemplateRootMappingRuleInterpreted implements TemplateRootMappingRule {
+public class TemplateRootMappingRuleInterpreted extends MapRootRuleBase implements TemplateRootMappingRule {
 
   private final SNode myRuleNode;
-  private final SNodeReference myRuleRef;
-  private final String myApplicableConcept;
   private final String myMappingName;
   private final SNode myTemplateNode;
-  private final boolean myApplyToInheritors;
-  private final boolean myKeepSourceRoot;
   private MapRootRuleCondition myCondition;
 
   public TemplateRootMappingRuleInterpreted(SNode rule) {
+    super(rule.getReference(), MetaAdapterByDeclaration.getConcept(RuleUtil.getBaseRuleApplicableConcept(rule)),
+        RuleUtil.getBaseRuleApplyToConceptInheritors(rule), RuleUtil.getRootRuleKeepSourceRoot(rule));
     myRuleNode = rule;
-    myApplicableConcept = GeneratorUtil.getConceptQualifiedName(RuleUtil.getBaseRuleApplicableConcept(rule));
-    myRuleRef = new jetbrains.mps.smodel.SNodePointer(rule);
     myMappingName = RuleUtil.getBaseRuleLabel(rule);
     myTemplateNode = RuleUtil.getRootRuleTemplateNode(rule);
-    myApplyToInheritors = RuleUtil.getBaseRuleApplyToConceptInheritors(rule);
-    myKeepSourceRoot = RuleUtil.getRootRuleKeepSourceRoot(rule);
   }
 
   @Override
-  public SNodeReference getRuleNode() {
-    return myRuleRef;
-  }
-
-  @Override
-  public String getApplicableConcept() {
-    return myApplicableConcept;
-  }
-
-  @Override
-  public boolean applyToInheritors() {
-    return myApplyToInheritors;
-  }
-
-  @Override
-  public boolean keepSourceRoot() {
-    return myKeepSourceRoot;
-  }
-
-  @Override
-  public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean isApplicable(@NotNull TemplateContext context) throws GenerationFailureException {
     if (myCondition == null) {
-      myCondition = environment.getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
+      myCondition = context.getEnvironment().getQueryProvider(getRuleNode()).getMapRootRuleCondition(myRuleNode);
     }
     return myCondition.check(new MapRootRuleContext(context, getRuleNode()));
   }

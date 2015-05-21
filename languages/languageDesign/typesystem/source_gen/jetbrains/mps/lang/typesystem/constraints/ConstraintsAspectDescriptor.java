@@ -77,6 +77,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0xef0542bbc395068L) {
       return new CaretPositionOperation_Constraints();
     }
+    if (id == 0x58e32a0782bca52aL) {
+      return new SubstituteTypeRule_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

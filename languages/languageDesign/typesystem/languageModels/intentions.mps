@@ -233,6 +233,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" flags="ng" index="A9Btg">
@@ -283,6 +284,7 @@
   </registry>
   <node concept="2S6QgY" id="hpoNNqY">
     <property role="TrG5h" value="ConvertInferenceRuleToNonTypesystemRule" />
+    <property role="3GE5qa" value="definition.rule" />
     <ref role="2ZfgGC" to="tpd4:h5YbPVU" resolve="InferenceRule" />
     <node concept="2S6ZIM" id="hpoNNqZ" role="2ZfVej">
       <node concept="3clFbS" id="hpoNNr0" role="2VODD2">
@@ -553,6 +555,7 @@
   <node concept="2S6QgY" id="2Rjnwer$k2t">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="CreateTypesystemIntention" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="2ZfgGC" to="tpd4:hQOEHw2" resolve="MessageStatement" />
     <node concept="2S6ZIM" id="2Rjnwer$k2u" role="2ZfVej">
       <node concept="3clFbS" id="2Rjnwer$k2v" role="2VODD2">
@@ -668,6 +671,7 @@
   <node concept="2S6QgY" id="5VHjC1$djWn">
     <property role="2ZfUl0" value="true" />
     <property role="TrG5h" value="FlipInequality" />
+    <property role="3GE5qa" value="definition.statement" />
     <ref role="2ZfgGC" to="tpd4:hCOb1gi" resolve="AbstractInequationStatement" />
     <node concept="2S6ZIM" id="5VHjC1$djWo" role="2ZfVej">
       <node concept="3clFbS" id="5VHjC1$djWp" role="2VODD2">
@@ -1134,6 +1138,7 @@
   <node concept="2S6QgY" id="7cq3qQ1_bjX">
     <property role="2ZfUl3" value="true" />
     <property role="TrG5h" value="MultiForeachLoop_replaceWith_MultiForEachStatement" />
+    <property role="3GE5qa" value="_obsolete" />
     <ref role="2ZfgGC" to="tpd4:h7JHHhJ" resolve="MultipleForeachLoop" />
     <node concept="2S6ZIM" id="7cq3qQ1_bjY" role="2ZfVej">
       <node concept="3clFbS" id="7cq3qQ1_bjZ" role="2VODD2">

@@ -41,7 +41,7 @@ public class NonIncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy) {
-    return GenerationDependencies.fromNonIncremental(myModelHash, myParametersHash);
+    return new GenerationDependencies(myModelHash, myParametersHash);
   }
 
   @Override
