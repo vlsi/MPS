@@ -123,8 +123,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   //this method MUST NOT call any concept methods (not to get into infinite recursion)
   private boolean isConceptDeclaration(SConcept concept) {
     if (concept instanceof SConceptAdapterByName) {
-      String fqname = concept.getQualifiedName();
-      return fqname.equals(SNodeUtil.conceptName_ConceptDeclaration) || fqname.equals(SNodeUtil.conceptName_InterfaceConceptDeclaration);
+      return concept.equals(SNodeUtil.concept_ConceptDeclaration) || concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
     } else if (concept instanceof SConceptAdapterById) {
       SConceptId id = ((SConceptAdapterById) concept).getId();
       return id.equals(SNodeUtil.conceptId_ConceptDeclaration) || id.equals(SNodeUtil.conceptId_InterfaceConceptDeclaration);

@@ -77,7 +77,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877216526">
     <file name="ConceptDeclaration_Behavior.java">
       <node id="1222430706342" at="23,93,24,48" concept="6" />
-      <node id="1222430784916" at="25,177,26,492" concept="2" />
+      <node id="1222430784916" at="25,346,26,492" concept="2" />
       <node id="1222431222336" at="28,209,29,221" concept="2" />
       <node id="1222431008423" at="30,5,31,18" concept="7" />
       <node id="9106339407519386341" at="33,99,34,72" concept="6" />
@@ -105,7 +105,7 @@
       <node id="9106339407519386388" at="45,51,56,5" concept="3" />
       <node id="1213877216526" at="33,0,60,0" concept="10" trace="call_getAllMethodsInPriorityOrder_9106339407519386338#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="1213877216580" at="21,43,21,43" />
-      <scope id="6739176272150809626" at="25,177,26,492" />
+      <scope id="6739176272150809626" at="25,346,26,492" />
       <scope id="1222431021549" at="28,209,29,221" />
       <scope id="9106339407519386399" at="47,39,48,175" />
       <scope id="9106339407519386399" at="51,37,52,165" />

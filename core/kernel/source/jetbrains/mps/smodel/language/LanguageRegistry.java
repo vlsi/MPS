@@ -244,7 +244,6 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       try {
         LanguageRuntime langRuntime = createRuntime(language);
         if (langRuntime == null) continue;
-        if (langRuntime.getId() == null) langRuntime.setId(languageId);
 
         String langName = langRuntime.getNamespace();
         if (myLanguages.containsKey(langName)) {

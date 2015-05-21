@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "fae29102-8774-4e55-af5d-93fa67387f38(jetbrains.mps.samples.generator_demo.demoLang1)";
@@ -36,7 +36,9 @@ public class Language extends LanguageRuntime {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "db87040c-49b4-458d-a4a2-44812b4083f5(jetbrains.mps.samples.generator_demo.demoLang1####1228430287736)"));
   }
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    return super.createAspectDescriptor(descriptorClass);
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+
+
+    return super.createAspect(aspectClass);
   }
 }

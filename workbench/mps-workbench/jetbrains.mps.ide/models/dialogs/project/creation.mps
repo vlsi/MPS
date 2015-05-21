@@ -6,6 +6,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -43,7 +44,7 @@
     <import index="byws" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.lang.model(JDK/javax.lang.model@java_stub)" />
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="oj8w" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
     <import index="nx1" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" implicit="true" />
@@ -262,6 +263,13 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
+    </language>
+    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
+      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
+      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
+      </concept>
+      <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -496,32 +504,38 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="1pyYjDPRa0W" role="3cqZAp">
-          <node concept="2OqwBi" id="3envJk8CwF6" role="1gVkn0">
-            <node concept="liA8E" id="3envJk8CwX6" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
-            </node>
-            <node concept="2OqwBi" id="1pyYjDPRa0Y" role="2Oq$k0">
-              <node concept="liA8E" id="3envJk8CvWM" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
-              </node>
-              <node concept="2OqwBi" id="1pyYjDPRa0Z" role="2Oq$k0">
-                <node concept="37vLTw" id="2BHiRxeuFKa" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
+        <node concept="1QHqEK" id="2T$XN_fUHUJ" role="3cqZAp">
+          <node concept="1QHqEC" id="2T$XN_fUHUL" role="1QHqEI">
+            <node concept="3clFbS" id="2T$XN_fUHUN" role="1bW5cS">
+              <node concept="1gVbGN" id="1pyYjDPRa0W" role="3cqZAp">
+                <node concept="2OqwBi" id="3envJk8CwF6" role="1gVkn0">
+                  <node concept="liA8E" id="3envJk8CwX6" role="2OqNvi">
+                    <ref role="37wK5l" to="k7g3:~Iterator.hasNext():boolean" resolve="hasNext" />
+                  </node>
+                  <node concept="2OqwBi" id="1pyYjDPRa0Y" role="2Oq$k0">
+                    <node concept="liA8E" id="3envJk8CvWM" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Iterable.iterator():java.util.Iterator" resolve="iterator" />
+                    </node>
+                    <node concept="2OqwBi" id="1pyYjDPRa0Z" role="2Oq$k0">
+                      <node concept="37vLTw" id="2BHiRxeuFKa" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
+                      </node>
+                      <node concept="liA8E" id="1pyYjDPRa11" role="2OqNvi">
+                        <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
-                <node concept="liA8E" id="1pyYjDPRa11" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                <node concept="Xl_RD" id="1pyYjDPRa14" role="1gVpfI">
+                  <property role="Xl_RC" value="Can't create a model in solution with no model roots" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="1pyYjDPRa15" role="3cqZAp">
+                <node concept="1rXfSq" id="4hiugqyz95u" role="3clFbG">
+                  <ref role="37wK5l" node="1pyYjDPRa1D" resolve="initContentPane" />
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="Xl_RD" id="1pyYjDPRa14" role="1gVpfI">
-            <property role="Xl_RC" value="Can't create a model in solution with no model roots" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="1pyYjDPRa15" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyz95u" role="3clFbG">
-            <ref role="37wK5l" node="1pyYjDPRa1D" resolve="initContentPane" />
           </node>
         </node>
         <node concept="3clFbJ" id="1pyYjDPRa17" role="3cqZAp">
@@ -2772,89 +2786,95 @@
               </node>
             </node>
             <node concept="3clFbH" id="6TR48CGda6O" role="3cqZAp" />
-            <node concept="1DcWWT" id="2OVU6XAacfy" role="3cqZAp">
-              <node concept="3clFbS" id="2OVU6XAacf$" role="2LFqv$">
-                <node concept="3clFbJ" id="2OVU6XAacy0" role="3cqZAp">
-                  <node concept="1Wc70l" id="2OVU6XAadnu" role="3clFbw">
-                    <node concept="2OqwBi" id="2OVU6XAafil" role="3uHU7w">
-                      <node concept="liA8E" id="2OVU6XAahhU" role="2OqNvi">
-                        <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                        <node concept="2OqwBi" id="3n24nrxKlc1" role="37wK5m">
-                          <node concept="37vLTw" id="2OVU6XAahzU" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2LW9P$mo6ZO" resolve="selectedModelRoot" />
+            <node concept="1QHqEK" id="2PMNsNJti_c" role="3cqZAp">
+              <node concept="1QHqEC" id="2PMNsNJti_e" role="1QHqEI">
+                <node concept="3clFbS" id="2PMNsNJti_g" role="1bW5cS">
+                  <node concept="1DcWWT" id="2OVU6XAacfy" role="3cqZAp">
+                    <node concept="3clFbS" id="2OVU6XAacf$" role="2LFqv$">
+                      <node concept="3clFbJ" id="2OVU6XAacy0" role="3cqZAp">
+                        <node concept="1Wc70l" id="2OVU6XAadnu" role="3clFbw">
+                          <node concept="2OqwBi" id="2OVU6XAafil" role="3uHU7w">
+                            <node concept="liA8E" id="2OVU6XAahhU" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                              <node concept="2OqwBi" id="3n24nrxKlc1" role="37wK5m">
+                                <node concept="37vLTw" id="2OVU6XAahzU" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2LW9P$mo6ZO" resolve="selectedModelRoot" />
+                                </node>
+                                <node concept="liA8E" id="3n24nrxKmwk" role="2OqNvi">
+                                  <ref role="37wK5l" to="ep0o:~FileBasedModelRoot.getContentRoot():java.lang.String" resolve="getContentRoot" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="2OVU6XAadJN" role="2Oq$k0">
+                              <node concept="liA8E" id="2OVU6XAaf3z" role="2OqNvi">
+                                <ref role="37wK5l" to="ep0o:~FileBasedModelRoot.getContentRoot():java.lang.String" resolve="getContentRoot" />
+                              </node>
+                              <node concept="1eOMI4" id="2OVU6XAadxx" role="2Oq$k0">
+                                <node concept="10QFUN" id="2OVU6XAadpL" role="1eOMHV">
+                                  <node concept="3uibUv" id="2OVU6XAadwm" role="10QFUM">
+                                    <ref role="3uigEE" to="ep0o:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
+                                  </node>
+                                  <node concept="37vLTw" id="2OVU6XAadoa" role="10QFUP">
+                                    <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
-                          <node concept="liA8E" id="3n24nrxKmwk" role="2OqNvi">
-                            <ref role="37wK5l" to="ep0o:~FileBasedModelRoot.getContentRoot():java.lang.String" resolve="getContentRoot" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="2OVU6XAadJN" role="2Oq$k0">
-                        <node concept="liA8E" id="2OVU6XAaf3z" role="2OqNvi">
-                          <ref role="37wK5l" to="ep0o:~FileBasedModelRoot.getContentRoot():java.lang.String" resolve="getContentRoot" />
-                        </node>
-                        <node concept="1eOMI4" id="2OVU6XAadxx" role="2Oq$k0">
-                          <node concept="10QFUN" id="2OVU6XAadpL" role="1eOMHV">
-                            <node concept="3uibUv" id="2OVU6XAadwm" role="10QFUM">
+                          <node concept="2ZW3vV" id="2OVU6XAacSc" role="3uHU7B">
+                            <node concept="3uibUv" id="2OVU6XAacY$" role="2ZW6by">
                               <ref role="3uigEE" to="ep0o:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
                             </node>
-                            <node concept="37vLTw" id="2OVU6XAadoa" role="10QFUP">
+                            <node concept="37vLTw" id="2OVU6XAacyq" role="2ZW6bz">
                               <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
                             </node>
                           </node>
                         </node>
+                        <node concept="3clFbS" id="2OVU6XAacy2" role="3clFbx">
+                          <node concept="3clFbF" id="6TXVK5J5QR0" role="3cqZAp">
+                            <node concept="2OqwBi" id="6TXVK5J5R_K" role="3clFbG">
+                              <node concept="liA8E" id="6TXVK5J5WXe" role="2OqNvi">
+                                <ref role="37wK5l" to="dbrf:~JComboBox.addItem(java.lang.Object):void" resolve="addItem" />
+                                <node concept="37vLTw" id="2OVU6XAal_Y" role="37wK5m">
+                                  <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="6TXVK5J5QQZ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1pyYjDPRa0i" resolve="myModelRoots" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="2LW9P$mpl2B" role="3cqZAp">
+                            <node concept="2OqwBi" id="2LW9P$mplKf" role="3clFbG">
+                              <node concept="liA8E" id="2LW9P$mpr7H" role="2OqNvi">
+                                <ref role="37wK5l" to="dbrf:~JComboBox.setSelectedItem(java.lang.Object):void" resolve="setSelectedItem" />
+                                <node concept="37vLTw" id="2OVU6XAalBh" role="37wK5m">
+                                  <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="2LW9P$mpl2A" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1pyYjDPRa0i" resolve="myModelRoots" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="2ZW3vV" id="2OVU6XAacSc" role="3uHU7B">
-                      <node concept="3uibUv" id="2OVU6XAacY$" role="2ZW6by">
-                        <ref role="3uigEE" to="ep0o:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
+                    <node concept="3cpWsn" id="2OVU6XAacf_" role="1Duv9x">
+                      <property role="TrG5h" value="modelRoot" />
+                      <node concept="3uibUv" id="2OVU6XAacuR" role="1tU5fm">
+                        <ref role="3uigEE" to="qx6n:~ModelRoot" resolve="ModelRoot" />
                       </node>
-                      <node concept="37vLTw" id="2OVU6XAacyq" role="2ZW6bz">
-                        <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
+                    </node>
+                    <node concept="2OqwBi" id="2OVU6XAa6q$" role="1DdaDG">
+                      <node concept="liA8E" id="2OVU6XAa73J" role="2OqNvi">
+                        <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                      </node>
+                      <node concept="37vLTw" id="2OVU6XAa6kD" role="2Oq$k0">
+                        <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbS" id="2OVU6XAacy2" role="3clFbx">
-                    <node concept="3clFbF" id="6TXVK5J5QR0" role="3cqZAp">
-                      <node concept="2OqwBi" id="6TXVK5J5R_K" role="3clFbG">
-                        <node concept="liA8E" id="6TXVK5J5WXe" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~JComboBox.addItem(java.lang.Object):void" resolve="addItem" />
-                          <node concept="37vLTw" id="2OVU6XAal_Y" role="37wK5m">
-                            <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="6TXVK5J5QQZ" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1pyYjDPRa0i" resolve="myModelRoots" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3clFbF" id="2LW9P$mpl2B" role="3cqZAp">
-                      <node concept="2OqwBi" id="2LW9P$mplKf" role="3clFbG">
-                        <node concept="liA8E" id="2LW9P$mpr7H" role="2OqNvi">
-                          <ref role="37wK5l" to="dbrf:~JComboBox.setSelectedItem(java.lang.Object):void" resolve="setSelectedItem" />
-                          <node concept="37vLTw" id="2OVU6XAalBh" role="37wK5m">
-                            <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
-                          </node>
-                        </node>
-                        <node concept="37vLTw" id="2LW9P$mpl2A" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1pyYjDPRa0i" resolve="myModelRoots" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWsn" id="2OVU6XAacf_" role="1Duv9x">
-                <property role="TrG5h" value="modelRoot" />
-                <node concept="3uibUv" id="2OVU6XAacuR" role="1tU5fm">
-                  <ref role="3uigEE" to="qx6n:~ModelRoot" resolve="ModelRoot" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="2OVU6XAa6q$" role="1DdaDG">
-                <node concept="liA8E" id="2OVU6XAa73J" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~AbstractModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
-                </node>
-                <node concept="37vLTw" id="2OVU6XAa6kD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1pyYjDPR9ZY" resolve="myModule" />
                 </node>
               </node>
             </node>

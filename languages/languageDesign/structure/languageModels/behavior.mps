@@ -306,9 +306,6 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
-      </concept>
       <concept id="1180457458947" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" flags="nn" index="3oJPKh" />
       <concept id="1180458444893" name="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" flags="nn" index="3oNA_f" />
       <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
@@ -462,16 +459,21 @@
           </node>
           <node concept="3fqX7Q" id="7vc5PjWrVtv" role="3clFbw">
             <node concept="2OqwBi" id="7vc5PjWrVtx" role="3fr31v">
-              <node concept="2OqwBi" id="7vc5PjWrVty" role="2Oq$k0">
+              <node concept="2OqwBi" id="4fSpAVASXRf" role="2Oq$k0">
                 <node concept="13iPFW" id="7vc5PjWrVtz" role="2Oq$k0" />
-                <node concept="2qgKlT" id="7vc5PjWrVt$" role="2OqNvi">
+                <node concept="2qgKlT" id="4fSpAVASYkl" role="2OqNvi">
                   <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                 </node>
               </node>
               <node concept="liA8E" id="7vc5PjWrVt_" role="2OqNvi">
                 <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                <node concept="3nh3qo" id="7vc5PjWrVCw" role="37wK5m">
-                  <ref role="3nh3qp" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                <node concept="2OqwBi" id="4fSpAVASYt0" role="37wK5m">
+                  <node concept="3B5_sB" id="7UEyXn91WS8" role="2Oq$k0">
+                    <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                  </node>
+                  <node concept="2qgKlT" id="4fSpAVASYVi" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                  </node>
                 </node>
               </node>
             </node>

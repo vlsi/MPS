@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
  * Marker for a language extension, known as 'Language Aspect'.
  * @see jetbrains.mps.smodel.language.LanguageRuntime#getAspect(Class)
  */
-public interface LanguageAspectDescriptor {
+@Deprecated
+@ToRemove(version = 3.2)
+//use ILanguageAspect
+public interface LanguageAspectDescriptor extends ILanguageAspect {
 }

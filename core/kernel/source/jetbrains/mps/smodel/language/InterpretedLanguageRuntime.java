@@ -17,9 +17,8 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import org.jetbrains.annotations.NotNull;
@@ -39,12 +38,11 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
 
   public InterpretedLanguageRuntime(@NotNull Language l) {
     myLang = l;
-    setId(MetaIdByDeclaration.getLanguageId(l));
     myName = myLang.getModuleName();
   }
 
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
+  protected <T extends jetbrains.mps.smodel.runtime.LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
     if (descriptorInterface == StructureAspectDescriptor.class) {
       return (T) new StructureAspectInterpreted(myLang);
     }
@@ -61,6 +59,16 @@ class InterpretedLanguageRuntime extends LanguageRuntime {
   @Override
   public String getNamespace() {
     return myName;
+  }
+
+  @Override
+  public SLanguageId getId() {
+    return MetaIdByDeclaration.getLanguageId(myLang);
+  }
+
+  @Override
+  public int getVersion() {
+    return -1;
   }
 
   @Override

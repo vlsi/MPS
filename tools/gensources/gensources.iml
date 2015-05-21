@@ -58,6 +58,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/analyzers/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/analyzers/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/aspectDescriptor/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/aspectDescriptor/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/testlang/source_gen" isTestSource="false" />
@@ -213,6 +215,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/actions/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/analyzers/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/analyzers/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/aspectDescriptor/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/aspectDescriptor/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/behavior/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/behavior/languages/testlang/classes_gen" />

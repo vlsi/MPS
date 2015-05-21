@@ -6,9 +6,15 @@ import com.intellij.openapi.options.SearchableConfigurable;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JCheckBox;
+import javax.swing.JTextArea;
 import java.util.Hashtable;
 import javax.swing.JLabel;
 import java.awt.Dimension;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.BorderFactory;
+import java.awt.BorderLayout;
+import javax.swing.border.EtchedBorder;
 import java.awt.GridBagLayout;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagConstraints;
@@ -23,10 +29,11 @@ import javax.swing.JComponent;
 
 public class ModelCheckerPreferencesPage implements SearchableConfigurable {
   private JPanel myPage;
-  private JSlider myCheckingLevelSlider = new JSlider(JSlider.HORIZONTAL, 0, ModelCheckerSettings.CheckingLevel.values().length - 1, 0);
+  private JSlider myCheckingLevelSlider = new JSlider(JSlider.VERTICAL, 0, ModelCheckerSettings.CheckingLevel.values().length - 1, 0);
   private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
   private JCheckBox myCheckSpecificCheckBox = new JCheckBox("Perform additional checks");
   private ModelCheckerSettings myModelCheckerSettings;
+  private JTextArea myDescriptionText = new JTextArea();
 
   public ModelCheckerPreferencesPage(ModelCheckerSettings settings) {
     myModelCheckerSettings = settings;
@@ -40,7 +47,21 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     myCheckingLevelSlider.setPaintTicks(true);
     myCheckingLevelSlider.setMajorTickSpacing(1);
     myCheckingLevelSlider.setSnapToTicks(true);
-    myCheckingLevelSlider.setPreferredSize(new Dimension(350, 60));
+    myCheckingLevelSlider.setPreferredSize(new Dimension(140, 180));
+    myCheckingLevelSlider.addChangeListener(new ChangeListener() {
+      public void stateChanged(ChangeEvent p0) {
+        myDescriptionText.setText(ModelCheckerSettings.CheckingLevel.values()[myCheckingLevelSlider.getValue()].getLongDescription());
+      }
+    });
+
+    myDescriptionText.setEditable(false);
+    myDescriptionText.setOpaque(false);
+    myDescriptionText.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+
+    JPanel levelSelectionPanel = new JPanel(new BorderLayout());
+    levelSelectionPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED), "Model checking level"));
+    levelSelectionPanel.add(myCheckingLevelSlider, BorderLayout.WEST);
+    levelSelectionPanel.add(myDescriptionText, BorderLayout.CENTER);
 
     myPage = new JPanel(new GridBagLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -49,19 +70,18 @@ public class ModelCheckerPreferencesPage implements SearchableConfigurable {
     c.gridx = 0;
     c.gridy = 0;
     c.anchor = GridBagConstraints.NORTHWEST;
+    c.fill = GridBagConstraints.HORIZONTAL;
+    myPage.add(levelSelectionPanel, c);
+
     c.fill = GridBagConstraints.NONE;
-    myPage.add(new JLabel("Model checking level"), c);
 
-    c.gridy = 1;
-    myPage.add(myCheckingLevelSlider, c);
-
-    c.gridy = 2;
+    c.gridy++;
     myPage.add(myCheckStubsCheckBox, c);
 
-    c.gridy = 3;
+    c.gridy++;
     myPage.add(myCheckSpecificCheckBox, c);
 
-    c.gridy = 4;
+    c.gridy++;
     c.weightx = 1.0;
     c.weighty = 1.0;
     c.fill = GridBagConstraints.BOTH;

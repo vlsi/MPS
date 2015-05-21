@@ -87,9 +87,18 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       boolean showLongName,
       Condition<SNode> condition,
       int countNamePart) {
+    this(modelDescriptor, label, showLongName, condition, countNamePart, IconManager.getIconFor(modelDescriptor));
+  }
+
+  public SModelTreeNode(SModel modelDescriptor,
+        String label,
+    boolean showLongName,
+      Condition<SNode> condition,
+      int countNamePart,
+      Icon icon) {
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
-    myIcon = IconManager.getIconFor(getModel());
+    myIcon = icon;
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
