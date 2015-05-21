@@ -3009,7 +3009,7 @@
                       <ref role="3cqZAo" node="41innpAfQge" resolve="lr" />
                     </node>
                     <node concept="liA8E" id="4vrWHlzyD7W" role="2OqNvi">
-                      <ref role="37wK5l" to="n55e:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" resolve="getAspect" />
+                      <ref role="37wK5l" to="n55e:~LanguageRuntime.getAspect(java.lang.Class):jetbrains.mps.smodel.runtime.ILanguageAspect" resolve="getAspect" />
                       <node concept="3VsKOn" id="4vrWHlzyD7X" role="37wK5m">
                         <ref role="3VsUkX" to="fwv2:~MakeAspectDescriptor" resolve="MakeAspectDescriptor" />
                       </node>
