@@ -144,6 +144,9 @@
       <node concept="3uibUv" id="ghIDlF6Hda" role="q3mfk">
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
+      <node concept="QcxE9" id="6zkSwmUFPMJ" role="2IRzpu">
+        <property role="QcwnP" value="&lt;no help URL&gt;" />
+      </node>
     </node>
   </node>
 </model>
