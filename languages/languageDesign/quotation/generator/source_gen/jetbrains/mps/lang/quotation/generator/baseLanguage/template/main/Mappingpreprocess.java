@@ -50,7 +50,7 @@ public class Mappingpreprocess extends MapConfigBase implements TemplateMappingC
       return QueriesGenerated.baseMappingRule_Condition_8274572146452630995(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x718e3f4cb7a3132eL, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression"));
       try {

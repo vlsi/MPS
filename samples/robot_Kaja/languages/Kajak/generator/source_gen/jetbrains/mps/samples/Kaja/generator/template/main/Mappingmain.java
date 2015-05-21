@@ -57,7 +57,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039580714"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45762L, "jetbrains.mps.samples.Kaja.structure.Step"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Step().apply(environment, context);
       return tlist1;
@@ -68,7 +68,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039647643"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9f8bL, "jetbrains.mps.samples.Kaja.structure.LeftTurn"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__LeftTurn().apply(environment, context);
       return tlist1;
@@ -79,7 +79,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039647796"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785eca02cL, "jetbrains.mps.samples.Kaja.structure.IsWall"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__IsWall().apply(environment, context);
       return tlist1;
@@ -90,7 +90,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039654077"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecb8b0L, "jetbrains.mps.samples.Kaja.structure.Not"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Not().apply(environment, context);
       return tlist1;
@@ -101,7 +101,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436186603"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f89fe6L, "jetbrains.mps.samples.Kaja.structure.IsMark"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__IsMark().apply(environment, context);
       return tlist1;
@@ -112,7 +112,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "859008965969439774"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0xbebd01a737bec18L, "jetbrains.mps.samples.Kaja.structure.IsFull"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__IsFull().apply(environment, context);
       return tlist1;
@@ -123,7 +123,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039647830"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fbeL, "jetbrains.mps.samples.Kaja.structure.IfStatement"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__IfStatement().apply(environment, context);
       return tlist1;
@@ -134,7 +134,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039660390"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecd14cL, "jetbrains.mps.samples.Kaja.structure.Repeat"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Repeat().apply(environment, context);
       return tlist1;
@@ -145,7 +145,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039667448"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ecece0L, "jetbrains.mps.samples.Kaja.structure.While"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__While().apply(environment, context);
       return tlist1;
@@ -156,7 +156,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039683662"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c41L, "jetbrains.mps.samples.Kaja.structure.Heading"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Heading().apply(environment, context);
       return tlist1;
@@ -167,7 +167,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "7060824959893176543"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x61fd16e423a38042L, "jetbrains.mps.samples.Kaja.structure.Looking"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Looking().apply(environment, context);
       return tlist1;
@@ -178,7 +178,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039683776"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d3bL, "jetbrains.mps.samples.Kaja.structure.North"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__North().apply(environment, context);
       return tlist1;
@@ -189,7 +189,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039683792"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d41L, "jetbrains.mps.samples.Kaja.structure.East"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__East().apply(environment, context);
       return tlist1;
@@ -200,7 +200,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039683806"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed0d4bL, "jetbrains.mps.samples.Kaja.structure.South"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__South().apply(environment, context);
       return tlist1;
@@ -211,7 +211,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039683821"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed2c3cL, "jetbrains.mps.samples.Kaja.structure.West"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__West().apply(environment, context);
       return tlist1;
@@ -222,7 +222,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701201"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__RoutineDefinition().apply(environment, context);
       return tlist1;
@@ -233,7 +233,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701251"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f92L, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__RoutineCall().apply(environment, context);
       return tlist1;
@@ -244,7 +244,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928807"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL, "jetbrains.mps.samples.Kaja.structure.CommandList"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__CommandList().apply(environment, context);
       return tlist1;
@@ -255,7 +255,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436123137"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f79f27L, "jetbrains.mps.samples.Kaja.structure.Drop"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Drop().apply(environment, context);
       return tlist1;
@@ -266,7 +266,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436170018"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713f85f1dL, "jetbrains.mps.samples.Kaja.structure.Pick"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__Pick().apply(environment, context);
       return tlist1;
@@ -277,7 +277,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287827"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x58e59ea713fa2b43L, "jetbrains.mps.samples.Kaja.structure.CommentLine"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__CommentLine().apply(environment, context);
       return tlist1;
@@ -288,7 +288,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3210697320273763069"), MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2c8eb033a8375aeeL, "jetbrains.mps.samples.Kaja.structure.TraceMessage"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__TraceMessage().apply(environment, context);
       return tlist1;

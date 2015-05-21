@@ -103,7 +103,7 @@
       <node id="1892993302480310366" at="33,62,34,17" concept="9" />
       <node id="1892993302480310366" at="36,172,37,16" concept="9" />
       <node id="1892993302480310366" at="42,29,43,366" concept="13" />
-      <node id="1892993302480310366" at="46,108,47,80" concept="8" />
+      <node id="1892993302480310366" at="46,103,47,80" concept="8" />
       <node id="1892993302480310366" at="47,80,48,104" concept="8" />
       <node id="1892993302480310366" at="48,104,49,20" concept="9" />
       <node id="1892993302480310366" at="39,0,41,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
@@ -113,7 +113,7 @@
       <node id="1892993302480310366" at="33,0,36,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
       <node id="1892993302480310366" at="36,0,39,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="1892993302480310366" at="42,0,45,0" concept="1" trace="ReductionRule0#()V" />
-      <node id="1892993302480310366" at="45,0,51,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1892993302480310366" at="45,0,51,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1892993302480310366" at="39,125,39,125" />
       <scope id="1892993302480310366" at="24,39,25,108" />
       <scope id="1892993302480310366" at="27,41,28,199" />
@@ -137,7 +137,7 @@
         <var name="templateSwitch" id="1892993302480310366" />
       </scope>
       <scope id="1892993302480310366" at="42,0,45,0" />
-      <scope id="1892993302480310366" at="46,108,49,20">
+      <scope id="1892993302480310366" at="46,103,49,20">
         <var name="environment" id="1892993302480310366" />
         <var name="tlist1" id="1892993302480310366" />
       </scope>
@@ -229,7 +229,7 @@
       <node id="3893401255414084744" at="40,61,41,21" concept="9" />
       <node id="3893401255414084744" at="44,29,45,366" concept="13" />
       <node id="3893401255414084744" at="48,94,49,131" concept="9" />
-      <node id="3893401255414084744" at="52,108,53,80" concept="8" />
+      <node id="3893401255414084744" at="52,103,53,80" concept="8" />
       <node id="3893401255414084744" at="53,80,54,96" concept="8" />
       <node id="3893401255414084744" at="54,96,55,20" concept="9" />
       <node id="3893401255414084744" at="59,31,60,371" concept="13" />
@@ -244,7 +244,7 @@
       <node id="3893401255414084744" at="62,0,66,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="3893401255414084744" at="66,0,70,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="3893401255414084744" at="30,0,35,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
-      <node id="3893401255414084744" at="51,0,57,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="51,0,57,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="3893401255414084744" at="36,64,37,17" />
       <scope id="3893401255414084744" at="40,61,41,21" />
       <scope id="3893401255414084744" at="44,29,45,366" />
@@ -256,7 +256,7 @@
       </scope>
       <scope id="3893401255414084744" at="30,52,33,103" />
       <scope id="3893401255414084744" at="44,0,47,0" />
-      <scope id="3893401255414084744" at="52,108,55,20">
+      <scope id="3893401255414084744" at="52,103,55,20">
         <var name="environment" id="3893401255414084744" />
         <var name="tlist1" id="3893401255414084744" />
       </scope>
@@ -524,7 +524,7 @@
       <node id="8371596541809066874" at="43,125,44,71" concept="3" />
       <node id="8371596541809066874" at="47,29,48,366" concept="13" />
       <node id="8371596541809066874" at="51,94,52,131" concept="9" />
-      <node id="8371596541809066874" at="55,108,56,80" concept="8" />
+      <node id="8371596541809066874" at="55,103,56,80" concept="8" />
       <node id="8371596541809066874" at="56,80,57,96" concept="8" />
       <node id="8371596541809066874" at="57,96,58,20" concept="9" />
       <node id="8371596541809066874" at="27,0,30,0" concept="1" trace="SwitchbetterSwitch#()V" />
@@ -535,7 +535,7 @@
       <node id="8371596541809066874" at="47,0,50,0" concept="1" trace="ReductionRule0#()V" />
       <node id="8371596541809066874" at="39,0,43,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="8371596541809066874" at="50,0,54,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-      <node id="8371596541809066874" at="54,0,60,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="8371596541809066874" at="54,0,60,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="8371596541809066874" at="27,31,28,100" />
       <scope id="8371596541809066874" at="30,41,31,199" />
       <scope id="8371596541809066874" at="33,45,34,199" />
@@ -556,7 +556,7 @@
         <var name="templateSwitch" id="8371596541809066874" />
       </scope>
       <scope id="8371596541809066874" at="47,0,50,0" />
-      <scope id="8371596541809066874" at="55,108,58,20">
+      <scope id="8371596541809066874" at="55,103,58,20">
         <var name="environment" id="8371596541809066874" />
         <var name="tlist1" id="8371596541809066874" />
       </scope>

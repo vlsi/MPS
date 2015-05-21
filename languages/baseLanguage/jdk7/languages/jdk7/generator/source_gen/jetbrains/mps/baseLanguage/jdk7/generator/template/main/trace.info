@@ -29,18 +29,18 @@
       <node id="400642802550418959" at="25,181,26,95" concept="3" />
       <node id="400642802550418959" at="29,64,30,17" concept="9" />
       <node id="400642802550418959" at="33,29,34,328" concept="12" />
-      <node id="400642802550418959" at="37,108,38,80" concept="8" />
+      <node id="400642802550418959" at="37,103,38,80" concept="8" />
       <node id="400642802550418959" at="38,80,39,108" concept="8" />
       <node id="400642802550418959" at="39,108,40,20" concept="9" />
       <node id="400642802550418959" at="33,0,36,0" concept="1" trace="ReductionRule0#()V" />
       <node id="400642802550418959" at="24,0,28,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="400642802550418959" at="28,0,32,0" concept="7" trace="getReductionRules#()Ljava/util/Collection;" />
-      <node id="400642802550418959" at="36,0,42,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="400642802550418959" at="36,0,42,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="400642802550418959" at="29,64,30,17" />
       <scope id="400642802550418959" at="33,29,34,328" />
       <scope id="400642802550418959" at="24,52,26,95" />
       <scope id="400642802550418959" at="33,0,36,0" />
-      <scope id="400642802550418959" at="37,108,40,20">
+      <scope id="400642802550418959" at="37,103,40,20">
         <var name="environment" id="400642802550418959" />
         <var name="tlist1" id="400642802550418959" />
       </scope>

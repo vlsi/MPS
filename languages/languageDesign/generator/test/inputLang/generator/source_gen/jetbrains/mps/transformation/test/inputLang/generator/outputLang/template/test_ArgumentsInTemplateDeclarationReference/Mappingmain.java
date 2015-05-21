@@ -54,7 +54,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599916695"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new TemplatereduceWithArgs("constant").apply(environment, context);
       return tlist1;
@@ -65,7 +65,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       super(new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599916699"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x118e69cb58aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_B"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599916822(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0b0b7)))).apply(environment, context);
       return tlist1;
@@ -80,7 +80,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       return QueriesGenerated.baseMappingRule_Condition_4929591503636513204(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_7496726876599935510(new BaseMappingRuleContext(context, rule_417xrn_b0a0c0c8))) {
@@ -101,7 +101,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       return QueriesGenerated.baseMappingRule_Condition_4929591503636589503(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.ifMacro_Condition_4929591503636643306(new IfMacroContext(context, ifMacroRef_417xrn_b0a0c0c9))) {
@@ -127,7 +127,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       return QueriesGenerated.baseMappingRule_Condition_4929591503636614138(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_4929591503636676782(new BaseMappingRuleContext(context, rule_417xrn_b0a0c0c01))) {

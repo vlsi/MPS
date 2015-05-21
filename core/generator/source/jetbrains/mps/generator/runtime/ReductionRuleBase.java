@@ -18,6 +18,7 @@ package jetbrains.mps.generator.runtime;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -91,11 +92,27 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
 
   // XXX now there's no reason to override tryToApply just to delegate to doApply()
   @Override
+  @ToRemove(version = 3.3)
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return doApply(context);
   }
 
-  protected abstract Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException;
+  @Nullable
+  @Override
+  @ToRemove(version = 3.3)
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    // FIXME Compatibility code, once no MPS 3.2-generated rules are there, the method shall become abstract
+    return tryToApply(context.getEnvironment(), context);
+  }
+
+  /**
+   * @deprecated with {@link #apply(TemplateContext)}, there's no reason to override this method. Left for compatibility with code generated in MPS 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException {
+    return null;
+  }
 
   /*
    * Next two isApplicable methods provided here to facilitate migration of generated reduction rules, conditionally implementing TemplateRuleWithCondition.

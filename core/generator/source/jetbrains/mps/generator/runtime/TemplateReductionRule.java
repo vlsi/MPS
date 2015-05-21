@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -26,5 +29,19 @@ import java.util.Collection;
  */
 public interface TemplateReductionRule extends TemplateRuleForConcept {
 
+  /**
+   * @deprecated use {@link #apply(TemplateContext)}  instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  /**
+   * Try to apply rule in the given context
+   * @param context execution context
+   * @return <code>null</code> to indicate this rule could not do anything to active input node
+   * @throws GenerationException
+   */
+  @Nullable
+  Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException;
 }

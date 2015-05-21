@@ -49,7 +49,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
       return QueriesGenerated.baseMappingRule_Condition_3893401255414132234(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;

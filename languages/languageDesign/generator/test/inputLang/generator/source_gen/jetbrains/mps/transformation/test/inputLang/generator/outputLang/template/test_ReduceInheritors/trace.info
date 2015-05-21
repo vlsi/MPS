@@ -35,21 +35,21 @@
       <node id="1206459766745" at="47,61,48,21" concept="9" />
       <node id="1206459766745" at="51,29,52,360" concept="13" />
       <node id="1206459766745" at="55,94,56,125" concept="9" />
-      <node id="1206459766745" at="59,108,60,80" concept="8" />
+      <node id="1206459766745" at="59,103,60,80" concept="8" />
       <node id="1206459766745" at="60,80,61,214" concept="8" />
       <node id="1206459766745" at="62,11,63,108" concept="3" />
       <node id="1206459766745" at="63,108,64,185" concept="3" />
       <node id="1206459766745" at="66,7,67,48" concept="9" />
       <node id="1206459766745" at="71,29,72,360" concept="13" />
       <node id="1206459766745" at="75,94,76,125" concept="9" />
-      <node id="1206459766745" at="79,108,80,80" concept="8" />
+      <node id="1206459766745" at="79,103,80,80" concept="8" />
       <node id="1206459766745" at="80,80,81,214" concept="8" />
       <node id="1206459766745" at="82,11,83,108" concept="3" />
       <node id="1206459766745" at="83,108,84,185" concept="3" />
       <node id="1206459766745" at="86,7,87,48" concept="9" />
       <node id="1206459766745" at="91,29,92,358" concept="13" />
       <node id="1206459766745" at="95,94,96,125" concept="9" />
-      <node id="1206459766745" at="99,108,100,80" concept="8" />
+      <node id="1206459766745" at="99,103,100,80" concept="8" />
       <node id="1206459766745" at="100,80,101,214" concept="8" />
       <node id="1206459766745" at="102,11,103,108" concept="3" />
       <node id="1206459766745" at="103,108,104,188" concept="3" />
@@ -74,9 +74,9 @@
       <node id="1206459766745" at="61,214,66,7" concept="14" />
       <node id="1206459766745" at="81,214,86,7" concept="14" />
       <node id="1206459766745" at="101,214,106,7" concept="14" />
-      <node id="1206459766745" at="58,0,69,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="1206459766745" at="78,0,89,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="1206459766745" at="98,0,109,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1206459766745" at="58,0,69,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1206459766745" at="78,0,89,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1206459766745" at="98,0,109,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1206459766745" at="65,17,65,17" />
       <scope id="1206459766745" at="85,17,85,17" />
       <scope id="1206459766745" at="105,17,105,17" />
@@ -126,15 +126,15 @@
       <scope id="1206459766745" at="33,0,38,0">
         <var name="model" id="1206459766745" />
       </scope>
-      <scope id="1206459766745" at="59,108,67,48">
+      <scope id="1206459766745" at="59,103,67,48">
         <var name="environment" id="1206459766745" />
         <var name="tnode1" id="1206459766745" />
       </scope>
-      <scope id="1206459766745" at="79,108,87,48">
+      <scope id="1206459766745" at="79,103,87,48">
         <var name="environment" id="1206459766745" />
         <var name="tnode1" id="1206459766745" />
       </scope>
-      <scope id="1206459766745" at="99,108,107,48">
+      <scope id="1206459766745" at="99,103,107,48">
         <var name="environment" id="1206459766745" />
         <var name="tnode1" id="1206459766745" />
       </scope>

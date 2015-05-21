@@ -27,19 +27,19 @@
       <node id="3210697320273563027" at="25,194,26,197" concept="2" />
       <node id="3210697320273563027" at="29,64,30,17" concept="7" />
       <node id="3210697320273563027" at="33,29,34,342" concept="10" />
-      <node id="3210697320273563027" at="37,108,38,80" concept="6" />
+      <node id="3210697320273563027" at="37,103,38,80" concept="6" />
       <node id="3210697320273563027" at="38,80,39,93" concept="6" />
       <node id="3210697320273563027" at="39,93,40,20" concept="7" />
       <node id="3210697320273563027" at="44,29,45,344" concept="10" />
-      <node id="3210697320273563027" at="48,108,49,80" concept="6" />
+      <node id="3210697320273563027" at="48,103,49,80" concept="6" />
       <node id="3210697320273563027" at="49,80,50,95" concept="6" />
       <node id="3210697320273563027" at="50,95,51,20" concept="7" />
       <node id="3210697320273563027" at="55,29,56,341" concept="10" />
-      <node id="3210697320273563027" at="59,108,60,80" concept="6" />
+      <node id="3210697320273563027" at="59,103,60,80" concept="6" />
       <node id="3210697320273563027" at="60,80,61,92" concept="6" />
       <node id="3210697320273563027" at="61,92,62,20" concept="7" />
       <node id="3210697320273563027" at="66,29,67,341" concept="10" />
-      <node id="3210697320273563027" at="70,108,71,80" concept="6" />
+      <node id="3210697320273563027" at="70,103,71,80" concept="6" />
       <node id="3210697320273563027" at="71,80,72,92" concept="6" />
       <node id="3210697320273563027" at="72,92,73,20" concept="7" />
       <node id="3210697320273563027" at="33,0,36,0" concept="1" trace="ReductionRule0#()V" />
@@ -48,10 +48,10 @@
       <node id="3210697320273563027" at="66,0,69,0" concept="1" trace="ReductionRule3#()V" />
       <node id="3210697320273563027" at="24,0,28,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="3210697320273563027" at="28,0,32,0" concept="5" trace="getReductionRules#()Ljava/util/Collection;" />
-      <node id="3210697320273563027" at="36,0,42,0" concept="5" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="3210697320273563027" at="47,0,53,0" concept="5" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="3210697320273563027" at="58,0,64,0" concept="5" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-      <node id="3210697320273563027" at="69,0,75,0" concept="5" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3210697320273563027" at="36,0,42,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3210697320273563027" at="47,0,53,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3210697320273563027" at="58,0,64,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3210697320273563027" at="69,0,75,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="3210697320273563027" at="29,64,30,17" />
       <scope id="3210697320273563027" at="33,29,34,342" />
       <scope id="3210697320273563027" at="44,29,45,344" />
@@ -59,22 +59,22 @@
       <scope id="3210697320273563027" at="66,29,67,341" />
       <scope id="3210697320273563027" at="24,52,26,197" />
       <scope id="3210697320273563027" at="33,0,36,0" />
-      <scope id="3210697320273563027" at="37,108,40,20">
+      <scope id="3210697320273563027" at="37,103,40,20">
         <var name="environment" id="3210697320273563027" />
         <var name="tlist1" id="3210697320273563027" />
       </scope>
       <scope id="3210697320273563027" at="44,0,47,0" />
-      <scope id="3210697320273563027" at="48,108,51,20">
+      <scope id="3210697320273563027" at="48,103,51,20">
         <var name="environment" id="3210697320273563027" />
         <var name="tlist1" id="3210697320273563027" />
       </scope>
       <scope id="3210697320273563027" at="55,0,58,0" />
-      <scope id="3210697320273563027" at="59,108,62,20">
+      <scope id="3210697320273563027" at="59,103,62,20">
         <var name="environment" id="3210697320273563027" />
         <var name="tlist1" id="3210697320273563027" />
       </scope>
       <scope id="3210697320273563027" at="66,0,69,0" />
-      <scope id="3210697320273563027" at="70,108,73,20">
+      <scope id="3210697320273563027" at="70,103,73,20">
         <var name="environment" id="3210697320273563027" />
         <var name="tlist1" id="3210697320273563027" />
       </scope>

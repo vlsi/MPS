@@ -348,7 +348,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           }
           try {
             myReductionTrack.enter(inputNode, rule);
-            Collection<SNode> outputNodes = getQueryExecutor().tryToApply(rule, context);
+            Collection<SNode> outputNodes = getQueryExecutor().applyRule(rule, context);
             if (outputNodes != null) {
               SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());

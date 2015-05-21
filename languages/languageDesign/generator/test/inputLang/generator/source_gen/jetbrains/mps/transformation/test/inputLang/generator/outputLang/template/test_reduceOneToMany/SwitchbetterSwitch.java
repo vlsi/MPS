@@ -52,7 +52,7 @@ public class SwitchbetterSwitch extends TemplateSwitchBase implements TemplateSw
       return QueriesGenerated.baseMappingRule_Condition_8371596541809066879(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A().apply(environment, context);
       return tlist1;

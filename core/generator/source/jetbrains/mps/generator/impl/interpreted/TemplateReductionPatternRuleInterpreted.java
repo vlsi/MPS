@@ -53,29 +53,24 @@ public class TemplateReductionPatternRuleInterpreted extends ReductionRuleBase i
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    GeneratedMatchingPattern pattern = checkIfApplicable(environment, context);
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    GeneratedMatchingPattern pattern = checkIfApplicable(context.getEnvironment(), context);
     if (pattern == null) {
       return null;
     }
     // the order of subContext is important - first pattern, then mapping name: subContext(Pattern) drops mapping name
-    return super.tryToApply(environment, context.subContext(pattern));
+    context = context.subContext(pattern);
+    if (myRuleConsequence == null) {
+      throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(context));
+    }
+
+    return myRuleConsequence.processRuleConsequence(context.subContext(myRuleMappingName));
   }
 
-  public GeneratedMatchingPattern checkIfApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
+  private GeneratedMatchingPattern checkIfApplicable(TemplateExecutionEnvironment env, TemplateContext context) throws GenerationFailureException {
     if (myQuery == null) {
       myQuery = env.getQueryProvider(getRuleNode()).getPatternRuleCondition(myRuleNode);
     }
     return myQuery.pattern(new PatternRuleContext(context, getRuleNode()));
-  }
-
-  @Override
-  @NotNull
-  protected Collection<SNode> doApply(@NotNull TemplateContext templateContext) throws GenerationException {
-    if (myRuleConsequence == null) {
-      throw new TemplateProcessingFailureException(myRuleNode, "no rule consequence", GeneratorUtil.describeInput(templateContext));
-    }
-
-    return myRuleConsequence.processRuleConsequence(templateContext.subContext(myRuleMappingName));
   }
 }

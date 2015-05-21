@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,7 +210,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       final DependenciesReadListener l;
       if (context.getEnvironment().getGenerator().isIncremental()) {
@@ -225,7 +225,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
         l = listener;
       }
       NodeReadEventsCaster.setNodesReadListener(l);
-      return wrapped.tryToApply(rule, context);
+      return wrapped.applyRule(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
