@@ -35,12 +35,29 @@ import java.util.Map;
  * After completing the refactoring (3.3?), this class chould be cleaned up together with removal of LanguageAspect class
  */
 public class LanguageAspectSupport {
-  public static boolean isLanguageAspect(SModel model) {
+  public static boolean isAspectModel(SModel model) {
     SModule module = model.getModule();
     if (!(module instanceof Language)) return false;
     if (getOldAspect(model) != null) return true;
     if (getNewAspect(model) != null) return true;
     return false;
+  }
+
+  public static Collection<SModel> getAspectModels(Language language) {
+    //todo
+    return null;
+  }
+
+  @Nullable
+  public static String getHelpUrl(SModel model) {
+    //todo
+    return null;
+  }
+
+  @Nullable
+  public static String getIconPath(SModel model) {
+    //todo
+    return null;
   }
 
   @Nullable
@@ -60,7 +77,7 @@ public class LanguageAspectSupport {
   //for internal use only
   public static LanguageAspectDescriptor getNewAspect(SModel model) {
     Collection<LanguageAspectDescriptor> newAspects = SNodeUtil.collectAspects();
-    for (LanguageAspectDescriptor d:newAspects){
+    for (LanguageAspectDescriptor d : newAspects) {
       if (d.getAspectModels(model.getModule()).contains(model)) return d;
     }
     return null;
