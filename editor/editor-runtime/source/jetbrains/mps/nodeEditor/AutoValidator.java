@@ -64,7 +64,7 @@ class AutoValidator {
         return;
       }
 
-      if (((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).isCellSwapInProgress()) {
+      if (editorComponent.isReadOnly() || ((jetbrains.mps.nodeEditor.EditorComponent) editorComponent).isCellSwapInProgress()) {
         return;
       }
 
