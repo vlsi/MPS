@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,6 +30,15 @@ public class MapSrcMacroContext extends TemplateQueryContextWithMacro {
   public MapSrcMacroContext(@NotNull TemplateContext context, SNode parentOutputNode, @NotNull SNodeReference macroNode) {
     super(context, macroNode);
     myParentOutputNode = parentOutputNode;
+  }
+
+  /**
+   * @param postProcessor description of the post-processing code
+   * @since 3.3
+   */
+  public MapSrcMacroContext(@NotNull NodePostProcessor postProcessor) {
+    super(postProcessor.getTemplateContext(), postProcessor.getTemplateNode());
+    myParentOutputNode = postProcessor.getOutputAnchor().getParent();
   }
 
   /**

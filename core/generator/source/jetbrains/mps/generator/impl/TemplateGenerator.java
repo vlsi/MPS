@@ -39,6 +39,7 @@ import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
@@ -628,27 +629,28 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual, @NotNull TemplateContext ctx, SNodeReference templateNode) {
+  void replacePlaceholderNode(@NotNull NodePostProcessor postProcessor, @NotNull SNode substitute) {
+    SNode placeholder = postProcessor.getOutputAnchor();
     SNode parent = placeholder.getParent();
     if (parent != null) {
       // check new child
       SContainmentLink childRole = placeholder.getContainmentLink();
-      final Status status = getChildRoleValidator(parent, childRole).validate(actual);
+      final Status status = getChildRoleValidator(parent, childRole).validate(substitute);
       if (status != null) {
-        getLogger().warning(templateNode, status.getMessage("delayed changes"), status.describe(
-            GeneratorUtil.describe(ctx.getInput(), "input"), GeneratorUtil.describe(parent, "parent")
+        getLogger().warning(postProcessor.getTemplateNode(), status.getMessage("delayed changes"), status.describe(
+            GeneratorUtil.describeInput(postProcessor.getTemplateContext()), GeneratorUtil.describe(parent, "parent")
         ));
       }
     }
     if (myDeltaBuilder != null) {
       // placeholders with active inplace may lack both model and parent (top of MAP-SRC-injected subtree)
-      myDeltaBuilder.replacePlaceholderNode(placeholder, actual);
+      myDeltaBuilder.replacePlaceholderNode(placeholder, substitute);
     } else {
       assert placeholder.getModel() != null || parent != null : "Can't replace node that is not part of another structure (hangs in the air)";
-      SNodeUtil.replaceWithAnother(placeholder, actual);
+      SNodeUtil.replaceWithAnother(placeholder, substitute);
     }
     if (parent == null && placeholder.getModel() != null) {
-      myDependenciesBuilder.rootReplaced(placeholder, actual);
+      myDependenciesBuilder.rootReplaced(placeholder, substitute);
     }
   }
 

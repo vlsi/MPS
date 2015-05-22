@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.impl.MapSrcProcessor.NodeMapperProcessorAdapter;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
@@ -28,6 +29,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
@@ -249,18 +251,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   /*
-    *  returns temporary node
-    */
+   *  returns temporary node
+   */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
-    generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
+    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(mapper.getTemplateNode(), childToReplaceLater, context, mapper, null));
     return childToReplaceLater;
   }
 
   @Override
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
-    generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, getQueryExecutor());
+    // XXX using reference to output node instead the one to macro/template model is a hack.
+    // This method is compatibility code, for generator code generated in MPS 3.2
+    SNodeReference templateNode = outputNode.getReference();
+    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(templateNode, outputNode, context, null, processor));
+  }
+
+  @Override
+  public void postProcess(@NotNull NodePostProcessor postProcessor) {
+    generator.getDelayedChanges().add(postProcessor);
   }
 
   @Override

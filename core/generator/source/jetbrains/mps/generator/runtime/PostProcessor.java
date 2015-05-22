@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
+ * @deprecated use {@link NodePostProcessor} instead
  * Evgeny Gryaznov, 11/8/10
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public interface PostProcessor {
 
   void process(SNode outputNode, TemplateContext context);

@@ -353,13 +353,10 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_99767819676503747(final PropertyMacroContext _context) {
     return "context" + ((int[]) _context.getVariable("varindex"))[0];
   }
-  public static Object propertyMacro_GetPropertyValue_6612261708901109136(final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getConcept().getQualifiedName();
-  }
   public static Object propertyMacro_GetPropertyValue_99767819676504012(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
-  public static Object propertyMacro_GetPropertyValue_99767819676504133(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5851073518441517513(final PropertyMacroContext _context) {
     return "mapSrcOutput" + ++((int[]) _context.getVariable("varindex"))[0];
   }
   public static Object propertyMacro_GetPropertyValue_99767819675976134(final PropertyMacroContext _context) {
@@ -452,9 +449,6 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_1940510396026567414(final PropertyMacroContext _context) {
     return GenUtil.asIdentifier("Switch" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-  }
-  public static Object propertyMacro_GetPropertyValue_6612261708901143234(final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(_context.getNode()).getConcept().getQualifiedName();
   }
   public static Object propertyMacro_GetPropertyValue_8196331069071255561(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -931,10 +925,13 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_99767819676503662(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11003977640L, "sourceNodesQuery")));
   }
-  public static Object referenceMacro_GetReferent_99767819676503832(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441464888(final ReferenceMacroContext _context) {
+    return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
+  }
+  public static Object referenceMacro_GetReferent_5851073518441464937(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x1109d5f7af9L, "mapperFunction")));
   }
-  public static Object referenceMacro_GetReferent_99767819676503854(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441464969(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")));
   }
   public static Object referenceMacro_GetReferent_99767819676503944(final ReferenceMacroContext _context) {
@@ -946,16 +943,16 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_99767819676503999(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
-  public static Object referenceMacro_GetReferent_99767819676504071(final ReferenceMacroContext _context) {
-    return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")));
-  }
-  public static Object referenceMacro_GetReferent_99767819676504092(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441500518(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
-  public static Object referenceMacro_GetReferent_99767819676504164(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441500544(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")));
   }
-  public static Object referenceMacro_GetReferent_99767819676504187(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441517554(final ReferenceMacroContext _context) {
+    return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")));
+  }
+  public static Object referenceMacro_GetReferent_5851073518441517569(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
   public static Object referenceMacro_GetReferent_99767819676504227(final ReferenceMacroContext _context) {
@@ -1085,13 +1082,16 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8626372016104475500(final ReferenceMacroContext _context) {
     return ((String) _context.getVariable("varname"));
   }
-  public static Object referenceMacro_GetReferent_2321430363679348809(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441306480(final ReferenceMacroContext _context) {
+    return (SNode) SNodeOperations.getConcept(SNodeOperations.getParent(_context.getNode())).getDeclarationNode();
+  }
+  public static Object referenceMacro_GetReferent_5851073518441286399(final ReferenceMacroContext _context) {
     return ((String) _context.getVariable("resultVar"));
   }
-  public static Object referenceMacro_GetReferent_2321430363679348239(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441355282(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11094b2b653L, "mapperFunction")));
   }
-  public static Object referenceMacro_GetReferent_2321430363679348261(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441339666(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11d455be680L, "postMapperFunction")));
   }
   public static Object referenceMacro_GetReferent_2321430363679349185(final ReferenceMacroContext _context) {
@@ -1109,13 +1109,13 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8196331069071255548(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
-  public static Object referenceMacro_GetReferent_2321430363679348420(final ReferenceMacroContext _context) {
-    return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11d455be680L, "postMapperFunction")));
-  }
-  public static Object referenceMacro_GetReferent_2321430363679348441(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441393845(final ReferenceMacroContext _context) {
     return GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
   }
-  public static Object referenceMacro_GetReferent_2321430363679348513(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5851073518441396798(final ReferenceMacroContext _context) {
+    return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11d455be680L, "postMapperFunction")));
+  }
+  public static Object referenceMacro_GetReferent_5851073518441414370(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11d455be680L, "postMapperFunction")));
   }
   public static Object referenceMacro_GetReferent_2321430363679348536(final ReferenceMacroContext _context) {
@@ -1544,10 +1544,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_99767819676503709(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static boolean ifMacro_Condition_99767819676503874(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441464978(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")) != null);
   }
-  public static boolean ifMacro_Condition_99767819676503886(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441464987(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x1109d5f7af9L, "mapperFunction")) != null);
   }
   public static boolean ifMacro_Condition_99767819676503896(final IfMacroContext _context) {
@@ -1561,11 +1561,11 @@ public class QueriesGenerated {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return innervar != null && (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
-  public static boolean ifMacro_Condition_99767819676504105(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441500560(final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")) != null) && innervar.startsWith("tnode");
   }
-  public static boolean ifMacro_Condition_99767819676504199(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441517581(final IfMacroContext _context) {
     String innervar = GenUtil.getVar(_context, SNodeOperations.getParent(_context.getNode()), ((Integer) _context.getVariable("macrosToSkip")));
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x107ce4fbf98L, 0x11d4561610fL, "postMapperFunction")) != null) && innervar.startsWith("tlist");
   }
@@ -1785,10 +1785,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_8626372016104475477(final IfMacroContext _context) {
     return ((String) _context.getVariable("varname")) != null && ((String) _context.getVariable("varname")).startsWith("tlist");
   }
-  public static boolean ifMacro_Condition_2321430363679348283(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441331027(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11d455be680L, "postMapperFunction")) != null);
   }
-  public static boolean ifMacro_Condition_2321430363679348295(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_5851073518441245352(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10759372d78L, 0x11094b2b653L, "mapperFunction")) != null);
   }
   public static boolean ifMacro_Condition_2321430363679348305(final IfMacroContext _context) {
