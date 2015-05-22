@@ -504,8 +504,6 @@ public class EditorManager {
         }
       }
     }
-    LOG.error("Editor cell created for the node: " + node + " does not contain any cell associated with this node. Following node was used instead: " +
-        cell.getSNode(), cell.getSNode());
     return null;
   }
 
