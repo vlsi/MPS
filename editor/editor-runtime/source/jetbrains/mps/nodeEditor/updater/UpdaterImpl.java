@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
@@ -23,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -114,6 +116,11 @@ public class UpdaterImpl implements Updater, CommandContext {
   @Deprecated
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
     assert !myDisposed;
+    Project project = ProjectHelper.getProject(getEditorContext().getRepository());
+    assert
+        project == null || !project.isDisposed() :
+        "Update was executed for the editor associated with disposed project: " + project + ", editor: " + getEditorComponent() + ", node: " +
+            getEditorComponent().getEditedNode();
     myUpdateSession = createUpdateSession(node, events);
     EditorCell result = null;
     try {
