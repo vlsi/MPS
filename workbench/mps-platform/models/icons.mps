@@ -250,6 +250,12 @@
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
@@ -262,8 +268,10 @@
       <concept id="8064396509828172209" name="jetbrains.mps.baseLanguage.structure.UnaryMinus" flags="nn" index="1ZRNhn" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -409,6 +417,13 @@
         </node>
         <node concept="3uibUv" id="axXFkGpDcK" role="3rvSg0">
           <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
+        </node>
+      </node>
+      <node concept="z59LJ" id="7IH442cOwFV" role="lGtFl">
+        <node concept="TZ5HA" id="7IH442cOwFW" role="TZ5H$">
+          <node concept="1dT_AC" id="7IH442cOwFX" role="1dT_Ay">
+            <property role="1dT_AB" value="[MM] this usage of LanguageAspect is reviewed" />
+          </node>
         </node>
       </node>
     </node>
@@ -1795,6 +1810,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="7IH442cOuOT" role="3cqZAp" />
+        <node concept="3SKdUt" id="7IH442cOwxS" role="3cqZAp">
+          <node concept="3SKdUq" id="7IH442cOwxT" role="3SKWNk">
+            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="7IH442cOt4N" role="3cqZAp">
           <node concept="3cpWsn" id="7IH442cOt4O" role="3cpWs9">
             <property role="TrG5h" value="oldAspect" />
@@ -2528,6 +2548,11 @@
         </node>
       </node>
       <node concept="3clFbS" id="277Nzj6qTOp" role="3clF47">
+        <node concept="3SKdUt" id="7IH442cOwln" role="3cqZAp">
+          <node concept="3SKdUq" id="7IH442cOwlo" role="3SKWNk">
+            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="axXFkGpDf1" role="3cqZAp">
           <node concept="3cpWsn" id="axXFkGpDf2" role="3cpWs9">
             <property role="TrG5h" value="icon" />
@@ -2581,6 +2606,11 @@
     </node>
     <node concept="1Pe0a1" id="axXFkGpDcP" role="jymVt">
       <node concept="3clFbS" id="axXFkGpDcQ" role="1Pe0a2">
+        <node concept="3SKdUt" id="7IH442cOw0N" role="3cqZAp">
+          <node concept="3SKdUq" id="7IH442cOw3L" role="3SKWNk">
+            <property role="3SKdUp" value="[MM] this usage of LanguageAspect is reviewed" />
+          </node>
+        </node>
         <node concept="3clFbF" id="axXFkGpDes" role="3cqZAp">
           <node concept="37vLTI" id="axXFkGpDeu" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeoniW" role="37vLTJ">

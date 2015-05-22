@@ -20,9 +20,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
 public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(SModel structureModel, SNode node) {
@@ -68,32 +65,5 @@ public class ConceptEditorHelper {
         return (conceptIndex == -1 ? conceptOrder.length : conceptIndex);
       }
     }, true).toListSequence();
-  }
-  public static class ModelCondition implements Condition<SModel> {
-    private Language myLanguage;
-    private LanguageAspect myAspect;
-    public ModelCondition(Language language, LanguageAspect aspect) {
-      this.myLanguage = language;
-      this.myAspect = aspect;
-    }
-    @Override
-    public boolean met(SModel modelDescriptor) {
-      return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
-    }
-  }
-  public static class GeneratorCondition implements Condition<SModel> {
-    private Language myLanguage;
-    public GeneratorCondition(Language language) {
-      this.myLanguage = language;
-    }
-    @Override
-    public boolean met(SModel modelDescriptor) {
-      for (Generator generator : CollectionSequence.fromCollection(this.myLanguage.getGenerators())) {
-        if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
-          return true;
-        }
-      }
-      return false;
-    }
   }
 }

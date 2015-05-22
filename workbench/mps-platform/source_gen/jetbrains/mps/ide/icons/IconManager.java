@@ -58,6 +58,9 @@ public final class IconManager {
   public static final Logger LOG = LogManager.getLogger(IconManager.class);
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
+  /**
+   * [MM] this usage of LanguageAspect is reviewed
+   */
   private static Map<LanguageAspect, Icon> ourAspectsToIcons;
   public static final Icon EMPTY_ICON = new Icon() {
     @Override
@@ -221,6 +224,7 @@ public final class IconManager {
       return IdeIcons.UNKNOWN_ICON;
     }
 
+    // [MM] this usage of LanguageAspect is reviewed 
     LanguageAspect oldAspect = LanguageAspectSupport.getOldAspect(model);
     if (oldAspect != null) {
       return getIconForAspect(LanguageAspectSupport.getOldAspect(model));
@@ -315,6 +319,7 @@ public final class IconManager {
   @Deprecated
   @ToRemove(version = 3.3)
   public static Icon getIconForAspect(LanguageAspect aspect) {
+    // [MM] this usage of LanguageAspect is reviewed 
     Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
     if (icon == null) {
       return IdeIcons.MODEL_ICON;
@@ -322,6 +327,7 @@ public final class IconManager {
     return icon;
   }
   static {
+    // [MM] this usage of LanguageAspect is reviewed 
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, IdeIcons.BEHAVIOR_MODEL_ICON);
