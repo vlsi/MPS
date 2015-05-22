@@ -35,6 +35,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -48,6 +50,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
 
@@ -217,19 +220,27 @@ public final class IconManager {
     if (model == null) {
       return IdeIcons.UNKNOWN_ICON;
     }
-    LanguageAspect aspect = Language.getModelAspect(model);
-    if (aspect != null) {
-      return getIconForAspect(aspect);
-    } else
+
+    LanguageAspect oldAspect = LanguageAspectSupport.getOldAspect(model);
+    if (oldAspect != null) {
+      return getIconForAspect(LanguageAspectSupport.getOldAspect(model));
+    }
+
+    LanguageAspectDescriptor newAspect = LanguageAspectSupport.getNewAspect(model);
+    if (newAspect != null) {
+      return newAspect.getIcon();
+    }
+
     if (SModelStereotype.isGeneratorModel(model)) {
       return IdeIcons.TEMPLATES_MODEL_ICON;
-    } else
+    }
     if (Language.isLanguageOwnedAccessoryModel(model)) {
       return IdeIcons.ACCESSORY_MODEL_ICON;
-    } else
+    }
     if (SModelStereotype.isTestModel(model)) {
       return IdeIcons.TEST_MODEL_ICON;
     }
+
     return IdeIcons.MODEL_ICON;
   }
   public static Icon getIconFor(SModule module) {
@@ -301,6 +312,8 @@ public final class IconManager {
     }
     return icon;
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static Icon getIconForAspect(LanguageAspect aspect) {
     Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
     if (icon == null) {
