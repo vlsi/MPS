@@ -20,6 +20,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.InternalFlag;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -38,6 +40,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
@@ -86,7 +89,7 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
           return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
             @Override
             public MPSCompilationResult compute() {
-              return maker.make(IterableUtil.asCollection(myMPSProject.getModules()), monitor.subTask(9),
+              return maker.make(IterableUtil.asCollection(getModules()), monitor.subTask(9),
                   JavaCompilerOptionsComponent.getInstance().getJavaCompilerOptions(myMPSProject));
             }
           });
@@ -99,6 +102,13 @@ public final class StartupModuleMakerImpl extends StartupModuleMaker {
       monitor.done();
     }
     LOG.info("Compilation on startup is finished");
+  }
+
+  private Iterable<? extends SModule> getModules() {
+    if (InternalFlag.isInternalMode()) {
+      return myMPSProject.getRepository().getModules();
+    }
+    return myMPSProject.getModules();
   }
 
   private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {

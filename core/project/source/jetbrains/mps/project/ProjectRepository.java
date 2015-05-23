@@ -56,7 +56,7 @@ public class ProjectRepository extends SRepositoryBase {
 
   @Override
   public Iterable<SModule> getModules() {
-    return Collections.emptyList();
+    return getRootRepository().getModules();
   }
 
   @Override
