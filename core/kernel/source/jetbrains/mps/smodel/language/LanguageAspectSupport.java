@@ -60,7 +60,16 @@ public class LanguageAspectSupport {
 
   @Nullable
   public static String getHelpUrl(SModel model) {
-    //todo
+    if (!(model.getModule() instanceof Language)) return null;
+
+    for (LanguageAspect la : LanguageAspect.values()) {
+      if (la.is(model)) return la.getHelpURL();
+    }
+
+    for (LanguageAspectDescriptor d : SNodeUtil.collectAspects()) {
+      if (d.getAspectModels(model.getModule()).contains(model)) return d.getHelpUrl();
+    }
+
     return null;
   }
 

@@ -44,7 +44,7 @@ public enum LanguageAspect {
 
   REFACTORINGS("refactorings", BootstrapLanguages.refactoringLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Refactoring"),
 
-  SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), ""),
+  SCRIPTS("scripts", BootstrapLanguages.scriptLanguageRef(), null),
 
   INTENTIONS("intentions", BootstrapLanguages.intentionsLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Intentions"),
 
