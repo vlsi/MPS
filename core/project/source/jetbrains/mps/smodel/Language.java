@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -276,11 +277,12 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public List<SModel> getUtilModels() {
-    List<SModel> result = new ArrayList<SModel>();
-    for (SModel md : getModels()) {
-      if (getAspectForModel(md) != null || isAccessoryModel(md.getReference())) {
-        continue;
-      }
+    Set<SModel> models = new HashSet<SModel>(getModels());
+    models.removeAll(LanguageAspectSupport.getAspectModels(this));
+    models.removeAll(getAccessoryModels());
+
+    List<SModel> result = new ArrayList<SModel>(getModels());
+    for (SModel md : models) {
       String st = SModelStereotype.getStereotype(md);
       if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {
         // perhaps, we need more generic isPredefinedStereotypeMPS()
@@ -348,6 +350,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return getModuleName() + " [language]";
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no full equivalent to this method, use appropriate method from LanguageAspectSupport
   public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
