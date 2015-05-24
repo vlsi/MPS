@@ -223,22 +223,13 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       throw new IOException("empty list of source roots");
     }
 
+
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
-      sourceRoot = null;
-      for (String sr : sourceRoots) {
-        if (isLanguageAspectsSourceRoot(sr)) {
-          String prefix = getModule().getModuleName() + ".";
-          if (modelName.startsWith(prefix)) {
-            String aspectName = modelName.substring(prefix.length());
-            if (getAspect(aspectName) != null) {
-              sourceRoot = sr;
-              break;
-            }
-          }
-          continue;
-        }
-        sourceRoot = sr;
-        break;
+      if (!sourceRoots.isEmpty()){
+        //todo this should be changed later. The point is that at first the user
+        //todo chooses a root to create the model and then he can edit additional settings
+        //todo provided by this root, not the root automatically choosing some options
+        sourceRoot = sourceRoots.iterator().next();
       }
       if (sourceRoot == null) {
         throw new IOException("no suitable source root found");
@@ -254,18 +245,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     options.put(ModelFactory.OPTION_RELPATH, relPath);
     IFile file = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + relPath);
     return new FileDataSource(file, this);
-  }
-
-  private LanguageAspect getAspect(@NotNull String aspectName) {
-    if (aspectName.indexOf('.') >= 0) {
-      return null;
-    }
-    for (LanguageAspect la : LanguageAspect.values()) {
-      if (la.getName().equals(aspectName)) {
-        return la;
-      }
-    }
-    return null;
   }
 
   private boolean isLanguageAspect(String modelName, String sourceRoot) {
