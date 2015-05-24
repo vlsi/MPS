@@ -103,46 +103,40 @@ public class AspectDependenciesChecker extends SpecificChecker {
 
     SModule module = model.getModule();
     if (module instanceof Language) {
-      LanguageAspect aspect = Language.getModelAspect(model);
-      if (aspect != null) {
-        switch (aspect) {
-          case ACTIONS:
-            return EDITOR;
-          case BEHAVIOR:
-            return CORE;
-          case CONSTRAINTS:
-            return CORE;
-          case DATA_FLOW:
-            return CORE;
-          case EDITOR:
-            return EDITOR;
-          case FIND_USAGES:
-            return CORE;
-          case INTENTIONS:
-            return EDITOR;
-          case PLUGIN:
-            return WORKBENCH;
-          case REFACTORINGS:
-            return CORE;
-          case SCRIPTS:
-            return CORE;
-          case STRUCTURE:
-            return CORE;
-          case MIGRATION:
-            return CORE;
-          case TEST:
-            return EDITOR;
-          case TEXT_GEN:
-            return CORE;
-          case TYPESYSTEM:
-            return CORE;
-          default:
-        }
+      if (LanguageAspect.ACTIONS.is(model)) {
+        return EDITOR;
+      } else if (LanguageAspect.BEHAVIOR.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.CONSTRAINTS.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.DATA_FLOW.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.EDITOR.is(model)) {
+        return EDITOR;
+      } else if (LanguageAspect.FIND_USAGES.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.INTENTIONS.is(model)) {
+        return EDITOR;
+      } else if (LanguageAspect.PLUGIN.is(model)) {
+        return WORKBENCH;
+      } else if (LanguageAspect.REFACTORINGS.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.SCRIPTS.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.STRUCTURE.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.MIGRATION.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.TEST.is(model)) {
+        return EDITOR;
+      } else if (LanguageAspect.TEXT_GEN.is(model)) {
+        return CORE;
+      } else if (LanguageAspect.TYPESYSTEM.is(model)) {
+        return CORE;
+      } else {
+        return CORE;
       }
-      return CORE;
-
     } else if (module instanceof Solution) {
-
       String moduleFqName = module.getModuleName();
       if (moduleFqName.equals("JDK")) {
         return CORE;

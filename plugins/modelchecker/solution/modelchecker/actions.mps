@@ -2735,7 +2735,6 @@
         <node concept="3clFbJ" id="2tRCcbzc6d1" role="3cqZAp">
           <node concept="3eNFk2" id="2tRCcbzc6da" role="3eNLev">
             <node concept="3clFbS" id="2tRCcbzc6dc" role="3eOfB_">
-              <node concept="3clFbH" id="1MEKy$8pQem" role="3cqZAp" />
               <node concept="3cpWs8" id="1MEKy$8pR_X" role="3cqZAp">
                 <node concept="3cpWsn" id="1MEKy$8pR_Y" role="3cpWs9">
                   <property role="TrG5h" value="moduleFqName" />
@@ -3054,240 +3053,330 @@
             </node>
           </node>
           <node concept="3clFbS" id="2tRCcbzc6d2" role="3clFbx">
-            <node concept="3cpWs8" id="2tRCcbzc6GQ" role="3cqZAp">
-              <node concept="3cpWsn" id="2tRCcbzc6GR" role="3cpWs9">
-                <property role="TrG5h" value="aspect" />
-                <node concept="3uibUv" id="2tRCcbzc6GS" role="1tU5fm">
-                  <ref role="3uigEE" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+            <node concept="3clFbJ" id="7IH442cVt_s" role="3cqZAp">
+              <node concept="3clFbS" id="7IH442cVt_u" role="3clFbx">
+                <node concept="3cpWs6" id="2tRCcbzc6S9" role="3cqZAp">
+                  <node concept="37vLTw" id="7IH442cVxCh" role="3cqZAk">
+                    <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
+                  </node>
                 </node>
-                <node concept="2YIFZM" id="2tRCcbzc6RQ" role="33vP2m">
-                  <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-                  <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-                  <node concept="2JrnkZ" id="2tRCcbzc6RS" role="37wK5m">
-                    <node concept="37vLTw" id="2BHiRxgm8UF" role="2JrQYb">
+              </node>
+              <node concept="2OqwBi" id="7IH442cVutp" role="3clFbw">
+                <node concept="Rm8GO" id="7IH442cVuii" role="2Oq$k0">
+                  <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
+                  <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                </node>
+                <node concept="liA8E" id="7IH442cVuRM" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                  <node concept="37vLTw" id="7IH442cVuYm" role="37wK5m">
+                    <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cVyi1" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cVyi3" role="3eOfB_">
+                  <node concept="3cpWs6" id="2tRCcbzc6Sj" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVzAk" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cVyTZ" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVyX5" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cVyU1" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cVyU2" role="37wK5m">
                       <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                     </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="3clFbJ" id="7wjlWrtVMvl" role="3cqZAp">
-              <node concept="3clFbS" id="7wjlWrtVMvm" role="3clFbx">
-                <node concept="3KaCP$" id="2tRCcbzc6S0" role="3cqZAp">
-                  <node concept="3KbdKl" id="2tRCcbzc6S4" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6S6" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6S9" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeojZb" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6S8" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.ACTIONS" resolve="ACTIONS" />
+              <node concept="3eNFk2" id="7IH442cVzDU" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cVzDV" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cVzDW" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVzEx" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
                     </node>
                   </node>
-                  <node concept="37vLTw" id="3GM_nagTA60" role="3KbGdf">
-                    <ref role="3cqZAo" node="2tRCcbzc6GR" resolve="aspect" />
+                </node>
+                <node concept="2OqwBi" id="7IH442cVzDX" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cV_cg" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
                   </node>
-                  <node concept="3clFbS" id="2tRCcbzc6S2" role="3Kb1Dw" />
-                  <node concept="3KbdKl" id="2tRCcbzc6Sg" role="3KbHQx">
-                    <node concept="Rm8GO" id="2tRCcbzc6SS" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.BEHAVIOR" resolve="BEHAVIOR" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                    <node concept="3clFbS" id="2tRCcbzc6Si" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6Sj" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeodiG" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Sl" role="3KbHQx">
-                    <node concept="Rm8GO" id="2tRCcbzc6ST" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                    <node concept="3clFbS" id="2tRCcbzc6Sn" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6So" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoq8b" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Sq" role="3KbHQx">
-                    <node concept="Rm8GO" id="2tRCcbzc6SU" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                    <node concept="3clFbS" id="2tRCcbzc6Ss" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6St" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeodj0" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Sv" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6Sx" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6Sy" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoq8n" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6SV" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.EDITOR" resolve="EDITOR" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6S$" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6SA" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6SB" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoqrf" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6SW" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6SD" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6SF" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6SG" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoqOb" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6SX" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6SI" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6SK" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6SL" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoei7" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5U_" resolve="WORKBENCH" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6SY" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.PLUGIN" resolve="PLUGIN" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6SN" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6SP" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6SQ" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeofy2" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6SZ" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.REFACTORINGS" resolve="REFACTORINGS" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6T1" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6T3" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6T4" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeoi9l" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6Tq" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.SCRIPTS" resolve="SCRIPTS" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6T6" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6T8" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6T9" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeooZz" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6Tr" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="4LZ8dlMVP5l" role="3KbHQx">
-                    <node concept="3clFbS" id="4LZ8dlMVP5m" role="3Kbo56">
-                      <node concept="3cpWs6" id="4LZ8dlMVP5n" role="3cqZAp">
-                        <node concept="37vLTw" id="19PHAvVIVsF" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="4LZ8dlMVQT8" role="3Kbmr1">
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Tg" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6Ti" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6Tj" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeon9V" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6Tt" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TEST" resolve="TEST" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Tl" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6Tn" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6To" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeooIJ" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6Tu" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
-                    </node>
-                  </node>
-                  <node concept="3KbdKl" id="2tRCcbzc6Tw" role="3KbHQx">
-                    <node concept="3clFbS" id="2tRCcbzc6Ty" role="3Kbo56">
-                      <node concept="3cpWs6" id="2tRCcbzc6Tz" role="3cqZAp">
-                        <node concept="37vLTw" id="2BHiRxeonaf" role="3cqZAk">
-                          <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rm8GO" id="2tRCcbzc6T_" role="3Kbmr1">
-                      <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                      <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+                  <node concept="liA8E" id="7IH442cVzDZ" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cVzE0" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3y3z36" id="7wjlWrtVMvq" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagT_GJ" role="3uHU7B">
-                  <ref role="3cqZAo" node="2tRCcbzc6GR" resolve="aspect" />
+              <node concept="3eNFk2" id="7IH442cV$hT" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$hU" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$hV" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$iw" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="10Nm6u" id="7wjlWrtVMvt" role="3uHU7w" />
+                <node concept="2OqwBi" id="7IH442cV$hW" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cV_iH" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.DATA_FLOW" resolve="DATA_FLOW" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$hY" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$hZ" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$j1" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$j2" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$j3" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV_yY" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$j4" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cV_p3" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.EDITOR" resolve="EDITOR" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$j6" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$j7" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$kh" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$ki" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$kj" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$kS" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$kk" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVAem" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.FIND_USAGES" resolve="FIND_USAGES" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$km" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$kn" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$lD" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$lE" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$lF" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVAuy" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$lG" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVAkG" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.INTENTIONS" resolve="INTENTIONS" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$lI" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$lJ" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$n9" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$na" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$nb" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVBjN" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5U_" resolve="WORKBENCH" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$nc" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVB9Z" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.PLUGIN" resolve="PLUGIN" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$ne" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$nf" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$oL" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$oM" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$oN" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$po" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$oO" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVBZ3" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.REFACTORINGS" resolve="REFACTORINGS" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$oQ" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$oR" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$qx" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$qy" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$qz" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$r8" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$q$" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVC5j" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.SCRIPTS" resolve="SCRIPTS" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$qA" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$qB" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$sp" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$sq" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$sr" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$t0" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$ss" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVCbx" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.STRUCTURE" resolve="STRUCTURE" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$su" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$sv" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cV$up" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cV$uq" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cV$ur" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cV$v0" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cV$us" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVDBm" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cV$uu" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cV$uv" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cVChv" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cVChw" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cVChx" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVDSM" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uy" resolve="EDITOR" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cVChz" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVDIk" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TEST" resolve="TEST" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cVCh_" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cVChA" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cVCTf" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cVCTg" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cVCTh" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVCTi" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cVCTj" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVE$S" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TEXT_GEN" resolve="TEXT_GEN" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cVCTl" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cVCTm" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3eNFk2" id="7IH442cVEF$" role="3eNLev">
+                <node concept="3clFbS" id="7IH442cVEF_" role="3eOfB_">
+                  <node concept="3cpWs6" id="7IH442cVEFA" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVEFB" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7IH442cVEFC" role="3eO9$A">
+                  <node concept="Rm8GO" id="7IH442cVFq3" role="2Oq$k0">
+                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  </node>
+                  <node concept="liA8E" id="7IH442cVEFE" role="2OqNvi">
+                    <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                    <node concept="37vLTw" id="7IH442cVEFF" role="37wK5m">
+                      <ref role="3cqZAo" node="1MEKy$8pRWJ" resolve="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="9aQIb" id="7IH442cVH2f" role="9aQIa">
+                <node concept="3clFbS" id="7IH442cVH2g" role="9aQI4">
+                  <node concept="3cpWs6" id="7IH442cVHJ4" role="3cqZAp">
+                    <node concept="37vLTw" id="7IH442cVHJ_" role="3cqZAk">
+                      <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="2tRCcbzc6TN" role="3cqZAp">
-              <node concept="37vLTw" id="2BHiRxeon35" role="3cqZAk">
-                <ref role="3cqZAo" node="2tRCcbzc5Uv" resolve="CORE" />
-              </node>
-            </node>
-            <node concept="3clFbH" id="2tRCcbzc6du" role="3cqZAp" />
           </node>
           <node concept="2ZW3vV" id="2tRCcbzc6d6" role="3clFbw">
             <node concept="3uibUv" id="2tRCcbzc6d9" role="2ZW6by">
