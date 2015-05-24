@@ -4,28 +4,28 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
-public class NewAspectModel_Action extends BaseAction {
+public class NewAspectModelByDescriptor_Action extends BaseAction {
   private static final Icon ICON = null;
-  private LanguageAspect aspect;
-  public NewAspectModel_Action(LanguageAspect aspect_par) {
+  private String aspectId;
+  public NewAspectModelByDescriptor_Action(String aspectId_par) {
     super("Aspect Model", "", ICON);
-    this.aspect = aspect_par;
+    this.aspectId = aspectId_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -35,13 +35,17 @@ public class NewAspectModel_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
-    event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
-    if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language) {
-      NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) ((SModule) MapSequence.fromMap(_params).get("module")))) == null);
-    } else {
-      NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
+    LanguageAspectDescriptor ad = NewAspectModelActionHelper.getAspectById(NewAspectModelByDescriptor_Action.this.aspectId);
+    if (ad == null || !((((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language))) {
+      disable(event.getPresentation());
+      return;
     }
+    enable(event.getPresentation());
+
+    event.getPresentation().setText(NameUtil.capitalize(ad.getPresentableAspectName()) + " Aspect");
+    event.getPresentation().setIcon(ad.getIcon());
+
+    NewAspectModelByDescriptor_Action.this.setEnabledState(event.getPresentation(), ad.canCreate(((SModule) MapSequence.fromMap(_params).get("module"))));
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -66,25 +70,29 @@ public class NewAspectModel_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
+    LanguageAspectDescriptor ad = NewAspectModelActionHelper.getAspectById(NewAspectModelByDescriptor_Action.this.aspectId);
+    ad.create(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
 
     // we need it since tree is updated later 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
-      }
-    });
+    final Collection<SModel> aspectModels = ad.getAspectModels(((SModule) MapSequence.fromMap(_params).get("module")));
+    if (aspectModels.size() == 1) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(aspectModels.iterator().next(), false);
+        }
+      });
+    }
   }
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
     res.append(super.getActionId());
     res.append("#");
-    res.append(aspect_State((LanguageAspect) this.aspect));
+    res.append(aspectId_State((String) this.aspectId));
     res.append("!");
     return res.toString();
   }
-  public static String aspect_State(LanguageAspect object) {
-    return object.getName();
+  public static String aspectId_State(String object) {
+    return object;
   }
 }
