@@ -5,7 +5,6 @@ package jetbrains.mps.lang.constraints.generator.baseLanguage.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -37,8 +36,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_6490356536635245644(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model) == LanguageAspect.CONSTRAINTS) && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
-
+    return LanguageAspect.CONSTRAINTS.is(model) && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
   }
   public static Object propertyMacro_GetPropertyValue_1213106242798(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));

@@ -8,10 +8,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,7 +29,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_3804167831988830136(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.INTENTIONS;
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty() && LanguageAspect.INTENTIONS.is(model);
   }
   public static Object propertyMacro_GetPropertyValue_7991477654791693985(final PropertyMacroContext _context) {
     SModule module = _context.getOriginalInputModel().getModule();

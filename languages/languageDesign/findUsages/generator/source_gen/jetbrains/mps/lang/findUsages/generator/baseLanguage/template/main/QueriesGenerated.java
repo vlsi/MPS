@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
@@ -31,7 +30,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_7991477654791680147(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.FIND_USAGES;
+    return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"))).isNotEmpty() && LanguageAspect.FIND_USAGES.is(model);
   }
   public static Object propertyMacro_GetPropertyValue_4192433084863763942(final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder")));
