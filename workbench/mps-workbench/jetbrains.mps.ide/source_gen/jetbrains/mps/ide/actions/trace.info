@@ -965,15 +965,14 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1215874656794">
     <file name="CloneModel_Action.java">
-      <node id="1215874656794" at="19,0,20,0" concept="16" trace="ICON" />
-      <node id="1215874656794" at="20,30,21,35" concept="18" />
-      <node id="1215874656794" at="21,35,22,34" concept="6" />
-      <node id="1215874656794" at="22,34,23,40" concept="6" />
-      <node id="1215874656794" at="26,32,27,16" concept="13" />
-      <node id="1222268725570" at="31,71,32,19" concept="13" />
-      <node id="1222268858286" at="33,5,34,86" concept="12" />
-      <node id="1222268878901" at="35,37,36,44" concept="12" />
-      <node id="1222268810721" at="36,44,37,102" concept="13" />
+      <node id="1215874656794" at="20,0,21,0" concept="16" trace="ICON" />
+      <node id="1215874656794" at="21,30,22,35" concept="18" />
+      <node id="1215874656794" at="22,35,23,34" concept="6" />
+      <node id="1215874656794" at="23,34,24,40" concept="6" />
+      <node id="1215874656794" at="27,32,28,16" concept="13" />
+      <node id="1222268725570" at="32,71,33,19" concept="13" />
+      <node id="1222268858286" at="34,5,35,86" concept="12" />
+      <node id="1222268810721" at="36,37,37,108" concept="13" />
       <node id="1222268803048" at="38,12,39,18" concept="13" />
       <node id="1215874656794" at="43,89,44,85" concept="6" />
       <node id="1215874656794" at="48,53,49,19" concept="13" />
@@ -991,25 +990,26 @@
       <node id="4047102590261012456" at="78,25,79,156" concept="6" />
       <node id="1215874800212" at="81,7,82,24" concept="6" />
       <node id="1222268801280" at="38,10,40,5" concept="1" />
-      <node id="1222268716248" at="30,87,33,5" concept="10" />
+      <node id="1222268716248" at="31,87,34,5" concept="10" />
       <node id="1215874656794" at="47,95,50,5" concept="10" />
       <node id="1215874656794" at="53,51,56,7" concept="10" />
       <node id="1215874656794" at="60,53,63,7" concept="10" />
       <node id="1215874656794" at="67,53,70,7" concept="10" />
       <node id="5996241366547805919" at="78,0,81,0" concept="11" trace="run#()V" />
-      <node id="1215874656794" at="25,0,29,0" concept="11" trace="isDumbAware#()Z" />
+      <node id="1215874656794" at="26,0,30,0" concept="11" trace="isDumbAware#()Z" />
       <node id="1215874656794" at="42,0,46,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="1215874656794" at="20,0,25,0" concept="4" trace="CloneModel_Action#()V" />
+      <node id="1215874656794" at="21,0,26,0" concept="4" trace="CloneModel_Action#()V" />
+      <node id="1222268789084" at="35,86,40,5" concept="10" />
       <node id="5996241366547752298" at="76,81,81,7" concept="6" />
-      <node id="1222268789084" at="34,86,40,5" concept="10" />
       <node id="1215874656794" at="50,5,57,5" concept="1" />
       <node id="1215874656794" at="57,5,64,5" concept="1" />
       <node id="1215874656794" at="64,5,71,5" concept="1" />
       <node id="1215874656794" at="74,0,84,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="1215874656794" at="29,0,42,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="1215874656794" at="30,0,42,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="1215874656794" at="46,0,74,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="1215874656794" at="26,32,27,16" />
-      <scope id="1222268716249" at="31,71,32,19" />
+      <scope id="1215874656794" at="27,32,28,16" />
+      <scope id="1222268716249" at="32,71,33,19" />
+      <scope id="1222268789085" at="36,37,37,108" />
       <scope id="1222268801281" at="38,12,39,18" />
       <scope id="1215874656794" at="43,89,44,85" />
       <scope id="1215874656794" at="48,53,49,19" />
@@ -1017,17 +1017,14 @@
       <scope id="1215874656794" at="61,22,62,21" />
       <scope id="1215874656794" at="68,22,69,21" />
       <scope id="5996241366547805920" at="78,25,79,156" />
-      <scope id="1222268789085" at="35,37,37,102">
-        <var name="language" id="1222268878902" />
-      </scope>
-      <scope id="1215874656794" at="20,30,23,40" />
+      <scope id="1215874656794" at="21,30,24,40" />
       <scope id="5996241366547805919" at="78,0,81,0" />
-      <scope id="1215874656794" at="25,0,29,0" />
+      <scope id="1215874656794" at="26,0,30,0" />
       <scope id="1215874656794" at="42,0,46,0">
         <var name="_params" id="1215874656794" />
         <var name="event" id="1215874656794" />
       </scope>
-      <scope id="1215874656794" at="20,0,25,0" />
+      <scope id="1215874656794" at="21,0,26,0" />
       <scope id="1215874656794" at="51,5,56,7">
         <var name="p" id="1215874656794" />
       </scope>
@@ -1040,14 +1037,14 @@
       <scope id="1215874656794" at="75,96,82,24">
         <var name="dialog" id="1215874783309" />
       </scope>
-      <scope id="1215874705347" at="30,87,40,5">
+      <scope id="1215874705347" at="31,87,40,5">
         <var name="module" id="1222268858287" />
       </scope>
       <scope id="1215874656794" at="74,0,84,0">
         <var name="_params" id="1215874656794" />
         <var name="event" id="1215874656794" />
       </scope>
-      <scope id="1215874656794" at="29,0,42,0">
+      <scope id="1215874656794" at="30,0,42,0">
         <var name="_params" id="1215874656794" />
         <var name="event" id="1215874656794" />
       </scope>
@@ -1057,7 +1054,7 @@
         <var name="event" id="1215874656794" />
       </scope>
       <unit id="5996241366547805919" at="77,114,81,5" name="jetbrains.mps.ide.actions.CloneModel_Action$1" />
-      <unit id="1215874656794" at="18,0,85,0" name="jetbrains.mps.ide.actions.CloneModel_Action" />
+      <unit id="1215874656794" at="19,0,85,0" name="jetbrains.mps.ide.actions.CloneModel_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1215874930420">
