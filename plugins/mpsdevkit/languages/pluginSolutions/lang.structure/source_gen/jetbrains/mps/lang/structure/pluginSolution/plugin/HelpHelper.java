@@ -9,9 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.ide.BrowserUtil;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class HelpHelper {
   public static HelpHelper.HelpType getDefaultHelpFor(SModule contextModule, SModel contextModel, SNode node) {
@@ -53,21 +54,16 @@ public class HelpHelper {
       return false;
     }
     if (module instanceof Language) {
-      Language language = ((Language) module);
-      LanguageAspect aspect = language.getAspectForModel(model);
-      if (aspect == null) {
-        return false;
-      }
-      return aspect.getHelpURL() != null && !(aspect.getHelpURL().equals(""));
+      return LanguageAspectSupport.getHelpUrl(model) != null;
     } else {
       return module instanceof Generator;
     }
   }
   public static void showHelpForAspect(SModule contextModule, SModel contextModel) {
     if (contextModule instanceof Language) {
-      Language language = ((Language) contextModule);
-      LanguageAspect aspect = language.getAspectForModel(contextModel);
-      BrowserUtil.launchBrowser(aspect.getHelpURL());
+      String url = LanguageAspectSupport.getHelpUrl(contextModel);
+      assert url != null : "should have checked that helpForAspectIsAvailable==true";
+      BrowserUtil.launchBrowser(url);
     } else {
       BrowserUtil.launchBrowser(LanguageAspect.CONFLUENCE_BASE + "Generator#Generator-aboutgenerator");
     }
