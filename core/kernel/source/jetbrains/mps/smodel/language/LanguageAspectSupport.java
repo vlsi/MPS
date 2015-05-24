@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.Icon;
 import java.util.Collection;
 import java.util.EnumMap;
+import java.util.HashSet;
 import java.util.Map;
 
 /**
@@ -44,8 +45,17 @@ public class LanguageAspectSupport {
   }
 
   public static Collection<SModel> getAspectModels(Language language) {
-    //todo
-    return null;
+    HashSet<SModel> result = new HashSet<SModel>();
+    for (LanguageAspect la : LanguageAspect.values()) {
+      SModel aspectModel = la.get(language);
+      if (aspectModel == null) continue;
+      result.add(aspectModel);
+    }
+
+    for (LanguageAspectDescriptor d : SNodeUtil.collectAspects()) {
+      result.addAll(d.getAspectModels(language));
+    }
+    return result;
   }
 
   @Nullable
