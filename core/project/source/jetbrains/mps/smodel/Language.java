@@ -370,6 +370,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Deprecated
   @ToRemove(version = 3.3)
   //no full equivalent to this method, use appropriate method from LanguageAspectSupport
+  //no usages in MPS
   @Nullable
   public static LanguageAspect getModelAspect(org.jetbrains.mps.openapi.model.SModel sm) {
     if (sm == null) return null;
