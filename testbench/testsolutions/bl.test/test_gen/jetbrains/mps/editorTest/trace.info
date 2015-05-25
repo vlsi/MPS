@@ -14741,6 +14741,108 @@
       <unit id="8777381699079423280" at="10,0,33,0" name="jetbrains.mps.editorTest.AddStatementToBlock_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8841676161362720717">
+    <file name="ImplicitEnumMethodImplementation_Test.java">
+      <node id="8841676161362720717" at="17,77,18,114" concept="2" />
+      <node id="8841676161362720717" at="18,114,19,144" concept="2" />
+      <node id="8841676161362720717" at="22,77,23,114" concept="2" />
+      <node id="8841676161362720717" at="23,114,24,144" concept="2" />
+      <node id="8841676161362720717" at="27,95,28,114" concept="2" />
+      <node id="8841676161362720717" at="28,114,29,162" concept="2" />
+      <node id="8841676161362720717" at="32,77,33,114" concept="2" />
+      <node id="8841676161362720717" at="33,114,34,144" concept="2" />
+      <node id="8841676161362720717" at="37,96,38,114" concept="2" />
+      <node id="8841676161362720717" at="38,114,39,163" concept="2" />
+      <node id="8841676161362720717" at="42,96,43,114" concept="2" />
+      <node id="8841676161362720717" at="43,114,44,163" concept="2" />
+      <node id="8841676161362720717" at="47,77,48,114" concept="2" />
+      <node id="8841676161362720717" at="48,114,49,144" concept="2" />
+      <node id="8841676161362720717" at="52,77,53,114" concept="2" />
+      <node id="8841676161362720717" at="53,114,54,144" concept="2" />
+      <node id="8841676161362720717" at="58,79,59,235" concept="6" />
+      <node id="8841676161362720717" at="59,235,60,159" concept="2" />
+      <node id="8841676161362720717" at="62,79,63,235" concept="6" />
+      <node id="8841676161362720717" at="63,235,64,159" concept="2" />
+      <node id="8841676161362720717" at="66,97,67,235" concept="6" />
+      <node id="8841676161362720717" at="67,235,68,159" concept="2" />
+      <node id="8841676161362720717" at="70,79,71,235" concept="6" />
+      <node id="8841676161362720717" at="71,235,72,159" concept="2" />
+      <node id="8841676161362720717" at="74,98,75,235" concept="6" />
+      <node id="8841676161362720717" at="75,235,76,159" concept="2" />
+      <node id="8841676161362720717" at="78,98,79,235" concept="6" />
+      <node id="8841676161362720717" at="79,235,80,159" concept="2" />
+      <node id="8841676161362720717" at="82,79,83,235" concept="6" />
+      <node id="8841676161362720717" at="83,235,84,159" concept="2" />
+      <node id="8841676161362720717" at="86,79,87,235" concept="6" />
+      <node id="8841676161362720717" at="87,235,88,159" concept="2" />
+      <node id="8841676161362720717" at="58,0,62,0" concept="5" trace="test_ErrorMessagesCheck8841676161362742012#()V" />
+      <node id="8841676161362720717" at="62,0,66,0" concept="5" trace="test_ErrorMessagesCheck8841676161362742874#()V" />
+      <node id="8841676161362720717" at="66,0,70,0" concept="5" trace="test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735#()V" />
+      <node id="8841676161362720717" at="70,0,74,0" concept="5" trace="test_ErrorMessagesCheck8841676161362737481#()V" />
+      <node id="8841676161362720717" at="74,0,78,0" concept="5" trace="test_NodeEnumConstantHasUnimplementedCheck8841676161362737703#()V" />
+      <node id="8841676161362720717" at="78,0,82,0" concept="5" trace="test_NodeEnumConstantHasUnimplementedCheck8841676161362737723#()V" />
+      <node id="8841676161362720717" at="82,0,86,0" concept="5" trace="test_ErrorMessagesCheck8841676161362737639#()V" />
+      <node id="8841676161362720717" at="86,0,90,0" concept="5" trace="test_ErrorMessagesCheck8841676161362738093#()V" />
+      <node id="8841676161362720717" at="16,0,21,0" concept="5" trace="test_ErrorMessagesCheck8841676161362742012#()V" />
+      <node id="8841676161362720717" at="21,0,26,0" concept="5" trace="test_ErrorMessagesCheck8841676161362742874#()V" />
+      <node id="8841676161362720717" at="26,0,31,0" concept="5" trace="test_NodeEnumHasUnimplementedMethodsCheck8841676161362904735#()V" />
+      <node id="8841676161362720717" at="31,0,36,0" concept="5" trace="test_ErrorMessagesCheck8841676161362737481#()V" />
+      <node id="8841676161362720717" at="36,0,41,0" concept="5" trace="test_NodeEnumConstantHasUnimplementedCheck8841676161362737703#()V" />
+      <node id="8841676161362720717" at="41,0,46,0" concept="5" trace="test_NodeEnumConstantHasUnimplementedCheck8841676161362737723#()V" />
+      <node id="8841676161362720717" at="46,0,51,0" concept="5" trace="test_ErrorMessagesCheck8841676161362737639#()V" />
+      <node id="8841676161362720717" at="51,0,56,0" concept="5" trace="test_ErrorMessagesCheck8841676161362738093#()V" />
+      <scope id="8841676161362720717" at="17,77,19,144" />
+      <scope id="8841676161362720717" at="22,77,24,144" />
+      <scope id="8841676161362720717" at="27,95,29,162" />
+      <scope id="8841676161362720717" at="32,77,34,144" />
+      <scope id="8841676161362720717" at="37,96,39,163" />
+      <scope id="8841676161362720717" at="42,96,44,163" />
+      <scope id="8841676161362720717" at="47,77,49,144" />
+      <scope id="8841676161362720717" at="52,77,54,144" />
+      <scope id="8841676161362720717" at="58,79,60,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="62,79,64,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="66,97,68,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="70,79,72,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="74,98,76,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="78,98,80,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="82,79,84,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="86,79,88,159">
+        <var name="operation" id="8841676161362720717" />
+      </scope>
+      <scope id="8841676161362720717" at="58,0,62,0" />
+      <scope id="8841676161362720717" at="62,0,66,0" />
+      <scope id="8841676161362720717" at="66,0,70,0" />
+      <scope id="8841676161362720717" at="70,0,74,0" />
+      <scope id="8841676161362720717" at="74,0,78,0" />
+      <scope id="8841676161362720717" at="78,0,82,0" />
+      <scope id="8841676161362720717" at="82,0,86,0" />
+      <scope id="8841676161362720717" at="86,0,90,0" />
+      <scope id="8841676161362720717" at="16,0,21,0" />
+      <scope id="8841676161362720717" at="21,0,26,0" />
+      <scope id="8841676161362720717" at="26,0,31,0" />
+      <scope id="8841676161362720717" at="31,0,36,0" />
+      <scope id="8841676161362720717" at="36,0,41,0" />
+      <scope id="8841676161362720717" at="41,0,46,0" />
+      <scope id="8841676161362720717" at="46,0,51,0" />
+      <scope id="8841676161362720717" at="51,0,56,0" />
+      <unit id="8841676161362720717" at="56,0,91,0" name="jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test$TestBody" />
+      <unit id="8841676161362720717" at="14,0,92,0" name="jetbrains.mps.editorTest.ImplicitEnumMethodImplementation_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659160147">
     <file name="JustTypeCompletion_Test.java">
       <node id="8933061889659160147" at="17,58,18,107" concept="2" />

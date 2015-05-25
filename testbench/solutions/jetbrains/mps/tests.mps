@@ -1673,6 +1673,9 @@
     <node concept="lpD6D" id="2TdQhrRPT6D" role="lpD6w">
       <ref role="lpD7u" to="ryl9:676KKEeTb08" resolve="EmptyEnumConstantCreationWithConstructorTest" />
     </node>
+    <node concept="lpD6D" id="7ENWpYx4d6o" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7ENWpYx47vd" resolve="ImplicitEnumMethodImplementation" />
+    </node>
     <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
     </node>
