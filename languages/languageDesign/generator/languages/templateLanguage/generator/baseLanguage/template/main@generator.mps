@@ -536,6 +536,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
@@ -36613,10 +36614,71 @@
     </node>
     <node concept="avzCv" id="4gPmXg0ae9w" role="avys_">
       <node concept="3clFbS" id="4gPmXg0ae9x" role="2VODD2">
-        <node concept="3clFbF" id="4gPmXg0agnX" role="3cqZAp">
-          <node concept="3clFbT" id="4gPmXg0agnW" role="3clFbG">
-            <property role="3clFbU" value="true" />
+        <node concept="3cpWs8" id="6i1E6rkHG3X" role="3cqZAp">
+          <node concept="3cpWsn" id="6i1E6rkHG3Y" role="3cpWs9">
+            <property role="TrG5h" value="ownerModule" />
+            <node concept="3Tqbb2" id="6i1E6rkHG3W" role="1tU5fm">
+              <ref role="ehGHo" to="hypd:5xDtKQA7vSu" resolve="Module" />
+            </node>
+            <node concept="2OqwBi" id="6i1E6rkHG3Z" role="33vP2m">
+              <node concept="2OqwBi" id="6i1E6rkHG40" role="2Oq$k0">
+                <node concept="1iwH7S" id="6i1E6rkHG41" role="2Oq$k0" />
+                <node concept="1st3f0" id="6i1E6rkHG42" role="2OqNvi" />
+              </node>
+              <node concept="13u695" id="6i1E6rkHG43" role="2OqNvi" />
+            </node>
           </node>
+        </node>
+        <node concept="3clFbJ" id="6i1E6rkHxma" role="3cqZAp">
+          <node concept="3clFbS" id="6i1E6rkHxmc" role="3clFbx">
+            <node concept="3cpWs6" id="6i1E6rkHxXW" role="3cqZAp">
+              <node concept="3clFbT" id="6i1E6rkHy0T" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6i1E6rkHo3y" role="3clFbw">
+            <node concept="37vLTw" id="6i1E6rkHG44" role="2Oq$k0">
+              <ref role="3cqZAo" node="6i1E6rkHG3Y" resolve="ownerModule" />
+            </node>
+            <node concept="1mIQ4w" id="6i1E6rkHvdc" role="2OqNvi">
+              <node concept="chp4Y" id="6i1E6rkHvqx" role="cj9EA">
+                <ref role="cht4Q" to="hypd:5xDtKQA7vSx" resolve="Generator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6i1E6rkHyon" role="3cqZAp">
+          <node concept="2OqwBi" id="6i1E6rkHyrR" role="3clFbG">
+            <node concept="1iwH7S" id="6i1E6rkHyol" role="2Oq$k0" />
+            <node concept="2k5nB$" id="6i1E6rkHyzN" role="2OqNvi">
+              <node concept="2YIFZM" id="6i1E6rkHzHH" role="2k5Stb">
+                <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
+                <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                <node concept="Xl_RD" id="6i1E6rkHyDq" role="37wK5m">
+                  <property role="Xl_RC" value="Generator language is applied to a model %s not from generator module (actual module is %s), aborted." />
+                </node>
+                <node concept="2OqwBi" id="6i1E6rkH$_S" role="37wK5m">
+                  <node concept="2OqwBi" id="6i1E6rkH$jv" role="2Oq$k0">
+                    <node concept="1iwH7S" id="6i1E6rkH$ev" role="2Oq$k0" />
+                    <node concept="1st3f0" id="6i1E6rkH$v0" role="2OqNvi" />
+                  </node>
+                  <node concept="LkI2h" id="6i1E6rkH$Ji" role="2OqNvi" />
+                </node>
+                <node concept="2OqwBi" id="6i1E6rkHGRb" role="37wK5m">
+                  <node concept="37vLTw" id="6i1E6rkHGIw" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6i1E6rkHG3Y" resolve="ownerModule" />
+                  </node>
+                  <node concept="3TrcHB" id="6i1E6rkHHPP" role="2OqNvi">
+                    <ref role="3TsBF5" to="hypd:5xDtKQA7vSz" resolve="namespace" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6i1E6rkHy6v" role="3cqZAp">
+          <node concept="3clFbT" id="6i1E6rkHy6x" role="3cqZAk" />
         </node>
       </node>
     </node>
