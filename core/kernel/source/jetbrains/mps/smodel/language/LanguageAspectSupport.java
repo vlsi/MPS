@@ -48,10 +48,13 @@ public class LanguageAspectSupport {
     return false;
   }
 
-  public static Collection<SModel> getAspectModels(Language language) {
+  public static Collection<SModel> getAspectModels(SModule language) {
+    assert language instanceof Language;
+    //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
+
     HashSet<SModel> result = new HashSet<SModel>();
     for (LanguageAspect la : LanguageAspect.values()) {
-      SModel aspectModel = la.get(language);
+      SModel aspectModel = la.get(((Language) language));
       if (aspectModel == null) continue;
       result.add(aspectModel);
     }
