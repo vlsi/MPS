@@ -28,7 +28,7 @@ public class ConceptEditorHelper {
     for (SNode root : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(root), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")) && SPropertyOperations.getBoolean(root, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"))) {
         SNode candidate = (SNode) root;
-        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(candidate)), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")), "virtual_isApplicable_7839831476331657915", new Object[]{node})) {
+        if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(candidate), "virtual_canBeAppliedToNode_8911797107065640816", new Object[]{node})) {
           ListSequence.fromList(result).addElement(candidate);
         }
       }
@@ -36,6 +36,7 @@ public class ConceptEditorHelper {
     return result;
   }
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
+    // [MM] this LanguageAspect usage is reviewed 
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     Language language = ((Language) aspect.getMainLanguage().resolve(MPSModuleRepository.getInstance()));
     SModel structureModel = language.getStructureModelDescriptor();
@@ -50,6 +51,7 @@ public class ConceptEditorHelper {
     return conceptAspect;
   }
   public static SNode createNewConceptAspectInstance(LanguageAspect aspect, SNode applicableNode, SNode concept) {
+    // [MM] this LanguageAspect usage is reviewed 
     Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;
 
