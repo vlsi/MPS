@@ -168,7 +168,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
         try {
           newNode[0] = doSubstitute(context, pattern);
         } catch (RuntimeException rte) {
-          LOG.error("Exception on calling doSubstitute()", rte);
+          LOG.error("Exception on calling doSubstitute() method for " + AbstractNodeSubstituteAction.this.getClass(), rte);
         }
         // similar to: IntellijentInputUtil.applyRigthTransform() logic
         if (context != null && newNode[0] != null) {
