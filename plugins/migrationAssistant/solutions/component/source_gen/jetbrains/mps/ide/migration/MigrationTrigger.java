@@ -8,16 +8,17 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -28,7 +29,6 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.GeneralSettings;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.migration.component.util.MigrationComponent;
 import com.intellij.openapi.ui.Messages;
@@ -72,6 +72,14 @@ import org.jetbrains.annotations.Nullable;
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
   private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
+  private static void updateLanguageVersions(Iterable<SModule> modules) {
+    Sequence.fromIterable(modules).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
+      public void visit(AbstractModule it) {
+        it.validateLanguageVersions();
+      }
+    });
+  }
+
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
@@ -100,11 +108,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-            public void visit(AbstractModule it) {
-              it.validateLanguageVersions();
-            }
-          });
+          MigrationTrigger.updateLanguageVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
           tryMigratingProject();
         }
       });
@@ -116,11 +120,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-              public void visit(AbstractModule it) {
-                it.validateLanguageVersions();
-              }
-            });
+            MigrationTrigger.updateLanguageVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
           }
         });
 
@@ -187,8 +187,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public synchronized void tryMigratingProjectNoQueue() {
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
     final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
+        MigrationTrigger.updateLanguageVersions(allModules);
         migrationRequired.value = MigrationComponent.isMigrationRequired(myMpsProject, allModules);
       }
     });
@@ -213,6 +214,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
+    MigrationTrigger.updateLanguageVersions(modules);
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
     if (!(MigrationComponent.isMigrationRequired(p, modules2Check))) {
       return;
@@ -243,6 +245,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         }
       }
     });
+    MigrationTrigger.updateLanguageVersions(modules2Check);
     if (!(MigrationComponent.isLanguageMigrationRequired(modules2Check))) {
       return;
     }
@@ -367,7 +370,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       return;
     }
 
-    MigrationErrorWizardStep lastStep = as_feb5zp_a0a01a64(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+    MigrationErrorWizardStep lastStep = as_feb5zp_a0a01a84(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
     if (lastStep == null) {
       return;
     }
@@ -437,7 +440,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a01a64(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a01a84(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

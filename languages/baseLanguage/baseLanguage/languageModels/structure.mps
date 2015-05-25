@@ -407,6 +407,9 @@
     <node concept="PrWs8" id="1653mnvB2v4" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="PrWs8" id="3F8BxGicqra" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
     <node concept="1TJgyi" id="3RZN444tIdK" role="1TKVEl">
       <property role="TrG5h" value="forceOneLine" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
@@ -781,6 +784,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="3F8BxGidMC$" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fHeOMHZ">
     <property role="R4oN_" value="parenthesis" />
@@ -794,6 +800,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="PrWs8" id="3F8BxGifhXK" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fHWc73I">
     <property role="R4oN_" value="conditional-and operation" />
@@ -802,6 +811,9 @@
     <property role="3GE5qa" value="expressions" />
     <property role="34LRSv" value="&amp;&amp;" />
     <ref role="1TJDcQ" node="fJuHJVf" resolve="BinaryOperation" />
+    <node concept="PrWs8" id="3F8BxGieUes" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fI2lmyv">
     <property role="R4oN_" value="conditional-or operation" />
@@ -810,6 +822,9 @@
     <property role="3GE5qa" value="expressions" />
     <property role="34LRSv" value="||" />
     <ref role="1TJDcQ" node="fJuHJVf" resolve="BinaryOperation" />
+    <node concept="PrWs8" id="3F8BxGif3Ty" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fIYIFW9">
     <property role="R4oN_" value="static method invocation" />
@@ -878,6 +893,9 @@
     </node>
     <node concept="PrWs8" id="3VO0F5IFDAn" role="PzmwI">
       <ref role="PrY4T" node="1wHCnsn58oY" resolve="IBinaryLike" />
+    </node>
+    <node concept="PrWs8" id="3F8BxGifpBm" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
     </node>
   </node>
   <node concept="1TIwiD" id="fJzACpZ">
@@ -1355,6 +1373,9 @@
     <node concept="PrWs8" id="2a$QO9k_z3L" role="PzmwI">
       <ref role="PrY4T" to="356a:4pl5GY7LKmy" resolve="ScopeConcept" />
     </node>
+    <node concept="PrWs8" id="3F8BxGiefhj" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gEShaYr">
     <property role="R5$K7" value="true" />
@@ -1562,6 +1583,9 @@
     <ref role="1TJDcQ" node="fz3vP1J" resolve="Expression" />
     <node concept="PrWs8" id="1wHCnsn5EsM" role="PzmwI">
       <ref role="PrY4T" node="1wHCnsn58oY" resolve="IBinaryLike" />
+    </node>
+    <node concept="PrWs8" id="3F8BxGieLe6" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
     </node>
     <node concept="1TJgyj" id="gVK4C9J" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1910,6 +1934,9 @@
       <property role="20kJfa" value="condition" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="PrWs8" id="3F8BxGie5qm" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8PeGkH">
@@ -2369,6 +2396,9 @@
       <property role="20kJfa" value="statementList" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="PrWs8" id="3F8BxGiedmZ" role="PzmwI">
+      <ref role="PrY4T" node="3F8BxGibdn2" resolve="IConditional" />
     </node>
   </node>
   <node concept="1TIwiD" id="hzKIgBR">
@@ -3942,6 +3972,9 @@
     <property role="3GE5qa" value="scopes" />
     <property role="TrG5h" value="SuperInerfaceKind" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="PlHQZ" id="3F8BxGibdn2">
+    <property role="TrG5h" value="IConditional" />
   </node>
 </model>
 
