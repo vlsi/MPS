@@ -85,6 +85,21 @@ public class LanguageAspectSupport {
     return Collections.emptyList();
   }
 
+  public static boolean isLanguageModelNameForbidden(String modelName) {
+    String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      if (shortName.equals(aspect.getName())) {
+        return true;
+      }
+    }
+    for (LanguageAspectDescriptor ad:SNodeUtil.collectAspects()){
+      if (shortName.equals(ad.getPresentableAspectName())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Nullable
   public static String getIconPath(SModel model) {
     //todo

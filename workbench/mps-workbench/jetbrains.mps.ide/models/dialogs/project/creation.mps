@@ -46,7 +46,7 @@
     <import index="wqua" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.classloading(jetbrains.mps.classloading@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspectDescriptor.plugin)" />
-    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" implicit="true" />
+    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="oj8w" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
@@ -65,9 +65,6 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1224500790866" name="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" flags="nn" index="pVOtf" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1224573963862" name="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" flags="nn" index="uiWXb">
-        <reference id="1224573974191" name="enumClass" index="uiZuM" />
-      </concept>
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -144,7 +141,6 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -268,12 +264,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension">
-      <concept id="6626851894249711936" name="jetbrains.mps.lang.extension.structure.ExtensionPointExpression" flags="nn" index="2O5UvJ">
-        <reference id="6626851894249712469" name="extensionPoint" index="2O5UnU" />
-      </concept>
-      <concept id="3175313036448560967" name="jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation" flags="nn" index="SfwO_" />
-    </language>
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
@@ -315,16 +305,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
-        <child id="1153944400369" name="variable" index="2Gsz3X" />
-        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
-      </concept>
-      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
-      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
-        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
     </language>
   </registry>
@@ -3664,148 +3644,63 @@
             </node>
           </node>
           <node concept="3clFbS" id="1pyYjDPRa8r" role="3clFbx">
-            <node concept="3cpWs8" id="1pyYjDPRa8x" role="3cqZAp">
-              <node concept="3cpWsn" id="1pyYjDPRa8y" role="3cpWs9">
-                <property role="TrG5h" value="shortName" />
-                <node concept="17QB3L" id="5$SHav7hnJ3" role="1tU5fm" />
-                <node concept="2OqwBi" id="1pyYjDPRa8$" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagT$yw" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
-                  </node>
-                  <node concept="liA8E" id="1pyYjDPRa8A" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
-                    <node concept="3cpWs3" id="2R7pax8jpSh" role="37wK5m">
-                      <node concept="3cmrfG" id="2R7pax8jpSk" role="3uHU7w">
-                        <property role="3cmrfH" value="1" />
+            <node concept="3clFbJ" id="7IH442cXg$b" role="3cqZAp">
+              <node concept="3clFbS" id="7IH442cXg$d" role="3clFbx">
+                <node concept="3cpWs8" id="1pyYjDPRa8x" role="3cqZAp">
+                  <node concept="3cpWsn" id="1pyYjDPRa8y" role="3cpWs9">
+                    <property role="TrG5h" value="shortName" />
+                    <node concept="17QB3L" id="5$SHav7hnJ3" role="1tU5fm" />
+                    <node concept="2OqwBi" id="1pyYjDPRa8$" role="33vP2m">
+                      <node concept="37vLTw" id="3GM_nagT$yw" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
                       </node>
-                      <node concept="2OqwBi" id="2R7pax8jpSb" role="3uHU7B">
-                        <node concept="37vLTw" id="3GM_nagT$Os" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
-                        </node>
-                        <node concept="liA8E" id="2R7pax8jpSf" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
-                          <node concept="Xl_RD" id="2R7pax8jpSg" role="37wK5m">
-                            <property role="Xl_RC" value="." />
+                      <node concept="liA8E" id="1pyYjDPRa8A" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~String.substring(int):java.lang.String" resolve="substring" />
+                        <node concept="3cpWs3" id="2R7pax8jpSh" role="37wK5m">
+                          <node concept="3cmrfG" id="2R7pax8jpSk" role="3uHU7w">
+                            <property role="3cmrfH" value="1" />
                           </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7IH442cSHuR" role="3cqZAp">
-              <node concept="3SKdUq" id="7IH442cSIVE" role="3SKWNk">
-                <property role="3SKdUp" value="[MM] this LanguageAspect usage is reviewed" />
-              </node>
-            </node>
-            <node concept="1DcWWT" id="1pyYjDPRa8s" role="3cqZAp">
-              <node concept="uiWXb" id="1pyYjDPRb$G" role="1DdaDG">
-                <ref role="uiZuM" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="3cpWsn" id="1pyYjDPRa8u" role="1Duv9x">
-                <property role="TrG5h" value="aspect" />
-                <node concept="3uibUv" id="1pyYjDPRa8v" role="1tU5fm">
-                  <ref role="3uigEE" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="1pyYjDPRa8w" role="2LFqv$">
-                <node concept="3clFbJ" id="1pyYjDPRa8E" role="3cqZAp">
-                  <node concept="2OqwBi" id="1pyYjDPRa8F" role="3clFbw">
-                    <node concept="37vLTw" id="3GM_nagTBEI" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
-                    </node>
-                    <node concept="liA8E" id="1pyYjDPRa8H" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="2OqwBi" id="1pyYjDPRa8I" role="37wK5m">
-                        <node concept="37vLTw" id="3GM_nagTzTr" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1pyYjDPRa8u" resolve="aspect" />
-                        </node>
-                        <node concept="liA8E" id="1pyYjDPRa8K" role="2OqNvi">
-                          <ref role="37wK5l" to="cu2c:~LanguageAspect.getName():java.lang.String" resolve="getName" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="1pyYjDPRa8L" role="3clFbx">
-                    <node concept="3clFbF" id="1pyYjDPRa8M" role="3cqZAp">
-                      <node concept="1rXfSq" id="4hiugqyzetq" role="3clFbG">
-                        <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
-                        <node concept="3cpWs3" id="1pyYjDPRa8O" role="37wK5m">
-                          <node concept="3cpWs3" id="1pyYjDPRa8P" role="3uHU7B">
-                            <node concept="Xl_RD" id="1pyYjDPRa8Q" role="3uHU7B">
-                              <property role="Xl_RC" value="This name isn't allowed because '" />
+                          <node concept="2OqwBi" id="2R7pax8jpSb" role="3uHU7B">
+                            <node concept="37vLTw" id="3GM_nagT$Os" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
                             </node>
-                            <node concept="37vLTw" id="3GM_nagTB4h" role="3uHU7w">
-                              <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
+                            <node concept="liA8E" id="2R7pax8jpSf" role="2OqNvi">
+                              <ref role="37wK5l" to="e2lb:~String.lastIndexOf(java.lang.String):int" resolve="lastIndexOf" />
+                              <node concept="Xl_RD" id="2R7pax8jpSg" role="37wK5m">
+                                <property role="Xl_RC" value="." />
+                              </node>
                             </node>
                           </node>
-                          <node concept="Xl_RD" id="1pyYjDPRa8S" role="3uHU7w">
-                            <property role="Xl_RC" value="' is language aspect name" />
-                          </node>
                         </node>
                       </node>
                     </node>
-                    <node concept="3cpWs6" id="1pyYjDPRa8T" role="3cqZAp">
-                      <node concept="3clFbT" id="2R7pax8jqzl" role="3cqZAk">
-                        <property role="3clFbU" value="false" />
-                      </node>
-                    </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="2Gpval" id="7IH442cSvHQ" role="3cqZAp">
-              <node concept="2GrKxI" id="7IH442cSvHS" role="2Gsz3X">
-                <property role="TrG5h" value="ad" />
-              </node>
-              <node concept="3clFbS" id="7IH442cSvHU" role="2LFqv$">
-                <node concept="3clFbJ" id="7IH442cSz9j" role="3cqZAp">
-                  <node concept="3clFbS" id="7IH442cSz9k" role="3clFbx">
-                    <node concept="3clFbF" id="7IH442cSDL2" role="3cqZAp">
-                      <node concept="1rXfSq" id="7IH442cSDL3" role="3clFbG">
-                        <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
-                        <node concept="3cpWs3" id="7IH442cSDL4" role="37wK5m">
-                          <node concept="3cpWs3" id="7IH442cSDL5" role="3uHU7B">
-                            <node concept="Xl_RD" id="7IH442cSDL6" role="3uHU7B">
-                              <property role="Xl_RC" value="This name isn't allowed because '" />
-                            </node>
-                            <node concept="37vLTw" id="7IH442cSDL7" role="3uHU7w">
-                              <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="7IH442cSDL8" role="3uHU7w">
-                            <property role="Xl_RC" value="' is language aspect name" />
-                          </node>
+                <node concept="3clFbF" id="1pyYjDPRa8M" role="3cqZAp">
+                  <node concept="1rXfSq" id="4hiugqyzetq" role="3clFbG">
+                    <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
+                    <node concept="3cpWs3" id="1pyYjDPRa8O" role="37wK5m">
+                      <node concept="3cpWs3" id="1pyYjDPRa8P" role="3uHU7B">
+                        <node concept="Xl_RD" id="1pyYjDPRa8Q" role="3uHU7B">
+                          <property role="Xl_RC" value="This name isn't allowed because '" />
+                        </node>
+                        <node concept="37vLTw" id="7IH442cXypQ" role="3uHU7w">
+                          <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
                         </node>
                       </node>
-                    </node>
-                    <node concept="3cpWs6" id="7IH442cSDL9" role="3cqZAp">
-                      <node concept="3clFbT" id="7IH442cSDLa" role="3cqZAk">
-                        <property role="3clFbU" value="false" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="17R0WA" id="7IH442cSDHZ" role="3clFbw">
-                    <node concept="37vLTw" id="7IH442cSDJT" role="3uHU7w">
-                      <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
-                    </node>
-                    <node concept="2OqwBi" id="7IH442cSza_" role="3uHU7B">
-                      <node concept="2GrUjf" id="7IH442cSz9P" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="7IH442cSvHS" resolve="ad" />
-                      </node>
-                      <node concept="liA8E" id="7IH442cSzin" role="2OqNvi">
-                        <ref role="37wK5l" to="n55e:~LanguageAspectDescriptor.getPresentableAspectName():java.lang.String" resolve="getPresentableAspectName" />
+                      <node concept="Xl_RD" id="1pyYjDPRa8S" role="3uHU7w">
+                        <property role="Xl_RC" value="' is language aspect name" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="7IH442cRLzY" role="2GsD0m">
-                <node concept="2O5UvJ" id="7IH442cRLzZ" role="2Oq$k0">
-                  <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
+              <node concept="2YIFZM" id="7IH442cXuI0" role="3clFbw">
+                <ref role="37wK5l" to="n55e:~LanguageAspectSupport.isLanguageModelNameForbidden(java.lang.String):boolean" resolve="isLanguageModelNameForbidden" />
+                <ref role="1Pybhc" to="n55e:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+                <node concept="37vLTw" id="7IH442cXuIG" role="37wK5m">
+                  <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
                 </node>
-                <node concept="SfwO_" id="7IH442cRL$0" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -3962,8 +3857,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2TONI_OxVhX" role="3cqZAp" />
-        <node concept="3clFbH" id="2TONI_OuPLe" role="3cqZAp" />
-        <node concept="3clFbH" id="2R7pax8jqzM" role="3cqZAp" />
         <node concept="3clFbF" id="2GHfGX3TvTf" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz5M6" role="3clFbG">
             <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />

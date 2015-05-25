@@ -61,10 +61,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -370,19 +367,9 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     if (myModule instanceof Language) {
-      String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
-      // [MM] this LanguageAspect usage is reviewed 
-      for (LanguageAspect aspect : LanguageAspect.values()) {
-        if (shortName.equals(aspect.getName())) {
-          setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
-          return false;
-        }
-      }
-      for (LanguageAspectDescriptor ad : Sequence.fromIterable(ExtensionPoint.<LanguageAspectDescriptor>generify(new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)).getObjects())) {
-        if (eq_vskvfc_a0a0d0l0v(ad.getPresentableAspectName(), shortName)) {
-          setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
-          return false;
-        }
+      if (LanguageAspectSupport.isLanguageModelNameForbidden(modelName)) {
+        String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
+        setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
       }
     }
 
@@ -406,8 +393,6 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-
-
     setErrorText(null);
     return true;
   }
@@ -421,8 +406,5 @@ public class NewModelDialog extends DialogWrapper {
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myModelName;
-  }
-  private static boolean eq_vskvfc_a0a0d0l0v(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }
