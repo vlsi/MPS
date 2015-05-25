@@ -4,13 +4,18 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
-import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class CellMenuComponent_BehaviorDescriptor extends AbstractComponent_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
   public CellMenuComponent_BehaviorDescriptor() {
+  }
+  public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept thisConcept, SNode candidate) {
+    return IConceptAspect_Behavior.virtual_canBeAppliedToNode_8911797107065640816(thisConcept, candidate);
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
@@ -21,6 +26,8 @@ public class CellMenuComponent_BehaviorDescriptor extends AbstractComponent_Beha
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
   }
