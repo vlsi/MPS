@@ -39,6 +39,7 @@ public class AbstractConceptDeclaration_Behavior {
   @Deprecated
   @ToRemove(version = 3.3)
   public static SModel call_getAspectModel_8360039740498072707(SNode thisNode, LanguageAspect aspect) {
+    // [MM] this usage of LanguageAspect is reviewed 
     Language language = SModelUtil.getDeclaringLanguage(thisNode);
     if (language == null) {
       return null;
@@ -52,6 +53,7 @@ public class AbstractConceptDeclaration_Behavior {
   @Deprecated
   @ToRemove(version = 3.3)
   public static List<SNode> call_findConceptAspectCollection_1567570417158062208(SNode thisNode, LanguageAspect aspect) {
+    // [MM] this usage of LanguageAspect is reviewed 
     List<SNode> result = new ArrayList<SNode>();
     SModel model = AbstractConceptDeclaration_Behavior.call_getAspectModel_8360039740498072707(thisNode, aspect);
     AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_8360039740498071686(thisNode, model, result);
