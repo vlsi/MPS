@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -58,10 +59,10 @@ public class ConceptEditorHelper {
     }
     return createNewConceptAspectInstance(applicableNode, concept, md);
   }
-  public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
+  public static List<SNode> sortRootsByConcept(List<SNode> roots, final SAbstractConcept[] conceptOrder) {
     return ListSequence.fromList(roots).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode root) {
-        int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
+        int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConcept(root));
         return (conceptIndex == -1 ? conceptOrder.length : conceptIndex);
       }
     }, true).toListSequence();
