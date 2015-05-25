@@ -48,6 +48,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -462,14 +463,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       return Language.class;
     }
 
+    @NotNull
     @Override
-    public Set<Language> getAutoImportedLanguages(Language contextLanguage, org.jetbrains.mps.openapi.model.SModel model) {
-      LanguageAspect aspect = Language.getModelAspect(model);
-      if (aspect != null) {
-        return Collections.singleton(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
-      } else {
-        return Collections.emptySet();
-      }
+    public Collection<SLanguage> getLanguages(Language contextModule, SModel model) {
+      return LanguageAspectSupport.getMainLanguages(model);
     }
 
     @Override

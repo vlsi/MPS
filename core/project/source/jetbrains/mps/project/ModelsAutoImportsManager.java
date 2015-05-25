@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -117,7 +118,7 @@ public class ModelsAutoImportsManager {
 
     // FIXME update subclasses to utilize new API. For a while, old implementation left to check if compatibility is ok (just in case there other contributors out there).
     @NotNull
-    public Set<SLanguage> getLanguages(ModuleType contextModule, SModel model) {
+    public Collection<SLanguage> getLanguages(ModuleType contextModule, SModel model) {
       // XXX transition: delegate to legacy code, drop along with the delegate method
       Set<SLanguage> rv = new HashSet<SLanguage>();
       for (Language l : getAutoImportedLanguages(contextModule, model)) {
