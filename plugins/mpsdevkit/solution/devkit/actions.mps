@@ -9962,31 +9962,14 @@
               </node>
             </node>
             <node concept="1eOMI4" id="7POWRVZMxhY" role="3uHU7w">
-              <node concept="1Wc70l" id="7POWRVZMxhZ" role="1eOMHV">
-                <node concept="3fqX7Q" id="7POWRVZMxi9" role="3uHU7w">
-                  <node concept="2YIFZM" id="7POWRVZMxia" role="3fr31v">
-                    <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
-                    <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-                    <node concept="2OqwBi" id="7POWRVZMxib" role="37wK5m">
-                      <node concept="I4A8Y" id="7POWRVZMxid" role="2OqNvi" />
-                      <node concept="37vLTw" id="2BHiRxglB3e" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7POWRVZMxh_" resolve="node" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbC" id="7POWRVZMxi0" role="3uHU7B">
-                  <node concept="10Nm6u" id="7POWRVZMxi8" role="3uHU7w" />
-                  <node concept="2YIFZM" id="7POWRVZMxi1" role="3uHU7B">
-                    <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-                    <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-                    <node concept="2JrnkZ" id="7POWRVZMxi3" role="37wK5m">
-                      <node concept="2OqwBi" id="7POWRVZMxi4" role="2JrQYb">
-                        <node concept="I4A8Y" id="7POWRVZMxi6" role="2OqNvi" />
-                        <node concept="37vLTw" id="2BHiRxglsdA" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7POWRVZMxh_" resolve="node" />
-                        </node>
-                      </node>
+              <node concept="3fqX7Q" id="7POWRVZMxi9" role="1eOMHV">
+                <node concept="2YIFZM" id="7POWRVZMxia" role="3fr31v">
+                  <ref role="1Pybhc" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+                  <ref role="37wK5l" to="cu2c:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
+                  <node concept="2OqwBi" id="7POWRVZMxib" role="37wK5m">
+                    <node concept="I4A8Y" id="7POWRVZMxid" role="2OqNvi" />
+                    <node concept="37vLTw" id="2BHiRxglB3e" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7POWRVZMxh_" resolve="node" />
                     </node>
                   </node>
                 </node>
@@ -10044,30 +10027,6 @@
             <node concept="3cpWs6" id="7POWRVZMxi$" role="3cqZAp">
               <node concept="3clFbT" id="7POWRVZMxi_" role="3cqZAk">
                 <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7POWRVZMxiF" role="3cqZAp">
-          <node concept="3clFbS" id="7POWRVZMxiG" role="3clFbx">
-            <node concept="3cpWs6" id="7POWRVZMxiH" role="3cqZAp">
-              <node concept="3clFbT" id="7POWRVZMxiI" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbC" id="7POWRVZMxiJ" role="3clFbw">
-            <node concept="10Nm6u" id="7POWRVZMxiR" role="3uHU7w" />
-            <node concept="2YIFZM" id="7POWRVZMxiK" role="3uHU7B">
-              <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-              <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-              <node concept="2JrnkZ" id="7POWRVZMxiM" role="37wK5m">
-                <node concept="2OqwBi" id="7POWRVZMxiN" role="2JrQYb">
-                  <node concept="37vLTw" id="2BHiRxgm7kE" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7POWRVZMxim" resolve="node" />
-                  </node>
-                  <node concept="I4A8Y" id="7POWRVZMxiP" role="2OqNvi" />
-                </node>
               </node>
             </node>
           </node>
