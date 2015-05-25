@@ -146,6 +146,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
@@ -178,6 +179,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
@@ -209,6 +211,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
@@ -240,6 +243,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.reference.RefResolver" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.NodeWeaveFacility" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />

@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
 public class Templatereduce__CommentLine extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -50,10 +51,10 @@ public class Templatereduce__CommentLine extends TemplateDeclarationBase impleme
   }
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = weaveTfConst_a1y0jd_a0b0e;
-    environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, context.getInput());
+    SNodeReference weaveTf0 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287837");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
+    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart0);
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer propertyMacro_a1y0jd_c0a0c0b0b0b0b0c = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287838");
-  private static SNodePointer weaveTfConst_a1y0jd_a0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "6405700485436287837");
 }

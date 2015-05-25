@@ -164,5 +164,19 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
    */
   void postProcess(@NotNull NodePostProcessor postProcessor);
 
+  /**
+   * FIXME PROVISIONAL API
+   * FIXME Consider splitting validation aspect from child addition, which could be generated.
+   * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
+   * @return utility capable of node weaving with respect to the given context
+   */
+  @NotNull
+  NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode);
+
+  /**
+   * @deprecated use {@link #weaveNode(TemplateContext, SNodeReference)} and {@link NodeWeaveFacility} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
 }

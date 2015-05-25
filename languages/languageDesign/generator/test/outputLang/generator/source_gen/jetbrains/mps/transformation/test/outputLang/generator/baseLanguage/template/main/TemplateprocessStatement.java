@@ -21,6 +21,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
 public class TemplateprocessStatement extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -256,15 +257,18 @@ public class TemplateprocessStatement extends TemplateDeclarationBase implements
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
-    SNodeReference weaveTf0 = weaveTfConst_slzep9_a0c0m;
-    environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, contextWithParams.getInput());
+    SNodeReference weaveTf0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695031");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(contextWithParams, weaveTf0);
+    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart0);
     SNode tnodepart1 = applyPart1(environment, contextWithParams);
-    SNodeReference weaveTf1 = weaveTfConst_slzep9_a0f0m;
-    environment.weaveNode(outputContextNode, "statement", tnodepart1, weaveTf1, contextWithParams.getInput());
+    SNodeReference weaveTf1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389838429");
+    NodeWeaveFacility weaveSupport1 = environment.weaveNode(contextWithParams, weaveTf1);
+    weaveSupport1.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), tnodepart1);
     Collection<SNode> tlistpart2 = applyPart2(environment, contextWithParams);
-    SNodeReference weaveTf2 = weaveTfConst_slzep9_a0i0m;
+    SNodeReference weaveTf2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5005282049926092703");
+    NodeWeaveFacility weaveSupport2 = environment.weaveNode(contextWithParams, weaveTf2);
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart2)) {
-      environment.weaveNode(outputContextNode, "statement", nodeToWeave, weaveTf2, contextWithParams.getInput());
+      weaveSupport2.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
     }
     return TemplateUtil.asList(tnodepart0, tnodepart1, tlistpart2);
   }
@@ -273,7 +277,4 @@ public class TemplateprocessStatement extends TemplateDeclarationBase implements
   private static SNodePointer propertyMacro_slzep9_c0a0c0b0b0b0b0c0b0b0b0i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695039");
   private static SNodePointer copySrcMacro_slzep9_b0a0c0d0b0b0b0c0b0b0b0i = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695055");
   private static SNodePointer templateNode_slzep9_c0a1a1a1a1a1a1a2a1a1a1a9 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4265636116363100026");
-  private static SNodePointer weaveTfConst_slzep9_a0c0m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288695031");
-  private static SNodePointer weaveTfConst_slzep9_a0f0m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "7870321878389838429");
-  private static SNodePointer weaveTfConst_slzep9_a0i0m = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5005282049926092703");
 }

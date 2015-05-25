@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
 public class Templatereduce__And extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -66,11 +67,11 @@ public class Templatereduce__And extends TemplateDeclarationBase implements Temp
   }
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = weaveTfConst_vw9msr_a0b0e;
-    environment.weaveNode(outputContextNode, "condition", tnodepart0, weaveTf0, context.getInput());
+    SNodeReference weaveTf0 = new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814344148");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
+    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition"), tnodepart0);
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer copySrcMacro_vw9msr_b0a0c0b0b0b0b0c = new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814344160");
   private static SNodePointer copySrcMacro_vw9msr_b0a0c0c0b0b0b0c = new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814344150");
-  private static SNodePointer weaveTfConst_vw9msr_a0b0e = new SNodePointer("r:68ff4d81-c742-4f6c-8cc1-cdf3e94f2c2e(jetbrains.mps.samples.KajaAndOr.generator.template.main@generator)", "1904811872814344148");
 }
