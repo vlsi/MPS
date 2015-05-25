@@ -274,6 +274,7 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
+      <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
@@ -4710,6 +4711,7 @@
     <node concept="13i0hz" id="6NcFj35FbEV" role="13h7CS">
       <property role="TrG5h" value="isApplicable" />
       <property role="13i0it" value="true" />
+      <property role="IEkAT" value="true" />
       <node concept="3Tm1VV" id="6NcFj35FbEW" role="1B3o_S" />
       <node concept="10P_77" id="6NcFj35Feng" role="3clF45" />
       <node concept="3clFbS" id="6NcFj35FbEY" role="3clF47">
@@ -4722,6 +4724,56 @@
       <node concept="37vLTG" id="6NcFj35Fenh" role="3clF46">
         <property role="TrG5h" value="candidate" />
         <node concept="3Tqbb2" id="6NcFj35Feni" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="7IH442d05If" role="lGtFl">
+        <node concept="TZ5HI" id="7IH442d05Ig" role="TZ5Hx">
+          <node concept="TZ5HA" id="7IH442d05Ih" role="3HnX3l">
+            <node concept="1dT_AC" id="7IH442d05Jt" role="1dT_Ay">
+              <property role="1dT_AB" value="use canBeAppliedToNode" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7IH442d05Iq" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="7IH442d05IH" role="2AJF6D">
+        <ref role="2AI5Lk" to="eunx:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="7IH442d05J8" role="2B76xF">
+          <ref role="2B6OnR" to="eunx:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="7IH442d05Jm" role="2B70Vg">
+            <property role="$nhwW" value="3.3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="7IH442d05tK" role="13h7CS">
+      <property role="TrG5h" value="canBeAppliedToNode" />
+      <property role="13i0it" value="true" />
+      <property role="2Ki8OM" value="true" />
+      <node concept="3Tm1VV" id="7IH442d05tL" role="1B3o_S" />
+      <node concept="10P_77" id="7IH442d05tM" role="3clF45" />
+      <node concept="3clFbS" id="7IH442d05tN" role="3clF47">
+        <node concept="3cpWs6" id="7IH442d05tO" role="3cqZAp">
+          <node concept="2OqwBi" id="7IH442d05T6" role="3cqZAk">
+            <node concept="2OqwBi" id="7IH442d05LV" role="2Oq$k0">
+              <node concept="13iPFW" id="7IH442d05Jw" role="2Oq$k0" />
+              <node concept="LFhST" id="7IH442d05QR" role="2OqNvi" />
+            </node>
+            <node concept="2qgKlT" id="7IH442d065_" role="2OqNvi">
+              <ref role="37wK5l" node="6NcFj35FbEV" resolve="isApplicable" />
+              <node concept="37vLTw" id="7IH442d067m" role="37wK5m">
+                <ref role="3cqZAo" node="7IH442d05tQ" resolve="candidate" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7IH442d05tQ" role="3clF46">
+        <property role="TrG5h" value="candidate" />
+        <node concept="3Tqbb2" id="7IH442d05tR" role="1tU5fm">
           <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
         </node>
       </node>
