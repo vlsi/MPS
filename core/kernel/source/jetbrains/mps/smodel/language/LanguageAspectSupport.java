@@ -18,13 +18,17 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -71,6 +75,14 @@ public class LanguageAspectSupport {
     }
 
     return null;
+  }
+
+  public static Collection<SLanguage> getMainLanguages(SModel model){
+    LanguageAspect oldAspect = getOldAspect(model);
+    if (oldAspect !=null) return Collections.singleton(MetaAdapterFactory.getLanguage(oldAspect.getMainLanguage()));
+    LanguageAspectDescriptor newAspect = getNewAspect(model);
+    if (newAspect!=null) return newAspect.getMainLanguages();
+    return Collections.emptyList();
   }
 
   @Nullable
