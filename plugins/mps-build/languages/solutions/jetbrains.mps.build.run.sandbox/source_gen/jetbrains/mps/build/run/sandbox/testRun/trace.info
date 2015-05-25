@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root nodeRef="r:14de661e-be46-405a-9f2a-f4fcdc380ca5(jetbrains.mps.build.run.sandbox.testRun)/4173297143639318933">
-    <file name="testRunner.xml">
-      <unit id="4173297143639318933" at="1,0,367,10" name="jetbrains.mps.build.run.sandbox.testRun.testRunner" />
-    </file>
-  </root>
-</debug-info>
-
