@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -54,9 +55,9 @@ public enum LanguageAspect {
 
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
-  TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction") ,
+  TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
 
-  TEXT_GEN("textGen",BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
+  TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
 
   MIGRATION("migration", BootstrapLanguages.migrationLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Migrations");
 
@@ -87,7 +88,9 @@ public enum LanguageAspect {
   }
 
   public boolean is(SModel sm) {
-    return Language.getModelAspect(sm) == this;
+    SModule module = sm.getModule();
+    if (!(module instanceof Language)) return false;
+    return get(((Language) module)) == sm;
   }
 
   public SModel get(Language l) {
@@ -103,6 +106,7 @@ public enum LanguageAspect {
     if (md != null && md.getModule() == l) return md;
     return doCreate ? createNew(l) : null;
   }
+
   public String getName() {
     return myName;
   }
