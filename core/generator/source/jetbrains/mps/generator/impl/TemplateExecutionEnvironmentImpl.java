@@ -20,8 +20,6 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.MapSrcProcessor.NodeMapperProcessorAdapter;
-import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
-import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
@@ -30,6 +28,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
@@ -52,6 +51,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -278,30 +278,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     if (outputNodeToWeave == null) {
       return;
     }
+    final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
+    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave);
+  }
 
-    TracingUtil.fillOriginalNode(inputNode, outputNodeToWeave, false);
-
-    // check child
-    RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
-    Status status = v.validate(outputNodeToWeave);
-    if (status != null) {
-      getLogger().warning(templateNode, status.getMessage("weave node"), status.describe(
-          GeneratorUtil.describe(inputNode, "input"), GeneratorUtil.describe(contextParentNode, "context parent node")));
-      // spit out the warning, but try to add anyway
-      contextParentNode.addChild(childRole, outputNodeToWeave);
-    } else {
-      // add
-      if (v.isMultipleSource()) {
-        contextParentNode.addChild(childRole, outputNodeToWeave);
-      } else {
-        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);
-        if (oldChild != null) {
-          // if singular child then don't add more that 1 child
-          contextParentNode.removeChild(oldChild);
-        }
-        contextParentNode.addChild(childRole, outputNodeToWeave);
-      }
-    }
+  @NotNull
+  @Override
+  public NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
+    return new NodeWeaveSupport(context, templateNode, generator);
   }
 
   // Internal API, perhaps, shall be part of ExecutionEnvironmentInternal iface

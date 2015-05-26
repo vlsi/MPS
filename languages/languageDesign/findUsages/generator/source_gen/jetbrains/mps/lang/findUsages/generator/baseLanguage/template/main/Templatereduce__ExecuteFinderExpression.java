@@ -21,6 +21,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
 public class Templatereduce__ExecuteFinderExpression extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -165,8 +166,9 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
   }
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = weaveTfConst_qubm7t_a0b0e;
-    environment.weaveNode(outputContextNode, "expression", tnodepart0, weaveTf0, context.getInput());
+    SNodeReference weaveTf0 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789322220");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
+    weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), tnodepart0);
     return TemplateUtil.singletonList(tnodepart0);
   }
   private static SNodePointer propertyMacro_qubm7t_c0a0c0b0b0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789321858");
@@ -178,5 +180,4 @@ public class Templatereduce__ExecuteFinderExpression extends TemplateDeclaration
   private static SNodePointer ifMacroRef_qubm7t_b0a0b0b0g0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789322201");
   private static SNodePointer copySrcMacro_qubm7t_b0a0c0a1a1a6a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789322212");
   private static SNodePointer ifMacroRef_qubm7t_b0a0b0g0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789322166");
-  private static SNodePointer weaveTfConst_qubm7t_a0b0e = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "5097877160789322220");
 }

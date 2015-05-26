@@ -18,10 +18,12 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -51,22 +53,24 @@ public class WeaveTemplateContainer {
     TemplateExecutionEnvironment env = context.getEnvironment();
     ITemplateProcessor templateProcessor = env.getTemplateProcessor();
     for (SNode templateFragment : myFragments) {
-      SNode templateFragmentNode = templateFragment.getParent();
+      SNode templateFragmentParentNode = templateFragment.getParent();
       SNode contextParentNode = null;
       try {
-        contextParentNode = env.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode, context);
+        contextParentNode = env.getQueryExecutor().getContextNodeForTemplateFragment(templateFragmentParentNode, outputContextNode, context);
       } catch (Exception e) {
         env.getLogger().handleException(e);
       }
       if (contextParentNode != null) {
         try {
           String tfMapLabel = GeneratorUtilEx.getMappingName_TemplateFragment(templateFragment, null);
-          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentNode, context.subContext(tfMapLabel));
-          String childRole = templateFragmentNode.getRoleInParent();
+          List<SNode> outputNodesToWeave = templateProcessor.apply(templateFragmentParentNode, context.subContext(tfMapLabel));
+          final SContainmentLink childRole = templateFragmentParentNode.getContainmentLink();
+          assert childRole != null;
+
+          final NodeWeaveFacility weaveSupport = env.weaveNode(context, templateFragment.getReference());
 
           for (SNode outputNodeToWeave : outputNodesToWeave) {
-            env.weaveNode(contextParentNode, childRole, outputNodeToWeave, new jetbrains.mps.smodel.SNodePointer(templateFragment),
-                context.getInput());
+            weaveSupport.weave(contextParentNode, childRole, outputNodeToWeave);
           }
         } catch (DismissTopMappingRuleException e) {
           env.getLogger().error(templateFragment.getReference(), "bad template: dismiss in weave is not supported",
