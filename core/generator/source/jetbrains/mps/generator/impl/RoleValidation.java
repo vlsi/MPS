@@ -50,8 +50,8 @@ public class RoleValidation {
     if (validator != null) {
       return validator;
     }
-    if (!srcConcept.isSubConceptOf(role.getContainingConcept())) {
-      String msg = String.format("Source node of %s concept could not have reference %s (from %s)", srcConcept.getQualifiedName(), roleName, role.getContainingConcept().getQualifiedName());
+    if (!srcConcept.isSubConceptOf(role.getOwner())) {
+      String msg = String.format("Source node of %s concept could not have reference %s (from %s)", srcConcept.getQualifiedName(), roleName, role.getOwner().getQualifiedName());
       Status s = new Status(msg);
       validator = new RoleValidator(s);
     } else {
@@ -72,8 +72,8 @@ public class RoleValidation {
     if (validator != null) {
       return validator;
     }
-    if (!srcConcept.isSubConceptOf(role.getContainingConcept())) {
-      String msg = String.format("No child role %s (%s) known for source node's %s concept", roleName, role.getContainingConcept().getQualifiedName(), srcConcept.getQualifiedName());
+    if (!srcConcept.isSubConceptOf(role.getOwner())) {
+      String msg = String.format("No child role %s (%s) known for source node's %s concept", roleName, role.getOwner().getQualifiedName(), srcConcept.getQualifiedName());
       Status s = new Status(msg);
       validator = new RoleValidator(s);
     } else {

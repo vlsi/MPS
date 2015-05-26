@@ -51,7 +51,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
   protected void init() {
     assert mySNode != null && myConcept != null;
     for (SProperty sProperty : mySNode.getProperties()) {
-      if (!sProperty.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myProperties.add(sProperty);
       }
     }
@@ -59,7 +59,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     for (SReference sReference : mySNode.getReferences()) {
       SReferenceLink link = sReference.getLink();
       assert link != null : "Null meta-link from node: " + this.mySNode + ", role: " + sReference.getRole();
-      if (!link.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!link.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myReferenceLinks.add(link);
       }
     }
@@ -67,7 +67,7 @@ public class ReadOnlyDefaultEditor extends AbstractDefaultEditor {
     for (SNode child : this.mySNode.getChildren()) {
       SContainmentLink containmentLink = child.getContainmentLink();
       assert containmentLink != null : "Null meta-containmentLink returned for the child of node: " + this.mySNode + ", child: " + child;
-      if (!containmentLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!containmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myContainmentLinks.add(containmentLink);
       }
     }

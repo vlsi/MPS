@@ -510,7 +510,7 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null || role == null) {
       return false;
     }
-    return node.getParent().getConcept().isSubConceptOf(role.getContainingConcept()) && role.equals(node.getContainmentLink());
+    return node.getParent().getConcept().isSubConceptOf(role.getOwner()) && role.equals(node.getContainmentLink());
   }
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ? null : node.getConcept().getDeclarationNode());
@@ -651,7 +651,7 @@ public class SNodeOperations {
     if (containmentLink == null) {
       return null;
     }
-    return containmentLink.getRoleName();
+    return containmentLink.getName();
   }
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {

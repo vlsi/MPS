@@ -55,6 +55,7 @@ public final class SPropertyAdapterById extends SPropertyAdapter {
         myPropertyName.equals(((SPropertyAdapter) obj).myPropertyName);
   }
 
+  @NotNull
   @Override
   public String getName() {
     if (RuntimeFlags.isMergeDriverMode() || myIsBootstrap) {

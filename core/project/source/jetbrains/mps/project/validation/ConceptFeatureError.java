@@ -18,8 +18,18 @@ package jetbrains.mps.project.validation;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptFeatureCardinalityError extends ConceptFeatureError {
-  public ConceptFeatureCardinalityError(SNode node, SConceptFeature feature, String message) {
-    super(node, feature, message);
+/**
+ * An error associated with a concept feature
+ */
+public class ConceptFeatureError extends NodeValidationProblem {
+  private final SConceptFeature myFeature;
+
+  public ConceptFeatureError(SNode node, SConceptFeature feature, String message) {
+    super(Severity.ERROR, node, message);
+    myFeature = feature;
+  }
+
+  public SConceptFeature getFeature() {
+    return myFeature;
   }
 }

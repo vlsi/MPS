@@ -15,23 +15,33 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents an abstract meta-definition of node connections. These can express either references or containment relationships.
  */
-@Deprecated //just remove this class after 3.2
-public interface SAbstractLink {
+public interface SAbstractLink extends SConceptFeature {
+  /**
+   * @deprecated use {@link #getName()}
+   */
   @Deprecated
   String getRole();
 
+  /**
+   * @deprecated use {@link #getOwner()} instead
+   */
+  // ToRemove(version = 3.3)
   SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.
    */
+  @NotNull
   SAbstractConcept getTargetConcept();
 
   /**
    * True for references, false for containment relationships.
+   * @deprecated boolean limits API to two link kinds possible
    */
   @Deprecated
   boolean isReference();

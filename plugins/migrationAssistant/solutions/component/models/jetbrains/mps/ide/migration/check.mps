@@ -968,11 +968,11 @@
                                     <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                   </node>
                                   <node concept="liA8E" id="17tv9cWNMXs" role="2OqNvi">
-                                    <ref role="37wK5l" to="6k24:~ConceptFeatureMissingError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                    <ref role="37wK5l" to="6k24:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="17tv9cWNMXt" role="2OqNvi">
-                                  <ref role="37wK5l" to="t3eg:~SConceptFeature.getContainingConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getContainingConcept" />
+                                  <ref role="37wK5l" to="t3eg:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
                                 </node>
                               </node>
                             </node>
@@ -996,7 +996,7 @@
                                       <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                     </node>
                                     <node concept="liA8E" id="17tv9cWO0Tu" role="2OqNvi">
-                                      <ref role="37wK5l" to="6k24:~ConceptFeatureMissingError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                      <ref role="37wK5l" to="6k24:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
                                     </node>
                                   </node>
                                 </node>
@@ -1041,7 +1041,7 @@
                                     <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                   </node>
                                   <node concept="liA8E" id="17tv9cWOcko" role="2OqNvi">
-                                    <ref role="37wK5l" to="6k24:~ConceptFeatureMissingError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                    <ref role="37wK5l" to="6k24:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
                                   </node>
                                 </node>
                               </node>
@@ -1061,7 +1061,7 @@
                                         <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                       </node>
                                       <node concept="liA8E" id="17tv9cWOERz" role="2OqNvi">
-                                        <ref role="37wK5l" to="6k24:~ConceptFeatureMissingError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                        <ref role="37wK5l" to="6k24:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
                                       </node>
                                     </node>
                                     <node concept="2OqwBi" id="17tv9cWOIdv" role="37wK5m">
@@ -1070,6 +1070,14 @@
                                       </node>
                                       <node concept="liA8E" id="17tv9cWOJvm" role="2OqNvi">
                                         <ref role="37wK5l" to="6k24:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                                      </node>
+                                    </node>
+                                    <node concept="2OqwBi" id="1JLWpRAA_QS" role="37wK5m">
+                                      <node concept="37vLTw" id="1JLWpRAA_2H" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
+                                      </node>
+                                      <node concept="liA8E" id="1JLWpRAAAt8" role="2OqNvi">
+                                        <ref role="37wK5l" to="6k24:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
                                       </node>
                                     </node>
                                   </node>
@@ -1953,9 +1961,18 @@
     <node concept="3Tm1VV" id="3n7MNzODSAb" role="1B3o_S" />
     <node concept="312cEg" id="3n7MNzOKROx" role="jymVt">
       <property role="TrG5h" value="myFeature" />
+      <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="3n7MNzOKROy" role="1B3o_S" />
       <node concept="3uibUv" id="3n7MNzOKRO$" role="1tU5fm">
         <ref role="3uigEE" to="t3eg:~SConceptFeature" resolve="SConceptFeature" />
+      </node>
+    </node>
+    <node concept="312cEg" id="1JLWpRAAz7_" role="jymVt">
+      <property role="TrG5h" value="myMessage" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1JLWpRAAz7A" role="1B3o_S" />
+      <node concept="3uibUv" id="1JLWpRAAz7C" role="1tU5fm">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
     </node>
     <node concept="3clFbW" id="3n7MNzODSAd" role="jymVt">
@@ -1978,6 +1995,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="1JLWpRAAz7D" role="3cqZAp">
+          <node concept="37vLTI" id="1JLWpRAAz7F" role="3clFbG">
+            <node concept="37vLTw" id="1JLWpRAAzQd" role="37vLTJ">
+              <ref role="3cqZAo" node="1JLWpRAAz7_" resolve="myMessage" />
+            </node>
+            <node concept="37vLTw" id="1JLWpRAAz7N" role="37vLTx">
+              <ref role="3cqZAo" node="1JLWpRAAwk2" resolve="message" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="3n7MNzODSAl" role="3clF46">
         <property role="TrG5h" value="feature" />
@@ -1991,6 +2018,12 @@
           <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
         </node>
       </node>
+      <node concept="37vLTG" id="1JLWpRAAwk2" role="3clF46">
+        <property role="TrG5h" value="message" />
+        <node concept="3uibUv" id="1JLWpRAAz6d" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="3n7MNzODSAy" role="jymVt" />
     <node concept="3clFb_" id="3n7MNzODSAz" role="jymVt">
@@ -2002,18 +2035,8 @@
       <node concept="3Tm1VV" id="3n7MNzODSA_" role="1B3o_S" />
       <node concept="3clFbS" id="3n7MNzODSAA" role="3clF47">
         <node concept="3cpWs6" id="3n7MNzOKSff" role="3cqZAp">
-          <node concept="3cpWs3" id="2RMHhGkQP9d" role="3cqZAk">
-            <node concept="2OqwBi" id="2RMHhGkQPyA" role="3uHU7w">
-              <node concept="37vLTw" id="2RMHhGkQPsu" role="2Oq$k0">
-                <ref role="3cqZAo" node="3n7MNzOKROx" resolve="myFeature" />
-              </node>
-              <node concept="liA8E" id="2RMHhGkQPDl" role="2OqNvi">
-                <ref role="37wK5l" to="t3eg:~SConceptFeature.getPresentableKind():java.lang.String" resolve="getPresentableKind" />
-              </node>
-            </node>
-            <node concept="Xl_RD" id="3n7MNzOKVlE" role="3uHU7B">
-              <property role="Xl_RC" value="Unknown " />
-            </node>
+          <node concept="37vLTw" id="1JLWpRAAzWh" role="3cqZAk">
+            <ref role="3cqZAo" node="1JLWpRAAz7_" resolve="myMessage" />
           </node>
         </node>
       </node>
@@ -2039,6 +2062,9 @@
     </node>
     <node concept="3uibUv" id="3n7MNzODSAG" role="1zkMxy">
       <ref role="3uigEE" node="3n7MNzO_IjP" resolve="Problem" />
+      <node concept="3uibUv" id="1JLWpRAAtVG" role="11_B2D">
+        <ref role="3uigEE" to="ec5l:~SNode" resolve="SNode" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="3n7MNzOJops">
