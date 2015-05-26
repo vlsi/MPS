@@ -48,9 +48,16 @@ public abstract class Project implements MPSModuleOwner {
   private boolean isDisposed;
   private final SRepository myRepository;
 
-  protected Project(@NotNull File projectFile) {
+  /**
+   * Contract -- projectFile may be null in the case of JpsMpsProject from idea plugin
+   */
+  protected Project(@Nullable File projectFile) {
     myRepository = new ProjectRepository(this);
     myProjectFile = projectFile;
+  }
+
+  protected Project() {
+    this(null);
   }
 
   public ProjectScope getScope() {
@@ -100,7 +107,7 @@ public abstract class Project implements MPSModuleOwner {
     return result;
   }
 
-  @NotNull
+  @Nullable
   public File getProjectFile() {
     return myProjectFile;
   }
