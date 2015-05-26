@@ -45,41 +45,38 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> {
+public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> implements ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> {
   public MoveNodesDefault() {
     super("jetbrains.mps.ide.platform.MoveNodesAction");
   }
-  private ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> myFunction = new ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>() {
-    @Override
-    public Collection<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> getOverridden() {
-      List<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> result = ListSequence.fromList(new ArrayList<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>());
-      Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> extensions = getAllExtensions();
-      return result;
-    }
-    public Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> getAllExtensions() {
-      return ExtensionRegistry.getInstance().getExtensions(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
-    }
-    public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
-      MPSProject project = arg._1();
-      final List<SNode> nodes = arg._0();
-      final Wrappers._boolean result = new Wrappers._boolean();
-      project.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          result.value = canBeMoved(nodes);
-        }
-      });
-      return result.value;
-    }
-    public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
-      List<SNode> target = arg._0();
-      MPSProject project = arg._1();
-      execute(project, target);
-      return null;
-    }
-  };
-
+  @Override
+  public Collection<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> getOverridden() {
+    List<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> result = ListSequence.fromList(new ArrayList<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>());
+    Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> extensions = getAllExtensions();
+    return result;
+  }
+  public Iterable<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>> getAllExtensions() {
+    return ExtensionRegistry.getInstance().getExtensions(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
+  }
   public ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> get() {
-    return myFunction;
+    return this;
+  }
+  public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
+    MPSProject project = arg._1();
+    final List<SNode> nodes = arg._0();
+    final Wrappers._boolean result = new Wrappers._boolean();
+    project.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result.value = canBeMoved(nodes);
+      }
+    });
+    return result.value;
+  }
+  public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
+    List<SNode> target = arg._0();
+    MPSProject project = arg._1();
+    execute(project, target);
+    return null;
   }
 
   public void execute(final MPSProject project, final List<SNode> target) {
@@ -160,7 +157,7 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
     final SModel model = firstNode.getModel();
     return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_92fyi8_a0a0a0a0a0a0f0h(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
+        return eq_92fyi8_a0a0a0a0a0a0f0j(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
       }
     });
   }
@@ -228,7 +225,7 @@ public class MoveNodesDefault extends Extension.Default<ExtensionFunction<Tuples
     });
   }
 
-  private static boolean eq_92fyi8_a0a0a0a0a0a0f0h(Object a, Object b) {
+  private static boolean eq_92fyi8_a0a0a0a0a0a0f0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
