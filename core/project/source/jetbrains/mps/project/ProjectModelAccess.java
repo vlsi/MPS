@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessBase;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
@@ -31,31 +33,28 @@ public class ProjectModelAccess extends ModelAccessBase {
     myProject = project;
   }
 
+  @NotNull
+  private ModelAccess getDelegate() {
+    return ModelAccess.instance();
+  }
+
   @Override
   public void executeCommand(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().executeCommand(r, myProject);
+    getDelegate().executeCommand(r, myProject);
   }
 
   @Override
   public void executeCommandInEDT(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, myProject);
+    getDelegate().runCommandInEDT(r, myProject);
   }
 
   @Override
   public void executeUndoTransparentCommand(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, myProject);
+    getDelegate().runUndoTransparentCommand(r, myProject);
   }
 
   @Override
   public boolean isCommandAction() {
-    return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
-  }
-
-  @Override
-  public void addWriteActionListener(WriteActionListener listener) {
-  }
-
-  @Override
-  public void removeWriteActionListener(WriteActionListener listener) {
+    return getDelegate().isInsideCommand();
   }
 }

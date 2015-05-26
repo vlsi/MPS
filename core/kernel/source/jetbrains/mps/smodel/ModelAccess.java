@@ -22,7 +22,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;

@@ -524,6 +524,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/generator/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/generator/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />

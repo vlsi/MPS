@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
@@ -29,60 +30,65 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
 
   @Override
   public boolean canRead() {
-    return ModelAccess.instance().canRead();
+    return getDelegate().canRead();
   }
 
   @Override
   public void checkReadAccess() {
-    ModelAccess.instance().checkReadAccess();
+    getDelegate().checkReadAccess();
   }
 
   @Override
   public boolean canWrite() {
-    return ModelAccess.instance().canWrite();
+    return getDelegate().canWrite();
   }
 
   @Override
   public void checkWriteAccess() {
-    ModelAccess.instance().checkWriteAccess();
+    getDelegate().checkWriteAccess();
   }
 
   @Override
   public void runReadAction(Runnable r) {
-    ModelAccess.instance().runReadAction(r);
+    getDelegate().runReadAction(r);
   }
 
   @Override
   public void runReadInEDT(Runnable r) {
-    ModelAccess.instance().runReadInEDT(r);
+    getDelegate().runReadInEDT(r);
   }
 
   @Override
   public void runWriteAction(Runnable r) {
-    ModelAccess.instance().runWriteAction(r);
+    getDelegate().runWriteAction(r);
   }
 
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    ModelAccess.instance().runWriteInEDT(r);
+    getDelegate().runWriteInEDT(r);
   }
 
   public void addCommandListener(CommandListener listener) {
-    ModelAccess.instance().addCommandListener(listener);
+    getDelegate().addCommandListener(listener);
   }
 
   public void removeCommandListener(CommandListener listener) {
-    ModelAccess.instance().removeCommandListener(listener);
+    getDelegate().removeCommandListener(listener);
   }
 
   @Override
-  public void addWriteActionListener(WriteActionListener listener) {
-    ModelAccess.instance().addWriteActionListener(listener);
+  public void addWriteActionListener(@NotNull WriteActionListener listener) {
+    getDelegate().addWriteActionListener(listener);
   }
 
   @Override
-  public void removeWriteActionListener(WriteActionListener listener) {
-    ModelAccess.instance().removeWriteActionListener(listener);
+  public void removeWriteActionListener(@NotNull WriteActionListener listener) {
+    getDelegate().removeWriteActionListener(listener);
+  }
+
+  @NotNull
+  private ModelAccess getDelegate() {
+    return ModelAccess.instance();
   }
 }
