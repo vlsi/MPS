@@ -2504,14 +2504,33 @@
                   <ref role="3cqZAo" node="7deq$1uHGUy" resolve="r" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="7deq$1uHJP8" role="3K4GZi">
-                <node concept="37vLTw" id="7deq$1uHJH8" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1tGIPqPLrjq" resolve="myModule" />
+              <node concept="2OqwBi" id="6TqiyXNcCnn" role="3K4GZi">
+                <node concept="2ShNRf" id="6TqiyXNcCJf" role="2Oq$k0">
+                  <node concept="1pGfFk" id="6TqiyXNcKzZ" role="2ShVmc">
+                    <ref role="37wK5l" to="cu2c:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                    <node concept="37vLTw" id="6TqiyXNcKBc" role="37wK5m">
+                      <ref role="3cqZAo" node="7deq$1uHGUy" resolve="r" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="liA8E" id="7deq$1uHJZF" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
-                  <node concept="37vLTw" id="7deq$1uHKl1" role="37wK5m">
-                    <ref role="3cqZAo" node="7deq$1uHGUy" resolve="r" />
+                <node concept="liA8E" id="6TqiyXNcCwR" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                  <node concept="1bVj0M" id="6TqiyXNcC_o" role="37wK5m">
+                    <node concept="3clFbS" id="6TqiyXNcC_p" role="1bW5cS">
+                      <node concept="3clFbF" id="6TqiyXNcKK9" role="3cqZAp">
+                        <node concept="2OqwBi" id="6TqiyXNcL90" role="3clFbG">
+                          <node concept="37vLTw" id="6TqiyXNcL3C" role="2Oq$k0">
+                            <ref role="3cqZAo" node="1tGIPqPLrjq" resolve="myModule" />
+                          </node>
+                          <node concept="liA8E" id="6TqiyXNcLiJ" role="2OqNvi">
+                            <ref role="37wK5l" to="88zw:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
+                            <node concept="37vLTw" id="6TqiyXNd3TT" role="37wK5m">
+                              <ref role="3cqZAo" node="7deq$1uHGUy" resolve="r" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

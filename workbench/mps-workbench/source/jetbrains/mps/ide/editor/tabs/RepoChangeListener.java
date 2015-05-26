@@ -48,7 +48,7 @@ class RepoChangeListener extends SRepositoryContentAdapter implements CommandLis
   }
 
   @Override
-  public void startListening(SRepository repository) {
+  public void startListening(@NotNull SRepository repository) {
     super.startListening(repository);
     repository.getModelAccess().addCommandListener(this);
   }

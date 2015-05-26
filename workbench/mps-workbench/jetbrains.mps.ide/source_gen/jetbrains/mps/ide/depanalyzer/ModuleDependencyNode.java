@@ -12,6 +12,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import java.util.Iterator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class ModuleDependencyNode extends MPSTreeNode {
@@ -80,8 +82,12 @@ public class ModuleDependencyNode extends MPSTreeNode {
   @Override
   public void doubleClick() {
     Project project = getProject();
-    SRepository r = ProjectHelper.getProjectRepository(project);
-    SModule m = (r == null ? null : myModule.resolve(r));
+    final SRepository r = ProjectHelper.getProjectRepository(project);
+    SModule m = (r == null ? null : new ModelAccessHelper(r).runReadAction(new Computable<SModule>() {
+      public SModule compute() {
+        return myModule.resolve(r);
+      }
+    }));
     if (m == null) {
       return;
     }

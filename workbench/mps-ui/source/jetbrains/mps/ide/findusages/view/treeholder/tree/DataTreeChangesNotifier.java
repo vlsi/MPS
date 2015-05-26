@@ -85,7 +85,7 @@ public class DataTreeChangesNotifier extends SRepositoryContentAdapter {
 
 
   @Override
-  public void startListening(SRepository repository) {
+  public void startListening(@NotNull SRepository repository) {
     super.startListening(repository);
     repository.getModelAccess().addCommandListener(myChangeDispatch);
   }
