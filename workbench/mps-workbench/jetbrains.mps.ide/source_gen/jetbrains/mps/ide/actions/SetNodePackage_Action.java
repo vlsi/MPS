@@ -17,10 +17,11 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -28,6 +29,8 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Collections;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -88,6 +91,13 @@ public class SetNodePackage_Action extends BaseAction {
         return false;
       }
     }
+    {
+      Project p = event.getData(CommonDataKeys.PROJECT);
+      MapSequence.fromMap(_params).put("ideaProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
@@ -112,7 +122,7 @@ public class SetNodePackage_Action extends BaseAction {
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
           if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-            for (SNode aspect : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{}))) {
+            for (SNode aspect : ListSequence.fromList(SetNodePackage_Action.this.findAllAspects(((Project) MapSequence.fromMap(_params).get("ideaProject")), SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), _params))) {
               SPropertyOperations.set(((SNode) aspect), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), dialog.getPackage());
             }
           }
@@ -142,5 +152,22 @@ public class SetNodePackage_Action extends BaseAction {
     List<String> result = ListSequence.fromListWithValues(new ArrayList<String>(), packages);
     Collections.sort(result);
     return result;
+  }
+  public List<SNode> findAllAspects(Project project, final SNode node, final Map<String, Object> _params) {
+    List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project, node);
+    return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
+      public boolean accept(RelationDescriptor it) {
+        return it.isApplicable(node);
+      }
+    }).translate(new ITranslator2<RelationDescriptor, SNode>() {
+      public Iterable<SNode> translate(final RelationDescriptor tab) {
+        List<SNode> nodes = tab.getNodes(node);
+        return ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return tab.getBaseNode(it) == node;
+          }
+        });
+      }
+    }).toListSequence();
   }
 }

@@ -114,8 +114,8 @@ public class AbstractConceptDeclaration_Behavior {
     }
     return result;
   }
-  @Deprecated
   @ToRemove(version = 3.3)
+  @Deprecated
   public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
