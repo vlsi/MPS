@@ -203,12 +203,22 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -922,7 +932,7 @@
     <property role="TrG5h" value="BaseMpsTest" />
     <property role="1sVAO0" value="true" />
     <node concept="2YIFZL" id="61uE6zXmDxE" role="jymVt">
-      <property role="TrG5h" value="tearDown" />
+      <property role="TrG5h" value="tearDownBase" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
@@ -957,6 +967,29 @@
       <node concept="3cqZAl" id="61uE6zXmDxA" role="3clF45" />
       <node concept="2AHcQZ" id="5CmrdrYUA2f" role="2AJF6D">
         <ref role="2AI5Lk" to="qjxg:~AfterClass" resolve="AfterClass" />
+      </node>
+      <node concept="P$JXv" id="1jWEngOH53A" role="lGtFl">
+        <node concept="TZ5HA" id="1jWEngOH53B" role="TZ5H$">
+          <node concept="1dT_AC" id="1jWEngOH53C" role="1dT_Ay">
+            <property role="1dT_AB" value="This is the common way to dispose an environment in tests (which operate " />
+          </node>
+          <node concept="1dT_AA" id="1jWEngOH54b" role="1dT_Ay">
+            <node concept="92FcH" id="1jWEngOH54h" role="qph3F">
+              <node concept="VXe08" id="1jWEngOH9C3" role="92FcQ">
+                <ref role="VXe09" to="79ha:HKKzfMjqRV" resolve="Environment" />
+              </node>
+              <node concept="TZ5HA" id="1jWEngOH54l" role="2XjZqd" />
+            </node>
+          </node>
+          <node concept="1dT_AC" id="1jWEngOH54a" role="1dT_Ay">
+            <property role="1dT_AB" value=" directly)" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1jWEngOH9OJ" role="TZ5H$">
+          <node concept="1dT_AC" id="1jWEngOH9OK" role="1dT_Ay">
+            <property role="1dT_AB" value="You need to check for the current TestMode to avoid unnecessary environment disposal during tests suite run" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="61uE6zXmDof" role="jymVt" />

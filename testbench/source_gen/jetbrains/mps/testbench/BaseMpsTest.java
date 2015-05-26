@@ -23,9 +23,8 @@ import java.io.IOException;
 
 public abstract class BaseMpsTest {
   /**
-   * This is the common way to dispose an environment in tests (which operate {@link jetbrains.mps.tool.environment.Environment}
-   * directly).
-   * You need to check for the current TestMode to avoid unnecessary environment disposal during tests suite runs
+   * This is the common way to dispose an environment in tests (which operate {@link jetbrains.mps.tool.environment.Environment } directly)
+   * You need to check for the current TestMode to avoid unnecessary environment disposal during tests suite run
    */
   @AfterClass
   public static void tearDownBase() {
