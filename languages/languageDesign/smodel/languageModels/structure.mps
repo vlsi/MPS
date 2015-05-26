@@ -288,6 +288,9 @@
     <node concept="PrWs8" id="1653mnvB2PM" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="PrWs8" id="LxMtFEJ2AE" role="PzmwI">
+      <ref role="PrY4T" to="tpee:1wHCnsn58oY" resolve="IBinaryLike" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gAoxUXw">
     <property role="R5$K7" value="false" />
