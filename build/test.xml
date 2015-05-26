@@ -41,7 +41,7 @@
 
     <junit fork="true" dir="${mps_build_home}">
       <jvmarg value="-ea"/>
-      <jvmarg value="-Dmps.junit.modules.root=."/>
+      <jvmarg value="-Dmps.junit.project=."/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
