@@ -18,7 +18,6 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="l288" ref="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" />
     <import index="rkxj" ref="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)" />
     <import index="ep0o" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.persistence(MPS.Core/jetbrains.mps.extapi.persistence@java_stub)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
@@ -36,6 +35,7 @@
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="ua2a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
+    <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -826,7 +826,7 @@
               <node concept="3cpWsn" id="70HT6wFs6dT" role="3cpWs9">
                 <property role="TrG5h" value="diff" />
                 <node concept="3uibUv" id="70HT6wFs6dU" role="1tU5fm">
-                  <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                  <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
                 </node>
                 <node concept="2OqwBi" id="7MUb3LLc1Lw" role="33vP2m">
                   <node concept="2YIFZM" id="7MUb3LLc1EK" role="2Oq$k0">
@@ -849,21 +849,21 @@
                             <property role="IEkAT" value="false" />
                             <node concept="3Tm1VV" id="7MUb3LLc6M5" role="1B3o_S" />
                             <node concept="3uibUv" id="7MUb3LLc709" role="3clF45">
-                              <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                              <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
                             </node>
                             <node concept="3clFbS" id="7MUb3LLc6M8" role="3clF47">
                               <node concept="3cpWs6" id="7MUb3LLc7hl" role="3cqZAp">
                                 <node concept="2OqwBi" id="4OzBQ_jr4Qw" role="3cqZAk">
                                   <node concept="2ShNRf" id="4OzBQ_jqUoQ" role="2Oq$k0">
                                     <node concept="1pGfFk" id="4OzBQ_jr4to" role="2ShVmc">
-                                      <ref role="37wK5l" to="l288:4OzBQ_joz01" resolve="NodesMatcher" />
+                                      <ref role="37wK5l" to="y5e1:4OzBQ_joz01" resolve="NodesMatcher" />
                                       <node concept="37vLTw" id="4OzBQ_jr4J9" role="37wK5m">
                                         <ref role="3cqZAo" node="70HT6wFs6cq" resolve="nodeMap" />
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="4OzBQ_jr54v" role="2OqNvi">
-                                    <ref role="37wK5l" to="l288:4OzBQ_joRGy" resolve="match" />
+                                    <ref role="37wK5l" to="y5e1:4OzBQ_joRGy" resolve="match" />
                                     <node concept="37vLTw" id="4OzBQ_jr62h" role="37wK5m">
                                       <ref role="3cqZAo" node="13DhuT6A0hE" resolve="result" />
                                     </node>
@@ -876,7 +876,7 @@
                             </node>
                           </node>
                           <node concept="3uibUv" id="7MUb3LLc6Tq" role="2Ghqu4">
-                            <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                            <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
                           </node>
                         </node>
                       </node>
@@ -2836,8 +2836,8 @@
           <node concept="3cpWsn" id="6YV7lv2CRpd" role="3cpWs9">
             <property role="TrG5h" value="diff" />
             <node concept="2YIFZM" id="6YV7lv2CRpg" role="33vP2m">
-              <ref role="37wK5l" to="l288:7MIYyntE0aS" resolve="matchNodes" />
-              <ref role="1Pybhc" to="l288:7MIYyntE09$" resolve="NodesMatcher" />
+              <ref role="1Pybhc" to="y5e1:7MIYyntE09$" resolve="NodesMatcher" />
+              <ref role="37wK5l" to="y5e1:7MIYyntE0aS" resolve="matchNodes" />
               <node concept="37vLTw" id="3GM_nagTy$T" role="37wK5m">
                 <ref role="3cqZAo" node="6YV7lv2CRok" resolve="binRoots" />
               </node>
@@ -2850,7 +2850,7 @@
             </node>
             <node concept="_YKpA" id="6YV7lv2CRpe" role="1tU5fm">
               <node concept="3uibUv" id="6YV7lv2CRpf" role="_ZDj9">
-                <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
               </node>
             </node>
           </node>
