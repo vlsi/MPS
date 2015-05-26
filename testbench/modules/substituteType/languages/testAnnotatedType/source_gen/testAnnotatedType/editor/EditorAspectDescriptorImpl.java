@@ -17,8 +17,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new PresenceCondition_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new PrimType_Editor());
+        return Collections.<ConceptEditor>singletonList(new PrimNumConstant_Editor());
       case 2:
+        return Collections.<ConceptEditor>singletonList(new PrimType_Editor());
+      case 3:
         return Collections.<ConceptEditor>singletonList(new SubstituteAnnotation_Editor());
       default:
     }
@@ -29,5 +31,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimType", "testAnnotatedType.structure.SubstituteAnnotation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimNumConstant", "testAnnotatedType.structure.PrimType", "testAnnotatedType.structure.SubstituteAnnotation"};
 }

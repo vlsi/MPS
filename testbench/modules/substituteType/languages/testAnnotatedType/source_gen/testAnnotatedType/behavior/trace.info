@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,30,0" name="testAnnotatedType.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,34,0" name="testAnnotatedType.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="PresenceCondition_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="testAnnotatedType.behavior.PresenceCondition_BehaviorDescriptor" />
+    </file>
+    <file name="PrimDoubleType_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="testAnnotatedType.behavior.PrimDoubleType_BehaviorDescriptor" />
     </file>
     <file name="PrimFloatType_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="testAnnotatedType.behavior.PrimFloatType_BehaviorDescriptor" />
@@ -18,18 +22,61 @@
     <file name="PrimLongType_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="testAnnotatedType.behavior.PrimLongType_BehaviorDescriptor" />
     </file>
+    <file name="PrimNumConstant_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="testAnnotatedType.behavior.PrimNumConstant_BehaviorDescriptor" />
+    </file>
     <file name="PrimType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="testAnnotatedType.behavior.PrimType_BehaviorDescriptor" />
     </file>
     <file name="SubstituteAnnotation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="testAnnotatedType.behavior.SubstituteAnnotation_BehaviorDescriptor" />
     </file>
   </root>
+  <root nodeRef="r:7e57b061-76da-4008-a734-67f3e97231e2(testAnnotatedType.behavior)/1470921783545443946">
+    <file name="PrimType_Behavior.java">
+      <node id="1470921783545443978" at="10,94,11,16" concept="1" />
+      <node id="1470921783545443946" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1470921783545443946" at="10,0,13,0" concept="2" trace="virtual_substituteWith_1470921783545443949#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1470921783545443948" at="8,43,8,43" />
+      <scope id="1470921783545443951" at="10,94,11,16" />
+      <scope id="1470921783545443946" at="8,0,10,0">
+        <var name="thisNode" id="1470921783545443946" />
+      </scope>
+      <scope id="1470921783545443946" at="10,0,13,0">
+        <var name="subs" id="1470921783545443960" />
+        <var name="thisNode" id="1470921783545443946" />
+      </scope>
+      <unit id="1470921783545443946" at="7,0,14,0" name="testAnnotatedType.behavior.PrimType_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:7e57b061-76da-4008-a734-67f3e97231e2(testAnnotatedType.behavior)/1470921783545455335">
+    <file name="PrimDoubleType_Behavior.java">
+      <node id="1470921783545458905" at="14,182,15,219" concept="1" />
+      <node id="1470921783545489409" at="17,184,18,221" concept="1" />
+      <node id="1470921783545459426" at="19,5,20,16" concept="1" />
+      <node id="1470921783545455335" at="11,0,13,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1470921783545458183" at="13,94,16,5" concept="0" />
+      <node id="1470921783545489407" at="16,5,19,5" concept="0" />
+      <node id="1470921783545455335" at="13,0,22,0" concept="2" trace="virtual_substituteWith_1470921783545443949#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1470921783545455337" at="11,43,11,43" />
+      <scope id="1470921783545458184" at="14,182,15,219" />
+      <scope id="1470921783545489408" at="17,184,18,221" />
+      <scope id="1470921783545455335" at="11,0,13,0">
+        <var name="thisNode" id="1470921783545455335" />
+      </scope>
+      <scope id="1470921783545458063" at="13,94,20,16" />
+      <scope id="1470921783545455335" at="13,0,22,0">
+        <var name="subs" id="1470921783545458064" />
+        <var name="thisNode" id="1470921783545455335" />
+      </scope>
+      <unit id="1470921783545455335" at="10,0,23,0" name="testAnnotatedType.behavior.PrimDoubleType_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:7e57b061-76da-4008-a734-67f3e97231e2(testAnnotatedType.behavior)/6405009306797675389">
     <file name="PresenceCondition_Behavior.java">
-      <node id="6405009306797675409" at="12,78,13,182" concept="0" />
-      <node id="6405009306797675389" at="10,0,12,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6405009306797675389" at="12,0,15,0" concept="1" trace="call_isSatisfied_6405009306797675392#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6405009306797675409" at="12,78,13,182" concept="1" />
+      <node id="6405009306797675389" at="10,0,12,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6405009306797675389" at="12,0,15,0" concept="2" trace="call_isSatisfied_6405009306797675392#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="6405009306797675391" at="10,43,10,43" />
       <scope id="6405009306797675394" at="12,78,13,182" />
       <scope id="6405009306797675389" at="10,0,12,0">
