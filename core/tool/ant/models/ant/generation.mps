@@ -1222,6 +1222,52 @@
       </node>
     </node>
     <node concept="2tJIrI" id="3H7CugYdMwg" role="jymVt" />
+    <node concept="3clFb_" id="5iKxrmkqBvm" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getSolution" />
+      <property role="DiZV1" value="false" />
+      <node concept="3clFbS" id="5iKxrmkqBvn" role="3clF47">
+        <node concept="3cpWs6" id="5iKxrmkqBvo" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqBvp" role="3cqZAk">
+            <node concept="37vLTw" id="5iKxrmkqBvq" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqBvr" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:5iKxrmkqgTC" resolve="getSolution" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5iKxrmkqBvs" role="1B3o_S" />
+      <node concept="17QB3L" id="5iKxrmkqBvt" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="5iKxrmkqBvu" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="setSolution" />
+      <property role="DiZV1" value="false" />
+      <node concept="3Tm1VV" id="5iKxrmkqBvv" role="1B3o_S" />
+      <node concept="3cqZAl" id="5iKxrmkqBvw" role="3clF45" />
+      <node concept="3clFbS" id="5iKxrmkqBvx" role="3clF47">
+        <node concept="3clFbF" id="5iKxrmkqBvy" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqBvz" role="3clFbG">
+            <node concept="37vLTw" id="5iKxrmkqBv$" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_opw$" resolve="myProperties" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqBv_" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:5iKxrmkqgTm" resolve="setSolution" />
+              <node concept="37vLTw" id="5iKxrmkqBvA" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqBvB" resolve="solutioun" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5iKxrmkqBvB" role="3clF46">
+        <property role="TrG5h" value="solutioun" />
+        <property role="3TUv4t" value="false" />
+        <node concept="17QB3L" id="5iKxrmkqBvC" role="1tU5fm" />
+      </node>
+    </node>
     <node concept="3clFb_" id="3H7CugYdMN6" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getStartClass" />

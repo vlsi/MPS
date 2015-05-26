@@ -12,15 +12,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.project.Project;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
-import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.tool.common.MpsRunnerProperties;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -55,63 +52,44 @@ public class MpsRunnerWorker extends MpsWorker {
 
     Project project = createDummyProject();
 
-    final Set<SModule> modules = new LinkedHashSet<SModule>();
-    for (final File module : SetSequence.fromSet(myWhatToDo.getModules())) {
-      project.getModelAccess().runWriteAction(new Runnable() {
-        public void run() {
-          processModuleFile(module, modules);
-        }
-      });
-    }
-
     MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);
     String className = properties.getStartClass();
     String methodName = properties.getStartMethod();
-    boolean isClassFound = runClass(className, methodName, project);
+    final SModuleReference solutionRef = ModuleReference.parseReference(properties.getSolution());
+    final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        module.value = GlobalScope.getInstance().resolve(solutionRef);
+      }
+    });
+
+    boolean isClassFound = runClass(module.value, className, methodName);
     if (!(isClassFound)) {
-      error("cannot find class " + className + " to run.");
+      error("cannot find class " + className + " in solution " + solutionRef);
     }
 
     dispose();
   }
 
-  private static boolean runClass(String className, String methodName, Project project) {
-    final Wrappers._T<Iterable<SModule>> modules = new Wrappers._T<Iterable<SModule>>(null);
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        modules.value = GlobalScope.getInstance().getModules();
-      }
-    });
-
-    String modelName = NameUtil.namespaceFromLongName(className);
-
-    for (SModule module : modules.value) {
-      for (SModel model : module.getModels()) {
-        if (model.getModelName().equals(modelName)) {
-          Class cls = null;
-          try {
-            cls = ClassLoaderManager.getInstance().getClassLoader(module).loadClass(className);
-          } catch (ClassNotFoundException e) {
-          }
-          if (cls == null) {
-            continue;
-          }
-          try {
-            // invoke public static method 
-            Method method = cls.getMethod(methodName);
-            method.invoke(null);
-          } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-          } catch (InvocationTargetException e) {
-            e.printStackTrace();
-          } catch (IllegalAccessException e) {
-            e.printStackTrace();
-          }
-          return true;
-        }
-      }
+  private static boolean runClass(SModule module, String className, String methodName) {
+    Class cls = null;
+    try {
+      cls = ClassLoaderManager.getInstance().getClassLoader(module).loadClass(className);
+    } catch (ClassNotFoundException e) {
+      return false;
     }
-    return false;
+    try {
+      // invoke public static method 
+      Method method = cls.getMethod(methodName);
+      method.invoke(null);
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
+    return true;
   }
 
 

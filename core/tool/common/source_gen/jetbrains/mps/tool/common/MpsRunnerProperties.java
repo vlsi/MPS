@@ -4,6 +4,7 @@ package jetbrains.mps.tool.common;
 
 
 public class MpsRunnerProperties {
+  private static final String START_SOLUTION = "solution";
   private static final String START_CLASS = "startClass";
   private static final String START_METHOD = "startMethod";
 
@@ -13,6 +14,13 @@ public class MpsRunnerProperties {
     myScript = script;
   }
 
+  public MpsRunnerProperties setSolution(String startClass) {
+    myScript.putProperty(START_SOLUTION, startClass);
+    return this;
+  }
+  public String getSolution() {
+    return myScript.getProperty(START_SOLUTION);
+  }
   public MpsRunnerProperties setStartClass(String startClass) {
     myScript.putProperty(START_CLASS, startClass);
     return this;

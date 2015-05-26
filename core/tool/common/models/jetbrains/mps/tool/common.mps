@@ -9171,6 +9171,17 @@
   </node>
   <node concept="312cEu" id="1Vi5mb_oi7$">
     <property role="TrG5h" value="MpsRunnerProperties" />
+    <node concept="Wx3nA" id="5iKxrmkqeo7" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="START_SOLUTION" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="5iKxrmkqeo8" role="1B3o_S" />
+      <node concept="17QB3L" id="5iKxrmkqeo9" role="1tU5fm" />
+      <node concept="Xl_RD" id="5iKxrmkqeoa" role="33vP2m">
+        <property role="Xl_RC" value="solution" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="3H7CugYjcxj" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
@@ -9231,6 +9242,65 @@
       <node concept="3Tm1VV" id="1Vi5mb_om5W" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="1Vi5mb_om56" role="jymVt" />
+    <node concept="3clFb_" id="5iKxrmkqgTm" role="jymVt">
+      <property role="TrG5h" value="setSolution" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="5iKxrmkqgTn" role="3clF46">
+        <property role="TrG5h" value="startClass" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="5iKxrmkqgTo" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5iKxrmkqgTp" role="3clF47">
+        <node concept="3clFbF" id="5iKxrmkqgTq" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqgTr" role="3clFbG">
+            <node concept="37vLTw" id="5iKxrmkqgTs" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqgTt" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="5iKxrmkqhWh" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqeo7" resolve="START_SOLUTION" />
+              </node>
+              <node concept="37vLTw" id="5iKxrmkqgTv" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqgTn" resolve="startClass" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5iKxrmkqgTw" role="3cqZAp">
+          <node concept="Xjq3P" id="5iKxrmkqgTx" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5iKxrmkqgTy" role="1B3o_S" />
+      <node concept="3uibUv" id="5iKxrmkqgTz" role="3clF45">
+        <ref role="3uigEE" node="1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5iKxrmkqgTC" role="jymVt">
+      <property role="TrG5h" value="getSolution" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="5iKxrmkqgTD" role="3clF47">
+        <node concept="3cpWs6" id="5iKxrmkqgTE" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqgTF" role="3cqZAk">
+            <node concept="37vLTw" id="5iKxrmkqgTG" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqgTH" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+              <node concept="37vLTw" id="5iKxrmkqhXQ" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqeo7" resolve="START_SOLUTION" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5iKxrmkqgTJ" role="1B3o_S" />
+      <node concept="17QB3L" id="5iKxrmkqgTK" role="3clF45" />
+    </node>
     <node concept="3clFb_" id="1Vi5mb_omw2" role="jymVt">
       <property role="TrG5h" value="setStartClass" />
       <property role="DiZV1" value="false" />

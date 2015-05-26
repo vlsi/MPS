@@ -8,6 +8,7 @@
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
+    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -46,17 +47,11 @@
     <property role="TrG5h" value="BuildSolutionRunnerAspect" />
     <property role="34LRSv" value="run code" />
     <ref role="1TJDcQ" to="3ior:34DbxDwRlgt" resolve="BuildAspect" />
-    <node concept="1TJgyj" id="1Vi5mb_wb2u" role="1TKVEi">
+    <node concept="1TJgyj" id="5iKxrmkn6qh" role="1TKVEi">
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="startClass" />
+      <property role="20kJfa" value="solution" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
-    <node concept="1TJgyj" id="1Vi5mb_xv49" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="startMethod" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+      <ref role="20lvS9" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
     </node>
     <node concept="PrWs8" id="1Vi5mb_gy0R" role="PzmwI">
       <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />

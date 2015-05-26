@@ -39,12 +39,12 @@
     <property role="TrG5h" value="run-mps-code" />
     <node concept="2VaFvF" id="3BExUgsK9tI" role="yghi5">
       <property role="TrG5h" value="run-mps-code" />
-      <node concept="2VaxJe" id="1Vi5mb__lKe" role="2VaxJ6">
-        <ref role="2VaxJf" to="tnlc:6l_Qx579cKk" resolve="classes" />
+      <node concept="2VaxJe" id="4e7dAY67ObU" role="2VaxJ6">
+        <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
       </node>
     </node>
     <node concept="3bMsLL" id="1Vi5mb__lKv" role="yghi5">
-      <ref role="3bMsLK" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      <ref role="3bMsLK" to="tnlc:6l_Qx579h0X" resolve="build" />
       <node concept="2VaxJe" id="1Vi5mb__lKE" role="3bNaKb">
         <ref role="2VaxJf" node="3BExUgsK9tI" resolve="run-mps-code" />
       </node>

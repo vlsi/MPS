@@ -16,6 +16,12 @@ public class MpsRunnerTask extends GenerateTask {
     return "jetbrains.mps.tool.builder.make.MpsRunnerWorker";
   }
 
+  public String getSolution() {
+    return myProperties.getSolution();
+  }
+  public void setSolution(String solutioun) {
+    myProperties.setSolution(solutioun);
+  }
   public String getStartClass() {
     return myProperties.getStartClass();
   }
