@@ -43,6 +43,9 @@ public class FileMPSProject extends Project {
   @Override
   public String getName() {
     File projectFile = getProjectFile();
+    if (projectFile == null) {
+      return null;
+    }
     return projectFile.getName();
   }
 

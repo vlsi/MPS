@@ -4332,8 +4332,16 @@
           <node concept="2ShNRf" id="2BGPXkEw8Dk" role="YScLw">
             <node concept="1pGfFk" id="2BGPXkEw9eH" role="2ShVmc">
               <ref role="37wK5l" to="e2lb:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
-              <node concept="Xl_RD" id="2BGPXkEw9fN" role="37wK5m">
-                <property role="Xl_RC" value="Strategy is not applicable -- cannot create project" />
+              <node concept="3cpWs3" id="3nWS7UXt2WU" role="37wK5m">
+                <node concept="Xl_RD" id="2BGPXkEw9fN" role="3uHU7w">
+                  <property role="Xl_RC" value=" is not applicable -- cannot create project" />
+                </node>
+                <node concept="3cpWs3" id="3nWS7UXsYcZ" role="3uHU7B">
+                  <node concept="Xl_RD" id="3nWS7UXt2Cg" role="3uHU7B">
+                    <property role="Xl_RC" value="Strategy " />
+                  </node>
+                  <node concept="Xjq3P" id="3nWS7UXt3c2" role="3uHU7w" />
+                </node>
               </node>
             </node>
           </node>

@@ -30,7 +30,7 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
       Project emptyProject = env.createEmptyProject();
       return construct(emptyProject);
     }
-    throw new IllegalStateException("Strategy is not applicable -- cannot create project");
+    throw new IllegalStateException("Strategy " + this + " is not applicable -- cannot create project");
   }
 
   @NotNull

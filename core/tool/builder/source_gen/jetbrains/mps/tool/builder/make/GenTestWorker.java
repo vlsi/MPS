@@ -107,6 +107,7 @@ public class GenTestWorker extends GeneratorWorker {
     }
 
     Environment environment = new GeneratorWorker.MyEnvironment(config);
+    environment.init();
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     setupEnvironment();

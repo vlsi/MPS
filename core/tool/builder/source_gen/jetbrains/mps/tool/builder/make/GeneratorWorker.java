@@ -63,6 +63,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     }
 
     Environment environment = new GeneratorWorker.MyEnvironment(config);
+    environment.init();
     setupEnvironment();
     setGenerationProperties();
     boolean doneSomething = false;
