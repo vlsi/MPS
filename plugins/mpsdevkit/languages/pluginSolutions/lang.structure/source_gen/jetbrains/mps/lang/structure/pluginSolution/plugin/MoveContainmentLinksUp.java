@@ -41,26 +41,40 @@ public class MoveContainmentLinksUp extends Extension.Default<ExtensionFunction<
       return ExtensionRegistry.getInstance().getExtensions(new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>(getExtensionPointId()));
     }
     public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
-      final List<SNode> target = arg._0();
-      MPSProject project = arg._1();
-      final Wrappers._boolean result = new Wrappers._boolean();
-      project.getRepository().getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          result.value = ListSequence.fromList(target).any(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
-            }
-          });
-        }
-      });
-      return result.value;
+      return MoveContainmentLinksUp.this.applicable(arg);
     }
     public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
-      throw new UnsupportedOperationException();
+      return MoveContainmentLinksUp.this.apply(arg);
     }
   };
 
   public ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void> get() {
     return myFunction;
+  }
+  public boolean applicable(Tuples._2<List<SNode>, MPSProject> arg) {
+    if (!(((MoveNodesDefault) Sequence.fromIterable(getAllExtensions()).where(new IWhereFilter<Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>>>() {
+      public boolean accept(Extension<ExtensionFunction<Tuples._2<List<SNode>, MPSProject>, Void>> it) {
+        return it instanceof MoveNodesDefault;
+      }
+    }).first()).applicable(arg))) {
+      return false;
+    }
+
+    final List<SNode> target = arg._0();
+    MPSProject project = arg._1();
+    final Wrappers._boolean result = new Wrappers._boolean();
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result.value = ListSequence.fromList(target).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+          }
+        });
+      }
+    });
+    return result.value;
+  }
+  public Void apply(Tuples._2<List<SNode>, MPSProject> arg) {
+    throw new UnsupportedOperationException();
   }
 }
