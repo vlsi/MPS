@@ -51,8 +51,7 @@ public class MpsAuditConstraints extends AuditConstraints {
 
   @Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
-    initEnvironment(".");
-
+    initEnvironment();
     return createTestParametersFromModules(excludeModules(getContextProject().getModules(), DISABLED_MODULES));
   }
 

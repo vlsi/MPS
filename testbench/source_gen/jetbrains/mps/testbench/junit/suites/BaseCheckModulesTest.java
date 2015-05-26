@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -36,15 +35,15 @@ public class BaseCheckModulesTest {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation? 
     // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)? 
     // can be extended with right modules set 
-    initEnvironment(null);
+    initEnvironment();
     return createTestParametersFromModules(ourContextProject.getModules());
   }
 
-  protected static void initEnvironment(@Nullable String dir) throws InvocationTargetException, InterruptedException {
+  protected static void initEnvironment() throws InvocationTargetException, InterruptedException {
     Environment env = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
 
     ourStatistic = new CheckingTestStatistic();
-    ProjectStrategy strategy = (dir == null ? new FromProjectPathProjectStrategy() : new FromProjectPathProjectStrategy(dir));
+    ProjectStrategy strategy = new FromProjectPathProjectStrategy();
     ourContextProject = env.createProject(strategy);
   }
 

@@ -14,12 +14,12 @@
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="qjxg" ref="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)" />
-    <import index="l288" ref="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="51te" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" />
     <import index="tpy3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.tempmodel(MPS.Core/jetbrains.mps.smodel.tempmodel@java_stub)" />
+    <import index="y5e1" ref="r:4464540a-9650-433f-b716-ed95bbac5a69(jetbrains.mps.lang.test.matcher)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -1092,17 +1092,17 @@
             <node concept="3uibUv" id="1yTFUP3AYih" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~List" resolve="List" />
               <node concept="3uibUv" id="1yTFUP3AYii" role="11_B2D">
-                <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
               </node>
             </node>
             <node concept="2OqwBi" id="4OzBQ_jr8SZ" role="33vP2m">
               <node concept="2ShNRf" id="4OzBQ_jr7ib" role="2Oq$k0">
                 <node concept="1pGfFk" id="4OzBQ_jr8MP" role="2ShVmc">
-                  <ref role="37wK5l" to="l288:7MIYyntE09A" resolve="NodesMatcher" />
+                  <ref role="37wK5l" to="y5e1:7MIYyntE09A" resolve="NodesMatcher" />
                 </node>
               </node>
               <node concept="liA8E" id="4OzBQ_jr92u" role="2OqNvi">
-                <ref role="37wK5l" to="l288:4OzBQ_jpsdg" resolve="match" />
+                <ref role="37wK5l" to="y5e1:4OzBQ_jpsdg" resolve="match" />
                 <node concept="2OqwBi" id="1yTFUP3AYik" role="37wK5m">
                   <node concept="37vLTw" id="3GM_nagTBTc" role="2Oq$k0">
                     <ref role="3cqZAo" node="1yTFUP3AYi6" resolve="sampleModel" />
@@ -1172,17 +1172,17 @@
             <node concept="3uibUv" id="E9ySoS$Lqe" role="1tU5fm">
               <ref role="3uigEE" to="k7g3:~List" resolve="List" />
               <node concept="3uibUv" id="E9ySoS$Lqf" role="11_B2D">
-                <ref role="3uigEE" to="l288:7MIYyntDZEK" resolve="NodeDifference" />
+                <ref role="3uigEE" to="y5e1:7MIYyntDZEK" resolve="NodeDifference" />
               </node>
             </node>
             <node concept="2OqwBi" id="4OzBQ_jr9j5" role="33vP2m">
               <node concept="2ShNRf" id="4OzBQ_jr9j6" role="2Oq$k0">
                 <node concept="1pGfFk" id="4OzBQ_jr9j7" role="2ShVmc">
-                  <ref role="37wK5l" to="l288:7MIYyntE09A" resolve="NodesMatcher" />
+                  <ref role="37wK5l" to="y5e1:7MIYyntE09A" resolve="NodesMatcher" />
                 </node>
               </node>
               <node concept="liA8E" id="4OzBQ_jr9j8" role="2OqNvi">
-                <ref role="37wK5l" to="l288:4OzBQ_jpsdg" resolve="match" />
+                <ref role="37wK5l" to="y5e1:4OzBQ_jpsdg" resolve="match" />
                 <node concept="2OqwBi" id="4OzBQ_jr9j9" role="37wK5m">
                   <node concept="37vLTw" id="4OzBQ_jr9ja" role="2Oq$k0">
                     <ref role="3cqZAo" node="E9ySoS$Lq3" resolve="sampleModel" />
