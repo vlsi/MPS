@@ -1560,16 +1560,16 @@
             <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
           </node>
         </node>
-        <node concept="1SiIV0" id="yja7V_1HSb" role="3bR37C">
-          <node concept="3bR9La" id="yja7V_1HSc" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:ymnOULAU1u" resolve="jetbrains.mps.lang.test.runtime" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="yja7V_1HSd" role="3bR37C">
           <node concept="3bR9La" id="yja7V_1HSe" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6aIAM_Qd5Fa" role="3bR37C">
+          <node concept="3bR9La" id="6aIAM_Qd5Fb" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
           </node>
         </node>
       </node>
@@ -1849,6 +1849,12 @@
           <node concept="3bR9La" id="1nB28seQt0" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6aIAM_Qd5DZ" role="3bR37C">
+          <node concept="3bR9La" id="6aIAM_Qd5E0" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
           </node>
         </node>
       </node>
@@ -2690,7 +2696,7 @@
     </node>
   </node>
   <node concept="1l3spW" id="5bAGsVFhMud">
-    <property role="TrG5h" value="testPackaged" />
+    <property role="TrG5h" value="mpsPackaged" />
     <property role="turDy" value="testPackaged.xml" />
     <property role="2DA0ip" value="../../../../" />
     <node concept="398rNT" id="5bAGsVFhMue" role="1l3spd">

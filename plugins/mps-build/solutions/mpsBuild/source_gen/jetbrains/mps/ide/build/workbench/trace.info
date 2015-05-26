@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root nodeRef="r:db535002-78db-44e6-bf64-9d17dde44337(jetbrains.mps.ide.build.workbench)/2569834391839970845">
-    <file name="mpsWorkbench.xml">
-      <unit id="2569834391839970845" at="1,0,905,10" name="jetbrains.mps.ide.build.workbench.mpsWorkbench" />
-    </file>
-  </root>
-</debug-info>
-
