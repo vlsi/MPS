@@ -23718,6 +23718,37 @@
           </node>
         </node>
       </node>
+      <node concept="2GAZfH" id="16OlLMGl9Mz" role="398b2p">
+        <node concept="TIC1d" id="16OlLMGl9M$" role="2GAZfG">
+          <node concept="398BVA" id="16OlLMGl9M_" role="TIC6M">
+            <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="16OlLMGl9MA" role="iGT6I">
+              <property role="2Ry0Am" value="plugins" />
+              <node concept="2Ry0Ak" id="16OlLMGl9MB" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-testing" />
+                <node concept="2Ry0Ak" id="16OlLMGl9MC" role="2Ry0An">
+                  <property role="2Ry0Am" value="languages" />
+                  <node concept="2Ry0Ak" id="16OlLMGl9MD" role="2Ry0An">
+                    <property role="2Ry0Am" value="languageDesign" />
+                    <node concept="2Ry0Ak" id="16OlLMGl9ME" role="2Ry0An">
+                      <property role="2Ry0Am" value="test" />
+                      <node concept="2Ry0Ak" id="16OlLMGl9MF" role="2Ry0An">
+                        <property role="2Ry0Am" value="solutions" />
+                        <node concept="2Ry0Ak" id="16OlLMGl9MG" role="2Ry0An">
+                          <property role="2Ry0Am" value="jetbrains.mps.lang.test.matcher" />
+                          <node concept="2Ry0Ak" id="16OlLMGl9MH" role="2Ry0An">
+                            <property role="2Ry0Am" value="source_gen" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2GAZfH" id="63lu3g6BW2K" role="398b2p">
         <node concept="TIC1d" id="63lu3g6BW2L" role="2GAZfG">
           <node concept="398BVA" id="63lu3g6BW2M" role="TIC6M">
@@ -26688,6 +26719,9 @@
           </node>
           <node concept="L2wRC" id="45oiMWk3wHi" role="39821P">
             <ref role="L2wRA" node="ymnOULAU2c" resolve="jetbrains.mps.lang.smodelTests" />
+          </node>
+          <node concept="L2wRC" id="16OlLMGkAA7" role="39821P">
+            <ref role="L2wRA" node="6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
           </node>
         </node>
       </node>

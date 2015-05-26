@@ -119,6 +119,7 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/testSrc" />
     <mkdir dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
     <mkdir dir="${mps_home}/testbench/source_gen" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin-tests" />
@@ -128,6 +129,7 @@
         <path location="${mps_home}/IdeaPlugin/mps-core/testSrc" />
         <path location="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
         <path location="${mps_home}/testbench/source_gen" />
         <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
       </src>
@@ -165,6 +167,7 @@
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

@@ -384,6 +384,29 @@
       <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/jetbrains.mps.lang.smodelTests.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-smodelTests-languageModels1" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar1" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar1/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar1/META-INF/module.xml">
+      <module namespace="jetbrains.mps.lang.test.matcher" type="solution" uuid="e55e6749-03cb-4ea7-9695-2322bab791c1">
+        <dependencies />
+        <sources jar="jetbrains.mps.lang.test.matcher-src.jar" descriptor="jetbrains.mps.lang.test.matcher.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test.matcher" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar1" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.matcher-models1">
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.test.matcher-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
+      <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/jetbrains.mps.lang.test.matcher.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.matcher-models1" prefix="module/models" />
+    </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
