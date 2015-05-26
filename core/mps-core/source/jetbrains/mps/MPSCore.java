@@ -81,15 +81,14 @@ public final class MPSCore extends ComponentPlugin {
     init(new FindUsagesManager());
     init(new MigrationPropertiesManager());
 
-    // repositories
-    init(new SRepositoryRegistry());
-    SModelRepository modelRepository = init(new SModelRepository());
+    SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
+    SModelRepository modelRepository = init(new SModelRepository(moduleRepository));
     init(new GlobalSModelEventsManager(modelRepository));
     myClassLoaderManager = init(new ClassLoaderManager(moduleRepository));
     init(new DebugRegistry());
 
-    init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
+    init(new SModelFileTracker(repositoryRegistry));
     init(new ModuleRepositoryFacade(moduleRepository));
     init(new ModuleFileTracker(moduleRepository));
     CleanupManager cleanupManager = init(new CleanupManager(myClassLoaderManager));

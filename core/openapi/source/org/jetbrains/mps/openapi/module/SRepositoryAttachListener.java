@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Variation of a repository listener that receives notifications when listener is attached to/detached from a repository.
  * Useful for listeners that need to perform certain initialization of own state the moment they get registered with a repository.
@@ -22,6 +24,6 @@ package org.jetbrains.mps.openapi.module;
  * @author Artem Tikhomirov
  */
 public interface SRepositoryAttachListener extends SRepositoryListener {
-  void startListening(SRepository repository);
-  void stopListening(SRepository repository);
+  void startListening(@NotNull SRepository repository);
+  void stopListening(@NotNull SRepository repository);
 }

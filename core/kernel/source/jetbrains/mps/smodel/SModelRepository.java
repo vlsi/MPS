@@ -77,7 +77,7 @@ public class SModelRepository implements CoreComponent {
     return INSTANCE;
   }
 
-  public SModelRepository() {
+  public SModelRepository(@NotNull MPSModuleRepository moduleRepository) {
   }
 
   @Override

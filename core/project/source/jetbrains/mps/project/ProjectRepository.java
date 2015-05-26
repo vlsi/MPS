@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -41,6 +42,7 @@ public class ProjectRepository extends SRepositoryBase {
     init();
   }
 
+  @NotNull
   private MPSModuleRepository getRootRepository() {
     return MPSModuleRepository.getInstance();
   }

@@ -55,7 +55,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   }
 
   @Override
-  public void startListening(SRepository repository) {
+  public void startListening(@NotNull SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
     }

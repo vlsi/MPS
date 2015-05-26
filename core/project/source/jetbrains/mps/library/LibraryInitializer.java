@@ -139,7 +139,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   // performed in write action
   // actual reading from disk happens here
   private void updateState(final boolean refreshFiles, Delta<SLibrary> libraryDelta) {
-    final List<SLibrary> toUnload= libraryDelta.getRemoved();
+    final List<SLibrary> toUnload = libraryDelta.getRemoved();
     final List<SLibrary> toLoad = libraryDelta.getAdded();
 
     myModelAccess.runWriteAction(new Runnable() {
