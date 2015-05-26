@@ -17,10 +17,12 @@ import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class NodesMatcher {
   private final Map<SNode, SNode> map;
+
   public NodesMatcher() {
     map = new HashMap<SNode, SNode>();
     // FIXME refactor to use instances instead of static method 
   }
+
   public NodesMatcher(Map<SNode, SNode> map) {
     this.map = map;
   }

@@ -752,7 +752,7 @@
       <node id="3740508248791186444" at="54,8,55,18" concept="12" />
       <node id="1672645887151080794" at="60,48,61,37" concept="0" />
       <node id="7913496392050459821" at="61,37,62,67" concept="12" />
-      <node id="1277999467583127602" at="67,52,68,69" concept="11" />
+      <node id="1277999467583127602" at="67,52,68,88" concept="11" />
       <node id="1277999467583127476" at="69,31,70,64" concept="12" />
       <node id="6978373592756704896" at="71,5,72,0" concept="14" />
       <node id="7913496392053759254" at="73,31,74,59" concept="6" />
@@ -763,8 +763,8 @@
       <node id="5400869363160114638" at="83,9,84,60" concept="11" />
       <node id="5400869363160116518" at="84,60,85,107" concept="6" />
       <node id="5400869363160129592" at="85,107,86,20" concept="12" />
-      <node id="2276757138027266834" at="88,8,89,42" concept="6" />
-      <node id="2276757138027266842" at="89,42,90,18" concept="12" />
+      <node id="2276757138027266834" at="88,8,89,61" concept="6" />
+      <node id="2276757138027266842" at="89,61,90,18" concept="12" />
       <node id="5256253775190389392" at="94,0,95,0" concept="7" trace="myCachedErrors" />
       <node id="5256253775190395680" at="95,0,96,0" concept="7" trace="myRoot" />
       <node id="5256253775189887017" at="99,53,100,30" concept="12" />
@@ -773,9 +773,9 @@
       <node id="5256253775189944837" at="109,48,110,20" concept="6" />
       <node id="5256253775189945267" at="110,20,111,61" concept="6" />
       <node id="5256253775190309208" at="111,61,112,83" concept="6" />
-      <node id="3740508248791186293" at="116,0,117,0" concept="15" trace="LOG" />
+      <node id="3740508248791186293" at="115,0,116,0" concept="15" trace="LOG" />
       <node id="3740508248791186434" at="51,0,54,0" concept="10" trace="accept#(Ljetbrains/mps/errors/IErrorReporter;)Z" />
-      <node id="1277999467583057103" at="68,69,71,5" concept="9" />
+      <node id="1277999467583057103" at="68,88,71,5" concept="9" />
       <node id="7913496392053759254" at="72,0,75,5" concept="1" />
       <node id="7913496392053759254" at="72,0,75,5" concept="9" />
       <node id="5400869363160100297" at="80,52,83,9" concept="9" />
@@ -859,7 +859,7 @@
       <unit id="3740508248791186372" at="59,51,64,5" name="jetbrains.mps.lang.test.runtime.TestsErrorsChecker$2" />
       <unit id="5400869363160099193" at="79,118,88,5" name="jetbrains.mps.lang.test.runtime.TestsErrorsChecker$3" />
       <unit id="5256253775189855624" at="93,0,115,0" name="jetbrains.mps.lang.test.runtime.TestsErrorsChecker$ModelErrorsHolder" />
-      <unit id="3740508248791186293" at="28,0,118,0" name="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" />
+      <unit id="3740508248791186293" at="28,0,117,0" name="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/5283973801934659527">
