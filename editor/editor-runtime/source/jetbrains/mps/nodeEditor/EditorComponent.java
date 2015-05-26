@@ -1310,6 +1310,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   @Override
   public EditorContext getEditorContext() {
+    // TODO: assert !myDisposed here.
     return myEditorContext;
   }
 

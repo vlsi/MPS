@@ -311,13 +311,15 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void commandStarted() {
+    // TODO: assert !myDisposed here.
     myCommandLevel++;
   }
 
   @Override
   public void commandFinished() {
+    // TODO: assert !myDisposed here.
     try {
-      if (myCommandLevel == 1) {
+      if (myCommandLevel == 1 && !myDisposed) {
         myModelListenersController.flush();
       }
     } finally {
