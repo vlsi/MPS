@@ -19,7 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.RepositoryContributor;
-import jetbrains.mps.library.contributor.RepositoryPathDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;

@@ -21,6 +21,7 @@ import com.intellij.facet.FacetType;
 import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -29,10 +30,8 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
-import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.tool.builder.util.PathManager;
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import java.util.Arrays;
 
