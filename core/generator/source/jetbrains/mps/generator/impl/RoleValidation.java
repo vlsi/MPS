@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,15 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -32,65 +34,82 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class RoleValidation {
   private final boolean myShowBadChildWarning;
-  private final RoleValidator successValidatorOne = new RoleValidator(false);
-  private final RoleValidator successValidatorMany = new RoleValidator(true);
+  private final RoleValidator mySuccessValidator = new RoleValidator();
   // the code might need refactoring to be more thread-friendly, e.g. validators per thread, not per single generator as it's now
-  private final Map<String, Map<String, RoleValidator>> validators = new ConcurrentHashMap<String, Map<String, RoleValidator>>();
+  private final ConcurrentHashMap<String, Map<String, RoleValidator>> validators = new ConcurrentHashMap<String, Map<String, RoleValidator>>();
 
   public RoleValidation(boolean showBadChildWarning) {
     myShowBadChildWarning = showBadChildWarning;
   }
-  
-  RoleValidator getValidator(SNode sourceNode, String role, boolean child) {
-    if (child && RuleUtil.link_BaseConcept_attrs_name.equals(role)) {
-      //unnecessary warning removed
-      return successValidatorMany; //todo maybe add check for attribute links
-    }
-    final SConcept concept = sourceNode.getConcept();
-    String conceptFQName = concept.getQualifiedName();
-    Map<String, RoleValidator> vmap = validators.get(conceptFQName);
-    if (vmap == null) {
-      validators.put(conceptFQName, vmap = new HashMap<String, RoleValidator>());
-    }
-    RoleValidator validator = vmap.get(role);
+
+  RoleValidator getValidator(SNode sourceNode, SReferenceLink role) {
+    final SConcept srcConcept = sourceNode.getConcept();
+    Map<String, RoleValidator> vmap = getCached(srcConcept);
+    final String roleName = role.getRoleName();
+    RoleValidator validator = vmap.get(roleName);
     if (validator != null) {
       return validator;
     }
-    SAbstractLink link = concept.getLink(role);
-    if (link == null || link.isReference() == child) {
-      String relationKind = child ? "child" : "referent";
-      String msg;
-      if (link == null) {
-        msg = String.format("concept '%s' cannot have %s with role '%s'", concept.getQualifiedName(), relationKind, role);
-      } else {
-        msg = String.format("%s '%s' in concept '%s' doesn't match declared kind:%s", relationKind, role, concept.getQualifiedName(), link.isReference() ? "referent" : "child");
-      }
+    if (!srcConcept.isSubConceptOf(role.getContainingConcept())) {
+      String msg = String.format("Source node of %s concept could not have reference %s (from %s)", srcConcept.getQualifiedName(), roleName, role.getContainingConcept().getQualifiedName());
       Status s = new Status(msg);
       validator = new RoleValidator(s);
     } else {
-      if (!myShowBadChildWarning) {
-        // ignore
-        validator = link.isMultiple() ? successValidatorMany : successValidatorOne;
+      validator = new AcceptableTargetValidator(role);
+    }
+    vmap.put(roleName, validator);
+    return validator;
+  }
+
+  RoleValidator getValidator(SNode sourceNode, SContainmentLink role) {
+    if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(role)) {
+      return mySuccessValidator;
+    }
+    final SConcept srcConcept = sourceNode.getConcept();
+    Map<String, RoleValidator> vmap = getCached(srcConcept);
+    final String roleName = role.getRoleName();
+    RoleValidator validator = vmap.get(roleName);
+    if (validator != null) {
+      return validator;
+    }
+    if (!srcConcept.isSubConceptOf(role.getContainingConcept())) {
+      String msg = String.format("No child role %s (%s) known for source node's %s concept", roleName, role.getContainingConcept().getQualifiedName(), srcConcept.getQualifiedName());
+      Status s = new Status(msg);
+      validator = new RoleValidator(s);
+    } else {
+      if (myShowBadChildWarning) {
+        validator = new AcceptableTargetValidator(role);
       } else {
-        validator = new AcceptableTargetValidator(link);
+        validator = mySuccessValidator;
       }
     }
-    vmap.put(role, validator);
+    vmap.put(roleName, validator);
     return validator;
+  }
+
+
+  @NotNull
+  private Map<String, RoleValidator> getCached(SConcept concept) {
+    final String conceptFQName = concept.getQualifiedName();
+    Map<String, RoleValidator> vmap = validators.get(conceptFQName);
+    if (vmap == null) {
+      Map<String, RoleValidator> existing = validators.putIfAbsent(conceptFQName, vmap = new ConcurrentHashMap<String, RoleValidator>());
+      if (existing != null) {
+        vmap = existing;
+      }
+    }
+    return vmap;
   }
 
   public static class RoleValidator {
     private final Status myStatus;
-    private final boolean myMultipleSource;
 
-    public RoleValidator(boolean isMultipleSource) {
+    protected RoleValidator() {
       myStatus = null;
-      myMultipleSource = isMultipleSource;
     }
 
-    public RoleValidator(@NotNull Status status) {
+    protected RoleValidator(@NotNull Status status) {
       myStatus = status;
-      myMultipleSource = false;
     }
 
     /**
@@ -99,14 +118,6 @@ public class RoleValidation {
     public Status validate(SNode targetNode) {
       return myStatus;
     }
-
-    /**
-     * Value doesn't make sense if validation status is non-null (i.e. error)
-     * @return <code>true</code> if source cardinality is 0..* or 1..*
-     */
-    public boolean isMultipleSource() {
-      return myMultipleSource;
-    }
   }
 
   private static class AcceptableTargetValidator extends RoleValidator {
@@ -114,7 +125,6 @@ public class RoleValidation {
     private final SAbstractConcept myLinkTarget;
 
     AcceptableTargetValidator(@NotNull SAbstractLink link) {
-      super(link.isMultiple());
       myLink = link;
       myLinkTarget = link.getTargetConcept();
     }

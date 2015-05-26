@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Iterator;
+
 /**
  * Weave support implementation
  * @author Artem Tikhomirov
@@ -55,13 +57,13 @@ public final class NodeWeaveSupport implements NodeWeaveFacility {
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
       // add
-      if (v.isMultipleSource()) {
+      if (childRole.isMultiple()) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
-        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);
-        if (oldChild != null) {
+        final Iterator<? extends SNode> children = contextParentNode.getChildren(childRole).iterator();
+        if (children.hasNext()) {
           // if singular child then don't add more that 1 child
-          contextParentNode.removeChild(oldChild);
+          contextParentNode.removeChild(children.next());
         }
         contextParentNode.addChild(childRole, outputNodeToWeave);
       }

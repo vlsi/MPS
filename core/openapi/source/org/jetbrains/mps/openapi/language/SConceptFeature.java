@@ -22,6 +22,7 @@ public interface SConceptFeature {
    * Return the concept that contains the declaration of this concept feature.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this property.
+   * FIXME document null/not null contract
    */
   SAbstractConcept getContainingConcept();
 
