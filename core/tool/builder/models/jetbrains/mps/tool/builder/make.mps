@@ -62,6 +62,7 @@
     <import index="to5d" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />
     <import index="i119" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.compiler(MPS.Core/jetbrains.mps.compiler@java_stub)" />
     <import index="xqpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+    <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -12475,31 +12476,50 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="6rDosczHNl3" role="3cqZAp">
+          <node concept="3clFbS" id="6rDosczHNl5" role="3clFbx">
+            <node concept="3cpWs6" id="6rDosczHNTE" role="3cqZAp">
+              <node concept="3clFbT" id="6rDosczHO1z" role="3cqZAk">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="6rDosczHNMk" role="3clFbw">
+            <node concept="2ZW3vV" id="6rDosczHNMm" role="3fr31v">
+              <node concept="3uibUv" id="6rDosczHNMn" role="2ZW6by">
+                <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
+              </node>
+              <node concept="37vLTw" id="6rDosczHNMo" role="2ZW6bz">
+                <ref role="3cqZAo" node="5iKxrmkr4jx" resolve="module" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="SfApY" id="5iKxrmkr3Ah" role="3cqZAp">
           <node concept="3clFbS" id="5iKxrmkr3Ai" role="SfCbr">
-            <node concept="3clFbF" id="5iKxrmkr3Aj" role="3cqZAp">
-              <node concept="37vLTI" id="5iKxrmkr3Ak" role="3clFbG">
-                <node concept="2OqwBi" id="5iKxrmkr3Al" role="37vLTx">
-                  <node concept="liA8E" id="5iKxrmkr3Am" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />
-                    <node concept="37vLTw" id="5iKxrmkr3An" role="37wK5m">
+            <node concept="3clFbF" id="6rDosczHOfO" role="3cqZAp">
+              <node concept="37vLTI" id="6rDosczHOqG" role="3clFbG">
+                <node concept="2OqwBi" id="6rDosczHRpy" role="37vLTx">
+                  <node concept="1eOMI4" id="6rDosczHQXC" role="2Oq$k0">
+                    <node concept="10QFUN" id="6rDosczHQX_" role="1eOMHV">
+                      <node concept="3uibUv" id="6rDosczHR87" role="10QFUM">
+                        <ref role="3uigEE" to="42ru:~ReloadableModule" resolve="ReloadableModule" />
+                      </node>
+                      <node concept="1eOMI4" id="6rDosczHQXE" role="10QFUP">
+                        <node concept="37vLTw" id="6rDosczHRlp" role="1eOMHV">
+                          <ref role="3cqZAo" node="5iKxrmkr4jx" resolve="module" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6rDosczHRQh" role="2OqNvi">
+                    <ref role="37wK5l" to="42ru:~ReloadableModule.getClass(java.lang.String):java.lang.Class" resolve="getClass" />
+                    <node concept="37vLTw" id="6rDosczHRYh" role="37wK5m">
                       <ref role="3cqZAo" node="5iKxrmkr3Bx" resolve="className" />
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="5iKxrmkr3Ao" role="2Oq$k0">
-                    <node concept="liA8E" id="5iKxrmkr3Ap" role="2OqNvi">
-                      <ref role="37wK5l" to="wqua:~ClassLoaderManager.getClassLoader(org.jetbrains.mps.openapi.module.SModule):java.lang.ClassLoader" resolve="getClassLoader" />
-                      <node concept="37vLTw" id="5iKxrmkr3Aq" role="37wK5m">
-                        <ref role="3cqZAo" node="5iKxrmkr4jx" resolve="module" />
-                      </node>
-                    </node>
-                    <node concept="2YIFZM" id="5iKxrmkr3Ar" role="2Oq$k0">
-                      <ref role="1Pybhc" to="wqua:~ClassLoaderManager" resolve="ClassLoaderManager" />
-                      <ref role="37wK5l" to="wqua:~ClassLoaderManager.getInstance():jetbrains.mps.classloading.ClassLoaderManager" resolve="getInstance" />
-                    </node>
-                  </node>
                 </node>
-                <node concept="37vLTw" id="5iKxrmkr3As" role="37vLTJ">
+                <node concept="37vLTw" id="6rDosczHOfM" role="37vLTJ">
                   <ref role="3cqZAo" node="5iKxrmkr3Ae" resolve="cls" />
                 </node>
               </node>
@@ -12512,12 +12532,21 @@
                 <ref role="3uigEE" to="e2lb:~ClassNotFoundException" resolve="ClassNotFoundException" />
               </node>
             </node>
-            <node concept="3clFbS" id="5iKxrmkr3Aw" role="TDEfX">
-              <node concept="3cpWs6" id="5iKxrmkr6j5" role="3cqZAp">
-                <node concept="3clFbT" id="5iKxrmkr6qs" role="3cqZAk">
-                  <property role="3clFbU" value="false" />
-                </node>
+            <node concept="3clFbS" id="5iKxrmkr3Aw" role="TDEfX" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6rDosczHT1M" role="3cqZAp">
+          <node concept="3clFbS" id="6rDosczHT1O" role="3clFbx">
+            <node concept="3cpWs6" id="6rDosczHTrD" role="3cqZAp">
+              <node concept="3clFbT" id="6rDosczHT$m" role="3cqZAk">
+                <property role="3clFbU" value="false" />
               </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="6rDosczHTkW" role="3clFbw">
+            <node concept="10Nm6u" id="6rDosczHTmF" role="3uHU7w" />
+            <node concept="37vLTw" id="6rDosczHTc2" role="3uHU7B">
+              <ref role="3cqZAo" node="5iKxrmkr3Ae" resolve="cls" />
             </node>
           </node>
         </node>

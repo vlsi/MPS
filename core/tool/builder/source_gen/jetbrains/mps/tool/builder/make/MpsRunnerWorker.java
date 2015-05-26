@@ -18,7 +18,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 
@@ -73,9 +73,14 @@ public class MpsRunnerWorker extends MpsWorker {
 
   private static boolean runClass(SModule module, String className, String methodName) {
     Class cls = null;
+    if (!(module instanceof ReloadableModule)) {
+      return false;
+    }
     try {
-      cls = ClassLoaderManager.getInstance().getClassLoader(module).loadClass(className);
+      cls = ((ReloadableModule) (module)).getClass(className);
     } catch (ClassNotFoundException e) {
+    }
+    if (cls == null) {
       return false;
     }
     try {
