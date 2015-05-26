@@ -268,9 +268,6 @@
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
-      </concept>
       <concept id="2580416627845338977" name="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" flags="ng" index="1SXeKx" />
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -2127,15 +2124,11 @@
                 </node>
               </node>
             </node>
-            <node concept="3SKdUt" id="RSHx$LspTr" role="3cqZAp">
-              <node concept="3SKWN0" id="RSHx$LspTs" role="3SKWNk">
-                <node concept="3clFbF" id="2BGPXkExe0J" role="3SKWNf">
-                  <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
-                    <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
-                    <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
-                      <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
-                    </node>
-                  </node>
+            <node concept="3clFbF" id="2BGPXkExe0J" role="3cqZAp">
+              <node concept="1rXfSq" id="2BGPXkExe0H" role="3clFbG">
+                <ref role="37wK5l" to="79ha:2BGPXkEwSeK" resolve="makeOnFirstTimeOpened" />
+                <node concept="37vLTw" id="2BGPXkExe6J" role="37wK5m">
+                  <ref role="3cqZAo" node="2BGPXkExbjX" resolve="openedProject" />
                 </node>
               </node>
             </node>

@@ -38,7 +38,7 @@ public class FromProjectPathProjectStrategy extends ProjectStrategyBase {
     Project openedProject = env.getOpenedProject(projectFile);
     if (openedProject == null) {
       openedProject = env.openProject(projectFile);
-      // <node> 
+      makeOnFirstTimeOpened(openedProject);
     }
     return openedProject;
   }
