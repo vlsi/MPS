@@ -39,6 +39,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -64,6 +65,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
 public class ModuleMaker {
+  private final static Logger LOG = LogManager.getLogger(ModuleMaker.class);
 
   private final static int MAX_ERRORS = 100;
 
@@ -125,21 +127,25 @@ public class ModuleMaker {
 
   // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor, final JavaCompilerOptions compilerOptions) {
+    LOG.debug("Compiling " + modules.size() + " modules");
     monitor.start("Compiling", 12);
     myTracer.push("making " + modules.size() + " modules", false);
     try {
+      LOG.debug("Collecting dependent candidates");
       monitor.step("Collecting candidates");
       myTracer.push("collecting candidates", false);
       Collection<SModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
       myTracer.pop();
       monitor.advance(1);
 
+      LOG.debug("Loading dependencies");
       myTracer.push("loading deps", false);
       monitor.step("Loading dependencies");
       myDependencies = new Dependencies(candidates);
       myTracer.pop();
       monitor.advance(1);
 
+      LOG.debug("Totally " + modules.size() + " modules to compile");
       myTracer.push("modules to compile", false);
       monitor.step("Calculating modules to compile");
       Set<SModule> toCompile = getModulesToCompile(candidates);
@@ -151,6 +157,7 @@ public class ModuleMaker {
       List<IMessage> messages = new ArrayList<IMessage>();
       Set<SModule> changedModules = new HashSet<SModule>();
 
+      LOG.debug("Building module cycles");
       monitor.step("Building module cycles");
       myTracer.push("building cycles", false);
       List<Set<SModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
@@ -163,6 +170,7 @@ public class ModuleMaker {
         for (Set<SModule> cycle : schedule) {
           if (monitor.isCanceled()) break;
 
+          LOG.debug("Processing " + cycle + " cycle");
           inner.step("compiling " + cycle);
           myTracer.push("processing cycle", false);
           MPSCompilationResult result = compile(cycle, compilerOptions);
@@ -180,6 +188,7 @@ public class ModuleMaker {
         }
       } finally {
         inner.done();
+        LOG.debug("Make is done");
       }
 
       return new MPSCompilationResult(errorCount, warnCount, false, changedModules, messages);

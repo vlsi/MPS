@@ -4478,12 +4478,17 @@
                         <node concept="2YIFZM" id="2BGPXkEwUCv" role="37wK5m">
                           <ref role="1Pybhc" to="msyo:~IterableUtil" resolve="IterableUtil" />
                           <ref role="37wK5l" to="msyo:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
-                          <node concept="2OqwBi" id="2BGPXkEwUCw" role="37wK5m">
-                            <node concept="37vLTw" id="2BGPXkEwUCx" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2BGPXkEwSsJ" resolve="project" />
+                          <node concept="2OqwBi" id="6rYSYZkOLdJ" role="37wK5m">
+                            <node concept="2OqwBi" id="2BGPXkEwUCw" role="2Oq$k0">
+                              <node concept="37vLTw" id="2BGPXkEwUCx" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2BGPXkEwSsJ" resolve="project" />
+                              </node>
+                              <node concept="liA8E" id="2BGPXkEwUCy" role="2OqNvi">
+                                <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              </node>
                             </node>
-                            <node concept="liA8E" id="2BGPXkEwUCy" role="2OqNvi">
-                              <ref role="37wK5l" to="vsqj:~Project.getModules():java.lang.Iterable" resolve="getModules" />
+                            <node concept="liA8E" id="6rYSYZkPdzj" role="2OqNvi">
+                              <ref role="37wK5l" to="88zw:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
                             </node>
                           </node>
                         </node>

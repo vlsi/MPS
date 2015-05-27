@@ -48,7 +48,7 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
     }
     return new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
-        return new ModuleMaker().make(IterableUtil.asCollection(project.getModules()), new EmptyProgressMonitor());
+        return new ModuleMaker().make(IterableUtil.asCollection(project.getRepository().getModules()), new EmptyProgressMonitor());
       }
     });
   }
