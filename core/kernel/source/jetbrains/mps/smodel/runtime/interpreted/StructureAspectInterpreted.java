@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
 import java.util.Map;
@@ -82,7 +83,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
         myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
         return;
       }
-      myLanguage.getRepository().getModelAccess().runReadAction(new Runnable() {
+      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();

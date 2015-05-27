@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class ConflictableModuleAdapter extends Conflictable {
   private final AbstractModule myModule;
@@ -33,7 +34,7 @@ public class ConflictableModuleAdapter extends Conflictable {
   @Override
   public boolean needReloading() {
     final Wrappers._boolean result = new Wrappers._boolean(false);
-    myModule.getRepository().getModelAccess().runReadAction(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         result.value = SModuleOperations.needReloading(myModule);
       }

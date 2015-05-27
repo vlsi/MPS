@@ -19,6 +19,9 @@ import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.junit.After;
 import org.junit.Before;
@@ -34,6 +37,7 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
 
   @Before
   public void beforeTest() {
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
     String homePath = PathManager.getHomePath();
     assert homePath != null;
     myProject = openProject(new File(homePath));
