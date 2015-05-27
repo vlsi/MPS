@@ -37,15 +37,26 @@ class UpdaterModelListener extends ModelsEventsCollector {
     ModelEventsVisitor eventsAnalyzer = new ModelEventsVisitor(events, myUpdater.getEditorComponent());
     if (eventsAnalyzer.isPropertyModification() && !myUpdater.requiresUpdate(eventsAnalyzer.getModifiedProperty(), eventsAnalyzer.isPropertyAddedRemoved())) {
       myUpdater.synchronizeCells(eventsAnalyzer.getModifiedProperty());
-      myUpdater.getEditorComponent().relayout();
+      relayoutEditor();
       return;
     }
 
     myUpdater.update(events);
-    myUpdater.getEditorComponent().relayout();
+    relayoutEditor();
     if (myUpdater.isSelectionProcessingAllowed() && eventsAnalyzer.getSelectionHandler() != null) {
       eventsAnalyzer.getSelectionHandler().setEditorSelection(myUpdater.getEditorComponent(), lastSelectedNode);
     }
+  }
+
+  private void relayoutEditor() {
+    myUpdater.getEditorComponent().relayout();
+    /**
+     * Explicitly calling validate() after relayout here to layout EditorComponent before the end of containing command.
+     * This is necessary to ensure that UI components will be updated & the size of scroll pane will be recalculated till
+     * the end of the command. Used to allow editor memento (saved inside undo stack in the end of the command) tracking
+     * _updated_ position of scroll pane view port.
+     */
+    myUpdater.getEditorComponent().getExternalComponent().validate();
   }
 
   @Override
