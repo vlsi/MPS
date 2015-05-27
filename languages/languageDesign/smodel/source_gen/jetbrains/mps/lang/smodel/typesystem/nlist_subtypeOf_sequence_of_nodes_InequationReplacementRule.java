@@ -80,7 +80,7 @@ public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f2y4sj_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_f2y4sj_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType").equals(nodeToMatch_f2y4sj_a0a.getConcept()))) {
           return false;
         }
         patternVar_CONCEPT = nodeToMatch_f2y4sj_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, 0x10aae27c421L, "elementConcept"));
@@ -114,7 +114,7 @@ public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f2y4sj_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_f2y4sj_a0a_0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(nodeToMatch_f2y4sj_a0a_0.getConcept()))) {
           return false;
         }
         {
