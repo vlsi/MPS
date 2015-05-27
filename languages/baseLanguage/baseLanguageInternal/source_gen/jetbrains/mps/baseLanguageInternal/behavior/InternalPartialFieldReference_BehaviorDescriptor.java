@@ -18,7 +18,7 @@ public class InternalPartialFieldReference_BehaviorDescriptor extends Expression
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
   }
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
-    return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
+    return InternalPartialFieldReference_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
