@@ -436,26 +436,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/1227338266031213197">
     <file name="ConceptDeclarationExtendedConceptSearchScope.java">
-      <node id="843447540011600764" at="16,26,17,33" concept="2" />
-      <node id="843447540011600795" at="17,33,18,13" concept="7" />
-      <node id="843447540011600796" at="19,5,20,0" concept="9" />
-      <node id="843447540011600920" at="23,45,24,251" concept="7" />
-      <node id="1227338266031213257" at="15,105,19,5" concept="4" />
-      <node id="843447540011600910" at="22,0,26,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="843447540011600798" at="20,0,26,6" concept="2" />
-      <node id="1227338266031213210" at="15,0,28,0" concept="1" trace="ConceptDeclarationExtendedConceptSearchScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="843447540011600915" at="23,45,24,251" />
-      <scope id="1227338266031213261" at="16,26,18,13" />
-      <scope id="843447540011600910" at="22,0,26,0">
+      <node id="843447540011600764" at="17,26,18,33" concept="2" />
+      <node id="843447540011600795" at="18,33,19,13" concept="7" />
+      <node id="843447540011600796" at="20,5,21,0" concept="9" />
+      <node id="843447540011600920" at="24,45,25,339" concept="7" />
+      <node id="1227338266031213257" at="16,105,20,5" concept="4" />
+      <node id="843447540011600910" at="23,0,27,0" concept="5" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="843447540011600798" at="21,0,27,6" concept="2" />
+      <node id="1227338266031213210" at="16,0,29,0" concept="1" trace="ConceptDeclarationExtendedConceptSearchScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="843447540011600915" at="24,45,25,339" />
+      <scope id="1227338266031213261" at="17,26,19,13" />
+      <scope id="843447540011600910" at="23,0,27,0">
         <var name="node" id="843447540011600913" />
       </scope>
-      <scope id="1227338266031213218" at="15,105,26,6" />
-      <scope id="1227338266031213210" at="15,0,28,0">
+      <scope id="1227338266031213218" at="16,105,27,6" />
+      <scope id="1227338266031213210" at="16,0,29,0">
         <var name="concept" id="1227338266031213213" />
         <var name="contextNode" id="1227338266031213216" />
       </scope>
-      <unit id="843447540011600908" at="21,18,26,5" name="jetbrains.mps.lang.structure.constraints.ConceptDeclarationExtendedConceptSearchScope$1" />
-      <unit id="1227338266031213197" at="14,0,29,0" name="jetbrains.mps.lang.structure.constraints.ConceptDeclarationExtendedConceptSearchScope" />
+      <unit id="843447540011600908" at="22,18,27,5" name="jetbrains.mps.lang.structure.constraints.ConceptDeclarationExtendedConceptSearchScope$1" />
+      <unit id="1227338266031213197" at="15,0,30,0" name="jetbrains.mps.lang.structure.constraints.ConceptDeclarationExtendedConceptSearchScope" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)/199017432865781648">
