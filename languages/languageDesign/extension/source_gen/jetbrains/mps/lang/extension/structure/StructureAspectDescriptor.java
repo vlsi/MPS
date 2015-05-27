@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptApplyOverlappingExtensionOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ApplyOverlappingExtensionOperation", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2070f52fe8ba7b20L)).super_("jetbrains.mps.baseLanguage.structure.AbstractOperation").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1196792d150L)).parents("jetbrains.mps.baseLanguage.structure.AbstractOperation").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1196792d150L)).childDescriptors(new ConceptDescriptorBuilder.Link(2337637792722135752L, "argument", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"argument"}, new boolean[]{false}).alias("apply", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptArgumentField = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ArgumentField", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x2423391c8e713a20L)).super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L)).parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).alias("argument", "").create();
   /*package*/ final ConceptDescriptor myConceptExtension = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.Extension", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x1c30c5b543be3b2L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(126958800891274597L, "extensionPoint", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L), false)).references("extensionPoint").create();
   /*package*/ final ConceptDescriptor myConceptExtensionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3729007189729192405L, "extensionPoint", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L), false)).references("extensionPoint").childDescriptors(new ConceptDescriptorBuilder.Link(8029776554053057811L, "objectGetter", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x6f6f7f3b7a178565L), false, false, false), new ConceptDescriptorBuilder.Link(7036359038356050926L, "activator", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL), true, false, false), new ConceptDescriptorBuilder.Link(7036359038356050934L, "deactivator", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e15253efL), true, false, false), new ConceptDescriptorBuilder.Link(7036359038356115164L, "fieldDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L), true, true, false)).children(new String[]{"objectGetter", "activator", "deactivator", "fieldDeclaration"}, new boolean[]{false, false, false, true}).create();
   /*package*/ final ConceptDescriptor myConceptExtensionFieldDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", MetaIdFactory.conceptId(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e99L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).childDescriptors(new ConceptDescriptorBuilder.Link(7036359038356115101L, "fieldType", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), false, false, false)).children(new String[]{"fieldType"}, new boolean[]{false}).create();
@@ -33,50 +34,52 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplyOverlappingExtensionOperation, myConceptExtension, myConceptExtensionDeclaration, myConceptExtensionFieldDeclaration, myConceptExtensionFieldReference, myConceptExtensionFunction, myConceptExtensionObjectGetter, myConceptExtensionOverlapping, myConceptExtensionPointDeclaration, myConceptExtensionPointExpression, myConceptExtensionPointOverlappingDeclaration, myConceptExtensionPointType, myConceptGetExtensionObjectsOperation, myConceptIExtensionPoint, myConceptIRootWithUniqueName, myConceptOverridesItem, myConceptOverridesReference);
+    return Arrays.asList(myConceptApplyOverlappingExtensionOperation, myConceptArgumentField, myConceptExtension, myConceptExtensionDeclaration, myConceptExtensionFieldDeclaration, myConceptExtensionFieldReference, myConceptExtensionFunction, myConceptExtensionObjectGetter, myConceptExtensionOverlapping, myConceptExtensionPointDeclaration, myConceptExtensionPointExpression, myConceptExtensionPointOverlappingDeclaration, myConceptExtensionPointType, myConceptGetExtensionObjectsOperation, myConceptIExtensionPoint, myConceptIRootWithUniqueName, myConceptOverridesItem, myConceptOverridesReference);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0w, conceptFqName)) {
       case 0:
         return myConceptApplyOverlappingExtensionOperation;
       case 1:
-        return myConceptExtension;
+        return myConceptArgumentField;
       case 2:
-        return myConceptExtensionDeclaration;
+        return myConceptExtension;
       case 3:
-        return myConceptExtensionFieldDeclaration;
+        return myConceptExtensionDeclaration;
       case 4:
-        return myConceptExtensionFieldReference;
+        return myConceptExtensionFieldDeclaration;
       case 5:
-        return myConceptExtensionFunction;
+        return myConceptExtensionFieldReference;
       case 6:
-        return myConceptExtensionObjectGetter;
+        return myConceptExtensionFunction;
       case 7:
-        return myConceptExtensionOverlapping;
+        return myConceptExtensionObjectGetter;
       case 8:
-        return myConceptExtensionPointDeclaration;
+        return myConceptExtensionOverlapping;
       case 9:
-        return myConceptExtensionPointExpression;
+        return myConceptExtensionPointDeclaration;
       case 10:
-        return myConceptExtensionPointOverlappingDeclaration;
+        return myConceptExtensionPointExpression;
       case 11:
-        return myConceptExtensionPointType;
+        return myConceptExtensionPointOverlappingDeclaration;
       case 12:
-        return myConceptGetExtensionObjectsOperation;
+        return myConceptExtensionPointType;
       case 13:
-        return myConceptIExtensionPoint;
+        return myConceptGetExtensionObjectsOperation;
       case 14:
-        return myConceptIRootWithUniqueName;
+        return myConceptIExtensionPoint;
       case 15:
-        return myConceptOverridesItem;
+        return myConceptIRootWithUniqueName;
       case 16:
+        return myConceptOverridesItem;
+      case 17:
         return myConceptOverridesReference;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.lang.extension.structure.ApplyOverlappingExtensionOperation", "jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionOverlapping", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.IExtensionPoint", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName", "jetbrains.mps.lang.extension.structure.OverridesItem", "jetbrains.mps.lang.extension.structure.OverridesReference"};
+  private static String[] stringSwitchCases_1htk8d_a0a0w = new String[]{"jetbrains.mps.lang.extension.structure.ApplyOverlappingExtensionOperation", "jetbrains.mps.lang.extension.structure.ArgumentField", "jetbrains.mps.lang.extension.structure.Extension", "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionOverlapping", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointOverlappingDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation", "jetbrains.mps.lang.extension.structure.IExtensionPoint", "jetbrains.mps.lang.extension.structure.IRootWithUniqueName", "jetbrains.mps.lang.extension.structure.OverridesItem", "jetbrains.mps.lang.extension.structure.OverridesReference"};
 }

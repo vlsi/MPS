@@ -15,12 +15,23 @@
  */
 package jetbrains.mps.smodel.structure;
 
-import jetbrains.mps.util.Function;
+import jetbrains.mps.smodel.structure.ExtensionFunction.InstantiateableExtensionFunction;
 
-public abstract class BaseExtensionFunction<T, R> extends Extension.Default<Function<T, R>> implements ExtensionFunction<T, R> {
+public abstract class BaseOverlappingExtension<T, R> extends Extension.Default<ExtensionFunction<T, R>> implements InstantiateableExtensionFunction<T, R> {
 
-  public BaseExtensionFunction(String extensionPointId) {
-    super(extensionPointId);
+  public BaseOverlappingExtension(String id) {
+    super(id);
   }
 
+  public abstract FunctionInstance<R> instantiate(T argument);
+
+  @Override
+  public boolean applicable(T argument) {
+    return instantiate(argument).applicable();
+  }
+
+  @Override
+  public R apply(T argument) {
+    return instantiate(argument).apply();
+  }
 }

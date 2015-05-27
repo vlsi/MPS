@@ -185,12 +185,22 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
         <reference id="1140138128738" name="concept" index="1PxNhF" />
@@ -885,6 +895,53 @@
     <node concept="1YaCAy" id="21KXiZCJ61q" role="1YuTPh">
       <property role="TrG5h" value="aoeo" />
       <ref role="1YaFvo" to="v54s:21KXiZCIBGw" resolve="ApplyOverlappingExtensionOperation" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="2gzehMesENB">
+    <property role="TrG5h" value="typeof_ArgumentField" />
+    <property role="3GE5qa" value="overlapping" />
+    <node concept="3clFbS" id="2gzehMesENC" role="18ibNy">
+      <node concept="1Z5TYs" id="2gzehMesGj_" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="2gzehMesGjC" role="1ZfhK$">
+          <node concept="2OqwBi" id="2gzehMesGjD" role="mwGJk">
+            <node concept="1YBJjd" id="2gzehMesGjE" role="2Oq$k0">
+              <ref role="1YBMHb" node="2gzehMesENE" resolve="argumentField" />
+            </node>
+            <node concept="3TrEf2" id="2gzehMesGjF" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="2gzehMesGmk" role="1ZfhKB">
+          <node concept="2OqwBi" id="2gzehMesIwv" role="mwGJk">
+            <node concept="2OqwBi" id="2gzehMesHe9" role="2Oq$k0">
+              <node concept="2OqwBi" id="2gzehMesGu7" role="2Oq$k0">
+                <node concept="1YBJjd" id="2gzehMesGmi" role="2Oq$k0">
+                  <ref role="1YBMHb" node="2gzehMesENE" resolve="argumentField" />
+                </node>
+                <node concept="2Xjw5R" id="2gzehMesH4B" role="2OqNvi">
+                  <node concept="1xMEDy" id="2gzehMesH4D" role="1xVPHs">
+                    <node concept="chp4Y" id="2gzehMesH5f" role="ri$Ld">
+                      <ref role="cht4Q" to="v54s:3tZJV06aagQ" resolve="ExtensionOverlapping" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3TrEf2" id="2gzehMesHRG" role="2OqNvi">
+                <ref role="3Tt5mk" to="v54s:1it1kXyqfMF" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="2gzehMesILY" role="2OqNvi">
+              <ref role="3Tt5mk" to="v54s:aRphP9UjJo" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2gzehMesENE" role="1YuTPh">
+      <property role="TrG5h" value="argumentField" />
+      <ref role="1YaFvo" to="v54s:2gzehMesjCw" resolve="ArgumentField" />
     </node>
   </node>
 </model>

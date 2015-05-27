@@ -48,6 +48,7 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -489,6 +490,40 @@
                   <ref role="37wK5l" to="w0jm:aRphP9WWgF" resolve="getExtensionType" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="2gzehMesAFI">
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="1M2myG" to="v54s:2gzehMesjCw" resolve="ArgumentField" />
+    <node concept="EnEH3" id="2gzehMesAM6" role="1MhHOB">
+      <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
+      <node concept="QB0g5" id="2gzehMesAM8" role="QCWH9">
+        <node concept="3clFbS" id="2gzehMesAM9" role="2VODD2">
+          <node concept="3clFbF" id="2gzehMesAR8" role="3cqZAp">
+            <node concept="17R0WA" id="2gzehMesC52" role="3clFbG">
+              <node concept="1Wqviy" id="2gzehMesAR7" role="3uHU7B" />
+              <node concept="Xl_RD" id="2gzehMesB9s" role="3uHU7w">
+                <property role="Xl_RC" value="arg" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="EnEH3" id="2gzehMesBpp" role="1MhHOB">
+      <ref role="EomxK" to="tpee:h7TUv0c" resolve="isFinal" />
+      <node concept="QB0g5" id="2gzehMesBzW" role="QCWH9">
+        <node concept="3clFbS" id="2gzehMesBzX" role="2VODD2">
+          <node concept="3clFbF" id="2gzehMesBCW" role="3cqZAp">
+            <node concept="3clFbC" id="2gzehMesBUr" role="3clFbG">
+              <node concept="3clFbT" id="2gzehMfg5Oj" role="3uHU7w">
+                <property role="3clFbU" value="false" />
+              </node>
+              <node concept="1Wqviy" id="2gzehMesBCV" role="3uHU7B" />
             </node>
           </node>
         </node>
