@@ -29,8 +29,11 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -48,9 +51,28 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
   private Project project;
 
+  @BeforeClass
+  public static void setUp() {
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+  }
+
   @Test
   public void ClassesAreLoaded() {
     project = openProject(new File(PathManager.getHomePath()));
+    doTest();
+    closeProject(project);
+  }
+
+  @Test
+  public void ClassesAreLoadedStress() {
+    project = openProject(new File(PathManager.getHomePath()));
+    project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
+    doTest();
+    project.getRepository().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
+    closeProject(project);
+  }
+
+  private void doTest() {
     project.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -66,14 +88,6 @@ public class ProjectMPSClassLoadingTest extends WorkbenchMpsTest {
         }
       }
     });
-    closeProject(project);
-  }
-
-  @Test
-  public void ClassesAreLoadedStress() {
-    project.getRepository().addRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
-    ClassesAreLoaded();
-    project.getRepository().removeRepositoryListener(ModulesReloadTestStress.CRAZY_LISTENER);
   }
 
   private boolean checkModule(SModule module) {
