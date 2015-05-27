@@ -20,8 +20,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class check_ClassLikeMember_unique_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_ClassLikeMember_unique_NonTypesystemRule() {
+public class check_ClassLike_allRequired_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_ClassLike_allRequired_NonTypesystemRule() {
   }
   public void applyRule(final SNode classLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"))) == null) {
@@ -29,14 +29,10 @@ public class check_ClassLikeMember_unique_NonTypesystemRule extends AbstractNonT
     }
 
     for (SNode memberDescriptor : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(AttributeOperations.getAttribute(classLike, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"))), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor")), MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x72b255a0447fe4c8L, "classLikeMember")))) {
-      if (!(ClassLikeMember_Behavior.call_isMultiple_2141245758541890151(memberDescriptor))) {
-        if (Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_get_2603987804376013077", new Object[]{classLike})).count() > 1) {
-          for (SNode member : Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_get_2603987804376013077", new Object[]{classLike}))) {
-            {
-              MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(member, "Duplicated member '" + memberDescriptor + "'", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "2603987804377054178", null, errorTarget);
-            }
-          }
+      if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(memberDescriptor)) {
+        if (!(Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), memberDescriptor, "virtual_get_2603987804376013077", new Object[]{classLike})).isNotEmpty())) {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classLike, "Member '" + memberDescriptor + "' is required", "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "2603987804377015590", null, errorTarget);
         }
       }
     }
