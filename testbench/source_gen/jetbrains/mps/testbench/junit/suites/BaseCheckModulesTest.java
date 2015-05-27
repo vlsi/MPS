@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
@@ -33,10 +35,13 @@ public class BaseCheckModulesTest {
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
     // load excluded modules from system property, can be specified by MpsTestConfiguration annotation? 
-    // MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)? 
-    // can be extended with right modules set 
     initEnvironment();
-    return createTestParametersFromModules(ourContextProject.getModules());
+    Iterable<SModule> modules = new ModelAccessHelper(ourContextProject.getModelAccess()).runReadAction(new Computable<Iterable<SModule>>() {
+      public Iterable<SModule> compute() {
+        return ourContextProject.getRepository().getModules();
+      }
+    });
+    return createTestParametersFromModules(modules);
   }
 
   protected static void initEnvironment() throws InvocationTargetException, InterruptedException {

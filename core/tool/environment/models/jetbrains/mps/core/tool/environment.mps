@@ -4596,17 +4596,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="6rYSYZkPHJ3" role="3cqZAp">
-                  <node concept="1rXfSq" id="6rYSYZkPHJ1" role="3clFbG">
-                    <ref role="37wK5l" node="6rYSYZkPGv8" resolve="updateModelsInModules" />
-                    <node concept="37vLTw" id="6rYSYZkPHMk" role="37wK5m">
-                      <ref role="3cqZAo" node="6jVPebMMnIO" resolve="project" />
-                    </node>
-                    <node concept="37vLTw" id="6rYSYZkPHOD" role="37wK5m">
-                      <ref role="3cqZAo" node="6rYSYZkPH2t" resolve="changedModules" />
-                    </node>
-                  </node>
-                </node>
               </node>
               <node concept="2OqwBi" id="6rYSYZkPHsD" role="3clFbw">
                 <node concept="37vLTw" id="6rYSYZkPHr9" role="2Oq$k0">
@@ -4614,6 +4603,17 @@
                 </node>
                 <node concept="liA8E" id="6rYSYZkPH_r" role="2OqNvi">
                   <ref role="37wK5l" to="hb0s:~MPSCompilationResult.isReloadingNeeded():boolean" resolve="isReloadingNeeded" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="6rYSYZkPHJ3" role="3cqZAp">
+              <node concept="1rXfSq" id="6rYSYZkPHJ1" role="3clFbG">
+                <ref role="37wK5l" node="6rYSYZkPGv8" resolve="updateModelsInModules" />
+                <node concept="37vLTw" id="6rYSYZkPHMk" role="37wK5m">
+                  <ref role="3cqZAo" node="6jVPebMMnIO" resolve="project" />
+                </node>
+                <node concept="37vLTw" id="6rYSYZkPHOD" role="37wK5m">
+                  <ref role="3cqZAo" node="6rYSYZkPH2t" resolve="changedModules" />
                 </node>
               </node>
             </node>

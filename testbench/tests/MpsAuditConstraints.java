@@ -46,7 +46,7 @@ public class MpsAuditConstraints extends AuditConstraints {
     DISABLED_MODULES.add("jetbrains.mps.baseLanguage.unittest");
 
     // valid ref errors in a test project
-    DISABLED_MODULES.add("TestCompileSolution");
+//    DISABLED_MODULES.add("TestCompileSolution");
   }
 
   @Parameters

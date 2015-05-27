@@ -63,8 +63,8 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
       Set<SModule> changedModules = result.getChangedModules();
       if (result.isReloadingNeeded()) {
         reloadAllAfterMake(project, changedModules);
-        updateModelsInModules(project, changedModules);
       }
+      updateModelsInModules(project, changedModules);
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

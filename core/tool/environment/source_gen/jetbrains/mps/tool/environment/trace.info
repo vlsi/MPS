@@ -545,7 +545,7 @@
       <node id="4305429072761194507" at="60,69,61,71" concept="8" />
       <node id="7421619855160692892" at="62,9,63,63" concept="8" />
       <node id="9170334376386357108" at="64,39,65,52" concept="3" />
-      <node id="7421619855160695747" at="65,52,66,55" concept="3" />
+      <node id="7421619855160695747" at="66,7,67,53" concept="3" />
       <node id="7276643694148211910" at="68,27,69,36" concept="15" />
       <node id="6604662930316822364" at="70,5,71,19" concept="9" />
       <node id="5792583586807805478" at="75,30,76,42" concept="3" />
@@ -558,13 +558,13 @@
       <node id="2046945161065713083" at="48,90,51,5" concept="1" />
       <node id="2046945161065713083" at="48,90,51,5" concept="6" />
       <node id="3021026760600037912" at="53,0,56,0" concept="7" trace="compute#()Ljetbrains/mps/make/MPSCompilationResult;" />
+      <node id="7421619855160694316" at="63,63,66,7" concept="6" />
       <node id="5792583586807805478" at="74,153,77,5" concept="1" />
       <node id="5792583586807805478" at="74,153,77,5" concept="6" />
       <node id="4681254579908049041" at="81,0,84,0" concept="7" trace="run#()V" />
       <node id="7421619855160704751" at="98,61,101,11" concept="6" />
       <node id="3021026760599570459" at="25,0,29,0" concept="7" trace="isApplicable#()Z" />
       <node id="3021026760599827234" at="31,51,35,5" concept="6" />
-      <node id="7421619855160694316" at="63,63,67,7" concept="6" />
       <node id="3021026760599968814" at="42,0,47,0" concept="7" trace="loadProjectFromModuleHandles#(Ljetbrains/mps/project/Project;Ljava/util/List;)Ljetbrains/mps/project/Project;" />
       <node id="3021026760600037909" at="51,5,56,7" concept="9" />
       <node id="4681254579908049038" at="79,69,84,7" concept="3" />
@@ -580,6 +580,7 @@
       <scope id="3021026760599570462" at="26,33,27,16" />
       <scope id="2046945161065713083" at="49,30,50,48" />
       <scope id="3021026760600037913" at="53,45,54,131" />
+      <scope id="7421619855160694318" at="64,39,65,52" />
       <scope id="7276643694148211883" at="68,0,69,36">
         <var name="e" id="7276643694148211884" />
       </scope>
@@ -596,7 +597,6 @@
       <scope id="8356156703948196628" at="43,128,45,36">
         <var name="projectFilledWithModules" id="6450649963068989203" />
       </scope>
-      <scope id="7421619855160694318" at="64,39,66,55" />
       <scope id="2046945161065713083" at="48,90,51,5" />
       <scope id="3021026760600037912" at="53,0,56,0" />
       <scope id="5792583586807805478" at="74,153,77,5" />
@@ -608,7 +608,7 @@
         <var name="emptyProject" id="3021026760599986739" />
         <var name="moduleHandles" id="8356156703948201454" />
       </scope>
-      <scope id="7276643694148211882" at="62,9,67,7">
+      <scope id="7276643694148211882" at="62,9,67,53">
         <var name="changedModules" id="7421619855160692893" />
       </scope>
       <scope id="7421619855160704237" at="97,25,102,9" />

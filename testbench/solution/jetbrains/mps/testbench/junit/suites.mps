@@ -369,6 +369,11 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
+      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
+        <property id="779128492853935960" name="anchorTag" index="1K8rD$" />
+        <property id="779128492853934523" name="cellId" index="1K8rM7" />
+        <property id="779128492853699361" name="side" index="1Kfyot" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -522,15 +527,10 @@
           <node concept="3SKdUq" id="7X3$Ctw3Yw4" role="3SKWNk">
             <property role="3SKdUp" value="load excluded modules from system property, can be specified by MpsTestConfiguration annotation?" />
           </node>
-        </node>
-        <node concept="3SKdUt" id="7X3$Ctw3Yw7" role="3cqZAp">
-          <node concept="3SKdUq" id="7X3$Ctw3Yw6" role="3SKWNk">
-            <property role="3SKdUp" value="MpsTestConfiguration options: env, context project, excluded/included modules/models/nodes, modules type (for generators/constraints)?" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="7X3$Ctw3Yw9" role="3cqZAp">
-          <node concept="3SKdUq" id="7X3$Ctw3Yw8" role="3SKWNk">
-            <property role="3SKdUp" value="can be extended with right modules set" />
+          <node concept="1KehLL" id="5DrQSNO_r3m" role="lGtFl">
+            <property role="1K8rM7" value="Constant_5ng77o_a0" />
+            <property role="1K8rD$" value="default_RTransform" />
+            <property role="1Kfyot" value="left" />
           </node>
         </node>
         <node concept="3clFbF" id="6pV9atESEx" role="3cqZAp">
@@ -538,16 +538,59 @@
             <ref role="37wK5l" node="7X3$Ctw3YtA" resolve="initEnvironment" />
           </node>
         </node>
+        <node concept="3cpWs8" id="5DrQSNO_9BH" role="3cqZAp">
+          <node concept="3cpWsn" id="5DrQSNO_9BN" role="3cpWs9">
+            <property role="TrG5h" value="modules" />
+            <node concept="3uibUv" id="5DrQSNO_9BP" role="1tU5fm">
+              <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
+              <node concept="3uibUv" id="5DrQSNO_9Ga" role="11_B2D">
+                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="5DrQSNO_8T2" role="33vP2m">
+              <node concept="2ShNRf" id="5DrQSNO_aEo" role="2Oq$k0">
+                <node concept="1pGfFk" id="5DrQSNO_fCw" role="2ShVmc">
+                  <ref role="37wK5l" to="cu2c:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                  <node concept="2OqwBi" id="5DrQSNO_fKC" role="37wK5m">
+                    <node concept="37vLTw" id="5DrQSNO_gQJ" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
+                    </node>
+                    <node concept="liA8E" id="5DrQSNO_g5j" role="2OqNvi">
+                      <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="5DrQSNO_935" role="2OqNvi">
+                <ref role="37wK5l" to="cu2c:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <node concept="1bVj0M" id="5DrQSNO_94u" role="37wK5m">
+                  <node concept="3clFbS" id="5DrQSNO_94v" role="1bW5cS">
+                    <node concept="3clFbF" id="5DrQSNO_989" role="3cqZAp">
+                      <node concept="2OqwBi" id="5DrQSNO_9eO" role="3clFbG">
+                        <node concept="2OqwBi" id="7X3$Ctw3Y$_" role="2Oq$k0">
+                          <node concept="37vLTw" id="5DrQSNO_gQN" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
+                          </node>
+                          <node concept="liA8E" id="7X3$Ctw3Y$A" role="2OqNvi">
+                            <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="5DrQSNO_9na" role="2OqNvi">
+                          <ref role="37wK5l" to="88zw:~SRepository.getModules():java.lang.Iterable" resolve="getModules" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="7X3$Ctw3Ytv" role="3cqZAp">
           <node concept="1rXfSq" id="7X3$Ctw3Ytw" role="3cqZAk">
             <ref role="37wK5l" node="7X3$Ctw3YtW" resolve="createTestParametersFromModules" />
-            <node concept="2OqwBi" id="7X3$Ctw3Y$_" role="37wK5m">
-              <node concept="37vLTw" id="6pV9atESE8" role="2Oq$k0">
-                <ref role="3cqZAo" node="7X3$Ctw3Yt7" resolve="ourContextProject" />
-              </node>
-              <node concept="liA8E" id="7X3$Ctw3Y$A" role="2OqNvi">
-                <ref role="37wK5l" to="vsqj:~Project.getModules():java.lang.Iterable" resolve="getModules" />
-              </node>
+            <node concept="37vLTw" id="5DrQSNO_9S4" role="37wK5m">
+              <ref role="3cqZAo" node="5DrQSNO_9BN" resolve="modules" />
             </node>
           </node>
         </node>
