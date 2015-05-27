@@ -12,9 +12,12 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -57,26 +60,48 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
   protected Project makeOnFirstTimeOpened(@NotNull Project project) {
     MPSCompilationResult result = makeAllInCreatedEnvironment(project);
     try {
-      reloadAllAfterMake(result);
+      Set<SModule> changedModules = result.getChangedModules();
+      if (result.isReloadingNeeded()) {
+        reloadAllAfterMake(project, changedModules);
+        updateModelsInModules(project, changedModules);
+      }
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
     return project;
   }
 
-  public static void reloadAllAfterMake(final MPSCompilationResult mpsCompilationResult) throws InterruptedException, InvocationTargetException {
+  protected static void reloadAllAfterMake(@NotNull Project project, final Set<SModule> changed) throws InterruptedException, InvocationTargetException {
     if (LOG.isInfoEnabled()) {
       LOG.info("Reloading built modules");
     }
 
-    // why we need it? because some classes loaded before maker - LanguageRuntime and TypeSystem classes 
-    if (mpsCompilationResult.isReloadingNeeded()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
+    // todo create make process listeners, class loading is a client 
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadModules(changed);
+      }
+    });
+  }
+
+  /**
+   * Why do not we need it in IDE?
+   * Danya:
+   * added reload of all changed (or new) models after make.
+   * Usecase: stub model with source at classes_gen dir which is populated only during make.
+   * But by that time model repository is already filled and it has no such models since there was no class files
+   * when it got filled.
+   */
+  protected static void updateModelsInModules(@NotNull Project project, final Set<SModule> changed) {
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        for (SModule module : SetSequence.fromSet(changed)) {
+          if (module instanceof AbstractModule) {
+            ((AbstractModule) module).updateModelsSet();
+          }
         }
-      });
-    }
+      }
+    });
   }
   protected static Logger LOG = LogManager.getLogger(ProjectStrategyBase.class);
 }
