@@ -115,6 +115,7 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
+  // FIXME part of NodeWeaveFacility?
   Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
@@ -167,6 +168,7 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   /**
    * FIXME PROVISIONAL API
    * FIXME Consider splitting validation aspect from child addition, which could be generated.
+   * FIXME perhaps, {@link #weaveTemplate(SNodeReference, SNodeReference, TemplateContext, SNode, Object...)} could be part of NodeWeaveFacility as well?
    * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
    * @return utility capable of node weaving with respect to the given context
    */
