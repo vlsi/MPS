@@ -1596,7 +1596,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="3.2.2" />
+            <property role="3MwjfP" value="3.2.3" />
           </node>
         </node>
       </node>
