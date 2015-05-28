@@ -58,10 +58,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   private final LanguageRegistry myLanguageRegistry;
 
   //ConceptRegistry is a singleton, so we can omit remove() here though the field is not static
-  private final ThreadLocal<Set<Pair<Object, LanguageAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<Object, LanguageAspect>>>() {
+  private final ThreadLocal<Set<Pair<Object, RequestingAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<Object, RequestingAspect>>>() {
     @Override
-    protected Set<Pair<Object, LanguageAspect>> initialValue() {
-      return new HashSet<Pair<Object, LanguageAspect>>();
+    protected Set<Pair<Object, RequestingAspect>> initialValue() {
+      return new HashSet<Pair<Object, RequestingAspect>>();
     }
   };
 
@@ -90,8 +90,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     INSTANCE = null;
   }
 
-  private boolean startLoad(Object id, LanguageAspect aspect) {
-    Pair<Object, LanguageAspect> currentConceptAndLanguageAspect = new Pair<Object, LanguageAspect>(id, aspect);
+  private boolean startLoad(Object id, RequestingAspect aspect) {
+    Pair<Object, RequestingAspect> currentConceptAndLanguageAspect = new Pair<Object, RequestingAspect>(id, aspect);
     if (conceptsInLoading.get().contains(currentConceptAndLanguageAspect)) {
       return false;
     }
@@ -99,8 +99,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return true;
   }
 
-  private void finishLoad(Object fqName, LanguageAspect aspect) {
-    conceptsInLoading.get().remove(new Pair<Object, LanguageAspect>(fqName, aspect));
+  private void finishLoad(Object fqName, RequestingAspect aspect) {
+    conceptsInLoading.get().remove(new Pair<Object, RequestingAspect>(fqName, aspect));
   }
 
   @NotNull
@@ -122,7 +122,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    if (!startLoad(fqName, LanguageAspect.STRUCTURE)) {
+    if (!startLoad(fqName, RequestingAspect.STRUCTURE)) {
       return new IllegalConceptDescriptor(fqName);
     }
 
@@ -149,7 +149,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       conceptDescriptors.put(fqName, descriptor);
       return descriptor;
     } finally {
-      finishLoad(fqName, LanguageAspect.STRUCTURE);
+      finishLoad(fqName, RequestingAspect.STRUCTURE);
     }
   }
 
@@ -161,7 +161,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    if (!startLoad(id, LanguageAspect.STRUCTURE)) {
+    if (!startLoad(id, RequestingAspect.STRUCTURE)) {
       return new IllegalConceptDescriptor(id);
     }
 
@@ -187,7 +187,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       conceptDescriptorsById.put(id, descriptor);
       return descriptor;
     } finally {
-      finishLoad(id, LanguageAspect.STRUCTURE);
+      finishLoad(id, RequestingAspect.STRUCTURE);
     }
   }
 
@@ -199,7 +199,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    if (!startLoad(fqName, LanguageAspect.BEHAVIOR)) {
+    if (!startLoad(fqName, RequestingAspect.BEHAVIOR)) {
       return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     }
 
@@ -229,7 +229,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
       return descriptor;
     } finally {
-      finishLoad(fqName, LanguageAspect.BEHAVIOR);
+      finishLoad(fqName, RequestingAspect.BEHAVIOR);
     }
   }
 
@@ -272,7 +272,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     }
 
-    if (!startLoad(conceptId, LanguageAspect.CONSTRAINTS)) {
+    if (!startLoad(conceptId, RequestingAspect.CONSTRAINTS)) {
       // method ConstraintsDescriptor.getConceptFqName() is not in use, therefor we don't care to supply meaningful value
       return new IllegalConstraintsDescriptor(conceptId, MetaIdFactory.INVALID_CONCEPT_NAME);
     }
@@ -304,7 +304,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
       return descriptor;
     } finally {
-      finishLoad(conceptId, LanguageAspect.CONSTRAINTS);
+      finishLoad(conceptId, RequestingAspect.CONSTRAINTS);
     }
   }
 
@@ -321,5 +321,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptDescriptors.clear();
     behaviorDescriptors.clear();
     constraintsDescriptors.clear();
+  }
+
+  private enum RequestingAspect{
+    STRUCTURE, BEHAVIOR, CONSTRAINTS
   }
 }

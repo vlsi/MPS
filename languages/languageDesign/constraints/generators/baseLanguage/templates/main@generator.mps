@@ -410,23 +410,6 @@
           </node>
           <node concept="3clFbF" id="40EGsDCsY$4" role="3cqZAp">
             <node concept="1Wc70l" id="40EGsDCsY$5" role="3clFbG">
-              <node concept="1eOMI4" id="40EGsDCsY$6" role="3uHU7B">
-                <node concept="3clFbC" id="40EGsDCsY$7" role="1eOMHV">
-                  <node concept="Rm8GO" id="40EGsDCsY$8" role="3uHU7w">
-                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
-                  </node>
-                  <node concept="2YIFZM" id="40EGsDCsY$9" role="3uHU7B">
-                    <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-                    <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-                    <node concept="2JrnkZ" id="40EGsDCsY$b" role="37wK5m">
-                      <node concept="37vLTw" id="3GM_nagTytc" role="2JrQYb">
-                        <ref role="3cqZAo" node="5Cioe7RLP3z" resolve="model" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3fqX7Q" id="40EGsDCsY$e" role="3uHU7w">
                 <node concept="2OqwBi" id="40EGsDCsY$f" role="3fr31v">
                   <node concept="2OqwBi" id="40EGsDCsY$g" role="2Oq$k0">
@@ -438,9 +421,20 @@
                   <node concept="1v1jN8" id="40EGsDCsY$j" role="2OqNvi" />
                 </node>
               </node>
+              <node concept="2OqwBi" id="7IH442cVTOv" role="3uHU7B">
+                <node concept="Rm8GO" id="40EGsDCsY$8" role="2Oq$k0">
+                  <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  <ref role="Rm8GQ" to="cu2c:~LanguageAspect.CONSTRAINTS" resolve="CONSTRAINTS" />
+                </node>
+                <node concept="liA8E" id="7IH442cVUdz" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                  <node concept="37vLTw" id="7IH442cVUoP" role="37wK5m">
+                    <ref role="3cqZAo" node="5Cioe7RLP3z" resolve="model" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="3clFbH" id="40EGsDCsY$3" role="3cqZAp" />
         </node>
       </node>
     </node>

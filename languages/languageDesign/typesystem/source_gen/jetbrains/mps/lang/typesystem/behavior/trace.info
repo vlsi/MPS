@@ -28,7 +28,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.AbstractOverloadedOpsTypeRule_BehaviorDescriptor" />
     </file>
     <file name="AbstractRule_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor" />
+      <unit at="15,0,43,0" name="jetbrains.mps.lang.typesystem.behavior.AbstractRule_BehaviorDescriptor" />
     </file>
     <file name="AbstractSubtypingRule_BehaviorDescriptor.java">
       <unit at="11,0,40,0" name="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule_BehaviorDescriptor" />

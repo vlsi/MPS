@@ -66,6 +66,7 @@ public class ModelDigestUtil {
   /**
    * Ignores newlines.
    */
+  @NotNull
   public static String hashText(String content) {
     try {
       return hashText(new StringReader(content));

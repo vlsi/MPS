@@ -5,22 +5,58 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.util.Set;
+import com.intellij.openapi.util.Pair;
+import jetbrains.mps.workbench.ActionPlace;
+import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.LanguageAspect;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import org.jetbrains.annotations.Nullable;
 
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(LanguageNewCustomPartActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup";
+  private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
   public LanguageNewCustomPartActions_ActionGroup() {
     super("LanguageNewCustomPartActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+    } catch (Throwable t) {
+      LOG.error("User group error", t);
+    }
+  }
+  public void doUpdate(AnActionEvent event) {
+    try {
+      // do not change this to "build" as LanguageAspectDescriptor set can be changed 
+      // the descriptor class should not be held in actions 
+
+      LanguageNewCustomPartActions_ActionGroup.this.removeAll();
+
       for (LanguageAspect aspect : LanguageAspect.values()) {
+        // [MM] this LanguageAspect usage is reviewed 
         LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModel_Action(aspect), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), aspect);
+      }
+      for (LanguageAspectDescriptor ad : ExtensionPoint.<LanguageAspectDescriptor>generify(new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)).getObjects()) {
+        LanguageNewCustomPartActions_ActionGroup.this.addParameterizedAction(new NewAspectModelByDescriptor_Action(NewAspectModelActionHelper.getAspectId(ad)), PluginId.getId("jetbrains.mps.ide.mpsdevkit"), NewAspectModelActionHelper.getAspectId(ad));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
+    for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
+      this.addPlace(p.first, p.second);
+    }
+  }
+  public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
+    SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
+  }
+  public boolean isStrict() {
+    return false;
   }
 }

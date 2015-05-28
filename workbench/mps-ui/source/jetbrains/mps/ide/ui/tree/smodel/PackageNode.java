@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -51,7 +50,7 @@ public class PackageNode extends SNodeGroupTreeNode {
 
     final SModule module = myModelNode.getModel().getModule();
     if (module instanceof Language) {
-      for (SModel sm : LanguageAspect.getAspectModels((Language) module)) {
+      for (SModel sm : LanguageAspectSupport.getAspectModels(module)) {
         result.addAll(getNodesUnderPackage(sm));
       }
     }

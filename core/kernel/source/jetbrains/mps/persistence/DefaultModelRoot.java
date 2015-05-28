@@ -124,9 +124,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     if (!canCreateModels()) {
       return false;
     }
-    if (isLanguageAspectModelRoot()) {
-      return isLanguageAspect(modelName, getFiles(SOURCE_ROOTS).iterator().next());
-    }
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
     Map<String, String> options = new HashMap<String, String>();
     FileDataSource source;
@@ -223,22 +220,13 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       throw new IOException("empty list of source roots");
     }
 
+
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
-      sourceRoot = null;
-      for (String sr : sourceRoots) {
-        if (isLanguageAspectsSourceRoot(sr)) {
-          String prefix = getModule().getModuleName() + ".";
-          if (modelName.startsWith(prefix)) {
-            String aspectName = modelName.substring(prefix.length());
-            if (getAspect(aspectName) != null) {
-              sourceRoot = sr;
-              break;
-            }
-          }
-          continue;
-        }
-        sourceRoot = sr;
-        break;
+      if (!sourceRoots.isEmpty()) {
+        //todo this should be changed later. The point is that at first the user
+        //todo chooses a root to create the model and then he can edit additional settings
+        //todo provided by this root, not the root automatically choosing some options
+        sourceRoot = sourceRoots.iterator().next();
       }
       if (sourceRoot == null) {
         throw new IOException("no suitable source root found");
@@ -246,7 +234,12 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
 
     String filenameSuffix = modelName;
-    if (isLanguageAspect(modelName, sourceRoot) || isGeneratorTemplateModel(modelName)) {
+    if (isLanguageAspectsSourceRoot(sourceRoot)) {
+      String moduleName = getModule().getModuleName();
+      if (filenameSuffix.startsWith(moduleName + ".")) {
+        filenameSuffix = filenameSuffix.substring(moduleName.length() + 1);
+      }
+    } else if (isGeneratorTemplateModel(modelName)){
       filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
@@ -256,39 +249,9 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return new FileDataSource(file, this);
   }
 
-  private LanguageAspect getAspect(@NotNull String aspectName) {
-    if (aspectName.indexOf('.') >= 0) {
-      return null;
-    }
-    for (LanguageAspect la : LanguageAspect.values()) {
-      if (la.getName().equals(aspectName)) {
-        return la;
-      }
-    }
-    return null;
-  }
-
-  private boolean isLanguageAspect(String modelName, String sourceRoot) {
-    if (!isLanguageAspectsSourceRoot(sourceRoot)) return false;
-    //prefixed with language namespace
-    if (!NameUtil.namespaceFromLongName(modelName).equals(getModule().getModuleName())) return false;
-    //is aspect model name
-    String name = NameUtil.shortNameFromLongName(modelName);
-    for (LanguageAspect la : LanguageAspect.values()) {
-      if (la.getName().equals(name)) return true;
-    }
-    return false;
-  }
-
   public boolean isLanguageAspectsSourceRoot(String sourceRoot) {
     if (!(getModule() instanceof Language)) return false;
     return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
-  }
-
-  private boolean isLanguageAspectModelRoot() {
-    if (!(getModule() instanceof Language)) return false;
-    Collection<String> modelRoots = getFiles(SOURCE_ROOTS);
-    return modelRoots.size() == 1 && isLanguageAspectsSourceRoot(modelRoots.iterator().next());
   }
 
   private boolean isGeneratorTemplateModel(String modelName) {

@@ -27,11 +27,21 @@ import java.util.Collection;
 import java.util.Collections;
 
 public abstract class LanguageAspectDescriptor {
+  public abstract String getPresentableAspectName();
+
   @NotNull
   public abstract Collection<SModel> getAspectModels(SModule language);
 
   public boolean hasAspect(SModule language){
     return !getAspectModels(language).isEmpty();
+  }
+
+  public boolean canCreate(SModule language){
+    return false;
+  }
+
+  public void create(SModule language){
+
   }
 
   @NotNull

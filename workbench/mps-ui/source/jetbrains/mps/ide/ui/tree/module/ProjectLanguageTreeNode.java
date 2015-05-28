@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -80,19 +81,8 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    // language aspect
-    for (LanguageAspect aspect : LanguageAspect.values()) {
-      if (aspect.get(getModule()) != null) {
-        add(new SModelTreeNode(aspect.get(getModule()), null, false));
-      }
-    }
-
-    for (LanguageAspectDescriptor d: SNodeUtil.collectAspects()){
-      //todo exceptions handling
-      final Collection<SModel> models = d.getAspectModels(getModule());
-      for (SModel m:models){
-        add(new SModelTreeNode(m, null, false, Condition.TRUE_CONDITION, 0, d.getIcon()));
-      }
+    for (SModel m: LanguageAspectSupport.getAspectModels(getModule())){
+      add(new SModelTreeNode(m, null, false));
     }
 
     // language accessory models

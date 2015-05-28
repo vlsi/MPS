@@ -275,7 +275,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
           String className = getDescriptorClassName(language.getModuleReference());
-          initIntentionsDescriptor(language, LanguageAspect.INTENTIONS, className);
+          initIntentionsDescriptor(language, className);
         }
         for (Language language : allLanguages) {
           addMigrationsFromLanguage(language);
@@ -323,9 +323,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  private void initIntentionsDescriptor(Language language, LanguageAspect aspect, String classShortName) {
+  private void initIntentionsDescriptor(Language language, String classShortName) {
     try {
-      Class<?> cls = myClassLoaderManager.getOwnClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
+      Class<?> cls = myClassLoaderManager.getOwnClass(language, language.getModuleName() + "." + LanguageAspect.INTENTIONS.getName() + "." + classShortName);
       if (cls != null) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();
