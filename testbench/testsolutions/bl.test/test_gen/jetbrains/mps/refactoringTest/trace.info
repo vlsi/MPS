@@ -2280,6 +2280,62 @@
       <unit id="3014415391767789119" at="16,0,38,0" name="jetbrains.mps.refactoringTest.SimpleMoveStaticMethod_Test" />
     </file>
   </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/30987049746108520">
+    <file name="VariableDeclarationInitializer_Test.java">
+      <node id="30987049746108520" at="22,68,23,119" concept="1" />
+      <node id="30987049746108520" at="23,119,24,138" concept="1" />
+      <node id="30987049746108578" at="28,70,29,44" concept="1" />
+      <node id="30987049746108578" at="29,44,30,44" concept="1" />
+      <node id="30987049746108581" at="30,44,31,282" concept="5" />
+      <node id="30987049746108587" at="31,282,32,23" concept="1" />
+      <node id="30987049746108591" at="33,7,34,290" concept="5" />
+      <node id="30987049746108591" at="34,290,35,289" concept="5" />
+      <node id="30987049746108591" at="35,289,36,146" concept="1" />
+      <node id="30987049746108520" at="21,0,26,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
+      <node id="30987049746108591" at="32,23,37,7" concept="0" />
+      <node id="30987049746108578" at="28,0,39,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
+      <scope id="30987049746108520" at="22,68,24,138" />
+      <scope id="30987049746108591" at="33,7,36,146">
+        <var name="nodesAfter" id="30987049746108591" />
+        <var name="nodesBefore" id="30987049746108591" />
+      </scope>
+      <scope id="30987049746108520" at="21,0,26,0" />
+      <scope id="30987049746108578" at="28,70,37,7">
+        <var name="ref" id="30987049746108582" />
+      </scope>
+      <scope id="30987049746108578" at="28,0,39,0" />
+      <unit id="30987049746108520" at="26,0,40,0" name="jetbrains.mps.refactoringTest.VariableDeclarationInitializer_Test$TestBody" />
+      <unit id="30987049746108520" at="19,0,41,0" name="jetbrains.mps.refactoringTest.VariableDeclarationInitializer_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/30987049746113412">
+    <file name="OperandOfDotExpression_Test.java">
+      <node id="30987049746113412" at="22,68,23,119" concept="1" />
+      <node id="30987049746113412" at="23,119,24,130" concept="1" />
+      <node id="30987049746113470" at="28,70,29,44" concept="1" />
+      <node id="30987049746113470" at="29,44,30,44" concept="1" />
+      <node id="30987049746113473" at="30,44,31,275" concept="5" />
+      <node id="30987049746113479" at="31,275,32,23" concept="1" />
+      <node id="30987049746113483" at="33,7,34,290" concept="5" />
+      <node id="30987049746113483" at="34,290,35,289" concept="5" />
+      <node id="30987049746113483" at="35,289,36,146" concept="1" />
+      <node id="30987049746113412" at="21,0,26,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
+      <node id="30987049746113483" at="32,23,37,7" concept="0" />
+      <node id="30987049746113470" at="28,0,39,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
+      <scope id="30987049746113412" at="22,68,24,130" />
+      <scope id="30987049746113483" at="33,7,36,146">
+        <var name="nodesAfter" id="30987049746113483" />
+        <var name="nodesBefore" id="30987049746113483" />
+      </scope>
+      <scope id="30987049746113412" at="21,0,26,0" />
+      <scope id="30987049746113470" at="28,70,37,7">
+        <var name="ref" id="30987049746113474" />
+      </scope>
+      <scope id="30987049746113470" at="28,0,39,0" />
+      <unit id="30987049746113412" at="26,0,40,0" name="jetbrains.mps.refactoringTest.OperandOfDotExpression_Test$TestBody" />
+      <unit id="30987049746113412" at="19,0,41,0" name="jetbrains.mps.refactoringTest.OperandOfDotExpression_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/3109730807963541425">
     <file name="IntroduceVariableFromAnonimousClass_Test.java">
       <node id="3109730807963541425" at="22,79,23,119" concept="1" />

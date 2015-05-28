@@ -3423,8 +3423,14 @@
     <node concept="lpD6D" id="3FJ0r$qO3b6" role="lpD6w">
       <ref role="lpD7u" to="hbb4:hT$RL_U" resolve="InlineWithNoSourcesAttached" />
     </node>
+    <node concept="lpD6D" id="1I5CUWKB0r" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:1I5CUWKie4" resolve="OperandOfDotExpression" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3b7" role="lpD6w">
       <ref role="lpD7u" to="hbb4:hT$RLAm" resolve="SimpleInlineWithOneReturn" />
+    </node>
+    <node concept="lpD6D" id="1I5CUWKBcs" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:1I5CUWKh1C" resolve="VariableDeclarationInitializer" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c6" role="lpD6w">
       <ref role="lpD7u" to="hbb4:5w_nepi1Hna" resolve="InlineAssingmentInClosure" />
