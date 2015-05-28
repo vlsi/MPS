@@ -16,6 +16,9 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Result;
+import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -150,7 +153,7 @@ class IdeaFile implements IFileEx {
       return !myVirtualFile.isDirectory();
     } else {
       try {
-        VirtualFile directory = VfsUtil.createDirectories(truncDirPath(myPath));
+        VirtualFile directory = createDirs(truncDirPath(myPath));
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFile = directory.createChildData(ourRequestor(), fileName);
@@ -162,6 +165,32 @@ class IdeaFile implements IFileEx {
     }
   }
 
+  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
+  public VirtualFile createDirs(final String directoryPath) throws IOException{
+    return new WriteAction<VirtualFile>() {
+      @Override
+      protected void run(Result<VirtualFile> result) throws Throwable {
+        VirtualFile res = createDirsImpl(directoryPath);
+        result.setResult(res);
+      }
+    }.execute().throwException().getResultObject();
+  }
+
+  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
+  private VirtualFile createDirsImpl(String directoryPath) throws IOException {
+    String path = FileUtil.toSystemIndependentName(directoryPath);
+    final VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByPath(path);
+    if (file == null) {
+      int pos = path.lastIndexOf('/');
+      if (pos < 0) return null;
+      VirtualFile parent = createDirsImpl(path.substring(0, pos));
+      if (parent == null) return null;
+      final String dirName = path.substring(pos + 1);
+      return parent.createChildDirectory(ourRequestor(), dirName);
+    }
+    return file;
+  }
+
   @Override
   public boolean mkdirs() {
     ApplicationManager.getApplication().assertWriteAccessAllowed();
@@ -169,7 +198,7 @@ class IdeaFile implements IFileEx {
       return myVirtualFile.isDirectory();
     } else {
       try {
-        myVirtualFile = VfsUtil.createDirectories(myPath);
+        myVirtualFile = createDirs(myPath);
         return true;
       } catch (IOException e) {
         return false;
