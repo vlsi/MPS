@@ -12378,15 +12378,19 @@
                       <node concept="37vLTw" id="4e7dAY661Ch" role="37vLTJ">
                         <ref role="3cqZAo" node="4e7dAY65SX8" resolve="module" />
                       </node>
-                      <node concept="2OqwBi" id="4e7dAY65YWb" role="37vLTx">
-                        <node concept="2YIFZM" id="4e7dAY65YQh" role="2Oq$k0">
-                          <ref role="37wK5l" to="vsqj:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
-                          <ref role="1Pybhc" to="vsqj:~GlobalScope" resolve="GlobalScope" />
+                      <node concept="2OqwBi" id="1aYLt$9d4VG" role="37vLTx">
+                        <node concept="37vLTw" id="1aYLt$9d4VH" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5iKxrmkr17L" resolve="solutionRef" />
                         </node>
-                        <node concept="liA8E" id="4e7dAY65ZfG" role="2OqNvi">
-                          <ref role="37wK5l" to="vsqj:~GlobalScope.resolve(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
-                          <node concept="37vLTw" id="4e7dAY65Zm6" role="37wK5m">
-                            <ref role="3cqZAo" node="5iKxrmkr17L" resolve="solutionRef" />
+                        <node concept="liA8E" id="1aYLt$9d4VI" role="2OqNvi">
+                          <ref role="37wK5l" to="88zw:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
+                          <node concept="2OqwBi" id="1aYLt$9d4VJ" role="37wK5m">
+                            <node concept="37vLTw" id="1aYLt$9d4VK" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3H7CugYe6U_" resolve="project" />
+                            </node>
+                            <node concept="liA8E" id="1aYLt$9d4VL" role="2OqNvi">
+                              <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                            </node>
                           </node>
                         </node>
                       </node>

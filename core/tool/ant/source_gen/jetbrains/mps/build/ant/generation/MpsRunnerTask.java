@@ -8,7 +8,6 @@ public class MpsRunnerTask extends GenerateTask {
   private MpsRunnerProperties myProperties;
   public MpsRunnerTask() {
     myProperties = new MpsRunnerProperties(myWhatToDo);
-    myProperties.setStartMethod("runFromMPS");
   }
 
   @Override
@@ -34,9 +33,4 @@ public class MpsRunnerTask extends GenerateTask {
   public void setStartMethod(String startMethod) {
     myProperties.setStartMethod(startMethod);
   }
-
-  public void addConfiguredModule(ModuleChunkPart module) {
-    myWhatToDo.addModuleFile(module.getFile());
-  }
-
 }

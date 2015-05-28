@@ -52,9 +52,6 @@
     <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
       <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
     </node>
-    <node concept="ygXWA" id="3umvbTBOJS$" role="yg1MB">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
-    </node>
     <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
       <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />
     </node>

@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.module.ReloadableModule;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -50,7 +49,7 @@ public class MpsRunnerWorker extends MpsWorker {
     Environment environment = new MpsEnvironment(config);
     setupEnvironment();
 
-    Project project = createDummyProject();
+    final Project project = createDummyProject();
 
     MpsRunnerProperties properties = new MpsRunnerProperties(myWhatToDo);
     String className = properties.getStartClass();
@@ -59,7 +58,7 @@ public class MpsRunnerWorker extends MpsWorker {
     final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
     project.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        module.value = GlobalScope.getInstance().resolve(solutionRef);
+        module.value = solutionRef.resolve(project.getRepository());
       }
     });
 

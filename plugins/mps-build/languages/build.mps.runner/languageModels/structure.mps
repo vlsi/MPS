@@ -6,8 +6,8 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
   </imports>
   <registry>
@@ -39,7 +39,7 @@
   </registry>
   <node concept="1TIwiD" id="3BExUgsJFn6">
     <property role="TrG5h" value="BuildSolutionRunnerPlugin" />
-    <property role="34LRSv" value="run-from-mps" />
+    <property role="34LRSv" value="mps-runner" />
     <property role="R4oN_" value="adds ability to run MPS code after build" />
     <ref role="1TJDcQ" to="3ior:5KZfyKsUo6u" resolve="BuildPlugin" />
   </node>
@@ -55,6 +55,9 @@
     </node>
     <node concept="PrWs8" id="1Vi5mb_gy0R" role="PzmwI">
       <ref role="PrY4T" to="3ior:IFRVVI6zqz" resolve="BuildExternalDependency" />
+    </node>
+    <node concept="PrWs8" id="1aYLt$9de$A" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
 </model>

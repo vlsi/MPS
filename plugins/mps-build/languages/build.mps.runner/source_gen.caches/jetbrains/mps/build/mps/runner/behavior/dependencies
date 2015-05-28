@@ -11,15 +11,21 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_Behavior" file="BuildSolutionRunnerAspect_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.DescendantsScope" />
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_BehaviorDescriptor" file="BuildSolutionRunnerAspect_BehaviorDescriptor.java">
@@ -30,6 +36,9 @@
     <classNode dependClassName="jetbrains.mps.build.mps.runner.behavior.BuildSolutionRunnerAspect_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

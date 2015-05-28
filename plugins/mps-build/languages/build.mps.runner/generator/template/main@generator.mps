@@ -16,13 +16,14 @@
     <import index="tken" ref="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
+    <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" implicit="true" />
+    <import index="tos2" ref="r:19e846e2-aa6a-48a9-8367-2a1eda2709e7(jetbrains.mps.build.mps.runner.behavior)" implicit="true" />
+    <import index="boe" ref="r:4e917293-f5b9-4023-b36a-fcf2132c435c(jetbrains.mps.build.mps.runner.accessories)" implicit="true" />
+    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
     <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
-    <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="boe" ref="r:4e917293-f5b9-4023-b36a-fcf2132c435c(jetbrains.mps.build.mps.runner.accessories)" implicit="true" />
     <import index="as3y" ref="r:0f2b4a26-93a1-4327-97ef-ca91b7a4cf5e(jetbrains.mps.build.mps.runner.structure)" implicit="true" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -343,7 +344,7 @@
                               </node>
                               <node concept="3cpWs3" id="3pzPpUGhl8r" role="3uHU7B">
                                 <node concept="Xl_RD" id="3pzPpUGhleo" role="3uHU7B">
-                                  <property role="Xl_RC" value="starting " />
+                                  <property role="Xl_RC" value="Running code from " />
                                 </node>
                                 <node concept="2OqwBi" id="1Vi5mb_Ao03" role="3uHU7w">
                                   <node concept="2OqwBi" id="3pzPpUGhkQ_" role="2Oq$k0">
@@ -911,20 +912,10 @@
                       <node concept="3zFVjK" id="5iKxrmkquDP" role="3zH0cK">
                         <node concept="3clFbS" id="5iKxrmkquDQ" role="2VODD2">
                           <node concept="3clFbF" id="5iKxrmkquGw" role="3cqZAp">
-                            <node concept="3cpWs3" id="5iKxrmkqwk_" role="3clFbG">
-                              <node concept="Xl_RD" id="5iKxrmkqwkF" role="3uHU7w">
-                                <property role="Xl_RC" value=".MainClass" />
-                              </node>
-                              <node concept="2OqwBi" id="5iKxrmkqvu0" role="3uHU7B">
-                                <node concept="2OqwBi" id="5iKxrmkquLo" role="2Oq$k0">
-                                  <node concept="30H73N" id="5iKxrmkquGv" role="2Oq$k0" />
-                                  <node concept="3TrEf2" id="5iKxrmkqv9r" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" />
-                                  </node>
-                                </node>
-                                <node concept="3TrcHB" id="5iKxrmkqvQ8" role="2OqNvi">
-                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                </node>
+                            <node concept="2OqwBi" id="1aYLt$9ex4B" role="3clFbG">
+                              <node concept="30H73N" id="1aYLt$9ewSS" role="2Oq$k0" />
+                              <node concept="2qgKlT" id="1aYLt$9eBZX" role="2OqNvi">
+                                <ref role="37wK5l" to="tos2:1aYLt$9eyUg" resolve="getFQClassName" />
                               </node>
                             </node>
                           </node>
@@ -936,7 +927,23 @@
                 <node concept="2pNUuL" id="5iKxrmkqukg" role="2pNNFR">
                   <property role="2pNUuO" value="startMethod" />
                   <node concept="2pMdtt" id="5iKxrmkquDM" role="2pMdts">
-                    <property role="2pMdty" value="runMps" />
+                    <property role="2pMdty" value="mpsmain" />
+                    <node concept="17Uvod" id="6rDosczO_ck" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="6rDosczO_cl" role="3zH0cK">
+                        <node concept="3clFbS" id="6rDosczO_cm" role="2VODD2">
+                          <node concept="3clFbF" id="6rDosczO_ht" role="3cqZAp">
+                            <node concept="2OqwBi" id="1aYLt$9exTK" role="3clFbG">
+                              <node concept="30H73N" id="1aYLt$9exOt" role="2Oq$k0" />
+                              <node concept="2qgKlT" id="1aYLt$9eybo" role="2OqNvi">
+                                <ref role="37wK5l" to="tos2:1aYLt$9dX0a" resolve="getMethodName" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
