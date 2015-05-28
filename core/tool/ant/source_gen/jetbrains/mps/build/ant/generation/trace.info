@@ -124,6 +124,50 @@
       <unit id="4263887295358464059" at="17,0,84,0" name="jetbrains.mps.build.ant.generation.GenerateTask" />
     </file>
   </root>
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4271560773252437472">
+    <file name="MpsRunnerTask.java">
+      <node id="2220861080746432548" at="8,0,9,0" concept="3" trace="myProperties" />
+      <node id="2220861080746434487" at="9,26,10,55" concept="2" />
+      <node id="4271560773252623220" at="14,37,15,61" concept="8" />
+      <node id="6102524510012602328" at="18,31,19,38" concept="8" />
+      <node id="6102524510012602338" at="21,45,22,40" concept="2" />
+      <node id="2220861080746445818" at="24,33,25,40" concept="8" />
+      <node id="2220861080746447689" at="27,48,28,43" concept="2" />
+      <node id="2220861080746391117" at="30,34,31,41" concept="8" />
+      <node id="2220861080746449519" at="33,50,34,45" concept="2" />
+      <node id="2220861080746434088" at="9,0,12,0" concept="1" trace="MpsRunnerTask#()V" />
+      <node id="6102524510012602326" at="18,0,21,0" concept="6" trace="getSolution#()Ljava/lang/String;" />
+      <node id="6102524510012602334" at="21,0,24,0" concept="6" trace="setSolution#(Ljava/lang/String;)V" />
+      <node id="4271560773252623558" at="24,0,27,0" concept="6" trace="getStartClass#()Ljava/lang/String;" />
+      <node id="4271560773252623570" at="27,0,30,0" concept="6" trace="setStartClass#(Ljava/lang/String;)V" />
+      <node id="2220861080746391115" at="30,0,33,0" concept="6" trace="getStartMethod#()Ljava/lang/String;" />
+      <node id="2220861080746391128" at="33,0,36,0" concept="6" trace="setStartMethod#(Ljava/lang/String;)V" />
+      <node id="4271560773252623217" at="13,0,17,0" concept="6" trace="getWorkerClass#()Ljava/lang/String;" />
+      <scope id="2220861080746434092" at="9,26,10,55" />
+      <scope id="4271560773252623219" at="14,37,15,61" />
+      <scope id="6102524510012602327" at="18,31,19,38" />
+      <scope id="6102524510012602337" at="21,45,22,40" />
+      <scope id="4271560773252623559" at="24,33,25,40" />
+      <scope id="4271560773252623573" at="27,48,28,43" />
+      <scope id="2220861080746391116" at="30,34,31,41" />
+      <scope id="2220861080746391131" at="33,50,34,45" />
+      <scope id="2220861080746434088" at="9,0,12,0" />
+      <scope id="6102524510012602326" at="18,0,21,0" />
+      <scope id="6102524510012602334" at="21,0,24,0">
+        <var name="solutioun" id="6102524510012602343" />
+      </scope>
+      <scope id="4271560773252623558" at="24,0,27,0" />
+      <scope id="4271560773252623570" at="27,0,30,0">
+        <var name="startClass" id="4271560773252623581" />
+      </scope>
+      <scope id="2220861080746391115" at="30,0,33,0" />
+      <scope id="2220861080746391128" at="33,0,36,0">
+        <var name="startMethod" id="2220861080746391137" />
+      </scope>
+      <scope id="4271560773252623217" at="13,0,17,0" />
+      <unit id="4271560773252437472" at="7,0,37,0" name="jetbrains.mps.build.ant.generation.MpsRunnerTask" />
+    </file>
+  </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/861826518923203126">
     <file name="GenTestTask.java">
       <node id="861826518923203153" at="9,37,10,59" concept="8" />
