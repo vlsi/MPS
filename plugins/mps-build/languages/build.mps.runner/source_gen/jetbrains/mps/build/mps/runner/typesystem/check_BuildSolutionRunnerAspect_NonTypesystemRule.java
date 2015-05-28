@@ -27,7 +27,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildSolutionRunnerAspect_NonTypesystemRule() {
@@ -65,14 +65,11 @@ public class check_BuildSolutionRunnerAspect_NonTypesystemRule extends AbstractN
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(buildSolutionRunner, "Cannot find public static void " + className + "." + methodName + "() in " + SPropertyOperations.getString(SLinkOperations.getTarget(buildSolutionRunner, MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), "r:6869e2b7-2b2d-443c-a462-ce5a9004892e(jetbrains.mps.build.mps.runner.typesystem)", "7415565752189086936", null, errorTarget);
     }
   }
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerAspect";
+  public SAbstractConcept getApplicableConcept() {
+    return MetaAdapterFactory.getConcept(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, "jetbrains.mps.build.mps.runner.structure.BuildSolutionRunnerAspect");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
-      return new IsApplicableStatus(b, null);
-    }
+    return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
   }
   public boolean overrides() {
     return false;

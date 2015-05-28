@@ -27,8 +27,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.runner.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.build.mps.runner.constraints.BuildSolutionRunnerAspect_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
