@@ -2512,6 +2512,24 @@
               <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
               <node concept="1bVj0M" id="7DX8xFKyIyx" role="37wK5m">
                 <node concept="3clFbS" id="7DX8xFKyIyy" role="1bW5cS">
+                  <node concept="3clFbJ" id="2qEq7FDtqJy" role="3cqZAp">
+                    <node concept="3clFbS" id="2qEq7FDtqJ$" role="3clFbx">
+                      <node concept="3cpWs6" id="2qEq7FDtrtn" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="2qEq7FDtqZ4" role="3clFbw">
+                      <node concept="2OqwBi" id="2qEq7FDtqOk" role="2Oq$k0">
+                        <node concept="37vLTw" id="2qEq7FDtqM2" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
+                        </node>
+                        <node concept="liA8E" id="2qEq7FDtqWy" role="2OqNvi">
+                          <ref role="37wK5l" to="nu8v:~EditorCell.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="2qEq7FDtrmN" role="2OqNvi">
+                        <ref role="37wK5l" to="srng:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbJ" id="11sNP2BO_Ca" role="3cqZAp">
                     <node concept="1Wc70l" id="2wEmQUlSmjB" role="3clFbw">
                       <node concept="2ZW3vV" id="11sNP2BOAmv" role="3uHU7B">

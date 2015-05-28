@@ -74,6 +74,9 @@ public class Insert_Action extends BaseAction {
 
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
+          if (editorCell.getEditorComponent().isDisposed()) {
+            return;
+          }
           if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
             return;
           }

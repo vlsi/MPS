@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
@@ -23,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -78,6 +80,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void update() {
+    assert !myDisposed;
     doUpdate(null);
     myModelListenersController.clearCollectedEvents();
     fireEditorUpdated();
@@ -112,6 +115,12 @@ public class UpdaterImpl implements Updater, CommandContext {
    */
   @Deprecated
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
+    assert !myDisposed;
+    Project project = ProjectHelper.getProject(getEditorContext().getRepository());
+    assert
+        project == null || !project.isDisposed() :
+        "Update was executed for the editor associated with disposed project: " + project + ", editor: " + getEditorComponent() + ", node: " +
+            getEditorComponent().getEditedNode();
     myUpdateSession = createUpdateSession(node, events);
     EditorCell result = null;
     try {
@@ -135,6 +144,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void flushModelEvents() {
+    assert !myDisposed;
     LOG.assertLog(ModelAccess.instance().isInEDT(), "This method should be called in EDT");
     myModelListenersController.flush();
   }
@@ -151,6 +161,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public boolean setInitialEditorHints(@Nullable String[] hints) {
+    assert !myDisposed;
     boolean changed = !Arrays.equals(myInitialHints, hints);
     myInitialHints = hints;
     return changed;
@@ -159,8 +170,9 @@ public class UpdaterImpl implements Updater, CommandContext {
   @Nullable
   @Override
   public String[] getInitialEditorHints() {
+    assert !myDisposed;
     if (myInitialHints == null) {
-      return myInitialHints;
+      return null;
     }
     String[] result = new String[myInitialHints.length];
     System.arraycopy(myInitialHints, 0, result, 0, myInitialHints.length);
@@ -208,28 +220,33 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   public EditorCell getBigCell(SNode node) {
+    assert !myDisposed;
     WeakReference<EditorCell> editorCellWeakReference = myBigCellsMap.get(node);
     return editorCellWeakReference == null ? null : editorCellWeakReference.get();
   }
 
   public void clearDependencies(EditorCell cell) {
+    assert !myDisposed;
     myRelatedNodes.remove(cell);
     myRelatedRefTargets.remove(cell);
   }
 
   public Set<SNode> getRelatedNodes(EditorCell cell) {
+    assert !myDisposed;
     Set<SNode> nodes = myRelatedNodes.get(cell);
     if (nodes == null) return null;
     return Collections.unmodifiableSet(nodes);
   }
 
   public Set<SNodeReference> getRelatedRefTargets(EditorCell cell) {
+    assert !myDisposed;
     Set<SNodeReference> nodeProxies = myRelatedRefTargets.get(cell);
     if (nodeProxies == null) return null;
     return Collections.unmodifiableSet(nodeProxies);
   }
 
   public boolean isRelated(EditorCell cell, Pair<SNode, SNodeReference> modification) {
+    assert !myDisposed;
     Set<SNode> sNodes = myRelatedNodes.get(cell);
     if (sNodes != null && sNodes.contains(modification.o1)) {
       return true;
@@ -294,13 +311,15 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void commandStarted() {
+    // TODO: assert !myDisposed here.
     myCommandLevel++;
   }
 
   @Override
   public void commandFinished() {
+    // TODO: assert !myDisposed here.
     try {
-      if (myCommandLevel == 1) {
+      if (myCommandLevel == 1 && !myDisposed) {
         myModelListenersController.flush();
       }
     } finally {

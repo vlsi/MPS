@@ -42,7 +42,7 @@ public class DefaultNodeEditor implements ConceptEditor {
 
   @Override
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return new DefaultInspectorCell(editorContext, node, SNodeOperations.getDebugText(node), true);
+    return new DefaultInspectorCell(editorContext, node, SNodeOperations.getDebugText(node), false);
   }
 
   public static class DefaultInspectorCell extends EditorCell_Constant {

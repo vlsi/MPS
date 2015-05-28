@@ -165,7 +165,11 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
           }
         }
 
-        newNode[0] = doSubstitute(context, pattern);
+        try {
+          newNode[0] = doSubstitute(context, pattern);
+        } catch (RuntimeException rte) {
+          LOG.error("Exception on calling doSubstitute() method for " + AbstractNodeSubstituteAction.this.getClass(), rte);
+        }
         // similar to: IntellijentInputUtil.applyRigthTransform() logic
         if (context != null && newNode[0] != null) {
           jetbrains.mps.nodeEditor.EditorComponent editorComponent = ((jetbrains.mps.nodeEditor.EditorComponent) context.getEditorComponent());
