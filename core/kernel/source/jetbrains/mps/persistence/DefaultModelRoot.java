@@ -234,11 +234,13 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
 
     String filenameSuffix = modelName;
-    if (isLanguageAspectsSourceRoot(sourceRoot) || isGeneratorTemplateModel(modelName)) {
+    if (isLanguageAspectsSourceRoot(sourceRoot)) {
       String moduleName = getModule().getModuleName();
       if (filenameSuffix.startsWith(moduleName + ".")) {
         filenameSuffix = filenameSuffix.substring(moduleName.length() + 1);
       }
+    } else if (isGeneratorTemplateModel(modelName)){
+      filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
     String relPath = NameUtil.pathFromNamespace(filenameSuffix) + "." + extension;
