@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -44,22 +43,16 @@ public abstract class SPropertyAdapter implements SProperty {
   protected abstract SNode findInConcept(SNode cnode);
 
   @NotNull
-  @Override
-  public String getPresentableKind() {
-    return "property";
-  }
-
-  @NotNull
-  @Override
-  public String getPresentableName() {
-    return getName();
-  }
-
-  @NotNull
   public abstract SPropertyId getId();
 
   @Override
   public SAbstractConcept getContainingConcept() {
+    return getOwner();
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
     SConceptId id = getId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ?
@@ -71,7 +64,7 @@ public abstract class SPropertyAdapter implements SProperty {
   public abstract PropertyDescriptor getPropertyDescriptor();
 
   public final SNode getDeclarationNode() {
-    SNode cnode = getContainingConcept().getDeclarationNode();
+    SNode cnode = getOwner().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

@@ -106,12 +106,12 @@ public class MigrationCheckUtil {
             ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
           } else if (vp instanceof ConceptFeatureMissingError) {
             ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
-            SAbstractConcept concept = err.getFeature().getContainingConcept();
+            SAbstractConcept concept = err.getFeature().getOwner();
             if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getFeature())) {
               return true;
             }
             SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
-            ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode()));
+            ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
           } else {
             // ignore other errors 
           }

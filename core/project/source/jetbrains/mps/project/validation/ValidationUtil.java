@@ -102,21 +102,21 @@ public class ValidationUtil {
     List<SProperty> props = IterableUtil.asList(concept.getProperties());
     for (SProperty p : node.getProperties()) {
       if (props.contains(p)) continue;
-      if (!processor.process(new ConceptFeatureMissingError(node, p))) return false;
+      if (!processor.process(new ConceptFeatureMissingError(node, p, String.format("Missing property: %s", p.getName())))) return false;
     }
 
     List<SContainmentLink> links = IterableUtil.asList(concept.getContainmentLinks());
     for (SNode n : node.getChildren()) {
       SContainmentLink l = n.getContainmentLink();
       if (links.contains(l)) continue;
-      if (!processor.process(new ConceptFeatureMissingError(node, l))) return false;
+      if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing link: %s", l.getName())))) return false;
     }
 
     List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
     for (SReference r : node.getReferences()) {
       SReferenceLink l = r.getLink();
       if (refs.contains(l)) continue;
-      if (!processor.process(new ConceptFeatureMissingError(node, l))) return false;
+      if (!processor.process(new ConceptFeatureMissingError(node, l, String.format("Missing reference: %s", l.getName())))) return false;
     }
 
     for (SContainmentLink link : concept.getContainmentLinks()) {
@@ -129,7 +129,7 @@ public class ValidationUtil {
         // todo state behavior on a meeting and remove this hack
         if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
 
-        if (!processor.process(new ConceptFeatureCardinalityError(node, link, false))) return false;
+        if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("No child in obligatory role %s", link.getName())))) return false;
       }
       if (!link.isMultiple() && children.size() > 1) {
 
@@ -137,7 +137,7 @@ public class ValidationUtil {
         // todo state behavior on a meeting and remove this hack
         if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
 
-        if (!processor.process(new ConceptFeatureCardinalityError(node, link, true))) return false;
+        if (!processor.process(new ConceptFeatureCardinalityError(node, link, String.format("Only one child is allowed in role %s", link.getName())))) return false;
       }
     }
     for (SReferenceLink ref : concept.getReferenceLinks()) {
@@ -148,7 +148,7 @@ public class ValidationUtil {
           // todo state behavior on a meeting and remove this hack
           if (SModelStereotype.isGeneratorModel(node.getModel())) continue;
 
-          if (!processor.process(new ConceptFeatureCardinalityError(node, ref, false))) return false;
+          if (!processor.process(new ConceptFeatureCardinalityError(node, ref, String.format("No reference in obligatory role %s", ref.getName())))) return false;
         }
       }
     }

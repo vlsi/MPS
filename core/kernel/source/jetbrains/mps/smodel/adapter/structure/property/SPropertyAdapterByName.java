@@ -46,6 +46,7 @@ public final class SPropertyAdapterByName extends SPropertyAdapter {
     return conceptDescriptor.getPropertyDescriptor(myPropertyName);
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myPropertyName;
