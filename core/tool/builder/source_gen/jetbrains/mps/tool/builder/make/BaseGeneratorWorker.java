@@ -17,6 +17,7 @@ import jetbrains.mps.make.service.AbstractMakeService;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
+import jetbrains.mps.internal.make.cfg.TextGenFacetInitializer;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -115,12 +116,13 @@ public class BaseGeneratorWorker extends MpsWorker {
     info(s.toString());
     Iterable<MResource> resources = Sequence.fromIterable(collectResources(project, go)).toListSequence();
     myEnvironment.flushAllEvents();
-    MakeSession session = new MakeSession(project, myMessageHandler, true);
+    final MakeSession session = new MakeSession(project, myMessageHandler, true);
     AbstractMakeService.DefaultMonitor defaultMonitor = new AbstractMakeService.DefaultMonitor(session);
     IScriptController.Stub controller = new IScriptController.Stub(defaultMonitor, defaultMonitor) {
       @Override
       public void setup(IPropertiesPool ppool) {
         new JavaCompileFacetInitializer().setJavaCompileOptions(myJavaCompilerOptions).populate(ppool);
+        new TextGenFacetInitializer(session).populate(ppool);
       }
     };
     Future<IResult> res = new BuildMakeService().make(session, resources, null, controller, new EmptyProgressMonitor());
