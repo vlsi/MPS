@@ -17115,22 +17115,21 @@
           <node concept="3cpWsn" id="1FNJAreaTVv" role="3cpWs9">
             <property role="TrG5h" value="contextClassifierPackage" />
             <node concept="17QB3L" id="1FNJAreaTVy" role="1tU5fm" />
-            <node concept="2YIFZM" id="1FNJAreaTV_" role="33vP2m">
-              <ref role="1Pybhc" to="msyo:~JavaNameUtil" resolve="JavaNameUtil" />
-              <ref role="37wK5l" to="msyo:~JavaNameUtil.packageName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="packageName" />
-              <node concept="2OqwBi" id="1FNJAreaTX2" role="37wK5m">
-                <node concept="2OqwBi" id="1FNJAreaTVX" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxeuyIq" role="2Oq$k0">
+            <node concept="1rXfSq" id="7vq1qYNI3Ui" role="33vP2m">
+              <ref role="37wK5l" node="7vq1qYNI3Uf" resolve="retrievePackageName" />
+              <node concept="2OqwBi" id="7vq1qYNI7kG" role="37wK5m">
+                <node concept="2OqwBi" id="7vq1qYNI7kH" role="2Oq$k0">
+                  <node concept="37vLTw" id="7vq1qYNI7kI" role="2Oq$k0">
                     <ref role="3cqZAo" node="1FNJAreaJDr" resolve="classifiers" />
                   </node>
-                  <node concept="liA8E" id="1FNJAreaTW6" role="2OqNvi">
+                  <node concept="liA8E" id="7vq1qYNI7kJ" role="2OqNvi">
                     <ref role="37wK5l" to="k7g3:~Vector.get(int):java.lang.Object" resolve="get" />
-                    <node concept="3cmrfG" id="1FNJAreaTW8" role="37wK5m">
+                    <node concept="3cmrfG" id="7vq1qYNI7kK" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
                   </node>
                 </node>
-                <node concept="I4A8Y" id="1FNJAreaTX7" role="2OqNvi" />
+                <node concept="I4A8Y" id="7vq1qYNI7kL" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -17153,9 +17152,8 @@
               </node>
               <node concept="3fqX7Q" id="1FNJAreaU9v" role="3clFbw">
                 <node concept="2OqwBi" id="1FNJAreaU9w" role="3fr31v">
-                  <node concept="2YIFZM" id="1FNJAreaU9x" role="2Oq$k0">
-                    <ref role="1Pybhc" to="msyo:~JavaNameUtil" resolve="JavaNameUtil" />
-                    <ref role="37wK5l" to="msyo:~JavaNameUtil.packageName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="packageName" />
+                  <node concept="1rXfSq" id="7vq1qYNIgVR" role="2Oq$k0">
+                    <ref role="37wK5l" node="7vq1qYNI3Uf" resolve="retrievePackageName" />
                     <node concept="2OqwBi" id="1FNJAreaU9y" role="37wK5m">
                       <node concept="37vLTw" id="3GM_nagTu2Q" role="2Oq$k0">
                         <ref role="3cqZAo" node="1FNJAreaTVr" resolve="inheritedClassifier" />
@@ -17195,6 +17193,37 @@
         <node concept="3Tqbb2" id="6OATPVCUo1n" role="1tU5fm">
           <ref role="ehGHo" to="tpee:6r77ob2URXY" resolve="IClassifierType" />
         </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="7vq1qYNI3Uf" role="jymVt">
+      <property role="TrG5h" value="retrievePackageName" />
+      <node concept="3Tm6S6" id="7vq1qYNI3Ug" role="1B3o_S" />
+      <node concept="17QB3L" id="7vq1qYNIinp" role="3clF45" />
+      <node concept="3clFbS" id="7vq1qYNI3LL" role="3clF47">
+        <node concept="3cpWs6" id="7vq1qYNI3PW" role="3cqZAp">
+          <node concept="3K4zz7" id="7vq1qYNIcEj" role="3cqZAk">
+            <node concept="Xl_RD" id="7vq1qYNIgi0" role="3K4GZi">
+              <property role="Xl_RC" value="" />
+            </node>
+            <node concept="3y3z36" id="7vq1qYNIdUy" role="3K4Cdx">
+              <node concept="10Nm6u" id="7vq1qYNIesS" role="3uHU7w" />
+              <node concept="37vLTw" id="7vq1qYNIdis" role="3uHU7B">
+                <ref role="3cqZAo" node="7vq1qYNI6Cy" resolve="model" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="7vq1qYNI3PX" role="3K4E3e">
+              <ref role="1Pybhc" to="msyo:~JavaNameUtil" resolve="JavaNameUtil" />
+              <ref role="37wK5l" to="msyo:~JavaNameUtil.packageName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="packageName" />
+              <node concept="37vLTw" id="7vq1qYNI8qV" role="37wK5m">
+                <ref role="3cqZAo" node="7vq1qYNI6Cy" resolve="model" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7vq1qYNI6Cy" role="3clF46">
+        <property role="TrG5h" value="model" />
+        <node concept="H_c77" id="7vq1qYNI6Cx" role="1tU5fm" />
       </node>
     </node>
     <node concept="3clFb_" id="6OATPVCUo1p" role="jymVt">

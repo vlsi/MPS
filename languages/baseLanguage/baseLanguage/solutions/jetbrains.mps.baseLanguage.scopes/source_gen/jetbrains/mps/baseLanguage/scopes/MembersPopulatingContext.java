@@ -14,8 +14,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
@@ -76,15 +77,18 @@ public class MembersPopulatingContext {
 
     // recalc is package protected available 
     isPackageProtectedAvailable = true;
-    String contextClassifierPackage = JavaNameUtil.packageName(SNodeOperations.getModel(classifiers.get(0)));
+    String contextClassifierPackage = retrievePackageName(SNodeOperations.getModel(classifiers.get(0)));
     for (SNode inheritedClassifier : classifiers) {
-      if (!(JavaNameUtil.packageName(SNodeOperations.getModel(inheritedClassifier)).equals(contextClassifierPackage))) {
+      if (!(retrievePackageName(SNodeOperations.getModel(inheritedClassifier)).equals(contextClassifierPackage))) {
         isPackageProtectedAvailable = false;
         break;
       }
     }
 
     return true;
+  }
+  private String retrievePackageName(SModel model) {
+    return (model != null ? JavaNameUtil.packageName(model) : "");
   }
   public void exitClassifierInternal(SNode classifier) {
     assert classifiers.pop() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getClassifier_7405920559687237513", new Object[]{});
