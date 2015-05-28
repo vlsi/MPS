@@ -12030,7 +12030,7 @@
       </node>
       <node concept="3clFbS" id="3H7CugYdXuD" role="3clF47">
         <node concept="XkiVB" id="3H7CugYdXuE" role="3cqZAp">
-          <ref role="37wK5l" to="jo3e:KL8Aqlj5lR" resolve="MpsWorker" />
+          <ref role="37wK5l" node="3GGnItM97pk" resolve="GeneratorWorker" />
           <node concept="37vLTw" id="3H7CugYdXuF" role="37wK5m">
             <ref role="3cqZAo" node="3H7CugYdXuB" resolve="whatToDo" />
           </node>
@@ -12054,7 +12054,7 @@
       </node>
       <node concept="3clFbS" id="3H7CugYdXuN" role="3clF47">
         <node concept="XkiVB" id="3H7CugYdXuO" role="3cqZAp">
-          <ref role="37wK5l" to="jo3e:KL8Aqlj5me" resolve="MpsWorker" />
+          <ref role="37wK5l" node="3GGnItM97pB" resolve="GeneratorWorker" />
           <node concept="37vLTw" id="3H7CugYdXuP" role="37wK5m">
             <ref role="3cqZAo" node="3H7CugYdXuJ" resolve="whatToDo" />
           </node>
@@ -12244,11 +12244,21 @@
             </node>
             <node concept="2ShNRf" id="3H7CugYe6Uo" role="33vP2m">
               <node concept="1pGfFk" id="3H7CugYe6Up" role="2ShVmc">
-                <ref role="37wK5l" to="79ha:6rx4kZDkRyV" resolve="MpsEnvironment" />
+                <ref role="37wK5l" node="5kpQnuAv0sN" resolve="GeneratorWorker.MyEnvironment" />
                 <node concept="37vLTw" id="3H7CugYe6Uq" role="37wK5m">
                   <ref role="3cqZAo" node="3H7CugYe6Ts" resolve="config" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3rIwDCYGhxD" role="3cqZAp">
+          <node concept="2OqwBi" id="3rIwDCYGhOg" role="3clFbG">
+            <node concept="37vLTw" id="3rIwDCYGhxB" role="2Oq$k0">
+              <ref role="3cqZAo" node="3H7CugYe6Um" resolve="environment" />
+            </node>
+            <node concept="liA8E" id="3rIwDCYGi5p" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:3eUNqOk4TkZ" resolve="init" />
             </node>
           </node>
         </node>
@@ -12444,8 +12454,8 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="3H7CugYdV9c" role="1B3o_S" />
-    <node concept="3uibUv" id="1Vi5mb_neBQ" role="1zkMxy">
-      <ref role="3uigEE" to="jo3e:KL8Aqlj5ln" resolve="MpsWorker" />
+    <node concept="3uibUv" id="3rIwDCYGpg9" role="1zkMxy">
+      <ref role="3uigEE" node="3GGnItM97js" resolve="GeneratorWorker" />
     </node>
     <node concept="2tJIrI" id="3H7CugYimwG" role="jymVt" />
     <node concept="2YIFZL" id="5iKxrmkr3_D" role="jymVt">
@@ -12750,6 +12760,8 @@
       <node concept="3cqZAl" id="1Vi5mb_nf6z" role="3clF45" />
       <node concept="3clFbS" id="1Vi5mb_nf6_" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="3rIwDCYFvSC" role="jymVt" />
+    <node concept="2tJIrI" id="3rIwDCYFwip" role="jymVt" />
   </node>
 </model>
 
