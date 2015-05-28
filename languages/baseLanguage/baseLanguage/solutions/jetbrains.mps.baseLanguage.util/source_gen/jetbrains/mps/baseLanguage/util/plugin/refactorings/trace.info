@@ -5664,7 +5664,7 @@
         <var name="returnVar" id="8492459591399173829" />
       </scope>
       <scope id="8492459591399173796" at="57,0,91,0" />
-      <unit id="3907884340416564091" at="106,265,110,13" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
+      <unit id="3907884340416564091" at="106,463,110,13" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$1" />
       <unit id="3907884340416608151" at="110,28,114,13" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$2" />
       <unit id="901167123042833002" at="155,284,159,5" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$3" />
       <unit id="1736299320260998319" at="167,286,171,5" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodRefactoring$4" />
