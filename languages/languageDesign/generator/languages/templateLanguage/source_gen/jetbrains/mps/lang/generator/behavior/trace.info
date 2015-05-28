@@ -148,7 +148,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
     </file>
     <file name="MappingConfiguration_BehaviorDescriptor.java">
-      <unit at="16,0,48,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
+      <unit at="17,0,52,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
     </file>
     <file name="MappingConfiguration_Condition_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
@@ -250,7 +250,7 @@
       <unit at="8,0,25,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
     </file>
     <file name="TemplateDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,44,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
     </file>
     <file name="TemplateFragment_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
@@ -289,7 +289,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" />
     </file>
     <file name="TemplateSwitch_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
+      <unit at="16,0,44,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
     </file>
     <file name="TraceMacro_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.TraceMacro_BehaviorDescriptor" />

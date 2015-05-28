@@ -12,12 +12,12 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590354(jetbrains.mps.lang.intentions.generator.baseLanguage.template.main@generator)/1192798704064">
     <file name="QueriesGenerated.java">
       <node id="3804167831988850599" at="30,108,31,52" concept="2" />
-      <node id="3804167831988830138" at="31,52,32,302" concept="3" />
+      <node id="3804167831988830138" at="31,52,32,278" concept="3" />
       <node id="5264392666049412673" at="66,109,67,25" concept="3" />
       <node id="5264392666049483292" at="105,108,106,178" concept="3" />
       <scope id="5264392666049409976" at="66,109,67,25" />
       <scope id="5264392666049483257" at="105,108,106,178" />
-      <scope id="3804167831988830137" at="30,108,32,302">
+      <scope id="3804167831988830137" at="30,108,32,278">
         <var name="model" id="3804167831988850600" />
       </scope>
     </file>

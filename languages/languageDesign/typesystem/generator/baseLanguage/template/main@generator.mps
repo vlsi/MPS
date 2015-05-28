@@ -158,7 +158,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -565,23 +565,6 @@
           </node>
           <node concept="3clFbF" id="hIzvlT7" role="3cqZAp">
             <node concept="1Wc70l" id="hZnXrrn" role="3clFbG">
-              <node concept="1eOMI4" id="hZnY3Di" role="3uHU7B">
-                <node concept="3clFbC" id="hZnY3Dj" role="1eOMHV">
-                  <node concept="Rm8GO" id="hZnY3Dk" role="3uHU7w">
-                    <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                    <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
-                  </node>
-                  <node concept="2YIFZM" id="hZnY3Dl" role="3uHU7B">
-                    <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-                    <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-                    <node concept="2JrnkZ" id="hZnY3Dn" role="37wK5m">
-                      <node concept="37vLTw" id="3GM_nagTtCc" role="2JrQYb">
-                        <ref role="3cqZAo" node="hZnXRdl" resolve="model" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3fqX7Q" id="hIzvlT8" role="3uHU7w">
                 <node concept="2OqwBi" id="hIzvH1N" role="3fr31v">
                   <node concept="2OqwBi" id="hIzvsjr" role="2Oq$k0">
@@ -591,6 +574,18 @@
                     <node concept="2RRcyG" id="hIzvt_h" role="2OqNvi" />
                   </node>
                   <node concept="1v1jN8" id="hIzvHyk" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="7IH442cW7jq" role="3uHU7B">
+                <node concept="Rm8GO" id="hZnY3Dk" role="2Oq$k0">
+                  <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+                  <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                </node>
+                <node concept="liA8E" id="7IH442cW7GT" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                  <node concept="37vLTw" id="7IH442cW7S4" role="37wK5m">
+                    <ref role="3cqZAo" node="hZnXRdl" resolve="model" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -17421,20 +17416,21 @@
           <node concept="3clFbS" id="5fcado_hZ4u" role="3clFbx">
             <node concept="3cpWs6" id="5fcado_iqQV" role="3cqZAp" />
           </node>
-          <node concept="3y3z36" id="5fcado_ik1m" role="3clFbw">
-            <node concept="2YIFZM" id="5fcado_ik1p" role="3uHU7B">
-              <ref role="1Pybhc" to="cu2c:~Language" resolve="Language" />
-              <ref role="37wK5l" to="cu2c:~Language.getModelAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.LanguageAspect" resolve="getModelAspect" />
-              <node concept="2JrnkZ" id="5fcado_j3gj" role="37wK5m">
-                <node concept="2OqwBi" id="5fcado_i6yg" role="2JrQYb">
-                  <node concept="1iwH7S" id="5fcado_i6yh" role="2Oq$k0" />
-                  <node concept="1st3f0" id="5fcado_i6yi" role="2OqNvi" />
+          <node concept="3fqX7Q" id="7IH442cW4Ju" role="3clFbw">
+            <node concept="1eOMI4" id="7IH442cW4Jy" role="3fr31v">
+              <node concept="2OqwBi" id="7IH442cW3SU" role="1eOMHV">
+                <node concept="Rm8GO" id="5fcado_ik1o" role="2Oq$k0">
+                  <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                  <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
+                </node>
+                <node concept="liA8E" id="7IH442cW4fo" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+                  <node concept="2OqwBi" id="5fcado_i6yg" role="37wK5m">
+                    <node concept="1iwH7S" id="5fcado_i6yh" role="2Oq$k0" />
+                    <node concept="1st3f0" id="5fcado_i6yi" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
-            </node>
-            <node concept="Rm8GO" id="5fcado_ik1o" role="3uHU7w">
-              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.TYPESYSTEM" resolve="TYPESYSTEM" />
-              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
             </node>
           </node>
         </node>

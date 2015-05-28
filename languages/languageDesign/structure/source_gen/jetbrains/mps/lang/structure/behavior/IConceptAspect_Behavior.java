@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IConceptAspect_Behavior {
   public static void init(SNode thisNode) {
@@ -24,7 +28,12 @@ public class IConceptAspect_Behavior {
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return true;
+  }
+  public static boolean virtual_canBeAppliedToNode_8911797107065640816(SAbstractConcept thisConcept, SNode candidate) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_isApplicable_7839831476331657915", new Object[]{candidate});
   }
 }

@@ -18,11 +18,14 @@ package jetbrains.mps.ide.projectPane;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.actions.SetNodePackage_Action;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -104,7 +107,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
     dtde.acceptDrop(dtde.getDropAction());
 
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    final Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     JFrame frame = WindowManager.getInstance().getFrame(project);
     final String targetPackage = (getTargetVirtualPackage(target) == null) ? "" : getTargetVirtualPackage(target);
     String text = getConfirmLabel(sourceNodes.size(), targetPackage);
@@ -121,9 +124,15 @@ public class ProjectPaneDnDListener implements DropTargetListener {
           String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
           SNodeAccessUtil.setProperty(sourceNode.o1, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
           if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
-            List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
-            for (SNode aspect : allAspects) {
-              SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+            SNode baseNode = sourceNode.o1;
+            List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(project, baseNode);
+            for (RelationDescriptor tab:tabs){
+              if (!tab.isApplicable(baseNode)) continue;
+
+              for (SNode aspect : tab.getNodes(baseNode)) {
+                if (tab.getBaseNode(aspect) != baseNode) continue;
+                SNodeAccessUtil.setProperty(aspect, SNodeUtil.property_BaseConcept_virtualPackage, fullTargetPack);
+              }
             }
           }
         }

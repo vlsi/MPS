@@ -70,7 +70,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CaretPositionParameter_BehaviorDescriptor" />
     </file>
     <file name="CellActionMapDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,44,0" name="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_BehaviorDescriptor" />
     </file>
     <file name="CellActionMapItem_BehaviorDescriptor.java">
       <unit at="9,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellActionMapItem_BehaviorDescriptor" />
@@ -85,7 +85,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellIdReferenceSelector_BehaviorDescriptor" />
     </file>
     <file name="CellKeyMapDeclaration_BehaviorDescriptor.java">
-      <unit at="14,0,37,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,44,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_BehaviorDescriptor" />
     </file>
     <file name="CellKeyMapItem_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_BehaviorDescriptor" />
@@ -145,7 +145,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Property_BehaviorDescriptor" />
     </file>
     <file name="CellMenuComponent_BehaviorDescriptor.java">
-      <unit at="12,0,35,0" name="jetbrains.mps.lang.editor.behavior.CellMenuComponent_BehaviorDescriptor" />
+      <unit at="14,0,42,0" name="jetbrains.mps.lang.editor.behavior.CellMenuComponent_BehaviorDescriptor" />
     </file>
     <file name="CellMenuDescriptor_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.CellMenuDescriptor_BehaviorDescriptor" />
@@ -337,7 +337,7 @@
       <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.behavior.ConceptEditorContextHints_BehaviorDescriptor" />
     </file>
     <file name="ConceptEditorDeclaration_BehaviorDescriptor.java">
-      <unit at="12,0,35,0" name="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_BehaviorDescriptor" />
+      <unit at="13,0,39,0" name="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ConceptEditorHintDeclarationReferenceExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclarationReferenceExpression_BehaviorDescriptor" />
@@ -409,7 +409,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.EditorComponentDeclarationReference_BehaviorDescriptor" />
     </file>
     <file name="EditorComponentDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,39,0" name="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_BehaviorDescriptor" />
+      <unit at="15,0,46,0" name="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ExplicitHintsSpecification_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.ExplicitHintsSpecification_BehaviorDescriptor" />

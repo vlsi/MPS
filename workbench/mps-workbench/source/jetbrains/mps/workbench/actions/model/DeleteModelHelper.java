@@ -59,9 +59,7 @@ public class DeleteModelHelper {
   private static final Logger LOG = LogManager.getLogger(DeleteModelHelper.class);
 
   public static void deleteModel(Project project, SModule contextModule, SModel modelDescriptor, boolean safeDelete, boolean deleteFiles) {
-    LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
-
-    if (aspect == LanguageAspect.STRUCTURE) {
+    if (LanguageAspect.STRUCTURE.is(modelDescriptor)) {
       Message msg = new Message(MessageKind.WARNING, DeleteModelHelper.class, "Can't delete structure model " + modelDescriptor.getModelName());
       project.getComponent(MessagesViewTool.class).add(msg);
       return;

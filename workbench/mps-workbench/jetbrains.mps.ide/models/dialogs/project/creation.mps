@@ -2,11 +2,12 @@
 <model ref="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -43,6 +44,8 @@
     <import index="3sib" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.options.ex(MPS.IDEA/com.intellij.openapi.options.ex@java_stub)" />
     <import index="byws" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.lang.model(JDK/javax.lang.model@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspectDescriptor.plugin)" />
+    <import index="n55e" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(jetbrains.mps.smodel.language@java_stub)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="oj8w" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" implicit="true" />
     <import index="l077" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" implicit="true" />
@@ -61,9 +64,6 @@
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1224500790866" name="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression" flags="nn" index="pVOtf" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
-      <concept id="1224573963862" name="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" flags="nn" index="uiWXb">
-        <reference id="1224573974191" name="enumClass" index="uiZuM" />
-      </concept>
       <concept id="1076505808687" name="jetbrains.mps.baseLanguage.structure.WhileStatement" flags="nn" index="2$JKZl">
         <child id="1076505808688" name="condition" index="2$JKZa" />
       </concept>
@@ -166,7 +166,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3643,17 +3643,8 @@
             </node>
           </node>
           <node concept="3clFbS" id="1pyYjDPRa8r" role="3clFbx">
-            <node concept="1DcWWT" id="1pyYjDPRa8s" role="3cqZAp">
-              <node concept="uiWXb" id="1pyYjDPRb$G" role="1DdaDG">
-                <ref role="uiZuM" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-              </node>
-              <node concept="3cpWsn" id="1pyYjDPRa8u" role="1Duv9x">
-                <property role="TrG5h" value="aspect" />
-                <node concept="3uibUv" id="1pyYjDPRa8v" role="1tU5fm">
-                  <ref role="3uigEE" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="1pyYjDPRa8w" role="2LFqv$">
+            <node concept="3clFbJ" id="7IH442cXg$b" role="3cqZAp">
+              <node concept="3clFbS" id="7IH442cXg$d" role="3clFbx">
                 <node concept="3cpWs8" id="1pyYjDPRa8x" role="3cqZAp">
                   <node concept="3cpWsn" id="1pyYjDPRa8y" role="3cpWs9">
                     <property role="TrG5h" value="shortName" />
@@ -3684,48 +3675,30 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbJ" id="1pyYjDPRa8E" role="3cqZAp">
-                  <node concept="2OqwBi" id="1pyYjDPRa8F" role="3clFbw">
-                    <node concept="37vLTw" id="3GM_nagTBEI" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
-                    </node>
-                    <node concept="liA8E" id="1pyYjDPRa8H" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="2OqwBi" id="1pyYjDPRa8I" role="37wK5m">
-                        <node concept="37vLTw" id="3GM_nagTzTr" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1pyYjDPRa8u" resolve="aspect" />
+                <node concept="3clFbF" id="1pyYjDPRa8M" role="3cqZAp">
+                  <node concept="1rXfSq" id="4hiugqyzetq" role="3clFbG">
+                    <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
+                    <node concept="3cpWs3" id="1pyYjDPRa8O" role="37wK5m">
+                      <node concept="3cpWs3" id="1pyYjDPRa8P" role="3uHU7B">
+                        <node concept="Xl_RD" id="1pyYjDPRa8Q" role="3uHU7B">
+                          <property role="Xl_RC" value="This name isn't allowed because '" />
                         </node>
-                        <node concept="liA8E" id="1pyYjDPRa8K" role="2OqNvi">
-                          <ref role="37wK5l" to="cu2c:~LanguageAspect.getName():java.lang.String" resolve="getName" />
+                        <node concept="37vLTw" id="7IH442cXypQ" role="3uHU7w">
+                          <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
                         </node>
+                      </node>
+                      <node concept="Xl_RD" id="1pyYjDPRa8S" role="3uHU7w">
+                        <property role="Xl_RC" value="' is language aspect name" />
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbS" id="1pyYjDPRa8L" role="3clFbx">
-                    <node concept="3clFbF" id="1pyYjDPRa8M" role="3cqZAp">
-                      <node concept="1rXfSq" id="4hiugqyzetq" role="3clFbG">
-                        <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />
-                        <node concept="3cpWs3" id="1pyYjDPRa8O" role="37wK5m">
-                          <node concept="3cpWs3" id="1pyYjDPRa8P" role="3uHU7B">
-                            <node concept="Xl_RD" id="1pyYjDPRa8Q" role="3uHU7B">
-                              <property role="Xl_RC" value="This name isn't allowed because '" />
-                            </node>
-                            <node concept="37vLTw" id="3GM_nagTB4h" role="3uHU7w">
-                              <ref role="3cqZAo" node="1pyYjDPRa8y" resolve="shortName" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="1pyYjDPRa8S" role="3uHU7w">
-                            <property role="Xl_RC" value="' is language aspect name" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3cpWs6" id="1pyYjDPRa8T" role="3cqZAp">
-                      <node concept="3clFbT" id="2R7pax8jqzl" role="3cqZAk">
-                        <property role="3clFbU" value="false" />
-                      </node>
-                    </node>
-                  </node>
+                </node>
+              </node>
+              <node concept="2YIFZM" id="7IH442cXuI0" role="3clFbw">
+                <ref role="37wK5l" to="n55e:~LanguageAspectSupport.isLanguageModelNameForbidden(java.lang.String):boolean" resolve="isLanguageModelNameForbidden" />
+                <ref role="1Pybhc" to="n55e:~LanguageAspectSupport" resolve="LanguageAspectSupport" />
+                <node concept="37vLTw" id="7IH442cXuIG" role="37wK5m">
+                  <ref role="3cqZAo" node="2R7pax8jqxP" resolve="modelName" />
                 </node>
               </node>
             </node>
@@ -3883,8 +3856,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="2TONI_OxVhX" role="3cqZAp" />
-        <node concept="3clFbH" id="2TONI_OuPLe" role="3cqZAp" />
-        <node concept="3clFbH" id="2R7pax8jqzM" role="3cqZAp" />
         <node concept="3clFbF" id="2GHfGX3TvTf" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz5M6" role="3clFbG">
             <ref role="37wK5l" to="810:~DialogWrapper.setErrorText(java.lang.String):void" resolve="setErrorText" />

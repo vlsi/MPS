@@ -61,7 +61,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -367,12 +367,9 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     if (myModule instanceof Language) {
-      for (LanguageAspect aspect : LanguageAspect.values()) {
+      if (LanguageAspectSupport.isLanguageModelNameForbidden(modelName)) {
         String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
-        if (shortName.equals(aspect.getName())) {
-          setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
-          return false;
-        }
+        setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
       }
     }
 
@@ -395,8 +392,6 @@ public class NewModelDialog extends DialogWrapper {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
-
-
 
     setErrorText(null);
     return true;

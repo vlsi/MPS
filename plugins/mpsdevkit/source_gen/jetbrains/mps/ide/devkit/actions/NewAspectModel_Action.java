@@ -67,9 +67,9 @@ public class NewAspectModel_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
+
     // we need it since tree is updated later 
     SwingUtilities.invokeLater(new Runnable() {
-      @Override
       public void run() {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject"))).selectModel(modelDescriptor, false);
       }
