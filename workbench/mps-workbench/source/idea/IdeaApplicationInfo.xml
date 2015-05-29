@@ -3,12 +3,12 @@
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387" progressColor="FDA916" progressY="230"/>
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
-  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size128="/MPS_128.png"/>
+  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size12="/toolwindows/toolWindowProject.png" size128="/MPS_128.png" ico="MPS.ico"/>
   <dialogs-image url="/jetbrains/mps/workbench/icons/dialogImage.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
-  <welcome-screen logo-url="/MPS_32.png"
+  <welcome-screen logo-url="/MPS_welcomeScreen.png"
                   caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png"
                   slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
 
