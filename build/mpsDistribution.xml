@@ -42,7 +42,7 @@
         <exclude name="**/fsnotifier" />
         <exclude name="**/fsnotifier64" />
       </tarfileset>
-      <tarfileset file="${basedir}/workbench/mps-workbench/source/MPS_32.png" prefix="MPS ${mpsBootstrapCore.version}/bin" />
+      <tarfileset file="${basedir}/workbench/mps-icons/source/MPS_128.png" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
