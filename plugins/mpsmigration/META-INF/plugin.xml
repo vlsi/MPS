@@ -16,6 +16,7 @@
   <depends>jetbrains.mps.console</depends>
 
   <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/migration32/Migration32Actions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/mpsmigration/v33/Migration33Actions.xml" xpointer="xpointer(/components/*)"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/solution"/>
