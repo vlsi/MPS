@@ -4,6 +4,7 @@ package jetbrains.mps.tool.builder.converter;
 
 import java.util.Map;
 import jetbrains.mps.MPSCore;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -12,7 +13,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
 import java.util.HashMap;
 import jetbrains.mps.persistence.DefaultModelPersistence;
@@ -26,10 +26,12 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
   }
+
   public void convert(final Map<String, String> map, final Boolean stripImplementation) {
     final MPSCore mpsCore = new MPSCore();
     mpsCore.init();
-    final MPSPersistence mpsPersistence = new MPSPersistence();
+    PersistenceFacade persistenceFacade = mpsCore.getPersistenceFacade();
+    final MPSPersistence mpsPersistence = new MPSPersistence(persistenceFacade);
     mpsPersistence.init();
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
@@ -47,6 +49,7 @@ public class ConvertToBinaryWorker {
       mpsCore.dispose();
     }
   }
+
   private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));

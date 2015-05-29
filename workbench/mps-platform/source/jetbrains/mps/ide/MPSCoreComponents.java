@@ -37,12 +37,12 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class MPSCoreComponents implements ApplicationComponent {
-  private MPSCore myMPSCore;
-  private MPSPersistence myMPSPersistence;
-  private MPSGenerator myMPSGenerator;
-  private MPSTypesystem myMPSTypesystem;
-  private MPSFindUsages myMPSFindUsages;
-  private MPSBaseLanguage myMPSBaseLanguage;
+  private MPSCore myCore;
+  private MPSPersistence myPersistence;
+  private MPSGenerator myGenerator;
+  private MPSTypesystem myTypesystem;
+  private MPSFindUsages myFindUsages;
+  private MPSBaseLanguage myBaseLanguage;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
   }
@@ -64,39 +64,38 @@ public class MPSCoreComponents implements ApplicationComponent {
     ModelAccess.setInstance(new WorkbenchModelAccess());
 
     // setup MPS.Core
-    myMPSCore = new MPSCore();
-    myMPSPersistence = new MPSPersistence();
-    myMPSTypesystem = new MPSTypesystem();
-    myMPSGenerator = new MPSGenerator();
-    myMPSFindUsages = new MPSFindUsages();
-    myMPSCore.init();
-    myMPSPersistence.init();
-    myMPSTypesystem.init();
-    myMPSGenerator.init();
-    myMPSFindUsages.init();
+    myCore = new MPSCore();
+    myCore.init();
 
-    // setup BaseLanguage
-    myMPSBaseLanguage = new MPSBaseLanguage();
-    myMPSBaseLanguage.init();
+    myPersistence = new MPSPersistence(myCore.getPersistenceFacade());
+    myTypesystem = new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager());
+    myGenerator = new MPSGenerator();
+    myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
+    myBaseLanguage = new MPSBaseLanguage();
+
+    myPersistence.init();
+    myTypesystem.init();
+    myGenerator.init();
+    myFindUsages.init();
+    myBaseLanguage.init();
   }
 
   @Override
   public void disposeComponent() {
-    // dispose BaseLanguage
-    myMPSBaseLanguage.dispose();
-    myMPSBaseLanguage = null;
 
-    // dispose Core
-    myMPSFindUsages.dispose();
-    myMPSGenerator.dispose();
-    myMPSTypesystem.dispose();
-    myMPSPersistence.dispose();
-    myMPSCore.dispose();
-    myMPSFindUsages = null;
-    myMPSGenerator = null;
-    myMPSTypesystem = null;
-    myMPSPersistence = null;
-    myMPSCore = null;
+    myBaseLanguage.dispose();
+    myFindUsages.dispose();
+    myGenerator.dispose();
+    myTypesystem.dispose();
+    myPersistence.dispose();
+    myCore.dispose();
+
+    myBaseLanguage = null;
+    myFindUsages = null;
+    myGenerator = null;
+    myTypesystem = null;
+    myPersistence = null;
+    myCore = null;
 
     // cleanup
     ModelAccess.instance().dispose();
@@ -104,7 +103,7 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   @NotNull
   public MPSCore getMPSCore() {
-    return myMPSCore;
+    return myCore;
   }
 
   public ClassLoaderManager getClassLoaderManager() {
@@ -112,7 +111,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   }
 
   public MPSModuleRepository getModuleRepository() {
-    return MPSModuleRepository.getInstance();
+    return myCore.getModuleRepository();
   }
 
   public GlobalSModelEventsManager getGlobalSModelEventsManager() {

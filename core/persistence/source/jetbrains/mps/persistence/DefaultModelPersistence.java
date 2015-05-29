@@ -66,20 +66,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
    */
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
-  private final PersistenceRegistry myRegistry;
+  private final PersistenceFacade myFacade;
 
-  DefaultModelPersistence(@NotNull PersistenceRegistry persistenceRegistry) {
-    myRegistry = persistenceRegistry;
+  DefaultModelPersistence(@NotNull PersistenceFacade persistenceFacade) {
+    myFacade = persistenceFacade;
   }
 
   @Override
   public void init() {
-    myRegistry.setModelFactory(MPSExtentions.MODEL, this);
+    myFacade.setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    myRegistry.setModelFactory(MPSExtentions.MODEL, null);
+    myFacade.setModelFactory(MPSExtentions.MODEL, null);
   }
 
   @NotNull

@@ -826,7 +826,15 @@
             </node>
             <node concept="2ShNRf" id="1RFBgMs36vc" role="33vP2m">
               <node concept="1pGfFk" id="1RFBgMs3i5U" role="2ShVmc">
-                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;()" resolve="MPSPersistence" />
+                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;(org.jetbrains.mps.openapi.persistence.PersistenceFacade)" resolve="MPSPersistence" />
+                <node concept="2OqwBi" id="2Jqa$lyS3qS" role="37wK5m">
+                  <node concept="37vLTw" id="2Jqa$lyS3pt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="11RXB4meviO" resolve="mpsCore" />
+                  </node>
+                  <node concept="liA8E" id="2Jqa$lyS3zE" role="2OqNvi">
+                    <ref role="37wK5l" to="1p1s:~MPSCore.getPersistenceFacade():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getPersistenceFacade" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

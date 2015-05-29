@@ -34,7 +34,6 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements CustomClassL
 
   @Override
   public void save(Memento memento) {
-    // =(
     memento.put("pluginId", pluginId);
   }
 

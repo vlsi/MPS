@@ -67,8 +67,8 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   private final PersistenceRegistry myRegistry;
 
-  FilePerRootModelPersistence(PersistenceRegistry persistenceRegistry) {
-    myRegistry = persistenceRegistry;
+  FilePerRootModelPersistence(@NotNull PersistenceFacade persistenceRegistry) {
+    myRegistry = (PersistenceRegistry) persistenceRegistry;
   }
 
   @Override

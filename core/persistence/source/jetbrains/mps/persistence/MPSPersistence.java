@@ -17,23 +17,25 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * evgeny, 11/9/12
  */
 public final class MPSPersistence extends ComponentPlugin {
+  private final PersistenceFacade myPersistenceFacade;
 
-  public MPSPersistence() {
+  public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {
+    myPersistenceFacade = persistenceFacade;
   }
 
   @Override
   public void init() {
     super.init();
-    // FIXME pass MPSCore instance to MPSPersistence and use it as source
-    PersistenceRegistry persistenceRegistry = PersistenceRegistry.getInstance();
-    init(new DefaultModelPersistence(persistenceRegistry));
-    init(new FilePerRootModelPersistence(persistenceRegistry));
-    init(new BinaryModelPersistence(persistenceRegistry));
-    init(new JavaClassesPersistence(persistenceRegistry));
+    init(new DefaultModelPersistence(myPersistenceFacade));
+    init(new FilePerRootModelPersistence(myPersistenceFacade));
+    init(new BinaryModelPersistence(myPersistenceFacade));
+    init(new JavaClassesPersistence(myPersistenceFacade));
   }
 }

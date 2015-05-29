@@ -17,20 +17,21 @@ package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 10/14/11
  */
 public final class MPSFindUsages extends ComponentPlugin {
+  private final LanguageRegistry myLanguageRegistry;
 
-  public MPSFindUsages() {
+  public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
   }
 
   @Override
   public void init() {
     super.init();
-    final LanguageRegistry languageRegistry = LanguageRegistry.getInstance();
-
-    init(new FindersManager(languageRegistry));
+    init(new FindersManager(myLanguageRegistry));
   }
 }

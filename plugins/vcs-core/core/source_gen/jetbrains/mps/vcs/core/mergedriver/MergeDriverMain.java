@@ -59,7 +59,7 @@ public class MergeDriverMain {
     configureLog4j();
     final MPSCore mpsCore = new MPSCore();
     mpsCore.init();
-    final MPSPersistence mpsPersistence = new MPSPersistence();
+    final MPSPersistence mpsPersistence = new MPSPersistence(mpsCore.getPersistenceFacade());
     mpsPersistence.init();
 
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();

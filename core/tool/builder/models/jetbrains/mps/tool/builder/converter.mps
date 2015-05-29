@@ -27,6 +27,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
         <child id="1153952416686" name="body" index="2GV8ay" />
         <child id="1153952429843" name="finallyBody" index="2GVbov" />
@@ -82,6 +83,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -174,6 +176,7 @@
       <node concept="3clFbS" id="6NgXkpAWLJ5" role="3clF47" />
       <node concept="3Tm1VV" id="6NgXkpAWLJ6" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2Jqa$lyRxFr" role="jymVt" />
     <node concept="3clFb_" id="6NgXkpAWLJ7" role="jymVt">
       <property role="TrG5h" value="convert" />
       <property role="od$2w" value="false" />
@@ -223,6 +226,22 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="2Jqa$lyRum7" role="3cqZAp">
+          <node concept="3cpWsn" id="2Jqa$lyRum8" role="3cpWs9">
+            <property role="TrG5h" value="persistenceFacade" />
+            <node concept="3uibUv" id="2Jqa$lyRum3" role="1tU5fm">
+              <ref role="3uigEE" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
+            </node>
+            <node concept="2OqwBi" id="2Jqa$lyRum9" role="33vP2m">
+              <node concept="37vLTw" id="2Jqa$lyRuma" role="2Oq$k0">
+                <ref role="3cqZAo" node="11RXB4md_Ze" resolve="mpsCore" />
+              </node>
+              <node concept="liA8E" id="2Jqa$lyRumb" role="2OqNvi">
+                <ref role="37wK5l" to="1p1s:~MPSCore.getPersistenceFacade():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getPersistenceFacade" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1RFBgMs4KDt" role="3cqZAp">
           <node concept="3cpWsn" id="1RFBgMs4KDr" role="3cpWs9">
             <property role="3TUv4t" value="true" />
@@ -232,7 +251,10 @@
             </node>
             <node concept="2ShNRf" id="1RFBgMs4Nhg" role="33vP2m">
               <node concept="1pGfFk" id="1RFBgMs4NvQ" role="2ShVmc">
-                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;()" resolve="MPSPersistence" />
+                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;(org.jetbrains.mps.openapi.persistence.PersistenceFacade)" resolve="MPSPersistence" />
+                <node concept="37vLTw" id="2Jqa$lyRumc" role="37wK5m">
+                  <ref role="3cqZAo" node="2Jqa$lyRum8" resolve="persistenceFacade" />
+                </node>
               </node>
             </node>
           </node>
@@ -258,6 +280,10 @@
         </node>
         <node concept="3clFbF" id="3vvhEQxYuy5" role="3cqZAp">
           <node concept="2OqwBi" id="3vvhEQxYw8P" role="3clFbG">
+            <node concept="2YIFZM" id="3vvhEQxYvKF" role="2Oq$k0">
+              <ref role="37wK5l" to="d2v5:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
+              <ref role="1Pybhc" to="d2v5:~PersistenceRegistry" resolve="PersistenceRegistry" />
+            </node>
             <node concept="liA8E" id="3vvhEQxYwzF" role="2OqNvi">
               <ref role="37wK5l" to="d2v5:~PersistenceRegistry.setModelEnvironmentInfo(jetbrains.mps.persistence.ModelEnvironmentInfo):void" resolve="setModelEnvironmentInfo" />
               <node concept="2ShNRf" id="3vvhEQxYwUh" role="37wK5m">
@@ -265,10 +291,6 @@
                   <ref role="37wK5l" to="lw3o:3vvhEQxVnos" resolve="LightModelEnvironmentInfoImpl" />
                 </node>
               </node>
-            </node>
-            <node concept="2YIFZM" id="3vvhEQxYvKF" role="2Oq$k0">
-              <ref role="37wK5l" to="d2v5:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="d2v5:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
           </node>
         </node>
@@ -311,12 +333,8 @@
                                 <property role="3TUv4t" value="false" />
                                 <node concept="3uibUv" id="6NgXkpAWLJq" role="1tU5fm">
                                   <ref role="3uigEE" to="k7g3:~Map$Entry" resolve="Map.Entry" />
-                                  <node concept="3uibUv" id="6NgXkpAWLJr" role="11_B2D">
-                                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                                  </node>
-                                  <node concept="3uibUv" id="6NgXkpAWLJs" role="11_B2D">
-                                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-                                  </node>
+                                  <node concept="17QB3L" id="2Jqa$lyRxSQ" role="11_B2D" />
+                                  <node concept="17QB3L" id="2Jqa$lyRy2O" role="11_B2D" />
                                 </node>
                               </node>
                               <node concept="3clFbS" id="6NgXkpAWLJh" role="2LFqv$">
@@ -394,6 +412,7 @@
       <node concept="3Tm1VV" id="6NgXkpAWLJD" role="1B3o_S" />
       <node concept="3cqZAl" id="6NgXkpAWLJE" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="2Jqa$lyRxu8" role="jymVt" />
     <node concept="3clFb_" id="6NgXkpAWLJF" role="jymVt">
       <property role="TrG5h" value="convertModelToBinary" />
       <property role="od$2w" value="false" />

@@ -525,7 +525,7 @@
     <node concept="312cEg" id="11RXB4mcWQw" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myMPSCore" />
+      <property role="TrG5h" value="myCore" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="11RXB4mcWNW" role="1B3o_S" />
       <node concept="3uibUv" id="11RXB4mcWQs" role="1tU5fm">
@@ -533,14 +533,14 @@
       </node>
     </node>
     <node concept="312cEg" id="1RFBgMs3NN8" role="jymVt">
-      <property role="TrG5h" value="myMPSPersistence" />
+      <property role="TrG5h" value="myPersistence" />
       <node concept="3Tm6S6" id="1RFBgMs3NN9" role="1B3o_S" />
       <node concept="3uibUv" id="1RFBgMs3NUv" role="1tU5fm">
         <ref role="3uigEE" to="d2v5:~MPSPersistence" resolve="MPSPersistence" />
       </node>
     </node>
     <node concept="312cEg" id="2IizP$ACozW" role="jymVt">
-      <property role="TrG5h" value="myMPSTypesystem" />
+      <property role="TrG5h" value="myTypesystem" />
       <node concept="3Tm6S6" id="2IizP$ACozX" role="1B3o_S" />
       <node concept="3uibUv" id="2IizP$ACoGa" role="1tU5fm">
         <ref role="3uigEE" to="4q6f:~MPSTypesystem" resolve="MPSTypesystem" />
@@ -549,7 +549,7 @@
     <node concept="312cEg" id="2IizP$ACoWZ" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myMPSGenerator" />
+      <property role="TrG5h" value="myGenerator" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2IizP$ACoOL" role="1B3o_S" />
       <node concept="3uibUv" id="2IizP$ACoWV" role="1tU5fm">
@@ -577,19 +577,38 @@
               </node>
             </node>
             <node concept="37vLTw" id="11RXB4mcX2H" role="37vLTJ">
-              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
+              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="KL8AqliugN" role="3cqZAp">
+          <node concept="2OqwBi" id="KL8AqliugO" role="3clFbG">
+            <node concept="37vLTw" id="11RXB4mcXw8" role="2Oq$k0">
+              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
+            </node>
+            <node concept="liA8E" id="KL8AqliugQ" role="2OqNvi">
+              <ref role="37wK5l" to="1p1s:~MPSCore.init():void" resolve="init" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2Jqa$lyR_hM" role="3cqZAp" />
         <node concept="3clFbF" id="1RFBgMs3O0O" role="3cqZAp">
           <node concept="37vLTI" id="1RFBgMs3O7e" role="3clFbG">
             <node concept="2ShNRf" id="1RFBgMs3Oca" role="37vLTx">
               <node concept="1pGfFk" id="1RFBgMs3PE7" role="2ShVmc">
-                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;()" resolve="MPSPersistence" />
+                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;(org.jetbrains.mps.openapi.persistence.PersistenceFacade)" resolve="MPSPersistence" />
+                <node concept="2OqwBi" id="2Jqa$lyR$E2" role="37wK5m">
+                  <node concept="37vLTw" id="2Jqa$lyR$CW" role="2Oq$k0">
+                    <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
+                  </node>
+                  <node concept="liA8E" id="2Jqa$lyR$I8" role="2OqNvi">
+                    <ref role="37wK5l" to="1p1s:~MPSCore.getPersistenceFacade():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getPersistenceFacade" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="1RFBgMs3O0N" role="37vLTJ">
-              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myMPSPersistence" />
+              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myPersistence" />
             </node>
           </node>
         </node>
@@ -597,11 +616,27 @@
           <node concept="37vLTI" id="2IizP$ACpn6" role="3clFbG">
             <node concept="2ShNRf" id="2IizP$ACprT" role="37vLTx">
               <node concept="1pGfFk" id="2IizP$ACxHr" role="2ShVmc">
-                <ref role="37wK5l" to="4q6f:~MPSTypesystem.&lt;init&gt;()" resolve="MPSTypesystem" />
+                <ref role="37wK5l" to="4q6f:~MPSTypesystem.&lt;init&gt;(jetbrains.mps.smodel.language.LanguageRegistry,jetbrains.mps.classloading.ClassLoaderManager)" resolve="MPSTypesystem" />
+                <node concept="2OqwBi" id="2Jqa$lyR$Km" role="37wK5m">
+                  <node concept="37vLTw" id="2Jqa$lyR$J7" role="2Oq$k0">
+                    <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
+                  </node>
+                  <node concept="liA8E" id="2Jqa$lyR$Os" role="2OqNvi">
+                    <ref role="37wK5l" to="1p1s:~MPSCore.getLanguageRegistry():jetbrains.mps.smodel.language.LanguageRegistry" resolve="getLanguageRegistry" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2Jqa$lyR$RY" role="37wK5m">
+                  <node concept="37vLTw" id="2Jqa$lyR$Qt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
+                  </node>
+                  <node concept="liA8E" id="2Jqa$lyR$Zs" role="2OqNvi">
+                    <ref role="37wK5l" to="1p1s:~MPSCore.getClassLoaderManager():jetbrains.mps.classloading.ClassLoaderManager" resolve="getClassLoaderManager" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="2IizP$ACpgx" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myMPSTypesystem" />
+              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myTypesystem" />
             </node>
           </node>
         </node>
@@ -613,17 +648,7 @@
               </node>
             </node>
             <node concept="37vLTw" id="2IizP$ACxPk" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myMPSGenerator" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="KL8AqliugN" role="3cqZAp">
-          <node concept="2OqwBi" id="KL8AqliugO" role="3clFbG">
-            <node concept="37vLTw" id="11RXB4mcXw8" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
-            </node>
-            <node concept="liA8E" id="KL8AqliugQ" role="2OqNvi">
-              <ref role="37wK5l" to="1p1s:~MPSCore.init():void" resolve="init" />
+              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myGenerator" />
             </node>
           </node>
         </node>
@@ -633,14 +658,14 @@
               <ref role="37wK5l" to="d2v5:~MPSPersistence.init():void" resolve="init" />
             </node>
             <node concept="37vLTw" id="1RFBgMs3PFI" role="2Oq$k0">
-              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myMPSPersistence" />
+              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myPersistence" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="2IizP$ACyu4" role="3cqZAp">
           <node concept="2OqwBi" id="2IizP$ACyAy" role="3clFbG">
             <node concept="37vLTw" id="2IizP$ACyu3" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myMPSTypesystem" />
+              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myTypesystem" />
             </node>
             <node concept="liA8E" id="2IizP$ACyG9" role="2OqNvi">
               <ref role="37wK5l" to="4q6f:~MPSTypesystem.init():void" resolve="init" />
@@ -650,7 +675,7 @@
         <node concept="3clFbF" id="2IizP$ACyQg" role="3cqZAp">
           <node concept="2OqwBi" id="2IizP$ACyZy" role="3clFbG">
             <node concept="37vLTw" id="2IizP$ACyQf" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myMPSGenerator" />
+              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myGenerator" />
             </node>
             <node concept="liA8E" id="2IizP$ACz6h" role="2OqNvi">
               <ref role="37wK5l" to="y5px:~MPSGenerator.init():void" resolve="init" />
@@ -670,7 +695,7 @@
         <node concept="3clFbF" id="2IizP$AC$ld" role="3cqZAp">
           <node concept="2OqwBi" id="2IizP$AC$uB" role="3clFbG">
             <node concept="37vLTw" id="2IizP$AC$lc" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myMPSGenerator" />
+              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myGenerator" />
             </node>
             <node concept="liA8E" id="2IizP$AC$_m" role="2OqNvi">
               <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
@@ -680,7 +705,7 @@
         <node concept="3clFbF" id="2IizP$AC$SV" role="3cqZAp">
           <node concept="2OqwBi" id="2IizP$AC_2B" role="3clFbG">
             <node concept="37vLTw" id="2IizP$AC$SU" role="2Oq$k0">
-              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myMPSTypesystem" />
+              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myTypesystem" />
             </node>
             <node concept="liA8E" id="2IizP$AC_a0" role="2OqNvi">
               <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
@@ -693,14 +718,14 @@
               <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
             </node>
             <node concept="37vLTw" id="1RFBgMs3PHM" role="2Oq$k0">
-              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myMPSPersistence" />
+              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myPersistence" />
             </node>
           </node>
         </node>
         <node concept="3clFbF" id="KL8Aqliuhr" role="3cqZAp">
           <node concept="2OqwBi" id="KL8Aqliuhs" role="3clFbG">
             <node concept="37vLTw" id="11RXB4mcXEw" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
+              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
             </node>
             <node concept="liA8E" id="KL8Aqliuhu" role="2OqNvi">
               <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
@@ -711,7 +736,7 @@
           <node concept="37vLTI" id="2IizP$ACzHK" role="3clFbG">
             <node concept="10Nm6u" id="2IizP$ACzNO" role="37vLTx" />
             <node concept="37vLTw" id="2IizP$ACzA9" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myMPSGenerator" />
+              <ref role="3cqZAo" node="2IizP$ACoWZ" resolve="myGenerator" />
             </node>
           </node>
         </node>
@@ -719,7 +744,7 @@
           <node concept="37vLTI" id="2IizP$AC$5m" role="3clFbG">
             <node concept="10Nm6u" id="2IizP$AC$bq" role="37vLTx" />
             <node concept="37vLTw" id="2IizP$ACzW$" role="37vLTJ">
-              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myMPSTypesystem" />
+              <ref role="3cqZAo" node="2IizP$ACozW" resolve="myTypesystem" />
             </node>
           </node>
         </node>
@@ -727,7 +752,7 @@
           <node concept="37vLTI" id="1RFBgMs3PZ1" role="3clFbG">
             <node concept="10Nm6u" id="1RFBgMs3Q5B" role="37vLTx" />
             <node concept="37vLTw" id="1RFBgMs3PQN" role="37vLTJ">
-              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myMPSPersistence" />
+              <ref role="3cqZAo" node="1RFBgMs3NN8" resolve="myPersistence" />
             </node>
           </node>
         </node>
@@ -735,7 +760,7 @@
           <node concept="37vLTI" id="11RXB4mcYux" role="3clFbG">
             <node concept="10Nm6u" id="11RXB4mcY$G" role="37vLTx" />
             <node concept="37vLTw" id="11RXB4mcYo2" role="37vLTJ">
-              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
+              <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
             </node>
           </node>
         </node>
@@ -753,7 +778,7 @@
       <node concept="3clFbS" id="1vtSNIfMqbe" role="3clF47">
         <node concept="3cpWs6" id="1vtSNIfMqhD" role="3cqZAp">
           <node concept="37vLTw" id="1vtSNIfMqmR" role="3cqZAk">
-            <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myMPSCore" />
+            <ref role="3cqZAo" node="11RXB4mcWQw" resolve="myCore" />
           </node>
         </node>
       </node>

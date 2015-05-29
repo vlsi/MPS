@@ -20,20 +20,22 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import org.jetbrains.annotations.NotNull;
 
 public final class MPSTypesystem extends ComponentPlugin {
+  private final LanguageRegistry myLanguageRegistry;
+  private final ClassLoaderManager myClassLoaderManager;
 
-  public MPSTypesystem() {
+  public MPSTypesystem(@NotNull LanguageRegistry languageRegistry, @NotNull ClassLoaderManager classLoaderManager) {
+    myLanguageRegistry = languageRegistry;
+    myClassLoaderManager = classLoaderManager;
   }
 
   @Override
   public void init() {
     super.init();
-    final LanguageRegistry languageRegistry = LanguageRegistry.getInstance();
-    final ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
-
-    TypeChecker typeChecker = init(new TypeChecker(languageRegistry));
-    init(new TypeContextManager(typeChecker, classLoaderManager));
+    TypeChecker typeChecker = init(new TypeChecker(myLanguageRegistry));
+    init(new TypeContextManager(typeChecker, myClassLoaderManager));
   }
 }
 
