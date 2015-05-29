@@ -16,7 +16,9 @@
 
 package jetbrains.mps.excluded;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.core.platform.PlatformFactory;
+import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
@@ -24,7 +26,6 @@ import junit.framework.Assert;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.ElementNameAndAttributeQualifier;
 import org.custommonkey.xmlunit.XMLAssert;
-import org.custommonkey.xmlunit.XMLUnit;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -45,20 +46,18 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
-  private static MPSCore ourMPSCore;
+  private static Platform ourPlatform;
 
   @BeforeClass
   public static void init() {
     assertNull(PersistenceFacade.getInstance());
-    ourMPSCore = new MPSCore();
-    ourMPSCore.init();
+    ourPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.CORE);
   }
 
   @AfterClass
   public static void dispose() {
     assertNotNull(PersistenceFacade.getInstance());
-    ourMPSCore.dispose();
-    ourMPSCore = null;
+    ourPlatform.dispose();
     assertNull(PersistenceFacade.getInstance());
   }
 

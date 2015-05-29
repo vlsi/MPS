@@ -16,7 +16,9 @@
 
 package jetbrains.mps.excluded;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.core.platform.PlatformFactory;
+import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import org.jdom.JDOMException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -40,12 +42,11 @@ public class GeneratorsRunner {
 
   public static void main(String[] args) throws JDOMException, IOException {
     assertNull(PersistenceFacade.getInstance());
-    final MPSCore mpsCore = new MPSCore();
-    mpsCore.init();
+    Platform platform = PlatformFactory.initPlatform(PlatformOptionsBuilder.CORE);
 
     generateGenSourcesIml();
     generateCompilerXmlFile();
 
-    mpsCore.dispose();
+    platform.dispose();
   }
 }

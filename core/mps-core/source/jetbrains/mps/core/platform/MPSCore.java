@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps;
+package jetbrains.mps.core.platform;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
@@ -60,7 +60,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public final class MPSCore extends ComponentPlugin {
+/**
+ * Core MPS functionality layer. Non-instantiable now, the only way to create MPS is via {@link jetbrains.mps.core.platform.PlatformFactory}.
+ */
+public final class MPSCore extends ComponentPluginBase {
   private volatile boolean myInitialized = false;
   private ClassLoaderManager myClassLoaderManager;
   private LibraryInitializer myLibraryInitializer;
@@ -68,7 +71,11 @@ public final class MPSCore extends ComponentPlugin {
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
 
-  public MPSCore() {
+  /**
+   * made package-private
+   * Please consider using {@link jetbrains.mps.core.platform.Platform} instead
+   */
+  MPSCore() {
   }
 
   @Override

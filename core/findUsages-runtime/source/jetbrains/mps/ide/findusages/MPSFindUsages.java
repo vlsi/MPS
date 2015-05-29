@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.ide.findusages;
 
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 10/14/11
  */
-public final class MPSFindUsages extends ComponentPlugin {
+public final class MPSFindUsages extends ComponentPluginBase {
   private final LanguageRegistry myLanguageRegistry;
 
   public MPSFindUsages(@NotNull LanguageRegistry languageRegistry) {

@@ -18,7 +18,7 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
-    <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" implicit="true" />
+    <import index="mn44" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.core.platform(MPS.Core/jetbrains.mps.core.platform@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -41,6 +41,10 @@
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
@@ -202,70 +206,20 @@
         </node>
       </node>
       <node concept="3clFbS" id="6NgXkpAWLJc" role="3clF47">
-        <node concept="3cpWs8" id="11RXB4md_Zd" role="3cqZAp">
-          <node concept="3cpWsn" id="11RXB4md_Ze" role="3cpWs9">
-            <property role="TrG5h" value="mpsCore" />
+        <node concept="3cpWs8" id="Y1BBlvzKBO" role="3cqZAp">
+          <node concept="3cpWsn" id="Y1BBlvzKBM" role="3cpWs9">
             <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="11RXB4md_Zf" role="1tU5fm">
-              <ref role="3uigEE" to="1p1s:~MPSCore" resolve="MPSCore" />
+            <property role="TrG5h" value="platform" />
+            <node concept="3uibUv" id="Y1BBlvzKRj" role="1tU5fm">
+              <ref role="3uigEE" to="mn44:~Platform" resolve="Platform" />
             </node>
-            <node concept="2ShNRf" id="11RXB4mdBce" role="33vP2m">
-              <node concept="1pGfFk" id="11RXB4mdD_w" role="2ShVmc">
-                <ref role="37wK5l" to="1p1s:~MPSCore.&lt;init&gt;()" resolve="MPSCore" />
+            <node concept="2YIFZM" id="Y1BBlvzKSI" role="33vP2m">
+              <ref role="37wK5l" to="mn44:~PlatformFactory.initPlatform(jetbrains.mps.core.platform.PlatformOptionsBuilder):jetbrains.mps.core.platform.Platform" resolve="initPlatform" />
+              <ref role="1Pybhc" to="mn44:~PlatformFactory" resolve="PlatformFactory" />
+              <node concept="Rm8GO" id="Y1BBlvzKW8" role="37wK5m">
+                <ref role="Rm8GQ" to="mn44:~PlatformOptionsBuilder.PERSISTENCE" resolve="PERSISTENCE" />
+                <ref role="1Px2BO" to="mn44:~PlatformOptionsBuilder" resolve="PlatformOptionsBuilder" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="35PnRaEY6S6" role="3cqZAp">
-          <node concept="2OqwBi" id="35PnRaEY7ws" role="3clFbG">
-            <node concept="liA8E" id="35PnRaEY89U" role="2OqNvi">
-              <ref role="37wK5l" to="1p1s:~MPSCore.init():void" resolve="init" />
-            </node>
-            <node concept="37vLTw" id="11RXB4mdEfL" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4md_Ze" resolve="mpsCore" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2Jqa$lyRum7" role="3cqZAp">
-          <node concept="3cpWsn" id="2Jqa$lyRum8" role="3cpWs9">
-            <property role="TrG5h" value="persistenceFacade" />
-            <node concept="3uibUv" id="2Jqa$lyRum3" role="1tU5fm">
-              <ref role="3uigEE" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
-            </node>
-            <node concept="2OqwBi" id="2Jqa$lyRum9" role="33vP2m">
-              <node concept="37vLTw" id="2Jqa$lyRuma" role="2Oq$k0">
-                <ref role="3cqZAo" node="11RXB4md_Ze" resolve="mpsCore" />
-              </node>
-              <node concept="liA8E" id="2Jqa$lyRumb" role="2OqNvi">
-                <ref role="37wK5l" to="1p1s:~MPSCore.getPersistenceFacade():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getPersistenceFacade" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1RFBgMs4KDt" role="3cqZAp">
-          <node concept="3cpWsn" id="1RFBgMs4KDr" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="mpsPersistence" />
-            <node concept="3uibUv" id="1RFBgMs4L5G" role="1tU5fm">
-              <ref role="3uigEE" to="d2v5:~MPSPersistence" resolve="MPSPersistence" />
-            </node>
-            <node concept="2ShNRf" id="1RFBgMs4Nhg" role="33vP2m">
-              <node concept="1pGfFk" id="1RFBgMs4NvQ" role="2ShVmc">
-                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;(org.jetbrains.mps.openapi.persistence.PersistenceFacade)" resolve="MPSPersistence" />
-                <node concept="37vLTw" id="2Jqa$lyRumc" role="37wK5m">
-                  <ref role="3cqZAo" node="2Jqa$lyRum8" resolve="persistenceFacade" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="35PnRaEY$j1" role="3cqZAp">
-          <node concept="2OqwBi" id="35PnRaEYA8o" role="3clFbG">
-            <node concept="liA8E" id="35PnRaEYAK$" role="2OqNvi">
-              <ref role="37wK5l" to="d2v5:~MPSPersistence.init():void" resolve="init" />
-            </node>
-            <node concept="37vLTw" id="1RFBgMs4O9X" role="2Oq$k0">
-              <ref role="3cqZAo" node="1RFBgMs4KDr" resolve="mpsPersistence" />
             </node>
           </node>
         </node>
@@ -386,23 +340,13 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="35PnRaEYCjO" role="3cqZAp">
-              <node concept="2OqwBi" id="35PnRaEYDqJ" role="3clFbG">
-                <node concept="liA8E" id="35PnRaEYDZe" role="2OqNvi">
-                  <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
+            <node concept="3clFbF" id="Y1BBlvzL4q" role="3cqZAp">
+              <node concept="2OqwBi" id="Y1BBlvzLp6" role="3clFbG">
+                <node concept="37vLTw" id="Y1BBlvzL4o" role="2Oq$k0">
+                  <ref role="3cqZAo" node="Y1BBlvzKBM" resolve="platform" />
                 </node>
-                <node concept="37vLTw" id="1RFBgMs4OOF" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1RFBgMs4KDr" resolve="mpsPersistence" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="35PnRaEYp3L" role="3cqZAp">
-              <node concept="2OqwBi" id="35PnRaEYq9M" role="3clFbG">
-                <node concept="liA8E" id="35PnRaEYqHJ" role="2OqNvi">
-                  <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
-                </node>
-                <node concept="37vLTw" id="11RXB4mdFzV" role="2Oq$k0">
-                  <ref role="3cqZAo" node="11RXB4md_Ze" resolve="mpsCore" />
+                <node concept="liA8E" id="Y1BBlvzLpM" role="2OqNvi">
+                  <ref role="37wK5l" to="mn44:~Platform.dispose():void" resolve="dispose" />
                 </node>
               </node>
             </node>

@@ -111,8 +111,10 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
+    <classNode dependClassName="jetbrains.mps.core.platform.PlatformFactory" />
+    <classNode dependClassName="jetbrains.mps.core.platform.PlatformOptionsBuilder" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.FileMPSProject" />
-    <classNode dependClassName="jetbrains.mps.core.tool.environment.util.MpsPlatform" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

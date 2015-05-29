@@ -65,7 +65,7 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.core.platform.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ModuleData" />

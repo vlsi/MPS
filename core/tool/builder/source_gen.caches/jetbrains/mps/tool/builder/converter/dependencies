@@ -9,12 +9,13 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
+    <classNode dependClassName="jetbrains.mps.core.platform.Platform" />
+    <classNode dependClassName="jetbrains.mps.core.platform.PlatformFactory" />
+    <classNode dependClassName="jetbrains.mps.core.platform.PlatformOptionsBuilder" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.persistence.DefaultModelPersistence" />
     <classNode dependClassName="jetbrains.mps.persistence.LightModelEnvironmentInfoImpl" />
-    <classNode dependClassName="jetbrains.mps.persistence.MPSPersistence" />
     <classNode dependClassName="jetbrains.mps.persistence.MetaModelInfoProvider" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />

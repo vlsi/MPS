@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 /**
  * evgeny, 11/9/12
  */
-public final class MPSPersistence extends ComponentPlugin {
+public final class MPSPersistence extends ComponentPluginBase {
   private final PersistenceFacade myPersistenceFacade;
 
   public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {

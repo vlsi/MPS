@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.typesystem;
 
-import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
 
-public final class MPSTypesystem extends ComponentPlugin {
+public final class MPSTypesystem extends ComponentPluginBase {
   private final LanguageRegistry myLanguageRegistry;
   private final ClassLoaderManager myClassLoaderManager;
 

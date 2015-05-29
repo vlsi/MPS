@@ -85,6 +85,7 @@
     <orderEntry type="module" module-name="vcs" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs-core" scope="PROVIDED" />
     <orderEntry type="module" module-name="make-facets" scope="PROVIDED" />
+    <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="platform" />
   </component>
 </module>
-

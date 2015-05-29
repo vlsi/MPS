@@ -36,8 +36,8 @@
     <import index="fmpa" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#org.xml.sax(JDK/org.xml.sax@java_stub)" />
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
     <import index="ep0o" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.persistence(MPS.Core/jetbrains.mps.extapi.persistence@java_stub)" />
+    <import index="mn44" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.core.platform(MPS.Core/jetbrains.mps.core.platform@java_stub)" />
     <import index="9yi" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.xml.parsers(JDK/javax.xml.parsers@java_stub)" implicit="true" />
-    <import index="kgxg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -793,59 +793,19 @@
             <ref role="37wK5l" node="2TzypFyLI9T" resolve="configureLog4j" />
           </node>
         </node>
-        <node concept="3cpWs8" id="11RXB4meviQ" role="3cqZAp">
-          <node concept="3cpWsn" id="11RXB4meviO" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="mpsCore" />
-            <node concept="3uibUv" id="11RXB4mex$B" role="1tU5fm">
-              <ref role="3uigEE" to="1p1s:~MPSCore" resolve="MPSCore" />
+        <node concept="3cpWs8" id="Y1BBlv$vrf" role="3cqZAp">
+          <node concept="3cpWsn" id="Y1BBlv$vrg" role="3cpWs9">
+            <property role="TrG5h" value="platform" />
+            <node concept="3uibUv" id="Y1BBlv$vrd" role="1tU5fm">
+              <ref role="3uigEE" to="mn44:~Platform" resolve="Platform" />
             </node>
-            <node concept="2ShNRf" id="11RXB4mexBs" role="33vP2m">
-              <node concept="1pGfFk" id="11RXB4meFo7" role="2ShVmc">
-                <ref role="37wK5l" to="1p1s:~MPSCore.&lt;init&gt;()" resolve="MPSCore" />
+            <node concept="2YIFZM" id="Y1BBlv$vrh" role="33vP2m">
+              <ref role="37wK5l" to="mn44:~PlatformFactory.initPlatform(jetbrains.mps.core.platform.PlatformOptionsBuilder):jetbrains.mps.core.platform.Platform" resolve="initPlatform" />
+              <ref role="1Pybhc" to="mn44:~PlatformFactory" resolve="PlatformFactory" />
+              <node concept="Rm8GO" id="Y1BBlv$vri" role="37wK5m">
+                <ref role="Rm8GQ" to="mn44:~PlatformOptionsBuilder.PERSISTENCE" resolve="PERSISTENCE" />
+                <ref role="1Px2BO" to="mn44:~PlatformOptionsBuilder" resolve="PlatformOptionsBuilder" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7CeQlvr5qgl" role="3cqZAp">
-          <node concept="2OqwBi" id="7CeQlvr5qgm" role="3clFbG">
-            <node concept="37vLTw" id="11RXB4meFq4" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4meviO" resolve="mpsCore" />
-            </node>
-            <node concept="liA8E" id="7CeQlvr5qgp" role="2OqNvi">
-              <ref role="37wK5l" to="1p1s:~MPSCore.init():void" resolve="init" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1RFBgMs348T" role="3cqZAp">
-          <node concept="3cpWsn" id="1RFBgMs348R" role="3cpWs9">
-            <property role="3TUv4t" value="true" />
-            <property role="TrG5h" value="mpsPersistence" />
-            <node concept="3uibUv" id="1RFBgMs36nw" role="1tU5fm">
-              <ref role="3uigEE" to="d2v5:~MPSPersistence" resolve="MPSPersistence" />
-            </node>
-            <node concept="2ShNRf" id="1RFBgMs36vc" role="33vP2m">
-              <node concept="1pGfFk" id="1RFBgMs3i5U" role="2ShVmc">
-                <ref role="37wK5l" to="d2v5:~MPSPersistence.&lt;init&gt;(org.jetbrains.mps.openapi.persistence.PersistenceFacade)" resolve="MPSPersistence" />
-                <node concept="2OqwBi" id="2Jqa$lyS3qS" role="37wK5m">
-                  <node concept="37vLTw" id="2Jqa$lyS3pt" role="2Oq$k0">
-                    <ref role="3cqZAo" node="11RXB4meviO" resolve="mpsCore" />
-                  </node>
-                  <node concept="liA8E" id="2Jqa$lyS3zE" role="2OqNvi">
-                    <ref role="37wK5l" to="1p1s:~MPSCore.getPersistenceFacade():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getPersistenceFacade" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7CeQlvr5qgq" role="3cqZAp">
-          <node concept="2OqwBi" id="7CeQlvr5qgr" role="3clFbG">
-            <node concept="37vLTw" id="1RFBgMs3irx" role="2Oq$k0">
-              <ref role="3cqZAo" node="1RFBgMs348R" resolve="mpsPersistence" />
-            </node>
-            <node concept="liA8E" id="7CeQlvr5qgu" role="2OqNvi">
-              <ref role="37wK5l" to="d2v5:~MPSPersistence.init():void" resolve="init" />
             </node>
           </node>
         </node>
@@ -1079,23 +1039,13 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1RFBgMs3kB$" role="3cqZAp">
-          <node concept="2OqwBi" id="1RFBgMs3noE" role="3clFbG">
-            <node concept="37vLTw" id="1RFBgMs3kBz" role="2Oq$k0">
-              <ref role="3cqZAo" node="1RFBgMs348R" resolve="mpsPersistence" />
+        <node concept="3clFbF" id="Y1BBlv$wZQ" role="3cqZAp">
+          <node concept="2OqwBi" id="Y1BBlv$xm2" role="3clFbG">
+            <node concept="37vLTw" id="Y1BBlv$wZO" role="2Oq$k0">
+              <ref role="3cqZAo" node="Y1BBlv$vrg" resolve="platform" />
             </node>
-            <node concept="liA8E" id="1RFBgMs3pmN" role="2OqNvi">
-              <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="11RXB4meH_l" role="3cqZAp">
-          <node concept="2OqwBi" id="11RXB4meJK3" role="3clFbG">
-            <node concept="37vLTw" id="11RXB4meH_k" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4meviO" resolve="mpsCore" />
-            </node>
-            <node concept="liA8E" id="11RXB4meLHd" role="2OqNvi">
-              <ref role="37wK5l" to="kgxg:~ComponentPlugin.dispose():void" resolve="dispose" />
+            <node concept="liA8E" id="Y1BBlv$xB2" role="2OqNvi">
+              <ref role="37wK5l" to="mn44:~Platform.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>

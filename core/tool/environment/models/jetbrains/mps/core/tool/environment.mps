@@ -28,6 +28,7 @@
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
+    <import index="mn44" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.core.platform(MPS.Core/jetbrains.mps.core.platform@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1230,11 +1231,11 @@
     <node concept="312cEg" id="11RXB4md7v2" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myPlatformLoader" />
+      <property role="TrG5h" value="myPlatform" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="11RXB4md4I7" role="1B3o_S" />
-      <node concept="3uibUv" id="11RXB4mdahk" role="1tU5fm">
-        <ref role="3uigEE" to="v9gs:KL8AqliugE" resolve="MpsPlatform" />
+      <node concept="3uibUv" id="Y1BBlvzRN4" role="1tU5fm">
+        <ref role="3uigEE" to="mn44:~Platform" resolve="Platform" />
       </node>
     </node>
     <node concept="2tJIrI" id="5mza6Qqm4lm" role="jymVt" />
@@ -1380,27 +1381,19 @@
         </node>
         <node concept="3clFbF" id="11RXB4mdbcQ" role="3cqZAp">
           <node concept="37vLTI" id="11RXB4mdbIw" role="3clFbG">
-            <node concept="2ShNRf" id="11RXB4mdcaB" role="37vLTx">
-              <node concept="1pGfFk" id="11RXB4mdcaA" role="2ShVmc">
-                <ref role="37wK5l" to="v9gs:KL8AqliugG" resolve="MpsPlatform" />
+            <node concept="2YIFZM" id="Y1BBlvzSbI" role="37vLTx">
+              <ref role="37wK5l" to="mn44:~PlatformFactory.initPlatform(jetbrains.mps.core.platform.PlatformOptionsBuilder):jetbrains.mps.core.platform.Platform" resolve="initPlatform" />
+              <ref role="1Pybhc" to="mn44:~PlatformFactory" resolve="PlatformFactory" />
+              <node concept="Rm8GO" id="Y1BBlvzSdt" role="37wK5m">
+                <ref role="Rm8GQ" to="mn44:~PlatformOptionsBuilder.ALL" resolve="ALL" />
+                <ref role="1Px2BO" to="mn44:~PlatformOptionsBuilder" resolve="PlatformOptionsBuilder" />
               </node>
             </node>
             <node concept="37vLTw" id="11RXB4mdbcP" role="37vLTJ">
-              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatformLoader" />
+              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="11RXB4mddgp" role="3cqZAp">
-          <node concept="2OqwBi" id="11RXB4mde92" role="3clFbG">
-            <node concept="37vLTw" id="11RXB4mddgo" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatformLoader" />
-            </node>
-            <node concept="liA8E" id="11RXB4mdeI7" role="2OqNvi">
-              <ref role="37wK5l" to="v9gs:11RXB4mcWWR" resolve="init" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="3eUNqOk7vbG" role="3cqZAp" />
         <node concept="3clFbF" id="KL8AqljyHw" role="3cqZAp">
           <node concept="2OqwBi" id="KL8AqljyHx" role="3clFbG">
             <node concept="2YIFZM" id="KL8AqljyHy" role="2Oq$k0">
@@ -1439,10 +1432,10 @@
             <node concept="2OqwBi" id="5A5jZryYVtG" role="37wK5m">
               <node concept="2OqwBi" id="3eUNqOk9b60" role="2Oq$k0">
                 <node concept="37vLTw" id="3eUNqOk9b1t" role="2Oq$k0">
-                  <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatformLoader" />
+                  <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
                 </node>
                 <node concept="liA8E" id="3eUNqOk9bds" role="2OqNvi">
-                  <ref role="37wK5l" to="v9gs:1vtSNIfMqbb" resolve="getMPSCore" />
+                  <ref role="37wK5l" to="mn44:~Platform.getCore():jetbrains.mps.MPSCore" resolve="getCore" />
                 </node>
               </node>
               <node concept="liA8E" id="5A5jZryYVO8" role="2OqNvi">
@@ -1787,10 +1780,10 @@
         <node concept="3clFbF" id="11RXB4mdlCD" role="3cqZAp">
           <node concept="2OqwBi" id="11RXB4mdmrF" role="3clFbG">
             <node concept="37vLTw" id="11RXB4mdlCC" role="2Oq$k0">
-              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatformLoader" />
+              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
             </node>
             <node concept="liA8E" id="11RXB4mdnne" role="2OqNvi">
-              <ref role="37wK5l" to="v9gs:11RXB4mcXyd" resolve="dispose" />
+              <ref role="37wK5l" to="mn44:~Platform.dispose():void" resolve="dispose" />
             </node>
           </node>
         </node>
@@ -1798,7 +1791,7 @@
           <node concept="37vLTI" id="11RXB4mdq1K" role="3clFbG">
             <node concept="10Nm6u" id="11RXB4mdqyY" role="37vLTx" />
             <node concept="37vLTw" id="11RXB4mdnX$" role="37vLTJ">
-              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatformLoader" />
+              <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
             </node>
           </node>
         </node>

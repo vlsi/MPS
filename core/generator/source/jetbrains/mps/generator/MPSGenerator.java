@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.ComponentPluginBase;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -26,7 +27,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * evgeny, 10/14/11
  */
-public final class MPSGenerator extends ComponentPlugin {
+public final class MPSGenerator extends ComponentPluginBase {
 
   public MPSGenerator() {
   }
