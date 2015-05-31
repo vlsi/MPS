@@ -170,6 +170,7 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
       return Collections.emptySet();
     }
 
+    @NotNull
     @Override
     public SModule getModule() {
       return TempModule.this;

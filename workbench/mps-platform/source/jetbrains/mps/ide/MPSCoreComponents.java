@@ -22,15 +22,13 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
-import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
-import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.UndoHandler;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
@@ -39,7 +37,9 @@ public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
   private Platform myPlatform;
 
-  public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
+  public MPSCoreComponents(FileSystemProviderComponent fsProvider,
+      ModelAccess access,
+      UndoHandler handler) {
   }
 
   @NotNull
@@ -48,15 +48,8 @@ public class MPSCoreComponents implements ApplicationComponent {
     return "MPS Core Components";
   }
 
-  //getFileSystemProvider return ideaFileSystemProvider ? null
-
   @Override
   public void initComponent() {
-    // setup undo
-    UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
-
-    ModelAccess.setInstance(new WorkbenchModelAccess());
-
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
     myBaseLanguage = new MPSBaseLanguage();
     myBaseLanguage.init();
@@ -66,9 +59,6 @@ public class MPSCoreComponents implements ApplicationComponent {
   public void disposeComponent() {
     myBaseLanguage.dispose();
     myPlatform.dispose();
-
-    // cleanup
-    ModelAccess.instance().dispose();
   }
 
   @NotNull

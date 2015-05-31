@@ -26,7 +26,6 @@
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <import index="c5lc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vfs.newvfs.impl(MPS.IDEA/com.intellij.openapi.vfs.newvfs.impl@java_stub)" />
-    <import index="mn44" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.core.platform(MPS.Core/jetbrains.mps.core.platform@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -548,17 +547,12 @@
         <node concept="3clFbF" id="3eUNqOk7G04" role="3cqZAp">
           <node concept="3nyPlj" id="3eUNqOk7G02" role="3clFbG">
             <ref role="37wK5l" to="79ha:3eUNqOk6clf" resolve="init" />
-            <node concept="2OqwBi" id="5A5jZrz2$1m" role="37wK5m">
-              <node concept="2OqwBi" id="5A5jZrz2zPw" role="2Oq$k0">
-                <node concept="37vLTw" id="5A5jZrz2zNu" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5A5jZrz2zs4" resolve="coreComponents" />
-                </node>
-                <node concept="liA8E" id="5A5jZrz2$0w" role="2OqNvi">
-                  <ref role="37wK5l" to="86um:~MPSCoreComponents.getMPSCore():jetbrains.mps.core.platform.MPSCore" resolve="getMPSCore" />
-                </node>
+            <node concept="2OqwBi" id="5A5jZrz2zPw" role="37wK5m">
+              <node concept="37vLTw" id="5A5jZrz2zNu" role="2Oq$k0">
+                <ref role="3cqZAo" node="5A5jZrz2zs4" resolve="coreComponents" />
               </node>
-              <node concept="liA8E" id="5A5jZrz2$8J" role="2OqNvi">
-                <ref role="37wK5l" to="mn44:~MPSCore.getLibraryInitializer():jetbrains.mps.library.LibraryInitializer" resolve="getLibraryInitializer" />
+              <node concept="liA8E" id="5A5jZrz2$0w" role="2OqNvi">
+                <ref role="37wK5l" to="86um:~MPSCoreComponents.getMPSCore():jetbrains.mps.core.platform.MPSCore" resolve="getMPSCore" />
               </node>
             </node>
           </node>
@@ -1575,7 +1569,7 @@
     <node concept="2tJIrI" id="5A5jZryYPrX" role="jymVt" />
     <node concept="3clFb_" id="5A5jZryYOQ0" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="rootCLForLibs" />
+      <property role="TrG5h" value="rootClassLoader" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />

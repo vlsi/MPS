@@ -49,33 +49,29 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  */
 public class WorkbenchModelAccess extends ModelAccess implements ApplicationComponent {
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
-
-  private final AtomicInteger myWritesScheduled = new AtomicInteger();
-  private EDTExecutor myEDTExecutor = new EDTExecutor(this);
-
   private static final int REQUIRE_MAX_TRIES = 8;
 
-  private DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
-
-  private Thread myInterruptingThread;
-
-  public WorkbenchModelAccess() {
-    this.myInterruptingThread = new Thread(new Runnable() {
-      @Override
-      public void run() {
-        for (; ; ) {
-          try {
-            DelayedInterrupt di = myInterruptQueue.take();
-            di.timeIsUp();
-          } catch (InterruptedException e) {
-            Application app = ApplicationManager.getApplication();
-            if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
-              return;
-            }
+  private final AtomicInteger myWritesScheduled = new AtomicInteger();
+  private final EDTExecutor myEDTExecutor = new EDTExecutor(this);
+  private final DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
+  private final Thread myInterruptingThread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+      while (true) {
+        try {
+          DelayedInterrupt di = myInterruptQueue.take();
+          di.timeIsUp();
+        } catch (InterruptedException e) {
+          Application app = ApplicationManager.getApplication();
+          if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
+            return;
           }
         }
       }
-    }, "MPS interrupting thread");
+    }
+  }, "MPS interrupting thread");
+
+  protected WorkbenchModelAccess() {
     myInterruptingThread.start();
   }
 
@@ -599,11 +595,15 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
 
   @Override
   public void initComponent() {
-    setInstance(new WorkbenchModelAccess());
+    // not allowing to substitute alien model accesses here
+    assert instance() instanceof DefaultModelAccess;
+    setInstance(this);
   }
 
   @Override
   public void disposeComponent() {
+    setInstance(new DefaultModelAccess());
+    dispose();
   }
 
   @NotNull

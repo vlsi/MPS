@@ -146,15 +146,6 @@ public class ClassLoaderManager implements CoreComponent {
     myBroadCaster = new ClassLoadingBroadCaster(repository.getModelAccess());
   }
 
-  private void addDumbIdeaPluginFacetFactory() {
-    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
-      @Override
-      public SModuleFacet create() {
-        return new DumbIdeaPluginFacet();
-      }
-    });
-  }
-
   @Override
   public void init() {
     myRepository.getModelAccess().checkWriteAccess();
@@ -163,7 +154,6 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = this;
     myRepositoryListener.init(this);
     myClassLoadersHolder.init();
-    addDumbIdeaPluginFacetFactory(); // FIXME : it does not belong here
   }
 
   @Override

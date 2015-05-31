@@ -61,6 +61,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     return FACET_TYPE;
   }
 
+  @NotNull
   @Override
   public AbstractModule getModule() {
     return (AbstractModule) super.getModule();

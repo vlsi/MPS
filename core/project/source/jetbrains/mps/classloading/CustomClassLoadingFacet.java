@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 /**
@@ -24,5 +25,6 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 public interface CustomClassLoadingFacet extends SModuleFacet {
   public boolean isValid();
 
+  @NotNull
   public ClassLoader getClassLoader();
 }

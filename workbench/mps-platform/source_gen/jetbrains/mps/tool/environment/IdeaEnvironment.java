@@ -76,7 +76,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     VfsRootAccess.SHOULD_PERFORM_ACCESS_CHECK = false;
 
     MPSCoreComponents coreComponents = getMPSCoreComponents();
-    super.init(coreComponents.getMPSCore().getLibraryInitializer());
+    super.init(coreComponents.getMPSCore());
   }
 
   private MPSCoreComponents getMPSCoreComponents() {
@@ -220,7 +220,7 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   @Nullable
   @Override
-  protected ClassLoader rootCLForLibs() {
+  protected ClassLoader rootClassLoader() {
     return null;
   }
   protected static Logger LOG = LogManager.getLogger(IdeaEnvironment.class);

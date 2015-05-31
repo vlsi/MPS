@@ -8,6 +8,9 @@ import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import jetbrains.mps.classloading.DumbIdeaPluginFacet;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import java.io.File;
@@ -46,11 +49,30 @@ public class MpsEnvironment extends EnvironmentBase {
       LOG.info("Creating MPS environment");
     }
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
+
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
     EnvironmentBase.setSystemProperties(false);
     EnvironmentBase.setPluginPath();
+    registerFacetFactory();
+    super.init(myPlatform.getCore());
+  }
 
-    super.init(myPlatform.getCore().getLibraryInitializer());
+  private void registerFacetFactory() {
+    FacetsFacade.FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
+    assert dumbFactory != null;
+    FacetsFacade.getInstance().removeFactory(dumbFactory);
+    FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetsFacade.FacetFactory() {
+      @Override
+      public SModuleFacet create() {
+        return new DumbIdeaPluginFacet() {
+          @Override
+          @NotNull
+          public ClassLoader getClassLoader() {
+            return rootClassLoader();
+          }
+        };
+      }
+    });
   }
 
   @Nullable
@@ -82,6 +104,7 @@ public class MpsEnvironment extends EnvironmentBase {
   }
 
   @NotNull
+  @Override
   public Project createEmptyProject() {
     checkInitialized();
     File projectFile = FileUtil.createTmpFile();
@@ -113,7 +136,7 @@ public class MpsEnvironment extends EnvironmentBase {
   }
 
   @Nullable
-  protected ClassLoader rootCLForLibs() {
+  protected ClassLoader rootClassLoader() {
     return null;
   }
   protected static Logger LOG = LogManager.getLogger(MpsEnvironment.class);

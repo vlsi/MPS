@@ -17,21 +17,24 @@ package jetbrains.mps.repository;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImplComponent;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
 import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 import java.util.Arrays;
 
-public class RepositoryInitializingComponent implements ApplicationComponent {
+public final class RepositoryInitializingComponent implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
   private BootstrapLibraryContributor myBootstrapLibraryContributor;
   private PluginLibraryContributor myPluginLibraryContributor;
   private WorkbenchLibraryContributor myWorkbenchLibraryContributor;
 
-  public RepositoryInitializingComponent(MPSCoreComponents coreComponents) {
+  public RepositoryInitializingComponent(MPSCoreComponents coreComponents,
+      IdeaPluginModuleFacetImplComponent ideaPluginFacetComponent) {
     myLibraryInitializer = coreComponents.getMPSCore().getLibraryInitializer();
   }
 

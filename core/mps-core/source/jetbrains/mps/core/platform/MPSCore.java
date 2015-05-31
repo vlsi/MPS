@@ -86,10 +86,6 @@ public final class MPSCore extends ComponentPluginBase {
   }
 
   private void doInit() {
-    if (ModelAccess.instance() == null) {
-      ModelAccess.setInstance(new DefaultModelAccess());
-    }
-
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     myPersistenceFacade = init(new PersistenceRegistry());
     init(new FacetsRegistry());

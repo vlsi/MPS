@@ -43,7 +43,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
 
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
-  private static ModelAccess ourInstance;
+  protected static ModelAccess ourInstance = new DefaultModelAccess();
 
   private final ReentrantReadWriteLockEx myReadWriteLock = new ReentrantReadWriteLockEx();
 
@@ -82,7 +82,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     return ourInstance;
   }
 
-  public static void setInstance(ModelAccess modelAccess) {
+  static void setInstance(@NotNull ModelAccess modelAccess) {
     ourInstance = modelAccess;
   }
 

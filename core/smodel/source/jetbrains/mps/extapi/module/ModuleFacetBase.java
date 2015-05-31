@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -33,6 +34,7 @@ public abstract class ModuleFacetBase implements SModuleFacet {
     return getFacetType();
   }
 
+  @NotNull
   @Override
   public SModule getModule() {
     return myModule;

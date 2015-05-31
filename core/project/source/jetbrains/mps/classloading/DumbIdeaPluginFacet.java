@@ -16,10 +16,10 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
-public class DumbIdeaPluginFacet extends ModuleFacetBase implements CustomClassLoadingFacet {
-  public static final String FACET_TYPE = "ideaPlugin";
+public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginModuleFacet {
   private String pluginId;
 
   @Override
@@ -27,6 +27,7 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements CustomClassL
     return true;
   }
 
+  @NotNull
   @Override
   public ClassLoader getClassLoader() {
     return ClassLoaderManager.class.getClassLoader();
@@ -45,5 +46,10 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements CustomClassL
   @Override
   public String getFacetType() {
     return FACET_TYPE;
+  }
+
+  @Override
+  public String getPluginId() {
+    return pluginId;
   }
 }

@@ -16,13 +16,17 @@
 package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.DefaultUndoHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,7 +34,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public class WorkbenchUndoHandler implements UndoHandler {
+public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
   private boolean ourUndoBlocked = false;
   private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
 
@@ -73,5 +77,21 @@ public class WorkbenchUndoHandler implements UndoHandler {
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions));
     myActions = new LinkedList<SNodeUndoableAction>();
+  }
+
+  @Override
+  public void initComponent() {
+    UndoHelper.getInstance().setUndoHandler(this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    UndoHelper.getInstance().setUndoHandler(new DefaultUndoHandler());
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return getClass().getSimpleName();
   }
 }
