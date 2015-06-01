@@ -131,7 +131,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -11582,13 +11582,33 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2pNNFK" id="5g8Dzn7lhb4" role="3o6s8t">
+                <node concept="2pNNFK" id="4LrmwrD9Psy" role="3o6s8t">
                   <property role="qg3DV" value="true" />
                   <property role="2pNNFO" value="fileset" />
-                  <node concept="2pNUuL" id="5g8Dzn7lhb5" role="2pNNFR">
+                  <node concept="2pNUuL" id="4LrmwrD9Psz" role="2pNNFR">
                     <property role="2pNUuO" value="dir" />
-                    <node concept="2pMdtt" id="5g8Dzn7lhb6" role="2pMdts">
-                      <property role="2pMdty" value="${build.tmp}/java/out/mps-core-component" />
+                    <node concept="2pMdtt" id="4LrmwrD9Ps$" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/platform" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="4LrmwrD9Ptb" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="4LrmwrD9Ptc" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="4LrmwrD9Ptd" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-core-components" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNNFK" id="4LrmwrDbDnp" role="3o6s8t">
+                  <property role="qg3DV" value="true" />
+                  <property role="2pNNFO" value="fileset" />
+                  <node concept="2pNUuL" id="4LrmwrDbDnq" role="2pNNFR">
+                    <property role="2pNUuO" value="dir" />
+                    <node concept="2pMdtt" id="4LrmwrDbDnr" role="2pMdts">
+                      <property role="2pMdty" value="${build.tmp}/java/out/mps-core" />
                     </node>
                   </node>
                 </node>

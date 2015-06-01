@@ -16,7 +16,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import jetbrains.mps.workbench.MPSApplicationInfo;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.MPSCore;
 import java.net.URL;
 import java.io.IOException;
 import org.apache.log4j.Level;
