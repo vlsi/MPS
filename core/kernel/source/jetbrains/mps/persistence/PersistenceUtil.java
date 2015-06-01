@@ -241,7 +241,7 @@ public class PersistenceUtil {
     return null;
   }
 
-  private static class StreamDataSourceBase implements StreamDataSource {
+  public static class StreamDataSourceBase implements StreamDataSource {
 
     @NotNull
     @Override
@@ -307,7 +307,7 @@ public class PersistenceUtil {
     }
   }
 
-  private abstract static class MultiStreamDataSourceBase implements MultiStreamDataSource {
+  public abstract static class MultiStreamDataSourceBase implements MultiStreamDataSource {
 
     @Override
     public InputStream openInputStream(String name) throws IOException {
