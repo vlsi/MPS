@@ -1009,7 +1009,7 @@
     </node>
     <node concept="2DRAP_" id="1w81suLSqoW" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSqp3" role="2DRAPQ">
-      <property role="2DPR8u" value="set PROJECT_HOME=%~dp0..\" />
+      <property role="2DPR8u" value="set PROJECT_HOME=%~dp0" />
     </node>
     <node concept="2DRAP_" id="1w81suLSqpb" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSqpk" role="2DRAPQ">
@@ -1434,7 +1434,7 @@
     </node>
     <node concept="2DRAP_" id="1w81suLSXU3" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suLSXVU" role="2DRAPQ">
-      <property role="2DPR8u" value="pushd %PROJECT_HOME%" />
+      <property role="2DPR8u" value="pushd " />
       <node concept="17Uvod" id="1w81suLSYW1" role="lGtFl">
         <property role="2qtEX9" value="text" />
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />

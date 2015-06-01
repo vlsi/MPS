@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2l2mo9tadpjujdtuu6vuk4th3qscies">
+<dependencies version="2" modelHash="-aiu96y55iwr3xddlz6xdldwcvxkzoz2">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -59,13 +59,11 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3885435385580635038" name="main" hash="-2r04tor4ejv58sh2hy0kvlrf910yibc" />
-  <source id="8979762117546970698" name="Info.plist" hash="-7ey2oa2va3jogwtvklwe1ui79ruibqx">
+  <source id="3885435385580635038" name="main" hash="-2r04tor4ejv58sh2hy0kvlrf910yibc">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1731640411964801460" name="mps.bat" hash="370zt2k0s9fk2tz272xy6cye9y4w5d9">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="8979762117546970698" name="Info.plist" hash="-7ey2oa2va3jogwtvklwe1ui79ruibqx" />
+  <source id="1731640411964801460" name="mps.bat" hash="-4vb3kvtmwvo63rs316a7aprcozcaegy" />
   <source id="1731640411967557611" name="mps.vmoptions" hash="clbm9s5a21smqead8ohcx4imcqkg2qo" />
   <source id="4487788881657579420" name="mps.sh" hash="-cdwxt88w1xg5wtv1m4y68loc0gw98xk" />
   <source id="2693344784288480124" name="mps64.vmoptions" hash="5av8eu1b4k51fsz6voym5qna1oqb9gn" />
