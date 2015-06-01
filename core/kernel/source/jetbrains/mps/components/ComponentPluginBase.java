@@ -26,7 +26,7 @@ public class ComponentPluginBase extends ComponentPlugin {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        component.init();
+        ComponentPluginBase.super.init(component);
       }
     });
     return component;

@@ -23,6 +23,7 @@
       <implementation-class>jetbrains.mps.ide.undo.WorkbenchUndoHandler</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.repository.IdeaPluginFacetComponent</interface-class>
       <implementation-class>jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImplComponent</implementation-class>
     </component>
     <component>

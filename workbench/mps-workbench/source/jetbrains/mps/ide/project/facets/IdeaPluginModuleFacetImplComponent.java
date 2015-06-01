@@ -18,12 +18,16 @@ package jetbrains.mps.ide.project.facets;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.repository.IdeaPluginFacetComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-public final class IdeaPluginModuleFacetImplComponent implements ApplicationComponent {
+/**
+ * FIXME refactor FacetFactory and make an ApplicationComponent from <code>FacetFactory<IdeaPluginModuleFacet></code>
+ */
+public final class IdeaPluginModuleFacetImplComponent implements IdeaPluginFacetComponent, ApplicationComponent {
   private final static FacetFactory IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
     @Override
     public SModuleFacet create() {
