@@ -60,6 +60,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_195736285282718193(final PropertyMacroContext _context) {
     return IRootWithUniqueName_Behavior.call_getId_63012922130945363(_context.getNode());
   }
+  public static Object propertyMacro_GetPropertyValue_6406916363967548809(final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x149d054f626ce0a6L, 0x149d054f62698ae6L, "parent")), "virtual_getFqName_1213877404258", new Object[]{});
+  }
   public static Object propertyMacro_GetPropertyValue_2603987804367453017(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
@@ -89,9 +92,6 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_7036359038356141310(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, 0x61a62b43e1534e9fL, "declaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-  }
-  public static Object referenceMacro_GetReferent_2603987804367414504(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x149d054f626ce0a6L, 0x149d054f62698ae6L, "parent"));
   }
   public static Object referenceMacro_GetReferent_6406916363963762490(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x1db73bac2ebb00e3L, 0x1db73bac2ebb0408L, "decl")), "overridesItemField");

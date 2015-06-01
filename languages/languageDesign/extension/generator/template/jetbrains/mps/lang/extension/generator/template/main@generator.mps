@@ -382,8 +382,8 @@
     </node>
     <node concept="2rT7sh" id="3zLwYDe7GWG" role="2rTMjI">
       <property role="TrG5h" value="extensionClass" />
-      <ref role="2rTdP9" to="v54s:7335HkeYeM" resolve="Extension" />
       <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
+      <ref role="2rTdP9" to="v54s:7335HkeYeM" resolve="Extension" />
     </node>
     <node concept="2rT7sh" id="1QReUKIUpav" role="2rTMjI">
       <property role="TrG5h" value="extensionOverlappingClass" />
@@ -1874,18 +1874,24 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="overrided" />
       <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="2gzehMeL4XD" role="1tU5fm">
+      <node concept="2eloPW" id="5zDW7NrTjbl" role="1tU5fm">
+        <property role="2ely0U" value="overriredExtension" />
         <ref role="3uigEE" to="bltl:~ExtensionFunction$FunctionInstance" resolve="ExtensionFunction.FunctionInstance" />
-        <node concept="1ZhdrF" id="2gzehMeLejB" role="lGtFl">
-          <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" />
-          <property role="2qtEX8" value="classifier" />
-          <node concept="3$xsQk" id="2gzehMeLejC" role="3$ytzL">
-            <node concept="3clFbS" id="2gzehMeLejD" role="2VODD2">
-              <node concept="3clFbF" id="2gzehMeLe_1" role="3cqZAp">
-                <node concept="2OqwBi" id="2gzehMeLeQx" role="3clFbG">
-                  <node concept="30H73N" id="2gzehMeLe_0" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="2gzehMeLfF2" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:1it1kXyqoFA" />
+        <node concept="17Uvod" id="5zDW7NrV4Q8" role="lGtFl">
+          <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1174914042989/1174914081067" />
+          <property role="2qtEX9" value="fqClassName" />
+          <node concept="3zFVjK" id="5zDW7NrV4Q9" role="3zH0cK">
+            <node concept="3clFbS" id="5zDW7NrV4Qa" role="2VODD2">
+              <node concept="3clFbF" id="5zDW7NrVaDt" role="3cqZAp">
+                <node concept="2OqwBi" id="5zDW7NrVsEz" role="3clFbG">
+                  <node concept="2OqwBi" id="5zDW7NrVglX" role="2Oq$k0">
+                    <node concept="30H73N" id="5zDW7NrVaDs" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="5zDW7NrVm$3" role="2OqNvi">
+                      <ref role="3Tt5mk" to="v54s:1it1kXyqoFA" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="5zDW7NrVzeE" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                   </node>
                 </node>
               </node>
