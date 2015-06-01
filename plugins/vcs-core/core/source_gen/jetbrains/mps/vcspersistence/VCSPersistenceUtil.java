@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.io.IOException;
 import java.io.ByteArrayInputStream;
 import java.util.Collections;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.smodel.SModelHeader;
 import org.xml.sax.InputSource;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -39,6 +41,25 @@ public class VCSPersistenceUtil {
       return model;
     } catch (IOException ex) {
       return null;
+    }
+  }
+
+  public static SModel loadModel(IFile file) {
+    InputStream input = null;
+    try {
+      input = file.openInputStream();
+      byte[] bytes = ReadUtil.read(input);
+      return loadModel(bytes, file.getName().substring(file.getName().lastIndexOf(".")));
+    } catch (IOException e) {
+      return null;
+    } finally {
+      if (input != null) {
+        try {
+          input.close();
+        } catch (IOException e) {
+          // do nothing 
+        }
+      }
     }
   }
 
