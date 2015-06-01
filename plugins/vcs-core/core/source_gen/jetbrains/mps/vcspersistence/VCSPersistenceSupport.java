@@ -69,7 +69,7 @@ import jetbrains.mps.util.StringUtil;
  * of the old model. It MUST produce a new SModel. 
  * (??? [Mihail Muhin] isn't it better to produce model with persistence version set to LAST_VERSION?)
  */
-/*package*/ class VCSPersistenceSupport {
+public class VCSPersistenceSupport {
   private static final Logger LOG = LogManager.getLogger(VCSPersistenceSupport.class);
   public static final String TARGET_NODE_ID = "targetNodeId";
   public static final String LINK = "link";
