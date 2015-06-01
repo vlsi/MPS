@@ -927,7 +927,7 @@
         <property role="3F0ifm" value="street:" />
       </node>
       <node concept="3F0A7n" id="4yAESKAGZgR" role="3EZMnx">
-        <ref role="1NtTu8" to="vseb:4yAESKAGZgc" resolve="streen" />
+        <ref role="1NtTu8" to="vseb:4yAESKAGZgc" resolve="street" />
       </node>
       <node concept="3F0ifn" id="4yAESKAGZgZ" role="3EZMnx">
         <property role="3F0ifm" value="zip code" />
