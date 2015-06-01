@@ -16,7 +16,11 @@
 package jetbrains.mps.smodel.structure;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFunction<T, R>> {
 
@@ -36,9 +40,23 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
       throw new IllegalStateException("No applicable extensions for extension point " + toString());
     }
     for (ExtensionFunction<T, R> ext1 : allApplicable) {
+      Set<ExtensionFunction<T, R>> allOverridden = new HashSet<ExtensionFunction<T, R>>(ext1.getOverridden());
+      ExtensionFunction<T, R> notIncluded;
+      do {
+        notIncluded = null;
+        for (ExtensionFunction<T, R> item : allOverridden) {
+          if (!allOverridden.containsAll(item.getOverridden())) {
+            notIncluded = item;
+            break;
+          }
+        }
+        if (notIncluded != null) {
+          allOverridden.addAll(notIncluded.getOverridden());
+        }
+      } while (notIncluded != null);
       boolean ext1OverridesAll = true;
       for (ExtensionFunction<T, R> ext2 : allApplicable) {
-        if (ext2 != ext1 && !ext1.getOverridden().contains(ext2)) {
+        if (ext2 != ext1 && !allOverridden.contains(ext2)) {
           ext1OverridesAll = false;
           break;
         }
