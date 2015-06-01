@@ -70,27 +70,32 @@ public class MoveReferenceLinkUp implements ExtensionFunction.FunctionInstance<V
 
   public final _FunctionTypes._void_P0_E0 changeReferenceLinkInstances = new _FunctionTypes._void_P0_E0() {
     public void invoke() {
-      final SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(moveFeatureUp.feature);
+      SReferenceLink oldLink = MetaAdapterByDeclaration.getReferenceLink(moveFeatureUp.feature);
       ListSequence.fromList(SLinkOperations.getChildren(moveFeatureUp.targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.cast(moveFeatureUp.feature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
-      final SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(moveFeatureUp.feature);
+      SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(moveFeatureUp.feature);
       for (SNode node : SetSequence.fromSet(moveFeatureUp.instances)) {
-        Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-        Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return LinkAttribute_Behavior.call_getLink_1341860900489573894(it).equals(oldLink);
-          }
-        }).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            LinkAttribute_Behavior.call_setLink_7714691473529772139(it, newLink);
-          }
-        });
-
-        SNode referenceTarget = node.getReferenceTarget(oldLink);
-        node.setReferenceTarget(newLink, referenceTarget);
-        node.setReferenceTarget(oldLink, null);
+        doWithEachInstance(node, oldLink, newLink);
       }
     }
   };
+
+  public static void doWithEachInstance(SNode node, final SReferenceLink oldLink, final SReferenceLink newLink) {
+    Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return LinkAttribute_Behavior.call_getLink_1341860900489573894(it).equals(oldLink);
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        LinkAttribute_Behavior.call_setLink_7714691473529772139(it, newLink);
+      }
+    });
+
+    SNode referenceTarget = node.getReferenceTarget(oldLink);
+    node.setReferenceTarget(newLink, referenceTarget);
+    node.setReferenceTarget(oldLink, null);
+  }
+
 
 
   public static class ExtensionFunction extends BaseOverlappingExtension<Tuples._2<List<SNode>, MPSProject>, Void> {

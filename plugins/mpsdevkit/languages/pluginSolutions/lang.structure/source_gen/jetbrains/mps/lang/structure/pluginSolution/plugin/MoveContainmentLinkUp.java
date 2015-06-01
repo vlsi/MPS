@@ -72,14 +72,18 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
       ListSequence.fromList(SLinkOperations.getChildren(moveFeatureUp.targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.cast(moveFeatureUp.feature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
       SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(moveFeatureUp.feature);
       for (SNode node : SetSequence.fromSet(moveFeatureUp.instances)) {
-        List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), (Iterable<SNode>) node.getChildren(oldLink));
-        for (SNode child : ListSequence.fromList(children)) {
-          node.removeChild(child);
-          node.addChild(newLink, child);
-        }
+        doWithEachInstance(node, oldLink, newLink);
       }
     }
   };
+
+  public static void doWithEachInstance(SNode node, SContainmentLink oldLink, SContainmentLink newLink) {
+    List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), (Iterable<SNode>) node.getChildren(oldLink));
+    for (SNode child : ListSequence.fromList(children)) {
+      node.removeChild(child);
+      node.addChild(newLink, child);
+    }
+  }
 
 
   public static class ExtensionFunction extends BaseOverlappingExtension<Tuples._2<List<SNode>, MPSProject>, Void> {

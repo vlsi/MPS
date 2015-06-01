@@ -70,27 +70,32 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
 
   public final _FunctionTypes._void_P0_E0 changePropertyInstances = new _FunctionTypes._void_P0_E0() {
     public void invoke() {
-      final SProperty oldProp = MetaAdapterByDeclaration.getProperty(moveFeatureUp.feature);
+      SProperty oldProp = MetaAdapterByDeclaration.getProperty(moveFeatureUp.feature);
       ListSequence.fromList(SLinkOperations.getChildren(moveFeatureUp.targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(SNodeOperations.cast(moveFeatureUp.feature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
-      final SProperty newProp = MetaAdapterByDeclaration.getProperty(moveFeatureUp.feature);
+      SProperty newProp = MetaAdapterByDeclaration.getProperty(moveFeatureUp.feature);
       for (SNode node : SetSequence.fromSet(moveFeatureUp.instances)) {
-        Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
-        Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
-          }
-        }).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode it) {
-            PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
-          }
-        });
-
-        String value = node.getProperty(oldProp);
-        node.setProperty(newProp, value);
-        node.setProperty(oldProp, null);
+        doWithEachInstance(node, oldProp, newProp);
       }
     }
   };
+
+  public static void doWithEachInstance(SNode node, final SProperty oldProp, final SProperty newProp) {
+    Iterable<? extends SNode> children = node.getChildren(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(children).ofType(SNode.class), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return PropertyAttribute_Behavior.call_getProperty_1341860900488756504(it).equals(oldProp);
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        PropertyAttribute_Behavior.call_setProperty_7714691473529670203(it, newProp);
+      }
+    });
+
+    String value = node.getProperty(oldProp);
+    node.setProperty(newProp, value);
+    node.setProperty(oldProp, null);
+  }
+
 
 
   public static class ExtensionFunction extends BaseOverlappingExtension<Tuples._2<List<SNode>, MPSProject>, Void> {
