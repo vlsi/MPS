@@ -167,6 +167,46 @@
                 <ref role="1Y3XeK" to="n55e:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
                 <ref role="37wK5l" to="n55e:~LanguageAspectDescriptor.&lt;init&gt;()" resolve="LanguageAspectDescriptor" />
                 <node concept="3Tm1VV" id="2Sw9hCAHQce" role="1B3o_S" />
+                <node concept="3clFb_" id="2Y$EcRKMn5i" role="jymVt">
+                  <property role="1EzhhJ" value="false" />
+                  <property role="TrG5h" value="getPresentableAspectName" />
+                  <property role="DiZV1" value="false" />
+                  <property role="IEkAT" value="false" />
+                  <node concept="3Tm1VV" id="2Y$EcRKMn5j" role="1B3o_S" />
+                  <node concept="3uibUv" id="2Y$EcRKMn5l" role="3clF45">
+                    <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                  </node>
+                  <node concept="3clFbS" id="2Y$EcRKMn5n" role="3clF47">
+                    <node concept="29HgVG" id="2Y$EcRKMnZ7" role="lGtFl">
+                      <node concept="3NFfHV" id="2Y$EcRKMoyN" role="3NFExx">
+                        <node concept="3clFbS" id="2Y$EcRKMoyO" role="2VODD2">
+                          <node concept="3clFbF" id="2Y$EcRKMozz" role="3cqZAp">
+                            <node concept="2OqwBi" id="2Y$EcRKMoz$" role="3clFbG">
+                              <node concept="2OqwBi" id="2Y$EcRKMoz_" role="2Oq$k0">
+                                <node concept="30H73N" id="2Y$EcRKMozA" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="2Y$EcRKMozB" role="2OqNvi">
+                                  <ref role="37wK5l" to="b2yo:6d7r2Fq2j7f" resolve="getMethod" />
+                                  <node concept="3fl2lp" id="2Y$EcRKMozC" role="37wK5m">
+                                    <ref role="3fl3PK" to="9n97:2Y$EcRKLScp" resolve="getPresentableAspectName" />
+                                    <node concept="3B5_sB" id="2Y$EcRKMozD" role="3fl3PI">
+                                      <ref role="3B5MYn" to="9n97:ghIDlF6CZM" resolve="LanguageAspect" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="2Y$EcRKMozE" role="2OqNvi">
+                                <ref role="3Tt5mk" to="tpee:fzclF7Z" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3cpWs6" id="2Y$EcRKMnZD" role="3cqZAp">
+                      <node concept="10Nm6u" id="2Y$EcRKMo94" role="3cqZAk" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFb_" id="4r8JClTmVGn" role="jymVt">
                   <property role="1EzhhJ" value="false" />
                   <property role="TrG5h" value="hasAspect" />

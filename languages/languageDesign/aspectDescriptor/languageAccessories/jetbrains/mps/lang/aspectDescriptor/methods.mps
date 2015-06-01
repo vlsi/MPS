@@ -63,6 +63,14 @@
   <node concept="q3mft" id="ghIDlF6CZM">
     <property role="TrG5h" value="LanguageAspect" />
     <ref role="2qG0Lo" to="hfbu:2PMNsNJsb26" resolve="LanguageAspectDescriptor" />
+    <node concept="q3mfq" id="2Y$EcRKLScp" role="QNr5C">
+      <property role="TrG5h" value="getPresentableAspectName" />
+      <node concept="3uibUv" id="2Y$EcRKLZcL" role="q3mfk">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="2IRzkw" id="2Y$EcRKLZcV" role="2IRzpu" />
+    </node>
+    <node concept="qMXn0" id="2Y$EcRKLZdL" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmU4i" role="QNr5C">
       <property role="TrG5h" value="hasAspect" />
       <node concept="q3mfp" id="4r8JClTmU4H" role="q3mfl">

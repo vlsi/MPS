@@ -3,7 +3,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="14,0,54,0" name="jetbrains.mps.lang.aspectDescriptor.generator.template.main.QueriesGenerated" />
+      <unit at="14,0,57,0" name="jetbrains.mps.lang.aspectDescriptor.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspectDescriptor.generator.template.main@generator)/3323697319248338132">
@@ -12,26 +12,28 @@
       <node id="3323697319248359747" at="20,94,21,244" concept="0" />
       <node id="3323697319248426258" at="23,94,24,244" concept="0" />
       <node id="3323697319248455546" at="26,94,27,244" concept="0" />
-      <node id="5100536058473091293" at="29,108,30,381" concept="0" />
-      <node id="3323697319248421462" at="32,108,33,380" concept="0" />
-      <node id="3323697319248420474" at="35,108,36,380" concept="0" />
-      <node id="5100536058473122330" at="38,108,39,381" concept="0" />
-      <node id="5100536058473120331" at="41,108,42,381" concept="0" />
-      <node id="3323697319248401508" at="44,108,45,380" concept="0" />
-      <node id="3323697319248442903" at="47,108,48,380" concept="0" />
-      <node id="3323697319248466507" at="50,108,51,380" concept="0" />
+      <node id="3433054418424662243" at="29,108,30,381" concept="0" />
+      <node id="5100536058473091293" at="32,108,33,381" concept="0" />
+      <node id="3323697319248421462" at="35,108,36,380" concept="0" />
+      <node id="3323697319248420474" at="38,108,39,380" concept="0" />
+      <node id="5100536058473122330" at="41,108,42,381" concept="0" />
+      <node id="5100536058473120331" at="44,108,45,381" concept="0" />
+      <node id="3323697319248401508" at="47,108,48,380" concept="0" />
+      <node id="3323697319248442903" at="50,108,51,380" concept="0" />
+      <node id="3323697319248466507" at="53,108,54,380" concept="0" />
       <scope id="4504202565774905129" at="17,94,18,245" />
       <scope id="3323697319248359128" at="20,94,21,244" />
       <scope id="3323697319248425081" at="23,94,24,244" />
       <scope id="3323697319248454296" at="26,94,27,244" />
-      <scope id="5100536058473072661" at="29,108,30,381" />
-      <scope id="3323697319248421438" at="32,108,33,380" />
-      <scope id="3323697319248420445" at="35,108,36,380" />
-      <scope id="5100536058473122304" at="38,108,39,381" />
-      <scope id="5100536058473120284" at="41,108,42,381" />
-      <scope id="3323697319248401462" at="44,108,45,380" />
-      <scope id="3323697319248442879" at="47,108,48,380" />
-      <scope id="3323697319248466483" at="50,108,51,380" />
+      <scope id="3433054418424662196" at="29,108,30,381" />
+      <scope id="5100536058473072661" at="32,108,33,381" />
+      <scope id="3323697319248421438" at="35,108,36,380" />
+      <scope id="3323697319248420445" at="38,108,39,380" />
+      <scope id="5100536058473122304" at="41,108,42,381" />
+      <scope id="5100536058473120284" at="44,108,45,381" />
+      <scope id="3323697319248401462" at="47,108,48,380" />
+      <scope id="3323697319248442879" at="50,108,51,380" />
+      <scope id="3323697319248466483" at="53,108,54,380" />
     </file>
   </root>
 </debug-info>
