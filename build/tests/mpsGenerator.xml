@@ -773,10 +773,10 @@
   <target name="cleanSources">
     <delete dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" />
-    <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" />
     <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/source_gen" />
+    <delete dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/generator/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/generator.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/test_gen" />
   </target>

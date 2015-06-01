@@ -1008,13 +1008,13 @@
   
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/generator/source_gen" />

@@ -269,6 +269,7 @@
         <module file="${mps_home}/plugins/mps-core/languages/languageDesign/table/jetbrains.mps.lang.editor.table.mpl" />
         <module file="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/jetbrains.mps.lang.editor.table.runtime.msd" />
       </chunk>
+      <chunk />
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
@@ -519,7 +520,7 @@
     <delete dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" />
     <delete dir="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen" />
   </target>
 </project>
