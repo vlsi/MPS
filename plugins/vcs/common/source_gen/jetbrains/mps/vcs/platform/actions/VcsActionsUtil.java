@@ -20,7 +20,8 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -72,8 +73,7 @@ public class VcsActionsUtil {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(vFile);
       VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(vFile);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, vFile);
-      // <node> 
-      SModel oldModel = PersistenceUtil.loadModel(content.getContent(), MPSExtentions.MODEL);
+      SModel oldModel = VCSPersistenceUtil.loadModel(content.getContent().getBytes(FileUtil.DEFAULT_CHARSET), MPSExtentions.MODEL);
       final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {

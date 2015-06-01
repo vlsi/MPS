@@ -64,7 +64,8 @@
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
     <import index="jrbx" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
     <import index="fw3h" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
+    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -288,9 +289,6 @@
       </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
-      <concept id="6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" flags="nn" index="3SKWN0">
-        <child id="6329021646629175144" name="commentedStatement" index="3SKWNf" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
@@ -1030,38 +1028,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3SKdUt" id="55$aReHkQIA" role="3cqZAp">
-              <node concept="3SKWN0" id="55$aReHkQIB" role="3SKWNk">
-                <node concept="3cpWs8" id="55$aReHkJzS" role="3SKWNf">
-                  <node concept="3cpWsn" id="55$aReHkJzT" role="3cpWs9">
-                    <property role="TrG5h" value="oldModel" />
-                    <node concept="3uibUv" id="55$aReHkJzU" role="1tU5fm">
-                      <ref role="3uigEE" to="cu2c:~SModel" resolve="SModel" />
-                    </node>
-                    <node concept="2YIFZM" id="55$aReHkJzV" role="33vP2m">
-                      <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                      <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                      <node concept="2OqwBi" id="55$aReHkJzW" role="37wK5m">
-                        <node concept="liA8E" id="55$aReHkJzX" role="2OqNvi">
-                          <ref role="37wK5l" to="o84r:~ContentRevision.getContent():java.lang.String" resolve="getContent" />
-                        </node>
-                        <node concept="37vLTw" id="3GM_nagTzpy" role="2Oq$k0">
-                          <ref role="3cqZAo" node="78RbNhWi9MI" resolve="content" />
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="55$aReHkJzZ" role="37wK5m">
-                        <node concept="37vLTw" id="55$aReHkJ$0" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6ySnuJfjmnd" resolve="vFile" />
-                        </node>
-                        <node concept="liA8E" id="55$aReHkJ$1" role="2OqNvi">
-                          <ref role="37wK5l" to="3df7:~VirtualFile.getExtension():java.lang.String" resolve="getExtension" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3cpWs8" id="78RbNhWi9MR" role="3cqZAp">
               <node concept="3cpWsn" id="78RbNhWi9MS" role="3cpWs9">
                 <property role="TrG5h" value="oldModel" />
@@ -1069,14 +1035,23 @@
                   <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
                 </node>
                 <node concept="2YIFZM" id="6z2l4wbkvSr" role="33vP2m">
-                  <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                  <node concept="2OqwBi" id="6z2l4wbkvSs" role="37wK5m">
-                    <node concept="liA8E" id="6z2l4wbkvSt" role="2OqNvi">
-                      <ref role="37wK5l" to="o84r:~ContentRevision.getContent():java.lang.String" resolve="getContent" />
+                  <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                  <ref role="37wK5l" to="iho:1NiMOxiwPI2" resolve="loadModel" />
+                  <node concept="2OqwBi" id="1NiMOxiyTyq" role="37wK5m">
+                    <node concept="2OqwBi" id="6z2l4wbkvSs" role="2Oq$k0">
+                      <node concept="liA8E" id="6z2l4wbkvSt" role="2OqNvi">
+                        <ref role="37wK5l" to="o84r:~ContentRevision.getContent():java.lang.String" resolve="getContent" />
+                      </node>
+                      <node concept="37vLTw" id="3GM_nagTsCx" role="2Oq$k0">
+                        <ref role="3cqZAo" node="78RbNhWi9MI" resolve="content" />
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTsCx" role="2Oq$k0">
-                      <ref role="3cqZAo" node="78RbNhWi9MI" resolve="content" />
+                    <node concept="liA8E" id="1NiMOxiyUeY" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~String.getBytes(java.nio.charset.Charset):byte[]" resolve="getBytes" />
+                      <node concept="10M0yZ" id="1NiMOxiyUnP" role="37wK5m">
+                        <ref role="1PxDUh" to="msyo:~FileUtil" resolve="FileUtil" />
+                        <ref role="3cqZAo" to="msyo:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
+                      </node>
                     </node>
                   </node>
                   <node concept="10M0yZ" id="55$aReHmrND" role="37wK5m">

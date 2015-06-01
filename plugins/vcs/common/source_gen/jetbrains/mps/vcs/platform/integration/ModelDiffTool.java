@@ -23,7 +23,7 @@ import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.diff.DocumentContent;
@@ -148,7 +148,7 @@ public class ModelDiffTool implements DiffTool {
       if (contentType != null && !((contentType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) || contentType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)))) {
         contentType.getDefaultExtension();
       }
-      return PersistenceUtil.loadModel(bytes, ext);
+      return VCSPersistenceUtil.loadModel(bytes, ext);
     } catch (IOException ioe) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Couldn't read content: " + ioe.getMessage(), ioe);
@@ -194,7 +194,7 @@ public class ModelDiffTool implements DiffTool {
       return null;
     }
     // get rootId from file 
-    SModel diskModel = PersistenceUtil.loadModel(file, MPSExtentions.MODEL);
+    SModel diskModel = VCSPersistenceUtil.loadModel(file);
     if (diskModel == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Error reading MPS file " + file.getPath());

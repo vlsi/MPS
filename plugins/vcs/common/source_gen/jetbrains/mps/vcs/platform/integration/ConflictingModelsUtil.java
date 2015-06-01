@@ -45,6 +45,7 @@ import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -283,7 +284,7 @@ public class ConflictingModelsUtil {
     if (bytes.length == 0) {
       return null;
     }
-    return PersistenceUtil.loadModel(bytes, ext);
+    return VCSPersistenceUtil.loadModel(bytes, ext);
   }
   protected static Logger LOG = LogManager.getLogger(ConflictingModelsUtil.class);
 }

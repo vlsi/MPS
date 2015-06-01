@@ -103,7 +103,8 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.fileTypes.FileType;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vcs.diff.merge.MergeTemporaryModel;
 import com.intellij.openapi.diff.DiffContent;
@@ -657,7 +658,7 @@ __switch__:
                 FileType[] filetypes = {(before == null ? null : before.getFile().getFileType()), after.getFile().getFileType()};
                 final boolean isPerRoot = MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(filetypes[1]) || MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.equals(filetypes[1]);
 
-                final SModel afterModel = PersistenceUtil.loadModel(after.getContent(), (isPerRoot ? MPSExtentions.MODEL : filetypes[1].getDefaultExtension()));
+                final SModel afterModel = VCSPersistenceUtil.loadModel(after.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[1].getDefaultExtension()));
 
                 if (pi.isCanceled()) {
                   return;
@@ -668,7 +669,7 @@ __switch__:
                 if (before == null) {
                   beforeModel.value = new MergeTemporaryModel(myModel.getReference(), true);
                 } else {
-                  beforeModel.value = PersistenceUtil.loadModel(before.getContent(), (isPerRoot ? MPSExtentions.MODEL : filetypes[0].getDefaultExtension()));
+                  beforeModel.value = VCSPersistenceUtil.loadModel(before.getContent().getBytes(FileUtil.DEFAULT_CHARSET), (isPerRoot ? MPSExtentions.MODEL : filetypes[0].getDefaultExtension()));
                 }
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
