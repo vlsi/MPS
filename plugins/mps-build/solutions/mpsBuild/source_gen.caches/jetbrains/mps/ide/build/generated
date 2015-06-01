@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6dwuh4rg3u09m3p5zw4nrp9fe2zphnf">
+<dependencies version="2" modelHash="-8a481kb07bus7nnno5nv63e0usdee1p">
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="1mf0qk0cl1nhfo8a339033zvmnfhaui" />
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-cjrczi4ux0nektm0mx426hmwry5miet" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="3fmamqjqlfsx8kxfmdxuq8cbug9a0yx" />
@@ -252,7 +252,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsConnectorPlugin.xml" />
   </source>
-  <source id="716066598061903713" name="mps" hash="-4syq9q62a1p3dcw1045aydavim4kegh">
+  <source id="716066598061903713" name="mps" hash="qb20vf612qdvvbv1uls8teymubhthf">
     <file name="Info.plist.xml" />
     <file name="mps.bat" />
     <file name="mps.sh" />
