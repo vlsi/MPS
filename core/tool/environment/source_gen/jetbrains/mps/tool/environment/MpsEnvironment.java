@@ -66,7 +66,7 @@ public class MpsEnvironment extends EnvironmentBase {
       public SModuleFacet create() {
         return new DumbIdeaPluginFacet() {
           @Override
-          @NotNull
+          @Nullable
           public ClassLoader getClassLoader() {
             return rootClassLoader();
           }

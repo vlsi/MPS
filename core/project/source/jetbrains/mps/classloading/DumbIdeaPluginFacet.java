@@ -16,7 +16,7 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginModuleFacet {
@@ -27,7 +27,7 @@ public class DumbIdeaPluginFacet extends ModuleFacetBase implements IdeaPluginMo
     return true;
   }
 
-  @NotNull
+  @Nullable
   @Override
   public ClassLoader getClassLoader() {
     return ClassLoaderManager.class.getClassLoader();
