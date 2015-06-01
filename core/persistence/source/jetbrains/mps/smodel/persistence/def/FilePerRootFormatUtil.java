@@ -134,7 +134,7 @@ public class FilePerRootFormatUtil {
   }
 
   public static int actualPersistenceVersion(int desiredPersistenceVersion) {
-    IModelPersistence modelPersistence = ModelPersistence.getPersistence(Math.max(desiredPersistenceVersion, 8));
+    IModelPersistence modelPersistence = ModelPersistence.getPersistence(Math.max(desiredPersistenceVersion, ModelPersistence.FIRST_SUPPORTED_VERSION));
     if (modelPersistence == null) {
       modelPersistence = ModelPersistence.getPersistence(ModelPersistence.LAST_VERSION);
     }
