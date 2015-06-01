@@ -10,10 +10,6 @@
     <dependency reexport="false">4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)</dependency>
     <dependency reexport="false">dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</dependency>
   </dependencies>
-  <usedLanguages>
-    <usedLanguage>4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)</usedLanguage>
-    <usedLanguage>dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</usedLanguage>
-  </usedLanguages>
   <languageVersions>
     <language id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" fqName="jetbrains.mps.generator.test.crossmodel.entity" version="0" />
     <language id="dc1cc948-6f43-4687-90cb-17dd5cb27219" fqName="jetbrains.mps.generator.test.crossmodel.property" version="0" />
