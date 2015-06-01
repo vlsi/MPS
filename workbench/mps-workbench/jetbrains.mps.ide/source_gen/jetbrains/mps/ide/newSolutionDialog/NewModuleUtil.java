@@ -141,7 +141,7 @@ public class NewModuleUtil {
   }
 
   @Deprecated
-  public static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, MPSModuleOwner moduleOwner) {
+  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
 
@@ -168,6 +168,7 @@ public class NewModuleUtil {
     } catch (IOException ioException) {
     }
 
+    // FIXME NewGeneratorDialog.createNewGenerator() has similar code, refactor to avoid duplication 
 
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
@@ -177,8 +178,6 @@ public class NewModuleUtil {
     templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
     generatorDescriptor.getUsedDevkits().add(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
-    generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"));
-    generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
     descriptor.getGenerators().add(generatorDescriptor);
     language.setLanguageDescriptor(descriptor);
     language.save();
@@ -203,14 +202,14 @@ public class NewModuleUtil {
     return language;
   }
   @Deprecated
-  public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+  private static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     return (Solution) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
   @Deprecated
-  public static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
+  private static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);

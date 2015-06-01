@@ -539,40 +539,38 @@
       <node id="256092811604632855" at="167,57,168,81" concept="4" />
       <node id="1613125646032873191" at="168,81,169,89" concept="4" />
       <node id="1613125646032873198" at="169,89,170,178" concept="4" />
-      <node id="8978606230572474218" at="170,178,171,172" concept="4" />
-      <node id="5492287215007042962" at="171,172,172,190" concept="4" />
-      <node id="1613125646032873205" at="172,190,173,64" concept="4" />
-      <node id="1613125646032873212" at="173,64,174,55" concept="4" />
-      <node id="8978606230572474873" at="174,55,175,20" concept="4" />
-      <node id="2273513587775220371" at="175,20,176,0" concept="12" />
-      <node id="2273513587775220372" at="176,0,177,96" concept="10" />
-      <node id="1613125646032873250" at="179,66,180,66" concept="10" />
-      <node id="1613125646032873264" at="182,85,183,45" concept="9" />
-      <node id="1613125646032873279" at="185,63,186,40" concept="4" />
-      <node id="1613125646032873283" at="186,40,187,14" concept="2" />
-      <node id="8978606230572474845" at="190,35,191,13" concept="10" />
-      <node id="8623608763345593586" at="192,5,193,213" concept="9" />
-      <node id="1613125646032873351" at="193,213,194,282" concept="9" />
-      <node id="1613125646032873356" at="194,282,195,172" concept="4" />
-      <node id="1613125646032873361" at="195,172,196,81" concept="4" />
-      <node id="1613125646032873368" at="196,81,197,25" concept="4" />
-      <node id="1613125646032872003" at="199,0,200,0" concept="13" trace="LOG" />
+      <node id="1613125646032873205" at="170,178,171,64" concept="4" />
+      <node id="1613125646032873212" at="171,64,172,53" concept="4" />
+      <node id="8978606230572474873" at="172,53,173,20" concept="4" />
+      <node id="2273513587775220371" at="173,20,174,0" concept="12" />
+      <node id="2273513587775220372" at="174,0,175,96" concept="10" />
+      <node id="1613125646032873250" at="177,66,178,66" concept="10" />
+      <node id="1613125646032873264" at="180,85,181,45" concept="9" />
+      <node id="1613125646032873279" at="183,63,184,40" concept="4" />
+      <node id="1613125646032873283" at="184,40,185,14" concept="2" />
+      <node id="8978606230572474845" at="188,35,189,13" concept="10" />
+      <node id="8623608763345593586" at="190,5,191,213" concept="9" />
+      <node id="1613125646032873351" at="191,213,192,282" concept="9" />
+      <node id="1613125646032873356" at="192,282,193,172" concept="4" />
+      <node id="1613125646032873361" at="193,172,194,81" concept="4" />
+      <node id="1613125646032873368" at="194,81,195,25" concept="4" />
+      <node id="1613125646032872003" at="197,0,198,0" concept="13" trace="LOG" />
       <node id="1613125646032873389" at="83,58,86,9" concept="7" />
       <node id="1613125646032873414" at="87,44,90,9" concept="7" />
       <node id="1613125646032872971" at="105,39,108,7" concept="7" />
       <node id="1613125646032872984" at="112,0,115,0" concept="8" trace="getResult#()Ljetbrains/mps/smodel/Generator;" />
       <node id="2990056072202845376" at="144,33,147,11" concept="1" />
       <node id="2990056072202845376" at="144,33,147,11" concept="7" />
-      <node id="1613125646032873244" at="179,0,182,0" concept="8" trace="getTemplateModelPrefix#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
-      <node id="1613125646032873284" at="189,5,192,5" concept="7" />
+      <node id="1613125646032873244" at="177,0,180,0" concept="8" trace="getTemplateModelPrefix#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
+      <node id="1613125646032873284" at="187,5,190,5" concept="7" />
       <node id="1613125646032873000" at="117,68,121,5" concept="7" />
       <node id="1613125646032873017" at="122,50,126,5" concept="7" />
       <node id="1613125646032873043" at="127,50,131,5" concept="7" />
-      <node id="1613125646032873275" at="184,61,188,7" concept="7" />
+      <node id="1613125646032873275" at="182,61,186,7" concept="7" />
       <node id="2602827338915203477" at="66,0,71,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
       <node id="1613125646032872964" at="104,44,109,5" concept="6" />
       <node id="1613125646032873128" at="156,0,161,0" concept="8" trace="dispose#()V" />
-      <node id="1613125646032873268" at="183,45,189,5" concept="6" />
+      <node id="1613125646032873268" at="181,45,187,5" concept="6" />
       <node id="1613125646032872919" at="97,0,104,0" concept="8" trace="updateTemplateModelsDir#()V" />
       <node id="1613125646032872958" at="104,0,112,0" concept="8" trace="isValidName#(Ljava/lang/String;)Z" />
       <node id="1613125646032872700" at="56,0,66,0" concept="3" trace="NewGeneratorDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/Language;)V" />
@@ -581,8 +579,8 @@
       <node id="5049856602248792141" at="137,0,151,0" concept="8" trace="invoke#()V" />
       <node id="1613125646032872871" at="77,58,92,7" concept="4" />
       <node id="5049856602248834912" at="135,81,151,7" concept="4" />
-      <node id="1613125646032873256" at="182,0,199,0" concept="8" trace="adjustTemplateModel#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Generator;)V" />
-      <node id="1613125646032873137" at="161,0,179,0" concept="8" trace="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/Generator;" />
+      <node id="1613125646032873137" at="161,0,177,0" concept="8" trace="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;Ljava/lang/String;)Ljetbrains/mps/smodel/Generator;" />
+      <node id="1613125646032873256" at="180,0,197,0" concept="8" trace="adjustTemplateModel#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Generator;)V" />
       <node id="1613125646032872751" at="71,0,97,0" concept="8" trace="initContentPane#()V" />
       <node id="1939610764124496121" at="115,0,156,0" concept="8" trace="doOKAction#()V" />
       <scope id="2602827338915203481" at="68,44,69,26" />
@@ -591,24 +589,24 @@
       <scope id="1613125646032872979" at="106,56,107,21" />
       <scope id="1613125646032872987" at="112,32,113,20" />
       <scope id="2990056072202845376" at="145,46,146,29" />
-      <scope id="1613125646032873249" at="179,66,180,66" />
-      <scope id="8978606230572474842" at="190,35,191,13" />
+      <scope id="1613125646032873249" at="177,66,178,66" />
+      <scope id="8978606230572474842" at="188,35,189,13" />
       <scope id="1613125646032873006" at="118,43,120,13" />
       <scope id="1613125646032873022" at="123,30,125,13" />
       <scope id="1613125646032873047" at="128,31,130,13" />
       <scope id="1613125646032873131" at="157,28,159,42" />
-      <scope id="1613125646032873278" at="185,63,187,14" />
+      <scope id="1613125646032873278" at="183,63,185,14" />
       <scope id="1613125646032872970" at="105,39,108,7" />
       <scope id="1613125646032872984" at="112,0,115,0" />
       <scope id="2990056072202845376" at="144,33,147,11" />
-      <scope id="1613125646032873244" at="179,0,182,0">
+      <scope id="1613125646032873244" at="177,0,180,0">
         <var name="sourceLanguage" id="1613125646032873247" />
       </scope>
       <scope id="2990056072202845344" at="144,0,148,36">
         <var name="e" id="2990056072202845345" />
       </scope>
       <scope id="2990056072202845347" at="144,33,148,36" />
-      <scope id="1613125646032873274" at="184,61,188,7" />
+      <scope id="1613125646032873274" at="182,61,186,7" />
       <scope id="2602827338915203477" at="66,0,71,0" />
       <scope id="1613125646032872922" at="97,42,102,43">
         <var name="modelsDir" id="1613125646032872942" />
@@ -621,7 +619,7 @@
       <scope id="2990056072202845342" at="138,13,143,68" />
       <scope id="1613125646032873128" at="156,0,161,0" />
       <scope id="1613125646032872963" at="104,44,110,16" />
-      <scope id="1613125646032873268" at="183,45,189,5">
+      <scope id="1613125646032873268" at="181,45,187,5">
         <var name="modelDescriptor" id="1613125646032873272" />
       </scope>
       <scope id="1613125646032872919" at="97,0,104,0" />
@@ -643,24 +641,24 @@
         <var name="e" id="1613125646032872881" />
       </scope>
       <scope id="5049856602248792141" at="137,0,151,0" />
-      <scope id="1613125646032873263" at="182,85,197,25">
-        <var name="alreadyOwnsTemplateModel" id="1613125646032873265" />
-        <var name="mappingConfiguration" id="1613125646032873352" />
-        <var name="templateModel" id="8623608763345593587" />
-      </scope>
-      <scope id="1613125646032873146" at="161,106,177,96">
+      <scope id="1613125646032873146" at="161,106,175,96">
         <var name="generatorDescriptor" id="1613125646032873154" />
         <var name="languageDescriptor" id="1613125646032873148" />
         <var name="templateModelsRoot" id="1613125646032873175" />
       </scope>
-      <scope id="1613125646032873256" at="182,0,199,0">
-        <var name="newGenerator" id="1613125646032873261" />
-        <var name="sourceLanguage" id="1613125646032873259" />
+      <scope id="1613125646032873263" at="180,85,195,25">
+        <var name="alreadyOwnsTemplateModel" id="1613125646032873265" />
+        <var name="mappingConfiguration" id="1613125646032873352" />
+        <var name="templateModel" id="8623608763345593587" />
       </scope>
-      <scope id="1613125646032873137" at="161,0,179,0">
+      <scope id="1613125646032873137" at="161,0,177,0">
         <var name="language" id="1613125646032873140" />
         <var name="name" id="1613125646032873144" />
         <var name="templateModelsDir" id="1613125646032873142" />
+      </scope>
+      <scope id="1613125646032873256" at="180,0,197,0">
+        <var name="newGenerator" id="1613125646032873261" />
+        <var name="sourceLanguage" id="1613125646032873259" />
       </scope>
       <scope id="1613125646032872754" at="71,34,95,30" />
       <scope id="1613125646032872751" at="71,0,97,0" />
@@ -674,7 +672,7 @@
       <scope id="1939610764124496121" at="115,0,156,0" />
       <unit id="1613125646032872877" at="78,46,92,5" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$1" />
       <unit id="5049856602248792141" at="136,49,151,5" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$2" />
-      <unit id="1613125646032872003" at="50,0,201,0" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
+      <unit id="1613125646032872003" at="50,0,199,0" name="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
     </file>
   </root>
 </debug-info>

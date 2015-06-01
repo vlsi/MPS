@@ -24,11 +24,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
@@ -163,8 +163,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return;
   }
   private void addRequiredImports(SModel smodel, ModuleDescriptor moduleDescriptor) {
-    moduleDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)"));
-    moduleDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)"));
     ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L), "jetbrains.mps.build", -1));
     ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xcf935df46994e9cL, 0xa132fa109541cba3L), "jetbrains.mps.build.mps", -1));
 

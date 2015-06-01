@@ -11626,42 +11626,6 @@
       <node concept="3Tm6S6" id="38bQ8pLeEMR" role="1B3o_S" />
       <node concept="3cqZAl" id="38bQ8pLeEMS" role="3clF45" />
       <node concept="3clFbS" id="38bQ8pLeEMT" role="3clF47">
-        <node concept="3clFbF" id="38bQ8pLeEN0" role="3cqZAp">
-          <node concept="2OqwBi" id="38bQ8pLeEN1" role="3clFbG">
-            <node concept="2OqwBi" id="38bQ8pLeEN2" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxgm9La" role="2Oq$k0">
-                <ref role="3cqZAo" node="38bQ8pLeEO4" resolve="moduleDescriptor" />
-              </node>
-              <node concept="liA8E" id="38bQ8pLeEN4" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="38bQ8pLeEN5" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SlNyP" role="37wK5m">
-                <property role="2L6k_S" value="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="38bQ8pLeEN9" role="3cqZAp">
-          <node concept="2OqwBi" id="38bQ8pLeENa" role="3clFbG">
-            <node concept="2OqwBi" id="38bQ8pLeENb" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxghg7W" role="2Oq$k0">
-                <ref role="3cqZAo" node="38bQ8pLeEO4" resolve="moduleDescriptor" />
-              </node>
-              <node concept="liA8E" id="38bQ8pLeENd" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="38bQ8pLeENe" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SlXqG" role="37wK5m">
-                <property role="2L6k_S" value="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="38bQ8pLeENi" role="3cqZAp">
           <node concept="2OqwBi" id="38bQ8pLeENj" role="3clFbG">
             <node concept="1eOMI4" id="5WIcYaGhyxE" role="2Oq$k0">

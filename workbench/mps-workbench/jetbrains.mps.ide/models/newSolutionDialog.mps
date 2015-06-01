@@ -1413,6 +1413,11 @@
           </node>
         </node>
         <node concept="3clFbH" id="70MbTYnakeO" role="3cqZAp" />
+        <node concept="3SKdUt" id="3w7csdPNxGI" role="3cqZAp">
+          <node concept="3SKdUq" id="3w7csdPNxKz" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME NewGeneratorDialog.createNewGenerator() has similar code, refactor to avoid duplication" />
+          </node>
+        </node>
         <node concept="3clFbH" id="70MbTYn7hiR" role="3cqZAp" />
         <node concept="3cpWs8" id="1pyYjDPRar1" role="3cqZAp">
           <node concept="3cpWsn" id="1pyYjDPRar2" role="3cpWs9">
@@ -1546,42 +1551,6 @@
               <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
               <node concept="2L6k_Z" id="625yo8SoqYi" role="37wK5m">
                 <property role="2L6k_S" value="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7MqqGJ7opXE" role="3cqZAp">
-          <node concept="2OqwBi" id="7MqqGJ7opXF" role="3clFbG">
-            <node concept="2OqwBi" id="7MqqGJ7opXG" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagTw$G" role="2Oq$k0">
-                <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
-              </node>
-              <node concept="liA8E" id="7MqqGJ7opXI" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7MqqGJ7opXJ" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SoaNC" role="37wK5m">
-                <property role="2L6k_S" value="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4KSxxXAUwQi" role="3cqZAp">
-          <node concept="2OqwBi" id="4KSxxXAUwQj" role="3clFbG">
-            <node concept="2OqwBi" id="4KSxxXAUwQk" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagTvxL" role="2Oq$k0">
-                <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
-              </node>
-              <node concept="liA8E" id="4KSxxXAUwQm" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="4KSxxXAUwQn" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SokxF" role="37wK5m">
-                <property role="2L6k_S" value="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
               </node>
             </node>
           </node>
@@ -1835,7 +1804,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="7BBl3KIwh8h" role="1B3o_S" />
+      <node concept="3Tm6S6" id="3w7csdPNyDh" role="1B3o_S" />
       <node concept="3uibUv" id="7BBl3KIwhHF" role="3clF45">
         <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
       </node>
@@ -1923,7 +1892,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="1Yd98ZZnqFz" role="1B3o_S" />
+      <node concept="3Tm6S6" id="3w7csdPNz5P" role="1B3o_S" />
       <node concept="37vLTG" id="1Yd98ZZnqF_" role="3clF46">
         <property role="TrG5h" value="namespace" />
         <property role="3TUv4t" value="false" />
@@ -2020,7 +1989,7 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="1Yd98ZZnqJg" role="1B3o_S" />
+      <node concept="3Tm6S6" id="3w7csdPNzbJ" role="1B3o_S" />
       <node concept="3uibUv" id="1Yd98ZZnqJh" role="3clF45">
         <ref role="3uigEE" to="vsqj:~DevKit" resolve="DevKit" />
       </node>

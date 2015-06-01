@@ -4992,42 +4992,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7MqqGJ7opXE" role="3cqZAp">
-          <node concept="2OqwBi" id="7MqqGJ7opXF" role="3clFbG">
-            <node concept="2OqwBi" id="7MqqGJ7opXG" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagTwq4" role="2Oq$k0">
-                <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
-              </node>
-              <node concept="liA8E" id="7MqqGJ7opXI" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7MqqGJ7opXJ" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SnKIV" role="37wK5m">
-                <property role="2L6k_S" value="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4KSxxXAUwQi" role="3cqZAp">
-          <node concept="2OqwBi" id="4KSxxXAUwQj" role="3clFbG">
-            <node concept="2OqwBi" id="4KSxxXAUwQk" role="2Oq$k0">
-              <node concept="37vLTw" id="3GM_nagTAfB" role="2Oq$k0">
-                <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
-              </node>
-              <node concept="liA8E" id="4KSxxXAUwQm" role="2OqNvi">
-                <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getUsedLanguages():java.util.Collection" resolve="getUsedLanguages" />
-              </node>
-            </node>
-            <node concept="liA8E" id="4KSxxXAUwQn" role="2OqNvi">
-              <ref role="37wK5l" to="k7g3:~Collection.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2L6k_Z" id="625yo8SnTn7" role="37wK5m">
-                <property role="2L6k_S" value="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1pyYjDPRarP" role="3cqZAp">
           <node concept="2OqwBi" id="1pyYjDPRarQ" role="3clFbG">
             <node concept="2OqwBi" id="1pyYjDPRarR" role="2Oq$k0">
@@ -5052,7 +5016,7 @@
               <ref role="3cqZAo" node="1pyYjDPRaqO" resolve="language" />
             </node>
             <node concept="liA8E" id="1pyYjDPRarZ" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~Language.setLanguageDescriptor(jetbrains.mps.project.structure.modules.LanguageDescriptor):void" resolve="setLanguageDescriptor" />
+              <ref role="37wK5l" to="vsqj:~AbstractModule.setModuleDescriptor(jetbrains.mps.project.structure.modules.ModuleDescriptor):void" resolve="setModuleDescriptor" />
               <node concept="37vLTw" id="3GM_nagT$PT" role="37wK5m">
                 <ref role="3cqZAo" node="1pyYjDPRaqW" resolve="languageDescriptor" />
               </node>
