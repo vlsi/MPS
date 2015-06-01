@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.ide.platform.MoveNodesAction")};
-  private Extension[] extensions = new Extension[]{new MoveNodesDefault()};
+  private Extension[] extensions = new Extension[]{new MoveNodesDefault.ExtensionFunction()};
   public ExtensionDescriptor() {
   }
   @Override

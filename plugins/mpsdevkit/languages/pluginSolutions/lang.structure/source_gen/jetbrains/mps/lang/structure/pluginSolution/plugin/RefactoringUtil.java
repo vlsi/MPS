@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -36,13 +36,13 @@ public class RefactoringUtil {
     return result;
   }
 
-  public static void changeReferences(final Project mpsProject, com.intellij.openapi.project.Project project, final Set<SReference> usages, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String name) {
+  public static void changeReferences(final MPSProject mpsProject, final Set<SReference> usages, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String name) {
     List<SNode> nodesToShow = SetSequence.fromSet(usages).select(new ISelector<SReference, SNode>() {
       public SNode select(SReference it) {
         return it.getSourceNode();
       }
     }).toListSequence();
-    refactor(mpsProject, project, nodesToShow, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+    refactor(mpsProject, nodesToShow, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
       public void invoke(final Set<SNode> included) {
         executeBefore.invoke();
         SetSequence.fromSet(usages).where(new IWhereFilter<SReference>() {
@@ -58,9 +58,9 @@ public class RefactoringUtil {
     }, name);
   }
 
-  public static void refactor(final Project mpsProject, com.intellij.openapi.project.Project project, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String name) {
+  public static void refactor(final MPSProject mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String name) {
     SearchResults sr = nodesToRefactoringResult(nodes, "References");
-    RefactoringAccessEx.getInstance().showRefactoringView(project, new RefactoringViewAction() {
+    RefactoringAccessEx.getInstance().showRefactoringView(mpsProject.getProject(), new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {

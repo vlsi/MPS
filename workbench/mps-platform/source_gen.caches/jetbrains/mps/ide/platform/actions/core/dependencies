@@ -47,7 +47,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ExtensionRegistry" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.BaseOverlappingExtension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
+    <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionFunction" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionFunctionPoint" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
@@ -58,8 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.ExtensionFunction" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.FunctionInstance" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" file="MoveNodes_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
