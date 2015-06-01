@@ -26,9 +26,15 @@ public class VCSPersistenceUtil {
   public static SModel loadModel(final byte[] content, String extension) {
     // returns null if an error occured, as its predcessor in PersistenceUtil. 
     // [MM] not sure this is correct, just left it unchanged 
+
+    SModel oldModel = loadFromOldMPSPersistence(content);
+    if (oldModel != null) {
+      return oldModel;
+    }
+
     ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
     if (factory == null) {
-      return loadFromOldMPSPersistence(content);
+      return null;
     }
     try {
       SModel model = factory.load(new PersistenceUtil.StreamDataSourceBase() {
@@ -63,7 +69,7 @@ public class VCSPersistenceUtil {
     }
   }
 
-  public static SModel loadFromOldMPSPersistence(final byte[] content) {
+  private static SModel loadFromOldMPSPersistence(final byte[] content) {
     SModelHeader header;
     try {
       header = VCSPersistenceSupport.loadDescriptor(new InputSource(new ByteArrayInputStream(content)));

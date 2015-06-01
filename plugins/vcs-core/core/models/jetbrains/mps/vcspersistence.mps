@@ -3038,6 +3038,37 @@
             <property role="3SKdUp" value="[MM] not sure this is correct, just left it unchanged" />
           </node>
         </node>
+        <node concept="3clFbH" id="1qA3$z3nly8" role="3cqZAp" />
+        <node concept="3cpWs8" id="1qA3$z3nhg0" role="3cqZAp">
+          <node concept="3cpWsn" id="1qA3$z3nhg1" role="3cpWs9">
+            <property role="TrG5h" value="oldModel" />
+            <node concept="3uibUv" id="1qA3$z3nhfZ" role="1tU5fm">
+              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
+            </node>
+            <node concept="1rXfSq" id="1qA3$z3nhg2" role="33vP2m">
+              <ref role="37wK5l" node="1NiMOxiwVQ1" resolve="loadFromOldMPSPersistence" />
+              <node concept="37vLTw" id="1qA3$z3nhg3" role="37wK5m">
+                <ref role="3cqZAo" node="1NiMOxiwPI3" resolve="content" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1qA3$z3nm7A" role="3cqZAp">
+          <node concept="3clFbS" id="1qA3$z3nm7C" role="3clFbx">
+            <node concept="3cpWs6" id="1qA3$z3nn0C" role="3cqZAp">
+              <node concept="37vLTw" id="1qA3$z3nnbC" role="3cqZAk">
+                <ref role="3cqZAo" node="1qA3$z3nhg1" resolve="oldModel" />
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="1qA3$z3nmHJ" role="3clFbw">
+            <node concept="10Nm6u" id="1qA3$z3nmOD" role="3uHU7w" />
+            <node concept="37vLTw" id="1qA3$z3nmiM" role="3uHU7B">
+              <ref role="3cqZAo" node="1qA3$z3nhg1" resolve="oldModel" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1qA3$z3nnlk" role="3cqZAp" />
         <node concept="3cpWs8" id="1NiMOxiwPIa" role="3cqZAp">
           <node concept="3cpWsn" id="1NiMOxiwPI9" role="3cpWs9">
             <property role="3TUv4t" value="false" />
@@ -3068,12 +3099,7 @@
           </node>
           <node concept="3clFbS" id="1NiMOxiwPIm" role="3clFbx">
             <node concept="3cpWs6" id="1NiMOxiwPIk" role="3cqZAp">
-              <node concept="1rXfSq" id="1NiMOxiwVWU" role="3cqZAk">
-                <ref role="37wK5l" node="1NiMOxiwVQ1" resolve="loadFromOldMPSPersistence" />
-                <node concept="37vLTw" id="1NiMOxiwW2v" role="37wK5m">
-                  <ref role="3cqZAo" node="1NiMOxiwPI3" resolve="content" />
-                </node>
-              </node>
+              <node concept="10Nm6u" id="1qA3$z3nnMW" role="3cqZAk" />
             </node>
           </node>
         </node>
@@ -3592,7 +3618,7 @@
       <node concept="3uibUv" id="1NiMOxiwULk" role="3clF45">
         <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
       </node>
-      <node concept="3Tm1VV" id="1NiMOxiwUEL" role="1B3o_S" />
+      <node concept="3Tm6S6" id="1qA3$z3nnwm" role="1B3o_S" />
     </node>
     <node concept="3Tm1VV" id="1NiMOxiwPcI" role="1B3o_S" />
   </node>
