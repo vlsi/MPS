@@ -13,21 +13,27 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptLanguageAspectDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", MetaIdFactory.conceptId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2d72cdccef70b086L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).create();
+  /*package*/ final ConceptDescriptor myConceptLanguageReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", MetaIdFactory.conceptId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL)).super_("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression").super_(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L)).parents("jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression").parentIds(MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L)).create();
+  /*package*/ final ConceptDescriptor myConceptSimpleLanguageAspectDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor", MetaIdFactory.conceptId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3433054418424672409L, "helpUrl"), new ConceptDescriptorBuilder.Prop(3433054418424678460L, "implClassShortName")).properties("helpUrl", "implClassShortName").referenceDescriptors(new ConceptDescriptorBuilder.Ref(3433054418424672413L, "interfaceClass", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), true)).references("interfaceClass").childDescriptors(new ConceptDescriptorBuilder.Link(3433054418424672404L, "mainLanguage", MetaIdFactory.conceptId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL), false, false, false), new ConceptDescriptorBuilder.Link(3433054418424672406L, "additionalLanguages", MetaIdFactory.conceptId(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9c87aL), true, true, false), new ConceptDescriptorBuilder.Link(3433054418425083029L, "icon", MetaIdFactory.conceptId(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL), true, false, false)).children(new String[]{"mainLanguage", "additionalLanguages", "icon"}, new boolean[]{false, true, false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptLanguageAspectDescriptor);
+    return Arrays.asList(myConceptLanguageAspectDescriptor, myConceptLanguageReference, myConceptSimpleLanguageAspectDescriptor);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptLanguageAspectDescriptor;
+      case 1:
+        return myConceptLanguageReference;
+      case 2:
+        return myConceptSimpleLanguageAspectDescriptor;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", "jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor"};
 }
