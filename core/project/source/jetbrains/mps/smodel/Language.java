@@ -278,7 +278,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     models.removeAll(LanguageAspectSupport.getAspectModels(this));
     models.removeAll(getAccessoryModels());
 
-    List<SModel> result = new ArrayList<SModel>(getModels());
+    List<SModel> result = new ArrayList<SModel>(models.size());
     for (SModel md : models) {
       String st = SModelStereotype.getStereotype(md);
       if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {
