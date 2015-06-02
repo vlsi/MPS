@@ -283,7 +283,7 @@ public class ModulesWatcher {
     return myModuleUpdater.isDirty();
   }
 
-  static enum ClassLoadingStatus {
+  enum ClassLoadingStatus {
     /**
      * module is not loadable OR
      * module is loadable and disposed from the repository OR

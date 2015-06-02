@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -259,7 +260,7 @@ public class ClassLoadersHolder {
 
     private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
       LOG.debug("Creating ModuleClassLoader for " + module);
-      Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Arrays.asList(module));
+      Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
       final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
       return new ModelAccessHelper(myRepository).runReadAction(new Computable<ModuleClassLoader>() {
         @Override
