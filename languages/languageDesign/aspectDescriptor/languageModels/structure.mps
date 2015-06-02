@@ -92,7 +92,7 @@
   <node concept="1TIwiD" id="2Y$EcRKMsxU">
     <property role="3GE5qa" value="simple" />
     <property role="TrG5h" value="LanguageReference" />
-    <ref role="1TJDcQ" to="tp25:3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
+    <ref role="1TJDcQ" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
   </node>
 </model>
 

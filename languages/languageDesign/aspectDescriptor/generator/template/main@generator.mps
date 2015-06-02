@@ -25,6 +25,7 @@
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspectDescriptor.structure)" />
     <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
+    <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="3767" ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)" implicit="true" />
     <import index="9n97" ref="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -161,9 +162,6 @@
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
-      </concept>
-      <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
-        <child id="1092060348987" name="contentNode" index="13RCb5" />
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
@@ -945,7 +943,7 @@
             <node concept="Tc6Ow" id="2Y$EcRKOd4e" role="2ShVmc">
               <node concept="10Nm6u" id="2Y$EcRKOdld" role="HW$Y0">
                 <node concept="xERo3" id="2Y$EcRKOmS6" role="lGtFl">
-                  <ref role="xH3mL" node="2Y$EcRKOnwB" resolve="LangRef2Language" />
+                  <ref role="xH3mL" to="tp27:3TEgbCBRq7d" resolve="reduce_LanguageRefExpression" />
                   <node concept="3NFfHV" id="2Y$EcRKOnYX" role="xEYEz">
                     <node concept="3clFbS" id="2Y$EcRKOnYY" role="2VODD2">
                       <node concept="3clFbF" id="2Y$EcRKOo08" role="3cqZAp">
@@ -998,7 +996,7 @@
                   </node>
                 </node>
                 <node concept="xERo3" id="2Y$EcRKOoG8" role="lGtFl">
-                  <ref role="xH3mL" node="2Y$EcRKOnwB" resolve="LangRef2Language" />
+                  <ref role="xH3mL" to="tp27:3TEgbCBRq7d" resolve="reduce_LanguageRefExpression" />
                 </node>
               </node>
               <node concept="3uibUv" id="2Y$EcRKOoB$" role="HW$YZ">
@@ -1244,10 +1242,6 @@
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
     </node>
-  </node>
-  <node concept="13MO4I" id="2Y$EcRKOnwB">
-    <property role="TrG5h" value="LangRef2Language" />
-    <node concept="2VYdi" id="2Y$EcRKOnwC" role="13RCb5" />
   </node>
 </model>
 
