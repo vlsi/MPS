@@ -75,18 +75,6 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
     return aClass;
   }
 
-  private static class LoadedClassIsNullException extends ClassNotFoundException {
-    public LoadedClassIsNullException(@NotNull ClassLoader classLoader, String internClassName) {
-      super("ClassLoader's " + classLoader + "#loadClass method returned null at the class " + internClassName + " request");
-    }
-  }
-
-  private static class ModuleClassLoaderIsNullException extends RuntimeException {
-    public ModuleClassLoaderIsNullException(@NotNull ReloadableModule module) {
-      super("ClassLoader of module " + module + " could not be found");
-    }
-  }
-
   @Nullable
   @Override
   public ClassLoader getClassLoader() {
