@@ -77,6 +77,7 @@
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
     <language id="b5734616-c4b0-4639-9c6a-f3a1cf5dc4db" fqName="testDefaultEditor" version="0" />
     <language id="e228eea1-07ef-499c-8826-9c47a7e369db" fqName="testMoveElements" version="0" />
+    <language id="4dd3c558-f0fc-4807-bade-5d6bcad6b3f1" fqName="testSpaceCompletion" version="0" />
   </languageVersions>
 </solution>
 

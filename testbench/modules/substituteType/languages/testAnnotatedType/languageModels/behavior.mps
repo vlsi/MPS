@@ -146,7 +146,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1hDKT6wB6bB">
-    <ref role="13h7C2" to="tp5x:1hDKT6wB6bA" resolve="PrimDouble" />
+    <ref role="13h7C2" to="tp5x:1hDKT6wB6bA" resolve="PrimDoubleType" />
     <node concept="13hLZK" id="1hDKT6wB6bC" role="13h7CW">
       <node concept="3clFbS" id="1hDKT6wB6bD" role="2VODD2" />
     </node>
@@ -186,7 +186,7 @@
               <node concept="2ShNRf" id="1hDKT6wBew2" role="3cqZAk">
                 <node concept="3zrR0B" id="1hDKT6wBew3" role="2ShVmc">
                   <node concept="3Tqbb2" id="1hDKT6wBew4" role="3zrR0E">
-                    <ref role="ehGHo" to="tp5x:1hDKT6wB6bA" resolve="PrimDouble" />
+                    <ref role="ehGHo" to="tp5x:1hDKT6wB6bA" resolve="PrimDoubleType" />
                   </node>
                 </node>
               </node>

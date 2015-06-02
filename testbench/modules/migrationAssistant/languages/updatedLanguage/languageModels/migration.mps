@@ -93,7 +93,7 @@
       </concept>
     </language>
     <language id="a59395ba-5d94-4758-a87c-b11e086d5491" name="updatedLanguage">
-      <concept id="297352798234498871" name="updatedLanguage.structure.MigratingConcept" flags="ng" index="1zB3ZW" />
+      <concept id="297352798234498871" name="updatedLanguage.structure.MigratingConcept" flags="lg" index="1zB3ZW" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">

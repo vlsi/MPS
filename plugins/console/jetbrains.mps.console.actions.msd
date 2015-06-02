@@ -37,8 +37,6 @@
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" fqName="jetbrains.mps.baseLanguage.tuples" version="0" />
     <language id="de1ad86d-6e50-4a02-b306-d4d17f64c375" fqName="jetbrains.mps.console.base" version="0" />
     <language id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" fqName="jetbrains.mps.console.blCommand" version="0" />
-    <language id="a5e4de53-46a3-44da-aab3-68fdf1c34ed0" fqName="jetbrains.mps.console.ideCommands" version="0" />
-    <language id="995a7394-7f76-4b8b-a929-c53448708106" fqName="jetbrains.mps.console.internalCommands" version="0" />
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" fqName="jetbrains.mps.lang.access" version="0" />
     <language id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" fqName="jetbrains.mps.lang.checkedName" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />

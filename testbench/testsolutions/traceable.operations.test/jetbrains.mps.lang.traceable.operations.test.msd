@@ -29,6 +29,7 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="0" />
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" fqName="jetbrains.mps.lang.test" version="1" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
+    <language id="eba1dbb3-0bc4-4ce9-a184-05c9135353be" fqName="jetbrains.mps.lang.traceable.operations" version="-1" />
   </languageVersions>
 </solution>
 

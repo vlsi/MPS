@@ -119,10 +119,10 @@
         <child id="3751132065236767081" name="retType" index="q3mfk" />
         <child id="3751132065236767080" name="param" index="q3mfl" />
       </concept>
-      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor" flags="ng" index="q3mft">
+      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor" flags="ig" index="q3mft">
         <reference id="1825613483881131410" name="preferredConcept" index="2qG0Lo" />
         <child id="1825613483881472526" name="initializer" index="2qJGf4" />
-        <child id="8264762413010642120" name="member" index="QNr5C" />
+        <child id="8264762413010642120" name="classLikeMember" index="QNr5C" />
       </concept>
       <concept id="3751132065236767068" name="jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration" flags="ig" index="q3mfx">
         <child id="3751132065236767069" name="getter" index="q3mfw" />
