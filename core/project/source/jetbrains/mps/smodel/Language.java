@@ -406,7 +406,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return false;
   }
 
-  @Nullable
+  @NotNull
   protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleIsNotLoadableException {
     // first check if class comes from stubs
     if (classFqName.startsWith(getModuleName() + ".stubs.")) {
@@ -414,7 +414,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
         return myStubsLoader.loadClass(classFqName);
       } catch (ClassNotFoundException e) {
         LOG.error("Exception during stubs' class loading", e);
-        return null;
+        throw e;
       }
     }
 

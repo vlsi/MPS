@@ -46,27 +46,45 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   protected ReloadableModuleBase() {
   }
 
-  @Nullable
+  @NotNull
   @Override
   public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
     return getClass(classFqName, false);
   }
 
-  @Nullable
+  @NotNull
   @Override
   public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleIsNotLoadableException {
     return getClass(classFqName, true);
   }
 
-  @Nullable
+  @NotNull
   protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException {
     ClassLoader classLoader = getClassLoader();
-    if (classLoader == null) return null;
+    if (classLoader == null) {
+      throw new ModuleClassLoaderIsNullException(this);
+    }
     String internClassName = InternUtil.intern(classFqName);
     if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
       return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
     }
-    return classLoader.loadClass(internClassName);
+    Class<?> aClass = classLoader.loadClass(internClassName);
+    if (aClass == null) {
+      throw new LoadedClassIsNullException(classLoader, internClassName);
+    }
+    return aClass;
+  }
+
+  private static class LoadedClassIsNullException extends ClassNotFoundException {
+    public LoadedClassIsNullException(@NotNull ClassLoader classLoader, String internClassName) {
+      super("ClassLoader's " + classLoader + "#loadClass method returned null at the class " + internClassName + " request");
+    }
+  }
+
+  private static class ModuleClassLoaderIsNullException extends RuntimeException {
+    public ModuleClassLoaderIsNullException(@NotNull ReloadableModule module) {
+      super("ClassLoader of module " + module + " could not be found");
+    }
   }
 
   @Nullable
