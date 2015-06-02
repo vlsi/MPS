@@ -129,20 +129,24 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
     }
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
-        instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
+        usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(feature), new EmptyProgressMonitor());
         if (result == Messages.YES) {
-          usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(feature), new EmptyProgressMonitor());
+          instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
           RefactoringUtil.changeReferences(project, usages, feature, refactorInstances, "Move " + featureKind + " " + featureName);
         } else {
-          SNode newFeature = SNodeOperations.copyNode(feature);
-          ListSequence.fromList(placeToMove.invoke()).addElement(newFeature);
-          AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0c0a1a0a0m0u("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
-          markOldFeature.invoke(feature);
+          final SNode newFeature = SNodeOperations.copyNode(feature);
+          RefactoringUtil.changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
+            public void invoke() {
+              ListSequence.fromList(placeToMove.invoke()).addElement(newFeature);
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0u("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+              markOldFeature.invoke(feature);
 
-          MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_" + featureKind + "_" + featureName);
-          SNode oldFeatureDecl = oldFeatureVar.invoke(feature);
-          SNode newFeatureDecl = newFeatureVar.invoke(newFeature);
-          builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(oldFeatureDecl, newFeatureDecl, builder, refactorInstancesClosure.invoke(oldFeatureDecl, newFeatureDecl)), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));
+              MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_" + featureKind + "_" + featureName);
+              SNode oldFeatureDecl = oldFeatureVar.invoke(feature);
+              SNode newFeatureDecl = newFeatureVar.invoke(newFeature);
+              builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(oldFeatureDecl, newFeatureDecl, builder, refactorInstancesClosure.invoke(oldFeatureDecl, newFeatureDecl)), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));
+            }
+          }, "Move " + featureKind + " " + featureName);
         }
       }
     });
@@ -193,7 +197,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
       return this;
     }
   }
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0c0a1a0a0m0u(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0u(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
