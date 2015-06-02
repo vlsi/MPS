@@ -11,15 +11,17 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 0:
-        return new LanguageAspectDescriptor_BehaviorDescriptor();
-      case 2:
-        return new SimpleLanguageAspectDescriptor_BehaviorDescriptor();
       case 1:
+        return new LanguageAspectDescriptor_BehaviorDescriptor();
+      case 3:
+        return new SimpleLanguageAspectDescriptor_BehaviorDescriptor();
+      case 2:
         return new LanguageReference_BehaviorDescriptor();
+      case 0:
+        return new GenerationDescriptor_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", "jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.GenerationDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", "jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor"};
 }

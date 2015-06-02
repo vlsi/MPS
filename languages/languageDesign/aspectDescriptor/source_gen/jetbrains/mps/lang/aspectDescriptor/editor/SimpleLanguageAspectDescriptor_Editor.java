@@ -28,8 +28,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -132,7 +130,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rpszz1_i1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rpszz1_j1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_k1b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_rpszz1_l1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_a1b0(EditorContext editorContext, SNode node) {
@@ -388,96 +385,22 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createIndentCell_rpszz1_a01b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rpszz1_b01b1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_rpszz1_c01b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rpszz1_b01b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_rpszz1_a01b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-  private EditorCell createConstant_rpszz1_b01b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface class:");
-    editorCell.setCellId("Constant_rpszz1_b01b1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefCell_rpszz1_c01b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("interfaceClass");
-    provider.setNoTargetText("<no interfaceClass>");
+  private EditorCell createRefNode_rpszz1_b01b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("genDesc");
+    provider.setNoTargetText("<aspect is not generated>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleLanguageAspectDescriptor_Editor._Inline_rpszz1_a2k1b0());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
-      editorCell.setReferenceCell(true);
-      editorCell.setRole("interfaceClass");
+      editorCell.setRole("genDesc");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  public static class _Inline_rpszz1_a2k1b0 extends InlineCellProvider {
-    public _Inline_rpszz1_a2k1b0() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_rpszz1_a0c01b1a(editorContext, node);
-    }
-    private EditorCell createProperty_rpszz1_a0c01b1a(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_2");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
-  }
-  private EditorCell createCollection_rpszz1_l1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rpszz1_l1b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_rpszz1_a11b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rpszz1_b11b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_rpszz1_c11b1a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createIndentCell_rpszz1_a11b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    return editorCell;
-  }
-  private EditorCell createConstant_rpszz1_b11b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "impl class name:");
-    editorCell.setCellId("Constant_rpszz1_b11b1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_rpszz1_c11b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("implClassShortName");
-    provider.setNoTargetText("<no implClassShortName>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_implClassShortName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

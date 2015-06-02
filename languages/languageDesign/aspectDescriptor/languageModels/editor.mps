@@ -65,6 +65,7 @@
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -374,37 +375,16 @@
         <node concept="3F0ifn" id="2Y$EcRKMt2Z" role="3EZMnx">
           <property role="3F0ifm" value="Generation" />
         </node>
-        <node concept="3EZMnI" id="2Y$EcRKMt98" role="3EZMnx">
-          <node concept="VPM3Z" id="2Y$EcRKMt99" role="3F10Kt">
+        <node concept="3EZMnI" id="5KGdJjE3kje" role="3EZMnx">
+          <node concept="VPM3Z" id="5KGdJjE3kjg" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3gaC" role="3EZMnx" />
-          <node concept="3F0ifn" id="2Y$EcRKMt9a" role="3EZMnx">
-            <property role="3F0ifm" value="interface class:" />
+          <node concept="3XFhqQ" id="5KGdJjE3kjX" role="3EZMnx" />
+          <node concept="3F1sOY" id="5KGdJjE3kk3" role="3EZMnx">
+            <property role="1$x2rV" value="&lt;aspect is not generated&gt;" />
+            <ref role="1NtTu8" to="hfbu:5KGdJjE3kdu" />
           </node>
-          <node concept="1iCGBv" id="2Y$EcRKMtaz" role="3EZMnx">
-            <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2t" />
-            <node concept="1sVBvm" id="2Y$EcRKMta_" role="1sWHZn">
-              <node concept="3F0A7n" id="2Y$EcRKMtaH" role="2wV5jI">
-                <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-          <node concept="2iRfu4" id="2Y$EcRKMt9c" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="2Y$EcRKMtaK" role="3EZMnx">
-          <node concept="VPM3Z" id="2Y$EcRKMtaL" role="3F10Kt">
-            <property role="VOm3f" value="false" />
-          </node>
-          <node concept="3XFhqQ" id="5KGdJjE3gaS" role="3EZMnx" />
-          <node concept="3F0ifn" id="2Y$EcRKMtaM" role="3EZMnx">
-            <property role="3F0ifm" value="impl class name:" />
-          </node>
-          <node concept="3F0A7n" id="2Y$EcRKMtbu" role="3EZMnx">
-            <ref role="1NtTu8" to="hfbu:2Y$EcRKMswW" resolve="implClassShortName" />
-          </node>
-          <node concept="2iRfu4" id="2Y$EcRKMtaO" role="2iSdaV" />
+          <node concept="2iRfu4" id="5KGdJjE3kjj" role="2iSdaV" />
         </node>
         <node concept="2iRkQZ" id="5KGdJjE3g6T" role="2iSdaV" />
       </node>
@@ -417,6 +397,43 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="5KGdJjE3jHN">
+    <property role="3GE5qa" value="simple" />
+    <ref role="1XX52x" to="hfbu:5KGdJjE3jGJ" resolve="GenerationDescriptor" />
+    <node concept="3EZMnI" id="5KGdJjE3jHP" role="2wV5jI">
+      <node concept="3EZMnI" id="2Y$EcRKMt98" role="3EZMnx">
+        <node concept="VPM3Z" id="2Y$EcRKMt99" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2Y$EcRKMt9a" role="3EZMnx">
+          <property role="3F0ifm" value="interface class:" />
+        </node>
+        <node concept="1iCGBv" id="2Y$EcRKMtaz" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2t" />
+          <node concept="1sVBvm" id="2Y$EcRKMta_" role="1sWHZn">
+            <node concept="3F0A7n" id="2Y$EcRKMtaH" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="2Y$EcRKMt9c" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="2Y$EcRKMtaK" role="3EZMnx">
+        <node concept="VPM3Z" id="2Y$EcRKMtaL" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="2Y$EcRKMtaM" role="3EZMnx">
+          <property role="3F0ifm" value="impl class name:" />
+        </node>
+        <node concept="3F0A7n" id="2Y$EcRKMtbu" role="3EZMnx">
+          <ref role="1NtTu8" to="hfbu:2Y$EcRKMswW" resolve="implClassShortName" />
+        </node>
+        <node concept="2iRfu4" id="2Y$EcRKMtaO" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="5KGdJjE3jHS" role="2iSdaV" />
     </node>
   </node>
 </model>

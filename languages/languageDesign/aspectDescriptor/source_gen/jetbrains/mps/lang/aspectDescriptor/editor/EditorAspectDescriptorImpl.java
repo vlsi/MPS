@@ -15,10 +15,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationDescriptor_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new LanguageAspectDescriptor_Editor());
       case 2:
+        return Collections.<ConceptEditor>singletonList(new LanguageReference_Editor());
+      case 3:
         return Collections.<ConceptEditor>singletonList(new SimpleLanguageAspectDescriptor_Editor());
       default:
     }
@@ -29,5 +31,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", "jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.aspectDescriptor.structure.GenerationDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageAspectDescriptor", "jetbrains.mps.lang.aspectDescriptor.structure.LanguageReference", "jetbrains.mps.lang.aspectDescriptor.structure.SimpleLanguageAspectDescriptor"};
 }
