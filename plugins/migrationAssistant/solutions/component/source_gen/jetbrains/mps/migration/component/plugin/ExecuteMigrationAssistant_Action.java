@@ -9,17 +9,8 @@ import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.migration.MigrationTrigger;
-import jetbrains.mps.migration.component.util.MigrationComponent;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
@@ -45,34 +36,10 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
         return false;
       }
     }
-    {
-      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("mpsProject", p);
-      if (p == null) {
-        return false;
-      }
-    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        MigrationTrigger.updateUsedLanguagesVersions(allModules);
-        migrationRequired.value = MigrationComponent.isMigrationRequired(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), allModules);
-      }
-    });
-    if (!(migrationRequired.value)) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration not required", null);
-        }
-      });
-      return;
-    }
-
     MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
     mt.postponeMigration();
   }

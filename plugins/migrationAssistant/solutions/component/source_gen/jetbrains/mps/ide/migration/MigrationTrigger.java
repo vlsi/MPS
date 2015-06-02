@@ -48,6 +48,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
@@ -303,6 +304,19 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   public synchronized void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
+    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
+    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
+    myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        MigrationTrigger.updateUsedLanguagesVersions(allModules);
+        migrationRequired.value = myMigrationManager.isMigrationRequired();
+      }
+    });
+    if (!(migrationRequired.value)) {
+      Messages.showMessageDialog(myProject, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
+      myMigrationQueued = false;
+      return;
+    }
 
     saveAndSetTipsState();
 

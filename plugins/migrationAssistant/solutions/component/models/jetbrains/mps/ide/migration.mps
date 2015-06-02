@@ -181,7 +181,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -2091,6 +2091,118 @@
             </node>
             <node concept="37vLTw" id="4tP09YuEmKO" role="33vP2m">
               <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="285c2S_YhOK" role="3cqZAp">
+          <node concept="3cpWsn" id="285c2S_YhOL" role="3cpWs9">
+            <property role="TrG5h" value="allModules" />
+            <node concept="A3Dl8" id="285c2S_YhOG" role="1tU5fm">
+              <node concept="3uibUv" id="285c2S_YhOJ" role="A3Ik2">
+                <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="285c2S_YhOM" role="33vP2m">
+              <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+              <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+              <node concept="37vLTw" id="2fg9H9N2fig" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6KPfPAmPB01" role="3cqZAp">
+          <node concept="3cpWsn" id="6KPfPAmPB02" role="3cpWs9">
+            <property role="TrG5h" value="migrationRequired" />
+            <node concept="10P_77" id="6KPfPAmPAZY" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2fg9H9N2fAp" role="3cqZAp">
+          <node concept="2OqwBi" id="2fg9H9N2gDv" role="3clFbG">
+            <node concept="2OqwBi" id="2fg9H9N2gp5" role="2Oq$k0">
+              <node concept="2OqwBi" id="2fg9H9N2fTu" role="2Oq$k0">
+                <node concept="37vLTw" id="2fg9H9N2fAn" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+                </node>
+                <node concept="liA8E" id="2fg9H9N2go2" role="2OqNvi">
+                  <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2fg9H9N2gCu" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2fg9H9N2gWB" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <node concept="1bVj0M" id="2fg9H9N2gZs" role="37wK5m">
+                <node concept="3clFbS" id="2fg9H9N2gZt" role="1bW5cS">
+                  <node concept="3clFbF" id="1Ql1_c6N7pv" role="3cqZAp">
+                    <node concept="2YIFZM" id="1Ql1_c6N7rw" role="3clFbG">
+                      <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                      <ref role="1Pybhc" node="5SsFeroaajZ" resolve="MigrationTrigger" />
+                      <node concept="37vLTw" id="1Ql1_c6N7tp" role="37wK5m">
+                        <ref role="3cqZAo" node="285c2S_YhOL" resolve="allModules" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6KPfPAmPB9S" role="3cqZAp">
+                    <node concept="37vLTI" id="6KPfPAmPB9U" role="3clFbG">
+                      <node concept="2OqwBi" id="6KPfPAmPB03" role="37vLTx">
+                        <node concept="37vLTw" id="6KPfPAmPB04" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5SsFeroaaki" resolve="myMigrationManager" />
+                        </node>
+                        <node concept="liA8E" id="6KPfPAmPB05" role="2OqNvi">
+                          <ref role="37wK5l" node="5SsFeroaac6" resolve="isMigrationRequired" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="6KPfPAmPB9Y" role="37vLTJ">
+                        <ref role="3cqZAo" node="6KPfPAmPB02" resolve="migrationRequired" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2fg9H9N2hhz" role="3cqZAp">
+          <node concept="3clFbS" id="2fg9H9N2hh_" role="3clFbx">
+            <node concept="3clFbF" id="285c2S_YjHi" role="3cqZAp">
+              <node concept="2YIFZM" id="285c2S_YiZ6" role="3clFbG">
+                <ref role="1Pybhc" to="810:~Messages" resolve="Messages" />
+                <ref role="37wK5l" to="810:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                <node concept="37vLTw" id="2fg9H9N2iew" role="37wK5m">
+                  <ref role="3cqZAo" to="iiw6:~AbstractProjectComponent.myProject" resolve="myProject" />
+                </node>
+                <node concept="3cpWs3" id="285c2S_Ynnd" role="37wK5m">
+                  <node concept="Xl_RD" id="285c2S_YnnS" role="3uHU7w">
+                    <property role="Xl_RC" value="Migration assistant will not be started." />
+                  </node>
+                  <node concept="Xl_RD" id="285c2S_YlfP" role="3uHU7B">
+                    <property role="Xl_RC" value="None of the modules in project require migration.\n" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="285c2S_YiZ9" role="37wK5m">
+                  <property role="Xl_RC" value="Migration Not Required" />
+                </node>
+                <node concept="10Nm6u" id="285c2S_YiZc" role="37wK5m" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="2fg9H9N2iEx" role="3cqZAp">
+              <node concept="37vLTI" id="2fg9H9N2j3k" role="3clFbG">
+                <node concept="3clFbT" id="2fg9H9N2jdX" role="37vLTx">
+                  <property role="3clFbU" value="false" />
+                </node>
+                <node concept="37vLTw" id="2fg9H9N2iEv" role="37vLTJ">
+                  <ref role="3cqZAo" node="1AzqgyAfdcG" resolve="myMigrationQueued" />
+                </node>
+              </node>
+            </node>
+            <node concept="3cpWs6" id="6KPfPAmPXxS" role="3cqZAp" />
+          </node>
+          <node concept="3fqX7Q" id="2fg9H9N2hlv" role="3clFbw">
+            <node concept="37vLTw" id="6KPfPAmPB06" role="3fr31v">
+              <ref role="3cqZAo" node="6KPfPAmPB02" resolve="migrationRequired" />
             </node>
           </node>
         </node>
