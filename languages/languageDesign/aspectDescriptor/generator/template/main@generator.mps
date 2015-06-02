@@ -746,7 +746,7 @@
                                 <node concept="2qgKlT" id="2Sw9hCAIh9f" role="2OqNvi">
                                   <ref role="37wK5l" to="b2yo:6d7r2Fq2j7f" resolve="getMethod" />
                                   <node concept="3fl2lp" id="2Sw9hCAIh9g" role="37wK5m">
-                                    <ref role="3fl3PK" to="9n97:ghIDlF6GE1" resolve="getIcon" />
+                                    <ref role="3fl3PK" to="9n97:ghIDlF6HcX" resolve="getHelpUrl" />
                                     <node concept="3B5_sB" id="2Sw9hCAIh9h" role="3fl3PI">
                                       <ref role="3B5MYn" to="9n97:ghIDlF6CZM" resolve="LanguageAspect" />
                                     </node>
@@ -1305,6 +1305,23 @@
       </node>
       <node concept="3uibUv" id="2Y$EcRKOqVR" role="3clF45">
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="1W57fq" id="74Oxs8AKbsN" role="lGtFl">
+        <node concept="3IZrLx" id="74Oxs8AKbsP" role="3IZSJc">
+          <node concept="3clFbS" id="74Oxs8AKbsR" role="2VODD2">
+            <node concept="3clFbF" id="74Oxs8AKbXG" role="3cqZAp">
+              <node concept="2OqwBi" id="74Oxs8AKcLI" role="3clFbG">
+                <node concept="2OqwBi" id="74Oxs8AKc25" role="2Oq$k0">
+                  <node concept="30H73N" id="74Oxs8AKbXF" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="74Oxs8AKckI" role="2OqNvi">
+                    <ref role="3TsBF5" to="hfbu:2Y$EcRKMr2p" resolve="helpUrl" />
+                  </node>
+                </node>
+                <node concept="17RvpY" id="74Oxs8AKdvB" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
