@@ -131,6 +131,12 @@
     <node concept="qMXn0" id="4r8JClTmU99" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmUai" role="QNr5C">
       <property role="TrG5h" value="getImplementationClassName" />
+      <node concept="q3mfp" id="74Oxs8ALpTn" role="q3mfl">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="74Oxs8ALpTs" role="q3mfr">
+          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+        </node>
+      </node>
       <node concept="3uibUv" id="4r8JClTmUaS" role="q3mfk">
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>

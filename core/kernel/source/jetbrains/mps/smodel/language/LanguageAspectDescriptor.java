@@ -56,7 +56,7 @@ public abstract class LanguageAspectDescriptor {
   public abstract SNode getInterfaceClassDeclaration();
 
   @NotNull
-  public abstract String getImplementationClassName();
+  public abstract String getImplementationClassName(SModule language);
 
   @Nullable
   public Icon getIcon(){

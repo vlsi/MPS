@@ -1102,7 +1102,10 @@
                                       <ref role="3cqZAo" node="4r8JClTlnvX" resolve="it" />
                                     </node>
                                     <node concept="liA8E" id="4r8JClTlqUJ" role="2OqNvi">
-                                      <ref role="37wK5l" to="n55e:~LanguageAspectDescriptor.getImplementationClassName():java.lang.String" resolve="getImplementationClassName" />
+                                      <ref role="37wK5l" to="n55e:~LanguageAspectDescriptor.getImplementationClassName(org.jetbrains.mps.openapi.module.SModule):java.lang.String" resolve="getImplementationClassName" />
+                                      <node concept="37vLTw" id="74Oxs8AL$ys" role="37wK5m">
+                                        <ref role="3cqZAo" node="4r8JClTlid7" resolve="languageModule" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
