@@ -18,7 +18,7 @@
     <model modelUID="r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.lang.aspectDescriptor#3274906159125927726" uuid="e45a8b22-94f2-427f-b849-77f254c4eef5">
+    <generator name="" generatorUID="jetbrains.mps.lang.aspectDescriptor#3274906159125927726" uuid="e45a8b22-94f2-427f-b849-77f254c4eef5">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -28,6 +28,8 @@
       <dependencies>
         <dependency reexport="false">f159adf4-3c93-40f9-9c5a-1f245a8697af(jetbrains.mps.lang.aspectDescriptor)</dependency>
         <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
+        <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
+        <dependency reexport="false">982eb8df-2c96-4bd7-9963-11712ea622e5(jetbrains.mps.lang.resources)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)</usedLanguage>
@@ -39,14 +41,33 @@
       <languageVersions>
         <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" fqName="jetbrains.mps.baseLanguage" version="1" />
         <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
+        <language id="fd392034-7849-419d-9071-12563d152375" fqName="jetbrains.mps.baseLanguage.closures" version="0" />
+        <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" fqName="jetbrains.mps.baseLanguage.collections" version="0" />
         <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" fqName="jetbrains.mps.lang.aspectDescriptor" version="-1" />
+        <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" fqName="jetbrains.mps.lang.classLike" version="0" />
         <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="1" />
         <language id="c0080a47-7e37-4558-bee9-9ae18e690549" fqName="jetbrains.mps.lang.extension" version="0" />
         <language id="b401a680-8325-4110-8fd3-84331ff25bef" fqName="jetbrains.mps.lang.generator" version="0" />
         <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" fqName="jetbrains.mps.lang.generator.generationContext" version="0" />
+        <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="0" />
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
       </languageVersions>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <generator generatorUID="e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspectDescriptor#3274906159125927726)" />
+            <external-mapping>
+              <mapping-node modelUID="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspectDescriptor.generator.template.main@generator)" nodeID="3433054418425097067" />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="e45a8b22-94f2-427f-b849-77f254c4eef5(jetbrains.mps.lang.aspectDescriptor#3274906159125927726)" />
+            <external-mapping>
+              <mapping-node modelUID="r:4c5ac278-3ad7-4902-ab86-6c60b350f168(jetbrains.mps.lang.aspectDescriptor.generator.template.main@generator)" nodeID="3274906159125927727" />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <sourcePath />
