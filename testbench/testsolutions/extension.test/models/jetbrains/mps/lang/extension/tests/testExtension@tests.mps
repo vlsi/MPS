@@ -2,10 +2,10 @@
 <model ref="r:eb1b318e-412f-4a0e-a1ff-62ff2ab9ff40(jetbrains.mps.lang.extension.tests.testExtension@tests)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
   </languages>
   <imports>
@@ -125,6 +125,9 @@
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
         <child id="1128555889557" name="staticField" index="33b4aj" />
       </concept>
+      <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
+        <child id="1171903916107" name="bound" index="3qUE_r" />
+      </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
@@ -242,10 +245,12 @@
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="66AaOfxlrbb" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-                <node concept="3uibUv" id="66AaOfxlrbc" role="11_B2D">
-                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
-                  <node concept="3uibUv" id="66AaOfxlrbd" role="11_B2D">
-                    <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
+                <node concept="3qUE_q" id="549iHX$aXP9" role="11_B2D">
+                  <node concept="3uibUv" id="66AaOfxlrbc" role="3qUE_r">
+                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <node concept="3uibUv" id="66AaOfxlrbd" role="11_B2D">
+                      <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -279,10 +284,12 @@
               <property role="TrG5h" value="it" />
               <node concept="3uibUv" id="66AaOfxlrdG" role="1tU5fm">
                 <ref role="3uigEE" to="k7g3:~Iterator" resolve="Iterator" />
-                <node concept="3uibUv" id="66AaOfxlrdH" role="11_B2D">
-                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
-                  <node concept="3uibUv" id="66AaOfxlrdI" role="11_B2D">
-                    <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
+                <node concept="3qUE_q" id="549iHX$aYm4" role="11_B2D">
+                  <node concept="3uibUv" id="66AaOfxlrdH" role="3qUE_r">
+                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <node concept="3uibUv" id="66AaOfxlrdI" role="11_B2D">
+                      <ref role="3uigEE" to="d0sk:66AaOfxll3S" resolve="TestObject" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -415,10 +422,12 @@
               <property role="TrG5h" value="extensions" />
               <node concept="3uibUv" id="2hA_2dv2TY4" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Iterable" resolve="Iterable" />
-                <node concept="3uibUv" id="2hA_2dv2TY5" role="11_B2D">
-                  <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
-                  <node concept="3uibUv" id="2hA_2dv2Uo_" role="11_B2D">
-                    <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
+                <node concept="3qUE_q" id="549iHX$aYKB" role="11_B2D">
+                  <node concept="3uibUv" id="2hA_2dv2TY5" role="3qUE_r">
+                    <ref role="3uigEE" to="bltl:~Extension" resolve="Extension" />
+                    <node concept="3uibUv" id="2hA_2dv2Uo_" role="11_B2D">
+                      <ref role="3uigEE" to="d0sk:2hA_2dv2TXz" resolve="LazyTestObject" />
+                    </node>
                   </node>
                 </node>
               </node>

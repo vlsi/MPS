@@ -21,9 +21,9 @@ public class Extension_Test extends TestCase {
   private static TestObject TEST_OBJECT;
   @MPSLaunch
   public void test_testObject() throws Exception {
-    Iterable<Extension<TestObject>> extensions = ((ExtensionPoint<TestObject>) ExtensionPoint.<TestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class))).getExtensions();
+    Iterable<? extends Extension<TestObject>> extensions = ((ExtensionPoint<TestObject>) new ExtensionPoint<TestObject>("jetbrains.mps.lang.extension.tests.testExtensionPoint")).getExtensions();
     Assert.assertNotNull(extensions);
-    Iterator<Extension<TestObject>> it = extensions.iterator();
+    Iterator<? extends Extension<TestObject>> it = extensions.iterator();
     Assert.assertTrue(it.hasNext());
     Extension<TestObject> ext = it.next();
     try {
@@ -40,14 +40,14 @@ public class Extension_Test extends TestCase {
   @MPSLaunch
   public void test_testLazyObject() throws Exception {
     Assert.assertNull(LazyTestObject.INSTANCE);
-    Iterable<Extension<LazyTestObject>> extensions = ((ExtensionPoint<LazyTestObject>) ExtensionPoint.<LazyTestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint", LazyTestObject.class))).getExtensions();
+    Iterable<? extends Extension<LazyTestObject>> extensions = ((ExtensionPoint<LazyTestObject>) new ExtensionPoint<LazyTestObject>("jetbrains.mps.lang.extension.tests.lazyTestExtensionPoint")).getExtensions();
     LazyTestObject lzo = extensions.iterator().next().get();
     Assert.assertNotNull(lzo);
     Assert.assertSame(LazyTestObject.INSTANCE, lzo);
   }
   @MPSLaunch
   public void test_extensionPointExpression() throws Exception {
-    String string = IterableUtils.join(Sequence.fromIterable(ExtensionPoint.<String>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)).getObjects()).sort(new ISelector<String, String>() {
+    String string = IterableUtils.join(Sequence.fromIterable(new ExtensionPoint<String>("jetbrains.mps.lang.extension.tests.multiExtensionPoint").getObjects()).sort(new ISelector<String, String>() {
       public String select(String it) {
         return it;
       }
