@@ -29,6 +29,9 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kohub4_a(editorContext, node);
   }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_kohub4_a_0(editorContext, node);
+  }
   private EditorCell createCollection_kohub4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kohub4_a");
@@ -148,5 +151,68 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createCollection_kohub4_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_kohub4_a_0");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createRefCell_kohub4_a0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createRefCell_kohub4_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("concept");
+    provider.setNoTargetText("<all>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new Model_NodesOperation_Editor._Inline_kohub4_a0a());
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("concept");
+    }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  public static class _Inline_kohub4_a0a extends InlineCellProvider {
+    public _Inline_kohub4_a0a() {
+      super();
+    }
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_kohub4_a0a0(editorContext, node);
+    }
+    private EditorCell createProperty_kohub4_a0a0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name_1");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
+      style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
+      editorCell.getStyle().putAll(style);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+        return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
 }
