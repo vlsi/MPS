@@ -4,11 +4,10 @@ package jetbrains.mps.lang.structure.plugin;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer")};
   public ExtensionDescriptor() {
   }
   @Override

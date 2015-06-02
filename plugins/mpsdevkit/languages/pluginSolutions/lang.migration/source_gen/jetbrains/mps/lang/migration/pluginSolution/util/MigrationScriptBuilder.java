@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 
 public class MigrationScriptBuilder {
@@ -54,8 +55,14 @@ public class MigrationScriptBuilder {
     return this;
   }
 
+  @Deprecated
   public MigrationScriptBuilder addMissingImports() {
     SModelOperations.validateLanguagesAndImports(SNodeOperations.getModel(myScript), false, true);
+    return this;
+  }
+
+  public MigrationScriptBuilder addDependency(SModel m) {
+    ((SModelInternal) SNodeOperations.getModel(myScript)).addModelImport(m.getReference(), true);
     return this;
   }
 
