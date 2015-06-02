@@ -56,9 +56,13 @@ import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public final class MPSCore extends ComponentPlugin {
+  private volatile boolean myInitialized = false;
+  private ClassLoaderManager myClassLoaderManager;
+  private LibraryInitializer myLibraryInitializer;
 
   public MPSCore() {
   }
@@ -77,42 +81,61 @@ public final class MPSCore extends ComponentPlugin {
     init(new FindUsagesManager());
     init(new MigrationPropertiesManager());
 
-    // repositories
-    final SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
-    SModelRepository modelRepository = init(new SModelRepository());
+    SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
+    SModelRepository modelRepository = init(new SModelRepository(moduleRepository));
     init(new GlobalSModelEventsManager(modelRepository));
-    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
+    myClassLoaderManager = init(new ClassLoaderManager(moduleRepository));
     init(new DebugRegistry());
 
-    init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
+    init(new SModelFileTracker(repositoryRegistry));
     init(new ModuleRepositoryFacade(moduleRepository));
     init(new ModuleFileTracker(moduleRepository));
-    CleanupManager cleanupManager = init(new CleanupManager(classLoaderManager));
+    CleanupManager cleanupManager = init(new CleanupManager(myClassLoaderManager));
     init(new PathMacros());
-    init(new LibraryInitializer(moduleRepository, classLoaderManager));
+    myLibraryInitializer = init(new LibraryInitializer(moduleRepository));
     init(new GlobalScope(moduleRepository, modelRepository));
     init(new ImmatureReferences(moduleRepository));
 
-    init(new QueryMethodGenerated(classLoaderManager));
-    LanguageRegistry languageRegistry = init(new LanguageRegistry(moduleRepository, classLoaderManager));
+    init(new QueryMethodGenerated(myClassLoaderManager));
+    LanguageRegistry languageRegistry = init(new LanguageRegistry(moduleRepository, myClassLoaderManager));
     init(new ConceptRegistry(languageRegistry));
     init(new TextGenRegistry(languageRegistry));
-    init(new ExtensionRegistry(classLoaderManager, moduleRepository));
+    init(new ExtensionRegistry(myClassLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
-    init(new CachesManager(classLoaderManager, modelRepository));
+    init(new CachesManager(myClassLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider(moduleRepository));
     init(new ProjectStructureModule(moduleRepository));
-    init(new CopyPasteManager(classLoaderManager));
-    init(new PasteWrappersManager(classLoaderManager));
+    init(new CopyPasteManager(myClassLoaderManager));
+    init(new PasteWrappersManager(myClassLoaderManager));
     init(new BLDependenciesCache(moduleRepository, cleanupManager));
-    init(new DataFlowManager(moduleRepository, classLoaderManager));
+    init(new DataFlowManager(moduleRepository, myClassLoaderManager));
 
     init(new ResolverComponent());
     init(new ValidationSettings());
 
     init(new BootstrapMakeFacets());
-    init(new PropertySupportCache(classLoaderManager));
+    init(new PropertySupportCache(myClassLoaderManager));
+    myInitialized = true;
+  }
+
+  private void checkInitialized() {
+    if (!myInitialized) throw new ComponentNotInitializedException();
+  }
+
+  @NotNull
+  public ClassLoaderManager getClassLoaderManager() {
+    checkInitialized();
+    return myClassLoaderManager;
+  }
+
+  @NotNull
+  public LibraryInitializer getLibraryInitializer() {
+    checkInitialized();
+    return myLibraryInitializer;
+  }
+
+  private static class ComponentNotInitializedException extends IllegalStateException {
   }
 }

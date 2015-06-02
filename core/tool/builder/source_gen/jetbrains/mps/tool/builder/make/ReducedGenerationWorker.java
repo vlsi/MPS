@@ -7,7 +7,6 @@ import jetbrains.mps.tool.builder.paths.OutputPathRedirects;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
@@ -40,15 +39,18 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
   private ModuleOutputPaths myOutputPaths;
   private ReducedGenerationWorker.MyForeignRootPaths myForeignRootPaths;
   private OutputPathRedirects myOutputRedirects;
+
   public ReducedGenerationWorker(Script whatToDo) {
     super(whatToDo);
   }
+
   public ReducedGenerationWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
+
   @Override
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
-    ModelAccess.instance().flushEventQueue();
+    myEnvironment.flushAllEvents();
     Future<IResult> res;
 
     BuildMakeService bms = new BuildMakeService();
@@ -100,10 +102,12 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       myErrors.add(e.toString());
     }
   }
+
   @Override
   protected void showStatistic() {
     // do nothing 
   }
+
   @Override
   protected Iterable<MResource> collectResources(Project project, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
@@ -122,13 +126,16 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       }
     });
   }
+
   @Override
   protected void make() {
     // we do not need make in ReducedGenerationWorker 
   }
+
   @Override
   protected void makeProject() {
   }
+
   @Override
   protected void setupEnvironment() {
     super.setupEnvironment();
@@ -143,10 +150,12 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       }
     });
   }
+
   public static void main(String[] args) {
     MpsWorker mpsWorker = new ReducedGenerationWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
+
   private static class MyForeignRootPaths {
     private String[] rootPaths;
     public MyForeignRootPaths(Iterable<String> foreignRoots) {

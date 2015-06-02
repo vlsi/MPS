@@ -39,25 +39,28 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
-        if (myModule instanceof Language) {
-          ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
-        }
+        BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
+            if (myModule instanceof Language) {
+              ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
+            }
 
-        for (SModule sm : modules) {
-          MessageCollectProcessor processor = new MessageCollectProcessor(false);
-          ValidationUtil.validateModule(sm, processor);
-          if (processor.getErrors().isEmpty()) {
-            continue;
+            for (SModule sm : modules) {
+              MessageCollectProcessor processor = new MessageCollectProcessor(false);
+              ValidationUtil.validateModule(sm, processor);
+              if (processor.getErrors().isEmpty()) {
+                continue;
+              }
+
+              StringBuilder errorMessages = new StringBuilder();
+              for (String item : processor.getErrors()) {
+                errorMessages.append("\t").append(item).append("\n");
+              }
+              errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+            }
           }
-
-          StringBuilder errorMessages = new StringBuilder();
-          for (String item : processor.getErrors()) {
-            errorMessages.append("\t").append(item).append("\n");
-          }
-          errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
-        }
-
+        });
       }
     });
     Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
@@ -67,7 +70,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Order(value = 2)
   public void checkModels() {
     final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
           MessageCollectProcessor collector = new MessageCollectProcessor(false);
@@ -94,7 +97,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Order(value = 3)
   public void checkStructure() {
     final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
           MessageCollectProcessor collector = new MessageCollectProcessor(false) {
@@ -130,7 +133,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Order(value = 4)
   public void checkReferences() {
     final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
           StringBuilder errorMessages = new StringBuilder();
@@ -164,7 +167,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Order(value = 5)
   public void checkGenerationStatus() {
     final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(false)) {
           SModule module = sm.getModule();
@@ -188,7 +191,6 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
         }
       }
     });
-
     Assert.assertTrue("Try to regenerate models:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
   }
 

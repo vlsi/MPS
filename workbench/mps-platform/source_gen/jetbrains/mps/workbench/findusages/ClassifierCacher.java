@@ -5,9 +5,11 @@ package jetbrains.mps.workbench.findusages;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import gnu.trove.THashMap;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMFormalTypeParameter;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMType;
@@ -38,8 +40,8 @@ public class ClassifierCacher {
   public Map<IdIndexEntry, Integer> getResult() {
     return myResult;
   }
-  private void instance(String concept) {
-    myResult.put(new IdIndexEntry(concept, true), 0);
+  private void instance(SAbstractConcept concept) {
+    myResult.put(new IdIndexEntry(concept.getQualifiedName(), true), 0);
   }
   private void ref(SNodeId id) {
     if (!(id instanceof jetbrains.mps.smodel.SNodeId.Foreign)) {
@@ -52,7 +54,7 @@ public class ClassifierCacher {
   }
   public void updateClassifier(ClassifierKind kind, ASMClass ac) {
     if (kind == ClassifierKind.CLASS) {
-      instance("jetbrains.mps.baseLanguage.structure.ClassConcept");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       updateAnnotations(ac);
       updateTypeVariables(ac);
       updateExtendsAndImplements(ac);
@@ -62,18 +64,18 @@ public class ClassifierCacher {
       updateInstanceMethods(ac);
       updateStaticMethods(ac, kind);
     } else if (kind == ClassifierKind.INTERFACE) {
-      instance("jetbrains.mps.baseLanguage.structure.Interface");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"));
       updateAnnotations(ac);
       updateTypeVariables(ac);
       updateExtendsForInterface(ac);
       updateStaticFields(ac);
       updateInstanceMethods(ac);
     } else if (kind == ClassifierKind.ANNOTATIONS) {
-      instance("jetbrains.mps.baseLanguage.structure.Annotation");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"));
       updateAnnotationMethods(ac);
       updateAnnotations(ac);
     } else if (kind == ClassifierKind.ENUM) {
-      instance("jetbrains.mps.baseLanguage.structure.EnumClass");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"));
       updateAnnotations(ac);
       updateTypeVariables(ac);
       updateExtendsAndImplements(ac);
@@ -86,12 +88,12 @@ public class ClassifierCacher {
       return;
     }
     if (ac.isPublic()) {
-      instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
     }
   }
   private void updateTypeVariables(ASMClass cls) {
     for (ASMTypeVariable tv : cls.getTypeParameters()) {
-      instance("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"));
       if (!(tv instanceof ASMFormalTypeParameter)) {
         continue;
       }
@@ -106,7 +108,7 @@ public class ClassifierCacher {
   }
   private void updateTypeVariables(ASMMethod method) {
     for (ASMTypeVariable tv : method.getTypeParameters()) {
-      instance("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"));
     }
     for (ASMTypeVariable tv : method.getTypeParameters()) {
       if (!(tv instanceof ASMFormalTypeParameter)) {
@@ -148,7 +150,7 @@ public class ClassifierCacher {
       if (field.isCompilerGenerated()) {
         continue;
       }
-      instance("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
       createVisibility(field);
       getTypeByASMType(field.getGenericType());
       for (ASMAnnotation annotation : field.getAnnotations()) {
@@ -165,9 +167,9 @@ public class ClassifierCacher {
         continue;
       }
       if (field.isEnumConstant()) {
-        instance("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
+        instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
       } else {
-        instance("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
         createVisibility(field);
         getTypeByASMType(field.getGenericType());
         for (ASMAnnotation annotation : field.getAnnotations()) {
@@ -177,9 +179,9 @@ public class ClassifierCacher {
           if (field.hasValue()) {
             Object value = field.getValue();
             if (value instanceof Integer) {
-              instance("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+              instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
             } else if (value instanceof String) {
-              instance("jetbrains.mps.baseLanguage.structure.StringLiteral");
+              instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
             }
           }
         }
@@ -188,9 +190,9 @@ public class ClassifierCacher {
   }
   private void updateAnnotationMethods(ASMClass refCls) {
     for (ASMMethod m : refCls.getDeclaredMethods()) {
-      instance("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6a17a27L, "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration"));
       getTypeByASMType(m.getGenericReturnType());
-      instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
       if (m.getAnnotationDefault() != null) {
         getAnnotationValue(m.getAnnotationDefault());
       }
@@ -202,12 +204,12 @@ public class ClassifierCacher {
         continue;
       }
 
-      instance("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
       createVisibility(c);
-      instance("jetbrains.mps.baseLanguage.structure.StubStatementList");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
 
       for (ASMTypeVariable tv : c.getTypeParameters()) {
-        instance("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
+        instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"));
       }
 
       {
@@ -234,7 +236,7 @@ public class ClassifierCacher {
             continue;
           }
 
-          instance("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
           getTypeByASMType(pt);
           addAnnotationsToParameter(pa);
         }
@@ -259,7 +261,7 @@ public class ClassifierCacher {
         continue;
       }
 
-      instance("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       createVisibility(m);
       updateBaseMethod(m);
     }
@@ -276,13 +278,13 @@ public class ClassifierCacher {
         continue;
       }
 
-      instance("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       createVisibility(m);
       updateBaseMethod(m);
     }
   }
   private void updateBaseMethod(ASMMethod m) {
-    instance("jetbrains.mps.baseLanguage.structure.StubStatementList");
+    instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4975dc2bdcfa0c49L, "jetbrains.mps.baseLanguage.structure.StubStatementList"));
     updateTypeVariables(m);
     getTypeByASMType(m.getGenericReturnType());
     {
@@ -305,7 +307,7 @@ public class ClassifierCacher {
         pt = pt_iterator.next();
         pn = pn_iterator.next();
         pa = pa_iterator.next();
-        instance("jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+        instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
         getTypeByASMType(pt);
         addAnnotationsToParameter(pa);
       }
@@ -329,20 +331,20 @@ public class ClassifierCacher {
   }
   protected void createVisibility(ASMMethod m) {
     if (m.isPublic()) {
-      instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
     } else if (m.isPrivate()) {
-      instance("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
     } else if (m.isProtected()) {
-      instance("jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"));
     }
   }
   protected void createVisibility(ASMField f) {
     if (f.isPublic()) {
-      instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
     } else if (f.isPrivate()) {
-      instance("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
     } else if (f.isProtected()) {
-      instance("jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"));
     }
   }
   private void addAnnotationsToParameter(List<ASMAnnotation> anns) {
@@ -353,44 +355,44 @@ public class ClassifierCacher {
     });
   }
   private void createAnnotation(ASMAnnotation annotation) {
-    instance("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+    instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
     ASMClassType c = (ASMClassType) annotation.getType();
     addClassifierReference(c);
     Map<String, Object> values = ((Map<String, Object>) annotation.getValues());
     for (String key : MapSequence.fromMap(values).keySet()) {
-      instance("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"));
       getAnnotationValue(MapSequence.fromMap(values).get(key));
       addAnnotationMethodReference(c, key);
     }
   }
   private void getAnnotationValue(Object value) {
     if (value instanceof Integer) {
-      instance("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
     } else if (value instanceof Byte) {
-      instance("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
     } else if (value instanceof Short) {
-      instance("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
     } else if (value instanceof Boolean) {
-      instance("jetbrains.mps.baseLanguage.structure.BooleanConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
     } else if (value instanceof Character) {
-      instance("jetbrains.mps.baseLanguage.structure.CharConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, "jetbrains.mps.baseLanguage.structure.CharConstant"));
     } else if (value instanceof Long) {
-      instance("jetbrains.mps.baseLanguage.structure.LongLiteral");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3b418722717710b4L, "jetbrains.mps.baseLanguage.structure.LongLiteral"));
     } else if (value instanceof Float) {
-      instance("jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"));
     } else if (value instanceof Double) {
-      instance("jetbrains.mps.baseLanguage.structure.FloatingPointConstant");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102cb19a434L, "jetbrains.mps.baseLanguage.structure.FloatingPointConstant"));
     } else if (value instanceof String) {
-      instance("jetbrains.mps.baseLanguage.structure.StringLiteral");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
     } else if (value instanceof ASMAnnotation) {
       createAnnotation((ASMAnnotation) value);
-      instance("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance"));
     } else if (value instanceof ASMPrimitiveType) {
       getTypeByASMType((ASMPrimitiveType) value);
-      instance("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"));
     } else if (value instanceof List) {
       List<Object> list = (List<Object>) value;
-      instance("jetbrains.mps.baseLanguage.structure.ArrayLiteral");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, "jetbrains.mps.baseLanguage.structure.ArrayLiteral"));
       ListSequence.fromList(list).visitAll(new IVisitor<Object>() {
         public void visit(Object it) {
           getAnnotationValue(it);
@@ -399,46 +401,46 @@ public class ClassifierCacher {
     } else if (value instanceof ASMEnumValue) {
       ASMEnumValue enumValue = (ASMEnumValue) value;
       ASMClassType c = (ASMClassType) enumValue.getType();
-      instance("jetbrains.mps.baseLanguage.structure.EnumConstantReference");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc37588bc8L, "jetbrains.mps.baseLanguage.structure.EnumConstantReference"));
       addClassifierReference(c);
       addEnumConstReference(enumValue);
     } else if (value instanceof ASMClassType) {
-      instance("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"));
       addClassifierReference((ASMClassType) value);
     }
   }
   private void getTypeByASMType(ASMType type) {
     if (type == ASMPrimitiveType.BOOLEAN) {
-      instance("jetbrains.mps.baseLanguage.structure.BooleanType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"));
     } else if (type == ASMPrimitiveType.BYTE) {
-      instance("jetbrains.mps.baseLanguage.structure.ByteType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d5b617L, "jetbrains.mps.baseLanguage.structure.ByteType"));
     } else if (type == ASMPrimitiveType.SHORT) {
-      instance("jetbrains.mps.baseLanguage.structure.ShortType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cc380dL, "jetbrains.mps.baseLanguage.structure.ShortType"));
     } else if (type == ASMPrimitiveType.INT) {
-      instance("jetbrains.mps.baseLanguage.structure.IntegerType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"));
     } else if (type == ASMPrimitiveType.LONG) {
-      instance("jetbrains.mps.baseLanguage.structure.LongType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f3L, "jetbrains.mps.baseLanguage.structure.LongType"));
     } else if (type == ASMPrimitiveType.FLOAT) {
-      instance("jetbrains.mps.baseLanguage.structure.FloatType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d327fdL, "jetbrains.mps.baseLanguage.structure.FloatType"));
     } else if (type == ASMPrimitiveType.DOUBLE) {
-      instance("jetbrains.mps.baseLanguage.structure.DoubleType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d451a6L, "jetbrains.mps.baseLanguage.structure.DoubleType"));
     } else if (type == ASMPrimitiveType.VOID) {
-      instance("jetbrains.mps.baseLanguage.structure.VoidType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc6bf96dL, "jetbrains.mps.baseLanguage.structure.VoidType"));
     } else if (type == ASMPrimitiveType.CHAR) {
-      instance("jetbrains.mps.baseLanguage.structure.CharType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d4f826L, "jetbrains.mps.baseLanguage.structure.CharType"));
     } else if (type instanceof ASMArrayType) {
       getTypeByASMType(((ASMArrayType) type).getElementType());
-      instance("jetbrains.mps.baseLanguage.structure.ArrayType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType"));
     } else if (type instanceof ASMVarArgType) {
       getTypeByASMType(((ASMVarArgType) type).getElementType());
-      instance("jetbrains.mps.baseLanguage.structure.VariableArityType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, "jetbrains.mps.baseLanguage.structure.VariableArityType"));
     } else if (type instanceof ASMTypeVariable) {
-      instance("jetbrains.mps.baseLanguage.structure.TypeVariableReference");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"));
       // usages handled on upper level as for resolve we should load model 
       // another variant is just to search for occurence in the same model 
     } else if (type instanceof ASMClassType) {
       ASMClassType c = (ASMClassType) type;
-      instance("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       addClassifierReference(c);
     } else if (type instanceof ASMParameterizedType) {
       ASMParameterizedType pt = (ASMParameterizedType) type;
@@ -449,20 +451,20 @@ public class ClassifierCacher {
       if (e.getBound() instanceof ASMClassType) {
         ASMClassType ct = (ASMClassType) e.getBound();
         if (ct.getName().equals("java.lang.Object")) {
-          instance("jetbrains.mps.baseLanguage.structure.WildCardType");
+          instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
           return;
         }
       }
-      instance("jetbrains.mps.baseLanguage.structure.UpperBoundType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110daeaa84aL, "jetbrains.mps.baseLanguage.structure.UpperBoundType"));
       getTypeByASMType(e.getBound());
     } else if (type instanceof ASMSuperType) {
       ASMSuperType e = (ASMSuperType) type;
-      instance("jetbrains.mps.baseLanguage.structure.LowerBoundType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType"));
       getTypeByASMType(e.getBound());
     } else if (type instanceof ASMUnboundedType) {
-      instance("jetbrains.mps.baseLanguage.structure.WildCardType");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae5f4a3L, "jetbrains.mps.baseLanguage.structure.WildCardType"));
     } else {
-      instance("jetbrains.mps.baseLanguage.structure.Type");
+      instance(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"));
     }
   }
   private void addTypeParameters(List<? extends ASMType> typeParameters) {

@@ -16,11 +16,9 @@
 package jetbrains.mps.components;
 
 /**
- * evgeny, 10/14/11
+ * Contract : init and dispose methods are run with write lock
  */
 public interface CoreComponent {
-
   void init();
-
   void dispose();
 }

@@ -35,7 +35,7 @@ public class PatternExpression_Behavior {
   public static List<SNode> call_getUniqueVariables_4855904478357073018(SNode thisNode) {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
     List<SNode> result = new ArrayList<SNode>();
-    Set<String> names = new HashSet();
+    Set<String> names = new HashSet<String>();
     for (SNode var : variables) {
       if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))))) {
         ListSequence.fromList(result).addElement(var);

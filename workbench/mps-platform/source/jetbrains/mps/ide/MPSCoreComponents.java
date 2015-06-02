@@ -102,6 +102,11 @@ public class MPSCoreComponents implements ApplicationComponent {
     ModelAccess.instance().dispose();
   }
 
+  @NotNull
+  public MPSCore getMPSCore() {
+    return myMPSCore;
+  }
+
   public ClassLoaderManager getClassLoaderManager() {
     return ClassLoaderManager.getInstance();
   }

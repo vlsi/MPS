@@ -21,14 +21,23 @@ import org.jetbrains.annotations.NotNull;
  * @author Evgeny Gerashchenko
  */
 public interface FileSystemProvider {
+  /**
+   * Creates an appropriate IFile from the path parameter, depending on the current fs provider and paths itself
+   */
+  @NotNull
   IFile getFile(@NotNull String path);
+
+  /**
+   * Part of platform functionality.
+   * @see jetbrains.mps.ide.vfs.IdeaFileSystemProvider implementation for details
+   */
   boolean isFileIgnored(String name);
   void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles);
 
   /**
    * @see FileSystem#runWriteTransaction(Runnable)
    * @param r code to execute within platform write lock
-   * @return <code>false</code> if something went wrong (yeah, stupid contract, I know)
+   * @return <code>false</code> if an exception was encountered
    */
   boolean runWriteTransaction(@NotNull Runnable r);
 

@@ -7,14 +7,19 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IExtractMethodAvailable_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
-import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import java.util.List;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IExtractMethodAvailable_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
   public ConceptBehavior_BehaviorDescriptor() {
+  }
+  public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept thisConcept, SNode candidate) {
+    return IConceptAspect_Behavior.virtual_canBeAppliedToNode_8911797107065640816(thisConcept, candidate);
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
@@ -37,6 +42,8 @@ public class ConceptBehavior_BehaviorDescriptor extends BaseConcept_BehaviorDesc
   public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return ConceptBehavior_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
   }

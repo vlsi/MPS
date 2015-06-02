@@ -11,19 +11,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 2:
+      case 3:
         return new PrimIntType_BehaviorDescriptor();
-      case 4:
+      case 6:
         return new SubstituteAnnotation_BehaviorDescriptor();
-      case 1:
+      case 2:
         return new PrimFloatType_BehaviorDescriptor();
       case 0:
         return new PresenceCondition_BehaviorDescriptor();
-      case 3:
+      case 4:
         return new PrimLongType_BehaviorDescriptor();
+      case 5:
+        return new PrimNumConstant_BehaviorDescriptor();
+      case 1:
+        return new PrimDoubleType_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimFloatType", "testAnnotatedType.structure.PrimIntType", "testAnnotatedType.structure.PrimLongType", "testAnnotatedType.structure.SubstituteAnnotation"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimDoubleType", "testAnnotatedType.structure.PrimFloatType", "testAnnotatedType.structure.PrimIntType", "testAnnotatedType.structure.PrimLongType", "testAnnotatedType.structure.PrimNumConstant", "testAnnotatedType.structure.SubstituteAnnotation"};
 }

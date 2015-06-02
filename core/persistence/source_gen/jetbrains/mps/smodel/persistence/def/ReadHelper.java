@@ -21,9 +21,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.persistence.LightModelEnvironmentInfo;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import org.apache.log4j.Logger;
@@ -166,76 +165,60 @@ public class ReadHelper {
   public String readName(String s) {
     return s;
   }
-  public static void conceptRead(final SNode node) {
-    final LightModelEnvironmentInfo info = getInfo();
+  public static void conceptRead(SNode node) {
+    LightModelEnvironmentInfo info = getInfo();
     if (info == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        info.conceptRead(node, check_9mlqpu_b0a0a0c0r(SNodeOperations.getConcept(node).getDeclarationNode()), StaticScope.GLOBAL, ConceptKind.NORMAL);
-      }
-    });
+    info.conceptRead(node, check_9mlqpu_b0a2a71(SNodeOperations.getConcept(node).getDeclarationNode()), StaticScope.GLOBAL, ConceptKind.NORMAL);
   }
-  public static void roleRead(final SNode node, final String role) {
-    final LightModelEnvironmentInfo info = getInfo();
+  public static void roleRead(SNode node, String role) {
+    LightModelEnvironmentInfo info = getInfo();
     if (info == null) {
       return;
     }
     if (SNodeOperations.getParent(node) == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        info.nodeRoleRead(node, check_9mlqpu_b0a0a0d0s(MetaAdapterFactoryByName.getContainmentLink(SNodeOperations.getConcept(SNodeOperations.getParent(node)).getQualifiedName(), role).getDeclarationNode()), false);
-      }
-    });
+    info.nodeRoleRead(node, check_9mlqpu_b0a3a81(((ConceptMetaInfoConverter) SNodeOperations.getConcept(SNodeOperations.getParent(node))).convertAggregation(role).getDeclarationNode()), false);
   }
-  public static void propertyRead(final SNode node, final String propName) {
-    final LightModelEnvironmentInfo info = getInfo();
+  public static void propertyRead(SNode node, String propName) {
+    LightModelEnvironmentInfo info = getInfo();
     if (info == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        info.propertyNameRead(node, propName, check_9mlqpu_c0a0a0c0t(MetaAdapterFactoryByName.getProperty(SNodeOperations.getConcept(node).getQualifiedName(), propName).getDeclarationNode()));
-      }
-    });
+    info.propertyNameRead(node, propName, check_9mlqpu_c0a2a91(((ConceptMetaInfoConverter) SNodeOperations.getConcept(node)).convertProperty(propName).getDeclarationNode()));
   }
-  public static void referenceRead(final SReference ref) {
-    final LightModelEnvironmentInfo info = getInfo();
+  public static void referenceRead(SReference ref) {
+    LightModelEnvironmentInfo info = getInfo();
     if (info == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        info.referenceRoleRead(ref, check_9mlqpu_b0a0a0c0u(MetaAdapterFactoryByName.getReferenceLink(ref.getSourceNode().getConcept().getQualifiedName(), ref.getRole()).getDeclarationNode()));
-      }
-    });
+    info.referenceRoleRead(ref, check_9mlqpu_b0a2a02(((ConceptMetaInfoConverter) ref.getSourceNode().getConcept()).convertAssociation(ref.getRole()).getDeclarationNode()));
   }
   private static LightModelEnvironmentInfo getInfo() {
     return as_9mlqpu_a0a0v(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), LightModelEnvironmentInfo.class);
   }
   protected static Logger LOG = LogManager.getLogger(ReadHelper.class);
-  private static SNodeReference check_9mlqpu_b0a0a0c0r(SNode checkedDotOperand) {
+  private static SNodeReference check_9mlqpu_b0a2a71(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNodeReference check_9mlqpu_b0a0a0d0s(SNode checkedDotOperand) {
+  private static SNodeReference check_9mlqpu_b0a3a81(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNodeReference check_9mlqpu_c0a0a0c0t(SNode checkedDotOperand) {
+  private static SNodeReference check_9mlqpu_c0a2a91(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-  private static SNodeReference check_9mlqpu_b0a0a0c0u(SNode checkedDotOperand) {
+  private static SNodeReference check_9mlqpu_b0a2a02(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

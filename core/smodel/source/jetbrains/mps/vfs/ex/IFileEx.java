@@ -19,10 +19,7 @@ import jetbrains.mps.vfs.IFile;
 
 public interface IFileEx extends IFile {
   boolean isPackaged();
-
   IFile getBundleHome();
-
   boolean setTimeStamp(long time);
-  
   void refresh();
 }

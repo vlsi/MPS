@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -32,7 +33,7 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
   private boolean myApplyToSubConcepts;
 
   /**
-   * @deprecated compatibility
+   * @deprecated compatibility with MPS 3.2 code
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -69,9 +70,16 @@ public abstract class WeaveRuleBase implements TemplateWeavingRule {
     return myRuleNode;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myAppConcept.getQualifiedName();
+  }
+
+  @NotNull
+  @Override
+  public final SAbstractConcept getApplicableConcept2() {
+    return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
   }
 
   @Override

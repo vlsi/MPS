@@ -43,11 +43,11 @@ import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.testbench.PerformanceMessenger;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.Level;
@@ -86,11 +86,7 @@ public class GenerationTestBase {
 
   @BeforeClass
   public static void init() throws Exception {
-    CREATED_ENV = MpsTestsSupport.initEnv(false);
-    MpsTestsSupport.makeAllInCreatedEnvironment();
-
-    Logger.getRootLogger().setLevel(Level.INFO);
-    RuntimeFlags.setTestMode(TestMode.USUAL);
+    CREATED_ENV = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @AfterClass
@@ -331,11 +327,11 @@ public class GenerationTestBase {
   }
 
   protected static Project loadProject(File projectFile) {
-    return ActiveEnvironment.getInstance().openProject(projectFile);
+    return CREATED_ENV.openProject(projectFile);
   }
 
   protected static void cleanup(final Project p) {
-    CREATED_ENV.disposeProject(p.getProjectFile());
+    CREATED_ENV.closeProject(p);
   }
 
   protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {

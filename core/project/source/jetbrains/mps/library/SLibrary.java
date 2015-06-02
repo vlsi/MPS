@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.library;
 
-import jetbrains.mps.fs.MPSDirectoryWatcher;
-import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -36,34 +35,43 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
+ * SLibrary tracks a path {@link #myFile} with modules inside.
+ * It listens to file system events and reloads modules from disk if necessary.
+ * It is actually the layer between SRepository and SModule in the repository hierarchy (as well as the Project).
+ * [The repository consists from library modules, project modules and several special modules (there are few of them)]
+ *
  * evgeny, 11/3/12
  */
-class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
+public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrary> {
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
+  @NotNull
   private final IFile myFile;
-  private final ClassLoader myParentLoader;
+  private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
-  private AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
-  private final WatchRequestor myWatchRequestor;
+  private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
 
-  SLibrary(IFile file, ClassLoader parent, boolean hidden) {
-    this.myFile = file;
-    this.myParentLoader = parent;
-    this.myHidden = hidden;
-    myWatchRequestor = new WatchRequestor() {
-      @Override
-      public String getDirectory() {
-        return SLibrary.this.myFile.getPath();
-      }
-    };
+  public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
+    myPluginClassLoader = pathDescriptor.getPluginClassLoader();
+    myFile = FileSystem.getInstance().getFileByPath(pathDescriptor.getPath());
+    myHidden = hidden;
   }
 
-  public IFile getFile() {
+  @NotNull
+  private IFile getFile() {
     return myFile;
   }
 
-  public List<ModuleHandle> getHandles() {
+  /**
+   * @return a classloader which will be the parent for all ModuleClassLoaders created for the modules in this SLibrary
+   */
+  @Nullable
+  public ClassLoader getPluginClassLoader() {
+    return myPluginClassLoader;
+  }
+
+  // TODO transfer these methods up to the {@link RepositoryReader}
+  List<ModuleHandle> getHandles() {
     List<ModuleHandle> moduleHandles = myHandles.get();
     if (moduleHandles == null) return Collections.emptyList();
     return moduleHandles;
@@ -71,26 +79,25 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
 
   void attach(boolean refreshFiles) {
     LOG.debug("Attaching " + this);
-    MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
-    update(refreshFiles);
     FileSystem.getInstance().addListener(this);
+    collectAndRegisterModules(refreshFiles);
   }
 
   void dispose() {
     LOG.debug("Disposing " + this);
-    FileSystem.getInstance().removeListener(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
+    FileSystem.getInstance().removeListener(this);
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
-    return myFile;
+    return getFile();
   }
 
   @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
-    return null;
+    return Collections.emptyList();
   }
 
   @Override
@@ -103,14 +110,12 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
       }
     }
     if (changed) {
-      update(false);
+      collectAndRegisterModules(false);
     }
   }
 
-  void update(boolean refreshFiles) {
-    ModelAccess.assertLegalWrite();
-
-    List<ModuleHandle> moduleHandles = Collections.unmodifiableList(ModulesMiner.getInstance().collectModules(myFile, refreshFiles));
+  void collectAndRegisterModules(boolean refreshFiles) {
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(myFile, refreshFiles);
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {
@@ -137,27 +142,26 @@ class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<SLibrar
     SLibrary library = (SLibrary) o;
 
     if (myHidden != library.myHidden) return false;
-    if (myParentLoader != null ? !myParentLoader.equals(library.myParentLoader) : library.myParentLoader != null) return false;
-    if (!myFile.equals(library.myFile)) return false;
+    if (myPluginClassLoader == null ? library.myPluginClassLoader != null : !myPluginClassLoader.equals(library.myPluginClassLoader)) return false;
+    return myFile.equals(library.myFile);
 
-    return true;
   }
 
   @Override
   public String toString() {
-    return "SLibrary with path " + myFile + ", classloader " + myParentLoader;
+    return "SLibrary [path " + myFile + "; plugin " + myPluginClassLoader + "]";
   }
 
   @Override
   public int hashCode() {
     int result = myFile.hashCode();
-    result = 31 * result + (myParentLoader != null ? myParentLoader.hashCode() : 0);
+    result = 31 * result + (myPluginClassLoader != null ? myPluginClassLoader.hashCode() : 0);
     result = 31 * result + (myHidden ? 1 : 0);
     return result;
   }
 
   @Override
   public int compareTo(@NotNull SLibrary another) {
-    return this.getFile().getName().compareTo(another.getFile().getName());
+    return getFile().getName().compareTo(another.getFile().getName());
   }
 }

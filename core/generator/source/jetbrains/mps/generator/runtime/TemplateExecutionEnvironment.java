@@ -40,12 +40,15 @@ import java.util.List;
  * With delegation mechanism to resort to other generator rules/templates (i.e. not part of the active generator; whether interpreted or generated),
  * {@link jetbrains.mps.generator.runtime.TemplateExecutionEnvironment} is inherently associated with an active
  * generation thread (IMPLEMENTATION NOTE: at the moment, there's one instance per thread/per root).
- *
+ * <p/>
  * It's deemed to serve as a mediator between generated and interpreted templates, although present implementation of interpreted templates not always
  * resort to facilities provided by this class.
- *
+ * <p/>
  * Unlike {@link jetbrains.mps.generator.runtime.TemplateContext}, which is call stack for particular template/rule, this class is of broader scope/life-cycle.
-
+ * <p/>
+ * This interface is not deemed to be implemented by clients. Generator subsystem provides implementation of this interface, which is an API to generator
+ * facilities. New API methods may be added as needed, depecation of existing methods shall respect generated code out there.
+ *
  * @see jetbrains.mps.generator.runtime.TemplateContext
  * Evgeny Gryaznov, 10/22/10
  */
@@ -112,6 +115,7 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
 
   Collection<SNode> applyTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, Object... arguments) throws GenerationException;
 
+  // FIXME part of NodeWeaveFacility?
   Collection<SNode> weaveTemplate(@NotNull SNodeReference templateDeclaration, @NotNull SNodeReference templateNode, @NotNull TemplateContext context, @NotNull SNode outputContextNode, Object... arguments) throws GenerationException;
 
   void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId);
@@ -139,15 +143,42 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void resolve(@NotNull ReferenceResolver2 resolver);
 
   /**
+   * @deprecated use {@link #postProcess(NodePostProcessor)} instead
    * Support for $MAP-SRC$ macro's mapping function
    * @return temporary node
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context);
 
   /**
+   * @deprecated use {@link #postProcess(NodePostProcessor)} instead
    * Support for $MAP-SRC$ macro's post-process function
    */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context);
 
+  /**
+   * Support for $MAP-SRC$ macro, to substitute and/or process nodes in output model once transformation step is over and output model is <em>almost</em> ready.
+   * As MPS documentation put it, "MAP-SRC macro is executed in the end of generator micro-step - after all node- and property-macro but before reference-macro."
+   */
+  void postProcess(@NotNull NodePostProcessor postProcessor);
+
+  /**
+   * FIXME PROVISIONAL API
+   * FIXME Consider splitting validation aspect from child addition, which could be generated.
+   * FIXME perhaps, {@link #weaveTemplate(SNodeReference, SNodeReference, TemplateContext, SNode, Object...)} could be part of NodeWeaveFacility as well?
+   * If there's use for 'validate(parent, role, child) elsewhere, shall get rid of distinct weaveNode method as it does nothing but validateChild+addChild
+   * @return utility capable of node weaving with respect to the given context
+   */
+  @NotNull
+  NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode);
+
+  /**
+   * @deprecated use {@link #weaveNode(TemplateContext, SNodeReference)} and {@link NodeWeaveFacility} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void weaveNode(SNode contextParentNode, String childRole, SNode outputNodeToWeave, SNodeReference templateNode, SNode inputNode);
 }

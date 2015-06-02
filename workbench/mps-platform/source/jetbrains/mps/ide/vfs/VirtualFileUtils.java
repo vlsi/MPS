@@ -21,14 +21,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
 public class VirtualFileUtils {
+  @Nullable
   public static VirtualFile getVirtualFile(String path) {
     return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
   }
 
+  @Nullable
   public static VirtualFile getVirtualFile(IFile file) {
     if (file instanceof IdeaFile) {
       return ((IdeaFile) file).getVirtualFile();

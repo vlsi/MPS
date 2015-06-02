@@ -33,6 +33,7 @@ public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,6 +47,7 @@ public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_JavaDoc(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

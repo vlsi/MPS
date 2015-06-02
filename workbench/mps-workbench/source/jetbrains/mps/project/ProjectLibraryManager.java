@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.openapi.application.Application;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -26,8 +23,8 @@ import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.BaseLibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -52,37 +49,24 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void initComponent() {
-    if (myProject.isDefault()) return;
-    super.initComponent();
+    if (!myProject.isDefault()) {
+      super.initComponent();
+    }
   }
 
   @Override
   public void disposeComponent() {
-    if (myProject.isDefault()) return;
-    super.disposeComponent();
+    if (!myProject.isDefault()) {
+      super.disposeComponent();
+    }
   }
 
   @Override
   public void projectOpened() {
-    loadLibraries();
   }
 
   @Override
   public void projectClosed() {
-  }
-
-  @Override
-  protected void loadLibraries() {
-    if (!ThreadUtils.isInEDT()) {
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ProjectLibraryManager.super.loadLibraries();
-        }
-      }, ModalityState.defaultModalityState());
-    } else {
-      super.loadLibraries();
-    }
   }
 
   @Override
@@ -103,5 +87,10 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     String projectUrl = myProject.getPresentableUrl();
     if (projectUrl != null) return new File(projectUrl);
     return new File(PathManager.getHomePath());
+  }
+
+  @Override
+  public String toString() {
+    return "ProjectLibraryManager " + myProject.getName();
   }
 }

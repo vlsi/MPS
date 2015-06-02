@@ -21,11 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 /**
  * Evgeny Gryaznov, Nov 29, 2010
  */
-public interface TemplateWeavingRule extends TemplateRuleWithCondition {
-
-  String getApplicableConcept();
-
-  boolean applyToInheritors();
+public interface TemplateWeavingRule extends TemplateRuleWithCondition, TemplateRuleForConcept {
 
   SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException;
 

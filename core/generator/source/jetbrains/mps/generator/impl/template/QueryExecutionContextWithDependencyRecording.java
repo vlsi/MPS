@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,7 +210,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       final DependenciesReadListener l;
       if (context.getEnvironment().getGenerator().isIncremental()) {
@@ -225,7 +225,7 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
         l = listener;
       }
       NodeReadEventsCaster.setNodesReadListener(l);
-      return wrapped.tryToApply(rule, context);
+      return wrapped.applyRule(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -242,13 +242,13 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException {
     if(rule instanceof TemplateRootMappingRuleInterpreted) {
-      return wrapped.applyRule(rule, environment, context);
+      return wrapped.applyRule(rule, context);
     }
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.applyRule(rule, environment, context);
+      return wrapped.applyRule(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -268,10 +268,21 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
+    // FIXME why there's code above not to listen when interpreted rule is applied? Should I do the same here?
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.getContextNode(rule, environment, context);
+      return wrapped.applyRule(rule, context, outputContextNode);
+    } finally {
+      NodeReadEventsCaster.removeNodesReadListener();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
+    try {
+      NodeReadEventsCaster.setNodesReadListener(listener);
+      return wrapped.getContextNode(rule, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }

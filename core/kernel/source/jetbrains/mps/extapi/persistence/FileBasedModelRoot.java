@@ -19,6 +19,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -243,10 +244,11 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   private final class PathListener implements FileSystemListener {
     private IFile path;
 
-    private PathListener(IFile path) {
+    private PathListener(@NotNull IFile path) {
       this.path = path;
     }
 
+    @NotNull
     @Override
     public IFile getFileToListen() {
       return path;

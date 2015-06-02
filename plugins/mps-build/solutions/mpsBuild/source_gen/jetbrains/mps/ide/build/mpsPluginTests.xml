@@ -119,15 +119,17 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/testSrc" />
     <mkdir dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
     <mkdir dir="${mps_home}/testbench/source_gen" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin-tests" />
-    <javac2 destdir="${build.tmp}/java/out/mps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-plugin-tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/testSrc" />
         <path location="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
         <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" />
         <path location="${mps_home}/testbench/source_gen" />
         <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
       </src>
@@ -138,6 +140,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
@@ -164,6 +167,7 @@
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -172,7 +176,7 @@
   <target name="java.compile.mps-jps-plugin-tests" depends="fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
-    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-tests" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/testSrc" />
@@ -184,6 +188,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />

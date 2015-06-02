@@ -4,7 +4,7 @@
   <!--
   <appStarter implementation="com.intellij.openapi.diff.MergeApplication"/>
   <appStarter implementation="com.intellij.ui.win.RecentProjectApplication"/>
-  -->                                                                  cd
+  -->
   <appStarter implementation="com.intellij.help.impl.KeymapGenerator"/>
   <!--MPS Patch: search in settings-->
   <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
@@ -267,6 +267,8 @@
 
     <projectService serviceInterface="com.intellij.openapi.project.ProjectReloadState"
                     serviceImplementation="com.intellij.openapi.project.impl.ProjectReloadStateImpl"/>
+
+    <welcomeFrameProvider implementation="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrameProvider"/>
 
   <!-- General -->
     <applicationConfigurable groupId="appearance" groupWeight="120" key="title.general" bundle="messages.IdeBundle" id="preferences.general"

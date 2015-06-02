@@ -13,7 +13,7 @@
       <unit at="9,0,100,0" name="jetbrains.mps.lang.constraints.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConceptConstraints_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
+      <unit at="15,0,43,0" name="jetbrains.mps.lang.constraints.behavior.ConceptConstraints_BehaviorDescriptor" />
     </file>
     <file name="ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.constraints.behavior.ConceptParameter_ReferentSearchScope_enclosingNode_BehaviorDescriptor" />

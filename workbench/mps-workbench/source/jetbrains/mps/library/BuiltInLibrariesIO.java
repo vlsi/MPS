@@ -31,6 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * TODO reuse it to read our libraries (core, workbench) from the generated xml file
+ */
 public class BuiltInLibrariesIO {
   private static final Logger LOG = LogManager.getLogger(BuiltInLibrariesIO.class);
   public static final String CONFIG_FILE_NAME = "CustomBuiltInLibraries";

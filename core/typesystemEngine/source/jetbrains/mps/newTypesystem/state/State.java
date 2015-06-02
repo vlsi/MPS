@@ -65,6 +65,7 @@ import java.util.AbstractSet;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -494,7 +495,19 @@ public class State {
 
     if (!TypesUtil.isVariable(origType)) {
       SNode subsType = new TypeSubstitution(origType, myTypeCheckingContext).substitutedType();
-      if (subsType != origType) {
+
+      if (subsType != null && !subsType.equals(origType)) {
+
+        // exhaustively apply substitutions until the operation has no effect
+        Set<SNode> seen = new HashSet<SNode>(Collections.singleton(subsType));
+        for (SNode nextSubs = null;
+             !seen.contains(nextSubs);
+             seen.add(nextSubs))
+        {
+          nextSubs = new TypeSubstitution(subsType, myTypeCheckingContext).substitutedType();
+          subsType = nextSubs;
+        }
+
         executeOperation(new SubstituteTypeOperation(origType, subsType));
         origType = subsType;
       }

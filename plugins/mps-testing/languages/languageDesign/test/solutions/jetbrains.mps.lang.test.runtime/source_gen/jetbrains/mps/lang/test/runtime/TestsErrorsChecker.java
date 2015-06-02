@@ -65,7 +65,7 @@ public class TestsErrorsChecker {
   }
 
   private Iterable<IErrorReporter> getRootErrors() {
-    Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(myRoot);
+    Set<IErrorReporter> cachedErrors = TestsErrorsChecker.modelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
@@ -86,7 +86,7 @@ public class TestsErrorsChecker {
         return true;
       }
     }));
-    modelErrorsHolder.set(myRoot, result);
+    TestsErrorsChecker.modelErrorsHolder.set(myRoot, result);
     return result;
   }
 
@@ -112,6 +112,5 @@ public class TestsErrorsChecker {
       SetSequence.fromSet(myCachedErrors).addSequence(SetSequence.fromSet(errors));
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TestsErrorsChecker.class);
 }

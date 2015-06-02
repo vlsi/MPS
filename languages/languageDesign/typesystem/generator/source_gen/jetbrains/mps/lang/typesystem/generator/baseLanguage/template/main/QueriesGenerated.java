@@ -5,7 +5,6 @@ package jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -49,7 +48,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_1175254554283(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
+    return LanguageAspect.TYPESYSTEM.is(model) && !(ListSequence.fromList(SModelOperations.roots(model, null)).isEmpty());
   }
   public static boolean baseMappingRule_Condition_1188901620278(final BaseMappingRuleContext _context) {
     return !((SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114caade477L, "jetbrains.mps.lang.typesystem.structure.ComparisonRule")) || SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"))));
@@ -1965,7 +1964,7 @@ public class QueriesGenerated {
     // The right way to accomplish would be refactoring of main and Inequations map configurations, to 
     // split generation of TS definition from TS use (i.e. everything related to rules including this script 
     // goes to former, while .type, coerce() and others go to latter) 
-    if (Language.getModelAspect(_context.getOriginalInputModel()) != LanguageAspect.TYPESYSTEM) {
+    if (!((LanguageAspect.TYPESYSTEM.is(_context.getOriginalInputModel())))) {
       return;
     }
     final SNode csInferenceMethod = SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a6a074(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));

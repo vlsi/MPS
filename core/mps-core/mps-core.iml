@@ -19,6 +19,14 @@
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="migrations-runtime" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/annotations.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
-

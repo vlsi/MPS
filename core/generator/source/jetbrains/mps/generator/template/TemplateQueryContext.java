@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.ExportsSessionContext;
-import jetbrains.mps.generator.impl.ExportsVault;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
@@ -47,28 +45,40 @@ public class TemplateQueryContext {
   private final ITemplateGenerator myGenerator;
 
   /**
+   * Context for queries when an input node is not known yet (queries of an MC or a script).
+   * @since 3.3
+   */
+  public TemplateQueryContext(@NotNull SNodeReference templateNode, @NotNull ITemplateGenerator generator) {
+    myTemplateNode = templateNode;
+    myContext = null;
+    myGenerator = generator;
+  }
+
+  /**
    * @deprecated Use  alternative with SNodeReference, without explicit input node and ITemplateGenerator
+   * Kept in 3.3 as there might be generated code in MC.isApplicable methods that call it.
    */
   @Deprecated
   @ToRemove(version = 3.1)
   public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
-    this(templateNode == null ? null : templateNode.getReference(), context == null ? new DefaultTemplateContext(inputNode) : context.subContext(inputNode), generator);
+    myTemplateNode = templateNode == null ? null : templateNode.getReference();
+    myContext = context == null ? null : context.subContext(inputNode);
+    myGenerator = generator;
   }
 
-  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context) {
+  protected TemplateQueryContext(@NotNull SNodeReference templateNode, @NotNull TemplateContext context) {
     myContext = context;
     myTemplateNode = templateNode;
     myGenerator = context.getEnvironment().getGenerator();
   }
 
   /**
-   * Cons for code migration purposes - cases when TemplateContext is 'fake' and doesn't know its environment, and, hence, its generator
+   * Cons for internal/tests use, generally subclasses shall not call it.
    */
-  @ToRemove(version = 3.1)
-  protected TemplateQueryContext(@Nullable SNodeReference templateNode, @NotNull TemplateContext context, ITemplateGenerator generator) {
-    myContext = context;
-    myTemplateNode = templateNode;
-    myGenerator = generator;
+  protected TemplateQueryContext() {
+    myContext = null;
+    myTemplateNode = null;
+    myGenerator = null;
   }
 
   /**
@@ -80,7 +90,7 @@ public class TemplateQueryContext {
 
 
   public SNode getInputNode() {
-    return myContext.getInput();
+    return myContext == null ? null : myContext.getInput();
   }
 
   public SNode getOutputNode() {

@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -22,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Reference links describe relations that do not follow the parent-child relationships pattern. Target nodes can
  * physically lie anywhere in the AST (even in a different model).
  */
-public interface SReferenceLink extends SAbstractLink, SConceptFeature {
+public interface SReferenceLink extends SAbstractLink {
   /**
    * Returns a name of this reference
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
@@ -35,14 +36,17 @@ public interface SReferenceLink extends SAbstractLink, SConceptFeature {
    * Return the concept that contains the declaration of this reference.
    * Note that if you've got some reference from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this reference.
+   * @deprecated use {@link #getOwner()} instead
    */
-  @Deprecated// use SConceptFeature.getContainingConcept()
+  @NotNull
+  @Deprecated
+  // ToRemove(version = 3.3)
   SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.
-   * FIXME explain whether null/not null
    */
+  @NotNull
   SAbstractConcept getTargetConcept();
 
   /**

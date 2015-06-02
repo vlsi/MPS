@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -35,55 +36,33 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Runtime representation of a language, extension point for various language aspects.
  * Dependency from typesystem, find usages and other language aspects is transitional, eventually (after 3.2)
- * this class shall be generic and aware of {@link jetbrains.mps.smodel.runtime.LanguageAspectDescriptor} only.
+ * this class shall be generic and aware of {@link jetbrains.mps.smodel.runtime.ILanguageAspect} only.
  * It shall not load any classes through reflection (any class-loading of generated code/aspects is responsibility of
  * generated language runtime class).
  * <p/>
  * Language runtime keeps track of aspects queried (instantiates them lazily).
  */
 public abstract class LanguageRuntime {
-  private final ConcurrentMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
-      new ConcurrentHashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
+  private final ConcurrentMap<Class<? extends ILanguageAspect>, ILanguageAspect> myAspectDescriptors =
+      new ConcurrentHashMap<Class<? extends ILanguageAspect>, ILanguageAspect>();
   private final List<LanguageRuntime> myExtendingLanguages = new ArrayList<LanguageRuntime>();
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
-
-  @ToRemove(version = 3.2)
-  private SLanguageId myLanguageId;
 
   public abstract String getNamespace();
 
   /**
-   * FIXME This method shall become abstract post 3.2, it's non-abstract for binary compatibility with legacy LanguageRuntime classes
-   * FIXME Better yet, supply a cons that takes mandatory values (id, name), rather than overriding methods in generated classes
    * @return now value of the field, <code>null</code> if not set. Generated LanguageRuntime classes shall override return value
    * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
    */
-  @ToRemove(version = 3.2)
-  public SLanguageId getId() {
-    return myLanguageId;
-  }
-
-  /**
-   * Sole purpose of this method is to supply language id for runtimes generated with 3.1 when loaded into 3.2
-   */
-  @ToRemove(version = 3.2)
-  /*package*/void setId(SLanguageId languageId) {
-    assert languageId == null || myLanguageId == null : "shall not change id once set";
-    myLanguageId = languageId;
-  }
+  public abstract SLanguageId getId();
 
   /**
    * Generated LanguageRuntime classes shall override this method
-   * FIXME This method shall become abstract post 3.2, and is non-abstract for binary compatibility of languages generated in 3.1 when loaded into 3.2
-   * FIXME see getId() for explanation why it should stay and become final, instead.
    * Denoted with @ToRemove just to ease later discovery, it's method implementation to be removed, not the method itself
    * @since 3.2
    * @return 0 now
    */
-  @ToRemove(version = 3.2)
-  public int getVersion() {
-    return -1;
-  }
+  public abstract int getVersion();
 
   public abstract Collection<? extends GeneratorRuntime> getGenerators();
 
@@ -94,17 +73,17 @@ public abstract class LanguageRuntime {
    * At the moment, sole mechanism to supply new aspect is code in generated language runtime subclass (i.e. there's no mechanism yet to
    * add aspects dynamically).
    *
-   * @see #createAspectDescriptor(Class)
-   * @see jetbrains.mps.smodel.runtime.LanguageAspectDescriptor
+   * @see #createAspect(Class)
+   * @see jetbrains.mps.smodel.runtime.ILanguageAspect
    * @param descriptorInterface identifies aspect to retrieve
-   * @param <T> subtype of {@link jetbrains.mps.smodel.runtime.LanguageAspectDescriptor}
+   * @param <T> subtype of {@link jetbrains.mps.smodel.runtime.ILanguageAspect}
    * @return instance of aspect implementation if there's one for the language
    */
-  public final <T extends LanguageAspectDescriptor> T getAspect(@NotNull Class<T> descriptorInterface) {
+  public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> descriptorInterface) {
     @SuppressWarnings("unchecked")
     T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
     if (aspectDescriptor == null) {
-      aspectDescriptor = createAspectDescriptor(descriptorInterface);
+      aspectDescriptor = createAspect(descriptorInterface);
       if (aspectDescriptor == null) {
         return null;
       }
@@ -117,6 +96,15 @@ public abstract class LanguageRuntime {
     return aspectDescriptor;
   }
 
+  //body needed for compatibility with 3.2-generated classes, remove it after 3.3
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass){
+    if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) return ((T) createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
+    return null;
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //for compatibility purposes only
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
     // FIXME Method shall become abstract past 3.3, once we change generated override methods not to delegate to this super.
     return null;

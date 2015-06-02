@@ -19,8 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
-import jetbrains.mps.generator.impl.RoleValidation.Status;
+import jetbrains.mps.generator.impl.MapSrcProcessor.NodeMapperProcessorAdapter;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
@@ -28,6 +27,8 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
+import jetbrains.mps.generator.runtime.NodePostProcessor;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
@@ -42,7 +43,6 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -51,6 +51,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -164,7 +165,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Nullable
   @Override
   public Collection<SNode> trySwitch(SNodeReference _switch, TemplateContext context) throws GenerationException {
-    FastRuleFinder rf = generator.getRuleManager().getRuleFinder(_switch);
+    FastRuleFinder rf = generator.getRuleManager().getSwitchRules(_switch);
     Collection<SNode> outputNodes = tryToReduce(rf, context);
     if (outputNodes != null) {
       if (outputNodes.size() == 1 && context.getInputName() != null) {
@@ -250,18 +251,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   /*
-    *  returns temporary node
-    */
+   *  returns temporary node
+   */
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
-    generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
+    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(mapper.getTemplateNode(), childToReplaceLater, context, mapper, null));
     return childToReplaceLater;
   }
 
   @Override
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
-    generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, getQueryExecutor());
+    // XXX using reference to output node instead the one to macro/template model is a hack.
+    // This method is compatibility code, for generator code generated in MPS 3.2
+    SNodeReference templateNode = outputNode.getReference();
+    generator.getDelayedChanges().add(new NodeMapperProcessorAdapter(templateNode, outputNode, context, null, processor));
+  }
+
+  @Override
+  public void postProcess(@NotNull NodePostProcessor postProcessor) {
+    generator.getDelayedChanges().add(postProcessor);
   }
 
   @Override
@@ -269,30 +278,14 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     if (outputNodeToWeave == null) {
       return;
     }
+    final SContainmentLink role = ((ConceptMetaInfoConverter) contextParentNode.getConcept()).convertAggregation(childRole);
+    weaveNode(new DefaultTemplateContext(this, inputNode, null), templateNode).weave(contextParentNode, role, outputNodeToWeave);
+  }
 
-    TracingUtil.fillOriginalNode(inputNode, outputNodeToWeave, false);
-
-    // check child
-    RoleValidator v = generator.getChildRoleValidator(contextParentNode, childRole);
-    Status status = v.validate(outputNodeToWeave);
-    if (status != null) {
-      getLogger().warning(templateNode, status.getMessage("weave node"), status.describe(
-          GeneratorUtil.describe(inputNode, "input"), GeneratorUtil.describe(contextParentNode, "context parent node")));
-      // spit out the warning, but try to add anyway
-      contextParentNode.addChild(childRole, outputNodeToWeave);
-    } else {
-      // add
-      if (v.isMultipleSource()) {
-        contextParentNode.addChild(childRole, outputNodeToWeave);
-      } else {
-        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);
-        if (oldChild != null) {
-          // if singular child then don't add more that 1 child
-          contextParentNode.removeChild(oldChild);
-        }
-        contextParentNode.addChild(childRole, outputNodeToWeave);
-      }
-    }
+  @NotNull
+  @Override
+  public NodeWeaveFacility weaveNode(@NotNull TemplateContext context, @NotNull SNodeReference templateNode) {
+    return new NodeWeaveSupport(context, templateNode, generator);
   }
 
   // Internal API, perhaps, shall be part of ExecutionEnvironmentInternal iface
@@ -303,7 +296,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Nullable
   Collection<SNode> tryToReduce(@NotNull SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    FastRuleFinder rf = generator.getRuleManager().getRuleFinder();
+    FastRuleFinder rf = generator.getRuleManager().getReductionRules();
     Collection<SNode> outputNodes = tryToReduce(rf, new DefaultTemplateContext(this, inputNode, null));
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
@@ -329,11 +322,11 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
    * returns null if no reductions found
    */
   @Nullable
-  Collection<SNode> tryToReduce(FastRuleFinder ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
+  Collection<SNode> tryToReduce(FastRuleFinder<TemplateReductionRule> ruleFinder, @NotNull TemplateContext context) throws GenerationFailureException, GenerationCanceledException {
     final SNode inputNode = context.getInput();
     TemplateReductionRule reductionRule = null;
     // find rule
-    TemplateReductionRule[] conceptRules = ruleFinder.findReductionRules(inputNode);
+    List<TemplateReductionRule> conceptRules = ruleFinder.findReductionRules(inputNode);
     if (conceptRules == null) {
       return null;
     }
@@ -349,7 +342,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
           }
           try {
             myReductionTrack.enter(inputNode, rule);
-            Collection<SNode> outputNodes = getQueryExecutor().tryToApply(rule, context);
+            Collection<SNode> outputNodes = getQueryExecutor().applyRule(rule, context);
             if (outputNodes != null) {
               SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());

@@ -7,7 +7,7 @@
   </languages>
   <imports>
     <import index="wfc9" ref="r:6ea8585f-7b0c-4c4e-a3ae-330a49f753b2(jetbrains.mps.ide.java.tests.utility)" />
-    <import index="a8jz" ref="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)" />
+    <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -78,8 +78,8 @@
             <property role="TrG5h" value="homePath" />
             <node concept="17QB3L" id="70HT6wFscuD" role="1tU5fm" />
             <node concept="2YIFZM" id="70HT6wFscuu" role="33vP2m">
-              <ref role="1Pybhc" to="a8jz:4937uxYQn6D" resolve="PathManager" />
-              <ref role="37wK5l" to="a8jz:4937uxYQn9c" resolve="getHomePath" />
+              <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
+              <ref role="37wK5l" to="v9gs:4937uxYQn9c" resolve="getHomePath" />
             </node>
           </node>
         </node>

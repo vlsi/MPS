@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
@@ -109,8 +110,8 @@ public interface ModelAccess {
    * @see #runWriteAction(Runnable)
    * @param listener listens to write action
    */
-  public void addWriteActionListener(WriteActionListener listener);
+  public void addWriteActionListener(@NotNull WriteActionListener listener);
 
-  public void removeWriteActionListener(WriteActionListener listener);
+  public void removeWriteActionListener(@NotNull WriteActionListener listener);
 
 }

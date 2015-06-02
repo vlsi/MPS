@@ -205,6 +205,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.aspectDescriptor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.classLike.jar" />
@@ -306,7 +307,7 @@
   
   <target name="java.compile.vcs-core" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs-core" />
-    <javac2 destdir="${build.tmp}/java/out/vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/vcs-core" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/plugins/vcs-core/core/source_gen" />
       <classpath>
@@ -334,7 +335,7 @@
   
   <target name="java.compile.vcs" depends="java.compile.vcs-core, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs" />
-    <javac2 destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/vcs" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/vcs/source_gen" />
@@ -348,6 +349,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
@@ -380,7 +382,7 @@
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
@@ -394,6 +396,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -419,7 +422,7 @@
   <target name="java.compile.jetbrains.mps.vcs.mergehints" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
@@ -433,6 +436,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -457,7 +461,7 @@
   <target name="java.compile.jetbrains.mps.vcs.mergehints#7313573869697832621" depends="java.compile.jetbrains.mps.vcs.mergehints, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/mergehints/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints#7313573869697832621" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints#7313573869697832621" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints#7313573869697832621" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/mergehints/generator/source_gen" />
@@ -471,6 +475,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

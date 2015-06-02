@@ -26,6 +26,11 @@ public class Library implements Cloneable {
     myName = name;
   }
 
+  public Library(String name, String path) {
+    myName = name;
+    myPath = path;
+  }
+
   public void setName(String name) {
     myName = name;
   }
@@ -43,14 +48,17 @@ public class Library implements Cloneable {
   }
 
   public String toString() {
-    return myName;
+    return myName + " [" + myPath + "]";
   }
 
-  public Library copy() {
+  @Override
+  public Library clone() {
+    Library clone;
     try {
-      return (Library) super.clone();
+      clone = (Library) super.clone();
     } catch (CloneNotSupportedException e) {
-      throw new RuntimeException(e);
+      return new Library(myName, myPath);
     }
+    return clone;
   }
 }

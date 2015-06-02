@@ -39,14 +39,9 @@ import jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.make.MPSCompilationResult;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -83,6 +78,7 @@ public class GenTestWorker extends GeneratorWorker {
   private Map<String, String> path2tmp = MapSequence.fromMap(new HashMap<String, String>());
   private String tmpPath;
   private GenTestWorker.MyReporter myReporter = new GenTestWorker.MyReporter();
+
   public GenTestWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
     myBuildServerMessageFormat = getBuildServerMessageFormat();
@@ -96,6 +92,7 @@ public class GenTestWorker extends GeneratorWorker {
     }
     this.tmpPath = tmpDir.getAbsolutePath();
   }
+
   @Override
   public void work() {
     myReporter.init();
@@ -110,6 +107,7 @@ public class GenTestWorker extends GeneratorWorker {
     }
 
     Environment environment = new GeneratorWorker.MyEnvironment(config);
+    environment.init();
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
 
     setupEnvironment();
@@ -223,16 +221,11 @@ public class GenTestWorker extends GeneratorWorker {
       myErrors.add(e.toString());
     }
   }
-  private void loadAndMake(Project project, final MpsWorker.ObjectsToProcess go) {
-    project.getModelAccess().runWriteAction(new Runnable() {
-      @Override
+  private void loadAndMake(final Project project, final MpsWorker.ObjectsToProcess go) {
+    ModelAccess access = project.getRepository().getModelAccess();
+    access.runReadAction(new Runnable() {
       public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
-    ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
-      public MPSCompilationResult compute() {
-        return new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
+        new ModuleMaker().make(go.getModules(), new EmptyProgressMonitor() {
           @Override
           public void step(String text) {
             // silently 
@@ -244,13 +237,10 @@ public class GenTestWorker extends GeneratorWorker {
         }, myJavaCompilerOptions);
       }
     });
-    // load classes 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    access.runWriteAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().reloadModules(go.getModules());
-
         // the following updates stub models that could change due to the compilation happened (webr, 3.0 migration case) 
-        for (SModule m : MPSModuleRepository.getInstance().getModules()) {
+        for (SModule m : project.getRepository().getModules()) {
           if (!((m instanceof AbstractModule))) {
             continue;
           }
@@ -281,7 +271,7 @@ public class GenTestWorker extends GeneratorWorker {
   }
   private Iterable<IResource> collectResources(Project project, final Iterable<SModule> modules, final Iterable<SModel> models) {
     final Wrappers._T<Iterable<SModel>> result = new Wrappers._T<Iterable<SModel>>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule m) {

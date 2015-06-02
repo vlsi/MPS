@@ -22,10 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * Evgeny Gryaznov, 12/7/10
  */
-public interface TemplateRuleWithCondition {
-
-  @NotNull
-  SNodeReference getRuleNode();
+public interface TemplateRuleWithCondition extends TemplateRule {
 
   /**
    * @deprecated use single-arg alternative {@link #isApplicable(TemplateContext)}

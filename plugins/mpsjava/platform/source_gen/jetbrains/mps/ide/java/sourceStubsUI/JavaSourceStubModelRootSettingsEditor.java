@@ -42,7 +42,7 @@ public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsE
         if (dir == null) {
           return;
         }
-        myPath = dir.getAbsolutePath();
+        myPath = dir.getPath();
       }
     });
   }

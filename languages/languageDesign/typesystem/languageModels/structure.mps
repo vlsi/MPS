@@ -1896,6 +1896,7 @@
     <property role="TrG5h" value="SubstituteTypeRule" />
     <property role="34LRSv" value="Substitute Type Rule" />
     <property role="19KtqR" value="true" />
+    <property role="MwhBj" value="${module}/icons/substitute.png" />
     <ref role="1TJDcQ" node="h5YuPLN" resolve="AbstractRule" />
     <node concept="1TJgyj" id="2EOQLmJ9HZ$" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

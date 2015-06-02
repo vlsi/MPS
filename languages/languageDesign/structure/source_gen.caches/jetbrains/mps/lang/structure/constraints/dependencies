@@ -24,6 +24,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.constraints.ConceptDeclarationExtendedConceptSearchScope" file="ConceptDeclarationExtendedConceptSearchScope.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="java.lang.Override" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
     <classNode dependClassName="jetbrains.mps.scope.FilteringScope" />
     <classNode dependClassName="jetbrains.mps.lang.structure.constraints.ConceptsScope" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode extendsClassName="jetbrains.mps.scope.DelegatingScope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_Constraints" file="ConceptDeclaration_Constraints.java">

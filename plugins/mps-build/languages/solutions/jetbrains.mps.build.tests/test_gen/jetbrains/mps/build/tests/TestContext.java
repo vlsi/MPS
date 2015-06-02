@@ -30,7 +30,7 @@ public class TestContext extends Context {
     private Map<Object, Object> map = new HashMap<Object, Object>();
     private SModel model;
     public TestGenContext(SModel model) {
-      super(null, null, null, null);
+      super();
       this.model = model;
     }
     @Override

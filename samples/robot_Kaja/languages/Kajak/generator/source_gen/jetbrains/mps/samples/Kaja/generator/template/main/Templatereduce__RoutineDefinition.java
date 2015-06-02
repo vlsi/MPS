@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 
 @Generated
 public class Templatereduce__RoutineDefinition extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -86,13 +87,13 @@ public class Templatereduce__RoutineDefinition extends TemplateDeclarationBase i
   }
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     Collection<SNode> tlistpart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = weaveTfConst_18musb_a0b0e;
+    SNodeReference weaveTf0 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701223");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      environment.weaveNode(outputContextNode, "member", nodeToWeave, weaveTf0, context.getInput());
+      weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"), nodeToWeave);
     }
     return tlistpart0;
   }
   private static SNodePointer propertyMacro_18musb_c0a0c0b0d0c = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701224");
   private static SNodePointer copySrcMacro_18musb_b0a0c0b0b0e0d0c = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039907031");
-  private static SNodePointer weaveTfConst_18musb_a0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039701223");
 }

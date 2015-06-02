@@ -21,27 +21,36 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.ComputeRunnable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.ModelUtil;
+import jetbrains.mps.workbench.FileSystemModelHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 //todo throw away when there's per-node persistence or include into MPSCore.xml when migrated to Idea ProjectView
 public class ProjectViewSelectInProvider implements ApplicationComponent {
-  public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodeReference node) {
-    VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+
+  public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodeReference nodeRef) {
+    final SRepository repo = p.getRepository();
+    ComputeRunnable<VirtualFile> cr = new ComputeRunnable<VirtualFile>(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
+        if (nodeRef == null) return null;
+        SNode node = nodeRef.resolve(repo);
         if (node == null) return null;
-        SNode n = node.resolve(MPSModuleRepository.getInstance());
-        return n == null ? null : ModelUtil.getFileByModel(n.getModel());
+        SModel model = node.getModel();
+        if (model == null) return null;
+        return new FileSystemModelHelper(model).getVirtualFile();
       }
     });
-    if (modelFile == null) {return null;}
+    repo.getModelAccess().runReadAction(cr);
+    VirtualFile modelFile = cr.getResult();
+    if (modelFile == null) return null;
+
     return new VirtualFileSelectInContext(ProjectHelper.toIdeaProject(p), modelFile);
   }
 

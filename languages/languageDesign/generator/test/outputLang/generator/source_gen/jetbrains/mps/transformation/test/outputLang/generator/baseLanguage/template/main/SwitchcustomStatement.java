@@ -50,7 +50,7 @@ public class SwitchcustomStatement extends TemplateSwitchBase implements Templat
       return QueriesGenerated.baseMappingRule_Condition_8371596541809088659(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
       try {
@@ -69,7 +69,7 @@ public class SwitchcustomStatement extends TemplateSwitchBase implements Templat
       return QueriesGenerated.baseMappingRule_Condition_8371596541809090605(new ReductionRuleQueryContext(context, getRuleNode()));
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
       try {

@@ -35,8 +35,9 @@ public final class RuntimeFlags {
     return ourTestMode;
   }
 
+  // not lightweight test run ("in-process")
   public static boolean isTestMode() {
-    return ourTestMode == TestMode.USUAL;
+    return ourTestMode.equals(TestMode.USUAL) || ourTestMode.equals(TestMode.SUITE);
   }
 
   public static void setTestMode(TestMode testMode) {

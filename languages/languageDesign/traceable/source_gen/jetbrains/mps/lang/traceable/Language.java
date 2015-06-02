@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.lang.traceable.plugin.FacetAspectDescriptor;
@@ -39,16 +39,18 @@ public class Language extends LanguageRuntime {
     return null;
   }
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    if (descriptorClass == BehaviorAspectDescriptor.class) {
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == BehaviorAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor();
     }
-    if (descriptorClass == MakeAspectDescriptor.class) {
+    if (aspectClass == MakeAspectDescriptor.class) {
       return (T) new FacetAspectDescriptor();
     }
-    if (descriptorClass == StructureAspectDescriptor.class) {
+    if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.traceable.structure.StructureAspectDescriptor();
     }
-    return super.createAspectDescriptor(descriptorClass);
+
+
+    return super.createAspect(aspectClass);
   }
 }

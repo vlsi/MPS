@@ -33,11 +33,13 @@ public class FileSystemImpl extends FileSystem {
     myFileSystemProvider = fileSystemProvider;
   }
 
+  @NotNull
   @Override
   public FileSystemProvider getFileSystemProvider() {
     return myFileSystemProvider;
   }
 
+  @NotNull
   @Override
   public IFile getFileByPath(@NotNull String path) {
     return myFileSystemProvider.getFile(path.replace("//", "/").replace("\\\\", "\\"));

@@ -25,6 +25,7 @@
       <modulePath path="$PROJECT_DIR$/core/tool/ant/jetbrains.mps.tool.ant.msd" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/core/tool/builder/jetbrains.mps.tool.builder.msd" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/core/tool/common/jetbrains.mps.tool.common.msd" folder="core.tool" />
+      <modulePath path="$PROJECT_DIR$/core/tool/environment/jetbrains.mps.core.tool.environment.msd" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core.aspects.typesystem" />
       <modulePath path="$PROJECT_DIR$/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.aspects.editor" />
@@ -81,6 +82,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/analyzers/jetbrains.mps.lang.dataFlow.analyzers.mpl" folder="core.aspects.dataflow" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/aspectDescriptor/jetbrains.mps.lang.aspectDescriptor.mpl" folder="core.aspects.aspect" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/behavior/languages/behavior/jetbrains.mps.lang.behavior.mpl" folder="core.aspects.behavior" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/behavior/languages/testlang/jetbrains.mps.lang.behavior.test.mpl" folder="core.aspects.behavior" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/checkedName/jetbrains.mps.lang.checkedName.mpl" folder="core.languages" />
@@ -199,6 +201,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" folder="platform.build" />
@@ -225,6 +228,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/smodelTests/jetbrains.mps.lang.smodelTests.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/jetbrains.mps.lang.test.mpl" folder="core.languages.test" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/jetbrains.mps.lang.test.matcher.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/jetbrains.mps.lang.test.util.msd" folder="core.languages.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" folder="core.languages.test" />

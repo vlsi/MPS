@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.actions.descriptor.AbstractActionAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
@@ -46,25 +46,27 @@ public class Language extends LanguageRuntime {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "fba22dff-95de-42ab-9335-5963e5f5fc3f(jetbrains.mps.lang.resources#8974276187400288250)"));
   }
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    if (descriptorClass == ActionAspectDescriptor.class) {
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == ActionAspectDescriptor.class) {
       return (T) new AbstractActionAspectDescriptor() {};
     }
-    if (descriptorClass == BehaviorAspectDescriptor.class) {
+    if (aspectClass == BehaviorAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.resources.behavior.BehaviorAspectDescriptor();
     }
-    if (descriptorClass == EditorAspectDescriptor.class) {
+    if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (descriptorClass == MakeAspectDescriptor.class) {
+    if (aspectClass == MakeAspectDescriptor.class) {
       return (T) new FacetAspectDescriptor();
     }
-    if (descriptorClass == StructureAspectDescriptor.class) {
+    if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.resources.structure.StructureAspectDescriptor();
     }
-    if (descriptorClass == IHelginsDescriptor.class) {
+    if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-    return super.createAspectDescriptor(descriptorClass);
+
+
+    return super.createAspect(aspectClass);
   }
 }

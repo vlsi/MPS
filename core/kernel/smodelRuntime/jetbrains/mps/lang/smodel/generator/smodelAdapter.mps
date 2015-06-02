@@ -10324,7 +10324,7 @@
                     <ref role="3cqZAo" node="5IkW5anFewz" resolve="role" />
                   </node>
                   <node concept="liA8E" id="3oBWDt4Z37v" role="2OqNvi">
-                    <ref role="37wK5l" to="t3eg:~SContainmentLink.getContainingConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getContainingConcept" />
+                    <ref role="37wK5l" to="t3eg:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
                   </node>
                 </node>
               </node>
@@ -11480,7 +11480,7 @@
               <ref role="3cqZAo" node="MEgg0G$6JN" resolve="containmentLink" />
             </node>
             <node concept="liA8E" id="3oBWDt4ZKRo" role="2OqNvi">
-              <ref role="37wK5l" to="t3eg:~SContainmentLink.getRoleName():java.lang.String" resolve="getRoleName" />
+              <ref role="37wK5l" to="t3eg:~SConceptFeature.getName():java.lang.String" resolve="getName" />
             </node>
           </node>
         </node>
@@ -16288,7 +16288,7 @@
                       <ref role="3cqZAo" node="5zEkxuKhq5d" resolve="myLink" />
                     </node>
                     <node concept="liA8E" id="1hGbYg8P8LL" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SReferenceLink.getContainingConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getContainingConcept" />
+                      <ref role="37wK5l" to="t3eg:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
                     </node>
                   </node>
                   <node concept="liA8E" id="1hGbYg8P8Lm" role="2OqNvi">
@@ -16347,7 +16347,7 @@
                         <ref role="3cqZAo" node="5zEkxuKhq5d" resolve="myLink" />
                       </node>
                       <node concept="liA8E" id="1hGbYg8P8Ml" role="2OqNvi">
-                        <ref role="37wK5l" to="t3eg:~SReferenceLink.getRoleName():java.lang.String" resolve="getRoleName" />
+                        <ref role="37wK5l" to="t3eg:~SConceptFeature.getName():java.lang.String" resolve="getName" />
                       </node>
                     </node>
                   </node>
@@ -16627,7 +16627,7 @@
                       <ref role="3cqZAo" node="5zEkxuKhq7w" resolve="myProperty" />
                     </node>
                     <node concept="liA8E" id="1hGbYg8P6ia" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SProperty.getContainingConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getContainingConcept" />
+                      <ref role="37wK5l" to="t3eg:~SConceptFeature.getOwner():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getOwner" />
                     </node>
                   </node>
                   <node concept="liA8E" id="1hGbYg8P6hJ" role="2OqNvi">

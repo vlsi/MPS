@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,19 +23,16 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * Evgeny Gryaznov, 11/15/10
  */
 public class TemplateQueryContextWithRule extends TemplateQueryContext {
-  private final SNodeReference myRulePointer;
-
   /**
    * @since 3.1
    */
   protected TemplateQueryContextWithRule(@NotNull TemplateContext templateContext, @NotNull SNodeReference ruleNode) {
-    super(null, templateContext);
-    myRulePointer = ruleNode;
+    super(ruleNode, templateContext);
   }
 
   @Override
   protected SNodeReference getRuleNode() {
-    return myRulePointer;
+    return getTemplateNodeRef();
   }
 
 }

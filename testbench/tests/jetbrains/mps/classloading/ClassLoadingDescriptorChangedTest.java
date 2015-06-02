@@ -19,10 +19,12 @@ import jetbrains.mps.WorkbenchMpsTest;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.PathManager;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -31,6 +33,21 @@ import static org.junit.Assert.assertTrue;
 
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
 
+  private Project myProject;
+
+  @Before
+  public void beforeTest() {
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    String homePath = PathManager.getHomePath();
+    assert homePath != null;
+    myProject = openProject(new File(homePath));
+  }
+
+  @After
+  public void afterTest() {
+    closeProject(myProject);
+  }
+
   /**
    * We have languages L1 and L2. They have generators G1 and G2, correspondingly. G1 has a dependency on L2 and G2.
    * The test asserts, that after reloading file descriptor of the language L2 we are still able to get the QueriesGenerated
@@ -38,21 +55,19 @@ public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
    */
   @Test
   public void testClassLoadingDescriptorChanged() {
-    final Project project = openProject(new File(jetbrains.mps.tool.builder.util.PathManager.getHomePath()));
-    final Language language1 = ProjectTestsSupport.getLanguage("L1");
+    final Language language1 = getLanguage("L1");
     assert language1 != null;
-    final Language language2 = ProjectTestsSupport.getLanguage("L2");
+    final Language language2 = getLanguage("L2");
     assert language2 != null;
     Generator generator1 = language1.getGenerators().iterator().next();
     performCheck(generator1);
     reloadAfterDescriptorChange(language2);
     generator1 = language1.getGenerators().iterator().next();
     performCheck(generator1);
-    disposeProject(project);
   }
 
   private void reloadAfterDescriptorChange(final Language language2) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         language2.reloadAfterDescriptorChange();

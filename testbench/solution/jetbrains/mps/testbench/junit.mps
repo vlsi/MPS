@@ -30,6 +30,7 @@
       </concept>
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
       </concept>
@@ -1248,6 +1249,7 @@
       </node>
       <node concept="3Tm6S6" id="4_TMdeLkPqC" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5b$ra" role="jymVt" />
     <node concept="3clFbW" id="4_TMdeLkPqD" role="jymVt">
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
@@ -1268,6 +1270,7 @@
       </node>
       <node concept="3Tm1VV" id="4_TMdeLkPqI" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bzMt" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPqJ" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <property role="od$2w" value="false" />
@@ -1276,6 +1279,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPqL" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPqM" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bzir" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPqN" role="jymVt">
       <property role="TrG5h" value="initCaches" />
       <property role="od$2w" value="false" />
@@ -1345,6 +1349,7 @@
       <node concept="3Tm6S6" id="4_TMdeLkPrx" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPry" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5byMq" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPrz" role="jymVt">
       <property role="TrG5h" value="disposeCaches" />
       <property role="od$2w" value="false" />
@@ -1388,6 +1393,7 @@
       <node concept="3Tm6S6" id="4_TMdeLkPrV" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPrW" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5byiq" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPrX" role="jymVt">
       <property role="TrG5h" value="fireTestStarted" />
       <property role="od$2w" value="false" />
@@ -1456,6 +1462,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPsn" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPso" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bxMr" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPsp" role="jymVt">
       <property role="TrG5h" value="fireTestFinished" />
       <property role="od$2w" value="false" />
@@ -1521,6 +1528,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPsM" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPsN" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bxit" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPsO" role="jymVt">
       <property role="TrG5h" value="fireTestFailure" />
       <property role="od$2w" value="false" />
@@ -1569,6 +1577,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPt4" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPt5" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bwMw" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPt6" role="jymVt">
       <property role="TrG5h" value="fireTestAssumptionFailed" />
       <property role="od$2w" value="false" />
@@ -1617,6 +1626,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPtm" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPtn" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bwi$" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPto" role="jymVt">
       <property role="TrG5h" value="fireTestIgnored" />
       <property role="od$2w" value="false" />
@@ -1660,6 +1670,7 @@
       <node concept="3Tm1VV" id="4_TMdeLkPtB" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPtC" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bvOA" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPtD" role="jymVt">
       <property role="TrG5h" value="beforeTest" />
       <property role="od$2w" value="false" />
@@ -1859,6 +1870,7 @@
       <node concept="3Tm6S6" id="4_TMdeLkPuT" role="1B3o_S" />
       <node concept="3cqZAl" id="4_TMdeLkPuU" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="4YCIFw5bvku" role="jymVt" />
     <node concept="3clFb_" id="4_TMdeLkPuV" role="jymVt">
       <property role="TrG5h" value="afterTest" />
       <property role="od$2w" value="false" />

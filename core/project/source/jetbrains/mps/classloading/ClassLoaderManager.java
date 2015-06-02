@@ -443,6 +443,7 @@ public class ClassLoaderManager implements CoreComponent {
    * @deprecated the module is reloaded automatically on events like moduleChanged, dependenciesChanged, etc.
    * [!] no need to call this method directly anymore
    *
+   * TODO: add listening to class files updating and remove explicit call from ModuleMaker and the others
    * FIXME: remove TempModule: it should not be processed by CLManager. It maintains only repository modules!
    */
   @Deprecated

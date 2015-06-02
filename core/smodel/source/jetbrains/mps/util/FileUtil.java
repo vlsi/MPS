@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -528,7 +529,8 @@ public class FileUtil {
     return null;
   }
 
-  public static String stripLastSlashes(String path) {
+  @Nullable
+  public static String stripLastSlashes(@Nullable String path) {
     if (path == null) return null;
 
     while (path.endsWith("/") || path.endsWith("\\")) {

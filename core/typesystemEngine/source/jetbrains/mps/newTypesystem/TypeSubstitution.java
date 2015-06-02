@@ -79,6 +79,8 @@ public class TypeSubstitution {
     ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(origNode));
     nodesToTest.add(origNode);
 
+    Collections.reverse(nodesToTest);
+
     return nodesToTest;
   }
 

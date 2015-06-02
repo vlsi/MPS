@@ -53,28 +53,32 @@
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
         <version codename="MPS" major="3" minor="3" eap="true" update-channel="MPS33" />
-        <build date="${date}" number="${build.number}" />
-        <logo url="/splash.png" textcolor="002387" />
+        <build number="${build.number}" date="${date}" />
+        <logo url="/splash.png" textcolor="002387" progressColor="FDA916" progressY="262" />
         <about url="/mpsAbout.png" />
-        <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" />
+        <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size12="/MPS_13.png" size128="/MPS_128.png" ico="/MPS.ico" />
         <dialogs-image url="/dialogImage.png" />
         <package code="code" />
         <names product="MPS" fullname="JetBrains MPS" />
+        <welcome-screen logo-url="/MPS_32.png" caption-url="/MPS_welcomeScreen.png" slogan-url="/mpsSlogan.png" />
         <update-urls check="http://www.jetbrains.com/mps/update.xml" update="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
-        <welcome-screen caption-url="/mpsWelcomeCaption.png" slogan-url="/mpsSlogan.png" logo-url="/MPS_32.png" />
         <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/" />
         <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" />
+        <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS" />
       </component>
     </echoxml>
     <jar destfile="${build.layout}/lib/branding.jar">
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_32.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_32.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/splash.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
-      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/dialogImage.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_32.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_128.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS.ico" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_13.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_welcomeScreen.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/mpsSlogan.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/MPS_32.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/splash.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/mpsAbout.png" />
+      <fileset file="${basedir}/workbench/mps-icons/source/dialogImage.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/MPS-src.zip" />

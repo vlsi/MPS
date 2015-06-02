@@ -40,14 +40,11 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
     <import index="hdhb" ref="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)" />
-    <import index="hznm" ref="r:dad1ea7d-da9c-4176-99bb-37db4fbb1112(jetbrains.mps.ide.platform.environment)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="rfkh" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.bookmark(jetbrains.mps.ide.bookmark@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="joqk" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.mock(com.intellij.mock@java_stub)" />
-    <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="auou" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(com.intellij.openapi@java_stub)" />
-    <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
     <import index="gwo9" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.idea(com.intellij.idea@java_stub)" />
     <import index="mo84" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.extensions(com.intellij.openapi.extensions@java_stub)" />
     <import index="jrbx" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
@@ -62,6 +59,7 @@
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
     <import index="xa8l" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.diff(MPS.IDEA/com.intellij.openapi.diff@java_stub)" />
+    <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3034,8 +3032,8 @@
       <property role="TrG5h" value="ENV" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2ysqId120Cs" role="1B3o_S" />
-      <node concept="3uibUv" id="24dvNo_7KII" role="1tU5fm">
-        <ref role="3uigEE" to="hznm:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+      <node concept="3uibUv" id="4P_zM4FAvAG" role="1tU5fm">
+        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
     </node>
     <node concept="3Tm1VV" id="6m1MVDkVd2a" role="1B3o_S" />
@@ -3291,28 +3289,17 @@
         </node>
         <node concept="3clFbF" id="2ysqId125ai" role="3cqZAp">
           <node concept="37vLTI" id="2ysqId125iC" role="3clFbG">
-            <node concept="2ShNRf" id="2ysqId125VY" role="37vLTx">
-              <node concept="1pGfFk" id="2ysqId12uoQ" role="2ShVmc">
-                <ref role="37wK5l" to="hznm:6rx4kZDkRjb" resolve="IdeaEnvironment" />
-                <node concept="2YIFZM" id="2ysqId12vhm" role="37wK5m">
-                  <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultEnvironment" />
-                  <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
-                </node>
+            <node concept="2YIFZM" id="6LlhC3WKXaV" role="37vLTx">
+              <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
+              <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
+              <node concept="2YIFZM" id="6LlhC3WKXaX" role="37wK5m">
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
               </node>
             </node>
             <node concept="10M0yZ" id="7Psq8BycfpL" role="37vLTJ">
               <ref role="3cqZAo" node="2ysqId120Ld" resolve="ENV" />
               <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="53lh2wVkuX5" role="3cqZAp">
-          <node concept="2YIFZM" id="3w8hPtGBBg4" role="3clFbG">
-            <ref role="37wK5l" to="1p1s:~RuntimeFlags.setTestMode(jetbrains.mps.TestMode):void" resolve="setTestMode" />
-            <ref role="1Pybhc" to="1p1s:~RuntimeFlags" resolve="RuntimeFlags" />
-            <node concept="Rm8GO" id="3w8hPtGBBT6" role="37wK5m">
-              <ref role="Rm8GQ" to="1p1s:~TestMode.USUAL" resolve="USUAL" />
-              <ref role="1Px2BO" to="1p1s:~TestMode" resolve="TestMode" />
             </node>
           </node>
         </node>

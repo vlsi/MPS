@@ -1,54 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,24,0" name="jetbrains.mps.lang.descriptor.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="GeneratorInternal_Aspect_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.descriptor.behavior.GeneratorInternal_Aspect_BehaviorDescriptor" />
     </file>
     <file name="LanguageDescriptor_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_BehaviorDescriptor" />
-    </file>
-  </root>
-  <root nodeRef="r:37f1d471-dcaa-4655-ad67-56eeecf8ca2c(jetbrains.mps.lang.descriptor.behavior)/3064888218669919289">
-    <file name="LanguageDescriptor_Behavior.java">
-      <node id="6918927246412048183" at="24,152,25,367" concept="2" />
-      <node id="3064888218669923945" at="25,367,26,85" concept="2" />
-      <node id="3064888218669923959" at="27,20,28,570" concept="0" />
-      <node id="3064888218669923973" at="28,570,29,18" concept="3" />
-      <node id="3064888218669923978" at="30,5,31,38" concept="2" />
-      <node id="3064888218669923987" at="32,21,33,18" concept="3" />
-      <node id="3064888218669923992" at="34,5,35,18" concept="2" />
-      <node id="3064888218669924000" at="36,20,37,268" concept="0" />
-      <node id="3064888218669924012" at="37,268,38,18" concept="3" />
-      <node id="3064888218669924017" at="39,5,40,76" concept="3" />
-      <node id="3064888218669919289" at="22,0,24,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3064888218669923985" at="31,38,34,5" concept="1" />
-      <node id="3064888218669923957" at="26,85,30,5" concept="1" />
-      <node id="3064888218669923998" at="35,18,39,5" concept="1" />
-      <node id="3064888218669919289" at="24,0,42,0" concept="4" trace="call_isLanguageAspectEmpty_3064888218669923940#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/LanguageAspect;Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-      <scope id="3064888218669919291" at="22,43,22,43" />
-      <scope id="3064888218669923986" at="32,21,33,18" />
-      <scope id="3064888218669919289" at="22,0,24,0">
-        <var name="thisNode" id="3064888218669919289" />
-      </scope>
-      <scope id="3064888218669923958" at="27,20,29,18" />
-      <scope id="3064888218669923999" at="36,20,38,18" />
-      <scope id="3064888218669923943" at="24,152,40,76">
-        <var name="l" id="3064888218669923946" />
-        <var name="m" id="3064888218669923993" />
-        <var name="ref" id="6918927246412048184" />
-        <var name="ts" id="3064888218669923979" />
-      </scope>
-      <scope id="3064888218669919289" at="24,0,42,0">
-        <var name="genContext" id="3064888218669924026" />
-        <var name="languageAspect" id="3064888218669924034" />
-        <var name="thisNode" id="3064888218669919289" />
-      </scope>
-      <unit id="3064888218669919289" at="21,0,43,0" name="jetbrains.mps.lang.descriptor.behavior.LanguageDescriptor_Behavior" />
     </file>
   </root>
 </debug-info>

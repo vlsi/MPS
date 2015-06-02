@@ -4,10 +4,15 @@ package jetbrains.mps.lang.structure.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface IConceptAspect_BehaviorDescriptor {
   public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode);
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode);
   public void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept);
+  @Deprecated
+  @ToRemove(version = 3.3)
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate);
+  public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept thisConcept, SNode candidate);
 }

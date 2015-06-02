@@ -30,7 +30,6 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -122,7 +121,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String getSamplesPathInUserHome() {
-    return WorkbenchPathManager.getUserHome() + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + getSuffix();
+    return System.getProperty("user.home") + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + getSuffix();
   }
 
   private String getSuffix() {

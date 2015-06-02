@@ -14,7 +14,9 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class Templatereduce__CommandList extends TemplateDeclarationBase implements TemplateDeclarationWeavingAware {
@@ -34,12 +36,12 @@ public class Templatereduce__CommandList extends TemplateDeclarationBase impleme
   }
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     Collection<SNode> tlistpart0 = applyPart0(environment, context);
-    SNodeReference weaveTf0 = weaveTfConst_g3b4ec_a0b0e;
+    SNodeReference weaveTf0 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928820");
+    NodeWeaveFacility weaveSupport0 = environment.weaveNode(context, weaveTf0);
     for (SNode nodeToWeave : TemplateUtil.asNotNull(tlistpart0)) {
-      environment.weaveNode(outputContextNode, "statement", nodeToWeave, weaveTf0, context.getInput());
+      weaveSupport0.weave(outputContextNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), nodeToWeave);
     }
     return tlistpart0;
   }
   private static SNodePointer copySrcListMacro_g3b4ec_b0a0a1a2 = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928822");
-  private static SNodePointer weaveTfConst_g3b4ec_a0b0e = new SNodePointer("r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185(jetbrains.mps.samples.Kaja.generator.template.main@generator)", "3308300503039928820");
 }

@@ -13,8 +13,8 @@ import java.io.IOError;
 import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
-import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.RuntimeFlags;
 import org.junit.runner.notification.StoppedByUserException;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
@@ -93,13 +93,14 @@ public class TestLightExecutor extends AbstractTestExecutor {
       LOG.info("Executing tests in-process...");
     }
     myTestRunState.advance(RunStateEnum.READYTOEXECUTE, RunStateEnum.RUNNING);
-    RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
+    TestMode oldTestMode = RuntimeFlags.getTestMode();
     try {
+      RuntimeFlags.setTestMode(TestMode.IN_PROCESS);
       super.doExecute(core, requests);
     } catch (StoppedByUserException exception) {
       terminateProcess(FakeProcess.TERMINATION_CODE);
     } finally {
-      RuntimeFlags.setTestMode(TestMode.NONE);
+      RuntimeFlags.setTestMode(oldTestMode);
     }
   }
 

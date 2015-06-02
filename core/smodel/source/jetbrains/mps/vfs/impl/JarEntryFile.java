@@ -91,15 +91,10 @@ public class JarEntryFile implements IFileEx {
     return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }
 
+  @NotNull
   @Override
   public String getPath() {
     return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
-  }
-
-  @Override
-  @Deprecated
-  public String getAbsolutePath() {
-    return getPath();
   }
 
   @Override

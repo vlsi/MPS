@@ -19,7 +19,6 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.workbench.DocumentationHelper;
 import jetbrains.mps.workbench.MPSApplicationInfo;
-import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -157,6 +156,6 @@ public class ProjectStep extends BaseStep {
   }
 
   private String getProjectsDir() {
-    return WorkbenchPathManager.getUserHome() + File.separator + "MPSProjects";
+    return System.getProperty("user.home") + File.separator + "MPSProjects";
   }
 }

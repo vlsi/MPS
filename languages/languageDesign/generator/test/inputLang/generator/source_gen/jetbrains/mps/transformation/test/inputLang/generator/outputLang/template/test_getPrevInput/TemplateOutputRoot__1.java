@@ -15,14 +15,15 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.generator.runtime.PostProcessor;
+import jetbrains.mps.generator.impl.MapSrcProcessor;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
-import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
 public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements TemplateDeclaration {
@@ -33,7 +34,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
   }
   protected Collection<SNode> applyNode0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final List<SNode> tlist1 = new ArrayList<SNode>();
-    final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(new SourceSubstituteMacroNodesContext(context, mapsrclMacroRef_ewlaka_b0a0a1a2));
+    final Iterable<SNode> sourceList1 = QueriesGenerated.sourceNodesQuery_1233603475878(new SourceSubstituteMacroNodesContext(context, new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1233603475877")));
     for (SNode itnode1 : sourceList1) {
       if (itnode1 == null) {
         continue;
@@ -102,11 +103,12 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
           }
           if (tnode5 != null) {
             tlist4.add(tnode5);
-            environment.postProcess(new PostProcessor() {
-              public void process(SNode outputNode, TemplateContext postProcessContext) {
-                QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(new MapSrcMacroPostProcContext(postProcessContext, outputNode, mapsrcMacroRef_ewlaka_c0a0a0a0a0a0b0f0e0e0c0c));
+            environment.postProcess(new MapSrcProcessor(new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202337434278"), tnode5, context3) {
+              @Override
+              public void postProcess(@NotNull SNode outputNode) throws GenerationFailureException {
+                QueriesGenerated.mapSrcMacro_post_mapper_1225236165359(new MapSrcMacroPostProcContext(getTemplateContext(), outputNode, getTemplateNode()));
               }
-            }, tnode5, context3);
+            });
           }
           if (tlist4 != null) {
             tlist3.addAll(tlist4);
@@ -121,11 +123,12 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
         tlist1.addAll(tlist2);
         environment.registerLabel(itnode1, tlist2, "LEVEL 1");
         for (SNode mapSrcOutput11 : tlist2) {
-          environment.postProcess(new PostProcessor() {
-            public void process(SNode outputNode, TemplateContext postProcessContext) {
-              QueriesGenerated.mapSrcMacro_post_mapper_1233603527948(new MapSrcMacroPostProcContext(postProcessContext, outputNode, mapsrclMacroRef_ewlaka_b0a0a1a2));
+          environment.postProcess(new MapSrcProcessor(new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1233603475877"), mapSrcOutput11, context1) {
+            @Override
+            public void postProcess(@NotNull SNode node) throws GenerationFailureException {
+              QueriesGenerated.mapSrcMacro_post_mapper_1233603527948(new MapSrcMacroPostProcContext(getTemplateContext(), node, getTemplateNode()));
             }
-          }, mapSrcOutput11, context1);
+          });
         }
       }
     }
@@ -149,7 +152,6 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
     return TemplateUtil.singletonList(tnode1);
   }
   private static SNodePointer template_ewlaka_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202255620269");
-  private static SNodePointer mapsrclMacroRef_ewlaka_b0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1233603475877");
   private static SNodePointer loopMacroRef_ewlaka_b0a0a3a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202256587516");
   private static SNodePointer loopMacroRef_ewlaka_b0a0a3a4a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202256594379");
   private static SNodePointer propertyMacro_ewlaka_c0a0c0b0e0e0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202326517570");
@@ -157,5 +159,4 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
   private static SNodePointer propertyMacro_ewlaka_c0a0c0b0b0b0d0e0e0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202327887567");
   private static SNodePointer ifMacroRef_ewlaka_b0a0b0d0e0e0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202332796046");
   private static SNodePointer propertyMacro_ewlaka_c0a0c0b0b0e0e0e0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202327970030");
-  private static SNodePointer mapsrcMacroRef_ewlaka_c0a0a0a0a0a0b0f0e0e0c0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202337434278");
 }

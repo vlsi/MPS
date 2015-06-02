@@ -15,20 +15,36 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 
 /**
+ * Rule for an input node (not necessarily model root) to get transformed into a new root node(s)
  * Evgeny Gryaznov, 10/27/10
  */
-public interface TemplateRootMappingRule extends TemplateRuleWithCondition {
+public interface TemplateRootMappingRule extends TemplateRuleWithCondition, TemplateRuleForConcept {
 
-  String getApplicableConcept();
-
-  boolean applyToInheritors();
-
+  /**
+   * @deprecated use {@link #apply(TemplateContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
+
+  /**
+   * Try to apply rule in the given context
+   * @param context execution context
+   * @return <code>null</code> if this rule could not process input, collection of new root nodes otherwise
+   * @throws GenerationException report a failure/cancellation. Note, {@link jetbrains.mps.generator.impl.DismissTopMappingRuleException} nor
+   * {@link jetbrains.mps.generator.impl.AbandonRuleInputException} are not expected to come from this rule
+   * @since 3.3
+   */
+  @Nullable
+  Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException;
 
   boolean keepSourceRoot();
 }

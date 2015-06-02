@@ -6,15 +6,20 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
-import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import java.util.List;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.checkedName.PropertyReference;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class FinderDeclaration_BehaviorDescriptor extends AbstractFinderDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public FinderDeclaration_BehaviorDescriptor() {
+  }
+  public boolean virtual_canBeAppliedToNode_8911797107065640816(SConcept thisConcept, SNode candidate) {
+    return IConceptAspect_Behavior.virtual_canBeAppliedToNode_8911797107065640816(thisConcept, candidate);
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     return IConceptAspect_Behavior.virtual_getBaseConceptCollection_5270353093116013036(thisNode);
@@ -37,6 +42,8 @@ public class FinderDeclaration_BehaviorDescriptor extends AbstractFinderDeclarat
   public PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return FinderDeclaration_Behavior.virtual_getPropertyToCheck_4844813484172611473(thisNode);
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return IConceptAspect_Behavior.virtual_isApplicable_7839831476331657915(thisNode, candidate);
   }

@@ -16,12 +16,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import java.util.Collections;
 import junit.framework.Assert;
 import java.util.Map;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -120,7 +120,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   protected void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
-    ModelAccess.instance().flushEventQueue();
+    flushEvents();
     // FIXME why do we need model write here? 
     myProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -139,10 +139,14 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    flushEvents();
     if (throwable.value != null) {
       throw throwable.value;
     }
+  }
+
+  private void flushEvents() {
+    ModelAccess.instance().flushEventQueue();
   }
 
   public void testMethod() throws Throwable {
@@ -236,7 +240,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public void flushEDTEvents() throws InvocationTargetException, InterruptedException {
+  private void flushEDTEvents() throws InvocationTargetException, InterruptedException {
     // wait for all events currently in EDT queue 
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
@@ -245,7 +249,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       }
     });
     // flushing model events 
-    ModelAccess.instance().flushEventQueue();
+    flushEvents();
   }
 
   public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {

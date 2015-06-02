@@ -232,12 +232,13 @@ public class QueryMethodGenerated implements CoreComponent {
         } catch (IllegalAccessException e) {
           throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
         } catch (InvocationTargetException e) {
-          if (e.getCause() instanceof IllegalModelChangeError) {
-            throw (IllegalModelChangeError) e.getCause();
+          Throwable cause = e.getCause();
+          if (cause instanceof IllegalModelChangeError) {
+            throw (IllegalModelChangeError) cause;
           }
           String message = "error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName();
-          LOG.error(message, e.getCause());
-          throw new RuntimeException(message, e.getCause());
+          LOG.error(cause.toString(), cause);
+          throw new RuntimeException(message, cause);
         }
       }
     };

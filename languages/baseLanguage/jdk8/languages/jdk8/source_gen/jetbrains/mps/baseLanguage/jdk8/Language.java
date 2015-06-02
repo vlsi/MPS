@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.actions.descriptor.AbstractActionAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -45,25 +45,27 @@ public class Language extends LanguageRuntime {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "297397fa-e9d7-48f3-8e06-e90e2a1e0498(jetbrains.mps.baseLanguage.jdk8#1719162360409737186)"));
   }
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    if (descriptorClass == ActionAspectDescriptor.class) {
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == ActionAspectDescriptor.class) {
       return (T) new AbstractActionAspectDescriptor() {};
     }
-    if (descriptorClass == ConstraintsAspectDescriptor.class) {
+    if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.jdk8.constraints.ConstraintsAspectDescriptor();
     }
-    if (descriptorClass == EditorAspectDescriptor.class) {
+    if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (descriptorClass == StructureAspectDescriptor.class) {
+    if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.jdk8.structure.StructureAspectDescriptor();
     }
-    if (descriptorClass == TextGenAspectDescriptor.class) {
+    if (aspectClass == TextGenAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.jdk8.textGen.TextGenAspectDescriptor();
     }
-    if (descriptorClass == IHelginsDescriptor.class) {
+    if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-    return super.createAspectDescriptor(descriptorClass);
+
+
+    return super.createAspect(aspectClass);
   }
 }

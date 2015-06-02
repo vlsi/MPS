@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
@@ -47,6 +48,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -243,10 +245,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     setModuleDescriptor(moduleDescriptor);
   }
 
-  public boolean isBootstrap() {
-    return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
-  }
-
   public int getLanguageVersion() {
     return getModuleDescriptor().getVersion();
   }
@@ -276,11 +274,12 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public List<SModel> getUtilModels() {
-    List<SModel> result = new ArrayList<SModel>();
-    for (SModel md : getModels()) {
-      if (getAspectForModel(md) != null || isAccessoryModel(md.getReference())) {
-        continue;
-      }
+    Set<SModel> models = new HashSet<SModel>(getModels());
+    models.removeAll(LanguageAspectSupport.getAspectModels(this));
+    models.removeAll(getAccessoryModels());
+
+    List<SModel> result = new ArrayList<SModel>(getModels());
+    for (SModel md : models) {
       String st = SModelStereotype.getStereotype(md);
       if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {
         // perhaps, we need more generic isPredefinedStereotypeMPS()
@@ -348,6 +347,9 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return getModuleName() + " [language]";
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no full equivalent to this method, use appropriate method from LanguageAspectSupport
   public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
@@ -361,6 +363,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     return getLanguageFor(modelDescriptor);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.3)
+  //no full equivalent to this method, use appropriate method from LanguageAspectSupport
+  //no usages in MPS
   @Nullable
   public static LanguageAspect getModelAspect(org.jetbrains.mps.openapi.model.SModel sm) {
     if (sm == null) return null;
@@ -443,25 +449,16 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
   }
 
-  @Deprecated
-  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
-  }
-
   private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
     @Override
     public Class<Language> getApplicableSModuleClass() {
       return Language.class;
     }
 
+    @NotNull
     @Override
-    public Set<Language> getAutoImportedLanguages(Language contextLanguage, org.jetbrains.mps.openapi.model.SModel model) {
-      LanguageAspect aspect = Language.getModelAspect(model);
-      if (aspect != null) {
-        return Collections.singleton(ScopeOperations.resolveLanguage(GlobalScope.getInstance(), aspect.getMainLanguage()));
-      } else {
-        return Collections.emptySet();
-      }
+    public Collection<SLanguage> getLanguages(Language contextModule, SModel model) {
+      return LanguageAspectSupport.getMainLanguages(model);
     }
 
     @Override

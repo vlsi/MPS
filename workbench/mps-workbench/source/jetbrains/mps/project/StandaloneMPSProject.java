@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -24,20 +22,15 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
@@ -55,7 +48,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -83,8 +75,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
-  private WatchRequestor myWatchRequestor;
-
   public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
     super(project);
   }
@@ -104,7 +94,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       return myProjectElement;
     }
 
-    return ModelAccess.instance().runReadAction(new Computable<Element>() {
+    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Element>() {
       @Override
       public Element compute() {
         ProjectDescriptor descriptor = getProjectDescriptor();
@@ -120,36 +110,22 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   @Override
-  public void initComponent() {
-    super.initComponent();
-    myWatchRequestor = new WatchRequestor() {
-      private String path = myProject.getBaseDir().getPath();
-      @Override
-      public String getDirectory() {
-        return path;
-      }
-    };
-  }
-
-  @Override
-  public void disposeComponent() {
-    super.disposeComponent();
-  }
-
-  @Override
   public void projectOpened() {
     LOG.info("Project '" + getName() + "' opened");
     super.projectOpened();
-    initProject();
+    initProjectOnOpen();
   }
 
-  private void initProject() {
-    // important to have it before all init procedures,
-    // otherwise performance will be bad, as we will create a new watch request pretty much
-    // for every FileSystem.addListener() call. Very many of such creations will result in updating
-    // fs watcher process state, via feeding text to its stdin.
-    startWatching();
+  @Override
+  public void projectClosed() {
+    LOG.info("Project '" + getName() + "' closing");
+    if (getFileToListen() != null) {
+      FileSystem.getInstance().removeListener(this);
+    }
+    super.projectClosed();
+  }
 
+  private void initProjectOnOpen() {
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
@@ -294,7 +270,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void dispose() {
-    FileSystem.getInstance().removeListener(this);
     super.dispose();
     getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -302,24 +277,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
       }
     });
-
-    //todo hack
-    if (myProject != null) {
-      if (RuntimeFlags.isTestMode() && !(myProject.isDisposed())) {
-        //second check if for MPS-12881, we invoked this method recursively and tried to dispose a disposed project
-        ProjectUtil.closeAndDispose(myProject);
-      }
-    }
-
-    stopWatching();
-  }
-
-  private void startWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addGlobalWatch(myWatchRequestor);
-  }
-
-  private void stopWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeGlobalWatch(myWatchRequestor);
   }
 
   private Path getPathForModule(SModule module) {
@@ -346,6 +303,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     return null;
   }
 
+  @Nullable
   @Override
   public IFile getFileToListen() {
     VirtualFile projectFile = myProject.getProjectFile();

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import jetbrains.mps.testbench.junit.suites.BaseMpsSuite;
 import jetbrains.mps.tests.*;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
@@ -26,7 +27,7 @@ import org.junit.runners.Suite;
  */
 // todo: !!!should be WatchingSuite!!!
 @Deprecated
-@RunWith(Suite.class)
+@RunWith(BaseMpsSuite.class)
 @Suite.SuiteClasses({
     TestModule_closures_test.class,
     TestModule_collections_trove_test.class,
@@ -59,6 +60,7 @@ import org.junit.runners.Suite;
     TestModule_jetbrains_mps_traceInfo_testWeaving.class,
     TestModule_jetbrains_mps_transformation_test_inputModels.class,
     TestModule_testSubtypingTest.class,
-    TestModule_testSubstituteType.class})
+    TestModule_testSubstituteType.class
+})
 public class ModuleTestSuite extends TestSuite {
 }

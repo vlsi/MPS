@@ -14,6 +14,12 @@ public class EnumClass_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return EnumClass_Behavior.virtual_getMembers_1213877531970(thisNode);
   }
+  public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    return EnumClass_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
+  }
+  public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+    return EnumClass_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
+  }
   public SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return EnumClass_Behavior.virtual_getSuperclass_1240936569950(thisNode);
   }

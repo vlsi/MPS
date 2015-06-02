@@ -43,7 +43,6 @@ import org.apache.log4j.Logger;
 import java.util.Collections;
 import java.util.Set;
 
-
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private static final Logger LOG = LogManager.getLogger(MPSFileBasedIndexProjectHandler.class);
   private ProjectRootManagerEx myRootManager;
@@ -104,7 +103,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   @Override
   public boolean isInSet(VirtualFile file) {
-    if (CacheUtil.isIgnored(file, myRootManager)) return false;
+    if (IndexableRootCalculator.isIgnored(file, myRootManager)) return false;
 
     for (VirtualFile vf : getRootFiles()) {
       if (VfsUtil.isAncestor(vf, file, true)) return true;
@@ -119,7 +118,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   private void iterateIndexableFilesIn_internal(VirtualFile file, ContentIterator iterator) {
-    if (CacheUtil.isIgnored(file, myRootManager)) return;
+    if (IndexableRootCalculator.isIgnored(file, myRootManager)) return;
 
     if (file.isDirectory()) {
       for (VirtualFile child : file.getChildren()) {
@@ -132,12 +131,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   private Set<VirtualFile> getRootFiles() {
     if (myRootFiles == null) {
-      myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
-        @Override
-        public Set<VirtualFile> compute() {
-          return CacheUtil.getIndexableRoots();
-        }
-      });
+      myRootFiles = new IndexableRootCalculator(myProject).getIndexableRoots();
     }
     return myRootFiles;
   }

@@ -49,6 +49,7 @@
     <import index="f0ym" ref="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)" />
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
     <import index="dbrf" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
+    <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3727,6 +3728,7 @@
       </node>
       <node concept="3Tm1VV" id="7X3$CtwaMQW" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="2BGPXkExP$U" role="jymVt" />
     <node concept="2YIFZL" id="7X3$Ctw3Ytq" role="jymVt">
       <property role="TrG5h" value="testParameters" />
       <property role="DiZV1" value="false" />
@@ -3782,12 +3784,19 @@
         <ref role="3uigEE" to="e2lb:~InterruptedException" resolve="InterruptedException" />
       </node>
       <node concept="3clFbS" id="7X3$Ctw3YtD" role="3clF47">
-        <node concept="3clFbF" id="6pV9atGnDz" role="3cqZAp">
-          <node concept="2YIFZM" id="6pV9atGnHI" role="3clFbG">
-            <ref role="1Pybhc" to="oh7r:3oaQFFra9DZ" resolve="MpsTestsSupport" />
-            <ref role="37wK5l" to="oh7r:2pL3QjruFcX" resolve="initEnv" />
-            <node concept="3clFbT" id="r94OK97FNi" role="37wK5m">
-              <property role="3clFbU" value="false" />
+        <node concept="3cpWs8" id="6LlhC3WLzsm" role="3cqZAp">
+          <node concept="3cpWsn" id="6LlhC3WLzsn" role="3cpWs9">
+            <property role="TrG5h" value="env" />
+            <node concept="3uibUv" id="4P_zM4FzXIS" role="1tU5fm">
+              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+            </node>
+            <node concept="2YIFZM" id="6LlhC3WLzsp" role="33vP2m">
+              <ref role="1Pybhc" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
+              <ref role="37wK5l" to="79ha:6LlhC3WJZzD" resolve="getOrCreate" />
+              <node concept="2YIFZM" id="6LlhC3WLzsr" role="37wK5m">
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+              </node>
             </node>
           </node>
         </node>
@@ -3796,9 +3805,18 @@
             <node concept="37vLTw" id="r94OK96OHY" role="37vLTJ">
               <ref role="3cqZAo" node="r94OK97SAs" resolve="ourContextProject" />
             </node>
-            <node concept="2YIFZM" id="7X3$Ctw3Y$u" role="37vLTx">
-              <ref role="1Pybhc" to="oh7r:43Ra3NMzuDK" resolve="ContextProjectSupport" />
-              <ref role="37wK5l" to="oh7r:43Ra3NMzH1x" resolve="loadContextProject" />
+            <node concept="2OqwBi" id="2BGPXkExMrm" role="37vLTx">
+              <node concept="37vLTw" id="2BGPXkExMqt" role="2Oq$k0">
+                <ref role="3cqZAo" node="6LlhC3WLzsn" resolve="env" />
+              </node>
+              <node concept="liA8E" id="2BGPXkExMw4" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:6rx4kZDk5oX" resolve="createProject" />
+                <node concept="2ShNRf" id="2BGPXkExMwX" role="37wK5m">
+                  <node concept="1pGfFk" id="2BGPXkExNYu" role="2ShVmc">
+                    <ref role="37wK5l" to="oh7r:2BGPXkEv60R" resolve="FromProjectPathProjectStrategy" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3806,6 +3824,7 @@
       <node concept="3Tm1VV" id="7X3$Ctw3YtS" role="1B3o_S" />
       <node concept="3cqZAl" id="6pV9atEQ3H" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="2BGPXkExLGF" role="jymVt" />
     <node concept="2YIFZL" id="7X3$Ctw3YtW" role="jymVt">
       <property role="TrG5h" value="createTestParametersFromModules" />
       <property role="DiZV1" value="false" />
@@ -4173,6 +4192,7 @@
       <node concept="3Tm1VV" id="7X3$CtwaMRG" role="1B3o_S" />
       <node concept="3cqZAl" id="7X3$CtwaMRH" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="2BGPXkExP3J" role="jymVt" />
     <node concept="3clFb_" id="7X3$CtwaMRI" role="jymVt">
       <property role="TrG5h" value="diffModule" />
       <property role="DiZV1" value="false" />
@@ -4289,7 +4309,7 @@
       <node concept="1SXeKx" id="r94OK96Hqo" role="2B76xF">
         <ref role="2B6OnR" to="u67u:~RunWith.value()" resolve="value" />
         <node concept="3VsKOn" id="r94OK96HsP" role="2B70Vg">
-          <ref role="3VsUkX" to="oh7r:NTQuym1o0F" resolve="TeamCityParameterized" />
+          <ref role="3VsUkX" to="oh7r:NTQuym1o0F" resolve="TeamCityParameterizedRunner" />
         </node>
       </node>
     </node>

@@ -20,8 +20,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.EnvironmentContainer;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -75,30 +77,11 @@ public class ProjectCreationTest {
 
   private IFile myTmpDir;
 
-  private static Environment CREATED_ENV;
-
   private Project myProject;
 
   @BeforeClass
   public static void init() {
-    CREATED_ENV = MpsTestsSupport.initEnv(true);
-  }
-
-  @AfterClass
-  public static void dispose() {
-    if (CREATED_ENV != null) {
-      CREATED_ENV.dispose();
-    }
-  }
-
-  @After
-  public void tearDown() {
-    // todo: remove?
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-      }
-    }, ModalityState.defaultModalityState());
+    IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test

@@ -19,8 +19,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
+ * @deprecated this interface is left intact for compatibility with code generated in MPS 3.2.
+ * Later, API of {@link ReferenceResolver2} would get merged here, and RR2 would cease to keep name space clean.
+ * Thus, this interface should not be implemented except in RR2 implementation.
  * Evgeny Gryaznov, 11/4/10
  */
+@Deprecated
 public interface ReferenceResolver {
 
   Object resolve(SNode outputNode, TemplateContext context);

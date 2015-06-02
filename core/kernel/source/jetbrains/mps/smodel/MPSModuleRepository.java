@@ -220,7 +220,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
 
-  public SModule getModuleByFqName(String fqName) {
+  public SModule getModuleByFqName(@NotNull String fqName) {
     //todo assertCanRead();
 
     return myFqNameToModulesMap.get(fqName);

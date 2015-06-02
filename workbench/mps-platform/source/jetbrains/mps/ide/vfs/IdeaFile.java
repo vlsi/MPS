@@ -16,14 +16,18 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.Result;
+import com.intellij.openapi.application.WriteAction;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.*;
 import jetbrains.mps.vfs.ex.IFileEx;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,6 +41,7 @@ import java.util.List;
  * @author Evgeny Gerashchenko
  */
 class IdeaFile implements IFileEx {
+  private final static Logger LOG = LogManager.getLogger(IdeaFile.class);
 
   /*
    * remember the name used to create this instance, as it might be different from a name in fs on case-insensitive filesystem
@@ -53,6 +58,7 @@ class IdeaFile implements IFileEx {
     myPath = virtualFile.getPath();
   }
 
+  @NotNull
   @Override
   public String getPath() {
     if (findVirtualFile()) {
@@ -60,12 +66,6 @@ class IdeaFile implements IFileEx {
     } else {
       return myPath;
     }
-  }
-
-  @Override
-  @Deprecated
-  public String getAbsolutePath() {
-    return getPath();
   }
 
   @Override
@@ -86,7 +86,7 @@ class IdeaFile implements IFileEx {
       }
       return null;
     } else {
-      return new IdeaFile(truncDirPath(myPath));
+      return new IdeaFile(truncateDirPath(myPath));
     }
   }
 
@@ -150,16 +150,42 @@ class IdeaFile implements IFileEx {
       return !myVirtualFile.isDirectory();
     } else {
       try {
-        VirtualFile directory = VfsUtil.createDirectories(truncDirPath(myPath));
+        VirtualFile directory = createDirs(truncateDirPath(myPath));
         String fileName = truncFileName(myPath);
         directory.findChild(fileName); // This is a workaround for IDEA-67279
         myVirtualFile = directory.createChildData(ourRequestor(), fileName);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.error(null, e);
+        LOG.error(null, e);
         return false;
       }
     }
+  }
+
+  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
+  public VirtualFile createDirs(final String directoryPath) throws IOException{
+    return new WriteAction<VirtualFile>() {
+      @Override
+      protected void run(Result<VirtualFile> result) throws Throwable {
+        VirtualFile res = createDirsImpl(directoryPath);
+        result.setResult(res);
+      }
+    }.execute().throwException().getResultObject();
+  }
+
+  //this was copied from Idea. The point of copying is changing the requestor not to get back-events during saving models
+  private VirtualFile createDirsImpl(String directoryPath) throws IOException {
+    String path = FileUtil.toSystemIndependentName(directoryPath);
+    final VirtualFile file = LocalFileSystem.getInstance().refreshAndFindFileByPath(path);
+    if (file == null) {
+      int pos = path.lastIndexOf('/');
+      if (pos < 0) return null;
+      VirtualFile parent = createDirsImpl(path.substring(0, pos));
+      if (parent == null) return null;
+      final String dirName = path.substring(pos + 1);
+      return parent.createChildDirectory(ourRequestor(), dirName);
+    }
+    return file;
   }
 
   @Override
@@ -169,7 +195,7 @@ class IdeaFile implements IFileEx {
       return myVirtualFile.isDirectory();
     } else {
       try {
-        myVirtualFile = VfsUtil.createDirectories(myPath);
+        myVirtualFile = createDirs(myPath);
         return true;
       } catch (IOException e) {
         return false;
@@ -190,7 +216,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile = null;
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("Could not delete file: ", e);
+        LOG.warn("Could not delete file: ", e);
         return false;
       }
     } else {
@@ -204,7 +230,7 @@ class IdeaFile implements IFileEx {
       myVirtualFile.rename(ourRequestor(), newName);
       return true;
     } catch (IOException e) {
-      IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
+      LOG.warn("Could not rename file: ", e);
       return false;
     }
   }
@@ -216,7 +242,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile.move(ourRequestor(), ((IdeaFile) newParent).myVirtualFile);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
+        LOG.warn("Could not rename file: ", e);
         return false;
       }
     } else {
@@ -269,7 +295,7 @@ class IdeaFile implements IFileEx {
         ((NewVirtualFile) myVirtualFile).setTimeStamp(time);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warn("", e);
+        LOG.warn("", e);
       }
     }
     return false;
@@ -322,10 +348,7 @@ class IdeaFile implements IFileEx {
   }
 
   private boolean findVirtualFile(boolean withRefresh) {
-    if (myVirtualFile != null && !myVirtualFile.isValid()) {
-      myVirtualFile = null;
-    }
-    if (myVirtualFile == null) {
+    if (myVirtualFile == null || !myVirtualFile.isValid()) {
       myVirtualFile = findIdeaFile(myPath, withRefresh);
     }
     return myVirtualFile != null;
@@ -368,10 +391,11 @@ class IdeaFile implements IFileEx {
     }
   }
 
-  private static String truncDirPath(String path) {
+  @NotNull
+  private static String truncateDirPath(String path) {
     int index = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'));
     if (index == -1) {
-      return null;
+      return path;
     } else {
       return path.substring(0, index);
     }
@@ -402,11 +426,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public int hashCode() {
-    if (getPath() == null) {
-      return 0;
-    } else {
-      return getSystemIndependentPath().hashCode();
-    }
+    return getSystemIndependentPath().hashCode();
   }
 
   @Override
@@ -423,5 +443,4 @@ class IdeaFile implements IFileEx {
     assert provider instanceof IdeaFileSystemProvider;
     return (IdeaFileSystemProvider) provider;
   }
-
 }

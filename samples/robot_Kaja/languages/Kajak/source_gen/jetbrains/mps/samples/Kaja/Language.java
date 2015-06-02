@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.samples.Kaja.actions.ActionAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -46,25 +46,27 @@ public class Language extends LanguageRuntime {
     return TemplateUtil.<TemplateModule>asCollection(new Generator(this));
   }
   @Override
-  protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    if (descriptorClass == ActionAspectDescriptor.class) {
+  protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
+    if (aspectClass == ActionAspectDescriptor.class) {
       return (T) new ActionAspectDescriptorImpl();
     }
-    if (descriptorClass == ConstraintsAspectDescriptor.class) {
+    if (aspectClass == ConstraintsAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.Kaja.constraints.ConstraintsAspectDescriptor();
     }
-    if (descriptorClass == DataFlowAspectDescriptor.class) {
+    if (aspectClass == DataFlowAspectDescriptor.class) {
       return (T) new AbstractDataFlowAspectDescriptor() {};
     }
-    if (descriptorClass == EditorAspectDescriptor.class) {
+    if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
     }
-    if (descriptorClass == StructureAspectDescriptor.class) {
+    if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor();
     }
-    if (descriptorClass == IHelginsDescriptor.class) {
+    if (aspectClass == IHelginsDescriptor.class) {
       return (T) new TypesystemDescriptor();
     }
-    return super.createAspectDescriptor(descriptorClass);
+
+
+    return super.createAspect(aspectClass);
   }
 }

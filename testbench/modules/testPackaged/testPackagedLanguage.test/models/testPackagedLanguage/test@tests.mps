@@ -139,8 +139,8 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
-      <concept id="8339862546319741524" name="jetbrains.mps.lang.smodel.structure.ConceptFqNameRefExpression" flags="nn" index="3nh3qo">
-        <reference id="8339862546319741525" name="conceptDeclaration" index="3nh3qp" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
         <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
@@ -313,11 +313,11 @@
                     <node concept="3uibUv" id="1J9x1z49MYf" role="1tU5fm">
                       <ref role="3uigEE" to="dbrf:~Icon" resolve="Icon" />
                     </node>
-                    <node concept="2YIFZM" id="1J9x1z49MYi" role="33vP2m">
+                    <node concept="2YIFZM" id="7UEyXn91YN5" role="33vP2m">
+                      <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
                       <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-                      <ref role="37wK5l" to="sn11:277Nzj6qTH$" resolve="getIconForConceptFQName" />
-                      <node concept="3nh3qo" id="1J9x1z49MYj" role="37wK5m">
-                        <ref role="3nh3qp" to="rbhu:605L0w15dkf" resolve="TestConcept" />
+                      <node concept="35c_gC" id="7UEyXn91YQG" role="37wK5m">
+                        <ref role="35c_gD" to="rbhu:605L0w15dkf" resolve="TestConcept" />
                       </node>
                     </node>
                   </node>

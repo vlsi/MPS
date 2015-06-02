@@ -39,6 +39,7 @@ import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
@@ -48,12 +49,10 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -340,17 +339,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsConsumed) throws GenerationFailureException, GenerationCanceledException {
-    String applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-      return;
-    }
-    boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = FastNodeFinderManager.get(myInputModel).getNodes(rule.getApplicableConcept2(), rule.applyToInheritors());
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) continue;
+      if (getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+        continue;
+      }
 
       final QueryExecutionContext executionContext = getExecutionContext(inputNode);
       if (executionContext != null) {
@@ -372,7 +367,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure)
     throws GenerationCanceledException, GenerationFailureException {
     try {
-      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, env, new DefaultTemplateContext(env, inputNode, null));
+      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, new DefaultTemplateContext(env, inputNode, null));
       if (outputNodes == null) {
         return;
       }
@@ -416,7 +411,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       copyProcessor = new PartialCopyFacility(env, myDeltaBuilder);
     }
     // check if can drop
-    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules())) {
+    if (copyProcessor.checkDropRules(inputRootNode, myRuleManager.getDropRootRules(inputRootNode))) {
       setChanged();
       return;
     }
@@ -634,27 +629,28 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  void replacePlaceholderNode(@NotNull SNode placeholder, @NotNull SNode actual, @NotNull TemplateContext ctx, SNodeReference templateNode) {
+  void replacePlaceholderNode(@NotNull NodePostProcessor postProcessor, @NotNull SNode substitute) {
+    SNode placeholder = postProcessor.getOutputAnchor();
     SNode parent = placeholder.getParent();
     if (parent != null) {
       // check new child
       SContainmentLink childRole = placeholder.getContainmentLink();
-      final Status status = getChildRoleValidator(parent, childRole).validate(actual);
+      final Status status = getChildRoleValidator(parent, childRole).validate(substitute);
       if (status != null) {
-        getLogger().warning(templateNode, status.getMessage("delayed changes"), status.describe(
-            GeneratorUtil.describe(ctx.getInput(), "input"), GeneratorUtil.describe(parent, "parent")
+        getLogger().warning(postProcessor.getTemplateNode(), status.getMessage("delayed changes"), status.describe(
+            GeneratorUtil.describeInput(postProcessor.getTemplateContext()), GeneratorUtil.describe(parent, "parent")
         ));
       }
     }
     if (myDeltaBuilder != null) {
       // placeholders with active inplace may lack both model and parent (top of MAP-SRC-injected subtree)
-      myDeltaBuilder.replacePlaceholderNode(placeholder, actual);
+      myDeltaBuilder.replacePlaceholderNode(placeholder, substitute);
     } else {
       assert placeholder.getModel() != null || parent != null : "Can't replace node that is not part of another structure (hangs in the air)";
-      SNodeUtil.replaceWithAnother(placeholder, actual);
+      SNodeUtil.replaceWithAnother(placeholder, substitute);
     }
     if (parent == null && placeholder.getModel() != null) {
-      myDependenciesBuilder.rootReplaced(placeholder, actual);
+      myDependenciesBuilder.rootReplaced(placeholder, substitute);
     }
   }
 
@@ -691,9 +687,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     /**
      * @return true if one of drop rules matched
      */
-    public final boolean checkDropRules(SNode inputRootNode, Iterable<TemplateDropRootRule> rules) throws GenerationFailureException {
+    public final boolean checkDropRules(SNode inputRootNode, List<TemplateDropRootRule> rules) throws GenerationFailureException {
+      final DefaultTemplateContext tc = new DefaultTemplateContext(myEnv, inputRootNode, null);
       for (TemplateDropRootRule dropRootRule : rules) {
-        if (isApplicableDropRootRule(inputRootNode, dropRootRule)) {
+        if (myEnv.getQueryExecutor().isApplicable(dropRootRule, tc)) {
           drop(inputRootNode, dropRootRule);
           return true;
         }
@@ -704,19 +701,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     protected abstract void drop(SNode inputRootNode, TemplateDropRootRule rule);
 
     public abstract void copyRootInputNode(@NotNull SNode inputRoot) throws GenerationFailureException, GenerationCanceledException;
-
-    private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule) throws GenerationFailureException {
-      String applicableConcept = rule.getApplicableConcept();
-      if (applicableConcept == null) {
-        getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-        return false;
-      }
-
-      if (inputRootNode.getConcept().isSubConceptOf(MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(applicableConcept)))) {
-        return myEnv.getQueryExecutor().isApplicable(rule, new DefaultTemplateContext(myEnv, inputRootNode, null));
-      }
-      return false;
-    }
   }
 
   static class GeneratedRootDescriptor {

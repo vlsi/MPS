@@ -197,11 +197,6 @@ public class Solution extends ReloadableModuleBase {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
-  @Deprecated
-  public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
-  }
-
   @Override
   public boolean willLoad() {
     // TODO mps facet from this [like IDEA plugin facet]

@@ -28,8 +28,9 @@ import java.io.File;
  * @author Evgeny Gerashchenko
  */
 public class IoFileSystemProvider implements FileSystemProvider {
-  static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
+  private static final Logger LOG = LogManager.getLogger(IoFileSystemProvider.class);
 
+  @NotNull
   @Override
   public IFile getFile(@NotNull String path) {
     if (path.contains("!")) {
@@ -43,9 +44,7 @@ public class IoFileSystemProvider implements FileSystemProvider {
 
       File jarFile = new File(jarPath);
 
-      return new JarEntryFile(
-        jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData (jarFile),
-        jarFile, entryPath);
+      return new JarEntryFile(jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData(jarFile), jarFile, entryPath);
     } else {
       return new IoFile(path);
     }
@@ -53,7 +52,6 @@ public class IoFileSystemProvider implements FileSystemProvider {
 
   @Override
   public boolean isFileIgnored(String name) {
-    // TODO ??
     return false;
   }
 

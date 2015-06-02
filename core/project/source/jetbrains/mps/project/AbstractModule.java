@@ -636,6 +636,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     initFacetsAndModels();
   }
 
+  @Nullable
   @Override
   public IFile getFileToListen() {
     return myDescriptorFile;
@@ -786,15 +787,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void updateSModelReferences() {
-    if (getModuleDescriptor() == null) return;
-    if (getModuleDescriptor().updateModelRefs()) {
+    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
+    if (moduleDescriptor == null) return;
+    if (moduleDescriptor.updateModelRefs()) {
       setChanged();
     }
   }
 
   public void updateModuleReferences() {
-    if (getModuleDescriptor() == null) return;
-    if (getModuleDescriptor().updateModuleRefs()) {
+    ModuleDescriptor moduleDescriptor = getModuleDescriptor();
+    if (moduleDescriptor == null) return;
+    if (moduleDescriptor.updateModuleRefs()) {
       setChanged();
     }
   }

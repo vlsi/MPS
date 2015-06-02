@@ -19,6 +19,7 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -74,6 +75,10 @@ public abstract class RefResolver implements ReferenceResolver2 {
   }
 
 
+  /**
+   * Compatibility with legacy ReferenceResolver
+   */
+  @ToRemove(version = 3.3)
   public static final class RefResolverAdapter extends RefResolver {
     private final ReferenceResolver myLegacyResolver;
 

@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.tool.builder.util.PathManager;
+import jetbrains.mps.core.tool.environment.util.PathManager;
 import jetbrains.mps.ide.java.tests.utility.Utils;
 
 @MPSLaunch

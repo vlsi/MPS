@@ -19,7 +19,10 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
+import jetbrains.mps.library.SLibrary;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -28,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ReloadableModuleBase extends AbstractModule implements ReloadableModule {
@@ -69,6 +73,21 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   @Override
   public ClassLoader getClassLoader() {
     return myManager.getClassLoader(this);
+  }
+
+  @Override
+  public ClassLoader getRootClassLoader() {
+    getRepository().getModelAccess().checkReadAccess();
+    Set<MPSModuleOwner> moduleOwners = ModuleRepositoryFacade.getInstance().getModuleOwners(this);
+    for (MPSModuleOwner owner : moduleOwners) {
+      if (owner instanceof SLibrary) {
+        ClassLoader classLoader = ((SLibrary) owner).getPluginClassLoader();
+        if (classLoader != null) {
+          return classLoader;
+        }
+      }
+    }
+    return ReloadableModule.class.getClassLoader();
   }
 
   @Override

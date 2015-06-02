@@ -81,7 +81,10 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -9165,6 +9168,259 @@
     </node>
     <node concept="2tJIrI" id="3pzB6wMWsw6" role="jymVt" />
     <node concept="3Tm1VV" id="3pzB6wMWmOy" role="1B3o_S" />
+  </node>
+  <node concept="312cEu" id="1Vi5mb_oi7$">
+    <property role="TrG5h" value="MpsRunnerProperties" />
+    <node concept="Wx3nA" id="5iKxrmkqeo7" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="START_SOLUTION" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="5iKxrmkqeo8" role="1B3o_S" />
+      <node concept="17QB3L" id="5iKxrmkqeo9" role="1tU5fm" />
+      <node concept="Xl_RD" id="5iKxrmkqeoa" role="33vP2m">
+        <property role="Xl_RC" value="solution" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="3H7CugYjcxj" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="START_CLASS" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1Vi5mb_qkFX" role="1B3o_S" />
+      <node concept="17QB3L" id="3H7CugYjcwS" role="1tU5fm" />
+      <node concept="Xl_RD" id="3H7CugYjc_h" role="33vP2m">
+        <property role="Xl_RC" value="startClass" />
+      </node>
+    </node>
+    <node concept="Wx3nA" id="1Vi5mb_oaz_" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="START_METHOD" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1Vi5mb_qkIE" role="1B3o_S" />
+      <node concept="17QB3L" id="1Vi5mb_oazB" role="1tU5fm" />
+      <node concept="Xl_RD" id="1Vi5mb_oazC" role="33vP2m">
+        <property role="Xl_RC" value="startMethod" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1Vi5mb_olTz" role="jymVt" />
+    <node concept="312cEg" id="1Vi5mb_omii" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myScript" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3uibUv" id="1Vi5mb_omij" role="1tU5fm">
+        <ref role="3uigEE" node="KL8Aql8enO" resolve="Script" />
+      </node>
+      <node concept="3Tm6S6" id="1Vi5mb_omik" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1Vi5mb_omhx" role="jymVt" />
+    <node concept="3clFbW" id="1Vi5mb_om5N" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3cqZAl" id="1Vi5mb_om5O" role="3clF45" />
+      <node concept="37vLTG" id="1Vi5mb_om5P" role="3clF46">
+        <property role="TrG5h" value="script" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="1Vi5mb_om5Q" role="1tU5fm">
+          <ref role="3uigEE" node="KL8Aql8enO" resolve="Script" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1Vi5mb_om5R" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_om5S" role="3cqZAp">
+          <node concept="37vLTI" id="1Vi5mb_om5T" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_om5U" role="37vLTJ">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="37vLTw" id="1Vi5mb_om5V" role="37vLTx">
+              <ref role="3cqZAo" node="1Vi5mb_om5P" resolve="script" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_om5W" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1Vi5mb_om56" role="jymVt" />
+    <node concept="3clFb_" id="5iKxrmkqgTm" role="jymVt">
+      <property role="TrG5h" value="setSolution" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="5iKxrmkqgTn" role="3clF46">
+        <property role="TrG5h" value="startClass" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="5iKxrmkqgTo" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="5iKxrmkqgTp" role="3clF47">
+        <node concept="3clFbF" id="5iKxrmkqgTq" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqgTr" role="3clFbG">
+            <node concept="37vLTw" id="5iKxrmkqgTs" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqgTt" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="5iKxrmkqhWh" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqeo7" resolve="START_SOLUTION" />
+              </node>
+              <node concept="37vLTw" id="5iKxrmkqgTv" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqgTn" resolve="startClass" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5iKxrmkqgTw" role="3cqZAp">
+          <node concept="Xjq3P" id="5iKxrmkqgTx" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5iKxrmkqgTy" role="1B3o_S" />
+      <node concept="3uibUv" id="5iKxrmkqgTz" role="3clF45">
+        <ref role="3uigEE" node="1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="5iKxrmkqgTC" role="jymVt">
+      <property role="TrG5h" value="getSolution" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="5iKxrmkqgTD" role="3clF47">
+        <node concept="3cpWs6" id="5iKxrmkqgTE" role="3cqZAp">
+          <node concept="2OqwBi" id="5iKxrmkqgTF" role="3cqZAk">
+            <node concept="37vLTw" id="5iKxrmkqgTG" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="5iKxrmkqgTH" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+              <node concept="37vLTw" id="5iKxrmkqhXQ" role="37wK5m">
+                <ref role="3cqZAo" node="5iKxrmkqeo7" resolve="START_SOLUTION" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5iKxrmkqgTJ" role="1B3o_S" />
+      <node concept="17QB3L" id="5iKxrmkqgTK" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_omw2" role="jymVt">
+      <property role="TrG5h" value="setStartClass" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="1Vi5mb_omw3" role="3clF46">
+        <property role="TrG5h" value="startClass" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="1Vi5mb_omw4" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1Vi5mb_omw5" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_omw6" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_omw7" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_omw8" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_omw9" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="1Vi5mb_omPT" role="37wK5m">
+                <ref role="3cqZAo" node="3H7CugYjcxj" resolve="START_CLASS" />
+              </node>
+              <node concept="37vLTw" id="1Vi5mb_omwa" role="37wK5m">
+                <ref role="3cqZAo" node="1Vi5mb_omw3" resolve="startClass" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1Vi5mb_omwb" role="3cqZAp">
+          <node concept="Xjq3P" id="1Vi5mb_omwc" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_omwd" role="1B3o_S" />
+      <node concept="3uibUv" id="1Vi5mb_omMC" role="3clF45">
+        <ref role="3uigEE" node="1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_omwh" role="jymVt">
+      <property role="TrG5h" value="getStartClass" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="1Vi5mb_omwi" role="3clF47">
+        <node concept="3cpWs6" id="1Vi5mb_omwj" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_omwk" role="3cqZAk">
+            <node concept="37vLTw" id="1Vi5mb_omwl" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_omwm" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+              <node concept="37vLTw" id="1Vi5mb_onue" role="37wK5m">
+                <ref role="3cqZAo" node="3H7CugYjcxj" resolve="START_CLASS" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_omwn" role="1B3o_S" />
+      <node concept="17QB3L" id="1Vi5mb_onj5" role="3clF45" />
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_onx_" role="jymVt">
+      <property role="TrG5h" value="setStartMethod" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="37vLTG" id="1Vi5mb_onxA" role="3clF46">
+        <property role="TrG5h" value="startMethod" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="1Vi5mb_onxB" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="1Vi5mb_onxC" role="3clF47">
+        <node concept="3clFbF" id="1Vi5mb_onxD" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_onxE" role="3clFbG">
+            <node concept="37vLTw" id="1Vi5mb_onxF" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_onxG" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBe" resolve="putProperty" />
+              <node concept="37vLTw" id="1Vi5mb_onXM" role="37wK5m">
+                <ref role="3cqZAo" node="1Vi5mb_oaz_" resolve="START_METHOD" />
+              </node>
+              <node concept="37vLTw" id="1Vi5mb_onxH" role="37wK5m">
+                <ref role="3cqZAo" node="1Vi5mb_onxA" resolve="startMethod" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1Vi5mb_onxI" role="3cqZAp">
+          <node concept="Xjq3P" id="1Vi5mb_onxJ" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_onxK" role="1B3o_S" />
+      <node concept="3uibUv" id="1Vi5mb_onxL" role="3clF45">
+        <ref role="3uigEE" node="1Vi5mb_oi7$" resolve="MpsRunnerProperties" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="1Vi5mb_onxQ" role="jymVt">
+      <property role="TrG5h" value="getStartMethod" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="1Vi5mb_onxR" role="3clF47">
+        <node concept="3cpWs6" id="1Vi5mb_onxS" role="3cqZAp">
+          <node concept="2OqwBi" id="1Vi5mb_onxT" role="3cqZAk">
+            <node concept="37vLTw" id="1Vi5mb_onxU" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Vi5mb_omii" resolve="myScript" />
+            </node>
+            <node concept="liA8E" id="1Vi5mb_onxV" role="2OqNvi">
+              <ref role="37wK5l" node="KL8Aql8eBs" resolve="getProperty" />
+              <node concept="37vLTw" id="1Vi5mb_oof_" role="37wK5m">
+                <ref role="3cqZAo" node="1Vi5mb_oaz_" resolve="START_METHOD" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="1Vi5mb_onxW" role="1B3o_S" />
+      <node concept="17QB3L" id="1Vi5mb_onxX" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="1Vi5mb_omuh" role="jymVt" />
+    <node concept="3Tm1VV" id="1Vi5mb_oi7_" role="1B3o_S" />
   </node>
 </model>
 

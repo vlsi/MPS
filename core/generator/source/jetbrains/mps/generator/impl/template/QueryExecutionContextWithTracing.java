@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -223,11 +223,11 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), rule.getRuleNode());
       tracer.push(taskName, true);
-      return wrapped.tryToApply(rule, context);
+      return wrapped.applyRule(rule, context);
     } finally {
       tracer.pop();
     }
@@ -244,10 +244,10 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException {
     try {
       tracer.push(taskName(String.format("root mapping rule(%s)", rule.getApplicableConcept()), rule.getRuleNode()), true);
-      return wrapped.applyRule(rule, environment,context);
+      return wrapped.applyRule(rule, context);
     } finally {
       tracer.pop();
     }
@@ -264,10 +264,20 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
+    try {
+      tracer.push(taskName("weave rule", rule.getRuleNode()), true);
+      return wrapped.applyRule(rule, context, outputContextNode);
+    } finally {
+      tracer.pop();
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("context for weaving", rule.getRuleNode()), true);
-      return wrapped.getContextNode(rule, environment, context);
+      return wrapped.getContextNode(rule, context);
     } finally {
       tracer.pop();
     }

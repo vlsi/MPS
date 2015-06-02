@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -43,6 +44,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -108,18 +110,12 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllLanguageImports(targetModel));
 
-    LanguageAspect aspect = Language.getModelAspect(targetModel);
-    if (aspect != null) {
-      SModuleReference ref = aspect.getMainLanguage();
-      Language langModule = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
-      if (langModule != null) {
-        // FIXME LanguageAspect shall tell its main language as SLanguage, not as SModuleReference
-        final SLanguage language = MetaAdapterByDeclaration.getLanguage(langModule);
-        modelLanguages.remove(language);
+    Collection<SLanguage> mainLanguages = LanguageAspectSupport.getMainLanguages(targetModel);
+    for (SLanguage mainLang: mainLanguages){
+      modelLanguages.remove(mainLang);
 
-        addActionsForRoots(language, targetModel, this);
-        addSeparator();
-      }
+      addActionsForRoots(mainLang, targetModel, this);
+      addSeparator();
     }
 
     Collections.sort(modelLanguages, new ToStringComparator());
@@ -138,7 +134,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
     }
 
-    final boolean plain = byLanguage.size() == 1 && aspect == null;
+    final boolean plain = byLanguage.size() == 1 && mainLanguages.isEmpty();
 
     for (DefaultActionGroup g : byLanguage) {
       if (plain) {

@@ -42,10 +42,11 @@
         <exclude name="**/fsnotifier" />
         <exclude name="**/fsnotifier64" />
       </tarfileset>
+      <tarfileset file="${basedir}/workbench/mps-icons/source/MPS_128.png" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
-      <tarfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
+      <tarfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <tarfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz" />
     </tar>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip" />
@@ -77,6 +78,13 @@
       </filterchain>
       <globmapper from="*" to="mps64.exe.vmoptions" />
     </copy>
+    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" />
+    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551">
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
+      <filterchain>
+        <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin/mac" />
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7552" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7552">
@@ -101,13 +109,6 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" />
     <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755">
-      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
-    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" />
-    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551">
       <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" />
       <filterchain>
         <fixcrlf eol="crlf" />
@@ -140,7 +141,7 @@
       <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${mpsBootstrapCore.version}/bin/mac/Contents/MacOS" filemode="755" />
       <zipfileset file="${basedir}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
       <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
+      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7552" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <fileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip" />
     </zip>
@@ -160,8 +161,8 @@
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
-    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f7551" />
-    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f7551">
+    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755" />
+    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755">
       <fileset file="${basedir}/bin/mac/printenv.py" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
@@ -185,13 +186,6 @@
       </filterchain>
       <globmapper from="*" to="Info.plist" />
     </copy>
-    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755" />
-    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755">
-      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
-      <filterchain>
-        <fixcrlf eol="lf" eof="remove" />
-      </filterchain>
-    </copy>
     <zip destfile="${build.layout}/${mps.build.number}-macos.zip">
       <zipfileset dir="${artifacts.mps}" prefix="MPS ${mpsBootstrapCore.version}.app/Contents" />
       <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/Resources" />
@@ -201,8 +195,7 @@
       <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
       <zipfileset file="${basedir}/bin/mac/restarter" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" filemode="755" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}.app/Contents" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f7551" filemode="755" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
+      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
       <fileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>

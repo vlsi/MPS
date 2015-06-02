@@ -25,5 +25,8 @@ import java.util.Collection;
  */
 public interface FileSystemBasedDataSource extends DataSource {
 
+  /**
+   * @return collection of files (or folders) which comprise a set of source paths (!) for this DataSource
+   */
   Collection<IFile> getAffectedFiles();
 }

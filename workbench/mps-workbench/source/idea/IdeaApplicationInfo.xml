@@ -1,20 +1,26 @@
 <component>
   <version codename="MPS" major="3" minor="3" eap="true" update-channel="MPS33"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
-  <!--TODO: add and adjust progress bar? -->
-  <logo url="/jetbrains/mps/workbench/icons/splash.png" textcolor="002387" /><!--progressColor="f49514" progressY="298"-->
-  <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
-  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png"/>
-  <dialogs-image url="/jetbrains/mps/workbench/icons/dialogImage.png"/>
+  <logo url="/splash.png" textcolor="002387" progressColor="FDA916" progressY="262"/>
+  <about url="/mpsAbout.png"/>
+  <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" size12="/toolwindows/toolWindowProject.png" size128="/MPS_128.png" ico="MPS.ico"/>
+  <dialogs-image url="/dialogImage.png"/>
   <package code="__PACKAGE_CODE__"/>
   <names product="MPS" fullname="JetBrains MPS"/>
 
-  <update-urls check="http://www.jetbrains.com/mps/update.xml" download="http://www.jetbrains.com/mps/download/"/>
-  <!--TODO: Replace logo-url by better one-->
-  <welcome-screen caption-url="/jetbrains/mps/workbench/icons/mpsWelcomeCaption.png"
-                  logo-url="/MPS_32.png"
-                  slogan-url="/jetbrains/mps/workbench/icons/mpsSlogan.png"/>
+  <welcome-screen logo-url="/MPS_welcomeScreen.png"
+                  caption-url="/mpsWelcomeCaption.png"
+                  slogan-url="/mpsSlogan.png"/>
+
+  <third-party url="http://www.jetbrains.org/"/>
+
+  <editor background-url="/idea_logo_welcome.png"/>
+
+  <update-urls check="http://www.jetbrains.com/mps/update.xml"
+               download="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"/>
+
   <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
-  <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System" release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
+  <feedback eap-url="http://forum.jetbrains.com/forum/Meta-Programming-System"
+            release-url="http://forum.jetbrains.com/forum/Meta-Programming-System"/>
   <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS"/>
 </component>

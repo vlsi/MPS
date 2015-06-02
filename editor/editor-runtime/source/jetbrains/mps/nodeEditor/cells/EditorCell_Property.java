@@ -42,6 +42,10 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   public EditorCell_Property(EditorContext editorContext, ModelAccessor accessor, SNode node) {
     super(editorContext, node, accessor.getText());
     myModelAccessor = accessor;
+    if (myModelAccessor instanceof TransactionalPropertyAccessor) {
+      TransactionalPropertyAccessor propertyAccessor = (TransactionalPropertyAccessor) myModelAccessor;
+      propertyAccessor.setCell(this);
+    }
     synchronizeViewWithModel();
   }
 
@@ -114,7 +118,6 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
         TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
         if (transactionalModelAccessor.hasValueToCommit()) {
           transactionalModelAccessor.commit();
-          synchronizeViewWithModel();
           result = true;
         }
         getEditor().relayout();

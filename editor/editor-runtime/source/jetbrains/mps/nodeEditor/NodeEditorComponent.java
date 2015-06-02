@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
@@ -41,8 +40,9 @@ public class NodeEditorComponent extends EditorComponent {
         getRepository().getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
-            if (isShowing() || RuntimeFlags.getTestMode() != TestMode.NONE)
+            if (isShowing() || RuntimeFlags.getTestMode().isInsideTestEnvironment()) {
               inspect(toSelect[0]);
+            }
           }
         });
       }

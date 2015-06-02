@@ -26,6 +26,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -45,7 +46,6 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   private final SModelReference[] myRequiredImports;
   private final SModuleReference[] myRequiredLanguages;
   private Map<SModelReference, String> myImport2Module = new HashMap<SModelReference, String>();
-  private Map<SModelReference, LanguageAspect> myImport2Aspect = new HashMap<SModelReference, LanguageAspect>();
 
   private JList myModelsList;
   private JList myLanguagesList;
@@ -66,12 +66,6 @@ public class AddRequiredImportsDialog extends DialogWrapper {
           SModule module = descr.getModule();
           if (module == null) continue;
           myImport2Module.put(ref, module.getModuleName());
-          if (module instanceof Language) {
-            LanguageAspect modelAspect = Language.getModelAspect(descr);
-            if (modelAspect != null) {
-              myImport2Aspect.put(ref, modelAspect);
-            }
-          }
         }
       }
     });
@@ -127,7 +121,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
-      myModelsList = new JBList(myRequiredImports);
+      myModelsList = new JBList((Object[]) myRequiredImports);
       myModelsList.setCellRenderer(new MyCellRenderer());
       myModelsList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myModelsList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
@@ -140,7 +134,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(myRequiredImports.length > 0 ? 5 : 0, 0, 0, 0), 0, 0));
 
-      myLanguagesList = new JBList(myRequiredLanguages);
+      myLanguagesList = new JBList((Object[]) myRequiredLanguages);
       myLanguagesList.setCellRenderer(new MyCellRenderer());
       myLanguagesList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myLanguagesList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
@@ -187,12 +181,9 @@ public class AddRequiredImportsDialog extends DialogWrapper {
 
       if (value instanceof SModelReference) {
         SModelReference ref = (SModelReference) value;
-        LanguageAspect languageAspect = myImport2Aspect.get(ref);
-        if (languageAspect != null) {
-          setIcon(IconManager.getIconForAspect(languageAspect));
-        } else {
-          setIcon(IconManager.getIconForModelReference(ref));
-        }
+
+        SModel model = ref.resolve(MPSModuleRepository.getInstance());
+        setIcon(IconManager.getIconFor(model));
         String longName = SModelStereotype.withoutStereotype(ref.getModelName());
         append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);
         if (!SModelStereotype.getStereotype(ref.getModelName()).isEmpty()) {

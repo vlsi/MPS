@@ -3762,6 +3762,66 @@
     <node concept="13hLZK" id="30c0HY8gA9c" role="13h7CW">
       <node concept="3clFbS" id="30c0HY8gA9d" role="2VODD2" />
     </node>
+    <node concept="13i0hz" id="3lJIBUNcdUB" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getInputNodeTypeInsideOfMacro" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
+      <node concept="3Tm1VV" id="3lJIBUNcdUZ" role="1B3o_S" />
+      <node concept="3clFbS" id="3lJIBUNcdV0" role="3clF47">
+        <node concept="3cpWs8" id="3lJIBUNcfNz" role="3cqZAp">
+          <node concept="3cpWsn" id="3lJIBUNcfN$" role="3cpWs9">
+            <property role="TrG5h" value="queryType" />
+            <node concept="3Tqbb2" id="3lJIBUNcfNx" role="1tU5fm" />
+            <node concept="2OqwBi" id="3lJIBUNcfN_" role="33vP2m">
+              <node concept="2OqwBi" id="3lJIBUNcfNA" role="2Oq$k0">
+                <node concept="13iPFW" id="3lJIBUNcfNB" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3lJIBUNcfNC" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpf8:30c0HY8gA7F" />
+                </node>
+              </node>
+              <node concept="3JvlWi" id="3lJIBUNcfND" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3Knyl0" id="3lJIBUNcgox" role="3cqZAp">
+          <node concept="37vLTw" id="3lJIBUNcgoy" role="3Ko5Z1">
+            <ref role="3cqZAo" node="3lJIBUNcfN$" resolve="queryType" />
+          </node>
+          <node concept="3clFbS" id="3lJIBUNcgoz" role="3KnTvU">
+            <node concept="3cpWs6" id="3lJIBUNcgo$" role="3cqZAp">
+              <node concept="2iQiJ2" id="3lJIBUNcgo_" role="3cqZAk">
+                <ref role="2iQyjY" node="3lJIBUNcgoE" resolve="#concept" />
+              </node>
+            </node>
+          </node>
+          <node concept="1Yb3XT" id="3lJIBUNcgoA" role="3KnVwV">
+            <property role="TrG5h" value="_" />
+            <node concept="2DMOqp" id="3lJIBUNcgoB" role="1YbcFS">
+              <node concept="A3Dl8" id="3lJIBUNcgoC" role="2DMOqq">
+                <node concept="3Tqbb2" id="3lJIBUNcgoD" role="A3Ik2">
+                  <node concept="3jrphi" id="3lJIBUNcgoE" role="lGtFl">
+                    <property role="2qtEX8" value="concept" />
+                    <property role="3jrwYG" value="concept" />
+                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3lJIBUNcgw0" role="3cqZAp">
+          <node concept="2OqwBi" id="3lJIBUNcdV2" role="3cqZAk">
+            <node concept="13iAh5" id="3lJIBUNcdV3" role="2Oq$k0" />
+            <node concept="2qgKlT" id="3lJIBUNcdV4" role="2OqNvi">
+              <ref role="37wK5l" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3THzug" id="3lJIBUNcdV1" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="2n6lsTIwojj">
     <property role="3GE5qa" value="macro" />

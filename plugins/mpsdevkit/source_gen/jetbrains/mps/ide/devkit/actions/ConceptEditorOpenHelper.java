@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -57,7 +56,7 @@ public class ConceptEditorOpenHelper {
       return null;
     }
     SNode baseNode = findBaseNodeMultiTab(node);
-    if ((baseNode == null) || SModelUtil.getDeclaringLanguage(baseNode) == null || (Language.getModelAspect(SNodeOperations.getModel(node)) == null && !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))))) {
+    if ((baseNode == null) || SModelUtil.getDeclaringLanguage(baseNode) == null || (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))))) {
       return null;
     }
     return baseNode;
@@ -67,9 +66,6 @@ public class ConceptEditorOpenHelper {
       return false;
     }
     if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) == null) {
-      return false;
-    }
-    if (Language.getModelAspect(SNodeOperations.getModel(node)) == null) {
       return false;
     }
     return true;

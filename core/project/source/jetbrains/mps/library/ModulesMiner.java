@@ -63,6 +63,7 @@ public class ModulesMiner {
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
     List<ModuleHandle> result = new ArrayList<ModuleHandle>();
     if (refreshFiles) {
+      LOG.debug("Refreshing recursively in the " + dir);
       refreshRecursivelyIntoJars(dir);
     }
     LOG.debug("Reading modules from " + dir);

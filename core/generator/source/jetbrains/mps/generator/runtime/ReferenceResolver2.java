@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * FIXME WORK IN PROGRESS. REVISIT
- * Everything one needs to known about reference macro and its resolution.
+ * Everything one needs to know about reference macro and its resolution.
  * <p/>
  * New alternative to {@link ReferenceResolver}, taking its approach to extremum, with all relevant parameters being part of the resolver.
  * Another possible approach is to abstract with resolver execution code only, and pass relevant parameters (e.g. output node, reference, etc)
@@ -29,8 +29,11 @@ import org.jetbrains.mps.openapi.model.SNode;
  * is tightly bound to output node, reference role and template node (in fact, it's the only way to define RM now), that there's little sense to
  * escape this fact. However, once (and if) we introduce external utility functions, we might need to re-consider this approach (i.e. of few RM
  * would happen to use same function, we'd need abstraction for execution code to be separate from RM's context).
- * The reason I wrote here is that there are ReferenceInfo implementations that mirror most of this ReferenceResolver2 stuff, and perhaps should
+ * The reason I wrote this here is that there are ReferenceInfo implementations that mirror most of this ReferenceResolver2 stuff, and perhaps should
  * be merged into a common approach.
+ *
+ * The reason this interface extends original RR is not 100% certain. I need resolve info and template node here as well, and now reuse them from RR.
+ * Could have copied them, though, to
  * @since 3.3
  * @author Artem Tikhomirov
  */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.generator.runtime;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
@@ -30,7 +31,7 @@ public interface TemplateMappingConfiguration {
 
   SNodeReference getMappingNode();
 
-  boolean isApplicable(ITemplateGenerator generator) throws GenerationFailureException;
+  boolean isApplicable(@NotNull ITemplateGenerator generator) throws GenerationFailureException;
 
   String getName();
 

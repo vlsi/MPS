@@ -4,7 +4,7 @@
     <file name="Language.java">
       <unit at="51,21,51,56" name="jetbrains.mps.baseLanguage.logging.Language$1" />
       <unit at="57,21,57,58" name="jetbrains.mps.baseLanguage.logging.Language$2" />
-      <unit at="23,0,71,0" name="jetbrains.mps.baseLanguage.logging.Language" />
+      <unit at="23,0,73,0" name="jetbrains.mps.baseLanguage.logging.Language" />
     </file>
   </root>
 </debug-info>

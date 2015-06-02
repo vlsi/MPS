@@ -13,13 +13,12 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,6 +26,10 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import java.util.Collection;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
 
 public final class SNodeUtil {
 
@@ -59,11 +62,17 @@ public final class SNodeUtil {
 
   public static final SInterfaceConcept concept_IResolveInfo = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo");
   public static final SInterfaceConcept concept_INamedConcept = BootstrapAdapterFactory.getInterface(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept");
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static final String conceptName_BaseConcept = "jetbrains.mps.lang.core.structure.BaseConcept";
   public static final SConcept concept_BaseConcept = BootstrapAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
   public static final SConcept concept_AbstractConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static final String conceptName_ConceptDeclaration = "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   public static final SConcept concept_ConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static final String conceptName_InterfaceConceptDeclaration = "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration";
   public static final SConcept concept_InterfaceConceptDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103556dcafL, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   public static final SConcept concept_LinkDeclaration = BootstrapAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
@@ -120,9 +129,6 @@ public final class SNodeUtil {
   }
   public static boolean isDefaultSubstitutable(SAbstractConcept concept) {
     return !(concept.isAbstract()) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL, "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault")));
-  }
-  public static List<SNode> findAllAspects(SNode node) {
-    return BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findAllAspects_7754459869734028917", new Object[]{});
   }
   public static int getMetaLevel(SNode node) {
     return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{});
@@ -256,5 +262,9 @@ public final class SNodeUtil {
   public static boolean isAssociationLink(String metaclass) {
     // same as cardinality, would like to access LinkDeclaration.metaClass via bootstrap property 
     return metaclass == null || "reference".equals(metaclass);
+  }
+
+  public static Collection<LanguageAspectDescriptor> collectAspects() {
+    return Sequence.fromIterable(ExtensionPoint.<LanguageAspectDescriptor>generify(new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)).getObjects()).toListSequence();
   }
 }

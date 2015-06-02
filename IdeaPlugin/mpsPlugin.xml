@@ -244,6 +244,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <library file="${artifacts.mpsBootstrapCore}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.aspectDescriptor.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.classLike.jar" />
@@ -325,7 +326,7 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/src" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/common/resources" />
     <mkdir dir="${build.tmp}/java/out/mps-common" />
-    <javac2 destdir="${build.tmp}/java/out/mps-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-common" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/common/src" />
@@ -358,7 +359,7 @@
   <target name="java.compile.mps-jps-plugin" depends="java.compile.mps-common, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-jps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
@@ -371,6 +372,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -393,7 +395,7 @@
   <target name="java.compile.mps-plugin" depends="java.compile.mps-common, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/src" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/src" />
@@ -405,6 +407,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
@@ -433,7 +436,7 @@
   <target name="java.compile.mps-vcs-core" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs-core/core/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-core" />
-    <javac2 destdir="${build.tmp}/java/out/mps-vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-vcs-core" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
@@ -466,7 +469,7 @@
     <mkdir dir="${mps_home}/plugins/vcs/common/source_gen" />
     <mkdir dir="${mps_home}/IdeaPlugin/mps-vcs/source" />
     <mkdir dir="${build.tmp}/java/out/mps-vcs-platform" />
-    <javac2 destdir="${build.tmp}/java/out/mps-vcs-platform" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-vcs-platform" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
@@ -480,6 +483,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
         <pathelement path="${build.tmp}/java/out/mps-vcs-core" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
@@ -508,7 +512,7 @@
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/source_gen" />
     <mkdir dir="${mps_home}/plugins/mpsjava/platform/source" />
     <mkdir dir="${build.tmp}/java/out/mps-java" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
@@ -525,6 +529,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
@@ -563,7 +568,7 @@
   <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-common, java.compile.mps-jps-plugin, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-java-jps-plugin" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
@@ -597,7 +602,7 @@
   <target name="java.compile.jetbrains.mps.ide.vcs.modelmetadata" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true" source="1.6" target="1.6">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
@@ -611,6 +616,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

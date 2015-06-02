@@ -73,11 +73,6 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
-  public String toString() {
-    return "FolderDataSource(" + myFolder.toString() + ")";
-  }
-
-  @Override
   public boolean isReadOnly() {
     return FileSystem.getInstance().isPackaged(myFolder);
   }
@@ -88,6 +83,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return myFolder.toString();
   }
 
+  @NotNull
   @Override
   public Iterable<String> getAvailableStreams() {
     Set<String> names = new HashSet<String>();
@@ -99,6 +95,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return names;
   }
 
+  @NotNull
   @Override
   public InputStream openInputStream(String name) throws IOException {
     IFile file = getFile(name);
@@ -108,6 +105,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     return file.openInputStream();
   }
 
+  @NotNull
   @Override
   public OutputStream openOutputStream(String name) throws IOException {
     IFile file = getFile(name);
@@ -120,10 +118,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   @Override
   public boolean delete(String name) {
     IFile file = getFile(name);
-    if (file == null) {
-      return false;
-    }
-    return file.delete();
+    return file != null && file.delete();
   }
 
   @Override
@@ -160,6 +155,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     }
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
     return myFolder;
@@ -226,4 +222,5 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFolder);
   }
+
 }

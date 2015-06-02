@@ -35,6 +35,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -48,6 +50,7 @@ import java.io.InputStream;
 import java.io.IOException;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
 
@@ -55,6 +58,9 @@ public final class IconManager {
   public static final Logger LOG = LogManager.getLogger(IconManager.class);
   private static final int IMAGE_LOADED = ~((MediaTracker.ABORTED | MediaTracker.ERRORED | MediaTracker.LOADING));
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
+  /**
+   * [MM] this usage of LanguageAspect is reviewed
+   */
   private static Map<LanguageAspect, Icon> ourAspectsToIcons;
   public static final Icon EMPTY_ICON = new Icon() {
     @Override
@@ -217,19 +223,28 @@ public final class IconManager {
     if (model == null) {
       return IdeIcons.UNKNOWN_ICON;
     }
-    LanguageAspect aspect = Language.getModelAspect(model);
-    if (aspect != null) {
-      return getIconForAspect(aspect);
-    } else
+
+    // [MM] this usage of LanguageAspect is reviewed 
+    LanguageAspect oldAspect = LanguageAspectSupport.getOldAspect(model);
+    if (oldAspect != null) {
+      return getIconForAspect(LanguageAspectSupport.getOldAspect(model));
+    }
+
+    LanguageAspectDescriptor newAspect = LanguageAspectSupport.getNewAspect(model);
+    if (newAspect != null) {
+      return newAspect.getIcon();
+    }
+
     if (SModelStereotype.isGeneratorModel(model)) {
       return IdeIcons.TEMPLATES_MODEL_ICON;
-    } else
+    }
     if (Language.isLanguageOwnedAccessoryModel(model)) {
       return IdeIcons.ACCESSORY_MODEL_ICON;
-    } else
+    }
     if (SModelStereotype.isTestModel(model)) {
       return IdeIcons.TEST_MODEL_ICON;
     }
+
     return IdeIcons.MODEL_ICON;
   }
   public static Icon getIconFor(SModule module) {
@@ -301,7 +316,10 @@ public final class IconManager {
     }
     return icon;
   }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static Icon getIconForAspect(LanguageAspect aspect) {
+    // [MM] this usage of LanguageAspect is reviewed 
     Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
     if (icon == null) {
       return IdeIcons.MODEL_ICON;
@@ -309,6 +327,7 @@ public final class IconManager {
     return icon;
   }
   static {
+    // [MM] this usage of LanguageAspect is reviewed 
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.BEHAVIOR, IdeIcons.BEHAVIOR_MODEL_ICON);

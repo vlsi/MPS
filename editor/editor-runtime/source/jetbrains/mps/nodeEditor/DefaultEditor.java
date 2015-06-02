@@ -80,21 +80,21 @@ public class DefaultEditor extends AbstractDefaultEditor {
   protected void init() {
     assert mySNode != null && myConcept != null;
     for (SProperty sProperty : myConcept.getProperties()) {
-      if (!sProperty.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!sProperty.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myProperties.add(sProperty);
       }
     }
     // TODO: add other SProperties declared in this node, not declared in the concept
 
     for (SReferenceLink sReferenceLink : myConcept.getReferenceLinks()) {
-      if (!sReferenceLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!sReferenceLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myReferenceLinks.add(sReferenceLink);
       }
     }
     // TODO: add other SReferenceLinks declared in this node, not declared in the concept
 
     for (SContainmentLink sContainmentLink : myConcept.getContainmentLinks()) {
-      if (!sContainmentLink.getContainingConcept().equals(SNodeUtil.concept_BaseConcept)) {
+      if (!sContainmentLink.getOwner().equals(SNodeUtil.concept_BaseConcept)) {
         myContainmentLinks.add(sContainmentLink);
       }
     }

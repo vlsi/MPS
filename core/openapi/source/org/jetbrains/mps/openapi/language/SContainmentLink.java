@@ -15,13 +15,14 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Containment links describe parent-child relationships.
  */
-public interface SContainmentLink extends SAbstractLink, SConceptFeature {
+public interface SContainmentLink extends SAbstractLink {
   /**
    * Returns a name of this property
    * Though in 3.2 the name is still used as id in some cases, it should be treated only as a user-friendly text representation.
@@ -34,13 +35,16 @@ public interface SContainmentLink extends SAbstractLink, SConceptFeature {
    * Return the concept that contains the declaration of this property.
    * Note that if you've got some property from a concept, this method can return its [concept's] ancestor, not
    * exactly the concept from which you've obtained this property.
+   * @deprecated use {@link #getOwner()}
    */
-  @Deprecated// use SConceptFeature.getContainingConcept()
+  @Deprecated
+  // ToRemove(version = 3.3)
   SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.
    */
+  @NotNull
   SAbstractConcept getTargetConcept();
 
   /**

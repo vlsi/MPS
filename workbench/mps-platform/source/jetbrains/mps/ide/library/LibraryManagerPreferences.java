@@ -148,12 +148,6 @@ public class LibraryManagerPreferences {
 
     Library l = (Library) myListModel.get(index);
 
-    //add support of predefined libs
-    if (false) {
-      JOptionPane.showMessageDialog(myMainPanel, "You can't edit a predefined library", "Error", JOptionPane.ERROR_MESSAGE);
-      return;
-    }
-
     String path;
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);

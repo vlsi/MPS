@@ -30,6 +30,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.Collection;
 import java.util.Map;
@@ -82,7 +83,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
         myDescriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
         return;
       }
-      myLanguage.getRepository().getModelAccess().runReadAction(new Runnable() {
+      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
           ConcurrentHashMap<SConceptId, ConceptDescriptor> descriptors = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
@@ -123,8 +124,7 @@ public class StructureAspectInterpreted extends BaseStructureAspectDescriptor {
   //this method MUST NOT call any concept methods (not to get into infinite recursion)
   private boolean isConceptDeclaration(SConcept concept) {
     if (concept instanceof SConceptAdapterByName) {
-      String fqname = concept.getQualifiedName();
-      return fqname.equals(SNodeUtil.conceptName_ConceptDeclaration) || fqname.equals(SNodeUtil.conceptName_InterfaceConceptDeclaration);
+      return concept.equals(SNodeUtil.concept_ConceptDeclaration) || concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
     } else if (concept instanceof SConceptAdapterById) {
       SConceptId id = ((SConceptAdapterById) concept).getId();
       return id.equals(SNodeUtil.conceptId_ConceptDeclaration) || id.equals(SNodeUtil.conceptId_InterfaceConceptDeclaration);

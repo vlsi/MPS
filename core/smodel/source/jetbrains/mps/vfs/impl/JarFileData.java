@@ -17,6 +17,7 @@ package jetbrains.mps.vfs.impl;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -194,12 +195,12 @@ class JarFileData extends AbstractJarFileData {
     }
 
     @Override
-    public int read(byte[] b) throws IOException {
+    public int read(@NotNull byte[] b) throws IOException {
       return stream.read(b);
     }
 
     @Override
-    public int read(byte[] b, int off, int len) throws IOException {
+    public int read(@NotNull byte[] b, int off, int len) throws IOException {
       return stream.read(b, off, len);
     }
 
@@ -227,8 +228,8 @@ class JarFileData extends AbstractJarFileData {
     }
 
     @Override
-    public void mark(int readlimit) {
-      stream.mark(readlimit);
+    public void mark(int readLimit) {
+      stream.mark(readLimit);
     }
 
     @Override

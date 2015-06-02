@@ -43,7 +43,7 @@ public class Switchswitch__InputNode__A extends TemplateSwitchBase implements Te
       super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367"), MetaAdapterFactory.getConcept(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x11645be5a7aL, "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A"), false);
     }
     @Override
-    protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Templatereduce__InputNode__A__switch().apply(environment, context);
       return tlist1;

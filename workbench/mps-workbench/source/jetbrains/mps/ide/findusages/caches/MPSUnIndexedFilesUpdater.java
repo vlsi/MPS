@@ -28,6 +28,7 @@ import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexingStamp;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -80,7 +81,7 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
     }
 
     Set<VirtualFile> visitedFolders = new HashSet<VirtualFile>();
-    for (VirtualFile root : CacheUtil.getIndexableRoots()) {
+    for (VirtualFile root : new IndexableRootCalculator(myProject).getIndexableRoots()) {
       iterateRecursively(root, processor, indicator,visitedFolders);
     }
   }
@@ -93,7 +94,7 @@ public class MPSUnIndexedFilesUpdater implements CacheUpdater {
       visitedFolders.add(root);
     }
 
-    if (CacheUtil.isIgnored(root, myManager)) return;
+    if (IndexableRootCalculator.isIgnored(root, myManager)) return;
 
     if (indicator != null) {
       indicator.setText2(root.getPresentableUrl());

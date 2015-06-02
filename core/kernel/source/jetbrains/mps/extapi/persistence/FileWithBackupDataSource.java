@@ -111,10 +111,11 @@ public class FileWithBackupDataSource extends FileDataSource {
   private class BackupFileListener implements FileSystemListener {
     private IFile path;
 
-    private BackupFileListener(IFile path) {
+    private BackupFileListener(@NotNull IFile path) {
       this.path = path;
     }
 
+    @NotNull
     @Override
     public IFile getFileToListen() {
       return path;

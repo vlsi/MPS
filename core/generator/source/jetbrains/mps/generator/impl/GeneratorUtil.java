@@ -19,9 +19,13 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -29,6 +33,15 @@ import java.util.Arrays;
 
 
 public class GeneratorUtil {
+
+  /**
+   * Single location to clean once we drop legacy code that deals with string concept fqn
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static SAbstractConcept toSConcept(String conceptQualifiedName) {
+    return MetaAdapterByDeclaration.getConcept(SModelUtil.findConceptDeclaration(conceptQualifiedName));
+  }
 
   public static ProblemDescription describeInput(TemplateContext ctx) {
     return ctx == null ? null : describeIfExists(ctx.getInput(), "input node");

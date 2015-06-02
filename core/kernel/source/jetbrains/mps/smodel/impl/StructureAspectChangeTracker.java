@@ -72,7 +72,7 @@ public final class StructureAspectChangeTracker extends SRepositoryListenerBase 
   }
 
   @Override
-  public void startListening(SRepository repository) {
+  public void startListening(@NotNull SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
     }

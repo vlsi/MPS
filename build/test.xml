@@ -41,7 +41,7 @@
 
     <junit fork="true" dir="${mps_build_home}">
       <jvmarg value="-ea"/>
-      <jvmarg value="-Dmps.junit.modules.root=."/>
+      <jvmarg value="-Dmps.junit.project=."/>
       <jvmarg value="-Xss1024k"/>
       <jvmarg value="-Xmx1200m"/>
       <jvmarg value="-XX:MaxPermSize=128m"/>
@@ -107,7 +107,7 @@
       <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>
     </ant>
-    <ant antfile="build/tests/testPackaged.xml" inheritAll="true" useNativeBasedir="true">
+    <ant antfile="build/tests/mpsPackaged.xml" inheritAll="true" useNativeBasedir="true">
       <target name="build"/>
       <target name="check"/>
       <property name="mps_home" value="${mps_build_home}"/>

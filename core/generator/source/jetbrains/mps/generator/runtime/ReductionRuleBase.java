@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -38,18 +40,16 @@ import java.util.Collection;
 public abstract class ReductionRuleBase implements TemplateReductionRule {
 
   private final SNodeReference myRule;
-  private final String myConcept;
+  private final SAbstractConcept myConcept;
   private final boolean myIncludeInheritors;
 
   /**
-   * @deprecated
+   * @deprecated use {@link #ReductionRuleBase(SNodeReference, SAbstractConcept, boolean)}
    */
   @Deprecated
   @ToRemove(version = 3.3)
   protected ReductionRuleBase(@NotNull SNodeReference ruleNode, @NotNull String appConcept, boolean withInheritors) {
-    myRule = ruleNode;
-    myConcept = appConcept;
-    myIncludeInheritors = withInheritors;
+    this(ruleNode, GeneratorUtil.toSConcept(appConcept), withInheritors);
   }
 
   /**
@@ -59,16 +59,29 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
    * @since 3.3
    */
   protected ReductionRuleBase(@NotNull SNodeReference ruleNode, @NotNull SAbstractConcept appConcept, boolean withInheritors) {
-    this(ruleNode, appConcept.getQualifiedName(), withInheritors);
+    myRule = ruleNode;
+    myConcept = appConcept;
+    myIncludeInheritors = withInheritors;
   }
 
+  @NotNull
   @Override
   public SNodeReference getRuleNode() {
     return myRule;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
+    return myConcept.getQualifiedName();
+  }
+
+  @NotNull
+  @Override
+  public final SAbstractConcept getApplicableConcept2() {
+    // the reason why this class if different from other XXXRuleBase classes in concept field handing is
+    // that there were no subclasses of RRB in MPS 3.2 to override #getApplicableConcept method (there's cons with args already, while
+    // other base classes had no-arg cons in MPS 3.2
     return myConcept;
   }
 
@@ -79,11 +92,27 @@ public abstract class ReductionRuleBase implements TemplateReductionRule {
 
   // XXX now there's no reason to override tryToApply just to delegate to doApply()
   @Override
+  @ToRemove(version = 3.3)
   public Collection<SNode> tryToApply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
     return doApply(context);
   }
 
-  protected abstract Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException;
+  @Nullable
+  @Override
+  @ToRemove(version = 3.3)
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    // FIXME Compatibility code, once no MPS 3.2-generated rules are there, the method shall become abstract
+    return tryToApply(context.getEnvironment(), context);
+  }
+
+  /**
+   * @deprecated with {@link #apply(TemplateContext)}, there's no reason to override this method. Left for compatibility with code generated in MPS 3.2
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  protected Collection<SNode> doApply(@NotNull TemplateContext context) throws GenerationException {
+    return null;
+  }
 
   /*
    * Next two isApplicable methods provided here to facilitate migration of generated reduction rules, conditionally implementing TemplateRuleWithCondition.

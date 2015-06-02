@@ -20,6 +20,12 @@ public class SNodeTypeCastExpression_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x12067573bc7L, "asCast")) ? "as" : ":");
   }
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression"));
+  }
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, 0x109758722b4L, "leftExpression"), expr);
+  }
   private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

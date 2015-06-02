@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
@@ -42,44 +40,11 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class SModuleOperations {
   private static final Logger LOG = LogManager.getLogger(SModuleOperations.class);
-
-  public static Collection<String> getIndexablePaths(SModule module) {
-    // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
-    Set<String> result = new TreeSet<String>();
-
-    for (ModelRoot modelRoot : module.getModelRoots()) {
-      if (modelRoot instanceof FileBasedModelRoot) {
-        FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) modelRoot;
-        String contentRoot = fileBasedModelRoot.getContentRoot();
-        if (contentRoot != null) {
-          result.add(exposePath(contentRoot));
-        }
-        // todo: use excluded & source folders like IDEA
-//        for (String fileKind : fileBasedModelRoot.getSupportedFileKinds()) {
-//          if (!FileBasedModelRoot.EXCLUDED.equals(fileKind)) {
-//            for (String file : fileBasedModelRoot.getFiles(fileKind)) {
-////              checkContentPath(file, module, modelRoot);
-//              result.add(exposePath(file));
-//            }
-//          }
-//        }
-      }
-
-      // todo: obsolete model root type
-      if (modelRoot instanceof FolderModelRootBase) {
-        result.add(exposePath(((FolderModelRootBase) modelRoot).getPath()));
-      }
-    }
-
-    return result;
-  }
 
   public static String getOutputPathFor(SModel model) {
     // todo: move to SModelOperations?
@@ -212,7 +177,9 @@ public class SModuleOperations {
    * Reads module from file and eventually reloads it (when CLManager triggers refresh)
    */
   public static void reloadFromDisk(AbstractModule module) {
-    if (module.getRepository() == null) throw new IllegalArgumentException("Module " + module + " is disposed");
+    if (module.getRepository() == null) {
+      throw new IllegalArgumentException("Module " + module + " is disposed");
+    }
 
     module.getRepository().getModelAccess().checkWriteAccess();
 
@@ -251,11 +218,6 @@ public class SModuleOperations {
   }
 
   // helpers
-  private static String exposePath(String path) {
-    String suffix = path.endsWith("." + MPSExtentions.MPS_ARCH) ? "!/" : "";
-    return path + suffix;
-  }
-
   private static void checkContentPath(String path, SModule module, ModelRoot modelRoot) {
     if (PersistenceRegistry.JAVA_CLASSES_ROOT.equals(modelRoot.getType())) {
       return;

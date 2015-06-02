@@ -25,8 +25,10 @@ public abstract class FileSystem {
   private static final FileSystem INSTANCE = new FileSystemImpl();
 
   public abstract void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider);
+  @NotNull
   public abstract FileSystemProvider getFileSystemProvider();
 
+  @NotNull
   public abstract IFile getFileByPath(@NotNull String path);
   public abstract boolean isPackaged(IFile file);
   public abstract boolean isFileIgnored(@NotNull String name);
@@ -41,20 +43,11 @@ public abstract class FileSystem {
 
   /**
    * Write files from appropriate thread and with appropriate locks
-   * @param r
    * @return  false - error occurred
    */
   public abstract boolean runWriteTransaction(Runnable r);
 
   public static FileSystem getInstance() {
     return INSTANCE;
-  }
-
-  /**
-   * @deprecated Use FileSystem.getInstance().getFileByPath(String) instead.
-   */
-  @Deprecated()
-  public IFile getFile(String path) {
-    return FileSystem.getInstance().getFileByPath(path);
   }
 }

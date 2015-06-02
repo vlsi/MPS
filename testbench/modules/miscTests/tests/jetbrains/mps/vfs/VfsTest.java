@@ -29,7 +29,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Added on Oct 12, 2010
@@ -120,7 +120,7 @@ public class VfsTest extends WorkbenchMpsTest {
     }
     assertTrue(file1.exists());
     assertEquals(file1.length(), FILE_SIZE);
-    assertEquals(Arrays.asList(file1), subSubDir.getChildren());
+    assertEquals(Collections.singletonList(file1), subSubDir.getChildren());
 
     try {
       InputStream os = file1.openInputStream();
@@ -210,6 +210,6 @@ public class VfsTest extends WorkbenchMpsTest {
   }
 
   private interface TestInvoker {
-    public void invokeTest(Runnable testRunnable); 
+    void invokeTest(Runnable testRunnable);
   }
 }

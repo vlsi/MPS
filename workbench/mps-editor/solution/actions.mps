@@ -1108,6 +1108,9 @@
                 <node concept="3cpWs8" id="3M9DpEEa3$6" role="3cqZAp">
                   <node concept="3cpWsn" id="3M9DpEEa3$7" role="3cpWs9">
                     <property role="TrG5h" value="link" />
+                    <node concept="3uibUv" id="1Oj45PFeMkQ" role="1tU5fm">
+                      <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+                    </node>
                     <node concept="2OqwBi" id="6lZ8OoRvh49" role="33vP2m">
                       <node concept="2JrnkZ" id="6lZ8OoRvh4a" role="2Oq$k0">
                         <node concept="37vLTw" id="3GM_nagTAj9" role="2JrQYb">
@@ -1118,12 +1121,17 @@
                         <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                       </node>
                     </node>
-                    <node concept="3uibUv" id="1Oj45PFeMkQ" role="1tU5fm">
-                      <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
-                    </node>
                   </node>
                 </node>
                 <node concept="3clFbJ" id="3M9DpEEa3$s" role="3cqZAp">
+                  <node concept="2OqwBi" id="3M9DpEEa3$Y" role="3clFbw">
+                    <node concept="37vLTw" id="1Oj45PFeNqB" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
+                    </node>
+                    <node concept="liA8E" id="1Oj45PFeNL2" role="2OqNvi">
+                      <ref role="37wK5l" to="t3eg:~SContainmentLink.isMultiple():boolean" resolve="isMultiple" />
+                    </node>
+                  </node>
                   <node concept="3clFbS" id="3M9DpEEa3$t" role="3clFbx">
                     <node concept="3cpWs8" id="3M9DpEEa3$u" role="3cqZAp">
                       <node concept="3cpWsn" id="3M9DpEEa3$v" role="3cpWs9">
@@ -1208,14 +1216,6 @@
                     </node>
                     <node concept="3cpWs6" id="3M9DpEEa3$W" role="3cqZAp" />
                   </node>
-                  <node concept="2OqwBi" id="3M9DpEEa3$Y" role="3clFbw">
-                    <node concept="37vLTw" id="1Oj45PFeNqB" role="2Oq$k0">
-                      <ref role="3cqZAo" node="3M9DpEEa3$7" resolve="link" />
-                    </node>
-                    <node concept="liA8E" id="1Oj45PFeNL2" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SContainmentLink.isMultiple():boolean" resolve="isMultiple" />
-                    </node>
-                  </node>
                 </node>
                 <node concept="3clFbF" id="3M9DpEEa3_1" role="3cqZAp">
                   <node concept="37vLTI" id="3M9DpEEa3_2" role="3clFbG">
@@ -1288,6 +1288,9 @@
               <node concept="3cpWs8" id="3M9DpEEa3_z" role="3cqZAp">
                 <node concept="3cpWsn" id="3M9DpEEa3_$" role="3cpWs9">
                   <property role="TrG5h" value="role" />
+                  <node concept="3uibUv" id="1Oj45PFgHW4" role="1tU5fm">
+                    <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
+                  </node>
                   <node concept="2OqwBi" id="6lZ8OoRvh1N" role="33vP2m">
                     <node concept="2JrnkZ" id="6lZ8OoRvh1O" role="2Oq$k0">
                       <node concept="37vLTw" id="3GM_nagTtbD" role="2JrQYb">
@@ -1297,9 +1300,6 @@
                     <node concept="liA8E" id="6lZ8OoRvh1Q" role="2OqNvi">
                       <ref role="37wK5l" to="ec5l:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                     </node>
-                  </node>
-                  <node concept="3uibUv" id="1Oj45PFgHW4" role="1tU5fm">
-                    <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
                   </node>
                 </node>
               </node>
@@ -2450,6 +2450,24 @@
               <ref role="37wK5l" to="cu2c:~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolve="runWriteInEDT" />
               <node concept="1bVj0M" id="7DX8xFKyIyx" role="37wK5m">
                 <node concept="3clFbS" id="7DX8xFKyIyy" role="1bW5cS">
+                  <node concept="3clFbJ" id="2qEq7FDtqJy" role="3cqZAp">
+                    <node concept="3clFbS" id="2qEq7FDtqJ$" role="3clFbx">
+                      <node concept="3cpWs6" id="2qEq7FDtrtn" role="3cqZAp" />
+                    </node>
+                    <node concept="2OqwBi" id="2qEq7FDtqZ4" role="3clFbw">
+                      <node concept="2OqwBi" id="2qEq7FDtqOk" role="2Oq$k0">
+                        <node concept="37vLTw" id="2qEq7FDtqM2" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7eEUNhe_Ak" resolve="editorCell" />
+                        </node>
+                        <node concept="liA8E" id="2qEq7FDtqWy" role="2OqNvi">
+                          <ref role="37wK5l" to="nu8v:~EditorCell.getEditorComponent():jetbrains.mps.openapi.editor.EditorComponent" resolve="getEditorComponent" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="2qEq7FDtrmN" role="2OqNvi">
+                        <ref role="37wK5l" to="srng:~EditorComponent.isDisposed():boolean" resolve="isDisposed" />
+                      </node>
+                    </node>
+                  </node>
                   <node concept="3clFbJ" id="11sNP2BO_Ca" role="3cqZAp">
                     <node concept="1Wc70l" id="2wEmQUlSmjB" role="3clFbw">
                       <node concept="2ZW3vV" id="11sNP2BOAmv" role="3uHU7B">
@@ -8606,6 +8624,11 @@
     <property role="3GE5qa" value="EditMenuActions" />
     <property role="2uzpH1" value="Add Model Import by Root" />
     <property role="1teQrl" value="true" />
+    <node concept="1DS2jV" id="3WfhvVJ3Syz" role="1NuT2Z">
+      <property role="TrG5h" value="project" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="3WfhvVJ3Sy$" role="1oa70y" />
+    </node>
     <node concept="2XrIbr" id="30tYQkHUrnK" role="32lrUH">
       <property role="TrG5h" value="getErrorCell" />
       <node concept="3uibUv" id="1C72Z0GtEpJ" role="3clF45">
@@ -8648,11 +8671,6 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="30tYQkHUrom" role="1B3o_S" />
-    </node>
-    <node concept="1DS2jV" id="3WfhvVJ3Syz" role="1NuT2Z">
-      <property role="TrG5h" value="project" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-      <node concept="1oajcY" id="3WfhvVJ3Sy$" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="30tYQkHUrop" role="1NuT2Z">
       <property role="TrG5h" value="module" />

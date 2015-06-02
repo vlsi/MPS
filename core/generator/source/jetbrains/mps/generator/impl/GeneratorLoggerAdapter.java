@@ -36,6 +36,7 @@ import java.util.List;
  */
 public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
+  private static final int MAX_EXCEPTION_DEPTH = 10;
   protected final IMessageHandler myMessageHandler;
   protected final MessageFactory myFactory;
   protected final boolean myHandleInfo;
@@ -117,14 +118,13 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   @Override
   public void handleException(Throwable t) {
     String text = t.getMessage();
-    if (text == null) {
-      Throwable cause = t.getCause();
-      int tries = 0;
-      while (text == null && cause != null && tries < 10) {
-        text = cause.getMessage();
-        cause = cause.getCause();
-        tries++;
+    Throwable cause = t;
+    for (int i = 0; i < MAX_EXCEPTION_DEPTH; ++i) {
+      if (text != null || cause == null) {
+        break;
       }
+      text = cause.getMessage();
+      cause = cause.getCause();
     }
     if (text == null) {
       text = String.format("An exception was encountered: %s (no message)", t.getClass().getName());

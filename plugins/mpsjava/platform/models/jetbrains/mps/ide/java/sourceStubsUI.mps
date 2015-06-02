@@ -410,7 +410,7 @@
                           <node concept="37vLTI" id="1iml1A5i1rg" role="3clFbG">
                             <node concept="2OqwBi" id="1iml1A5i1rh" role="37vLTx">
                               <node concept="liA8E" id="1iml1A5i1ri" role="2OqNvi">
-                                <ref role="37wK5l" to="59et:~IFile.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                                <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
                               </node>
                               <node concept="37vLTw" id="1iml1A5i1rj" role="2Oq$k0">
                                 <ref role="3cqZAo" node="1iml1A5i1r4" resolve="dir" />

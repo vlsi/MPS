@@ -228,7 +228,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       return QueryMethodGenerated.invoke(
           methodName,
           myGenerator.getGeneratorSessionContext(),
-          new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLinkRole(refMacro)),
+          new ReferenceMacroContext(context, outputNode, refMacro.getReference(), AttributeOperations.getLink(refMacro)),
           refMacro.getModel());
 
     } catch (Throwable t) {
@@ -249,14 +249,13 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
-    TemplateExecutionEnvironment env = context.getEnvironment();
+  public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
-      return rule.tryToApply(env, context);
+      return rule.apply(context);
     } catch (GenerationException ex) {
       throw ex;
     } catch (Throwable t) {
-      env.getLogger().error(rule.getRuleNode(), "error executing pattern/condition (see exception)");
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "error executing pattern/condition (see exception)");
       throw new GenerationFailureException(t);
     }
   }
@@ -274,23 +273,49 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return rule.apply(environment, context);
+  public Collection<SNode> applyRule(TemplateRootMappingRule rule, TemplateContext context) throws GenerationException {
+    try {
+      return rule.apply(context);
+    } catch (GenerationException ex) {
+      throw ex;
+    } catch (Throwable th) {
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
+      throw new GenerationFailureException(th);
+    }
   }
 
   @Override
   public Collection<SNode> applyRule(TemplateCreateRootRule rule, TemplateExecutionEnvironment environment) throws GenerationException {
-    return rule.apply(environment);
+    try {
+      return rule.apply(environment);
+    } catch (GenerationException ex) {
+      throw ex;
+    } catch (Throwable th) {
+      environment.getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
+      throw new GenerationFailureException(th);
+    }
   }
 
   @Override
-  public SNode getContextNode(TemplateWeavingRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationFailureException {
+  public boolean applyRule(TemplateWeavingRule rule, TemplateContext context, SNode outputContextNode) throws GenerationException {
     try {
-      return rule.getContextNode(environment, context);
+      return rule.apply(context.getEnvironment(), context, outputContextNode);
+    } catch (GenerationException ex) {
+      throw ex;
+    } catch (Throwable th) {
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "unexpected exception when applying rule");
+      throw new GenerationFailureException(th);
+    }
+  }
+
+  @Override
+  public SNode getContextNode(TemplateWeavingRule rule, TemplateContext context) throws GenerationFailureException {
+    try {
+      return rule.getContextNode(context.getEnvironment(), context);
     } catch (GenerationFailureException ex) {
       throw ex;
     } catch (Throwable e) {
-      environment.getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
+      context.getEnvironment().getLogger().error(rule.getRuleNode(), "cannot evaluate rule context query ", GeneratorUtil.describeInput(context));
       throw new GenerationFailureException(e);
     }
   }

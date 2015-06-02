@@ -21,7 +21,7 @@
       <node id="3316697760692356760" at="50,40,51,68" concept="2" />
       <node id="3316697760692356780" at="56,13,57,0" concept="9" />
       <node id="3316697760692356781" at="57,0,58,96" concept="7" />
-      <node id="3316697760692356813" at="60,112,61,43" concept="7" />
+      <node id="3316697760692356813" at="60,113,61,43" concept="7" />
       <node id="3316697760692356823" at="62,51,63,60" concept="2" />
       <node id="5128632992124313970" at="64,17,65,89" concept="7" />
       <node id="3316697760692356829" at="66,42,67,47" concept="2" />
@@ -61,7 +61,7 @@
         <var name="model" id="8124529816840220989" />
       </scope>
       <scope id="3316697760692356848" at="77,0,83,0" />
-      <scope id="2834132315319614609" at="60,112,68,17">
+      <scope id="2834132315319614609" at="60,113,68,17">
         <var name="fileToRefresh" id="3316697760692356814" />
         <var name="virtualFile" id="5128632992124313971" />
       </scope>
@@ -102,162 +102,153 @@
   </root>
   <root nodeRef="r:b41d4b6d-4038-4cd8-94d3-475689babea3(jetbrains.mps.watching)/6793838228148720923">
     <file name="WatchedRootsUpdater.java">
-      <node id="6793838228148720926" at="33,0,34,0" concept="3" trace="myLibraryManager" />
-      <node id="6793838228148720929" at="34,0,35,0" concept="3" trace="myClassLoaderManager" />
-      <node id="6793838228148720932" at="35,0,36,0" concept="3" trace="myClassesListener" />
-      <node id="6793838228148720944" at="36,0,37,0" concept="3" trace="myLibrariesRequests" />
-      <node id="6793838228148720953" at="37,0,38,0" concept="3" trace="myProjectLibrariesRequests" />
-      <node id="6793838228148720980" at="38,0,39,0" concept="3" trace="myLocalFileSystem" />
-      <node id="3095993558265470571" at="39,0,40,0" concept="3" trace="myWatchedRootsBase" />
-      <node id="6793838228148720983" at="40,0,41,0" concept="3" trace="myProjectManager" />
-      <node id="6793838228148720986" at="41,0,42,0" concept="3" trace="myProjectManagerListener" />
-      <node id="6793838228148721001" at="42,174,43,38" concept="2" />
-      <node id="6793838228148721005" at="43,38,44,38" concept="2" />
-      <node id="6793838228148721009" at="44,38,45,66" concept="2" />
-      <node id="6793838228148721015" at="45,66,46,28" concept="2" />
-      <node id="3095993558265470982" at="46,28,47,38" concept="2" />
-      <node id="6793838228148721023" at="51,36,52,35" concept="8" />
-      <node id="6793838228148721041" at="58,83,59,33" concept="2" />
-      <node id="6793838228148721044" at="61,6,62,29" concept="2" />
-      <node id="6793838228148721046" at="62,29,63,62" concept="2" />
-      <node id="6793838228148721066" at="66,50,67,127" concept="2" />
-      <node id="6793838228148721082" at="70,51,71,127" concept="2" />
-      <node id="6793838228148836951" at="73,6,74,0" concept="9" />
-      <node id="6793838228148721092" at="74,0,75,73" concept="2" />
-      <node id="6793838228148721268" at="79,41,80,83" concept="2" />
-      <node id="6793838228148721274" at="80,83,81,36" concept="2" />
-      <node id="6793838228148721280" at="83,48,84,47" concept="7" />
-      <node id="6793838228148721294" at="85,58,86,80" concept="2" />
-      <node id="6793838228148721304" at="87,5,88,61" concept="2" />
-      <node id="6793838228148721319" at="90,131,91,90" concept="7" />
-      <node id="6793838228148721328" at="91,90,92,87" concept="7" />
-      <node id="6793838228148721337" at="92,87,93,51" concept="2" />
-      <node id="6793838228148721341" at="93,51,94,45" concept="2" />
-      <node id="6793838228148721361" at="97,29,98,102" concept="7" />
-      <node id="6793838228148721371" at="98,102,99,45" concept="2" />
-      <node id="6793838228148721393" at="103,32,104,81" concept="7" />
-      <node id="6793838228148721405" at="105,33,106,58" concept="2" />
-      <node id="6793838228148721410" at="107,7,108,34" concept="2" />
-      <node id="6793838228148721426" at="111,93,112,52" concept="7" />
-      <node id="6793838228148721438" at="113,34,114,28" concept="7" />
-      <node id="6793838228148721457" at="116,67,117,23" concept="2" />
-      <node id="6793838228148721461" at="117,23,118,16" concept="0" />
-      <node id="6793838228148721466" at="121,21,122,28" concept="2" />
-      <node id="6793838228148721471" at="124,5,125,18" concept="8" />
-      <node id="6793838228148721477" at="128,34,129,65" concept="2" />
-      <node id="6793838228148721482" at="129,65,130,76" concept="2" />
-      <node id="6793838228148721287" at="84,47,87,5" concept="4" />
-      <node id="6793838228148721400" at="104,81,107,7" concept="5" />
-      <node id="6793838228148721462" at="120,7,123,7" concept="5" />
-      <node id="6793838228148721037" at="57,0,61,0" concept="6" trace="afterClassesLoaded#(Ljava/util/Set;)V" />
-      <node id="6793838228148721057" at="65,0,69,0" concept="6" trace="projectOpened#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="6793838228148721076" at="69,0,73,0" concept="6" trace="projectClosing#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="6793838228148721264" at="79,0,83,0" concept="6" trace="processLibrariesChange#()V" />
-      <node id="6793838228148721356" at="96,115,100,5" concept="4" />
-      <node id="6793838228148721447" at="115,45,119,9" concept="5" />
-      <node id="6793838228148721019" at="49,0,54,0" concept="6" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="6793838228148721473" at="127,0,132,0" concept="6" trace="disposeComponent#()V" />
-      <node id="6793838228148721031" at="55,31,61,6" concept="2" />
-      <node id="6793838228148721308" at="90,0,96,0" concept="6" trace="processLibrariesChange#(Ljava/util/Set;Ljava/util/Map;)V" />
-      <node id="6793838228148721345" at="96,0,102,0" concept="6" trace="addLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
-      <node id="6793838228148721442" at="114,28,120,7" concept="4" />
-      <node id="6793838228148720989" at="42,0,49,0" concept="1" trace="WatchedRootsUpdater#(Lcom/intellij/openapi/vfs/LocalFileSystem;Ljetbrains/mps/ide/platform/watching/WatchedRoots;Ljetbrains/mps/ide/MPSCoreComponents;Ljetbrains/mps/library/LibraryManager;Lcom/intellij/openapi/project/ProjectManager;)V" />
-      <node id="6793838228148721276" at="83,0,90,0" concept="6" trace="processProjectLibrariesChange#()V" />
-      <node id="6793838228148721388" at="102,121,109,5" concept="4" />
-      <node id="6793838228148721377" at="102,0,111,0" concept="6" trace="removeLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
-      <node id="6793838228148721051" at="63,62,73,6" concept="2" />
-      <node id="6793838228148721433" at="112,52,124,5" concept="4" />
-      <node id="6793838228148721415" at="111,0,127,0" concept="6" trace="librarySubtract#(Ljava/util/Collection;Ljava/util/Collection;)Ljava/util/List;" />
-      <node id="6793838228148721027" at="54,0,77,0" concept="6" trace="initComponent#()V" />
-      <scope id="6793838228148721022" at="51,36,52,35" />
-      <scope id="6793838228148721040" at="58,83,59,33" />
-      <scope id="6793838228148721062" at="66,50,67,127" />
-      <scope id="6793838228148721081" at="70,51,71,127" />
-      <scope id="6793838228148721293" at="85,58,86,80" />
-      <scope id="6793838228148721404" at="105,33,106,58" />
-      <scope id="6793838228148721465" at="121,21,122,28" />
-      <scope id="6793838228148721267" at="79,41,81,36" />
-      <scope id="6793838228148721360" at="97,29,99,45">
+      <node id="6793838228148720926" at="31,0,32,0" concept="3" trace="myLibraryManager" />
+      <node id="6793838228148720929" at="32,0,33,0" concept="3" trace="myClassLoaderManager" />
+      <node id="6793838228148720932" at="33,0,34,0" concept="3" trace="myClassesListener" />
+      <node id="6793838228148720944" at="34,0,35,0" concept="3" trace="myLibrariesRequests" />
+      <node id="6793838228148720953" at="35,0,36,0" concept="3" trace="myProjectLibrariesRequests" />
+      <node id="6793838228148720980" at="36,0,37,0" concept="3" trace="myLocalFileSystem" />
+      <node id="3095993558265470571" at="37,0,38,0" concept="3" trace="myWatchedRootsBase" />
+      <node id="6793838228148720983" at="38,0,39,0" concept="3" trace="myProjectManager" />
+      <node id="6793838228148720986" at="39,0,40,0" concept="3" trace="myProjectManagerListener" />
+      <node id="6793838228148721001" at="40,186,41,38" concept="2" />
+      <node id="6793838228148721005" at="41,38,42,38" concept="2" />
+      <node id="6793838228148721009" at="42,38,43,66" concept="2" />
+      <node id="6793838228148721015" at="43,66,44,28" concept="2" />
+      <node id="3095993558265470982" at="44,28,45,38" concept="2" />
+      <node id="6793838228148721023" at="49,36,50,35" concept="8" />
+      <node id="6793838228148721044" at="53,31,54,29" concept="2" />
+      <node id="6793838228148721066" at="57,50,58,127" concept="2" />
+      <node id="6793838228148721082" at="61,51,62,127" concept="2" />
+      <node id="6793838228148836951" at="64,6,65,0" concept="9" />
+      <node id="6793838228148721092" at="65,0,66,73" concept="2" />
+      <node id="6793838228148721268" at="69,41,70,83" concept="2" />
+      <node id="6793838228148721274" at="70,83,71,36" concept="2" />
+      <node id="6793838228148721280" at="74,48,75,47" concept="7" />
+      <node id="6793838228148721294" at="76,58,77,80" concept="2" />
+      <node id="6793838228148721304" at="78,5,79,61" concept="2" />
+      <node id="6793838228148721319" at="82,131,83,90" concept="7" />
+      <node id="6793838228148721328" at="83,90,84,87" concept="7" />
+      <node id="6793838228148721337" at="84,87,85,51" concept="2" />
+      <node id="6793838228148721341" at="85,51,86,45" concept="2" />
+      <node id="6793838228148721361" at="90,29,91,102" concept="7" />
+      <node id="6793838228148721371" at="91,102,92,45" concept="2" />
+      <node id="6793838228148721393" at="97,32,98,81" concept="7" />
+      <node id="6793838228148721405" at="99,33,100,58" concept="2" />
+      <node id="6793838228148721410" at="101,7,102,34" concept="2" />
+      <node id="6793838228148721426" at="106,93,107,52" concept="7" />
+      <node id="6793838228148721438" at="108,34,109,28" concept="7" />
+      <node id="6793838228148721457" at="111,67,112,23" concept="2" />
+      <node id="6793838228148721461" at="112,23,113,16" concept="0" />
+      <node id="6793838228148721466" at="116,21,117,28" concept="2" />
+      <node id="6793838228148721471" at="119,5,120,18" concept="8" />
+      <node id="6793838228148721477" at="124,34,125,65" concept="2" />
+      <node id="6793838228148721482" at="125,65,126,76" concept="2" />
+      <node id="6793838228148721287" at="75,47,78,5" concept="4" />
+      <node id="6793838228148721400" at="98,81,101,7" concept="5" />
+      <node id="6793838228148721462" at="115,7,118,7" concept="5" />
+      <node id="6793838228148721057" at="56,0,60,0" concept="6" trace="projectOpened#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="6793838228148721076" at="60,0,64,0" concept="6" trace="projectClosing#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="6793838228148721264" at="69,0,73,0" concept="6" trace="processLibrariesChange#()V" />
+      <node id="6793838228148721356" at="89,115,93,5" concept="4" />
+      <node id="6793838228148721447" at="110,45,114,9" concept="5" />
+      <node id="6793838228148721019" at="47,0,52,0" concept="6" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="6793838228148721473" at="123,0,128,0" concept="6" trace="disposeComponent#()V" />
+      <node id="6793838228148721308" at="82,0,88,0" concept="6" trace="processLibrariesChange#(Ljava/util/Set;Ljava/util/Map;)V" />
+      <node id="6793838228148721345" at="89,0,95,0" concept="6" trace="addLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
+      <node id="6793838228148721442" at="109,28,115,7" concept="4" />
+      <node id="6793838228148720989" at="40,0,47,0" concept="1" trace="WatchedRootsUpdater#(Lcom/intellij/openapi/vfs/LocalFileSystem;Ljetbrains/mps/ide/platform/watching/WatchedRoots;Ljetbrains/mps/ide/MPSCoreComponents;Ljetbrains/mps/library/AdditionalLibrariesManager;Lcom/intellij/openapi/project/ProjectManager;)V" />
+      <node id="6793838228148721276" at="74,0,81,0" concept="6" trace="processProjectLibrariesChange#()V" />
+      <node id="6793838228148721388" at="96,121,103,5" concept="4" />
+      <node id="6793838228148721377" at="96,0,105,0" concept="6" trace="removeLibraryWatch#(Ljava/util/List;Ljava/util/Map;)V" />
+      <node id="6793838228148721051" at="54,29,64,6" concept="2" />
+      <node id="6793838228148721433" at="107,52,119,5" concept="4" />
+      <node id="6793838228148721027" at="52,0,68,0" concept="6" trace="initComponent#()V" />
+      <node id="6793838228148721415" at="106,0,122,0" concept="6" trace="librarySubtract#(Ljava/util/Collection;Ljava/util/Collection;)Ljava/util/List;" />
+      <scope id="6793838228148721022" at="49,36,50,35" />
+      <scope id="6793838228148721062" at="57,50,58,127" />
+      <scope id="6793838228148721081" at="61,51,62,127" />
+      <scope id="6793838228148721293" at="76,58,77,80" />
+      <scope id="6793838228148721404" at="99,33,100,58" />
+      <scope id="6793838228148721465" at="116,21,117,28" />
+      <scope id="6793838228148721267" at="69,41,71,36" />
+      <scope id="6793838228148721360" at="90,29,92,45">
         <var name="watchRequest" id="6793838228148721362" />
       </scope>
-      <scope id="6793838228148721456" at="116,67,118,16" />
-      <scope id="6793838228148721476" at="128,34,130,76" />
-      <scope id="6793838228148721287" at="84,47,87,5">
+      <scope id="6793838228148721456" at="111,67,113,16" />
+      <scope id="6793838228148721476" at="124,34,126,76" />
+      <scope id="6793838228148721287" at="75,47,78,5">
         <var name="p" id="6793838228148721291" />
       </scope>
-      <scope id="6793838228148721037" at="57,0,61,0">
-        <var name="modules" id="4056393811838853006" />
-      </scope>
-      <scope id="6793838228148721057" at="65,0,69,0">
+      <scope id="6793838228148721057" at="56,0,60,0">
         <var name="project" id="6793838228148721060" />
       </scope>
-      <scope id="6793838228148721076" at="69,0,73,0">
+      <scope id="6793838228148721076" at="60,0,64,0">
         <var name="project" id="6793838228148721079" />
       </scope>
-      <scope id="6793838228148721264" at="79,0,83,0" />
-      <scope id="6793838228148721318" at="90,131,94,45">
+      <scope id="6793838228148721264" at="69,0,73,0" />
+      <scope id="6793838228148721318" at="82,131,86,45">
         <var name="toAdd" id="6793838228148721329" />
         <var name="toRemove" id="6793838228148721320" />
       </scope>
-      <scope id="6793838228148721355" at="96,115,100,5" />
-      <scope id="6793838228148721356" at="96,115,100,5">
+      <scope id="6793838228148721355" at="89,115,93,5" />
+      <scope id="6793838228148721356" at="89,115,93,5">
         <var name="l" id="6793838228148721358" />
       </scope>
-      <scope id="6793838228148721446" at="115,45,119,9" />
-      <scope id="6793838228148721000" at="42,174,47,38" />
-      <scope id="6793838228148721019" at="49,0,54,0" />
-      <scope id="6793838228148721279" at="83,48,88,61">
+      <scope id="6793838228148721446" at="110,45,114,9" />
+      <scope id="6793838228148721000" at="40,186,45,38" />
+      <scope id="6793838228148721019" at="47,0,52,0" />
+      <scope id="6793838228148721279" at="74,48,79,61">
         <var name="libs" id="6793838228148721281" />
       </scope>
-      <scope id="6793838228148721392" at="103,32,108,34">
+      <scope id="6793838228148721392" at="97,32,102,34">
         <var name="watchRequest" id="6793838228148721394" />
       </scope>
-      <scope id="6793838228148721473" at="127,0,132,0" />
-      <scope id="6793838228148721308" at="90,0,96,0">
+      <scope id="6793838228148721473" at="123,0,128,0" />
+      <scope id="6793838228148721308" at="82,0,88,0">
         <var name="currentLibraries" id="6793838228148721311" />
         <var name="libraryToRequest" id="6793838228148721314" />
       </scope>
-      <scope id="6793838228148721345" at="96,0,102,0">
+      <scope id="6793838228148721345" at="89,0,95,0">
         <var name="librariesRequests" id="6793838228148721351" />
         <var name="toAdd" id="6793838228148721348" />
       </scope>
-      <scope id="6793838228148721442" at="114,28,120,7">
+      <scope id="6793838228148721442" at="109,28,115,7">
         <var name="possibleMatching" id="6793838228148721444" />
       </scope>
-      <scope id="6793838228148720989" at="42,0,49,0">
+      <scope id="6793838228148720989" at="40,0,47,0">
         <var name="coreComponents" id="6793838228148720994" />
         <var name="lfs" id="6793838228148720992" />
         <var name="libraryManager" id="6793838228148720996" />
         <var name="projectManager" id="6793838228148720998" />
         <var name="watchedRoots" id="3095993558265469796" />
       </scope>
-      <scope id="6793838228148721276" at="83,0,90,0" />
-      <scope id="6793838228148721387" at="102,121,109,5" />
-      <scope id="6793838228148721388" at="102,121,109,5">
+      <scope id="6793838228148721276" at="74,0,81,0" />
+      <scope id="6793838228148721387" at="96,121,103,5" />
+      <scope id="6793838228148721388" at="96,121,103,5">
         <var name="l" id="6793838228148721390" />
       </scope>
-      <scope id="6793838228148721377" at="102,0,111,0">
+      <scope id="6793838228148721377" at="96,0,105,0">
         <var name="librariesRequests" id="6793838228148721383" />
         <var name="toRemove" id="6793838228148721380" />
       </scope>
-      <scope id="6793838228148721437" at="113,34,123,7">
+      <scope id="6793838228148721437" at="108,34,118,7">
         <var name="found" id="6793838228148721439" />
       </scope>
-      <scope id="6793838228148721433" at="112,52,124,5">
+      <scope id="6793838228148721433" at="107,52,119,5">
         <var name="pattern" id="6793838228148721435" />
       </scope>
-      <scope id="6793838228148721425" at="111,93,125,18">
+      <scope id="6793838228148721030" at="53,31,66,73" />
+      <scope id="6793838228148721425" at="106,93,120,18">
         <var name="result" id="6793838228148721427" />
       </scope>
-      <scope id="6793838228148721415" at="111,0,127,0">
+      <scope id="6793838228148721027" at="52,0,68,0" />
+      <scope id="6793838228148721415" at="106,0,122,0">
         <var name="from" id="6793838228148721419" />
         <var name="what" id="6793838228148721422" />
       </scope>
-      <scope id="6793838228148721030" at="55,31,75,73" />
-      <scope id="6793838228148721027" at="54,0,77,0" />
-      <unit id="6793838228148721036" at="56,28,61,5" name="jetbrains.mps.watching.WatchedRootsUpdater$1" />
-      <unit id="6793838228148721056" at="64,35,73,5" name="jetbrains.mps.watching.WatchedRootsUpdater$2" />
-      <unit id="6793838228148720923" at="28,0,133,0" name="jetbrains.mps.watching.WatchedRootsUpdater" />
+      <unit id="6793838228148721056" at="55,35,64,5" name="jetbrains.mps.watching.WatchedRootsUpdater$1" />
+      <unit id="6793838228148720923" at="26,0,129,0" name="jetbrains.mps.watching.WatchedRootsUpdater" />
     </file>
   </root>
 </debug-info>

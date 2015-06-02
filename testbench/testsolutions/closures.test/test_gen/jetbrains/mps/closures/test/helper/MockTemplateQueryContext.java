@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MockTemplateQueryContext extends TemplateQueryContext {
   public Map sessionObjects = new HashMap();
   public MockTemplateQueryContext() {
-    super(null, null, null, null);
+    super();
   }
   @Override
   public void showWarningMessage(SNode node, String string) {

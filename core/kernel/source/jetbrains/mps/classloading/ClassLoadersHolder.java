@@ -16,6 +16,8 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -258,8 +260,13 @@ public class ClassLoadersHolder {
     private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
       LOG.debug("Creating ModuleClassLoader for " + module);
       Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Arrays.asList(module));
-      ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
-      return new ModuleClassLoader(support);
+      final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
+      return new ModelAccessHelper(myRepository).runReadAction(new Computable<ModuleClassLoader>() {
+        @Override
+        public ModuleClassLoader compute() {
+          return new ModuleClassLoader(support);
+        }
+      });
     }
 
     private void onLoaded(SModuleReference module) {

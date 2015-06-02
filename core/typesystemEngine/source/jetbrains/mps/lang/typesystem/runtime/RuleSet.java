@@ -46,7 +46,7 @@ public class RuleSet<T extends IApplicableToConcept> {
 
     @Override
     protected List<SAbstractConcept> getParents(SAbstractConcept nextConcept) {
-      return SConceptOperations.getAllSuperConcepts(nextConcept, false);
+      return SConceptOperations.getDirectSuperConcepts(nextConcept, false);
     }
 
     @Override

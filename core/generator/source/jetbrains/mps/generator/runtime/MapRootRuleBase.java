@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+
+import java.util.Collection;
 
 /**
  * Base implementation of {@link jetbrains.mps.generator.runtime.TemplateRootMappingRule} to use as superclass in generated code
@@ -54,9 +59,16 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
     myKeepSourceRoot = keepSourceRoot;
   }
 
+  @NotNull
   @Override
   public String getApplicableConcept() {
     return myAppConcept.getQualifiedName();
+  }
+
+  @NotNull
+  @Override
+  public final SAbstractConcept getApplicableConcept2() {
+    return myAppConcept == null ? GeneratorUtil.toSConcept(getApplicableConcept()) : myAppConcept;
   }
 
   @Override
@@ -76,7 +88,7 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   }
 
   /**
-   * Compatibility with new MPS 3.3 API method, always <code>true</code>
+   * Compatibility with code generated in MPS 3.2, delegate to new method.
    */
   @ToRemove(version = 3.3)
   @Override
@@ -85,11 +97,25 @@ public abstract class MapRootRuleBase implements TemplateRootMappingRule {
   }
 
   /**
-   * Compatibility with code generated in MPS 3.2, delegate to old method, which, unless overridden (e.g. in MPS 3.2), always return <code>true</code>.
-   * Subclasses can rely on default implementation to return <code>true</code>.
+   * Default implementation subclasses can rely on, always <code>true</code>
    */
   @Override
   public boolean isApplicable(@NotNull TemplateContext context) throws GenerationException {
     return isApplicable(context.getEnvironment(), context);
+  }
+
+  @Override
+  @ToRemove(version = 3.3)
+  public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+    // compatibility, code generated in MPS 3.2 overrides this method
+    return null;
+  }
+
+  @Nullable
+  @Override
+  @ToRemove(version = 3.3)
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
+    // FIXME this method shall become abstract once no code generated with MPS 3.2 left
+    return apply(context.getEnvironment(), context);
   }
 }

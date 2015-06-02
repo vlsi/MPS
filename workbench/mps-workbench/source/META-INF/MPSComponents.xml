@@ -42,13 +42,6 @@
       <implementation-class>jetbrains.mps.watching.ModelFocusSynchronizer</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.library.contributor.BootstrapLibContributor</implementation-class>
-    </component>
-    <component>
-      <!-- depends on BootstrapLibContributor -->
-      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.platform.watching.ModelCacheReloader</implementation-class>
     </component>
     <component>
@@ -70,7 +63,7 @@
       <implementation-class>jetbrains.mps.MessagesPoolClearer</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.library.LibraryManager</implementation-class>
+      <implementation-class>jetbrains.mps.library.AdditionalLibrariesManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.smodel.ModelValidationSettings</implementation-class>
@@ -187,7 +180,9 @@
     </component>
     <!-- language development workbench -->
     <component>
-      <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
+      <interface-class>jetbrains.mps.ide.make.StartupModuleMaker</interface-class>
+      <headless-implementation-class>jetbrains.mps.ide.make.DummyStartupModuleMaker</headless-implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.StartupModuleMakerImpl</implementation-class>
     </component>
   </project-components>
 

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -33,8 +34,7 @@ public class CloneModel_Action extends BaseAction {
     }
     SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module instanceof Language) {
-      Language language = (Language) module;
-      return language.getAspectForModel(((SModel) MapSequence.fromMap(_params).get("model"))) == null;
+      return !((LanguageAspectSupport.isAspectModel(((SModel) MapSequence.fromMap(_params).get("model")))));
     } else {
       return true;
     }

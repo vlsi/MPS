@@ -13,36 +13,42 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptPresenceCondition = new ConceptDescriptorBuilder("testAnnotatedType.structure.PresenceCondition", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).create();
+  /*package*/ final ConceptDescriptor myConceptPrimDoubleType = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimDoubleType", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09c62e6L)).super_("testAnnotatedType.structure.PrimType").super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).parents("testAnnotatedType.structure.PrimType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).alias("_double", "").create();
   /*package*/ final ConceptDescriptor myConceptPrimFloatType = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimFloatType", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bdL)).super_("testAnnotatedType.structure.PrimType").super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).parents("testAnnotatedType.structure.PrimType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).alias("_float", "").create();
   /*package*/ final ConceptDescriptor myConceptPrimIntType = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimIntType", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be609eL)).super_("testAnnotatedType.structure.PrimType").super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).parents("testAnnotatedType.structure.PrimType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).alias("_int", "").create();
   /*package*/ final ConceptDescriptor myConceptPrimLongType = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimLongType", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x786549534310b4f5L)).super_("testAnnotatedType.structure.PrimType").super_(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).parents("testAnnotatedType.structure.PrimType").parentIds(MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).alias("_long", "").create();
+  /*package*/ final ConceptDescriptor myConceptPrimNumConstant = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimNumConstant", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x1469c391a09a5eefL)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1470921783545419434L, "value"), new ConceptDescriptorBuilder.Prop(1470921783545323248L, "isFloat")).properties("value", "isFloat").create();
   /*package*/ final ConceptDescriptor myConceptPrimType = new ConceptDescriptorBuilder("testAnnotatedType.structure.PrimType", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).abstract_().create();
   /*package*/ final ConceptDescriptor myConceptSubstituteAnnotation = new ConceptDescriptorBuilder("testAnnotatedType.structure.SubstituteAnnotation", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).childDescriptors(new ConceptDescriptorBuilder.Link(6405009306797650362L, "substitute", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL), false, false, false), new ConceptDescriptorBuilder.Link(6405009306797650372L, "condition", MetaIdFactory.conceptId(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1c7L), false, false, false)).children(new String[]{"substitute", "condition"}, new boolean[]{false, false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptPresenceCondition, myConceptPrimFloatType, myConceptPrimIntType, myConceptPrimLongType, myConceptPrimType, myConceptSubstituteAnnotation);
+    return Arrays.asList(myConceptPresenceCondition, myConceptPrimDoubleType, myConceptPrimFloatType, myConceptPrimIntType, myConceptPrimLongType, myConceptPrimNumConstant, myConceptPrimType, myConceptSubstituteAnnotation);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
         return myConceptPresenceCondition;
       case 1:
-        return myConceptPrimFloatType;
+        return myConceptPrimDoubleType;
       case 2:
-        return myConceptPrimIntType;
+        return myConceptPrimFloatType;
       case 3:
-        return myConceptPrimLongType;
+        return myConceptPrimIntType;
       case 4:
-        return myConceptPrimType;
+        return myConceptPrimLongType;
       case 5:
+        return myConceptPrimNumConstant;
+      case 6:
+        return myConceptPrimType;
+      case 7:
         return myConceptSubstituteAnnotation;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimFloatType", "testAnnotatedType.structure.PrimIntType", "testAnnotatedType.structure.PrimLongType", "testAnnotatedType.structure.PrimType", "testAnnotatedType.structure.SubstituteAnnotation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"testAnnotatedType.structure.PresenceCondition", "testAnnotatedType.structure.PrimDoubleType", "testAnnotatedType.structure.PrimFloatType", "testAnnotatedType.structure.PrimIntType", "testAnnotatedType.structure.PrimLongType", "testAnnotatedType.structure.PrimNumConstant", "testAnnotatedType.structure.PrimType", "testAnnotatedType.structure.SubstituteAnnotation"};
 }

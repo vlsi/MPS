@@ -72,11 +72,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public String toString() {
-    return "FileDataSource(" + myFile.toString() + ")";
-  }
-
-  @Override
   public boolean isReadOnly() {
     return FileSystem.getInstance().isPackaged(myFile) || myFile.isReadOnly();
   }
@@ -136,6 +131,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     FileSystem.getInstance().removeListener(this);
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
     return myFile;
@@ -191,4 +187,5 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFile);
   }
+
 }

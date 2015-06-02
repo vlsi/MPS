@@ -63,9 +63,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     List<SpecificChecker> checkers = ListSequence.fromList(new ArrayList<SpecificChecker>());
     switch (myState.myCheckingLevel) {
       case TYPESYSTEM:
-        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker()));
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new TypesystemChecker(), "typesystem"));
       case CONSTRAINTS:
-        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker()));
+        ListSequence.fromList(checkers).addElement(new INodeCheckerSpecificCheckerAdapter(new LanguageChecker(), "constraints"));
       case STRUCTURE:
         ListSequence.fromList(checkers).addElement(new StructureChecker());
       default:
@@ -127,18 +127,29 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     }
   }
   public static   enum CheckingLevel {
-    BASIC("Basic"),
-    STRUCTURE("Structure"),
-    CONSTRAINTS("Constraints"),
-    TYPESYSTEM("Typesystem");
+    BASIC("Basic", "Project structure is correct", "Each reference has target"),
+    STRUCTURE("Structure", "Code conforms with languages' structure"),
+    CONSTRAINTS("Constraints", "Code satisfies languages' constraints"),
+    TYPESYSTEM("Typesystem", "Code passes typesystem checks");
 
 
     private String myPresentation;
-    CheckingLevel(String presentation) {
+    private String[] myChecks;
+    CheckingLevel(String presentation, String... checks) {
       myPresentation = presentation;
+      myChecks = checks;
     }
     public String getPresentation() {
       return myPresentation;
+    }
+    public String getLongDescription() {
+      StringBuilder sb = new StringBuilder("Checks that:\n");
+      for (int i = 0; i <= this.ordinal(); i++) {
+        for (String s : ModelCheckerSettings.CheckingLevel.values()[i].myChecks) {
+          sb.append("-").append(s).append("\n");
+        }
+      }
+      return sb.toString();
     }
   }
 }

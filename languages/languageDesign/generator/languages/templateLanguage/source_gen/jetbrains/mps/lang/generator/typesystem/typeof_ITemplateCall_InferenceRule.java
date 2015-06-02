@@ -22,7 +22,6 @@ public class typeof_ITemplateCall_InferenceRule extends AbstractInferenceRule_Ru
   }
   public void applyRule(final SNode iTemplateCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode templateDeclaration = SLinkOperations.getTarget(iTemplateCall, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template"));
-    boolean b = true;
     if (templateDeclaration != null) {
       List<SNode> parameterDeclarations = SLinkOperations.getChildren(templateDeclaration, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e5137e9b1L, 0xda3dc6e5137ea56L, "parameter"));
       List<SNode> actualArguments = SLinkOperations.getChildren(iTemplateCall, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"));

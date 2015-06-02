@@ -44,9 +44,10 @@ public interface ReloadableModule extends SModule {
    *
    * @see jetbrains.mps.classloading.ModuleClassNotFoundException
    * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
+   * warning: this method is lazy implemented!
    */
   @Nullable
-  public Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
@@ -57,9 +58,10 @@ public interface ReloadableModule extends SModule {
    * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
    * @see jetbrains.mps.classloading.ModuleClassLoader
    * @see jetbrains.mps.classloading.ModuleClassLoader#loadOwnClass(String)
+   * warning: this method is lazy implemented!
    */
   @Nullable
-  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
+  Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
    * @return the class loader associated with the module.
@@ -67,21 +69,29 @@ public interface ReloadableModule extends SModule {
    *
    * The latter is returned in the case when IDEA plugin manages the module's classes.
    * Use it if you want to get a class from the module with IdeaPluginFacet.
+   * warning: this method is lazy implemented!
    */
   @Nullable
-  public ClassLoader getClassLoader();
+  ClassLoader getClassLoader();
+
+  /**
+   * @return so-called parent (or root) class loader. Simply returns the Idea plugin classloader in the case the module is
+   * bundled into an idea plugin. Will return an application classloader in the case there is no idea plugin.
+   * Contract: the class loader returned from #getClassLoader always depends on the root class loader.
+   */
+  ClassLoader getRootClassLoader();
 
   /**
    * Call it to replace the old class loader of this module with a new one.
    * To reload more than one module all together
    * check out {@link ClassLoaderManager#reloadModules(Iterable)} method.
    */
-  public void reload();
+  void reload();
 
   /**
    * @return true if it will load classes.
    * For some subclasses it is possible to disable class loading for <code>ReloadableModule</code>.
    * @see jetbrains.mps.project.Solution
    */
-  public boolean willLoad();
+  boolean willLoad();
 }

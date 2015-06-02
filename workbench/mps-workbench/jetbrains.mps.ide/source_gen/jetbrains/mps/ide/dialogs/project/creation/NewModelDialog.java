@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -46,7 +47,6 @@ import java.io.File;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -61,7 +61,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
@@ -83,8 +83,12 @@ public class NewModelDialog extends DialogWrapper {
     myProject = project;
     myModule = module;
     myNamespace = (namespace == null ? "" : namespace);
-    assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
-    initContentPane();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
+        initContentPane();
+      }
+    });
     if (stereotype != null) {
       myModelStereotype.setSelectedItem(stereotype);
       myModelStereotype.setEnabled(!(strict));
@@ -271,18 +275,16 @@ public class NewModelDialog extends DialogWrapper {
         }
       });
 
-      final Wrappers._T<Iterable<ModelRoot>> modelRoots = new Wrappers._T<Iterable<ModelRoot>>();
-      myProject.getModelAccess().runReadAction(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          modelRoots.value = myModule.getModelRoots();
+          for (ModelRoot modelRoot : myModule.getModelRoots()) {
+            if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
+              myModelRoots.addItem(modelRoot);
+              myModelRoots.setSelectedItem(modelRoot);
+            }
+          }
         }
       });
-      for (ModelRoot modelRoot : modelRoots.value) {
-        if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {
-          myModelRoots.addItem(modelRoot);
-          myModelRoots.setSelectedItem(modelRoot);
-        }
-      }
     }
 
     myResult = new ModelAccessHelper(myProject.getModelAccess()).executeCommand(new Computable<SModel>() {
@@ -365,12 +367,9 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     if (myModule instanceof Language) {
-      for (LanguageAspect aspect : LanguageAspect.values()) {
+      if (LanguageAspectSupport.isLanguageModelNameForbidden(modelName)) {
         String shortName = modelName.substring(modelName.lastIndexOf(".") + 1);
-        if (shortName.equals(aspect.getName())) {
-          setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
-          return false;
-        }
+        setErrorText("This name isn't allowed because '" + shortName + "' is language aspect name");
       }
     }
 
@@ -393,8 +392,6 @@ public class NewModelDialog extends DialogWrapper {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
-
-
 
     setErrorText(null);
     return true;

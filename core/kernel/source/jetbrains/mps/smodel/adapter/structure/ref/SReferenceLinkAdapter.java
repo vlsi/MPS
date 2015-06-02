@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @NotNull
   @Override
-  public String getPresentableKind() {
-    return "reference";
-  }
-
-  @NotNull
-  @Override
-  public String getPresentableName() {
+  public String getName() {
     return getRoleName();
   }
 
@@ -56,8 +50,15 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @NotNull
   public abstract SReferenceLinkId getRoleId();
 
+  @NotNull
   @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
+  public SAbstractConcept getContainingConcept() {
+    return getOwner();
+  }
+
+  @NotNull
+  @Override
+  public SAbstractConcept getOwner() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ?
@@ -80,6 +81,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     return rd.isOptional();
   }
 
+  @NotNull
   @Override
   public SAbstractConcept getTargetConcept() {
     ReferenceDescriptor rd = getReferenceDescriptor();
@@ -106,7 +108,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public SNode getDeclarationNode() {
-    SNode cnode = getContainingConcept().getDeclarationNode();
+    SNode cnode = getOwner().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

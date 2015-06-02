@@ -10,6 +10,8 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -45,6 +47,43 @@ public class EnumClass_Behavior {
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     // enums always have static operations: valueOf and values 
     return true;
+  }
+  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    List<SNode> methodsToImplement = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMethodsToImplement_5418393554803775106", new Object[]{});
+    final List<SNode> ownMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getOwnMethods_1906502351318572840", new Object[]{});
+    Iterable<SNode> remaining = ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode toBeImplemented) {
+        return !(ListSequence.fromList(ownMethods).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode own) {
+            return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, own, "virtual_isAbstract_1232982539764", new Object[]{})) && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(toBeImplemented, own);
+          }
+        }));
+      }
+    });
+    return Sequence.fromIterable(remaining).toListSequence();
+  }
+  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
+    final List<SNode> methodsToOverride = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMethodsToOverride_5418393554803767537", new Object[]{});
+    Iterable<SNode> ownMethods = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getOwnMethods_1906502351318572840", new Object[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) || SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        SNode v = SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
+        return (v != null) && !(SNodeOperations.isInstanceOf(v, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) && !(SPropertyOperations.getBoolean(SNodeOperations.as(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x113294bffd2L, "isFinal")));
+      }
+    });
+    Iterable<SNode> allToBeAdded = Sequence.fromIterable(ownMethods).where(new IWhereFilter<SNode>() {
+      public boolean accept(final SNode own) {
+        return !(ListSequence.fromList(methodsToOverride).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode toBeOverriden) {
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(own, toBeOverriden);
+          }
+        }));
+      }
+    });
+    return ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(allToBeAdded));
   }
   private static SNode _quotation_createNode_nbdilp_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

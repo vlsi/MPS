@@ -20,5 +20,5 @@ import com.intellij.openapi.vfs.SavingRequestor;
 /**
  * Created by victor on 22.01.15.
  */
-public class IdeaFileSystemProviderSR extends IdeaFileSystemProvider implements SavingRequestor{
+public class IdeaFileSystemProviderSR extends IdeaFileSystemProvider implements SavingRequestor {
 }

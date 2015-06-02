@@ -24,7 +24,9 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -37,15 +39,22 @@ import java.util.Set;
 
 public class JavaCompilerTest extends WorkbenchMpsTest {
   private static final File PROJECT_PATH = new File("testbench/modules/testCompilation");
-  private static Project myProject;
-  private static Solution mySolution;
+  private static Environment ourEnvironment;
+  private static Project ourProject;
+  private static Solution ourSolution;
 
   @BeforeClass
   public static void setUp() {
-    myProject = openProject(PROJECT_PATH);
-    mySolution = ProjectTestsSupport.getSolution("TestCompileSolution");
+    ourEnvironment = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    ourProject = openProject(PROJECT_PATH);
+    ourSolution = getSolution("TestCompileSolution");
   }
 
+  @AfterClass
+  public static void tearDown() {
+    if (ourProject == null) return;
+    ourEnvironment.closeProject(ourProject);
+  }
 
   @Test
   public void testOldVersion() throws Exception {
@@ -59,7 +68,7 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
 
   private void testRecompileClasses(final JavaVersion version, final boolean needOk) {
     final Set<SModule> toCompile = new LinkedHashSet<SModule>();
-    toCompile.add(mySolution);
+    toCompile.add(ourSolution);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -75,11 +84,4 @@ public class JavaCompilerTest extends WorkbenchMpsTest {
       }
     });
   }
-
-  @AfterClass
-  public static void tearDown() {
-    WorkbenchMpsTest.disposeProject(myProject);
-  }
-
-
 }

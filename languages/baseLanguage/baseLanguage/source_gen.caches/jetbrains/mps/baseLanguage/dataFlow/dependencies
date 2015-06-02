@@ -230,6 +230,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ElsifClause_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ExpressionStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.FieldReferenceOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.ForeachStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.GenericNewExpression_DataFlow" />
@@ -353,6 +354,13 @@
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.Expression_DataFlow" file="Expression_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.FieldReferenceOperation_DataFlow" file="FieldReferenceOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.ForStatement_DataFlow" file="ForStatement_DataFlow.java">

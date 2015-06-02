@@ -30,7 +30,6 @@ import java.lang.reflect.InvocationTargetException;
  * For IDEA, use <code>ApplicationManager.getApplication()</code>
  */
 public class ThreadUtils {
-
   public static boolean runInUIThreadAndWait(Runnable r) {
     LogExceptionsRunnable wrap = new LogExceptionsRunnable(LogManager.getLogger(ThreadUtils.class), r);
     if (ApplicationManager.getApplication() != null) {

@@ -194,9 +194,4 @@ public class DevKit extends AbstractModule {
   protected void collectFacetTypes(Set<String> types) {
     // no-op
   }
-
-  @Deprecated
-  public static DevKit newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    return (DevKit) ModuleRepositoryFacade.createModule(handle, moduleOwner);
-  }
 }

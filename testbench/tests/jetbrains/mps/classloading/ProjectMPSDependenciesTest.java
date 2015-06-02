@@ -15,66 +15,54 @@
  */
 package jetbrains.mps.classloading;
 
-import com.intellij.idea.LoggerFactory;
-import com.intellij.openapi.diagnostic.Logger;
+import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import static jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
+import jetbrains.mps.library.contributor.LibDescriptor;
 
-public class ProjectMPSDependenciesTest {
+/**
+ * Internal consistency check of module dependencies between different layers of MPS hierarchy:
+ * core, workbench and plugin
+ */
+public class ProjectMPSDependenciesTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
   private boolean myFailed = false;
 
-  private static void initLoggingSystem() {
-    Logger.setFactory(LoggerFactory.class);
-    assert Logger.isInitialized();
-    Logger.getInstance("");
-  }
-
-  static {
-    initLoggingSystem();
+  @BeforeClass
+  public static void beforeTest() {
+    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
   }
 
   @Test
-  public void DepsAreValid() {
-    EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
-    Environment currentEnv = ActiveEnvironment.getInstance();
-    if (currentEnv != null) currentEnv.dispose();
-    MpsEnvironment environment = new MpsEnvironment(config);
-    try {
-      LOG.info("ADDING CORE CONTRIBUTORS");
-      addContributorWithPaths(getCorePaths());
-      checkDeps();
-      LOG.info("ADDING WORKBENCH CONTRIBUTORS");
-      addContributorWithPaths(Arrays.asList(PathManager.getWorkbenchPath()));
-      checkDeps();
-      LOG.info("ADDING PLUGINS CONTRIBUTORS");
-      addContributorWithPaths(Arrays.asList(PathManager.getHomePath() + File.separator + "plugins"));
-      checkDeps();
-    } finally {
-      environment.dispose();
-    }
+  public void depsAreValid() {
+    LOG.info("ADDING CORE CONTRIBUTORS");
+    addContributorWithPaths(getCorePaths());
+    checkDeps();
+    LOG.info("ADDING WORKBENCH CONTRIBUTORS");
+    addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
+    checkDeps();
+    LOG.info("ADDING PLUGINS CONTRIBUTORS");
+    addContributorWithPaths(Collections.singletonList(PathManager.getHomePath() + File.separator + "plugins"));
+    checkDeps();
     Assert.assertFalse("Some dependencies are invalid", myFailed);
   }
 
@@ -87,19 +75,13 @@ public class ProjectMPSDependenciesTest {
   private void addContributorWithPaths(Iterable<? extends String> paths) {
     Set<LibDescriptor> libraryPaths = new LinkedHashSet<LibDescriptor>();
     for (String path : paths) {
-      libraryPaths.add(new LibDescriptor(path, null));
+      libraryPaths.add(new LibDescriptor(path));
     }
-    addContributor(new SetLibraryContributor(libraryPaths));
+    addContributor(SetLibraryContributor.fromSet(libraryPaths));
   }
 
   private void addContributor(LibraryContributor contributor) {
     LibraryInitializer.getInstance().addContributor(contributor);
-    getRepository().getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(true);
-      }
-    });
   }
 
   private void checkDeps() {

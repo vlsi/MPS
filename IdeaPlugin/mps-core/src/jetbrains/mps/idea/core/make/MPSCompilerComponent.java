@@ -29,12 +29,11 @@ import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.library.contributor.PluginLibrariesContributor;
+import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -82,9 +81,9 @@ public class MPSCompilerComponent implements ProjectComponent {
         if (compileScope == null) return true;
 
         StringBuilder sb = new StringBuilder();
-        PluginLibrariesContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibrariesContributor.class);
-        for (LibDescriptor library : pluginLibContributor.getLibraries()) {
-          String path = FileUtil.toSystemDependentName(library.path);
+        PluginLibraryContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibraryContributor.class);
+        for (LibDescriptor library : pluginLibContributor.getPaths()) {
+          String path = FileUtil.toSystemDependentName(library.getPath());
           if (sb.length() > 0) {
             sb.append(";");
           }

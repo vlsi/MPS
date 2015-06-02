@@ -263,7 +263,7 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myProperty2Index.get(id));
     } else {
       writeByte(PROPERTY);
-      writeConcept(property.getContainingConcept());
+      writeConcept(property.getOwner());
       writeLong(id.getIdValue());
       writeString(property.getName());
       myProperty2Index.put(id, myPropertyIndex++);
@@ -281,9 +281,9 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myAssociation2Index.get(id));
     } else {
       writeByte(ASSOCIATION);
-      writeConcept(link.getContainingConcept());
+      writeConcept(link.getOwner());
       writeLong(id.getIdValue());
-      writeString(link.getRoleName());
+      writeString(link.getName());
       myAssociation2Index.put(id, myAssociationIndex++);
     }
   }
@@ -299,9 +299,9 @@ public class ModelOutputStream extends DataOutputStream {
       writeShort(myAggregation2Index.get(id));
     } else {
       writeByte(AGGREGATION);
-      writeConcept(link.getContainingConcept());
+      writeConcept(link.getOwner());
       writeLong(id.getIdValue());
-      writeString(link.getRoleName());
+      writeString(link.getName());
       myAggregation2Index.put(id, myAggregationIndex++);
     }
   }

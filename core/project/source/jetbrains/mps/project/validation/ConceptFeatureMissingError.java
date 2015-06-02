@@ -18,25 +18,12 @@ package jetbrains.mps.project.validation;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptFeatureMissingError extends NodeValidationProblem {
-  private final SConceptFeature myFeature;
-
-  public ConceptFeatureMissingError(SNode node, SConceptFeature feature) {
-    super(Severity.ERROR, node, "Missing concept " + feature.getPresentableKind() + ": " + feature.getPresentableName());
-    myFeature = feature;
-  }
-
-  public SConceptFeature getFeature() {
-    return myFeature;
-  }
-
-  @Override
-  public boolean canFix() {
-    return false;
-  }
-
-  @Override
-  public void fix() {
-
+/**
+ * Both {@link ConceptFeatureMissingError} and {@link ConceptFeatureCardinalityError} are {@link ConceptFeatureError},
+ * however, there's code (MigrationCheckUtil) which is interested in this particular error only, hence we keep distinct classes
+ */
+public class ConceptFeatureMissingError extends ConceptFeatureError {
+  public ConceptFeatureMissingError(SNode node, SConceptFeature feature, String message) {
+    super(node, feature, message);
   }
 }

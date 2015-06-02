@@ -71,8 +71,9 @@
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
     <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
     <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
-    <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
+    <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
+    <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -378,6 +379,30 @@
     </node>
     <node concept="lpD6D" id="P9hc2KhcIj" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgLWf" resolve="Subst_SingleChild_OnlyEnumProperty_with_Another" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz4G" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsttl" resolve="RedoChangesOfTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz5N" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsvZz" resolve="RedoCommitedInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz8I" role="lpD6w">
+      <ref role="lpD7u" to="65l5:2qEq7FDsqew" resolve="RedoInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz6W" role="lpD6w">
+      <ref role="lpD7u" to="65l5:59gag9wlcDR" resolve="RedoTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsz9l" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJzm$2" resolve="UndoChangesOfTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDsza$" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJDNNg" resolve="UndoCommitedInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDszbP" role="lpD6w">
+      <ref role="lpD7u" to="65l5:1xCYTpJDKMw" resolve="UndoInvalidTypingInTransactionalPropertyCell" />
+    </node>
+    <node concept="lpD6D" id="2qEq7FDszd8" role="lpD6w">
+      <ref role="lpD7u" to="65l5:4ECnMeMhxat" resolve="UndoTypingInTransactionalPropertyCell" />
     </node>
     <node concept="lpD6D" id="7S5U8qgDgdG" role="lpD6w">
       <ref role="lpD7u" to="tzu1:7S5U8qgD2aI" resolve="EndWithLineSelection_fromFirstCell" />
@@ -1673,6 +1698,9 @@
     <node concept="lpD6D" id="2TdQhrRPT6D" role="lpD6w">
       <ref role="lpD7u" to="ryl9:676KKEeTb08" resolve="EmptyEnumConstantCreationWithConstructorTest" />
     </node>
+    <node concept="lpD6D" id="7ENWpYx4d6o" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:7ENWpYx47vd" resolve="ImplicitEnumMethodImplementation" />
+    </node>
     <node concept="lpD6D" id="7rVl9VzwnxM" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1yvohCOewGs" resolve="AddFinalInStaticField" />
     </node>
@@ -1734,6 +1762,9 @@
       <ref role="lpD7u" to="ryl9:2o160AxalHm" resolve="RemoveVolatileInStaticFieldBackspace" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3e9" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:73g2kXOrpX2" resolve="UnusedFields" />
+    </node>
+    <node concept="lpD6D" id="73g2kXOrQg_" role="lpD6w">
       <ref role="lpD7u" to="ryl9:1IrcZZXTiKR" resolve="SurroundExpressionWithParenthesis" />
     </node>
     <node concept="lpD6D" id="2TdQhrRPT8A" role="lpD6w">
@@ -3392,8 +3423,14 @@
     <node concept="lpD6D" id="3FJ0r$qO3b6" role="lpD6w">
       <ref role="lpD7u" to="hbb4:hT$RL_U" resolve="InlineWithNoSourcesAttached" />
     </node>
+    <node concept="lpD6D" id="1I5CUWKB0r" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:1I5CUWKie4" resolve="OperandOfDotExpression" />
+    </node>
     <node concept="lpD6D" id="3FJ0r$qO3b7" role="lpD6w">
       <ref role="lpD7u" to="hbb4:hT$RLAm" resolve="SimpleInlineWithOneReturn" />
+    </node>
+    <node concept="lpD6D" id="1I5CUWKBcs" role="lpD6w">
+      <ref role="lpD7u" to="hbb4:1I5CUWKh1C" resolve="VariableDeclarationInitializer" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3c6" role="lpD6w">
       <ref role="lpD7u" to="hbb4:5w_nepi1Hna" resolve="InlineAssingmentInClosure" />
@@ -3849,6 +3886,27 @@
       <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
     </node>
   </node>
+  <node concept="lpD6F" id="5GF7bt500qz">
+    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
+      <property role="2R4zub" value="testSubstituteType" />
+      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
+    </node>
+    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
+      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
+    </node>
+    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
+      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="1lM6JtOM9Yh">
+    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
+      <property role="2R4zub" value="tests.testDepViewer" />
+      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
+    </node>
+    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
+      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
+    </node>
+  </node>
   <node concept="lpD6F" id="3ofMfJ4Yh7E">
     <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
       <property role="2R4zub" value="testPackagedLanguage.test" />
@@ -3866,27 +3924,6 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="1lM6JtOM9Yh">
-    <node concept="2R4zua" id="1lM6JtOM9Yi" role="2R4z3u">
-      <property role="2R4zub" value="tests.testDepViewer" />
-      <property role="2R4zu8" value="4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d" />
-    </node>
-    <node concept="lpD6D" id="1lM6JtOM9Yj" role="lpD6w">
-      <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="5GF7bt500qz">
-    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
-      <property role="2R4zub" value="testSubstituteType" />
-      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
-    </node>
-    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
-      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
-    </node>
-    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
-      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
     </node>
   </node>
 </model>

@@ -738,7 +738,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
-
   protected void notifyCreation() {
     jetbrains.mps.project.Project project = ProjectHelper.getProject(myRepository);
     if (project == null) {
@@ -1294,6 +1293,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @NotNull
   @Override
   public EditorContext getEditorContext() {
+// TODO: uncomment this assertion. Was commented out because this method is called indirectly from the dispose() method (failing tests).
+//    assert !isDisposed();
     return myEditorContext;
   }
 
@@ -2898,7 +2899,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class UpdaterEventDispatcher extends UpdaterListenerAdapter {
     @Override
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
+      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners.toArray(
+          new CellSynchronizationWithModelListener[myCellSynchronizationListeners.size()])) {
         listener.cellSynchronizedWithModel(cell);
       }
     }

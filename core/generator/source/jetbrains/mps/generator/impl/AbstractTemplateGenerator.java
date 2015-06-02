@@ -135,22 +135,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return getOutputModel().getNode(nodeId);
   }
 
-  @Deprecated
-  @ToRemove(version = 0)
-  public RoleValidator getChildRoleValidator(SNode parent, String role) {
-    return myValidation.getValidator(parent, role, true);
-  }
   public RoleValidator getChildRoleValidator(SNode parent, SContainmentLink role) {
-    return myValidation.getValidator(parent, role.getRoleName(), true);
-  }
-
-  @Deprecated
-  @ToRemove(version = 0)
-  public RoleValidator getReferentRoleValidator(SNode source, String role) {
-    return myValidation.getValidator(source, role, false);
+    return myValidation.getValidator(parent, role);
   }
 
   public RoleValidator getReferentRoleValidator(SNode source, SReferenceLink role) {
-    return myValidation.getValidator(source, role.getRoleName(), false);
+    return myValidation.getValidator(source, role);
   }
 }

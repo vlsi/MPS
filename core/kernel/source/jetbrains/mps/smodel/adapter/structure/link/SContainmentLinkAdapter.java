@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,14 +45,8 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @NotNull
   @Override
-  public String getPresentableKind() {
-    return "link";
-  }
-
-  @NotNull
-  @Override
-  public String getPresentableName() {
-    return getRole();
+  public String getName() {
+    return getRoleName();
   }
 
   @Override
@@ -69,7 +63,13 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
+  public SAbstractConcept getContainingConcept() {
+    return getOwner();
+  }
+
+  @NotNull
+  @Override
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getOwner() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     String fqName = concept.getConceptFqName();
@@ -78,6 +78,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
         MetaAdapterFactory.getConcept(id, fqName);
   }
 
+  @NotNull
   @Override
   public SAbstractConcept getTargetConcept() {
     LinkDescriptor ld = getLinkDescriptor();
@@ -114,7 +115,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public SNode getDeclarationNode() {
-    SNode cnode = getContainingConcept().getDeclarationNode();
+    SNode cnode = getOwner().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

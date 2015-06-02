@@ -27,22 +27,27 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   private CachingAppender app;
   private Map<Description, Object> testsToIgnore = new HashMap<Description, Object>();
   private ThreadWatcher threadWatcher;
+
   public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
   }
+
   public void dispose() {
   }
+
   private void initCaches() {
     System.err.flush();
     System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error", IGNORED_OUTPUT_PATTERNS));
     cacheErr.clear();
     cacheErr.startCaching();
   }
+
   private void disposeCaches() {
     cacheErr.flush();
     cacheErr.stopCaching();
     System.setErr(cacheErr.getOut());
   }
+
   @Override
   public void fireTestStarted(Description description) throws StoppedByUserException {
     super.fireTestStarted(description);
@@ -52,6 +57,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
       super.fireTestFailure(new Failure(description, e));
     }
   }
+
   @Override
   public void fireTestFinished(Description description) {
     try {
@@ -61,21 +67,25 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     }
     super.fireTestFinished(description);
   }
+
   @Override
   public void fireTestFailure(Failure failure) {
     testsToIgnore.put(failure.getDescription(), Boolean.TRUE);
     super.fireTestFailure(failure);
   }
+
   @Override
   public void fireTestAssumptionFailed(Failure failure) {
     testsToIgnore.put(failure.getDescription(), Boolean.TRUE);
     super.fireTestAssumptionFailed(failure);
   }
+
   @Override
   public void fireTestIgnored(Description description) {
     testsToIgnore.put(description, Boolean.TRUE);
     super.fireTestIgnored(description);
   }
+
   private void beforeTest(Description desc) {
     this.oldLevel = org.apache.log4j.Logger.getRootLogger().getLevel();
     org.apache.log4j.Logger.getRootLogger().setLevel(WATCH_LEVEL);
@@ -93,6 +103,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     }
     this.threadWatcher = new ThreadWatcher(true);
   }
+
   private void afterTest(Description desc) {
     threadWatcher.waitUntilSettled(15000);
     disposeCaches();

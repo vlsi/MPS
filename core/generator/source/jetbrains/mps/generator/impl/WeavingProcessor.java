@@ -49,13 +49,8 @@ public class WeavingProcessor {
     final BlockedReductionsData ruleBlocks = myGenerator.getBlockedReductionsData();
     final FastNodeFinder nodeFinder = FastNodeFinderManager.get(inputModel);
     for (TemplateWeavingRule rule : rules) {
-      String applicableConcept = rule.getApplicableConcept();
-      if (applicableConcept == null) {
-        myGenerator.getLogger().error(rule.getRuleNode(), "rule has no applicable concept defined");
-        continue;
-      }
       boolean includeInheritors = rule.applyToInheritors();
-      for (SNode applicableNode : nodeFinder.getNodes(applicableConcept, includeInheritors)) {
+      for (SNode applicableNode : nodeFinder.getNodes(rule.getApplicableConcept2(), includeInheritors)) {
         if (ruleBlocks.isWeavingBlocked(applicableNode, rule)) {
           continue;
         }
@@ -104,14 +99,14 @@ public class WeavingProcessor {
     public boolean apply() throws GenerationFailureException, GenerationCanceledException {
       try {
         DefaultTemplateContext context = new DefaultTemplateContext(myEnv, myApplicableNode, null);
-        SNode outputContextNode = myEnv.getQueryExecutor().getContextNode(myRule, myEnv, context);
+        final QueryExecutionContext queryExecutor = myEnv.getQueryExecutor();
+        SNode outputContextNode = queryExecutor.getContextNode(myRule, context);
         if (!checkContext(outputContextNode)) {
           return false;
         }
 
         try {
-          myRule.apply(myEnv, context, outputContextNode);
-
+          queryExecutor.applyRule(myRule, context, outputContextNode);
         } catch (DismissTopMappingRuleException e) {
           myEnv.getLogger().error(myRule.getRuleNode(), "wrong template: dismiss in weaving rule is not supported", GeneratorUtil.describeInput(context));
         } catch (TemplateProcessingFailureException e) {
@@ -170,7 +165,7 @@ public class WeavingProcessor {
 
     @Override
     public String toString() {
-      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept(), myApplicableNode);
+      return String.format("waving rule for: %s; node: %s", myRule.getApplicableConcept2().getQualifiedName(), myApplicableNode);
     }
   }
  }

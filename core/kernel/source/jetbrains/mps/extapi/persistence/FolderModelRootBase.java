@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -72,6 +73,7 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
     super.dispose();
   }
 
+  @NotNull
   @Override
   public IFile getFileToListen() {
     return FileSystem.getInstance().getFileByPath(getPath());

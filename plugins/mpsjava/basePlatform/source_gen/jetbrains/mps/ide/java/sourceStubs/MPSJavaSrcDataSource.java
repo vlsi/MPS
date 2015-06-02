@@ -39,9 +39,7 @@ public class MPSJavaSrcDataSource extends FolderDataSource {
       }
     } catch (IOException e) {
       LOG.warn("Failed to guess package name for java source stub model", e);
-    } finally {
-      return pkg;
     }
+    return pkg;
   }
-
 }

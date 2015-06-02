@@ -15,9 +15,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="testbench" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="module" module-name="mps-ant" />
     <orderEntry type="module" module-name="mps-workbench" />
   </component>
 </module>
-

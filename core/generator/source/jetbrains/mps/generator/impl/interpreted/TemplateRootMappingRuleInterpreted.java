@@ -28,6 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
@@ -35,7 +36,7 @@ import java.util.Collection;
 /**
  * Evgeny Gryaznov, Nov 30, 2010
  */
-public class TemplateRootMappingRuleInterpreted extends MapRootRuleBase implements TemplateRootMappingRule {
+public final class TemplateRootMappingRuleInterpreted extends MapRootRuleBase implements TemplateRootMappingRule {
 
   private final SNode myRuleNode;
   private final String myMappingName;
@@ -58,16 +59,17 @@ public class TemplateRootMappingRuleInterpreted extends MapRootRuleBase implemen
     return myCondition.check(new MapRootRuleContext(context, getRuleNode()));
   }
 
+  @Nullable
   @Override
-  public Collection<SNode> apply(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
+  public Collection<SNode> apply(@NotNull TemplateContext context) throws GenerationException {
     if (myTemplateNode != null) {
       // subContext(null) doesn't update mapping label, while we'd like to reset it for the rule.
       // It's possible to do it another way: context = myMappingName == null ? context.subContext() : context.subContext(myMappingName);
       // but it seems better to start rule with a fresh context anyway (unless we'd need to pass parameters - which would be odd as users
       // have no control on which rules get applied and hence can't expect parameters present)
-      return environment.getTemplateProcessor().apply(myTemplateNode, new DefaultTemplateContext(environment, context.getInput(), myMappingName));
+      return context.getEnvironment().getTemplateProcessor().apply(myTemplateNode, new DefaultTemplateContext(context.getEnvironment(), context.getInput(), myMappingName));
     } else {
-      environment.getLogger().error(getRuleNode(), "no template is defined for the rule", GeneratorUtil.describeIfExists(context.getInput(), "input node"));
+      context.getEnvironment().getLogger().error(getRuleNode(), "no template is defined for the rule", GeneratorUtil.describeIfExists(context.getInput(), "input node"));
     }
     return null;
   }

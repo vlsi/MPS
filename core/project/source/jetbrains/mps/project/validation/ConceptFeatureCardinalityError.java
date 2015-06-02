@@ -18,34 +18,8 @@ package jetbrains.mps.project.validation;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ConceptFeatureCardinalityError extends NodeValidationProblem {
-  private final SConceptFeature myFeature;
-  private final boolean myUpperBoundBroken;
-
-  public ConceptFeatureCardinalityError(SNode node, SConceptFeature feature, boolean isUpperBoundBroken) {
-    super(Severity.ERROR, node, isUpperBoundBroken ?
-            "Only one  " + feature.getPresentableKind() + " allowed in role " + feature.getPresentableName() :
-            "No " + feature.getPresentableKind() + " in obligatory role " + feature.getPresentableName()
-    );
-    myFeature = feature;
-    myUpperBoundBroken = isUpperBoundBroken;
-  }
-
-  public boolean isUpperBoundBroken() {
-    return myUpperBoundBroken;
-  }
-
-  public SConceptFeature getFeature() {
-    return myFeature;
-  }
-
-  @Override
-  public boolean canFix() {
-    return false;
-  }
-
-  @Override
-  public void fix() {
-
+public class ConceptFeatureCardinalityError extends ConceptFeatureError {
+  public ConceptFeatureCardinalityError(SNode node, SConceptFeature feature, String message) {
+    super(node, feature, message);
   }
 }

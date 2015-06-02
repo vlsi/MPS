@@ -95,7 +95,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new SwitchToCustomPropertyImplementation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SwitchToDefaultPropertyImplementation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new TryCatchFinally_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new TurnEnumToClassAndBack_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UnwrapIfThenBlock_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UnwrapTryCatch_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new UsedefaultLayout_Intention());

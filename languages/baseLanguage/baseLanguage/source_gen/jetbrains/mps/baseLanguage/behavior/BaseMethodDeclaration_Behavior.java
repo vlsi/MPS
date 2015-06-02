@@ -153,9 +153,12 @@ public class BaseMethodDeclaration_Behavior {
     return ResolveUtil.processMethodToImplement(enclosingClassifier, thisNode);
   }
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count()) {
+      return false;
+    }
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count(); i++) {
-      String searchedParamType = check_tq0gdw_a0a0a0p(check_tq0gdw_a0a0a0a51(ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
-      String foundParamType = check_tq0gdw_a0b0a0p(check_tq0gdw_a0a1a0a51(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
+      String searchedParamType = check_tq0gdw_a0a0b0p(check_tq0gdw_a0a0a1a51(ListSequence.fromList(SLinkOperations.getChildren(checked, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
+      String foundParamType = check_tq0gdw_a0b0b0p(check_tq0gdw_a0a1a1a51(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(i)));
       if (searchedParamType == null || foundParamType == null) {
         return false;
       }
@@ -310,25 +313,25 @@ public class BaseMethodDeclaration_Behavior {
     }
     return null;
   }
-  private static String check_tq0gdw_a0a0a0p(SNode checkedDotOperand) {
+  private static String check_tq0gdw_a0a0b0p(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getErasureSignature_1213877337313", new Object[]{});
     }
     return null;
   }
-  private static SNode check_tq0gdw_a0a0a0a51(SNode checkedDotOperand) {
+  private static SNode check_tq0gdw_a0a0a1a51(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     }
     return null;
   }
-  private static String check_tq0gdw_a0b0a0p(SNode checkedDotOperand) {
+  private static String check_tq0gdw_a0b0b0p(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getErasureSignature_1213877337313", new Object[]{});
     }
     return null;
   }
-  private static SNode check_tq0gdw_a0a1a0a51(SNode checkedDotOperand) {
+  private static SNode check_tq0gdw_a0a1a1a51(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"));
     }
