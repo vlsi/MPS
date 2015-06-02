@@ -1170,16 +1170,26 @@
       <node concept="3clFbS" id="74Oxs8ALqus" role="3clF47">
         <node concept="3clFbF" id="2Y$EcRKOmaf" role="3cqZAp">
           <node concept="3cpWs3" id="74Oxs8ALr96" role="3clFbG">
-            <node concept="3cpWs3" id="74Oxs8ALrGf" role="3uHU7B">
-              <node concept="Xl_RD" id="74Oxs8ALrGs" role="3uHU7w">
+            <node concept="3cpWs3" id="2Z_48ADrhhd" role="3uHU7B">
+              <node concept="Xl_RD" id="2Z_48ADrhhq" role="3uHU7w">
                 <property role="Xl_RC" value="." />
               </node>
-              <node concept="2OqwBi" id="74Oxs8ALrmi" role="3uHU7B">
-                <node concept="37vLTw" id="74Oxs8ALrfD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="74Oxs8ALquu" resolve="language" />
+              <node concept="3cpWs3" id="2Z_48ADrgUS" role="3uHU7B">
+                <node concept="3cpWs3" id="74Oxs8ALrGf" role="3uHU7B">
+                  <node concept="2OqwBi" id="74Oxs8ALrmi" role="3uHU7B">
+                    <node concept="37vLTw" id="74Oxs8ALrfD" role="2Oq$k0">
+                      <ref role="3cqZAo" node="74Oxs8ALquu" resolve="language" />
+                    </node>
+                    <node concept="liA8E" id="74Oxs8ALrvE" role="2OqNvi">
+                      <ref role="37wK5l" to="88zw:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="74Oxs8ALrGs" role="3uHU7w">
+                    <property role="Xl_RC" value="." />
+                  </node>
                 </node>
-                <node concept="liA8E" id="74Oxs8ALrvE" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                <node concept="1rXfSq" id="2Z_48ADrh4e" role="3uHU7w">
+                  <ref role="37wK5l" node="2Y$EcRKO3dN" resolve="getPresentableAspectName" />
                 </node>
               </node>
             </node>
