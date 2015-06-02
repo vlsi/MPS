@@ -9,7 +9,6 @@ import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -33,7 +32,7 @@ public class ConvertToBinaryWorker {
     RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     try {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      platform.getCore().getModuleRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           for (Map.Entry<String, String> entry : map.entrySet()) {
             convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
