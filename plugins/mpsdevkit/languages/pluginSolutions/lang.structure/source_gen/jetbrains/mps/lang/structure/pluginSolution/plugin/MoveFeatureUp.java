@@ -94,7 +94,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
     });
   }
 
-  public void execute(final _FunctionTypes._void_P0_E0 refactorInstances, final _FunctionTypes._return_P0_E0<? extends List<SNode>> placeToMove, final _FunctionTypes._void_P2_E0<? super SNode, ? super String> setFeatureName, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> oldFeatureVar, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> newFeatureVar, final _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> refactorInstancesClosure) {
+  public void execute(final _FunctionTypes._void_P0_E0 refactorInstances, final _FunctionTypes._return_P0_E0<? extends List<SNode>> placeToMove, final _FunctionTypes._void_P1_E0<? super SNode> markOldFeature, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> oldFeatureVar, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> newFeatureVar, final _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> refactorInstancesClosure) {
     if (ListSequence.fromList(arg._0()).count() != 1) {
       return;
     }
@@ -129,16 +129,15 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
     }
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
+        instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
         if (result == Messages.YES) {
           usages = FindUsagesManager.getInstance().findUsages(GlobalScope.getInstance(), Collections.singleton(feature), new EmptyProgressMonitor());
-          instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept.value)), false, new EmptyProgressMonitor());
           RefactoringUtil.changeReferences(project, usages, feature, refactorInstances, "Move " + featureKind + " " + featureName);
-
         } else {
           SNode newFeature = SNodeOperations.copyNode(feature);
           ListSequence.fromList(placeToMove.invoke()).addElement(newFeature);
-          AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0c0a0a0a0m0u("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
-          setFeatureName.invoke(feature, featureName + "_old");
+          AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0c0a1a0a0m0u("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+          markOldFeature.invoke(feature);
 
           MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_" + featureKind + "_" + featureName);
           SNode oldFeatureDecl = oldFeatureVar.invoke(feature);
@@ -194,7 +193,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
       return this;
     }
   }
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0c0a0a0a0m0u(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0c0a1a0a0m0u(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
