@@ -2,13 +2,11 @@
 <model ref="r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="fb9u" ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
-    <import index="tpdt" ref="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -17,7 +15,6 @@
     <import index="hilv" ref="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpdu" ref="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -179,9 +176,6 @@
         <reference id="1140138128738" name="concept" index="1PxNhF" />
         <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
-        <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -201,11 +195,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-    </language>
-    <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes">
-      <concept id="1159268661480" name="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" flags="ig" index="3DMZB_">
-        <reference id="1159268661479" name="descriptor" index="3DMZBE" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -341,22 +330,44 @@
     <property role="TrG5h" value="typeof_PersistentPropertyDeclaration" />
     <property role="3GE5qa" value="properties" />
     <node concept="3clFbS" id="63yBSeEXxFT" role="18ibNy">
-      <node concept="3cpWs8" id="63yBSeEXxFU" role="3cqZAp">
-        <node concept="3cpWsn" id="63yBSeEXxFV" role="3cpWs9">
-          <property role="TrG5h" value="primitive" />
-          <node concept="3Tqbb2" id="63yBSeEXxFW" role="1tU5fm">
-            <ref role="ehGHo" to="tpdt:gRDMI7h" resolve="PrimitiveTypeDescriptor" />
-          </node>
-          <node concept="2OqwBi" id="63yBSeEXxFX" role="33vP2m">
-            <node concept="2c44tf" id="63yBSeEXxFY" role="2Oq$k0">
-              <node concept="3DMZB_" id="63yBSeEXxFZ" role="2c44tc">
-                <ref role="3DMZBE" to="tpdu:hqvUXrO" resolve="Primitive" />
-              </node>
-            </node>
-            <node concept="3TrEf2" id="63yBSeEXxG0" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpdt:gRDMZzB" />
-            </node>
-          </node>
+      <node concept="3SKdUt" id="7dr0Sif0NRP" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NSk" role="3SKWNk">
+          <property role="3SKdUp" value="unfortunately, can't use superclass of all primitives, PrimitiveType," />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NSQ" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NTn" role="3SKWNk">
+          <property role="3SKdUp" value="as there's no 'supertype' relation between specific primitive type (e.g. IntegerType) and PrimitiveType" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NTV" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NUu" role="3SKWNk">
+          <property role="3SKdUp" value="There's indeed such relation with blTypes.PrimitiveTypeDescriptor (which in fact was in use here initially)," />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NV4" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NVD" role="3SKWNk">
+          <property role="3SKdUp" value="however, PrimitiveTypeDescriptor is not an IType (required by JoinType.argument), and I don't want neither" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NWh" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NWS" role="3SKWNk">
+          <property role="3SKdUp" value="to push incompatible value into model (could do using smodel lang, as light quotation force cast and fails at exec)," />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NXy" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NYb" role="3SKWNk">
+          <property role="3SKdUp" value="nor to make PrimitiveTypeDescriptor to implement IType (which it should, but it would yield another dependency cycle I" />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0NYR" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0NZy" role="3SKWNk">
+          <property role="3SKdUp" value="can't afford dealing with right now." />
+        </node>
+      </node>
+      <node concept="3SKdUt" id="7dr0Sif0O0g" role="3cqZAp">
+        <node concept="3SKdUq" id="7dr0Sif0O0X" role="3SKWNk">
+          <property role="3SKdUp" value="Thus, I've just listed all subtypes of PrimitiveType deemed reasonable at the moment." />
         </node>
       </node>
       <node concept="1ZobV4" id="63yBSeEXxG1" role="3cqZAp">
@@ -405,10 +416,29 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="36biLy" id="2F8bNQsJl_" role="36be1Z">
-                    <node concept="37vLTw" id="3GM_nagTAKL" role="36biLW">
-                      <ref role="3cqZAo" node="63yBSeEXxFV" resolve="primitive" />
-                    </node>
+                  <node concept="2pJPED" id="7dr0Sif0Nwu" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0P_4Y" resolve="BooleanType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NyO" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0OyhT" resolve="IntegerType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0N_o" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0OMvX" resolve="FloatType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NCa" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0P56A" resolve="DoubleType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NFa" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0PfwA" resolve="CharType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NIo" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0Pron" resolve="ByteType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NLO" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:fzcpWvN" resolve="LongType" />
+                  </node>
+                  <node concept="2pJPED" id="7dr0Sif0NPu" role="36be1Z">
+                    <ref role="2pJxaS" to="tpee:f_0N3wd" resolve="ShortType" />
                   </node>
                   <node concept="2pJPED" id="2F8bNQsJlA" role="36be1Z">
                     <ref role="2pJxaS" to="fb9u:O$iR4J$g3X" resolve="TemplatePersistentConfigurationType" />

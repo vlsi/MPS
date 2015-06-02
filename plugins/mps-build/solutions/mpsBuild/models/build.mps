@@ -19506,12 +19506,6 @@
             <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2a9bszgrvk8" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgrvk7" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6KZ6" resolve="jetbrains.mps.baseLanguage.blTypes" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2a9bszgrvkc" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgrvkb" role="1SiIV1">
             <property role="3bR36h" value="false" />
