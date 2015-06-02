@@ -21,7 +21,7 @@
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -3396,7 +3396,7 @@
             </node>
           </node>
           <node concept="3bMsLL" id="5KZfyKsWvF2" role="2VaxJS">
-            <ref role="3bMsLK" to="tnlc:6l_Qx579cKe" resolve="compileJava" />
+            <ref role="3bMsLK" to="2ogt:6l_Qx579cKe" resolve="compileJava" />
             <node concept="2VaxJe" id="5KZfyKsWvF3" role="3bNaKb">
               <ref role="2VaxJf" node="5KZfyKsWutq" resolve="targetName" />
               <node concept="1WS0z7" id="5KZfyKsWvF4" role="lGtFl">

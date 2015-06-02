@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -47,7 +46,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
@@ -174,20 +172,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
     for (SModel m : getModels()) {
-      if (m instanceof GeneratableSModel && ((GeneratableSModel) m).isDoNotGenerate()) {
-        usedLanguages.addAll(filterUsedLanguageOfNonGeneratableModel((GeneratableSModel) m));
-      } else {
-        usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
-      }
+      usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
     }
     usedLanguages.add(BootstrapLanguages.getLangCore());
 
     return usedLanguages;
-  }
-
-  @Hack
-  protected Collection<SLanguage> filterUsedLanguageOfNonGeneratableModel(@NotNull GeneratableSModel model) {
-    return ((SModelInternal) model).importedLanguageIds();
   }
 
   @Override

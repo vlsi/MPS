@@ -2,13 +2,13 @@
 <language namespace="jetbrains.mps.build.workflow" uuid="698a8d22-a104-47a0-ba8d-10e3ec237f13" version="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="accessoryModels" />
       <sourceRoot location="languageModels" />
       <sourceRoot location="util" />
     </modelRoot>
   </models>
   <accessoryModels>
-    <model modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
+    <model modelUID="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" />
+    <model modelUID="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" />
   </accessoryModels>
   <generators>
     <generator name="main" generatorUID="jetbrains.mps.build.workflow#2769948622284786808" uuid="39d44af6-f60e-499c-a201-583451e7fad0">

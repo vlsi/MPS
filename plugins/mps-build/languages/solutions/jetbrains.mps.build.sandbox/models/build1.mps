@@ -7,7 +7,7 @@
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
   </languages>
   <imports>
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -625,7 +625,7 @@
     </node>
     <node concept="1y0Vig" id="450ejGzh6pW" role="1hWBAP">
       <node concept="3bMsLL" id="450ejGzh6pX" role="1y0Vin">
-        <ref role="3bMsLK" to="tnlc:450ejGzgRPq" resolve="assemble" />
+        <ref role="3bMsLK" to="arit:450ejGzgRPq" resolve="assemble" />
         <node concept="2VaFvH" id="450ejGzh6q7" role="3bMsLN">
           <property role="TrG5h" value="aaa" />
           <node concept="2Vbh7Z" id="450ejGzh6q8" role="2VaTZU">

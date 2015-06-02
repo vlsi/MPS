@@ -19,7 +19,7 @@
     <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" implicit="true" />
     <import index="tos2" ref="r:19e846e2-aa6a-48a9-8367-2a1eda2709e7(jetbrains.mps.build.mps.runner.behavior)" implicit="true" />
     <import index="boe" ref="r:4e917293-f5b9-4023-b36a-fcf2132c435c(jetbrains.mps.build.mps.runner.accessories)" implicit="true" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
     <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -320,8 +320,8 @@
         </node>
         <node concept="2VaFvF" id="3BExUgsKmIZ" role="1y0Vin">
           <property role="TrG5h" value="run" />
-          <node concept="2VaxJe" id="4e7dAY67P0v" role="2VaxJ6">
-            <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
+          <node concept="2VaxJe" id="7bEMOo$2ApT" role="2VaxJ6">
+            <ref role="2VaxJf" to="arit:450ejGzgRPq" resolve="assemble" />
           </node>
           <node concept="2VaFvH" id="3pzPpUGhPUI" role="2VaFvJ">
             <property role="TrG5h" value="runCodeInMps" />

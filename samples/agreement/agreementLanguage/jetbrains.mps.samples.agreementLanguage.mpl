@@ -64,6 +64,8 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="0" />
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" fqName="jetbrains.mps.lang.structure" version="0" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
+    <language id="144f7012-c2d5-43be-be2b-4bfb7dff6503" fqName="jetbrains.mps.samples.agreementLanguage" version="0" />
+    <language id="b1a9bc47-8a26-4792-8b68-4660c531090a" fqName="jetbrains.mps.samples.formulaLanguage" version="0" />
   </languageVersions>
   <runtime>
     <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>

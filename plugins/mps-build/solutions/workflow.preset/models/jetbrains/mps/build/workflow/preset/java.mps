@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)">
+<model ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
   </languages>
   <imports>
     <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
@@ -34,27 +33,42 @@
       </concept>
     </language>
   </registry>
-  <node concept="yghi3" id="m8_23bzloH">
-    <property role="TrG5h" value="mps" />
-    <node concept="2VaFvF" id="m8_23bzoyR" role="yghi5">
-      <property role="TrG5h" value="generate" />
-      <node concept="2VaxJe" id="m8_23bSm_s" role="2VaxJ6">
-        <ref role="2VaxJf" node="m8_23b_6ft" resolve="declare-mps-tasks" />
+  <node concept="yghi3" id="6l_Qx579h0U">
+    <property role="TrG5h" value="java" />
+    <node concept="2VaFvF" id="6l_Qx579cKe" role="yghi5">
+      <property role="TrG5h" value="compileJava" />
+    </node>
+    <node concept="2VaFvF" id="6l_Qx579cKm" role="yghi5">
+      <property role="TrG5h" value="processResources" />
+    </node>
+    <node concept="2VaFvF" id="6l_Qx579cKk" role="yghi5">
+      <property role="TrG5h" value="classes" />
+      <node concept="2VaxJe" id="6l_Qx579cKo" role="2VaxJ6">
+        <ref role="2VaxJf" node="6l_Qx579cKe" resolve="compileJava" />
+      </node>
+      <node concept="2VaxJe" id="6l_Qx579cKq" role="2VaxJ6">
+        <ref role="2VaxJf" node="6l_Qx579cKm" resolve="processResources" />
       </node>
     </node>
-    <node concept="2VaFvF" id="m8_23b_6ft" role="yghi5">
-      <property role="TrG5h" value="declare-mps-tasks" />
-    </node>
-    <node concept="3bMsLL" id="5wKGSSolK5D" role="yghi5">
+    <node concept="3bMsLL" id="450ejGzgRPu" role="yghi5">
       <ref role="3bMsLK" to="arit:450ejGzgRPq" resolve="assemble" />
-      <node concept="2VaxJe" id="5wKGSSolK61" role="3bNaKb">
-        <ref role="2VaxJf" node="m8_23b_6ft" resolve="declare-mps-tasks" />
+      <node concept="2VaxJe" id="450ejGzgRPw" role="3bNaKb">
+        <ref role="2VaxJf" node="6l_Qx579cKk" resolve="classes" />
       </node>
     </node>
-    <node concept="2VaFvF" id="3zFnP6MHc0r" role="yghi5">
-      <property role="TrG5h" value="makeDependents" />
+    <node concept="2VaFvF" id="6l_Qx579cK_" role="yghi5">
+      <property role="TrG5h" value="test" />
+      <node concept="2VaxJe" id="6l_Qx579cKI" role="2VaxJ6">
+        <ref role="2VaxJf" node="6l_Qx579cKk" resolve="classes" />
+      </node>
     </node>
-    <node concept="ygXWA" id="5T0Kicg_Jpc" role="yg1MB">
+    <node concept="2VaFvF" id="6l_Qx579cKx" role="yghi5">
+      <property role="TrG5h" value="check" />
+      <node concept="2VaxJe" id="6l_Qx579cKK" role="2VaxJ6">
+        <ref role="2VaxJf" node="6l_Qx579cK_" resolve="test" />
+      </node>
+    </node>
+    <node concept="ygXWA" id="5T0KicgAcpT" role="yg1MB">
       <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
   </node>

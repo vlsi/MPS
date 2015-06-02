@@ -15,17 +15,17 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" />
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" />
-    <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(jetbrains.mps.util@java_stub)" />
     <import index="59et" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" />
     <import index="9a8" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(java.util.concurrent@java_stub)" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
@@ -11436,8 +11436,8 @@
                     <ref role="2pJxaS" to="8xvf:6l_Qx579wkR" resolve="BwfTaskLibraryDependency" />
                     <node concept="2pIpSj" id="3zFnP6MyD2T" role="2pJxcM">
                       <ref role="2pIpSl" to="8xvf:6l_Qx579wkS" />
-                      <node concept="36bGnv" id="3zFnP6MyD2U" role="2pJxcZ">
-                        <ref role="36bGnp" to="tnlc:6l_Qx579h0U" resolve="java" />
+                      <node concept="36bGnv" id="5T0Kicg_GhB" role="2pJxcZ">
+                        <ref role="36bGnp" to="2ogt:6l_Qx579h0U" resolve="java" />
                       </node>
                     </node>
                   </node>
@@ -13352,8 +13352,8 @@
         <node concept="3clFbF" id="5Wv1_bQ1re2" role="3cqZAp">
           <node concept="2OqwBi" id="5Wv1_bQ1rer" role="3clFbG">
             <node concept="2c44tf" id="5Wv1_bQ1re3" role="2Oq$k0">
-              <node concept="2VaxJe" id="5Wv1_bQ1re6" role="2c44tc">
-                <ref role="2VaxJf" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+              <node concept="2VaxJe" id="5T0Kicg_H94" role="2c44tc">
+                <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
               </node>
             </node>
             <node concept="3TrEf2" id="5Wv1_bQ1rez" role="2OqNvi">

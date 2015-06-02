@@ -17,15 +17,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
-import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -37,7 +33,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -65,7 +60,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -344,17 +338,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
     setModuleDescriptor(myLanguageDescriptor);
     this.reload();
-  }
-
-  @Override
-  protected Collection<SLanguage> filterUsedLanguageOfNonGeneratableModel(GeneratableSModel model) {
-    final Collection<SLanguage> imports = super.filterUsedLanguageOfNonGeneratableModel(model);
-    if (!isAccessoryModel(model.getReference())) {
-      return imports;
-    }
-    LinkedHashSet<SLanguage> rv = new LinkedHashSet<SLanguage>(imports);
-    rv.remove(MetaAdapterByDeclaration.getLanguage(this));
-    return rv;
   }
 
   public String toString() {

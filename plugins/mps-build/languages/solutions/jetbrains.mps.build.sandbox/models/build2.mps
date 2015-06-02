@@ -6,7 +6,8 @@
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
   </languages>
   <imports>
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -402,7 +403,7 @@
       <node concept="2IvZ1S" id="1s8OwvM6XNB" role="3_4Wgq" />
     </node>
     <node concept="3bMsLL" id="5KZfyKsWtUZ" role="2VaxJS">
-      <ref role="3bMsLK" to="tnlc:6l_Qx579h0X" resolve="build" />
+      <ref role="3bMsLK" to="arit:6l_Qx579h0X" resolve="build" />
       <node concept="2VaFvH" id="2pKPpytnqFo" role="3bMsLN">
         <property role="TrG5h" value="copyFiles" />
         <node concept="2Vbh7Z" id="2pKPpytnvRI" role="2VaTZU">
@@ -469,11 +470,11 @@
         </node>
       </node>
     </node>
-    <node concept="ygXWA" id="Y2EImGHkzk" role="yg1MA">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+    <node concept="ygXWA" id="5T0KicgAaG1" role="yg1MA">
+      <ref role="ygXWD" to="2ogt:6l_Qx579h0U" resolve="java" />
     </node>
-    <node concept="ygXWA" id="Y2EImGHkzm" role="yg1MA">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    <node concept="ygXWA" id="5T0KicgAaG5" role="yg1MA">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
   </node>
 </model>

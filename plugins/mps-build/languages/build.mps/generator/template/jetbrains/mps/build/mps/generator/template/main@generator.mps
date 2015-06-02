@@ -20,15 +20,13 @@
     <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="g07" ref="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
-    <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="tp2o" ref="r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" implicit="true" />
     <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" implicit="true" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -11047,8 +11045,8 @@
         </node>
         <node concept="3bMsLL" id="g0fHFWiP_k" role="1y0Vin">
           <ref role="3bMsLK" to="zwni:m8_23b_6ft" resolve="declare-mps-tasks" />
-          <node concept="2VaxJe" id="g0fHFWraXR" role="3bNaKb">
-            <ref role="2VaxJf" to="tnlc:6l_Qx579cKk" resolve="classes" />
+          <node concept="2VaxJe" id="1WGJoq9ZzbM" role="3bNaKb">
+            <ref role="2VaxJf" to="2ogt:6l_Qx579cKk" resolve="classes" />
           </node>
           <node concept="1W57fq" id="g0fHFWiUaK" role="lGtFl">
             <property role="34cw8o" value="mpsBootstrapCore" />
@@ -12918,7 +12916,7 @@
             <node concept="2VaTY3" id="5D0zVz80jZz" role="2VaTZU" />
           </node>
           <node concept="2VaxJe" id="m8_23bKZOk" role="3bNaKb">
-            <ref role="2VaxJf" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+            <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
             <node concept="1W57fq" id="m8_23bMiUI" role="lGtFl">
               <node concept="3IZrLx" id="m8_23bMiUK" role="3IZSJc">
                 <node concept="3clFbS" id="m8_23bMiUM" role="2VODD2">
@@ -12944,7 +12942,7 @@
           </node>
         </node>
         <node concept="3bMsLL" id="2NPgP3pAJNQ" role="1y0Vin">
-          <ref role="3bMsLK" to="tnlc:6l_Qx579cK_" resolve="test" />
+          <ref role="3bMsLK" to="2ogt:6l_Qx579cK_" resolve="test" />
           <node concept="1W57fq" id="5YheE7ibYs5" role="lGtFl">
             <node concept="3IZrLx" id="5YheE7ibYs7" role="3IZSJc">
               <node concept="3clFbS" id="5YheE7ibYs9" role="2VODD2">
@@ -14211,7 +14209,7 @@
             <node concept="2VaTY3" id="2NPgP3pAJSm" role="2VaTZU" />
           </node>
           <node concept="2VaxJe" id="2NPgP3pAJSn" role="3bNaKb">
-            <ref role="2VaxJf" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+            <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
             <node concept="1W57fq" id="2NPgP3pAJSo" role="lGtFl">
               <node concept="3IZrLx" id="2NPgP3pAJSp" role="3IZSJc">
                 <node concept="3clFbS" id="2NPgP3pAJSq" role="2VODD2">
