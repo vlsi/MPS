@@ -18,17 +18,21 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.library.contributor.LibraryContributor;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -36,47 +40,65 @@ import org.junit.Test;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
-
-import jetbrains.mps.library.contributor.LibDescriptor;
 
 /**
  * Internal consistency check of module dependencies between different layers of MPS hierarchy:
  * core, workbench and plugin
  */
-public class ProjectMPSDependenciesTest extends CoreMpsTest {
-  private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSDependenciesTest.class);
-  private boolean myFailed = false;
+public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
+  private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSFacetCorrectnessTest.class);
+  private static Environment ourEnvironment;
 
   @BeforeClass
   public static void beforeTest() {
-    MpsEnvironment.getOrCreate(EnvironmentConfig.emptyEnvironment());
+    ourEnvironment = MpsEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
   }
 
   @Test
-  public void depsAreValid() {
-    LOG.info("ADDING CORE CONTRIBUTORS : currently " + getModulesCount() + " modules");
+  public void testSolutionsHaveValidFacets() {
+    LOG.info("ADDING CONTRIBUTORS");
     addContributorWithPaths(getCorePaths());
-    checkDeps();
-    LOG.info("ADDING WORKBENCH CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
-    checkDeps();
-    LOG.info("ADDING PLUGINS CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(Collections.singletonList(PathManager.getPreInstalledPluginsPath()));
-    LOG.info("FINISHED : currently " + getModulesCount() + " modules");
-    checkDeps();
-    Assert.assertFalse("Some dependencies are invalid", myFailed);
+    doTest();
   }
 
-  private int getModulesCount() {
-    final SRepository repository = getRepository();
-    return new ModelAccessHelper(repository).runReadAction(new Computable<Integer>() {
+  private void doTest() {
+    Iterable<SModule> allModules = getAllModules();
+    LOG.info("Checking " + IterableUtil.asCollection(allModules).size() + " modules");
+    for (SModule module : allModules) {
+      if (module instanceof Solution) {
+        JavaModuleFacet javaModuleFacet = module.getFacet(JavaModuleFacet.class);
+        if (javaModuleFacet == null) {
+          continue;
+        }
+        CustomClassLoadingFacet facet = module.getFacet(CustomClassLoadingFacet.class);
+        if (facet != null) {
+          Assert.assertTrue("Unknown kind of facet " + facet + " in module " + module, facet instanceof IdeaPluginModuleFacet);
+          Assert.assertTrue("Facet of the module " + module + " is not valid", facet.isValid());
+          Assert.assertTrue("The module " + module + " has enabled both idea plugin facet and java compilation in MPS",
+              !javaModuleFacet.isCompileInMps());
+        } else {
+          Assert.assertTrue("The module " + module + " has neither idea plugin facet nor java compilation enabled",
+              javaModuleFacet.isCompileInMps());
+        }
+      }
+    }
+  }
+
+  private Iterable<SModule> getAllModules() {
+    final SRepository repo = MPSModuleRepository.getInstance();
+    return new ModelAccessHelper(repo).runReadAction(new Computable<Iterable<SModule>>() {
       @Override
-      public Integer compute() {
-        return IterableUtil.asCollection(repository.getModules()).size();
+      public Iterable<SModule> compute() {
+        return repo.getModules();
       }
     });
   }
@@ -97,28 +119,5 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
 
   private void addContributor(LibraryContributor contributor) {
     LibraryInitializer.getInstance().load(Collections.singletonList(contributor));
-  }
-
-  private void checkDeps() {
-    final ModulesWatcher modulesWatcher = getModulesWatcher();
-    final SRepository repository = getRepository();
-    repository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SModuleReference module : modulesWatcher.getAllModules()) {
-          if (modulesWatcher.isModuleInvalid(module, true)) {
-            myFailed = true;
-          }
-        }
-      }
-    });
-  }
-
-  private ModulesWatcher getModulesWatcher() {
-    return ClassLoaderManager.getInstance().getModulesWatcher();
-  }
-
-  private SRepository getRepository() {
-    return MPSModuleRepository.getInstance();
   }
 }
