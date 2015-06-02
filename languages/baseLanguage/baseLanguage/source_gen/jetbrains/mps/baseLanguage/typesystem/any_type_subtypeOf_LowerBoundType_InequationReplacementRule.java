@@ -13,6 +13,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -60,10 +61,13 @@ public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends
     /*package*/ SNode patternVar_TYPE;
     public Pattern_w2c88q_a0a0a0a7() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_y0gkvf_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.LowerBoundType".equals(nodeToMatch_y0gkvf_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, "jetbrains.mps.baseLanguage.structure.LowerBoundType").equals(nodeToMatch_y0gkvf_a0a.getConcept()))) {
           return false;
         }
         {

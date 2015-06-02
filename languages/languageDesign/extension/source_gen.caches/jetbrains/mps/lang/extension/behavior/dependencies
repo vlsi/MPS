@@ -6,10 +6,19 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.extension.behavior.ArgumentField_BehaviorDescriptor" file="ArgumentField_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ApplyOverlappingExtensionOperation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ArgumentField_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionFieldDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.extension.behavior.ExtensionFieldReference_BehaviorDescriptor" />

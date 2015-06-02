@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -36,10 +37,13 @@ public class RuleAssertNotNull implements DataFlowConstructor {
     private GeneratedMatchingPattern myOrPattern_7fbm30_a0a0;
     public Pattern_7fbm30_a0a() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_7fbm30_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_7fbm30_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, "jetbrains.mps.baseLanguage.structure.AssertStatement").equals(nodeToMatch_7fbm30_a0a.getConcept()))) {
           return false;
         }
         {
@@ -54,12 +58,12 @@ public class RuleAssertNotNull implements DataFlowConstructor {
               {
                 boolean orMatches = false;
                 GeneratedMatchingPattern orPattern;
-                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a0a0a();
+                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a1a0a();
                 if (orPattern.match(nodeToMatch_7fbm30_a0a0)) {
                   orMatches = true;
                   myOrPattern_7fbm30_a0a0 = orPattern;
                 }
-                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a0a0a();
+                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a1a0a();
                 if (orPattern.match(nodeToMatch_7fbm30_a0a0)) {
                   orMatches = true;
                   myOrPattern_7fbm30_a0a0 = orPattern;
@@ -111,13 +115,16 @@ public class RuleAssertNotNull implements DataFlowConstructor {
         }
       }
     }
-    public class Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a0a0a() {
+    public class Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a1a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a1a0a() {
+      }
+      public SConcept getConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression");
       }
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_7fbm30_a0a0a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_7fbm30_a0a0a0.getConcept().getQualifiedName()))) {
+          if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression").equals(nodeToMatch_7fbm30_a0a0a0.getConcept()))) {
             return false;
           }
           {
@@ -142,7 +149,7 @@ public class RuleAssertNotNull implements DataFlowConstructor {
               SNode childVar_7fbm30_a0a0a0a_0 = IterableUtil.get(nodeToMatch_7fbm30_a0a0a0.getChildren(childRole_7fbm30__1), 0);
               {
                 SNode nodeToMatch_7fbm30_a0a0a0a_0 = childVar_7fbm30_a0a0a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7fbm30_a0a0a0a_0.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral").equals(nodeToMatch_7fbm30_a0a0a0a_0.getConcept()))) {
                   return false;
                 }
               }
@@ -162,13 +169,16 @@ public class RuleAssertNotNull implements DataFlowConstructor {
       public void performActions(Object o) {
       }
     }
-    public class Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a0a0a() {
+    public class Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a1a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a1a0a() {
+      }
+      public SConcept getConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression");
       }
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_7fbm30_a1a0a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_7fbm30_a1a0a0.getConcept().getQualifiedName()))) {
+          if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression").equals(nodeToMatch_7fbm30_a1a0a0.getConcept()))) {
             return false;
           }
           {
@@ -180,7 +190,7 @@ public class RuleAssertNotNull implements DataFlowConstructor {
               SNode childVar_7fbm30_a0b0a0a = IterableUtil.get(nodeToMatch_7fbm30_a1a0a0.getChildren(childRole_7fbm30__2), 0);
               {
                 SNode nodeToMatch_7fbm30_a0b0a0a = childVar_7fbm30_a0b0a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7fbm30_a0b0a0a.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral").equals(nodeToMatch_7fbm30_a0b0a0a.getConcept()))) {
                   return false;
                 }
               }

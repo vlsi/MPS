@@ -13,6 +13,7 @@ import java.util.Arrays;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -47,10 +48,13 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   public static class Pattern_gqfgxi_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_gqfgxi_a0a0a0a4() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_mvbroc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_mvbroc_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType").equals(nodeToMatch_mvbroc_a0a.getConcept()))) {
           return false;
         }
         {
@@ -62,11 +66,11 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
             SNode childVar_mvbroc_a0a0 = IterableUtil.get(nodeToMatch_mvbroc_a0a.getChildren(childRole_mvbroc_), 0);
             {
               SNode nodeToMatch_mvbroc_a0a0 = childVar_mvbroc_a0a0;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_mvbroc_a0a0.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_mvbroc_a0a0.getConcept()))) {
                 return false;
               }
               {
-                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e;
+                SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0b0a0a0a0e;
                 if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
                   return false;
                 }
@@ -109,5 +113,5 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Cloneable")));
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0b0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

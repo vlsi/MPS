@@ -47,7 +47,6 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
 
 public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void> {
-  private MoveNodesDefault.ExtensionFunction _myExtension;
 
 
   public boolean applicable() {
@@ -62,20 +61,19 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     return result.value;
   }
   public Void apply() {
-    target = arg._0();
-    project = arg._1();
     execute();
     return null;
   }
 
   private Tuples._2<List<SNode>, MPSProject> arg;
 
-  protected MPSProject project;
-  protected List<SNode> target;
+  private MPSProject project;
+  private List<SNode> target;
 
-  protected SModel targetModel;
+  private SModel targetModel;
 
-  protected Object newLocation;
+  private Object newLocation;
+
 
   public boolean canBeMoved(List<SNode> nodesToMove) {
     if (ListSequence.fromList(nodesToMove).isEmpty()) {
@@ -93,6 +91,8 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
   }
 
   public void init() {
+    target = arg._0();
+    project = arg._1();
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         targetModel = SNodeOperations.getModel(ListSequence.fromList(target).first());
@@ -128,10 +128,11 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
   }
 
   public void execute() {
+    init();
+
     final SRepository repository = project.getRepository();
     final ModelAccess modelAccess = repository.getModelAccess();
 
-    init();
 
     showChooseDialog();
     if (newLocation == null) {
@@ -239,7 +240,6 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     public MoveNodesDefault instantiate(Tuples._2<List<SNode>, MPSProject> arg) {
       MoveNodesDefault result = new MoveNodesDefault();
       result.arg = arg;
-      result._myExtension = this;
       return result;
     }
     @Override
