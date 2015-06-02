@@ -103,7 +103,9 @@
       <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
         <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
       </concept>
+      <concept id="1202776937179" name="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence" flags="lg" index="b5Tf3" />
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
+        <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
@@ -120,6 +122,9 @@
       </concept>
       <concept id="1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" flags="ln" index="17Uvod">
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
+      </concept>
+      <concept id="1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" flags="lg" index="3aamgX">
+        <child id="1169672767469" name="ruleConsequence" index="1lVwrX" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
         <reference id="1167514355421" name="template" index="3lhOvi" />
@@ -224,6 +229,10 @@
   <node concept="bUwia" id="3geGFOI0TCe">
     <property role="TrG5h" value="main" />
     <property role="3GE5qa" value="" />
+    <node concept="3aamgX" id="27IayeC_p6F" role="3acgRq">
+      <ref role="30HIoZ" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
+      <node concept="b5Tf3" id="27IayeC_p6J" role="1lVwrX" />
+    </node>
     <node concept="3lhOvk" id="4eMO5R8usWZ" role="3lj3bC">
       <ref role="30HIoZ" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
       <ref role="3lhOvi" node="3geGFOI1ynn" resolve="Queries" />
