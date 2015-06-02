@@ -28,7 +28,9 @@
         <child id="1198489993734" name="body" index="b$wch" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
+        <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
@@ -56,6 +58,9 @@
       </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
+        <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
@@ -294,14 +299,10 @@
     <ref role="1XX52x" to="hfbu:2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
     <node concept="b$f91" id="2Y$EcRKMt2F" role="2wV5jI">
       <node concept="3EZMnI" id="2Y$EcRKMt2S" role="b$wch">
-        <node concept="3F0ifn" id="5KGdJjE3g6W" role="3EZMnx">
-          <property role="3F0ifm" value="Common" />
-        </node>
         <node concept="3EZMnI" id="2Y$EcRKMt35" role="3EZMnx">
           <node concept="VPM3Z" id="2Y$EcRKMt37" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3gb1" role="3EZMnx" />
           <node concept="3F0ifn" id="2Y$EcRKMt3g" role="3EZMnx">
             <property role="3F0ifm" value="aspect model name:" />
           </node>
@@ -318,7 +319,6 @@
           <node concept="VPM3Z" id="2Y$EcRKMt3r" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3hSK" role="3EZMnx" />
           <node concept="3F0ifn" id="2Y$EcRKMt3s" role="3EZMnx">
             <property role="3F0ifm" value="main language:" />
           </node>
@@ -331,25 +331,24 @@
           <node concept="VPM3Z" id="2Y$EcRKMt3J" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3hSW" role="3EZMnx" />
           <node concept="3F0ifn" id="2Y$EcRKMt3K" role="3EZMnx">
             <property role="3F0ifm" value="additional languages:" />
           </node>
           <node concept="3F2HdR" id="2Y$EcRKMt47" role="3EZMnx">
+            <property role="2czwfO" value="," />
             <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2m" />
             <node concept="2iRkQZ" id="2Y$EcRKMt4d" role="2czzBx" />
+            <node concept="3F0ifn" id="5KGdJjE3t_8" role="2czzBI">
+              <property role="3F0ifm" value="&lt;no languages&gt;" />
+              <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+            </node>
           </node>
           <node concept="2iRfu4" id="2Y$EcRKMt3M" role="2iSdaV" />
-        </node>
-        <node concept="3F0ifn" id="5KGdJjE3g8h" role="3EZMnx" />
-        <node concept="3F0ifn" id="2Y$EcRKMt4g" role="3EZMnx">
-          <property role="3F0ifm" value="UI" />
         </node>
         <node concept="3EZMnI" id="2Y$EcRKMt79" role="3EZMnx">
           <node concept="VPM3Z" id="2Y$EcRKMt7a" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3gaJ" role="3EZMnx" />
           <node concept="3F0ifn" id="2Y$EcRKMt7b" role="3EZMnx">
             <property role="3F0ifm" value="helpUrl:" />
           </node>
@@ -362,7 +361,6 @@
           <node concept="VPM3Z" id="2Y$EcRKMt6E" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
-          <node concept="3XFhqQ" id="5KGdJjE3gap" role="3EZMnx" />
           <node concept="3F0ifn" id="2Y$EcRKMt6F" role="3EZMnx">
             <property role="3F0ifm" value="icon:" />
           </node>
