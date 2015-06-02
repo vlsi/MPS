@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.components;
 
-import jetbrains.mps.smodel.ModelAccess;
-
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -25,10 +23,6 @@ import java.util.LinkedList;
  */
 public class ComponentPlugin {
   private Deque<CoreComponent> myComponents;
-
-  private static ModelAccess getModelAccess() {
-    return ModelAccess.instance();
-  }
 
   public void init() {
     myComponents = new LinkedList<CoreComponent>();
@@ -39,12 +33,7 @@ public class ComponentPlugin {
    */
   protected <T extends CoreComponent> T init(final T component) {
     try {
-      getModelAccess().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          component.init();
-        }
-      });
+      component.init();
       myComponents.push(component);
     } catch (Throwable th) {
       throw new RuntimeException("Component " + component + " initialization error", th);
@@ -56,18 +45,12 @@ public class ComponentPlugin {
     if (myComponents == null) {
       return;
     }
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        while (!myComponents.isEmpty()) {
-          dispose(myComponents.pop());
-        }
-      }
-    });
+    while (!myComponents.isEmpty()) {
+      dispose(myComponents.pop());
+    }
   }
 
   private <T extends CoreComponent> void dispose(final T component) {
-    getModelAccess().checkWriteAccess();
     try {
       component.dispose();
     } catch (Throwable th) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 /**
@@ -22,7 +23,8 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
  * Classes of the module which has such facet are NOT managed by MPS itself (for example, by IDEA's PluginClassLoaders)
  */
 public interface CustomClassLoadingFacet extends SModuleFacet {
-  public boolean isValid();
+  boolean isValid();
 
-  public ClassLoader getClassLoader();
+  @Nullable
+  ClassLoader getClassLoader();
 }

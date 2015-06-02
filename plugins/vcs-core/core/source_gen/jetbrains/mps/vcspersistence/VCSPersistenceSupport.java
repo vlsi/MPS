@@ -115,6 +115,7 @@ public class VCSPersistenceSupport {
       return new ModelPersistence7();
     }
 
+    // todo remove this after removing usages of VCSPersistenceSupport from everywhere except VCSPersistenceUtil 
     return ModelPersistence.getPersistence(version);
   }
 

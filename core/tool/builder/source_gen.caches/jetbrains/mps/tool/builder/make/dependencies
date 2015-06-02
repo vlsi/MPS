@@ -201,7 +201,6 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.classloading.DumbIdeaPluginFacet" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.classloading.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.core.tool.environment.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -220,9 +219,7 @@
     <classNode dependClassName="jetbrains.mps.tool.environment.MpsEnvironment" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.FacetsFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleFacet" />
     <classNode extendsClassName="jetbrains.mps.tool.builder.make.BaseGeneratorWorker" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.MpsRunnerWorker" file="MpsRunnerWorker.java">

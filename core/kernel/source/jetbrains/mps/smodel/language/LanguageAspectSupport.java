@@ -31,6 +31,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 /**
@@ -52,7 +53,8 @@ public class LanguageAspectSupport {
     assert language instanceof Language;
     //as soon as this class is API-like, it's not good to have Language parameter here as in API we work with SModule
 
-    HashSet<SModel> result = new HashSet<SModel>();
+    //order is important here
+    LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
     for (LanguageAspect la : LanguageAspect.values()) {
       SModel aspectModel = la.get(((Language) language));
       if (aspectModel == null) continue;

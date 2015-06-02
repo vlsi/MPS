@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.smodel;
+package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.util.ProgressWindow;
@@ -28,11 +28,6 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IllegalModelAccessError;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.TimeOutRuntimeException;
-import jetbrains.mps.smodel.UndoHelper;
-import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
@@ -52,35 +47,31 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
-public class WorkbenchModelAccess extends ModelAccess {
-
+public class WorkbenchModelAccess extends ModelAccess implements ApplicationComponent {
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
-  private final AtomicInteger myWritesScheduled = new AtomicInteger();
-  private EDTExecutor myEDTExecutor = new EDTExecutor(this);
-
   private static final int REQUIRE_MAX_TRIES = 8;
 
-  private DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
-
-  private Thread myInterruptingThread;
-
-  public WorkbenchModelAccess() {
-    this.myInterruptingThread = new Thread(new Runnable() {
-      @Override
-      public void run() {
-        for (; ; ) {
-          try {
-            DelayedInterrupt di = myInterruptQueue.take();
-            di.timeIsUp();
-          } catch (InterruptedException e) {
-            Application app = ApplicationManager.getApplication();
-            if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
-              return;
-            }
+  private final AtomicInteger myWritesScheduled = new AtomicInteger();
+  private final EDTExecutor myEDTExecutor = new EDTExecutor(this);
+  private final DelayQueue<DelayedInterrupt> myInterruptQueue = new DelayQueue<DelayedInterrupt>();
+  private final Thread myInterruptingThread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+      while (true) {
+        try {
+          DelayedInterrupt di = myInterruptQueue.take();
+          di.timeIsUp();
+        } catch (InterruptedException e) {
+          Application app = ApplicationManager.getApplication();
+          if (app == null || app.isDisposeInProgress() || app.isDisposed()) {
+            return;
           }
         }
       }
-    }, "MPS interrupting thread");
+    }
+  }, "MPS interrupting thread");
+
+  protected WorkbenchModelAccess() {
     myInterruptingThread.start();
   }
 
@@ -600,6 +591,25 @@ public class WorkbenchModelAccess extends ModelAccess {
       getReadLock().lock();
       getReadLock().unlock();
     }
+  }
+
+  @Override
+  public void initComponent() {
+    // not allowing to substitute alien model accesses here
+    assert instance() instanceof DefaultModelAccess;
+    setInstance(this);
+  }
+
+  @Override
+  public void disposeComponent() {
+    setInstance(new DefaultModelAccess());
+    dispose();
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return getClass().getSimpleName();
   }
 
   private class CommandRunnable implements Runnable {

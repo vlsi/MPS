@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.project.facets.ui;
 
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 import org.jetbrains.mps.openapi.ui.persistence.TabFactory;

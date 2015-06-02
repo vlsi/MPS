@@ -20,6 +20,6 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="module" module-name="components" />
   </component>
 </module>
-

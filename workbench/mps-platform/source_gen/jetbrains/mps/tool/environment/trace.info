@@ -42,7 +42,7 @@
       <node id="3563237213751600604" at="75,57,76,54" concept="3" />
       <node id="3727517784853103489" at="76,54,77,0" concept="10" />
       <node id="6450649963067750147" at="77,0,78,62" concept="7" />
-      <node id="3727517784853102596" at="78,62,79,68" concept="3" />
+      <node id="3727517784853102596" at="78,62,79,44" concept="3" />
       <node id="6450649963067753108" at="82,52,83,85" concept="8" />
       <node id="4287407824075666918" at="87,30,88,47" concept="3" />
       <node id="7550149668843898821" at="89,5,90,49" concept="8" />
@@ -98,7 +98,7 @@
       <node id="7806223048927459160" at="207,32,208,23" concept="3" />
       <node id="5294483648489407984" at="212,32,213,45" concept="3" />
       <node id="3961386466486681237" at="215,25,216,15" concept="8" />
-      <node id="6450649963066772871" at="223,41,224,16" concept="8" />
+      <node id="6450649963066772871" at="223,43,224,16" concept="8" />
       <node id="7413225496542992859" at="226,0,227,0" concept="11" trace="LOG" />
       <node id="5876208808347915789" at="210,0,212,0" concept="6" trace="run#()V" />
       <node id="7413225496543196363" at="39,0,42,0" concept="2" trace="IdeaEnvironment#(Ljetbrains/mps/tool/environment/EnvironmentConfig;)V" />
@@ -124,7 +124,7 @@
       <node id="7806223048927386061" at="54,10,59,5" concept="1" />
       <node id="6450649963069039598" at="144,25,149,11" concept="3" />
       <node id="7314351270975464245" at="213,45,218,7" concept="3" />
-      <node id="6450649963066772864" at="221,0,226,0" concept="6" trace="rootCLForLibs#()Ljava/lang/ClassLoader;" />
+      <node id="6450649963066772864" at="221,0,226,0" concept="6" trace="rootClassLoader#()Ljava/lang/ClassLoader;" />
       <node id="7550149668843850817" at="86,0,92,0" concept="6" trace="createIdeaTestApp#()Lcom/intellij/idea/IdeaTestApplication;" />
       <node id="487413975935072695" at="131,0,137,0" concept="6" trace="getOpenedProject#(Ljava/io/File;)Ljetbrains/mps/project/Project;" />
       <node id="487413975935072691" at="103,10,110,5" concept="1" />
@@ -162,7 +162,7 @@
       </scope>
       <scope id="6450649963069042226" at="194,31,195,21" />
       <scope id="3961386466486574492" at="215,25,216,15" />
-      <scope id="6450649963066772869" at="223,41,224,16" />
+      <scope id="6450649963066772869" at="223,43,224,16" />
       <scope id="487413975935072696" at="133,62,135,47" />
       <scope id="2099495074362151675" at="166,0,168,18">
         <var name="e" id="2099495074362151677" />
@@ -224,7 +224,7 @@
         <var name="lastUsedProject" id="487413975935072683" />
       </scope>
       <scope id="7413225496542993028" at="138,0,153,0" />
-      <scope id="3727517784853015394" at="63,22,79,68">
+      <scope id="3727517784853015394" at="63,22,79,44">
         <var name="coreComponents" id="6450649963067750148" />
       </scope>
       <scope id="7323873899920468490" at="154,41,171,24">

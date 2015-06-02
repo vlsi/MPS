@@ -1850,7 +1850,7 @@
       <property role="2DPR8u" value="if [ -z &quot;${MPS_VM_OPTIONS}&quot; ]; then" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAae7V" role="2DRAPQ">
-      <property role="2DPR8u" value="  MPS_VM_OPTIONS=&quot;${PROJECT_HOME}/bin/mps$BITS.vmoptions&quot;" />
+      <property role="2DPR8u" value="  MPS_VM_OPTIONS=&quot;${PROJECT_HOME}/mps$BITS.vmoptions&quot;" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAaeEa" role="2DRAPQ">
       <property role="2DPR8u" value="else" />
@@ -2051,9 +2051,6 @@
     <node concept="2DRAP_" id="3T7P3nAax98" role="2DRAPQ" />
     <node concept="2DRAP_" id="3T7P3nAaxbk" role="2DRAPQ">
       <property role="2DPR8u" value="cd &quot;${PROJECT_HOME}&quot;" />
-    </node>
-    <node concept="2DRAP_" id="3T7P3nAaxJH" role="2DRAPQ">
-      <property role="2DPR8u" value="cd bin" />
     </node>
     <node concept="2DRAP_" id="3T7P3nAay32" role="2DRAPQ">
       <property role="2DPR8u" value="if [ &quot;${UNAME}&quot; = &quot;Darwin&quot; ]; then" />

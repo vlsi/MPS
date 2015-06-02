@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 /**
@@ -28,6 +29,7 @@ public interface SModuleFacet {
   /**
    * The owning module
    */
+  @NotNull
   SModule getModule();
 
   /**

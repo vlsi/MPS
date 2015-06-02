@@ -8,6 +8,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
+import jetbrains.mps.core.platform.MPSCore;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
@@ -53,8 +54,8 @@ public abstract class EnvironmentBase implements Environment {
     myConfig = config;
   }
 
-  public void init(LibraryInitializer libraryInitializer) {
-    myLibInitializer = libraryInitializer;
+  public void init(@NotNull MPSCore mpsCore) {
+    myLibInitializer = mpsCore.getLibraryInitializer();
     initMacros();
     initLibraries();
     EnvironmentContainer.setCurrent(this);
@@ -89,15 +90,20 @@ public abstract class EnvironmentBase implements Environment {
       LOG.info("Initializing libraries");
     }
     final List<LibraryContributor> libContribs = ListSequence.fromList(new ArrayList<LibraryContributor>());
-    LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, rootCLForLibs());
+    LibraryContributorHelper helper = new LibraryContributorHelper(myConfig, rootClassLoader());
     ListSequence.fromList(libContribs).addElement(helper.createLibContributorForLibs());
     ListSequence.fromList(libContribs).addElement(helper.createLibContributorForPlugins());
     myLibInitializer.load(libContribs);
     return libContribs;
   }
 
+  /**
+   * Root class loader:
+   * 1. As a root class loader for libraries in LibraryInitializer
+   * 2. As a root class loader for dumb idea plugin facet
+   */
   @Nullable
-  protected abstract ClassLoader rootCLForLibs();
+  protected abstract ClassLoader rootClassLoader();
 
   @Override
   @NotNull

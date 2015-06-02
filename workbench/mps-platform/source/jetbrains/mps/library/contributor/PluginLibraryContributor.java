@@ -37,9 +37,13 @@ public final class PluginLibraryContributor implements LibraryContributor {
   @NotNull
   private LibDescriptor createLibDescriptor(LanguageLibrary library) throws IOException {
     PluginId pluginId = library.getPluginDescriptor().getPluginId();
-    if (library.dir == null) throw new IllegalStateException("Library attribute 'dir' should be non-empty: plugin=" + pluginId.getIdString());
+    if (library.dir == null) {
+      throw new IllegalStateException("Library attribute 'dir' should be non-empty: plugin=" + pluginId.getIdString());
+    }
     IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
-    if (plugin == null) throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
+    if (plugin == null) {
+      throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
+    }
     final String libraryPath = new File(plugin.getPath(), library.dir).getCanonicalPath();
     return new LibDescriptor(libraryPath, plugin.getPluginClassLoader());
   }

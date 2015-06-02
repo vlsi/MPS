@@ -9,7 +9,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="make-facets" />
@@ -28,5 +27,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="components" />
   </component>
 </module>

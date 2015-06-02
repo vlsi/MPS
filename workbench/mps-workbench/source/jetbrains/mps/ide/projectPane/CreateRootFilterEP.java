@@ -28,6 +28,7 @@ import java.util.Set;
 
 //todo should be later converted to a fully-functional extension point, with wider possibilities
 //this variant was written to fix MPS-21478 and same issues with minimal changes in 3.2
+//if filter returns true, it means the concept should be filtered out
 public class CreateRootFilterEP {
   private static CreateRootFilterEP ourInstance = new CreateRootFilterEP();
 
@@ -84,8 +85,8 @@ public class CreateRootFilterEP {
 
   public boolean shouldBeRemoved(SAbstractConcept c){
     for (Condition<SAbstractConcept> f: myFilters){
-      if (!f.met(c)) return false;
+      if (f.met(c)) return true;
     }
-    return true;
+    return false;
   }
 }

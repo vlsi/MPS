@@ -16,26 +16,26 @@
 package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * evgeny, 12/13/12
  */
 public class JavaClassesPersistence implements CoreComponent {
-  private final PersistenceRegistry myRegistry;
+  private final PersistenceFacade myFacade;
 
-  public JavaClassesPersistence(@NotNull PersistenceRegistry persistenceRegistry) {
-    myRegistry = persistenceRegistry;
+  public JavaClassesPersistence(@NotNull PersistenceFacade persistenceFacade) {
+    myFacade = persistenceFacade;
   }
   @Override
   public void init() {
-    myRegistry.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, new JavaClassStubModelRootFactory());
+    myFacade.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, new JavaClassStubModelRootFactory());
   }
 
   @Override
   public void dispose() {
-    myRegistry.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
+    myFacade.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
   }
 
 }

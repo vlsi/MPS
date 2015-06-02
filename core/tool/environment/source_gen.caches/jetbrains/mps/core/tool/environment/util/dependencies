@@ -55,12 +55,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.core.tool.environment.util.MpsPlatform" file="MpsPlatform.java">
-    <classNode dependClassName="jetbrains.mps.MPSCore" />
-    <classNode dependClassName="jetbrains.mps.generator.MPSGenerator" />
-    <classNode dependClassName="jetbrains.mps.persistence.MPSPersistence" />
-    <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
-  </dependency>
   <dependency className="jetbrains.mps.core.tool.environment.util.PathManager" file="PathManager.java">
     <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.File" />

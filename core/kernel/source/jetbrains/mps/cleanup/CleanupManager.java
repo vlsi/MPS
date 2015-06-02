@@ -20,7 +20,6 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.ArrayList;
 import java.util.List;

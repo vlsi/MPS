@@ -5,10 +5,19 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,28,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="GenerationDescriptor_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.GenerationDescriptor_BehaviorDescriptor" />
     </file>
     <file name="LanguageAspectDescriptor_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.LanguageAspectDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="LanguageReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.LanguageReference_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleLanguageAspectDescriptor_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.aspectDescriptor.behavior.SimpleLanguageAspectDescriptor_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:34cf15ec-363f-428e-ba3e-57bc25764d1e(jetbrains.mps.lang.aspectDescriptor.behavior)/3323697319248376112">

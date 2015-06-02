@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.project.facets;
+package jetbrains.mps.repository;
 
-import jetbrains.mps.classloading.CustomClassLoadingFacet;
-import jetbrains.mps.classloading.DumbIdeaPluginFacet;
+import com.intellij.openapi.components.ApplicationComponent;
 
 /**
- * evgeny, 2/28/13
+ * Interface for idea plugin component.
+ * Plugins must be initialized with the right FacetFactories installed
+ * TODO probably better to use FacetFactory, which registers itself
  */
-public interface IdeaPluginModuleFacet extends CustomClassLoadingFacet {
-  public static final String FACET_TYPE = DumbIdeaPluginFacet.FACET_TYPE;
-
-  String getPluginId();
+public interface IdeaPluginFacetComponent extends ApplicationComponent {
 }

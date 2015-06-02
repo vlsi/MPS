@@ -519,6 +519,16 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
     </node>
+    <node concept="1TJgyj" id="5VYK1npHWR4" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="icon" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npKdVC" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="iconToolWindow" />
+      <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+    </node>
     <node concept="1TJgyj" id="5j4USBYG00q" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon32" />
@@ -616,6 +626,22 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="textColor" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npI0o$" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="progressColor" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npIaJ5" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="progressY" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="5VYK1npIw0m" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="customXmlElement" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
     </node>
     <node concept="1TJgyi" id="328lVm4LOT4" role="1TKVEl">
       <property role="TrG5h" value="major" />
