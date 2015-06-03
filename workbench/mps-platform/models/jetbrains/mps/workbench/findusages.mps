@@ -37,6 +37,7 @@
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
     <import index="luw9" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.findUsages(MPS.Core/jetbrains.mps.findUsages@java_stub)" />
     <import index="bc3y" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.org.objectweb.asm(MPS.Core/org.jetbrains.org.objectweb.asm@java_stub)" />
+    <import index="fw3h" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress(MPS.IDEA/com.intellij.openapi.progress@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -5440,45 +5441,80 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="2s2BsXxOyAC" role="3cqZAp">
-              <node concept="3cpWsn" id="2s2BsXxOyAD" role="3cpWs9">
-                <property role="TrG5h" value="matchingFiles" />
+            <node concept="3clFbH" id="6eNmn0rDFhm" role="3cqZAp" />
+            <node concept="3cpWs8" id="6eNmn0rDGlr" role="3cqZAp">
+              <node concept="3cpWsn" id="6eNmn0rDGlq" role="3cpWs9">
                 <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="2s2BsXxOyAE" role="1tU5fm">
+                <property role="TrG5h" value="matchingFiles" />
+                <node concept="3uibUv" id="6eNmn0rDGls" role="1tU5fm">
                   <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
-                  <node concept="3uibUv" id="2s2BsXxOyAF" role="11_B2D">
+                  <node concept="3uibUv" id="6eNmn0rDGlt" role="11_B2D">
                     <ref role="3uigEE" to="3df7:~VirtualFile" resolve="VirtualFile" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="2s2BsXxOyAG" role="33vP2m">
-                  <node concept="2YIFZM" id="2s2BsXxOyAH" role="2Oq$k0">
-                    <ref role="1Pybhc" to="j096:~FileBasedIndex" resolve="FileBasedIndex" />
-                    <ref role="37wK5l" to="j096:~FileBasedIndex.getInstance():com.intellij.util.indexing.FileBasedIndex" resolve="getInstance" />
-                  </node>
-                  <node concept="liA8E" id="2s2BsXxOyAI" role="2OqNvi">
-                    <ref role="37wK5l" to="j096:~FileBasedIndex.getContainingFiles(com.intellij.util.indexing.ID,java.lang.Object,com.intellij.psi.search.GlobalSearchScope):java.util.Collection" resolve="getContainingFiles" />
-                    <node concept="10M0yZ" id="2s2BsXxOyAJ" role="37wK5m">
-                      <ref role="3cqZAo" to="mlmx:~IdIndex.NAME" resolve="NAME" />
-                      <ref role="1PxDUh" to="mlmx:~IdIndex" resolve="IdIndex" />
-                    </node>
-                    <node concept="2ShNRf" id="2s2BsXxOyAK" role="37wK5m">
-                      <node concept="1pGfFk" id="2s2BsXxOyAL" role="2ShVmc">
-                        <ref role="37wK5l" to="mlmx:~IdIndexEntry.&lt;init&gt;(java.lang.String,boolean)" resolve="IdIndexEntry" />
-                        <node concept="37vLTw" id="3GM_nagTsSf" role="37wK5m">
-                          <ref role="3cqZAo" node="2s2BsXxOy_x" resolve="nodeId" />
-                        </node>
-                        <node concept="3clFbT" id="2s2BsXxOyAN" role="37wK5m">
-                          <property role="3clFbU" value="true" />
-                        </node>
+              </node>
+            </node>
+            <node concept="SfApY" id="6eNmn0rDGlO" role="3cqZAp">
+              <node concept="TDmWw" id="6eNmn0rDGlP" role="TEbGg">
+                <node concept="3clFbS" id="6eNmn0rDGlJ" role="TDEfX">
+                  <node concept="3clFbF" id="6eNmn0rDGlK" role="3cqZAp">
+                    <node concept="37vLTI" id="6eNmn0rDGlL" role="3clFbG">
+                      <node concept="37vLTw" id="6eNmn0rDGlM" role="37vLTJ">
+                        <ref role="3cqZAo" node="6eNmn0rDGlq" resolve="matchingFiles" />
+                      </node>
+                      <node concept="2YIFZM" id="6eNmn0rDJLT" role="37vLTx">
+                        <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+                        <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
                       </node>
                     </node>
-                    <node concept="37vLTw" id="3GM_nagTu_z" role="37wK5m">
-                      <ref role="3cqZAo" node="2s2BsXxOyAx" resolve="allFiles" />
+                  </node>
+                </node>
+                <node concept="3cpWsn" id="6eNmn0rDGlF" role="TDEfY">
+                  <property role="3TUv4t" value="false" />
+                  <property role="TrG5h" value="ce" />
+                  <node concept="3uibUv" id="6eNmn0rDOiv" role="1tU5fm">
+                    <ref role="3uigEE" to="fw3h:~ProcessCanceledException" resolve="ProcessCanceledException" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="6eNmn0rDGlv" role="SfCbr">
+                <node concept="3clFbF" id="6eNmn0rDGlw" role="3cqZAp">
+                  <node concept="37vLTI" id="6eNmn0rDGlx" role="3clFbG">
+                    <node concept="37vLTw" id="6eNmn0rDGly" role="37vLTJ">
+                      <ref role="3cqZAo" node="6eNmn0rDGlq" resolve="matchingFiles" />
+                    </node>
+                    <node concept="2OqwBi" id="6eNmn0rDGlz" role="37vLTx">
+                      <node concept="2YIFZM" id="6eNmn0rDJMu" role="2Oq$k0">
+                        <ref role="1Pybhc" to="j096:~FileBasedIndex" resolve="FileBasedIndex" />
+                        <ref role="37wK5l" to="j096:~FileBasedIndex.getInstance():com.intellij.util.indexing.FileBasedIndex" resolve="getInstance" />
+                      </node>
+                      <node concept="liA8E" id="6eNmn0rDGl_" role="2OqNvi">
+                        <ref role="37wK5l" to="j096:~FileBasedIndex.getContainingFiles(com.intellij.util.indexing.ID,java.lang.Object,com.intellij.psi.search.GlobalSearchScope):java.util.Collection" resolve="getContainingFiles" />
+                        <node concept="10M0yZ" id="6eNmn0rDJO4" role="37wK5m">
+                          <ref role="1PxDUh" to="mlmx:~IdIndex" resolve="IdIndex" />
+                          <ref role="3cqZAo" to="mlmx:~IdIndex.NAME" resolve="NAME" />
+                        </node>
+                        <node concept="2ShNRf" id="6eNmn0rDJN4" role="37wK5m">
+                          <node concept="1pGfFk" id="6eNmn0rDJN5" role="2ShVmc">
+                            <ref role="37wK5l" to="mlmx:~IdIndexEntry.&lt;init&gt;(java.lang.String,boolean)" resolve="IdIndexEntry" />
+                            <node concept="37vLTw" id="6eNmn0rDGlC" role="37wK5m">
+                              <ref role="3cqZAo" node="2s2BsXxOy_x" resolve="nodeId" />
+                            </node>
+                            <node concept="3clFbT" id="6eNmn0rDGlD" role="37wK5m">
+                              <property role="3clFbU" value="true" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="6eNmn0rDGlE" role="37wK5m">
+                          <ref role="3cqZAo" node="2s2BsXxOyAx" resolve="allFiles" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="6eNmn0rDFii" role="3cqZAp" />
             <node concept="3SKdUt" id="2s2BsXxOyN2" role="3cqZAp">
               <node concept="3SKdUq" id="2s2BsXxOyN3" role="3SKWNk">
                 <property role="3SKdUp" value="back-transform" />
@@ -5486,7 +5522,7 @@
             </node>
             <node concept="1DcWWT" id="2s2BsXxOyAP" role="3cqZAp">
               <node concept="37vLTw" id="3GM_nagTApb" role="1DdaDG">
-                <ref role="3cqZAo" node="2s2BsXxOyAD" resolve="matchingFiles" />
+                <ref role="3cqZAo" node="6eNmn0rDGlq" resolve="matchingFiles" />
               </node>
               <node concept="3cpWsn" id="2s2BsXxOyAR" role="1Duv9x">
                 <property role="TrG5h" value="file" />

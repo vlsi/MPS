@@ -42,6 +42,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport" file="StubModelsFastFindSupport.java">
+    <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtilCore" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileVisitor" />
@@ -53,6 +54,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
