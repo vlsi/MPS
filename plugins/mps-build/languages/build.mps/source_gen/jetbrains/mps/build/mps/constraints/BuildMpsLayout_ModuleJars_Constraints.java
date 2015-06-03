@@ -16,8 +16,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.scope.FilteringScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
@@ -44,12 +44,15 @@ public class BuildMpsLayout_ModuleJars_Constraints extends BaseConstraintsDescri
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new FilteringScope(Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module").getDeclarationNode())) {
-              @Override
-              public boolean isExcluded(SNode node) {
-                return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
-              }
-            };
+            {
+              Scope outer = Scope.getScope(Scope.parent(_context.getContextNode()), _context.getContextNode(), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module").getDeclarationNode());
+              return (outer == null ? null : new FilteringScope(outer) {
+                @Override
+                public boolean isExcluded(SNode node) {
+                  return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+                }
+              });
+            }
           }
         };
       }
