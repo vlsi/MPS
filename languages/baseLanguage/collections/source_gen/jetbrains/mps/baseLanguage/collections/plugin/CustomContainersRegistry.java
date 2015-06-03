@@ -23,7 +23,7 @@ public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
   private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
   private CustomContainersRegistry() {
-    for (_FunctionTypes._return_P0_E0<? extends List<SNode>> provider : ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>generify(new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)).getObjects()) {
+    for (_FunctionTypes._return_P0_E0<? extends List<SNode>> provider : new ExtensionPoint<_FunctionTypes._return_P0_E0<? extends List<SNode>>>("jetbrains.mps.baseLanguage.collections.customContainers").getObjects()) {
       ListSequence.fromList(providers).addElement(provider);
     }
   }

@@ -11,8 +11,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -57,10 +58,13 @@ public class PatternProperty_Test extends BaseTransformationTest {
       /*package*/ String patternVar_printed;
       public Pattern_xihehy_a0a1a2c() {
       }
+      public SConcept getConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression");
+      }
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_xihehy_a0a1a2c = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_xihehy_a0a1a2c.getConcept().getQualifiedName()))) {
+          if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression").equals(nodeToMatch_xihehy_a0a1a2c.getConcept()))) {
             return false;
           }
           {
@@ -72,7 +76,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
               SNode childVar_xihehy_a0a0b0c2 = IterableUtil.get(nodeToMatch_xihehy_a0a1a2c.getChildren(childRole_xihehy_), 0);
               {
                 SNode nodeToMatch_xihehy_a0a0b0c2 = childVar_xihehy_a0a0b0c2;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_xihehy_a0a0b0c2.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference").equals(nodeToMatch_xihehy_a0a0b0c2.getConcept()))) {
                   return false;
                 }
                 patternVar_className = nodeToMatch_xihehy_a0a0b0c2.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"));
@@ -89,7 +93,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
               SNode childVar_xihehy_a0a0b0c2_0 = IterableUtil.get(nodeToMatch_xihehy_a0a1a2c.getChildren(childRole_xihehy__0), 0);
               {
                 SNode nodeToMatch_xihehy_a0a0b0c2_0 = childVar_xihehy_a0a0b0c2_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_xihehy_a0a0b0c2_0.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").equals(nodeToMatch_xihehy_a0a0b0c2_0.getConcept()))) {
                   return false;
                 }
                 patternVar_method = nodeToMatch_xihehy_a0a0b0c2_0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
@@ -102,7 +106,7 @@ public class PatternProperty_Test extends BaseTransformationTest {
                     SNode childVar_xihehy_a0a0a1a2c = IterableUtil.get(nodeToMatch_xihehy_a0a0b0c2_0.getChildren(childRole_xihehy__1), 0);
                     {
                       SNode nodeToMatch_xihehy_a0a0a1a2c = childVar_xihehy_a0a0a1a2c;
-                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_xihehy_a0a0a1a2c.getConcept().getQualifiedName()))) {
+                      if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral").equals(nodeToMatch_xihehy_a0a0a1a2c.getConcept()))) {
                         return false;
                       }
                       patternVar_printed = SNodeAccessUtil.getProperty(nodeToMatch_xihehy_a0a0a1a2c, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));

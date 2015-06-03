@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4eedafe3-f2a5-4f4e-89c4-221adae35819(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants)">
+<model ref="r:1cff8f9f-9290-445e-94b6-84affe605db8(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants)">
   <persistence version="9" />
   <languages />
   <imports>
@@ -31,54 +31,54 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="5JE01wUfgq5">
+  <node concept="2$UQVi" id="27IayeEBZql">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="5JE01wUfgq6" role="2$$55j">
+    <node concept="2$$0lk" id="27IayeEBZqm" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgq7" role="2$VCQS">
+    <node concept="2$VJBW" id="27IayeEBZqn" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="2687243112288283093" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgq8" role="2$VCQQ">
+    <node concept="2$VJBW" id="27IayeEBZqo" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="6623106306058028174" />
+      <property role="2$VJBR" value="2444937980383589508" />
     </node>
-    <node concept="1oh28U" id="5JE01wUfgq4" role="2$VCQN">
+    <node concept="1oh28U" id="27IayeEBZqk" role="2$VCQN">
       <property role="1oh28R" value="C" />
     </node>
   </node>
-  <node concept="2$UQVi" id="5JE01wUfgqP">
+  <node concept="2$UQVi" id="27IayeEBZr2">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3MRh" resolve="exportedConstants" />
-    <node concept="2$$0lk" id="5JE01wUfgqQ" role="2$$55j">
+    <node concept="2$$0lk" id="27IayeEBZr3" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgqR" role="2$VCQS">
+    <node concept="2$VJBW" id="27IayeEBZr4" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constant" />
       <property role="2$VJBR" value="2687243112288287099" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgqS" role="2$VCQQ">
+    <node concept="2$VJBW" id="27IayeEBZr5" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
-      <property role="2$VJBR" value="6623106306058028681" />
+      <property role="2$VJBR" value="2444937980383590041" />
     </node>
-    <node concept="1oh28U" id="5JE01wUfgqO" role="2$VCQN">
+    <node concept="1oh28U" id="27IayeEBZr1" role="2$VCQN">
       <property role="1oh28R" value="D" />
     </node>
   </node>
-  <node concept="2$UQVi" id="5JE01wUfgqY">
+  <node concept="2$UQVi" id="27IayeEBZrb">
     <ref role="2$VUEs" to="vi5j:2lb0lXX3THt" resolve="exportedSetsOfConstants" />
-    <node concept="2$$0lk" id="5JE01wUfgqZ" role="2$$55j">
+    <node concept="2$$0lk" id="27IayeEBZrc" role="2$$55j">
       <property role="2$$0lg" value="org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgr0" role="2$VCQS">
+    <node concept="2$VJBW" id="27IayeEBZrd" role="2$VCQS">
       <property role="2$VJBT" value="org.jetbrains.mps.samples.Constants.structure.Constants" />
       <property role="2$VJBR" value="2687243112288283092" />
     </node>
-    <node concept="2$VJBW" id="5JE01wUfgr1" role="2$VCQQ">
+    <node concept="2$VJBW" id="27IayeEBZre" role="2$VCQQ">
       <property role="2$VJBT" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property role="2$VJBR" value="6623106306058028172" />
+      <property role="2$VJBR" value="2444937980383589506" />
     </node>
-    <node concept="1oh9TZ" id="5JE01wUfgqX" role="2$VCQN">
+    <node concept="1oh9TZ" id="27IayeEBZra" role="2$VCQN">
       <property role="1Vucue" value="OtherConstants" />
     </node>
   </node>

@@ -5,20 +5,22 @@ package jetbrains.mps.baseLanguage.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -31,11 +33,12 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
     return "Add necessary parentheses to NotExpressions";
   }
   public SNode execute(SModule m) {
-    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+    final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a1();
+    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"));
+        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
-    }), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"))).where(new IWhereFilter<SNode>() {
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return PrecedenceUtil.needsParensAroundNotExpression(node);
       }
@@ -44,18 +47,15 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
       }
     }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        final GeneratedMatchingPattern pattern = new AddNecessaryParenthsToNotExpressions.Pattern_fbexqr_a0a0a0a0a0a0a1();
-        if (!(pattern.match(it))) {
+      public void visit(final SNode nodeToMigrate) {
+        if (!(pattern.match(nodeToMigrate))) {
           return;
         }
-
-        {
-          SNode placeholder = SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
-          SNode migratedNode = _quotation_createNode_fbexqr_a0b0d0a0a0a1(pattern.getFieldValue("patternVar_expr"));
-          adjustMigratedIds(it, migratedNode);
-          SNodeOperations.replaceWithAnother(placeholder, migratedNode);
-        }
+        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+          public SNode compute() {
+            return _quotation_createNode_fbexqr_a0a0f(pattern.getFieldValue("patternVar_expr"));
+          }
+        });
       }
     });
     return null;
@@ -63,24 +63,28 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0);
   }
-  public static class Pattern_fbexqr_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+
+  public static class Pattern_fbexqr_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_expr;
-    public Pattern_fbexqr_a0a0a0a0a0a0a1() {
+    public Pattern_fbexqr_a0a0a1() {
+    }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression");
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_fbexqr_a0a0a0a0a0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.NotExpression".equals(nodeToMatch_fbexqr_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_fbexqr_a0a0f = nodeToMatch;
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression").equals(nodeToMatch_fbexqr_a0a0f.getConcept()))) {
           return false;
         }
         {
           SContainmentLink childRole_fbexqr_ = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, 0xfbcf6c30a4L, "expression");
-          if (!(PatternUtil.hasNChildren(nodeToMatch_fbexqr_a0a0a0a0a0b, childRole_fbexqr_, 1))) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_fbexqr_a0a0f, childRole_fbexqr_, 1))) {
             return false;
           }
           {
-            SNode childVar_fbexqr_a0a0a0a0a0a1 = IterableUtil.get(nodeToMatch_fbexqr_a0a0a0a0a0b.getChildren(childRole_fbexqr_), 0);
-            this.patternVar_expr = childVar_fbexqr_a0a0a0a0a0a1;
+            SNode childVar_fbexqr_a0a0a5 = IterableUtil.get(nodeToMatch_fbexqr_a0a0f.getChildren(childRole_fbexqr_), 0);
+            this.patternVar_expr = childVar_fbexqr_a0a0a5;
           }
         }
       }
@@ -103,7 +107,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_fbexqr_a0b0d0a0a0a1(Object parameter_1) {
+  private static SNode _quotation_createNode_fbexqr_a0a0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

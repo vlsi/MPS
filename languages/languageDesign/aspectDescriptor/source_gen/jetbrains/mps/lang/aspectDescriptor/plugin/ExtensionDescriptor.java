@@ -4,11 +4,10 @@ package jetbrains.mps.lang.aspectDescriptor.plugin;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP")};
   public ExtensionDescriptor() {
   }
   @Override

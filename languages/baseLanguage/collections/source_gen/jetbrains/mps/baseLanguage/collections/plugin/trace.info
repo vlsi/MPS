@@ -15,7 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
   <root>
     <file name="ExtensionDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
+      <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
     </file>
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557455304">
@@ -67,7 +67,7 @@
     <file name="CustomContainersRegistry.java">
       <node id="5633688998557707727" at="23,0,24,0" concept="9" trace="INSTANCE" />
       <node id="5633688998557707731" at="24,0,25,0" concept="2" trace="providers" />
-      <node id="2674780608612815781" at="26,279,27,60" concept="1" />
+      <node id="2674780608612815781" at="26,218,27,60" concept="1" />
       <node id="5633688998557707743" at="30,55,31,73" concept="6" />
       <node id="5633688998557707750" at="31,73,32,45" concept="6" />
       <node id="5633688998557707765" at="34,50,35,194" concept="7" />
@@ -101,7 +101,7 @@
       <node id="5633688998557707928" at="64,0,75,0" concept="5" trace="primAllCustomContainers#()Ljava/lang/Iterable;" />
       <node id="5633688998557707792" at="42,49,57,5" concept="4" />
       <node id="5633688998557707774" at="40,0,60,0" concept="5" trace="accessibleCustomContainerDeclarations#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-      <scope id="2674780608612815774" at="26,279,27,60" />
+      <scope id="2674780608612815774" at="26,218,27,60" />
       <scope id="5633688998557707764" at="34,50,35,194" />
       <scope id="5633688998557707859" at="53,52,54,196" />
       <scope id="5633688998557707940" at="66,25,67,140" />

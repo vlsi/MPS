@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -49,10 +50,13 @@ public class LoopMacro_Behavior {
     /*package*/ SNode patternVar_concept;
     public Pattern_cdqxf8_a0a0a0a1() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_cdqxf8_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_cdqxf8_a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType").equals(nodeToMatch_cdqxf8_a0a0a0.getConcept()))) {
           return false;
         }
         {
@@ -64,7 +68,7 @@ public class LoopMacro_Behavior {
             SNode childVar_cdqxf8_a0a0a0a = IterableUtil.get(nodeToMatch_cdqxf8_a0a0a0.getChildren(childRole_cdqxf8_), 0);
             {
               SNode nodeToMatch_cdqxf8_a0a0a0a = childVar_cdqxf8_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_cdqxf8_a0a0a0a.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_cdqxf8_a0a0a0a.getConcept()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

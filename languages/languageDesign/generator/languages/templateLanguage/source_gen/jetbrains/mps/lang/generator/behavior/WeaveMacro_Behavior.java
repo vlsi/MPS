@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -32,10 +33,13 @@ public class WeaveMacro_Behavior {
     /*package*/ SNode patternVar_concept;
     public Pattern_bvvctf_a0a0a1a1() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_bvvctf_a0a1a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_bvvctf_a0a1a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(nodeToMatch_bvvctf_a0a1a0.getConcept()))) {
           return false;
         }
         {
@@ -47,7 +51,7 @@ public class WeaveMacro_Behavior {
             SNode childVar_bvvctf_a0a0b0a = IterableUtil.get(nodeToMatch_bvvctf_a0a1a0.getChildren(childRole_bvvctf_), 0);
             {
               SNode nodeToMatch_bvvctf_a0a0b0a = childVar_bvvctf_a0a0b0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_bvvctf_a0a0b0a.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_bvvctf_a0a0b0a.getConcept()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_bvvctf_a0a0b0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

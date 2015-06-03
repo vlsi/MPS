@@ -196,7 +196,7 @@ public class Generate_Facet extends IFacet.Stub {
               if (vars(pa.global()).generationOptions() == null) {
                 vars(pa.global()).generationOptions(GenerationOptions.fromSettings(settings));
               }
-              Iterable<GenerationCacheContainer> caches = ExtensionPoint.<GenerationCacheContainer>generify(new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)).getObjects();
+              Iterable<GenerationCacheContainer> caches = new ExtensionPoint<GenerationCacheContainer>("jetbrains.mps.lang.core.GeneratorCache").getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
               final IncrementalGenerationStrategy incrementalStrategy;
               if (settings.isIncremental()) {

@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SwitchMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -28,10 +29,13 @@ public class SwitchMacro_Behavior {
     /*package*/ SNode patternVar_concept;
     public Pattern_i6m7ss_a0a0a0a1() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_i6m7ss_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_i6m7ss_a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_i6m7ss_a0a0a0.getConcept()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_i6m7ss_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

@@ -8,6 +8,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -30,10 +31,13 @@ public class MapSrcListMacro_Behavior {
     /*package*/ SNode patternVar_concept;
     public Pattern_wn5chh_a0a0a0a1() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_wn5chh_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_wn5chh_a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType").equals(nodeToMatch_wn5chh_a0a0a0.getConcept()))) {
           return false;
         }
         {
@@ -45,7 +49,7 @@ public class MapSrcListMacro_Behavior {
             SNode childVar_wn5chh_a0a0a0a = IterableUtil.get(nodeToMatch_wn5chh_a0a0a0.getChildren(childRole_wn5chh_), 0);
             {
               SNode nodeToMatch_wn5chh_a0a0a0a = childVar_wn5chh_a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wn5chh_a0a0a0a.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_wn5chh_a0a0a0a.getConcept()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_wn5chh_a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

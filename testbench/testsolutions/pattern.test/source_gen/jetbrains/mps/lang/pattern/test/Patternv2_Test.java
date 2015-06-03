@@ -15,8 +15,9 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -63,10 +64,13 @@ public class Patternv2_Test extends BaseTransformationTest {
       /*package*/ SNode patternVar_ifbody;
       public Pattern_ofki36_a0a1a2c() {
       }
+      public SConcept getConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList");
+      }
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_ofki36_a0a1a2c = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.StatementList".equals(nodeToMatch_ofki36_a0a1a2c.getConcept().getQualifiedName()))) {
+          if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList").equals(nodeToMatch_ofki36_a0a1a2c.getConcept()))) {
             return false;
           }
           {
@@ -81,7 +85,7 @@ public class Patternv2_Test extends BaseTransformationTest {
               SNode childVar_ofki36_b0a0b0c2 = IterableUtil.get(nodeToMatch_ofki36_a0a1a2c.getChildren(childRole_ofki36_), 1);
               {
                 SNode nodeToMatch_ofki36_b0a0b0c2 = childVar_ofki36_b0a0b0c2;
-                if (!("jetbrains.mps.baseLanguage.structure.IfStatement".equals(nodeToMatch_ofki36_b0a0b0c2.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement").equals(nodeToMatch_ofki36_b0a0b0c2.getConcept()))) {
                   return false;
                 }
                 {
@@ -93,7 +97,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                     SNode childVar_ofki36_a1a0a1a2c = IterableUtil.get(nodeToMatch_ofki36_b0a0b0c2.getChildren(childRole_ofki36__0), 0);
                     {
                       SNode nodeToMatch_ofki36_a1a0a1a2c = childVar_ofki36_a1a0a1a2c;
-                      if (!("jetbrains.mps.baseLanguage.structure.NotEqualsExpression".equals(nodeToMatch_ofki36_a1a0a1a2c.getConcept().getQualifiedName()))) {
+                      if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf9e20e303fL, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression").equals(nodeToMatch_ofki36_a1a0a1a2c.getConcept()))) {
                         return false;
                       }
                       {
@@ -105,7 +109,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                           SNode childVar_ofki36_a0b0a0b0c2 = IterableUtil.get(nodeToMatch_ofki36_a1a0a1a2c.getChildren(childRole_ofki36__1), 0);
                           {
                             SNode nodeToMatch_ofki36_a0b0a0b0c2 = childVar_ofki36_a0b0a0b0c2;
-                            if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_ofki36_a0b0a0b0c2.getConcept().getQualifiedName()))) {
+                            if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral").equals(nodeToMatch_ofki36_a0b0a0b0c2.getConcept()))) {
                               return false;
                             }
                           }

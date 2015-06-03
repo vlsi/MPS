@@ -44,6 +44,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScopeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class Classifier_Behavior {
@@ -565,10 +566,13 @@ public class Classifier_Behavior {
     public Pattern_qw8l7c_a1a0a0a52(Object parameter_qw8l7c_a0a0a0a0a42) {
       this.AntiquotationField_qw8l7c_a0a0a0a0a42 = parameter_qw8l7c_a0a0a0a0a42;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_qw8l7c_a0a0a0a42.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_qw8l7c_a0a0a0a42.getConcept()))) {
           return false;
         }
         {
