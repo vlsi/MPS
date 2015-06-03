@@ -108,10 +108,14 @@
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
         <child id="1167514678247" name="rootMappingRule" index="3lj3bC" />
       </concept>
+      <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
       </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
+      <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
+        <reference id="1722980698497626483" name="template" index="v9R2y" />
+      </concept>
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
@@ -232,6 +236,12 @@
     <node concept="3aamgX" id="27IayeC_p6F" role="3acgRq">
       <ref role="30HIoZ" to="oubp:5BD$AU43nQM" resolve="ClassLikeMemberPlaceholder" />
       <node concept="b5Tf3" id="27IayeC_p6J" role="1lVwrX" />
+    </node>
+    <node concept="3aamgX" id="3crTN2Y2ic2" role="3acgRq">
+      <ref role="30HIoZ" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
+      <node concept="j$656" id="27IayeD5jFv" role="1lVwrX">
+        <ref role="v9R2y" node="3crTN2Y2ic0" resolve="reduce_DependentTypeInstance" />
+      </node>
     </node>
     <node concept="3lhOvk" id="4eMO5R8usWZ" role="3lj3bC">
       <ref role="30HIoZ" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
