@@ -23,8 +23,9 @@ import com.intellij.openapi.diff.DiffContent;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.util.MergeConstants;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.merge.ISaveMergedModel;
@@ -35,7 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.persistence.PersistenceUtil;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
@@ -61,7 +62,7 @@ public class ModelMergeTool extends MergeTool {
       if (FilePerRootDataSource.isPerRootPersistenceFile(iFile)) {
         ext.value = MPSExtentions.MODEL;
       }
-      final SModel baseModel = PersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), ext.value);
+      final SModel baseModel = VCSPersistenceUtil.loadModel(contents[MergeConstants.ORIGINAL].getDocument().getText().getBytes(FileUtil.DEFAULT_CHARSET), ext.value);
       SModel mineModel = loadModel(contents[MergeConstants.CURRENT].getBytes(), ext.value);
       SModel newModel = loadModel(contents[MergeConstants.LAST_REVISION].getBytes(), ext.value);
       if (baseModel == null || mineModel == null || newModel == null) {
@@ -136,7 +137,7 @@ public class ModelMergeTool extends MergeTool {
       return null;
       // <node> 
     }
-    return PersistenceUtil.loadModel(bytes, ext);
+    return VCSPersistenceUtil.loadModel(bytes, ext);
   }
   @Override
   public boolean canShow(DiffRequest request) {

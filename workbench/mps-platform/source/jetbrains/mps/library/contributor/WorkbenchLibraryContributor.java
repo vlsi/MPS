@@ -36,6 +36,6 @@ public final class WorkbenchLibraryContributor implements LibraryContributor {
 
   @Override
   public boolean hiddenLanguages() {
-    return true;
+    return false;
   }
 }

@@ -29,13 +29,12 @@ public class buildScript_nodeFactories {
       }
 
       SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory"), ".");
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4291308148e8c6beL, "scriptsDir"), _quotation_createNode_v3u3ao_a0a6a0a());
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4291308148e8c6beL, "scriptsDir"), createBuildSourceProjectRelativePath_v3u3ao_a0a6a0a());
     }
-    private static SNode _quotation_createNode_v3u3ao_a0a6a0a() {
+    private static SNode createBuildSourceProjectRelativePath_v3u3ao_a0a6a0a() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), null, null, false);
-      return quotedNode_1;
+      SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"), null, null, false);
+      return n1;
     }
   }
   public static class NodeFactory_7389400916848172015 implements NodeFactory {

@@ -6,8 +6,9 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -37,23 +38,23 @@
   </registry>
   <node concept="yghi3" id="m8_23bzloH">
     <property role="TrG5h" value="module-tests" />
-    <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    <node concept="ygXWA" id="5T0Kicg_YEu" role="yg1MB">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
-    <node concept="ygXWA" id="3umvbTBOJS$" role="yg1MB">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+    <node concept="ygXWA" id="5T0Kicg_YEz" role="yg1MB">
+      <ref role="ygXWD" to="2ogt:6l_Qx579h0U" resolve="java" />
     </node>
     <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
       <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />
     </node>
     <node concept="2VaFvF" id="3umvbTBOJMd" role="yghi5">
       <property role="TrG5h" value="module-tests" />
-      <node concept="2VaxJe" id="3umvbTBOJTC" role="2VaxJ6">
-        <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      <node concept="2VaxJe" id="5T0Kicg_YEC" role="2VaxJ6">
+        <ref role="2VaxJf" to="arit:450ejGzgRPq" resolve="assemble" />
       </node>
     </node>
     <node concept="3bMsLL" id="3umvbTBOJSo" role="yghi5">
-      <ref role="3bMsLK" to="tnlc:6l_Qx579cK_" resolve="test" />
+      <ref role="3bMsLK" to="2ogt:6l_Qx579cK_" resolve="test" />
       <node concept="2VaxJe" id="3umvbTBOJSu" role="3bNaKb">
         <ref role="2VaxJf" node="3umvbTBOJMd" resolve="module-tests" />
       </node>

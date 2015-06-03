@@ -46,20 +46,20 @@ import java.util.Map;
  * evgeny, 11/20/12
  */
 public class BinaryModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
-  private final PersistenceRegistry myRegistry;
+  private final PersistenceFacade myFacade;
 
-  BinaryModelPersistence(@NotNull PersistenceRegistry registry) {
-    myRegistry = registry;
+  BinaryModelPersistence(@NotNull PersistenceFacade facade) {
+    myFacade = facade;
   }
 
   @Override
   public void init() {
-    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-    myRegistry.setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:8529f61f-8f06-4095-8b6b-632157b6badd(jetbrains.mps.ide.mpsmigration.v33)/4374117092268977701">
+    <file name="Migration33Actions.xml">
+      <unit id="4374117092268977701" at="1,0,9,13" name="jetbrains.mps.ide.mpsmigration.v33.Migration33Actions" />
+    </file>
+  </root>
+  <root nodeRef="r:8529f61f-8f06-4095-8b6b-632157b6badd(jetbrains.mps.ide.mpsmigration.v33)/4374117092268977713">
+    <file name="ModuleUsedLang_Action.java">
+      <node id="4374117092268977713" at="14,0,15,0" concept="7" trace="ICON" />
+      <node id="4374117092268977713" at="15,34,16,56" concept="8" />
+      <node id="4374117092268977713" at="16,56,17,35" concept="2" />
+      <node id="4374117092268977713" at="17,35,18,41" concept="2" />
+      <node id="4374117092268977713" at="21,32,22,16" concept="6" />
+      <node id="4374117092268977713" at="26,53,27,19" concept="6" />
+      <node id="4374117092268977713" at="29,5,30,66" concept="5" />
+      <node id="4374117092268977713" at="31,22,32,21" concept="6" />
+      <node id="4374117092268977713" at="34,5,35,16" concept="6" />
+      <node id="4374117092269203889" at="38,96,39,85" concept="2" />
+      <node id="4374117092268977713" at="25,95,28,5" concept="3" />
+      <node id="4374117092268977713" at="30,66,33,7" concept="3" />
+      <node id="4374117092268977713" at="20,0,24,0" concept="4" trace="isDumbAware#()Z" />
+      <node id="4374117092268977713" at="37,0,41,0" concept="4" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="4374117092268977713" at="15,0,20,0" concept="1" trace="ModuleUsedLang_Action#()V" />
+      <node id="4374117092268977713" at="28,5,34,5" concept="0" />
+      <node id="4374117092268977713" at="24,0,37,0" concept="4" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="4374117092268977713" at="21,32,22,16" />
+      <scope id="4374117092268977713" at="26,53,27,19" />
+      <scope id="4374117092268977713" at="31,22,32,21" />
+      <scope id="4374117092268977713" at="38,96,39,85" />
+      <scope id="4374117092268977713" at="15,34,18,41" />
+      <scope id="4374117092268977713" at="20,0,24,0" />
+      <scope id="4374117092268977713" at="29,5,33,7">
+        <var name="p" id="4374117092268977713" />
+      </scope>
+      <scope id="4374117092268977713" at="37,0,41,0">
+        <var name="_params" id="4374117092268977713" />
+        <var name="event" id="4374117092268977713" />
+      </scope>
+      <scope id="4374117092268977713" at="15,0,20,0" />
+      <scope id="4374117092268977713" at="25,95,35,16" />
+      <scope id="4374117092268977713" at="24,0,37,0">
+        <var name="_params" id="4374117092268977713" />
+        <var name="event" id="4374117092268977713" />
+      </scope>
+      <unit id="4374117092268977713" at="13,0,42,0" name="jetbrains.mps.ide.mpsmigration.v33.ModuleUsedLang_Action" />
+    </file>
+  </root>
+  <root nodeRef="r:8529f61f-8f06-4095-8b6b-632157b6badd(jetbrains.mps.ide.mpsmigration.v33)/4374117092269189853">
+    <file name="UpdateModuleUsedLang.java">
+      <node id="4374117092269208874" at="21,33,22,48" concept="8" />
+      <node id="4374117092269199101" at="25,45,26,91" concept="5" />
+      <node id="4374117092269199123" at="28,49,29,34" concept="6" />
+      <node id="4374117092269199139" at="33,44,34,60" concept="2" />
+      <node id="4374117092269199147" at="34,60,35,24" concept="2" />
+      <node id="4374117092269199153" at="37,7,38,38" concept="2" />
+      <node id="4374117092269198293" at="38,38,39,16" concept="6" />
+      <node id="4374117092269222612" at="42,34,43,46" concept="6" />
+      <node id="4374117092269208400" at="21,0,24,0" concept="1" trace="UpdateModuleUsedLang#()V" />
+      <node id="4374117092269199121" at="28,0,31,0" concept="4" trace="accept#(Ljetbrains/mps/extapi/module/EditableSModule;)Z" />
+      <node id="4374117092269222294" at="42,0,45,0" concept="4" trace="getDescription#()Ljava/lang/String;" />
+      <node id="4374117092269199137" at="33,0,37,0" concept="4" trace="visit#(Ljetbrains/mps/project/AbstractModule;)V" />
+      <node id="4374117092269199111" at="26,91,31,7" concept="5" />
+      <node id="4374117092269199130" at="31,7,37,7" concept="2" />
+      <node id="4374117092269189874" at="25,0,41,0" concept="4" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
+      <scope id="4374117092269208406" at="21,33,22,48" />
+      <scope id="4374117092269199122" at="28,49,29,34" />
+      <scope id="4374117092269222300" at="42,34,43,46" />
+      <scope id="4374117092269199138" at="33,44,35,24" />
+      <scope id="4374117092269208400" at="21,0,24,0" />
+      <scope id="4374117092269199121" at="28,0,31,0">
+        <var name="it" id="4374117092269199121" />
+      </scope>
+      <scope id="4374117092269222294" at="42,0,45,0" />
+      <scope id="4374117092269199137" at="33,0,37,0">
+        <var name="it" id="4374117092269199137" />
+      </scope>
+      <scope id="4374117092269189880" at="25,45,39,16">
+        <var name="modules" id="4374117092269199112" />
+        <var name="modulesWithGenerators" id="4374117092269199102" />
+      </scope>
+      <scope id="4374117092269189874" at="25,0,41,0">
+        <var name="project" id="4374117092269189878" />
+      </scope>
+      <unit id="4374117092269199121" at="27,125,31,5" name="jetbrains.mps.ide.mpsmigration.v33.UpdateModuleUsedLang$1" />
+      <unit id="4374117092269199137" at="32,77,37,5" name="jetbrains.mps.ide.mpsmigration.v33.UpdateModuleUsedLang$2" />
+      <unit id="4374117092269189853" at="14,0,46,0" name="jetbrains.mps.ide.mpsmigration.v33.UpdateModuleUsedLang" />
+    </file>
+  </root>
+</debug-info>
+

@@ -94,7 +94,6 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
-      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -756,46 +755,49 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="vAjk0TrLcn" role="3cqZAp">
-                    <node concept="3cpWsn" id="vAjk0TrLco" role="3cpWs9">
-                      <property role="TrG5h" value="message" />
-                      <node concept="17QB3L" id="vAjk0TrQSC" role="1tU5fm" />
-                      <node concept="2OqwBi" id="vAjk0TrLcp" role="33vP2m">
-                        <node concept="37vLTw" id="vAjk0TrLcq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6NgXkpAZm1d" resolve="t" />
-                        </node>
-                        <node concept="liA8E" id="vAjk0TrLcr" role="2OqNvi">
-                          <ref role="37wK5l" to="e2lb:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                  <node concept="3cpWs8" id="1klGXNRd6Jh" role="3cqZAp">
+                    <node concept="3cpWsn" id="1klGXNRd6Ji" role="3cpWs9">
+                      <property role="TrG5h" value="sw" />
+                      <node concept="3uibUv" id="1klGXNRd6Jj" role="1tU5fm">
+                        <ref role="3uigEE" to="fxg7:~StringWriter" resolve="StringWriter" />
+                      </node>
+                      <node concept="2ShNRf" id="1klGXNRd6RU" role="33vP2m">
+                        <node concept="1pGfFk" id="1klGXNRd7MX" role="2ShVmc">
+                          <ref role="37wK5l" to="fxg7:~StringWriter.&lt;init&gt;()" resolve="StringWriter" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3clFbJ" id="vAjk0TrZiX" role="3cqZAp">
-                    <node concept="2OqwBi" id="vAjk0Ts616" role="3clFbw">
-                      <node concept="17RlXB" id="vAjk0Ts9ko" role="2OqNvi" />
-                      <node concept="37vLTw" id="vAjk0Ts2$e" role="2Oq$k0">
-                        <ref role="3cqZAo" node="vAjk0TrLco" resolve="message" />
+                  <node concept="3clFbF" id="1klGXNRd7WG" role="3cqZAp">
+                    <node concept="2OqwBi" id="1klGXNRd83o" role="3clFbG">
+                      <node concept="37vLTw" id="1klGXNRd7WE" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6NgXkpAZm1d" resolve="t" />
+                      </node>
+                      <node concept="liA8E" id="1klGXNRd87g" role="2OqNvi">
+                        <ref role="37wK5l" to="e2lb:~Throwable.printStackTrace(java.io.PrintWriter):void" resolve="printStackTrace" />
+                        <node concept="2ShNRf" id="1klGXNRd89G" role="37wK5m">
+                          <node concept="1pGfFk" id="1klGXNRd8_6" role="2ShVmc">
+                            <ref role="37wK5l" to="fxg7:~PrintWriter.&lt;init&gt;(java.io.Writer)" resolve="PrintWriter" />
+                            <node concept="37vLTw" id="1klGXNRd8BH" role="37wK5m">
+                              <ref role="3cqZAo" node="1klGXNRd6Ji" resolve="sw" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
-                    <node concept="3clFbS" id="vAjk0TrZiZ" role="3clFbx">
-                      <node concept="3clFbF" id="vAjk0Tsc$h" role="3cqZAp">
-                        <node concept="37vLTI" id="vAjk0TsjaS" role="3clFbG">
-                          <node concept="2OqwBi" id="vAjk0Tsv4T" role="37vLTx">
-                            <node concept="2OqwBi" id="vAjk0TspWa" role="2Oq$k0">
-                              <node concept="liA8E" id="vAjk0Tstrr" role="2OqNvi">
-                                <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
-                              </node>
-                              <node concept="37vLTw" id="vAjk0Tsmum" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6NgXkpAZm1d" resolve="t" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="vAjk0Ts_LM" role="2OqNvi">
-                              <ref role="37wK5l" to="e2lb:~Class.toString():java.lang.String" resolve="toString" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="vAjk0Tsc$g" role="37vLTJ">
-                            <ref role="3cqZAo" node="vAjk0TrLco" resolve="message" />
-                          </node>
+                  </node>
+                  <node concept="3cpWs8" id="1klGXNRd91c" role="3cqZAp">
+                    <node concept="3cpWsn" id="1klGXNRd91d" role="3cpWs9">
+                      <property role="TrG5h" value="message" />
+                      <node concept="3uibUv" id="1klGXNRd91e" role="1tU5fm">
+                        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+                      </node>
+                      <node concept="2OqwBi" id="1klGXNRd9fE" role="33vP2m">
+                        <node concept="37vLTw" id="1klGXNRd9e4" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1klGXNRd6Ji" resolve="sw" />
+                        </node>
+                        <node concept="liA8E" id="1klGXNRd9hg" role="2OqNvi">
+                          <ref role="37wK5l" to="fxg7:~StringWriter.toString():java.lang.String" resolve="toString" />
                         </node>
                       </node>
                     </node>
@@ -811,7 +813,7 @@
                             <property role="Xl_RC" value="Cannot convert .mps into .mpb: %s\nModels:%s\nClasspath:%s" />
                           </node>
                           <node concept="37vLTw" id="4TFriYaGPMi" role="37wK5m">
-                            <ref role="3cqZAo" node="vAjk0TrLco" resolve="message" />
+                            <ref role="3cqZAo" node="1klGXNRd91d" resolve="message" />
                           </node>
                           <node concept="2OqwBi" id="6W_Fa5kssVm" role="37wK5m">
                             <node concept="37vLTw" id="4TFriYaGR7n" role="2Oq$k0">

@@ -16,7 +16,9 @@
 
 package jetbrains.mps.excluded;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.core.platform.PlatformFactory;
+import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
@@ -24,7 +26,6 @@ import junit.framework.Assert;
 import org.custommonkey.xmlunit.Diff;
 import org.custommonkey.xmlunit.ElementNameAndAttributeQualifier;
 import org.custommonkey.xmlunit.XMLAssert;
-import org.custommonkey.xmlunit.XMLUnit;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -45,20 +46,18 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
-  private static MPSCore ourMPSCore;
+  private static Platform ourPlatform;
 
   @BeforeClass
   public static void init() {
     assertNull(PersistenceFacade.getInstance());
-    ourMPSCore = new MPSCore();
-    ourMPSCore.init();
+    ourPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.CORE);
   }
 
   @AfterClass
   public static void dispose() {
     assertNotNull(PersistenceFacade.getInstance());
-    ourMPSCore.dispose();
-    ourMPSCore = null;
+    ourPlatform.dispose();
     assertNull(PersistenceFacade.getInstance());
   }
 
@@ -130,8 +129,8 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     Element expManager = getManagerElement(exp);
 
 
-    List<Element> realContent = (List<Element>) realManager.getChildren(Generators.CONTENT);
-    List<Element> expContent = (List<Element>) expManager.getChildren(Generators.CONTENT);
+    List<Element> realContent = realManager.getChildren(Generators.CONTENT);
+    List<Element> expContent = expManager.getChildren(Generators.CONTENT);
 
     Assert.assertEquals("Run GeneratorsRunner run configuration. Content sizes differ.", expContent.size(), realContent.size());
 
@@ -157,10 +156,10 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   }
 
   private void checkHasSamePathsUnderTag(Element rRoot, Element eRoot, String tag) throws JDOMException, IOException {
-    List<Element> realPaths = (List<Element>) rRoot.getChildren(tag);
-    List<Element> expPaths = (List<Element>) eRoot.getChildren(tag);
+    List<Element> realPaths = rRoot.getChildren(tag);
+    List<Element> expPaths = eRoot.getChildren(tag);
 
-    Assert.assertEquals("Run GeneratorsRunner run configuration. Content sizes under tag " + tag + " differs for url " + rRoot.getAttributeValue(Generators.URL), expPaths.size(), realPaths.size());
+    Assert.assertEquals("Run GeneratorsRunner run configuration (and make sure your local empty folders for generated source/classes are pruned). Content sizes under tag " + tag + " differs for url " + rRoot.getAttributeValue(Generators.URL), expPaths.size(), realPaths.size());
 
     outer:
     for (Element rp : realPaths) {

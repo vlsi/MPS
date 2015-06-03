@@ -347,7 +347,11 @@ public class QueriesGenerated {
       }
     }).select(new ISelector<LanguageAspectDescriptor, SNode>() {
       public SNode select(LanguageAspectDescriptor it) {
-        return createGeneratorInternal_Aspect_x583g4_a0a0a0b0uc(it.getImplementationClassName(), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it.getInterfaceClassDeclaration(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+        return createGeneratorInternal_Aspect_x583g4_a0a0a0a1a27(it.getImplementationClassName(languageModule), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it.getInterfaceClassDeclaration(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, 0x46c8be857954ff6fL, "implClass")) != null && SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, 0x46c8be857954ff66L, "interfaceClass")) != null;
       }
     });
   }
@@ -422,7 +426,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode createGeneratorInternal_Aspect_x583g4_a0a0a0b0uc(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_Aspect_x583g4_a0a0a0a1a27(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, "jetbrains.mps.lang.descriptor.structure.GeneratorInternal_Aspect"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, 0x46c8be857954ff6fL, "implClass"), String.valueOf(p0));

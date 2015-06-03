@@ -22,11 +22,13 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.FileStatusManager;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.persistence.PersistenceUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -95,7 +97,10 @@ public class BaseVersionUtil {
         return null;
       }
       String ext = vFile.getExtension();
-      return (content instanceof String ? PersistenceUtil.loadModel((String) content, ext) : PersistenceUtil.loadModel((byte[]) content, ext));
+
+
+      byte[] modelData = (content instanceof String ? ((String) content).getBytes(FileUtil.DEFAULT_CHARSET) : (byte[]) content);
+      return VCSPersistenceUtil.loadModel(modelData, ext);
     } else if (ds instanceof FilePerRootDataSource) {
       FilePerRootDataSource rds = (FilePerRootDataSource) ds;
       Map<String, Object> content = MapSequence.fromMap(new HashMap<String, Object>());

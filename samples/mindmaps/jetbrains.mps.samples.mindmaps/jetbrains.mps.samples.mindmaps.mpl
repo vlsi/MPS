@@ -13,9 +13,6 @@
     <dependency reexport="false">9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)</dependency>
     <dependency reexport="false">3368d218-0562-4953-8c2f-d10609f72361(jetbrains.mps.samples.mindmaps.figures)</dependency>
   </dependencies>
-  <usedLanguages>
-    <usedLanguage>6106f611-7a74-42d1-80de-edc5c602bfd1(jetbrains.mps.lang.editor.diagram)</usedLanguage>
-  </usedLanguages>
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>

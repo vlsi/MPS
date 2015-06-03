@@ -17,14 +17,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -278,7 +275,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     models.removeAll(LanguageAspectSupport.getAspectModels(this));
     models.removeAll(getAccessoryModels());
 
-    List<SModel> result = new ArrayList<SModel>(getModels());
+    List<SModel> result = new ArrayList<SModel>(models.size());
     for (SModel md : models) {
       String st = SModelStereotype.getStereotype(md);
       if (SModelStereotype.isStubModelStereotype(st) || SModelStereotype.isDescriptorModelStereotype(st)) {

@@ -52,11 +52,15 @@ public abstract class LanguageAspectDescriptor {
     return Collections.emptyList();
   }
 
-  @NotNull
-  public abstract SNode getInterfaceClassDeclaration();
+  @Nullable
+  public SNode getInterfaceClassDeclaration(){
+    return null;
+  }
 
-  @NotNull
-  public abstract String getImplementationClassName();
+  @Nullable
+  public String getImplementationClassName(SModule language){
+    return null;
+  }
 
   @Nullable
   public Icon getIcon(){

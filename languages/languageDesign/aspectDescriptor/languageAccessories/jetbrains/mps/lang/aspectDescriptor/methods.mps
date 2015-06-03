@@ -63,6 +63,14 @@
   <node concept="q3mft" id="ghIDlF6CZM">
     <property role="TrG5h" value="LanguageAspect" />
     <ref role="2qG0Lo" to="hfbu:2PMNsNJsb26" resolve="LanguageAspectDescriptor" />
+    <node concept="q3mfq" id="2Y$EcRKLScp" role="QNr5C">
+      <property role="TrG5h" value="getPresentableAspectName" />
+      <node concept="3uibUv" id="2Y$EcRKLZcL" role="q3mfk">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="2IRzkw" id="2Y$EcRKLZcV" role="2IRzpu" />
+    </node>
+    <node concept="qMXn0" id="2Y$EcRKLZdL" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmU4i" role="QNr5C">
       <property role="TrG5h" value="hasAspect" />
       <node concept="q3mfp" id="4r8JClTmU4H" role="q3mfl">
@@ -115,18 +123,28 @@
     <node concept="qMXn0" id="4r8JClTmU7T" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmU6H" role="QNr5C">
       <property role="TrG5h" value="getInterfaceClassDeclaration" />
+      <node concept="QcxE9" id="5KGdJjE2Btn" role="2IRzpu">
+        <property role="QcwnP" value="aspect not generated" />
+      </node>
       <node concept="3Tqbb2" id="4r8JClTmU7e" role="q3mfk">
         <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
       </node>
-      <node concept="2IRzkw" id="4r8JClTmU7g" role="2IRzpu" />
     </node>
     <node concept="qMXn0" id="4r8JClTmU99" role="QNr5C" />
     <node concept="q3mfq" id="4r8JClTmUai" role="QNr5C">
       <property role="TrG5h" value="getImplementationClassName" />
+      <node concept="q3mfp" id="74Oxs8ALpTn" role="q3mfl">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="74Oxs8ALpTs" role="q3mfr">
+          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="QcxE9" id="5KGdJjE2Btq" role="2IRzpu">
+        <property role="QcwnP" value="aspect not generated" />
+      </node>
       <node concept="3uibUv" id="4r8JClTmUaS" role="q3mfk">
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
-      <node concept="2IRzkw" id="3U295U9q2Po" role="2IRzpu" />
     </node>
     <node concept="qMXn0" id="ghIDlF6Hhv" role="QNr5C" />
     <node concept="q3mfq" id="ghIDlF6GE1" role="QNr5C">

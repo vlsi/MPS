@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CommandDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -33,7 +32,7 @@ public class CommandDeclaration_Behavior {
     return "Command";
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return _quotation_createNode_5aznw1_a0a2(thisNode);
+    return createCommandType_5aznw1_a0a2(thisNode);
   }
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
     // we get all parameters generated into fields and select a list with uniquie names 
@@ -98,12 +97,11 @@ public class CommandDeclaration_Behavior {
   public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept thisConcept) {
     return "getDebuggerConfiguration";
   }
-  private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1) {
+  private static SNode createCommandType_5aznw1_a0a2(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, "jetbrains.mps.execution.commands.structure.CommandType"), null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), (SNode) parameter_1);
-    return quotedNode_2;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L, "jetbrains.mps.execution.commands.structure.CommandType"), null, null, false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier"), (SNode) p0);
+    return n1;
   }
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

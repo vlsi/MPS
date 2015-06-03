@@ -244,9 +244,6 @@
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -4106,34 +4103,9 @@
         </node>
       </node>
       <node concept="2tJIrI" id="5A5jZryYX$S" role="jymVt" />
-      <node concept="3clFb_" id="5A5jZryYY2p" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="init" />
-        <property role="od$2w" value="false" />
-        <property role="DiZV1" value="false" />
-        <property role="2aFKle" value="false" />
-        <node concept="3clFbS" id="5A5jZryYY2s" role="3clF47">
-          <node concept="3clFbF" id="5A5jZryYYwW" role="3cqZAp">
-            <node concept="3nyPlj" id="5A5jZryYYwU" role="3clFbG">
-              <ref role="37wK5l" to="79ha:3eUNqOk7hpY" resolve="init" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="5A5jZryYYrr" role="3cqZAp">
-            <node concept="1rXfSq" id="5A5jZryYYrq" role="3clFbG">
-              <ref role="37wK5l" node="2hWPXztUBs3" resolve="registerFactory" />
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm1VV" id="5A5jZryYXO8" role="1B3o_S" />
-        <node concept="3cqZAl" id="5A5jZryYY1W" role="3clF45" />
-        <node concept="2AHcQZ" id="5A5jZryYYWM" role="2AJF6D">
-          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="5A5jZrz0ZPN" role="jymVt" />
       <node concept="3clFb_" id="5A5jZrz10QF" role="jymVt">
         <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="rootCLForLibs" />
+        <property role="TrG5h" value="rootClassLoader" />
         <property role="od$2w" value="false" />
         <property role="DiZV1" value="false" />
         <property role="2aFKle" value="false" />
@@ -4152,138 +4124,10 @@
           <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="2tJIrI" id="5A5jZrz10iS" role="jymVt" />
       <node concept="3uibUv" id="5kpQnuAtlfK" role="1zkMxy">
         <ref role="3uigEE" to="79ha:6rx4kZDk6yp" resolve="MpsEnvironment" />
       </node>
       <node concept="3Tmbuc" id="3Mm4xdrl1GS" role="1B3o_S" />
-      <node concept="3clFb_" id="2hWPXztUBs3" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="registerFactory" />
-        <property role="od$2w" value="false" />
-        <property role="DiZV1" value="false" />
-        <node concept="3clFbS" id="2hWPXztUBs6" role="3clF47">
-          <node concept="3cpWs8" id="2hWPXztUD6F" role="3cqZAp">
-            <node concept="3cpWsn" id="2hWPXztUD6E" role="3cpWs9">
-              <property role="3TUv4t" value="false" />
-              <property role="TrG5h" value="dumbFactory" />
-              <node concept="3uibUv" id="2hWPXztV80R" role="1tU5fm">
-                <ref role="3uigEE" to="88zw:~FacetsFacade$FacetFactory" resolve="FacetsFacade.FacetFactory" />
-              </node>
-              <node concept="2OqwBi" id="2hWPXztV81k" role="33vP2m">
-                <node concept="2YIFZM" id="2hWPXztV81l" role="2Oq$k0">
-                  <ref role="1Pybhc" to="88zw:~FacetsFacade" resolve="FacetsFacade" />
-                  <ref role="37wK5l" to="88zw:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
-                </node>
-                <node concept="liA8E" id="2hWPXztV81m" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~FacetsFacade.getFacetFactory(java.lang.String):org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory" resolve="getFacetFactory" />
-                  <node concept="10M0yZ" id="2hWPXztV81n" role="37wK5m">
-                    <ref role="1PxDUh" to="wqua:~DumbIdeaPluginFacet" resolve="DumbIdeaPluginFacet" />
-                    <ref role="3cqZAo" to="wqua:~DumbIdeaPluginFacet.FACET_TYPE" resolve="FACET_TYPE" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="1gVbGN" id="2hWPXztUD6O" role="3cqZAp">
-            <node concept="3y3z36" id="2hWPXztUD6L" role="1gVkn0">
-              <node concept="37vLTw" id="2hWPXztUD6M" role="3uHU7B">
-                <ref role="3cqZAo" node="2hWPXztUD6E" resolve="dumbFactory" />
-              </node>
-              <node concept="10Nm6u" id="2hWPXztUD6N" role="3uHU7w" />
-            </node>
-          </node>
-          <node concept="3clFbF" id="2hWPXztUD6P" role="3cqZAp">
-            <node concept="2OqwBi" id="2hWPXztUD6Q" role="3clFbG">
-              <node concept="2YIFZM" id="2hWPXztUD7s" role="2Oq$k0">
-                <ref role="1Pybhc" to="88zw:~FacetsFacade" resolve="FacetsFacade" />
-                <ref role="37wK5l" to="88zw:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="2hWPXztUD6S" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~FacetsFacade.removeFactory(org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory):void" resolve="removeFactory" />
-                <node concept="37vLTw" id="2hWPXztUD6T" role="37wK5m">
-                  <ref role="3cqZAo" node="2hWPXztUD6E" resolve="dumbFactory" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="2hWPXztUD6U" role="3cqZAp">
-            <node concept="2OqwBi" id="2hWPXztUD6V" role="3clFbG">
-              <node concept="2YIFZM" id="2hWPXztUD7v" role="2Oq$k0">
-                <ref role="1Pybhc" to="88zw:~FacetsFacade" resolve="FacetsFacade" />
-                <ref role="37wK5l" to="88zw:~FacetsFacade.getInstance():org.jetbrains.mps.openapi.module.FacetsFacade" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="2hWPXztUD6X" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~FacetsFacade.addFactory(java.lang.String,org.jetbrains.mps.openapi.module.FacetsFacade$FacetFactory):void" resolve="addFactory" />
-                <node concept="10M0yZ" id="2hWPXztV8_v" role="37wK5m">
-                  <ref role="3cqZAo" to="wqua:~DumbIdeaPluginFacet.FACET_TYPE" resolve="FACET_TYPE" />
-                  <ref role="1PxDUh" to="wqua:~DumbIdeaPluginFacet" resolve="DumbIdeaPluginFacet" />
-                </node>
-                <node concept="2ShNRf" id="2hWPXztUD6Z" role="37wK5m">
-                  <node concept="YeOm9" id="2hWPXztUD70" role="2ShVmc">
-                    <node concept="1Y3b0j" id="2hWPXztUD71" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <property role="1sVAO0" value="false" />
-                      <property role="1EXbeo" value="false" />
-                      <ref role="1Y3XeK" to="88zw:~FacetsFacade$FacetFactory" resolve="FacetsFacade.FacetFactory" />
-                      <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
-                      <node concept="3Tm1VV" id="2hWPXztUD72" role="1B3o_S" />
-                      <node concept="3clFb_" id="2hWPXztUD73" role="jymVt">
-                        <property role="TrG5h" value="create" />
-                        <property role="DiZV1" value="false" />
-                        <property role="od$2w" value="false" />
-                        <node concept="2AHcQZ" id="2hWPXztUD74" role="2AJF6D">
-                          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                        </node>
-                        <node concept="3clFbS" id="2hWPXztUD75" role="3clF47">
-                          <node concept="3cpWs6" id="2hWPXztUD76" role="3cqZAp">
-                            <node concept="2ShNRf" id="2hWPXztV8CR" role="3cqZAk">
-                              <node concept="YeOm9" id="2hWPXztVky$" role="2ShVmc">
-                                <node concept="1Y3b0j" id="2hWPXztVkyB" role="YeSDq">
-                                  <property role="2bfB8j" value="true" />
-                                  <ref role="1Y3XeK" to="wqua:~DumbIdeaPluginFacet" resolve="DumbIdeaPluginFacet" />
-                                  <ref role="37wK5l" to="wqua:~DumbIdeaPluginFacet.&lt;init&gt;()" resolve="DumbIdeaPluginFacet" />
-                                  <node concept="3Tm1VV" id="2hWPXztVkyC" role="1B3o_S" />
-                                  <node concept="3clFb_" id="2hWPXztVkzb" role="jymVt">
-                                    <property role="1EzhhJ" value="false" />
-                                    <property role="TrG5h" value="getClassLoader" />
-                                    <property role="DiZV1" value="false" />
-                                    <property role="IEkAT" value="false" />
-                                    <node concept="3Tm1VV" id="2hWPXztVkzc" role="1B3o_S" />
-                                    <node concept="3uibUv" id="2hWPXztVkze" role="3clF45">
-                                      <ref role="3uigEE" to="e2lb:~ClassLoader" resolve="ClassLoader" />
-                                    </node>
-                                    <node concept="3clFbS" id="2hWPXztVkzg" role="3clF47">
-                                      <node concept="3clFbF" id="2hWPXztVnxO" role="3cqZAp">
-                                        <node concept="37vLTw" id="2hWPXztVnxN" role="3clFbG">
-                                          <ref role="3cqZAo" node="2hWPXztVkJy" resolve="myClassLoader" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="2AHcQZ" id="2hWPXztVkzh" role="2AJF6D">
-                                      <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3Tm1VV" id="2hWPXztUD78" role="1B3o_S" />
-                        <node concept="3uibUv" id="2hWPXztUD79" role="3clF45">
-                          <ref role="3uigEE" to="88zw:~SModuleFacet" resolve="SModuleFacet" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3Tm6S6" id="2hWPXztUBoq" role="1B3o_S" />
-        <node concept="3cqZAl" id="2hWPXztUBrA" role="3clF45" />
-      </node>
     </node>
     <node concept="2tJIrI" id="5A5jZrz12it" role="jymVt" />
     <node concept="3uibUv" id="3GGnItM97NI" role="1zkMxy">

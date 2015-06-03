@@ -114,8 +114,10 @@ public class Generators {
       }
       for (String modulePath : mpsCompiledInfo.keySet()) {
         // todo: rewrite this code using ProjectPathUtil
-        String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + "/" + AbstractModule.CLASSES_GEN;
-        classesGenFolders.add(cgFolder);
+        if (new File(modulePath + '/' + AbstractModule.CLASSES_GEN).exists()) { // why would anyone keep non-existing folders?
+          String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + '/' + AbstractModule.CLASSES_GEN;
+          classesGenFolders.add(cgFolder);
+        }
       }
       Collections.sort(sourceGenFolders);
       Collections.sort(classesGenFolders);
@@ -156,11 +158,11 @@ public class Generators {
       //if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
-      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
+      for (Element cRoot : rootManager.getChildren(CONTENT)) {
         String imlFormattedRoot = cRoot.getAttributeValue(URL);
         modelRoots.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
 
-        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
+        for (Element sFolder : cRoot.getChildren(SOURCE_FOLDER)) {
           String imlFormattedSourceFolder = sFolder.getAttributeValue(URL);
           String sourcePath = new File(imlFormattedSourceFolder.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath();
           sourcesIncluded.add(sourcePath);
@@ -173,6 +175,7 @@ public class Generators {
     Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
     List<String> sourceGen = new ArrayList<String>();
     List<String> classesGen = new ArrayList<String>();
+    // FIXME BLOODY SH!T. QUITE SIMILAR CODE IS ABOVE. I BEG YOU TO FIX ME
     for (File dir : sourceDirs) {
       for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
         for (String sourcePath : module.getValue()) {
@@ -182,7 +185,10 @@ public class Generators {
             sourceGen.add(sourcePath);
           }
         }
-        classesGen.add(module.getKey() + "/" + AbstractModule.CLASSES_GEN);
+        String classesPath = module.getKey() + '/' + AbstractModule.CLASSES_GEN;
+        if (new File(classesPath).exists()) {
+          classesGen.add(classesPath);
+        }
       }
     }
 

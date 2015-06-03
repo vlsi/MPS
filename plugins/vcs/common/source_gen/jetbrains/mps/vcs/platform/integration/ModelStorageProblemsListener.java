@@ -45,7 +45,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
-import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.vcspersistence.VCSPersistenceUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
@@ -265,7 +265,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
   }
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = PersistenceUtil.loadModel(modelFile);
+    SModel onDisk = VCSPersistenceUtil.loadModel(modelFile);
     com.intellij.openapi.project.Project project = com.intellij.openapi.project.ProjectManager.getInstance().getOpenProjects()[0];
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(project, onDisk, inMemory, "Filesystem version (Read-Only)", "Memory Version", null);
     SwingUtilities.invokeLater(new Runnable() {

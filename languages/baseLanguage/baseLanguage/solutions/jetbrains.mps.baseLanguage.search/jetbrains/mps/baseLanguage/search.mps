@@ -20106,8 +20106,8 @@
     <property role="TrG5h" value="MPSBaseLanguage" />
     <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="17_Ehlwj8wC" role="1B3o_S" />
-    <node concept="3uibUv" id="17_EhlwjbqF" role="1zkMxy">
-      <ref role="3uigEE" to="kgxg:~ComponentPlugin" resolve="ComponentPlugin" />
+    <node concept="3uibUv" id="Y1BBlvzZKv" role="1zkMxy">
+      <ref role="3uigEE" to="kgxg:~ComponentPluginBase" resolve="ComponentPluginBase" />
     </node>
     <node concept="3clFbW" id="17_Ehlwj8wD" role="jymVt">
       <node concept="3Tm1VV" id="2IizP$ACE91" role="1B3o_S" />
@@ -20129,7 +20129,7 @@
         </node>
         <node concept="3clFbF" id="17_Ehlwjbr6" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyZxB" role="3clFbG">
-            <ref role="37wK5l" to="kgxg:~ComponentPlugin.init(jetbrains.mps.components.CoreComponent):jetbrains.mps.components.CoreComponent" resolve="init" />
+            <ref role="37wK5l" to="kgxg:~ComponentPluginBase.init(jetbrains.mps.components.CoreComponent):jetbrains.mps.components.CoreComponent" resolve="init" />
             <node concept="2ShNRf" id="17_Ehlwjbr8" role="37wK5m">
               <node concept="1pGfFk" id="17_Ehlwjbra" role="2ShVmc">
                 <ref role="37wK5l" node="3ohKLrgURCZ" resolve="ClassifierSuccessors" />

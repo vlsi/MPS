@@ -68,6 +68,7 @@
     <import index="15tk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.vcs.impl(MPS.IDEA/com.intellij.openapi.vcs.impl@java_stub)" />
     <import index="8q6x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <import index="xqpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+    <import index="iho" ref="r:57faf072-5a23-4c30-9cf6-da73f0e0a8ad(jetbrains.mps.vcspersistence)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -2027,8 +2028,8 @@
             </node>
             <node concept="3cpWs6" id="2k8P2L5OSAc" role="3cqZAp">
               <node concept="2YIFZM" id="2k8P2L5OSAd" role="3cqZAk">
-                <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                <ref role="37wK5l" to="iho:1NiMOxiwPI2" resolve="loadModel" />
                 <node concept="37vLTw" id="7vnu9rGK66D" role="37wK5m">
                   <ref role="3cqZAo" node="2k8P2L5OS_w" resolve="bytes" />
                 </node>
@@ -2468,14 +2469,10 @@
             <property role="TrG5h" value="diskModel" />
             <node concept="H_c77" id="6k7ELiE2yj_" role="1tU5fm" />
             <node concept="2YIFZM" id="6k7ELiE2$tz" role="33vP2m">
-              <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-              <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(jetbrains.mps.vfs.IFile,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+              <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+              <ref role="37wK5l" to="iho:1NiMOxizoc6" resolve="loadModel" />
               <node concept="37vLTw" id="6k7ELiE2$v4" role="37wK5m">
                 <ref role="3cqZAo" node="2k8P2L5IU8S" resolve="file" />
-              </node>
-              <node concept="10M0yZ" id="7K2zuF8rLXc" role="37wK5m">
-                <ref role="1PxDUh" to="vsqj:~MPSExtentions" resolve="MPSExtentions" />
-                <ref role="3cqZAo" to="vsqj:~MPSExtentions.MODEL" resolve="MODEL" />
               </node>
             </node>
           </node>
@@ -2859,25 +2856,34 @@
                 <property role="3TUv4t" value="false" />
                 <node concept="H_c77" id="4hhnRwR6tP9" role="1tU5fm" />
                 <node concept="2YIFZM" id="4hhnRwRmR5Q" role="33vP2m">
-                  <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-                  <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-                  <node concept="2OqwBi" id="4hhnRwRmR5R" role="37wK5m">
-                    <node concept="2OqwBi" id="4hhnRwRmR5S" role="2Oq$k0">
-                      <node concept="AH0OO" id="4hhnRwRmR5T" role="2Oq$k0">
-                        <node concept="37vLTw" id="3GM_nagTtKn" role="AHHXb">
-                          <ref role="3cqZAo" node="5eJvzs3Q6Gx" resolve="contents" />
+                  <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+                  <ref role="37wK5l" to="iho:1NiMOxiwPI2" resolve="loadModel" />
+                  <node concept="2OqwBi" id="1NiMOxizaSa" role="37wK5m">
+                    <node concept="2OqwBi" id="4hhnRwRmR5R" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4hhnRwRmR5S" role="2Oq$k0">
+                        <node concept="AH0OO" id="4hhnRwRmR5T" role="2Oq$k0">
+                          <node concept="37vLTw" id="3GM_nagTtKn" role="AHHXb">
+                            <ref role="3cqZAo" node="5eJvzs3Q6Gx" resolve="contents" />
+                          </node>
+                          <node concept="10M0yZ" id="4hhnRwRmR5V" role="AHEQo">
+                            <ref role="3cqZAo" to="ur19:341WClvYLKO" resolve="ORIGINAL" />
+                            <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                          </node>
                         </node>
-                        <node concept="10M0yZ" id="4hhnRwRmR5V" role="AHEQo">
-                          <ref role="3cqZAo" to="ur19:341WClvYLKO" resolve="ORIGINAL" />
-                          <ref role="1PxDUh" to="ur19:341WClvYLJt" resolve="MergeConstants" />
+                        <node concept="liA8E" id="4hhnRwRmR5W" role="2OqNvi">
+                          <ref role="37wK5l" to="xa8l:~DiffContent.getDocument():com.intellij.openapi.editor.Document" resolve="getDocument" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="4hhnRwRmR5W" role="2OqNvi">
-                        <ref role="37wK5l" to="xa8l:~DiffContent.getDocument():com.intellij.openapi.editor.Document" resolve="getDocument" />
+                      <node concept="liA8E" id="4hhnRwRmR5X" role="2OqNvi">
+                        <ref role="37wK5l" to="18ql:~Document.getText():java.lang.String" resolve="getText" />
                       </node>
                     </node>
-                    <node concept="liA8E" id="4hhnRwRmR5X" role="2OqNvi">
-                      <ref role="37wK5l" to="18ql:~Document.getText():java.lang.String" resolve="getText" />
+                    <node concept="liA8E" id="1NiMOxizbHw" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~String.getBytes(java.nio.charset.Charset):byte[]" resolve="getBytes" />
+                      <node concept="10M0yZ" id="1NiMOxizc4l" role="37wK5m">
+                        <ref role="1PxDUh" to="msyo:~FileUtil" resolve="FileUtil" />
+                        <ref role="3cqZAo" to="msyo:~FileUtil.DEFAULT_CHARSET" resolve="DEFAULT_CHARSET" />
+                      </node>
                     </node>
                   </node>
                   <node concept="37vLTw" id="4hhnRwRnzfu" role="37wK5m">
@@ -3520,8 +3526,8 @@
         </node>
         <node concept="3cpWs6" id="7lfItRMKbvl" role="3cqZAp">
           <node concept="2YIFZM" id="7lfItRMKbvm" role="3cqZAk">
-            <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-            <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+            <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+            <ref role="37wK5l" to="iho:1NiMOxiwPI2" resolve="loadModel" />
             <node concept="37vLTw" id="7lfItRMKbvn" role="37wK5m">
               <ref role="3cqZAo" node="7lfItRMKbvr" resolve="bytes" />
             </node>
@@ -6725,10 +6731,10 @@
             <node concept="3uibUv" id="6z2l4wadvKA" role="1tU5fm">
               <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
             </node>
-            <node concept="2YIFZM" id="6z2l4wadPFn" role="33vP2m">
-              <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(jetbrains.mps.vfs.IFile):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
-              <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-              <node concept="37vLTw" id="6z2l4waeaq1" role="37wK5m">
+            <node concept="2YIFZM" id="1NiMOxizrNw" role="33vP2m">
+              <ref role="37wK5l" to="iho:1NiMOxizoc6" resolve="loadModel" />
+              <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+              <node concept="37vLTw" id="1NiMOxizrNx" role="37wK5m">
                 <ref role="3cqZAo" node="6KmbN9hT1dL" resolve="modelFile" />
               </node>
             </node>
@@ -9491,8 +9497,8 @@
         </node>
         <node concept="3cpWs6" id="7lfItRMJ2Vv" role="3cqZAp">
           <node concept="2YIFZM" id="7lfItRMJ39Q" role="3cqZAk">
-            <ref role="1Pybhc" to="d2v5:~PersistenceUtil" resolve="PersistenceUtil" />
-            <ref role="37wK5l" to="d2v5:~PersistenceUtil.loadModel(byte[],java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+            <ref role="1Pybhc" to="iho:1NiMOxiwPcH" resolve="VCSPersistenceUtil" />
+            <ref role="37wK5l" to="iho:1NiMOxiwPI2" resolve="loadModel" />
             <node concept="37vLTw" id="7lfItRMJ3ji" role="37wK5m">
               <ref role="3cqZAo" node="7lfItRMIPkT" resolve="bytes" />
             </node>

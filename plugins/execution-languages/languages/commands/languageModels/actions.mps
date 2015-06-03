@@ -2,7 +2,6 @@
 <model ref="r:03471ad4-1311-49c0-9dc7-d40326a174c7(jetbrains.mps.execution.commands.actions)">
   <persistence version="9" />
   <languages>
-    <use id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands" version="-1" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
@@ -16,10 +15,6 @@
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
       <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
-    </language>
-    <language id="f3347d8a-0e79-4f35-8ac9-1574f25c986f" name="jetbrains.mps.execution.commands">
-      <concept id="612376536074296995" name="jetbrains.mps.execution.commands.structure.CommandProcessType" flags="in" index="50ouk" />
-      <concept id="856705193941281810" name="jetbrains.mps.execution.commands.structure.ProcessType" flags="in" index="2LYoN7" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
@@ -64,8 +59,11 @@
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
-      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
-        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -282,8 +280,10 @@
         <node concept="3clFbS" id="4DPUXm60K5h" role="2VODD2">
           <node concept="3clFbF" id="4DPUXm60K5i" role="3cqZAp">
             <node concept="3JuTUA" id="4DPUXm60K5j" role="3clFbG">
-              <node concept="2c44tf" id="4DPUXm60K5k" role="3JuZjQ">
-                <node concept="2LYoN7" id="4DPUXm60K5l" role="2c44tc" />
+              <node concept="2pJPEk" id="2F8bNQrJUt" role="3JuZjQ">
+                <node concept="2pJPED" id="2F8bNQrJUs" role="2pJPEn">
+                  <ref role="2pJxaS" to="rzqf:JzCdmU6yKi" resolve="ProcessType" />
+                </node>
               </node>
               <node concept="2OqwBi" id="4DPUXm60K5m" role="3JuY14">
                 <node concept="Cj7Ep" id="4DPUXm60K5n" role="2Oq$k0" />
@@ -498,8 +498,10 @@
           <node concept="1NCAza" id="1$vg1EcfVRE" role="1NDbUd">
             <node concept="3clFbS" id="1$vg1EcfVRF" role="2VODD2">
               <node concept="3clFbF" id="1$vg1EcfXZy" role="3cqZAp">
-                <node concept="2c44tf" id="1$vg1EcfXZz" role="3clFbG">
-                  <node concept="50ouk" id="1$vg1EcfXZ_" role="2c44tc" />
+                <node concept="2pJPEk" id="2F8bNQrK2r" role="3clFbG">
+                  <node concept="2pJPED" id="2F8bNQrK2q" role="2pJPEn">
+                    <ref role="2pJxaS" to="rzqf:xZAjsdvxUz" resolve="CommandProcessType" />
+                  </node>
                 </node>
               </node>
             </node>

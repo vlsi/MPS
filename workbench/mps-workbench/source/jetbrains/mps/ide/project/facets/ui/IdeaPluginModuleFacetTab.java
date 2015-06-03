@@ -22,7 +22,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.persistence.MementoImpl;

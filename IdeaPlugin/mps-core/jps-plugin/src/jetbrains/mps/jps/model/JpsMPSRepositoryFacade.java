@@ -16,12 +16,14 @@
 
 package jetbrains.mps.jps.model;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.core.platform.PlatformFactory;
+import jetbrains.mps.core.platform.PlatformOptionsBuilder;
+
+
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
@@ -33,10 +35,8 @@ import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -46,7 +46,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -87,10 +86,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
   public static final UUID JDK_UUID = UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
   private static final BaseMPSModuleOwner OWNER = new BaseMPSModuleOwner() {};
 
-  private MPSCore myMPSCore;
-  private MPSPersistence myMPSPersistence;
-  private MPSGenerator myMPSGenerator;
-  private MPSTypesystem myMPSTypesystem;
+  private Platform myPlatform;
   private MPSBaseLanguage myMPSBaseLanguage;
   private volatile boolean isInitialized = false;
   private CachedRepositoryData myRepo;
@@ -367,14 +363,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
 
   private void initMPS() {
-    myMPSCore = new MPSCore();
-    myMPSPersistence = new MPSPersistence();
-    myMPSTypesystem = new MPSTypesystem();
-    myMPSGenerator = new MPSGenerator();
-    myMPSCore.init();
-    myMPSPersistence.init();
-    myMPSTypesystem.init();
-    myMPSGenerator.init();
+    myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
 
     myMPSBaseLanguage = new MPSBaseLanguage();
     myMPSBaseLanguage.init();
@@ -382,16 +371,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private void disposeMPS() {
     myMPSBaseLanguage.dispose();
-    myMPSBaseLanguage = null;
-
-    myMPSGenerator.dispose();
-    myMPSTypesystem.dispose();
-    myMPSPersistence.dispose();
-    myMPSCore.dispose();
-    myMPSGenerator = null;
-    myMPSTypesystem = null;
-    myMPSPersistence = null;
-    myMPSCore = null;
+    myPlatform.dispose();
   }
 
   @Override

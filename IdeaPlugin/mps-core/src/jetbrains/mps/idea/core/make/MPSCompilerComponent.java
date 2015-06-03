@@ -19,7 +19,6 @@ package jetbrains.mps.idea.core.make;
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileScope;
 import com.intellij.openapi.compiler.CompileTask;
@@ -28,13 +27,12 @@ import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.compiler.CompilerPaths;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.library.contributor.LibDescriptor;
-import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
@@ -50,29 +48,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * evgeny, 11/21/11
  */
 public class MPSCompilerComponent implements ProjectComponent {
-
-  private Project project;
+  private Project myProject;
 
   public MPSCompilerComponent(Project project) {
-    this.project = project;
+    myProject = project;
   }
 
   @Override
   public void projectOpened() {
-    CompilerManager compilerManager = CompilerManager.getInstance(project);
+    CompilerManager compilerManager = CompilerManager.getInstance(myProject);
 
     final List<String> errorMessages = new ArrayList<String>();
 
-    project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
-    project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
+    myProject.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
+    myProject.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
 
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE);
-
-//    for (MPSNoCompiler compiler : compilerManager.getCompilers(MPSNoCompiler.class)) {
-//      compilerManager.removeCompiler(compiler);
-//    }
-//    compilerManager.addCompiler(new MPSNoCompiler());
 
     compilerManager.addBeforeTask(new CompileTask() {
       @Override
@@ -80,21 +72,9 @@ public class MPSCompilerComponent implements ProjectComponent {
         final CompileScope compileScope = context.getCompileScope();
         if (compileScope == null) return true;
 
-        StringBuilder sb = new StringBuilder();
-        PluginLibraryContributor pluginLibContributor = ApplicationManager.getApplication().getComponent(PluginLibraryContributor.class);
-        for (LibDescriptor library : pluginLibContributor.getPaths()) {
-          String path = FileUtil.toSystemDependentName(library.getPath());
-          if (sb.length() > 0) {
-            sb.append(";");
-          }
-          sb.append(path);
-        }
-        compileScope.putUserData(MPSMakeConstants.MPS_LANGUAGES, sb.toString());
-
-
-        final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(project), "mps_repository.dat");
+        final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
         final long start = System.nanoTime();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ProjectHelper.toMPSProject(myProject).getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             CachedRepositoryData cachedRepositoryData = MPSRepositoryUtil.buildData(LibraryInitializer.getInstance().getModuleHandles());
@@ -112,7 +92,7 @@ public class MPSCompilerComponent implements ProjectComponent {
         });
         long result = (System.nanoTime() - start) / 1000000;
 
-        if (CompilerWorkspaceConfiguration.getInstance(project).COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS.contains("-Dmps.jps.debug=true")) {
+        if (CompilerWorkspaceConfiguration.getInstance(myProject).COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS.contains("-Dmps.jps.debug=true")) {
           context.addMessage(CompilerMessageCategory.INFORMATION, "repository cache saved in " + result + " ms", null, 0, 0);
         }
         return true;
@@ -164,7 +144,7 @@ public class MPSCompilerComponent implements ProjectComponent {
 
         } else if (messageType.equals(MPSCustomMessages.MSG_REFRESH)) {
           final List<File> generatedFiles = myAffectedFiles.getAndSet(new ArrayList<File>());
-          if (project.isDisposed() || generatedFiles.isEmpty()) {
+          if (myProject.isDisposed() || generatedFiles.isEmpty()) {
             return;
           }
 

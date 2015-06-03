@@ -17,10 +17,17 @@ package jetbrains.mps.ide.project.facets;
 
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
+import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 /**
@@ -41,10 +48,7 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
 
   @Override
   public boolean setModule(SModule module) {
-    if (!(module instanceof Solution)) {
-      return false;
-    }
-    return super.setModule(module);
+    return module instanceof Solution && super.setModule(module);
   }
 
   @Override
@@ -74,10 +78,12 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
     return PluginManager.getPlugin(PluginId.getId(getPluginId())) != null;
   }
 
+  @NotNull
   @Override
   public ClassLoader getClassLoader() {
     IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId(getPluginId()));
     assert plugin != null;
     return plugin.getPluginClassLoader();
   }
+
 }

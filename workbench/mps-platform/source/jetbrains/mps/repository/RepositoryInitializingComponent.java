@@ -25,13 +25,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-public class RepositoryInitializingComponent implements ApplicationComponent {
+public final class RepositoryInitializingComponent implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
   private BootstrapLibraryContributor myBootstrapLibraryContributor;
   private PluginLibraryContributor myPluginLibraryContributor;
   private WorkbenchLibraryContributor myWorkbenchLibraryContributor;
 
-  public RepositoryInitializingComponent(MPSCoreComponents coreComponents) {
+  public RepositoryInitializingComponent(MPSCoreComponents coreComponents,
+      IdeaPluginFacetComponent ideaPluginFacetComponent) {
     myLibraryInitializer = coreComponents.getMPSCore().getLibraryInitializer();
   }
 

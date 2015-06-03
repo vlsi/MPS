@@ -20,6 +20,8 @@ import java.net.URLClassLoader;
 import java.lang.reflect.Method;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 import org.apache.tools.ant.util.FileUtils;
 import org.apache.tools.ant.types.FilterSetCollection;
 import java.util.Vector;
@@ -87,10 +89,9 @@ public class ConvertToBinaryTask extends Copy {
         } else if (t instanceof InvocationTargetException) {
           t = ((InvocationTargetException) t).getTargetException();
         }
-        String message = t.getMessage();
-        if ((message == null || message.length() == 0)) {
-          message = t.getClass().toString();
-        }
+        StringWriter sw = new StringWriter();
+        t.printStackTrace(new PrintWriter(sw));
+        String message = sw.toString();
         throw new BuildException(String.format("Cannot convert .mps into .mpb: %s\nModels:%s\nClasspath:%s", message, toConvert.keySet(), classPathUrls), t);
       }
     }

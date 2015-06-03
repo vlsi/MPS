@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -46,7 +46,7 @@
       <property role="TrG5h" value="declare-mps-tasks" />
     </node>
     <node concept="3bMsLL" id="5wKGSSolK5D" role="yghi5">
-      <ref role="3bMsLK" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      <ref role="3bMsLK" to="arit:450ejGzgRPq" resolve="assemble" />
       <node concept="2VaxJe" id="5wKGSSolK61" role="3bNaKb">
         <ref role="2VaxJf" node="m8_23b_6ft" resolve="declare-mps-tasks" />
       </node>
@@ -54,8 +54,8 @@
     <node concept="2VaFvF" id="3zFnP6MHc0r" role="yghi5">
       <property role="TrG5h" value="makeDependents" />
     </node>
-    <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    <node concept="ygXWA" id="5T0Kicg_Jpc" role="yg1MB">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
   </node>
 </model>

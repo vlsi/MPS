@@ -19,9 +19,6 @@ import java.util.LinkedHashSet;
 import java.util.Collections;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.FacetsFacade;
-import jetbrains.mps.classloading.DumbIdeaPluginFacet;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -110,31 +107,8 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     }
 
     @Override
-    public void init() {
-      super.init();
-      registerFactory();
-    }
-
-    @Override
-    protected ClassLoader rootCLForLibs() {
+    protected ClassLoader rootClassLoader() {
       return myClassLoader;
-    }
-
-    private void registerFactory() {
-      FacetsFacade.FacetFactory dumbFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
-      assert dumbFactory != null;
-      FacetsFacade.getInstance().removeFactory(dumbFactory);
-      FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetsFacade.FacetFactory() {
-        @Override
-        public SModuleFacet create() {
-          return new DumbIdeaPluginFacet() {
-            @Override
-            public ClassLoader getClassLoader() {
-              return myClassLoader;
-            }
-          };
-        }
-      });
     }
   }
 

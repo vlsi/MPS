@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -78,6 +79,9 @@ public class VisibleModules {
     if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error(message);
     }
+  }
+  public SNode resolve(SLanguage language) {
+    return resolve(language.getQualifiedName(), null);
   }
   public SNode resolve(SModuleReference moduleRef) {
     String targetName = moduleRef.getModuleName();

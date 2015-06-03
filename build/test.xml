@@ -39,7 +39,7 @@
     </jar>
     <delete dir="${build.tmp}/buildtests.tmp"/>
 
-    <junit fork="true" dir="${mps_build_home}">
+    <junit fork="true" dir="${mps_build_home}" showoutput="true">
       <jvmarg value="-ea"/>
       <jvmarg value="-Dmps.junit.project=."/>
       <jvmarg value="-Xss1024k"/>

@@ -16,35 +16,30 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.generator.MPSGenerator;
-import jetbrains.mps.ide.findusages.MPSFindUsages;
-import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
-import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
+import jetbrains.mps.core.platform.Platform;
+import jetbrains.mps.core.platform.PlatformFactory;
+import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
-import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.UndoHelper;
-import jetbrains.mps.typesystem.MPSTypesystem;
+import jetbrains.mps.smodel.UndoHandler;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class MPSCoreComponents implements ApplicationComponent {
-  private MPSCore myMPSCore;
-  private MPSPersistence myMPSPersistence;
-  private MPSGenerator myMPSGenerator;
-  private MPSTypesystem myMPSTypesystem;
-  private MPSFindUsages myMPSFindUsages;
-  private MPSBaseLanguage myMPSBaseLanguage;
+  private MPSBaseLanguage myBaseLanguage;
+  private Platform myPlatform;
 
-  public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
+  public MPSCoreComponents(FileSystemProviderComponent fsProvider,
+      ModelAccess access,
+      UndoHandler handler) {
   }
 
   @NotNull
@@ -53,66 +48,30 @@ public class MPSCoreComponents implements ApplicationComponent {
     return "MPS Core Components";
   }
 
-  //getFileSystemProvider return ideaFileSystemProvider ? null
-
   @Override
   public void initComponent() {
-    // setup undo
-    UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
-
-    // setup model access
-    ModelAccess.setInstance(new WorkbenchModelAccess());
-
-    // setup MPS.Core
-    myMPSCore = new MPSCore();
-    myMPSPersistence = new MPSPersistence();
-    myMPSTypesystem = new MPSTypesystem();
-    myMPSGenerator = new MPSGenerator();
-    myMPSFindUsages = new MPSFindUsages();
-    myMPSCore.init();
-    myMPSPersistence.init();
-    myMPSTypesystem.init();
-    myMPSGenerator.init();
-    myMPSFindUsages.init();
-
-    // setup BaseLanguage
-    myMPSBaseLanguage = new MPSBaseLanguage();
-    myMPSBaseLanguage.init();
+    myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
+    myBaseLanguage = new MPSBaseLanguage();
+    myBaseLanguage.init();
   }
 
   @Override
   public void disposeComponent() {
-    // dispose BaseLanguage
-    myMPSBaseLanguage.dispose();
-    myMPSBaseLanguage = null;
-
-    // dispose Core
-    myMPSFindUsages.dispose();
-    myMPSGenerator.dispose();
-    myMPSTypesystem.dispose();
-    myMPSPersistence.dispose();
-    myMPSCore.dispose();
-    myMPSFindUsages = null;
-    myMPSGenerator = null;
-    myMPSTypesystem = null;
-    myMPSPersistence = null;
-    myMPSCore = null;
-
-    // cleanup
-    ModelAccess.instance().dispose();
+    myBaseLanguage.dispose();
+    myPlatform.dispose();
   }
 
   @NotNull
   public MPSCore getMPSCore() {
-    return myMPSCore;
+    return myPlatform.getCore();
   }
 
   public ClassLoaderManager getClassLoaderManager() {
-    return ClassLoaderManager.getInstance();
+    return getMPSCore().getClassLoaderManager();
   }
 
   public MPSModuleRepository getModuleRepository() {
-    return MPSModuleRepository.getInstance();
+    return getMPSCore().getModuleRepository();
   }
 
   public GlobalSModelEventsManager getGlobalSModelEventsManager() {

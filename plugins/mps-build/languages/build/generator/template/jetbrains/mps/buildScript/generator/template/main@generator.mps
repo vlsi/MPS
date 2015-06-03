@@ -23,7 +23,8 @@
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="2ogt" ref="r:dc6ee11b-0a41-4208-a099-65b1a11fb3ff(jetbrains.mps.build.workflow.preset.java)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -7528,15 +7529,10 @@
                 <node concept="1UU6SM" id="4VmJU8hwEnQ" role="1UU7Ll">
                   <node concept="3clFbS" id="4VmJU8hwEnR" role="2VODD2">
                     <node concept="3clFbF" id="4VmJU8hwEnS" role="3cqZAp">
-                      <node concept="10QFUN" id="4VmJU8hwEnT" role="3clFbG">
-                        <node concept="3Tqbb2" id="4VmJU8hwEnU" role="10QFUM">
-                          <ref role="ehGHo" to="3ior:4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
-                        </node>
-                        <node concept="2OqwBi" id="520hcA99G4B" role="10QFUP">
-                          <node concept="30H73N" id="4VmJU8hwEnX" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="520hcA99H2j" role="2OqNvi">
-                            <ref role="3Tt5mk" to="3ior:520hcA990bR" />
-                          </node>
+                      <node concept="2OqwBi" id="520hcA99G4B" role="3clFbG">
+                        <node concept="30H73N" id="4VmJU8hwEnX" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="520hcA99H2j" role="2OqNvi">
+                          <ref role="3Tt5mk" to="3ior:520hcA990bR" />
                         </node>
                       </node>
                     </node>
@@ -7842,7 +7838,7 @@
           </node>
           <node concept="raruj" id="5DY7s5F42hw" role="lGtFl" />
           <node concept="2VaxJe" id="5DY7s5F46Yg" role="LrzAz">
-            <ref role="2VaxJf" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+            <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
             <node concept="1W57fq" id="5DY7s5F46Yi" role="lGtFl">
               <node concept="3IZrLx" id="5DY7s5F46Yj" role="3IZSJc">
                 <node concept="3clFbS" id="5DY7s5F46Yk" role="2VODD2">
@@ -11178,7 +11174,7 @@
       </node>
     </node>
     <node concept="3bMsLL" id="5hFYqIiZPCB" role="2VaxJS">
-      <ref role="3bMsLK" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+      <ref role="3bMsLK" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
       <node concept="1WS0z7" id="5Wv1_bQ145M" role="lGtFl">
         <node concept="3JmXsc" id="5Wv1_bQ145N" role="3Jn$fo">
           <node concept="3clFbS" id="5Wv1_bQ145O" role="2VODD2">
@@ -11436,7 +11432,7 @@
       </node>
     </node>
     <node concept="3bMsLL" id="Y2EImGHXHO" role="2VaxJS">
-      <ref role="3bMsLK" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      <ref role="3bMsLK" to="arit:450ejGzgRPq" resolve="assemble" />
       <node concept="2VaFvH" id="7UAfeVQTkIr" role="3bMsLN">
         <property role="TrG5h" value="mkdir.artifacts" />
         <node concept="2Vbh7Z" id="7UAfeVQTleo" role="2VaTZU">
@@ -11728,7 +11724,7 @@
         </node>
       </node>
       <node concept="2VaxJe" id="5DY7s5F3YNz" role="3bNaKb">
-        <ref role="2VaxJf" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+        <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
         <node concept="1W57fq" id="5DY7s5F3YND" role="lGtFl">
           <node concept="3IZrLx" id="5DY7s5F3YNE" role="3IZSJc">
             <node concept="3clFbS" id="5DY7s5F3YNF" role="2VODD2">
@@ -11768,7 +11764,7 @@
       </node>
     </node>
     <node concept="3bMsLL" id="5DY7s5F47Xu" role="2VaxJS">
-      <ref role="3bMsLK" to="tnlc:5DY7s5F47Xn" resolve="buildDependents" />
+      <ref role="3bMsLK" to="arit:5DY7s5F47Xn" resolve="buildDependents" />
       <node concept="2VaFvH" id="5DY7s5F47X$" role="3bMsLN">
         <property role="TrG5h" value="callAssemble" />
         <node concept="2Vbh7Z" id="5DY7s5F484j" role="2VaTZU">
@@ -11938,7 +11934,7 @@
       </node>
     </node>
     <node concept="3bMsLL" id="1ZTcb8AgQ9C" role="2VaxJS">
-      <ref role="3bMsLK" to="tnlc:6l_Qx579cKM" resolve="clean" />
+      <ref role="3bMsLK" to="arit:6l_Qx579cKM" resolve="clean" />
       <node concept="2VaFvH" id="1ZTcb8AgQ9I" role="3bMsLN">
         <property role="TrG5h" value="cleanTemp" />
         <node concept="2Vbh7Z" id="6l_Qx578U6l" role="2VaTZU">
@@ -11986,11 +11982,11 @@
         </node>
       </node>
     </node>
-    <node concept="ygXWA" id="6l_Qx579$PA" role="yg1MA">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
+    <node concept="ygXWA" id="5T0Kicg_JYH" role="yg1MA">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
     <node concept="ygXWA" id="6l_Qx579$P$" role="yg1MA">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+      <ref role="ygXWD" to="2ogt:6l_Qx579h0U" resolve="java" />
       <node concept="1WS0z7" id="5KZfyKsVsFu" role="lGtFl">
         <node concept="3JmXsc" id="5KZfyKsVsFv" role="3Jn$fo">
           <node concept="3clFbS" id="5KZfyKsVsFw" role="2VODD2">
@@ -14779,8 +14775,8 @@
     <node concept="3aamgX" id="5KZfyKsVsFK" role="3aUrZf">
       <ref role="30HIoZ" to="3ior:5KZfyKsUqLB" resolve="BuildJavaPlugin" />
       <node concept="gft3U" id="5KZfyKsVsFM" role="1lVwrX">
-        <node concept="ygXWA" id="5KZfyKsVsFP" role="gfFT$">
-          <ref role="ygXWD" to="tnlc:6l_Qx579h0U" resolve="java" />
+        <node concept="ygXWA" id="5T0KicgGzg6" role="gfFT$">
+          <ref role="ygXWD" to="2ogt:6l_Qx579h0U" resolve="java" />
         </node>
       </node>
     </node>
@@ -17688,7 +17684,7 @@
       <ref role="2sgKRv" node="5hFYqIiZAnL" resolve="buildSourceArchiveRelativePath" />
       <node concept="1Koe21" id="5hFYqIiZMoc" role="1lVwrX">
         <node concept="3bMsLL" id="5hFYqIiZMog" role="1Koe22">
-          <ref role="3bMsLK" to="tnlc:6bGbH3SvUOQ" resolve="fetchDependencies" />
+          <ref role="3bMsLK" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
           <node concept="2VaFvH" id="5Wv1_bQ1r$a" role="3bMsLN">
             <property role="TrG5h" value="referent" />
           </node>

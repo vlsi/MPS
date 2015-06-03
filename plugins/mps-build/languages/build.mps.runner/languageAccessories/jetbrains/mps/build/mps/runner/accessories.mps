@@ -2,12 +2,11 @@
 <model ref="r:4e917293-f5b9-4023-b36a-fcf2132c435c(jetbrains.mps.build.mps.runner.accessories)">
   <persistence version="9" />
   <languages>
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
   </languages>
   <imports>
     <import index="zwni" ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" />
-    <import index="tnlc" ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
@@ -37,20 +36,20 @@
   </registry>
   <node concept="yghi3" id="3BExUgsK9rC">
     <property role="TrG5h" value="run-mps-code" />
+    <node concept="ygXWA" id="5T0Kicg_YEn" role="yg1MB">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
+    </node>
     <node concept="2VaFvF" id="3BExUgsK9tI" role="yghi5">
       <property role="TrG5h" value="run-mps-code" />
-      <node concept="2VaxJe" id="4e7dAY67ObU" role="2VaxJ6">
-        <ref role="2VaxJf" to="tnlc:450ejGzgRPq" resolve="assemble" />
+      <node concept="2VaxJe" id="5T0Kicg_YEr" role="2VaxJ6">
+        <ref role="2VaxJf" to="arit:450ejGzgRPq" resolve="assemble" />
       </node>
     </node>
     <node concept="3bMsLL" id="1Vi5mb__lKv" role="yghi5">
-      <ref role="3bMsLK" to="tnlc:6l_Qx579h0X" resolve="build" />
+      <ref role="3bMsLK" to="arit:6l_Qx579h0X" resolve="build" />
       <node concept="2VaxJe" id="1Vi5mb__lKE" role="3bNaKb">
         <ref role="2VaxJf" node="3BExUgsK9tI" resolve="run-mps-code" />
       </node>
-    </node>
-    <node concept="ygXWA" id="5wKGSSl92LA" role="yg1MB">
-      <ref role="ygXWD" to="tnlc:6l_Qx579h0V" resolve="common" />
     </node>
     <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
       <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />

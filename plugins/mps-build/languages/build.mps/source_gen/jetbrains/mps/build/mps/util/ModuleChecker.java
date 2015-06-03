@@ -44,6 +44,7 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -767,13 +768,13 @@ public class ModuleChecker {
   }
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
-    Iterable<SModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
+    Set<SLanguage> usedLanguages = myModuleDescriptor.getLanguageVersions().keySet();
     Iterable<SModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
 
-    for (SModuleReference lang : usedLanguages) {
+    for (SLanguage lang : usedLanguages) {
       SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
       if (resolved == null) {
-        report("cannot find used language in dependencies: " + lang.getModuleName(), myModule);
+        report("cannot find used language in dependencies: " + lang.getQualifiedName(), myModule);
         continue;
       }
       SNode ul = SModelOperations.createNewNode(SNodeOperations.getModel(module), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage")));

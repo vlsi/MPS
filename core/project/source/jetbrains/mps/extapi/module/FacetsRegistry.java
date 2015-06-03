@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.module;
 
+import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
@@ -32,6 +33,26 @@ import java.util.*;
  * evgeny, 2/27/13
  */
 public class FacetsRegistry extends FacetsFacade implements CoreComponent {
+  private final static FacetFactory TESTS_FACET_FACTORY = new FacetFactory() {
+    @Override
+    public SModuleFacet create() {
+      return new TestsFacetImpl();
+    }
+  };
+
+  private final static FacetFactory JAVA_MODULE_FACET_FACTORY = new FacetFactory() {
+    @Override
+    public SModuleFacet create() {
+      return new JavaModuleFacetImpl();
+    }
+  };
+
+  private final static FacetFactory DUMB_IDEA_PLUGIN_FACET_FACTORY = new FacetFactory() {
+    @Override
+    public SModuleFacet create() {
+      return new DumbIdeaPluginFacet();
+    }
+  };
 
   private MultiMap<String, String> myLanguageToFacetTypes = new MultiMap<String, String>();
 
@@ -95,20 +116,26 @@ public class FacetsRegistry extends FacetsFacade implements CoreComponent {
     }
     INSTANCE = this;
 
-    addFactory(JavaModuleFacet.FACET_TYPE, new FacetFactory() {
-      @Override
-      public SModuleFacet create() {
-        return new JavaModuleFacetImpl();
-      }
-    });
-    registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE_NAMESPACE, JavaModuleFacet.FACET_TYPE);
+    setUpJavaFacet();
+    setUpTestsFacet();
+    setUpDumbIdeaFacet();
 
-    addFactory(TestsFacet.FACET_TYPE, new FacetFactory() {
-      @Override
-      public SModuleFacet create() {
-        return new TestsFacetImpl();
-      }
-    });
+    registerLanguageFacet(BootstrapLanguages.BASE_LANGUAGE_NAMESPACE, JavaModuleFacet.FACET_TYPE);
+  }
+
+  private void setUpJavaFacet() {
+    addFactory(JavaModuleFacet.FACET_TYPE, JAVA_MODULE_FACET_FACTORY);
+  }
+
+  private void setUpTestsFacet() {
+    addFactory(TestsFacet.FACET_TYPE, TESTS_FACET_FACTORY);
+  }
+
+  private void setUpDumbIdeaFacet() {
+    FacetFactory existingFactory = FacetsFacade.getInstance().getFacetFactory(DumbIdeaPluginFacet.FACET_TYPE);
+    if (existingFactory == null) {
+      FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, DUMB_IDEA_PLUGIN_FACET_FACTORY);
+    }
   }
 
   @Override
