@@ -5574,8 +5574,8 @@
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6EHMAvz$$f0" role="3bR37C">
-          <node concept="3bR9La" id="6EHMAvz$$f1" role="1SiIV1">
+        <node concept="1SiIV0" id="7pcjncIl8cK" role="3bR37C">
+          <node concept="3bR9La" id="7pcjncIl8cL" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
@@ -9758,12 +9758,6 @@
           <node concept="3bR9La" id="1LdRpEZ6EUx" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5KGdJjE3zwz" role="3bR37C">
-          <node concept="3bR9La" id="5KGdJjE3zw$" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
           </node>
         </node>
       </node>
@@ -19766,10 +19760,10 @@
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
           </node>
         </node>
-        <node concept="1SiIV0" id="2F8bNQublV" role="3bR37C">
-          <node concept="3bR9La" id="2F8bNQublW" role="1SiIV1">
+        <node concept="1SiIV0" id="6sU0j2FjB$9" role="3bR37C">
+          <node concept="3bR9La" id="6sU0j2FjB$a" role="1SiIV1">
             <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+            <ref role="3bR37D" node="7Kfy9QB6KZ6" resolve="jetbrains.mps.baseLanguage.blTypes" />
           </node>
         </node>
       </node>
@@ -27644,12 +27638,6 @@
               <ref role="3bR37D" node="25y4WSoTpRZ" resolve="jetbrains.jetpad" />
             </node>
           </node>
-          <node concept="1SiIV0" id="1L8vb48Wbpj" role="3bR37C">
-            <node concept="3bR9La" id="1L8vb48Wbpk" role="1SiIV1">
-              <property role="3bR36h" value="false" />
-              <ref role="3bR37D" node="1L8vb48W86O" resolve="jetbrains.mps.lang.editor.diagram.runtime" />
-            </node>
-          </node>
           <node concept="1SiIV0" id="22B44hbUmfy" role="3bR37C">
             <node concept="3bR9La" id="22B44hbUmfz" role="1SiIV1">
               <property role="3bR36h" value="false" />
@@ -27680,11 +27668,11 @@
               <ref role="3bR37D" node="7Kfy9QB6L0C" resolve="collections.runtime" />
             </node>
           </node>
-        </node>
-        <node concept="1SiIV0" id="1L8vb48Wbph" role="3bR37C">
-          <node concept="3bR9La" id="1L8vb48Wbpi" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1L8vb48W86O" resolve="jetbrains.mps.lang.editor.diagram.runtime" />
+          <node concept="1SiIV0" id="7pcjncIhYhm" role="3bR37C">
+            <node concept="3bR9La" id="7pcjncIhYhn" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="1L8vb48W86O" resolve="jetbrains.mps.lang.editor.diagram.runtime" />
+            </node>
           </node>
         </node>
         <node concept="1E0d5M" id="5stQbxMEjAJ" role="1E1XAP">
@@ -27716,6 +27704,15 @@
           <node concept="3bR9La" id="1LdRpEZ6GiP" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="3MI1gu0QouH" resolve="jetbrains.mps.editor.runtime" />
+          </node>
+        </node>
+        <node concept="1E0d5M" id="6sU0j2Fnfk5" role="1E1XAP">
+          <ref role="1E0d5P" node="1L8vb48W86O" resolve="jetbrains.mps.lang.editor.diagram.runtime" />
+        </node>
+        <node concept="1SiIV0" id="7pcjncIhYhk" role="3bR37C">
+          <node concept="3bR9La" id="7pcjncIhYhl" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1L8vb48W86O" resolve="jetbrains.mps.lang.editor.diagram.runtime" />
           </node>
         </node>
       </node>

@@ -1060,5 +1060,8 @@
     <orderEntry type="module" module-name="textgen" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="migrations-runtime" />
+    <orderEntry type="module" module-name="kernel-resources" />
+    <orderEntry type="module" module-name="debugger-java-api" />
+    <orderEntry type="module" module-name="debugger-java-runtime" />
   </component>
 </module>
