@@ -22,6 +22,7 @@
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <import index="qx6n" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(org.jetbrains.mps.openapi.persistence@java_stub)" />
     <import index="z8de" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)" />
+    <import index="bc3y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.org.objectweb.asm(MPS.Core/org.jetbrains.org.objectweb.asm@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -110,6 +111,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -998,68 +1000,72 @@
       </node>
       <node concept="3Tm1VV" id="J8g2iHBSI" role="1B3o_S" />
       <node concept="3clFbS" id="J8g2iHBSJ" role="3clF47">
-        <node concept="3cpWs8" id="J8g2iHBSO" role="3cqZAp">
-          <node concept="3cpWsn" id="J8g2iHBSP" role="3cpWs9">
-            <property role="TrG5h" value="kind" />
-            <node concept="3uibUv" id="J8g2iHBSQ" role="1tU5fm">
-              <ref role="3uigEE" to="fhgm:~ClassifierKind" resolve="ClassifierKind" />
+        <node concept="3cpWs8" id="2KI8dVBd4Wa" role="3cqZAp">
+          <node concept="3cpWsn" id="2KI8dVBd4Wb" role="3cpWs9">
+            <property role="TrG5h" value="classBytes" />
+            <node concept="3uibUv" id="2KI8dVBd4VY" role="1tU5fm">
+              <ref role="3uigEE" to="n13f:~ClassBytesProvider$ClassBytes" resolve="ClassBytesProvider.ClassBytes" />
             </node>
-            <node concept="2OqwBi" id="J8g2iHBSR" role="33vP2m">
-              <node concept="2OqwBi" id="J8g2iHBSS" role="2Oq$k0">
-                <node concept="Xjq3P" id="J8g2iHBST" role="2Oq$k0">
-                  <ref role="1HBi2w" node="J8g2iHBRC" resolve="JavaStubNodeDescriptor" />
-                </node>
-                <node concept="2OwXpG" id="J8g2iHBSU" role="2OqNvi">
-                  <ref role="2Oxat5" node="J8g2iHBRD" resolve="myItem" />
+            <node concept="2OqwBi" id="2KI8dVBd4Wc" role="33vP2m">
+              <node concept="37vLTw" id="2KI8dVBd4Wd" role="2Oq$k0">
+                <ref role="3cqZAo" node="J8g2iHBRD" resolve="myItem" />
+              </node>
+              <node concept="liA8E" id="2KI8dVBd4We" role="2OqNvi">
+                <ref role="37wK5l" to="n13f:~ClassBytesProvider.getClassBytes(java.lang.String):jetbrains.mps.reloading.ClassBytesProvider$ClassBytes" resolve="getClassBytes" />
+                <node concept="3K4zz7" id="2KI8dVBd4Wf" role="37wK5m">
+                  <node concept="3cpWs3" id="2KI8dVBd4Wg" role="3K4GZi">
+                    <node concept="37vLTw" id="2KI8dVBd4Wh" role="3uHU7w">
+                      <ref role="3cqZAo" node="J8g2iHBRJ" resolve="myCls" />
+                    </node>
+                    <node concept="3cpWs3" id="2KI8dVBd4Wi" role="3uHU7B">
+                      <node concept="37vLTw" id="2KI8dVBd4Wj" role="3uHU7B">
+                        <ref role="3cqZAo" node="J8g2iHBRG" resolve="myPName" />
+                      </node>
+                      <node concept="1Xhbcc" id="2KI8dVBd4Wk" role="3uHU7w">
+                        <property role="1XhdNS" value="." />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="2KI8dVBd4Wl" role="3K4E3e">
+                    <ref role="3cqZAo" node="J8g2iHBRJ" resolve="myCls" />
+                  </node>
+                  <node concept="2OqwBi" id="2KI8dVBd4Wm" role="3K4Cdx">
+                    <node concept="37vLTw" id="2KI8dVBd4Wn" role="2Oq$k0">
+                      <ref role="3cqZAo" node="J8g2iHBRG" resolve="myPName" />
+                    </node>
+                    <node concept="17RlXB" id="2KI8dVBd4Wo" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
-              <node concept="liA8E" id="J8g2iHBSV" role="2OqNvi">
-                <ref role="37wK5l" to="n13f:~IClassPathItem.getClassifierKind(java.lang.String):jetbrains.mps.stubs.javastub.classpath.ClassifierKind" resolve="getClassifierKind" />
-                <node concept="3K4zz7" id="J8g2iHBSW" role="37wK5m">
-                  <node concept="2OqwBi" id="J8g2iHBSX" role="3K4E3e">
-                    <node concept="Xjq3P" id="J8g2iHBSY" role="2Oq$k0">
-                      <ref role="1HBi2w" node="J8g2iHBRC" resolve="JavaStubNodeDescriptor" />
-                    </node>
-                    <node concept="2OwXpG" id="J8g2iHBSZ" role="2OqNvi">
-                      <ref role="2Oxat5" node="J8g2iHBRJ" resolve="myCls" />
-                    </node>
-                  </node>
-                  <node concept="3cpWs3" id="J8g2iHBT0" role="3K4GZi">
-                    <node concept="2OqwBi" id="J8g2iHBT1" role="3uHU7w">
-                      <node concept="Xjq3P" id="J8g2iHBT2" role="2Oq$k0">
-                        <ref role="1HBi2w" node="J8g2iHBRC" resolve="JavaStubNodeDescriptor" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2KI8dVBd76A" role="3cqZAp">
+          <node concept="3cpWsn" id="2KI8dVBd76B" role="3cpWs9">
+            <property role="TrG5h" value="kind" />
+            <node concept="3uibUv" id="2KI8dVBd76o" role="1tU5fm">
+              <ref role="3uigEE" to="fhgm:~ClassifierKind" resolve="ClassifierKind" />
+            </node>
+            <node concept="3K4zz7" id="2KI8dVBd9vR" role="33vP2m">
+              <node concept="10Nm6u" id="2KI8dVBd9yH" role="3K4E3e" />
+              <node concept="3clFbC" id="2KI8dVBd9m0" role="3K4Cdx">
+                <node concept="10Nm6u" id="2KI8dVBd9qW" role="3uHU7w" />
+                <node concept="37vLTw" id="2KI8dVBd9jh" role="3uHU7B">
+                  <ref role="3cqZAo" node="2KI8dVBd4Wb" resolve="classBytes" />
+                </node>
+              </node>
+              <node concept="2YIFZM" id="2KI8dVBd76C" role="3K4GZi">
+                <ref role="1Pybhc" to="fhgm:~ClassifierKind" resolve="ClassifierKind" />
+                <ref role="37wK5l" to="fhgm:~ClassifierKind.getClassifierKind(org.jetbrains.org.objectweb.asm.ClassReader):jetbrains.mps.stubs.javastub.classpath.ClassifierKind" resolve="getClassifierKind" />
+                <node concept="2ShNRf" id="2KI8dVBd76D" role="37wK5m">
+                  <node concept="1pGfFk" id="2KI8dVBd76E" role="2ShVmc">
+                    <ref role="37wK5l" to="bc3y:~ClassReader.&lt;init&gt;(byte[])" resolve="ClassReader" />
+                    <node concept="2OqwBi" id="2KI8dVBd76F" role="37wK5m">
+                      <node concept="37vLTw" id="2KI8dVBd76G" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2KI8dVBd4Wb" resolve="classBytes" />
                       </node>
-                      <node concept="2OwXpG" id="J8g2iHBT3" role="2OqNvi">
-                        <ref role="2Oxat5" node="J8g2iHBRJ" resolve="myCls" />
-                      </node>
-                    </node>
-                    <node concept="3cpWs3" id="J8g2iHBT4" role="3uHU7B">
-                      <node concept="2OqwBi" id="J8g2iHBT5" role="3uHU7B">
-                        <node concept="Xjq3P" id="J8g2iHBT6" role="2Oq$k0">
-                          <ref role="1HBi2w" node="J8g2iHBRC" resolve="JavaStubNodeDescriptor" />
-                        </node>
-                        <node concept="2OwXpG" id="J8g2iHBT7" role="2OqNvi">
-                          <ref role="2Oxat5" node="J8g2iHBRG" resolve="myPName" />
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="J8g2iHBT8" role="3uHU7w">
-                        <property role="Xl_RC" value="." />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="J8g2iHBT9" role="3K4Cdx">
-                    <node concept="Xl_RD" id="J8g2iHBTa" role="2Oq$k0">
-                      <property role="Xl_RC" value="" />
-                    </node>
-                    <node concept="liA8E" id="J8g2iHBTb" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="2OqwBi" id="J8g2iHBTc" role="37wK5m">
-                        <node concept="Xjq3P" id="J8g2iHBTd" role="2Oq$k0">
-                          <ref role="1HBi2w" node="J8g2iHBRC" resolve="JavaStubNodeDescriptor" />
-                        </node>
-                        <node concept="2OwXpG" id="J8g2iHBTe" role="2OqNvi">
-                          <ref role="2Oxat5" node="J8g2iHBRG" resolve="myPName" />
-                        </node>
+                      <node concept="liA8E" id="2KI8dVBd76H" role="2OqNvi">
+                        <ref role="37wK5l" to="n13f:~ClassBytesProvider$ClassBytes.getBytes():byte[]" resolve="getBytes" />
                       </node>
                     </node>
                   </node>
@@ -1082,7 +1088,7 @@
               <ref role="Rm8GQ" to="fhgm:~ClassifierKind.CLASS" resolve="CLASS" />
             </node>
             <node concept="37vLTw" id="3GM_nagTvFI" role="3uHU7B">
-              <ref role="3cqZAo" node="J8g2iHBSP" resolve="kind" />
+              <ref role="3cqZAo" node="2KI8dVBd76B" resolve="kind" />
             </node>
           </node>
           <node concept="3eNFk2" id="J8g2iHBTo" role="3eNLev">
@@ -1099,7 +1105,7 @@
                 <ref role="1Px2BO" to="fhgm:~ClassifierKind" resolve="ClassifierKind" />
               </node>
               <node concept="37vLTw" id="3GM_nagTtbg" role="3uHU7B">
-                <ref role="3cqZAo" node="J8g2iHBSP" resolve="kind" />
+                <ref role="3cqZAo" node="2KI8dVBd76B" resolve="kind" />
               </node>
             </node>
           </node>
@@ -1117,7 +1123,7 @@
                 <ref role="Rm8GQ" to="fhgm:~ClassifierKind.ANNOTATIONS" resolve="ANNOTATIONS" />
               </node>
               <node concept="37vLTw" id="3GM_nagT$MW" role="3uHU7B">
-                <ref role="3cqZAo" node="J8g2iHBSP" resolve="kind" />
+                <ref role="3cqZAo" node="2KI8dVBd76B" resolve="kind" />
               </node>
             </node>
           </node>
@@ -1135,7 +1141,7 @@
                 <ref role="Rm8GQ" to="fhgm:~ClassifierKind.ENUM" resolve="ENUM" />
               </node>
               <node concept="37vLTw" id="3GM_nagTxHe" role="3uHU7B">
-                <ref role="3cqZAo" node="J8g2iHBSP" resolve="kind" />
+                <ref role="3cqZAo" node="2KI8dVBd76B" resolve="kind" />
               </node>
             </node>
           </node>

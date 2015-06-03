@@ -17,7 +17,6 @@ package jetbrains.mps.reloading;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.InternUtil;
@@ -155,33 +154,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public synchronized ClassifierKind getClassifierKind(String qualifiedClassName) {
-    checkValidity();
-    ensureInitialized();
-    InputStream inp = null;
-    ZipFile zf = null;
-    try {
-      zf = new ZipFile(myFile);
-      String entryName = toClassEntry(qualifiedClassName);
-      ZipEntry entry = zf.getEntry(entryName);
-      if (entry == null) {
-        return null;
-      }
-      inp = zf.getInputStream(entry);
-      if (inp == null) {
-        return null;
-      }
-      return ClassifierKind.getClassifierKind(inp);
-    } catch (IOException e) {
-      LOG.error(getClass().getName(), e);
-      return null;
-    } finally {
-      FileUtil.closeFileSafe(inp);
-      closeZipFile(zf);
-    }
-  }
-
-  @Override
   public URL getResource(String name) {
     checkValidity();
     ZipFile zf = null;
@@ -225,22 +197,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     checkValidity();
     ensureInitialized();
     return myCache.getSubpackagesSetFor(namespace);
-  }
-
-  @Override
-  public long getClassesTimestamp(String namespace) {
-    checkValidity();
-    long timestamp = 0;
-    for (String cls : getAvailableClasses(namespace)) {
-      timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
-    }
-    return timestamp;
-  }
-
-  @Override
-  public long getTimestamp() {
-    checkValidity();
-    return myFile.lastModified();
   }
 
   @Override

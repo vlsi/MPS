@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 package jetbrains.mps.reloading;
-
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -50,11 +48,6 @@ public class NonExistingClassPathItem extends RealClassPathItem {
   }
 
   @Override
-  public ClassifierKind getClassifierKind(String name) {
-    return null;
-  }
-
-  @Override
   public URL getResource(String name) {
     checkValidity();
     return null;
@@ -70,12 +63,6 @@ public class NonExistingClassPathItem extends RealClassPathItem {
   public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     return Collections.emptyList();
-  }
-
-  @Override
-  public long getClassesTimestamp(String namespace) {
-    checkValidity();
-    return -1;
   }
 
   @Override

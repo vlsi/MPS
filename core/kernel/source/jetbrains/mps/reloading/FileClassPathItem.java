@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,10 @@ package jetbrains.mps.reloading;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.mps.util.Condition;
 
@@ -29,7 +31,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -97,24 +103,6 @@ public class FileClassPathItem extends RealClassPathItem {
       }
 
       return bytes == null ? null : new DefaultClassBytes(bytes, new File(path).toURI().toURL());
-    } catch (IOException e) {
-      return null;
-    }
-  }
-
-  @Override
-  public ClassifierKind getClassifierKind(String name) {
-    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
-    try {
-      InputStream inp = null;
-      try {
-        inp = new FileInputStream(path);
-        return ClassifierKind.getClassifierKind(inp);
-      } finally {
-        if (inp != null) {
-          inp.close();
-        }
-      }
     } catch (IOException e) {
       return null;
     }
@@ -192,21 +180,6 @@ public class FileClassPathItem extends RealClassPathItem {
 
     mySubpackagesCache.put(namespace, subpacks);
     myAvailableClassesCache.put(namespace, classes);
-  }
-
-  @Override
-  public long getClassesTimestamp(String namespace) {
-    checkValidity();
-    File dir = getModelDir(namespace);
-    long result = dir.lastModified();
-    if (dir.exists()) {
-      for (File file : dir.listFiles()) {
-        if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
-          result = Math.max(result, file.lastModified());
-        }
-      }
-    }
-    return result;
   }
 
   @Override

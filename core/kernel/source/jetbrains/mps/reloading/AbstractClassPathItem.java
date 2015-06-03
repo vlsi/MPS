@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.util.ConditionalIterable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.util.Condition;
@@ -26,11 +26,6 @@ import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
   private static final Pattern DIGITS = Pattern.compile("\\d+");
-
-  @Override
-  public long getTimestamp() {
-    return getTimestamp("");
-  }
 
   @Override
   public IClassPathItem optimize() {
@@ -55,14 +50,6 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       if (DIGITS.matcher(part).matches()) return true;
     }
     return false;
-  }
-
-  private long getTimestamp(String namespace) {
-    long result = getClassesTimestamp(namespace);
-    for (String subpackage : getSubpackages(namespace)) {
-      result = Math.max(result, getTimestamp(subpackage));
-    }
-    return result;
   }
 
   @Override
