@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose.base;
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.FilteredGlobalScope;
@@ -68,42 +69,39 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   private Map<String, List<NavigationItem>> getProjectNamesCache() {
+    //to avoid things like MPS-17632: read and not dumb
+    ModelAccess.assertLegalRead();
+    assert !DumbService.getInstance(myProject).isDumb();
+
     if (myObjectsInProjectScope == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myObjectsInProjectScope = find(false);
-          myProjectNamesCache.clear();
-          for (T o : myObjectsInProjectScope) {
-            String name = doGetObjectName(o);
-            if (myProjectNamesCache.get(name) == null) {
-              myProjectNamesCache.put(name, new ArrayList<NavigationItem>());
-            }
-            myProjectNamesCache.get(name).add(doGetNavigationItem(o));
-          }
+      myObjectsInProjectScope = find(false);
+      myProjectNamesCache.clear();
+      for (T o : myObjectsInProjectScope) {
+        String name = doGetObjectName(o);
+        if (myProjectNamesCache.get(name) == null) {
+          myProjectNamesCache.put(name, new ArrayList<NavigationItem>());
         }
-      });
+        myProjectNamesCache.get(name).add(doGetNavigationItem(o));
+      }
     }
     return myProjectNamesCache;
   }
 
   private Map<String, List<NavigationItem>> getGlobalNamesCache() {
-    if (myObjectsInGlobalScope == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          myObjectsInGlobalScope = find(true);
-          myGlobalNamesCache.clear();
-          for (T o : myObjectsInGlobalScope) {
-            String name = doGetObjectName(o);
-            if (myGlobalNamesCache.get(name) == null) {
-              myGlobalNamesCache.put(name, new ArrayList<NavigationItem>());
-            }
-            myGlobalNamesCache.get(name).add(doGetNavigationItem(o));
-          }
+    //to avoid things like MPS-17632: read and not dumb
+    ModelAccess.assertLegalRead();
+    assert !DumbService.getInstance(myProject).isDumb();
 
+    if (myObjectsInGlobalScope == null) {
+      myObjectsInGlobalScope = find(true);
+      myGlobalNamesCache.clear();
+      for (T o : myObjectsInGlobalScope) {
+        String name = doGetObjectName(o);
+        if (myGlobalNamesCache.get(name) == null) {
+          myGlobalNamesCache.put(name, new ArrayList<NavigationItem>());
         }
-      });
+        myGlobalNamesCache.get(name).add(doGetNavigationItem(o));
+      }
     }
     return myGlobalNamesCache;
   }
@@ -113,6 +111,11 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return ModelAccess.instance().runReadAction(new Computable<String[]>() {
       @Override
       public String[] compute() {
+        DumbService ds = DumbService.getInstance(myProject);
+        if (ds.isDumb()){
+          ds.showDumbModeNotification("Please wait until indices are built");
+          return new String[0];
+        }
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         return namesMap.keySet().toArray(new String[namesMap.keySet().size()]);
       }
@@ -124,6 +127,12 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return ModelAccess.instance().runReadAction(new Computable<NavigationItem[]>() {
       @Override
       public NavigationItem[] compute() {
+        DumbService ds = DumbService.getInstance(myProject);
+        if (ds.isDumb()){
+          ds.showDumbModeNotification("Please wait until indices are built");
+          return new NavigationItem[0];
+        }
+
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         List<NavigationItem> navigationItems = namesMap.get(name);
 
