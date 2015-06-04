@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:debded47-9400-43b4-8f2a-90969bae3c47(jetbrains.mps.build.mps.runner.test.test3)/138593292063249461">
+    <file name="MainClass.java">
+      <node id="138593292063072481" at="9,32,10,68" concept="1" />
+      <node id="138593292063250624" at="10,68,11,27" concept="0" />
+      <node id="138593292063249494" at="9,0,13,0" concept="2" trace="mpsMain#()V" />
+      <scope id="138593292063249500" at="9,32,11,27">
+        <var name="okFile" id="138593292063072482" />
+      </scope>
+      <scope id="138593292063249494" at="9,0,13,0" />
+      <unit id="138593292063249461" at="8,0,14,0" name="jetbrains.mps.build.mps.runner.test.test3.MainClass" />
+    </file>
+  </root>
+</debug-info>
+
