@@ -358,6 +358,16 @@
       <unit id="8465538089690983820" at="11,0,18,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8844725588324684453">
+    <file name="EmptyBlockDocTag_Behavior.java">
+      <node id="8844725588324684453" at="8,0,10,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="8844725588324684455" at="8,43,8,43" />
+      <scope id="8844725588324684453" at="8,0,10,0">
+        <var name="thisNode" id="8844725588324684453" />
+      </scope>
+      <unit id="8844725588324684453" at="7,0,11,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/9042833497008205275">
     <file name="CommentLinePart_Behavior.java">
       <node id="9042833497008205289" at="12,108,13,41" concept="1" />
