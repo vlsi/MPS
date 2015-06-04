@@ -37,7 +37,7 @@ public class EmptyBlockDocTag_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     DeleteEmptyBlockDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyBlockDocTag_Editor.ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_e0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_f0a(), new EmptyBlockDocTag_Editor.EmptyBlockDocTag_generic_cellMenu_4ui9jp_g0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyBlockDocTag_Editor.ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ParameterBlockDocTag_cellMenu_4ui9jp_b0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ReturnBlockDocTag_cellMenu_4ui9jp_c0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SeeBlockDocTag_cellMenu_4ui9jp_d0a(), new EmptyBlockDocTag_Editor.ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a(), new EmptyBlockDocTag_Editor.ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a(), new EmptyBlockDocTag_Editor.ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a(), new EmptyBlockDocTag_Editor.EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a()}));
     return editorCell;
   }
   public static class ReplaceWith_AuthorBlockDocTag_cellMenu_4ui9jp_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -68,22 +68,29 @@ public class EmptyBlockDocTag_Editor extends DefaultNodeEditor {
       return "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag";
     }
   }
-  public static class ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_e0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_e0a() {
+  public static class ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_VersionBlockDocTag_cellMenu_4ui9jp_e0a() {
+    }
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag";
+    }
+  }
+  public static class ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SinceBlockDocTag_cellMenu_4ui9jp_f0a() {
     }
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag";
     }
   }
-  public static class ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_f0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_f0a() {
+  public static class ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ThrowsBlockDocTag_cellMenu_4ui9jp_g0a() {
     }
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag";
     }
   }
-  public static class EmptyBlockDocTag_generic_cellMenu_4ui9jp_g0a extends AbstractCellMenuPart_Generic_Item {
-    public EmptyBlockDocTag_generic_cellMenu_4ui9jp_g0a() {
+  public static class EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a extends AbstractCellMenuPart_Generic_Item {
+    public EmptyBlockDocTag_generic_cellMenu_4ui9jp_h0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode comment = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
