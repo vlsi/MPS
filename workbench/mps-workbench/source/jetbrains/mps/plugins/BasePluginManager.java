@@ -124,6 +124,7 @@ public abstract class BasePluginManager<T> implements PluginLoader {
   private T createPluginChecked(PluginContributor contributor) {
     T plugin = null;
     try {
+      LOG.debug("Creating plugin from the contributor " + contributor);
       plugin = createPlugin(contributor);
     } catch (LinkageError le) {
       LOG.error("Contributor " + contributor + " threw a linkage error during plugin creation ", le);

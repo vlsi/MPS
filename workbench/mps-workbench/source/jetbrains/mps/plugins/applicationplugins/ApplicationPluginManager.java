@@ -149,7 +149,8 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   @Override
   public void initComponent() {
     if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
-      LOG.warn("Some contributor plugins will not be loaded because of too late component initialization.");
+//      LOG.warn("Some contributor plugins will not be loaded because of too late component initialization.");
+      loadPlugins(myPluginLoaderRegistry.getLoadedContributors());
     }
     register();
   }
