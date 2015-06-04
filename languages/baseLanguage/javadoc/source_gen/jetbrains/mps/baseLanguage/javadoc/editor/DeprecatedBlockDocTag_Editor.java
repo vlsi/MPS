@@ -34,6 +34,7 @@ public class DeprecatedBlockDocTag_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteTagsAndHandleDeprecationOnAttributedNode.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

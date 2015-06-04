@@ -9,7 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior;
 
 public class IBLDeprecatable_Behavior {
   public static void init(SNode thisNode) {
@@ -36,6 +40,20 @@ public class IBLDeprecatable_Behavior {
   }
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "" + (true));
+  }
+  public static void call_removeDeprecationFromDoc_6978502240659599963(SNode thisNode, SNode comment) {
+    ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SNodeOperations.deleteNode(it);
+      }
+    });
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, comment, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && !(BaseDocComment_Behavior.call_hasTags_4948473272651019109(comment)) && ListSequence.fromList(SLinkOperations.getChildren(comment, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).isEmpty()) {
+      SNodeOperations.deleteNode(comment);
+    }
   }
   public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated"), "" + (false));

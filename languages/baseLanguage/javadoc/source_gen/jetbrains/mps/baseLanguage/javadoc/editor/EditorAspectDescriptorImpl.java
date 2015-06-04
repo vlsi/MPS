@@ -41,38 +41,40 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 12:
         return Collections.<ConceptEditor>singletonList(new DocTypeParameterReference_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new EmptyBlockDocTag_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldDocComment_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
+        return Collections.<ConceptEditor>singletonList(new FieldDocReference_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new HTMLElement_Editor());
       case 17:
-        return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new InheritDocInlineDocTag_Editor());
       case 18:
-        return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new InlineTagCommentLinePart_Editor());
       case 19:
-        return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
+        return Collections.<ConceptEditor>singletonList(new LinkInlineDocTag_Editor());
       case 20:
-        return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDocComment_Editor());
       case 21:
-        return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDocReference_Editor());
       case 22:
-        return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterBlockDocTag_Editor());
       case 23:
-        return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ReturnBlockDocTag_Editor());
       case 24:
-        return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new SeeBlockDocTag_Editor());
       case 25:
-        return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new SinceBlockDocTag_Editor());
       case 26:
-        return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
+        return Collections.<ConceptEditor>singletonList(new StaticFieldDocReference_Editor());
       case 27:
-        return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new TextCommentLinePart_Editor());
       case 28:
-        return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
+        return Collections.<ConceptEditor>singletonList(new ThrowsBlockDocTag_Editor());
       case 29:
+        return Collections.<ConceptEditor>singletonList(new ValueInlineDocTag_Editor());
+      case 30:
         return Collections.<ConceptEditor>singletonList(new VersionBlockDocTag_Editor());
       default:
     }
@@ -83,5 +85,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.EmptyBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};
 }

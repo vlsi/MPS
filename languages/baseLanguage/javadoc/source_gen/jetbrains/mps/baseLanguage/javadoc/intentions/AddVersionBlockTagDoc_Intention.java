@@ -67,7 +67,7 @@ public class AddVersionBlockTagDoc_Intention implements IntentionFactory {
       return "Add @version tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f963L, "version"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag")));
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87dda0L, "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag")));
       BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
     public IntentionDescriptor getDescriptor() {
