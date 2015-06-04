@@ -39,7 +39,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class GroupAdjuster {
-
   private static void addPlace(String groupId, ActionPlace place) {
     BaseGroup group = ActionUtils.getGroup(groupId);
     if (group != null) {
@@ -47,7 +46,7 @@ public class GroupAdjuster {
     }
   }
 
-  public static void adjustTopLevelGroups(BaseApplicationPlugin idePlugin) {
+  public static void adjustTopLevelGroups() {
     addPlace(ProjectPaneActionGroups.NODE_ACTIONS, ActionPlace.PROJECT_PANE_SNODE);
     addPlace(ProjectPaneActionGroups.MODEL_ACTIONS, ActionPlace.PROJECT_PANE_SMODEL);
     addPlace(ProjectPaneActionGroups.PROJECT_PANE_MODULE_ACTIONS, ActionPlace.PROJECT_PANE_MODULE);
@@ -84,10 +83,11 @@ public class GroupAdjuster {
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
-      if (!(action instanceof BaseGroup)) continue;
-      BaseGroup group = ((BaseGroup) action);
-      if (ActionUtils.contains(mainMenuGroup, group)) {
-        mainMenuGroups.add(group);
+      if ((action instanceof BaseGroup)) {
+        BaseGroup group = (BaseGroup) action;
+        if (ActionUtils.contains(mainMenuGroup, group)) {
+          mainMenuGroups.add(group);
+        }
       }
     }
 

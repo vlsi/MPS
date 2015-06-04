@@ -96,8 +96,10 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   private void runStartupActivity(List<PluginContributor> loadedContributors) {
-    loadPlugins(loadedContributors);
-    register();
+    synchronized (myPluginsLock) {
+      loadPlugins(loadedContributors);
+      register();
+    }
   }
 
   @Override
@@ -108,8 +110,10 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   }
 
   private void runShutDownActivity() {
-    unregister();
-    unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+    synchronized (myPluginsLock) {
+      unregister();
+      unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+    }
   }
 
   @Nullable

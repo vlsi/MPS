@@ -18,7 +18,6 @@ package jetbrains.mps.plugins;
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.util.ModuleNameUtil;
@@ -28,6 +27,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
+// AlexP:
+// why so differ the way we work with ide solution? why all the hard code? TODO generify
 public class ModulePluginContributor extends PluginContributor {
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
   private static final Logger LOG = LogManager.getLogger(ModulePluginContributor.class);
@@ -48,15 +49,15 @@ public class ModulePluginContributor extends PluginContributor {
   }
 
   @NotNull
-  public ReloadableModuleBase getModule() {
+  public ReloadableModule getModule() {
     return myModule;
   }
 
   @NotNull
-  private final ReloadableModuleBase myModule;
+  private final ReloadableModule myModule;
 
-  public ModulePluginContributor(ReloadableModule module) {
-    myModule = (ReloadableModuleBase) module;
+  public ModulePluginContributor(@NotNull ReloadableModule module) {
+    myModule = module;
   }
 
   @Override
@@ -77,8 +78,6 @@ public class ModulePluginContributor extends PluginContributor {
   private Object createPlugin(String className) {
     try {
       Class pluginClass = myModule.getOwnClass(className);
-      if (pluginClass == null) return null;
-
       return pluginClass.newInstance();
     } catch (ClassNotFoundException e) {
       return null;

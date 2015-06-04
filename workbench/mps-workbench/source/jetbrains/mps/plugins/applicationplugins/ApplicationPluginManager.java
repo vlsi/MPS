@@ -18,6 +18,7 @@ package jetbrains.mps.plugins.applicationplugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.plugins.BasePluginManager;
 import jetbrains.mps.plugins.ModulePluginContributor;
 import jetbrains.mps.plugins.PluginContributor;
@@ -65,27 +66,8 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
     createGroups(plugins);
     adjustGroups(plugins);
     createCustomParts(plugins);
-    adjustIdePlugin(plugins);
-  }
-
-  private void adjustIdePlugin(List<BaseApplicationPlugin> plugins) {
-    BaseApplicationPlugin idePlugin = findIdePlugin(plugins);
-
-    if (idePlugin != null) {
-      GroupAdjuster.adjustTopLevelGroups(idePlugin);
-    }
+    GroupAdjuster.adjustTopLevelGroups();
     GroupAdjuster.refreshCustomizations();
-  }
-
-  private BaseApplicationPlugin findIdePlugin(List<BaseApplicationPlugin> plugins) {
-    BaseApplicationPlugin idePlugin = null;
-    for (BaseApplicationPlugin p : plugins) {
-      if (p.getClass().getName().equals(ModulePluginContributor.IDE_MODULE_APP_PLUGIN)) {
-        idePlugin = p;
-        break;
-      }
-    }
-    return idePlugin;
   }
 
   private void createKeyMaps(List<BaseApplicationPlugin> plugins) {
@@ -148,18 +130,22 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
 
   @Override
   public void initComponent() {
-    if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
-//      LOG.warn("Some contributor plugins will not be loaded because of too late component initialization.");
-      loadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+    synchronized (myPluginsLock) {
+      if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
+        LOG.error("Some contributor plugins will not be loaded because of too late component initialization.");
+//        loadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+      }
+      register();
     }
-    register();
   }
 
   @Override
   public void disposeComponent() {
-    unregister();
-    if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
-      unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+    synchronized (myPluginsLock) {
+      unregister();
+      if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
+        unloadPlugins(myPluginLoaderRegistry.getLoadedContributors());
+      }
     }
   }
 }

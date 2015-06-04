@@ -18,6 +18,7 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -118,7 +119,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModule> toUnload) {
     List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
-    for (PluginContributor contributor : myLoadedContributors) {
+    for (PluginContributor contributor : myLoadedContributors) { // factories are unloaded as well
       if (contributor instanceof ModulePluginContributor) {
         if (toUnload.contains(((ModulePluginContributor) contributor).getModule())) {
           toUnloadContributors.add(contributor);
