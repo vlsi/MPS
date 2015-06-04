@@ -5461,25 +5461,25 @@
               </node>
             </node>
             <node concept="3LXIA4" id="2d0qgmCd0lu" role="39821P">
-              <node concept="3LXTmp" id="2d0qgmCd0lv" role="3LXIA7">
-                <node concept="55IIr" id="2d0qgmCd0lw" role="3LXTmr">
-                  <node concept="29HgVG" id="2d0qgmCd0lx" role="lGtFl">
-                    <node concept="3NFfHV" id="2d0qgmCd0ly" role="3NFExx">
-                      <node concept="3clFbS" id="2d0qgmCd0lz" role="2VODD2">
-                        <node concept="3clFbF" id="2d0qgmCd0l$" role="3cqZAp">
-                          <node concept="2OqwBi" id="2d0qgmCd0l_" role="3clFbG">
-                            <node concept="2OqwBi" id="2d0qgmCd0lA" role="2Oq$k0">
-                              <node concept="2OqwBi" id="2d0qgmCd0lB" role="2Oq$k0">
-                                <node concept="30H73N" id="2d0qgmCd0lC" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="2d0qgmCd0lU" role="2OqNvi">
+              <node concept="3LXTmp" id="cMBi0kA3y$" role="3LXIA7">
+                <node concept="55IIr" id="cMBi0kA3yA" role="3LXTmr">
+                  <node concept="29HgVG" id="cMBi0kA3yB" role="lGtFl">
+                    <node concept="3NFfHV" id="cMBi0kA3yC" role="3NFExx">
+                      <node concept="3clFbS" id="cMBi0kA3yD" role="2VODD2">
+                        <node concept="3clFbF" id="cMBi0kA3yE" role="3cqZAp">
+                          <node concept="2OqwBi" id="cMBi0kA3yF" role="3clFbG">
+                            <node concept="2OqwBi" id="cMBi0kA3yG" role="2Oq$k0">
+                              <node concept="2OqwBi" id="cMBi0kA3yH" role="2Oq$k0">
+                                <node concept="30H73N" id="cMBi0kA3yI" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="cMBi0kA3yJ" role="2OqNvi">
                                   <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" />
                                 </node>
                               </node>
-                              <node concept="3TrEf2" id="2d0qgmCd0lE" role="2OqNvi">
+                              <node concept="3TrEf2" id="cMBi0kA3yK" role="2OqNvi">
                                 <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
                               </node>
                             </node>
-                            <node concept="2qgKlT" id="2d0qgmCd0lF" role="2OqNvi">
+                            <node concept="2qgKlT" id="cMBi0kA3yL" role="2OqNvi">
                               <ref role="37wK5l" to="vbkb:7wpYgMyTXsR" resolve="getParent" />
                             </node>
                           </node>
@@ -5488,7 +5488,7 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3qWCbU" id="2d0qgmCd0lG" role="3LXTna">
+                <node concept="3qWCbU" id="cMBi0kA3yM" role="3LXTna">
                   <property role="3qWCbO" value="icons/**, resources/**" />
                 </node>
               </node>
@@ -5509,6 +5509,83 @@
                           </node>
                         </node>
                         <node concept="3x8VRR" id="2d0qgmCd0lS" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3LXIA4" id="cMBi0kB55d" role="39821P">
+              <node concept="3LXTmp" id="cMBi0kB55e" role="3LXIA7">
+                <node concept="55IIr" id="cMBi0kB55f" role="3LXTmr">
+                  <node concept="29HgVG" id="cMBi0kB55g" role="lGtFl">
+                    <node concept="3NFfHV" id="cMBi0kB55h" role="3NFExx">
+                      <node concept="3clFbS" id="cMBi0kB55i" role="2VODD2">
+                        <node concept="3clFbF" id="cMBi0kB55j" role="3cqZAp">
+                          <node concept="2OqwBi" id="cMBi0kBu_M" role="3clFbG">
+                            <node concept="2OqwBi" id="cMBi0kBsVj" role="2Oq$k0">
+                              <node concept="30H73N" id="cMBi0kBsSf" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="cMBi0kBu0w" role="2OqNvi">
+                                <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="cMBi0kBuNh" role="2OqNvi">
+                              <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3qWCbU" id="cMBi0kB55r" role="3LXTna">
+                  <property role="3qWCbO" value="**/trace.info, **/exports" />
+                </node>
+              </node>
+              <node concept="1W57fq" id="cMBi0kB55s" role="lGtFl">
+                <property role="34cw8o" value="I've got no idea why we check path != null to decide to copy resources. Likely, it's odd way to decide whether the module has sources?" />
+                <node concept="3IZrLx" id="cMBi0kB55t" role="3IZSJc">
+                  <node concept="3clFbS" id="cMBi0kB55u" role="2VODD2">
+                    <node concept="3clFbF" id="cMBi0kB55v" role="3cqZAp">
+                      <node concept="2OqwBi" id="cMBi0kB55w" role="3clFbG">
+                        <node concept="2OqwBi" id="cMBi0kB55x" role="2Oq$k0">
+                          <node concept="2OqwBi" id="cMBi0kB55y" role="2Oq$k0">
+                            <node concept="30H73N" id="cMBi0kB55z" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="cMBi0kB55$" role="2OqNvi">
+                              <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="cMBi0kB55_" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
+                          </node>
+                        </node>
+                        <node concept="3x8VRR" id="cMBi0kB55A" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1WS0z7" id="cMBi0kB5Yl" role="lGtFl">
+                <node concept="3JmXsc" id="cMBi0kB5Yn" role="3Jn$fo">
+                  <node concept="3clFbS" id="cMBi0kB5Yp" role="2VODD2">
+                    <node concept="3clFbF" id="cMBi0kB7T4" role="3cqZAp">
+                      <node concept="2OqwBi" id="cMBi0kB8JK" role="3clFbG">
+                        <node concept="2OqwBi" id="cMBi0kB7T6" role="2Oq$k0">
+                          <node concept="2OqwBi" id="cMBi0kB7T7" role="2Oq$k0">
+                            <node concept="30H73N" id="cMBi0kB7T8" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="cMBi0kB7T9" role="2OqNvi">
+                              <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" />
+                            </node>
+                          </node>
+                          <node concept="3Tsc0h" id="cMBi0kB7Ta" role="2OqNvi">
+                            <ref role="3TtcxE" to="kdzh:4zCbl23d1OL" />
+                          </node>
+                        </node>
+                        <node concept="v3k3i" id="cMBi0kBbbo" role="2OqNvi">
+                          <node concept="chp4Y" id="cMBi0kBbnL" role="v3oSu">
+                            <ref role="cht4Q" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -5699,6 +5776,9 @@
               <node concept="3LXTmp" id="2d0qgmCd0rD" role="3LXIA7">
                 <node concept="3LWZYq" id="1G0fvspbb$z" role="3LXTna">
                   <property role="3LWZYl" value="**/trace.info" />
+                </node>
+                <node concept="3LWZYq" id="22qsRO3n9Xb" role="3LXTna">
+                  <property role="3LWZYl" value="**/exports" />
                 </node>
                 <node concept="55IIr" id="2d0qgmCd0rE" role="3LXTmr">
                   <node concept="29HgVG" id="2d0qgmCd0sh" role="lGtFl">

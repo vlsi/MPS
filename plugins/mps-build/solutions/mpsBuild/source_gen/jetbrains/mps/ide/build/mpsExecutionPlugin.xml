@@ -72,6 +72,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.commands" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.commands.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands-generator.jar">
@@ -86,9 +87,11 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-commands-generator-template" prefix="module/generator/template" />
@@ -121,6 +124,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations-generator.jar">
@@ -135,9 +139,11 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-generator-template" prefix="module/generator/template" />
@@ -166,6 +172,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-solutions-pluginSolution-models">
@@ -174,6 +181,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-solutions-pluginSolution-models" prefix="module/models" />
@@ -231,6 +239,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.commands.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.commands" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.commands.jar1" />
     </jar>
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.commands-generator.jar">
@@ -245,9 +254,11 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.commands-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/execution-languages/languages/commands/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-commands-generator-template1" prefix="module/generator/template" />
@@ -280,6 +291,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.jar1" />
     </jar>
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations-generator.jar">
@@ -294,9 +306,11 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-generator-template1" prefix="module/generator/template" />
@@ -325,6 +339,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.configurations.pluginSolution" />
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.configurations.pluginSolution.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-solutions-pluginSolution-models1">
@@ -333,6 +348,7 @@
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-languages-languages-configurations-solutions-pluginSolution-models1" prefix="module/models" />
@@ -357,6 +373,7 @@
     <jar destfile="${build.layout}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.execution.startup" />
       <fileset dir="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.execution.startup.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.startup-jetbrains">
@@ -365,6 +382,7 @@
     <jar destfile="${build.layout}/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup-src.jar">
       <fileset dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.startup/jetbrains.mps.baseLanguage.execution.startup.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-configurations-languages-baseLanguage-jetbrains.mps.baseLanguage.execution.startup-jetbrains" prefix="module/jetbrains" />

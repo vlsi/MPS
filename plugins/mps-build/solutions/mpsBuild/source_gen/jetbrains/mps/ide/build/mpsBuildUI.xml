@@ -72,6 +72,7 @@
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.mps.pluginSolution-models">
@@ -80,6 +81,7 @@
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/jetbrains.mps.build.mps.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.mps.pluginSolution-models" prefix="module/models" />
@@ -110,6 +112,7 @@
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.pluginSolution-models">
@@ -118,6 +121,7 @@
     <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/jetbrains.mps.build.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.pluginSolution-models" prefix="module/models" />

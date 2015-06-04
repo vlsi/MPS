@@ -124,6 +124,7 @@
     <jar destfile="${build.layout}/testExtendingAnalyzer.jar">
       <fileset dir="${build.tmp}/java/out/testExtendingAnalyzer" />
       <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testExtendingAnalyzer.jar" />
     </jar>
     <jar destfile="${build.layout}/testExtendingAnalyzer-generator.jar">
@@ -138,9 +139,11 @@
     <jar destfile="${build.layout}/testExtendingAnalyzer-src.jar">
       <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/testExtendingAnalyzer.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testExtendingAnalyzer-languages-testExtendingAnalyzer-generator-template" prefix="module/generator/template" />

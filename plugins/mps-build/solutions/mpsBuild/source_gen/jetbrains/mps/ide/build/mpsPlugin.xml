@@ -153,6 +153,7 @@
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels">
@@ -161,6 +162,7 @@
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels" prefix="module/languageModels" />

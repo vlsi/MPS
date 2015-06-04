@@ -63,6 +63,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.core.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.core.pluginSolution" />
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.core.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.core-models">
@@ -71,6 +72,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.core.pluginSolution-src.jar">
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.core/jetbrains.mps.lang.core.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.core-models" prefix="module/models" />
@@ -98,6 +100,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.script.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.script.pluginSolution" />
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.script.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.script-models">
@@ -106,6 +109,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.script.pluginSolution-src.jar">
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.script/jetbrains.mps.lang.script.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.script-models" prefix="module/models" />
@@ -133,6 +137,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.typesystem.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution" />
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.typesystem.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.typesystem-models">
@@ -141,6 +146,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.typesystem.pluginSolution-src.jar">
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.typesystem/jetbrains.mps.lang.typesystem.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.typesystem-models" prefix="module/models" />
@@ -169,6 +175,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.classLike.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.classLike.pluginSolution" />
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.classLike" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.classLike/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.classLike.pluginSolution.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.classLike-models">
@@ -177,6 +184,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.classLike.pluginSolution-src.jar">
       <fileset dir="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.classLike/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/workbench/mps-workbench/pluginSolutions/lang.classLike/jetbrains.mps.lang.classLike.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/workbench-mps-workbench-pluginSolutions-lang.classLike-models" prefix="module/models" />
@@ -205,6 +213,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.migration.actions.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.migration.actions" />
       <fileset dir="${mps_home}/languages/languageDesign/migration/solutions/actions" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/languages/languageDesign/migration/solutions/actions/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.migration.actions.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-migration-solutions-actions-models">
@@ -213,6 +222,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.migration.actions-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/migration/solutions/actions/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/migration/solutions/actions/jetbrains.mps.lang.migration.actions.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-migration-solutions-actions-models" prefix="module/models" />
@@ -240,6 +250,7 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.plugin.standalone" />
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.plugin.standalone.jar" />
     </jar>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.plugin.standalone-generator.jar">
@@ -254,9 +265,11 @@
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.plugin.standalone-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/languages/languageDesign/plugin-standalone/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-plugin-standalone-generator-template" prefix="module/generator/template" />

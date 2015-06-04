@@ -66,6 +66,7 @@
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" />
       <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table-generator.jar">
@@ -80,9 +81,11 @@
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table-src.jar">
       <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-core/languages/languageDesign/table/jetbrains.mps.lang.editor.table.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-languageDesign-table-generator-template" prefix="module/generator/template" />
@@ -107,6 +110,7 @@
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
       <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-languageDesign-table-runtime-jetbrains">
@@ -115,6 +119,7 @@
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime-src.jar">
       <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/jetbrains.mps.lang.editor.table.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-languageDesign-table-runtime-jetbrains" prefix="module/jetbrains" />
@@ -143,6 +148,7 @@
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.core.properties.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.properties" />
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.properties.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.core.properties-generator.jar">
@@ -160,9 +166,11 @@
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.core.properties-src.jar">
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/mps-core/languages/core.properties/jetbrains.mps.core.properties.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-core.properties-generator-template" prefix="module/generator/template" />
