@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -65,6 +66,14 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     return null;
   }
 
+  public static void moveNodes(List<SNode> nodes, MPSProject mpsProject) {
+    MoveNodesDefault moveNodesDefault = new MoveNodesDefault();
+    moveNodesDefault.arg = MultiTuple.<List<SNode>,MPSProject>from(nodes, mpsProject);
+    if (moveNodesDefault.applicable()) {
+      moveNodesDefault.apply();
+    }
+  }
+
   private Tuples._2<List<SNode>, MPSProject> arg;
 
   private MPSProject project;
@@ -85,7 +94,7 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     final SModel model = firstNode.getModel();
     return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_92fyi8_a0a0a0a0a0a0f0p(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
+        return eq_92fyi8_a0a0a0a0a0a0f0r(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
       }
     });
   }
@@ -255,7 +264,7 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
       return this;
     }
   }
-  private static boolean eq_92fyi8_a0a0a0a0a0a0f0p(Object a, Object b) {
+  private static boolean eq_92fyi8_a0a0a0a0a0a0f0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

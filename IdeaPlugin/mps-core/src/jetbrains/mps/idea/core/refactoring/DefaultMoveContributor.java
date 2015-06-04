@@ -8,8 +8,7 @@ import com.intellij.refactoring.util.MoveRenameUsageInfo;
 import com.intellij.usageView.UsageInfo;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesExecute;
-import jetbrains.mps.ide.platform.actions.core.MoveNodesExecute.ExecuteRefactoring;
+import jetbrains.mps.ide.platform.actions.core.MoveNodesDefault;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -44,18 +43,7 @@ public class DefaultMoveContributor implements MoveRefactoringContributor {
   @Override
   public void invoke(@NotNull Project project, @NotNull final List<SNode> nodes) {
     final MPSProject mpsProject = project.getComponent(MPSProject.class);
-
-    MoveNodesExecute.execute(mpsProject, nodes, new ExecuteRefactoring() {
-      @Override
-      public void run(Object newLocation) {
-        RefactoringAccessEx.getInstance().getRefactoringFacade().execute(
-          RefactoringContext.createRefactoringContext(new DefaultMoveRefactoring(nodes, newLocation),
-            Arrays.asList("target"),
-            Arrays.asList(newLocation),
-            nodes,
-            mpsProject));
-      }
-    });
+    MoveNodesDefault.moveNodes(nodes, mpsProject);
   }
 
   class DefaultMoveRefactoring extends PsiAwareRefactoring {
