@@ -132,6 +132,7 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -238,7 +239,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModule instanceof Generator)
         return "";
       return FileUtil.getCanonicalPath(
-        myModule.getDescriptorFile().getPath()
+          myModule.getDescriptorFile().getPath()
       );
     }
 
@@ -254,17 +255,27 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
     }
 
+    //null=not supported
+    @Nullable
+    protected Integer getVersion() {
+      if (!(myModule instanceof Language)) return null;
+      return ((Language) myModule).getLanguageVersion();
+    }
+
     @Override
     protected JComponent getTopComponent() {
       if (myModule instanceof Language || myModule instanceof Solution) {
 
+        boolean hasVersion = getVersion() != null;
         JPanel panel = new JPanel();
         //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
-        panel.setLayout(new GridLayoutManager(1, 2, new JBInsets(0,0,0,0), -1, -1));
+        panel.setLayout(new GridLayoutManager(hasVersion ? 2 : 1, 2, new JBInsets(0, 0, 0, 0), -1, -1));
+
+        int row=0;
 
         JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
-        panel.add(label, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-          GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panel.add(label, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+            GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
         myGenOut = new JTextField();
         final FileChooserDescriptor outputPathsChooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
@@ -277,8 +288,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         genOutPath.setText(getGenOutPath());
         genOutPath.setPreferredSize(new Dimension(300, 20));
         panel.add(genOutPath,
-          new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+            new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+        if (hasVersion) {
+          JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.version"));
+          panel.add(verLabel,
+              new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                  GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+          JTextField textField = new JTextField();
+          textField.setText("" + getVersion());
+          panel.add(textField,
+              new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
+        }
 
         return panel;
       }
@@ -293,12 +317,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public boolean isModified() {
       return super.isModified()
-        || (
-        myModule instanceof DevKit
-          ? myModuleDependenciesTab.isModified()
-          : myEntriesEditor.isModified())
-        || (
-        myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))
+          || (
+          myModule instanceof DevKit
+              ? myModuleDependenciesTab.isModified()
+              : myEntriesEditor.isModified())
+          || (
+          myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))
       );
     }
 
@@ -313,10 +337,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
           if (myModule instanceof Language) {
             ((LanguageDescriptor) myModule.getModuleDescriptor()).setGenPath(
-              myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
+                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           } else if (myModule instanceof Solution) {
             ((SolutionDescriptor) myModule.getModuleDescriptor()).setOutputPath(
-              myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
+                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           }
         }
         myEntriesEditor.apply();
@@ -377,7 +401,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   myDependTableModel.addLanguageItem(dep);
                 } else if (module instanceof Generator) {
                   myDependTableModel.addGeneratorItem(dep);
-                } else if (module instanceof  Solution) {
+                } else if (module instanceof Solution) {
                   myDependTableModel.addSolutionItem(dep);
                 } else if (module instanceof DevKit) {
                   myDependTableModel.addDevkitItem(dep);
@@ -397,6 +421,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       class MissingModuleCondition implements Condition<SModule> {
         public MissingModuleCondition() {
         }
+
         @Override
         public boolean met(SModule module) {
           return module == null;
@@ -425,8 +450,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 Object value = myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex());
                 if (value instanceof SModuleReference) {
                   modules.add(
-                    MPSModuleRepository.getInstance().getModuleByFqName(
-                      ((SModuleReference) value).getModuleName())
+                      MPSModuleRepository.getInstance().getModuleByFqName(
+                          ((SModuleReference) value).getModuleName())
                   );
                 }
               }
@@ -509,7 +534,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     public RuntimeTab() {
       super(PropertiesBundle.message("mps.properties.runtime.title"), General.Runtime,
-        PropertiesBundle.message("mps.properties.runtime.tip"));
+          PropertiesBundle.message("mps.properties.runtime.tip"));
       init();
     }
 
@@ -571,8 +596,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
       usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new SpeedSearchBase<JBTable>(runtimeTable) {
         @Override
@@ -659,8 +684,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       table = decoratorForAccessories.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
       usedLangsTab.add(table, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new SpeedSearchBase<JBTable>(accessoriesTable) {
         @Override
@@ -720,15 +745,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              (jetbrains.mps.smodel.SModelReference) value,
-              new ModulesScope(Arrays.asList(myModule))
+                (jetbrains.mps.smodel.SModelReference) value,
+                new ModulesScope(Arrays.asList(myModule))
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           } else if (value instanceof SModuleReference) {
             query[0] = new SearchQuery(
-              MPSModuleRepository.getInstance().getModuleByFqName(
-                ((SModuleReference) value).getModuleName()),
-              GlobalScope.getInstance()
+                MPSModuleRepository.getInstance().getModuleByFqName(
+                    ((SModuleReference) value).getModuleName()),
+                GlobalScope.getInstance()
             );
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
           }
@@ -863,7 +888,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       public boolean isModified() {
         LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModuleDescriptor;
         return !(languageDescriptor.getAccessoryModels().containsAll(getAccessoryModels()) && myTableItems.containsAll(
-          languageDescriptor.getAccessoryModels()));
+            languageDescriptor.getAccessoryModels()));
       }
 
       @Override
@@ -910,7 +935,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     Set<SModuleReference> getGenerators() {
       final HashSet<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>();
       for (DependenciesTableItem dependencyItem : myDependenciesTab.getActualDependencies()) {
-        if(dependencyItem.getModuleType() == ModuleType.GENERATOR) {
+        if (dependencyItem.getModuleType() == ModuleType.GENERATOR) {
           depGenerators.add(dependencyItem.getItem().getModuleRef());
         }
       }
@@ -926,12 +951,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBCheckBox myGenerateTemplates;
     private JBCheckBox myReflectiveQueries;
     private JBCheckBox myNeedOpContext;
-    private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings = new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
+    private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings =
+        new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
       super(PropertiesBundle.message("mps.properties.module.generator.title"), IdeIcons.DEFAULT_ICON,
-        PropertiesBundle.message("mps.properties.module.generator.tip"));
+          PropertiesBundle.message("mps.properties.module.generator.tip"));
       myGenerator = generator;
       myDepGenerators = depGenerators;
       init();
@@ -969,7 +995,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         @Override
         public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row,
-                                                       final int column) {
+            final int column) {
           if (value instanceof MappingConfig_AbstractRef) {
             MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
@@ -982,13 +1008,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             noCheckedChildren(rootNode);
 
             CheckboxTree checkboxTree =
-              new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
+                new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
             checkboxTree.setRootVisible(true);
 
             GeneratorPrioritiesTree.expandAllRows(checkboxTree);
 
             table.setRowHeight(
-              row, Math.max(checkboxTree.getPreferredSize().height + 10, table.getRowHeight(row))
+                row, Math.max(checkboxTree.getPreferredSize().height + 10, table.getRowHeight(row))
             );
 
             checkboxTree.setBackground(isSelected && !hasFocus ? table.getSelectionBackground() : table.getBackground());
@@ -1084,7 +1110,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             };
 
             final Component tableCellRendererComponent =
-              myTable.getCellRenderer(row, column).getTableCellRendererComponent(table, value, isSelected, true, row, column);
+                myTable.getCellRenderer(row, column).getTableCellRendererComponent(table, value, isSelected, true, row, column);
             tableCellRendererComponent.addFocusListener(new FocusListener() {
               @Override
               public void focusGained(FocusEvent e) {
@@ -1132,8 +1158,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setPreferredSize(new Dimension(500, 300));
 
       panel.add(decorator.createPanel(), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-        GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
@@ -1148,8 +1174,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       generationOptions.add(myReflectiveQueries);
       generationOptions.add(myNeedOpContext);
       panel.add(generationOptions,
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-          GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+          new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       setTabComponent(panel);
     }
@@ -1161,7 +1187,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final boolean b2 = genDescr.isReflectiveQueries();
       final boolean b3 = genDescr.needsOperationContext();
       return myPrioritiesTableModel.isModified()
-        || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2 || myNeedOpContext.isSelected() != b3;
+          || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2 || myNeedOpContext.isSelected() != b3;
     }
   }
 
@@ -1267,15 +1293,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(rule.getRight(), null));
         while (!queue.isEmpty()) {
           Pair<MappingConfig_AbstractRef, MappingConfig_RefSet> ref = queue.poll();
-          if(ref.o1 instanceof MappingConfig_RefSet) {
+          if (ref.o1 instanceof MappingConfig_RefSet) {
             final MappingConfig_RefSet refSet = (MappingConfig_RefSet) ref.o1;
-            for(MappingConfig_AbstractRef ref1 : refSet.getMappingConfigs()) {
+            for (MappingConfig_AbstractRef ref1 : refSet.getMappingConfigs()) {
               // record children of RefSet along with RefSet itself for further processing
               queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(ref1, refSet));
             }
-          } else if(ref.o1 instanceof MappingConfig_ExternalRef) {
+          } else if (ref.o1 instanceof MappingConfig_ExternalRef) {
             final MappingConfig_ExternalRef extRef = (MappingConfig_ExternalRef) ref.o1;
-            if(!accessibleGenerators.contains(extRef.getGenerator()) && ref.o2 != null) {
+            if (!accessibleGenerators.contains(extRef.getGenerator()) && ref.o2 != null) {
               ref.o2.getMappingConfigs().remove(ref.o1);
             }
           }
@@ -1324,7 +1350,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
       Set<String> applicableFacetTypes = FacetsFacade.getInstance().getApplicableFacetTypes(usedLangs);
 
-      for(String facet : FacetsFacade.getInstance().getFacetTypes()) {
+      for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
         final SModuleFacet sModuleFacet = facetsTypes.keySet().contains(facet)
             ? facetsTypes.get(facet) : FacetsFacade.getInstance().getFacetFactory(facet).create();
         if (!(sModuleFacet instanceof ModuleFacetBase)) continue;
@@ -1358,10 +1384,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       Set<String> newFacetsTypes = new HashSet<String>();
       for (JCheckBox checkBox : myCheckBoxes) {
-        if(checkBox.isSelected()) {
-          final SModuleFacet facet = (SModuleFacet)checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
+        if (checkBox.isSelected()) {
+          final SModuleFacet facet = (SModuleFacet) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
           if (!(facet instanceof ModuleFacetBase)) continue;
-          newFacetsTypes.add(((ModuleFacetBase)facet).getFacetType());
+          newFacetsTypes.add(((ModuleFacetBase) facet).getFacetType());
         }
       }
 
@@ -1370,16 +1396,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void apply() {
-      final HashMap<String, ModuleFacetBase> moduleFacets= new HashMap<String, ModuleFacetBase>();
+      final HashMap<String, ModuleFacetBase> moduleFacets = new HashMap<String, ModuleFacetBase>();
       for (final SModuleFacet moduleFacet : myModule.getFacets()) {
         if (!(moduleFacet instanceof ModuleFacetBase)) continue;
         moduleFacets.put(((ModuleFacetBase) moduleFacet).getFacetType(), (ModuleFacetBase) moduleFacet);
       }
 
       for (JCheckBox checkBox : myCheckBoxes) {
-        if(!(checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY) instanceof ModuleFacetBase)) continue;
+        if (!(checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY) instanceof ModuleFacetBase)) continue;
 
-        ModuleFacetBase facet = (ModuleFacetBase)checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
+        ModuleFacetBase facet = (ModuleFacetBase) checkBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
 
         if (checkBox.isSelected() && !moduleFacets.keySet().contains(facet.getFacetType())) {
           facet.setModule(myModule);
@@ -1413,7 +1439,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (myCheckBox.isSelected()) {
           final ModuleFacetBase moduleFacetBase = (ModuleFacetBase) myCheckBox.getClientProperty(CHECKBOX_PROPERTY_KEY);
           Tab facetTab = FacetTabsPersistence.getInstance().getFacetTab(
-            moduleFacetBase.getFacetType(), moduleFacetBase);
+              moduleFacetBase.getFacetType(), moduleFacetBase);
           if (facetTab != null) {
             ModulePropertiesConfigurable.this.insertTab(facetTab, ModulePropertiesConfigurable.this.indexOfTab(AddFacetsTab.this));
 //            ModulePropertiesConfigurable.this.selectTab(facetTab);
@@ -1430,6 +1456,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
     }
   }
+
   /*
    * FIXME myModule.getRepository requires read action (implementation, not API), while mpsProject.getRepository does not
    * Not sure whether which one is right (both seem reasonable, repository of a module might change, repository of the project could not)
@@ -1446,6 +1473,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public GetModuleRepo(@NotNull SModule module) {
       myModule = module;
     }
+
     @Override
     public SRepository compute() {
       return myModule.getRepository();
