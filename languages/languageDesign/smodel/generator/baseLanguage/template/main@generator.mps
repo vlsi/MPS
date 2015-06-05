@@ -15149,7 +15149,7 @@
     <ref role="3gUMe" to="tp25:3TEgbCBRn3N" resolve="LanguageRefExpression" />
     <node concept="2YIFZM" id="3TEgbCBRst3" role="13RCb5">
       <ref role="1Pybhc" to="hy6y:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-      <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String,int):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
+      <ref role="37wK5l" to="hy6y:~MetaAdapterFactory.getLanguage(jetbrains.mps.smodel.adapter.ids.SLanguageId,java.lang.String):org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
       <node concept="raruj" id="3TEgbCBRsti" role="lGtFl" />
       <node concept="10Nm6u" id="34EJa6aI_Lj" role="37wK5m">
         <node concept="5jKBG" id="34EJa6aIAqE" role="lGtFl">
@@ -15160,12 +15160,6 @@
         <property role="Xl_RC" value="" />
         <node concept="5jKBG" id="34EJa6aLJsQ" role="lGtFl">
           <ref role="v9R2y" node="34EJa6aLETL" resolve="reduce_LanguageId_Name" />
-        </node>
-      </node>
-      <node concept="3cmrfG" id="34EJa6aLMIF" role="37wK5m">
-        <property role="3cmrfH" value="0" />
-        <node concept="5jKBG" id="34EJa6aLMNl" role="lGtFl">
-          <ref role="v9R2y" node="34EJa6aLDbO" resolve="reduce_LanguageId_Version" />
         </node>
       </node>
       <node concept="1pdMLZ" id="34EJa6aLJYU" role="lGtFl">
