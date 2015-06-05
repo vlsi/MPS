@@ -19,7 +19,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Apple_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,82,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,86,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Car_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Car_BehaviorDescriptor" />
@@ -65,6 +65,12 @@
     </file>
     <file name="IncompleteCommand_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.IncompleteCommand_BehaviorDescriptor" />
+    </file>
+    <file name="ItemReference_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference_BehaviorDescriptor" />
+    </file>
+    <file name="Item_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Item_BehaviorDescriptor" />
     </file>
     <file name="LineStyle_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.LineStyle_BehaviorDescriptor" />
@@ -148,6 +154,22 @@
         <var name="thisNode" id="5681697064999291989" />
       </scope>
       <unit id="5681697064999291989" at="10,0,17,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Component_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:28b8f088-78ff-4075-9c89-d9a68552bf40(jetbrains.mps.samples.languagePatterns.Basic.behavior)/9119725621034346788">
+    <file name="ItemReference_Behavior.java">
+      <node id="9119725621034347451" at="11,90,12,16" concept="0" />
+      <node id="9119725621034346788" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9119725621034346788" at="11,0,14,0" concept="1" trace="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="9119725621034346790" at="9,43,9,43" />
+      <scope id="9119725621034347357" at="11,90,12,16" />
+      <scope id="9119725621034346788" at="9,0,11,0">
+        <var name="thisNode" id="9119725621034346788" />
+      </scope>
+      <scope id="9119725621034346788" at="11,0,14,0">
+        <var name="thisConcept" id="9119725621034346788" />
+      </scope>
+      <unit id="9119725621034346788" at="8,0,15,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.ItemReference_Behavior" />
     </file>
   </root>
 </debug-info>

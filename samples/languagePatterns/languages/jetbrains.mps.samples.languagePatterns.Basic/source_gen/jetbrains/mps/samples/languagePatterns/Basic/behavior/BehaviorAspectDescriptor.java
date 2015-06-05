@@ -15,25 +15,25 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new FruitPlate_BehaviorDescriptor();
       case 2:
         return new Apple_BehaviorDescriptor();
-      case 17:
+      case 19:
         return new Orange_BehaviorDescriptor();
       case 7:
         return new Concert_BehaviorDescriptor();
-      case 24:
+      case 26:
         return new Singer_BehaviorDescriptor();
-      case 19:
+      case 21:
         return new Performance_BehaviorDescriptor();
       case 4:
         return new CombinedPerformance_BehaviorDescriptor();
-      case 18:
-        return new Participant_BehaviorDescriptor();
       case 20:
+        return new Participant_BehaviorDescriptor();
+      case 22:
         return new PerformanceWithTitle_BehaviorDescriptor();
-      case 21:
+      case 23:
         return new RaceParticipant_BehaviorDescriptor();
       case 3:
         return new Car_BehaviorDescriptor();
-      case 29:
+      case 31:
         return new Truck_BehaviorDescriptor();
       case 8:
         return new Container_BehaviorDescriptor();
@@ -41,7 +41,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new Component_BehaviorDescriptor();
       case 6:
         return new ComponentUsage_BehaviorDescriptor();
-      case 16:
+      case 18:
         return new ListOfDrawCommands_BehaviorDescriptor();
       case 12:
         return new EmptyLine_BehaviorDescriptor();
@@ -49,33 +49,37 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DrawLine_BehaviorDescriptor();
       case 11:
         return new DrawRect_BehaviorDescriptor();
-      case 25:
+      case 27:
         return new SolidLine_BehaviorDescriptor();
       case 9:
         return new DottedLine_BehaviorDescriptor();
       case 15:
         return new IncompleteCommand_BehaviorDescriptor();
-      case 22:
+      case 24:
         return new Request_BehaviorDescriptor();
-      case 28:
+      case 30:
         return new StringDescription_BehaviorDescriptor();
-      case 23:
+      case 25:
         return new SimplifiedFormDescription_BehaviorDescriptor();
       case 13:
         return new FormDescription_BehaviorDescriptor();
-      case 26:
+      case 28:
         return new SomeForm_BehaviorDescriptor();
       case 0:
         return new Address_BehaviorDescriptor();
       case 1:
         return new AddressReference_BehaviorDescriptor();
-      case 30:
+      case 32:
         return new ZipOperation_BehaviorDescriptor();
-      case 27:
+      case 29:
         return new StreetOperation_BehaviorDescriptor();
+      case 16:
+        return new Item_BehaviorDescriptor();
+      case 17:
+        return new ItemReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Address", "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Request", "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm", "jetbrains.mps.samples.languagePatterns.Basic.structure.StreetOperation", "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck", "jetbrains.mps.samples.languagePatterns.Basic.structure.ZipOperation"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.languagePatterns.Basic.structure.Address", "jetbrains.mps.samples.languagePatterns.Basic.structure.AddressReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.Apple", "jetbrains.mps.samples.languagePatterns.Basic.structure.Car", "jetbrains.mps.samples.languagePatterns.Basic.structure.CombinedPerformance", "jetbrains.mps.samples.languagePatterns.Basic.structure.Component", "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage", "jetbrains.mps.samples.languagePatterns.Basic.structure.Concert", "jetbrains.mps.samples.languagePatterns.Basic.structure.Container", "jetbrains.mps.samples.languagePatterns.Basic.structure.DottedLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.DrawRect", "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.FormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.FruitPlate", "jetbrains.mps.samples.languagePatterns.Basic.structure.IncompleteCommand", "jetbrains.mps.samples.languagePatterns.Basic.structure.Item", "jetbrains.mps.samples.languagePatterns.Basic.structure.ItemReference", "jetbrains.mps.samples.languagePatterns.Basic.structure.ListOfDrawCommands", "jetbrains.mps.samples.languagePatterns.Basic.structure.Orange", "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance", "jetbrains.mps.samples.languagePatterns.Basic.structure.PerformanceWithTitle", "jetbrains.mps.samples.languagePatterns.Basic.structure.RaceParticipant", "jetbrains.mps.samples.languagePatterns.Basic.structure.Request", "jetbrains.mps.samples.languagePatterns.Basic.structure.SimplifiedFormDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Singer", "jetbrains.mps.samples.languagePatterns.Basic.structure.SolidLine", "jetbrains.mps.samples.languagePatterns.Basic.structure.SomeForm", "jetbrains.mps.samples.languagePatterns.Basic.structure.StreetOperation", "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription", "jetbrains.mps.samples.languagePatterns.Basic.structure.Truck", "jetbrains.mps.samples.languagePatterns.Basic.structure.ZipOperation"};
 }

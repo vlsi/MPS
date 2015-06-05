@@ -996,5 +996,31 @@
       <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
     </node>
   </node>
+  <node concept="24kQdi" id="7UfLy9aLY0W">
+    <property role="3GE5qa" value="declaration-references.java" />
+    <ref role="1XX52x" to="vseb:7UfLy9aLY0x" resolve="Item" />
+    <node concept="3EZMnI" id="7UfLy9aLY0Y" role="2wV5jI">
+      <node concept="3F0ifn" id="7UfLy9aLY15" role="3EZMnx">
+        <property role="3F0ifm" value="Item" />
+      </node>
+      <node concept="3F0A7n" id="7UfLy9aLY1f" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="l2Vlx" id="7UfLy9aLY11" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="7UfLy9aLY1I">
+    <property role="3GE5qa" value="declaration-references.java" />
+    <ref role="1XX52x" to="vseb:7UfLy9aLY1j" resolve="ItemReference" />
+    <node concept="1iCGBv" id="7UfLy9aLY1K" role="2wV5jI">
+      <ref role="1NtTu8" to="vseb:7UfLy9aLY1k" />
+      <node concept="1sVBvm" id="7UfLy9aLY1M" role="1sWHZn">
+        <node concept="3F0A7n" id="7UfLy9aLY1T" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
