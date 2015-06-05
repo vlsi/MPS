@@ -56,9 +56,6 @@
       <concept id="2459753140357918802" name="jetbrains.mps.execution.commands.structure.StartAndWaitOperation" flags="nn" index="343rKw" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
-        <child id="1082485599096" name="statements" index="9aQI4" />
-      </concept>
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -129,7 +126,6 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
@@ -241,8 +237,18 @@
               </node>
               <node concept="liA8E" id="7GotP_M8zf" role="2OqNvi">
                 <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                <node concept="37vLTw" id="7GotP_M8zg" role="37wK5m">
-                  <ref role="3cqZAo" node="7GotP_M3TA" resolve="scriptPath" />
+                <node concept="3cpWs3" id="7OAOF22JMVH" role="37wK5m">
+                  <node concept="37vLTw" id="7OAOF22JN30" role="3uHU7w">
+                    <ref role="3cqZAo" node="7OAOF22JL0C" resolve="scriptFilename" />
+                  </node>
+                  <node concept="3cpWs3" id="7OAOF22JMDR" role="3uHU7B">
+                    <node concept="37vLTw" id="7GotP_M8zg" role="3uHU7B">
+                      <ref role="3cqZAo" node="7GotP_M3TA" resolve="scriptPath" />
+                    </node>
+                    <node concept="Xl_RD" id="7OAOF22JMDU" role="3uHU7w">
+                      <property role="Xl_RC" value="/" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -254,12 +260,16 @@
             <node concept="3uibUv" id="7GotP_M4QI" role="1tU5fm">
               <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
             </node>
-            <node concept="2OqwBi" id="7GotP_M7CA" role="33vP2m">
-              <node concept="37vLTw" id="7GotP_M7CB" role="2Oq$k0">
-                <ref role="3cqZAo" node="7GotP_M4QK" resolve="scriptFile" />
+            <node concept="2OqwBi" id="7OAOF22JLuk" role="33vP2m">
+              <node concept="2YIFZM" id="7OAOF22JLul" role="2Oq$k0">
+                <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
+                <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
               </node>
-              <node concept="liA8E" id="7GotP_M7CC" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
+              <node concept="liA8E" id="7OAOF22JLum" role="2OqNvi">
+                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                <node concept="37vLTw" id="7OAOF22JMs3" role="37wK5m">
+                  <ref role="3cqZAo" node="7GotP_M3TA" resolve="scriptPath" />
+                </node>
               </node>
             </node>
           </node>
@@ -475,29 +485,6 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="9aQIb" id="7OAOF22FnuK" role="9aQIa">
-                          <node concept="3clFbS" id="7OAOF22FnuL" role="9aQI4">
-                            <node concept="3clFbF" id="7OAOF22FnwL" role="3cqZAp">
-                              <node concept="2OqwBi" id="7OAOF22FnwM" role="3clFbG">
-                                <node concept="10M0yZ" id="7OAOF22FnwN" role="2Oq$k0">
-                                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-                                </node>
-                                <node concept="liA8E" id="7OAOF22FnwO" role="2OqNvi">
-                                  <ref role="37wK5l" to="fxg7:~PrintStream.print(java.lang.String):void" resolve="print" />
-                                  <node concept="2OqwBi" id="7OAOF22FnwP" role="37wK5m">
-                                    <node concept="37vLTw" id="7OAOF22FnwQ" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="7GotP_M4Sv" resolve="event" />
-                                    </node>
-                                    <node concept="liA8E" id="7OAOF22FnwR" role="2OqNvi">
-                                      <ref role="37wK5l" to="ymw7:~ProcessEvent.getText():java.lang.String" resolve="getText" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="7GotP_M4SN" role="2AJF6D">
@@ -605,6 +592,10 @@
         <property role="TrG5h" value="scriptPath" />
         <node concept="17QB3L" id="7GotP_M3T_" role="1tU5fm" />
       </node>
+      <node concept="37vLTG" id="7OAOF22JL0C" role="3clF46">
+        <property role="TrG5h" value="scriptFilename" />
+        <node concept="17QB3L" id="7OAOF22JLhK" role="1tU5fm" />
+      </node>
     </node>
     <node concept="2XrIbr" id="7GotP_Eae_" role="1qtyYc">
       <property role="TrG5h" value="runAndCheck" />
@@ -645,31 +636,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7GotP_Mb1A" role="3cqZAp">
-          <node concept="37vLTI" id="7GotP_MbdV" role="3clFbG">
-            <node concept="3cpWs3" id="7GotP_MbUb" role="37vLTx">
-              <node concept="3cpWs3" id="7GotP_Mbv_" role="3uHU7B">
-                <node concept="37vLTw" id="7GotP_Mbk5" role="3uHU7B">
-                  <ref role="3cqZAo" node="7GotP_Ma0p" resolve="scriptPath" />
-                </node>
-                <node concept="Xl_RD" id="7GotP_Mb_W" role="3uHU7w">
-                  <property role="Xl_RC" value="/" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="7GotP_Mc3n" role="3uHU7w">
-                <node concept="37vLTw" id="7GotP_Mc3o" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7GotP_Ed5$" resolve="buildScript" />
-                </node>
-                <node concept="2qgKlT" id="7GotP_Mc3p" role="2OqNvi">
-                  <ref role="37wK5l" to="vbkb:4gSHdTptyu0" resolve="getOutputFileName" />
-                </node>
-              </node>
-            </node>
-            <node concept="37vLTw" id="7GotP_Mb1$" role="37vLTJ">
-              <ref role="3cqZAo" node="7GotP_Ma0p" resolve="scriptPath" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7GotP_MeP1" role="3cqZAp">
           <node concept="2OqwBi" id="7GotP_MeOV" role="3clFbG">
             <node concept="2WthIp" id="7GotP_MeOY" role="2Oq$k0" />
@@ -677,6 +643,14 @@
               <ref role="2WH_rO" node="7GotP_M3vU" resolve="runAndCheck" />
               <node concept="37vLTw" id="7GotP_MeVX" role="2XxRq1">
                 <ref role="3cqZAo" node="7GotP_Ma0p" resolve="scriptPath" />
+              </node>
+              <node concept="2OqwBi" id="7OAOF22JLNa" role="2XxRq1">
+                <node concept="37vLTw" id="7OAOF22JLNb" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7GotP_Ed5$" resolve="buildScript" />
+                </node>
+                <node concept="2qgKlT" id="7OAOF22JLNc" role="2OqNvi">
+                  <ref role="37wK5l" to="vbkb:4gSHdTptyu0" resolve="getOutputFileName" />
+                </node>
               </node>
             </node>
           </node>
@@ -694,62 +668,16 @@
       <property role="TrG5h" value="runBuildSimpleCode" />
       <node concept="3cqZAl" id="73dkH4PmkhK" role="3clF45" />
       <node concept="3clFbS" id="73dkH4PmkhL" role="3clF47">
-        <node concept="3cpWs8" id="7OAOF22FklL" role="3cqZAp">
-          <node concept="3cpWsn" id="7OAOF22FklM" role="3cpWs9">
-            <property role="TrG5h" value="f" />
-            <node concept="3uibUv" id="7OAOF22FklN" role="1tU5fm">
-              <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
-            </node>
-            <node concept="2OqwBi" id="7OAOF22FkFT" role="33vP2m">
-              <node concept="2YIFZM" id="7OAOF22FkFU" role="2Oq$k0">
-                <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
-                <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="7OAOF22FkFV" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                <node concept="Xl_RD" id="7OAOF22FkGP" role="37wK5m">
-                  <property role="Xl_RC" value="." />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7OAOF22FkYB" role="3cqZAp">
-          <node concept="2OqwBi" id="7OAOF22FkY$" role="3clFbG">
-            <node concept="10M0yZ" id="7OAOF22FkY_" role="2Oq$k0">
-              <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-              <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-            </node>
-            <node concept="liA8E" id="7OAOF22FkYA" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
-              <node concept="3cpWs3" id="7OAOF22Fnb1" role="37wK5m">
-                <node concept="Xl_RD" id="7OAOF22Fnb4" role="3uHU7w">
-                  <property role="Xl_RC" value="#" />
-                </node>
-                <node concept="3cpWs3" id="7OAOF22FlUU" role="3uHU7B">
-                  <node concept="Xl_RD" id="7OAOF22FlWR" role="3uHU7B">
-                    <property role="Xl_RC" value="current directory is #" />
-                  </node>
-                  <node concept="2OqwBi" id="7OAOF22FltD" role="3uHU7w">
-                    <node concept="37vLTw" id="7OAOF22Fl8z" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7OAOF22FklM" resolve="f" />
-                    </node>
-                    <node concept="liA8E" id="7OAOF22FlHh" role="2OqNvi">
-                      <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7GotP_EPtY" role="3cqZAp">
           <node concept="2OqwBi" id="7GotP_EPvg" role="3clFbG">
             <node concept="2WthIp" id="7GotP_EPtW" role="2Oq$k0" />
             <node concept="2XshWL" id="7GotP_EPAX" role="2OqNvi">
               <ref role="2WH_rO" node="7GotP_M3vU" resolve="runAndCheck" />
-              <node concept="Xl_RD" id="7GotP_Mn4V" role="2XxRq1">
-                <property role="Xl_RC" value="../plugins/mps-build/test/test1.xml" />
+              <node concept="Xl_RD" id="7OAOF22JLP9" role="2XxRq1">
+                <property role="Xl_RC" value="plugins/mps-build/test" />
+              </node>
+              <node concept="Xl_RD" id="7OAOF22JMdJ" role="2XxRq1">
+                <property role="Xl_RC" value="test1.xml" />
               </node>
             </node>
           </node>
@@ -766,7 +694,10 @@
             <node concept="2XshWL" id="7GotP_Fvva" role="2OqNvi">
               <ref role="2WH_rO" node="7GotP_M3vU" resolve="runAndCheck" />
               <node concept="Xl_RD" id="7OAOF22FIlB" role="2XxRq1">
-                <property role="Xl_RC" value="../plugins/mps-build/test/test2.xml" />
+                <property role="Xl_RC" value="plugins/mps-build/test" />
+              </node>
+              <node concept="Xl_RD" id="7OAOF22JMig" role="2XxRq1">
+                <property role="Xl_RC" value="test2.xml" />
               </node>
             </node>
           </node>
@@ -783,7 +714,10 @@
             <node concept="2XshWL" id="7GotP_FEbs" role="2OqNvi">
               <ref role="2WH_rO" node="7GotP_M3vU" resolve="runAndCheck" />
               <node concept="Xl_RD" id="7OAOF22FISb" role="2XxRq1">
-                <property role="Xl_RC" value="../plugins/mps-build/test/test3.xml" />
+                <property role="Xl_RC" value="plugins/mps-build/test" />
+              </node>
+              <node concept="Xl_RD" id="7OAOF22JMjl" role="2XxRq1">
+                <property role="Xl_RC" value="test2.xml" />
               </node>
             </node>
           </node>

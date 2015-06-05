@@ -42,19 +42,17 @@ public class RunCodeFromSolution_Test extends BaseTransformationTest {
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_runBuildSimpleCode() throws Exception {
-      IFile f = FileSystem.getInstance().getFileByPath(".");
-      System.out.println("current directory is #" + f.getPath() + "#");
-      this.runAndCheck("../plugins/mps-build/test/test1.xml");
+      this.runAndCheck("plugins/mps-build/test", "test1.xml");
     }
     public void test_callOtherSolution() throws Exception {
-      this.runAndCheck("../plugins/mps-build/test/test2.xml");
+      this.runAndCheck("plugins/mps-build/test", "test2.xml");
     }
     public void test_useIFile() throws Exception {
-      this.runAndCheck("../plugins/mps-build/test/test3.xml");
+      this.runAndCheck("plugins/mps-build/test", "test2.xml");
     }
-    public void runAndCheck(String scriptPath) {
-      IFile scriptFile = FileSystem.getInstance().getFileByPath(scriptPath);
-      IFile scriptDir = scriptFile.getParent();
+    public void runAndCheck(String scriptPath, String scriptFilename) {
+      IFile scriptFile = FileSystem.getInstance().getFileByPath(scriptPath + "/" + scriptFilename);
+      IFile scriptDir = FileSystem.getInstance().getFileByPath(scriptPath);
 
       assert scriptDir != null;
       assert scriptFile != null;
@@ -78,8 +76,6 @@ public class RunCodeFromSolution_Test extends BaseTransformationTest {
           if (ProcessOutputTypes.STDERR.equals(key)) {
             // print errors 
             System.err.print(event.getText());
-          } else {
-            System.out.print(event.getText());
           }
         }
       });
@@ -100,8 +96,7 @@ public class RunCodeFromSolution_Test extends BaseTransformationTest {
       if (scriptPath == null) {
         Assert.fail("Cannot find build script location");
       }
-      scriptPath = scriptPath + "/" + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(buildScript);
-      this.runAndCheck(scriptPath);
+      this.runAndCheck(scriptPath, BuildProject_Behavior.call_getOutputFileName_4915877860351551360(buildScript));
     }
   }
 }
