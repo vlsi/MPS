@@ -5,17 +5,18 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.log4j.Level;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.annotations.NotNull;
+import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
-import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import javax.swing.SwingUtilities;
@@ -33,9 +34,16 @@ public class ModuleProperties_Action extends BaseAction {
   public boolean isDumbAware() {
     return true;
   }
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    // see MPS-19850 
+    return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule && ((AbstractModule) ((SModule) MapSequence.fromMap(_params).get("module"))).getModuleDescriptor() != null;
+  }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "ModuleProperties", t);
