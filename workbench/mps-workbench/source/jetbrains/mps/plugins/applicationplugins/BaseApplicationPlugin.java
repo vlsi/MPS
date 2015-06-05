@@ -28,10 +28,13 @@ import jetbrains.mps.workbench.action.MPSActions;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import org.apache.log4j.Logger;
 
 import java.util.*;
 
 public abstract class BaseApplicationPlugin implements IActionsRegistry {
+  private static final Logger LOG = org.apache.log4j.LogManager.getLogger(BaseApplicationPlugin.class);
+
   private ActionManagerEx myActionManager = ActionManagerEx.getInstanceEx();
 
   private List<BaseCustomApplicationPlugin> myCustomPlugins;
@@ -67,7 +70,12 @@ public abstract class BaseApplicationPlugin implements IActionsRegistry {
   protected void insertInterfaceGroupIntoAnother(String whatId, String toId, String labelName, Anchor anchor) {
     DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
     DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
-    if (gTo == null || gWhat == null) {
+    if (gTo == null) {
+      LOG.warn("Destination group was not found id: " + toId + ". Trying to insert " + whatId);
+      return;
+    }
+    if (gWhat == null) {
+      LOG.warn("Group to insert was not found id: " + whatId + ". Trying to insert into " + toId);
       return;
     }
     if (!(gTo instanceof BaseGroup) && !(gWhat instanceof BaseGroup)) {
