@@ -136,9 +136,11 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.AbstractTableModel;
@@ -229,7 +231,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
-    private JTextField myVersion;
+    private JSpinner myVersion;
 
     @Override
     protected String getConfigItemName() {
@@ -299,8 +301,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                   GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-          myVersion = new JTextField();
-          myVersion.setText("" + getVersion());
+
+          myVersion = new JSpinner(new SpinnerNumberModel((int) getVersion(), 0, getVersion() + 20, 1));
           panel.add(myVersion,
               new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
@@ -325,8 +327,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       if (myVersion != null) {
         try {
-          int newVersion = Integer.parseInt(myVersion.getText());
-          if (!EqualUtil.equals(newVersion,getVersion())) return false;
+          int newVersion = ((Integer) myVersion.getValue());
+          if (!EqualUtil.equals(newVersion, getVersion())) return false;
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -352,9 +354,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           }
         }
-        if (myVersion!=null) {
+        if (myVersion != null) {
           try {
-            int newVersion = Integer.parseInt(myVersion.getText());
+            int newVersion = ((Integer) myVersion.getValue());
             ((Language) myModule).setLanguageVersion(newVersion);
           } catch (NumberFormatException e) {
             //just continue omitting this field
