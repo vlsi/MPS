@@ -112,7 +112,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   protected void addBuiltInImports() {
-    SLanguage base = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L), "jetbrains.mps.console.base", -1);
+    SLanguage base = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L), "jetbrains.mps.console.base");
     Collection<SLanguage> baseAndExtensions = new SLanguageHierarchy(Collections.singleton(base)).getExtending();
     SModelInternal modelInternal = ((SModelInternal) myModel);
     for (SLanguage l : CollectionSequence.fromCollection(baseAndExtensions)) {

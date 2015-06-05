@@ -628,10 +628,6 @@ public class SModel implements SModelData {
     addLanguage(language, language.getLanguageVersion());
   }
 
-  /**
-   * @deprecated  use #addLanguage(SLanguage) instead
-   */
-  @Deprecated
   public void addLanguage(SLanguage id, int version) {
     assertLegalChange();
 

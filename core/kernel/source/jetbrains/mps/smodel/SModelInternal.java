@@ -54,6 +54,8 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addLanguage(@NotNull SLanguage language);
 
+  void addLanguage(@NotNull SLanguage language, int version);
+
   /**
    * SLanguage is the reference to a language, and it bears version (SLanguage.getLanguageVersion()), no need to specify it explicitly here
    */

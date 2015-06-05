@@ -42,10 +42,6 @@ public class MetaAdapterFactoryByName {
     return new SLanguageAdapterByName(langName);
   }
 
-  public static SLanguage getLanguage(String langName, int version) {
-    return new SLanguageAdapterByName(langName, version);
-  }
-
   @Deprecated
   @ToRemove(version = 3.3)
   //no usages in MPS except SModelUtil.findConceptDeclaration

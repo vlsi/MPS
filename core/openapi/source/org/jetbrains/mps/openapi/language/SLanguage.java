@@ -67,5 +67,6 @@ public interface SLanguage {
    * In MPS 3.2, version is changed only by adding language migrations.
    * @return version of the language, or -1 the version could not be deduced.
    */
+  @Deprecated //normally, one shouldn't have used it. If you had, switch to getting version from LanguageRuntime
   int getLanguageVersion();
 }

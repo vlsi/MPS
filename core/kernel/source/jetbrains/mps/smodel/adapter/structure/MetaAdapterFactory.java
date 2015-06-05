@@ -60,32 +60,10 @@ public abstract class MetaAdapterFactory {
 
   @NotNull
   public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName) {
-    return getLanguage(id, langName, -1);
-  }
-
-  @NotNull
-  public static SLanguage getLanguage(@NotNull SLanguageId id, @NotNull String langName, int version) {
-    SLanguageAdapterById l = new SLanguageAdapterById(id, langName, version);
-    LangKey p = new LangKey(id, langName, version);
+    SLanguageAdapterById l = new SLanguageAdapterById(id, langName);
+    LangKey p = new LangKey(id, langName);
     ourLanguageIds.putIfAbsent(p, l);
     return ourLanguageIds.get(p);
-  }
-
-  public static SLanguage getLanguage(@NotNull SLanguage original, int anotherVersion) {
-    if (original.getLanguageVersion() == anotherVersion) {
-      return original;
-    }
-    SLanguageId langId = null;
-    if (original instanceof SLanguageAdapterById) {
-      langId = ((SLanguageAdapterById) original).getId();
-    } else if (original instanceof SLanguageAdapter) {
-      final LanguageRuntime rt = ((SLanguageAdapter) original).getLanguageDescriptor();
-      langId = rt == null ? null : rt.getId();
-    }
-    if (langId == null) {
-      langId = MetaIdByDeclaration.ref2LangId(original.getSourceModule().getModuleReference());
-    }
-    return getLanguage(langId, original.getQualifiedName(), anotherVersion);
   }
 
   @NotNull
@@ -212,24 +190,22 @@ public abstract class MetaAdapterFactory {
   private static class LangKey {
     private final SLanguageId myId;
     private final String myName;
-    private final int myVersion;
 
-    public LangKey(SLanguageId id, String name, int version) {
+    public LangKey(SLanguageId id, String name) {
       myId = id;
       myName = name;
-      myVersion = version;
     }
 
     @Override
     public int hashCode() {
-      return myId.hashCode() * 31 + myName.hashCode() + myVersion;
+      return myId.hashCode() * 31 + myName.hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
       if (obj instanceof LangKey) {
         LangKey o = (LangKey) obj;
-        return myVersion == o.myVersion && myId.equals(o.myId) && myName.equals(o.myName);
+        return myId.equals(o.myId) && myName.equals(o.myName);
       }
       return false;
     }
