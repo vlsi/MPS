@@ -4,10 +4,23 @@ package jetbrains.mps.build.mps.runner.test.test3;
 
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
 
 public class MainClass {
   public static void mpsMain() {
-    IFile okFile = FileSystem.getInstance().getFileByPath("ok.log");
-    okFile.createNewFile();
+    try {
+      IFile okFile = FileSystem.getInstance().getFileByPath("ok.log");
+      okFile.createNewFile();
+    } catch (Exception ex) {
+      System.err.println("Problem during file creation");
+      ex.printStackTrace();
+    }
+    File resultFile = new File("ok.log");
+    if (resultFile.exists()) {
+      System.out.println("Result file was created.");
+    } else {
+      System.out.println("Result file was not created. Trying one more time...");
+      jetbrains.mps.build.mps.runner.test.test1.MainClass.mpsMain();
+    }
   }
 }

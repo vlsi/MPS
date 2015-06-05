@@ -2,7 +2,7 @@
 <debug-info>
   <root nodeRef="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)/138593292063253314">
     <file name="test3.xml">
-      <unit id="138593292063253314" at="1,0,229,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test3" />
+      <unit id="138593292063253314" at="1,0,270,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test3" />
     </file>
   </root>
   <root nodeRef="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)/5712055271175299542">
