@@ -51,7 +51,7 @@
         <sources jar="jetbrains.mps.build.sandbox-src.jar" descriptor="jetbrains.mps.build.sandbox.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox.jar">
+    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/trace.info, **/exports" />
@@ -60,7 +60,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />

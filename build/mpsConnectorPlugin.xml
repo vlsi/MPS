@@ -34,7 +34,7 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugin" />
-    <jar destfile="${build.layout}/plugin/MPSPlugin.jar">
+    <jar destfile="${build.layout}/plugin/MPSPlugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/MPS-plugin" />
     </jar>
   </target>

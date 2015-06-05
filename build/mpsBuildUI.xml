@@ -69,7 +69,7 @@
         <sources jar="jetbrains.mps.build.mps.pluginSolution-src.jar" descriptor="jetbrains.mps.build.mps.pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution.jar">
+    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/trace.info, **/exports" />
@@ -78,7 +78,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.mps.pluginSolution-models">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -109,7 +109,7 @@
         <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="jetbrains.mps.build.pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution.jar">
+    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/trace.info, **/exports" />
@@ -118,7 +118,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-pluginSolutions-jetbrains.mps.build.pluginSolution-models">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />

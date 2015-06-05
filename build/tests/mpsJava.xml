@@ -63,7 +63,7 @@
         <sources jar="jetbrains.mps.ide.java.tests-src.jar" descriptor="jetbrains.mps.ide.java.tests.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports" />
@@ -72,7 +72,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models">
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests-src.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />

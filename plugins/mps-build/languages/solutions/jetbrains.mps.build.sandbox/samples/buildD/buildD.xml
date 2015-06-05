@@ -9,7 +9,7 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/aaaa.jar">
+    <jar destfile="${build.layout}/aaaa.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/AAA" />
     </jar>
     <echo file="${build.layout}/build.properties">buildA.aver=${buildA.aver}</echo>
