@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.module.ReloadableModule;
 
 import java.util.Set;
 
@@ -27,5 +27,5 @@ import java.util.Set;
  * Otherwise the application may behave unexpectedly
  */
 public interface ModuleReloadListener {
-  void modulesReloaded(Set<ReloadableModuleBase> modules);
+  void modulesReloaded(Set<ReloadableModule> modules);
 }

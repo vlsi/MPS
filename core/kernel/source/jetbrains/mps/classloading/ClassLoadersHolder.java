@@ -288,6 +288,7 @@ public class ClassLoadersHolder {
      * We do it in EDT asynchronously, because there are some class loading clients which eager to dispose asynchronously
      */
     public synchronized void flushDisposeQueue() {
+      if (myDisposeQueue.isEmpty()) return;
       final List<ModuleClassLoader> toDispose = new ArrayList<ModuleClassLoader>(myDisposeQueue);
       myModelAccess.runWriteInEDT(new Runnable() {
         @Override

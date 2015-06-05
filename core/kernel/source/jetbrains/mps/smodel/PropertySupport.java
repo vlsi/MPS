@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleReloadListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -283,7 +284,7 @@ public abstract class PropertySupport {
     }
 
     @Override
-    public void modulesReloaded(Set<ReloadableModuleBase> modules) {
+    public void modulesReloaded(Set<ReloadableModule> modules) {
       myMap.clear();
     }
 
