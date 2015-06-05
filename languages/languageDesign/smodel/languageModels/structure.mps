@@ -2085,6 +2085,9 @@
     <node concept="1TJgyi" id="34EJa6aIcNp" role="1TKVEl">
       <property role="TrG5h" value="version" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <node concept="asaX9" id="1KCVwvKvm6e" role="lGtFl">
+        <property role="YLQ7P" value="was introduced after 3.2 and removed just after 3.3 EAP1. Users should not have instances of this field" />
+      </node>
     </node>
     <node concept="PrWs8" id="34EJa6aIcz1" role="PzmwI">
       <ref role="PrY4T" node="34EJa6aIcco" resolve="LanguageIdentity" />

@@ -59,7 +59,7 @@ public class CollectTests_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite", -1);
+    final SLanguage lang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L), "jetbrains.mps.testbench.suite");
     return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguageIds().contains(lang);
   }
   @Override

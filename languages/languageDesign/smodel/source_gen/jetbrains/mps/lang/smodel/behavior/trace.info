@@ -2754,27 +2754,26 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3542851458883439860">
     <file name="LanguageId_Behavior.java">
-      <node id="3542851458883488426" at="15,83,16,577" concept="7" />
+      <node id="3542851458883488426" at="15,83,16,408" concept="7" />
       <node id="3542851458883480733" at="18,98,19,214" concept="2" />
       <node id="3542851458883443026" at="19,214,20,196" concept="2" />
-      <node id="3542851458883443034" at="20,196,21,203" concept="2" />
       <node id="3542851458883439860" at="13,0,15,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3542851458883439860" at="15,0,18,0" concept="8" trace="virtual_getLanguage_3542851458883438739#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SLanguage;" />
-      <node id="3542851458883439860" at="18,0,23,0" concept="8" trace="virtual_setLanguage_3542851458883438752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SLanguage;)V" />
+      <node id="3542851458883439860" at="18,0,22,0" concept="8" trace="virtual_setLanguage_3542851458883438752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SLanguage;)V" />
       <scope id="3542851458883439862" at="13,43,13,43" />
-      <scope id="3542851458883439867" at="15,83,16,577" />
+      <scope id="3542851458883439867" at="15,83,16,408" />
       <scope id="3542851458883439860" at="13,0,15,0">
         <var name="thisNode" id="3542851458883439860" />
       </scope>
+      <scope id="3542851458883439877" at="18,98,20,196" />
       <scope id="3542851458883439860" at="15,0,18,0">
         <var name="thisNode" id="3542851458883439860" />
       </scope>
-      <scope id="3542851458883439877" at="18,98,21,203" />
-      <scope id="3542851458883439860" at="18,0,23,0">
+      <scope id="3542851458883439860" at="18,0,22,0">
         <var name="language" id="3542851458883439878" />
         <var name="thisNode" id="3542851458883439860" />
       </scope>
-      <unit id="3542851458883439860" at="12,0,24,0" name="jetbrains.mps.lang.smodel.behavior.LanguageId_Behavior" />
+      <unit id="3542851458883439860" at="12,0,23,0" name="jetbrains.mps.lang.smodel.behavior.LanguageId_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3575813534625144062">

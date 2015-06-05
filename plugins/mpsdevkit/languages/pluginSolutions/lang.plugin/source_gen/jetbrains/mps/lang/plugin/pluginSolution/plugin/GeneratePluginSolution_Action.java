@@ -67,11 +67,11 @@ public class GeneratePluginSolution_Action extends BaseAction {
         ModelRoot defaultRoot = s.getModelRoots().iterator().next();
         SModel newModel = defaultRoot.createModel(s.getModuleName() + ".plugin");
 
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin", -1));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L), "jetbrains.mps.lang.plugin.standalone", -1));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L), "jetbrains.mps.lang.smodel", -1));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x63650c5916c8498aL, 0x99c8005c7ee9515dL), "jetbrains.mps.lang.access", -1));
-        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xef7bf5acd06c4342L, 0xb11de42104eb9343L), "jetbrains.mps.lang.plugin.standalone"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L), "jetbrains.mps.lang.smodel"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x63650c5916c8498aL, 0x99c8005c7ee9515dL), "jetbrains.mps.lang.access"));
+        ((SModelBase) newModel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
 
         SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a9a0a0a0a5a0());
 

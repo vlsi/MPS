@@ -13,11 +13,10 @@ public class LanguageId_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SLanguage virtual_getLanguage_3542851458883438739(SNode thisNode) {
-    return MetaAdapterFactory.getLanguage(SLanguageId.deserialize(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"))), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd9L, "version")));
+    return MetaAdapterFactory.getLanguage(SLanguageId.deserialize(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"))), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace")));
   }
   public static void virtual_setLanguage_3542851458883438752(SNode thisNode, SLanguage language) {
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"), IdHelper.getLanguageId(language).serialize());
     SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace"), language.getQualifiedName());
-    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd9L, "version"), "" + (language.getLanguageVersion()));
   }
 }

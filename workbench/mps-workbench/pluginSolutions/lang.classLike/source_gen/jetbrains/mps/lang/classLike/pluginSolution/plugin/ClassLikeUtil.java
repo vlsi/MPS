@@ -32,7 +32,7 @@ public class ClassLikeUtil {
     ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(descr, newClass);
 
     SModelInternal m = ((SModelInternal) model);
-    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L), "jetbrains.mps.lang.classLike", -1));
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L), "jetbrains.mps.lang.classLike"));
     return newClass;
   }
 }

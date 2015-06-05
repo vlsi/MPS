@@ -19,7 +19,7 @@ public class ModuleDependencyUtils {
   }
   public static void addDependencyOnJavaDocIfMissing(SModel currentModel) {
     SModelInternal model = (SModelInternal) currentModel;
-    SLanguage javadocLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1);
+    SLanguage javadocLang = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc");
     if (!(model.importedLanguageIds().contains(javadocLang))) {
       model.addLanguage(javadocLang);
     }
