@@ -4,12 +4,16 @@ package jetbrains.mps.nodeEditor.cells.jetpad;
 
 import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.openapi.editor.TextBuilder;
 
 public class EmptyCellLayout extends AbstractCellLayout {
 
   public void doLayout(EditorCell_Collection collection) {
+    for (EditorCell childCell : Sequence.fromIterable(collection)) {
+      childCell.relayout();
+    }
   }
   public TextBuilder doLayoutText(Iterable<EditorCell> iterable) {
     return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();

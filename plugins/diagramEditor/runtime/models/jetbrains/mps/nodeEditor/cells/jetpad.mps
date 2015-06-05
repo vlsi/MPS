@@ -8349,7 +8349,28 @@
           <ref role="3uigEE" to="nu8v:~EditorCell_Collection" resolve="EditorCell_Collection" />
         </node>
       </node>
-      <node concept="3clFbS" id="2eSMEaVmJZD" role="3clF47" />
+      <node concept="3clFbS" id="2eSMEaVmJZD" role="3clF47">
+        <node concept="2Gpval" id="1RWHAMZRP$W" role="3cqZAp">
+          <node concept="2GrKxI" id="1RWHAMZRP$X" role="2Gsz3X">
+            <property role="TrG5h" value="childCell" />
+          </node>
+          <node concept="3clFbS" id="1RWHAMZRP$Y" role="2LFqv$">
+            <node concept="3clFbF" id="1RWHAMZRQza" role="3cqZAp">
+              <node concept="2OqwBi" id="1RWHAMZRRCY" role="3clFbG">
+                <node concept="2GrUjf" id="1RWHAMZRQz9" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="1RWHAMZRP$X" resolve="childCell" />
+                </node>
+                <node concept="liA8E" id="1RWHAMZRSWL" role="2OqNvi">
+                  <ref role="37wK5l" to="nu8v:~EditorCell.relayout():void" resolve="relayout" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="1RWHAMZRQnj" role="2GsD0m">
+            <ref role="3cqZAo" node="2eSMEaVmJZ_" resolve="collection" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="2eSMEaVmJZE" role="jymVt">
       <property role="1EzhhJ" value="false" />
