@@ -352,6 +352,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                 myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
           }
         }
+        if (myVersion!=null) {
+          try {
+            int newVersion = Integer.parseInt(myVersion.getText());
+            ((Language) myModule).setLanguageVersion(newVersion);
+          } catch (NumberFormatException e) {
+            //just continue omitting this field
+          }
+        }
         myEntriesEditor.apply();
       }
     }
