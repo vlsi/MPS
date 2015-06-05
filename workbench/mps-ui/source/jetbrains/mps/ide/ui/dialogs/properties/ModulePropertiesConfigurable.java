@@ -104,6 +104,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Pair;
@@ -228,6 +229,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private ModuleDependenciesTab myModuleDependenciesTab;
     private ContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
+    private JTextField myVersion;
 
     @Override
     protected String getConfigItemName() {
@@ -271,7 +273,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         //TODO: replace new JBInsets(0,0,0,0) with JBUI.emptyInsets()
         panel.setLayout(new GridLayoutManager(hasVersion ? 2 : 1, 2, new JBInsets(0, 0, 0, 0), -1, -1));
 
-        int row=0;
+        int row = 0;
 
         JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.javatab.genoutlabel"));
         panel.add(label, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
@@ -297,9 +299,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
                   GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-          JTextField textField = new JTextField();
-          textField.setText("" + getVersion());
-          panel.add(textField,
+          myVersion = new JTextField();
+          myVersion.setText("" + getVersion());
+          panel.add(myVersion,
               new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
@@ -316,14 +318,21 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      return super.isModified()
-          || (
-          myModule instanceof DevKit
-              ? myModuleDependenciesTab.isModified()
-              : myEntriesEditor.isModified())
-          || (
-          myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))
-      );
+      if (super.isModified()) return true;
+      if (myModule instanceof DevKit && myModuleDependenciesTab.isModified()) return true;
+      if (!(myModule instanceof DevKit) && myEntriesEditor.isModified()) return true;
+      if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) return true;
+
+      if (myVersion != null) {
+        try {
+          int newVersion = Integer.parseInt(myVersion.getText());
+          if (!EqualUtil.equals(newVersion,getVersion())) return false;
+        } catch (NumberFormatException e) {
+          //just continue omitting this field
+        }
+      }
+
+      return false;
     }
 
     @Override
