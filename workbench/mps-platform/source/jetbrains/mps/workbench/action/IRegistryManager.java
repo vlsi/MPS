@@ -18,6 +18,9 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.workbench.action.IActionsRegistry;
 
-public interface IRegistryManager{
+/**
+ * fixme get rid of it
+ */
+public interface IRegistryManager {
   IActionsRegistry getActionsRegistry(PluginId id);
 }

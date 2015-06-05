@@ -39,12 +39,16 @@ public class ModulePluginContributor extends PluginContributor {
   private static final String APP_PLUGIN_SUFFIX = "_ApplicationPlugin";
 
   public static String getProjectPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECT_PLUGIN;
+    if (module.getModuleName().equals(IDE_MODULE_ID)) {
+      return IDE_MODULE_PROJECT_PLUGIN;
+    }
     return String.format("%s%s%s%s", module.getModuleName(), PLUGIN_STRING, ModuleNameUtil.getModuleShortName(module), PROJECT_PLUGIN_SUFFIX);
   }
 
   public static String getApplicationPluginClassName(SModule module) {
-    if (module.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APP_PLUGIN;
+    if (module.getModuleName().equals(IDE_MODULE_ID)) {
+      return IDE_MODULE_APP_PLUGIN;
+    }
     return String.format("%s%s%s%s", module.getModuleName(), PLUGIN_STRING, ModuleNameUtil.getModuleShortName(module), APP_PLUGIN_SUFFIX);
   }
 

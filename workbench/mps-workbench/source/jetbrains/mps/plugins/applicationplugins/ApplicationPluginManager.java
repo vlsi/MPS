@@ -20,7 +20,6 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.plugins.BasePluginManager;
-import jetbrains.mps.plugins.ModulePluginContributor;
 import jetbrains.mps.plugins.PluginContributor;
 import jetbrains.mps.plugins.PluginLoaderRegistry;
 import jetbrains.mps.workbench.action.IActionsRegistry;
@@ -39,7 +38,12 @@ import java.util.*;
 public class ApplicationPluginManager extends BasePluginManager<BaseApplicationPlugin> implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = LogManager.getLogger(ApplicationPluginManager.class);
 
-  public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginLoaderRegistry pluginLoaderRegistry) {
+  /**
+   * FIXME
+   * WARNING: the dependency on Ide_PluginInitializer is a hack. We need either to init ide plugin explicitly or remove the plugin factories at all,
+   * replace them with usual application_components and project_components.
+   */
+  public ApplicationPluginManager(MPSCoreComponents coreComponents, PluginLoaderRegistry pluginLoaderRegistry, Ide_PluginInitializer initializer) {
     super(coreComponents.getModuleRepository(), pluginLoaderRegistry);
   }
 
@@ -111,29 +115,34 @@ public class ApplicationPluginManager extends BasePluginManager<BaseApplicationP
   }
 
   @Override
-  protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
-  }
+    protected void beforePluginsDisposed(List<BaseApplicationPlugin> plugins) {
+    }
 
-  @Override
-  protected void disposePlugin(BaseApplicationPlugin plugin) {
-    plugin.dispose();
-  }
+    @Override
+    protected void disposePlugin(BaseApplicationPlugin plugin) {
+      plugin.dispose();
+    }
 
-  //----------------COMPONENT STUFF---------------------
+    @Override
+    @NonNls
+    @NotNull
+    public String getComponentName() {
+      return ApplicationPluginManager.class.getName();
+    }
 
-  @Override
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return ApplicationPluginManager.class.getName();
-  }
-
+    /**
+     * Cannot load existing plugins here since:
+     * 1. we need to initialize ide plugin at the first place here (other plugins' actions depend on it)
+     * 2. it has some action which recursively addresses this component via Application#getComponent which leads to infinite recursive initialization
+     *    fixme we can get rid of that but probably some generated code needs to be rewritten (the only place is {@link jetbrains.mps.plugins.actions.GeneratedActionGroup}
+     *
+   * Thus we state that currently there must be no loaded modules in the repository when #initComponent() is called
+   */
   @Override
   public void initComponent() {
     synchronized (myPluginsLock) {
       if (!myPluginLoaderRegistry.getLoadedContributors().isEmpty()) {
         LOG.error("Some contributor plugins will not be loaded because of too late component initialization.");
-//        loadPlugins(myPluginLoaderRegistry.getLoadedContributors());
       }
       register();
     }

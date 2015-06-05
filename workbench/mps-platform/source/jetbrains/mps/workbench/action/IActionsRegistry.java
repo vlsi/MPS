@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.workbench.action;
 
-import jetbrains.mps.workbench.action.BaseAction;
-
+/**
+ * fixme get rid of it
+ */
 public interface IActionsRegistry {
   void addParameterizedAction(BaseAction action, Object... params);
 }
