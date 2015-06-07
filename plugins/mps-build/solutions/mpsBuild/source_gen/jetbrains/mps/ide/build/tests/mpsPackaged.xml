@@ -59,7 +59,7 @@
         <sources jar="testPackagedLanguage.test-src.jar" descriptor="testPackagedLanguage.test.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/testPackagedLanguage.test.jar">
+    <jar destfile="${build.layout}/testPackagedLanguage.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPackagedLanguage.test" />
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/testPackagedLanguage.test.jar" />
@@ -67,7 +67,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models">
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/testPackagedLanguage.test-src.jar">
+    <jar destfile="${build.layout}/testPackagedLanguage.test-src.jar" duplicate="preserve">
       <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage.test/testPackagedLanguage.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage.test-models" prefix="module/models" />
     </jar>
@@ -92,12 +92,13 @@
         <sources jar="testPackagedLanguage-src.jar" descriptor="testPackagedLanguage.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/testPackagedLanguage.jar">
+    <jar destfile="${build.layout}/testPackagedLanguage.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPackagedLanguage" />
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/testPackagedLanguage.jar" />
     </jar>
-    <jar destfile="${build.layout}/testPackagedLanguage-generator.jar">
+    <jar destfile="${build.layout}/testPackagedLanguage-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testPackagedLanguage#6919151941181557458" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-generator-template">
@@ -106,12 +107,14 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-languageModels">
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/testPackagedLanguage-src.jar">
+    <jar destfile="${build.layout}/testPackagedLanguage-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testPackaged/testPackagedLanguage/testPackagedLanguage.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testPackaged-testPackagedLanguage-generator-template" prefix="module/generator/template" />

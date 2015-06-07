@@ -12,11 +12,11 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/result" />
     <mkdir dir="${build.tmp}/default/A-_dl__lbrace_aver_rbrace_.zip" />
-    <jar destfile="${build.tmp}/default/A-_dl__lbrace_aver_rbrace_.zip/module-A.jar">
+    <jar destfile="${build.tmp}/default/A-_dl__lbrace_aver_rbrace_.zip/module-A.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/module-A" />
     </jar>
     <mkdir dir="${build.tmp}/default/withX.zip" />
-    <jar destfile="${build.tmp}/default/withX.zip/X.jar">
+    <jar destfile="${build.tmp}/default/withX.zip/X.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/modX" />
     </jar>
     <zip destfile="${build.tmp}/default/A-_dl__lbrace_aver_rbrace_.zip/withX.zip">

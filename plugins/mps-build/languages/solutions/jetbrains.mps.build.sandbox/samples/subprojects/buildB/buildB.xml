@@ -28,7 +28,7 @@
     </copy>
     <copy file="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip/module-A.jar" todir="${build.layout}/result/A-${buildA.aver}" />
     <copy file="${build.tmp}/deps/buildA/abcde.zip/abcde.jar" todir="${build.layout}/result/A-${buildA.aver}" />
-    <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar">
+    <jar destfile="${build.layout}/result/A-${buildA.aver}/module-B.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/module-B" />
     </jar>
     <mkdir dir="${build.layout}/importTest" />

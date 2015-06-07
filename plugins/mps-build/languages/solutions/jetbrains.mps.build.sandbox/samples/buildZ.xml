@@ -7,7 +7,7 @@
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/modB.jar">
+    <jar destfile="${build.layout}/modB.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/module-B-in-Z" />
     </jar>
     <mkdir dir="${build.layout}/Aa" />
