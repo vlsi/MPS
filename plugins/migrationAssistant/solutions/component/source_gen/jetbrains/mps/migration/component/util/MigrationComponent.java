@@ -5,21 +5,15 @@ package jetbrains.mps.migration.component.util;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
-
 import java.util.Map;
-
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-
 import java.util.HashMap;
-
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.migration.global.ProjectMigration;
-
 import javax.swing.SwingUtilities;
-
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -36,15 +30,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import jetbrains.mps.project.AbstractModule;
-
 import java.util.List;
-
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -57,9 +47,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-
 import java.util.Collection;
-
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
@@ -126,9 +114,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public String getDescriptorFQName(SModule module) {
-    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class,
-        SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L,
-            "jetbrains.mps.lang.migration.structure.MigrationScript").getDeclarationNode()), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
+    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript").getDeclarationNode()), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
 
   public MigrationDescriptor getMigrationDescriptor(Language module) {
@@ -220,7 +206,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             }
             for (int v = ver; v < currentLangVersion; v++) {
               if (fetchScript(new MigrationScriptReference(lang, v)) == null) {
-                ListSequence.fromList(result).addElement(MultiTuple.<SModule, SLanguage, Integer>from(module, lang, v));
+                ListSequence.fromList(result).addElement(MultiTuple.<SModule,SLanguage,Integer>from(module, lang, v));
                 // next used language, please 
                 break;
               }
@@ -312,7 +298,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public String getDescription() {
         return cc.getDescription();
       }
-
       public boolean execute() {
         try {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -372,25 +357,23 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     final Wrappers._int result = new Wrappers._int();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        Iterable<Integer> scriptsByModule =
-            Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).ofType(AbstractModule.class).select(
-                new ISelector<AbstractModule, Integer>() {
-                  public Integer select(AbstractModule module) {
-                    int scripts = 0;
-                    for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
-                      int currentLangVersion = lang.getLanguageVersion();
-                      int ver = module.getUsedLanguageVersion(lang);
+        Iterable<Integer> scriptsByModule = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).ofType(AbstractModule.class).select(new ISelector<AbstractModule, Integer>() {
+          public Integer select(AbstractModule module) {
+            int scripts = 0;
+            for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
+              int currentLangVersion = lang.getLanguageVersion();
+              int ver = module.getUsedLanguageVersion(lang);
 
-                      ver = Math.max(ver, 0);
-                      currentLangVersion = Math.max(currentLangVersion, 0);
+              ver = Math.max(ver, 0);
+              currentLangVersion = Math.max(currentLangVersion, 0);
 
-                      if (ver < currentLangVersion) {
-                        scripts += currentLangVersion - ver;
-                      }
-                    }
-                    return scripts;
-                  }
-                });
+              if (ver < currentLangVersion) {
+                scripts += currentLangVersion - ver;
+              }
+            }
+            return scripts;
+          }
+        });
         return result.value = Sequence.fromIterable(scriptsByModule).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
           public Integer combine(Integer s, Integer it) {
             return s + it;
@@ -408,46 +391,43 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       public Boolean invoke() {
         Collection<ScriptApplied> scripts = CollectionSequence.fromCollection(new ArrayList<ScriptApplied>());
 
-        return Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).ofType(AbstractModule.class).any(
-            new IWhereFilter<AbstractModule>() {
-              public boolean accept(final AbstractModule module) {
-                return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
-                  public boolean accept(MigrationScriptReference it) {
-                    if (!(MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module))) {
-                      return false;
-                    }
-                    MigrationScript loaded = fetchScript(it);
-                    if (loaded == null) {
-                      return false;
-                    }
-                    final ScriptApplied applied = new ScriptApplied(loaded, module);
-                    if (!(areDepsSatisfied(applied))) {
-                      return false;
-                    }
-                    result.value = new MigrationManager.MigrationStep() {
-                      public String getDescription() {
-                        return applied.toString();
-                      }
-
-                      public boolean execute() {
-                        final Wrappers._boolean res = new Wrappers._boolean();
-                        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-                          public void run() {
-                            res.value = executeScript(applied);
-                          }
-                        });
-                        return res.value;
-                      }
-
-                      public void forceExecutionNextTime() {
-                        throw new UnsupportedOperationException("not supported for language migrations");
-                      }
-                    };
-                    return true;
+        return Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(ProjectHelper.toMPSProject(myProject))).ofType(AbstractModule.class).any(new IWhereFilter<AbstractModule>() {
+          public boolean accept(final AbstractModule module) {
+            return Sequence.fromIterable(MigrationsUtil.getNextStepScripts(module)).any(new IWhereFilter<MigrationScriptReference>() {
+              public boolean accept(MigrationScriptReference it) {
+                if (!(MigrationsUtil.isMigrationNeeded(it.getLanguage(), it.getFromVersion(), module))) {
+                  return false;
+                }
+                MigrationScript loaded = fetchScript(it);
+                if (loaded == null) {
+                  return false;
+                }
+                final ScriptApplied applied = new ScriptApplied(loaded, module);
+                if (!(areDepsSatisfied(applied))) {
+                  return false;
+                }
+                result.value = new MigrationManager.MigrationStep() {
+                  public String getDescription() {
+                    return applied.toString();
                   }
-                });
+                  public boolean execute() {
+                    final Wrappers._boolean res = new Wrappers._boolean();
+                    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                      public void run() {
+                        res.value = executeScript(applied);
+                      }
+                    });
+                    return res.value;
+                  }
+                  public void forceExecutionNextTime() {
+                    throw new UnsupportedOperationException("not supported for language migrations");
+                  }
+                };
+                return true;
               }
             });
+          }
+        });
       }
     }));
 
@@ -468,7 +448,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
-
   private static MigrationScript check_gd1mrb_a0e0u(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
