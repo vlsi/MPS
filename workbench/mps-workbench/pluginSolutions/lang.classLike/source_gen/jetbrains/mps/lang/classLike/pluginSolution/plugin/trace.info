@@ -17,8 +17,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="d43affd0-e5f9-482c-adc1-9400b73f2a8d/r:b2267b28-bfcc-40f1-8447-02c15480f0d2(jetbrains.mps.lang.classLike.pluginSolution/jetbrains.mps.lang.classLike.pluginSolution.plugin)/1909661648054906471">
     <file name="ClassLikeUtil.java">
-      <node id="3402736933910993997" at="22,69,23,204" concept="7" />
-      <node id="3384419124890909909" at="23,204,24,32" concept="2" />
+      <node id="3402736933910993997" at="22,69,23,385" concept="7" />
+      <node id="3384419124890909909" at="23,385,24,32" concept="2" />
       <node id="3402736933911010699" at="24,32,25,468" concept="2" />
       <node id="3402736933910988348" at="25,468,26,412" concept="2" />
       <node id="6478870542308645504" at="28,35,29,117" concept="2" />
@@ -42,7 +42,7 @@
         <var name="descr" id="1909661648054929839" />
         <var name="model" id="1909661648054930862" />
       </scope>
-      <unit id="3402736933912013908" at="27,208,31,5" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil$1" />
+      <unit id="3402736933912013908" at="27,121,31,5" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil$1" />
       <unit id="1909661648054906471" at="21,0,39,0" name="jetbrains.mps.lang.classLike.pluginSolution.plugin.ClassLikeUtil" />
     </file>
   </root>
