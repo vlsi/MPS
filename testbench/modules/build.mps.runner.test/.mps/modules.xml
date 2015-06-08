@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="MPSProject">
-    <projectModules>
-      <modulePath path="$PROJECT_DIR$/jetbrains.mps.build.mps.runner.test.buildscript/jetbrains.mps.build.mps.runner.test.buildscript.msd" folder="platform.build.runner.test" />
-      <modulePath path="$PROJECT_DIR$/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" folder="platform.build.runner.test" />
-      <modulePath path="$PROJECT_DIR$/jetbrains.mps.build.mps.runner.test.test2/jetbrains.mps.build.mps.runner.test.test2.msd" folder="platform.build.runner.test" />
-      <modulePath path="$PROJECT_DIR$/jetbrains.mps.build.mps.runner.test.test3/jetbrains.mps.build.mps.runner.test.test3.msd" folder="platform.build.runner.test" />
-      <modulePath path="$PROJECT_DIR$/jetbrains.mps.build.mps.runner.test.test4/jetbrains.mps.build.mps.runner.test.test4.msd" folder="platform.build.runner.test" />
-    </projectModules>
+    <projectModules />
   </component>
 </project>
