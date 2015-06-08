@@ -7,12 +7,7 @@ import jetbrains.mps.vfs.FileSystem;
 
 public class MainClass {
   public static void mpsMain() {
-    try {
-      IFile okFile = FileSystem.getInstance().getFileByPath("ok.log");
-      okFile.createNewFile();
-    } catch (Exception ex) {
-      System.err.println("Problem during file creation");
-      ex.printStackTrace();
-    }
+    IFile okFile = FileSystem.getInstance().getFileByPath("ok.log");
+    okFile.createNewFile();
   }
 }

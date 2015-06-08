@@ -11,10 +11,10 @@ public class MainClass {
     File resultFile = new File("ok.log");
     try {
       if (!(resultFile.createNewFile())) {
-        System.out.println("Cannot create new file " + resultFile.getAbsolutePath());
+        System.err.println("Cannot create new file " + resultFile.getAbsolutePath());
       }
     } catch (IOException e) {
-      System.out.println("Exception while creating new file " + resultFile.getAbsolutePath());
+      System.err.println("Exception while creating new file " + resultFile.getAbsolutePath());
       e.printStackTrace();
     }
   }

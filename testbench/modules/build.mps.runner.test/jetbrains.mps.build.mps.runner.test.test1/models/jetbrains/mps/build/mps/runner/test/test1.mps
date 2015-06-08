@@ -137,7 +137,7 @@
                   <node concept="2OqwBi" id="4X5j05vNf_E" role="3clFbG">
                     <node concept="10M0yZ" id="4X5j05vNf_F" role="2Oq$k0">
                       <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                      <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                      <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
                     </node>
                     <node concept="liA8E" id="4X5j05vNf_G" role="2OqNvi">
                       <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
@@ -176,7 +176,7 @@
                 <node concept="2OqwBi" id="4X5j05vNdUw" role="3clFbG">
                   <node concept="10M0yZ" id="4X5j05vNdUx" role="2Oq$k0">
                     <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                    <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
+                    <ref role="3cqZAo" to="e2lb:~System.err" resolve="err" />
                   </node>
                   <node concept="liA8E" id="4X5j05vNdUy" role="2OqNvi">
                     <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
