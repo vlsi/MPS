@@ -4,22 +4,15 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class CatchClause_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.createScopeInfo(this, node);
-    }
+    createScopeInfo(node);
     this.appendWithIndent("} catch (");
     appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f1L, "throwable")));
     this.append(") {");
@@ -27,18 +20,7 @@ public class CatchClause_TextGen extends SNodeTextGen {
     appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10f39a56e2fL, 0x10f39a6a2f2L, "catchBody")));
     this.decreaseDepth();
     if (getBuffer().hasPositionsSupport()) {
-      {
-        List<SNode> scopeVariables = new ArrayList<SNode>();
-        try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-        } catch (Throwable t) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Can't calculate scope variables for a node " + node + ".", t);
-          }
-        }
-        TraceInfoGenerationUtil.fillScopeInfo(this, node, scopeVariables);
-      }
+      fillScopeInfo(node, BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{}));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(CatchClause_TextGen.class);
 }

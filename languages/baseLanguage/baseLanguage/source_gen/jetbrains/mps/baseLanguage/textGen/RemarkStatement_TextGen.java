@@ -4,20 +4,14 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class RemarkStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.createPositionInfo(this, node);
-    }
+    createPositionInfo(node);
     if (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1101757c8faL, 0x110175cdb2bL, "value")) != null) {
       this.appendNewLine();
       this.appendWithIndent("// ");
@@ -27,18 +21,7 @@ public class RemarkStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("// ");
     }
     if (getBuffer().hasPositionsSupport()) {
-      {
-        String traceableProperty = "";
-        try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-        } catch (Throwable t) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
-          }
-        }
-        TraceInfoGenerationUtil.fillPositionInfo(this, node, traceableProperty);
-      }
+      fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(RemarkStatement_TextGen.class);
 }
