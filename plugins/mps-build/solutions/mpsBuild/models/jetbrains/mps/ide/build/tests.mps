@@ -1429,12 +1429,6 @@
           </node>
         </node>
       </node>
-      <node concept="1SiIV0" id="7GotP_G7J2" role="3bR37C">
-        <node concept="3bR9La" id="7GotP_G7J3" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" to="ffeo:7pdFgzxlDoA" resolve="jetbrains.mps.build" />
-        </node>
-      </node>
       <node concept="1SiIV0" id="7GotP_G7Ph" role="3bR37C">
         <node concept="3bR9La" id="7GotP_G7Pi" role="1SiIV1">
           <property role="3bR36h" value="false" />

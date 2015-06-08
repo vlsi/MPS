@@ -418,6 +418,12 @@
           <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
         </node>
       </node>
+      <node concept="1SiIV0" id="7viJmryXw9g" role="3bR37C">
+        <node concept="3bR9La" id="7viJmryXw9h" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:4Hc8TwAmyoE" resolve="jetbrains.mps.tool.builder" />
+        </node>
+      </node>
     </node>
     <node concept="10PD9b" id="1ZVcZhrTx0R" role="10PD9s" />
     <node concept="3b7kt6" id="1ZVcZhrTx0S" role="10PD9s" />
