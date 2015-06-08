@@ -12,9 +12,6 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
-        <child id="1082485599096" name="statements" index="9aQI4" />
-      </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -23,9 +20,6 @@
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
-      </concept>
-      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
-        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
         <child id="1164903359218" name="catchBody" index="TDEfX" />
@@ -58,11 +52,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
-        <child id="1068580123160" name="condition" index="3clFbw" />
-        <child id="1068580123161" name="ifTrue" index="3clFbx" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -75,7 +64,6 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
@@ -164,72 +152,6 @@
               <property role="TrG5h" value="ex" />
               <node concept="3uibUv" id="7OAOF22JSNQ" role="1tU5fm">
                 <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="4X5j05vMYwk" role="3cqZAp">
-          <node concept="3cpWsn" id="4X5j05vMYwl" role="3cpWs9">
-            <property role="TrG5h" value="resultFile" />
-            <node concept="3uibUv" id="4X5j05vMYwm" role="1tU5fm">
-              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
-            </node>
-            <node concept="2ShNRf" id="4X5j05vMYxK" role="33vP2m">
-              <node concept="1pGfFk" id="4X5j05vMYxJ" role="2ShVmc">
-                <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="Xl_RD" id="4X5j05vMYyc" role="37wK5m">
-                  <property role="Xl_RC" value="ok.log" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7OAOF22JUDn" role="3cqZAp">
-          <node concept="3clFbS" id="7OAOF22JUDp" role="3clFbx">
-            <node concept="3clFbF" id="7OAOF22JUWR" role="3cqZAp">
-              <node concept="2OqwBi" id="7OAOF22JUWO" role="3clFbG">
-                <node concept="10M0yZ" id="7OAOF22JUWP" role="2Oq$k0">
-                  <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                  <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-                </node>
-                <node concept="liA8E" id="7OAOF22JUWQ" role="2OqNvi">
-                  <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
-                  <node concept="Xl_RD" id="7OAOF22JUXK" role="37wK5m">
-                    <property role="Xl_RC" value="Result file was created." />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7OAOF22JUUz" role="3clFbw">
-            <node concept="37vLTw" id="7OAOF22JUU$" role="2Oq$k0">
-              <ref role="3cqZAo" node="4X5j05vMYwl" resolve="resultFile" />
-            </node>
-            <node concept="liA8E" id="7OAOF22JUU_" role="2OqNvi">
-              <ref role="37wK5l" to="fxg7:~File.exists():boolean" resolve="exists" />
-            </node>
-          </node>
-          <node concept="9aQIb" id="7OAOF22JVpU" role="9aQIa">
-            <node concept="3clFbS" id="7OAOF22JVpV" role="9aQI4">
-              <node concept="3clFbF" id="7OAOF22JVsq" role="3cqZAp">
-                <node concept="2OqwBi" id="7OAOF22JVsn" role="3clFbG">
-                  <node concept="10M0yZ" id="7OAOF22JVso" role="2Oq$k0">
-                    <ref role="1PxDUh" to="e2lb:~System" resolve="System" />
-                    <ref role="3cqZAo" to="e2lb:~System.out" resolve="out" />
-                  </node>
-                  <node concept="liA8E" id="7OAOF22JVsp" role="2OqNvi">
-                    <ref role="37wK5l" to="fxg7:~PrintStream.println(java.lang.String):void" resolve="println" />
-                    <node concept="Xl_RD" id="7OAOF22JVth" role="37wK5m">
-                      <property role="Xl_RC" value="Result file was not created. Trying one more time..." />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="7OAOF22JW$R" role="3cqZAp">
-                <node concept="2YIFZM" id="7OAOF22JW_Q" role="3clFbG">
-                  <ref role="37wK5l" to="q2nv:4X5j05vMERW" resolve="mpsMain" />
-                  <ref role="1Pybhc" to="q2nv:4X5j05vMAGu" resolve="MainClass" />
-                </node>
               </node>
             </node>
           </node>

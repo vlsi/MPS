@@ -66,8 +66,6 @@ public class RunCodeFromSolution_Test extends TestCase {
         if (ProcessOutputTypes.STDERR.equals(key)) {
           // print errors 
           System.err.print(event.getText());
-        } else {
-          System.out.print(event.getText());
         }
       }
     });

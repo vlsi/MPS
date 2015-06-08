@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.runner.test.test3.MainClass" file="MainClass.java">
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.build.mps.runner.test.test1.MainClass" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
