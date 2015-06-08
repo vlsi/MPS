@@ -35,8 +35,12 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
         return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
     }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode n) {
-        return true;
+      public boolean accept(SNode it) {
+        return pattern.match(it);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode op) {
+        return pattern.getFieldValue("patternVar_concept") != null;
       }
     }).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
@@ -44,9 +48,6 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode nodeToMigrate) {
-        if (!(pattern.match(nodeToMigrate))) {
-          return;
-        }
         applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
           public SNode compute() {
             return _quotation_createNode_vs95qi_a0a0f(pattern.getFieldValue("patternVar_concept"));
