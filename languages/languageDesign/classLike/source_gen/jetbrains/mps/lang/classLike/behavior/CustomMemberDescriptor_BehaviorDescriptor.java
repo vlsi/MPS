@@ -11,6 +11,12 @@ public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_Behav
   public SNode virtual_create_8260330507834998478(SNode thisNode) {
     return CustomMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
   }
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return CustomMemberDescriptor_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+  public Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
+    return CustomMemberDescriptor_Behavior.virtual_get_2603987804376013077(thisNode, cls);
+  }
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     ClassLikeMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }

@@ -15,8 +15,9 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -77,10 +78,13 @@ public class PatternListPattern_Test extends BaseTransformationTest {
       /*package*/ SNode patternVar_method;
       public Pattern_i79cpz_a0a1a2c() {
       }
+      public SConcept getConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression");
+      }
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_i79cpz_a0a1a2c = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_i79cpz_a0a1a2c.getConcept().getQualifiedName()))) {
+          if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression").equals(nodeToMatch_i79cpz_a0a1a2c.getConcept()))) {
             return false;
           }
           {
@@ -92,7 +96,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
               SNode childVar_i79cpz_a0a0b0c2 = IterableUtil.get(nodeToMatch_i79cpz_a0a1a2c.getChildren(childRole_i79cpz_), 0);
               {
                 SNode nodeToMatch_i79cpz_a0a0b0c2 = childVar_i79cpz_a0a0b0c2;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_i79cpz_a0a0b0c2.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference").equals(nodeToMatch_i79cpz_a0a0b0c2.getConcept()))) {
                   return false;
                 }
                 patternVar_className = nodeToMatch_i79cpz_a0a0b0c2.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"));
@@ -109,7 +113,7 @@ public class PatternListPattern_Test extends BaseTransformationTest {
               SNode childVar_i79cpz_a0a0b0c2_0 = IterableUtil.get(nodeToMatch_i79cpz_a0a1a2c.getChildren(childRole_i79cpz__0), 0);
               {
                 SNode nodeToMatch_i79cpz_a0a0b0c2_0 = childVar_i79cpz_a0a0b0c2_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_i79cpz_a0a0b0c2_0.getConcept().getQualifiedName()))) {
+                if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").equals(nodeToMatch_i79cpz_a0a0b0c2_0.getConcept()))) {
                   return false;
                 }
                 patternVar_method = nodeToMatch_i79cpz_a0a0b0c2_0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));

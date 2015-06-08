@@ -5,21 +5,23 @@ package jetbrains.mps.baseLanguage.javadoc.migration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -28,11 +30,12 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     return "Add CommentLine child to DeprecatedBlockDocTags";
   }
   public SNode execute(SModule m) {
-    Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
+    final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a1();
+    Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
-        return SModelOperations.nodes(it, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"));
+        return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
-    }), MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag"))).where(new IWhereFilter<SNode>() {
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
       }
@@ -41,18 +44,15 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
         return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, null, false)).count();
       }
     }, false).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        final GeneratedMatchingPattern pattern = new UpdateDeprecatedBlockDocTags.Pattern_fgay1s_a0a0a0a0a0a0a1();
-        if (!(pattern.match(it))) {
+      public void visit(final SNode nodeToMigrate) {
+        if (!(pattern.match(nodeToMigrate))) {
           return;
         }
-
-        {
-          SNode placeholder = SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
-          SNode migratedNode = _quotation_createNode_fgay1s_a0b0d0a0a0a1();
-          adjustMigratedIds(it, migratedNode);
-          SNodeOperations.replaceWithAnother(placeholder, migratedNode);
-        }
+        applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
+          public SNode compute() {
+            return _quotation_createNode_fgay1s_a0a0f();
+          }
+        });
       }
     });
     return null;
@@ -60,13 +60,17 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xf280165065d5424eL, 0xbb1b463a8781b786L, "jetbrains.mps.baseLanguage.javadoc"), 0);
   }
-  public static class Pattern_fgay1s_a0a0a0a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_fgay1s_a0a0a0a0a0a0a1() {
+
+  public static class Pattern_fgay1s_a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_fgay1s_a0a0a1() {
+    }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
     }
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_fgay1s_a0a0a0a0a0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag".equals(nodeToMatch_fgay1s_a0a0a0a0a0b.getConcept().getQualifiedName()))) {
+        SNode nodeToMatch_fgay1s_a0a0f = nodeToMatch;
+        if (!(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag").equals(nodeToMatch_fgay1s_a0a0f.getConcept()))) {
           return false;
         }
       }
@@ -83,7 +87,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_fgay1s_a0b0d0a0a0a1() {
+  private static SNode _quotation_createNode_fgay1s_a0a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

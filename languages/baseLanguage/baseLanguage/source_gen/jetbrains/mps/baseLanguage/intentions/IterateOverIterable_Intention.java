@@ -22,6 +22,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
@@ -99,14 +100,17 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     /*package*/ SNode patternVar_elem;
     public Pattern_w1n2qe_a1a0a0a0j() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6isygg_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_6isygg_a0a0a0a0.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0b0b0a0a0a9;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -145,14 +149,17 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     /*package*/ SNode patternVar_elem;
     public Pattern_w1n2qe_a0a0a0a2n() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6isygg_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_6isygg_a0a0a0.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31;
+          SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0b0a0a0a0c31;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -187,6 +194,6 @@ public class IterateOverIterable_Intention implements IntentionFactory {
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0b0b0a0a0a9 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0b0a0a0a0c31 = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

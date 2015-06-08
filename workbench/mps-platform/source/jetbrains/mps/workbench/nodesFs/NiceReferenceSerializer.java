@@ -99,7 +99,7 @@ public class NiceReferenceSerializer {
   private static final SerializerTarget<SNode> NODE_TARGET = new SerializerTarget<SNode>() {
     @Override
     public String getName(SNode e) {
-      return e.getPresentation();
+      return "" + e.getPresentation();
     }
   };
   private static final SerializerTarget<SModel> MODEL_TARGET = new SerializerTarget<SModel>() {

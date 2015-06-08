@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -376,14 +377,17 @@ public class ClassifierType_Behavior {
   public static class Pattern_hz3823_a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_hz3823_a0a1a1a0a0a01() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a0a0a0j = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a0a0a0j.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_hz3823_a0a0a0a0j.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k;
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0b0a0b0b0a0a0k;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -409,10 +413,13 @@ public class ClassifierType_Behavior {
     public Pattern_hz3823_a0a0a1a01(Object parameter_hz3823_a0a0a1a9) {
       this.AntiquotationField_hz3823_a0a0a1a9 = parameter_hz3823_a0a0a1a9;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a1a9 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a1a9.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_hz3823_a0a1a9.getConcept()))) {
           return false;
         }
         {
@@ -458,14 +465,17 @@ public class ClassifierType_Behavior {
   public static class Pattern_hz3823_a0a1a1a0a0a11 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_hz3823_a0a1a1a0a0a11() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a0a0a0k = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a0a0a0k.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_hz3823_a0a0a0a0k.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l;
+          SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0b0a0b0b0a0a0l;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0k.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -491,10 +501,13 @@ public class ClassifierType_Behavior {
     public Pattern_hz3823_a0a0a1a11(Object parameter_hz3823_a0a0a1a01) {
       this.AntiquotationField_hz3823_a0a0a1a01 = parameter_hz3823_a0a0a1a01;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a1a01 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_hz3823_a0a1a01.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_hz3823_a0a1a01.getConcept()))) {
           return false;
         }
         {
@@ -577,6 +590,6 @@ public class ClassifierType_Behavior {
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)"), facade.createNodeId("~Array")));
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
-  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0b0a0b0b0a0a0k = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0b0a0b0b0a0a0l = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

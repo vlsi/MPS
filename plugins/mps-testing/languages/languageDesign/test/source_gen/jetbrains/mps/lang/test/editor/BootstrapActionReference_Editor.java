@@ -71,7 +71,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     }
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
-      for (List<String> ext : ExtensionPoint.<List<String>>generify(new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)).getObjects()) {
+      for (List<String> ext : new ExtensionPoint<List<String>>("jetbrains.mps.lang.test.ActionIDs").getObjects()) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ext));
       }
       return result;

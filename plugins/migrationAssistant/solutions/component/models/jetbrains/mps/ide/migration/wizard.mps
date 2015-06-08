@@ -7,6 +7,7 @@
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
   </languages>
@@ -38,7 +39,6 @@
     <import index="bco1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.migration.global(MPS.Core/jetbrains.mps.migration.global@java_stub)" />
     <import index="810" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" />
     <import index="ayyu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ui(MPS.IDEA/com.intellij.ui@java_stub)" />
-    <import index="yq2y" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.uiDesigner.core(MPS.Platform/com.intellij.uiDesigner.core@java_stub)" />
     <import index="vuby" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <import index="50yb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.progress.util(MPS.IDEA/com.intellij.openapi.progress.util@java_stub)" />
@@ -46,6 +46,7 @@
     <import index="t99v" ref="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="umn7" ref="r:c66fc409-a644-4946-bb27-007f5d00a613(jetbrains.mps.lang.migration.runtime.util)" />
+    <import index="kbmk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.uiDesigner.core(MPS.IDEA/com.intellij.uiDesigner.core@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -177,7 +178,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -3371,7 +3372,7 @@
                 <ref role="37wK5l" to="dbrf:~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolve="JPanel" />
                 <node concept="2ShNRf" id="6PeyMxxal2C" role="37wK5m">
                   <node concept="1pGfFk" id="6PeyMxxal2D" role="2ShVmc">
-                    <ref role="37wK5l" to="yq2y:~GridLayoutManager.&lt;init&gt;(int,int,java.awt.Insets,int,int)" resolve="GridLayoutManager" />
+                    <ref role="37wK5l" to="kbmk:~GridLayoutManager.&lt;init&gt;(int,int,java.awt.Insets,int,int)" resolve="GridLayoutManager" />
                     <node concept="3cmrfG" id="6PeyMxxal2u" role="37wK5m">
                       <property role="3cmrfH" value="2" />
                     </node>
@@ -3609,7 +3610,7 @@
               </node>
               <node concept="2ShNRf" id="6PeyMxxa_Db" role="37wK5m">
                 <node concept="1pGfFk" id="6PeyMxxa_Dc" role="2ShVmc">
-                  <ref role="37wK5l" to="yq2y:~GridConstraints.&lt;init&gt;(int,int,int,int,int,int,int,int,java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)" resolve="GridConstraints" />
+                  <ref role="37wK5l" to="kbmk:~GridConstraints.&lt;init&gt;(int,int,int,int,int,int,int,int,java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)" resolve="GridConstraints" />
                   <node concept="3cmrfG" id="6PeyMxxa_Dd" role="37wK5m">
                     <property role="3cmrfH" value="0" />
                   </node>
@@ -3623,31 +3624,31 @@
                     <property role="3cmrfH" value="1" />
                   </node>
                   <node concept="10M0yZ" id="6PeyMxxa_Dh" role="37wK5m">
-                    <ref role="3cqZAo" to="yq2y:~GridConstraints.ANCHOR_NORTHWEST" resolve="ANCHOR_NORTHWEST" />
-                    <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                    <ref role="3cqZAo" to="kbmk:~GridConstraints.ANCHOR_NORTHWEST" resolve="ANCHOR_NORTHWEST" />
+                    <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                   </node>
                   <node concept="10M0yZ" id="6PeyMxxa_Di" role="37wK5m">
-                    <ref role="3cqZAo" to="yq2y:~GridConstraints.FILL_BOTH" resolve="FILL_BOTH" />
-                    <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                    <ref role="3cqZAo" to="kbmk:~GridConstraints.FILL_BOTH" resolve="FILL_BOTH" />
+                    <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                   </node>
                   <node concept="pVOtf" id="6PeyMxxa_Dj" role="37wK5m">
                     <node concept="10M0yZ" id="6PeyMxxa_Dk" role="3uHU7B">
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                     </node>
                     <node concept="10M0yZ" id="6PeyMxxa_Dl" role="3uHU7w">
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
                     </node>
                   </node>
                   <node concept="pVOtf" id="6PeyMxxa_Dm" role="37wK5m">
                     <node concept="10M0yZ" id="6PeyMxxa_Dn" role="3uHU7B">
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
                     </node>
                     <node concept="10M0yZ" id="6PeyMxxa_Do" role="3uHU7w">
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                     </node>
                   </node>
                   <node concept="10Nm6u" id="6PeyMxxa_Dp" role="37wK5m" />
@@ -3726,7 +3727,7 @@
               </node>
               <node concept="2ShNRf" id="6PeyMxxbpjt" role="37wK5m">
                 <node concept="1pGfFk" id="6PeyMxxbpju" role="2ShVmc">
-                  <ref role="37wK5l" to="yq2y:~GridConstraints.&lt;init&gt;(int,int,int,int,int,int,int,int,java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)" resolve="GridConstraints" />
+                  <ref role="37wK5l" to="kbmk:~GridConstraints.&lt;init&gt;(int,int,int,int,int,int,int,int,java.awt.Dimension,java.awt.Dimension,java.awt.Dimension)" resolve="GridConstraints" />
                   <node concept="3cmrfG" id="6PeyMxxbt5q" role="37wK5m">
                     <property role="3cmrfH" value="1" />
                   </node>
@@ -3740,26 +3741,26 @@
                     <property role="3cmrfH" value="1" />
                   </node>
                   <node concept="10M0yZ" id="6PeyMxxbpj$" role="37wK5m">
-                    <ref role="3cqZAo" to="yq2y:~GridConstraints.ANCHOR_NORTHWEST" resolve="ANCHOR_NORTHWEST" />
-                    <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                    <ref role="3cqZAo" to="kbmk:~GridConstraints.ANCHOR_NORTHWEST" resolve="ANCHOR_NORTHWEST" />
+                    <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                   </node>
                   <node concept="10M0yZ" id="6PeyMxxbpj_" role="37wK5m">
-                    <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
-                    <ref role="3cqZAo" to="yq2y:~GridConstraints.FILL_BOTH" resolve="FILL_BOTH" />
+                    <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
+                    <ref role="3cqZAo" to="kbmk:~GridConstraints.FILL_BOTH" resolve="FILL_BOTH" />
                   </node>
                   <node concept="pVOtf" id="6PeyMxxbpjA" role="37wK5m">
                     <node concept="10M0yZ" id="6PeyMxxbpjB" role="3uHU7B">
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_SHRINK" resolve="SIZEPOLICY_CAN_SHRINK" />
                     </node>
                     <node concept="10M0yZ" id="6PeyMxxbpjC" role="3uHU7w">
-                      <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
-                      <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
+                      <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_CAN_GROW" resolve="SIZEPOLICY_CAN_GROW" />
+                      <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
                     </node>
                   </node>
                   <node concept="10M0yZ" id="6PeyMxxbpjD" role="37wK5m">
-                    <ref role="1PxDUh" to="yq2y:~GridConstraints" resolve="GridConstraints" />
-                    <ref role="3cqZAo" to="yq2y:~GridConstraints.SIZEPOLICY_FIXED" resolve="SIZEPOLICY_FIXED" />
+                    <ref role="1PxDUh" to="kbmk:~GridConstraints" resolve="GridConstraints" />
+                    <ref role="3cqZAo" to="kbmk:~GridConstraints.SIZEPOLICY_FIXED" resolve="SIZEPOLICY_FIXED" />
                   </node>
                   <node concept="10Nm6u" id="6PeyMxxbpjE" role="37wK5m" />
                   <node concept="10Nm6u" id="6PeyMxxbpjF" role="37wK5m" />

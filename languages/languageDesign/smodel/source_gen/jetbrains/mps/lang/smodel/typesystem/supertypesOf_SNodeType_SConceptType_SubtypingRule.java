@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -48,14 +49,17 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   public static class Pattern_6gcjzy_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_6gcjzy_a0a0a0a4() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_auyr2c_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_auyr2c_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_auyr2c_a0a.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0b0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"))))) {
             return false;
           }
@@ -87,5 +91,5 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.SConceptType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+  private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0b0a0a0a0e = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
 }

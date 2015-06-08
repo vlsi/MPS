@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -79,10 +80,13 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     /*package*/ SNode patternVar_nodeType;
     public Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0.getConcept()))) {
           return false;
         }
         {
@@ -94,7 +98,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             SNode childVar_f4oi2a_a0a0a0a0a0a0a = IterableUtil.get(nodeToMatch_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_f4oi2a_), 0);
             {
               SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0a = childVar_f4oi2a_a0a0a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getConcept()))) {
                 return false;
               }
               patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
@@ -125,10 +129,13 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     /*package*/ SNode patternVar_nodeType;
     public Pattern_f4oi2a_a1a0a0a0e() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f4oi2a_a0a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_f4oi2a_a0a0a0a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(nodeToMatch_f4oi2a_a0a0a0a0.getConcept()))) {
           return false;
         }
         {
@@ -140,7 +147,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             SNode childVar_f4oi2a_a0a0a0a0a = IterableUtil.get(nodeToMatch_f4oi2a_a0a0a0a0.getChildren(childRole_f4oi2a__0), 0);
             {
               SNode nodeToMatch_f4oi2a_a0a0a0a0a = childVar_f4oi2a_a0a0a0a0a;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_f4oi2a_a0a0a0a0a.getConcept()))) {
                 return false;
               }
               patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

@@ -14,7 +14,8 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -119,9 +120,9 @@
     <import index="jrbx" ref="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
     <import index="8q6x" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <import index="631u" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps(MPS.Platform/jetbrains.mps@java_stub)" />
-    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
-    <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspectDescriptor.plugin)" />
     <import index="i4ec" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.ref(JDK/java.lang.ref@java_stub)" />
+    <import index="gevi" ref="r:33cde0a0-dbcb-4270-bdee-9b4160731fdf(jetbrains.mps.lang.aspectDescriptor.plugin)" />
+    <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -2363,42 +2364,71 @@
             <node concept="3uibUv" id="1pyYjDPRmBP" role="1tU5fm">
               <ref role="3uigEE" to="yrws:1pyYjDPR9Zv" resolve="NewModelDialog" />
             </node>
-            <node concept="2ShNRf" id="30peylOO29N" role="33vP2m">
-              <node concept="1pGfFk" id="30peylOO29O" role="2ShVmc">
-                <ref role="37wK5l" to="yrws:1pyYjDPRa0t" resolve="NewModelDialog" />
-                <node concept="2OqwBi" id="5MhEiCEsgje" role="37wK5m">
-                  <node concept="1DTwFV" id="4oi2Bf2teSo" role="2OqNvi">
-                    <ref role="2WH_rO" node="4oi2Bf2tcm3" resolve="project" />
-                  </node>
-                  <node concept="2WthIp" id="5MhEiCEsgiT" role="2Oq$k0" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="7335Hkf_BY" role="3cqZAp">
+          <node concept="2OqwBi" id="7335HkfAzG" role="3clFbG">
+            <node concept="2OqwBi" id="7335HkfAcS" role="2Oq$k0">
+              <node concept="2OqwBi" id="7335Hkf_BS" role="2Oq$k0">
+                <node concept="2WthIp" id="7335Hkf_BV" role="2Oq$k0" />
+                <node concept="1DTwFV" id="7335Hkf_BX" role="2OqNvi">
+                  <ref role="2WH_rO" node="4oi2Bf2tcm3" resolve="project" />
                 </node>
-                <node concept="1eOMI4" id="5JozKOugNjT" role="37wK5m">
-                  <node concept="10QFUN" id="5JozKOugNjU" role="1eOMHV">
-                    <node concept="2OqwBi" id="5JozKOugNjQ" role="10QFUP">
-                      <node concept="2WthIp" id="5JozKOugNjR" role="2Oq$k0" />
-                      <node concept="1DTwFV" id="5JozKOugNjS" role="2OqNvi">
-                        <ref role="2WH_rO" node="30peylOO29y" resolve="module" />
+              </node>
+              <node concept="liA8E" id="7335HkfAyS" role="2OqNvi">
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7335HkfAJc" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="1bVj0M" id="7335HkfARd" role="37wK5m">
+                <node concept="3clFbS" id="7335HkfARe" role="1bW5cS">
+                  <node concept="3clFbF" id="7335Hkf$Qp" role="3cqZAp">
+                    <node concept="37vLTI" id="7335Hkf$Qr" role="3clFbG">
+                      <node concept="2ShNRf" id="30peylOO29N" role="37vLTx">
+                        <node concept="1pGfFk" id="30peylOO29O" role="2ShVmc">
+                          <ref role="37wK5l" to="yrws:1pyYjDPRa0t" resolve="NewModelDialog" />
+                          <node concept="2OqwBi" id="5MhEiCEsgje" role="37wK5m">
+                            <node concept="1DTwFV" id="4oi2Bf2teSo" role="2OqNvi">
+                              <ref role="2WH_rO" node="4oi2Bf2tcm3" resolve="project" />
+                            </node>
+                            <node concept="2WthIp" id="5MhEiCEsgiT" role="2Oq$k0" />
+                          </node>
+                          <node concept="1eOMI4" id="5JozKOugNjT" role="37wK5m">
+                            <node concept="10QFUN" id="5JozKOugNjU" role="1eOMHV">
+                              <node concept="2OqwBi" id="5JozKOugNjQ" role="10QFUP">
+                                <node concept="2WthIp" id="5JozKOugNjR" role="2Oq$k0" />
+                                <node concept="1DTwFV" id="5JozKOugNjS" role="2OqNvi">
+                                  <ref role="2WH_rO" node="30peylOO29y" resolve="module" />
+                                </node>
+                              </node>
+                              <node concept="3uibUv" id="5JozKOugNjO" role="10QFUM">
+                                <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="30peylOO29T" role="37wK5m">
+                            <node concept="37vLTw" id="3GM_nagTtBT" role="2Oq$k0">
+                              <ref role="3cqZAo" node="30peylOO29C" resolve="language" />
+                            </node>
+                            <node concept="liA8E" id="30peylOO29V" role="2OqNvi">
+                              <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                            </node>
+                          </node>
+                          <node concept="10M0yZ" id="30peylOO2a0" role="37wK5m">
+                            <ref role="3cqZAo" to="cu2c:~SModelStereotype.NONE" resolve="NONE" />
+                            <ref role="1PxDUh" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
+                          </node>
+                          <node concept="3clFbT" id="30peylOO2a1" role="37wK5m">
+                            <property role="3clFbU" value="true" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7335Hkf$Qv" role="37vLTJ">
+                        <ref role="3cqZAo" node="30peylOO29L" resolve="d" />
                       </node>
                     </node>
-                    <node concept="3uibUv" id="5JozKOugNjO" role="10QFUM">
-                      <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
-                    </node>
                   </node>
-                </node>
-                <node concept="2OqwBi" id="30peylOO29T" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTtBT" role="2Oq$k0">
-                    <ref role="3cqZAo" node="30peylOO29C" resolve="language" />
-                  </node>
-                  <node concept="liA8E" id="30peylOO29V" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                  </node>
-                </node>
-                <node concept="10M0yZ" id="30peylOO2a0" role="37wK5m">
-                  <ref role="3cqZAo" to="cu2c:~SModelStereotype.NONE" resolve="NONE" />
-                  <ref role="1PxDUh" to="cu2c:~SModelStereotype" resolve="SModelStereotype" />
-                </node>
-                <node concept="3clFbT" id="30peylOO2a1" role="37wK5m">
-                  <property role="3clFbU" value="true" />
                 </node>
               </node>
             </node>
@@ -3011,10 +3041,6 @@
   <node concept="tC5Ba" id="30peylOO7BC">
     <property role="TrG5h" value="LanguageNewCustomPartActions" />
     <property role="3GE5qa" value="New.Group" />
-    <node concept="tT9cl" id="30peylOO7BN" role="2f5YQi">
-      <ref role="tU$_T" to="tprs:1bRM4HyGTmn" resolve="LanguageNewActions" />
-      <ref role="2f8Tey" to="tprs:1bRM4HyGTms" resolve="newAspect" />
-    </node>
     <node concept="2OiAzN" id="7IH442cRpWk" role="ftER_">
       <node concept="2OiTZ2" id="7IH442cRpWm" role="2Oj6PV">
         <node concept="3clFbS" id="7IH442cRpWo" role="2VODD2">
@@ -3094,6 +3120,10 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="tT9cl" id="30peylOO7BN" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:1bRM4HyGTmn" resolve="LanguageNewActions" />
+      <ref role="2f8Tey" to="tprs:1bRM4HyGTms" resolve="newAspect" />
     </node>
   </node>
   <node concept="sE7Ow" id="1tuGf38GoJY">
@@ -8099,10 +8129,10 @@
                           </node>
                           <node concept="2WmjW8" id="2$SWsiCtx1f" role="2OqNvi">
                             <node concept="2OqwBi" id="2$SWsiCtx1g" role="25WWJ7">
+                              <node concept="2yIwOk" id="7IH442cZrL6" role="2OqNvi" />
                               <node concept="37vLTw" id="2BHiRxgmNAB" role="2Oq$k0">
                                 <ref role="3cqZAo" node="2$SWsiCtx1s" resolve="root" />
                               </node>
-                              <node concept="2yIwOk" id="7IH442cZrL6" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
@@ -8462,7 +8492,6 @@
             </node>
             <node concept="2ShNRf" id="2erTeUVF9Xt" role="37wK5m">
               <node concept="3g6Rrh" id="2erTeUVF9Xu" role="2ShVmc">
-                <node concept="3bZ5Sz" id="7IH442cZsIq" role="3g7fb8" />
                 <node concept="35c_gC" id="7IH442cZvbe" role="3g7hyw">
                   <ref role="35c_gD" to="tpc2:fA4kQeF" resolve="ConceptEditorDeclaration" />
                 </node>
@@ -8481,6 +8510,7 @@
                 <node concept="35c_gC" id="7IH442cZ$9q" role="3g7hyw">
                   <ref role="35c_gD" to="tpc2:hgV5ht3" resolve="StyleSheet" />
                 </node>
+                <node concept="3bZ5Sz" id="7IH442cZsIq" role="3g7fb8" />
               </node>
             </node>
           </node>
@@ -13302,6 +13332,107 @@
       </node>
     </node>
   </node>
+  <node concept="312cEu" id="7IH442cRICc">
+    <property role="3GE5qa" value="New" />
+    <property role="TrG5h" value="NewAspectModelActionHelper" />
+    <node concept="2YIFZL" id="7IH442cRIHk" role="jymVt">
+      <property role="TrG5h" value="getAspectId" />
+      <node concept="3uibUv" id="7IH442cRINl" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3Tm1VV" id="7IH442cRIHp" role="1B3o_S" />
+      <node concept="3clFbS" id="7IH442cRIHq" role="3clF47">
+        <node concept="3cpWs6" id="7IH442cRJ88" role="3cqZAp">
+          <node concept="2OqwBi" id="7IH442cRJia" role="3cqZAk">
+            <node concept="2OqwBi" id="7IH442cRJ8W" role="2Oq$k0">
+              <node concept="37vLTw" id="7IH442cRJ8r" role="2Oq$k0">
+                <ref role="3cqZAo" node="7IH442cRIY0" resolve="d" />
+              </node>
+              <node concept="liA8E" id="7IH442cRJcE" role="2OqNvi">
+                <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7IH442cRJXG" role="2OqNvi">
+              <ref role="37wK5l" to="e2lb:~Class.getName():java.lang.String" resolve="getName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7IH442cRIY0" role="3clF46">
+        <property role="TrG5h" value="d" />
+        <node concept="3uibUv" id="7IH442cRIXZ" role="1tU5fm">
+          <ref role="3uigEE" to="n55e:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7IH442cRK8_" role="jymVt" />
+    <node concept="2YIFZL" id="7IH442cRK2g" role="jymVt">
+      <property role="TrG5h" value="getAspectById" />
+      <node concept="3uibUv" id="7IH442cRKlV" role="3clF45">
+        <ref role="3uigEE" to="n55e:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
+      </node>
+      <node concept="3Tm1VV" id="7IH442cRK2i" role="1B3o_S" />
+      <node concept="3clFbS" id="7IH442cRK2j" role="3clF47">
+        <node concept="2Gpval" id="7IH442cRKFg" role="3cqZAp">
+          <node concept="2GrKxI" id="7IH442cRKFi" role="2Gsz3X">
+            <property role="TrG5h" value="ad" />
+          </node>
+          <node concept="3clFbS" id="7IH442cRKFk" role="2LFqv$">
+            <node concept="3clFbJ" id="7IH442cRLOr" role="3cqZAp">
+              <node concept="3clFbS" id="7IH442cRLOs" role="3clFbx">
+                <node concept="3cpWs6" id="7IH442cRNh1" role="3cqZAp">
+                  <node concept="2GrUjf" id="7IH442cRNhk" role="3cqZAk">
+                    <ref role="2Gs0qQ" node="7IH442cRKFi" resolve="ad" />
+                  </node>
+                </node>
+              </node>
+              <node concept="17R0WA" id="7IH442cRN2f" role="3clFbw">
+                <node concept="37vLTw" id="7IH442cRN6l" role="3uHU7w">
+                  <ref role="3cqZAo" node="7IH442cRK2q" resolve="id" />
+                </node>
+                <node concept="2OqwBi" id="7IH442cRM5W" role="3uHU7B">
+                  <node concept="2OqwBi" id="7IH442cRLPy" role="2Oq$k0">
+                    <node concept="2GrUjf" id="7IH442cRLON" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7IH442cRKFi" resolve="ad" />
+                    </node>
+                    <node concept="liA8E" id="7IH442cRLYD" role="2OqNvi">
+                      <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7IH442cRMN_" role="2OqNvi">
+                    <ref role="37wK5l" to="e2lb:~Class.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7IH442cRLzY" role="2GsD0m">
+            <node concept="2O5UvJ" id="7IH442cRLzZ" role="2Oq$k0">
+              <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
+            </node>
+            <node concept="SfwO_" id="7IH442cRL$0" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="7IH442cRK2k" role="3cqZAp">
+          <node concept="10Nm6u" id="7IH442cRNkL" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7IH442cRK2q" role="3clF46">
+        <property role="TrG5h" value="id" />
+        <node concept="3uibUv" id="7IH442cRKtk" role="1tU5fm">
+          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="7IH442cRICd" role="1B3o_S" />
+    <node concept="3UR2Jj" id="7IH442cRKnd" role="lGtFl">
+      <node concept="TZ5HA" id="7IH442cRKne" role="TZ5H$">
+        <node concept="1dT_AC" id="7IH442cRKnf" role="1dT_Ay">
+          <property role="1dT_AB" value="This is not to held LanguageAspectDescriptors in actions, which can lead to memleaks" />
+        </node>
+      </node>
+    </node>
+  </node>
   <node concept="sE7Ow" id="7IH442cRjJ6">
     <property role="TrG5h" value="NewAspectModelByDescriptor" />
     <property role="3GE5qa" value="New" />
@@ -13619,107 +13750,6 @@
           <node concept="3clFbF" id="7IH442cRSCH" role="3cqZAp">
             <node concept="2K3dj_" id="7IH442cRSCE" role="3clFbG" />
           </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="312cEu" id="7IH442cRICc">
-    <property role="3GE5qa" value="New" />
-    <property role="TrG5h" value="NewAspectModelActionHelper" />
-    <node concept="2YIFZL" id="7IH442cRIHk" role="jymVt">
-      <property role="TrG5h" value="getAspectId" />
-      <node concept="3uibUv" id="7IH442cRINl" role="3clF45">
-        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-      </node>
-      <node concept="3Tm1VV" id="7IH442cRIHp" role="1B3o_S" />
-      <node concept="3clFbS" id="7IH442cRIHq" role="3clF47">
-        <node concept="3cpWs6" id="7IH442cRJ88" role="3cqZAp">
-          <node concept="2OqwBi" id="7IH442cRJia" role="3cqZAk">
-            <node concept="2OqwBi" id="7IH442cRJ8W" role="2Oq$k0">
-              <node concept="37vLTw" id="7IH442cRJ8r" role="2Oq$k0">
-                <ref role="3cqZAo" node="7IH442cRIY0" resolve="d" />
-              </node>
-              <node concept="liA8E" id="7IH442cRJcE" role="2OqNvi">
-                <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
-              </node>
-            </node>
-            <node concept="liA8E" id="7IH442cRJXG" role="2OqNvi">
-              <ref role="37wK5l" to="e2lb:~Class.getName():java.lang.String" resolve="getName" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7IH442cRIY0" role="3clF46">
-        <property role="TrG5h" value="d" />
-        <node concept="3uibUv" id="7IH442cRIXZ" role="1tU5fm">
-          <ref role="3uigEE" to="n55e:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7IH442cRK8_" role="jymVt" />
-    <node concept="2YIFZL" id="7IH442cRK2g" role="jymVt">
-      <property role="TrG5h" value="getAspectById" />
-      <node concept="3uibUv" id="7IH442cRKlV" role="3clF45">
-        <ref role="3uigEE" to="n55e:~LanguageAspectDescriptor" resolve="LanguageAspectDescriptor" />
-      </node>
-      <node concept="3Tm1VV" id="7IH442cRK2i" role="1B3o_S" />
-      <node concept="3clFbS" id="7IH442cRK2j" role="3clF47">
-        <node concept="2Gpval" id="7IH442cRKFg" role="3cqZAp">
-          <node concept="2GrKxI" id="7IH442cRKFi" role="2Gsz3X">
-            <property role="TrG5h" value="ad" />
-          </node>
-          <node concept="3clFbS" id="7IH442cRKFk" role="2LFqv$">
-            <node concept="3clFbJ" id="7IH442cRLOr" role="3cqZAp">
-              <node concept="3clFbS" id="7IH442cRLOs" role="3clFbx">
-                <node concept="3cpWs6" id="7IH442cRNh1" role="3cqZAp">
-                  <node concept="2GrUjf" id="7IH442cRNhk" role="3cqZAk">
-                    <ref role="2Gs0qQ" node="7IH442cRKFi" resolve="ad" />
-                  </node>
-                </node>
-              </node>
-              <node concept="17R0WA" id="7IH442cRN2f" role="3clFbw">
-                <node concept="37vLTw" id="7IH442cRN6l" role="3uHU7w">
-                  <ref role="3cqZAo" node="7IH442cRK2q" resolve="id" />
-                </node>
-                <node concept="2OqwBi" id="7IH442cRM5W" role="3uHU7B">
-                  <node concept="2OqwBi" id="7IH442cRLPy" role="2Oq$k0">
-                    <node concept="2GrUjf" id="7IH442cRLON" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="7IH442cRKFi" resolve="ad" />
-                    </node>
-                    <node concept="liA8E" id="7IH442cRLYD" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~Object.getClass():java.lang.Class" resolve="getClass" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="7IH442cRMN_" role="2OqNvi">
-                    <ref role="37wK5l" to="e2lb:~Class.getName():java.lang.String" resolve="getName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="7IH442cRLzY" role="2GsD0m">
-            <node concept="2O5UvJ" id="7IH442cRLzZ" role="2Oq$k0">
-              <ref role="2O5UnU" to="gevi:2Sw9hCAHJv3" resolve="LanguageAspectsEP" />
-            </node>
-            <node concept="SfwO_" id="7IH442cRL$0" role="2OqNvi" />
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7IH442cRK2k" role="3cqZAp">
-          <node concept="10Nm6u" id="7IH442cRNkL" role="3cqZAk" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="7IH442cRK2q" role="3clF46">
-        <property role="TrG5h" value="id" />
-        <node concept="3uibUv" id="7IH442cRKtk" role="1tU5fm">
-          <ref role="3uigEE" to="e2lb:~String" resolve="String" />
-        </node>
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="7IH442cRICd" role="1B3o_S" />
-    <node concept="3UR2Jj" id="7IH442cRKnd" role="lGtFl">
-      <node concept="TZ5HA" id="7IH442cRKne" role="TZ5H$">
-        <node concept="1dT_AC" id="7IH442cRKnf" role="1dT_Ay">
-          <property role="1dT_AB" value="This is not to held LanguageAspectDescriptors in actions, which can lead to memleaks" />
         </node>
       </node>
     </node>

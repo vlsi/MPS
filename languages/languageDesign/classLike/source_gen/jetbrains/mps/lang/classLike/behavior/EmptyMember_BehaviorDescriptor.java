@@ -11,6 +11,9 @@ public class EmptyMember_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   public SNode virtual_create_8260330507834998478(SNode thisNode) {
     return EmptyMember_Behavior.virtual_create_8260330507834998478(thisNode);
   }
+  public Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
+    return EmptyMember_Behavior.virtual_get_2603987804376013077(thisNode, cls);
+  }
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     EmptyMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }

@@ -265,6 +265,6 @@ public final class SNodeUtil {
   }
 
   public static Collection<LanguageAspectDescriptor> collectAspects() {
-    return Sequence.fromIterable(ExtensionPoint.<LanguageAspectDescriptor>generify(new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)).getObjects()).toListSequence();
+    return Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP").getObjects()).toListSequence();
   }
 }

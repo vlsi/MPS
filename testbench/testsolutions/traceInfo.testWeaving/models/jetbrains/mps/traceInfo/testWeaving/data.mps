@@ -2,8 +2,8 @@
 <model ref="r:7e5623b0-f241-4ce8-8fe7-d8a5c8c44458(jetbrains.mps.traceInfo.testWeaving.data)">
   <persistence version="9" />
   <languages>
-    <use id="ce517356-fc9a-4e78-8606-6e7a36ff0671" name="jetbrains.mps.traceInfo.testWeavingGenerated.data" version="-1" />
-    <use id="ffafcf63-cbe6-4e5c-9717-541f01743ac7" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data" version="-1" />
+    <use id="ce517356-fc9a-4e78-8606-6e7a36ff0671" name="jetbrains.mps.traceInfo.testWeavingGenerated.data" version="0" />
+    <use id="ffafcf63-cbe6-4e5c-9717-541f01743ac7" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data" version="0" />
   </languages>
   <imports />
   <registry>

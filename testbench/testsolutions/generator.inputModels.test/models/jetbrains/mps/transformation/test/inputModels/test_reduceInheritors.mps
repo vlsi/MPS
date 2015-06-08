@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590601(jetbrains.mps.transformation.test.inputModels.test_reduceInheritors)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="-1" />
+    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="0" />
   </languages>
   <imports />
   <registry>

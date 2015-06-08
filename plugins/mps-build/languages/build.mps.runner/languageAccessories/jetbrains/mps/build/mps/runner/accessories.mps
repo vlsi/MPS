@@ -36,6 +36,9 @@
   </registry>
   <node concept="yghi3" id="3BExUgsK9rC">
     <property role="TrG5h" value="run-mps-code" />
+    <node concept="ygXWA" id="5T0Kicg_YEn" role="yg1MB">
+      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
+    </node>
     <node concept="2VaFvF" id="3BExUgsK9tI" role="yghi5">
       <property role="TrG5h" value="run-mps-code" />
       <node concept="2VaxJe" id="5T0Kicg_YEr" role="2VaxJ6">
@@ -47,9 +50,6 @@
       <node concept="2VaxJe" id="1Vi5mb__lKE" role="3bNaKb">
         <ref role="2VaxJf" node="3BExUgsK9tI" resolve="run-mps-code" />
       </node>
-    </node>
-    <node concept="ygXWA" id="5T0Kicg_YEn" role="yg1MB">
-      <ref role="ygXWD" to="arit:6l_Qx579h0V" resolve="common" />
     </node>
     <node concept="ygXWA" id="3umvbTBOJSF" role="yg1MB">
       <ref role="ygXWD" to="zwni:m8_23bzloH" resolve="mps" />

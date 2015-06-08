@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -45,14 +46,17 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
   public static class Pattern_v5k8je_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_v5k8je_a0a0a0a5() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_rtu2iv_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_rtu2iv_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_rtu2iv_a0a.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0b0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_rtu2iv_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -71,5 +75,5 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
+  private static SNodePointer SNODE_POINTER_v5k8je_a0a0a0a0b0b0a0b0a0a0a0f = new SNodePointer("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)", "6168415856807657256");
 }

@@ -124,7 +124,7 @@
       <node id="1101347953350138824" at="64,82,65,94" concept="8" />
       <node id="1101347953350138824" at="66,10,67,22" concept="8" />
       <node id="136702651994179443" at="72,120,73,75" concept="7" />
-      <node id="136702651994179469" at="74,152,75,78" concept="2" />
+      <node id="136702651994179469" at="74,115,75,78" concept="2" />
       <node id="1101347953350240473" at="76,7,77,20" concept="8" />
       <node id="1101347953350138839" at="70,0,72,0" concept="1" trace="BootstrapActionReference_actionId_cellMenu_pdl482_a0b0#()V" />
       <node id="1101347953350138824" at="29,0,32,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -138,7 +138,7 @@
       <scope id="1101347953350138824" at="29,79,30,63" />
       <scope id="1101347953350138824" at="35,28,36,81" />
       <scope id="1101347953350138824" at="36,81,37,81" />
-      <scope id="136702651994179438" at="74,152,75,78" />
+      <scope id="136702651994179438" at="74,115,75,78" />
       <scope id="1101347953350138824" at="63,35,65,94">
         <var name="manager" id="1101347953350138824" />
       </scope>

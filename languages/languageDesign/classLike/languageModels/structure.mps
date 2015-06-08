@@ -2,18 +2,21 @@
 <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -94,7 +97,7 @@
     <property role="TrG5h" value="ClassLikeDescriptor" />
     <property role="3GE5qa" value="" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyj" id="1_lSsE3TuQi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="preferredConcept" />
@@ -104,10 +107,14 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initializer" />
       <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+      <node concept="asaX9" id="4auf8pYaX55" role="lGtFl">
+        <property role="YLPcu" value="MPS 3.3" />
+        <property role="YLQ7P" value="use class-like method init()" />
+      </node>
     </node>
     <node concept="1TJgyj" id="7aMlq14vYj8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="member" />
+      <property role="20kJfa" value="classLikeMember" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
@@ -352,6 +359,7 @@
     <property role="TrG5h" value="GenerateModifier" />
     <property role="34LRSv" value="generate" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="6zkSwmUG6Et" role="lGtFl" />
     <node concept="1TJgyi" id="3m06JgscQVS" role="1TKVEl">
       <property role="TrG5h" value="name" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -359,7 +367,19 @@
     <node concept="PrWs8" id="3crTN2XY8Qq" role="PzmwI">
       <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
-    <node concept="asaX9" id="6zkSwmUG6Et" role="lGtFl" />
+  </node>
+  <node concept="1TIwiD" id="1QReUKIFP7I">
+    <property role="3GE5qa" value="member" />
+    <property role="TrG5h" value="MultipleModifier" />
+    <property role="34LRSv" value="multiple" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1QReUKIFP7J" role="1TKVEl">
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="1QReUKIFP7K" role="PzmwI">
+      <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
+    </node>
   </node>
 </model>
 

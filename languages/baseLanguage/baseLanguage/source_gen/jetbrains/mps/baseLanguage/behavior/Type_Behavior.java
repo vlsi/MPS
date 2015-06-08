@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -144,6 +145,9 @@ public class Type_Behavior {
     /*package*/ Object AntiquotationField_smb55n_a0a0a0a41;
     public Pattern_smb55n_a0a0a0a51(Object parameter_smb55n_a0a0a0a41) {
       this.AntiquotationField_smb55n_a0a0a0a41 = parameter_smb55n_a0a0a0a41;
+    }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept");
     }
     public boolean match(SNode nodeToMatch) {
       {

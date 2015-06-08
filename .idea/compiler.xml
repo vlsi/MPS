@@ -505,7 +505,6 @@
       <directory url="file://$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/languages/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/languages/updatedLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/languages/updatedLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/test_gen" includeSubdirectories="true" />
@@ -618,6 +617,7 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/traceable.operations.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/workflow.preset/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/workflow.preset/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/migrationAssistant/languages/updatedLanguage/generator/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -71,10 +72,13 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
     /*package*/ SNode patternVar_SUB;
     public Pattern_rspi48_a0a0a0a6() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_otuqx5_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_otuqx5_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType").equals(nodeToMatch_otuqx5_a0a.getConcept()))) {
           return false;
         }
         {
@@ -111,10 +115,13 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
     /*package*/ SNode patternVar_SUPER;
     public Pattern_rspi48_a0a0a0a7() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_otuqx5_a0a_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.CollectionType".equals(nodeToMatch_otuqx5_a0a_0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x62e1df06bd2172b2L, "jetbrains.mps.baseLanguage.collections.structure.CollectionType").equals(nodeToMatch_otuqx5_a0a_0.getConcept()))) {
           return false;
         }
         {

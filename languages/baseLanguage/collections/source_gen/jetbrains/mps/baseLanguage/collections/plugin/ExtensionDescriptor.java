@@ -4,12 +4,11 @@ package jetbrains.mps.baseLanguage.collections.plugin;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers")};
   private Extension[] extensions = new Extension[]{new Extension_customContainers5633688998557455304_()};
   public ExtensionDescriptor() {
   }

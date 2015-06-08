@@ -142,7 +142,7 @@
                   <node concept="25$lcc" id="1hDKT6wB61O" role="1PxMeX" />
                 </node>
                 <node concept="2qgKlT" id="1hDKT6wB61P" role="2OqNvi">
-                  <ref role="37wK5l" to="5myg:1hDKT6wB3pH" resolve="doSubstitute" />
+                  <ref role="37wK5l" to="5myg:1hDKT6wB3pH" resolve="substituteWith" />
                   <node concept="2OqwBi" id="1hDKT6wB61Q" role="37wK5m">
                     <node concept="1YBJjd" id="1hDKT6wB61R" role="2Oq$k0">
                       <ref role="1YBMHb" node="5zzawu2JKvb" resolve="substituteAnnotation" />

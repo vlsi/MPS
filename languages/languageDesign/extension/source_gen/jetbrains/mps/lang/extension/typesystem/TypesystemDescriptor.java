@@ -4,10 +4,18 @@ package jetbrains.mps.lang.extension.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ApplyOverlappingExtensionOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ArgumentField_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ExtensionFieldReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
@@ -25,8 +33,20 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new ExtensionPointType_supertypes_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
+      InferenceRule_Runtime inferenceRule = new typeof_OverridesReference_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ExtensionPointDeclaration_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_ExtensionPointOverlappingDeclaration_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_IHasUniqueId_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
     }
   }
 }

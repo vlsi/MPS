@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -48,14 +49,17 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     /*package*/ SNode patternVar_ELEMENT_TYPE;
     public Pattern_9xe6am_a0a0a0a5() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_drfijn_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_drfijn_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_drfijn_a0a.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_9xe6am_a0a0a0a0b0b0a0a0a0a0a0f;
+          SNodeReference pointer = SNODE_POINTER_9xe6am_a0a0a0a0b0b0a0b0a0a0a0f;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_drfijn_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -90,5 +94,5 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_9xe6am_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_9xe6am_a0a0a0a0b0b0a0b0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Deque");
 }

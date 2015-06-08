@@ -15,7 +15,7 @@ public class NewAspectModelActionHelper {
   }
 
   public static LanguageAspectDescriptor getAspectById(String id) {
-    for (LanguageAspectDescriptor ad : Sequence.fromIterable(ExtensionPoint.<LanguageAspectDescriptor>generify(new ExtensionPoint("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP", LanguageAspectDescriptor.class)).getObjects())) {
+    for (LanguageAspectDescriptor ad : Sequence.fromIterable(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspectDescriptor.LanguageAspectsEP").getObjects())) {
       if (eq_u0fml6_a0a0a0c(ad.getClass().getName(), id)) {
         return ad;
       }

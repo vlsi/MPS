@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.smodel.Language;
@@ -25,11 +27,17 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ConceptsScope extends SimpleScope {
+  public ConceptsScope(SNode contextNode, SAbstractConcept metaConcept) {
+    // todo: make better name for this scope 
+    super(getAvailableConcepts(contextNode, metaConcept));
+  }
+  @Deprecated
+  @ToRemove(version = 3.3)
   public ConceptsScope(SNode contextNode, SNode metaConcept) {
     // todo: make better name for this scope 
     super(getAvailableConcepts(contextNode, metaConcept));
   }
-  public static Iterable<SNode> getAvailableConcepts(SNode contextNode, final SNode metaConcept) {
+  public static Iterable<SNode> getAvailableConcepts(SNode contextNode, final SAbstractConcept metaConcept) {
     SModule contextModule = contextNode.getModel().getModule();
 
     Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
@@ -71,6 +79,11 @@ public class ConceptsScope extends SimpleScope {
         return SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
       }
     });
+  }
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static Iterable<SNode> getAvailableConcepts(SNode contextNode, SNode metaConcept) {
+    return getAvailableConcepts(contextNode, SNodeOperations.asSConcept(metaConcept));
   }
   @Nullable
   @Override

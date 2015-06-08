@@ -2,7 +2,7 @@
 <model ref="r:7736cb0a-06c8-464f-a1eb-5560b9560d89(jetbrains.mps.transformation.test.inputModels.test_reduceOneToMany)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
-    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="-1" />
+    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="0" />
   </languages>
   <imports />
   <registry>

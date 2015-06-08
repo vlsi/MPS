@@ -26,6 +26,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
@@ -236,10 +237,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     public Pattern_nn7be_a0a0a3a2a2a1(Object parameter_e5spwb_a0a0a3a2a0) {
       this.AntiquotationField_e5spwb_a0a0a3a2a0 = parameter_e5spwb_a0a0a3a2a0;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a3a2a0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_e5spwb_a0a3a2a0.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_e5spwb_a0a3a2a0.getConcept()))) {
           return false;
         }
         {
@@ -268,10 +272,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     public Pattern_nn7be_a0a0a0a2(Object parameter_e5spwb_a0a0a0a) {
       this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_e5spwb_a0a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_e5spwb_a0a0a.getConcept()))) {
           return false;
         }
         {
@@ -300,10 +307,13 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     public Pattern_nn7be_a0a0a0a1a3(Object parameter_e5spwb_a0a0a0a) {
       this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_e5spwb_a0a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_e5spwb_a0a0a.getConcept()))) {
           return false;
         }
         {

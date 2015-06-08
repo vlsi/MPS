@@ -15,9 +15,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
+import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -66,12 +66,6 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-
-    MoveNodesExecute.execute(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("target")), new MoveNodesExecute.ExecuteRefactoring() {
-      public void run(Object newLocation) {
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newLocation), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-      }
-    });
-
+    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").apply(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
   }
 }

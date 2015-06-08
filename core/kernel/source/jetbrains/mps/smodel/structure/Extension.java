@@ -17,19 +17,19 @@ package jetbrains.mps.smodel.structure;
 
 public interface Extension<T> {
 
-  String getExtensionPointId ();
+  String getExtensionPointId();
 
-  T get ();
+  T get();
 
-  void activate ();
+  void activate();
 
-  void deactivate ();
-  
+  void deactivate();
+
   abstract class Default<T> implements Extension<T> {
 
     private final String myExtensionPointId;
 
-    public  Default (String extensionPointId) {
+    public Default(String extensionPointId) {
       myExtensionPointId = extensionPointId;
     }
 

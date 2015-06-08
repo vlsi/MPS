@@ -2,7 +2,7 @@
 <model ref="r:bfbc3842-c5ca-4fa2-826a-4befb946143a(references.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" version="0" />
@@ -86,6 +86,7 @@
     </language>
     <language id="16100485-31ac-4899-9112-2289e22843dd" name="references">
       <concept id="7709929535540733641" name="references.structure.NewComponentRef" flags="ng" index="zNoFp" />
+      <concept id="7709929535540647757" name="references.structure.OldComponentRef" flags="ng" index="zNBHt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -156,9 +157,9 @@
       <node concept="3clFbS" id="14sMr$jTewX" role="3clF47">
         <node concept="3SqFnK" id="14sMr$jTeW8" role="3cqZAp">
           <node concept="2DMOqp" id="14sMr$jTeWa" role="3SqFnn">
-            <node concept="zNoFp" id="14sMr$jTf11" role="2DMOqq">
-              <node concept="3jrphi" id="14sMr$jTZzA" role="lGtFl">
-                <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540733641/7709929535540733642" />
+            <node concept="zNBHt" id="7Cx8$vCcio$" role="2DMOqq">
+              <node concept="3jrphi" id="7Cx8$vCciqB" role="lGtFl">
+                <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540647757/7709929535540733594" />
                 <property role="2qtEX8" value="target" />
                 <property role="3jrwYG" value="comp" />
               </node>
@@ -170,8 +171,8 @@
                 <node concept="2c44tb" id="14sMr$jTf3r" role="lGtFl">
                   <property role="P3scX" value="16100485-31ac-4899-9112-2289e22843dd/7709929535540733641/7709929535540733642" />
                   <property role="2qtEX8" value="target" />
-                  <node concept="spIps" id="14sMr$jTZ$S" role="2c44t1">
-                    <ref role="spIpr" node="14sMr$jTZzA" resolve="#comp" />
+                  <node concept="spIps" id="7Cx8$vCcirW" role="2c44t1">
+                    <ref role="spIpr" node="7Cx8$vCciqB" resolve="#comp" />
                   </node>
                 </node>
               </node>

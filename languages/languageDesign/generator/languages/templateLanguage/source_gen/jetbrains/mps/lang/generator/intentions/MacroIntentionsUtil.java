@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -108,10 +109,13 @@ public final class MacroIntentionsUtil {
     /*package*/ SNode patternVar_concept;
     public Pattern_iiuth6_a0a0a0a3a1() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_iiuth6_a0a0a3a1 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a3a1.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_iiuth6_a0a0a3a1.getConcept()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));
@@ -139,10 +143,13 @@ public final class MacroIntentionsUtil {
     /*package*/ SNode patternVar_concept;
     public Pattern_iiuth6_a0a0a0a0d0b() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_iiuth6_a0a0a0d0b = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_iiuth6_a0a0a0d0b.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(nodeToMatch_iiuth6_a0a0a0d0b.getConcept()))) {
           return false;
         }
         {
@@ -154,7 +161,7 @@ public final class MacroIntentionsUtil {
             SNode childVar_iiuth6_a0a0a0a3a1 = IterableUtil.get(nodeToMatch_iiuth6_a0a0a0d0b.getChildren(childRole_iiuth6_), 0);
             {
               SNode nodeToMatch_iiuth6_a0a0a0a3a1 = childVar_iiuth6_a0a0a0a3a1;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a0a3a1.getConcept().getQualifiedName()))) {
+              if (!(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType").equals(nodeToMatch_iiuth6_a0a0a0a3a1.getConcept()))) {
                 return false;
               }
               patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"));

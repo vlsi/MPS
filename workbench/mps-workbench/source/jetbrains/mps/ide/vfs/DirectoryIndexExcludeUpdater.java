@@ -162,11 +162,13 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   private class MyModuleRepositoryListener extends SRepositoryContentAdapter {
     @Override
     public void moduleAdded(@NotNull SModule module) {
+      super.moduleAdded(module);
       notifyRootsChanged(true);
     }
 
     @Override
     public void moduleChanged(SModule module) {
+      super.moduleChanged(module);
       notifyRootsChanged(true);
     }
   }

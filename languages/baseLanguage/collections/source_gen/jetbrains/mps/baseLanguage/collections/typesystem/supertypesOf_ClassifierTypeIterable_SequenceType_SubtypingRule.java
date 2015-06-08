@@ -11,6 +11,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -45,14 +46,17 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     /*package*/ SNode patternVar_p;
     public Pattern_x5x8gb_a0a0a0a4() {
     }
+    public SConcept getConcept() {
+      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    }
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_z7dq1d_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_z7dq1d_a0a.getConcept().getQualifiedName()))) {
+        if (!(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType").equals(nodeToMatch_z7dq1d_a0a.getConcept()))) {
           return false;
         }
         {
-          SNodeReference pointer = SNODE_POINTER_x5x8gb_a0a0a0a0b0b0a0a0a0a0a0e;
+          SNodeReference pointer = SNODE_POINTER_x5x8gb_a0a0a0a0b0b0a0b0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_z7dq1d_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))))) {
             return false;
           }
@@ -98,5 +102,5 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     }
     return quotedNode_2;
   }
-  private static SNodePointer SNODE_POINTER_x5x8gb_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_x5x8gb_a0a0a0a0b0b0a0b0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

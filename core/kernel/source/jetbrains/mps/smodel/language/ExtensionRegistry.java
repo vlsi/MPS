@@ -122,14 +122,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     }
   }
 
-  @SuppressWarnings("unchecked")
-  /*package for tests*/ void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+  public void registerExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     registerExtensions(extensionDescriptor.getExtensions());
     registerExtensionPoints(extensionDescriptor.getExtensionPoints());
   }
 
-  @SuppressWarnings("unchecked")
-    /*package for tests*/ void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
+    public void unregisterExtensionDescriptor(ExtensionDescriptor extensionDescriptor) {
     unregisterExtensionPoints(extensionDescriptor.getExtensionPoints());
     unregisterExtensions(extensionDescriptor.getExtensions());
   }

@@ -2,7 +2,7 @@
 <model ref="r:28e28940-56d5-4c82-9733-48f8f13c0358(jetbrains.mps.transformation.test.inputModels.test_ArgsInTemplDeclRef)">
   <persistence version="9" />
   <languages>
-    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="-1" />
+    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" version="0" />
   </languages>
   <imports />
   <registry>

@@ -5966,7 +5966,7 @@
         <var name="languageModule" id="5100536058472637255" />
       </scope>
       <unit id="7462157308149143869" at="336,385,340,5" name="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$1" />
-      <unit id="5100536058472636120" at="344,216,348,5" name="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$2" />
+      <unit id="5100536058472636120" at="344,159,348,5" name="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$2" />
       <unit id="5100536058472658939" at="348,18,352,5" name="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$3" />
       <unit id="6641743975991161864" at="352,17,356,5" name="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated$4" />
     </file>

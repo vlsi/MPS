@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.pattern;
 
+import org.jetbrains.mps.openapi.language.SConcept;
+
 public class GeneratedMatchingPattern extends DefaultMatchingPattern {
   public Object getFieldValue(String s) {
     return null;
@@ -32,4 +34,12 @@ public class GeneratedMatchingPattern extends DefaultMatchingPattern {
     
   }
 
+  public SConcept getConcept() {
+    return null;
+  }
+
+  @Override
+  public String getConceptFQName() {
+    return getConcept() == null ? null : getConcept().getQualifiedName();
+  }
 }

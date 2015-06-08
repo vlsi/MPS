@@ -83,7 +83,7 @@
   </registry>
   <node concept="2S6QgY" id="5zzawu2JFEr">
     <property role="TrG5h" value="AddRemovePresenceAnnotation" />
-    <ref role="2ZfgGC" to="tp5x:5zzawu2JF6W" resolve="PrimitiveType" />
+    <ref role="2ZfgGC" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
     <node concept="2S6ZIM" id="5zzawu2JFEs" role="2ZfVej">
       <node concept="3clFbS" id="5zzawu2JFEt" role="2VODD2">
         <node concept="3clFbF" id="5zzawu2JGrE" role="3cqZAp">

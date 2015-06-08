@@ -4,11 +4,10 @@ package jetbrains.mps.lang.test.plugin;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import java.util.List;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs", List.class)};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.test.ActionIDs")};
   public ExtensionDescriptor() {
   }
   @Override

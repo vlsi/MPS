@@ -17,10 +17,14 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierMember_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -31,7 +35,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return Util.getMethodDescriptors(_context.getParentNode());
+            return SubstituteUtil.getMethodDescriptors(_context.getParentNode());
           }
         }.compute();
         if (queryResult != null) {
@@ -60,7 +64,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return Util.getPropertyDescriptors(_context.getParentNode());
+            return SubstituteUtil.getPropertyDescriptors(_context.getParentNode());
           }
         }.compute();
         if (queryResult != null) {
@@ -84,21 +88,60 @@ public class QueriesGenerated {
       }
     }
     {
-      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-        public Iterable<SNode> compute() {
-          return Sequence.fromIterable(Util.getCustomDescriptors(_context.getParentNode())).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return ((SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
-            }
-          });
-        }
-      }.compute();
-      if (queryResult != null) {
-        for (SNode item : queryResult) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
+      SNode outputConcept = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember").getDeclarationNode();
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
+            return SubstituteUtil.getCustomDescriptors(_context.getParentNode());
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{});
+              }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
+              }
+              public String getDescriptionText(String pattern) {
+                return "custom member";
+              }
+            });
+          }
         }
       }
     }
     return result;
+  }
+  public static List<SubstituteAction> sideTransform_ActionsFactory_ClassConcept_3190746170676596108(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode(), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+        return _context.getSourceNode();
+      }
+      public String getMatchingText(String pattern) {
+        return "extends";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode(), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode(), null));
+      }
+    });
+    return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassConcept_3190746170676596109(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) == null;
   }
 }

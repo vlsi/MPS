@@ -2,7 +2,7 @@
 <model ref="r:8a713d47-0d34-47f0-a8dc-1c3960c96703(updatedLanguage.migration)">
   <persistence version="9" />
   <languages>
-    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
+    <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" version="0" />
@@ -93,7 +93,7 @@
       </concept>
     </language>
     <language id="a59395ba-5d94-4758-a87c-b11e086d5491" name="updatedLanguage">
-      <concept id="297352798234498871" name="updatedLanguage.structure.MigratingConcept" flags="ng" index="1zB3ZW" />
+      <concept id="297352798234498871" name="updatedLanguage.structure.MigratingConcept" flags="lg" index="1zB3ZW" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">

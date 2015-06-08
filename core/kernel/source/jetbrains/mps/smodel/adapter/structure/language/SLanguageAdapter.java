@@ -56,6 +56,7 @@ public abstract class SLanguageAdapter implements SLanguage {
   public abstract Language getSourceModule();
 
   @Override
+  @NotNull
   public String getQualifiedName() {
     return myLanguageFqName;
   }

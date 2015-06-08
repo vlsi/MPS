@@ -15,9 +15,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class MigrationScript_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static SNode call_getHeader_8352104482584353830(SNode thisNode) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x3d90e8d384845a8fL, "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"))).first();
-  }
   public static SNode call_getDescription_8585153554445641526(SNode thisNode) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L, "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

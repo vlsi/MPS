@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -26,14 +28,15 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_obn5mp_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_obn5mp_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_obn5mp_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_obn5mp_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_obn5mp_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_obn5mp_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_obn5mp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_obn5mp_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_obn5mp_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_obn5mp_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_obn5mp_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_obn5mp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ExtensionPoint");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extension");
     editorCell.setCellId("Constant_obn5mp_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
@@ -41,7 +44,30 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_obn5mp_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_obn5mp_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "point");
+    editorCell.setCellId("Constant_obn5mp_b0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createAlternation_obn5mp_c0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = ExtensionPointDeclaration_Editor.renderingCondition_obn5mp_a2a(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_obn5mp_a2a(editorContext, node);
+    } else {
+      editorCell = this.createProperty_obn5mp_a2a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+  private static boolean renderingCondition_obn5mp_a2a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x520ae19dd2771b96L, "extensionName")) != null;
+  }
+  private EditorCell createProperty_obn5mp_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("extensionName");
     provider.setNoTargetText("<no extensionName>");
@@ -57,9 +83,25 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_obn5mp_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_obn5mp_a2a_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createConstant_obn5mp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_obn5mp_c0");
+    editorCell.setCellId("Constant_obn5mp_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
@@ -67,7 +109,7 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_obn5mp_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_obn5mp_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("objectType");
     provider.setNoTargetText("<no objectType>");
@@ -85,9 +127,9 @@ public class ExtensionPointDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_obn5mp_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_obn5mp_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_obn5mp_e0");
+    editorCell.setCellId("Constant_obn5mp_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
