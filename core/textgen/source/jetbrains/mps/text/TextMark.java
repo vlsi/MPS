@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.text.rt;
+package jetbrains.mps.text;
 
 /**
- * FIXME WORK IN PROGRESS
- * Generated code shall subclass {@link jetbrains.mps.text.TextGenDescriptorBase}
+ * Location within a {@link TextBuffer text buffer}, merely an identity object.
+ * Specific text location (row, column) become known once buffer is complete.
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public interface TextGenDescriptor {
-  void generateText(TextGenContext context);
+public interface TextMark {
 }
