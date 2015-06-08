@@ -123,8 +123,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.base.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.base" />
-      <fileset dir="${mps_home}/plugins/console/lang/base" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/base/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.base.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.base-generator.jar" duplicate="preserve">
@@ -175,8 +174,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.blCommand.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.blCommand" />
-      <fileset dir="${mps_home}/plugins/console/lang/blCommand" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/blCommand/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.blCommand.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.blCommand-generator.jar" duplicate="preserve">
@@ -225,8 +223,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.ideCommands.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands" />
-      <fileset dir="${mps_home}/plugins/console/lang/ideCommands" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/ideCommands/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.ideCommands.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.ideCommands-generator.jar" duplicate="preserve">
@@ -277,8 +274,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.internalCommands.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands" />
-      <fileset dir="${mps_home}/plugins/console/lang/internalCommands" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.internalCommands.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.internalCommands-generator.jar" duplicate="preserve">
@@ -325,8 +321,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.scripts.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.scripts" />
-      <fileset dir="${mps_home}/plugins/console/lang/scripts" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/scripts/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.scripts.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.scripts-generator.jar" duplicate="preserve">
@@ -372,8 +367,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.blCommand.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.blCommand.runtime" />
-      <fileset dir="${mps_home}/plugins/console/lang/blCommandRuntime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/blCommandRuntime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.blCommand.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-blCommandRuntime-models">
@@ -407,8 +401,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.internalCommands.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands.runtime" />
-      <fileset dir="${mps_home}/plugins/console/lang/internalCommandsRuntime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/internalCommandsRuntime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.internalCommands.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-internalCommandsRuntime-models">
@@ -442,8 +435,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.ideCommands.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands.runtime" />
-      <fileset dir="${mps_home}/plugins/console/lang/ideCommandsRuntime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/ideCommandsRuntime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.ideCommands.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-ideCommandsRuntime-models">
@@ -477,8 +469,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.scripts.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.scripts.runtime" />
-      <fileset dir="${mps_home}/plugins/console/lang/scriptsRuntime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/lang/scriptsRuntime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.scripts.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-scriptsRuntime-models">
@@ -518,8 +509,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.actions.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.actions" />
-      <fileset dir="${mps_home}/plugins/console" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/console/actions/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.actions.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-actions-models">

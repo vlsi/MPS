@@ -65,8 +65,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table-generator.jar" duplicate="preserve">
@@ -109,8 +108,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.table.runtime" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.table.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-core-languages-languageDesign-table-runtime-jetbrains">
@@ -147,8 +145,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.core.properties.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.core.properties" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-core/languages/core.properties/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.core.properties.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.core.properties-generator.jar" duplicate="preserve">

@@ -53,7 +53,7 @@
       </module>
     </echoxml>
     <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/jetpad/solutions/jetbrains.jetpad" includes="icons/**, resources/**" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.jetpad.jar" />
     </jar>
     <jar destfile="${build.layout}/jetpad/languages/jetpad/jetbrains.jetpad-src.jar" duplicate="preserve">

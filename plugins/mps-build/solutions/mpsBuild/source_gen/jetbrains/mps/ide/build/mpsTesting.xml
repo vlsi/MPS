@@ -48,8 +48,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unitTest" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/baseLanguage/unitTest/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-generator.jar" duplicate="preserve">
@@ -88,8 +87,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test.matcher" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.matcher-models">
@@ -129,8 +127,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test-generator.jar" duplicate="preserve">
@@ -174,8 +171,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test.runtime" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.runtime.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.runtime-jetbrains">
@@ -211,8 +207,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.editor.editorTest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.editorTest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-editorTest-languageModels">
@@ -248,8 +243,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.smodelTests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelTests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-smodelTests-languageModels">
@@ -300,8 +294,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.editor.editorTest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.editorTest" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/editorTest/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.editor.editorTest.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-editorTest-languageModels1">
@@ -341,8 +334,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.jar1" />
     </jar>
     <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.test-generator.jar" duplicate="preserve">
@@ -389,8 +381,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.smodelTests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.smodelTests" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/smodelTests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.smodelTests.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-smodelTests-languageModels1">
@@ -416,8 +407,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/jetbrains.mps.lang.test.matcher.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test.matcher" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.matcher/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.matcher.jar1" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.matcher-models1">

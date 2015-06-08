@@ -62,8 +62,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models">

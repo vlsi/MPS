@@ -67,8 +67,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build-generator.jar" duplicate="preserve">
@@ -119,8 +118,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow-generator.jar" duplicate="preserve">
@@ -174,8 +172,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps-generator.jar" duplicate="preserve">
@@ -226,8 +223,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.tests" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.tests.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.tests-generator.jar" duplicate="preserve">
@@ -278,8 +274,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.runner.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.runner-generator.jar" duplicate="preserve">
@@ -330,8 +325,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.startup.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.startup-generator.jar" duplicate="preserve">
@@ -374,8 +368,7 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow.preset.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow.preset" />
-      <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.preset.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-solutions-workflow.preset-models">

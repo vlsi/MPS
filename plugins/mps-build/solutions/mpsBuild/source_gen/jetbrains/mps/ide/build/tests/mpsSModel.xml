@@ -62,7 +62,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.lang.traceable.operations.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.traceable.operations.test" />
-      <fileset dir="${basedir}/testbench/testsolutions/traceable.operations.test" includes="icons/**, resources/**" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.traceable.operations.test.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-traceable.operations.test-models">
@@ -93,7 +93,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.smodel.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.smodel.test" />
-      <fileset dir="${basedir}/plugins/mps-testing/languages/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test" includes="icons/**, resources/**" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.smodel.test.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-smodelTests-solutions-jetbrains.mps.smodel.test-jetbrains">
@@ -123,8 +123,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.testRead.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.testRead" />
-      <fileset dir="${basedir}/testbench/modules/testRead" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testRead/resources" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.testRead.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testRead-models">
