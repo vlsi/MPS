@@ -36,6 +36,10 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
         return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
     }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return pattern.match(it);
+      }
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return BehaviorReflection.invokeVirtual(Integer.TYPE, node, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) == 0 && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")) == null);
       }
@@ -45,9 +49,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode nodeToMigrate) {
-        if (!(pattern.match(nodeToMigrate))) {
-          return;
-        }
+        pattern.match(nodeToMigrate);
         applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
           public SNode compute() {
             return _quotation_createNode_fgay1s_a0a0f();

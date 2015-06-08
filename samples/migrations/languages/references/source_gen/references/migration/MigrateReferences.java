@@ -36,6 +36,10 @@ public class MigrateReferences extends MigrationScriptBase {
         return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
       }
     }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return pattern.match(it);
+      }
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
         return true;
       }
@@ -45,9 +49,7 @@ public class MigrateReferences extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode nodeToMigrate) {
-        if (!(pattern.match(nodeToMigrate))) {
-          return;
-        }
+        pattern.match(nodeToMigrate);
         applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
           public SNode compute() {
             return _quotation_createNode_w5820p_a0a0f(pattern.getFieldValue("patternVar_comp"));

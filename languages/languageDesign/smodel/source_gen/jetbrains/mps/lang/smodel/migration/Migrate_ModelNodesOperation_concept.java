@@ -48,6 +48,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
       }
     }, false).visitAll(new IVisitor<SNode>() {
       public void visit(final SNode nodeToMigrate) {
+        pattern.match(nodeToMigrate);
         applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
           public SNode compute() {
             return _quotation_createNode_vs95qi_a0a0f(pattern.getFieldValue("patternVar_concept"));

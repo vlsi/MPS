@@ -1669,6 +1669,19 @@
               <node concept="2es0OD" id="4SSaNAQnb4Z" role="2OqNvi">
                 <node concept="1bVj0M" id="4SSaNAQnb51" role="23t8la">
                   <node concept="3clFbS" id="4SSaNAQnb52" role="1bW5cS">
+                    <node concept="3clFbF" id="3Kei0BRG2_z" role="3cqZAp">
+                      <node concept="2OqwBi" id="3Kei0BRG2Ub" role="3clFbG">
+                        <node concept="37vLTw" id="3Kei0BRG2_x" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4SSaNAQnbPc" resolve="pattern" />
+                        </node>
+                        <node concept="liA8E" id="3Kei0BRG3rS" role="2OqNvi">
+                          <ref role="37wK5l" to="whpq:~DefaultMatchingPattern.match(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="match" />
+                          <node concept="37vLTw" id="3Kei0BRG3P4" role="37wK5m">
+                            <ref role="3cqZAo" node="4SSaNAQnb53" resolve="nodeToMigrate" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="1xD045lUVWP" role="3cqZAp">
                       <node concept="1rXfSq" id="1xD045lUVWN" role="3clFbG">
                         <ref role="37wK5l" to="6f4m:1xD045lRVzu" resolve="applyTransormMigration" />
