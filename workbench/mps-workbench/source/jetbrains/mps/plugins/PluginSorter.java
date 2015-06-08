@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.plugins;
 
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -25,39 +26,39 @@ import java.util.*;
 // TODO: remove another implementation graph from here!
 // FIXME: notice that we do tolerate cycles here
 public class PluginSorter {
-  private final Collection<ReloadableModuleBase> myModules;
+  private final Collection<ReloadableModule> myModules;
 
-  public PluginSorter(Collection<ReloadableModuleBase> modules) {
+  public PluginSorter(Collection<ReloadableModule> modules) {
     myModules = modules;
   }
 
-  public List<ReloadableModuleBase> sortByDependencies() {
+  public List<ReloadableModule> sortByDependencies() {
     return new TopologySorter().sort();
   }
 
   private class TopologySorter {
-    private Set<ReloadableModuleBase> myVisited;
-    private List<ReloadableModuleBase> result;
+    private Set<ReloadableModule> myVisited;
+    private List<ReloadableModule> result;
 
-    public List<ReloadableModuleBase> sort() {
-      myVisited = new HashSet<ReloadableModuleBase>(myModules.size());
-      result = new ArrayList<ReloadableModuleBase>(myModules.size());
+    public List<ReloadableModule> sort() {
+      myVisited = new HashSet<ReloadableModule>(myModules.size());
+      result = new ArrayList<ReloadableModule>(myModules.size());
       dfs();
       return result;
     }
 
     private void dfs() {
-      for (ReloadableModuleBase module : myModules) {
+      for (ReloadableModule module : myModules) {
         if (myVisited.contains(module)) continue;
         dfs0(module);
       }
     }
 
-    private void dfs0(ReloadableModuleBase module) {
+    private void dfs0(ReloadableModule module) {
       myVisited.add(module);
       Collection<SModule> deps = new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE);
       for (SModule dependency : deps) {
-        if (dependency instanceof ReloadableModuleBase) {
+        if (dependency instanceof ReloadableModule) {
           if (myModules.contains(dependency) && !myVisited.contains(dependency)) {
             dfs0((ReloadableModuleBase) dependency);
           }

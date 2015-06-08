@@ -50,7 +50,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not an element from generator language 
-    if (SNodeOperations.getConcept(node).getLanguage().equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator", -1))) {
+    if (SNodeOperations.getConcept(node).getLanguage().equals(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xb401a68083254110L, 0x8fd384331ff25befL), "jetbrains.mps.lang.generator"))) {
       return false;
     }
     //  not inside macro 

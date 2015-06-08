@@ -7193,10 +7193,10 @@
     <file name="ModuleDependencyUtils.java">
       <node id="558454895477897463" at="16,50,17,160" concept="7" />
       <node id="4214225063067035532" at="20,75,21,57" concept="13" />
-      <node id="4214225063067034873" at="21,57,22,165" concept="13" />
+      <node id="4214225063067034873" at="21,57,22,161" concept="13" />
       <node id="4214225063067034887" at="23,63,24,37" concept="7" />
       <node id="558454895477892754" at="15,78,18,5" concept="11" />
-      <node id="4214225063067034878" at="22,165,25,5" concept="11" />
+      <node id="4214225063067034878" at="22,161,25,5" concept="11" />
       <node id="558454895479019226" at="15,0,20,0" concept="18" trace="addDependencyOnJDKIfMissing#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="7625832129925586765" at="20,0,27,0" concept="18" trace="addDependencyOnJavaDocIfMissing#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="558454895477892757" at="16,50,17,160" />

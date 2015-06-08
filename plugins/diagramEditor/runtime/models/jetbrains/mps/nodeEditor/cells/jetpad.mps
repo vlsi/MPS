@@ -2,10 +2,10 @@
 <model ref="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
   </languages>
@@ -207,7 +207,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -8349,7 +8349,28 @@
           <ref role="3uigEE" to="nu8v:~EditorCell_Collection" resolve="EditorCell_Collection" />
         </node>
       </node>
-      <node concept="3clFbS" id="2eSMEaVmJZD" role="3clF47" />
+      <node concept="3clFbS" id="2eSMEaVmJZD" role="3clF47">
+        <node concept="2Gpval" id="1RWHAMZRP$W" role="3cqZAp">
+          <node concept="2GrKxI" id="1RWHAMZRP$X" role="2Gsz3X">
+            <property role="TrG5h" value="childCell" />
+          </node>
+          <node concept="3clFbS" id="1RWHAMZRP$Y" role="2LFqv$">
+            <node concept="3clFbF" id="1RWHAMZRQza" role="3cqZAp">
+              <node concept="2OqwBi" id="1RWHAMZRRCY" role="3clFbG">
+                <node concept="2GrUjf" id="1RWHAMZRQz9" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="1RWHAMZRP$X" resolve="childCell" />
+                </node>
+                <node concept="liA8E" id="1RWHAMZRSWL" role="2OqNvi">
+                  <ref role="37wK5l" to="nu8v:~EditorCell.relayout():void" resolve="relayout" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTw" id="1RWHAMZRQnj" role="2GsD0m">
+            <ref role="3cqZAo" node="2eSMEaVmJZ_" resolve="collection" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="2eSMEaVmJZE" role="jymVt">
       <property role="1EzhhJ" value="false" />

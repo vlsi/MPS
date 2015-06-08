@@ -40,6 +40,8 @@ public class PathManager {
   private static final String MODULES_PREFIX = "!/modules";
 
   private static final String PROTOCOL_DELIMITER = ":";
+  private static final String PLUGINS_PATH = "plugins";
+
   private static String ourHomePath;
   private static String ourIdeaPath;
 
@@ -221,5 +223,9 @@ public class PathManager {
 
     resultPath = resultPath != null ? StringUtil.replace(resultPath, "%20", " ") : null;
     return resultPath;
+  }
+
+  public static String getPreInstalledPluginsPath() {
+    return getHomePath() + File.separator + PLUGINS_PATH;
   }
 }

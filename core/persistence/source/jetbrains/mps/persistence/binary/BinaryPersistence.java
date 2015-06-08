@@ -426,7 +426,6 @@ public final class BinaryPersistence {
       // id, name, version
       os.writeUUID(IdHelper.getLanguageId(l).getIdValue());
       os.writeString(l.getQualifiedName());
-      os.writeInt(l.getLanguageVersion());
     }
   }
 
@@ -435,8 +434,7 @@ public final class BinaryPersistence {
     for (int i = 0; i < size; i++) {
       SLanguageId id = new SLanguageId(is.readUUID());
       String name = is.readString();
-      int version = is.readInt();
-      SLanguage l = MetaAdapterFactory.getLanguage(id, name, version);
+      SLanguage l = MetaAdapterFactory.getLanguage(id, name);
       myModelData.addLanguage(l);
       myMetaInfoProvider.setLanguageName(id, name);
     }

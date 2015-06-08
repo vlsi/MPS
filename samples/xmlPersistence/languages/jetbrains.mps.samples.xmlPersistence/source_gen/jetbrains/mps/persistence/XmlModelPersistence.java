@@ -207,7 +207,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       name = FileUtil.getNameWithoutExtension(((SModelId.RelativePathSModelId) reference.getModelId()).getFileName());
     }
     SNode xmlFile = XmlConverter.newDocument(name);
-    sModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L), "jetbrains.mps.core.xml", -1));
+    sModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L), "jetbrains.mps.core.xml"));
     sModel.addRootNode(xmlFile);
     return sModel;
   }
@@ -230,7 +230,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       SNode xmlFile = XmlConverter.convertDocument(name, document);
 
       jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
-      sModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L), "jetbrains.mps.core.xml", -1));
+      sModel.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x479c7a8c02f943b5L, 0x9139d910cb22f298L), "jetbrains.mps.core.xml"));
       sModel.addRootNode(xmlFile);
       return sModel;
     } catch (JDOMException e) {

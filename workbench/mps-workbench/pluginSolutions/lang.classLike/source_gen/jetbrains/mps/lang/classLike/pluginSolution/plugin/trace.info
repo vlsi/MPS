@@ -25,8 +25,8 @@
       <node id="3384419124890816989" at="31,7,32,94" concept="2" />
       <node id="5174336506434611794" at="32,94,33,0" concept="10" />
       <node id="8352104482584074074" at="33,0,34,48" concept="7" />
-      <node id="3932724607434496109" at="34,48,35,150" concept="2" />
-      <node id="1909661648054921184" at="35,150,36,20" concept="8" />
+      <node id="3932724607434496109" at="34,48,35,146" concept="2" />
+      <node id="1909661648054921184" at="35,146,36,20" concept="8" />
       <node id="3402736933912013908" at="28,0,31,0" concept="6" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3402736933911962352" at="26,412,31,7" concept="2" />
       <node id="1909661648054908191" at="22,0,38,0" concept="12" trace="createNewClassLike#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />

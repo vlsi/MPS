@@ -62,16 +62,15 @@ public class ClassLoadingBroadCaster {
     myReloadListeners.remove(listener);
   }
 
-  public Collection<ReloadableModuleBase> onUnload(Collection<? extends SModuleReference> refsToUnload) {
+  public Set<ReloadableModule> onUnload(Collection<? extends SModuleReference> refsToUnload) {
     if (refsToUnload.isEmpty()) return Collections.emptySet();
 
     myModelAccess.checkWriteAccess();
     final Set<ReloadableModuleBase> modulesToUnload = new LinkedHashSet<ReloadableModuleBase>();
     for (ReloadableModule loadedModule : myLoadedModules) {
-      ReloadableModuleBase loadedModule1 = (ReloadableModuleBase) loadedModule;
-      SModuleReference mRef = loadedModule1.getModuleReference();
+      SModuleReference mRef = loadedModule.getModuleReference();
       if (refsToUnload.contains(mRef)) {
-        modulesToUnload.add(loadedModule1);
+        modulesToUnload.add((ReloadableModuleBase) loadedModule);
       }
     }
     if (modulesToUnload.size() < refsToUnload.size()) {
@@ -84,7 +83,9 @@ public class ClassLoadingBroadCaster {
       listener.beforeClassesUnloaded(modulesToUnload);
     }
 
-    return modulesToUnload;
+    final Set<ReloadableModule> resultingUnload = new LinkedHashSet<ReloadableModule>();
+    for (ReloadableModule module : modulesToUnload) resultingUnload.add(module);
+    return resultingUnload;
   }
 
   public void onLoad(Collection<? extends ReloadableModule> toLoad) {
@@ -104,8 +105,8 @@ public class ClassLoadingBroadCaster {
     if (reloadedModules.isEmpty()) return;
 
     myModelAccess.checkWriteAccess();
-    final Set<ReloadableModuleBase> modulesToReload = new LinkedHashSet<ReloadableModuleBase>(reloadedModules.size());
-    for (ReloadableModule module : reloadedModules) modulesToReload.add((ReloadableModuleBase) module);
+    final Set<ReloadableModule> modulesToReload = new LinkedHashSet<ReloadableModule>(reloadedModules.size());
+    for (ReloadableModule module : reloadedModules) modulesToReload.add(module);
 
     for (ModuleReloadListener listener : myReloadListeners) {
       listener.modulesReloaded(modulesToReload);

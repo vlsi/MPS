@@ -153,7 +153,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project", 0));
+    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project"));
   }
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference().getModelId()) != null) {

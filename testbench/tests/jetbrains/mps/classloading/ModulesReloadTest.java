@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.module.ModuleClassLoaderIsNullException;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -447,6 +448,8 @@ public class ModulesReloadTest extends ModuleMpsTest {
     try {
       return module.getClass(classFqName);
     } catch (ClassNotFoundException ignored) {
+      return null;
+    } catch (ModuleClassLoaderIsNullException ignored) {
       return null;
     }
   }

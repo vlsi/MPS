@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.core.tool.environment.util.PathManager;
+import jetbrains.mps.util.PathManager;
 import org.apache.log4j.Logger;
 
 /**
@@ -139,7 +139,7 @@ public abstract class EnvironmentBase implements Environment {
 
   protected static void setPluginPath() {
     StringBuilder pluginPath = new StringBuilder();
-    File pluginDir = new File(PathManager.getPreinstalledPluginsPath());
+    File pluginDir = new File(PathManager.getPreInstalledPluginsPath());
     if (pluginDir.exists()) {
       for (File pluginFolder : pluginDir.listFiles()) {
         if (pluginPath.length() > 0) {

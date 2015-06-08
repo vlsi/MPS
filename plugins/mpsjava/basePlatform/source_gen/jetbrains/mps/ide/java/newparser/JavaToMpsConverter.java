@@ -163,8 +163,8 @@ public class JavaToMpsConverter {
               continue;
             }
 
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
-            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc", -1));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
+            ((SModelBase) model).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf280165065d5424eL, 0xbb1b463a8781b786L), "jetbrains.mps.baseLanguage.javadoc"));
 
             Set<SNode> roots = MapSequence.fromMap(classesPerPackage).get(pakage);
             SetSequence.fromSet(roots).visitAll(new IVisitor<SNode>() {

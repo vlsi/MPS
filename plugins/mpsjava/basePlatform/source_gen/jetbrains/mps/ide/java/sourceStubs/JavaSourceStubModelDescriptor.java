@@ -248,7 +248,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
 
   @Override
   public Collection<SLanguage> importedLanguageIds() {
-    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage", -1));
+    return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
   }
 
   public void reloadFromDiskSafe() {

@@ -68,7 +68,7 @@ public class BootstrapLanguages {
   private BootstrapLanguages() {
   }
   public static SLanguage getLangCore() {
-    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core", -1);
+    return MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL), "jetbrains.mps.lang.core");
   }
   public static Language baseLanguage() {
     return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"), Language.class);

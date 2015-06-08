@@ -40,15 +40,9 @@ import java.util.Set;
 
 public abstract class SLanguageAdapter implements SLanguage {
   protected final String myLanguageFqName;
-  /**
-   * We use -1 to indicate we care about actual language version available.
-   * Positive value indicates this is a reference to the given revision of the language
-   */
-  private final int myVersion;
 
-  protected SLanguageAdapter(@NotNull String language, int version) {
+  protected SLanguageAdapter(@NotNull String language) {
     this.myLanguageFqName = language;
-    myVersion = version;
   }
 
   @Nullable
@@ -111,9 +105,6 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   public int getLanguageVersion() {
-    if (myVersion >= 0) {
-      return myVersion;
-    }
     LanguageRuntime languageDescriptor = getLanguageDescriptor();
     if (languageDescriptor == null) {
       return -1;

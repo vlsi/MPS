@@ -54,6 +54,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   /**
    * Migration to 3.0. Loads and returns model data.
+   *
    * @deprecated use {@link SModelBase#getModelData()} or {@link #getSModel()}
    * FIXME  there's implicit convention that smodel.SModel has this openapi.SModel (aka descriptor) assigned once
    * this method returns
@@ -184,6 +185,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
 
   /**
    * Likely, shall return SModelData eventually
+   *
    * @return actual model data or <code>null</code> if not initialized yet
    */
   @Nullable
@@ -233,6 +235,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   @Override
   public void addLanguage(@NotNull SLanguage language) {
     getSModel().addLanguage(language);
+  }
+
+  @Override
+  public void addLanguage(@NotNull SLanguage language, int version) {
+    getSModel().addLanguage(language, version);
   }
 
   @Override

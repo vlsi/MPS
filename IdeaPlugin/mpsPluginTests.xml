@@ -72,7 +72,7 @@
       </fileset>
       <flattenmapper />
     </copy>
-    <jar destfile="${build.layout}/mps-core/lib/mps-plugin-tests.jar">
+    <jar destfile="${build.layout}/mps-core/lib/mps-plugin-tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-plugin-tests" />
       <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
       <fileset dir="${build.tmp}/default/mps-plugin-tests.jar" />
@@ -81,7 +81,7 @@
     <copy todir="${build.layout}/mps-core/lib/jps">
       <fileset file="${mps_home}/IdeaPlugin/mps-core/lib/jps/jps-build-test-139.1117.1.jar" />
     </copy>
-    <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar">
+    <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>

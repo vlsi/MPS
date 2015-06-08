@@ -250,7 +250,6 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     }
 
     int toVersion = script.getDescriptor().getFromVersion() + 1;
-    final SLanguage toLanguage = MetaAdapterFactory.getLanguage(fromLanguage, toVersion);
     module.getModuleDescriptor().getLanguageVersions().put(fromLanguage, toVersion);
     module.setChanged();
 
@@ -266,7 +265,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       }
 
       ((SModelInternal) model).deleteLanguageId(fromLanguage);
-      ((SModelInternal) model).addLanguage(toLanguage);
+      ((SModelInternal) model).addLanguage(fromLanguage, toVersion);
     }
 
     return true;

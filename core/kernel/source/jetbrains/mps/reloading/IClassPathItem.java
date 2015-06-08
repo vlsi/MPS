@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -25,6 +24,11 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
+ * Why methods of these class are deprecated and get removed one by one?
+ * The reason is their contract is vague. Whether {@link #getAvailableClasses(String)} returns anonymous inner classes or not,
+ * whether {@link #hasClass(String)} answers true for them and {@link #getClassBytes(String)} treats inner/anonymous classes in any special way.
+ * What's in the name of inner class, whether it's dot-separated (human-friendly notation) or '$'-separated (computer-frriendly) is unspecified.
+ * It is easier to throw this class away than to enforce a contract.
  * @author Kostik
  */
 public interface IClassPathItem extends ClassBytesProvider {
@@ -37,9 +41,6 @@ public interface IClassPathItem extends ClassBytesProvider {
    * @return <code>true</code> if this classpath item knows about classes in specified package or any subpackage thereof.
    */
   boolean hasPackage(@NotNull String name);
-  
-  @Nullable
-  ClassifierKind getClassifierKind(String name);
 
   /**
    * The contract is the same as in the {@link java.lang.ClassLoader#getResource(String)}
@@ -72,20 +73,6 @@ public interface IClassPathItem extends ClassBytesProvider {
   @Deprecated
   @ToRemove(version = 3.2)
   Iterable<String> getSubpackages(String namespace);
-
-  /**
-   * @deprecated the method is not in use and will be removed
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  long getClassesTimestamp(String namespace);
-
-  /**
-   * @deprecated the method is not in use and will be removed
-   */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  long getTimestamp();
 
   List<RealClassPathItem> flatten();
 

@@ -163,8 +163,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return;
   }
   private void addRequiredImports(SModel smodel, ModuleDescriptor moduleDescriptor) {
-    ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L), "jetbrains.mps.build", -1));
-    ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xcf935df46994e9cL, 0xa132fa109541cba3L), "jetbrains.mps.build.mps", -1));
+    ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L), "jetbrains.mps.build"));
+    ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xcf935df46994e9cL, 0xa132fa109541cba3L), "jetbrains.mps.build.mps"));
 
     moduleDescriptor.getDependencies().add(new Dependency(PersistenceFacade.getInstance().createModuleReference("422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)"), false));
     ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.build").getReference(), false);

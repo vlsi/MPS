@@ -22,7 +22,7 @@
         <attribute name="sectionAttribute" value="value" />
       </section>
     </manifest>
-    <jar destfile="${build.layout}/some.jar" manifest="${build.tmp}/default/MANIFEST.MF">
+    <jar destfile="${build.layout}/some.jar" manifest="${build.tmp}/default/MANIFEST.MF" duplicate="preserve">
       <fileset dir="${build.tmp}/default/some.jar" />
     </jar>
     <echo file="${build.layout}/build.properties">testmanifest.var=${var}</echo>

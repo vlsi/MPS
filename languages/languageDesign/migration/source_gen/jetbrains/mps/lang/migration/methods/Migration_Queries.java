@@ -33,8 +33,8 @@ public class Migration_Queries {
     SModelInternal m = ((SModelInternal) (SModel) SNodeOperations.getModel(c));
     AbstractModule mod = ((AbstractModule) module);
 
-    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin", -1));
-    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern", -1));
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x28f9e4973b424291L, 0xaeba0a1039153ab1L), "jetbrains.mps.lang.plugin"));
+    m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L), "jetbrains.mps.lang.pattern"));
 
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);

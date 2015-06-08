@@ -3295,9 +3295,9 @@
             <node concept="2ShNRf" id="7P_U$gDQsc3" role="33vP2m">
               <node concept="1pGfFk" id="7P_U$gDQsc4" role="2ShVmc">
                 <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="2YIFZM" id="7P_U$gDQsc5" role="37wK5m">
-                  <ref role="1Pybhc" to="v9gs:4937uxYQn6D" resolve="PathManager" />
-                  <ref role="37wK5l" to="v9gs:4937uxYQnfX" resolve="getPreinstalledPluginsPath" />
+                <node concept="2YIFZM" id="5eyuPQWCLYG" role="37wK5m">
+                  <ref role="37wK5l" to="msyo:~PathManager.getPreInstalledPluginsPath():java.lang.String" resolve="getPreInstalledPluginsPath" />
+                  <ref role="1Pybhc" to="msyo:~PathManager" resolve="PathManager" />
                 </node>
               </node>
             </node>

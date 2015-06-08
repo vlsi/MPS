@@ -60,17 +60,19 @@
         <sources jar="jetbrains.mps.testActions-src.jar" descriptor="jetbrains.mps.testActions.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/jetbrains.mps.testActions.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.testActions.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.testActions" />
       <fileset dir="${basedir}/testbench/modules/testActions" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/modules/testActions/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.testActions.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-modules-testActions-models">
       <fileset dir="${basedir}/testbench/modules/testActions/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/jetbrains.mps.testActions-src.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.testActions-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/testbench/modules/testActions/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/testbench-modules-testActions-models" prefix="module/models" />

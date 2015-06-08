@@ -6,7 +6,7 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/Aa.jar">
+    <jar destfile="${build.layout}/Aa.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/module-A-in-Y" />
     </jar>
     <zip destfile="${build.layout}/AaLibs.zip">

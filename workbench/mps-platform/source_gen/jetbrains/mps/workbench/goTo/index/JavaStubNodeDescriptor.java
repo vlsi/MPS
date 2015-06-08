@@ -10,7 +10,9 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.reloading.ClassBytesProvider;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import org.jetbrains.org.objectweb.asm.ClassReader;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class JavaStubNodeDescriptor implements NavigationParticipant.NavigationTarget {
@@ -34,7 +36,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
   @Override
   public SConcept getConcept() {
-    ClassifierKind kind = JavaStubNodeDescriptor.this.myItem.getClassifierKind(("".equals(JavaStubNodeDescriptor.this.myPName) ? JavaStubNodeDescriptor.this.myCls : JavaStubNodeDescriptor.this.myPName + "." + JavaStubNodeDescriptor.this.myCls));
+    ClassBytesProvider.ClassBytes classBytes = myItem.getClassBytes(((myPName == null || myPName.length() == 0) ? myCls : myPName + '.' + myCls));
+    ClassifierKind kind = (classBytes == null ? null : ClassifierKind.getClassifierKind(new ClassReader(classBytes.getBytes())));
     if (kind == ClassifierKind.CLASS) {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     } else if (kind == ClassifierKind.INTERFACE) {

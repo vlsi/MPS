@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import org.jetbrains.annotations.NotNull;
@@ -82,16 +81,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   @Override
-  public ClassifierKind getClassifierKind(String name) {
-    checkValidity();
-    for (IClassPathItem item : myChildren) {
-      ClassifierKind result = item.getClassifierKind(name);
-      if (result != null) return result;
-    }
-    return null;
-  }
-
-  @Override
   public URL getResource(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -135,26 +124,6 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     for (IClassPathItem item : myChildren) {
       //todo rewrite using mapping iterable
       result.add(item.getSubpackages(namespace));
-    }
-    return result;
-  }
-
-  @Override
-  public long getClassesTimestamp(String namespace) {
-    checkValidity();
-    long result = 0;
-    for (IClassPathItem item : myChildren) {
-      result = Math.max(result, item.getClassesTimestamp(namespace));
-    }
-    return result;
-  }
-
-  @Override
-  public long getTimestamp() {
-    checkValidity();
-    long result = 0;
-    for (IClassPathItem item : myChildren) {
-      result = Math.max(result, item.getTimestamp());
     }
     return result;
   }

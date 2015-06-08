@@ -47,7 +47,6 @@ public class LanguageId_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_2vmwcs_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2vmwcs_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createCollection_2vmwcs_a0(EditorContext editorContext, SNode node) {
@@ -75,39 +74,6 @@ public class LanguageId_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_languageId");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createCollection_2vmwcs_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2vmwcs_b0");
-    editorCell.addEditorCell(this.createConstant_2vmwcs_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2vmwcs_b1a(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_2vmwcs_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
-    editorCell.setCellId("Constant_2vmwcs_a1a");
-    Style style = new StyleImpl();
-    ProjectStructure_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_2vmwcs_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("version");
-    provider.setNoTargetText("<no version>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_version");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

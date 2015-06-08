@@ -168,7 +168,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     final Collection<LanguageRuntime> languages = getAvailableLanguages();
     ArrayList<SLanguage> rv = new ArrayList<SLanguage>(languages.size());
     for (LanguageRuntime lr : languages) {
-      rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace(), lr.getVersion()));
+      rv.add(MetaAdapterFactory.getLanguage(lr.getId(), lr.getNamespace()));
     }
     return rv;
   }

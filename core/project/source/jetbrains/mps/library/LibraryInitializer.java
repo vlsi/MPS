@@ -94,7 +94,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
 
   @Override
   public void unload(List<LibraryContributor> contributors) {
-    for (RepositoryContributor contributor : contributors) {
+    for (LibraryContributor contributor : contributors) {
       removeContributor(contributor);
     }
     update(false);
@@ -184,7 +184,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    * Please use one-step version to unload modules from MPS {@link #unload(List)}
    */
   @Deprecated
-  public void removeContributor(@NotNull RepositoryContributor c) {
+  public void removeContributor(@NotNull LibraryContributor c) {
     LOG.info("Removing libraries from " + c.getClass().getName());
     myContributors.remove(c);
   }

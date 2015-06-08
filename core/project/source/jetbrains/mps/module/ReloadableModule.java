@@ -18,6 +18,7 @@ package jetbrains.mps.module;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.ModuleClassNotFoundException;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -46,7 +47,7 @@ public interface ReloadableModule extends SModule {
    * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
    * warning: this method is lazy implemented!
    */
-  @Nullable
+  @NotNull
   Class<?> getClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**
@@ -60,7 +61,7 @@ public interface ReloadableModule extends SModule {
    * @see jetbrains.mps.classloading.ModuleClassLoader#loadOwnClass(String)
    * warning: this method is lazy implemented!
    */
-  @Nullable
+  @NotNull
   Class<?> getOwnClass(String classFqName) throws ClassNotFoundException, ModuleClassNotFoundException, ModuleIsNotLoadableException;
 
   /**

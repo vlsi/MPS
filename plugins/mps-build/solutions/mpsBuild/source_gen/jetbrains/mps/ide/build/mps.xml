@@ -67,7 +67,7 @@
         <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS" />
       </component>
     </echoxml>
-    <jar destfile="${build.layout}/lib/branding.jar">
+    <jar destfile="${build.layout}/lib/branding.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_32.png" />
       <fileset file="${basedir}/workbench/mps-icons/source/MPS_128.png" />

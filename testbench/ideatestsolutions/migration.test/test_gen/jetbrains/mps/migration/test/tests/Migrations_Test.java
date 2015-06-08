@@ -38,26 +38,25 @@ import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 public class Migrations_Test extends TestCase {
   public void test_isAvailable() throws Exception {
 
-    SLanguage langA_0 = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(239, 0), "langA", 0);
-    SLanguage langA_1 = MetaAdapterFactory.getLanguage(langA_0, 1);
-    SLanguage langB = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(239, 1), "langB", 0);
+    SLanguage langA = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(239, 0), "langA");
+    SLanguage langB = MetaAdapterFactory.getLanguage(MetaIdFactory.langId(239, 1), "langB");
 
 
-    final MigrationScript scriptA0 = new Migrations_Test.MockMigrationScript(langA_0);
+    final MigrationScript scriptA0 = new Migrations_Test.MockMigrationScript(langA, 0);
 
-    final MigrationScript scriptB0 = new Migrations_Test.MockMigrationScript(langB) {
+    final MigrationScript scriptB0 = new Migrations_Test.MockMigrationScript(langB, 0) {
       public Iterable<MigrationScriptReference> executeAfter() {
         return Sequence.<MigrationScriptReference>singleton(scriptA0.getDescriptor());
       }
     };
 
-    final MigrationScript scriptA1 = new Migrations_Test.MockMigrationScript(langA_1) {
+    final MigrationScript scriptA1 = new Migrations_Test.MockMigrationScript(langA, 1) {
       public Iterable<MigrationScriptReference> requiresData() {
         return Sequence.<MigrationScriptReference>singleton(scriptB0.getDescriptor());
       }
     };
 
-    SModule singleModule = new Migrations_Test.MockModule("singleModule", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA_0, langB).withValues(0, 0), Sequence.fromIterable(Collections.<SModule>emptyList()));
+    SModule singleModule = new Migrations_Test.MockModule("singleModule", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA, langB).withValues(0, 0), Sequence.fromIterable(Collections.<SModule>emptyList()));
 
 
 
@@ -67,8 +66,8 @@ public class Migrations_Test extends TestCase {
 
     List<SModule> dep1 = ListSequence.fromList(new ArrayList<SModule>());
     List<SModule> dep2 = ListSequence.fromList(new ArrayList<SModule>());
-    SModule cyclicModule1 = new Migrations_Test.MockModule("cyclicModule1", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA_0, langB).withValues(1, 0), dep1);
-    SModule cyclicModule2 = new Migrations_Test.MockModule("cyclicModule2", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA_0, langB).withValues(1, 0), dep2);
+    SModule cyclicModule1 = new Migrations_Test.MockModule("cyclicModule1", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA, langB).withValues(1, 0), dep1);
+    SModule cyclicModule2 = new Migrations_Test.MockModule("cyclicModule2", MapSequence.<SLanguage, Integer>fromMapAndKeysArray(new HashMap<SLanguage, Integer>(), langA, langB).withValues(1, 0), dep2);
     ListSequence.fromList(dep1).addElement(cyclicModule2);
     ListSequence.fromList(dep2).addElement(cyclicModule1);
 
@@ -110,8 +109,8 @@ public class Migrations_Test extends TestCase {
 
   /*package*/ static class MockMigrationScript extends MigrationScriptBase {
     private MigrationScriptReference myReference;
-    public MockMigrationScript(SLanguage lang) {
-      myReference = new MigrationScriptReference(lang);
+    public MockMigrationScript(SLanguage lang, int version) {
+      myReference = new MigrationScriptReference(lang, version);
     }
     public MigrationScriptReference getDescriptor() {
       return myReference;

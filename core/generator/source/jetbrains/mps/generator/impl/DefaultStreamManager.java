@@ -31,6 +31,8 @@ import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
  * {@link jetbrains.mps.generator.impl.ModelStreamManager} implementation to capture present conventions regarding
  * location of output artifacts and generated caches.
  *
+ * FIXME likely, shall get a different name (to better distinguish from DeployedStreamManager), e.g. WorkspaceStreamManager
+ *
  * FIXME move FileGenerationUtil logic in here; move this class out from generator and expose to any model client; replace used of FGU with this class, drop the FGU class.
  *
  * @author Artem Tikhomirov
@@ -41,7 +43,7 @@ public class DefaultStreamManager implements ModelStreamManager {
   private final FolderDataSource myOutputDir;
   private final FolderDataSource myCachesDir;
 
-  private DefaultStreamManager(@NotNull SModelReference modelReference, @NotNull IFile outputDir, @NotNull IFile cachesDir) {
+  /*package*/ DefaultStreamManager(@NotNull SModelReference modelReference, @NotNull IFile outputDir, @NotNull IFile cachesDir) {
     myModelReference = modelReference;
     // expect directories, if exist
     assert !outputDir.exists() || outputDir.isDirectory();
@@ -66,12 +68,11 @@ public class DefaultStreamManager implements ModelStreamManager {
     return myCachesDir;
   }
 
-  public static class Provider implements ModelStreamManager.Provider {
-
-    @Override
-    public ModelStreamManager getStreamManager(@NotNull SModel model) {
-      return new DefaultStreamManager(model.getReference(), getOutputDir(model), getCachesDir(model));
-    }
+  /**
+   * @deprecated use {@link ModelStreamProviderImpl} instead
+   */
+  @Deprecated
+  public static class Provider extends ModelStreamProviderImpl {
 
     /**
      * FIXME public until TextGenUtil and TextGen_Facet are refactored to use ModelStreamManager

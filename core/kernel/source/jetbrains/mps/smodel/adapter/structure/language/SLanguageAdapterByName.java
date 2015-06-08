@@ -28,10 +28,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 
 public final class SLanguageAdapterByName extends SLanguageAdapter {
   public SLanguageAdapterByName(@NotNull String language) {
-    super(language, -1);
-  }
-  public SLanguageAdapterByName(@NotNull String language, int version) {
-    super(language, version);
+    super(language);
   }
 
   @Override

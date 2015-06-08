@@ -18,6 +18,7 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -73,12 +74,12 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     return pluginContributors;
   }
 
-  private static List<PluginContributor> createPluginContributors(Collection<ReloadableModuleBase> modules) {
-    List<ReloadableModuleBase> sortedModules = new PluginSorter(modules).sortByDependencies();
+  private static List<PluginContributor> createPluginContributors(Collection<ReloadableModule> modules) {
+    List<ReloadableModule> sortedModules = new PluginSorter(modules).sortByDependencies();
 
     List<PluginContributor> contributors = new ArrayList<PluginContributor>();
-    for (SModule module : sortedModules) {
-      PluginContributor contributor = createPluginContributor((ReloadableModule) module);
+    for (ReloadableModule module : sortedModules) {
+      PluginContributor contributor = createPluginContributor(module);
       if (contributor != null) {
         contributors.add(contributor);
       }
@@ -88,8 +89,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
   }
 
   @Nullable
-  private static PluginContributor createPluginContributor(ReloadableModule module) {
+  private static PluginContributor createPluginContributor(@NotNull ReloadableModule module) {
     if (module.willLoad()) {
+      LOG.debug("Creating plugin contributor from " + module);
       return new ModulePluginContributor(module);
     }
     return null;
@@ -115,9 +117,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
   }
 
-  private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModuleBase> toUnload) {
+  private List<PluginContributor> calcContributorsToUnload(Set<ReloadableModule> toUnload) {
     List<PluginContributor> toUnloadContributors = new ArrayList<PluginContributor>();
-    for (PluginContributor contributor : myLoadedContributors) {
+    for (PluginContributor contributor : myLoadedContributors) { // factories are unloaded as well
       if (contributor instanceof ModulePluginContributor) {
         if (toUnload.contains(((ModulePluginContributor) contributor).getModule())) {
           toUnloadContributors.add(contributor);
@@ -128,7 +130,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     return toUnloadContributors;
   }
 
-  private List<PluginContributor> calcContributorsToLoad(Set<ReloadableModuleBase> toLoad) {
+  private List<PluginContributor> calcContributorsToLoad(Set<ReloadableModule> toLoad) {
     List<PluginContributor> toLoadContributors = new ArrayList<PluginContributor>();
     toLoadContributors.addAll(createPluginContributors(toLoad));
     for (PluginContributor contributor : getPluginFactoriesRegistryContributors()) {
@@ -138,7 +140,6 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     }
     return toLoadContributors;
   }
-  //----------------COMPONENT STUFF---------------------
 
   @Override
   @NonNls
@@ -173,7 +174,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> unloadedModules) {
       LOG.debug(String.format("Unloading plugins from %d modules", unloadedModules.size()));
       long beginTime = System.currentTimeMillis();
-      Set<ReloadableModuleBase> pluginModules = getPluginModules(unloadedModules);
+      Set<ReloadableModule> pluginModules = getPluginModules(unloadedModules);
       if (pluginModules.isEmpty()) return;
       try {
         List<PluginContributor> toUnloadContributors = calcContributorsToUnload(pluginModules);
@@ -188,7 +189,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> loadedModules) {
       LOG.debug(String.format("Loading plugins from %d modules", loadedModules.size()));
       long beginTime = System.nanoTime();
-      Set<ReloadableModuleBase> pluginModules = getPluginModules(loadedModules);
+      Set<ReloadableModule> pluginModules = getPluginModules(loadedModules);
       if (pluginModules.isEmpty()) return;
       try {
         List<PluginContributor> toLoadContributors = calcContributorsToLoad(pluginModules);
@@ -199,10 +200,10 @@ public class PluginLoaderRegistry implements ApplicationComponent {
       }
     }
 
-    private Set<ReloadableModuleBase> getPluginModules(Collection<? extends ReloadableModuleBase> modules) {
-      Set<ReloadableModuleBase> result = new HashSet<ReloadableModuleBase>();
+    private Set<ReloadableModule> getPluginModules(Collection<? extends ReloadableModule> modules) {
+      Set<ReloadableModule> result = new HashSet<ReloadableModule>();
 
-      for (ReloadableModuleBase module : modules) {
+      for (ReloadableModule module : modules) {
         if (isPluginModule(module)) {
           result.add(module);
         }

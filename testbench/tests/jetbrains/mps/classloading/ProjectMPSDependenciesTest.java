@@ -20,10 +20,14 @@ import jetbrains.mps.core.tool.environment.util.SetLibraryContributor;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
@@ -54,16 +58,27 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
 
   @Test
   public void depsAreValid() {
-    LOG.info("ADDING CORE CONTRIBUTORS");
+    LOG.info("ADDING CORE CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(getCorePaths());
     checkDeps();
-    LOG.info("ADDING WORKBENCH CONTRIBUTORS");
+    LOG.info("ADDING WORKBENCH CONTRIBUTORS : currently " + getModulesCount() + " modules");
     addContributorWithPaths(Collections.singletonList(PathManager.getWorkbenchPath()));
     checkDeps();
-    LOG.info("ADDING PLUGINS CONTRIBUTORS");
-    addContributorWithPaths(Collections.singletonList(PathManager.getHomePath() + File.separator + "plugins"));
+    LOG.info("ADDING PLUGINS CONTRIBUTORS : currently " + getModulesCount() + " modules");
+    addContributorWithPaths(Collections.singletonList(PathManager.getPreInstalledPluginsPath()));
+    LOG.info("FINISHED : currently " + getModulesCount() + " modules");
     checkDeps();
     Assert.assertFalse("Some dependencies are invalid", myFailed);
+  }
+
+  private int getModulesCount() {
+    final SRepository repository = getRepository();
+    return new ModelAccessHelper(repository).runReadAction(new Computable<Integer>() {
+      @Override
+      public Integer compute() {
+        return IterableUtil.asCollection(repository.getModules()).size();
+      }
+    });
   }
 
   private Collection<String> getCorePaths() {
@@ -81,7 +96,7 @@ public class ProjectMPSDependenciesTest extends CoreMpsTest {
   }
 
   private void addContributor(LibraryContributor contributor) {
-    LibraryInitializer.getInstance().addContributor(contributor);
+    LibraryInitializer.getInstance().load(Collections.singletonList(contributor));
   }
 
   private void checkDeps() {

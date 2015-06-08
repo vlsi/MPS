@@ -23,7 +23,7 @@
     <mkdir dir="${build.tmp}/default/mps-core_dl__lbrace_ver_rbrace_.jar/abc" />
     <mkdir dir="${build.tmp}/default/mps-core_dl__lbrace_ver_rbrace_.jar/abc/edf" />
     <zip destfile="${build.tmp}/default/mps-core_dl__lbrace_ver_rbrace_.jar/abc/edf/aaa" />
-    <jar destfile="${build.tmp}/default/inrelease.zip/mps-core${ver}.jar">
+    <jar destfile="${build.tmp}/default/inrelease.zip/mps-core${ver}.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-core" />
       <fileset dir="${build.tmp}/default/mps-core_dl__lbrace_ver_rbrace_.jar" />
     </jar>

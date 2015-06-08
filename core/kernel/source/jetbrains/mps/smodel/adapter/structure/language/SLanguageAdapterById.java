@@ -29,10 +29,7 @@ public final class SLanguageAdapterById extends SLanguageAdapter {
   private final SLanguageId myLanguage;
 
   public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
-    this(language, fqName, -1);
-  }
-  public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName, int version) {
-    super(fqName, version);
+    super(fqName);
     this.myLanguage = language;
   }
 

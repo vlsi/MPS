@@ -787,6 +787,7 @@
         <property role="Xl_RC" value=".jar" />
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1A25" role="jymVt" />
     <node concept="Wx3nA" id="4937uxYQn8r" role="jymVt">
       <property role="TrG5h" value="JARS" />
       <property role="3TUv4t" value="true" />
@@ -843,6 +844,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1AG5" role="jymVt" />
     <node concept="Wx3nA" id="4937uxYQn8J" role="jymVt">
       <property role="TrG5h" value="MPS_JARS" />
       <property role="3TUv4t" value="true" />
@@ -913,11 +915,13 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1Bm6" role="jymVt" />
     <node concept="3clFbW" id="4937uxYQn98" role="jymVt">
       <node concept="3Tm1VV" id="4937uxYQn99" role="1B3o_S" />
       <node concept="3cqZAl" id="4937uxYQn9a" role="3clF45" />
       <node concept="3clFbS" id="4937uxYQn9b" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="stxyIU1C08" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQn9c" role="jymVt">
       <property role="TrG5h" value="getHomePath" />
       <property role="DiZV1" value="false" />
@@ -1399,6 +1403,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1_o6" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQncQ" role="jymVt">
       <property role="TrG5h" value="getSystemPath" />
       <property role="DiZV1" value="false" />
@@ -1549,6 +1554,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1$I8" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQndI" role="jymVt">
       <property role="TrG5h" value="ensureConfigFolderExists" />
       <property role="DiZV1" value="false" />
@@ -1625,6 +1631,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1$ev" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnec" role="jymVt">
       <property role="TrG5h" value="getConfigPath" />
       <property role="DiZV1" value="false" />
@@ -1653,6 +1660,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1x75" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnen" role="jymVt">
       <property role="TrG5h" value="getConfigPath" />
       <property role="DiZV1" value="false" />
@@ -1670,6 +1678,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1wta" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQneu" role="jymVt">
       <property role="TrG5h" value="getConfigPathWithoutDialog" />
       <property role="DiZV1" value="false" />
@@ -1767,6 +1776,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1vNg" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnf2" role="jymVt">
       <property role="TrG5h" value="getBinPath" />
       <property role="DiZV1" value="false" />
@@ -1793,6 +1803,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1v9n" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnfc" role="jymVt">
       <property role="TrG5h" value="getOptionsPath" />
       <property role="DiZV1" value="false" />
@@ -1819,6 +1830,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1uvv" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnfm" role="jymVt">
       <property role="TrG5h" value="getOptionsPathWithoutDialog" />
       <property role="DiZV1" value="false" />
@@ -1845,6 +1857,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1tZW" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnfw" role="jymVt">
       <property role="TrG5h" value="getIndexRoot" />
       <property role="DiZV1" value="false" />
@@ -1920,20 +1933,7 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="4937uxYQnfX" role="jymVt">
-      <property role="TrG5h" value="getPreinstalledPluginsPath" />
-      <property role="DiZV1" value="false" />
-      <node concept="17QB3L" id="57xhZj4x9_U" role="3clF45" />
-      <node concept="3Tm1VV" id="4937uxYQnfY" role="1B3o_S" />
-      <node concept="3clFbS" id="4937uxYQng0" role="3clF47">
-        <node concept="3cpWs6" id="4937uxYQng1" role="3cqZAp">
-          <node concept="10M0yZ" id="4937uxYQng2" role="3cqZAk">
-            <ref role="3cqZAo" node="4937uxYQnue" resolve="ourPreinstalledPluginsPath" />
-            <ref role="1PxDUh" node="4937uxYQnuc" resolve="PathManager.StringHolder" />
-          </node>
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="stxyIU1tm0" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQng3" role="jymVt">
       <property role="TrG5h" value="getPluginsPath" />
       <property role="DiZV1" value="false" />
@@ -2026,6 +2026,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1JJ_" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQng_" role="jymVt">
       <property role="TrG5h" value="getLogPath" />
       <property role="DiZV1" value="false" />
@@ -2118,6 +2119,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1IR0" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnhC" role="jymVt">
       <property role="TrG5h" value="getOptionsFile" />
       <property role="DiZV1" value="false" />
@@ -2166,6 +2168,7 @@
         <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1InM" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnhU" role="jymVt">
       <property role="TrG5h" value="getResourceRoot" />
       <property role="DiZV1" value="false" />
@@ -2276,6 +2279,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1G_$" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQniA" role="jymVt">
       <property role="TrG5h" value="extractRoot" />
       <property role="DiZV1" value="false" />
@@ -2730,6 +2734,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1FW6" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnll" role="jymVt">
       <property role="TrG5h" value="getDefaultOptionsFile" />
       <property role="DiZV1" value="false" />
@@ -2763,6 +2768,7 @@
         <ref role="2AI5Lk" to="as9o:~NonNls" resolve="NonNls" />
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1FsX" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnlx" role="jymVt">
       <property role="TrG5h" value="loadProperties" />
       <property role="DiZV1" value="false" />
@@ -3140,6 +3146,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1CEb" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnnP" role="jymVt">
       <property role="TrG5h" value="substituteVars" />
       <property role="DiZV1" value="false" />
@@ -3176,6 +3183,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1Dkf" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQno3" role="jymVt">
       <property role="TrG5h" value="substituteVars" />
       <property role="DiZV1" value="false" />
@@ -3385,6 +3393,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1Hf3" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnpk" role="jymVt">
       <property role="TrG5h" value="getPluginTempPath" />
       <property role="DiZV1" value="false" />
@@ -3421,6 +3430,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="stxyIU1HIf" role="jymVt" />
     <node concept="2YIFZL" id="4937uxYQnpy" role="jymVt">
       <property role="TrG5h" value="findFileInLibDirectory" />
       <property role="DiZV1" value="false" />
@@ -3560,41 +3570,6 @@
             <ref role="37wK5l" to="msyo:~PathManager.getLanguagesPath():java.lang.String" resolve="getLanguagesPath" />
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="5vooY9zipUj" role="jymVt" />
-    <node concept="312cEu" id="4937uxYQnuc" role="jymVt">
-      <property role="TrG5h" value="StringHolder" />
-      <property role="2bfB8j" value="false" />
-      <property role="1sVAO0" value="false" />
-      <property role="1EXbeo" value="false" />
-      <node concept="3Tm6S6" id="4937uxYQnud" role="1B3o_S" />
-      <node concept="Wx3nA" id="4937uxYQnue" role="jymVt">
-        <property role="TrG5h" value="ourPreinstalledPluginsPath" />
-        <property role="3TUv4t" value="true" />
-        <node concept="17QB3L" id="57xhZj4x9_C" role="1tU5fm" />
-        <node concept="3Tm6S6" id="4937uxYQnug" role="1B3o_S" />
-        <node concept="3cpWs3" id="4937uxYQnuh" role="33vP2m">
-          <node concept="3cpWs3" id="4937uxYQnui" role="3uHU7B">
-            <node concept="2YIFZM" id="4937uxYQnuj" role="3uHU7B">
-              <ref role="37wK5l" node="4937uxYQn9c" resolve="getHomePath" />
-              <ref role="1Pybhc" node="4937uxYQn6D" resolve="PathManager" />
-            </node>
-            <node concept="10M0yZ" id="4937uxYQnuk" role="3uHU7w">
-              <ref role="1PxDUh" to="fxg7:~File" resolve="File" />
-              <ref role="3cqZAo" to="fxg7:~File.separatorChar" resolve="separatorChar" />
-            </node>
-          </node>
-          <node concept="10M0yZ" id="4937uxYQnul" role="3uHU7w">
-            <ref role="3cqZAo" node="4937uxYQn7V" resolve="PLUGINS_DIRECTORY" />
-            <ref role="1PxDUh" node="4937uxYQn6D" resolve="PathManager" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbW" id="4937uxYQnum" role="jymVt">
-        <node concept="3Tm6S6" id="4937uxYQnun" role="1B3o_S" />
-        <node concept="3cqZAl" id="4937uxYQnuo" role="3clF45" />
-        <node concept="3clFbS" id="4937uxYQnup" role="3clF47" />
       </node>
     </node>
   </node>

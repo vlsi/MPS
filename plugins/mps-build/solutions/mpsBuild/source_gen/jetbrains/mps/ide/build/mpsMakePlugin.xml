@@ -46,14 +46,14 @@
       <fileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" />
     </copy>
     <mkdir dir="${build.layout}/mps-make/lib" />
-    <jar destfile="${build.layout}/mps-make/lib/icons.jar">
+    <jar destfile="${build.layout}/mps-make/lib/icons.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/mps-make/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsmake">
       <fileset dir="${mps_home}/plugins/mpsmake" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-make/lib/mps-make.jar">
+    <jar destfile="${build.layout}/mps-make/lib/mps-make.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-make" />
       <zipfileset file="${mps_home}/plugins/mpsmake/jetbrains.mps.ide.make.msd" prefix="modules/jetbrains.mps.ide.make" />
       <zipfileset dir="${mps_home}/plugins/mpsmake" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.make" />

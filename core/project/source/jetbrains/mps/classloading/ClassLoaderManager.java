@@ -18,7 +18,6 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.tempmodel.TempModule;
 import jetbrains.mps.util.NotCondition;
@@ -28,10 +27,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
-import org.jetbrains.mps.openapi.module.FacetsFacade;
-import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -202,7 +198,6 @@ public class ClassLoaderManager implements CoreComponent {
    * you need to process it on your own (probably show some user notification)
    *
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableModuleBase
    * @see ModuleIsNotLoadableException
    * @see ModuleClassNotFoundException
    */
@@ -226,7 +221,6 @@ public class ClassLoaderManager implements CoreComponent {
    * @deprecated use module-specific methods which throw different ClassNotFoundExceptions,
    * you need to process it by yourself (probably show some user notification)
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableModuleBase
    * @see ModuleIsNotLoadableException
    */
   @Deprecated
@@ -261,7 +255,6 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @see ModuleIsNotLoadableException
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @Nullable
@@ -374,7 +367,7 @@ public class ClassLoaderManager implements CoreComponent {
    * @see #myMPSLoadableCondition
    */
   @NotNull
-  Collection<ReloadableModuleBase> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
+  Collection<ReloadableModule> unloadModules(Iterable<? extends SModuleReference> modules, @NotNull ProgressMonitor monitor) {
     checkWriteAccess();
     monitor.start("Unloading modules...", 1);
     try {
@@ -389,7 +382,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       LOG.debug("Unloading " + modulesToUnload.size() + " modules");
       monitor.step("Disposing old class loaders...");
-      Collection<ReloadableModuleBase> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
+      Collection<ReloadableModule> unloadedModules = myBroadCaster.onUnload(modulesToUnload);
       myClassLoadersHolder.doUnloadModules(modulesToUnload);
       monitor.advance(1);
 
@@ -504,7 +497,6 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * @deprecated use module-specific method {@link jetbrains.mps.module.ReloadableModule#reload()}
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.module.ReloadableModuleBase
    */
   @Deprecated
   @ToRemove(version = 3.2)
