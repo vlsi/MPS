@@ -39,6 +39,11 @@ public class RunCodeFromSolution_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:cced89f7-d5c2-463a-b754-a486d525dd67(jetbrains.mps.build.mps.runner.test@tests)", false);
     this.runTest("jetbrains.mps.build.mps.runner.test.RunCodeFromSolution_Test$TestBody", "test_useIFile", true);
   }
+  @Test
+  public void test_useModelRepository() throws Throwable {
+    this.initTest("${mps_home}", "r:cced89f7-d5c2-463a-b754-a486d525dd67(jetbrains.mps.build.mps.runner.test@tests)", false);
+    this.runTest("jetbrains.mps.build.mps.runner.test.RunCodeFromSolution_Test$TestBody", "test_useModelRepository", true);
+  }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_runBuildSimpleCode() throws Exception {
@@ -48,7 +53,10 @@ public class RunCodeFromSolution_Test extends BaseTransformationTest {
       this.runAndCheck("plugins/mps-build/test", "test2.xml");
     }
     public void test_useIFile() throws Exception {
-      this.runAndCheck("plugins/mps-build/test", "test2.xml");
+      this.runAndCheck("plugins/mps-build/test", "test3.xml");
+    }
+    public void test_useModelRepository() throws Exception {
+      this.runAndCheck("plugins/mps-build/test", "test4.xml");
     }
     public void runAndCheck(String scriptPath, String scriptFilename) {
       IFile scriptFile = FileSystem.getInstance().getFileByPath(scriptPath + "/" + scriptFilename);

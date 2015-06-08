@@ -11,12 +11,9 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
   </languages>
   <imports>
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="ximz" ref="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)" />
     <import index="ymw7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)" />
-    <import index="xoe3" ref="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)" />
     <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
@@ -744,7 +741,27 @@
                 <property role="Xl_RC" value="plugins/mps-build/test" />
               </node>
               <node concept="Xl_RD" id="7OAOF22JMjl" role="2XxRq1">
-                <property role="Xl_RC" value="test2.xml" />
+                <property role="Xl_RC" value="test3.xml" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="1ZVcZhrTEr8" role="1SL9yI">
+      <property role="TrG5h" value="useModelRepository" />
+      <node concept="3cqZAl" id="1ZVcZhrTEr9" role="3clF45" />
+      <node concept="3clFbS" id="1ZVcZhrTEra" role="3clF47">
+        <node concept="3clFbF" id="1ZVcZhrTErb" role="3cqZAp">
+          <node concept="2OqwBi" id="1ZVcZhrTErc" role="3clFbG">
+            <node concept="2WthIp" id="1ZVcZhrTErd" role="2Oq$k0" />
+            <node concept="2XshWL" id="1ZVcZhrTEre" role="2OqNvi">
+              <ref role="2WH_rO" node="7GotP_M3vU" resolve="runAndCheck" />
+              <node concept="Xl_RD" id="1ZVcZhrTErf" role="2XxRq1">
+                <property role="Xl_RC" value="plugins/mps-build/test" />
+              </node>
+              <node concept="Xl_RD" id="1ZVcZhrTErg" role="2XxRq1">
+                <property role="Xl_RC" value="test4.xml" />
               </node>
             </node>
           </node>

@@ -215,6 +215,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test.test2/jetbrains.mps.build.mps.runner.test.test2.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test.test3/jetbrains.mps.build.mps.runner.test.test3.msd" folder="platform.build.runner.test" />
+      <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test.test4/jetbrains.mps.build.mps.runner.test.test4.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/jetbrains.mps.build.mps.runner.test.msd" folder="platform.build.runner.test" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-core/languages/core.properties/jetbrains.mps.core.properties.mpl" folder="core.languages.properties" />

@@ -5,7 +5,6 @@
   <property name="build.layout" location="${build.dir}/artifacts/test2" />
   <property name="mps_home" location="${basedir}/../../../../../Program Files (x86)/JetBrains/MPS 3.2" />
   <property name="artifacts.mps" location="${mps_home}" />
-  <property name="artifacts.test1" location="${build.dir}/artifacts/test1" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
   <property name="mps.date" value="${import.mps.mps.date}" />
@@ -22,6 +21,31 @@
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.build.mps.runner.test.test1" type="solution" uuid="f4221d3d-7652-4403-b74b-cf2957188acb">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
+        <sources jar="jetbrains.mps.build.mps.runner.test.test1-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.test1.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test1.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test1.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models">
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test1-src.jar">
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen">
+        <exclude name="**/trace.info" />
+      </fileset>
+      <zipfileset file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test1-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test2.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test2.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test2.jar/META-INF/module.xml">
@@ -50,9 +74,7 @@
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
-  <target name="buildDependents">
-    <ant antfile="test1.xml" inheritAll="false" useNativeBasedir="true" />
-  </target>
+  <target name="buildDependents" />
   
   <target name="fetchDependencies" />
   
@@ -63,7 +85,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.jetbrains.mps.build.mps.runner.test.test2" />
+  <target name="compileJava" depends="java.compile.jetbrains.mps.build.mps.runner.test.test1, java.compile.jetbrains.mps.build.mps.runner.test.test2" />
   
   <target name="processResources" />
   
@@ -122,8 +144,8 @@
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
-      <library file="${artifacts.test1}/jetbrains.mps.build.mps.runner.test.test1.jar" />
       <chunk>
+        <module file="${basedir}/jetbrains.mps.build.mps.runner.test.test1/jetbrains.mps.build.mps.runner.test.test1.msd" />
         <module file="${basedir}/jetbrains.mps.build.mps.runner.test.test2/jetbrains.mps.build.mps.runner.test.test2.msd" />
       </chunk>
       <jvmargs>
@@ -137,16 +159,23 @@
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
   
-  <target name="makeDependents">
-    <ant antfile="test1.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
-  </target>
+  <target name="makeDependents" />
   
   <target name="run-mps-code" depends="assemble, run.jetbrains.mps.build.mps.runner.test.test2" />
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test2" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test1">
+    <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
+      </src>
+      <classpath />
+    </javac>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.build.mps.runner.test.test2" depends="java.compile.jetbrains.mps.build.mps.runner.test.test1">
     <mkdir dir="${basedir}/jetbrains.mps.build.mps.runner.test.test2/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test2" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test2" fork="true" includeantruntime="false">
@@ -154,9 +183,7 @@
       <src>
         <path location="${basedir}/jetbrains.mps.build.mps.runner.test.test2/source_gen" />
       </src>
-      <classpath>
-        <fileset file="${artifacts.test1}/jetbrains.mps.build.mps.runner.test.test1.jar" />
-      </classpath>
+      <classpath path="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test1" />
     </javac>
   </target>
   
@@ -209,7 +236,7 @@
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
-      <library file="${artifacts.test1}/jetbrains.mps.build.mps.runner.test.test1.jar" />
+      <library file="${build.layout}/jetbrains.mps.build.mps.runner.test.test1.jar" />
       <macro name="mps_home" path="${mps_home}" />
       
       <library file="${build.layout}/jetbrains.mps.build.mps.runner.test.test2.jar" />
@@ -222,6 +249,7 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${basedir}/jetbrains.mps.build.mps.runner.test.test1/source_gen" />
     <delete dir="${basedir}/jetbrains.mps.build.mps.runner.test.test2/source_gen" />
   </target>
 </project>
