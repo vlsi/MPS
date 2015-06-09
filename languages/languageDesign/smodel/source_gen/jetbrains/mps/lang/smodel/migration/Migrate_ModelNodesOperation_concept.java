@@ -44,7 +44,7 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
         if (pattern.getFieldValue("patternVar_concept") == null) {
           return false;
         }
-        if (BehaviorReflection.invokeVirtual(Integer.TYPE, op, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) != 0 && SNodeOperations.getContainingRoot(op) == SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "3815816958997003956")) {
+        if (BehaviorReflection.invokeVirtual(Integer.TYPE, op, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) != 0 && SNodeOperations.getContainingRoot(op) == SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "3164834233148532313")) {
           return false;
         }
         return true;

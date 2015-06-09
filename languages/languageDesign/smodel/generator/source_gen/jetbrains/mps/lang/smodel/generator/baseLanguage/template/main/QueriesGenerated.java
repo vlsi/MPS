@@ -23,7 +23,6 @@ import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
@@ -261,26 +260,32 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L, 0x73bd24cca4f91255L, "conceptDeclaration")));
   }
   public static Object propertyMacro_GetPropertyValue_1219355399537(final PropertyMacroContext _context) {
-    SModelReference targetModelRef = SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference();
-    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
-    if (sourceModelRef.equals(targetModelRef)) {
+    if (SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})) != SNodeOperations.getModel(_context.getNode())) {
+      return SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference().toString();
+    } else {
       return _context.getOriginalInputModel().getReference().toString();
     }
-    return targetModelRef.toString();
   }
   public static Object propertyMacro_GetPropertyValue_1219355463409(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{}).getNodeId().toString();
+    if (SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})) != SNodeOperations.getModel(_context.getNode())) {
+      return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{}).getNodeId().toString();
+    } else {
+      return _context.getOriginalCopiedInputNode(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getNodeId().toString();
+    }
   }
   public static Object propertyMacro_GetPropertyValue_1828409047608049663(final PropertyMacroContext _context) {
-    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode"))).getReference();
-    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
-    if (sourceModelRef.equals(targetModelRef)) {
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode"))) != SNodeOperations.getModel(_context.getNode())) {
+      return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode"))).getReference().toString();
+    } else {
       return _context.getOriginalInputModel().getReference().toString();
     }
-    return targetModelRef.toString();
   }
   public static Object propertyMacro_GetPropertyValue_1828409047608051092(final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode")).getNodeId().toString();
+    if (SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode"))) != SNodeOperations.getModel(_context.getNode())) {
+      return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode")).getNodeId().toString();
+    } else {
+      return _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x195fd0576ac9bb4aL, "referentNode"))).getNodeId().toString();
+    }
   }
   public static Object propertyMacro_GetPropertyValue_5253134957341701124(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e2695189e59aL, 0x48e6e269518bf72eL, "linkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
