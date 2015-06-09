@@ -54,7 +54,8 @@ import org.junit.runners.Suite;
     jetbrains.mps.smodel.TreeIteratorTest.class,
     jetbrains.mps.smodel.SModelReferenceTest.class,
     jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class,
-    jetbrains.mps.classloading.ProjectMPSDependenciesTest.class
+    jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
+    jetbrains.mps.environment.EnvironmentTest.class
 })
 public class GlobalTestSuite {
 }
