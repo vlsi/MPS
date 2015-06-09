@@ -128,10 +128,7 @@ public class MpsEnvironment implements Environment {
   public void dispose() {
     ModelAccess.instance().flushEventQueue();
 
-    for (Project project : SetSequence.fromSet(myContainer.getProjects())) {
-      disposeProject(project.getProjectFile());
-    }
-
+    myContainer.dispose();
     PathMacros.getInstance().removeMacrosProvider(myMacrosProvider);
     for (LibraryContributor libContributor : Sequence.fromIterable(myLibContributors)) {
       LibraryInitializer.getInstance().removeContributor(libContributor);
