@@ -170,6 +170,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
         <property id="559557797393041554" name="fqName" index="BaBD8" />
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
@@ -184,7 +187,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
@@ -839,7 +842,9 @@
                             <ref role="3cqZAo" node="4SIS$II2Lfv" resolve="mdl" />
                           </node>
                           <node concept="2SmgA7" id="4SIS$II2LfG" role="2OqNvi">
-                            <ref role="2SmgA8" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
+                            <node concept="chp4Y" id="1jixkkC_WJ5" role="1dBWTz">
+                              <ref role="cht4Q" to="tp2q:5i_Pov1WWxc" resolve="CustomContainers" />
+                            </node>
                           </node>
                         </node>
                       </node>

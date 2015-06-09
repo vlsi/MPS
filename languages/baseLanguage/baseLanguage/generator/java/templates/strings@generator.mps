@@ -6,7 +6,7 @@
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -283,7 +283,7 @@
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1005,7 +1005,9 @@
                       <node concept="1r8y6K" id="3YWZWnq6eLM" role="2OqNvi" />
                     </node>
                     <node concept="2SmgA7" id="3YWZWnq6eLN" role="2OqNvi">
-                      <ref role="2SmgA8" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      <node concept="chp4Y" id="1jixkkC_WId" role="1dBWTz">
+                        <ref role="cht4Q" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3YWZWnq6eLO" role="2OqNvi">
@@ -1020,7 +1022,9 @@
                     <node concept="1r8y6K" id="3YWZWnq6eOp" role="2OqNvi" />
                   </node>
                   <node concept="2SmgA7" id="3YWZWnq6eOq" role="2OqNvi">
-                    <ref role="2SmgA8" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    <node concept="chp4Y" id="1jixkkC_WIj" role="1dBWTz">
+                      <ref role="cht4Q" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    </node>
                   </node>
                 </node>
                 <node concept="2HwmR7" id="3YWZWnq6eOr" role="2OqNvi">
@@ -1693,7 +1697,9 @@
                     <node concept="1r8y6K" id="3YWZWnq6f9u" role="2OqNvi" />
                   </node>
                   <node concept="2SmgA7" id="3YWZWnq6f9v" role="2OqNvi">
-                    <ref role="2SmgA8" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    <node concept="chp4Y" id="1jixkkC_WIl" role="1dBWTz">
+                      <ref role="cht4Q" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    </node>
                   </node>
                 </node>
                 <node concept="2HwmR7" id="3YWZWnq6f9w" role="2OqNvi">
@@ -1874,7 +1880,9 @@
                     <node concept="1r8y6K" id="3YWZWnq6f7V" role="2OqNvi" />
                   </node>
                   <node concept="2SmgA7" id="3YWZWnq6f7W" role="2OqNvi">
-                    <ref role="2SmgA8" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    <node concept="chp4Y" id="1jixkkC_WIn" role="1dBWTz">
+                      <ref role="cht4Q" to="tpee:hP7S18E" resolve="TrimOperation" />
+                    </node>
                   </node>
                 </node>
                 <node concept="2HwmR7" id="3YWZWnq6f8m" role="2OqNvi">
@@ -2129,7 +2137,9 @@
                       <node concept="1r8y6K" id="3YWZWnq6eKY" role="2OqNvi" />
                     </node>
                     <node concept="2SmgA7" id="3YWZWnq6eKZ" role="2OqNvi">
-                      <ref role="2SmgA8" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      <node concept="chp4Y" id="1jixkkC_WIf" role="1dBWTz">
+                        <ref role="cht4Q" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3YWZWnq6eL0" role="2OqNvi">
@@ -2203,7 +2213,9 @@
                       <node concept="1r8y6K" id="3YWZWnq6eLb" role="2OqNvi" />
                     </node>
                     <node concept="2SmgA7" id="3YWZWnq6eLc" role="2OqNvi">
-                      <ref role="2SmgA8" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      <node concept="chp4Y" id="1jixkkC_WIh" role="1dBWTz">
+                        <ref role="cht4Q" to="tpee:hP7RM7N" resolve="SubstringExpression" />
+                      </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="3YWZWnq6eLd" role="2OqNvi">

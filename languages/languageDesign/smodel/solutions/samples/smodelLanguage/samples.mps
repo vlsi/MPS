@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -227,7 +227,7 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1145570846907" name="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation" flags="nn" index="2TlYAL" />
       <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
@@ -4515,7 +4515,9 @@
                 <ref role="3cqZAo" node="h2Snw8D" resolve="model" />
               </node>
               <node concept="2SmgA7" id="h2SnAQS" role="2OqNvi">
-                <ref role="2SmgA8" to="tpee:fz12cDA" resolve="ClassConcept" />
+                <node concept="chp4Y" id="1jixkkC_WOV" role="1dBWTz">
+                  <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                </node>
               </node>
             </node>
           </node>
@@ -4534,7 +4536,9 @@
                   <ref role="3cqZAo" node="h2Snw8D" resolve="model" />
                 </node>
                 <node concept="2SmgA7" id="h2SnGsv" role="2OqNvi">
-                  <ref role="2SmgA8" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  <node concept="chp4Y" id="1jixkkC_WOT" role="1dBWTz">
+                    <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                  </node>
                 </node>
               </node>
               <node concept="3zZkjj" id="hRzagl2" role="2OqNvi">

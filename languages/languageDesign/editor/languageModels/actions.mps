@@ -277,7 +277,7 @@
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1240170042401" name="jetbrains.mps.lang.smodel.structure.SEnumMemberType" flags="in" index="2ZThk1">
@@ -2860,7 +2860,9 @@
                       <node concept="X8dFx" id="5lsGCnR7rFo" role="2OqNvi">
                         <node concept="2OqwBi" id="5lsGCnR6poP" role="25WWJ7">
                           <node concept="2SmgA7" id="5lsGCnR6poQ" role="2OqNvi">
-                            <ref role="2SmgA8" to="tpc2:59ZEGVP3g_u" resolve="ConceptEditorHintDeclaration" />
+                            <node concept="chp4Y" id="1jixkkC_WK_" role="1dBWTz">
+                              <ref role="cht4Q" to="tpc2:59ZEGVP3g_u" resolve="ConceptEditorHintDeclaration" />
+                            </node>
                           </node>
                           <node concept="2GrUjf" id="5lsGCnR6poR" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="5lsGCnR4Sup" resolve="nextModel" />

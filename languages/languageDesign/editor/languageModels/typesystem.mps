@@ -4,9 +4,9 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -280,7 +280,7 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
@@ -3643,7 +3643,9 @@
                 <node concept="I4A8Y" id="6SUBcAgb3Eg" role="2OqNvi" />
               </node>
               <node concept="2SmgA7" id="6SUBcAgb443" role="2OqNvi">
-                <ref role="2SmgA8" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                <node concept="chp4Y" id="1jixkkC_WKD" role="1dBWTz">
+                  <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                </node>
               </node>
             </node>
             <node concept="1z4cxt" id="6SUBcAgbj8x" role="2OqNvi">
@@ -3706,7 +3708,9 @@
                 <node concept="I4A8Y" id="6SUBcAgbkPl" role="2OqNvi" />
               </node>
               <node concept="2SmgA7" id="6SUBcAgbkPm" role="2OqNvi">
-                <ref role="2SmgA8" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                <node concept="chp4Y" id="1jixkkC_WKF" role="1dBWTz">
+                  <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+                </node>
               </node>
             </node>
             <node concept="1z4cxt" id="6SUBcAgbkPn" role="2OqNvi">

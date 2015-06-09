@@ -32,7 +32,7 @@
         <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" fqName="jetbrains.mps.lang.generator.generationContext" version="0" />
         <language id="289fcc83-6543-41e8-a5ca-768235715ce4" fqName="jetbrains.mps.lang.generator.generationParameters" version="0" />
         <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" fqName="jetbrains.mps.lang.sharedConcepts" version="0" />
-        <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="0" />
+        <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="1" />
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
         <language id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" fqName="jetbrains.mps.transformation.test.inputLang" version="0" />
         <language id="157a9668-bf58-417b-893e-53d86388dc56" fqName="jetbrains.mps.transformation.test.outputLang" version="0" />
