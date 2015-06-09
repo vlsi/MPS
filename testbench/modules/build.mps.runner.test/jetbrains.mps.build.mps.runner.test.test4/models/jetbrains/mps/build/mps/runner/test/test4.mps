@@ -513,7 +513,7 @@
               </node>
             </node>
             <node concept="liA8E" id="7viJmryVv4Z" role="2OqNvi">
-              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
+              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
               <node concept="1bVj0M" id="7viJmryVv6Q" role="37wK5m">
                 <node concept="3clFbS" id="7viJmryVv6R" role="1bW5cS">
                   <node concept="3clFbF" id="7viJmryVx43" role="3cqZAp">

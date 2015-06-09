@@ -64,7 +64,7 @@ public class MainClass {
 
     // test write access 
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
-    project.getModelAccess().executeCommandInEDT(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+    project.getModelAccess().executeCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         ListSequence.fromList(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_ea23db_a0a0a0a0s0e());
         return result.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))).findFirst(new IWhereFilter<SNode>() {

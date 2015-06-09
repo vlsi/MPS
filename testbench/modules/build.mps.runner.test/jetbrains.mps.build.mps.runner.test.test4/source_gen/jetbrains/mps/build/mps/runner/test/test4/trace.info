@@ -118,7 +118,7 @@
       <unit id="8634171685214444577" at="70,407,74,9" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$4" />
       <unit id="1891402444881711180" at="42,47,50,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$1" />
       <unit id="1891402444881821365" at="54,47,62,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$2" />
-      <unit id="8634171685214220726" at="67,101,76,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3" />
+      <unit id="8634171685214220726" at="67,96,76,5" name="jetbrains.mps.build.mps.runner.test.test4.MainClass$3" />
       <unit id="2304492758936015027" at="27,0,96,0" name="jetbrains.mps.build.mps.runner.test.test4.MainClass" />
     </file>
   </root>
