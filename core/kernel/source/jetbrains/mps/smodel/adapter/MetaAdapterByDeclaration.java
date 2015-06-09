@@ -32,6 +32,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -50,18 +52,21 @@ public class MetaAdapterByDeclaration {
   }
 
   public static SAbstractConcept getConcept(SNode conceptNode) {
+    SModel model = conceptNode.getModel();
+    if (model == null) return null;
+    if (!(model.getModule() instanceof Language)) return null;
+
     SConcept concept = conceptNode.getConcept();
     boolean cd = concept.equals(SNodeUtil.concept_ConceptDeclaration);
     boolean icd = concept.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
-    if (cd || icd) {
-      String name = NameUtil.getModelLongName(conceptNode.getModel()) + "." + getNormalizedName(conceptNode);
-      if (cd) {
-        return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
-      } else {
-        return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
-      }
+    if (!cd && !icd) return null;
+
+    String name = NameUtil.getModelLongName(model) + "." + getNormalizedName(conceptNode);
+    if (cd) {
+      return MetaAdapterFactory.getConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
+    } else {
+      return MetaAdapterFactory.getInterfaceConcept(MetaIdByDeclaration.getConceptId(conceptNode), name);
     }
-    return null;
   }
 
   public static SConcept getInstanceConcept(SNode c) {
