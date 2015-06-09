@@ -77,7 +77,7 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode ancestor = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false);
     if (ancestor != null) {
-      if ((SLinkOperations.getTarget(node, "property", false) == null) || eq_pyukpt_a0a0a1a4(SLinkOperations.getTarget(node, "property", false), ancestor)) {
+      if (eq_pyukpt_a0a0b0e(SLinkOperations.getTarget(node, "property", false), ancestor)) {
         return false;
       }
     }
@@ -87,7 +87,7 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "766946382474481600");
   private static SNodePointer breakingNode_pyukpt_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137259");
 
-  private static boolean eq_pyukpt_a0a0a1a4(Object a, Object b) {
+  private static boolean eq_pyukpt_a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
