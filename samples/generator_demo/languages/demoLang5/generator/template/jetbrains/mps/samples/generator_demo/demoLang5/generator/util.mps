@@ -86,12 +86,15 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -150,7 +153,9 @@
             </node>
             <node concept="2OqwBi" id="3sP3FIIyKcZ" role="33vP2m">
               <node concept="2SmgA7" id="3sP3FIIyKd0" role="2OqNvi">
-                <ref role="2SmgA8" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+                <node concept="chp4Y" id="3MnEEnJ8rWz" role="1dBWTz">
+                  <ref role="cht4Q" to="tpee:f$Xl_Og" resolve="StringLiteral" />
+                </node>
               </node>
               <node concept="37vLTw" id="3sP3FIIyKd1" role="2Oq$k0">
                 <ref role="3cqZAo" node="3sP3FIIyJSN" resolve="model" />

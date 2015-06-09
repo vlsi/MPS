@@ -556,7 +556,7 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
@@ -9248,7 +9248,9 @@
           <node concept="2OqwBi" id="pSQpN$p$3K" role="2GsD0m">
             <node concept="1Q6Npb" id="pSQpN$p$3I" role="2Oq$k0" />
             <node concept="2SmgA7" id="pSQpN$p$3P" role="2OqNvi">
-              <ref role="2SmgA8" to="tp4k:hByMS9Z" resolve="ConceptFunctionParameter_PreferencePage_component" />
+              <node concept="chp4Y" id="3MnEEnJ67Nb" role="1dBWTz">
+                <ref role="cht4Q" to="tp4k:hByMS9Z" resolve="ConceptFunctionParameter_PreferencePage_component" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="pSQpN$p$3G" role="2LFqv$">
@@ -10814,7 +10816,9 @@
           <node concept="2OqwBi" id="RmlFTgZuhK" role="2GsD0m">
             <node concept="1Q6Npb" id="RmlFTgZuh0" role="2Oq$k0" />
             <node concept="2SmgA7" id="RmlFTgZumZ" role="2OqNvi">
-              <ref role="2SmgA8" to="tp4k:hwsE7KS" resolve="ActionDeclaration" />
+              <node concept="chp4Y" id="3MnEEnJ67Nd" role="1dBWTz">
+                <ref role="cht4Q" to="tp4k:hwsE7KS" resolve="ActionDeclaration" />
+              </node>
             </node>
           </node>
         </node>

@@ -187,12 +187,15 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -513,7 +516,9 @@
                                         <ref role="2Gs0qQ" node="5KGdJjE0hIX" resolve="model" />
                                       </node>
                                       <node concept="2SmgA7" id="5KGdJjE0bTO" role="2OqNvi">
-                                        <ref role="2SmgA8" to="1oap:7Mb2akaesra" resolve="Resource" />
+                                        <node concept="chp4Y" id="3MnEEnJ67Nf" role="1dBWTz">
+                                          <ref role="cht4Q" to="1oap:7Mb2akaesra" resolve="Resource" />
+                                        </node>
                                       </node>
                                     </node>
                                     <node concept="3zZkjj" id="5KGdJjE0bTP" role="2OqNvi">

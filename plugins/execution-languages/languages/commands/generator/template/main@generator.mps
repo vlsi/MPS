@@ -333,7 +333,7 @@
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -3132,7 +3132,9 @@
           <node concept="2OqwBi" id="K16BhKDfxY" role="2GsD0m">
             <node concept="1Q6Npb" id="K16BhKDfxZ" role="2Oq$k0" />
             <node concept="2SmgA7" id="K16BhKDfy0" role="2OqNvi">
-              <ref role="2SmgA8" to="rzqf:JzCdmU6yJs" resolve="CommandParameterReference" />
+              <node concept="chp4Y" id="3MnEEnJ68wu" role="1dBWTz">
+                <ref role="cht4Q" to="rzqf:JzCdmU6yJs" resolve="CommandParameterReference" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="K16BhKDfy1" role="2LFqv$">
@@ -3185,7 +3187,9 @@
             <node concept="2OqwBi" id="K16BhKDfyl" role="2Oq$k0">
               <node concept="1Q6Npb" id="K16BhKDfym" role="2Oq$k0" />
               <node concept="2SmgA7" id="K16BhKDfyn" role="2OqNvi">
-                <ref role="2SmgA8" to="tpee:fK9aQHR" resolve="BlockStatement" />
+                <node concept="chp4Y" id="3MnEEnJ68ws" role="1dBWTz">
+                  <ref role="cht4Q" to="tpee:fK9aQHR" resolve="BlockStatement" />
+                </node>
               </node>
             </node>
             <node concept="3zZkjj" id="K16BhKDfyo" role="2OqNvi">

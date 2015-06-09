@@ -147,7 +147,7 @@
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -599,7 +599,9 @@
                 <node concept="2OqwBi" id="4Vpsm2KFfXG" role="2Oq$k0">
                   <node concept="1Q6Npb" id="4Vpsm2KFfXH" role="2Oq$k0" />
                   <node concept="2SmgA7" id="4Vpsm2KFfXI" role="2OqNvi">
-                    <ref role="2SmgA8" to="vseb:4Vpsm2KDZCE" resolve="Component" />
+                    <node concept="chp4Y" id="3MnEEnJ8rWD" role="1dBWTz">
+                      <ref role="cht4Q" to="vseb:4Vpsm2KDZCE" resolve="Component" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3zZkjj" id="4Vpsm2KFfXJ" role="2OqNvi">
@@ -611,7 +613,9 @@
                             <node concept="2OqwBi" id="4Vpsm2KFfXP" role="2Oq$k0">
                               <node concept="1Q6Npb" id="4Vpsm2KFfXQ" role="2Oq$k0" />
                               <node concept="2SmgA7" id="4Vpsm2KFfXR" role="2OqNvi">
-                                <ref role="2SmgA8" to="vseb:4Vpsm2KDZHL" resolve="ComponentUsage" />
+                                <node concept="chp4Y" id="3MnEEnJ8rWB" role="1dBWTz">
+                                  <ref role="cht4Q" to="vseb:4Vpsm2KDZHL" resolve="ComponentUsage" />
+                                </node>
                               </node>
                             </node>
                             <node concept="3zZkjj" id="4Vpsm2KFfXS" role="2OqNvi">

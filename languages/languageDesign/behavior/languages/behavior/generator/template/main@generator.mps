@@ -341,7 +341,7 @@
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
@@ -1562,7 +1562,9 @@
             <node concept="1DcWWT" id="6RPbHZpmct7" role="3cqZAp">
               <node concept="2OqwBi" id="6RPbHZpmctK" role="1DdaDG">
                 <node concept="2SmgA7" id="6RPbHZpmctO" role="2OqNvi">
-                  <ref role="2SmgA8" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                  <node concept="chp4Y" id="3MnEEnJ67MR" role="1dBWTz">
+                    <ref role="cht4Q" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                  </node>
                 </node>
                 <node concept="2OqwBi" id="6RPbHZpmctL" role="2Oq$k0">
                   <node concept="1r8y6K" id="6RPbHZpmctN" role="2OqNvi" />
@@ -2091,7 +2093,9 @@
                     </node>
                     <node concept="2OqwBi" id="ZzGQLJ4RsM" role="2Oq$k0">
                       <node concept="2SmgA7" id="ZzGQLJ4RsQ" role="2OqNvi">
-                        <ref role="2SmgA8" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                        <node concept="chp4Y" id="3MnEEnJ67MN" role="1dBWTz">
+                          <ref role="cht4Q" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                        </node>
                       </node>
                       <node concept="2OqwBi" id="ZzGQLJ4RsN" role="2Oq$k0">
                         <node concept="1r8y6K" id="ZzGQLJ4RsP" role="2OqNvi" />
@@ -2628,7 +2632,9 @@
                   <ref role="3cqZAo" node="ZzGQLJ52y8" resolve="structureModel" />
                 </node>
                 <node concept="2SmgA7" id="ZzGQLJ52EN" role="2OqNvi">
-                  <ref role="2SmgA8" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                  <node concept="chp4Y" id="3MnEEnJ67MT" role="1dBWTz">
+                    <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -2819,7 +2825,9 @@
                         <node concept="1r8y6K" id="ZzGQLJ4YUA" role="2OqNvi" />
                       </node>
                       <node concept="2SmgA7" id="ZzGQLJ4YUB" role="2OqNvi">
-                        <ref role="2SmgA8" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                        <node concept="chp4Y" id="3MnEEnJ67MP" role="1dBWTz">
+                          <ref role="cht4Q" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3236,7 +3244,9 @@
                       </node>
                       <node concept="2OqwBi" id="1MagDVHkEnS" role="2Oq$k0">
                         <node concept="2SmgA7" id="1MagDVHkEnU" role="2OqNvi">
-                          <ref role="2SmgA8" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                          <node concept="chp4Y" id="3MnEEnJ67ML" role="1dBWTz">
+                            <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                          </node>
                         </node>
                         <node concept="37vLTw" id="3GM_nagTyj6" role="2Oq$k0">
                           <ref role="3cqZAo" node="1MagDVHkEnH" resolve="structureModel" />

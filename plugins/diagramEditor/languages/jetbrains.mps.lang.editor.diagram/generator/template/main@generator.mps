@@ -495,7 +495,7 @@
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
@@ -11934,7 +11934,9 @@
                       <node concept="1r8y6K" id="4lIfGX7XNSE" role="2OqNvi" />
                     </node>
                     <node concept="2SmgA7" id="4lIfGX7XNSF" role="2OqNvi">
-                      <ref role="2SmgA8" to="gbdf:WK6Z46CMrx" resolve="CellModel_DiagramNode" />
+                      <node concept="chp4Y" id="3MnEEnJ67Nl" role="1dBWTz">
+                        <ref role="cht4Q" to="gbdf:WK6Z46CMrx" resolve="CellModel_DiagramNode" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3zZkjj" id="4lIfGX7XNSG" role="2OqNvi">
@@ -11997,7 +11999,9 @@
                       <node concept="1r8y6K" id="4lIfGX7XL$f" role="2OqNvi" />
                     </node>
                     <node concept="2SmgA7" id="4lIfGX7XL$g" role="2OqNvi">
-                      <ref role="2SmgA8" to="gbdf:5yk3CzNVRj9" resolve="CellModel_DiagramConnector" />
+                      <node concept="chp4Y" id="3MnEEnJ67Nn" role="1dBWTz">
+                        <ref role="cht4Q" to="gbdf:5yk3CzNVRj9" resolve="CellModel_DiagramConnector" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3zZkjj" id="4lIfGX7XL$h" role="2OqNvi">
@@ -12058,7 +12062,9 @@
                 <node concept="2OqwBi" id="4lIfGX7YsYm" role="2Oq$k0">
                   <node concept="1Q6Npb" id="4lIfGX7YwrF" role="2Oq$k0" />
                   <node concept="2SmgA7" id="4lIfGX7YsYq" role="2OqNvi">
-                    <ref role="2SmgA8" to="gbdf:WK6Z46CMrx" resolve="CellModel_DiagramNode" />
+                    <node concept="chp4Y" id="3MnEEnJ67Np" role="1dBWTz">
+                      <ref role="cht4Q" to="gbdf:WK6Z46CMrx" resolve="CellModel_DiagramNode" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3zZkjj" id="4lIfGX7YsYr" role="2OqNvi">
@@ -12092,7 +12098,9 @@
                 <node concept="2OqwBi" id="4lIfGX7YsYD" role="2Oq$k0">
                   <node concept="1Q6Npb" id="4lIfGX7YwNA" role="2Oq$k0" />
                   <node concept="2SmgA7" id="4lIfGX7YsYH" role="2OqNvi">
-                    <ref role="2SmgA8" to="gbdf:5yk3CzNVRj9" resolve="CellModel_DiagramConnector" />
+                    <node concept="chp4Y" id="3MnEEnJ67Nr" role="1dBWTz">
+                      <ref role="cht4Q" to="gbdf:5yk3CzNVRj9" resolve="CellModel_DiagramConnector" />
+                    </node>
                   </node>
                 </node>
                 <node concept="3zZkjj" id="4lIfGX7YsYI" role="2OqNvi">

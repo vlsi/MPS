@@ -134,7 +134,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
@@ -702,7 +702,9 @@
                                 </node>
                               </node>
                               <node concept="2SmgA7" id="173Z5qAPmno" role="2OqNvi">
-                                <ref role="2SmgA8" to="tpe3:hGB2rPm" resolve="ITestCase" />
+                                <node concept="chp4Y" id="3MnEEnJ8rWJ" role="1dBWTz">
+                                  <ref role="cht4Q" to="tpe3:hGB2rPm" resolve="ITestCase" />
+                                </node>
                               </node>
                             </node>
                           </node>
