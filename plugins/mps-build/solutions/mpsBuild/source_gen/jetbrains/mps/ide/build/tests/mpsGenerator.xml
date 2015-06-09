@@ -62,7 +62,7 @@
     </echoxml>
     <jar destfile="${build.layout}/generator/jetbrains.mps.generator.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.generator.tests" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/generator.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.generator.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-generator.test-models">
@@ -84,7 +84,8 @@
     </echoxml>
     <jar destfile="${build.layout}/generator/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.overloadedOperators.sandbox" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-overloadedOperators-solutions-jetbrains.mps.baseLanguage.overloadedOperators.sandbox-jetbrains">
@@ -119,7 +120,8 @@
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeaving.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeaving" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/testbench/testsolutions/traceInfo.testWeaving/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeaving.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-traceInfo.testWeaving-models">
@@ -155,7 +157,8 @@
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingGenerated.data.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingGenerated.data" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeavingGenerated.data.jar" />
     </jar>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingGenerated.data-generator.jar" duplicate="preserve">
@@ -202,7 +205,8 @@
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.traceInfo.testWeavingInterpreted.data" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.traceInfo.testWeavingInterpreted.data.jar" />
     </jar>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data-generator.jar" duplicate="preserve">

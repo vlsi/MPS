@@ -64,7 +64,8 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.Kaja.jar" />
     </jar>
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-generator.jar" duplicate="preserve">
@@ -102,7 +103,8 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.JavaKaja.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-solutions-JavaKajak-models" stripImplementation="true">
@@ -141,7 +143,7 @@
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
-      <fileset dir="" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.stripping.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models">
