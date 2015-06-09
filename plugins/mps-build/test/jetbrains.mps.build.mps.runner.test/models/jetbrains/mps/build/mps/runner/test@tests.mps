@@ -142,9 +142,6 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
-      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
-        <child id="1160998896846" name="condition" index="1gVkn0" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -231,93 +228,45 @@
         <node concept="3cpWs8" id="1ZVcZhrXDWU" role="3cqZAp">
           <node concept="3cpWsn" id="1ZVcZhrXDWV" role="3cpWs9">
             <property role="TrG5h" value="scriptFile" />
-            <node concept="3uibUv" id="1ZVcZhrXDWW" role="1tU5fm">
-              <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+            <node concept="3uibUv" id="4P3Fyw0cBgQ" role="1tU5fm">
+              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
             </node>
-            <node concept="2OqwBi" id="1ZVcZhrXDWX" role="33vP2m">
-              <node concept="2YIFZM" id="1ZVcZhrXDWY" role="2Oq$k0">
-                <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
-                <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="1ZVcZhrXDWZ" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                <node concept="3cpWs3" id="1ZVcZhrXDX0" role="37wK5m">
-                  <node concept="37vLTw" id="1ZVcZhrXDX1" role="3uHU7w">
-                    <ref role="3cqZAo" node="1ZVcZhrXDZq" resolve="scriptFilename" />
-                  </node>
-                  <node concept="3cpWs3" id="1ZVcZhrXDX2" role="3uHU7B">
-                    <node concept="37vLTw" id="1ZVcZhrXDX3" role="3uHU7B">
-                      <ref role="3cqZAo" node="1ZVcZhrXDZo" resolve="scriptPath" />
-                    </node>
-                    <node concept="Xl_RD" id="1ZVcZhrXDX4" role="3uHU7w">
-                      <property role="Xl_RC" value="/" />
-                    </node>
-                  </node>
+            <node concept="2ShNRf" id="4P3Fyw0cCRt" role="33vP2m">
+              <node concept="1pGfFk" id="4P3Fyw0cQL0" role="2ShVmc">
+                <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
+                <node concept="37vLTw" id="1ZVcZhrXDX3" role="37wK5m">
+                  <ref role="3cqZAo" node="1ZVcZhrXDZo" resolve="scriptPath" />
+                </node>
+                <node concept="37vLTw" id="1E8U0XDLxWZ" role="37wK5m">
+                  <ref role="3cqZAo" node="1ZVcZhrXDZq" resolve="scriptFilename" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1ZVcZhrXDX5" role="3cqZAp">
-          <node concept="3cpWsn" id="1ZVcZhrXDX6" role="3cpWs9">
-            <property role="TrG5h" value="scriptDir" />
-            <node concept="3uibUv" id="1ZVcZhrXDX7" role="1tU5fm">
-              <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
+        <node concept="3cpWs8" id="1ZVcZhrXDXo" role="3cqZAp">
+          <node concept="3cpWsn" id="1ZVcZhrXDXp" role="3cpWs9">
+            <property role="TrG5h" value="okFile" />
+            <node concept="3uibUv" id="4P3Fyw0cVzh" role="1tU5fm">
+              <ref role="3uigEE" to="fxg7:~File" resolve="File" />
             </node>
-            <node concept="2OqwBi" id="1ZVcZhrXDX8" role="33vP2m">
-              <node concept="2YIFZM" id="1ZVcZhrXDX9" role="2Oq$k0">
-                <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
-              </node>
-              <node concept="liA8E" id="1ZVcZhrXDXa" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
-                <node concept="37vLTw" id="1ZVcZhrXDXb" role="37wK5m">
+            <node concept="2ShNRf" id="4P3Fyw0cVI6" role="33vP2m">
+              <node concept="1pGfFk" id="4P3Fyw0cW5Q" role="2ShVmc">
+                <ref role="37wK5l" to="fxg7:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
+                <node concept="37vLTw" id="1E8U0XDLtUf" role="37wK5m">
                   <ref role="3cqZAo" node="1ZVcZhrXDZo" resolve="scriptPath" />
+                </node>
+                <node concept="Xl_RD" id="1ZVcZhrXDXu" role="37wK5m">
+                  <property role="Xl_RC" value="ok.log" />
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node concept="3clFbH" id="1ZVcZhrXDXc" role="3cqZAp" />
-        <node concept="1gVbGN" id="1ZVcZhrXDXd" role="3cqZAp">
-          <node concept="3y3z36" id="1ZVcZhrXDXe" role="1gVkn0">
-            <node concept="10Nm6u" id="1ZVcZhrXDXf" role="3uHU7w" />
-            <node concept="37vLTw" id="1ZVcZhrXDXg" role="3uHU7B">
-              <ref role="3cqZAo" node="1ZVcZhrXDX6" resolve="scriptDir" />
-            </node>
-          </node>
-        </node>
-        <node concept="1gVbGN" id="1ZVcZhrXDXh" role="3cqZAp">
-          <node concept="3y3z36" id="1ZVcZhrXDXi" role="1gVkn0">
-            <node concept="10Nm6u" id="1ZVcZhrXDXj" role="3uHU7w" />
-            <node concept="37vLTw" id="1ZVcZhrXDXk" role="3uHU7B">
-              <ref role="3cqZAo" node="1ZVcZhrXDWV" resolve="scriptFile" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="1ZVcZhrXDXl" role="3cqZAp" />
         <node concept="3SKdUt" id="1ZVcZhrXDXm" role="3cqZAp">
           <node concept="3SKdUq" id="1ZVcZhrXDXn" role="3SKWNk">
             <property role="3SKdUp" value="remove ok.log file if any" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="1ZVcZhrXDXo" role="3cqZAp">
-          <node concept="3cpWsn" id="1ZVcZhrXDXp" role="3cpWs9">
-            <property role="TrG5h" value="okFile" />
-            <node concept="3uibUv" id="1ZVcZhrXDXq" role="1tU5fm">
-              <ref role="3uigEE" to="59et:~IFile" resolve="IFile" />
-            </node>
-            <node concept="2OqwBi" id="1ZVcZhrXDXr" role="33vP2m">
-              <node concept="37vLTw" id="1ZVcZhrXDXs" role="2Oq$k0">
-                <ref role="3cqZAo" node="1ZVcZhrXDX6" resolve="scriptDir" />
-              </node>
-              <node concept="liA8E" id="1ZVcZhrXDXt" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
-                <node concept="Xl_RD" id="1ZVcZhrXDXu" role="37wK5m">
-                  <property role="Xl_RC" value="ok.log" />
-                </node>
-              </node>
-            </node>
           </node>
         </node>
         <node concept="3clFbJ" id="1ZVcZhrXDXv" role="3cqZAp">
@@ -333,7 +282,7 @@
                       <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
                     </node>
                     <node concept="liA8E" id="1ZVcZhrXDXB" role="2OqNvi">
-                      <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
+                      <ref role="37wK5l" to="fxg7:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                     </node>
                   </node>
                 </node>
@@ -347,7 +296,7 @@
                   <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
                 </node>
                 <node concept="liA8E" id="1ZVcZhrXDXG" role="2OqNvi">
-                  <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
+                  <ref role="37wK5l" to="fxg7:~File.delete():boolean" resolve="delete" />
                 </node>
               </node>
             </node>
@@ -356,7 +305,7 @@
                 <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
               </node>
               <node concept="liA8E" id="1ZVcZhrXDXJ" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                <ref role="37wK5l" to="fxg7:~File.exists():boolean" resolve="exists" />
               </node>
             </node>
           </node>
@@ -382,7 +331,7 @@
                         <ref role="3cqZAo" node="1ZVcZhrXDWV" resolve="scriptFile" />
                       </node>
                       <node concept="liA8E" id="1ZVcZhrXDXX" role="2OqNvi">
-                        <ref role="37wK5l" to="59et:~IFile.getPath():java.lang.String" resolve="getPath" />
+                        <ref role="37wK5l" to="fxg7:~File.getPath():java.lang.String" resolve="getPath" />
                       </node>
                     </node>
                   </node>
@@ -545,20 +494,6 @@
             <property role="3SKdUp" value="check and delete ok.log file" />
           </node>
         </node>
-        <node concept="3clFbF" id="1ZVcZhrXDZ5" role="3cqZAp">
-          <node concept="2OqwBi" id="1ZVcZhrXDZ6" role="3clFbG">
-            <node concept="2YIFZM" id="1ZVcZhrXDZ7" role="2Oq$k0">
-              <ref role="37wK5l" to="59et:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-              <ref role="1Pybhc" to="59et:~FileSystem" resolve="FileSystem" />
-            </node>
-            <node concept="liA8E" id="1ZVcZhrXDZ8" role="2OqNvi">
-              <ref role="37wK5l" to="59et:~FileSystem.refresh(jetbrains.mps.vfs.IFile):void" resolve="refresh" />
-              <node concept="37vLTw" id="1ZVcZhrXDZ9" role="37wK5m">
-                <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbJ" id="1ZVcZhrXDZa" role="3cqZAp">
           <node concept="3clFbS" id="1ZVcZhrXDZb" role="3clFbx">
             <node concept="3xETmq" id="1ZVcZhrXDZc" role="3cqZAp">
@@ -575,7 +510,7 @@
                 <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
               </node>
               <node concept="liA8E" id="1ZVcZhrXDZi" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                <ref role="37wK5l" to="fxg7:~File.exists():boolean" resolve="exists" />
               </node>
             </node>
           </node>
@@ -586,7 +521,7 @@
               <ref role="3cqZAo" node="1ZVcZhrXDXp" resolve="okFile" />
             </node>
             <node concept="liA8E" id="1ZVcZhrXDZm" role="2OqNvi">
-              <ref role="37wK5l" to="59et:~IFile.delete():boolean" resolve="delete" />
+              <ref role="37wK5l" to="fxg7:~File.delete():boolean" resolve="delete" />
             </node>
           </node>
         </node>

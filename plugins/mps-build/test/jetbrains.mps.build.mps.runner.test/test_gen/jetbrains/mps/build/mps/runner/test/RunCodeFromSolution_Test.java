@@ -7,8 +7,6 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.io.File;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
 import junit.framework.Assert;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
@@ -41,16 +39,12 @@ public class RunCodeFromSolution_Test extends TestCase {
   }
 
   private void runAndCheck(String scriptPath, String scriptFilename) {
-    IFile scriptFile = FileSystem.getInstance().getFileByPath(scriptPath + "/" + scriptFilename);
-    IFile scriptDir = FileSystem.getInstance().getFileByPath(scriptPath);
-
-    assert scriptDir != null;
-    assert scriptFile != null;
+    File scriptFile = new File(scriptPath, scriptFilename);
+    File okFile = new File(scriptPath, "ok.log");
 
     // remove ok.log file if any 
-    IFile okFile = scriptDir.getDescendant("ok.log");
     if (okFile.exists() && !(okFile.delete())) {
-      Assert.fail("Cannot delete " + okFile.getPath());
+      Assert.fail("Cannot delete " + okFile.getAbsolutePath());
     }
 
     ProcessHandler process = null;
@@ -75,7 +69,6 @@ public class RunCodeFromSolution_Test extends TestCase {
     }
 
     // check and delete ok.log file 
-    FileSystem.getInstance().refresh(okFile);
     if (!(okFile.exists())) {
       Assert.fail("Test failed.");
     }
