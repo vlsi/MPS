@@ -39,7 +39,7 @@ public class typeOf_Model_NodesOperation_InferenceRule extends AbstractInference
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1758937410081498359", true), (SNode) _quotation_createNode_pxwv6g_a0a0a2a1(), false, true, _info_12389875345);
       }
       {
-        final SNode conceptArgument = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument"));
+        final SNode conceptArgument = typeCheckingContext.typeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110b8590897L, 0x1869004155f6ce22L, "conceptArgument")), "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "4366145993414636146", true);
         typeCheckingContext.whenConcrete(conceptArgument, new Runnable() {
           public void run() {
             {
