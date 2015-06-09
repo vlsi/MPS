@@ -9,7 +9,6 @@ import jetbrains.mps.tool.environment.EnvironmentConfig;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.ide.platform.environment.IdeaEnvironment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.common.MpsRunnerProperties;
@@ -46,8 +45,7 @@ public class MpsRunnerWorker extends MpsWorker {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }
 
-    Environment environment = new IdeaEnvironment(config);
-    // <node> 
+    myEnvironment = new IdeaEnvironment(config);
 
     final Project project = createDummyProject();
 

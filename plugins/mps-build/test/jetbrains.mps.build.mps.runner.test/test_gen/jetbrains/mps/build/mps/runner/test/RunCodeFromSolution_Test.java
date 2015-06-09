@@ -60,12 +60,14 @@ public class RunCodeFromSolution_Test extends TestCase {
         if (ProcessOutputTypes.STDERR.equals(key)) {
           // print errors 
           System.err.print(event.getText());
+        } else {
+          System.out.print(event.getText());
         }
       }
     });
     int exitCode = ProcessHandlerBuilder.startAndWait(process);
     if (exitCode != 0) {
-      Assert.fail("Exit with code " + exitCode);
+      Assert.fail("Exited with code " + exitCode);
     }
 
     // check and delete ok.log file 

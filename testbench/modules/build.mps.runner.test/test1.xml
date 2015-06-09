@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/test1" />
   <property name="build.layout" location="${build.dir}/artifacts/test1" />
-  <property name="mps_home" location="${basedir}/../../../../../Program Files (x86)/JetBrains/MPS 3.2" />
+  <property name="mps_home" location="${basedir}/../../../../../Program Files (x86)/JetBrains/MPS 3.2 EAP" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
@@ -204,6 +204,7 @@
       
       <jvmargs>
         <arg value="-Xmx512m" />
+	<arg value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5023" />
       </jvmargs>
       
     </runMPS>
