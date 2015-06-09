@@ -18,11 +18,13 @@ package jetbrains.mps.workbench.choose.base;
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -77,8 +79,11 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return myProject;
   }
 
-  // expect model read access
   private Map<String, List<NavigationItem>> getProjectNamesCache() {
+    //to avoid things like MPS-17632: read and not dumb
+    ModelAccess.assertLegalRead();
+    assert !DumbService.getInstance(getIdeaProject()).isDumb();
+
     if (myObjectsInProjectScope == null) {
       myObjectsInProjectScope = find(false);
       myProjectNamesCache.clear();
@@ -93,8 +98,11 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return myProjectNamesCache;
   }
 
-  // expect model read access
   private Map<String, List<NavigationItem>> getGlobalNamesCache() {
+    //to avoid things like MPS-17632: read and not dumb
+    ModelAccess.assertLegalRead();
+    assert !DumbService.getInstance(getIdeaProject()).isDumb();
+
     if (myObjectsInGlobalScope == null) {
       myObjectsInGlobalScope = find(true);
       myGlobalNamesCache.clear();
@@ -109,11 +117,21 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return myGlobalNamesCache;
   }
 
+  private com.intellij.openapi.project.Project getIdeaProject() {
+    return ProjectHelper.toIdeaProject(myProject);
+  }
+
   @Override
   public String[] getNames(final boolean checkBoxState) {
     return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<String[]>() {
       @Override
       public String[] compute() {
+        DumbService ds = DumbService.getInstance(getIdeaProject());
+        if (ds.isDumb()) {
+          ds.showDumbModeNotification("Please wait until indices are built");
+          return new String[0];
+        }
+
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         return namesMap.keySet().toArray(new String[namesMap.keySet().size()]);
       }
@@ -125,6 +143,12 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return new ModelAccessHelper(getProject().getModelAccess()).runReadAction(new Computable<NavigationItem[]>() {
       @Override
       public NavigationItem[] compute() {
+        DumbService ds = DumbService.getInstance(getIdeaProject());
+        if (ds.isDumb()) {
+          ds.showDumbModeNotification("Please wait until indices are built");
+          return new NavigationItem[0];
+        }
+
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         List<NavigationItem> navigationItems = namesMap.get(name);
 
