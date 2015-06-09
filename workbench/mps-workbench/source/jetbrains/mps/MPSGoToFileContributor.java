@@ -21,9 +21,12 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.impl.cache.impl.id.IdIndex;
+import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
@@ -32,6 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAware {
@@ -45,7 +49,13 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
   public NavigationItem[] getItemsByName(String name, final String pattern, final Project project, boolean includeNonProjectItems) {
     GlobalSearchScope scope = new AllScope();
 
-    Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
+    Collection<VirtualFile> files;
+    try {
+      files = FileBasedIndex.getInstance().getContainingFiles(FilenameIndex.NAME, name, scope);
+    }catch (ProcessCanceledException ce){
+      files = Collections.emptyList();
+    }
+
     List<NavigationItem> result = new ArrayList<NavigationItem>();
     for (final VirtualFile file : files) {
       result.add(new FileNavigationItem(file, project));

@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
@@ -159,7 +160,13 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     for (T elem : elems) {
       String nodeId = id == null ? elem.toString() : id.value(elem);
 
-      Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+      Collection<VirtualFile> matchingFiles;
+
+      try {
+        matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+      }catch (ProcessCanceledException ce){
+        matchingFiles = Collections.emptyList();
+      }
 
       // back-transform
       for (VirtualFile file : matchingFiles) {
