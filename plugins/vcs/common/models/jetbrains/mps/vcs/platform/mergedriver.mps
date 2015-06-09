@@ -5882,55 +5882,32 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3cpWs8" id="3LKVexu8mz_" role="3cqZAp">
-                  <node concept="3cpWsn" id="3LKVexu8mzA" role="3cpWs9">
-                    <property role="TrG5h" value="mainMessage" />
-                    <node concept="17QB3L" id="3LKVexu8mzB" role="1tU5fm" />
-                    <node concept="3K4zz7" id="3LKVexu8mzJ" role="33vP2m">
-                      <node concept="Xl_RD" id="3LKVexu8m$o" role="3K4GZi">
-                        <property role="Xl_RC" value="To make it work better with MPS, it is recommended to &lt;a href=\&quot;install\&quot;&gt;update some of their global settings&lt;/a&gt;" />
-                      </node>
-                      <node concept="3clFbC" id="3LKVexu8mzE" role="3K4Cdx">
-                        <node concept="Rm8GO" id="3LKVexu8mzI" role="3uHU7w">
-                          <ref role="Rm8GQ" node="1crbmp8Of6r" resolve="OUTDATED" />
-                          <ref role="1Px2BO" node="1crbmp8Of6p" resolve="AbstractInstaller.State" />
-                        </node>
-                        <node concept="37vLTw" id="2BHiRxeukk8" role="3uHU7B">
-                          <ref role="3cqZAo" node="3LKVexu7Xl2" resolve="myCompositeState" />
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="3LKVexu8m_N" role="3K4E3e">
-                        <property role="Xl_RC" value="You have some of the global settings outdated, you need to &lt;a href=\&quot;install\&quot;&gt;update them&lt;/a&gt;" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="63ZcAL22ctF" role="3cqZAp">
                   <node concept="3cpWsn" id="63ZcAL22ctG" role="3cpWs9">
                     <property role="TrG5h" value="message" />
                     <node concept="17QB3L" id="63ZcAL22ctM" role="1tU5fm" />
-                    <node concept="2YIFZM" id="63ZcAL22ctI" role="33vP2m">
-                      <ref role="1Pybhc" to="e2lb:~String" resolve="String" />
-                      <ref role="37wK5l" to="e2lb:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
-                      <node concept="3cpWs3" id="3fU80iE1zWk" role="37wK5m">
-                        <node concept="Xl_RD" id="3fU80iE1xd8" role="3uHU7w">
-                          <property role="Xl_RC" value="Version+Control\&quot;&gt;More info&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;dismiss\&quot;&gt;Don't offer again&lt;/a&gt;.&lt;/p&gt;" />
-                        </node>
-                        <node concept="3cpWs3" id="3fU80iE1ukt" role="3uHU7B">
-                          <node concept="Xl_RD" id="3fU80iE1xd6" role="3uHU7B">
-                            <property role="Xl_RC" value="&lt;p&gt;You are using %s. %s.&lt;/p&gt;&lt;p&gt;&lt;a href=\&quot;" />
-                          </node>
-                          <node concept="10M0yZ" id="3fU80iE1WfY" role="3uHU7w">
-                            <ref role="1PxDUh" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
-                            <ref role="3cqZAo" to="cu2c:~LanguageAspect.CONFLUENCE_BASE" resolve="CONFLUENCE_BASE" />
-                          </node>
-                        </node>
+                    <node concept="3cpWs3" id="3fU80iE1zWk" role="33vP2m">
+                      <node concept="Xl_RD" id="3fU80iE1xd8" role="3uHU7w">
+                        <property role="Xl_RC" value="Version+Control\&quot;&gt;More info&lt;/a&gt;).&lt;p&gt;&lt;a href=\&quot;install\&quot;&gt;Update&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=\&quot;dismiss\&quot;&gt;Dismiss&lt;/a&gt;&lt;/p&gt;" />
                       </node>
-                      <node concept="37vLTw" id="3GM_nagTvh$" role="37wK5m">
-                        <ref role="3cqZAo" node="63ZcAL22ckp" resolve="whichVcses" />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTxzK" role="37wK5m">
-                        <ref role="3cqZAo" node="3LKVexu8mzA" resolve="mainMessage" />
+                      <node concept="3cpWs3" id="3fU80iE1ukt" role="3uHU7B">
+                        <node concept="3cpWs3" id="14CscpcLAjN" role="3uHU7B">
+                          <node concept="3cpWs3" id="14CscpcLA7y" role="3uHU7B">
+                            <node concept="Xl_RD" id="14CscpcLA7C" role="3uHU7B">
+                              <property role="Xl_RC" value="&lt;p&gt;This project uses " />
+                            </node>
+                            <node concept="37vLTw" id="14CscpcLATB" role="3uHU7w">
+                              <ref role="3cqZAo" node="63ZcAL22ckp" resolve="whichVcses" />
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="14CscpcLAjV" role="3uHU7w">
+                            <property role="Xl_RC" value=". For better integration with MPS, it is recommended to update global VCS settings (&lt;a href=\&quot;" />
+                          </node>
+                        </node>
+                        <node concept="10M0yZ" id="3fU80iE1WfY" role="3uHU7w">
+                          <ref role="1PxDUh" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
+                          <ref role="3cqZAo" to="cu2c:~LanguageAspect.CONFLUENCE_BASE" resolve="CONFLUENCE_BASE" />
+                        </node>
                       </node>
                     </node>
                   </node>
