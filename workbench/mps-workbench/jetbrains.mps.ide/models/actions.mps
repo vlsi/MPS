@@ -4017,6 +4017,51 @@
       <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
       <node concept="1oajcY" id="7HZe2EwZDka" role="1oa70y" />
     </node>
+    <node concept="2ScWuX" id="5_fhgbyvNnG" role="tmbBb">
+      <node concept="3clFbS" id="5_fhgbyvNnH" role="2VODD2">
+        <node concept="3SKdUt" id="5_fhgbywQKV" role="3cqZAp">
+          <node concept="3SKdUq" id="5_fhgbywQLi" role="3SKWNk">
+            <property role="3SKdUp" value="see MPS-19850" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5_fhgbywKFA" role="3cqZAp">
+          <node concept="1Wc70l" id="5_fhgbywNeq" role="3clFbG">
+            <node concept="3y3z36" id="5_fhgbywQkM" role="3uHU7w">
+              <node concept="10Nm6u" id="5_fhgbywQqP" role="3uHU7w" />
+              <node concept="2OqwBi" id="5_fhgbywPo1" role="3uHU7B">
+                <node concept="1eOMI4" id="5_fhgbywOXt" role="2Oq$k0">
+                  <node concept="10QFUN" id="5_fhgbywOXu" role="1eOMHV">
+                    <node concept="2OqwBi" id="5_fhgbywOXq" role="10QFUP">
+                      <node concept="2WthIp" id="5_fhgbywOXr" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="5_fhgbywOXs" role="2OqNvi">
+                        <ref role="2WH_rO" node="i2gaxCq" resolve="module" />
+                      </node>
+                    </node>
+                    <node concept="3uibUv" id="5_fhgbywPee" role="10QFUM">
+                      <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="5_fhgbywQb7" role="2OqNvi">
+                  <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
+                </node>
+              </node>
+            </node>
+            <node concept="2ZW3vV" id="5_fhgbywMC6" role="3uHU7B">
+              <node concept="3uibUv" id="5_fhgbywMSx" role="2ZW6by">
+                <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+              </node>
+              <node concept="2OqwBi" id="5_fhgbywKFw" role="2ZW6bz">
+                <node concept="2WthIp" id="5_fhgbywKFz" role="2Oq$k0" />
+                <node concept="1DTwFV" id="5_fhgbywKF_" role="2OqNvi">
+                  <ref role="2WH_rO" node="i2gaxCq" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="sE7Ow" id="hGAQHPQ">
     <property role="TrG5h" value="RemoveModuleFromProject" />
