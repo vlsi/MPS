@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -40,7 +41,13 @@ public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode op) {
-        return pattern.getFieldValue("patternVar_concept") != null;
+        if (pattern.getFieldValue("patternVar_concept") == null) {
+          return false;
+        }
+        if (BehaviorReflection.invokeVirtual(Integer.TYPE, op, "virtual_getMetaLevel_3981318653438234726", new Object[]{}) != 0 && SNodeOperations.getContainingRoot(op) == SNodeOperations.getNode("r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)", "3815816958997003956")) {
+          return false;
+        }
+        return true;
       }
     }).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
