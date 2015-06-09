@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Contents of a {@link TextUnit} being edited/populated.
  * Consists of text areas. Supports (nested) text markers, see {@link #pushMark()}.
+ * FIXME Perhaps, shall introduce either BinaryBuffer or BinaryArea to support binary (or partly binary) files
  *
  * @author Artem Tikhomirov
  * @since 3.3
@@ -39,11 +40,14 @@ public interface TextBuffer {
    * Intersecting marks, m1 starts, m2 starts, m1 ends, m2 ends are not supported, if there's need to,
    * API shall get extended with mark identity.
    */
-  void pushMark();
+  TextBuffer pushMark();
 
   /**
    * @return text location marker within the buffer
    */
   @NotNull
   TextMark popMark();
+
+  @NotNull
+  BufferSnapshot snapshot();
 }

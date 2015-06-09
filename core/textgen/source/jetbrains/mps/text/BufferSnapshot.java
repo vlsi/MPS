@@ -16,21 +16,39 @@
 package jetbrains.mps.text;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 /**
- * Continuous chunk of text, with append/indent operations. {@link TextUnit} has associated Buffer, comprised of <code>TextAreas</code>.
- * There's only 1 active <code>TextArea</code> within a buffer.
- * <p/>
- * Methods of this interface return self to facilitate chaining.
  * @author Artem Tikhomirov
- * @since 3.3
  */
-public interface TextArea {
-  TextArea append(CharSequence text);
-  TextArea newLine();
-  TextArea indent();
-  TextArea increaseIndent();
-  TextArea decreaseIndent();
-  // current length of the chunk
-  int length();
+public interface BufferSnapshot {
+
+  /**
+   * @return 0-based positions of mark start within buffer text
+   */
+  TextPosition getStart(@NotNull TextMark mark);
+
+  /**
+   * @return 0-based positions of mark end within buffer text
+   */
+  TextPosition getEnd(@NotNull TextMark mark);
+
+  /**
+   * @return marked text chunk
+   */
+  CharSequence getText(@NotNull TextMark mark);
+
+  /**
+   * XXX TextLocation?
+   */
+  @Immutable
+  final class TextPosition {
+    public final int line;
+    public final int column;
+
+    public TextPosition(int line, int column) {
+      this.line = line;
+      this.column = column;
+    }
+  }
 }

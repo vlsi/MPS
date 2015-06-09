@@ -83,6 +83,11 @@ public class TextAreaImpl implements TextArea {
     return this;
   }
 
+  @Override
+  public int length() {
+    return myStringBuilder.length();
+  }
+
   /**
    * XXX not quite sure yet it should be part of TextArea API or not
    * @return actual contents of the text chunk.
