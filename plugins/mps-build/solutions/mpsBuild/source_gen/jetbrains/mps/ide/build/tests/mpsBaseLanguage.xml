@@ -63,7 +63,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.baseLanguage.unittest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.unittest" />
-      <fileset dir="${basedir}/testbench/testsolutions/bl.unittest" includes="icons/**, resources/**" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unittest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.unittest-jetbrains">
@@ -93,7 +93,7 @@
     </echoxml>
     <jar destfile="${build.layout}/jetbrains.mps.baseLanguage.closures.unittest.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.closures.unittest" />
-      <fileset dir="${basedir}/testbench/testsolutions/bl.closures.unittest" includes="icons/**, resources/**" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.closures.unittest.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/testbench-testsolutions-bl.closures.unittest-jetbrains">
@@ -125,8 +125,7 @@
     </echoxml>
     <jar destfile="${build.layout}/testExtendingAnalyzer.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/testExtendingAnalyzer" />
-      <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/testbench/modules/testExtendingAnalyzer/languages/testExtendingAnalyzer/source_gen" includes="**/trace.info, **/exports" />
+      <fileset dir="" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/testExtendingAnalyzer.jar" />
     </jar>
     <jar destfile="${build.layout}/testExtendingAnalyzer-generator.jar" duplicate="preserve">

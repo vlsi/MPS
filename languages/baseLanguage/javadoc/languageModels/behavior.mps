@@ -4,8 +4,8 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -87,7 +87,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
@@ -210,6 +210,7 @@
         <child id="1225711191269" name="index" index="1y58nS" />
       </concept>
       <concept id="1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" flags="nn" index="1yVyf7" />
+      <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
     </language>
   </registry>
   <node concept="13h7C7" id="7lVCwDcz6WK">
@@ -276,6 +277,24 @@
         </node>
       </node>
       <node concept="10P_77" id="7lVCwDcz6WS" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="4iGwz$GSfd_" role="13h7CS">
+      <property role="TrG5h" value="hasTags" />
+      <node concept="3Tm1VV" id="4iGwz$GSfdA" role="1B3o_S" />
+      <node concept="10P_77" id="4iGwz$GSfhg" role="3clF45" />
+      <node concept="3clFbS" id="4iGwz$GSfdC" role="3clF47">
+        <node concept="3clFbF" id="4iGwz$GSfhk" role="3cqZAp">
+          <node concept="2OqwBi" id="4iGwz$GSgbG" role="3clFbG">
+            <node concept="2OqwBi" id="4iGwz$GSfj$" role="2Oq$k0">
+              <node concept="13iPFW" id="4iGwz$GSfhj" role="2Oq$k0" />
+              <node concept="3Tsc0h" id="4iGwz$GSft2" role="2OqNvi">
+                <ref role="3TtcxE" to="m373:4EPKw6tR9BN" />
+              </node>
+            </node>
+            <node concept="3GX2aA" id="4iGwz$GSjJe" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="7lVCwDcz6WL" role="13h7CW">
       <node concept="3clFbS" id="7lVCwDcz6WM" role="2VODD2" />
@@ -1450,6 +1469,13 @@
     <ref role="13h7C2" to="m373:5VgPTPXL4JM" resolve="FieldDocComment" />
     <node concept="13hLZK" id="1653mnvANL5" role="13h7CW">
       <node concept="3clFbS" id="1653mnvANL6" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="7EYLKYFTDa_">
+    <property role="3GE5qa" value="tag" />
+    <ref role="13h7C2" to="m373:4iGwz$GTsqK" resolve="EmptyBlockDocTag" />
+    <node concept="13hLZK" id="7EYLKYFTDaA" role="13h7CW">
+      <node concept="3clFbS" id="7EYLKYFTDaB" role="2VODD2" />
     </node>
   </node>
 </model>

@@ -47,6 +47,11 @@ Scoping rules ensure that:
 * a handy intention (IntroduceSinger) is available to create a singer from a string typed in the performance (frequently known as "create from usage"
 or "introduce variable" refactoring).
 
+### declaration-references.java
+
+Creating own declarations (Items) in BaseLanguage and using references in order to both read and write the values of the declarations. These will seamlessly
+integrate into BaseLanguage.
+The generator will translate the Items and ItemReferences into Java's LocalVariableDeclarations and VariableReferences, respectively.
 
 ## dotexpression
 

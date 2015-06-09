@@ -559,5 +559,25 @@
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7UfLy9aLY0x">
+    <property role="TrG5h" value="Item" />
+    <property role="34LRSv" value="item" />
+    <property role="3GE5qa" value="declaration-references.java" />
+    <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="PrWs8" id="7UfLy9aLY0y" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7UfLy9aLY1j">
+    <property role="TrG5h" value="ItemReference" />
+    <property role="3GE5qa" value="declaration-references.java" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="7UfLy9aLY1k" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="item" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7UfLy9aLY0x" resolve="Item" />
+    </node>
+  </node>
 </model>
 

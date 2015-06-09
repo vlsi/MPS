@@ -32,7 +32,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,72,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,74,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ClassifierDocComment_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.ClassifierDocComment_BehaviorDescriptor" />
@@ -60,6 +60,9 @@
     </file>
     <file name="DocTypeParameterReference_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.DocTypeParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="EmptyBlockDocTag_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_BehaviorDescriptor" />
     </file>
     <file name="FieldDocComment_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.FieldDocComment_BehaviorDescriptor" />
@@ -320,17 +323,23 @@
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8465538089690623792">
     <file name="BaseDocComment_Behavior.java">
       <node id="8465538089690623801" at="13,87,14,1019" concept="5" />
+      <node id="4948473272651019348" at="16,74,17,216" concept="5" />
       <node id="8465538089690623792" at="11,0,13,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8465538089690623792" at="13,0,16,0" concept="8" trace="virtual_isTagSectionEmpty_8465538089690623795#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8465538089690623792" at="16,0,19,0" concept="8" trace="call_hasTags_4948473272651019109#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="8465538089690623794" at="11,43,11,43" />
       <scope id="8465538089690623798" at="13,87,14,1019" />
+      <scope id="4948473272651019112" at="16,74,17,216" />
       <scope id="8465538089690623792" at="11,0,13,0">
         <var name="thisNode" id="8465538089690623792" />
       </scope>
       <scope id="8465538089690623792" at="13,0,16,0">
         <var name="thisNode" id="8465538089690623792" />
       </scope>
-      <unit id="8465538089690623792" at="10,0,17,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
+      <scope id="8465538089690623792" at="16,0,19,0">
+        <var name="thisNode" id="8465538089690623792" />
+      </scope>
+      <unit id="8465538089690623792" at="10,0,20,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.BaseDocComment_Behavior" />
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8465538089690983820">
@@ -347,6 +356,16 @@
         <var name="thisNode" id="8465538089690983820" />
       </scope>
       <unit id="8465538089690983820" at="11,0,18,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.MethodDocComment_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/8844725588324684453">
+    <file name="EmptyBlockDocTag_Behavior.java">
+      <node id="8844725588324684453" at="8,0,10,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="8844725588324684455" at="8,43,8,43" />
+      <scope id="8844725588324684453" at="8,0,10,0">
+        <var name="thisNode" id="8844725588324684453" />
+      </scope>
+      <unit id="8844725588324684453" at="7,0,11,0" name="jetbrains.mps.baseLanguage.javadoc.behavior.EmptyBlockDocTag_Behavior" />
     </file>
   </root>
   <root nodeRef="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)/9042833497008205275">

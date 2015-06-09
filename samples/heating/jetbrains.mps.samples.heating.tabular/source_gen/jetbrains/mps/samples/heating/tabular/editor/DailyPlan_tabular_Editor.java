@@ -199,7 +199,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
           }
           @Override
           public void insertRow(int rowNumber) {
-            System.out.println("AAAAAA " + rowNumber);
             if (rowNumber <= 0) {
               return;
             }
