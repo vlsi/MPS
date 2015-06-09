@@ -54,7 +54,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   protected String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
 
 
-  protected BaseMPSChooseModel(Project project, String entityName) {
+  protected BaseMPSChooseModel(@NotNull Project project, String entityName) {
     myProject = project;
     myCheckboxName = String.format("Include &non-&&project %s", NameUtil.pluralize(entityName));
     myPromptText = String.format("%s name:", NameUtil.capitalize(entityName));

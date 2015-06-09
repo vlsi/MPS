@@ -13,32 +13,37 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364472">
     <file name="ModelChooser.java">
-      <node id="3995997045458364502" at="22,46,23,77" concept="7" />
-      <node id="3995997045458364517" at="25,52,26,37" concept="8" />
-      <node id="3995997045458364524" at="30,7,31,79" concept="8" />
-      <node id="3995997045458364477" at="16,0,18,0" concept="1" trace="ModelChooser#()V" />
-      <node id="3995997045458364515" at="25,0,28,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="3995997045458364510" at="23,77,28,28" concept="8" />
-      <node id="3995997045458364497" at="21,0,30,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <node id="3995997045458364485" at="19,42,30,7" concept="7" />
-      <node id="3995997045458364480" at="18,0,33,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364479" at="16,25,16,25" />
-      <scope id="3995997045458364516" at="25,52,26,37" />
-      <scope id="3995997045458364477" at="16,0,18,0" />
-      <scope id="3995997045458364515" at="25,0,28,0">
-        <var name="it" id="3995997045458364515" />
+      <node id="2130537059618112227" at="18,0,19,0" concept="3" trace="project" />
+      <node id="2130537059618112231" at="19,34,20,16" concept="2" />
+      <node id="3995997045458364485" at="23,42,24,95" concept="7" />
+      <node id="3995997045458364502" at="26,25,27,77" concept="7" />
+      <node id="2130537059618110845" at="29,52,30,37" concept="8" />
+      <node id="3995997045458364524" at="34,7,35,88" concept="8" />
+      <node id="3995997045458364477" at="19,0,22,0" concept="1" trace="ModelChooser#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="2130537059618110843" at="29,0,32,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <node id="2130537059618109397" at="27,77,32,28" concept="2" />
+      <node id="2130537059618107192" at="26,0,34,0" concept="6" trace="run#()V" />
+      <node id="2130537059618107190" at="24,95,34,7" concept="2" />
+      <node id="3995997045458364480" at="22,0,37,0" concept="6" trace="compute#()Ljava/util/List;" />
+      <scope id="3995997045458364479" at="19,34,20,16" />
+      <scope id="2130537059618110844" at="29,52,30,37" />
+      <scope id="3995997045458364477" at="19,0,22,0">
+        <var name="p" id="2130537059618112159" />
       </scope>
-      <scope id="3995997045458364501" at="22,46,28,28">
+      <scope id="2130537059618110843" at="29,0,32,0">
+        <var name="it" id="2130537059618110843" />
+      </scope>
+      <scope id="2130537059618107194" at="26,25,32,28">
         <var name="descriptors" id="3995997045458364503" />
       </scope>
-      <scope id="3995997045458364497" at="21,0,30,0" />
-      <scope id="3995997045458364484" at="19,42,31,79">
+      <scope id="2130537059618107192" at="26,0,34,0" />
+      <scope id="3995997045458364484" at="23,42,35,88">
         <var name="models" id="3995997045458364486" />
       </scope>
-      <scope id="3995997045458364480" at="18,0,33,0" />
-      <unit id="3995997045458364515" at="24,61,28,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$2" />
-      <unit id="3995997045458364494" at="20,76,30,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1" />
-      <unit id="3995997045458364472" at="15,0,34,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" />
+      <scope id="3995997045458364480" at="22,0,37,0" />
+      <unit id="2130537059618110843" at="28,69,32,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$2" />
+      <unit id="2130537059618107192" at="25,45,34,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1" />
+      <unit id="3995997045458364472" at="17,0,38,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" />
     </file>
   </root>
   <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364579">

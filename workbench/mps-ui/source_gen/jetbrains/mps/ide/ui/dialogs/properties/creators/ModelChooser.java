@@ -5,6 +5,8 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 import jetbrains.mps.util.Computable;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.FilteredGlobalScope;
@@ -13,21 +15,23 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
 public class ModelChooser implements Computable<List<SModelReference>> {
-  public ModelChooser() {
+  private Project project;
+  public ModelChooser(Project p) {
+    project = p;
   }
   @Override
   public List<SModelReference> compute() {
-    List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {
-      @Override
-      public List<SModelReference> compute() {
+    final Wrappers._T<List<SModelReference>> models = new Wrappers._T<List<SModelReference>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
         Iterable<SModel> descriptors = new FilteredGlobalScope().getModels();
-        return Sequence.fromIterable(descriptors).select(new ISelector<SModel, SModelReference>() {
+        models.value = Sequence.fromIterable(descriptors).select(new ISelector<SModel, SModelReference>() {
           public SModelReference select(SModel it) {
             return it.getReference();
           }
         }).toListSequence();
       }
     });
-    return CommonChoosers.showDialogModelCollectionChooser(null, models, null);
+    return CommonChoosers.showDialogModelCollectionChooser(project, models.value, null);
   }
 }

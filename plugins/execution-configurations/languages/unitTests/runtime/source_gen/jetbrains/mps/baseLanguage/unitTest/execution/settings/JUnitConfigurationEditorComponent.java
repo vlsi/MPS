@@ -118,7 +118,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modulePanel = new JBPanel(new GridBagLayout());
     modulePanel.add(new JBLabel("Module:"), LayoutUtil.createLabelConstraints(0));
-    myModuleChooser = new ModuleChooser();
+    myModuleChooser = new ModuleChooser(project);
     myModuleChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModuleValue(myModuleChooser.getText());
@@ -128,7 +128,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modelPanel = new JBPanel(new GridBagLayout());
     modelPanel.add(new JBLabel("Model:"), LayoutUtil.createLabelConstraints(0));
-    myModelChooser = new ModelChooser();
+    myModelChooser = new ModelChooser(project);
     myModelChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModelValue(myModelChooser.getText());
