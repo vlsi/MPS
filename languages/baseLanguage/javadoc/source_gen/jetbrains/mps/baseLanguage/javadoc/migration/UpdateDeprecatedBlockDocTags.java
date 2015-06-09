@@ -54,7 +54,7 @@ public class UpdateDeprecatedBlockDocTags extends MigrationScriptBase {
           public SNode compute() {
             return _quotation_createNode_fgay1s_a0a0f();
           }
-        });
+        }, null);
       }
     });
     return null;

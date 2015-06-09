@@ -56,7 +56,7 @@ public class RemoveUITestPropertyFromTestInfo extends MigrationScriptBase {
               }
             }.invoke(nodeToMigrate);
           }
-        });
+        }, null);
       }
     });
     return null;

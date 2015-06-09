@@ -57,7 +57,7 @@ public class TestMigration extends MigrationScriptBase {
               }
             }.invoke(nodeToMigrate);
           }
-        });
+        }, null);
       }
     });
     return null;

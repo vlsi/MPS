@@ -57,7 +57,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
           public SNode compute() {
             return _quotation_createNode_fbexqr_a0a0f(pattern.getFieldValue("patternVar_expr"));
           }
-        });
+        }, null);
       }
     });
     return null;

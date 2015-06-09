@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Map;
@@ -126,11 +127,15 @@ public abstract class MigrationScriptBase implements MigrationScript {
     }
   }
 
-  protected void applyTransormMigration(SNode origin, Computable<SNode> migration) {
+  protected void applyTransormMigration(SNode origin, Computable<SNode> migration, _FunctionTypes._void_P2_E0<? super SNode, ? super SNode> postprocess) {
     MigrationScriptBase.SNodePlacePointer pointer = createSNodePlacePointer(origin);
     List<SNode> descendants = SNodeOperations.getNodeDescendants(origin, null, true, new SAbstractConcept[]{});
 
     SNode migrated = migration.compute();
+
+    if (postprocess != null) {
+      postprocess.invoke(origin, migrated);
+    }
 
     if (migrated == null) {
       // origin should be removed 

@@ -58,7 +58,7 @@ public class MigrateDeclarations extends MigrationScriptBase {
           public SNode compute() {
             return _quotation_createNode_9wc3oy_a0a0f(pattern.getFieldValue("patternVar_deps"), pattern.getFieldValue("patternVar_name"));
           }
-        });
+        }, null);
       }
     });
     return null;

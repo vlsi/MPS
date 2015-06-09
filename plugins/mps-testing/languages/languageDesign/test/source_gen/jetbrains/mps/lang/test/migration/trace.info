@@ -51,7 +51,7 @@
       <node id="3022023529957961099" at="74,45,80,7" concept="0" />
       <node id="3022023529957940386" at="51,0,59,0" concept="4" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3022023529957961099" at="74,0,83,0" concept="4" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3022023529957940386" at="49,37,59,11" concept="2" />
+      <node id="3022023529957940386" at="49,37,59,17" concept="2" />
       <node id="3022023529957940386" at="48,0,61,0" concept="4" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3022023529957940386" at="30,106,61,7" concept="2" />
       <node id="3022023529957940386" at="29,0,64,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -109,7 +109,7 @@
       <scope id="3022023529957961099" at="74,0,83,0">
         <var name="nodeToMatch" id="3022023529957961099" />
       </scope>
-      <scope id="3022023529957940386" at="48,52,59,11" />
+      <scope id="3022023529957940386" at="48,52,59,17" />
       <scope id="3022023529957940386" at="48,0,61,0">
         <var name="nodeToMigrate" id="3022023529957940386" />
       </scope>
