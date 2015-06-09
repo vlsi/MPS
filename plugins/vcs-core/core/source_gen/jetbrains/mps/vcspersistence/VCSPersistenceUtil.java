@@ -17,10 +17,14 @@ import org.xml.sax.InputSource;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.LazyEditableSModelBase;
+import jetbrains.mps.persistence.PersistenceVersionAware;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public class VCSPersistenceUtil {
   public static SModel loadModel(final byte[] content, String extension) {
@@ -90,16 +94,35 @@ public class VCSPersistenceUtil {
         return null;
       }
 
-      return new LazyEditableSModelBase(header.getModelReference(), new NullDataSource()) {
-        protected ModelLoadResult loadSModel(ModelLoadingState p0) {
-          return readModel;
-        }
-        protected boolean saveModel() throws IOException, ModelSaveException {
-          throw new UnsupportedOperationException();
-        }
-      };
+      return new VCSPersistenceUtil.MyLazyEditableSModelBase(header.getModelReference(), readModel, header);
     } catch (ModelReadException e) {
       return null;
+    }
+  }
+  private static class MyLazyEditableSModelBase extends LazyEditableSModelBase implements PersistenceVersionAware {
+    private final ModelLoadResult myReadModel;
+    private final SModelHeader myHeader;
+
+    public void setPersistenceVersion(int pv) {
+      myHeader.setPersistenceVersion(pv);
+    }
+    public int getPersistenceVersion() {
+      return myHeader.getPersistenceVersion();
+    }
+    @Nullable
+    public ModelFactory getModelFactory() {
+      return null;
+    }
+    public MyLazyEditableSModelBase(@NotNull SModelReference ref, ModelLoadResult readModel, SModelHeader header) {
+      super(ref, new NullDataSource());
+      myReadModel = readModel;
+      myHeader = header;
+    }
+    protected ModelLoadResult loadSModel(ModelLoadingState p0) {
+      return myReadModel;
+    }
+    protected boolean saveModel() throws IOException, ModelSaveException {
+      throw new UnsupportedOperationException();
     }
   }
 }

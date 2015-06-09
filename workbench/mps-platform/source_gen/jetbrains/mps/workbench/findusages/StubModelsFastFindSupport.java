@@ -40,6 +40,8 @@ import com.intellij.openapi.vfs.VirtualFileVisitor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
+import com.intellij.openapi.progress.ProcessCanceledException;
+import java.util.Collections;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -174,7 +176,14 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       String nodeId = (id == null ? elem.toString() : id.value(elem));
       // filter files with usages 
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
-      Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+
+      Collection<VirtualFile> matchingFiles;
+      try {
+        matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
+      } catch (ProcessCanceledException ce) {
+        matchingFiles = Collections.emptyList();
+      }
+
       // back-transform 
       for (VirtualFile file : matchingFiles) {
         for (SModel m : scopeFiles.getBySecond(file)) {

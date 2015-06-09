@@ -100,7 +100,7 @@ public class VCSPersistenceSupport {
 
   @Nullable
   private static IModelPersistence getPersistence(int version) {
-    assert version >= 4;
+    assert version >= 4 : "unsupported version requested " + version;
 
     if (version == 4) {
       return new ModelPersistence4();
