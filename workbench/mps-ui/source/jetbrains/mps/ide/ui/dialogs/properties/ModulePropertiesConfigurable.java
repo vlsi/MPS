@@ -128,6 +128,7 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultCellEditor;
+import javax.swing.InputVerifier;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -145,6 +146,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.text.DefaultFormatter;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -328,7 +330,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
                   GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
 
-          myVersion = new JSpinner(new SpinnerNumberModel((int) getVersion(), 0, getVersion() + 20, 1));
+          myVersion = new JSpinner(new SpinnerNumberModel((int) getVersion(), 0, getVersion() + 10000, 1));
+          JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor)myVersion.getEditor();
+          DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
+          formatter.setAllowsInvalid(false);
           panel.add(myVersion,
               new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
