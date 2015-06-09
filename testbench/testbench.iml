@@ -39,9 +39,11 @@
     <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-impl" scope="RUNTIME" />
-    <orderEntry type="module" module-name="dataflow-rt" scope="TEST" />
+    <orderEntry type="module" module-name="dataflow-rt" scope="RUNTIME" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
+    <orderEntry type="module" module-name="mps-ant" exported="" />
+    <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />
@@ -73,6 +75,6 @@
     <orderEntry type="module" module-name="console" scope="RUNTIME" />
     <orderEntry type="module" module-name="migrationAssistant" />
     <orderEntry type="module" module-name="migrations-runtime" scope="TEST" />
-    <orderEntry type="library" name="Idea-vcs" level="project" />
+    <orderEntry type="module" module-name="actions-runtime" scope="TEST" />
   </component>
 </module>

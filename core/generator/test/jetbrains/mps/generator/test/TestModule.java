@@ -18,7 +18,9 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -40,6 +42,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -58,7 +61,7 @@ public class TestModule extends AbstractModule {
 
   public TestModule(String namespace, String moduleId, SModule peer) {
     myPeer = peer;
-    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(namespace, moduleId);
+    SModuleReference reference = new ModuleReference(namespace, ModuleId.fromString(moduleId));
     setModuleReference(reference);
   }
 

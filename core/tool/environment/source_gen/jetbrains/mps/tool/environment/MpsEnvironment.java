@@ -107,11 +107,14 @@ public class MpsEnvironment extends EnvironmentBase {
   @Override
   public Project createEmptyProject() {
     checkInitialized();
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Creating an empty project");
+    }
     File projectFile = FileUtil.createTmpFile();
     FileMPSProject project = new FileMPSProject(projectFile);
     project.init(new FileMPSProject.ProjectDescriptor(null));
     projectFile.deleteOnExit();
-    openProject(projectFile);
+    myContainer.addProject(project);
     return project;
   }
 

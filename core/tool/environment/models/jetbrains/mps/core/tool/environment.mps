@@ -1775,6 +1775,12 @@
             <ref role="37wK5l" node="6LlhC3WLEQ3" resolve="checkInitialized" />
           </node>
         </node>
+        <node concept="34ab3g" id="kMLKV374WB" role="3cqZAp">
+          <property role="35gtTG" value="info" />
+          <node concept="Xl_RD" id="kMLKV374WC" role="34bqiv">
+            <property role="Xl_RC" value="Creating an empty project" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="5A5jZrz4f7E" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZrz4f7F" role="3cpWs9">
             <property role="TrG5h" value="projectFile" />
@@ -1830,11 +1836,16 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2BGPXkEwAx6" role="3cqZAp">
-          <node concept="1rXfSq" id="2BGPXkEwAx4" role="3clFbG">
-            <ref role="37wK5l" node="6rx4kZDk6_W" resolve="openProject" />
-            <node concept="37vLTw" id="2BGPXkEwAM$" role="37wK5m">
-              <ref role="3cqZAo" node="5A5jZrz4f7F" resolve="projectFile" />
+        <node concept="3clFbF" id="kMLKV379DK" role="3cqZAp">
+          <node concept="2OqwBi" id="kMLKV379NG" role="3clFbG">
+            <node concept="37vLTw" id="kMLKV379DI" role="2Oq$k0">
+              <ref role="3cqZAo" node="yBZlauHaA8" resolve="myContainer" />
+            </node>
+            <node concept="liA8E" id="kMLKV37a3S" role="2OqNvi">
+              <ref role="37wK5l" node="yBZlauH8_l" resolve="addProject" />
+              <node concept="37vLTw" id="kMLKV37a4I" role="37wK5m">
+                <ref role="3cqZAo" node="5A5jZrz4f7J" resolve="project" />
+              </node>
             </node>
           </node>
         </node>
