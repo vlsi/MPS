@@ -35,7 +35,7 @@ public class TextBufferTest {
     final TextMark mark = tb.popMark();
     tb.area().append("GHI");
     //
-    BufferSnapshot t = tb.snapshot();
+    BufferSnapshot t = tb.snapshot(tb.newLayout());
     check(t, mark, "DEF", 0, 3, 0, 6);
   }
 
@@ -50,7 +50,7 @@ public class TextBufferTest {
     final TextMark mark = tb.popMark();
     tb.area().append("MNO");
     //
-    BufferSnapshot t = tb.snapshot();
+    BufferSnapshot t = tb.snapshot(tb.newLayout());
     check(t, mark, "DEF" + myLineSep + "GHI" + myLineSep + "JKL", 0, 3, 2, 3);
   }
 
@@ -67,7 +67,7 @@ public class TextBufferTest {
     tb.area().append("JKL");
     final TextMark outerMark = tb.popMark();
     //
-    BufferSnapshot t = tb.snapshot();
+    BufferSnapshot t = tb.snapshot(tb.newLayout());
     final String expectedInner = myLineSep + "GHI" + myLineSep;
     check(t, innerMark, expectedInner, 0, 6, 2, 0);
     String expectedOuter = "DEF" + expectedInner + "JKL";
@@ -75,18 +75,45 @@ public class TextBufferTest {
   }
 
   @Test
-  public void testMarkerAroundInnerTextArea() {
+  public void testMarkerReplacedWithTextArea() {
     TextBufferImpl tb = new TextBufferImpl();
     tb.area().append("ABC").newLine();
     tb.pushMark();
-    tb.area().append("DEF").newLine();
-    // tb.pushArea("inner");
-    tb.area().append("GHI").newLine();
-    // tb.popArea();
+    tb.area().append("DEF").newLine(); // this is the line we are going to replace with another TextArea
     final TextMark mark = tb.popMark();
-    tb.area().append("JKL");
+    tb.pushTextArea(new BasicToken("inner"));
+    tb.area().append("GHI").newLine();
+    tb.area().append("JKL").newLine();
+    tb.popTextArea();
+    tb.area().append("MNO");
+    //
+    final BufferLayout l = tb.newLayout();
+    l.replace(mark, new BasicToken("inner"));
+    BufferSnapshot t = tb.snapshot(l);
+    final String expectedText = "ABC" + myLineSep + "GHI" + myLineSep + "JKL" + myLineSep + "MNO";
+    Assert.assertEquals(expectedText, t.getText().toString());
+    final String expectedInner = "GHI" + myLineSep + "JKL" + myLineSep;
+    check(t, mark, expectedInner, 1, 0, 3, 0);
+  }
 
-    Assert.fail("IMPLEMENT");
+  @Test
+  public void testSubsequentChunksImplicitLayout() {
+    TextBufferImpl tb = new TextBufferImpl();
+    tb.pushTextArea(new BasicToken("top"));
+    tb.area().append("ABC").newLine();
+    tb.pushTextArea(new BasicToken("bottom"));
+    tb.area().append("DEF").newLine();
+    tb.pushMark();
+    tb.area().append("GHI").newLine();
+    TextMark mark = tb.popMark();
+    tb.popTextArea();
+    tb.area().append("JKL").newLine();
+    //
+    BufferSnapshot t = tb.snapshot(tb.newLayout());
+    String top = "ABC" + myLineSep + "JKL" + myLineSep;
+    String bottom = "DEF" + myLineSep + "GHI" + myLineSep;
+    Assert.assertEquals(top + bottom, t.getText().toString());
+    check(t, mark, "GHI" + myLineSep, 3, 0, 4, 0);
   }
 
   private static void check(BufferSnapshot t, TextMark mark, String expectedText, int startLine, int startCol, int endLine, int endCol) {

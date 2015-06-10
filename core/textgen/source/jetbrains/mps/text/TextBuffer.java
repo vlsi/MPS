@@ -19,7 +19,16 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Contents of a {@link TextUnit} being edited/populated.
- * Consists of text areas. Supports (nested) text markers, see {@link #pushMark()}.
+ * <p/>
+ * Consists of text areas. Active text chunk/area could be switched with {@link #pushTextArea(TextAreaToken)} and {@link #popTextArea()}.
+ * There's default, top-most text area that can't be removed, i.e. one can treat fresh <code>TextBuffer</code> as being initialized like
+ * <pre>
+ *   TextBuffer tb;
+ *   tb.pushTextArea(defaultAreaToken);
+ * </pre>
+ * <p/>
+ * Supports (nested) text markers, see {@link #pushMark()}.
+ *
  * FIXME Perhaps, shall introduce either BinaryBuffer or BinaryArea to support binary (or partly binary) files
  *
  * @author Artem Tikhomirov
@@ -32,6 +41,14 @@ public interface TextBuffer {
    */
   @NotNull
   TextArea area();
+
+  /**
+   * Switch active area.
+   * FIXME describe whether nested push with the same token is allowed (present impl does allow, is it smth we'd like to use?)
+   * @param areaIdentity identifies text chunk to become active for output
+   */
+  void pushTextArea(@NotNull TextAreaToken areaIdentity);
+  void popTextArea();
 
   /**
    * Indicate start location of a marker, which is retrieved with {@link #popMark()}
@@ -48,6 +65,18 @@ public interface TextBuffer {
   @NotNull
   TextMark popMark();
 
+  /**
+   * Factory method to instantiate a layout capable to deal with this buffer instance.
+   * @return new instance suitable for subsequent argument to {@link #snapshot(BufferLayout)}
+   */
   @NotNull
-  BufferSnapshot snapshot();
+  BufferLayout newLayout();
+
+  /**
+   * Capture actual state of the buffer, text chunks positioned in accordance with supplied {@link BufferLayout layout}.
+   * @param layout describes how text chunks of the buffer shall be ordered.
+   * @return snapshot of the text in the buffer. The value is independent from subsequent buffer modifications
+   */
+  @NotNull
+  BufferSnapshot snapshot(@NotNull BufferLayout layout);
 }

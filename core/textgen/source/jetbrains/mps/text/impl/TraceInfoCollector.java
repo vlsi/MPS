@@ -24,9 +24,7 @@ import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

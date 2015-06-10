@@ -28,7 +28,6 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

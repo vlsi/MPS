@@ -15,20 +15,15 @@
  */
 package jetbrains.mps.text;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * Continuous chunk of text, with append/indent operations. {@link TextUnit} has associated Buffer, comprised of <code>TextAreas</code>.
- * There's only 1 active <code>TextArea</code> within a buffer.
- * <p/>
- * Methods of this interface return self to facilitate chaining.
+ * Tells {@link TextBuffer buffer} how to position different {@link TextArea text chunks} against each other.
+ * Perhaps, there should be pre-defined layouts, like 'AllChunksInTheirCreationOrder', 'FirstChunkOnly' and even 'MatchingChunk(Condition(TextAreaToken))
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public interface TextArea {
-  TextArea append(CharSequence text);
-  TextArea newLine();
-  TextArea indent();
-  TextArea increaseIndent();
-  TextArea decreaseIndent();
-  // current length of the chunk
-  int length();
+public interface BufferLayout {
+  void replace(@NotNull TextMark mark, @NotNull TextAreaToken withChunk);
 }

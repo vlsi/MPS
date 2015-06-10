@@ -16,19 +16,11 @@
 package jetbrains.mps.text;
 
 /**
- * Continuous chunk of text, with append/indent operations. {@link TextUnit} has associated Buffer, comprised of <code>TextAreas</code>.
- * There's only 1 active <code>TextArea</code> within a buffer.
- * <p/>
- * Methods of this interface return self to facilitate chaining.
+ * Identifier for a text area. The only contract is valid {@link #equals(Object)} implementation.
+ * Two tokens instantiated from different text generation locations shall be comparable to match the areas.
+ * @see BasicToken
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public interface TextArea {
-  TextArea append(CharSequence text);
-  TextArea newLine();
-  TextArea indent();
-  TextArea increaseIndent();
-  TextArea decreaseIndent();
-  // current length of the chunk
-  int length();
+public interface TextAreaToken {
 }

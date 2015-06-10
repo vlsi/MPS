@@ -26,17 +26,26 @@ public interface BufferSnapshot {
   /**
    * @return 0-based positions of mark start within buffer text
    */
+  @NotNull
   TextPosition getStart(@NotNull TextMark mark);
 
   /**
    * @return 0-based positions of mark end within buffer text
    */
+  @NotNull
   TextPosition getEnd(@NotNull TextMark mark);
 
   /**
    * @return marked text chunk
    */
+  @NotNull
   CharSequence getText(@NotNull TextMark mark);
+
+  /**
+   * @return buffer text
+   */
+  @NotNull
+  CharSequence getText();
 
   /**
    * XXX TextLocation?
