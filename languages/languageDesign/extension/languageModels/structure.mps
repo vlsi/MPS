@@ -312,7 +312,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplyOverlappingExtensionOperation" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="apply" />
+    <property role="34LRSv" value="get" />
     <property role="3GE5qa" value="overlapping" />
     <ref role="1TJDcQ" to="tpee:h_B$H5g" resolve="AbstractOperation" />
     <node concept="1TJgyj" id="21KXiZCIMF8" role="1TKVEi">

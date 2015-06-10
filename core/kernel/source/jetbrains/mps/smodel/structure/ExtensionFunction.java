@@ -18,17 +18,13 @@ package jetbrains.mps.smodel.structure;
 import java.util.Collection;
 
 public interface ExtensionFunction<T, R> {
-  boolean applicable(T argument);
-  Collection<ExtensionFunction<T, R>> getOverridden();
-  R apply(T argument);
+  Collection<? extends ExtensionFunction<T, R>> getOverridden();
+  FunctionInstance<R> instantiate(T argument);
 
   interface FunctionInstance<R> {
+    String getName();
     boolean applicable();
     R apply();
-  }
-
-  interface InstantiateableExtensionFunction<T, R> extends ExtensionFunction<T, R> {
-    FunctionInstance<R> instantiate(T argument);
   }
 
 }

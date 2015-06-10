@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="oubp" ref="r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="v54s" ref="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" implicit="true" />
     <import index="ztcw" ref="r:bda4f8a3-5658-4624-a3f1-ef4d37b30baa(jetbrains.mps.lang.classLike.methods)" implicit="true" />
@@ -86,6 +87,9 @@
       </concept>
       <concept id="8264762413010642119" name="jetbrains.mps.lang.classLike.structure.ClassLikeMember" flags="ng" index="QNr5B">
         <child id="3402736933911577960" name="modifier" index="2IRzpu" />
+      </concept>
+      <concept id="8264762413010631473" name="jetbrains.mps.lang.classLike.structure.PropertyDescriptor" flags="ng" index="QNuUh">
+        <reference id="5155329496663029311" name="type" index="2NexVz" />
       </concept>
       <concept id="3571587574961713354" name="jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation" flags="ng" index="30mAcN">
         <reference id="3571587574961717879" name="descriptor" index="30mx6e" />
@@ -199,6 +203,11 @@
     <property role="TrG5h" value="ExtensionOverlapping" />
     <ref role="2qG0Lo" to="v54s:3tZJV06aagQ" resolve="ExtensionOverlapping" />
     <node concept="qMXn0" id="5zDW7NrLnSG" role="QNr5C" />
+    <node concept="QNuUh" id="4u7uetTJQD6" role="QNr5C">
+      <property role="TrG5h" value="name" />
+      <ref role="2NexVz" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="2IRzkw" id="4u7uetTOeyL" role="2IRzpu" />
+    </node>
     <node concept="QcwwW" id="2gzehMes8lw" role="QNr5C">
       <ref role="QcwwZ" to="v54s:2gzehMesjCw" resolve="ArgumentField" />
       <node concept="2IRzkw" id="2gzehMes8mB" role="2IRzpu" />
