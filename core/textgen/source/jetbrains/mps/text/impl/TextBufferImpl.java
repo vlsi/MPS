@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.text.impl;
 
+import jetbrains.mps.text.BasicTextAreaFactory;
 import jetbrains.mps.text.BasicToken;
 import jetbrains.mps.text.BufferLayout;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.TextArea;
+import jetbrains.mps.text.TextAreaFactory;
 import jetbrains.mps.text.TextAreaToken;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextMark;
@@ -42,13 +44,19 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public class TextBufferImpl implements TextBuffer {
-  private final Deque<TextAreaImpl> myChunkStack = new ArrayDeque<TextAreaImpl>();
+  private final Deque<TextArea> myChunkStack = new ArrayDeque<TextArea>();
   // preserve order in which chunks were created
-  private final Map<TextAreaToken, TextAreaImpl> myChunks = new LinkedHashMap<TextAreaToken, TextAreaImpl>();
+  private final Map<TextAreaToken, TextArea> myChunks = new LinkedHashMap<TextAreaToken, TextArea>();
   private final Deque<Marker> myMarkerStack = new ArrayDeque<Marker>();
   private final List<Marker> myMarkers = new ArrayList<Marker>();
+  private final TextAreaFactory myChunkFactory;
 
   public TextBufferImpl() {
+    this(new BasicTextAreaFactory());
+  }
+
+  public TextBufferImpl(@NotNull TextAreaFactory factory) {
+    myChunkFactory = factory;
     pushTextArea(new BasicToken(System.identityHashCode(this)));
   }
 
@@ -60,9 +68,9 @@ public class TextBufferImpl implements TextBuffer {
 
   @Override
   public void pushTextArea(@NotNull TextAreaToken areaIdentity) {
-    TextAreaImpl chunk = myChunks.get(areaIdentity);
+    TextArea chunk = myChunks.get(areaIdentity);
     if (chunk == null) {
-      chunk = new TextAreaImpl();
+      chunk = myChunkFactory.create();
       myChunks.put(areaIdentity, chunk);
     }
     myChunkStack.push(chunk);
@@ -102,10 +110,10 @@ public class TextBufferImpl implements TextBuffer {
   public BufferSnapshot snapshot(@NotNull BufferLayout layout) {
     Layout realLayout = (Layout) layout;
     LinkedHashMap<TextAreaToken, StringBuilder> textMap = new LinkedHashMap<TextAreaToken, StringBuilder>();
-    Map<TextAreaImpl, TextAreaToken> chunk2token = new HashMap<TextAreaImpl, TextAreaToken>();
+    Map<TextArea, TextAreaToken> chunk2token = new HashMap<TextArea, TextAreaToken>();
     // myChunks is in the order chunks were created, keep the order in case not all chunks are explicitly placed.
-    for (Entry<TextAreaToken, TextAreaImpl> e : myChunks.entrySet()) {
-      final StringBuilder sb = new StringBuilder(e.getValue().value());
+    for (Entry<TextAreaToken, TextArea> e : myChunks.entrySet()) {
+      final StringBuilder sb = new StringBuilder(myChunkFactory.value(e.getValue()));
       textMap.put(e.getKey(), sb);
       chunk2token.put(e.getValue(), e.getKey());
     }
@@ -126,7 +134,7 @@ public class TextBufferImpl implements TextBuffer {
     for (StringBuilder chunkText : textMap.values()) {
       result.append(chunkText);
     }
-    final TextSnapshot s = new TextSnapshot(result);
+    final TextSnapshot s = new TextSnapshot(result, myChunkFactory.getLineSeparator());
     s.addMarks(myMarkers);
     int chunkOffset = 0;
     for (Entry<TextAreaToken, StringBuilder> e : textMap.entrySet()) {
@@ -160,14 +168,11 @@ public class TextBufferImpl implements TextBuffer {
     private Map<TextArea, Integer> myOffsets = new HashMap<TextArea, Integer>(8);
 
 
-    public TextSnapshot(CharSequence seq) {
+    public TextSnapshot(CharSequence seq, String lineSep) {
       myText = seq;
       ArrayList<Integer> lineBreaks = new ArrayList<Integer>();
       int i = 0;
       final String s = seq.toString();
-      // FIXME perhaps, line separator shall be attribute of the buffer (which is passed to TextArea).
-      // FIXME alternatively, TextAreaFactory, with create, likeSeparator and value(TextArea):CharSequence shall be introduced
-      final String lineSep = System.getProperty("line.separator");
       do {
         i = s.indexOf(lineSep, i);
         if (i == -1) {

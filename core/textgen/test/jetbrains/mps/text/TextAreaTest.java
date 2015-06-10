@@ -43,7 +43,7 @@ public class TextAreaTest {
   public void testIndent() {
     final char[] indent = new char[4];
     Arrays.fill(indent, ' ');
-    TextAreaImpl ta = new TextAreaImpl(new StringBuilder(), indent.length);
+    TextAreaImpl ta = new TextAreaImpl(new StringBuilder(), myLineSep, ' ', indent.length);
     ta.indent().append("A");
     ta.increaseIndent().newLine();
     ta.indent().append("B");

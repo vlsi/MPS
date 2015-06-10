@@ -17,6 +17,7 @@ package jetbrains.mps.text;
 
 import jetbrains.mps.text.BufferSnapshot.TextPosition;
 import jetbrains.mps.text.impl.TextBufferImpl;
+import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -24,11 +25,12 @@ import org.junit.Test;
  * @author Artem Tikhomirov
  */
 public class TextBufferTest {
-  private final String myLineSep = System.getProperty("line.separator");
+  private final TextAreaFactory myChunkFactory = new BasicTextAreaFactory();
+  private final String myLineSep = myChunkFactory.getLineSeparator();
 
   @Test
   public void testSingleLineMarker() {
-    TextBufferImpl tb = new TextBufferImpl();
+    TextBuffer tb = createTextBuffer();
     tb.area().append("ABC");
     tb.pushMark();
     tb.area().append("DEF");
@@ -39,9 +41,14 @@ public class TextBufferTest {
     check(t, mark, "DEF", 0, 3, 0, 6);
   }
 
+  @NotNull
+  private TextBuffer createTextBuffer() {
+    return new TextBufferImpl(myChunkFactory);
+  }
+
   @Test
   public void testMultiLineMarker() {
-    TextBufferImpl tb = new TextBufferImpl();
+    TextBuffer tb = createTextBuffer();
     tb.area().append("ABC");
     tb.pushMark();
     tb.area().append("DEF").newLine();
@@ -56,7 +63,7 @@ public class TextBufferTest {
 
   @Test
   public void testNestedMarker() {
-    TextBufferImpl tb = new TextBufferImpl();
+    TextBuffer tb = createTextBuffer();
     tb.area().append("ABC");
     tb.pushMark();
     tb.area().append("DEF");
@@ -76,7 +83,7 @@ public class TextBufferTest {
 
   @Test
   public void testMarkerReplacedWithTextArea() {
-    TextBufferImpl tb = new TextBufferImpl();
+    TextBuffer tb = createTextBuffer();
     tb.area().append("ABC").newLine();
     tb.pushMark();
     tb.area().append("DEF").newLine(); // this is the line we are going to replace with another TextArea
@@ -98,7 +105,7 @@ public class TextBufferTest {
 
   @Test
   public void testSubsequentChunksImplicitLayout() {
-    TextBufferImpl tb = new TextBufferImpl();
+    TextBuffer tb = createTextBuffer();
     tb.pushTextArea(new BasicToken("top"));
     tb.area().append("ABC").newLine();
     tb.pushTextArea(new BasicToken("bottom"));

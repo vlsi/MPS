@@ -65,12 +65,12 @@ public final class TextGenBuffer {
     }
     if (buffers == null) {
       myBuffers = new TextAreaImpl[2];
-      myBuffers[TOP] = new TextAreaImpl(new StringBuilder(2048), myIndent);
-      myBuffers[DEFAULT] = new TextAreaImpl(new StringBuilder(4096), myIndent);
+      myBuffers[TOP] = new TextAreaImpl(new StringBuilder(2048), LINE_SEPARATOR, ' ', myIndent);
+      myBuffers[DEFAULT] = new TextAreaImpl(new StringBuilder(4096), LINE_SEPARATOR, ' ', myIndent);
     } else {
       myBuffers = new TextAreaImpl[buffers.length];
       for (int i = 0; i < buffers.length; i++) {
-        myBuffers[i] = new TextAreaImpl(buffers[i], myIndent);
+        myBuffers[i] = new TextAreaImpl(buffers[i], LINE_SEPARATOR, ' ', myIndent);
       }
     }
     selectPart(DEFAULT);

@@ -31,16 +31,16 @@ public class TextAreaImpl implements TextArea {
   private final char[] mySpaces;
 
   public TextAreaImpl() {
-    this(new StringBuilder(2048), 2);
+    this(new StringBuilder(2048), "\n", ' ', 2);
   }
 
-  public TextAreaImpl(@NotNull StringBuilder stringBuilder, int indentSize) {
+  public TextAreaImpl(@NotNull StringBuilder stringBuilder, @NotNull String lineSeparator, char indentChar, int indentSize) {
     assert indentSize >= 0;
     myStringBuilder = stringBuilder;
     myIndentSize = indentSize;
-    myLineSeparator = System.getProperty("line.separator");
+    myLineSeparator = lineSeparator;
     mySpaces = new char[indentSize * 20];
-    Arrays.fill(mySpaces, ' ');
+    Arrays.fill(mySpaces, indentChar);
   }
 
 
