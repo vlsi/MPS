@@ -12,14 +12,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import java.util.Set;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.structure.BaseOverlappingExtension;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -59,25 +59,41 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     return result.value;
   }
   public Void apply() {
-    moveFeatureUp.init();
-    moveFeatureUp.project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        moveFeatureUp.featureName = SPropertyOperations.getString(SNodeOperations.cast(moveFeatureUp.feature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
+    moveFeatureUp.execute(new MoveFeatureUp.FeatureSpecific() {
+      public String getKind() {
+        return "link";
       }
-    });
-    moveFeatureUp.featureKind = "link";
-    moveFeatureUp.execute(changeContainmentLinkInstances, new _FunctionTypes._return_P0_E0<List<SNode>>() {
-      public List<SNode> invoke() {
-        return SLinkOperations.getChildren(moveFeatureUp.targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"));
+      public MoveFeatureUp.FeatureAccess getFeatureAccess(final SNode link, final SNode targetConcept) {
+        return new MoveFeatureUp.FeatureAccess() {
+          public String getName() {
+            return SPropertyOperations.getString(SNodeOperations.cast(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
+          }
+          public List<SNode> placeToMove() {
+            return SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"));
+          }
+          public void doMoveAndRefactorInstances(Set<SNode> instances) {
+            SContainmentLink oldLink = MetaAdapterByDeclaration.getContainmentLink(link);
+            ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.cast(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
+            SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(link);
+            for (SNode node : SetSequence.fromSet(instances)) {
+              RefactoringRuntime.refactorContainmentLinkInstance(node, oldLink, newLink);
+            }
+          }
+        };
       }
-    }, new _FunctionTypes._void_P1_E0<SNode>() {
-      public void invoke(SNode node) {
-        SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), SPropertyOperations.getString_def(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), "") + "old");
-        if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")))) {
-          SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) ? "0..1" : "0..n"));
+      public void markOldFeature(SNode oldLink) {
+        SPropertyOperations.set(SNodeOperations.cast(oldLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), SPropertyOperations.getString_def(SNodeOperations.cast(oldLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"), "") + "old");
+        if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(SNodeOperations.cast(oldLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")))) {
+          SPropertyOperations.set(SNodeOperations.cast(oldLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), (LinkDeclaration_Behavior.call_isSingular_1213877254557(SNodeOperations.cast(oldLink, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) ? "0..1" : "0..n"));
         }
       }
-    }, oldLinkDecl, newLinkDecl, refactorInstancesClosure);
+      public MoveFeatureUp.FeatureSpecificMigrations migrations(SNode oldLink, SNode newLink) {
+        SNode oldLinkVariable = _quotation_createNode_lavczv_a0a0d0a0a0a0h(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
+        SNode newLinkVariable = _quotation_createNode_lavczv_a0b0d0a0a0a0h(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
+        SNode refactorClosure = _quotation_createNode_lavczv_a0c0d0a0a0a0h(oldLinkVariable, newLinkVariable);
+        return new MoveFeatureUp.FeatureSpecificMigrations(oldLinkVariable, newLinkVariable, refactorClosure);
+      }
+    });
     return null;
   }
 
@@ -85,39 +101,9 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
   private Tuples._2<List<SNode>, MPSProject> arg;
 
 
-  public final _FunctionTypes._void_P0_E0 changeContainmentLinkInstances = new _FunctionTypes._void_P0_E0() {
-    public void invoke() {
-      SContainmentLink oldLink = MetaAdapterByDeclaration.getContainmentLink(moveFeatureUp.feature);
-      ListSequence.fromList(SLinkOperations.getChildren(moveFeatureUp.targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.cast(moveFeatureUp.feature, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
-      SContainmentLink newLink = MetaAdapterByDeclaration.getContainmentLink(moveFeatureUp.feature);
-      for (SNode node : SetSequence.fromSet(moveFeatureUp.instances)) {
-        RefactoringRuntime.refactorContainmentLinkInstance(node, oldLink, newLink);
-      }
-    }
-  };
-
-  public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> oldLinkDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-    public SNode invoke(SNode oldLink) {
-      return _quotation_createNode_lavczv_a0a0l(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
-    }
-  };
-
-  public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> newLinkDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
-    public SNode invoke(SNode newLink) {
-      return _quotation_createNode_lavczv_a0a0n(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
-    }
-  };
-
-  public final _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> refactorInstancesClosure = new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
-    public SNode invoke(SNode oldLink, SNode newLink) {
-      return _quotation_createNode_lavczv_a0a0p(oldLink, newLink);
-    }
-  };
-
-
   public static class ExtensionFunction extends BaseOverlappingExtension<Tuples._2<List<SNode>, MPSProject>, Void> {
     public ExtensionFunction() {
-      super("jetbrains.mps.ide.platform.MoveNodesAction");
+      super("jetbrains.mps.ide.platform.MoveNodesAction_Old");
     }
     public MoveContainmentLinkUp instantiate(Tuples._2<List<SNode>, MPSProject> arg) {
       MoveContainmentLinkUp result = new MoveContainmentLinkUp();
@@ -156,7 +142,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
       return this;
     }
   }
-  private static SNode _quotation_createNode_lavczv_a0a0l(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0a0d0a0a0a0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -172,7 +158,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0a0n(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0b0d0a0a0a0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -188,7 +174,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0a0p(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0c0d0a0a0a0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
