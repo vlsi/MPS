@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:debded47-9400-43b4-8f2a-90969bae3c47(jetbrains.mps.build.mps.runner.test.test3)/138593292063249461">
     <file name="MainClass.java">
-      <node id="138593292063072481" at="9,32,10,68" concept="1" />
-      <node id="138593292063250624" at="10,68,11,27" concept="0" />
-      <node id="138593292063249494" at="9,0,13,0" concept="2" trace="mpsMain#()V" />
-      <scope id="138593292063249500" at="9,32,11,27">
+      <node id="138593292063072481" at="16,36,17,72" concept="2" />
+      <node id="5349964674704758804" at="17,72,18,42" concept="3" />
+      <node id="5349964674704758476" at="16,0,20,0" concept="1" trace="compute#()Ljava/lang/Boolean;" />
+      <node id="5349964674704756950" at="14,25,20,11" concept="0" />
+      <node id="1912033194715198458" at="14,0,22,0" concept="1" trace="run#()V" />
+      <node id="1912033194715197745" at="12,32,22,7" concept="0" />
+      <node id="138593292063249494" at="12,0,24,0" concept="4" trace="mpsMain#()V" />
+      <scope id="5349964674704758477" at="16,36,18,42">
         <var name="okFile" id="138593292063072482" />
       </scope>
-      <scope id="138593292063249494" at="9,0,13,0" />
-      <unit id="138593292063249461" at="8,0,14,0" name="jetbrains.mps.build.mps.runner.test.test3.MainClass" />
+      <scope id="5349964674704758476" at="16,0,20,0" />
+      <scope id="1912033194715198459" at="14,25,20,11" />
+      <scope id="1912033194715198458" at="14,0,22,0" />
+      <scope id="138593292063249500" at="12,32,22,7" />
+      <scope id="138593292063249494" at="12,0,24,0" />
+      <unit id="5349964674704758476" at="15,50,20,9" name="jetbrains.mps.build.mps.runner.test.test3.MainClass$2" />
+      <unit id="1912033194715198458" at="13,41,22,5" name="jetbrains.mps.build.mps.runner.test.test3.MainClass$1" />
+      <unit id="138593292063249461" at="11,0,25,0" name="jetbrains.mps.build.mps.runner.test.test3.MainClass" />
     </file>
   </root>
 </debug-info>

@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -32,7 +33,7 @@ public class MainClass {
   public static void mpsMain() {
     System.out.println("Test project opening...");
     Environment env = ActiveEnvironment.getInstance();
-    Project project = env.openProject(new File(MPS_PROJECT));
+    final Project project = env.openProject(new File(MPS_PROJECT));
     assert project != null;
 
     System.out.println("Test model access...");
@@ -64,22 +65,26 @@ public class MainClass {
 
     // test write access 
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
-    project.getModelAccess().executeCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-      public SNode invoke() {
-        ListSequence.fromList(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_ea23db_a0a0a0a0s0e());
-        return result.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))).findFirst(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return "n".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        project.getModelAccess().executeCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+          public SNode invoke() {
+            ListSequence.fromList(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_ea23db_a0a0a0a0a0a0s0e());
+            return result.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))).findFirst(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return "n".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+              }
+            });
           }
-        });
+        }));
       }
-    }));
+    });
     assert result.value != null;
 
     // create resulting file to signal everything is OK 
     jetbrains.mps.build.mps.runner.test.test1.MainClass.mpsMain();
   }
-  private static SNode _quotation_createNode_ea23db_a0a0a0a0s0e() {
+  private static SNode _quotation_createNode_ea23db_a0a0a0a0a0a0s0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
