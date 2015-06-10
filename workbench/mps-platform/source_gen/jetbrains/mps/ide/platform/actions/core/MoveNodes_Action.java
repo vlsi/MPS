@@ -4,20 +4,20 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.smodel.structure.ExtensionFunction;
+import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,12 +31,12 @@ public class MoveNodes_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "MoveNodes"), ((List<SNode>) MapSequence.fromMap(_params).get("target")));
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    ExtensionFunction.FunctionInstance<Void> instance = new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").find(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+    MoveNodes_Action.this.setEnabledState(event.getPresentation(), instance != null);
+    if (instance != null) {
+      event.getPresentation().setText(instance.getName());
+    }
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -66,6 +66,6 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").apply(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").find(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")))).apply();
   }
 }

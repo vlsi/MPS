@@ -49,7 +49,9 @@ import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
 
 public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void> {
 
-
+  public String getName() {
+    return "Move Nodes";
+  }
   public boolean applicable() {
     MPSProject project = arg._1();
     final List<SNode> nodes = arg._0();
@@ -65,6 +67,7 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     execute();
     return null;
   }
+
 
   public static void moveNodes(List<SNode> nodes, MPSProject mpsProject) {
     MoveNodesDefault moveNodesDefault = new MoveNodesDefault();
@@ -94,7 +97,7 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
     final SModel model = firstNode.getModel();
     return ListSequence.fromList(nodesToMove).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_92fyi8_a0a0a0a0a0a0f0r(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
+        return eq_92fyi8_a0a0a0a0a0a0f0s(it.getContainmentLink(), containmentLink) && it.getParent() == parent && it.getModel() == model;
       }
     });
   }
@@ -264,7 +267,7 @@ public class MoveNodesDefault implements ExtensionFunction.FunctionInstance<Void
       return this;
     }
   }
-  private static boolean eq_92fyi8_a0a0a0a0a0a0f0r(Object a, Object b) {
+  private static boolean eq_92fyi8_a0a0a0a0a0a0f0s(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

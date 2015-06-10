@@ -36,7 +36,9 @@ import jetbrains.mps.smodel.SReference;
 public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance<Void> {
 
   public MoveFeatureUp moveFeatureUp;
-
+  public String getName() {
+    return "Move Link Up";
+  }
   public boolean applicable() {
     if (!(moveFeatureUp.applicable())) {
       return false;
@@ -79,6 +81,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     return null;
   }
 
+
   private Tuples._2<List<SNode>, MPSProject> arg;
 
 
@@ -95,19 +98,19 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
 
   public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> oldLinkDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
     public SNode invoke(SNode oldLink) {
-      return _quotation_createNode_lavczv_a0a0j(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
+      return _quotation_createNode_lavczv_a0a0l(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
     }
   };
 
   public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> newLinkDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
     public SNode invoke(SNode newLink) {
-      return _quotation_createNode_lavczv_a0a0l(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
+      return _quotation_createNode_lavczv_a0a0n(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
     }
   };
 
   public final _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> refactorInstancesClosure = new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
     public SNode invoke(SNode oldLink, SNode newLink) {
-      return _quotation_createNode_lavczv_a0a0n(oldLink, newLink);
+      return _quotation_createNode_lavczv_a0a0p(oldLink, newLink);
     }
   };
 
@@ -153,7 +156,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
       return this;
     }
   }
-  private static SNode _quotation_createNode_lavczv_a0a0j(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0a0l(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -169,7 +172,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0a0l(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0a0n(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -185,7 +188,7 @@ public class MoveContainmentLinkUp implements ExtensionFunction.FunctionInstance
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0a0n(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0a0p(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

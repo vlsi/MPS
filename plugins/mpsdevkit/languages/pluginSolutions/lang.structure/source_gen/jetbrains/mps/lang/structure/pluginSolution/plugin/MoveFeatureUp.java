@@ -47,7 +47,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
 
   public MoveNodesDefault moveDefault;
-
+  public String getName() {
+    return "Move Feature";
+  }
   public boolean applicable() {
     if (!(moveDefault.applicable())) {
       return false;
@@ -66,6 +68,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
   public Void apply() {
     return null;
   }
+
 
   private Tuples._2<List<SNode>, MPSProject> arg;
 
@@ -138,7 +141,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
           RefactoringUtil.changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               ListSequence.fromList(placeToMove.invoke()).addElement(newFeature);
-              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0u("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0w("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
               markOldFeature.invoke(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_" + featureKind + "_" + featureName);
@@ -153,7 +156,7 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
   }
 
   private SNode moveStatements(final SNode oldFeature, final SNode newFeature, MigrationScriptBuilder builder, SNode refactorInstancesClosure) {
-    return _quotation_createNode_g4dz8g_a0a22(oldFeature, newFeature, builder.getExecuteMethodModuleParameter(), currentConcept, currentConcept, refactorInstancesClosure);
+    return _quotation_createNode_g4dz8g_a0a42(oldFeature, newFeature, builder.getExecuteMethodModuleParameter(), currentConcept, currentConcept, refactorInstancesClosure);
   }
 
   public static class ExtensionFunction extends BaseOverlappingExtension<Tuples._2<List<SNode>, MPSProject>, Void> {
@@ -197,13 +200,13 @@ public class MoveFeatureUp implements ExtensionFunction.FunctionInstance<Void> {
       return this;
     }
   }
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0u(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a1a0a0m0w(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
     return n1;
   }
-  private static SNode _quotation_createNode_g4dz8g_a0a22(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+  private static SNode _quotation_createNode_g4dz8g_a0a42(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;

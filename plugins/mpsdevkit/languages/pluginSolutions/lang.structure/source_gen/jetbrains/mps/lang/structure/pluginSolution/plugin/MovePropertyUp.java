@@ -35,7 +35,9 @@ import jetbrains.mps.smodel.SReference;
 public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> {
 
   public MoveFeatureUp moveFeatureUp;
-
+  public String getName() {
+    return "Move Property Up";
+  }
   public boolean applicable() {
     if (!(moveFeatureUp.applicable())) {
       return false;
@@ -75,6 +77,7 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
     return null;
   }
 
+
   private Tuples._2<List<SNode>, MPSProject> arg;
 
 
@@ -91,19 +94,19 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
 
   public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> oldPropDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
     public SNode invoke(SNode oldProp) {
-      return _quotation_createNode_vnzymo_a0a0j(SNodeOperations.cast(SNodeOperations.getParent(oldProp), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldProp);
+      return _quotation_createNode_vnzymo_a0a0l(SNodeOperations.cast(SNodeOperations.getParent(oldProp), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldProp);
     }
   };
 
   public final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> newPropDecl = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
     public SNode invoke(SNode newProp) {
-      return _quotation_createNode_vnzymo_a0a0l(SNodeOperations.cast(SNodeOperations.getParent(newProp), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newProp);
+      return _quotation_createNode_vnzymo_a0a0n(SNodeOperations.cast(SNodeOperations.getParent(newProp), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newProp);
     }
   };
 
   public final _FunctionTypes._return_P2_E0<? extends SNode, ? super SNode, ? super SNode> refactorInstancesClosure = new _FunctionTypes._return_P2_E0<SNode, SNode, SNode>() {
     public SNode invoke(SNode oldProp, SNode newProp) {
-      return _quotation_createNode_vnzymo_a0a0n(oldProp, newProp);
+      return _quotation_createNode_vnzymo_a0a0p(oldProp, newProp);
     }
   };
 
@@ -149,7 +152,7 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
       return this;
     }
   }
-  private static SNode _quotation_createNode_vnzymo_a0a0j(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_vnzymo_a0a0l(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -165,7 +168,7 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_vnzymo_a0a0l(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_vnzymo_a0a0n(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -181,7 +184,7 @@ public class MovePropertyUp implements ExtensionFunction.FunctionInstance<Void> 
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_vnzymo_a0a0n(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_vnzymo_a0a0p(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
