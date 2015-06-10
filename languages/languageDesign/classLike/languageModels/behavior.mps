@@ -1273,7 +1273,7 @@
       </node>
       <node concept="A3Dl8" id="2gzehMfifxs" role="3clF45">
         <node concept="3Tqbb2" id="2gzehMfifxt" role="A3Ik2">
-          <ref role="ehGHo" to="tpee:h9ngReX" resolve="ClassifierMember" />
+          <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
         </node>
       </node>
     </node>
@@ -1693,7 +1693,7 @@
       </node>
       <node concept="A3Dl8" id="2gzehMfiknJ" role="3clF45">
         <node concept="3Tqbb2" id="2gzehMfiknK" role="A3Ik2">
-          <ref role="ehGHo" to="tpee:h9ngReX" resolve="ClassifierMember" />
+          <ref role="ehGHo" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
         </node>
       </node>
     </node>
