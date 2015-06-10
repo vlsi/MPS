@@ -114,6 +114,9 @@ public class IdeaEnvironment extends EnvironmentBase {
   @Override
   public Project createEmptyProject() {
     checkInitialized();
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Creating an empty project");
+    }
     File dummyProjectFile = createDummyProjectFile();
     Project dummyProject = openProject(dummyProjectFile);
     return dummyProject;

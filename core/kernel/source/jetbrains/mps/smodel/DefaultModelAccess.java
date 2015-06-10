@@ -20,10 +20,17 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class DefaultModelAccess extends ModelAccess {
+  /**
+   * write action is the same as command; storing a map from command listener clients to the actual write action listeners
+   */
+  private final Map<CommandListener, CommandWriteActionAdapter> myAdaptersMap = new HashMap<CommandListener, CommandWriteActionAdapter>();
 
   public DefaultModelAccess() {
   }
@@ -105,7 +112,7 @@ public class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void runCommandInEDT(@NotNull Runnable r, @NotNull Project p) {
-    throw new UnsupportedOperationException();
+    runWriteInEDT(r);
   }
 
   @Override
@@ -296,13 +303,17 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void addCommandListener(CommandListener l) {
-    LOG.warn("Adding command listener to DefaultModelAccess: can't run commands and listen to them");
+  public void addCommandListener(@NotNull CommandListener listener) {
+    LOG.warn("Adding command listener to DefaultModelAccess: a command is the same as a write action");
+    CommandWriteActionAdapter adapter = new CommandWriteActionAdapter(listener);
+    myAdaptersMap.put(listener, adapter);
+    addWriteActionListener(adapter);
   }
 
   @Override
-  public void removeCommandListener(CommandListener l) {
-    LOG.warn("Removing command listener from DefaultModelAccess: can't run commands and listen to them");
+  public void removeCommandListener(@NotNull CommandListener listener) {
+    @NotNull CommandWriteActionAdapter adapter = myAdaptersMap.remove(listener);
+    removeWriteActionListener(adapter);
   }
 
   @Override

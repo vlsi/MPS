@@ -740,6 +740,12 @@
             <ref role="37wK5l" to="79ha:6LlhC3WLEQ3" resolve="checkInitialized" />
           </node>
         </node>
+        <node concept="34ab3g" id="kMLKV374Al" role="3cqZAp">
+          <property role="35gtTG" value="info" />
+          <node concept="Xl_RD" id="kMLKV374An" role="34bqiv">
+            <property role="Xl_RC" value="Creating an empty project" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="1OyTUm35Wcw" role="3cqZAp">
           <node concept="3cpWsn" id="1OyTUm35Wcx" role="3cpWs9">
             <property role="TrG5h" value="dummyProjectFile" />

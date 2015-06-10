@@ -30,6 +30,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.compile.JavaCompilerTest.class,
+    jetbrains.mps.environment.IdeaEnvironmentTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,
@@ -58,6 +59,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.smodel.ModelListenerTest.class,
     jetbrains.mps.smodel.ModelUndoTest.class,
     jetbrains.mps.classloading.ProjectMPSDependenciesTest.class,
+    jetbrains.mps.environment.MpsEnvironmentTest.class,
     jetbrains.mps.classloading.ProjectMPSFacetCorrectnessTest.class
 })
 public class GlobalTestSuite {
