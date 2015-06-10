@@ -21,6 +21,33 @@ public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
     Iterable<SModel> models = m.getModels();
     Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {
+        return SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        JavaDocConverter.convertClassifierTags(it);
+      }
+    });
+    Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel model) {
+        return SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        JavaDocConverter.convertMethodTags(it);
+      }
+    });
+    Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel model) {
+        return SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dc44bf2L, "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"));
+      }
+    }).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        JavaDocConverter.convertFieldTags(it);
+      }
+    });
+    Sequence.fromIterable(models).ofType(SModel.class).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel model) {
         return SModelOperations.nodes(model, MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"));
       }
     }).visitAll(new IVisitor<SNode>() {
