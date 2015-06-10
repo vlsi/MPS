@@ -1209,36 +1209,18 @@
             <ref role="3cqZAo" node="2jln2Vr4vxV" resolve="myLibContributors" />
           </node>
         </node>
-        <node concept="3clFbH" id="2jln2Vr4GhV" role="3cqZAp" />
-        <node concept="2Gpval" id="6rx4kZDl$Ep" role="3cqZAp">
-          <node concept="2OqwBi" id="yBZlauMNsn" role="2GsD0m">
-            <node concept="37vLTw" id="yBZlauMNh1" role="2Oq$k0">
+        <node concept="3clFbH" id="6rx4kZDl$DY" role="3cqZAp" />
+        <node concept="3clFbF" id="o7F7WgIK0q" role="3cqZAp">
+          <node concept="2OqwBi" id="o7F7WgIKbC" role="3clFbG">
+            <node concept="37vLTw" id="o7F7WgIK0o" role="2Oq$k0">
               <ref role="3cqZAo" node="1w0tHxUYPGZ" resolve="myContainer" />
             </node>
-            <node concept="liA8E" id="yBZlauMNSK" role="2OqNvi">
-              <ref role="37wK5l" to="79ha:yBZlauH8$N" resolve="getProjects" />
-            </node>
-          </node>
-          <node concept="2GrKxI" id="6rx4kZDl$Er" role="2Gsz3X">
-            <property role="TrG5h" value="project" />
-          </node>
-          <node concept="3clFbS" id="6rx4kZDl$Ev" role="2LFqv$">
-            <node concept="3clFbF" id="6rx4kZDlIaX" role="3cqZAp">
-              <node concept="1rXfSq" id="6rx4kZDlIaW" role="3clFbG">
-                <ref role="37wK5l" node="6rx4kZDk5DX" resolve="disposeProject" />
-                <node concept="2OqwBi" id="yBZlauI1v3" role="37wK5m">
-                  <node concept="2GrUjf" id="6rx4kZDlIvL" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="6rx4kZDl$Er" resolve="project" />
-                  </node>
-                  <node concept="liA8E" id="yBZlauI20H" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
-                  </node>
-                </node>
-              </node>
+            <node concept="liA8E" id="o7F7WgIKij" role="2OqNvi">
+              <ref role="37wK5l" to="79ha:yBZlauH8zW" resolve="dispose" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="6rx4kZDl$DY" role="3cqZAp" />
+        <node concept="3clFbH" id="o7F7WgIKsU" role="3cqZAp" />
         <node concept="SfApY" id="_$UaLIBuw" role="3cqZAp">
           <node concept="3clFbS" id="_$UaLIBux" role="SfCbr">
             <node concept="3clFbF" id="4_TMdeLkOz5" role="3cqZAp">

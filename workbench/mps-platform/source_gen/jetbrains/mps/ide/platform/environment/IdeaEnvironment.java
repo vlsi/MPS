@@ -25,7 +25,6 @@ import jetbrains.mps.project.Project;
 import com.intellij.ui.GuiUtils;
 import com.intellij.ide.IdeEventQueue;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStream;
@@ -187,9 +186,7 @@ public class IdeaEnvironment implements Environment {
       LibraryInitializer.getInstance().removeContributor(contrib);
     }
 
-    for (Project project : SetSequence.fromSet(myContainer.getProjects())) {
-      disposeProject(project.getProjectFile());
-    }
+    myContainer.dispose();
 
     try {
       GuiUtils.runOrInvokeAndWait(new Runnable() {
