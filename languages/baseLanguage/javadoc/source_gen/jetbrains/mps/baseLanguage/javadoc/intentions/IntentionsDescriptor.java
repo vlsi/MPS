@@ -20,5 +20,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new AddThrowBlockDocTag_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddVersionBlockTagDoc_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new FoldHTMLElement_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new OrganizeTags_Intention());
   }
 }

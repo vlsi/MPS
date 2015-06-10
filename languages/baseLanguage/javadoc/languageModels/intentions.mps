@@ -26,6 +26,8 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <import index="serg" ref="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)" />
+    <import index="bzl4" ref="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -107,7 +109,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -2376,6 +2378,43 @@
                   <ref role="cht4Q" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="6sifs2ek4Ep">
+    <property role="TrG5h" value="OrganizeTags" />
+    <property role="2ZfUl0" value="true" />
+    <ref role="2ZfgGC" to="m373:4CW56HZFB3j" resolve="BaseDocComment" />
+    <node concept="2Sbjvc" id="6sifs2ek4Eq" role="2ZfgGD">
+      <node concept="3clFbS" id="6sifs2ek4Er" role="2VODD2">
+        <node concept="3clFbF" id="6sifs2em8YL" role="3cqZAp">
+          <node concept="2YIFZM" id="6sifs2embGl" role="3clFbG">
+            <ref role="37wK5l" to="serg:6sifs2elSJW" resolve="organizeTags" />
+            <ref role="1Pybhc" to="serg:6sifs2elSJd" resolve="DocTagHelper" />
+            <node concept="2Sf5sV" id="6sifs2embGJ" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2S6ZIM" id="6sifs2ek4Es" role="2ZfVej">
+      <node concept="3clFbS" id="6sifs2ek4Et" role="2VODD2">
+        <node concept="3clFbF" id="6sifs2ek4R2" role="3cqZAp">
+          <node concept="Xl_RD" id="6sifs2ek4R1" role="3clFbG">
+            <property role="Xl_RC" value="Organize Tags" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="6sifs2ek5jB" role="2ZfVeh">
+      <node concept="3clFbS" id="6sifs2ek5jC" role="2VODD2">
+        <node concept="3clFbF" id="6sifs2ek5qY" role="3cqZAp">
+          <node concept="2OqwBi" id="6sifs2ek5vO" role="3clFbG">
+            <node concept="2Sf5sV" id="6sifs2ek5qX" role="2Oq$k0" />
+            <node concept="2qgKlT" id="6sifs2ek8rj" role="2OqNvi">
+              <ref role="37wK5l" to="bzl4:4iGwz$GSfd_" resolve="hasTags" />
             </node>
           </node>
         </node>
