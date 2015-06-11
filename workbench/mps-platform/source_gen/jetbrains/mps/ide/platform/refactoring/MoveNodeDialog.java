@@ -26,16 +26,16 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   }
   @Override
   protected void doRefactoringAction() {
-    final Object selectedObject = myChooser.getSelectedObject();
-    if (!(selectedObject instanceof SNode)) {
+    final NodeLocation selectedObject = myChooser.getSelectedObject();
+    if (!(selectedObject instanceof NodeLocation.NodeLocationChild)) {
       JOptionPane.showMessageDialog(myChooser.getComponent(), "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
     final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
-          mySelectedObject = ((SNode) selectedObject);
+        if (myNodeFilter == null || myNodeFilter.checkForObject(((NodeLocation.NodeLocationChild) selectedObject).getNode(), myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
+          mySelectedObject = ((NodeLocation.NodeLocationChild) selectedObject).getNode();
           doRefactoring.value = true;
         }
       }

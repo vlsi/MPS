@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NonNls;
 public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   private SModel myModel;
   private MoveNodesDialog.ModelFilter myFilter;
-  protected Object mySelectedObject;
+  protected NodeLocation mySelectedObject;
   public MoveNodesDialog(@NotNull Project project, SModel model) {
     super(project);
     myModel = model;
@@ -22,7 +22,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   }
   @Override
   protected void doRefactoringAction() {
-    Object selectedObject = myChooser.getSelectedObject();
+    NodeLocation selectedObject = myChooser.getSelectedObject();
     if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getComponent())) {
       mySelectedObject = selectedObject;
       super.doRefactoringAction();
@@ -50,7 +50,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     dialog.show();
     return dialog.mySelectedObject;
   }
-  public static Object getSelectedObject(@NotNull Project project, SModel model, MoveNodesDialog.ModelFilter filter) {
+  public static NodeLocation getSelectedObject(@NotNull Project project, SModel model, MoveNodesDialog.ModelFilter filter) {
     MoveNodesDialog dialog = new MoveNodesDialog(project, model);
     dialog.setFilter(filter);
     dialog.show();
@@ -62,8 +62,8 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     public ModelFilter(String errorMessage) {
       super(errorMessage);
     }
-    public abstract boolean check(Object selectedObject, SModel model);
-    private boolean checkForObject(Object selectedObject, SModel model, JComponent component) {
+    public abstract boolean check(NodeLocation selectedObject, SModel model);
+    private boolean checkForObject(NodeLocation selectedObject, SModel model, JComponent component) {
       if (!(check(selectedObject, model))) {
         showError("Nodes can't be moved", component);
         return false;

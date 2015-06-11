@@ -7086,8 +7086,8 @@
                 <node concept="YeOm9" id="1F5g4zQpwYp" role="2ShVmc">
                   <node concept="1Y3b0j" id="1F5g4zQpwYq" role="YeSDq">
                     <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" node="1F5g4zQiWJd" resolve="MoveFeatureUp.FeatureSpecific" />
                     <ref role="37wK5l" to="e2lb:~Object.&lt;init&gt;()" resolve="Object" />
+                    <ref role="1Y3XeK" node="1F5g4zQiWJd" resolve="MoveFeatureUp.FeatureSpecific" />
                     <node concept="3clFb_" id="1F5g4zQpwYr" role="jymVt">
                       <property role="1EzhhJ" value="false" />
                       <property role="2aFKle" value="false" />
@@ -7505,10 +7505,6 @@
     <node concept="30mAcN" id="5t_qJH4L3Ic" role="lGtFl">
       <ref role="30mx6e" to="90d:7z8Vrj4Zy7l" resolve="ExtensionOverlapping" />
     </node>
-    <node concept="1QWunD" id="5t_qJH4Loey" role="jymVt">
-      <property role="TrG5h" value="moveDefault" />
-      <ref role="1QX8YD" to="lfzw:14xGDffeB31" resolve="MoveNodesDefault_Old" />
-    </node>
     <node concept="2tJIrI" id="5zDW7NrN6Pk" role="jymVt" />
     <node concept="q3mfD" id="2gzehMfgckJ" role="jymVt">
       <property role="TrG5h" value="applicable" />
@@ -7525,12 +7521,16 @@
             </node>
           </node>
           <node concept="3fqX7Q" id="3ZahVvp3pyC" role="3clFbw">
-            <node concept="2OqwBi" id="3ZahVvp3pyE" role="3fr31v">
-              <node concept="N33Hf" id="3ZahVvp3pyF" role="2Oq$k0">
-                <ref role="N33Y$" node="5t_qJH4Loey" resolve="moveDefault" />
-              </node>
-              <node concept="liA8E" id="3ZahVvp3pyG" role="2OqNvi">
-                <ref role="37wK5l" to="lfzw:2gzehMfgdCf" resolve="applicable" />
+            <node concept="2YIFZM" id="1F5g4zQwVIP" role="3fr31v">
+              <ref role="37wK5l" to="lfzw:1F5g4zQwUGb" resolve="canBeMoved" />
+              <ref role="1Pybhc" to="lfzw:1F5g4zQqVSR" resolve="MoveNodesDefault" />
+              <node concept="1LFfDK" id="1F5g4zQwVWk" role="37wK5m">
+                <node concept="3cmrfG" id="1F5g4zQwW07" role="1LF_Uc">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="37vLTw" id="1F5g4zQwVL3" role="1LFl5Q">
+                  <ref role="3cqZAo" node="5zDW7Nr$pTO" resolve="arg" />
+                </node>
               </node>
             </node>
           </node>

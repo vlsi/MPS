@@ -7,17 +7,21 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.structure.ExtensionFunction;
-import jetbrains.mps.smodel.structure.ExtensionFunctionPoint;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.structure.ExtensionPoint;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MoveNodes_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,11 +36,10 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    ExtensionFunction.FunctionInstance<Void> instance = new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").find(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
-    MoveNodes_Action.this.setEnabledState(event.getPresentation(), instance != null);
-    if (instance != null) {
-      event.getPresentation().setText(instance.getName());
-    }
+    MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
+    event.getPresentation().setText(refactoring.getName());
+    event.getPresentation().setEnabled(refactoring.isApplicable(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove"))));
+
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -46,9 +49,9 @@ public class MoveNodes_Action extends BaseAction {
     {
       List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
       if (nodes == null) {
-        MapSequence.fromMap(_params).put("target", null);
+        MapSequence.fromMap(_params).put("nodesToMove", null);
       } else {
-        MapSequence.fromMap(_params).put("target", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+        MapSequence.fromMap(_params).put("nodesToMove", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
       }
       if (nodes == null) {
         return false;
@@ -66,6 +69,33 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new ExtensionFunctionPoint<Tuples._2<List<SNode>, MPSProject>, Void>("jetbrains.mps.ide.platform.MoveNodesAction").find(MultiTuple.<List<SNode>,MPSProject>from(((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project")))).apply();
+    MoveNodes_Action.this.getRefactoring(_params).apply(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
   }
+  private MoveNodesRefactoring getRefactoring(final Map<String, Object> _params) {
+    Iterable<MoveNodesRefactoring> specialRefactorings = new ExtensionPoint<MoveNodesRefactoring>("jetbrains.mps.ide.platform.MoveNodes").getObjects();
+    Iterable<MoveNodesRefactoring> applicableRefactorings = Sequence.fromIterable(specialRefactorings).where(new IWhereFilter<MoveNodesRefactoring>() {
+      public boolean accept(MoveNodesRefactoring it) {
+        return it.isApplicable(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")));
+      }
+    });
+    if (Sequence.fromIterable(applicableRefactorings).isEmpty()) {
+      return new MoveNodesDefault();
+    } else {
+      if (Sequence.fromIterable(applicableRefactorings).count() > 1) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("More than one MoveNodes refactoring applicable: " + Sequence.fromIterable(applicableRefactorings).select(new ISelector<MoveNodesRefactoring, String>() {
+            public String select(MoveNodesRefactoring it) {
+              return "\"" + it.getName() + "\"";
+            }
+          }).foldLeft("", new ILeftCombinator<String, String>() {
+            public String combine(String s, String it) {
+              return s + ", " + it;
+            }
+          }));
+        }
+      }
+      return Sequence.fromIterable(applicableRefactorings).first();
+    }
+  }
+  protected static Logger LOG = LogManager.getLogger(MoveNodes_Action.class);
 }
