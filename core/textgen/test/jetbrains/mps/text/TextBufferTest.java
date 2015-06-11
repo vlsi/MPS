@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 /**
  * @author Artem Tikhomirov
  */
@@ -121,6 +123,56 @@ public class TextBufferTest {
     String bottom = "DEF" + myLineSep + "GHI" + myLineSep;
     Assert.assertEquals(top + bottom, t.getText().toString());
     check(t, mark, "GHI" + myLineSep, 3, 0, 4, 0);
+  }
+
+  @Test
+  public void testTwoZeroLengthMarksInTheSameLocation() {
+    TextBuffer tb = createTextBuffer();
+    tb.area().append("ABC").newLine();
+    final TextMark m1 = tb.pushMark().popMark();
+    final TextMark m2 = tb.pushMark().popMark();
+    tb.area().append("GHI").newLine();
+    tb.pushTextArea(new BasicToken(2));
+    tb.area().append("EF").newLine();
+    tb.popTextArea();
+    tb.area().append("JKL");
+    tb.pushTextArea(new BasicToken(1));
+    tb.area().append("D");
+    tb.popTextArea();
+    //
+    final BufferLayout l = tb.newLayout();
+    l.replace(m1, new BasicToken(1));
+    l.replace(m2, new BasicToken(2));
+    BufferSnapshot t = tb.snapshot(l);
+    Assert.assertEquals("ABC" + myLineSep + "DEF" + myLineSep + "GHI" + myLineSep + "JKL", t.getText().toString());
+    check(t, m1, "D", 1, 0, 1, 1);
+    check(t, m2, "EF" + myLineSep, 1, 1, 2, 0);
+  }
+
+  @Test
+  public void testSameChunkIntoFewMarks() {
+    TextBuffer tb = createTextBuffer();
+    final String[] lines = {"ABC", "DEF", "GHI"};
+    final ArrayList<TextMark> marks = new ArrayList<TextMark>();
+    for (String line : lines) {
+      marks.add(tb.pushMark().popMark());
+      tb.area().append(line).newLine();
+    }
+    tb.pushTextArea(new BasicToken("comment"));
+    tb.area().append("// XXX").newLine();
+    tb.popTextArea();
+    //
+    final BufferLayout l = tb.newLayout();
+    for (TextMark m : marks) {
+      l.replace(m, new BasicToken("comment"));
+    }
+    BufferSnapshot t = tb.snapshot(l);
+    StringBuilder expected = new StringBuilder();
+    for (String line : lines) {
+      expected.append("// XXX").append(myLineSep);
+      expected.append(line).append(myLineSep);
+    }
+    Assert.assertEquals(expected.toString(), t.getText().toString());
   }
 
   private static void check(BufferSnapshot t, TextMark mark, String expectedText, int startLine, int startCol, int endLine, int endCol) {

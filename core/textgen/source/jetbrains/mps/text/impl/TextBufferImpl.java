@@ -25,11 +25,12 @@ import jetbrains.mps.text.TextAreaToken;
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.TextMark;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -48,6 +49,11 @@ public class TextBufferImpl implements TextBuffer {
   // preserve order in which chunks were created
   private final Map<TextAreaToken, TextArea> myChunks = new LinkedHashMap<TextAreaToken, TextArea>();
   private final Deque<Marker> myMarkerStack = new ArrayDeque<Marker>();
+  /*
+   * Markers are partially ordered as it's impossible to add a marker in front of another one.
+   * However, with re-ordering of text areas, markers added later may get positioned in front of their predecessors.
+   * Within single text area, though, ordering is kept.
+   */
   private final List<Marker> myMarkers = new ArrayList<Marker>();
   private final TextAreaFactory myChunkFactory;
 
@@ -67,21 +73,23 @@ public class TextBufferImpl implements TextBuffer {
   }
 
   @Override
-  public void pushTextArea(@NotNull TextAreaToken areaIdentity) {
+  public TextBuffer pushTextArea(@NotNull TextAreaToken areaIdentity) {
     TextArea chunk = myChunks.get(areaIdentity);
     if (chunk == null) {
       chunk = myChunkFactory.create();
       myChunks.put(areaIdentity, chunk);
     }
     myChunkStack.push(chunk);
+    return this;
   }
 
   @Override
-  public void popTextArea() {
+  public TextBuffer popTextArea() {
     if (myChunkStack.size() == 1) {
       throw new IllegalStateException("Can't remove top-most text chunk");
     }
     myChunkStack.pop();
+    return this;
   }
 
   @Override
@@ -109,21 +117,33 @@ public class TextBufferImpl implements TextBuffer {
   @Override
   public BufferSnapshot snapshot(@NotNull BufferLayout layout) {
     Layout realLayout = (Layout) layout;
+    // build actual text of all chunks
     LinkedHashMap<TextAreaToken, StringBuilder> textMap = new LinkedHashMap<TextAreaToken, StringBuilder>();
+    // we could have kept token as attribute of TextArea, but would like to keep TextAre as simple as possible
     Map<TextArea, TextAreaToken> chunk2token = new HashMap<TextArea, TextAreaToken>();
+    // Marker is immutable location in text area, while we need a location we could shift as needed for actual snapshot
+    LinkedHashMap<TextArea, Deque<LiveLocation>> actualMarkers = new LinkedHashMap<TextArea, Deque<LiveLocation>>();
+    // to find actual position from marker kept by client fast (could walk LiveLocation chain, but why not map?)
+    LinkedHashMap<TextMark, LiveLocation> marker2liveLocation = new LinkedHashMap<TextMark, LiveLocation>();
     // myChunks is in the order chunks were created, keep the order in case not all chunks are explicitly placed.
     for (Entry<TextAreaToken, TextArea> e : myChunks.entrySet()) {
       final StringBuilder sb = new StringBuilder(myChunkFactory.value(e.getValue()));
       textMap.put(e.getKey(), sb);
       chunk2token.put(e.getValue(), e.getKey());
+      actualMarkers.put(e.getValue(), new ArrayDeque<LiveLocation>());
+    }
+    for (Marker m : myMarkers) {
+      final Deque<LiveLocation> ll = actualMarkers.get(m.myTextArea);
+      LiveLocation liveLoc = new LiveLocation(m, ll.peekLast());
+      ll.addLast(liveLoc);
+      marker2liveLocation.put(m, liveLoc);
     }
     Set<TextAreaToken> consumedChunks = new HashSet<TextAreaToken>();
     for (Entry<TextMark, TextAreaToken> e : realLayout.mySubstitutions.entrySet()) {
-      Marker m = (Marker) e.getKey();
-      StringBuilder target = textMap.get(chunk2token.get(m.myTextArea));
+      LiveLocation loc = marker2liveLocation.get(e.getKey());
+      StringBuilder target = textMap.get(chunk2token.get(loc.getTextArea()));
       StringBuilder replacement = textMap.get(e.getValue());
-      target.replace(m.myStartOffset, m.myStartOffset + m.myLength, replacement.toString());
-      m.myLength = replacement.length();
+      loc.replaceText(target, replacement);
       consumedChunks.add(e.getValue());
     }
     // chunks we've substituted into another are deemed processed/consumed and shall not show up in the output on their own
@@ -134,8 +154,7 @@ public class TextBufferImpl implements TextBuffer {
     for (StringBuilder chunkText : textMap.values()) {
       result.append(chunkText);
     }
-    final TextSnapshot s = new TextSnapshot(result, myChunkFactory.getLineSeparator());
-    s.addMarks(myMarkers);
+    final TextSnapshot s = new TextSnapshot(result, marker2liveLocation, myChunkFactory.getLineSeparator());
     int chunkOffset = 0;
     for (Entry<TextAreaToken, StringBuilder> e : textMap.entrySet()) {
       s.setOffset(myChunks.get(e.getKey()), chunkOffset);
@@ -145,8 +164,13 @@ public class TextBufferImpl implements TextBuffer {
     return s;
   }
 
+  /**
+   * Position in the TextArea, immutable (once mark is delivered to user from #popMark())
+   */
+  // Would be great to have myLength final, but this would take another round of refactoring of myMarkerStack
+  @Immutable
   private static class Marker implements TextMark {
-    public final TextArea myTextArea;
+    /*package*/ final TextArea myTextArea;
     /*package*/ final int myStartOffset;
     /*package*/ int myLength = 0;
 
@@ -161,15 +185,65 @@ public class TextBufferImpl implements TextBuffer {
     }
   }
 
+  /**
+   * TextMark we need to update during snapshot build.
+   * There seems to be no reason to keep it TextMark, other than indicate it's just another presentation of TextMark, within snapshot now.
+   */
+  private static class LiveLocation implements TextMark {
+    private final Marker myAnchor;
+    private int myStart;
+    private int myLength;
+    private LiveLocation myNextMark;
+
+    public LiveLocation(@NotNull Marker anchor, @Nullable LiveLocation previous) {
+      myAnchor = anchor;
+      myStart = anchor.myStartOffset;
+      myLength = anchor.myLength;
+      if (previous != null) {
+        previous.myNextMark = this;
+      }
+    }
+
+    public int getStart() {
+      return myStart;
+    }
+
+    public int getLength() {
+      return myLength;
+    }
+
+    public TextArea getTextArea() {
+      return myAnchor.myTextArea;
+    }
+
+    /*package*/ void replaceText(StringBuilder target, StringBuilder replacement) {
+      target.replace(myStart, myStart + myLength, replacement.toString());
+      final int oldLength = myLength;
+      myLength = replacement.length();
+      if (myNextMark != null) {
+        myNextMark.shift(myLength - oldLength);
+      }
+    }
+
+    // augment start offset of this LiveLocation AND ALL SUBSEQUENT MARKERS by offset
+    private void shift(int offset) {
+      myStart += offset;
+      if (myNextMark != null) {
+        myNextMark.shift(offset);
+      }
+    }
+  }
+
   private static class TextSnapshot implements BufferSnapshot {
     private final CharSequence myText;
-    private final List<Marker> myMarkers = new ArrayList<Marker>();
     private final int[] myLineBreaks; // index where a line starts, sorted due to initialization algorithm
     private Map<TextArea, Integer> myOffsets = new HashMap<TextArea, Integer>(8);
+    private Map<TextMark,LiveLocation> myMarks;
 
 
-    public TextSnapshot(CharSequence seq, String lineSep) {
+    public TextSnapshot(CharSequence seq, Map<TextMark,LiveLocation> marks, String lineSep) {
       myText = seq;
+      myMarks = marks;
       ArrayList<Integer> lineBreaks = new ArrayList<Integer>();
       int i = 0;
       final String s = seq.toString();
@@ -188,10 +262,6 @@ public class TextBufferImpl implements TextBuffer {
       }
     }
 
-    /*package*/ void addMarks(Collection<Marker> textMarks) {
-      myMarkers.addAll(textMarks);
-    }
-
     /*package*/ void setOffset(TextArea ta, int offset) {
       myOffsets.put(ta, offset);
     }
@@ -199,9 +269,9 @@ public class TextBufferImpl implements TextBuffer {
     @NotNull
     @Override
     public TextPosition getStart(@NotNull TextMark mark) {
-      final Marker realMark = realMark(mark);
-      int areaOffset = myOffsets.get(realMark.myTextArea);
-      final int markStart = areaOffset + realMark.myStartOffset;
+      final LiveLocation liveLoc = myMarks.get(mark);
+      int areaOffset = myOffsets.get(liveLoc.getTextArea());
+      final int markStart = areaOffset + liveLoc.getStart();
       int line = Arrays.binarySearch(myLineBreaks, markStart);
       if (line >= 0) {
         // right at the beginning of a line
@@ -215,9 +285,9 @@ public class TextBufferImpl implements TextBuffer {
     @NotNull
     @Override
     public TextPosition getEnd(@NotNull TextMark mark) {
-      final Marker realMark = realMark(mark);
-      int areaOffset = myOffsets.get(realMark.myTextArea);
-      final int markEnd = areaOffset + realMark.myStartOffset + realMark.myLength;
+      final LiveLocation liveLoc = myMarks.get(mark);
+      int areaOffset = myOffsets.get(liveLoc.getTextArea());
+      final int markEnd = areaOffset + liveLoc.getStart() + liveLoc.getLength();
       int line = Arrays.binarySearch(myLineBreaks, markEnd);
       if (line >= 0) {
         // right at the beginning of a line
@@ -231,21 +301,16 @@ public class TextBufferImpl implements TextBuffer {
     @NotNull
     @Override
     public CharSequence getText(@NotNull TextMark mark) {
-      final Marker realMark = realMark(mark);
-      int areaOffset = myOffsets.get(realMark.myTextArea);
-      final int start = areaOffset + realMark.myStartOffset;
-      return myText.subSequence(start, start + realMark.myLength);
+      final LiveLocation liveLoc = myMarks.get(mark);
+      int areaOffset = myOffsets.get(liveLoc.getTextArea());
+      final int start = areaOffset + liveLoc.getStart();
+      return myText.subSequence(start, start + liveLoc.getLength());
     }
 
     @NotNull
     @Override
     public CharSequence getText() {
       return myText;
-    }
-
-    private Marker realMark(TextMark mark) {
-      final int i = myMarkers.indexOf(mark);
-      return  myMarkers.get(i);
     }
   }
 

@@ -46,9 +46,15 @@ public interface TextBuffer {
    * Switch active area.
    * FIXME describe whether nested push with the same token is allowed (present impl does allow, is it smth we'd like to use?)
    * @param areaIdentity identifies text chunk to become active for output
+   * @return <code>this</code> for convenience
    */
-  void pushTextArea(@NotNull TextAreaToken areaIdentity);
-  void popTextArea();
+  TextBuffer pushTextArea(@NotNull TextAreaToken areaIdentity);
+
+  /**
+   * Revert to previous active area
+   * @return <code>this</code> for convenience
+   */
+  TextBuffer popTextArea();
 
   /**
    * Indicate start location of a marker, which is retrieved with {@link #popMark()}
