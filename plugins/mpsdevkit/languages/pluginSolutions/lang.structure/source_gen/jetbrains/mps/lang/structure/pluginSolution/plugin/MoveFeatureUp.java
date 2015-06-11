@@ -7,9 +7,10 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -18,7 +19,6 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -61,9 +61,16 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
     }
   }
 
-  public void execute(final MPSProject project, final SNode feature) {
+  public void apply(final MPSProject project, List<SNode> nodesToMove) {
     final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
     final String featureKind = this.getKind();
+
+    if (ListSequence.fromList(nodesToMove).count() > 1) {
+      moveNodesUI.showAlertCannotMoveMultiple(project, featureKind);
+      return;
+    }
+
+    final SNode feature = SNodeOperations.cast(ListSequence.fromList(nodesToMove).first(), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
     final SNode targetConcept = moveNodesUI.askTargetConcept(project, feature, featureKind);
 
     if (targetConcept == null) {
@@ -111,7 +118,7 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
           changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
-              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a01a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a41a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);
@@ -150,7 +157,7 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
   }
 
 
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a01a31(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a41a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));

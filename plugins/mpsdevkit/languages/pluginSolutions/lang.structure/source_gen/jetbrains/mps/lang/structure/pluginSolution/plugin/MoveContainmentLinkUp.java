@@ -7,8 +7,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,13 +32,10 @@ public class MoveContainmentLinkUp extends MoveFeatureUp {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(target).count() == 1 && SNodeOperations.hasRole(ListSequence.fromList(target).first(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(ListSequence.fromList(target).first(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
+        result.value = SNodeOperations.hasRole(ListSequence.fromList(target).first(), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration")) && SPropertyOperations.hasValue(SNodeOperations.cast(ListSequence.fromList(target).first(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference");
       }
     });
     return result.value;
-  }
-  public void apply(MPSProject project, List<SNode> target) {
-    execute(project, SNodeOperations.cast(ListSequence.fromList(target).first(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
   }
 
   public String getKind() {
@@ -69,13 +66,13 @@ public class MoveContainmentLinkUp extends MoveFeatureUp {
     }
   }
   public MoveFeatureUp.FeatureSpecificMigrations migrations(SNode oldLink, SNode newLink) {
-    SNode oldLinkVariable = _quotation_createNode_lavczv_a0a0i(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
-    SNode newLinkVariable = _quotation_createNode_lavczv_a0b0i(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
-    SNode refactorClosure = _quotation_createNode_lavczv_a0c0i(oldLinkVariable, newLinkVariable);
+    SNode oldLinkVariable = _quotation_createNode_lavczv_a0a0h(SNodeOperations.cast(SNodeOperations.getParent(oldLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), oldLink);
+    SNode newLinkVariable = _quotation_createNode_lavczv_a0b0h(SNodeOperations.cast(SNodeOperations.getParent(newLink), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), newLink);
+    SNode refactorClosure = _quotation_createNode_lavczv_a0c0h(oldLinkVariable, newLinkVariable);
     return new MoveFeatureUp.FeatureSpecificMigrations(oldLinkVariable, newLinkVariable, refactorClosure);
   }
 
-  private static SNode _quotation_createNode_lavczv_a0a0i(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0a0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -91,7 +88,7 @@ public class MoveContainmentLinkUp extends MoveFeatureUp {
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0b0i(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0b0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -107,7 +104,7 @@ public class MoveContainmentLinkUp extends MoveFeatureUp {
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_lavczv_a0c0i(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lavczv_a0c0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
