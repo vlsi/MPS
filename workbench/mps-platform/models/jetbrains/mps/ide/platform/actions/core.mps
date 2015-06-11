@@ -1133,75 +1133,89 @@
     </node>
     <node concept="tkhdA" id="2W$k3RWu0dk" role="tmbBb">
       <node concept="3clFbS" id="2W$k3RWu0dl" role="2VODD2">
-        <node concept="3cpWs8" id="1F5g4zQxlXA" role="3cqZAp">
-          <node concept="3cpWsn" id="1F5g4zQxlXB" role="3cpWs9">
-            <property role="TrG5h" value="refactoring" />
-            <node concept="3uibUv" id="1F5g4zQxlX$" role="1tU5fm">
-              <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
-            </node>
-            <node concept="2OqwBi" id="1F5g4zQxlXC" role="33vP2m">
-              <node concept="2WthIp" id="1F5g4zQxlXD" role="2Oq$k0" />
-              <node concept="2XshWL" id="1F5g4zQxlXE" role="2OqNvi">
-                <ref role="2WH_rO" node="1F5g4zQxiY7" resolve="getRefactoring" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="1F5g4zQxm6q" role="3cqZAp">
-          <node concept="2OqwBi" id="1F5g4zQxm6r" role="3clFbG">
-            <node concept="2OqwBi" id="1F5g4zQxm6s" role="2Oq$k0">
-              <node concept="tl45R" id="1F5g4zQxm6t" role="2Oq$k0" />
-              <node concept="liA8E" id="1F5g4zQxm6u" role="2OqNvi">
-                <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-              </node>
-            </node>
-            <node concept="liA8E" id="1F5g4zQxm6v" role="2OqNvi">
-              <ref role="37wK5l" to="nx1:~Presentation.setText(java.lang.String):void" resolve="setText" />
-              <node concept="2OqwBi" id="1F5g4zQxm6w" role="37wK5m">
-                <node concept="37vLTw" id="1F5g4zQxm6x" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1F5g4zQxlXB" resolve="refactoring" />
+        <node concept="3clFbJ" id="6gEjUfBq$aW" role="3cqZAp">
+          <node concept="3clFbS" id="6gEjUfBq$aY" role="3clFbx">
+            <node concept="3cpWs8" id="1F5g4zQxlXA" role="3cqZAp">
+              <node concept="3cpWsn" id="1F5g4zQxlXB" role="3cpWs9">
+                <property role="TrG5h" value="refactoring" />
+                <node concept="3uibUv" id="1F5g4zQxlX$" role="1tU5fm">
+                  <ref role="3uigEE" node="1F5g4zQqSPt" resolve="MoveNodesRefactoring" />
                 </node>
-                <node concept="liA8E" id="1F5g4zQxm6y" role="2OqNvi">
-                  <ref role="37wK5l" node="1F5g4zQxi0e" resolve="getName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2W$k3RWuy9$" role="3cqZAp">
-          <node concept="2OqwBi" id="2W$k3RWuyr0" role="3clFbG">
-            <node concept="2OqwBi" id="2W$k3RWuycU" role="2Oq$k0">
-              <node concept="tl45R" id="2W$k3RWuy9z" role="2Oq$k0" />
-              <node concept="liA8E" id="2W$k3RWuyq7" role="2OqNvi">
-                <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
-              </node>
-            </node>
-            <node concept="liA8E" id="2W$k3RWuyvZ" role="2OqNvi">
-              <ref role="37wK5l" to="nx1:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
-              <node concept="2OqwBi" id="2W$k3RWuyyt" role="37wK5m">
-                <node concept="37vLTw" id="1F5g4zQxm5a" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1F5g4zQxlXB" resolve="refactoring" />
-                </node>
-                <node concept="liA8E" id="1F5g4zQxmiw" role="2OqNvi">
-                  <ref role="37wK5l" node="1F5g4zQqTc8" resolve="isApplicable" />
-                  <node concept="2OqwBi" id="1F5g4zQxmjY" role="37wK5m">
-                    <node concept="2WthIp" id="1F5g4zQxmk1" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="1F5g4zQxmk3" role="2OqNvi">
-                      <ref role="2WH_rO" node="I5wdVHTn$y" resolve="project" />
-                    </node>
+                <node concept="2OqwBi" id="1F5g4zQxlXC" role="33vP2m">
+                  <node concept="2WthIp" id="1F5g4zQxlXD" role="2Oq$k0" />
+                  <node concept="2XshWL" id="1F5g4zQxlXE" role="2OqNvi">
+                    <ref role="2WH_rO" node="1F5g4zQxiY7" resolve="getRefactoring" />
                   </node>
-                  <node concept="2OqwBi" id="1F5g4zQxmor" role="37wK5m">
-                    <node concept="2WthIp" id="1F5g4zQxmou" role="2Oq$k0" />
-                    <node concept="3gHZIF" id="1F5g4zQxmow" role="2OqNvi">
-                      <ref role="2WH_rO" node="I5wdVHTn$u" resolve="nodesToMove" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1F5g4zQxm6q" role="3cqZAp">
+              <node concept="2OqwBi" id="1F5g4zQxm6r" role="3clFbG">
+                <node concept="2OqwBi" id="1F5g4zQxm6s" role="2Oq$k0">
+                  <node concept="tl45R" id="1F5g4zQxm6t" role="2Oq$k0" />
+                  <node concept="liA8E" id="1F5g4zQxm6u" role="2OqNvi">
+                    <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1F5g4zQxm6v" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~Presentation.setText(java.lang.String):void" resolve="setText" />
+                  <node concept="2OqwBi" id="1F5g4zQxm6w" role="37wK5m">
+                    <node concept="37vLTw" id="1F5g4zQxm6x" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1F5g4zQxlXB" resolve="refactoring" />
+                    </node>
+                    <node concept="liA8E" id="1F5g4zQxm6y" role="2OqNvi">
+                      <ref role="37wK5l" node="1F5g4zQxi0e" resolve="getName" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="2W$k3RWuy9$" role="3cqZAp">
+              <node concept="2OqwBi" id="2W$k3RWuyr0" role="3clFbG">
+                <node concept="2OqwBi" id="2W$k3RWuycU" role="2Oq$k0">
+                  <node concept="tl45R" id="2W$k3RWuy9z" role="2Oq$k0" />
+                  <node concept="liA8E" id="2W$k3RWuyq7" role="2OqNvi">
+                    <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="2W$k3RWuyvZ" role="2OqNvi">
+                  <ref role="37wK5l" to="nx1:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+                  <node concept="3clFbT" id="6gEjUfBq_24" role="37wK5m">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2YIFZM" id="6gEjUfBq$jC" role="3clFbw">
+            <ref role="37wK5l" node="1F5g4zQwUGb" resolve="canBeMoved" />
+            <ref role="1Pybhc" node="1F5g4zQqVSR" resolve="MoveNodesDefault" />
+            <node concept="2OqwBi" id="6gEjUfBq$p1" role="37wK5m">
+              <node concept="2WthIp" id="6gEjUfBq$p4" role="2Oq$k0" />
+              <node concept="3gHZIF" id="6gEjUfBq$p6" role="2OqNvi">
+                <ref role="2WH_rO" node="I5wdVHTn$u" resolve="nodesToMove" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="6gEjUfBq_52" role="9aQIa">
+            <node concept="3clFbS" id="6gEjUfBq_53" role="9aQI4">
+              <node concept="3clFbF" id="6gEjUfBq_8c" role="3cqZAp">
+                <node concept="2OqwBi" id="6gEjUfBq_8d" role="3clFbG">
+                  <node concept="2OqwBi" id="6gEjUfBq_8e" role="2Oq$k0">
+                    <node concept="tl45R" id="6gEjUfBq_8f" role="2Oq$k0" />
+                    <node concept="liA8E" id="6gEjUfBq_8g" role="2OqNvi">
+                      <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="6gEjUfBq_8h" role="2OqNvi">
+                    <ref role="37wK5l" to="nx1:~Presentation.setEnabled(boolean):void" resolve="setEnabled" />
+                    <node concept="3clFbT" id="6gEjUfBq_8i" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1F5g4zQxm7Y" role="3cqZAp" />
       </node>
     </node>
   </node>

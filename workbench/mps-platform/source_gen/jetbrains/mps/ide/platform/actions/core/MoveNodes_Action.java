@@ -7,13 +7,13 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -36,10 +36,13 @@ public class MoveNodes_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
-    event.getPresentation().setText(refactoring.getName());
-    event.getPresentation().setEnabled(refactoring.isApplicable(((MPSProject) MapSequence.fromMap(_params).get("project")), ((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove"))));
-
+    if (MoveNodesDefault.canBeMoved(((List<SNode>) MapSequence.fromMap(_params).get("nodesToMove")))) {
+      MoveNodesRefactoring refactoring = MoveNodes_Action.this.getRefactoring(_params);
+      event.getPresentation().setText(refactoring.getName());
+      event.getPresentation().setEnabled(true);
+    } else {
+      event.getPresentation().setEnabled(false);
+    }
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
