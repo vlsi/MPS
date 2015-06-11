@@ -11,17 +11,13 @@
     <import index="jo3e" ref="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" />
     <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
     <import index="xqpa" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
-    <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <import index="ajxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="fxg7" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="hznm" ref="r:dad1ea7d-da9c-4176-99bb-37db4fbb1112(jetbrains.mps.ide.platform.environment)" />
-    <import index="3y6k" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps.testbench.junit.runners(Testbench/jetbrains.mps.testbench.junit.runners@java_stub)" />
-    <import index="1p1s" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" />
-    <import index="ev2z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.tool.environment(MPS.Core/jetbrains.mps.tool.environment@java_stub)" />
-    <import index="urtk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.platform.environment(MPS.Platform/jetbrains.mps.ide.platform.environment@java_stub)" />
+    <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -277,11 +273,11 @@
           <node concept="3cpWsn" id="3H7CugYe6Ts" role="3cpWs9">
             <property role="TrG5h" value="config" />
             <node concept="2YIFZM" id="o7F7WgJ3Ku" role="33vP2m">
-              <ref role="37wK5l" to="ev2z:~EnvironmentConfig.emptyEnvironment():jetbrains.mps.tool.environment.EnvironmentConfig" resolve="emptyEnvironment" />
-              <ref role="1Pybhc" to="ev2z:~EnvironmentConfig" resolve="EnvironmentConfig" />
+              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+              <ref role="37wK5l" to="79ha:3YQ3dO9lg_M" resolve="emptyEnvironment" />
             </node>
-            <node concept="3uibUv" id="o7F7WgJ3kO" role="1tU5fm">
-              <ref role="3uigEE" to="ev2z:~EnvironmentConfig" resolve="EnvironmentConfig" />
+            <node concept="3uibUv" id="o7F7WgOcGa" role="1tU5fm">
+              <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
           </node>
         </node>
@@ -343,7 +339,7 @@
               <node concept="37vLTI" id="3H7CugYe6TR" role="3clFbG">
                 <node concept="2OqwBi" id="3H7CugYe6TS" role="37vLTx">
                   <node concept="liA8E" id="3H7CugYe6TT" role="2OqNvi">
-                    <ref role="37wK5l" to="ev2z:~EnvironmentConfig.addLib(java.lang.String):jetbrains.mps.tool.environment.EnvironmentConfig" resolve="addLib" />
+                    <ref role="37wK5l" to="79ha:6rx4kZDk8ph" resolve="addLib" />
                     <node concept="2GrUjf" id="3H7CugYe6TU" role="37wK5m">
                       <ref role="2Gs0qQ" node="3H7CugYe6Tx" resolve="jar" />
                     </node>
@@ -384,7 +380,7 @@
               <node concept="37vLTI" id="3H7CugYe6U7" role="3clFbG">
                 <node concept="2OqwBi" id="3H7CugYe6U8" role="37vLTx">
                   <node concept="liA8E" id="3H7CugYe6U9" role="2OqNvi">
-                    <ref role="37wK5l" to="ev2z:~EnvironmentConfig.addMacro(java.lang.String,java.io.File):jetbrains.mps.tool.environment.EnvironmentConfig" resolve="addMacro" />
+                    <ref role="37wK5l" to="79ha:6rx4kZDk6LY" resolve="addMacro" />
                     <node concept="2OqwBi" id="3H7CugYe6Ua" role="37wK5m">
                       <node concept="3AY5_j" id="3H7CugYe6Ub" role="2OqNvi" />
                       <node concept="2GrUjf" id="3H7CugYe6Uc" role="2Oq$k0">
