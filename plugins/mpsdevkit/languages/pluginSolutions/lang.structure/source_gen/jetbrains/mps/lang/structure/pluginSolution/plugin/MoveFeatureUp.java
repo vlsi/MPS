@@ -66,20 +66,19 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
     final String featureKind = this.getKind();
 
     if (ListSequence.fromList(nodesToMove).count() > 1) {
-      moveNodesUI.showAlertCannotMoveMultiple(project, featureKind);
+      moveNodesUI.showErrorDialog(project, "Moving multiple concept elements is not supported.\n" + "Please, select single " + featureKind + ".", "Select single " + featureKind + ".");
       return;
     }
 
     final SNode feature = SNodeOperations.cast(ListSequence.fromList(nodesToMove).first(), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L, "jetbrains.mps.lang.structure.structure.IStructureDeprecatable"));
     final SNode targetConcept = moveNodesUI.askTargetConcept(project, feature, featureKind);
-
     if (targetConcept == null) {
       return;
     }
 
-    final MoveNodesUI.WhetherWriteMigration result = moveNodesUI.askAboutMigration(project);
+    final MoveNodesUI.WhetherWriteMigration writeMigration = moveNodesUI.askAboutMigration(project);
 
-    if (result == MoveNodesUI.WhetherWriteMigration.CANCEL) {
+    if (writeMigration == MoveNodesUI.WhetherWriteMigration.CANCEL) {
       return;
     }
 
@@ -104,7 +103,7 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
 
 
         String usagesViewHeader = "Move " + featureKind + " " + featureName;
-        if (result == MoveNodesUI.WhetherWriteMigration.LOCALLY) {
+        if (writeMigration == MoveNodesUI.WhetherWriteMigration.LOCALLY) {
           final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept)), false, new EmptyProgressMonitor());
           changeReferences(project, usages, feature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
@@ -113,12 +112,12 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
           }, usagesViewHeader, moveNodesUI);
         }
 
-        if (result == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
+        if (writeMigration == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
           final SNode newFeature = SNodeOperations.copyNode(feature);
           changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
-              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a41a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);
@@ -157,7 +156,7 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
   }
 
 
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a41a31(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a31a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));

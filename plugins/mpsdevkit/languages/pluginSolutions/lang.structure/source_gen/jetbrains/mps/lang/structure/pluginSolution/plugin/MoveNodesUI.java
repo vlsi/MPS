@@ -17,7 +17,8 @@ public interface MoveNodesUI {
     CANCEL();
 
   }
-  public void showAlertCannotMoveMultiple(MPSProject project, String featureKind);
+  public void showErrorDialog(MPSProject project, String text, String header);
+  public void showWarningDialog(MPSProject project, String text, String header);
   public SNode askTargetConcept(MPSProject project, SNode conceptFeature, String featureKind);
   public MoveNodesUI.WhetherWriteMigration askAboutMigration(MPSProject project);
   public void showRefactoringViewAndRefactorSelected(MPSProject project, Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header);
@@ -29,8 +30,11 @@ public interface MoveNodesUI {
       return new MoveNodesUI.MoveNodesUIImpl();
     }
 
-    public void showAlertCannotMoveMultiple(MPSProject project, String featureKind) {
-      Messages.showInfoMessage(project.getProject(), "Moving multiple concept elements is not supported.\n" + "Please, select single " + featureKind + ".", "Select single " + featureKind + ".");
+    public void showErrorDialog(MPSProject project, String text, String header) {
+      Messages.showErrorDialog(project.getProject(), text, header);
+    }
+    public void showWarningDialog(MPSProject project, String text, String header) {
+      Messages.showWarningDialog(project.getProject(), text, header);
     }
     public SNode askTargetConcept(MPSProject project, SNode conceptFeature, String featureKind) {
       return MoveUpDialog.getConcept(project.getProject(), conceptFeature, featureKind);
