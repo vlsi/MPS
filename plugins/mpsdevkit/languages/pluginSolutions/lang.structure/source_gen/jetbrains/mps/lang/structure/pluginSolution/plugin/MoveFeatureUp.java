@@ -7,8 +7,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.refactoring.MoveUpDialog;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -27,6 +25,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -60,17 +62,17 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
   }
 
   public void execute(final MPSProject project, final SNode feature) {
-
+    final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
     final String featureKind = this.getKind();
-    final SNode targetConcept = MoveUpDialog.getConcept(project.getProject(), feature, featureKind);
+    final SNode targetConcept = moveNodesUI.askTargetConcept(project, feature, featureKind);
 
     if (targetConcept == null) {
       return;
     }
 
-    final int result = Messages.showYesNoCancelDialog(project.getProject(), "Do you want to run the refactoring locally?", "Execute Refactoring", "Run locally", "Write migration", "Cancel", null);
+    final MoveNodesUI.WhetherWriteMigration result = moveNodesUI.askAboutMigration(project);
 
-    if (result == Messages.CANCEL) {
+    if (result == MoveNodesUI.WhetherWriteMigration.CANCEL) {
       return;
     }
 
@@ -94,43 +96,67 @@ public abstract class MoveFeatureUp implements MoveNodesRefactoring {
         final String featureName = featureAccess.getName();
 
 
-
-        if (result == Messages.YES) {
+        String usagesViewHeader = "Move " + featureKind + " " + featureName;
+        if (result == MoveNodesUI.WhetherWriteMigration.LOCALLY) {
           final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept)), false, new EmptyProgressMonitor());
-          RefactoringUtil.changeReferences(project, usages, feature, new _FunctionTypes._void_P0_E0() {
+          changeReferences(project, usages, feature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               featureAccess.doMoveAndRefactorInstances(instances);
             }
-          }, "Move " + featureKind + " " + featureName);
-        } else {
+          }, usagesViewHeader, moveNodesUI);
+        }
+
+        if (result == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
           final SNode newFeature = SNodeOperations.copyNode(feature);
-          RefactoringUtil.changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
+          changeReferences(project, usages, newFeature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
-              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a31a0k0n("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
+              AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a01a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);
               builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(builder, MoveFeatureUp.this.migrations(feature, newFeature), currentConcept), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));
             }
-          }, "Move " + featureKind + " " + featureName);
+          }, usagesViewHeader, moveNodesUI);
         }
       }
     });
   }
 
+  public static void changeReferences(final MPSProject mpsProject, final Set<SReference> usages, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String header, MoveNodesUI moveNodesUI) {
+    List<SNode> nodesToShow = SetSequence.fromSet(usages).select(new ISelector<SReference, SNode>() {
+      public SNode select(SReference it) {
+        return it.getSourceNode();
+      }
+    }).toListSequence();
+    moveNodesUI.showRefactoringViewAndRefactorSelected(mpsProject, nodesToShow, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+      public void invoke(final Set<SNode> included) {
+        executeBefore.invoke();
+        SetSequence.fromSet(usages).where(new IWhereFilter<SReference>() {
+          public boolean accept(SReference it) {
+            return SetSequence.fromSet(included).contains(it.getSourceNode());
+          }
+        }).visitAll(new IVisitor<SReference>() {
+          public void visit(SReference usage) {
+            usage.getSourceNode().setReferenceTarget(usage.getLink(), newTarget);
+          }
+        });
+      }
+    }, header);
+  }
+
   private static SNode moveStatements(MigrationScriptBuilder builder, MoveFeatureUp.FeatureSpecificMigrations featureSpecificMigrations, SNode currentConcept) {
-    return _quotation_createNode_g4dz8g_a0a51(featureSpecificMigrations.oldFeatureVariableDeclaration, featureSpecificMigrations.newFeatureVariableDeclaration, builder.getExecuteMethodModuleParameter(), currentConcept, currentConcept, featureSpecificMigrations.refactorInstancesClosure);
+    return _quotation_createNode_g4dz8g_a0a71(featureSpecificMigrations.oldFeatureVariableDeclaration, featureSpecificMigrations.newFeatureVariableDeclaration, builder.getExecuteMethodModuleParameter(), currentConcept, currentConcept, featureSpecificMigrations.refactorInstancesClosure);
   }
 
 
-  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0a31a0k0n(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0d0b0p0a01a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
     return n1;
   }
-  private static SNode _quotation_createNode_g4dz8g_a0a51(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+  private static SNode _quotation_createNode_g4dz8g_a0a71(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;

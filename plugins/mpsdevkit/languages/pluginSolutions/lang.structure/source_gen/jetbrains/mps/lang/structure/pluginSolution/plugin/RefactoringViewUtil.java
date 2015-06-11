@@ -8,23 +8,22 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.MPSProject;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
-public class RefactoringUtil {
+public class RefactoringViewUtil {
 
   private static SearchResults<SNode> nodesToRefactoringResult(Iterable<SNode> nodes, final String category) {
     final SearchResults<SNode> result = new SearchResults<SNode>();
@@ -36,29 +35,7 @@ public class RefactoringUtil {
     return result;
   }
 
-  public static void changeReferences(final MPSProject mpsProject, final Set<SReference> usages, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String name) {
-    List<SNode> nodesToShow = SetSequence.fromSet(usages).select(new ISelector<SReference, SNode>() {
-      public SNode select(SReference it) {
-        return it.getSourceNode();
-      }
-    }).toListSequence();
-    refactor(mpsProject, nodesToShow, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
-      public void invoke(final Set<SNode> included) {
-        executeBefore.invoke();
-        SetSequence.fromSet(usages).where(new IWhereFilter<SReference>() {
-          public boolean accept(SReference it) {
-            return SetSequence.fromSet(included).contains(it.getSourceNode());
-          }
-        }).visitAll(new IVisitor<SReference>() {
-          public void visit(SReference usage) {
-            usage.getSourceNode().setReferenceTarget(usage.getLink(), newTarget);
-          }
-        });
-      }
-    }, name);
-  }
-
-  public static void refactor(final MPSProject mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String name) {
+  public static void refactor(final MPSProject mpsProject, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header) {
     SearchResults sr = nodesToRefactoringResult(nodes, "References");
     RefactoringAccessEx.getInstance().showRefactoringView(mpsProject.getProject(), new RefactoringViewAction() {
       public void performAction(final RefactoringViewItem refactoringViewItem) {
@@ -66,7 +43,7 @@ public class RefactoringUtil {
           public void run() {
             Iterable<SNode> includedNodes;
             if (refactoringViewItem instanceof RefactoringViewItemImpl) {
-              List<SNodeReference> nodeRefs = as_40hv3l_a0a0a0a1a0a0a0a0a0a0b0a1a5(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
+              List<SNodeReference> nodeRefs = as_y6hz2r_a0a0a0a1a0a0a0a0a0a0b0a1a3(refactoringViewItem, RefactoringViewItemImpl.class).getUsagesView().getIncludedResultNodes();
               includedNodes = ListSequence.fromList(nodeRefs).select(new ISelector<SNodeReference, SNode>() {
                 public SNode select(SNodeReference it) {
                   return it.resolve(mpsProject.getRepository());
@@ -84,9 +61,9 @@ public class RefactoringUtil {
         });
         refactoringViewItem.close();
       }
-    }, sr, false, name);
+    }, sr, false, header);
   }
-  private static <T> T as_40hv3l_a0a0a0a1a0a0a0a0a0a0b0a1a5(Object o, Class<T> type) {
+  private static <T> T as_y6hz2r_a0a0a0a1a0a0a0a0a0a0b0a1a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
