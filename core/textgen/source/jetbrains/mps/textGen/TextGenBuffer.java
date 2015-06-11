@@ -57,6 +57,7 @@ public final class TextGenBuffer {
   public static final String SPACES = "                                ";
 
   private final TextAreaFactory myChunkFactory;
+  private final boolean myFakePositionSupport;
   private TextBuffer myBuffer;
 
   private int myPrevBufferKey = -1;
@@ -68,7 +69,8 @@ public final class TextGenBuffer {
 
   private List<IMessage> myErrors = new ArrayList<IMessage>();
 
-  TextGenBuffer(StringBuilder[] buffers) {
+  TextGenBuffer(boolean fakePositionSupport, StringBuilder[] buffers) {
+    myFakePositionSupport = fakePositionSupport;
     myChunkFactory = buffers == null ? new BasicTextAreaFactory(LINE_SEPARATOR, 2048, ' ', myIndent) : new MyTextAreaFactory(buffers);
     myBuffer = new TextBufferImpl(myChunkFactory);
     // let buffer know all its text areas, in the order they used to be here
@@ -207,15 +209,21 @@ public final class TextGenBuffer {
   }
 
   public int getLineNumber() {
+    if (myFakePositionSupport) {
+      return 0;
+    }
     throw new IllegalStateException();
   }
 
   public int getPosition() {
+    if (myFakePositionSupport) {
+      return 0;
+    }
     throw new IllegalStateException();
   }
 
   public boolean hasPositionsSupport() {
-    return false;
+    return myFakePositionSupport;
   }
 
   public int selectPart(int partId) {

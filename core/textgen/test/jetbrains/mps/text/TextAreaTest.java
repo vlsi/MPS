@@ -35,7 +35,7 @@ public class TextAreaTest {
     ta.append("B");
     ta.newLine();
     ta.append("C");
-    String expected = String.format("A%sB%1$sC", myLineSep);
+    String expected = String.format("A%sB%1$sC", "\n");
     Assert.assertEquals(expected, ta.value().toString());
   }
 
