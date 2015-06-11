@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.tree.smodel;
 
+import com.intellij.ide.projectView.impl.ProjectViewTree;
 import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -35,9 +36,6 @@ import java.awt.Color;
 import java.awt.font.TextAttribute;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
-  //todo this is a hack till we move to Idea's tree in project pane or move SNodeTreeNode to workbench
-  private static Condition<MPSTree> ourShowStructureCondition = null;
-
   private static final Logger LOG = LogManager.getLogger(SNodeTreeNode.class);
 
   protected boolean myInitialized = false;
@@ -66,10 +64,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier(myNode.getNodeId().toString());
     }
     setToggleClickCount(-1);
-  }
-
-  public static void setShowStructureCondition(Condition<MPSTree> showStructureCondition) {
-    ourShowStructureCondition = showStructureCondition;
   }
 
   @Override
@@ -164,7 +158,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       provider.populate(this);
     }
 
-    if (ourShowStructureCondition == null || ourShowStructureCondition.met(getTree())) {
+    if (isShowStructure()) {
       for (SNode childNode : n.getChildren()) {
         if (!myCondition.met(childNode)) continue;
         SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent());
@@ -180,7 +174,13 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   @Override
   public boolean isLeaf() {
-    return ourShowStructureCondition != null && !ourShowStructureCondition.met(getTree());
+    return !isShowStructure();
+  }
+
+  private boolean isShowStructure() {
+    MPSTree tree = getTree();
+    if (!(tree instanceof TreeNodeParamProvider)) return true; //not to affect usages other than those we want to
+    return ((TreeNodeParamProvider) tree).isShowStructure();
   }
 
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role) {
