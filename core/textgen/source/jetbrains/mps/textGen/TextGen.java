@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
@@ -27,7 +28,6 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -89,21 +90,28 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
+    final TraceInfoCollector tic;
+    if (withDebugInfo)  {
+      tic = TraceInfoGenerationUtil.init(buffer);
+    } else {
+      tic = null;
+    }
+
     appendNodeText(buffer, node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
     Map<SNode, ScopePositionInfo> scopeInfo = null;
     Map<SNode, UnitPositionInfo> unitInfo = null;
-    if (withDebugInfo) {
-      positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
-      scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
-      unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
+    if (tic != null) {
+      positionInfo = tic.getTracePositions();
+      scopeInfo = tic.getScopePositions();
+      unitInfo = tic.getUnitPositions();
       int topLength = buffer.getTopBufferLineCount();
       topLength++; // human-friendly line numbers (not 0-based)
-      adjustPositions(topLength, positionInfo);
-      adjustPositions(topLength, scopeInfo);
-      adjustPositions(topLength, unitInfo);
+      adjustPositions(topLength, positionInfo.values());
+      adjustPositions(topLength, scopeInfo.values());
+      adjustPositions(topLength, unitInfo.values());
     }
 
     // dependencies
@@ -162,8 +170,8 @@ public class TextGen {
     return new DefaultTextGen();
   }
 
-  private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {
-    for (PositionInfo position : positionInfo.values()) {
+  private static void adjustPositions(int delta, Collection<? extends PositionInfo> positionInfo) {
+    for (PositionInfo position : positionInfo) {
       position.setStartLine(position.getStartLine() + delta);
       position.setEndLine(position.getEndLine() + delta);
     }

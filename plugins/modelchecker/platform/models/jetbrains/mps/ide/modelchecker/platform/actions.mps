@@ -267,7 +267,6 @@
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
       </concept>
-      <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -403,7 +402,6 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7" />
@@ -832,20 +830,6 @@
                       <ref role="37wK5l" node="3etVqSRK$2M" resolve="ModelPropertiesChecker" />
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2Hb8yVuC1rh" role="3cqZAp">
-              <node concept="2OqwBi" id="2Hb8yVuC1ri" role="3clFbG">
-                <node concept="TSZUe" id="2Hb8yVuC1rj" role="2OqNvi">
-                  <node concept="2ShNRf" id="2Hb8yVuC1rk" role="25WWJ7">
-                    <node concept="1pGfFk" id="2Hb8yVuC1rl" role="2ShVmc">
-                      <ref role="37wK5l" node="2Hb8yVu_HN3" resolve="ModelPersistenceVersionChecker" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="2Hb8yVuC1rm" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3etVqSRKzrG" resolve="checkers" />
                 </node>
               </node>
             </node>
@@ -9796,209 +9780,6 @@
     </node>
     <node concept="3Tm1VV" id="3etVqSRT$LR" role="1B3o_S" />
     <node concept="3uibUv" id="3etVqSRT$LS" role="1zkMxy">
-      <ref role="3uigEE" node="3etVqSRRx7i" resolve="SpecificChecker" />
-    </node>
-  </node>
-  <node concept="312cEu" id="2Hb8yVu_HN2">
-    <property role="TrG5h" value="ModelPersistenceVersionChecker" />
-    <property role="3GE5qa" value="Model Checker.Specific Checks" />
-    <node concept="3clFbW" id="2Hb8yVu_HN3" role="jymVt">
-      <node concept="3clFbS" id="2Hb8yVu_HN4" role="3clF47" />
-      <node concept="3Tm1VV" id="2Hb8yVu_HN5" role="1B3o_S" />
-      <node concept="3cqZAl" id="2Hb8yVu_HN6" role="3clF45" />
-    </node>
-    <node concept="3clFb_" id="2Hb8yVu_HN7" role="jymVt">
-      <property role="TrG5h" value="checkModel" />
-      <node concept="3clFbS" id="2Hb8yVu_HN8" role="3clF47">
-        <node concept="3clFbF" id="2Hb8yVu_HN9" role="3cqZAp">
-          <node concept="2OqwBi" id="2Hb8yVu_HNa" role="3clFbG">
-            <node concept="liA8E" id="2Hb8yVu_HNb" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-              <node concept="Xl_RD" id="2Hb8yVu_HNc" role="37wK5m">
-                <property role="Xl_RC" value="model persistence version" />
-              </node>
-              <node concept="3cmrfG" id="2Hb8yVu_HNd" role="37wK5m">
-                <property role="3cmrfH" value="1" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="2Hb8yVu_HNe" role="2Oq$k0">
-              <ref role="3cqZAo" node="2Hb8yVu_HOF" resolve="monitor" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="2Hb8yVu_HNg" role="3cqZAp">
-          <node concept="3cpWsn" id="2Hb8yVu_HNh" role="3cpWs9">
-            <property role="TrG5h" value="results" />
-            <node concept="2ShNRf" id="2Hb8yVu_HNi" role="33vP2m">
-              <node concept="Tc6Ow" id="2Hb8yVu_HNj" role="2ShVmc">
-                <node concept="3uibUv" id="2Hb8yVu_HNk" role="HW$YZ">
-                  <ref role="3uigEE" to="g4jo:J2bOg02GHT" resolve="SearchResult" />
-                  <node concept="3uibUv" id="2Hb8yVu_HNl" role="11_B2D">
-                    <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="_YKpA" id="2Hb8yVu_HNm" role="1tU5fm">
-              <node concept="3uibUv" id="2Hb8yVu_HNn" role="_ZDj9">
-                <ref role="3uigEE" to="g4jo:J2bOg02GHT" resolve="SearchResult" />
-                <node concept="3uibUv" id="2Hb8yVu_HNo" role="11_B2D">
-                  <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2Hb8yVu_HNp" role="3cqZAp" />
-        <node concept="3clFbJ" id="2Hb8yVuA25z" role="3cqZAp">
-          <node concept="3clFbS" id="2Hb8yVuA25A" role="3clFbx">
-            <node concept="3cpWs8" id="2Hb8yVuCQFI" role="3cqZAp">
-              <node concept="3cpWsn" id="2Hb8yVuCQFJ" role="3cpWs9">
-                <property role="TrG5h" value="model" />
-                <property role="3TUv4t" value="true" />
-                <node concept="3uibUv" id="2Hb8yVuCQFE" role="1tU5fm">
-                  <ref role="3uigEE" to="d2v5:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
-                </node>
-                <node concept="10QFUN" id="2Hb8yVuCQFL" role="33vP2m">
-                  <node concept="3uibUv" id="2Hb8yVuCQFM" role="10QFUM">
-                    <ref role="3uigEE" to="d2v5:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
-                  </node>
-                  <node concept="37vLTw" id="2Hb8yVuCQFN" role="10QFUP">
-                    <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="2Hb8yVuADSM" role="3cqZAp">
-              <node concept="3cpWsn" id="2Hb8yVuADSN" role="3cpWs9">
-                <property role="TrG5h" value="currentVersion" />
-                <node concept="10Oyi0" id="2Hb8yVuADSJ" role="1tU5fm" />
-                <node concept="2OqwBi" id="2Hb8yVuADSO" role="33vP2m">
-                  <node concept="37vLTw" id="2Hb8yVuCQFO" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2Hb8yVuCQFJ" resolve="model" />
-                  </node>
-                  <node concept="liA8E" id="2Hb8yVuADST" role="2OqNvi">
-                    <ref role="37wK5l" to="d2v5:~PersistenceVersionAware.getPersistenceVersion():int" resolve="getPersistenceVersion" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="2Hb8yVuADKI" role="3cqZAp">
-              <node concept="3clFbS" id="2Hb8yVuADKL" role="3clFbx">
-                <node concept="3clFbF" id="2Hb8yVuAFEm" role="3cqZAp">
-                  <node concept="2OqwBi" id="2Hb8yVuAFWG" role="3clFbG">
-                    <node concept="37vLTw" id="2Hb8yVuAFEl" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2Hb8yVu_HNh" resolve="results" />
-                    </node>
-                    <node concept="TSZUe" id="2Hb8yVuAHNH" role="2OqNvi">
-                      <node concept="2YIFZM" id="2Hb8yVuAI0r" role="25WWJ7">
-                        <ref role="37wK5l" node="3etVqSRKzVV" resolve="getSearchResultForModel" />
-                        <ref role="1Pybhc" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-                        <node concept="37vLTw" id="2Hb8yVuAI9L" role="37wK5m">
-                          <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
-                        </node>
-                        <node concept="3cpWs3" id="2Hb8yVuBGI1" role="37wK5m">
-                          <node concept="3cpWs3" id="2Hb8yVuBEYI" role="3uHU7B">
-                            <node concept="3cpWs3" id="2Hb8yVuAJcm" role="3uHU7B">
-                              <node concept="3cpWs3" id="2Hb8yVuBMyW" role="3uHU7B">
-                                <node concept="Xl_RD" id="2Hb8yVuBMGl" role="3uHU7B">
-                                  <property role="Xl_RC" value="Model" />
-                                </node>
-                                <node concept="2OqwBi" id="2Hb8yVuAIHe" role="3uHU7w">
-                                  <node concept="37vLTw" id="2Hb8yVuAIo6" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
-                                  </node>
-                                  <node concept="LkI2h" id="2Hb8yVuAISD" role="2OqNvi" />
-                                </node>
-                              </node>
-                              <node concept="Xl_RD" id="2Hb8yVuAJlz" role="3uHU7w">
-                                <property role="Xl_RC" value=" persistence version: " />
-                              </node>
-                            </node>
-                            <node concept="37vLTw" id="2Hb8yVuBFhs" role="3uHU7w">
-                              <ref role="3cqZAo" node="2Hb8yVuADSN" resolve="currentVersion" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="2Hb8yVuBGXB" role="3uHU7w">
-                            <property role="Xl_RC" value=", try running `Migrate from Names to Ids` action" />
-                          </node>
-                        </node>
-                        <node concept="10Nm6u" id="5dsJNHMwot3" role="37wK5m" />
-                        <node concept="10M0yZ" id="2Hb8yVuAQom" role="37wK5m">
-                          <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
-                          <ref role="3cqZAo" node="3etVqSRKzLv" resolve="SEVERITY_WARNING" />
-                        </node>
-                        <node concept="Xl_RD" id="2Hb8yVuAQTg" role="37wK5m">
-                          <property role="Xl_RC" value="Model persistence version" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3eOVzh" id="2Hb8yVuAFtn" role="3clFbw">
-                <node concept="37vLTw" id="2Hb8yVuAEwr" role="3uHU7B">
-                  <ref role="3cqZAo" node="2Hb8yVuADSN" resolve="currentVersion" />
-                </node>
-                <node concept="10M0yZ" id="2Hb8yVuBWzb" role="3uHU7w">
-                  <ref role="1PxDUh" to="zofw:~ModelPersistence" resolve="ModelPersistence" />
-                  <ref role="3cqZAo" to="zofw:~ModelPersistence.LAST_VERSION" resolve="LAST_VERSION" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2ZW3vV" id="2Hb8yVuAwQj" role="3clFbw">
-            <node concept="3uibUv" id="2Hb8yVuAx1S" role="2ZW6by">
-              <ref role="3uigEE" to="d2v5:~PersistenceVersionAware" resolve="PersistenceVersionAware" />
-            </node>
-            <node concept="37vLTw" id="2Hb8yVuAwJv" role="2ZW6bz">
-              <ref role="3cqZAo" node="2Hb8yVu_HOD" resolve="m" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="2Hb8yVuBZYN" role="3cqZAp" />
-        <node concept="3clFbF" id="2Hb8yVu_HOz" role="3cqZAp">
-          <node concept="2OqwBi" id="2Hb8yVu_HO$" role="3clFbG">
-            <node concept="37vLTw" id="2Hb8yVu_HO_" role="2Oq$k0">
-              <ref role="3cqZAo" node="2Hb8yVu_HOF" resolve="monitor" />
-            </node>
-            <node concept="liA8E" id="2Hb8yVu_HOA" role="2OqNvi">
-              <ref role="37wK5l" to="z8de:~ProgressMonitor.done():void" resolve="done" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="2Hb8yVu_HOB" role="3cqZAp">
-          <node concept="37vLTw" id="2Hb8yVu_HOC" role="3cqZAk">
-            <ref role="3cqZAo" node="2Hb8yVu_HNh" resolve="results" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="2Hb8yVu_HOD" role="3clF46">
-        <property role="TrG5h" value="m" />
-        <property role="3TUv4t" value="false" />
-        <node concept="H_c77" id="2Hb8yVu_HOE" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="2Hb8yVu_HOF" role="3clF46">
-        <property role="TrG5h" value="monitor" />
-        <node concept="3uibUv" id="2Hb8yVu_HOG" role="1tU5fm">
-          <ref role="3uigEE" to="z8de:~ProgressMonitor" resolve="ProgressMonitor" />
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="2Hb8yVu_HOH" role="1B3o_S" />
-      <node concept="_YKpA" id="2Hb8yVu_HOI" role="3clF45">
-        <node concept="3uibUv" id="2Hb8yVu_HOJ" role="_ZDj9">
-          <ref role="3uigEE" to="g4jo:J2bOg02GHT" resolve="SearchResult" />
-          <node concept="3uibUv" id="2Hb8yVu_HOK" role="11_B2D">
-            <ref role="3uigEE" node="3etVqSRKzT$" resolve="ModelCheckerIssue" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2Hb8yVu_HOL" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3Tm1VV" id="2Hb8yVu_HOM" role="1B3o_S" />
-    <node concept="3uibUv" id="2Hb8yVu_HON" role="1zkMxy">
       <ref role="3uigEE" node="3etVqSRRx7i" resolve="SpecificChecker" />
     </node>
   </node>

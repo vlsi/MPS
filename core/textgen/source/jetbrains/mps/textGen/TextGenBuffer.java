@@ -18,6 +18,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.text.impl.TextAreaImpl;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -39,35 +40,45 @@ public final class TextGenBuffer {
   public static final String LINE_SEPARATOR = System.getProperty("line.separator");
   public static final String SPACES = "                                ";
 
-  private StringBuilder[] myBuffers;
-  private StringBuilder myCurrentBuffer;
+  private TextAreaImpl[] myBuffers;
+  private TextAreaImpl myCurrentBuffer;
 
   private int myCurrBufferKey = DEFAULT;
   private HashMap myUserObjects = new HashMap();
 
   private final int myIndent = 2;
+  // still need to track indent here until positions are handled with text markers TODO: introduce support for markers in TextArea, rewrite position tracking
   private int myDepth = 0;
   private boolean myContainsErrors = false;
   private List<IMessage> myErrors = new ArrayList<IMessage>();
 
-  private final int[] myPostions;
+  private final int[] myPositions;
   private final int[] myLineNumbers;
 
   TextGenBuffer(boolean positionsSupport, StringBuilder[] buffers) {
     if (positionsSupport) {
-      myPostions = new int[2];
+      myPositions = new int[2];
       myLineNumbers = new int[2];
     } else {
-      myPostions = null;
+      myPositions = null;
       myLineNumbers = null;
     }
-    myBuffers = buffers != null ? buffers : new StringBuilder[]{new StringBuilder(2048), new StringBuilder(4096)};
+    if (buffers == null) {
+      myBuffers = new TextAreaImpl[2];
+      myBuffers[TOP] = new TextAreaImpl(new StringBuilder(2048), LINE_SEPARATOR, ' ', myIndent);
+      myBuffers[DEFAULT] = new TextAreaImpl(new StringBuilder(4096), LINE_SEPARATOR, ' ', myIndent);
+    } else {
+      myBuffers = new TextAreaImpl[buffers.length];
+      for (int i = 0; i < buffers.length; i++) {
+        myBuffers[i] = new TextAreaImpl(buffers[i], LINE_SEPARATOR, ' ', myIndent);
+      }
+    }
     selectPart(DEFAULT);
   }
 
   public String getText() {
-    final StringBuilder topBuffer = myBuffers[TOP];
-    final StringBuilder defaultBuffer = myBuffers[DEFAULT];
+    final CharSequence topBuffer = myBuffers[TOP].value();
+    final CharSequence defaultBuffer = myBuffers[DEFAULT].value();
     if (topBuffer.length() == 0) {
       return defaultBuffer.toString();
     }
@@ -80,10 +91,11 @@ public final class TextGenBuffer {
   }
 
   /*package*/ int getTopBufferLineCount() {
-    final StringBuilder b = myBuffers[TOP];
-    if (b.length() == 0) {
+    final CharSequence v = myBuffers[TOP].value();
+    if (v.length() == 0) {
       return 0;
     }
+    String b = v.toString();
     // this used to be b.split(LINE_SEPARATOR, -1).length + 2
     // however split("A\nB\n").length == split("A\nB").length, and two extra newlines between top and default buffer give different
     // line number (for human-friendly values, latter sample gives correct value, for 0-based indexes - former sample).
@@ -133,10 +145,12 @@ public final class TextGenBuffer {
 
   protected void increaseDepth() {
     myDepth++;
+    myCurrentBuffer.increaseIndent();
   }
 
   protected void decreaseDepth() {
     myDepth--;
+    myCurrentBuffer.decreaseIndent();
   }
 
   public void append(String s) {
@@ -144,7 +158,7 @@ public final class TextGenBuffer {
     if (s == null) {
       return;
     }
-    if (myPostions != null) {
+    if (myPositions != null) {
       int lastLineSepIndex, lineSepIndex;
       lastLineSepIndex = lineSepIndex = s.indexOf(LINE_SEPARATOR, 0);
       if (lastLineSepIndex >= 0) {
@@ -155,9 +169,9 @@ public final class TextGenBuffer {
           lineSepIndex = s.indexOf(LINE_SEPARATOR, lineSepIndex + LINE_SEPARATOR.length());
         }
         myLineNumbers[myCurrBufferKey] += lineCount;
-        myPostions[myCurrBufferKey] = s.length() - lastLineSepIndex - LINE_SEPARATOR.length();
+        myPositions[myCurrBufferKey] = s.length() - lastLineSepIndex - LINE_SEPARATOR.length();
       } else {
-        myPostions[myCurrBufferKey] += s.length();
+        myPositions[myCurrBufferKey] += s.length();
       }
     }
     myCurrentBuffer.append(s);
@@ -170,15 +184,10 @@ public final class TextGenBuffer {
 
   protected void indentBuffer() {
     int spaces = myIndent * myDepth;
-    if (myPostions != null) {
-      myPostions[myCurrBufferKey] += spaces;
+    if (myPositions != null) {
+      myPositions[myCurrBufferKey] += spaces;
     }
-
-    while (spaces > 0) {
-      int i = spaces > SPACES.length() ? SPACES.length() : spaces;
-      myCurrentBuffer.append(SPACES, 0, i);
-      spaces -= i;
-    }
+    myCurrentBuffer.indent();
   }
 
   public void putUserObject(Object key, Object o) {
@@ -206,7 +215,7 @@ public final class TextGenBuffer {
   }
 
   public int getBufferLength(int partId) {
-    return myBuffers[partId].length();
+    return myBuffers[partId].value().length();
   }
 
   public int getLineNumber() {
@@ -215,12 +224,12 @@ public final class TextGenBuffer {
   }
 
   public int getPosition() {
-    if (myPostions == null) throw new IllegalStateException();
-    return myPostions[DEFAULT];
+    if (myPositions == null) throw new IllegalStateException();
+    return myPositions[DEFAULT];
   }
 
   public boolean hasPositionsSupport() {
-    return myPostions != null;
+    return myPositions != null;
   }
 
   public int selectPart(int partId) {

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -14,18 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.Level;
 import java.util.List;
-import java.util.ArrayList;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.createPositionInfo(this, node);
-      TraceInfoGenerationUtil.createScopeInfo(this, node);
-    }
+    createPositionInfo(node);
+    createScopeInfo(node);
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
       appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
     }
@@ -93,29 +86,8 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       this.appendNewLine();
     }
     if (getBuffer().hasPositionsSupport()) {
-      {
-        String traceableProperty = "";
-        try {
-          traceableProperty = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{});
-        } catch (Throwable t) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Can't calculate traceable prorerty for a node " + node + ".", t);
-          }
-        }
-        TraceInfoGenerationUtil.fillPositionInfo(this, node, traceableProperty);
-      }
-      {
-        List<SNode> scopeVariables = new ArrayList<SNode>();
-        try {
-          scopeVariables = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{});
-        } catch (Throwable t) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Can't calculate scope variables for a node " + node + ".", t);
-          }
-        }
-        TraceInfoGenerationUtil.fillScopeInfo(this, node, scopeVariables);
-      }
+      fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
+      fillScopeInfo(node, BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{}));
     }
   }
-  protected static Logger LOG = LogManager.getLogger(InstanceMethodDeclaration_TextGen.class);
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -15,15 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class EnumClass_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (getBuffer().hasPositionsSupport()) {
-      TraceInfoGenerationUtil.createUnitInfo(this, node);
-    }
+    createUnitInfo(node);
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), this);
@@ -68,21 +62,10 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.appendWithIndent("}");
     this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
-      {
-        String unitName = null;
-        try {
-          unitName = BehaviorReflection.invokeVirtual(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{});
-        } catch (Throwable t) {
-          if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("Can't calculate unit name for a node " + node + ".", t);
-          }
-        }
-        TraceInfoGenerationUtil.fillUnitInfo(this, node, unitName);
-      }
+      fillUnitInfo(node, BehaviorReflection.invokeVirtual(String.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}));
     }
   }
   public String getExtension(SNode node) {
     return "java";
   }
-  protected static Logger LOG = LogManager.getLogger(EnumClass_TextGen.class);
 }

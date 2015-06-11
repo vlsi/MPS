@@ -517,11 +517,13 @@
                 <node concept="3uibUv" id="4dr7st0_ZEU" role="10QFUM">
                   <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
                 </node>
-                <node concept="2OqwBi" id="4dr7st0_ZEV" role="10QFUP">
-                  <node concept="37vLTw" id="4dr7st0_ZEW" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2BXC8DkHgq2" resolve="myScript" />
+                <node concept="2JrnkZ" id="4u7uetTHJSd" role="10QFUP">
+                  <node concept="2OqwBi" id="4dr7st0_ZEV" role="2JrQYb">
+                    <node concept="37vLTw" id="4dr7st0_ZEW" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2BXC8DkHgq2" resolve="myScript" />
+                    </node>
+                    <node concept="I4A8Y" id="4dr7st0_ZEX" role="2OqNvi" />
                   </node>
-                  <node concept="I4A8Y" id="4dr7st0_ZEX" role="2OqNvi" />
                 </node>
               </node>
             </node>
