@@ -3,9 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="5ajx" ref="r:ca31409d-862d-455e-85ee-8d510a57013f(jetbrains.mps.debugger.core)" />
@@ -224,6 +224,7 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
@@ -233,9 +234,7 @@
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC" />
-      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj">
-        <child id="2068944020170241614" name="param" index="3UR2Jh" />
-      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
@@ -2313,13 +2312,13 @@
       <node concept="TZ5HA" id="4d7ZCcwOtRa" role="TZ5H$">
         <node concept="1dT_AC" id="4d7ZCcwOtRb" role="1dT_Ay" />
       </node>
-      <node concept="TUZQ0" id="4d7ZCcwOtRc" role="3UR2Jh">
+      <node concept="TUZQ0" id="4d7ZCcwOtRc" role="3nqlJM">
         <property role="TUZQ4" value="breakpoint type" />
         <node concept="zr_56" id="4d7ZCcwOtRd" role="zr_5Q">
           <ref role="zr_51" node="2meLaIF5ltD" resolve="B" />
         </node>
       </node>
-      <node concept="TUZQ0" id="4d7ZCcwOtRe" role="3UR2Jh">
+      <node concept="TUZQ0" id="4d7ZCcwOtRe" role="3nqlJM">
         <property role="TUZQ4" value="location breakpoint type" />
         <node concept="zr_56" id="4d7ZCcwOtRf" role="zr_5Q">
           <ref role="zr_51" node="4d7ZCcwOtR6" resolve="L" />

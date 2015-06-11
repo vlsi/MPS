@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
@@ -150,7 +150,7 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
@@ -859,7 +859,7 @@
       <node concept="3clFbS" id="1mBiRF0LC6w" role="3clF47" />
     </node>
     <node concept="3UR2Jj" id="4vhWdcuRI$" role="lGtFl">
-      <node concept="TZ5HI" id="4vhWdcuRI_" role="TZ5Hx">
+      <node concept="TZ5HI" id="4vhWdcuRI_" role="3nqlJM">
         <node concept="TZ5HA" id="4vhWdcuRIA" role="3HnX3l">
           <node concept="1dT_AC" id="4vhWdcuRPJ" role="1dT_Ay">
             <property role="1dT_AB" value="action framework of dubious value and of single use (in mps.execution.lib.ui)" />

@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
@@ -206,7 +206,7 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
@@ -1842,7 +1842,7 @@
       </node>
     </node>
     <node concept="3UR2Jj" id="rsmmUzxBzl" role="lGtFl">
-      <node concept="TZ5HI" id="rsmmUzxBzm" role="TZ5Hx">
+      <node concept="TZ5HI" id="rsmmUzxBzm" role="3nqlJM">
         <node concept="TZ5HA" id="rsmmUzxBzn" role="3HnX3l">
           <node concept="1dT_AC" id="rsmmUzxDwM" role="1dT_Ay">
             <property role="1dT_AB" value="since MPS 3.2 ActionAspectDescriptor is completely generated, so this class should be removed after MPS 3.2" />
@@ -3175,7 +3175,7 @@
       <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
     </node>
     <node concept="3UR2Jj" id="rsmmUzxmLE" role="lGtFl">
-      <node concept="TZ5HI" id="rsmmUzxn1S" role="TZ5Hx">
+      <node concept="TZ5HI" id="rsmmUzxn1S" role="3nqlJM">
         <node concept="TZ5HA" id="rsmmUzxn1T" role="3HnX3l">
           <node concept="1dT_AC" id="rsmmUzxnhM" role="1dT_Ay">
             <property role="1dT_AB" value="since MPS 3.2 ActionAspectDescriptor is completely generated, so this class should be removed after MPS 3.2" />

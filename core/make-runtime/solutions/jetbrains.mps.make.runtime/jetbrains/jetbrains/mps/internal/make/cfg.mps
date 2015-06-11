@@ -4,8 +4,8 @@
   <languages>
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
@@ -128,11 +128,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -268,13 +266,13 @@
             <property role="1dT_AB" value="FIXME Theres's only 1 use, in BuildMakeService, likely we can get rid of it, and always use value from MakeSession" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5KMoCJBuMrw" role="TUOzN">
+        <node concept="TUZQ0" id="5KMoCJBuMrw" role="3nqlJM">
           <property role="TUZQ4" value="true to force complete generation" />
           <node concept="zr_55" id="5KMoCJBuMry" role="zr_5Q">
             <ref role="zr_51" node="7UozGIEQwRR" resolve="cleanMake" />
           </node>
         </node>
-        <node concept="x79VA" id="5KMoCJBuMrz" role="x79VK">
+        <node concept="x79VA" id="5KMoCJBuMrz" role="3nqlJM">
           <property role="x79VB" value="&lt;code&gt;this&lt;/code&gt; for convenience" />
         </node>
       </node>

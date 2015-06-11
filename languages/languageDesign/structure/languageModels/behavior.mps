@@ -7,8 +7,8 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -238,8 +238,8 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -2444,7 +2444,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="7l_AIgXO6YZ" role="lGtFl">
-        <node concept="TZ5HI" id="7l_AIgXO6Z0" role="TZ5Hx">
+        <node concept="TZ5HI" id="7l_AIgXO6Z0" role="3nqlJM">
           <node concept="TZ5HA" id="7l_AIgXO6Z1" role="3HnX3l">
             <node concept="1dT_AC" id="7l_AIgXO7V7" role="1dT_Ay">
               <property role="1dT_AB" value="not used in MPS" />
@@ -3430,7 +3430,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="7vc5PjWu4pm" role="lGtFl">
-        <node concept="TZ5HI" id="7vc5PjWu4pn" role="TZ5Hx">
+        <node concept="TZ5HI" id="7vc5PjWu4pn" role="3nqlJM">
           <node concept="TZ5HA" id="7vc5PjWu4po" role="3HnX3l">
             <node concept="1dT_AC" id="7vc5PjWukJ3" role="1dT_Ay">
               <property role="1dT_AB" value="don't use on a node. Use SNodeUtil.isDefaultSubstitutable(concept)" />
@@ -4762,7 +4762,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="7IH442d05If" role="lGtFl">
-        <node concept="TZ5HI" id="7IH442d05Ig" role="TZ5Hx">
+        <node concept="TZ5HI" id="7IH442d05Ig" role="3nqlJM">
           <node concept="TZ5HA" id="7IH442d05Ih" role="3HnX3l">
             <node concept="1dT_AC" id="7IH442d05Jt" role="1dT_Ay">
               <property role="1dT_AB" value="use canBeAppliedToNode" />

@@ -2,8 +2,8 @@
 <model ref="r:2efa673f-09db-4f93-9b0a-ba8232fe1b01(jetbrains.mps.testActions.util)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="nx1" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
@@ -133,10 +133,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -320,7 +319,7 @@
             <property role="1dT_AB" value="Such actionGroups belongs to main menu, so we could ignore them in check" />
           </node>
         </node>
-        <node concept="x79VA" id="3SXwVgLSjnW" role="x79VK">
+        <node concept="x79VA" id="3SXwVgLSjnW" role="3nqlJM">
           <property role="x79VB" value="set of actions ids" />
         </node>
       </node>
@@ -571,7 +570,7 @@
             <property role="1dT_AB" value="Creates list of actions/actionGroups with no parent, no shortcuts and not presented in MPS Core actions" />
           </node>
         </node>
-        <node concept="x79VA" id="_$eaC67kLa" role="x79VK">
+        <node concept="x79VA" id="_$eaC67kLa" role="3nqlJM">
           <property role="x79VB" value="List of &quot;flying&quot; actions/actionGroups to check" />
         </node>
       </node>
@@ -688,7 +687,7 @@
             <property role="1dT_AB" value="and do not belong to main menu" />
           </node>
         </node>
-        <node concept="x79VA" id="_$eaC67kL2" role="x79VK">
+        <node concept="x79VA" id="_$eaC67kL2" role="3nqlJM">
           <property role="x79VB" value="Set of actions/actionGroups ids" />
         </node>
       </node>

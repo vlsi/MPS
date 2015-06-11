@@ -12,7 +12,7 @@
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="osf5" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.tree(javax.swing.tree@java_stub)" />
@@ -306,7 +306,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -425,13 +425,10 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -2406,7 +2403,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="7iCFfvQGbNE" role="lGtFl">
-        <node concept="TZ5HI" id="7iCFfvQGbNF" role="TZ5Hx">
+        <node concept="TZ5HI" id="7iCFfvQGbNF" role="3nqlJM">
           <node concept="TZ5HA" id="7iCFfvQGbNG" role="3HnX3l">
             <node concept="1dT_AC" id="7iCFfvQGdET" role="1dT_Ay">
               <property role="1dT_AB" value="Use constructor with Project instead" />
@@ -2594,13 +2591,13 @@
             <property role="1dT_AB" value="." />
           </node>
         </node>
-        <node concept="TUZQ0" id="7iCFfvQ_RNX" role="TUOzN">
+        <node concept="TUZQ0" id="7iCFfvQ_RNX" role="3nqlJM">
           <property role="TUZQ4" value="indicates whether to perform clean build" />
           <node concept="zr_55" id="7iCFfvQ_RNZ" role="zr_5Q">
             <ref role="zr_51" node="7iCFfvQw3CS" resolve="clean" />
           </node>
         </node>
-        <node concept="x79VA" id="7iCFfvQ_RO0" role="x79VK">
+        <node concept="x79VA" id="7iCFfvQ_RO0" role="3nqlJM">
           <property role="x79VB" value="this for convenience" />
         </node>
       </node>
@@ -3484,7 +3481,7 @@
         <node concept="10P_77" id="7tZeFupJF8o" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="7iCFfvQxp2y" role="lGtFl">
-        <node concept="TZ5HI" id="7iCFfvQxp2z" role="TZ5Hx">
+        <node concept="TZ5HI" id="7iCFfvQxp2z" role="3nqlJM">
           <node concept="TZ5HA" id="7iCFfvQxp2$" role="3HnX3l">
             <node concept="1dT_AC" id="7iCFfvQxp66" role="1dT_Ay">
               <property role="1dT_AB" value=" use single argument constructor (the one with sole MakeActionParameters) instead" />

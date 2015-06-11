@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -190,11 +190,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -365,7 +363,7 @@
             <property role="1dT_AB" value="Token &quot;Name&quot;" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKWL" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKWL" role="3nqlJM">
           <property role="TUZQ4" value="string to test" />
           <node concept="zr_55" id="5M4a$b5iKWM" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKos" resolve="s" />
@@ -713,7 +711,7 @@
             <property role="1dT_AB" value="Token &quot;NameStartChar&quot;" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKT1" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKT1" role="3nqlJM">
           <property role="TUZQ4" value="character to test" />
           <node concept="zr_55" id="5M4a$b5iKT2" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKoA" resolve="c" />
@@ -880,7 +878,7 @@
             <property role="1dT_AB" value="Token &quot;NameChar&quot;" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKUS" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKUS" role="3nqlJM">
           <property role="TUZQ4" value="character to test" />
           <node concept="zr_55" id="5M4a$b5iKUT" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKTc" resolve="c" />
@@ -959,7 +957,7 @@
             <property role="1dT_AB" value="Token &quot;PITarget&quot;" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKXO" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKXO" role="3nqlJM">
           <property role="TUZQ4" value="target name to check" />
           <node concept="zr_55" id="5M4a$b5iKXP" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKX0" resolve="target" />
@@ -1094,7 +1092,7 @@
             <property role="1dT_AB" value="Token &quot;Char&quot;: any Unicode character, excluding the surrogate blocks, FFFE, and FFFF." />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKYM" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKYM" role="3nqlJM">
           <property role="TUZQ4" value="character to test" />
           <node concept="zr_55" id="5M4a$b5iKYN" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKYG" resolve="c" />
@@ -1561,7 +1559,7 @@
             <property role="1dT_AB" value="Token &quot;Comment&quot;: ((Char - '-') | ('-' (Char - '-')))*" />
           </node>
         </node>
-        <node concept="TUZQ0" id="5M4a$b5iKYz" role="TUOzN">
+        <node concept="TUZQ0" id="5M4a$b5iKYz" role="3nqlJM">
           <property role="TUZQ4" value="string to test" />
           <node concept="zr_55" id="5M4a$b5iKY$" role="zr_5Q">
             <ref role="zr_51" node="5M4a$b5iKYo" resolve="text" />
@@ -1727,13 +1725,13 @@
             <property role="1dT_AB" value="SystemLiteral ::= ('&quot;' [^&quot;]* '&quot;') | (&quot;'&quot; [^']* &quot;'&quot;)" />
           </node>
         </node>
-        <node concept="TUZQ0" id="1Qs9WekX7qb" role="TUOzN">
+        <node concept="TUZQ0" id="1Qs9WekX7qb" role="3nqlJM">
           <property role="TUZQ4" value="id to test" />
           <node concept="zr_55" id="1Qs9WekX7qc" role="zr_5Q">
             <ref role="zr_51" node="1Qs9WekX7q4" resolve="id" />
           </node>
         </node>
-        <node concept="x79VA" id="1Qs9WekX7qd" role="x79VK">
+        <node concept="x79VA" id="1Qs9WekX7qd" role="3nqlJM">
           <property role="x79VB" value="whether id is valid system id stinrg" />
         </node>
       </node>
@@ -1827,13 +1825,13 @@
             <property role="1dT_AB" value="PubidLiteral ::= '&quot;' PubidChar* '&quot;' | &quot;'&quot; (PubidChar - &quot;'&quot;)* &quot;'&quot;" />
           </node>
         </node>
-        <node concept="TUZQ0" id="1Qs9WekX59T" role="TUOzN">
+        <node concept="TUZQ0" id="1Qs9WekX59T" role="3nqlJM">
           <property role="TUZQ4" value="id to test" />
           <node concept="zr_55" id="1Qs9WekX59U" role="zr_5Q">
             <ref role="zr_51" node="1Qs9WekX59M" resolve="id" />
           </node>
         </node>
-        <node concept="x79VA" id="1Qs9WekX59V" role="x79VK">
+        <node concept="x79VA" id="1Qs9WekX59V" role="3nqlJM">
           <property role="x79VB" value="whether id is valid public id stinrg" />
         </node>
       </node>
@@ -2177,13 +2175,13 @@
             <property role="1dT_AB" value="PubidChar ::= #x20 | #xD | #xA | [a-zA-Z0-9] | [-'()+,./:=?;!*#@$_%]" />
           </node>
         </node>
-        <node concept="TUZQ0" id="1Qs9WekX5a4" role="TUOzN">
+        <node concept="TUZQ0" id="1Qs9WekX5a4" role="3nqlJM">
           <property role="TUZQ4" value="character to test" />
           <node concept="zr_55" id="1Qs9WekX5a5" role="zr_5Q">
             <ref role="zr_51" node="1Qs9WekX59E" resolve="c" />
           </node>
         </node>
-        <node concept="x79VA" id="1Qs9WekX5a6" role="x79VK">
+        <node concept="x79VA" id="1Qs9WekX5a6" role="3nqlJM">
           <property role="x79VB" value="whether character is valid public id character" />
         </node>
       </node>

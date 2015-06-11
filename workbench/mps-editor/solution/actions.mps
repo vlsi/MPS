@@ -7,9 +7,9 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
@@ -383,10 +383,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -4162,9 +4161,6 @@
             <property role="1dT_AB" value="We can use this method to determine if we should redispatch insert event to the corresponding" />
           </node>
         </node>
-        <node concept="x79VA" id="6KwcZ1G406A" role="x79VK">
-          <property role="x79VB" value="true if we should redispatch insert event to the next leaft cell" />
-        </node>
         <node concept="TZ5HA" id="6KwcZ1G406y" role="TZ5H$">
           <node concept="1dT_AC" id="6KwcZ1G406z" role="1dT_Ay">
             <property role="1dT_AB" value="child collection below the cell returned from cell.getNextLeaf() or we should go on and insert" />
@@ -4174,6 +4170,9 @@
           <node concept="1dT_AC" id="6KwcZ1G406_" role="1dT_Ay">
             <property role="1dT_AB" value="next child into a collection containing cell itself." />
           </node>
+        </node>
+        <node concept="x79VA" id="6KwcZ1G406A" role="3nqlJM">
+          <property role="x79VB" value="true if we should redispatch insert event to the next leaft cell" />
         </node>
       </node>
       <node concept="3Tm6S6" id="6KwcZ1G4060" role="1B3o_S" />
@@ -4339,9 +4338,6 @@
     <node concept="2YIFZL" id="6KwcZ1G406B" role="jymVt">
       <property role="TrG5h" value="hasSingleRolesAtLeftBoundary" />
       <node concept="P$JXv" id="6KwcZ1G407a" role="lGtFl">
-        <node concept="x79VA" id="6KwcZ1G407i" role="x79VK">
-          <property role="x79VB" value="true if we should redispatch insert event to the prev. leaft cell" />
-        </node>
         <node concept="TZ5HA" id="6KwcZ1G407b" role="TZ5H$">
           <node concept="1dT_AC" id="6KwcZ1G407c" role="1dT_Ay">
             <property role="1dT_AB" value="We can use this method to determine if we should redispatch insert event to the corresponding" />
@@ -4359,6 +4355,9 @@
           <node concept="1dT_AC" id="6KwcZ1G407h" role="1dT_Ay">
             <property role="1dT_AB" value="prev. child into a collection containing cell itself" />
           </node>
+        </node>
+        <node concept="x79VA" id="6KwcZ1G407i" role="3nqlJM">
+          <property role="x79VB" value="true if we should redispatch insert event to the prev. leaft cell" />
         </node>
       </node>
       <node concept="37vLTG" id="6KwcZ1G406C" role="3clF46">

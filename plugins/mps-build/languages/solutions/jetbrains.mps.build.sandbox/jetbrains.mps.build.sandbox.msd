@@ -20,7 +20,7 @@
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" fqName="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <language id="fd392034-7849-419d-9071-12563d152375" fqName="jetbrains.mps.baseLanguage.closures" version="0" />
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" fqName="jetbrains.mps.baseLanguage.collections" version="0" />
-    <language id="f2801650-65d5-424e-bb1b-463a8781b786" fqName="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" fqName="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" fqName="jetbrains.mps.build" version="0" />
     <language id="0cf935df-4699-4e9c-a132-fa109541cba3" fqName="jetbrains.mps.build.mps" version="1" />
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" fqName="jetbrains.mps.build.workflow" version="0" />

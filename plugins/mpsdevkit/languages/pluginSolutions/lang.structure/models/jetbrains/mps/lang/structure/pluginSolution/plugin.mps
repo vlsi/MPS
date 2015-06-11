@@ -386,12 +386,19 @@
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="8465538089690917625" name="param" index="TUOzN" />
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
-        <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
     </language>
     <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike">
@@ -8090,46 +8097,50 @@
                   </node>
                 </node>
                 <node concept="P$JXv" id="3NNdDGT6ChN" role="lGtFl">
-                  <node concept="TUZQ0" id="3NNdDGT6ChO" role="TUOzN">
-                    <property role="TUZQ4" value="node of some subconcept of " />
-                    <node concept="zr_55" id="3NNdDGT6ChP" role="zr_5Q">
+                  <node concept="TZ5HA" id="7XxYwsA8gOi" role="TZ5H$">
+                    <node concept="1dT_AC" id="7XxYwsA8gOj" role="1dT_Ay">
+                      <property role="1dT_AB" value="" />
+                    </node>
+                  </node>
+                  <node concept="TUZQ0" id="7XxYwsA8gSK" role="3nqlJM">
+                    <node concept="zr_55" id="7XxYwsA8gXd" role="zr_5Q">
                       <ref role="zr_51" node="3NNdDGT6ChJ" resolve="node" />
-                      <node concept="2c44tb" id="3NNdDGT6ChQ" role="lGtFl">
+                      <node concept="2c44tb" id="7XxYwsA8gXe" role="lGtFl">
                         <property role="P3scX" value="f2801650-65d5-424e-bb1b-463a8781b786/6832197706140518103/6832197706140518108" />
                         <property role="2qtEX8" value="param" />
                         <property role="3hQQBS" value="DocMethodParameterReference" />
-                        <node concept="37vLTw" id="3NNdDGT6ChR" role="2c44t1">
+                        <node concept="37vLTw" id="7XxYwsA8gXf" role="2c44t1">
                           <ref role="3cqZAo" node="3NNdDGSMN36" resolve="nodeToMigrate" />
                         </node>
                       </node>
                     </node>
-                    <node concept="2EMmih" id="3NNdDGT6ChS" role="lGtFl">
+                    <node concept="2EMmih" id="7XxYwsA8hp5" role="lGtFl">
                       <property role="P4ACc" value="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690881930/8465538089690881934" />
                       <property role="2qtEX9" value="text" />
-                      <node concept="3cpWs3" id="3NNdDGT6ChT" role="2c44t1">
-                        <node concept="2OqwBi" id="3NNdDGT6ChU" role="3uHU7w">
-                          <node concept="37vLTw" id="3NNdDGT6ChV" role="2Oq$k0">
+                      <node concept="3cpWs3" id="7XxYwsA8hpi" role="2c44t1">
+                        <node concept="2OqwBi" id="7XxYwsA8hpj" role="3uHU7w">
+                          <node concept="37vLTw" id="7XxYwsA8hpk" role="2Oq$k0">
                             <ref role="3cqZAo" node="3NNdDGSMEBd" resolve="newConcept" />
                           </node>
-                          <node concept="2qgKlT" id="3NNdDGT6ChW" role="2OqNvi">
+                          <node concept="2qgKlT" id="7XxYwsA8hpl" role="2OqNvi">
                             <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                           </node>
                         </node>
-                        <node concept="3cpWs3" id="3NNdDGT6ChX" role="3uHU7B">
-                          <node concept="3cpWs3" id="3NNdDGT6ChY" role="3uHU7B">
-                            <node concept="Xl_RD" id="3NNdDGT6ChZ" role="3uHU7B">
+                        <node concept="3cpWs3" id="7XxYwsA8hpm" role="3uHU7B">
+                          <node concept="3cpWs3" id="7XxYwsA8hpn" role="3uHU7B">
+                            <node concept="Xl_RD" id="7XxYwsA8hpo" role="3uHU7B">
                               <property role="Xl_RC" value="instance of some subconcept of " />
                             </node>
-                            <node concept="2OqwBi" id="3NNdDGT6Ci0" role="3uHU7w">
-                              <node concept="37vLTw" id="3NNdDGT6Ci1" role="2Oq$k0">
+                            <node concept="2OqwBi" id="7XxYwsA8hpp" role="3uHU7w">
+                              <node concept="37vLTw" id="7XxYwsA8hpq" role="2Oq$k0">
                                 <ref role="3cqZAo" node="3NNdDGSMEBb" resolve="oldConcept" />
                               </node>
-                              <node concept="2qgKlT" id="3NNdDGT6Ci2" role="2OqNvi">
+                              <node concept="2qgKlT" id="7XxYwsA8hpr" role="2OqNvi">
                                 <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
                               </node>
                             </node>
                           </node>
-                          <node concept="Xl_RD" id="3NNdDGT6Ci3" role="3uHU7w">
+                          <node concept="Xl_RD" id="7XxYwsA8hps" role="3uHU7w">
                             <property role="Xl_RC" value=" or " />
                           </node>
                         </node>

@@ -5,7 +5,7 @@
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -31,8 +31,8 @@
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="62l1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter(MPS.Core/jetbrains.mps.smodel.adapter@java_stub)" />
-    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="arit" ref="r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -324,7 +324,7 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -1426,7 +1426,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="5TYh2YDXLuJ" role="lGtFl">
-        <node concept="TZ5HI" id="5TYh2YDXLuK" role="TZ5Hx">
+        <node concept="TZ5HI" id="5TYh2YDXLuK" role="3nqlJM">
           <node concept="TZ5HA" id="5TYh2YDXLuL" role="3HnX3l">
             <node concept="1dT_AC" id="5TYh2YDXL_1" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink version, remove after 3.3" />
@@ -15013,7 +15013,7 @@
         <node concept="3THzug" id="13YBgBBS5XB" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="_dGddVG9G7" role="lGtFl">
-        <node concept="TZ5HI" id="_dGddVG9G8" role="TZ5Hx">
+        <node concept="TZ5HI" id="_dGddVG9G8" role="3nqlJM">
           <node concept="TZ5HA" id="_dGddVG9G9" role="3HnX3l">
             <node concept="1dT_AC" id="_dGddVG9R7" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink variant, remove this after 3.3" />
@@ -15588,7 +15588,7 @@
         <node concept="3THzug" id="_dGddVGb1g" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="_dGddVGar3" role="lGtFl">
-        <node concept="TZ5HI" id="_dGddVGar4" role="TZ5Hx">
+        <node concept="TZ5HI" id="_dGddVGar4" role="3nqlJM">
           <node concept="TZ5HA" id="_dGddVGar5" role="3HnX3l">
             <node concept="1dT_AC" id="_dGddVGay0" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink variant, remove this after 3.3" />

@@ -4,8 +4,8 @@
   <languages>
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -318,8 +318,8 @@
         <child id="3106559687488913694" name="line" index="2XjZqd" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -1970,7 +1970,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="3U4Yh9n2uJK" role="lGtFl">
-        <node concept="TZ5HI" id="3U4Yh9n2uJL" role="TZ5Hx">
+        <node concept="TZ5HI" id="3U4Yh9n2uJL" role="3nqlJM">
           <node concept="TZ5HA" id="3U4Yh9n2uJM" role="3HnX3l">
             <node concept="1dT_AC" id="3U4Yh9n2xjW" role="1dT_Ay">
               <property role="1dT_AB" value="use " />

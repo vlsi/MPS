@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="fxg7" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -312,11 +312,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -5244,13 +5242,13 @@
             <property role="1dT_AB" value="Override and make final. Called from the constructor when object is not fully constructed." />
           </node>
         </node>
-        <node concept="TUZQ0" id="ZQ3mOaURXi" role="TUOzN">
+        <node concept="TUZQ0" id="ZQ3mOaURXi" role="3nqlJM">
           <property role="TUZQ4" value=" " />
           <node concept="zr_55" id="ZQ3mOaURXj" role="zr_5Q">
             <ref role="zr_51" node="ZQ3mOaURVL" resolve="parentFqName" />
           </node>
         </node>
-        <node concept="x79VA" id="ZQ3mOaURXk" role="x79VK">
+        <node concept="x79VA" id="ZQ3mOaURXk" role="3nqlJM">
           <property role="x79VB" value=" " />
         </node>
       </node>
@@ -5986,19 +5984,19 @@
             <property role="1dT_AB" value="Deduce common parent directory given two normalized/straighten paths" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3avV6wmsQ6G" role="TUOzN">
+        <node concept="TUZQ0" id="3avV6wmsQ6G" role="3nqlJM">
           <property role="TUZQ4" value="first path" />
           <node concept="zr_55" id="3avV6wmsQ6I" role="zr_5Q">
             <ref role="zr_51" node="3avV6wmsqKB" resolve="path1" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3avV6wmsQ6J" role="TUOzN">
+        <node concept="TUZQ0" id="3avV6wmsQ6J" role="3nqlJM">
           <property role="TUZQ4" value="second path" />
           <node concept="zr_55" id="3avV6wmsQ6L" role="zr_5Q">
             <ref role="zr_51" node="3avV6wmsqME" resolve="path2" />
           </node>
         </node>
-        <node concept="x79VA" id="3avV6wmsQ6M" role="x79VK">
+        <node concept="x79VA" id="3avV6wmsQ6M" role="3nqlJM">
           <property role="x79VB" value="empty text if directory paths don't share common prefix, common prefix including trailing slash otherwise" />
         </node>
       </node>

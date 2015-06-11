@@ -6,8 +6,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -282,8 +282,8 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -3111,7 +3111,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwESq" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwESr" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwESr" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwESs" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwETG" role="1dT_Ay">
               <property role="1dT_AB" value="use .ancestors.contains() in smodel language" />
@@ -3203,7 +3203,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwF6u" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwF6v" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwF6v" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwF6w" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwFcB" role="1dT_Ay">
               <property role="1dT_AB" value="there is no full equivalent to this, use SNode.getChildren or node/../.children operations if possible" />
@@ -3325,7 +3325,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwHoC" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwHoD" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwHoD" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwHoE" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwHro" role="1dT_Ay">
               <property role="1dT_AB" value="use node/../.ancestors.where " />
@@ -3442,7 +3442,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwHrq" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwHrr" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwHrr" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwHrs" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwHIp" role="1dT_Ay">
               <property role="1dT_AB" value="rewrite to SProperty, don't use strings" />
@@ -3613,18 +3613,18 @@
         </node>
       </node>
       <node concept="P$JXv" id="1GH7SoqRSvn" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwIOS" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwIOT" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwIRB" role="1dT_Ay">
-              <property role="1dT_AB" value="rewrite to SContainmentLink, don't use by-name roles, use SNode methods " />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="1GH7SoqRSvo" role="TZ5H$">
           <node concept="1dT_AC" id="1GH7SoqRSvq" role="1dT_Ay">
             <property role="1dT_AB" value="todo rewrite the code using this" />
           </node>
           <node concept="1dT_AC" id="1GH7SoqRSvp" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwIOS" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwIOT" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwIRB" role="1dT_Ay">
+              <property role="1dT_AB" value="rewrite to SContainmentLink, don't use by-name roles, use SNode methods " />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="1GH7SoqRSvr" role="3clF46">
@@ -3702,18 +3702,18 @@
         </node>
       </node>
       <node concept="P$JXv" id="1GH7SoqRZJG" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwIRD" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwIRE" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwIVT" role="1dT_Ay">
-              <property role="1dT_AB" value="use SNode.getReferences" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="1GH7SoqRZJH" role="TZ5H$">
           <node concept="1dT_AC" id="1GH7SoqRZJI" role="1dT_Ay">
             <property role="1dT_AB" value="todo rewrite the code using this" />
           </node>
           <node concept="1dT_AC" id="1GH7SoqRZJJ" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwIRD" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwIRE" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwIVT" role="1dT_Ay">
+              <property role="1dT_AB" value="use SNode.getReferences" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="1GH7SoqRZJK" role="3clF46">
@@ -3753,18 +3753,18 @@
         </node>
       </node>
       <node concept="P$JXv" id="1GH7SoqS5Vr" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwK2j" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwK2k" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwK4J" role="1dT_Ay">
-              <property role="1dT_AB" value="use SNode.getChildren" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="1GH7SoqS5Vs" role="TZ5H$">
           <node concept="1dT_AC" id="1GH7SoqS5Vt" role="1dT_Ay">
             <property role="1dT_AB" value="todo rewrite the code using this" />
           </node>
           <node concept="1dT_AC" id="1GH7SoqS5Vu" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwK2j" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwK2k" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwK4J" role="1dT_Ay">
+              <property role="1dT_AB" value="use SNode.getChildren" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="1GH7SoqS5Vv" role="3clF46">
@@ -3844,7 +3844,13 @@
         </node>
       </node>
       <node concept="P$JXv" id="1GH7SoqTdhC" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwK4L" role="TZ5Hx">
+        <node concept="TZ5HA" id="1GH7SoqTdhD" role="TZ5H$">
+          <node concept="1dT_AC" id="1GH7SoqTdhE" role="1dT_Ay">
+            <property role="1dT_AB" value="todo rewrite the code using this" />
+          </node>
+          <node concept="1dT_AC" id="1GH7SoqTdhF" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwK4L" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwK4M" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwK7G" role="1dT_Ay">
               <property role="1dT_AB" value="use either SNode.getReference.select(it-&gt;it.role) or SNode.getConcept.getReferenceLinks depending on what you want to get" />
@@ -3853,12 +3859,6 @@
               <property role="1dT_AB" value="" />
             </node>
           </node>
-        </node>
-        <node concept="TZ5HA" id="1GH7SoqTdhD" role="TZ5H$">
-          <node concept="1dT_AC" id="1GH7SoqTdhE" role="1dT_Ay">
-            <property role="1dT_AB" value="todo rewrite the code using this" />
-          </node>
-          <node concept="1dT_AC" id="1GH7SoqTdhF" role="1dT_Ay" />
         </node>
       </node>
       <node concept="37vLTG" id="1GH7SoqTdhG" role="3clF46">
@@ -3905,18 +3905,18 @@
         </node>
       </node>
       <node concept="P$JXv" id="2k9fL4dNTIP" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwKHh" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwKHi" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwKIj" role="1dT_Ay">
-              <property role="1dT_AB" value="SNode.getParent!=null mostly (if done in &quot;user&quot; code which operates with nodes inside models)" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="2k9fL4dNTIQ" role="TZ5H$">
           <node concept="1dT_AC" id="2k9fL4dNTIR" role="1dT_Ay">
             <property role="1dT_AB" value="todo rewrite the code using this" />
           </node>
           <node concept="1dT_AC" id="2k9fL4dNTIS" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwKHh" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwKHi" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwKIj" role="1dT_Ay">
+              <property role="1dT_AB" value="SNode.getParent!=null mostly (if done in &quot;user&quot; code which operates with nodes inside models)" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="2k9fL4dNTIT" role="3clF46">
@@ -3984,13 +3984,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="2WtH7EQWx_I" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwKIl" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwKIm" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwKJz" role="1dT_Ay">
-              <property role="1dT_AB" value="use SNode.insertChildBefore/insertChildAfter" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="2WtH7EQWx_J" role="TZ5H$">
           <node concept="1dT_AC" id="2WtH7EQWx_K" role="1dT_Ay">
             <property role="1dT_AB" value="todo rewrite the code via snode methods" />
@@ -4002,6 +3995,13 @@
         <node concept="TZ5HA" id="3qaUGgZWvK7" role="TZ5H$">
           <node concept="1dT_AC" id="3qaUGgZWvK8" role="1dT_Ay">
             <property role="1dT_AB" value="@deprecated Use OpenAPI methods directly" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwKIl" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwKIm" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwKJz" role="1dT_Ay">
+              <property role="1dT_AB" value="use SNode.insertChildBefore/insertChildAfter" />
+            </node>
           </node>
         </node>
       </node>
@@ -4218,13 +4218,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="3YzxW_BCQAP" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwLj2" role="TZ5Hx">
-          <node concept="TZ5HA" id="2DYuqezwLj3" role="3HnX3l">
-            <node concept="1dT_AC" id="2DYuqezwPiD" role="1dT_Ay">
-              <property role="1dT_AB" value="use SNode.insertChildBefore/insertChildAfter" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="3YzxW_BCQAQ" role="TZ5H$">
           <node concept="1dT_AC" id="3YzxW_BCQAR" role="1dT_Ay">
             <property role="1dT_AB" value="Insert a child *after* specified anchor, or to the head of children list if anchor is null" />
@@ -4235,6 +4228,13 @@
             <property role="1dT_AB" value="todo rewrite the code via snode methods" />
           </node>
           <node concept="1dT_AC" id="3YzxW_BCQAS" role="1dT_Ay" />
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwLj2" role="3nqlJM">
+          <node concept="TZ5HA" id="2DYuqezwLj3" role="3HnX3l">
+            <node concept="1dT_AC" id="2DYuqezwPiD" role="1dT_Ay">
+              <property role="1dT_AB" value="use SNode.insertChildBefore/insertChildAfter" />
+            </node>
+          </node>
         </node>
       </node>
       <node concept="37vLTG" id="3YzxW_BCQAT" role="3clF46">
@@ -4696,16 +4696,16 @@
         </node>
       </node>
       <node concept="P$JXv" id="7U87j6$6ALL" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwPiF" role="TZ5Hx">
+        <node concept="TZ5HA" id="7U87j6$6ALM" role="TZ5H$">
+          <node concept="1dT_AC" id="7U87j6$6ALN" role="1dT_Ay">
+            <property role="1dT_AB" value="this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwPiF" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwPiG" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwPEa" role="1dT_Ay">
               <property role="1dT_AB" value="use SNode.getName, SNode.getModel or whatever info you really need. " />
             </node>
-          </node>
-        </node>
-        <node concept="TZ5HA" id="7U87j6$6ALM" role="TZ5H$">
-          <node concept="1dT_AC" id="7U87j6$6ALN" role="1dT_Ay">
-            <property role="1dT_AB" value="this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode" />
           </node>
         </node>
       </node>
@@ -4725,7 +4725,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwQdM" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwQdN" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwQdN" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwQdO" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwQkG" role="1dT_Ay">
               <property role="1dT_AB" value="use either SNode.getChildren.select(it-&gt;it.role) or SNode.getConcept.getContainmentLinks depending on what you want to get" />
@@ -4844,7 +4844,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwQkI" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwQkJ" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwQkJ" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwQkK" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwQsn" role="1dT_Ay">
               <property role="1dT_AB" value="use node/../.child or SNode.getChildren" />
@@ -4942,7 +4942,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwQsp" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwQsq" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwQsq" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwQsr" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwQ$4" role="1dT_Ay">
               <property role="1dT_AB" value="rewrite using SContainmentLink, don't use by-string roles" />
@@ -5099,16 +5099,16 @@
         </node>
       </node>
       <node concept="P$JXv" id="5T4fSAVTn3j" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwYaF" role="TZ5Hx">
+        <node concept="TZ5HA" id="5T4fSAVTn3k" role="TZ5H$">
+          <node concept="1dT_AC" id="5T4fSAVTn3l" role="1dT_Ay">
+            <property role="1dT_AB" value="This will be replaced by getting resolve info from a reference in a context containing it" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="2DYuqezwYaF" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwYaG" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwYdF" role="1dT_Ay">
               <property role="1dT_AB" value="use SNodeUtil.getResolveInfo (note it does not return name in case of !isInstanceOf(IResolveInfo))" />
             </node>
-          </node>
-        </node>
-        <node concept="TZ5HA" id="5T4fSAVTn3k" role="TZ5H$">
-          <node concept="1dT_AC" id="5T4fSAVTn3l" role="1dT_Ay">
-            <property role="1dT_AB" value="This will be replaced by getting resolve info from a reference in a context containing it" />
           </node>
         </node>
       </node>
@@ -5120,7 +5120,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwXdM" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwXdN" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwXdN" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwXdO" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwXhl" role="1dT_Ay">
               <property role="1dT_AB" value="use node/../.copy or copy manually" />
@@ -5192,7 +5192,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwQ$6" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwQ$7" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwQ$7" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwQ$8" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwQBK" role="1dT_Ay">
               <property role="1dT_AB" value="use SNode.getConcept.getLanguage (+.getSourceModule?)" />
@@ -5277,7 +5277,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezwQBM" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezwQBN" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezwQBN" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezwQBO" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezwQFn" role="1dT_Ay">
               <property role="1dT_AB" value="don't use user objects, store them separately" />
@@ -5350,7 +5350,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx02B" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx02C" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx02C" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx02D" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx05v" role="1dT_Ay">
               <property role="1dT_AB" value="just inline" />
@@ -5423,7 +5423,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx05x" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx05y" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx05y" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx05z" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx07D" role="1dT_Ay">
               <property role="1dT_AB" value="not supposed to be used not in MPS core. Use ref.getTargetNode" />
@@ -5501,7 +5501,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx07F" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx07G" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx07G" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx07H" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx09D" role="1dT_Ay">
               <property role="1dT_AB" value="inline" />
@@ -5539,7 +5539,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx09F" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx09G" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx09G" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx09H" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx0b_" role="1dT_Ay">
               <property role="1dT_AB" value="inline" />
@@ -5586,16 +5586,6 @@
         </node>
       </node>
       <node concept="P$JXv" id="3TEgbCBO2QB" role="lGtFl">
-        <node concept="TZ5HI" id="3TEgbCBO2QC" role="TZ5Hx">
-          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
-            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
-              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
-            </node>
-            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
-              <property role="1dT_AB" value="" />
-            </node>
-          </node>
-        </node>
         <node concept="TZ5HA" id="419l6RFrlDx" role="TZ5H$">
           <node concept="1dT_AC" id="419l6RFrlDy" role="1dT_Ay">
             <property role="1dT_AB" value="Legacy code to access model's used languages as a collection of SModuleReference, rather than that of SLanguage." />
@@ -5604,6 +5594,16 @@
         <node concept="TZ5HA" id="419l6RFrlDK" role="TZ5H$">
           <node concept="1dT_AC" id="419l6RFrlDL" role="1dT_Ay">
             <property role="1dT_AB" value="Once all uses are refactored, will be removed. SNodeOperations is bad location for the method anyway." />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="3TEgbCBO2QC" role="3nqlJM">
+          <node concept="TZ5HA" id="3TEgbCBO2QD" role="3HnX3l">
+            <node concept="1dT_AC" id="3TEgbCBO38t" role="1dT_Ay">
+              <property role="1dT_AB" value="If there's need for replacement, use j.m.s.SModelOperations.getAllImportedLanguageIds()" />
+            </node>
+            <node concept="1dT_AC" id="3TEgbCBO38v" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
           </node>
         </node>
       </node>
@@ -5665,7 +5665,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx0bB" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx0bC" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx0bC" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx0bD" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx0e9" role="1dT_Ay">
               <property role="1dT_AB" value="use model.getRepository!=null" />
@@ -5712,7 +5712,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx0eb" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx0ec" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx0ec" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx0ed" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx0hM" role="1dT_Ay">
               <property role="1dT_AB" value="inline" />
@@ -5757,7 +5757,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx0hO" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx0hP" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx0hP" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx0hQ" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx0jS" role="1dT_Ay">
               <property role="1dT_AB" value="use model.getRepository!=null" />
@@ -5798,7 +5798,7 @@
         <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
       </node>
       <node concept="P$JXv" id="2DYuqezx0jU" role="lGtFl">
-        <node concept="TZ5HI" id="2DYuqezx0jV" role="TZ5Hx">
+        <node concept="TZ5HI" id="2DYuqezx0jV" role="3nqlJM">
           <node concept="TZ5HA" id="2DYuqezx0jW" role="3HnX3l">
             <node concept="1dT_AC" id="2DYuqezx0mf" role="1dT_Ay">
               <property role="1dT_AB" value="not supposed to be used outside of MPS core, inline if you use it" />

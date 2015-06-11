@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="to5d" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)" />
@@ -228,12 +228,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516428" name="throwsTag" index="x79V$" />
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -244,9 +241,7 @@
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
-      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj">
-        <child id="2068944020170241614" name="param" index="3UR2Jh" />
-      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -1268,25 +1263,25 @@
             <property role="1dT_AB" value="Do something and convert jdi exceptions to evaluation exception" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6gC" role="TUOzN">
+        <node concept="TUZQ0" id="4jzwNwQQ6gC" role="3nqlJM">
           <property role="TUZQ4" value="what to invoke" />
           <node concept="zr_55" id="4jzwNwQQ6gD" role="zr_5Q">
             <ref role="zr_51" node="46sxDGTfnXG" resolve="invocatable" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6gE" role="TUOzN">
+        <node concept="TUZQ0" id="4jzwNwQQ6gE" role="3nqlJM">
           <property role="TUZQ4" value="result" />
           <node concept="zr_56" id="4jzwNwQQ6gF" role="zr_5Q">
             <ref role="zr_51" node="46sxDGTfnXE" resolve="T" />
           </node>
         </node>
-        <node concept="x0GOo" id="4jzwNwQQ6gG" role="x79V$">
+        <node concept="x0GOo" id="4jzwNwQQ6gG" role="3nqlJM">
           <property role="x0GOq" value="wrapper of the original exception" />
           <node concept="3uibUv" id="4jzwNwQQ6gH" role="zrq5$">
             <ref role="3uigEE" node="46sxDGTfogQ" resolve="EvaluationException" />
           </node>
         </node>
-        <node concept="x79VA" id="4jzwNwQQ6gI" role="x79VK">
+        <node concept="x79VA" id="4jzwNwQQ6gI" role="3nqlJM">
           <property role="x79VB" value="result" />
         </node>
       </node>
@@ -1437,25 +1432,25 @@
             <property role="1dT_AB" value="For example when we update the tree." />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6Yz" role="TUOzN">
+        <node concept="TUZQ0" id="4jzwNwQQ6Yz" role="3nqlJM">
           <property role="TUZQ4" value="the action to invoke" />
           <node concept="zr_55" id="4jzwNwQQ6Y$" role="zr_5Q">
             <ref role="zr_51" node="4jzwNwQQ6hi" resolve="invocatable" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6Y_" role="TUOzN">
+        <node concept="TUZQ0" id="4jzwNwQQ6Y_" role="3nqlJM">
           <property role="TUZQ4" value="value to return in case of failure" />
           <node concept="zr_55" id="4jzwNwQQ6YA" role="zr_5Q">
             <ref role="zr_51" node="4jzwNwQQ6kh" resolve="failure" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6YB" role="TUOzN">
+        <node concept="TUZQ0" id="4jzwNwQQ6YB" role="3nqlJM">
           <property role="TUZQ4" value="result" />
           <node concept="zr_56" id="4jzwNwQQ6YC" role="zr_5Q">
             <ref role="zr_51" node="4jzwNwQQ6hg" resolve="T" />
           </node>
         </node>
-        <node concept="x79VA" id="4jzwNwQQ6YD" role="x79VK">
+        <node concept="x79VA" id="4jzwNwQQ6YD" role="3nqlJM">
           <property role="x79VB" value="result" />
         </node>
       </node>
@@ -1474,7 +1469,7 @@
             <property role="1dT_AB" value="Something that can throw one of jdi exceptions or EvaluationException" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6gz" role="3UR2Jh">
+        <node concept="TUZQ0" id="4jzwNwQQ6gz" role="3nqlJM">
           <property role="TUZQ4" value="result" />
           <node concept="zr_56" id="4jzwNwQQ6g$" role="zr_5Q">
             <ref role="zr_51" node="46sxDGTfnGm" resolve="T" />
@@ -1521,7 +1516,7 @@
             <property role="1dT_AB" value="Something that can throw EvaluationException" />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6h8" role="3UR2Jh">
+        <node concept="TUZQ0" id="4jzwNwQQ6h8" role="3nqlJM">
           <property role="TUZQ4" value="result" />
           <node concept="zr_56" id="4jzwNwQQ6h9" role="zr_5Q">
             <ref role="zr_51" node="4jzwNwQQ6gV" resolve="T" />
@@ -1564,7 +1559,7 @@
             <property role="1dT_AB" value="Some action which also has information about thread reference where it happenes." />
           </node>
         </node>
-        <node concept="TUZQ0" id="4jzwNwQQ6gM" role="3UR2Jh">
+        <node concept="TUZQ0" id="4jzwNwQQ6gM" role="3nqlJM">
           <property role="TUZQ4" value="result" />
           <node concept="zr_56" id="4jzwNwQQ6gN" role="zr_5Q">
             <ref role="zr_51" node="46sxDGTfnGr" resolve="T" />

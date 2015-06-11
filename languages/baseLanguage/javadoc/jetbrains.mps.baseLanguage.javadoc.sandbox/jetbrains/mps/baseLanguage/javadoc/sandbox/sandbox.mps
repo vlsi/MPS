@@ -2,8 +2,8 @@
 <model ref="r:e54ee518-0377-432d-bc34-b3be6fdddf5b(jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -114,20 +114,13 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="5349172909345532722" name="author" index="P$JXp" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
-        <child id="8465538089690331490" name="since" index="TZ5HC" />
-        <child id="8465538089690331491" name="version" index="TZ5HD" />
-        <child id="2217234381367277533" name="see" index="VUckL" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345530174" name="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" flags="ng" index="P$Jll">
         <property id="5349172909345532826" name="text" index="P$JZL" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516428" name="throwsTag" index="x79V$" />
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -172,9 +165,7 @@
         <child id="2565027568480905697" name="statement" index="3xYUsq" />
       </concept>
       <concept id="6501140109493894267" name="jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference" flags="ng" index="1RlsK7" />
-      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj">
-        <child id="2068944020170241614" name="param" index="3UR2Jh" />
-      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -197,7 +188,7 @@
           <property role="1dT_AB" value="Comment for class " />
         </node>
       </node>
-      <node concept="TUZQ0" id="3pXDj_D6c$N" role="3UR2Jh">
+      <node concept="TUZQ0" id="3pXDj_D6c$N" role="3nqlJM">
         <property role="TUZQ4" value="param" />
         <node concept="zr_56" id="3pXDj_D6c$O" role="zr_5Q">
           <ref role="zr_51" node="5VgPTPXKiIc" resolve="TT" />
@@ -226,7 +217,7 @@
         <node concept="TZ5HA" id="3veQ_zQwjEc" role="TZ5H$">
           <node concept="1dT_AC" id="3veQ_zQwjEd" role="1dT_Ay" />
         </node>
-        <node concept="VUp57" id="3veQ_zQwjEe" role="VUckL">
+        <node concept="VUp57" id="3veQ_zQwjEe" role="3nqlJM">
           <property role="VUp50" value="see, yes" />
           <node concept="VXe08" id="3pXDj_D6c$R" role="VUp5m">
             <ref role="VXe09" to="e2lb:~CharacterDataUndefined" resolve="CharacterDataUndefined" />
@@ -247,7 +238,7 @@
         <node concept="TZ5HA" id="3veQ_zQwGfH" role="TZ5H$">
           <node concept="1dT_AC" id="3veQ_zQwGfI" role="1dT_Ay" />
         </node>
-        <node concept="P$Jll" id="3veQ_zQwGfL" role="P$JXp">
+        <node concept="P$Jll" id="3veQ_zQwGfL" role="3nqlJM">
           <property role="P$JZL" value="Ludwig Zoo" />
         </node>
       </node>
@@ -374,44 +365,44 @@
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TUZQ0" id="3veQ_zQsYdN" role="TUOzN">
+        <node concept="P$Jll" id="3veQ_zQsYdS" role="3nqlJM">
+          <property role="P$JZL" value="Ludwig Zoo" />
+        </node>
+        <node concept="TZ7YB" id="3veQ_zQsYdW" role="3nqlJM">
+          <property role="TZ7Y_" value="2004." />
+        </node>
+        <node concept="TZ7YE" id="3veQ_zQsYdV" role="3nqlJM">
+          <property role="TZ7YF" value="1.1.1.1.1" />
+        </node>
+        <node concept="VUp57" id="3veQ_zQsYdT" role="3nqlJM">
+          <node concept="1RlsK7" id="3veQ_zQthl4" role="VUp5m">
+            <ref role="YTMYt" node="4OLqP_NPzXl" resolve="SOME_CONSTANT" />
+          </node>
+        </node>
+        <node concept="VUp57" id="3veQ_zQtnVz" role="3nqlJM">
+          <node concept="VXe0Z" id="3veQ_zQtM$j" role="VUp5m">
+            <ref role="VXe0S" to="e2lb:~Integer.toString(int,int):java.lang.String" resolve="toString" />
+          </node>
+        </node>
+        <node concept="VUp57" id="3veQ_zQve0H" role="3nqlJM">
+          <node concept="VXe08" id="3veQ_zQv$6i" role="VUp5m">
+            <ref role="VXe09" to="1t7x:~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="3veQ_zQsYdN" role="3nqlJM">
           <property role="TUZQ4" value="param :)" />
           <node concept="zr_55" id="3veQ_zQsYdO" role="zr_5Q">
             <ref role="zr_51" node="6nHreUlPTYr" resolve="a" />
           </node>
         </node>
-        <node concept="x0GOo" id="3veQ_zQsYdP" role="x79V$">
+        <node concept="x0GOo" id="3veQ_zQsYdP" role="3nqlJM">
           <property role="x0GOq" value="ase :)" />
           <node concept="3uibUv" id="3veQ_zQsYdQ" role="zrq5$">
             <ref role="3uigEE" to="e2lb:~ArrayStoreException" resolve="ArrayStoreException" />
           </node>
         </node>
-        <node concept="x79VA" id="3veQ_zQsYdR" role="x79VK">
+        <node concept="x79VA" id="3veQ_zQsYdR" role="3nqlJM">
           <property role="x79VB" value="int :)" />
-        </node>
-        <node concept="P$Jll" id="3veQ_zQsYdS" role="P$JXp">
-          <property role="P$JZL" value="Ludwig Zoo" />
-        </node>
-        <node concept="VUp57" id="3veQ_zQsYdT" role="VUckL">
-          <node concept="1RlsK7" id="3veQ_zQthl4" role="VUp5m">
-            <ref role="YTMYt" node="4OLqP_NPzXl" resolve="SOME_CONSTANT" />
-          </node>
-        </node>
-        <node concept="VUp57" id="3veQ_zQtnVz" role="VUckL">
-          <node concept="VXe0Z" id="3veQ_zQtM$j" role="VUp5m">
-            <ref role="VXe0S" to="e2lb:~Integer.toString(int,int):java.lang.String" resolve="toString" />
-          </node>
-        </node>
-        <node concept="VUp57" id="3veQ_zQve0H" role="VUckL">
-          <node concept="VXe08" id="3veQ_zQv$6i" role="VUp5m">
-            <ref role="VXe09" to="1t7x:~JobAttributes$DialogType" resolve="JobAttributes.DialogType" />
-          </node>
-        </node>
-        <node concept="TZ7YE" id="3veQ_zQsYdV" role="TZ5HD">
-          <property role="TZ7YF" value="1.1.1.1.1" />
-        </node>
-        <node concept="TZ7YB" id="3veQ_zQsYdW" role="TZ5HC">
-          <property role="TZ7Y_" value="2004." />
         </node>
       </node>
     </node>
@@ -535,7 +526,7 @@
             <property role="1dT_AB" value="asdf" />
           </node>
         </node>
-        <node concept="TUZQ0" id="2GsHTemevBD" role="TUOzN">
+        <node concept="TUZQ0" id="2GsHTemevBD" role="3nqlJM">
           <node concept="zr_55" id="2GsHTemevBE" role="zr_5Q">
             <ref role="zr_51" node="3veQ_zQuD84" resolve="s" />
           </node>
@@ -553,7 +544,7 @@
             <property role="1dT_AB" value="fasdfasdfasdfasdfasdf" />
           </node>
         </node>
-        <node concept="TZ7YE" id="3veQ_zQwGfB" role="TZ5HD">
+        <node concept="TZ7YE" id="3veQ_zQwGfB" role="3nqlJM">
           <property role="TZ7YF" value="asdfasdf" />
         </node>
       </node>

@@ -77,8 +77,8 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
                * 
                * Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText
                * 
-               * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
                * @param refText reference text
+               * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
                * @return resolved element when reference text unambiguously identifies element, null otherwise
                */
               @Nullable
@@ -91,8 +91,8 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
                * 
                * Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node
                * 
-               * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
                * @param node element from the current scope (contains(node) == true)
+               * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
                * @return reference text for the node element in the current scope
                */
               @Nullable

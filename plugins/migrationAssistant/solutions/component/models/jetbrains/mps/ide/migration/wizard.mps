@@ -4,12 +4,12 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="bktd" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.wizard(MPS.IDEA/com.intellij.ide.wizard@java_stub)" />
@@ -283,10 +283,9 @@
       <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -4899,7 +4898,7 @@
         <ref role="3uigEE" to="e2lb:~String" resolve="String" />
       </node>
       <node concept="P$JXv" id="2htE_P_PJ_k" role="lGtFl">
-        <node concept="x79VA" id="2htE_P_PJ_n" role="x79VK">
+        <node concept="x79VA" id="2htE_P_PJ_n" role="3nqlJM">
           <property role="x79VB" value="text to display on next step" />
         </node>
       </node>
@@ -4919,7 +4918,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="2htE_P_PJ_z" role="lGtFl">
-        <node concept="x79VA" id="2htE_P_PJ_A" role="x79VK">
+        <node concept="x79VA" id="2htE_P_PJ_A" role="3nqlJM">
           <property role="x79VB" value="problems to show in model checker tool" />
         </node>
       </node>
@@ -4937,7 +4936,7 @@
       <node concept="3Tm1VV" id="2htE_P_Mtog" role="1B3o_S" />
       <node concept="3clFbS" id="2htE_P_Mtoh" role="3clF47" />
       <node concept="P$JXv" id="2htE_P_PM28" role="lGtFl">
-        <node concept="x79VA" id="2htE_P_PM2b" role="x79VK">
+        <node concept="x79VA" id="2htE_P_PM2b" role="3nqlJM">
           <property role="x79VB" value="null means success" />
         </node>
       </node>
