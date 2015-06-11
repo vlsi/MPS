@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.text.impl;
 
-import jetbrains.mps.text.TextBuffer;
+import jetbrains.mps.text.BufferSnapshot;
+import jetbrains.mps.text.BufferSnapshot.TextPosition;
 import jetbrains.mps.text.TextMark;
 import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,20 +37,26 @@ import java.util.Map;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public abstract class TraceInfoCollector {
+public class TraceInfoCollector {
   // FIXME for the time being, mimic structure of TraceInfoGenerationUtil. There seems to be no reason to assume
   // single position info kind per node, OTOH it doesn't hurt? Anyway, the problem is Map in the API, which needs to be
   // replaced with smth reasonable
   private final Map<SNode, TraceablePositionInfo> myTracePositions = new HashMap<SNode, TraceablePositionInfo>();
   private final Map<SNode, ScopePositionInfo> myScopePositions = new HashMap<SNode, ScopePositionInfo>();
   private final Map<SNode, UnitPositionInfo> myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
+  private final List<Pair<TextMark,PositionInfo>> myPositions = new ArrayList<Pair<TextMark, PositionInfo>>();
 
-  public final void populatePositions(TextBuffer buffer) {
-
+  public final void populatePositions(BufferSnapshot bufferText) {
+    for (Pair<TextMark, PositionInfo> p : myPositions) {
+      final TextPosition start = bufferText.getStart(p.o1);
+      final TextPosition end = bufferText.getEnd(p.o1);
+      PositionInfo pi = p.o2;
+      pi.setStartLine(start.line + 1); // 1-based, human-friendly line index
+      pi.setEndLine(end.line + 1);
+      pi.setStartPosition(start.column);
+      pi.setEndPosition(end.column);
+    }
   }
-
-  protected abstract void updatePositions(PositionInfo pi, TextMark positionMarker);
-
 
   public Map<SNode, TraceablePositionInfo> getTracePositions() {
     return myTracePositions;
@@ -63,19 +73,27 @@ public abstract class TraceInfoCollector {
   public TraceablePositionInfo createTracePosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     TraceablePositionInfo pi = new TraceablePositionInfo();
     myTracePositions.put(node, pi);
+//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;
   }
 
   public ScopePositionInfo createScopePosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     ScopePositionInfo pi = new ScopePositionInfo();
     myScopePositions.put(node, pi);
+//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;
   }
 
   public UnitPositionInfo createUnitPosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     UnitPositionInfo pi = new UnitPositionInfo();
     myUnitPositions.put(node, pi);
+//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;
   }
 
+  // FIXME transition: TraceInfoGenerationUtil now needs to obtain PI instance at createXXX method (not fillXXX), where we don't have TextMark yet.
+  // Once we get rid of populating PI in createXXX, body of this method shall move to factory methods above
+  public void setRealTextMark(PositionInfo pi, TextMark positionMarker) {
+    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
+  }
 }

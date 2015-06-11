@@ -53,4 +53,9 @@ public final class BasicToken implements TextAreaToken {
   public boolean equals(Object obj) {
     return obj instanceof BasicToken && ((BasicToken) obj).myIdentity.equals(myIdentity);
   }
+
+  @Override
+  public String toString() {
+    return String.format("Token[%s]", myIdentity.toString());
+  }
 }

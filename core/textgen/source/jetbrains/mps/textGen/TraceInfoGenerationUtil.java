@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.impl.TraceInfoCollector;
-import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
@@ -77,9 +76,8 @@ public class TraceInfoGenerationUtil {
       return;
     }
 
-    TraceablePositionInfo info = tic.createTracePosition(ourMark, node);
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
+    buffer.getRealBuffer().pushMark();
+    tic.createTracePosition(ourMark, node);
   }
 
   public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
@@ -90,8 +88,8 @@ public class TraceInfoGenerationUtil {
     }
 
     TraceablePositionInfo info = tic.getTracePositions().get(node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    tic.setRealTextMark(info, m);
     info.setConceptFqName(node.getConcept().getQualifiedName());
     info.setPropertyString(propertyString);
   }
@@ -103,9 +101,8 @@ public class TraceInfoGenerationUtil {
       return;
     }
 
+    buffer.getRealBuffer().pushMark();
     ScopePositionInfo info = tic.createScopePosition(ourMark, node);
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
   }
 
   public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node, List<SNode> vars) {
@@ -116,8 +113,8 @@ public class TraceInfoGenerationUtil {
     }
 
     ScopePositionInfo info = tic.getScopePositions().get(node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    tic.setRealTextMark(info, m);
     for (SNode var : vars) {
       if (var != null) {
         info.addVarInfo(var);
@@ -132,9 +129,8 @@ public class TraceInfoGenerationUtil {
       return;
     }
 
+    buffer.getRealBuffer().pushMark();
     UnitPositionInfo info = tic.createUnitPosition(ourMark, node);
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
   }
 
   public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node, String unitName) {
@@ -145,8 +141,8 @@ public class TraceInfoGenerationUtil {
     }
 
     UnitPositionInfo info = tic.getUnitPositions().get(node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    tic.setRealTextMark(info, m);
     info.setUnitName(unitName);
 
     warnIfUnitNameInvalid(unitName, node);
@@ -162,15 +158,8 @@ public class TraceInfoGenerationUtil {
   }
 
   @ToRemove(version = 3.3)
-  /*package*/ static TraceInfoCollector init(TextGenBuffer buffer) {
-    final TraceInfoCollector rv = new TraceInfoCollector() {
-      @Override
-      protected void updatePositions(PositionInfo pi, TextMark positionMarker) {
-
-      }
-    };
-    buffer.putUserObject(TraceInfoCollector.class, rv);
-    return rv;
+  /*package*/ static void setTraceInfoCollector(TextGenBuffer buffer, TraceInfoCollector tic) {
+    buffer.putUserObject(TraceInfoCollector.class, tic);
   }
 
   @Nullable

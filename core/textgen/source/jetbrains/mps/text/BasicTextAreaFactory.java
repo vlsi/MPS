@@ -33,10 +33,13 @@ public final class BasicTextAreaFactory implements TextAreaFactory{
   private final int myDefaultBufferSize;
 
   public BasicTextAreaFactory() {
-    myLineSeparator = System.getProperty("line.separator");
-    myDefaultBufferSize = 2048;
-    myIndentChar = ' ';
-    myIndentSize = 2;
+    this(System.getProperty("line.separator"), 2048, ' ', 2);
+  }
+  public BasicTextAreaFactory(@NotNull String lineSeparator, int defaultBufferSize, char indentChar, int indentSize) {
+    myLineSeparator = lineSeparator;
+    myDefaultBufferSize = defaultBufferSize;
+    myIndentChar = indentChar;
+    myIndentSize = indentSize;
   }
 
   @NotNull

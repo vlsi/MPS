@@ -18,6 +18,7 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
 import jetbrains.mps.text.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
@@ -87,12 +88,13 @@ public class TextGen {
   }
 
   public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
-    TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
+    TextGenBuffer buffer = new TextGenBuffer(buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
-      tic = TraceInfoGenerationUtil.init(buffer);
+      tic = new TraceInfoCollector();
+      TraceInfoGenerationUtil.setTraceInfoCollector(buffer, tic);
     } else {
       tic = null;
     }
@@ -103,15 +105,13 @@ public class TextGen {
     Map<SNode, TraceablePositionInfo> positionInfo = null;
     Map<SNode, ScopePositionInfo> scopeInfo = null;
     Map<SNode, UnitPositionInfo> unitInfo = null;
+    final BufferSnapshot textSnapshot = buffer.getTextSnapshot();
     if (tic != null) {
+      tic.populatePositions(textSnapshot);
+      //
       positionInfo = tic.getTracePositions();
       scopeInfo = tic.getScopePositions();
       unitInfo = tic.getUnitPositions();
-      int topLength = buffer.getTopBufferLineCount();
-      topLength++; // human-friendly line numbers (not 0-based)
-      adjustPositions(topLength, positionInfo.values());
-      adjustPositions(topLength, scopeInfo.values());
-      adjustPositions(topLength, unitInfo.values());
     }
 
     // dependencies
@@ -122,14 +122,15 @@ public class TextGen {
     deps.put(DEPENDENCY, dependencies);
     deps.put(EXTENDS, extend);
 
-    Object result = buffer.getText();
+    final String bufferOutcome = textSnapshot.getText().toString();
+    Object result = bufferOutcome;
     String outputEncoding = (String) buffer.getUserObject(OUTPUT_ENCODING);
     if (outputEncoding != null) {
       if (outputEncoding.equals("binary")) {
-        result = EncodingUtil.decodeBase64((String) result);
+        result = EncodingUtil.decodeBase64(bufferOutcome);
       } else {
         try {
-          result = EncodingUtil.encode((String) result, outputEncoding);
+          result = EncodingUtil.encode(bufferOutcome, outputEncoding);
         } catch (IOException ex) {
           buffer.foundError("cannot encode the output stream", null, ex);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,36 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.text.BasicTextAreaFactory;
+import jetbrains.mps.text.BasicToken;
+import jetbrains.mps.text.BufferSnapshot;
+import jetbrains.mps.text.TextArea;
+import jetbrains.mps.text.TextAreaFactory;
+import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.impl.TextAreaImpl;
+import jetbrains.mps.text.impl.TextBufferImpl;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 
 /**
+ * @deprecated This class is part of legacy textGen, left for compatibility with generated code (MPS 3.2),
+ * new code shall utilize API of <code>jetbrains.mps.text.*</code> package.
  * User: Dmitriev.
  * Date: Dec 22, 2003
  */
+@Deprecated
+@ToRemove(version = 3.3)
 public final class TextGenBuffer {
 
   public static final int TOP = 0;
@@ -40,45 +56,51 @@ public final class TextGenBuffer {
   public static final String LINE_SEPARATOR = System.getProperty("line.separator");
   public static final String SPACES = "                                ";
 
-  private TextAreaImpl[] myBuffers;
-  private TextAreaImpl myCurrentBuffer;
+  private final TextAreaFactory myChunkFactory;
+  private TextBuffer myBuffer;
 
-  private int myCurrBufferKey = DEFAULT;
+  private int myPrevBufferKey = -1;
+  private int myCurrBufferKey = -1;
+
   private HashMap myUserObjects = new HashMap();
-
   private final int myIndent = 2;
-  // still need to track indent here until positions are handled with text markers TODO: introduce support for markers in TextArea, rewrite position tracking
-  private int myDepth = 0;
   private boolean myContainsErrors = false;
+
   private List<IMessage> myErrors = new ArrayList<IMessage>();
 
-  private final int[] myPositions;
-  private final int[] myLineNumbers;
-
-  TextGenBuffer(boolean positionsSupport, StringBuilder[] buffers) {
-    if (positionsSupport) {
-      myPositions = new int[2];
-      myLineNumbers = new int[2];
-    } else {
-      myPositions = null;
-      myLineNumbers = null;
-    }
-    if (buffers == null) {
-      myBuffers = new TextAreaImpl[2];
-      myBuffers[TOP] = new TextAreaImpl(new StringBuilder(2048), LINE_SEPARATOR, ' ', myIndent);
-      myBuffers[DEFAULT] = new TextAreaImpl(new StringBuilder(4096), LINE_SEPARATOR, ' ', myIndent);
-    } else {
-      myBuffers = new TextAreaImpl[buffers.length];
-      for (int i = 0; i < buffers.length; i++) {
-        myBuffers[i] = new TextAreaImpl(buffers[i], LINE_SEPARATOR, ' ', myIndent);
+  TextGenBuffer(StringBuilder[] buffers) {
+    myChunkFactory = buffers == null ? new BasicTextAreaFactory(LINE_SEPARATOR, 2048, ' ', myIndent) : new MyTextAreaFactory(buffers);
+    myBuffer = new TextBufferImpl(myChunkFactory);
+    // let buffer know all its text areas, in the order they used to be here
+    myBuffer.pushTextArea(new BasicToken(TOP)).popTextArea();
+    myBuffer.pushTextArea(new BasicToken(DEFAULT)).popTextArea();
+    if (buffers != null) {
+      for (int i = DEFAULT + 1; i < buffers.length; i++) {
+        myBuffer.pushTextArea(new BasicToken(i)).popTextArea();
       }
     }
     selectPart(DEFAULT);
   }
 
+  /*package*/ BufferSnapshot getTextSnapshot() {
+    if (getTopBufferLength() > 0) {
+      // FIXME newlines to separate top from bottom done right, instead of this hack
+      selectPart(TOP);
+      // mimin two newlines added in getText()
+      myBuffer.area().newLine().newLine();
+      selectPart(DEFAULT);
+    }
+    return myBuffer.snapshot(myBuffer.newLayout());
+  }
+  /*package*/ TextBuffer getRealBuffer() {
+    return myBuffer;
+  }
+
   public String getText() {
-    final CharSequence topBuffer = myBuffers[TOP].value();
-    final CharSequence defaultBuffer = myBuffers[DEFAULT].value();
+    // FIXME rewrite with myBuffer.newLayout(), layout specifies where to put empty separator strings
+    // XXX not getTextSnapshot().getText() because at the moment it alters TOP buffer with newlines, and subsequent this.getText() would be different.
+    final CharSequence topBuffer = getBufferText(TOP);
+    final CharSequence defaultBuffer = getBufferText(DEFAULT);
     if (topBuffer.length() == 0) {
       return defaultBuffer.toString();
     }
@@ -88,25 +110,6 @@ public final class TextGenBuffer {
     rv.append(LINE_SEPARATOR);
     rv.append(defaultBuffer);
     return rv.toString();
-  }
-
-  /*package*/ int getTopBufferLineCount() {
-    final CharSequence v = myBuffers[TOP].value();
-    if (v.length() == 0) {
-      return 0;
-    }
-    String b = v.toString();
-    // this used to be b.split(LINE_SEPARATOR, -1).length + 2
-    // however split("A\nB\n").length == split("A\nB").length, and two extra newlines between top and default buffer give different
-    // line number (for human-friendly values, latter sample gives correct value, for 0-based indexes - former sample).
-    int lineSepIndex = b.indexOf(LINE_SEPARATOR, 0);
-    int lineCount = 0;
-    while (lineSepIndex != -1) {
-      lineCount++;
-      lineSepIndex = b.indexOf(LINE_SEPARATOR, lineSepIndex + LINE_SEPARATOR.length());
-    }
-    // account for newlines added in #getText()
-    return lineCount + 2;
   }
 
   public String getLineSeparator() {
@@ -144,13 +147,11 @@ public final class TextGenBuffer {
   }
 
   protected void increaseDepth() {
-    myDepth++;
-    myCurrentBuffer.increaseIndent();
+    myBuffer.area().increaseIndent();
   }
 
   protected void decreaseDepth() {
-    myDepth--;
-    myCurrentBuffer.decreaseIndent();
+    myBuffer.area().decreaseIndent();
   }
 
   public void append(String s) {
@@ -158,23 +159,7 @@ public final class TextGenBuffer {
     if (s == null) {
       return;
     }
-    if (myPositions != null) {
-      int lastLineSepIndex, lineSepIndex;
-      lastLineSepIndex = lineSepIndex = s.indexOf(LINE_SEPARATOR, 0);
-      if (lastLineSepIndex >= 0) {
-        int lineCount = 0;
-        while (lineSepIndex != -1) {
-          lineCount++;
-          lastLineSepIndex = lineSepIndex;
-          lineSepIndex = s.indexOf(LINE_SEPARATOR, lineSepIndex + LINE_SEPARATOR.length());
-        }
-        myLineNumbers[myCurrBufferKey] += lineCount;
-        myPositions[myCurrBufferKey] = s.length() - lastLineSepIndex - LINE_SEPARATOR.length();
-      } else {
-        myPositions[myCurrBufferKey] += s.length();
-      }
-    }
-    myCurrentBuffer.append(s);
+    myBuffer.area().append(s);
   }
 
     protected void appendWithIndent(String s) {
@@ -183,11 +168,7 @@ public final class TextGenBuffer {
   }
 
   protected void indentBuffer() {
-    int spaces = myIndent * myDepth;
-    if (myPositions != null) {
-      myPositions[myCurrBufferKey] += spaces;
-    }
-    myCurrentBuffer.indent();
+    myBuffer.area().indent();
   }
 
   public void putUserObject(Object key, Object o) {
@@ -199,11 +180,11 @@ public final class TextGenBuffer {
   }
 
   public String getDefaultBufferText() {
-    return myBuffers[DEFAULT].toString();
+    return getBufferText(DEFAULT).toString();
   }
 
   public String getTopBufferText() {
-    return myBuffers[TOP].toString();
+    return getBufferText(TOP).toString();
   }
 
   public int getDefaultBufferLength() {
@@ -215,27 +196,70 @@ public final class TextGenBuffer {
   }
 
   public int getBufferLength(int partId) {
-    return myBuffers[partId].value().length();
+    return getBufferText(partId).length();
+  }
+
+  private CharSequence getBufferText(int partId) {
+    myBuffer.pushTextArea(new BasicToken(partId));
+    CharSequence rv = myChunkFactory.value(myBuffer.area());
+    myBuffer.popTextArea();
+    return rv;
   }
 
   public int getLineNumber() {
-    if (myLineNumbers == null) throw new IllegalStateException();
-    return myLineNumbers[DEFAULT];
+    throw new IllegalStateException();
   }
 
   public int getPosition() {
-    if (myPositions == null) throw new IllegalStateException();
-    return myPositions[DEFAULT];
+    throw new IllegalStateException();
   }
 
   public boolean hasPositionsSupport() {
-    return myPositions != null;
+    return false;
   }
 
   public int selectPart(int partId) {
-    int currPartId = myCurrBufferKey;
+    if (myPrevBufferKey == partId) {
+      int rv = myCurrBufferKey;
+      myCurrBufferKey = partId;
+      myPrevBufferKey = -1;
+      myBuffer.popTextArea();
+      return rv;
+    }
+    myPrevBufferKey = myCurrBufferKey;
     myCurrBufferKey = partId;
-    myCurrentBuffer = myBuffers[partId];
-    return currPartId;
+    myBuffer.pushTextArea(new BasicToken(partId));
+    return myPrevBufferKey;
+  }
+
+  // use supplied N buffers for first N TextArea create request, then fail.
+  // original code with index greater than that of original array fails in selectPart
+  private class MyTextAreaFactory implements TextAreaFactory {
+    private final Deque<StringBuilder> myBuffers = new ArrayDeque<StringBuilder>();
+
+    public MyTextAreaFactory(@NotNull StringBuilder[] buffers) {
+      myBuffers.addAll(Arrays.asList(buffers));
+    }
+
+    @NotNull
+    @Override
+    public TextArea create() {
+      if (myBuffers.isEmpty()) {
+        throw new IllegalStateException("No more buffers supplied");
+      }
+      return new TextAreaImpl(myBuffers.removeFirst(), getLineSeparator(), ' ', myIndent);
+    }
+
+    @NotNull
+    @Override
+    public String getLineSeparator() {
+      return LINE_SEPARATOR;
+    }
+
+    @NotNull
+    @Override
+    public CharSequence value(@NotNull TextArea area) {
+      return ((TextAreaImpl) area).value();
+    }
   }
 }
