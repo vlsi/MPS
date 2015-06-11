@@ -7,6 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import com.intellij.openapi.project.Project;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -24,13 +25,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final List<SModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<SModuleReference>());
-  public ModuleChooser() {
+  public ModuleChooser(final Project p) {
     addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent p0) {
         ModuleChooser.this.collectModules();
         StringBuilder result = new StringBuilder();
-        SModuleReference ref = CommonChoosers.showDialogModuleChooser(null, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
+        SModuleReference ref = CommonChoosers.showDialogModuleChooser(p, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
         if (ref != null) {
           result.append(ref.getModuleName());
           ModuleChooser.this.setText(result.toString());

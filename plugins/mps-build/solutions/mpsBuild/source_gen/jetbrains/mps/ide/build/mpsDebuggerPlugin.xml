@@ -65,12 +65,13 @@
         <sources jar="jetbrains.mps.execution.settings-src.jar" descriptor="jetbrains.mps.execution.settings.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar">
+    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.settings" />
       <fileset dir="${mps_home}/plugins/execution-api/languages/settings" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-api/languages/settings/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.settings.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-generator.jar">
+    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.settings#946964771156035778" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-languages-settings-generator-template">
@@ -79,12 +80,14 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-languages-settings-languageModels">
       <fileset dir="${mps_home}/plugins/execution-api/languages/settings/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-src.jar">
+    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/execution-api/languages/settings/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/execution-api/languages/settings/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-languages-settings-generator-template" prefix="module/generator/template" />
@@ -111,30 +114,32 @@
         <sources jar="jetbrains.mps.execution.common-src.jar" descriptor="jetbrains.mps.execution.common.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar">
+    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.execution.common" />
       <fileset dir="${mps_home}/plugins/execution-api/languages/common" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/execution-api/languages/common/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.execution.common.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-languages-common-languageModels">
       <fileset dir="${mps_home}/plugins/execution-api/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common-src.jar">
+    <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/execution-api/languages/common/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-languages-common-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-execution-api/lib" />
-    <jar destfile="${build.layout}/mps-execution-api/lib/icons.jar">
+    <jar destfile="${build.layout}/mps-execution-api/lib/icons.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/mps-execution-api/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-execution-api-models">
       <fileset dir="${mps_home}/plugins/execution-api/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-execution-api/lib/execution-api.jar">
+    <jar destfile="${build.layout}/mps-execution-api/lib/execution-api.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/execution-api" />
       <zipfileset file="${mps_home}/plugins/execution-api/jetbrains.mps.execution.api.msd" prefix="modules/jetbrains.mps.execution.api" />
       <zipfileset dir="${mps_home}/plugins/execution-api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.execution.api" />
@@ -167,12 +172,13 @@
         <sources jar="jetbrains.mps.debugger.api.lang-src.jar" descriptor="jetbrains.mps.debugger.api.lang.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar">
+    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" />
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.api.lang.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-generator.jar">
+    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang#1270798772176052788" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-api-languages-jetbrains.mps.debugger.api.lang-generator-template">
@@ -181,19 +187,21 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-api-languages-jetbrains.mps.debugger.api.lang-languageModels">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-src.jar">
+    <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-api-languages-jetbrains.mps.debugger.api.lang-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-api-languages-jetbrains.mps.debugger.api.lang-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-debugger-api/lib" />
-    <jar destfile="${build.layout}/mps-debugger-api/lib/icons.jar">
+    <jar destfile="${build.layout}/mps-debugger-api/lib/icons.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/mps-debugger-api/lib" />
@@ -203,7 +211,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-api-runtime-jetbrains">
       <fileset dir="${mps_home}/plugins/debugger-api/runtime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-api/lib/debugger-api.jar">
+    <jar destfile="${build.layout}/mps-debugger-api/lib/debugger-api.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/debugger-api" />
       <zipfileset file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" prefix="modules/jetbrains.mps.debugger.api.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.api" />
@@ -239,17 +247,19 @@
         <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="jetbrains.mps.debugger.java.privateMembers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" />
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-privateMembers-languageModels">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers-src.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-privateMembers-languageModels" prefix="module/languageModels" />
@@ -274,12 +284,13 @@
         <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="jetbrains.mps.debugger.java.customViewers.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" />
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-generator.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers#4089989733346806812" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-customViewers-generator-template">
@@ -288,12 +299,14 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-customViewers-languageModels">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-src.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-customViewers-generator-template" prefix="module/generator/template" />
@@ -321,12 +334,13 @@
         <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="jetbrains.mps.debugger.java.evaluation.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" />
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.debugger.java.evaluation.jar" />
     </jar>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-generator.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation#1620955434532134778" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-evaluation-generator-template">
@@ -335,19 +349,21 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-evaluation-languageModels">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-src.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-evaluation-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-languages-evaluation-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-debugger-java/lib" />
-    <jar destfile="${build.layout}/mps-debugger-java/lib/icons.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/lib/icons.jar" duplicate="preserve">
       <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/mps-debugger-java/lib" />
@@ -360,7 +376,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-debugger-java-customViewers-models">
       <fileset dir="${mps_home}/plugins/debugger-java/customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/mps-debugger-java/lib/debugger-java.jar">
+    <jar destfile="${build.layout}/mps-debugger-java/lib/debugger-java.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/debugger-java" />
       <zipfileset file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" prefix="modules/jetbrains.mps.debugger.java.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.java.api" />

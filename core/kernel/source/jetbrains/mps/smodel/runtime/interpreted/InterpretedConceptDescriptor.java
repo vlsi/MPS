@@ -202,7 +202,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
           if (unordered) {
             unorderedChildren.add(role);
           }
-          final SConceptId targetConceptId = MetaIdByDeclaration.getConceptId(link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target));
+          SNode linkTargetConcept = link.getReferenceTarget(SNodeUtil.link_LinkDeclaration_target);
+          final SConceptId targetConceptId = linkTargetConcept == null ? SNodeUtil.conceptId_BaseConcept : MetaIdByDeclaration.getConceptId(linkTargetConcept);
           final String linkCardinality = link.getProperty(SNodeUtil.property_LinkDeclaration_sourceCardinality);
           final boolean isOptional = !SNodeUtil.isAtLeastOne(linkCardinality);
           if (SNodeUtil.isAssociationLink(link.getProperty(SNodeUtil.property_LinkDeclaration_metaClass))) {

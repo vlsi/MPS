@@ -1754,36 +1754,17 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5kpQnuAC88G" role="3cqZAp" />
-        <node concept="2Gpval" id="1WkoaDQ2Y5d" role="3cqZAp">
-          <node concept="2OqwBi" id="yBZlauMHbd" role="2GsD0m">
-            <node concept="37vLTw" id="7WpCgHt1KYX" role="2Oq$k0">
+        <node concept="3clFbH" id="779z0daA9v8" role="3cqZAp" />
+        <node concept="3clFbF" id="779z0daA8Vx" role="3cqZAp">
+          <node concept="2OqwBi" id="779z0daA90f" role="3clFbG">
+            <node concept="37vLTw" id="779z0daA8Vv" role="2Oq$k0">
               <ref role="3cqZAo" node="yBZlauHaA8" resolve="myContainer" />
             </node>
-            <node concept="liA8E" id="yBZlauMHuB" role="2OqNvi">
-              <ref role="37wK5l" node="yBZlauH8$N" resolve="getProjects" />
-            </node>
-          </node>
-          <node concept="2GrKxI" id="1WkoaDQ2Y5i" role="2Gsz3X">
-            <property role="TrG5h" value="project" />
-          </node>
-          <node concept="3clFbS" id="1WkoaDQ2Y5j" role="2LFqv$">
-            <node concept="3clFbF" id="1WkoaDQ2Y5k" role="3cqZAp">
-              <node concept="1rXfSq" id="1WkoaDQ2Y5l" role="3clFbG">
-                <ref role="37wK5l" node="6rx4kZDk6Ac" resolve="disposeProject" />
-                <node concept="2OqwBi" id="yBZlauHqUF" role="37wK5m">
-                  <node concept="2GrUjf" id="7WpCgHt1KZ9" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="1WkoaDQ2Y5i" resolve="project" />
-                  </node>
-                  <node concept="liA8E" id="yBZlauHs91" role="2OqNvi">
-                    <ref role="37wK5l" to="vsqj:~Project.getProjectFile():java.io.File" resolve="getProjectFile" />
-                  </node>
-                </node>
-              </node>
+            <node concept="liA8E" id="779z0daA9jI" role="2OqNvi">
+              <ref role="37wK5l" node="yBZlauH8zW" resolve="dispose" />
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5mza6QqkDI6" role="3cqZAp" />
         <node concept="3clFbF" id="KL8AqljyHX" role="3cqZAp">
           <node concept="2OqwBi" id="KL8AqljyHY" role="3clFbG">
             <node concept="2YIFZM" id="KL8AqljyHZ" role="2Oq$k0">

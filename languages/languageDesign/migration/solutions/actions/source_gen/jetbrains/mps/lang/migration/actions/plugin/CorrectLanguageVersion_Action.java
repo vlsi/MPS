@@ -9,18 +9,18 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -50,9 +50,12 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     }
 
     Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
+    SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
+    SLanguage slang = MetaAdapterFactory.getLanguage(langId, lang.getModuleName());
+
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     if (mig == null) {
-      return true;
+      return slang.getLanguageVersion() != 0;
     }
 
     List<SNode> migrations = SModelOperations.roots(((SModel) mig), MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
@@ -69,8 +72,6 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       }
     }, false).first(), MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, 0x50c63f9f4a0dac17L, "fromVersion"));
 
-    SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
-    SLanguage slang = MetaAdapterFactory.getLanguage(langId, lang.getModuleName());
     if (lang.getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
       if (lang.getModuleDescriptor().getLanguageVersions().get(slang) != lang.getLanguageVersion()) {
         return true;

@@ -496,7 +496,9 @@
                           <node concept="2YIFZM" id="5gyVhZ1blAO" role="33vP2m">
                             <ref role="1Pybhc" to="vmom:~CommonChoosers" resolve="CommonChoosers" />
                             <ref role="37wK5l" to="vmom:~CommonChoosers.showDialogModelChooser(com.intellij.openapi.project.Project,java.util.List,java.util.List):org.jetbrains.mps.openapi.model.SModelReference" resolve="showDialogModelChooser" />
-                            <node concept="10Nm6u" id="56yTY9Ip13M" role="37wK5m" />
+                            <node concept="37vLTw" id="4gdqSo5ixRl" role="37wK5m">
+                              <ref role="3cqZAo" node="4gdqSo5iw1z" resolve="p" />
+                            </node>
                             <node concept="2OqwBi" id="5gyVhZ1blAQ" role="37wK5m">
                               <node concept="2OwXpG" id="5gyVhZ1blAR" role="2OqNvi">
                                 <ref role="2Oxat5" node="5gyVhZ1blAe" resolve="myCheckedModels" />
@@ -554,6 +556,13 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4gdqSo5iw1z" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="4gdqSo5iw1y" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
         </node>
       </node>
     </node>
@@ -806,7 +815,9 @@
                           <node concept="2YIFZM" id="5gyVhZ1blCR" role="33vP2m">
                             <ref role="1Pybhc" to="vmom:~CommonChoosers" resolve="CommonChoosers" />
                             <ref role="37wK5l" to="vmom:~CommonChoosers.showDialogModuleChooser(com.intellij.openapi.project.Project,java.lang.String,java.util.List,java.util.List):org.jetbrains.mps.openapi.module.SModuleReference" resolve="showDialogModuleChooser" />
-                            <node concept="10Nm6u" id="56yTY9Ip13W" role="37wK5m" />
+                            <node concept="37vLTw" id="4gdqSo5jAbc" role="37wK5m">
+                              <ref role="3cqZAo" node="4gdqSo5j_St" resolve="p" />
+                            </node>
                             <node concept="Xl_RD" id="5gyVhZ1blCT" role="37wK5m">
                               <property role="Xl_RC" value="" />
                             </node>
@@ -880,6 +891,13 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4gdqSo5j_St" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <property role="3TUv4t" value="true" />
+        <node concept="3uibUv" id="4gdqSo5j_Ss" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
         </node>
       </node>
     </node>
@@ -5827,6 +5845,9 @@
             <node concept="2ShNRf" id="1_bTry21ddd" role="37vLTx">
               <node concept="1pGfFk" id="1m0YAdkeTOM" role="2ShVmc">
                 <ref role="37wK5l" node="5gyVhZ1blCp" resolve="ModuleChooser" />
+                <node concept="37vLTw" id="4gdqSo5k8rq" role="37wK5m">
+                  <ref role="3cqZAo" node="1_bTry1W3A$" resolve="project" />
+                </node>
               </node>
             </node>
           </node>
@@ -5934,6 +5955,9 @@
             <node concept="2ShNRf" id="1_bTry1Rfhu" role="37vLTx">
               <node concept="1pGfFk" id="1m0YAdkeV4C" role="2ShVmc">
                 <ref role="37wK5l" node="5gyVhZ1blAm" resolve="ModelChooser" />
+                <node concept="37vLTw" id="4gdqSo5jkQ7" role="37wK5m">
+                  <ref role="3cqZAo" node="1_bTry1W3A$" resolve="project" />
+                </node>
               </node>
             </node>
           </node>

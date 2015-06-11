@@ -18,7 +18,7 @@
     <zip destfile="${build.layout}/packedContent2.zip">
       <fileset dir="${build.tmp}/deps/buildA/A-_dl__lbrace_aver_rbrace_.zip" />
     </zip>
-    <jar destfile="${build.layout}/repackagedClasses.jar">
+    <jar destfile="${build.layout}/repackagedClasses.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/deps/buildA/module-A.jar" />
     </jar>
     <zip destfile="${build.layout}/zippedJar.zip">

@@ -34,17 +34,19 @@
         <sources jar="jetbrains.mps.build.mps.runner.test.test3-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.test3.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test3.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test3.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test.test3" />
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test3" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test3/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.test3.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test3-models">
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test3/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test3-src.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.build.mps.runner.test.test3-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/jetbrains.mps.build.mps.runner.test.test3/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.mps.runner.test.test3/jetbrains.mps.build.mps.runner.test.test3.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.mps.runner.test.test3-models" prefix="module/models" />

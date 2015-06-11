@@ -51,17 +51,19 @@
         <sources jar="jetbrains.mps.build.tests-src.jar" descriptor="jetbrains.mps.build.tests.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests.jar">
+    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
       <fileset dir="${basedir}/jetbrains.mps.build.tests" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.tests-models" stripImplementation="true">
       <fileset dir="${basedir}/jetbrains.mps.build.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests-src.jar">
+    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.tests-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/jetbrains.mps.build.tests/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.tests-models" prefix="module/models" />
@@ -83,17 +85,19 @@
         <sources jar="jetbrains.mps.build.sandbox-src.jar" descriptor="jetbrains.mps.build.sandbox.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox.jar">
+    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox-src.jar">
+    <jar destfile="${build.layout}/test1/languages/jetbrains.mps.build.sandbox-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/jetbrains.mps.build.sandbox-models" prefix="module/models" />

@@ -64,7 +64,7 @@
         <sources jar="jetbrains.mps.build.mps.runner.test-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/runner.test/jetbrains.mps.build.mps.runner.test.jar">
+    <jar destfile="${build.layout}/runner.test/jetbrains.mps.build.mps.runner.test.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner.test" />
       <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.runner.test.jar" />
@@ -72,7 +72,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.mps.runner.test-models">
       <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/runner.test/jetbrains.mps.build.mps.runner.test-src.jar">
+    <jar destfile="${build.layout}/runner.test/jetbrains.mps.build.mps.runner.test-src.jar" duplicate="preserve">
       <zipfileset file="${basedir}/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/jetbrains.mps.build.mps.runner.test.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.mps.runner.test-models" prefix="module/models" />
     </jar>
@@ -93,7 +93,7 @@
         <sources jar="jetbrains.mps.build.tests-src.jar" descriptor="jetbrains.mps.build.tests.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/jetbrains.mps.build.tests.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.build.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.tests" />
       <fileset dir="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.tests.jar" />
@@ -101,7 +101,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-solutions-jetbrains.mps.build.tests-models">
       <fileset dir="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/jetbrains.mps.build.tests-src.jar">
+    <jar destfile="${build.layout}/jetbrains.mps.build.tests-src.jar" duplicate="preserve">
       <zipfileset file="${basedir}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-languages-solutions-jetbrains.mps.build.tests-models" prefix="module/models" />
     </jar>

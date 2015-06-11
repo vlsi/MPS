@@ -34,17 +34,19 @@
         <sources jar="jetbrains.mps.samples.xmlPersistence.ideaPlugin-src.jar" descriptor="jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar">
+    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.ideaPlugin" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.ideaPlugin-models">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin-src.jar">
+    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence.ideaPlugin-models" prefix="module/models" />
@@ -66,20 +68,24 @@
         <sources jar="jetbrains.mps.samples.xmlPersistence-src.jar" descriptor="jetbrains.mps.samples.xmlPersistence.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence.jar">
+    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence" />
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata" includes="**/trace.info, **/exports" />
+      <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.xmlPersistence.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence-models">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence-src.jar">
+    <jar destfile="${build.tmp}/default/MPS-sample-persistence.zip/mps-sample-persistence/lib/jetbrains.mps.samples.xmlPersistence-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/testdata">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-jetbrains.mps.samples.xmlPersistence-models" prefix="module/models" />

@@ -142,6 +142,7 @@
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModelChooser" file="ModelChooser.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
@@ -166,6 +167,7 @@
     <classNode extendsClassName="com.intellij.openapi.ui.NoPathCompletion" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.ModuleChooser" file="ModuleChooser.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />

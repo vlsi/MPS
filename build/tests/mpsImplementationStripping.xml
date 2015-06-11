@@ -62,12 +62,13 @@
         <sources jar="jetbrains.mps.samples.Kaja-src.jar" descriptor="Kajak.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja" />
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.Kaja.jar" />
     </jar>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-generator.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.Kaja#3265739055509559144" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-languages-Kajak-generator-template" stripImplementation="true">
@@ -76,12 +77,14 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-languages-Kajak-languageModels" stripImplementation="true">
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-src.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/generator/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <fileset dir="${basedir}/samples/robot_Kaja/languages/Kajak/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/samples/robot_Kaja/languages/Kajak/Kajak.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-languages-Kajak-generator-template" prefix="module/generator/template" />
@@ -98,17 +101,19 @@
         <sources jar="jetbrains.mps.samples.JavaKaja-src.jar" descriptor="JavaKajak.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen" includes="**/trace.info, **/exports" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.samples.JavaKaja.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-solutions-JavaKajak-models" stripImplementation="true">
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja-src.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.samples.JavaKaja-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/samples/robot_Kaja/solutions/JavaKajak/source_gen">
         <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/JavaKajak.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/samples-robot_Kaja-solutions-JavaKajak-models" prefix="module/models" />
@@ -135,7 +140,7 @@
         <sources jar="jetbrains.mps.build.stripping.tests-src.jar" descriptor="jetbrains.mps.build.stripping.tests.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
       <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.stripping.tests.jar" />
@@ -143,7 +148,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models">
       <fileset dir="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests-src.jar">
+    <jar destfile="${build.layout}/tests/jetbrains.mps.build.stripping.tests-src.jar" duplicate="preserve">
       <zipfileset file="${basedir}/plugins/mps-build/test/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-build-test-jetbrains.mps.build.stripping.tests-models" prefix="module/models" />
     </jar>

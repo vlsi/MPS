@@ -43,7 +43,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models">
       <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/lib/mps-java-common.jar">
+    <jar destfile="${build.layout}/lib/mps-java-common.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />
       <zipfileset file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
