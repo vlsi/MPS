@@ -170,23 +170,16 @@ public abstract class BaseLanguageTextGen {
       textGen.append("???");
       return;
     }
-    String name = null;
-    final SReference ref = reference;
-    if (ref instanceof jetbrains.mps.smodel.SReference) {
-      name = ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
+    SNode targetNode = reference.getTargetNode();
+    if (targetNode == null) {
+      textGen.foundError(String.format("Unknown target for role %s", reference.getLink()));
+      textGen.append("???");
+      return;
     }
+    String name = SNodeUtil.getResolveInfo(targetNode);
     if (name == null) {
-      SNode targetNode = ref.getTargetNode();
-      if (targetNode == null) {
-        textGen.foundError(String.format("Unknown target for role %s", ref.getLink()));
-        textGen.append("???");
-        return;
-      }
-      name = SNodeUtil.getResolveInfo(targetNode);
-      if (name == null) {
-        textGen.foundError(String.format("No resolve info for node %s", targetNode));
-        name = targetNode.getName();
-      }
+      textGen.foundError(String.format("No resolve info for node %s", targetNode));
+      name = targetNode.getName();
     }
     if (name == null) {
       textGen.append("???");
