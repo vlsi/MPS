@@ -276,9 +276,9 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
     testUsedLanguage(l0, languages[1], 1);    //simple
     testUsedLanguage(l0, languages[2], 1);    //extended language is usedLanguage
     testUsedLanguage(l0, languages[3], 0);
-    testUsedLanguage(l1, languages[4], 1); // indirectly via devKit
+    testUsedLanguage(l1, languages[4], 2); // one as exported from devKit, another as usedLanguage (resolved devkit)
     testUsedLanguage(l0, languages[4], 0); //extended lang + devKit
-    testUsedLanguage(l1, languages[5], 1); // One via extended DevKit
+    testUsedLanguage(l1, languages[5], 2); // One as exported from extended DevKit, another as usedLanguage (resolved extended devkit)
     testUsedLanguage(l1, languages[6], 1); //if one uses a language, it takes it as a whole, with all extended languages
   }
 

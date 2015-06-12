@@ -171,8 +171,22 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     assertCanRead();
 
     LinkedHashSet<SLanguage> usedLanguages = new LinkedHashSet<SLanguage>();
+    LinkedHashSet<SModuleReference> devkits = new LinkedHashSet<SModuleReference>();
     for (SModel m : getModels()) {
-      usedLanguages.addAll(((SModelInternal) m).importedLanguageIds());
+      final SModelInternal modelInternal = (SModelInternal) m;
+      usedLanguages.addAll(modelInternal.importedLanguageIds());
+      devkits.addAll(modelInternal.importedDevkits());
+    }
+    final SRepository repository = getRepository();
+    if (repository != null) {
+      for (SModuleReference devkitRef : devkits) {
+        final SModule module = devkitRef.resolve(repository);
+        if (module instanceof DevKit) {
+          for (SLanguage l : ((DevKit) module).getAllExportedLanguageIds()) {
+            usedLanguages.add(l);
+          }
+        }
+      }
     }
     usedLanguages.add(BootstrapLanguages.getLangCore());
 

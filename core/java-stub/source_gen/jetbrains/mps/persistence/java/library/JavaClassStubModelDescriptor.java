@@ -16,6 +16,8 @@ import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import java.util.Collection;
+import java.util.List;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
@@ -83,6 +85,12 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   public Collection<SLanguage> importedLanguageIds() {
     return getLanguagesToImport();
   }
+
+  @Override
+  public List<SModuleReference> importedDevkits() {
+    return Collections.emptyList();
+  }
+
   @Override
   public void reloadFromDiskSafe() {
     assertCanChange();

@@ -248,7 +248,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public final List<SModuleReference> importedDevkits() {
+  public List<SModuleReference> importedDevkits() {
     return getSModelInternal().importedDevkits();
   }
 
