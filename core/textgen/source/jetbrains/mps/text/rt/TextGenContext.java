@@ -15,13 +15,23 @@
  */
 package jetbrains.mps.text.rt;
 
+import jetbrains.mps.text.TextBuffer;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * FIXME WORK IN PROGRESS
+ * Everything {@link TextGenDescriptor} shall know about outer world.
+ *
  * @author Artem Tikhomirov
  * @since 3.3
  */
 public interface TextGenContext {
+  /**
+   * @return text buffer associated with a {@link jetbrains.mps.text.TextUnit unit} being generated.
+   */
+  @NotNull
+  TextBuffer getBuffer();
+
   SNode getPrimaryInput();
 }

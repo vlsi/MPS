@@ -94,7 +94,9 @@ public final class TextGenBuffer {
     }
     return myBuffer.snapshot(myBuffer.newLayout());
   }
-  /*package*/ TextBuffer getRealBuffer() {
+
+  // though this is implementation-specific method, technically we need it public to access from the package with new API
+  public TextBuffer getRealBuffer() {
     return myBuffer;
   }
 

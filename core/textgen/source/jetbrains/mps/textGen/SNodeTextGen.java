@@ -17,7 +17,7 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
@@ -27,6 +27,13 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.List;
 
+/**
+ * @deprecated replaced with {@link jetbrains.mps.text.rt.TextGenDescriptor} and {@link jetbrains.mps.text.rt.TextGenDescriptorBase}.
+ * Though it's tempting to keep present approach (descriptor being only an adapter, and actual base class for generated textgen being stateful), refactoring
+ * of this class is troublesome due to vast API it exposes.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public abstract class SNodeTextGen {
   private TextGenBuffer myBuffer;
   private SNode mySNode;

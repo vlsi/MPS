@@ -72,28 +72,23 @@ public class TraceInfoCollector {
 
   public TraceablePositionInfo createTracePosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     TraceablePositionInfo pi = new TraceablePositionInfo();
+    pi.setConceptFqName(node.getConcept().getQualifiedName());
     myTracePositions.put(node, pi);
-//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
+    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;
   }
 
   public ScopePositionInfo createScopePosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     ScopePositionInfo pi = new ScopePositionInfo();
     myScopePositions.put(node, pi);
-//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
+    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
     return pi;
   }
 
   public UnitPositionInfo createUnitPosition(@NotNull TextMark positionMarker, @NotNull SNode node) {
     UnitPositionInfo pi = new UnitPositionInfo();
     myUnitPositions.put(node, pi);
-//    myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
-    return pi;
-  }
-
-  // FIXME transition: TraceInfoGenerationUtil now needs to obtain PI instance at createXXX method (not fillXXX), where we don't have TextMark yet.
-  // Once we get rid of populating PI in createXXX, body of this method shall move to factory methods above
-  public void setRealTextMark(PositionInfo pi, TextMark positionMarker) {
     myPositions.add(new Pair<TextMark, PositionInfo>(positionMarker, pi));
+    return pi;
   }
 }

@@ -20,7 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
-import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textgen.trace.PositionInfo;

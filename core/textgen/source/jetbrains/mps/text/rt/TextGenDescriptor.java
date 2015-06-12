@@ -17,7 +17,7 @@ package jetbrains.mps.text.rt;
 
 /**
  * FIXME WORK IN PROGRESS
- * Generated code shall subclass {@link jetbrains.mps.text.TextGenDescriptorBase}
+ * Generated code shall subclass {@link TextGenDescriptorBase}
  * @author Artem Tikhomirov
  * @since 3.3
  */

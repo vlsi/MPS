@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.text;
+package jetbrains.mps.text.impl;
 
+import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Context implementation for transition period, while we delegate to SNodeTextGen and use original TextGenBuffer
+ * Context implementation for transition period, while we delegate to SNodeTextGen and use original TextGenBuffer.
+ * This class is not intended for use in client code, only MPS internals may use it.
  * @author Artem Tikhomirov
  */
 public final class TextGenTransitionContext implements TextGenContext {
@@ -33,12 +35,18 @@ public final class TextGenTransitionContext implements TextGenContext {
     myBuffer = buffer;
   }
 
+  @NotNull
+  @Override
+  public TextBuffer getBuffer() {
+    return myBuffer.getRealBuffer();
+  }
+
   @Override
   public SNode getPrimaryInput() {
     return myInput;
   }
 
-  public TextGenBuffer getBuffer() {
+  public TextGenBuffer getLegacyBuffer() {
     return myBuffer;
   }
 }
