@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.TreeNodeParamProvider;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
@@ -34,7 +35,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
@@ -42,11 +45,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class ProjectTree extends MPSTree {
+public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
   private Project myProject;
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
   private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
+  private Computable<Boolean> myShowStructureCondition;
 
   public ProjectTree(Project project) {
     myProject = project;
@@ -67,7 +71,7 @@ public class ProjectTree extends MPSTree {
     setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-    for (Class<? extends SModule> cl: new Class[]{Solution.class,Language.class,DevKit.class}){
+    for (Class<? extends SModule> cl : new Class[]{Solution.class, Language.class, DevKit.class}) {
       for (SModule module : myProject.getProjectModules(cl)) {
         moduleNodes.add(ProjectModuleTreeNode.createFor(myProject, module, false));
       }
@@ -89,8 +93,7 @@ public class ProjectTree extends MPSTree {
           root.add(new TransientModelsTreeNode(myProject, module));
         }
       }
-    }
-    else {
+    } else {
       // postpone the update until the make session ends
       if (myMakeNotificationListener.compareAndSet(null, new Stub() {
         @Override
@@ -99,8 +102,7 @@ public class ProjectTree extends MPSTree {
           IMakeService.INSTANCE.get().removeListener(this);
           myMakeNotificationListener.set(null);
         }
-      }))
-      {
+      })) {
         IMakeService.INSTANCE.get().addListener(myMakeNotificationListener.get());
       }
     }
@@ -118,6 +120,15 @@ public class ProjectTree extends MPSTree {
 
   public Project getProject() {
     return myProject;
+  }
+
+  public void setShowStructureCondition(Computable<Boolean> showStructureCondition) {
+    myShowStructureCondition = showStructureCondition;
+  }
+
+  @Override
+  public boolean isShowStructure() {
+    return myShowStructureCondition == null || myShowStructureCondition.compute();
   }
 
   private static class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
