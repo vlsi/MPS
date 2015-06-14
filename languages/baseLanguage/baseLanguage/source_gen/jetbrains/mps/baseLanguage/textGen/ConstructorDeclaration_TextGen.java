@@ -19,56 +19,57 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createPositionInfo(node);
     createScopeInfo(node);
+    final SNodeTextGen textGen = this;
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
-      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
+      textGen.appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7faeeb34L, "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
     }
     SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-    BaseLanguageTextGen.annotations(node, this);
+    BaseLanguageTextGen.annotations(node, textGen);
     if (!(SNodeOperations.isInstanceOf(declaringClass, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
-      BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), this);
+      BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), textGen);
     } else {
-      this.indentBuffer();
+      textGen.indentBuffer();
     }
-    GenericDeclarationTextGen2.typeDeclarations(node, this);
+    GenericDeclarationTextGen2.typeDeclarations(node, textGen);
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isNotEmpty()) {
-      this.append(" ");
+      textGen.append(" ");
     }
     assert declaringClass != null;
-    this.append(SPropertyOperations.getString(declaringClass, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    this.append("(");
+    textGen.append(SPropertyOperations.getString(declaringClass, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    textGen.append("(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(")");
+    textGen.append(")");
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).isNotEmpty()) {
-      this.append(" throws ");
+      textGen.append(" throws ");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
           if (item != lastItem) {
-            append(", ");
+            textGen.append(", ");
           }
         }
       }
     }
-    this.append(" {");
-    this.increaseDepth();
+    textGen.append(" {");
+    textGen.increaseDepth();
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")) != null)) {
-      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")));
+      textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body")));
     }
-    this.decreaseDepth();
-    this.appendNewLine();
-    this.appendWithIndent("}");
-    this.appendNewLine();
+    textGen.decreaseDepth();
+    textGen.appendNewLine();
+    textGen.appendWithIndent("}");
+    textGen.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
       fillScopeInfo(node, BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{}));

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class DoubleType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("double");
+    final SNodeTextGen textGen = this;
+    textGen.append("double");
   }
 }

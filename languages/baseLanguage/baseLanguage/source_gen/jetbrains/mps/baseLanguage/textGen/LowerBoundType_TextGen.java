@@ -9,7 +9,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class LowerBoundType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("? super ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound")));
+    final SNodeTextGen textGen = this;
+    textGen.append("? super ");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound")));
   }
 }

@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StaticMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept")), this);
-    this.append(".");
-    BaseLanguageTextGen.methodCall(node, this);
+    final SNodeTextGen textGen = this;
+    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept")), textGen);
+    textGen.append(".");
+    BaseLanguageTextGen.methodCall(node, textGen);
   }
 }

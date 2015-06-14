@@ -9,13 +9,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ElsifClause_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(" else if (");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0983eL, "condition")));
-    this.append(") {");
-    this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
-    this.decreaseDepth();
-    this.appendNewLine();
-    this.appendWithIndent("}");
+    final SNodeTextGen textGen = this;
+    textGen.append(" else if (");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0983eL, "condition")));
+    textGen.append(") {");
+    textGen.increaseDepth();
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList")));
+    textGen.decreaseDepth();
+    textGen.appendNewLine();
+    textGen.appendWithIndent("}");
   }
 }

@@ -10,11 +10,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ParameterBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("@param ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x5ed0d79d7dbe86ebL, "parameter")));
-    this.append(" ");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x757ba20a4c905f8eL, "text")));
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("@param ");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x5ed0d79d7dbe86ebL, "parameter")));
+    textGen.append(" ");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c905f8aL, 0x757ba20a4c905f8eL, "text")));
   }
 }

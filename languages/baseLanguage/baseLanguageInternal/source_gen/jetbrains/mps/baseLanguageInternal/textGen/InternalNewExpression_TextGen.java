@@ -12,33 +12,34 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InternalNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("new ");
-    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName")), node, this);
+    final SNodeTextGen textGen = this;
+    textGen.append("new ");
+    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x11157a64c91L, "fqClassName")), node, textGen);
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x120ed7968bcL, "parameter"))).isNotEmpty()) {
-      this.append("<");
+      textGen.append("<");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x120ed7968bcL, "parameter"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
           if (item != lastItem) {
-            append(", ");
+            textGen.append(", ");
           }
         }
       }
-      this.append(">");
+      textGen.append(">");
     }
-    this.append("(");
+    textGen.append("(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157a3736dL, 0x46d6451be64f8b7L, "actualArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(")");
+    textGen.append(")");
   }
 }

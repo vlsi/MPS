@@ -12,35 +12,36 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
     if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")))) {
-      this.foundError("enum constant without name");
-      this.appendWithIndent("???");
+      textGen.foundError("enum constant without name");
+      textGen.appendWithIndent("???");
     } else {
-      this.appendWithIndent(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      textGen.appendWithIndent(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
-    this.append("(");
+    textGen.append("(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(")");
+    textGen.append(")");
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))).isNotEmpty()) {
-      this.append(" {");
-      this.appendNewLine();
-      this.increaseDepth();
+      textGen.append(" {");
+      textGen.appendNewLine();
+      textGen.increaseDepth();
       for (SNode imd : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, 0x6d60019ab157734L, "method"))) {
-        appendNode(imd);
+        textGen.appendNode(imd);
       }
-      this.decreaseDepth();
-      this.appendNewLine();
-      this.appendWithIndent("}");
+      textGen.decreaseDepth();
+      textGen.appendNewLine();
+      textGen.appendWithIndent("}");
     }
   }
   private static boolean isEmptyString(String str) {

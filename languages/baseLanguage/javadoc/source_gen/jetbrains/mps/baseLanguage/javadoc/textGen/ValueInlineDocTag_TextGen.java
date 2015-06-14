@@ -9,10 +9,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ValueInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("value");
+    final SNodeTextGen textGen = this;
+    textGen.append("value");
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, 0x2398cefbc25f6d46L, "variableReference")) != null)) {
-      this.append(" ");
-      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, 0x2398cefbc25f6d46L, "variableReference")));
+      textGen.append(" ");
+      textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x60a0f9237ac5e83bL, 0x2398cefbc25f6d46L, "variableReference")));
     }
   }
 }

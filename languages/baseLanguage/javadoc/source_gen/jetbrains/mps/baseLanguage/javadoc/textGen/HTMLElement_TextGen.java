@@ -11,23 +11,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HTMLElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).isEmpty()) {
-      this.append("<");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
-      this.append(" />");
+      textGen.append("<");
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
+      textGen.append(" />");
     } else {
-      this.append("<");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
-      this.append(">");
+      textGen.append("<");
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
+      textGen.append(">");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"));
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
         }
       }
-      this.append("</");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
-      this.append(">");
+      textGen.append("</");
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39aL, "name")));
+      textGen.append(">");
     }
   }
 }

@@ -11,19 +11,20 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InternalSuperMethodCallOperation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("super.");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, 0x33c9311d003a97d8L, "methodName")));
-    this.append("(");
+    final SNodeTextGen textGen = this;
+    textGen.append("super.");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, 0x33c9311d003a97d8L, "methodName")));
+    textGen.append("(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x33c9311d003a97d3L, 0x33c9311d003a97d7L, "actualArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(")");
+    textGen.append(")");
   }
 }

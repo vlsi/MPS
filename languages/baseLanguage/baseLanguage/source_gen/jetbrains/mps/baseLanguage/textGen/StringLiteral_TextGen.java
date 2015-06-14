@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StringLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("\"");
-    StringTextGen.compilableString((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value")) == null ? "" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"))), this);
-    this.append("\"");
+    final SNodeTextGen textGen = this;
+    textGen.append("\"");
+    StringTextGen.compilableString((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value")) == null ? "" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"))), textGen);
+    textGen.append("\"");
   }
 }

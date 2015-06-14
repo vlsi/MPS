@@ -9,14 +9,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class Visibility_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
-      this.append("private ");
+      textGen.append("private ");
     }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility"))) {
-      this.append("protected ");
+      textGen.append("protected ");
     }
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
-      this.append("public ");
+      textGen.append("public ");
     }
   }
 }

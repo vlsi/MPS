@@ -9,7 +9,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ClassifierClassExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier")), this);
-    this.append(".class");
+    final SNodeTextGen textGen = this;
+    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier")), textGen);
+    textGen.append(".class");
   }
 }

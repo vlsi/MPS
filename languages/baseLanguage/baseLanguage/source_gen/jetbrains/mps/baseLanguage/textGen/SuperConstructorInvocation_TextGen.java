@@ -13,20 +13,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createPositionInfo(node);
-    this.appendNewLine();
-    this.indentBuffer();
-    this.append("super(");
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    textGen.indentBuffer();
+    textGen.append("super(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(");");
+    textGen.append(");");
     if (getBuffer().hasPositionsSupport()) {
       fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
     }

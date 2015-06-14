@@ -9,11 +9,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CodeInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("code ");
+    final SNodeTextGen textGen = this;
+    textGen.append("code ");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252a7b73L, 0x2b1cb7939650a121L, "line"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
   }

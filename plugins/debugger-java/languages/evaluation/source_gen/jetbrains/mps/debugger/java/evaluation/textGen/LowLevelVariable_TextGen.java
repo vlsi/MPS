@@ -7,5 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class LowLevelVariable_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
   }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class LocalMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.methodCall(node, this);
+    final SNodeTextGen textGen = this;
+    BaseLanguageTextGen.methodCall(node, textGen);
   }
 }

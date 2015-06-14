@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class LongType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("long");
+    final SNodeTextGen textGen = this;
+    textGen.append("long");
   }
 }

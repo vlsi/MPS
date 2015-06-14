@@ -9,12 +9,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class GenericNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("new ");
+    final SNodeTextGen textGen = this;
+    textGen.append("new ");
     if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")) == null)) {
-      this.foundError("incomplete new expression");
-      this.append("???");
+      textGen.foundError("incomplete new expression");
+      textGen.append("???");
     } else {
-      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")));
+      textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")));
     }
   }
 }

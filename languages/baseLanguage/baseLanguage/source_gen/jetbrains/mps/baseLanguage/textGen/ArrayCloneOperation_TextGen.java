@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ArrayCloneOperation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("clone()");
+    final SNodeTextGen textGen = this;
+    textGen.append("clone()");
   }
 }

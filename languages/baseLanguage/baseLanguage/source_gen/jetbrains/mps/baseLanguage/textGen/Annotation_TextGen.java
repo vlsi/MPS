@@ -15,17 +15,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class Annotation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createUnitInfo(node);
+    final SNodeTextGen textGen = this;
     if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
-      appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
+      textGen.appendNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))));
     }
-    BaseLanguageTextGen.fileHeader(node, this);
-    BaseLanguageTextGen.annotations(node, this);
-    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), this);
-    this.append("@interface ");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-    this.append(" ");
-    BaseClassConceptTextGen.membersWithBrackets(node, true, this);
-    this.appendNewLine();
+    BaseLanguageTextGen.fileHeader(node, textGen);
+    BaseLanguageTextGen.annotations(node, textGen);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")), textGen);
+    textGen.append("@interface ");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    textGen.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, true, textGen);
+    textGen.appendNewLine();
 
     if (getBuffer().hasPositionsSupport()) {
       fillUnitInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}));

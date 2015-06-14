@@ -11,19 +11,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class XmlAttribute_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isMultiline_3080189811177259788", new Object[]{})) {
-      this.appendNewLine();
-      this.indentBuffer();
-      this.append("\t");
+      textGen.appendNewLine();
+      textGen.indentBuffer();
+      textGen.append("\t");
     }
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54b8df6L, "attrName")));
-    this.append("=\"");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54b8df6L, "attrName")));
+    textGen.append("=\"");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
-    this.append("\"");
+    textGen.append("\"");
   }
 }

@@ -11,19 +11,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XmlTextValue_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_3080189811177340422", new Object[]{})) {
-      this.appendNewLine();
-      this.indentBuffer();
-      this.append("\t\t");
+      textGen.appendNewLine();
+      textGen.indentBuffer();
+      textGen.append("\t\t");
     }
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text")));
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, 0x5c842a42c54cfd20L, "text")));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{})) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getNextSibling(node), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")), "virtual_onNewLine_3080189811177340422", new Object[]{})) {
         return;
       }
-      this.appendNewLine();
-      this.indentBuffer();
-      this.append("\t\t");
+      textGen.appendNewLine();
+      textGen.indentBuffer();
+      textGen.append("\t\t");
     }
   }
 }

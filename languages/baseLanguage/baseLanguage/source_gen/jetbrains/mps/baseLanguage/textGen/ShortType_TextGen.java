@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ShortType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("short");
+    final SNodeTextGen textGen = this;
+    textGen.append("short");
   }
 }

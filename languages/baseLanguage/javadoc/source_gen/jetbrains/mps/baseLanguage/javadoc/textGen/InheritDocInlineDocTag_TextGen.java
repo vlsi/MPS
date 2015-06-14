@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class InheritDocInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("inheritDoc");
+    final SNodeTextGen textGen = this;
+    textGen.append("inheritDoc");
   }
 }

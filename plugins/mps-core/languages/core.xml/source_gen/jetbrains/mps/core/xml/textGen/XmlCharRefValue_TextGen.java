@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class XmlCharRefValue_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("&#");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffed7feL, 0x2abf08504ffed806L, "charCode")));
-    this.append(";");
+    final SNodeTextGen textGen = this;
+    textGen.append("&#");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x2abf08504ffed7feL, 0x2abf08504ffed806L, "charCode")));
+    textGen.append(";");
   }
 }

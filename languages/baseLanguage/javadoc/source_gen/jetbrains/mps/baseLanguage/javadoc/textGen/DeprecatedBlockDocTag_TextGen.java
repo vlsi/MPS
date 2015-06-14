@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class DeprecatedBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("@deprecated ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")));
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("@deprecated ");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f964L, 0x250631c6c859e113L, "text")));
   }
 }

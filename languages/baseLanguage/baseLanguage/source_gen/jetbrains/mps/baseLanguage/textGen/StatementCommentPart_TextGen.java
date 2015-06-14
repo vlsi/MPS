@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class StatementCommentPart_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("<node>");
+    final SNodeTextGen textGen = this;
+    textGen.append("<node>");
   }
 }

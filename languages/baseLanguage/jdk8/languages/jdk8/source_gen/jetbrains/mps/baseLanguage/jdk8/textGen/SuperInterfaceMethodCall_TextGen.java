@@ -10,8 +10,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SuperInterfaceMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, 0x17dbb10eeb7528deL, "classifier")), this);
-    this.append(".super.");
-    BaseLanguageTextGen.methodCall(node, this);
+    final SNodeTextGen textGen = this;
+    BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xfdcdc48fbfd84831L, 0xaa765abac2ffa010L, 0x17dbb10eeb72e5d9L, 0x17dbb10eeb7528deL, "classifier")), textGen);
+    textGen.append(".super.");
+    BaseLanguageTextGen.methodCall(node, textGen);
   }
 }

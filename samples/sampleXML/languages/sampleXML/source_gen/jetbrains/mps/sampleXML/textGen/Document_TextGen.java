@@ -7,7 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class Document_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    ElementCreator.byElement(node, this);
+    final SNodeTextGen textGen = this;
+    ElementCreator.byElement(node, textGen);
   }
   public String getExtension(SNode node) {
     return "xml";

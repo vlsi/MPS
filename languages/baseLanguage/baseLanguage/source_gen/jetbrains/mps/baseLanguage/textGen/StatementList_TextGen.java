@@ -14,8 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class StatementList_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createScopeInfo(node);
+    final SNodeTextGen textGen = this;
     for (SNode stmt : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement")))) {
-      appendNode(stmt);
+      textGen.appendNode(stmt);
     }
     if (getBuffer().hasPositionsSupport()) {
       fillScopeInfo(node, BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a2L, "jetbrains.mps.lang.traceable.structure.ScopeConcept")), "virtual_getScopeVariables_5067982036267369894", new Object[]{}));

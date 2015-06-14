@@ -10,16 +10,17 @@ import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 
 public class CastExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("(");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type")));
-    this.append(") ");
+    final SNodeTextGen textGen = this;
+    textGen.append("(");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4bL, "type")));
+    textGen.append(") ");
     boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(node);
     if (needsParensAroundCastExpression) {
-      this.append("(");
+      textGen.append("(");
     }
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression")));
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression")));
     if (needsParensAroundCastExpression) {
-      this.append(")");
+      textGen.append(")");
     }
 
   }

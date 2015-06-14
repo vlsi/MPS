@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class InternalThisExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("this");
+    final SNodeTextGen textGen = this;
+    textGen.append("this");
   }
 }

@@ -11,13 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlCDATA_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     SNode left = SNodeOperations.getPrevSibling(node);
     if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
-      this.appendNewLine();
-      this.indentBuffer();
+      textGen.appendNewLine();
+      textGen.indentBuffer();
     }
-    this.append("<![CDATA[");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, 0x16838b3fce9b2633L, "content")));
-    this.append("]]>");
+    textGen.append("<![CDATA[");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549487aL, 0x16838b3fce9b2633L, "content")));
+    textGen.append("]]>");
   }
 }

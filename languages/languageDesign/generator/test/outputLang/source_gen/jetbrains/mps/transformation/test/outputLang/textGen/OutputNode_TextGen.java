@@ -11,20 +11,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OutputNode_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text")) != null) {
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text")));
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x11645b5a797L, "text")));
     } else {
-      this.append("!no text!");
+      textGen.append("!no text!");
     }
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"))).isNotEmpty()) {
-      this.append(" children:{");
+      textGen.append(" children:{");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, 0x117f047d47fL, "outputChild"));
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
         }
       }
-      this.append("}");
+      textGen.append("}");
     }
   }
 }

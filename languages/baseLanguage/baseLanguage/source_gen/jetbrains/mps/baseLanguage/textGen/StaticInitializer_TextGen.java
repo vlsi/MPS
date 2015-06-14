@@ -9,12 +9,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class StaticInitializer_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendWithIndent("static {");
-    this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, 0x11c7538039eL, "statementList")));
-    this.appendNewLine();
-    this.decreaseDepth();
-    this.appendWithIndent("}");
-    this.appendNewLine();
+    final SNodeTextGen textGen = this;
+    textGen.appendWithIndent("static {");
+    textGen.increaseDepth();
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c7538039dL, 0x11c7538039eL, "statementList")));
+    textGen.appendNewLine();
+    textGen.decreaseDepth();
+    textGen.appendWithIndent("}");
+    textGen.appendNewLine();
   }
 }

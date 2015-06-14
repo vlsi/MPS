@@ -10,11 +10,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ThrowsBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("@throws ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x5ed0d79d7dbd76f9L, "exceptionType")));
-    this.append(" ");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x514c0f68704ec272L, "text")));
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("@throws ");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x5ed0d79d7dbd76f9L, "exceptionType")));
+    textGen.append(" ");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x514c0f68704ec270L, 0x514c0f68704ec272L, "text")));
   }
 }

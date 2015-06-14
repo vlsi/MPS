@@ -16,35 +16,36 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class InternalAnonymousClass_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createUnitInfo(node);
-    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e7468e5L, "fqClassName")), node, this);
+    final SNodeTextGen textGen = this;
+    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e7468e5L, "fqClassName")), node, textGen);
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e74680dL, "typeParameter"))).isNotEmpty()) {
-      this.append("<");
+      textGen.append("<");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e74680dL, "typeParameter"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
           if (item != lastItem) {
-            append(", ");
+            textGen.append(", ");
           }
         }
       }
-      this.append(">");
+      textGen.append(">");
     }
-    this.append("(");
+    textGen.append("(");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, 0x2f7b79225e74680cL, "constructorArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append(")");
-    this.append(" ");
-    BaseClassConceptTextGen.membersWithBrackets(node, false, this);
+    textGen.append(")");
+    textGen.append(" ");
+    BaseClassConceptTextGen.membersWithBrackets(node, false, textGen);
     if (getBuffer().hasPositionsSupport()) {
       fillUnitInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), "virtual_getUnitName_5067982036267369911", new Object[]{}));
     }

@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ErrorReportingRoot_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("error reporting root {");
-    this.appendNewLine();
-    this.append("}");
+    final SNodeTextGen textGen = this;
+    textGen.append("error reporting root {");
+    textGen.appendNewLine();
+    textGen.append("}");
   }
 }

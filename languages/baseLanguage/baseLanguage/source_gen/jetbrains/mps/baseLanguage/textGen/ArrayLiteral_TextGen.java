@@ -10,17 +10,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ArrayLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("{");
+    final SNodeTextGen textGen = this;
+    textGen.append("{");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a770dc0dL, 0x114a770fdbfL, "item"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(", ");
+          textGen.append(", ");
         }
       }
     }
-    this.append("}");
+    textGen.append("}");
   }
 }

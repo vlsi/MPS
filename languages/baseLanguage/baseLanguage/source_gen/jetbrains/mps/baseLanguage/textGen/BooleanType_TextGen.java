@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class BooleanType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("boolean");
+    final SNodeTextGen textGen = this;
+    textGen.append("boolean");
   }
 }

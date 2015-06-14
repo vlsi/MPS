@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class InternalStaticFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, 0x1115794e9f1L, "fqClassName")), node, this);
-    this.append(".");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, 0x11157952fb6L, "fieldName")));
+    final SNodeTextGen textGen = this;
+    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, 0x1115794e9f1L, "fqClassName")), node, textGen);
+    textGen.append(".");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x11157912ec1L, 0x11157952fb6L, "fieldName")));
   }
 }

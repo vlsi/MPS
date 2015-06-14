@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlText_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     boolean needNewLine = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (!(needNewLine)) {
       SNode left = SNodeOperations.getPrevSibling(node);
@@ -19,9 +20,9 @@ public class XmlText_TextGen extends SNodeTextGen {
       }
     }
     if (needNewLine) {
-      this.appendNewLine();
-      this.indentBuffer();
+      textGen.appendNewLine();
+      textGen.indentBuffer();
     }
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value")));
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value")));
   }
 }

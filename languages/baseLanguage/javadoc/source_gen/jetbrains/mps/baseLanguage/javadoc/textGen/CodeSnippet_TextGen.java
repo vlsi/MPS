@@ -9,21 +9,22 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CodeSnippet_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("{{");
-    this.increaseDepth();
-    this.increaseDepth();
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("{{");
+    textGen.increaseDepth();
+    textGen.increaseDepth();
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x2398cefbc261e3ffL, 0x2398cefbc26369e1L, "statement"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
-    this.decreaseDepth();
-    this.decreaseDepth();
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("}}");
+    textGen.decreaseDepth();
+    textGen.decreaseDepth();
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("}}");
   }
 }

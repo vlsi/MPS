@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ClassifierDocReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, 0x1ec532ec2531d2e5L, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
+    final SNodeTextGen textGen = this;
+    textGen.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, 0x1ec532ec2531d2e5L, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}));
   }
 }

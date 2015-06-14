@@ -10,14 +10,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LinkInlineDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("link ");
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x235789022a5d3a34L, "reference")));
+    final SNodeTextGen textGen = this;
+    textGen.append("link ");
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x235789022a5d3a34L, "reference")));
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x2b1cb7939653411eL, "line"))).isNotEmpty()) {
-      this.append(" ");
+      textGen.append(" ");
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x235789022a5d3a2fL, 0x2b1cb7939653411eL, "line"));
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
         }
       }
     }

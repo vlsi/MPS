@@ -9,30 +9,31 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class XmlDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("<?xml");
-    this.append(" ");
-    this.append("version");
-    this.append(" = ");
-    this.append("\"");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x4c3596ee25a4a423L, "version")));
-    this.append("\"");
+    final SNodeTextGen textGen = this;
+    textGen.append("<?xml");
+    textGen.append(" ");
+    textGen.append("version");
+    textGen.append(" = ");
+    textGen.append("\"");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x4c3596ee25a4a423L, "version")));
+    textGen.append("\"");
     if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295456L, "encoding")))) {
-      this.append(" ");
-      this.append("encoding");
-      this.append(" = ");
-      this.append("\"");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295456L, "encoding")));
-      this.append("\"");
+      textGen.append(" ");
+      textGen.append("encoding");
+      textGen.append(" = ");
+      textGen.append("\"");
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295456L, "encoding")));
+      textGen.append("\"");
     }
     if (isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295458L, "standalone")))) {
-      this.append(" ");
-      this.append("standalone");
-      this.append(" = ");
-      this.append("\"");
-      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295458L, "standalone")));
-      this.append("\"");
+      textGen.append(" ");
+      textGen.append("standalone");
+      textGen.append(" = ");
+      textGen.append("\"");
+      textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, 0x2ed40cf354295458L, "standalone")));
+      textGen.append("\"");
     }
-    this.append("?>");
+    textGen.append("?>");
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

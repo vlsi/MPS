@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class HexIntegerLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("0x" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")));
+    final SNodeTextGen textGen = this;
+    textGen.append("0x" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1129761e073L, 0x11297628b3cL, "value")));
   }
 }

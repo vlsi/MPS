@@ -11,12 +11,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class Statement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createPositionInfo(node);
+    final SNodeTextGen textGen = this;
     if (SNodeOperations.getConcept(node) != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      this.append("/* error: statement w/o textGen:");
-      this.append(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{}));
-      this.append(" */");
+      textGen.append("/* error: statement w/o textGen:");
+      textGen.append(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{}));
+      textGen.append(" */");
     } else {
-      this.appendNewLine();
+      textGen.appendNewLine();
     }
     if (getBuffer().hasPositionsSupport()) {
       fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));

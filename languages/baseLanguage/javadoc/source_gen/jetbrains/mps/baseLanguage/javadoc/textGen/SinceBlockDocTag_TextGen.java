@@ -9,9 +9,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class SinceBlockDocTag_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    DocCommentTextGen.javadocIndent(this);
-    this.append("@since ");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, 0x757ba20a4c87ddafL, "text")));
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    DocCommentTextGen.javadocIndent(textGen);
+    textGen.append("@since ");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87ddadL, 0x757ba20a4c87ddafL, "text")));
   }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ArrayLengthOperation_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("length");
+    final SNodeTextGen textGen = this;
+    textGen.append("length");
   }
 }

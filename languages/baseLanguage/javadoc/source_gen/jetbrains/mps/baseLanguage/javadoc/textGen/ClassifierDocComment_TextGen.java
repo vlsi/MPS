@@ -12,7 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassifierDocComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    DocCommentTextGen.docCommentStart(node, this);
+    final SNodeTextGen textGen = this;
+    DocCommentTextGen.docCommentStart(node, textGen);
 
     {
       Iterable<SNode> collection = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).where(new IWhereFilter<SNode>() {
@@ -21,16 +22,16 @@ public class ClassifierDocComment_TextGen extends SNodeTextGen {
         }
       });
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, 0x1cb65d9fe66a764eL, "param"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
 
-    DocCommentTextGen.docCommentEnd(node, this);
+    DocCommentTextGen.docCommentEnd(node, textGen);
   }
 }

@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class FieldDocComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    DocCommentTextGen.docCommentStart(node, this);
+    final SNodeTextGen textGen = this;
+    DocCommentTextGen.docCommentStart(node, textGen);
 
-    DocCommentTextGen.docCommentEnd(node, this);
+    DocCommentTextGen.docCommentEnd(node, textGen);
   }
 }

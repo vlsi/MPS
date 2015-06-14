@@ -10,15 +10,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class CommentLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     // first line in tags needs to stay on the same line with the tag, DocComments prepend a new line explicitly 
     if (SNodeOperations.getIndexInParent(node) != 0) {
-      this.appendNewLine();
-      DocCommentTextGen.javadocIndent(this);
+      textGen.appendNewLine();
+      DocCommentTextGen.javadocIndent(textGen);
     }
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
   }

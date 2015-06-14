@@ -14,59 +14,60 @@ import jetbrains.mps.core.xml.behavior.XmlElement_Behavior;
 
 public class XmlElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     if ((SNodeOperations.getPrevSibling(node) != null)) {
-      this.appendNewLine();
-      this.indentBuffer();
+      textGen.appendNewLine();
+      textGen.indentBuffer();
     }
-    this.append("<");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName")));
+    textGen.append("<");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName")));
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).isNotEmpty()) {
-      this.append(" ");
+      textGen.append(" ");
     }
-    this.increaseDepth();
+    textGen.increaseDepth();
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
         if (item != lastItem) {
-          append(" ");
+          textGen.append(" ");
         }
       }
     }
-    this.decreaseDepth();
+    textGen.decreaseDepth();
     if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"))).isEmpty() && SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"))) {
-      this.append(" />");
+      textGen.append(" />");
       return;
     }
-    this.append(">");
+    textGen.append(">");
     if (XmlElement_Behavior.call_isMultiline_8886258982030574875(node)) {
-      this.appendNewLine();
-      this.increaseDepth();
-      this.indentBuffer();
+      textGen.appendNewLine();
+      textGen.increaseDepth();
+      textGen.indentBuffer();
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"));
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
         }
       }
-      this.decreaseDepth();
-      this.appendNewLine();
-      this.indentBuffer();
+      textGen.decreaseDepth();
+      textGen.appendNewLine();
+      textGen.indentBuffer();
     } else {
-      this.increaseDepth();
-      this.increaseDepth();
+      textGen.increaseDepth();
+      textGen.increaseDepth();
       {
         Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x16838b3fce9a4922L, "content"));
         for (SNode item : collection) {
-          appendNode(item);
+          textGen.appendNode(item);
         }
       }
-      this.decreaseDepth();
-      this.decreaseDepth();
+      textGen.decreaseDepth();
+      textGen.decreaseDepth();
     }
-    this.append("</");
-    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName")));
-    this.append(">");
+    textGen.append("</");
+    textGen.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName")));
+    textGen.append(">");
   }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class CharType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("char");
+    final SNodeTextGen textGen = this;
+    textGen.append("char");
   }
 }

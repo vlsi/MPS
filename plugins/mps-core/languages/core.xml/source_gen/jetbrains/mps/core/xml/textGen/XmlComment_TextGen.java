@@ -11,18 +11,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class XmlComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
+    final SNodeTextGen textGen = this;
     SNode left = SNodeOperations.getPrevSibling(node);
     if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart")), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{})) {
-      this.appendNewLine();
-      this.indentBuffer();
+      textGen.appendNewLine();
+      textGen.indentBuffer();
     }
-    this.append("<!--");
+    textGen.append("<!--");
     {
       Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494878L, 0x16838b3fce9bec77L, "lines"));
       for (SNode item : collection) {
-        appendNode(item);
+        textGen.appendNode(item);
       }
     }
-    this.append("-->");
+    textGen.append("-->");
   }
 }

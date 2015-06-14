@@ -12,13 +12,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CommentedStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     createPositionInfo(node);
-    this.appendNewLine();
-    this.appendWithIndent("/*");
-    this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, 0x11ef467946eL, "statement")));
-    this.appendNewLine();
-    this.decreaseDepth();
-    this.appendWithIndent("*/");
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
+    textGen.appendWithIndent("/*");
+    textGen.increaseDepth();
+    textGen.appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, 0x11ef467946eL, "statement")));
+    textGen.appendNewLine();
+    textGen.decreaseDepth();
+    textGen.appendWithIndent("*/");
     if (getBuffer().hasPositionsSupport()) {
       fillPositionInfo(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a3L, "jetbrains.mps.lang.traceable.structure.TraceableConcept")), "virtual_getTraceableProperty_5067982036267369901", new Object[]{}));
     }

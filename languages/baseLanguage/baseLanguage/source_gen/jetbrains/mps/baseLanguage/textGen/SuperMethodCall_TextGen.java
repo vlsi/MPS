@@ -7,7 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class SuperMethodCall_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("super.");
-    BaseLanguageTextGen.methodCall(node, this);
+    final SNodeTextGen textGen = this;
+    textGen.append("super.");
+    BaseLanguageTextGen.methodCall(node, textGen);
   }
 }

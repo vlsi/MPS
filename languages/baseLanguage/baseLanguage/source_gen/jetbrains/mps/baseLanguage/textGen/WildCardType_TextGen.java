@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class WildCardType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("?");
+    final SNodeTextGen textGen = this;
+    textGen.append("?");
   }
 }

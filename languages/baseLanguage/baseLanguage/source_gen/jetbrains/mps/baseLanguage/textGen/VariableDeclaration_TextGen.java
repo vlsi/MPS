@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class VariableDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.variableDeclaration(node, this);
+    final SNodeTextGen textGen = this;
+    BaseLanguageTextGen.variableDeclaration(node, textGen);
   }
 }

@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class NullLiteral_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("null");
+    final SNodeTextGen textGen = this;
+    textGen.append("null");
   }
 }
