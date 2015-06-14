@@ -488,7 +488,7 @@
     <node concept="3aamgX" id="i0uQCib" role="3acgRq">
       <ref role="30HIoZ" to="2omo:i0lc7va" resolve="AppendOperation" />
       <node concept="j$656" id="i0vf819" role="1lVwrX">
-        <ref role="v9R2y" node="hZiwTWo" resolve="reduce_Append" />
+        <ref role="v9R2y" node="hZiwTWo" resolve="reduce_AppendOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="i0v2gIX" role="3acgRq">
@@ -500,14 +500,14 @@
     <node concept="3aamgX" id="hZi_T_0" role="3acgRq">
       <ref role="30HIoZ" to="2omo:hZizx56" resolve="WithIndentOperation" />
       <node concept="j$656" id="hZiA5nD" role="1lVwrX">
-        <ref role="v9R2y" node="hZi_4dI" resolve="reduce_WithIndentOperationInLang" />
+        <ref role="v9R2y" node="hZi_4dI" resolve="reduce_WithIndentOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="hY4zKV$" role="3acgRq">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="2omo:hX1kVMc" resolve="SimpleTextGenOperation" />
       <node concept="j$656" id="hY4zN7g" role="1lVwrX">
-        <ref role="v9R2y" node="hY4zc7o" resolve="reduce_SimpleTextGenOperationInLang" />
+        <ref role="v9R2y" node="hY4zc7o" resolve="reduce_SimpleTextGenOperation" />
       </node>
     </node>
     <node concept="3aamgX" id="hYHPNsr" role="3acgRq">
@@ -534,7 +534,7 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="2omo:hY4Spyd" resolve="AbstractTextGenParameter" />
       <node concept="j$656" id="hY4_aHH" role="1lVwrX">
-        <ref role="v9R2y" node="hY4yFLJ" resolve="reduce_AbstractTextGenParameterInLang" />
+        <ref role="v9R2y" node="hY4yFLJ" resolve="reduce_AbstractTextGenParameter" />
       </node>
     </node>
     <node concept="3aamgX" id="hXJGP00" role="3acgRq">
@@ -1843,7 +1843,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="hY4yFLJ">
-    <property role="TrG5h" value="reduce_AbstractTextGenParameterInLang" />
+    <property role="TrG5h" value="reduce_AbstractTextGenParameter" />
     <ref role="3gUMe" to="2omo:hY4Spyd" resolve="AbstractTextGenParameter" />
     <node concept="312cEu" id="hY4yPba" role="13RCb5">
       <property role="TrG5h" value="Context" />
@@ -1896,7 +1896,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="hY4zc7o">
-    <property role="TrG5h" value="reduce_SimpleTextGenOperationInLang" />
+    <property role="TrG5h" value="reduce_SimpleTextGenOperation" />
     <ref role="3gUMe" to="2omo:hX1kVMc" resolve="SimpleTextGenOperation" />
     <node concept="312cEu" id="hY4ziR6" role="13RCb5">
       <property role="TrG5h" value="SimplestTG" />
@@ -1946,8 +1946,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="hY4CoYR">
-    <property role="TrG5h" value="reduce_NodePartInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_NodePart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:i0l9hCC" resolve="NodeAppendPart" />
     <node concept="312cEu" id="hY4Cxfg" role="13RCb5">
       <property role="TrG5h" value="MyClass" />
@@ -2027,8 +2027,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="hY4Datl">
-    <property role="TrG5h" value="reduce_OperationCallInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_OperationCallPart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:hXbDJEE" resolve="OperationCall" />
     <node concept="312cEu" id="hY4Dn69" role="13RCb5">
       <property role="TrG5h" value="ThisClass" />
@@ -2182,7 +2182,7 @@
     </node>
   </node>
   <node concept="jVnub" id="hZik$0t">
-    <property role="TrG5h" value="PartInLang_switch" />
+    <property role="TrG5h" value="switch_AppendPart" />
     <property role="3GE5qa" value="append" />
     <node concept="3aamgX" id="1edF3dvwACL" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:i0l9hCC" resolve="NodeAppendPart" />
@@ -2210,11 +2210,11 @@
               </node>
             </node>
             <node concept="j$656" id="1edF3dvwC4I" role="UU_$l">
-              <ref role="v9R2y" node="hY4CoYR" resolve="reduce_NodePartInLang" />
+              <ref role="v9R2y" node="hY4CoYR" resolve="reduce_NodePart" />
             </node>
           </node>
           <node concept="xERo3" id="1edF3dvwBSl" role="lGtFl">
-            <ref role="xH3mL" node="hZitiFS" resolve="reduce_PropertyInLang" />
+            <ref role="xH3mL" node="hZitiFS" resolve="reduce_PropertyPart" />
           </node>
         </node>
       </node>
@@ -2222,13 +2222,13 @@
     <node concept="3aamgX" id="i0uRywD" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:i0la8a6" resolve="ConstantStringAppendPart" />
       <node concept="j$656" id="i0uSP$r" role="1lVwrX">
-        <ref role="v9R2y" node="i0uRMh_" resolve="reduce_ConstantStringPartInLang" />
+        <ref role="v9R2y" node="i0uRMh_" resolve="reduce_ConstantStringPart" />
       </node>
     </node>
     <node concept="3aamgX" id="i0uTMyH" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:i0l8MZg" resolve="NewLineAppendPart" />
       <node concept="j$656" id="i0uTQks" role="1lVwrX">
-        <ref role="v9R2y" node="i0uTCn1" resolve="reduce_NewLinePartInLang" />
+        <ref role="v9R2y" node="i0uTCn1" resolve="reduce_NewLinePart" />
       </node>
     </node>
     <node concept="3aamgX" id="i0uUxoc" role="3aUrZf">
@@ -2240,19 +2240,19 @@
     <node concept="3aamgX" id="i0XMjRI" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:hXbDJEE" resolve="OperationCall" />
       <node concept="j$656" id="i0XMo53" role="1lVwrX">
-        <ref role="v9R2y" node="hY4Datl" resolve="reduce_OperationCallInLang" />
+        <ref role="v9R2y" node="hY4Datl" resolve="reduce_OperationCallPart" />
       </node>
     </node>
     <node concept="3aamgX" id="3KWRMGjvU_T" role="3aUrZf">
       <ref role="30HIoZ" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
       <node concept="j$656" id="3KWRMGjvU_V" role="1lVwrX">
-        <ref role="v9R2y" node="5ZG7NfXc0Hw" resolve="reduce_ReferenceAppendPartInLang" />
+        <ref role="v9R2y" node="5ZG7NfXc0Hw" resolve="reduce_ReferenceAppendPart" />
       </node>
     </node>
   </node>
   <node concept="13MO4I" id="hZitiFS">
-    <property role="TrG5h" value="reduce_PropertyInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_PropertyPart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:i0l9hCC" resolve="NodeAppendPart" />
     <node concept="312cEu" id="hZitppl" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -2325,8 +2325,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="hZiwTWo">
-    <property role="TrG5h" value="reduce_Append" />
-    <property role="3GE5qa" value="append" />
+    <property role="TrG5h" value="reduce_AppendOperation" />
+    <property role="3GE5qa" value="" />
     <ref role="3gUMe" to="2omo:i0lc7va" resolve="AppendOperation" />
     <node concept="312cEu" id="hZiwWrA" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -2353,7 +2353,7 @@
               </node>
             </node>
             <node concept="1sPUBX" id="1WfddY$XHMz" role="lGtFl">
-              <ref role="v9R2y" node="hZik$0t" resolve="PartInLang_switch" />
+              <ref role="v9R2y" node="hZik$0t" resolve="switch_AppendPart" />
             </node>
           </node>
         </node>
@@ -2361,7 +2361,7 @@
     </node>
   </node>
   <node concept="13MO4I" id="hZi_4dI">
-    <property role="TrG5h" value="reduce_WithIndentOperationInLang" />
+    <property role="TrG5h" value="reduce_WithIndentOperation" />
     <ref role="3gUMe" to="2omo:hZizx56" resolve="WithIndentOperation" />
     <node concept="312cEu" id="hZi_95g" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -2427,8 +2427,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="i0uRMh_">
-    <property role="TrG5h" value="reduce_ConstantStringPartInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_ConstantStringPart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:i0la8a6" resolve="ConstantStringAppendPart" />
     <node concept="312cEu" id="i0uRQ0R" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -2504,8 +2504,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="i0uTCn1">
-    <property role="TrG5h" value="reduce_NewLinePartInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_NewLinePart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:i0l8MZg" resolve="NewLineAppendPart" />
     <node concept="312cEu" id="i0uTF0v" role="13RCb5">
       <property role="TrG5h" value="A" />
@@ -2782,8 +2782,8 @@
     </node>
   </node>
   <node concept="13MO4I" id="5ZG7NfXc0Hw">
-    <property role="TrG5h" value="reduce_ReferenceAppendPartInLang" />
-    <property role="3GE5qa" value="append.lang" />
+    <property role="TrG5h" value="reduce_ReferenceAppendPart" />
+    <property role="3GE5qa" value="append" />
     <ref role="3gUMe" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
     <node concept="312cEu" id="5ZG7NfXc0Hy" role="13RCb5">
       <property role="TrG5h" value="A" />
