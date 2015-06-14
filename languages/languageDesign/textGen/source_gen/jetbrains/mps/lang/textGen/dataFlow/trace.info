@@ -6,7 +6,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root>
     <file name="DFABuilders.java">
-      <unit at="8,0,30,0" name="jetbrains.mps.lang.textGen.dataFlow.DFABuilders" />
+      <unit at="8,0,29,0" name="jetbrains.mps.lang.textGen.dataFlow.DFABuilders" />
     </file>
   </root>
   <root nodeRef="r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1234274822179">
@@ -178,21 +178,6 @@
         <var name="operationContext" id="1237483338873" />
       </scope>
       <unit id="1237483338873" at="9,0,16,0" name="jetbrains.mps.lang.textGen.dataFlow.ConstantStringAppendPart_DataFlow" />
-    </file>
-  </root>
-  <root nodeRef="r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483369901">
-    <file name="InfoAppendPart_DataFlow.java">
-      <node id="1237483373622" at="15,102,16,209" concept="1" />
-      <node id="1237483369901" at="13,0,15,0" concept="0" trace="InfoAppendPart_DataFlow#()V" />
-      <node id="1237483369901" at="15,0,18,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-      <scope id="1237483369901" at="13,36,13,36" />
-      <scope id="1237483369903" at="15,102,16,209" />
-      <scope id="1237483369901" at="13,0,15,0" />
-      <scope id="1237483369901" at="15,0,18,0">
-        <var name="_context" id="1237483369901" />
-        <var name="operationContext" id="1237483369901" />
-      </scope>
-      <unit id="1237483369901" at="12,0,19,0" name="jetbrains.mps.lang.textGen.dataFlow.InfoAppendPart_DataFlow" />
     </file>
   </root>
   <root nodeRef="r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483382474">

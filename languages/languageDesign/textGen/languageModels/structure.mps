@@ -315,24 +315,6 @@
     <property role="34LRSv" value="\n" />
     <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
   </node>
-  <node concept="1TIwiD" id="i0l93ec">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="resolve info" />
-    <property role="TrG5h" value="InfoAppendPart" />
-    <property role="3GE5qa" value="operation.append.part" />
-    <property role="34LRSv" value="$resolve{" />
-    <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
-    <node concept="1TJgyj" id="i0lbok1" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="value" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="5ZG7NfXc0vR" role="lGtFl">
-      <property role="YLQ7P" value="replaced by ReferenceAppendPart" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="i0l9hCC">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />

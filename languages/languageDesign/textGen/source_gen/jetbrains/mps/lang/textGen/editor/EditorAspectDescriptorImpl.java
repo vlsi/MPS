@@ -27,28 +27,26 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 5:
         return Collections.<ConceptEditor>singletonList(new FoundErrorOperation_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new InfoAppendPart_Editor());
-      case 7:
         return Collections.<ConceptEditor>singletonList(new LanguageTextGenDeclaration_Editor());
-      case 8:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new NewLineAppendPart_Editor());
-      case 9:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new NodeAppendPart_Editor());
-      case 10:
+      case 9:
         return Collections.<ConceptEditor>singletonList(new OperationCall_Editor());
-      case 11:
+      case 10:
         return Collections.<ConceptEditor>singletonList(new OperationDeclaration_Editor());
-      case 12:
+      case 11:
         return Collections.<ConceptEditor>singletonList(new ReferenceAppendPart_Editor());
-      case 13:
+      case 12:
         return Collections.<ConceptEditor>singletonList(new SimpleTextGenOperation_Editor());
-      case 14:
+      case 13:
         return Collections.<ConceptEditor>singletonList(new StubOperationDeclaration_Editor());
-      case 15:
+      case 14:
         return Collections.<ConceptEditor>singletonList(new UtilityMethodCall_Editor());
-      case 16:
+      case 15:
         return Collections.<ConceptEditor>singletonList(new UtilityMethodDeclaration_Editor());
-      case 17:
+      case 16:
         return Collections.<ConceptEditor>singletonList(new WithIndentOperation_Editor());
       default:
     }
@@ -59,5 +57,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
 }

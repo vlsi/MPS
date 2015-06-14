@@ -71,7 +71,6 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.IncreaseDepthOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.InfoAppendPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.NewLineAppendPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
@@ -288,12 +287,6 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.SimpleTextGenOperation_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.textGen.behavior.InfoAppendPart_BehaviorDescriptor" file="InfoAppendPart_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.behavior.AbstractAppendPart_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_Behavior" file="LanguageTextGenDeclaration_Behavior.java">
