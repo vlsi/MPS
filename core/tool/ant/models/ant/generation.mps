@@ -1199,7 +1199,7 @@
       <node concept="3clFbS" id="3H7CugYdMHN" role="3clF47">
         <node concept="3clFbF" id="3H7CugYdMHO" role="3cqZAp">
           <node concept="Xl_RD" id="3H7CugYdMHP" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.tool.builder.make.MpsRunnerWorker" />
+            <property role="Xl_RC" value="jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker" />
           </node>
         </node>
       </node>

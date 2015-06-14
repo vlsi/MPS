@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root nodeRef="r:0874afb3-3c36-4193-9ba6-eed3bcd5ae08(jetbrains.mps.build.mps.runner.test.test1)/5712055271175121694">
+    <file name="MainClass.java">
+      <node id="5712055271175138910" at="9,32,10,41" concept="0" />
+      <node id="5712055271175219220" at="10,41,11,41" concept="2" />
+      <node id="5712055271175289197" at="13,42,14,85" concept="0" />
+      <node id="5712055271175282339" at="16,29,17,94" concept="0" />
+      <node id="5712055271175289756" at="17,94,18,26" concept="0" />
+      <node id="5712055271175287189" at="12,9,15,7" concept="1" />
+      <node id="5712055271175282202" at="11,41,19,5" concept="4" />
+      <node id="5712055271175138812" at="9,0,21,0" concept="3" trace="mpsMain#()V" />
+      <scope id="5712055271175287191" at="13,42,14,85" />
+      <scope id="5712055271175282198" at="16,0,18,26">
+        <var name="e" id="5712055271175282200" />
+      </scope>
+      <scope id="5712055271175282199" at="16,29,18,26" />
+      <scope id="5712055271175282203" at="12,9,15,7" />
+      <scope id="5712055271175138818" at="9,32,19,5">
+        <var name="resultFile" id="5712055271175219221" />
+      </scope>
+      <scope id="5712055271175138812" at="9,0,21,0" />
+      <unit id="5712055271175121694" at="8,0,22,0" name="jetbrains.mps.build.mps.runner.test.test1.MainClass" />
+    </file>
+  </root>
+</debug-info>
+
