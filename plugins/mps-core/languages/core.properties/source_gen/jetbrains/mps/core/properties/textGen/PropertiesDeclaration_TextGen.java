@@ -10,9 +10,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertiesDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
-    this.append("=");
-    this.append(PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, 0x36fb0dc9fd3a3ae4L, "value"))));
-    this.appendNewLine();
+    final SNodeTextGen textGen = this;
+    textGen.append(PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+    textGen.append("=");
+    textGen.append(PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ac1L, 0x36fb0dc9fd3a3ae4L, "value"))));
+    textGen.appendNewLine();
   }
 }

@@ -1320,7 +1320,7 @@
                       <ref role="3cqZAo" node="hY4TEnm" resolve="builder" />
                     </node>
                     <node concept="liA8E" id="hY4TEnD" role="2OqNvi">
-                      <ref role="37wK5l" to="e2lb:~StringBuilder.append(java.lang.Object):java.lang.StringBuilder" resolve="append" />
+                      <ref role="37wK5l" to="e2lb:~StringBuilder.append(char):java.lang.StringBuilder" resolve="append" />
                       <node concept="2OqwBi" id="hY4TEnE" role="37wK5m">
                         <node concept="2OqwBi" id="hY4TEnF" role="2Oq$k0">
                           <node concept="37vLTw" id="3GM_nagTvzT" role="2Oq$k0">

@@ -10,8 +10,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class PropertiesComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append("# ");
-    this.append(PropEscapeUtil.escapeComment(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ad9L, 0x36fb0dc9fd3a3adaL, "text"))));
-    this.appendNewLine();
+    final SNodeTextGen textGen = this;
+    textGen.append("# ");
+    textGen.append(PropEscapeUtil.escapeComment(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x58f98fef90ad4b72L, 0xa390fad66ec7005aL, 0x36fb0dc9fd3a3ad9L, 0x36fb0dc9fd3a3adaL, "text"))));
+    textGen.appendNewLine();
   }
 }

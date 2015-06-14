@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class PropertiesLine_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
+    final SNodeTextGen textGen = this;
+    textGen.appendNewLine();
   }
 }
