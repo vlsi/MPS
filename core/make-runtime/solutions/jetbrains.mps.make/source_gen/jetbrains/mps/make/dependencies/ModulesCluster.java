@@ -22,12 +22,15 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import java.util.LinkedList;
 import jetbrains.mps.internal.make.runtime.util.GraphAnalyzer;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModulesCluster {
   private Map<SModuleReference, SModule> modulesView = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
@@ -202,7 +205,25 @@ __switch__:
   }
   private Iterable<SModuleReference> required(SModule mod) {
     GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
-    Set<SModule> reqmods = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
+
+    Iterable<Language> allUsedLangs = null;
+    if (mod instanceof AbstractModule) {
+      Set<SLanguage> allUsedSLanguages = ((AbstractModule) mod).getAllUsedLanguages();
+      allUsedLangs = SetSequence.fromSet(allUsedSLanguages).select(new ISelector<SLanguage, Language>() {
+        public Language select(SLanguage it) {
+          return ((SLanguageAdapter) it).getSourceModule();
+        }
+      }).where(new IWhereFilter<Language>() {
+        public boolean accept(Language it) {
+          return it != null;
+        }
+      });
+
+    } else {
+      allUsedLangs = (Iterable<Language>) depman.getUsedLanguages();
+    }
+
+    Set<SModule> reqmods = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable((allUsedLangs)).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {
         return lang.getGenerators();
       }
