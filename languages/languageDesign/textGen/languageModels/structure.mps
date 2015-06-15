@@ -233,6 +233,10 @@
     <property role="3GE5qa" value="parameter" />
     <property role="34LRSv" value="buffer" />
     <ref role="1TJDcQ" node="hY4Spyd" resolve="AbstractTextGenParameter" />
+    <node concept="asaX9" id="5NT4nYgHicq" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="Type of the buffer is TextGenBuffer, which we shall change to TextBuffer soon (either changing type of this CF parameter, or by introducing a new one. In any case, uses of TextGenBuffer shall get re-written, and thus uses of this CF parameter shall cease." />
+    </node>
   </node>
   <node concept="1TIwiD" id="hXJqxz$">
     <property role="R5$K7" value="false" />

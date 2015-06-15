@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -34,9 +35,13 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.ImmediateParentConceptIterator;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -155,6 +160,30 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     return null;
   }
 
+  /**
+   * @param model model to generate text from
+   * @return aspect runtime instances for all languages involved
+   */
+  @NotNull
+  public Collection<TextGenAspectDescriptor> getAspects(@NotNull SModel model) {
+    // FIXME likely, shall collect all extended languages as well, as there might be instances of a language without textgen in the model,
+    // while textgen elements are derived from extended language. HOWEVER, need to process breakdownToTextUnits carefully, so that default
+    // file-per-root breakdown doesn't create duplicates!
+    ArrayList<TextGenAspectDescriptor> rv = new ArrayList<TextGenAspectDescriptor>(5);
+    for (SLanguage l : ((SModelInternal) model).importedLanguageIds()) {
+      final LanguageRuntime lr = myLanguageRegistry.getLanguage(l);
+      if (lr == null) {
+        // XXX shall report missing language?
+        continue;
+      }
+      final TextGenAspectDescriptor rtAspect = lr.getAspect(TextGenAspectDescriptor.class);
+      if (rtAspect != null) {
+        rv.add(rtAspect);
+      }
+    }
+    return rv;
+  }
+
   @Override
   public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
     // @see ConceptRegistry#beforeLanguagesUnloaded
@@ -164,4 +193,5 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
   public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
     textGenDescriptors.clear();
   }
+
 }
