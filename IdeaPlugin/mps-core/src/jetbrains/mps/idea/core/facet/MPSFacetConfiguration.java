@@ -31,6 +31,7 @@ import com.intellij.util.PathUtil;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
@@ -82,6 +83,9 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
   }
 
   private void setConfigurationDefaults() {
+    if (!myConfigurationBean.isModuleIdSet()) {
+      myConfigurationBean.setIdByModuleName(myMpsFacet.getModule().getName());
+    }
     if (myConfigurationBean.isUseTransientOutputFolder()) {
       myConfigurationBean.setUseModuleSourceFolder(false);
     } else if (myConfigurationBean.isUseModuleSourceFolder()) {

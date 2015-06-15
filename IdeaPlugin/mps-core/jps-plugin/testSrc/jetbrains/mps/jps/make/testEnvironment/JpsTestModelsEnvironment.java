@@ -20,6 +20,7 @@ package jetbrains.mps.jps.make.testEnvironment;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.jps.make.tests.MpsJpsBuildTestCase;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.ModuleId;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.module.JpsModule;
@@ -69,6 +70,7 @@ public class JpsTestModelsEnvironment extends JpsTestEnvironmentBase<JpsTestBean
 
   private MPSConfigurationBean initMpsConfiguration(JpsTestBean bean, String generatorOutput) {
     MPSConfigurationBean configuration = new MPSConfigurationBean();
+    configuration.setIdByModuleName(bean.moduleName);
     configuration.setUsedLanguages(LANGUAGES_TO_USE);
     configuration.setGeneratorOutputPath(generatorOutput);
     configuration.setUseModuleSourceFolder(bean.useModuleSourceFolder);
