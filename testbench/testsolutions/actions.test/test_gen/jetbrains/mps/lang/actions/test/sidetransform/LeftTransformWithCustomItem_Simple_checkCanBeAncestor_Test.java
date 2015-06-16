@@ -6,9 +6,9 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import junit.framework.Assert;
 
 @MPSLaunch
 public class LeftTransformWithCustomItem_Simple_checkCanBeAncestor_Test extends BaseTransformationTest {
@@ -27,7 +27,7 @@ public class LeftTransformWithCustomItem_Simple_checkCanBeAncestor_Test extends 
     public void testMethodImpl() throws Exception {
       initEditor("3185679905990189306", "3185679905990189310");
       this.typeString(" ");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
       Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
       this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);

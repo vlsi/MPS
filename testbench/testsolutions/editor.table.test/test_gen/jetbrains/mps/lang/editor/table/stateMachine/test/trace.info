@@ -30,21 +30,22 @@
       <node id="3676708844864220430" at="17,57,18,132" concept="1" />
       <node id="3676708844864220430" at="18,132,19,123" concept="1" />
       <node id="3676708844864220430" at="26,51,27,63" concept="1" />
-      <node id="2059470233827535857" at="27,63,28,101" concept="1" />
+      <node id="3694071247855998073" at="27,63,28,76" concept="1" />
+      <node id="3694071247855986970" at="28,76,29,87" concept="1" />
       <node id="3676708844864220430" at="14,0,16,0" concept="0" trace="CompleteEmptyCell_Test#()V" />
       <node id="3676708844864220430" at="23,0,25,0" concept="0" trace="TestBody#()V" />
       <node id="3676708844864220430" at="16,0,21,0" concept="2" trace="test_CompleteEmptyCell#()V" />
-      <node id="3676708844864220430" at="25,0,30,0" concept="2" trace="testMethodImpl#()V" />
+      <node id="3676708844864220430" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
       <scope id="3676708844864220430" at="14,35,14,35" />
       <scope id="3676708844864220430" at="23,23,23,23" />
       <scope id="3676708844864220430" at="14,0,16,0" />
       <scope id="3676708844864220430" at="17,57,19,123" />
       <scope id="3676708844864220430" at="23,0,25,0" />
-      <scope id="3676708844864220430" at="26,51,28,101" />
+      <scope id="3676708844864220430" at="26,51,29,87" />
       <scope id="3676708844864220430" at="16,0,21,0" />
-      <scope id="3676708844864220430" at="25,0,30,0" />
-      <unit id="3676708844864220430" at="21,0,31,0" name="jetbrains.mps.lang.editor.table.stateMachine.test.CompleteEmptyCell_Test$TestBody" />
-      <unit id="3676708844864220430" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.stateMachine.test.CompleteEmptyCell_Test" />
+      <scope id="3676708844864220430" at="25,0,31,0" />
+      <unit id="3676708844864220430" at="21,0,32,0" name="jetbrains.mps.lang.editor.table.stateMachine.test.CompleteEmptyCell_Test$TestBody" />
+      <unit id="3676708844864220430" at="12,0,33,0" name="jetbrains.mps.lang.editor.table.stateMachine.test.CompleteEmptyCell_Test" />
     </file>
   </root>
   <root nodeRef="r:dc1400b5-0aa4-448e-8f15-11fb0ccb5c23(jetbrains.mps.lang.editor.table.stateMachine.test@tests)/5877647854348551015">
@@ -162,8 +163,8 @@
       <node id="6170050146384285880" at="17,69,18,132" concept="1" />
       <node id="6170050146384285880" at="18,132,19,135" concept="1" />
       <node id="6170050146384285880" at="26,51,27,63" concept="1" />
-      <node id="6170050146384300171" at="27,63,28,91" concept="1" />
-      <node id="6170050146384300210" at="28,91,29,33" concept="1" />
+      <node id="3694071247855998053" at="27,63,28,76" concept="1" />
+      <node id="6170050146384300210" at="28,76,29,33" concept="1" />
       <node id="6170050146384300216" at="29,33,30,87" concept="1" />
       <node id="6170050146384285880" at="14,0,16,0" concept="0" trace="MoveTransitionToAnotherColumn_Test#()V" />
       <node id="6170050146384285880" at="23,0,25,0" concept="0" trace="TestBody#()V" />
@@ -186,8 +187,8 @@
       <node id="6170050146384285882" at="17,66,18,132" concept="1" />
       <node id="6170050146384285882" at="18,132,19,132" concept="1" />
       <node id="6170050146384285882" at="26,51,27,63" concept="1" />
-      <node id="6170050146384300249" at="27,63,28,91" concept="1" />
-      <node id="6170050146384300251" at="28,91,29,33" concept="1" />
+      <node id="3694071247855998003" at="27,63,28,76" concept="1" />
+      <node id="6170050146384300251" at="28,76,29,33" concept="1" />
       <node id="6170050146384300254" at="29,33,30,87" concept="1" />
       <node id="6170050146384285882" at="14,0,16,0" concept="0" trace="MoveTransitionToAnotherRow_Test#()V" />
       <node id="6170050146384285882" at="23,0,25,0" concept="0" trace="TestBody#()V" />

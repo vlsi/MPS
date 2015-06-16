@@ -48,7 +48,6 @@
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
-        <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
     </language>
@@ -373,10 +372,9 @@
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="2cHV7yGKjfe" role="3cqZAp">
-        <node concept="pLAjd" id="2cHV7yGKjfg" role="yd6KS">
-          <property role="pLAjc" value="ctrl+shift" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="2zpwRGvK9FV" role="3cqZAp">
+        <node concept="1iFQzN" id="2zpwRGvK9Hu" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_umy" resolve="CompleteSmart" />
         </node>
       </node>
     </node>
@@ -473,10 +471,9 @@
           </node>
         </node>
       </node>
-      <node concept="yd1bK" id="4uH7WCIJQOQ" role="3cqZAp">
-        <node concept="pLAjd" id="4uH7WCIJQOR" role="yd6KS">
-          <property role="pLAjc" value="ctrl+shift" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="2zpwRGvK9M4" role="3cqZAp">
+        <node concept="1iFQzN" id="2zpwRGvK9M5" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_umy" resolve="CompleteSmart" />
         </node>
       </node>
       <node concept="3clFbH" id="4uH7WCIJQB6" role="3cqZAp" />

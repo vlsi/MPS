@@ -26,7 +26,7 @@ public class ReplaceAssignmentWithBinary_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("6736042903605141120", "6736042903605141130");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

@@ -26,7 +26,7 @@ public class ChangeClassifierInClassifierClassExpression_Test extends BaseTransf
     public void testMethodImpl() throws Exception {
       initEditor("6693493688811676727", "6693493688811710583");
       this.typeString("Double");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

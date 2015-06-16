@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class LT_PlusExpression_with_Cast_Test extends BaseTransformationTest {
@@ -26,7 +24,7 @@ public class LT_PlusExpression_with_Cast_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("3956753173913342772", "3956753173913342774");
       this.typeString("(type");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

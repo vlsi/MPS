@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class Subst_MultiChild_OnlyEnumProperty_with_Another_Test extends BaseTransformationTest {
@@ -26,7 +24,7 @@ public class Subst_MultiChild_OnlyEnumProperty_with_Another_Test extends BaseTra
     public void testMethodImpl() throws Exception {
       initEditor("957371990174637110", "957371990174637319");
       this.typeString("fal");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

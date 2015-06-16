@@ -53,7 +53,7 @@ public class MoveUp_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
     if (selection != null) {
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.UP);
+      selection.executeAction(CellActionType.UP);
     } else {
       EditorActionUtils.runEditorComponentAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), CellActionType.UP);
     }

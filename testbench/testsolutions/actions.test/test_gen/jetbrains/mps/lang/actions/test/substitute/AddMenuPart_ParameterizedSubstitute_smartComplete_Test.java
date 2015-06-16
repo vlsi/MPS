@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -27,10 +25,10 @@ public class AddMenuPart_ParameterizedSubstitute_smartComplete_Test extends Base
     public void testMethodImpl() throws Exception {
       initEditor("2534942168317963978", "2534942168317964289");
       this.typeString("ActionTestChild1");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
       this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl shift SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.CompleteSmart_Action");
     }
   }
 }

@@ -25,7 +25,7 @@ public class TypeAndChooseCompletion_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8933061889659393808", "8933061889659393818");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.typeString("ab");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));

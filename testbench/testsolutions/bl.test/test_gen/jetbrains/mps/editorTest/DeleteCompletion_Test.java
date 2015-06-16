@@ -25,7 +25,7 @@ public class DeleteCompletion_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8933061889659412224", "8933061889659412234");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.typeString("aDe");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
