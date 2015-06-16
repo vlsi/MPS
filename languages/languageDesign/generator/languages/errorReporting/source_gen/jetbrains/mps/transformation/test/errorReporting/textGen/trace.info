@@ -5,23 +5,23 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="13,0,31,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.TextGenAspectDescriptor" />
+      <unit at="19,0,58,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e99b0478-397a-402b-a078-57c984a0eca3(jetbrains.mps.transformation.test.errorReporting.textGen)/7287346816896128678">
     <file name="ErrorReportingRoot_TextGen.java">
-      <node id="7287346816896128678" at="9,42,10,38" concept="2" />
-      <node id="7287346816896135357" at="10,38,11,45" concept="0" />
-      <node id="7287346816896135365" at="11,45,12,28" concept="0" />
-      <node id="7287346816896135370" at="12,28,13,24" concept="0" />
-      <node id="7287346816896128678" at="9,0,15,0" concept="1" trace="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="7287346816896128678" at="9,42,13,24">
-        <var name="textGen" id="7287346816896128678" />
+      <node id="7287346816896128678" at="11,54,12,55" concept="2" />
+      <node id="7287346816896135357" at="12,55,13,41" concept="0" />
+      <node id="7287346816896135365" at="13,41,14,18" concept="0" />
+      <node id="7287346816896135370" at="14,18,15,20" concept="0" />
+      <node id="7287346816896128678" at="10,0,17,0" concept="1" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="7287346816896128678" at="11,54,15,20">
+        <var name="tgs" id="7287346816896128678" />
       </scope>
-      <scope id="7287346816896128678" at="9,0,15,0">
-        <var name="node" id="7287346816896128678" />
+      <scope id="7287346816896128678" at="10,0,17,0">
+        <var name="ctx" id="7287346816896128678" />
       </scope>
-      <unit id="7287346816896128678" at="8,0,16,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.ErrorReportingRoot_TextGen" />
+      <unit id="7287346816896128678" at="9,0,18,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.ErrorReportingRoot_TextGen" />
     </file>
   </root>
 </debug-info>
