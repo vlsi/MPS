@@ -110,7 +110,7 @@ public class EditorActionUtils {
     actionHandler.executeAction(cell, CellActionType.INSERT_BEFORE);
   }
   /*package*/ static void runEditorComponentAction(EditorComponent editorComponent, CellActionType actionType) {
-    CellAction action = editorComponent.getComponentAction(CellActionType.UP);
+    CellAction action = editorComponent.getComponentAction(actionType);
     EditorContext editorContext = editorComponent.getEditorContext();
     if (action != null && action.canExecute(editorContext)) {
       action.execute(editorContext);

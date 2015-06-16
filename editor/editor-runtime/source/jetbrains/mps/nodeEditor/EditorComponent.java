@@ -1535,12 +1535,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
       return jetbrains.mps.openapi.editor.cells.CellActionType.PREV;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlDown(keyEvent)) {
-      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlShiftDown(keyEvent)) {
-      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART;
-    }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
       return jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE;
     }
