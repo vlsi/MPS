@@ -44,7 +44,6 @@
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
-        <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
     </language>
@@ -240,10 +239,9 @@
       </node>
     </node>
     <node concept="3clFbS" id="5mwqYFP_kya" role="LjaKd">
-      <node concept="yd1bK" id="5mwqYFP_kyb" role="3cqZAp">
-        <node concept="pLAjd" id="5mwqYFP_kyc" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdh_" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdhA" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
       <node concept="2TK7Tu" id="5mwqYFP_kyM" role="3cqZAp">
@@ -451,10 +449,9 @@
       </node>
     </node>
     <node concept="3clFbS" id="5mwqYFP_kzo" role="LjaKd">
-      <node concept="yd1bK" id="5mwqYFP_kzp" role="3cqZAp">
-        <node concept="pLAjd" id="5mwqYFP_kzq" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdgN" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdgO" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
       <node concept="2TK7Tu" id="5mwqYFP_kzr" role="3cqZAp">
@@ -1465,12 +1462,13 @@
       </node>
     </node>
     <node concept="3clFbS" id="1MkHkgwLYJH" role="LjaKd">
-      <node concept="yd1bK" id="1MkHkgwLYJL" role="3cqZAp">
-        <node concept="pLAjd" id="1MkHkgwLYJM" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdhT" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdhU" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
-        <node concept="pLAjd" id="1MkHkgwLYJO" role="yd6KS">
+      </node>
+      <node concept="yd1bK" id="3d3YzDnsa$q" role="3cqZAp">
+        <node concept="pLAjd" id="3d3YzDnsa$s" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>

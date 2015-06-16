@@ -12,9 +12,6 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
-      <concept id="1228934484974" name="jetbrains.mps.lang.test.structure.PressKeyStatement" flags="nn" index="yd1bK">
-        <child id="1228934507814" name="keyStrokes" index="yd6KS" />
-      </concept>
       <concept id="7011073693661765739" name="jetbrains.mps.lang.test.structure.InvokeActionStatement" flags="nn" index="2HxZob">
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
@@ -40,12 +37,6 @@
       </concept>
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
-      </concept>
-    </language>
-    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
-      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
-        <property id="1207318242773" name="modifiers" index="pLAjc" />
-        <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -185,10 +176,9 @@
       <node concept="2TK7Tu" id="P9hc2KgLrp" role="3cqZAp">
         <property role="2TTd_B" value="v1" />
       </node>
-      <node concept="yd1bK" id="P9hc2Kg$gb" role="3cqZAp">
-        <node concept="pLAjd" id="P9hc2Kg$gd" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdhH" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdhI" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
     </node>
@@ -227,10 +217,9 @@
       <node concept="2TK7Tu" id="P9hc2KgLWn" role="3cqZAp">
         <property role="2TTd_B" value="fal" />
       </node>
-      <node concept="yd1bK" id="P9hc2KgLWo" role="3cqZAp">
-        <node concept="pLAjd" id="P9hc2KgLWp" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdh9" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdha" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
     </node>
@@ -263,10 +252,9 @@
       <node concept="2TK7Tu" id="P9hc2KgOoO" role="3cqZAp">
         <property role="2TTd_B" value="v1" />
       </node>
-      <node concept="yd1bK" id="P9hc2KgOoP" role="3cqZAp">
-        <node concept="pLAjd" id="P9hc2KgOoQ" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdhx" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdhy" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
     </node>
@@ -317,10 +305,9 @@
       <node concept="2TK7Tu" id="P9hc2Kh9KX" role="3cqZAp">
         <property role="2TTd_B" value="fal" />
       </node>
-      <node concept="yd1bK" id="P9hc2Kh9KY" role="3cqZAp">
-        <node concept="pLAjd" id="P9hc2Kh9KZ" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdgJ" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdgK" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
     </node>

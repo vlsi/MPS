@@ -44,7 +44,6 @@
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
-        <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
       </concept>
     </language>
@@ -173,10 +172,9 @@
       <node concept="2TK7Tu" id="5mwqYFP_eEc" role="3cqZAp">
         <property role="2TTd_B" value="Hierarchy" />
       </node>
-      <node concept="yd1bK" id="5mwqYFP_eEd" role="3cqZAp">
-        <node concept="pLAjd" id="5mwqYFP_eEe" role="yd6KS">
-          <property role="pLAjc" value="ctrl" />
-          <property role="pLAjf" value="VK_SPACE" />
+      <node concept="2HxZob" id="3d3YzDnsdhX" role="3cqZAp">
+        <node concept="1iFQzN" id="3d3YzDnsdhY" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
         </node>
       </node>
     </node>
