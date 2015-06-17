@@ -29,7 +29,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -41,6 +43,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -67,19 +70,43 @@ public class ModuleRenameHandler extends ModuleAdapter {
         @Override
         public void run() {
           Set<SModelReference> renamedModelRefs = new HashSet<SModelReference>();
+
+          // collecting all models of the renamed module, their SModelReferences will be changed
           for (SModel model : facet.getSolution().getModels()) {
             renamedModelRefs.add(model.getReference());
           }
 
-          // finding usages before we modified the solution
+          // finding usages before we modify the solution
           SearchScope projectScope = new ProjectScope(ProjectHelper.toMPSProject(project));
           Set<SModel> modelUsages = FindUsagesFacade.getInstance().findModelUsages(projectScope, renamedModelRefs, new EmptyProgressMonitor());
+
+          // now handling the case when there are usages within the renamed module itself
+          // if we don't handle it, we'll end up patching refs in models which are already disposed,
+          // becase we patch after solution reload
+          Iterator<SModel> usagesIterator = modelUsages.iterator();
+          // remembering ids of such in-module usages
+          Set<SModelId> ids = new HashSet<SModelId>();
+          while (usagesIterator.hasNext()) {
+            SModel usage = usagesIterator.next();
+            if (usage.getModule() == facet.getSolution() && usage instanceof EditableSModel) {
+              // it's in the same module and it's not derived (it's editable)
+              ids.add(usage.getModelId());
+              // don't want _this_instance_ of SModel in usages, as it will be disposed after we reload the module
+              usagesIterator.remove();
+            }
+          }
 
           // resetting facet => reloading solution
           final Solution newSolution = resetFacet(facet);
 
-          // fixing usages
-          ModuleRenameHandler.renameUsages(renamedModelRefs, modelUsages, new Function<SModelReference, SModelReference>() {
+          // adding to usages re-created in-modules models: those models which were found as usages,
+          // but which have been re-created by now as a result of solution reload
+          for (SModelId id: ids) {
+            modelUsages.add(newSolution.getModel(id));
+          }
+
+          // actually fixing usages
+          renameUsages(renamedModelRefs, modelUsages, new Function<SModelReference, SModelReference>() {
             @Override
             public SModelReference fun(SModelReference mRef) {
               String modelName = mRef.getModelName();
@@ -115,8 +142,8 @@ public class ModuleRenameHandler extends ModuleAdapter {
     return newFacet.getSolution();
   }
 
-  public static void renameUsages(Set<SModelReference> renamedModels, Set<SModel> modelUsages, Function<SModelReference, SModelReference> renameFunc) {
-
+  // todo reuse from PackageRenameListener
+  private void renameUsages(Set<SModelReference> renamedModels, Set<SModel> modelUsages, Function<SModelReference, SModelReference> renameFunc) {
     for (SModel model : modelUsages) {
       assert model instanceof SModelInternal;
 
@@ -140,7 +167,7 @@ public class ModuleRenameHandler extends ModuleAdapter {
     }
   }
 
-  private static void updateSReferences(SModel model, Map<SModelReference, SModelReference> modelRefChange) {
+  private void updateSReferences(SModel model, Map<SModelReference, SModelReference> modelRefChange) {
     for (SNode node : SNodeUtil.getDescendants(model)) {
       for (SReference ref : node.getReferences()) {
         if (!(ref instanceof StaticReference)) {
