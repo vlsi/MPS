@@ -38,6 +38,6 @@ public class CellAction_InsertIntoCollection extends AbstractCellAction {
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
     EditorCell contextCell = context.getContextCell();
-    myListHandler.startInsertMode(context, contextCell, before);
+    myListHandler.insertNewChild(context, contextCell, before);
   }
 }

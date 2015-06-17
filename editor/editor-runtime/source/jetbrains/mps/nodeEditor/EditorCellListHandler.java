@@ -84,8 +84,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   }
 
   @Override
-  protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
-    SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
+  protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
+    SNodeOperations.insertChild(getOwner(), getElementRole(), nodeToInsert, anchorNode, insertBefore);
   }
 
   @Override
