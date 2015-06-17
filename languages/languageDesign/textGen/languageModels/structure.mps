@@ -475,5 +475,12 @@
       <ref role="PrY4T" to="tpck:8AYOKVCAP5" resolve="IStubForAnotherConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7K9qoAEYlv1">
+    <property role="3GE5qa" value="operation.append.part" />
+    <property role="TrG5h" value="AttributedNodePart" />
+    <property role="R4oN_" value="attributed node" />
+    <property role="34LRSv" value="attributedNode" />
+    <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
+  </node>
 </model>
 

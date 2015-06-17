@@ -82,6 +82,14 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     return INSTANCE;
   }
 
+  /**
+   * @param node
+   * @return <code>true</code> if there's a TextGen for the node
+   */
+  public boolean hasTextGen(@NotNull SNode node) {
+    return !(getTextGenDescriptor(node.getConcept()) instanceof MissingTextGenDescriptor);
+  }
+
   @NotNull
   public TextGenDescriptor getTextGenDescriptor(@Nullable SNode node) {
     if (node == null) {

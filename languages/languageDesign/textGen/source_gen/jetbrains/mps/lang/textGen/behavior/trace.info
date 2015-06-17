@@ -20,8 +20,11 @@
     <file name="AppendOperation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.AppendOperation_BehaviorDescriptor" />
     </file>
+    <file name="AttributedNodePart_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.AttributedNodePart_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,72,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,74,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BufferParameter_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />

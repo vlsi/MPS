@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
@@ -150,7 +151,8 @@ public class TextGen {
       return;
     }
 
-    getTextGenForNode(node).generateText(new TextGenTransitionContext(node, buffer));
+    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer));
+    tgs.appendNode(node);
   }
 
   // helper stuff
