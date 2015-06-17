@@ -18,8 +18,8 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -170,7 +170,9 @@ public class TextGenRegistry implements CoreComponent, LanguageRegistryListener 
     // while textgen elements are derived from extended language. HOWEVER, need to process breakdownToTextUnits carefully, so that default
     // file-per-root breakdown doesn't create duplicates!
     ArrayList<TextGenAspectDescriptor> rv = new ArrayList<TextGenAspectDescriptor>(5);
-    for (SLanguage l : ((SModelInternal) model).importedLanguageIds()) {
+    final ModelDependencyScanner modelScanner = new ModelDependencyScanner();
+    modelScanner.crossModelReferences(false).usedLanguages(true).walk(model);
+    for (SLanguage l : modelScanner.getUsedLanguages()) {
       final LanguageRuntime lr = myLanguageRegistry.getLanguage(l);
       if (lr == null) {
         // XXX shall report missing language?
