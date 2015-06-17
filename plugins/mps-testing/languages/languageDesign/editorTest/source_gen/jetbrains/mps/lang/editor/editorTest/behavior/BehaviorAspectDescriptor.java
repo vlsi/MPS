@@ -11,13 +11,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 22:
+      case 23:
         return new TestBlockList_BehaviorDescriptor();
       case 1:
         return new BracesBlock_BehaviorDescriptor();
       case 18:
         return new StubBlock_BehaviorDescriptor();
-      case 25:
+      case 26:
         return new VerticalLayoutBlockList_BehaviorDescriptor();
       case 2:
         return new BracesStubBlock_BehaviorDescriptor();
@@ -33,9 +33,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new PlusExpression_BehaviorDescriptor();
       case 0:
         return new AttractsFocusBlock_BehaviorDescriptor();
-      case 23:
-        return new VariableDeclarationBlock_BehaviorDescriptor();
       case 24:
+        return new VariableDeclarationBlock_BehaviorDescriptor();
+      case 25:
         return new VariableDeclarationReference_BehaviorDescriptor();
       case 11:
         return new NonEmptyProperty_BehaviorDescriptor();
@@ -57,15 +57,17 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new DelTestChild1_BehaviorDescriptor();
       case 8:
         return new DelTestRoot_BehaviorDescriptor();
-      case 21:
+      case 22:
         return new SubstTestRoot_BehaviorDescriptor();
-      case 19:
-        return new SubstTestBooleanPropertyChild_BehaviorDescriptor();
       case 20:
+        return new SubstTestBooleanPropertyChild_BehaviorDescriptor();
+      case 21:
         return new SubstTestEnumPropertyChild_BehaviorDescriptor();
+      case 19:
+        return new SubstMiddlewareChild_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.SubstMiddlewareChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild", "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }

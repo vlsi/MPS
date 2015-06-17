@@ -47,6 +47,94 @@
       <unit id="7803854675610520166" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911890332">
+    <file name="Subst_MultiChild_AddNewChildBySeparator_Test.java">
+      <node id="9133079350911890332" at="15,79,16,115" concept="1" />
+      <node id="9133079350911890332" at="16,115,17,134" concept="1" />
+      <node id="9133079350911890332" at="24,51,25,63" concept="1" />
+      <node id="406476292284589395" at="25,63,26,27" concept="1" />
+      <node id="9133079350911890332" at="12,0,14,0" concept="0" trace="Subst_MultiChild_AddNewChildBySeparator_Test#()V" />
+      <node id="9133079350911890332" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911890332" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_AddNewChildBySeparator#()V" />
+      <node id="9133079350911890332" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911890332" at="12,57,12,57" />
+      <scope id="9133079350911890332" at="21,23,21,23" />
+      <scope id="9133079350911890332" at="12,0,14,0" />
+      <scope id="9133079350911890332" at="15,79,17,134" />
+      <scope id="9133079350911890332" at="21,0,23,0" />
+      <scope id="9133079350911890332" at="24,51,26,27" />
+      <scope id="9133079350911890332" at="14,0,19,0" />
+      <scope id="9133079350911890332" at="23,0,28,0" />
+      <unit id="9133079350911890332" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildBySeparator_Test$TestBody" />
+      <unit id="9133079350911890332" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildBySeparator_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911891054">
+    <file name="Subst_MultiChild_AddNewChildByEnter_Test.java">
+      <node id="9133079350911891054" at="15,75,16,115" concept="1" />
+      <node id="9133079350911891054" at="16,115,17,130" concept="1" />
+      <node id="9133079350911891054" at="24,51,25,63" concept="1" />
+      <node id="406476292283855901" at="25,63,26,74" concept="1" />
+      <node id="9133079350911891054" at="12,0,14,0" concept="0" trace="Subst_MultiChild_AddNewChildByEnter_Test#()V" />
+      <node id="9133079350911891054" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911891054" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_AddNewChildByEnter#()V" />
+      <node id="9133079350911891054" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911891054" at="12,53,12,53" />
+      <scope id="9133079350911891054" at="21,23,21,23" />
+      <scope id="9133079350911891054" at="12,0,14,0" />
+      <scope id="9133079350911891054" at="15,75,17,130" />
+      <scope id="9133079350911891054" at="21,0,23,0" />
+      <scope id="9133079350911891054" at="24,51,26,74" />
+      <scope id="9133079350911891054" at="14,0,19,0" />
+      <scope id="9133079350911891054" at="23,0,28,0" />
+      <unit id="9133079350911891054" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test$TestBody" />
+      <unit id="9133079350911891054" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911891140">
+    <file name="Subst_MiddleChild_AddNewChildBySeparator_Test.java">
+      <node id="9133079350911891140" at="15,80,16,115" concept="1" />
+      <node id="9133079350911891140" at="16,115,17,135" concept="1" />
+      <node id="9133079350911891140" at="24,51,25,63" concept="1" />
+      <node id="406476292284593129" at="25,63,26,27" concept="1" />
+      <node id="9133079350911891140" at="12,0,14,0" concept="0" trace="Subst_MiddleChild_AddNewChildBySeparator_Test#()V" />
+      <node id="9133079350911891140" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911891140" at="14,0,19,0" concept="2" trace="test_Subst_MiddleChild_AddNewChildBySeparator#()V" />
+      <node id="9133079350911891140" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911891140" at="12,58,12,58" />
+      <scope id="9133079350911891140" at="21,23,21,23" />
+      <scope id="9133079350911891140" at="12,0,14,0" />
+      <scope id="9133079350911891140" at="15,80,17,135" />
+      <scope id="9133079350911891140" at="21,0,23,0" />
+      <scope id="9133079350911891140" at="24,51,26,27" />
+      <scope id="9133079350911891140" at="14,0,19,0" />
+      <scope id="9133079350911891140" at="23,0,28,0" />
+      <unit id="9133079350911891140" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildBySeparator_Test$TestBody" />
+      <unit id="9133079350911891140" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildBySeparator_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911918642">
+    <file name="Subst_MiddleChild_AddNewChildByEnter_Test.java">
+      <node id="9133079350911918642" at="15,76,16,115" concept="1" />
+      <node id="9133079350911918642" at="16,115,17,131" concept="1" />
+      <node id="9133079350911918642" at="24,51,25,63" concept="1" />
+      <node id="406476292283852709" at="25,63,26,74" concept="1" />
+      <node id="9133079350911918642" at="12,0,14,0" concept="0" trace="Subst_MiddleChild_AddNewChildByEnter_Test#()V" />
+      <node id="9133079350911918642" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911918642" at="14,0,19,0" concept="2" trace="test_Subst_MiddleChild_AddNewChildByEnter#()V" />
+      <node id="9133079350911918642" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911918642" at="12,54,12,54" />
+      <scope id="9133079350911918642" at="21,23,21,23" />
+      <scope id="9133079350911918642" at="12,0,14,0" />
+      <scope id="9133079350911918642" at="15,76,17,131" />
+      <scope id="9133079350911918642" at="21,0,23,0" />
+      <scope id="9133079350911918642" at="24,51,26,74" />
+      <scope id="9133079350911918642" at="14,0,19,0" />
+      <scope id="9133079350911918642" at="23,0,28,0" />
+      <unit id="9133079350911918642" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildByEnter_Test$TestBody" />
+      <unit id="9133079350911918642" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildByEnter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174085944">
     <file name="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test.java">
       <node id="957371990174085944" at="17,90,18,115" concept="1" />
