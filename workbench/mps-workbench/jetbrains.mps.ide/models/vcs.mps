@@ -2,8 +2,8 @@
 <model ref="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tbz9" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.platform(MPS.IDEA/com.intellij.platform@java_stub)" />
@@ -144,9 +144,8 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="5349172909345532722" name="author" index="P$JXp" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
-        <child id="8465538089690331490" name="since" index="TZ5HC" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345530174" name="jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag" flags="ng" index="P$Jll">
         <property id="5349172909345532826" name="text" index="P$JZL" />
@@ -178,10 +177,10 @@
       <node concept="TZ5HA" id="4mqZImXW57N" role="TZ5H$">
         <node concept="1dT_AC" id="4mqZImXWfx2" role="1dT_Ay" />
       </node>
-      <node concept="P$Jll" id="4mqZImXWfwZ" role="P$JXp">
+      <node concept="P$Jll" id="4mqZImXWfwZ" role="3nqlJM">
         <property role="P$JZL" value="Evgeny Gerashchenko" />
       </node>
-      <node concept="TZ7YB" id="4mqZImXWfx1" role="TZ5HC">
+      <node concept="TZ7YB" id="4mqZImXWfx1" role="3nqlJM">
         <property role="TZ7Y_" value="10/15/11" />
       </node>
     </node>

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @deprecated Not in use

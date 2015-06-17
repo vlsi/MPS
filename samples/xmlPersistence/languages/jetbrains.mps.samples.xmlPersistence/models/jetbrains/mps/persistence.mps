@@ -2,9 +2,9 @@
 <model ref="r:bef1ed1f-5598-42b2-8784-93f0f1c6e538(jetbrains.mps.persistence)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -202,11 +202,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516428" name="throwsTag" index="x79V$" />
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -312,14 +310,14 @@
             <property role="1dT_AB" value="or module relative path of the source." />
           </node>
         </node>
-        <node concept="x79VA" id="4K4$FpC3CBk" role="x79VK">
-          <property role="x79VB" value="The loaded model" />
-        </node>
-        <node concept="x0GOo" id="4K4$FpC3CBL" role="x79V$">
+        <node concept="x0GOo" id="4K4$FpC3CBL" role="3nqlJM">
           <property role="x0GOq" value="if the data source is not supported" />
           <node concept="3uibUv" id="4K4$FpC3CF1" role="zrq5$">
             <ref role="3uigEE" to="qx6n:~UnsupportedDataSourceException" resolve="UnsupportedDataSourceException" />
           </node>
+        </node>
+        <node concept="x79VA" id="4K4$FpC3CBk" role="3nqlJM">
+          <property role="x79VB" value="The loaded model" />
         </node>
       </node>
       <node concept="2AHcQZ" id="6otXYHBgsVF" role="2AJF6D">
@@ -743,13 +741,13 @@
             <property role="1dT_AB" value="Creates a new empty model." />
           </node>
         </node>
-        <node concept="x0GOo" id="4K4$FpC3D2R" role="x79V$">
+        <node concept="x0GOo" id="4K4$FpC3D2R" role="3nqlJM">
           <property role="x0GOq" value="if the data source is not supported" />
           <node concept="3uibUv" id="4K4$FpC3UCs" role="zrq5$">
             <ref role="3uigEE" to="qx6n:~UnsupportedDataSourceException" resolve="UnsupportedDataSourceException" />
           </node>
         </node>
-        <node concept="x0GOo" id="4K4$FpC3Dr6" role="x79V$">
+        <node concept="x0GOo" id="4K4$FpC3Dr6" role="3nqlJM">
           <property role="x0GOq" value="if the model cannot be created" />
           <node concept="3uibUv" id="4K4$FpC3Dr_" role="zrq5$">
             <ref role="3uigEE" to="fxg7:~IOException" resolve="IOException" />

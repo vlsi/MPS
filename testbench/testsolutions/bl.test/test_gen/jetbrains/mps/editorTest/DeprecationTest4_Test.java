@@ -22,7 +22,7 @@ public class DeprecationTest4_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("992603586001643388", "992603586001643395");
+      initEditor("992603586001643388", "90258596274922870");
       invokeIntention("jetbrains.mps.baseLanguage.intentions.MakeDeprecated_Intention", myStart.getNode());
     }
   }

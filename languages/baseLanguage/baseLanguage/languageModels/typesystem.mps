@@ -2,15 +2,15 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="0" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="-1" />
+    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -31021,6 +31021,7 @@
       <node concept="3Tm1VV" id="6UtDUq0tqUS" role="1B3o_S" />
       <node concept="3clFbS" id="6UtDUq0tqUT" role="3clF47" />
     </node>
+    <node concept="2tJIrI" id="7EYLKYFLKqZ" role="jymVt" />
     <node concept="2YIFZL" id="6UtDUq0tqUU" role="jymVt">
       <property role="TrG5h" value="isAssigned" />
       <node concept="10P_77" id="6UtDUq0tqVq" role="3clF45" />
@@ -55766,6 +55767,67 @@
     <node concept="1YaCAy" id="22ZR0LkS57k" role="1YuTPh">
       <property role="TrG5h" value="fieldReferenceOperation" />
       <ref role="1YaFvo" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7UfLy9aMJ2H">
+    <property role="TrG5h" value="check_IBLDeprecatable" />
+    <node concept="3clFbS" id="7UfLy9aMJ2I" role="18ibNy">
+      <node concept="3clFbJ" id="7UfLy9aMJv4" role="3cqZAp">
+        <node concept="3clFbS" id="7UfLy9aMJv5" role="3clFbx">
+          <node concept="2MkqsV" id="7UfLy9aNqNM" role="3cqZAp">
+            <node concept="1YBJjd" id="7UfLy9aNqPt" role="2OEOjV">
+              <ref role="1YBMHb" node="7UfLy9aMJ2K" resolve="iblDeprecatable" />
+            </node>
+            <node concept="Xl_RD" id="7UfLy9aNqNY" role="2MkJ7o">
+              <property role="Xl_RC" value="The method is marked as deprecated, but the javadoc @deprecated tag is missing" />
+            </node>
+            <node concept="3Cnw8n" id="7UfLy9aSs0f" role="2OEOjU">
+              <property role="ARO6o" value="true" />
+              <ref role="QpYPw" node="7UfLy9aQFdw" resolve="RemoveInvisibleDeprecation" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="7UfLy9aMJwY" role="3clFbw">
+          <node concept="1YBJjd" id="7UfLy9aMJvg" role="2Oq$k0">
+            <ref role="1YBMHb" node="7UfLy9aMJ2K" resolve="iblDeprecatable" />
+          </node>
+          <node concept="2qgKlT" id="7UfLy9aNqML" role="2OqNvi">
+            <ref role="37wK5l" to="tpek:7UfLy9aMMC2" resolve="isInvisiblyDeprecated" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7UfLy9aMJ2K" role="1YuTPh">
+      <property role="TrG5h" value="iblDeprecatable" />
+      <ref role="1YaFvo" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="7UfLy9aQFdw">
+    <property role="TrG5h" value="RemoveInvisibleDeprecation" />
+    <node concept="Q5ZZ6" id="7UfLy9aQFdx" role="Q6x$H">
+      <node concept="3clFbS" id="7UfLy9aQFdy" role="2VODD2">
+        <node concept="3clFbF" id="7UfLy9aQFdI" role="3cqZAp">
+          <node concept="2OqwBi" id="7UfLy9aQHVX" role="3clFbG">
+            <node concept="1PxgMI" id="7UfLy9aQFg4" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <ref role="1PxNhF" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
+              <node concept="Q6c8r" id="7UfLy9aQFdH" role="1PxMeX" />
+            </node>
+            <node concept="2qgKlT" id="7UfLy9aXQWV" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:6Va_BJex$aE" resolve="unmarkDeprecated" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="7UfLy9aSs1C" role="QzAvj">
+      <node concept="3clFbS" id="7UfLy9aSs1D" role="2VODD2">
+        <node concept="3clFbF" id="7UfLy9aSs6G" role="3cqZAp">
+          <node concept="Xl_RD" id="7UfLy9aSs6F" role="3clFbG">
+            <property role="Xl_RC" value="Remove Invisible Deprecation" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

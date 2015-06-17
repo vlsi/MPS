@@ -101,6 +101,10 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     mpsWorker.workFromMain();
   }
 
+  protected ClassLoader getClassLoader() {
+    return myClassLoader;
+  }
+
   protected class MyEnvironment extends MpsEnvironment {
     public MyEnvironment(@NotNull EnvironmentConfig config) {
       super(config);

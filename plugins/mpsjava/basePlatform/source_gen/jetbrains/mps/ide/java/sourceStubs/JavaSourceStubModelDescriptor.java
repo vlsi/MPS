@@ -39,6 +39,7 @@ import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implements MultiStreamDataSourceListener {
 
@@ -249,6 +250,12 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   @Override
   public Collection<SLanguage> importedLanguageIds() {
     return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L), "jetbrains.mps.baseLanguage"));
+  }
+
+
+  @Override
+  public List<SModuleReference> importedDevkits() {
+    return Collections.emptyList();
   }
 
   public void reloadFromDiskSafe() {

@@ -128,7 +128,7 @@
     <file name="MpsRunnerTask.java">
       <node id="2220861080746432548" at="8,0,9,0" concept="3" trace="myProperties" />
       <node id="2220861080746434487" at="9,26,10,55" concept="2" />
-      <node id="4271560773252623220" at="14,37,15,61" concept="8" />
+      <node id="4271560773252623220" at="14,37,15,68" concept="8" />
       <node id="6102524510012602328" at="18,31,19,38" concept="8" />
       <node id="6102524510012602338" at="21,45,22,40" concept="2" />
       <node id="2220861080746445818" at="24,33,25,40" concept="8" />
@@ -144,7 +144,7 @@
       <node id="2220861080746391128" at="33,0,36,0" concept="6" trace="setStartMethod#(Ljava/lang/String;)V" />
       <node id="4271560773252623217" at="13,0,17,0" concept="6" trace="getWorkerClass#()Ljava/lang/String;" />
       <scope id="2220861080746434092" at="9,26,10,55" />
-      <scope id="4271560773252623219" at="14,37,15,61" />
+      <scope id="4271560773252623219" at="14,37,15,68" />
       <scope id="6102524510012602327" at="18,31,19,38" />
       <scope id="6102524510012602337" at="21,45,22,40" />
       <scope id="4271560773252623559" at="24,33,25,40" />

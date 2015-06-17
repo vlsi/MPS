@@ -167,5 +167,60 @@
       <ref role="1YaFvo" to="vseb:4yAESKAGZg6" resolve="SomeForm" />
     </node>
   </node>
+  <node concept="1YbPZF" id="7UfLy9aLY2k">
+    <property role="TrG5h" value="typeof_Item" />
+    <property role="3GE5qa" value="declaration-references.java" />
+    <node concept="3clFbS" id="7UfLy9aLY2l" role="18ibNy">
+      <node concept="1Z5TYs" id="7UfLy9aLY9x" role="3cqZAp">
+        <node concept="mw_s8" id="7UfLy9aLY9P" role="1ZfhKB">
+          <node concept="2c44tf" id="7UfLy9aLY9L" role="mwGJk">
+            <node concept="17QB3L" id="7UfLy9aLYa8" role="2c44tc" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="7UfLy9aLY9$" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7UfLy9aLY2r" role="mwGJk">
+            <node concept="1YBJjd" id="7UfLy9aLY2R" role="1Z2MuG">
+              <ref role="1YBMHb" node="7UfLy9aLY2n" resolve="item" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7UfLy9aLY2n" role="1YuTPh">
+      <property role="TrG5h" value="item" />
+      <ref role="1YaFvo" to="vseb:7UfLy9aLY0x" resolve="Item" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="7UfLy9aLYaT">
+    <property role="TrG5h" value="typeof_ItemReference" />
+    <property role="3GE5qa" value="declaration-references.java" />
+    <node concept="3clFbS" id="7UfLy9aLYaU" role="18ibNy">
+      <node concept="1Z5TYs" id="7UfLy9aLYgw" role="3cqZAp">
+        <node concept="mw_s8" id="7UfLy9aLYgO" role="1ZfhKB">
+          <node concept="1Z2H0r" id="7UfLy9aLYgK" role="mwGJk">
+            <node concept="2OqwBi" id="7UfLy9aLYiN" role="1Z2MuG">
+              <node concept="1YBJjd" id="7UfLy9aLYh5" role="2Oq$k0">
+                <ref role="1YBMHb" node="7UfLy9aLYaW" resolve="itemReference" />
+              </node>
+              <node concept="3TrEf2" id="7UfLy9aLYyJ" role="2OqNvi">
+                <ref role="3Tt5mk" to="vseb:7UfLy9aLY1k" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="7UfLy9aLYgz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="7UfLy9aLYba" role="mwGJk">
+            <node concept="1YBJjd" id="7UfLy9aLYbA" role="1Z2MuG">
+              <ref role="1YBMHb" node="7UfLy9aLYaW" resolve="itemReference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7UfLy9aLYaW" role="1YuTPh">
+      <property role="TrG5h" value="itemReference" />
+      <ref role="1YaFvo" to="vseb:7UfLy9aLY1j" resolve="ItemReference" />
+    </node>
+  </node>
 </model>
 

@@ -2,7 +2,7 @@
 <model ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -260,11 +260,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
-        <child id="2217234381367277533" name="see" index="VUckL" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -550,7 +548,7 @@
             <property role="1dT_AB" value="Creates an empty project" />
           </node>
         </node>
-        <node concept="x79VA" id="2BGPXkEw$sI" role="x79VK">
+        <node concept="x79VA" id="2BGPXkEw$sI" role="3nqlJM">
           <property role="x79VB" value="newly created Project. Must be already opened." />
         </node>
       </node>
@@ -582,7 +580,7 @@
             <property role="1dT_AB" value="Creates a project and constructs it according to the given strategy" />
           </node>
         </node>
-        <node concept="x79VA" id="2BGPXkEtDXJ" role="x79VK">
+        <node concept="x79VA" id="2BGPXkEtDXJ" role="3nqlJM">
           <property role="x79VB" value="newly created Project constructed as the strategy suggests. It is already opened." />
         </node>
       </node>
@@ -711,7 +709,7 @@
           <property role="1dT_AB" value="To initialize environment in a lazy way (trying to get cached environment if available) please" />
         </node>
       </node>
-      <node concept="VUp57" id="3eUNqOk4I2U" role="VUckL">
+      <node concept="VUp57" id="3eUNqOk4I2U" role="3nqlJM">
         <node concept="VXe08" id="3eUNqOk4Snw" role="VUp5m">
           <ref role="VXe09" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
         </node>
@@ -1200,12 +1198,12 @@
           <property role="1dT_AB" value="" />
         </node>
       </node>
-      <node concept="VUp57" id="3eUNqOk6xPi" role="VUckL">
+      <node concept="VUp57" id="3eUNqOk6xPi" role="3nqlJM">
         <node concept="VXe08" id="3eUNqOk6Ga5" role="VUp5m">
           <ref role="VXe09" node="HKKzfMjqRV" resolve="Environment" />
         </node>
       </node>
-      <node concept="VUp57" id="3eUNqOk6H56" role="VUckL">
+      <node concept="VUp57" id="3eUNqOk6H56" role="3nqlJM">
         <node concept="VXe08" id="3eUNqOk6RpV" role="VUp5m">
           <ref role="VXe09" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
         </node>
@@ -3486,7 +3484,7 @@
           <property role="1dT_AB" value="it is being stored in the special EnvironmentContainer class." />
         </node>
       </node>
-      <node concept="VUp57" id="6LlhC3WLQQ7" role="VUckL">
+      <node concept="VUp57" id="6LlhC3WLQQ7" role="3nqlJM">
         <node concept="VXe08" id="6LlhC3WLZe6" role="VUp5m">
           <ref role="VXe09" node="3Pdq2IL$qR3" resolve="EnvironmentContainer" />
         </node>

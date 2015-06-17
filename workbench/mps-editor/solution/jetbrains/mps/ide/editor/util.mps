@@ -7,8 +7,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
@@ -266,13 +266,10 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -678,19 +675,19 @@
       </node>
       <node concept="3Tm1VV" id="ES8jtOrzS3" role="1B3o_S" />
       <node concept="P$JXv" id="ES8jtOrK4z" role="lGtFl">
-        <node concept="TUZQ0" id="ES8jtOrK4A" role="TUOzN">
+        <node concept="TUZQ0" id="ES8jtOrK4A" role="3nqlJM">
           <property role="TUZQ4" value="model element to scroll to" />
           <node concept="zr_55" id="ES8jtOrK4C" role="zr_5Q">
             <ref role="zr_51" node="ES8jtOr$9v" resolve="node" />
           </node>
         </node>
-        <node concept="TUZQ0" id="ES8jtOrK4D" role="TUOzN">
+        <node concept="TUZQ0" id="ES8jtOrK4D" role="3nqlJM">
           <property role="TUZQ4" value="the method doesn't make sense with this argument == null, however, we tolerate null for convenience" />
           <node concept="zr_55" id="ES8jtOrK4F" role="zr_5Q">
             <ref role="zr_51" node="ES8jtOr$9y" resolve="component" />
           </node>
         </node>
-        <node concept="x79VA" id="ES8jtOrK4G" role="x79VK">
+        <node concept="x79VA" id="ES8jtOrK4G" role="3nqlJM">
           <property role="x79VB" value="editor component (i.e. editor or inspector) the node has been found in" />
         </node>
       </node>
@@ -753,17 +750,17 @@
         <ref role="2AI5Lk" to="as9o:~Nullable" resolve="Nullable" />
       </node>
       <node concept="P$JXv" id="ES8jtOr$lx" role="lGtFl">
-        <node concept="TZ5HI" id="ES8jtOr$qa" role="TZ5Hx">
+        <node concept="TUZQ0" id="ES8jtOr$C0" role="3nqlJM">
+          <property role="TUZQ4" value="just to access idea project and grab InspectorTool" />
+          <node concept="zr_55" id="ES8jtOr$Ca" role="zr_5Q">
+            <ref role="zr_51" node="3TltS6fENtx" resolve="manager" />
+          </node>
+        </node>
+        <node concept="TZ5HI" id="ES8jtOr$qa" role="3nqlJM">
           <node concept="TZ5HA" id="ES8jtOr$qb" role="3HnX3l">
             <node concept="1dT_AC" id="ES8jtOr$Cj" role="1dT_Ay">
               <property role="1dT_AB" value="use the one with openapi parameters counterpart" />
             </node>
-          </node>
-        </node>
-        <node concept="TUZQ0" id="ES8jtOr$C0" role="TUOzN">
-          <property role="TUZQ4" value="just to access idea project and grab InspectorTool" />
-          <node concept="zr_55" id="ES8jtOr$Ca" role="zr_5Q">
-            <ref role="zr_51" node="3TltS6fENtx" resolve="manager" />
           </node>
         </node>
       </node>

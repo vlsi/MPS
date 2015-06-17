@@ -39,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.FoundErrorOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.IncreaseDepthOperation_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.IndentBufferOperation_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.InfoAppendPart_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.LanguageTextGenDeclaration_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.NewLineAppendPart_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.textGen.dataFlow.NodeAppendPart_DataFlow" />
@@ -72,14 +71,6 @@
   <dependency className="jetbrains.mps.lang.textGen.dataFlow.IndentBufferOperation_DataFlow" file="IndentBufferOperation_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.textGen.dataFlow.InfoAppendPart_DataFlow" file="InfoAppendPart_DataFlow.java">
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.textGen.dataFlow.LanguageTextGenDeclaration_DataFlow" file="LanguageTextGenDeclaration_DataFlow.java">

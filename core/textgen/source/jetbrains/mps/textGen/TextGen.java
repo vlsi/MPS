@@ -18,16 +18,17 @@ package jetbrains.mps.textGen;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
-import jetbrains.mps.text.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TextGenTransitionContext;
+import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
-import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,6 +42,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.text.TextGeneratorEngine} to produce text from models.
+ * There's yet no alternative to transform single node to text, FIXME shall implement
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class TextGen {
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
@@ -89,21 +96,27 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
+    final TraceInfoCollector tic;
+    if (withDebugInfo)  {
+      tic = new TraceInfoCollector();
+      TraceInfoGenerationUtil.setTraceInfoCollector(buffer, tic);
+    } else {
+      tic = null;
+    }
+
     appendNodeText(buffer, node);
 
     // position info
     Map<SNode, TraceablePositionInfo> positionInfo = null;
     Map<SNode, ScopePositionInfo> scopeInfo = null;
     Map<SNode, UnitPositionInfo> unitInfo = null;
-    if (withDebugInfo) {
-      positionInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.POSITION_INFO);
-      scopeInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.SCOPE_INFO);
-      unitInfo = TraceInfoGenerationUtil.getUserObjects(buffer, TraceInfoGenerationUtil.UNIT_INFO);
-      int topLength = buffer.getTopBufferLineCount();
-      topLength++; // human-friendly line numbers (not 0-based)
-      adjustPositions(topLength, positionInfo);
-      adjustPositions(topLength, scopeInfo);
-      adjustPositions(topLength, unitInfo);
+    final BufferSnapshot textSnapshot = buffer.getTextSnapshot();
+    if (tic != null) {
+      tic.populatePositions(textSnapshot);
+      //
+      positionInfo = tic.getTracePositions();
+      scopeInfo = tic.getScopePositions();
+      unitInfo = tic.getUnitPositions();
     }
 
     // dependencies
@@ -114,14 +127,15 @@ public class TextGen {
     deps.put(DEPENDENCY, dependencies);
     deps.put(EXTENDS, extend);
 
-    Object result = buffer.getText();
+    final String bufferOutcome = textSnapshot.getText().toString();
+    Object result = bufferOutcome;
     String outputEncoding = (String) buffer.getUserObject(OUTPUT_ENCODING);
     if (outputEncoding != null) {
       if (outputEncoding.equals("binary")) {
-        result = EncodingUtil.decodeBase64((String) result);
+        result = EncodingUtil.decodeBase64(bufferOutcome);
       } else {
         try {
-          result = EncodingUtil.encode((String) result, outputEncoding);
+          result = EncodingUtil.encode(bufferOutcome, outputEncoding);
         } catch (IOException ex) {
           buffer.foundError("cannot encode the output stream", null, ex);
         }
@@ -149,7 +163,7 @@ public class TextGen {
   private static SNodeTextGen getLegacyTextGen(@NotNull SNode node) {
     try {
       Class<? extends SNodeTextGen> textgenClass = TextGenRegistry.getInstance().getLegacyTextGenClass(node.getConcept());
-      if (textgenClass != null) {
+      if (textgenClass != null && SNodeTextGen.class.isAssignableFrom(textgenClass)) {
         return textgenClass.newInstance();
       }
     } catch (InstantiationException ex) {
@@ -160,13 +174,6 @@ public class TextGen {
       // fall-through
     }
     return new DefaultTextGen();
-  }
-
-  private static void adjustPositions(int delta, Map<SNode, ? extends PositionInfo> positionInfo) {
-    for (PositionInfo position : positionInfo.values()) {
-      position.setStartLine(position.getStartLine() + delta);
-      position.setEndLine(position.getEndLine() + delta);
-    }
   }
 
   private static List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {

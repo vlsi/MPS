@@ -7,8 +7,8 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -208,8 +208,8 @@
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
@@ -1308,7 +1308,7 @@
         <node concept="3THzug" id="i1dxRCr" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="3$rob8hHtDV" role="lGtFl">
-        <node concept="TZ5HI" id="3$rob8hHtDW" role="TZ5Hx">
+        <node concept="TZ5HI" id="3$rob8hHtDW" role="3nqlJM">
           <node concept="TZ5HA" id="3$rob8hHtDX" role="3HnX3l">
             <node concept="1dT_AC" id="3$rob8hHum8" role="1dT_Ay">
               <property role="1dT_AB" value="use SConcept.isSubConceptOf" />
@@ -1389,7 +1389,7 @@
         <node concept="17QB3L" id="49NWpd$b1vR" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="3$rob8hHuNi" role="lGtFl">
-        <node concept="TZ5HI" id="3$rob8hHuNj" role="TZ5Hx">
+        <node concept="TZ5HI" id="3$rob8hHuNj" role="3nqlJM">
           <node concept="TZ5HA" id="3$rob8hHuNk" role="3HnX3l">
             <node concept="1dT_AC" id="3$rob8hHvmY" role="1dT_Ay">
               <property role="1dT_AB" value="use SConcept.isSubConceptOf" />
@@ -1514,7 +1514,7 @@
         <node concept="17QB3L" id="6CIjHcu$EUh" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="3$rob8hHuSJ" role="lGtFl">
-        <node concept="TZ5HI" id="3$rob8hHuSK" role="TZ5Hx">
+        <node concept="TZ5HI" id="3$rob8hHuSK" role="3nqlJM">
           <node concept="TZ5HA" id="3$rob8hHuSL" role="3HnX3l">
             <node concept="1dT_AC" id="3$rob8hHvn0" role="1dT_Ay">
               <property role="1dT_AB" value="use SConcept.isSubConceptOf" />

@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class CheckingUtil {
   public CheckingUtil() {
   }
+
   public static boolean isAssigned(SNode node) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6fea7de6103549b1L, "jetbrains.mps.baseLanguage.structure.UnaryMinus"))) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")) == node) {
       return true;
@@ -76,7 +77,7 @@ public class CheckingUtil {
       return false;
     }
     try {
-      Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{check_36hle6_a0a0a0b0j(expr.getModel())});
+      Object compileTimeConstantValue = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{check_36hle6_a0a0a0b0k(expr.getModel())});
       if (compileTimeConstantValue == null || !(compileTimeConstantValue instanceof Integer)) {
         return false;
       }
@@ -102,7 +103,7 @@ public class CheckingUtil {
     }
   }
   protected static Logger LOG = LogManager.getLogger(CheckingUtil.class);
-  private static SModule check_36hle6_a0a0a0b0j(SModel checkedDotOperand) {
+  private static SModule check_36hle6_a0a0a0b0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

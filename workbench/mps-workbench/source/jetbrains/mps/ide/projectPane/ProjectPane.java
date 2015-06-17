@@ -54,6 +54,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
@@ -130,13 +131,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       @Override
       public void reloadFinished() {
         rebuild();
-      }
-    });
-    SNodeTreeNode.setShowStructureCondition(new Condition<MPSTree>() {
-      @Override
-      public boolean met(MPSTree tree) {
-        if (project.isDisposed()) return false;
-        return !(tree instanceof ProjectPaneTree) || ProjectPane.getInstance(project).showNodeStructure();
       }
     });
   }
@@ -228,6 +222,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
     ProjectPaneTree tree = new ProjectPaneTree(this, myProject);
     Disposer.register(this, tree);
+    tree.setShowStructureCondition(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        if (myProject.isDisposed()) return false;
+        return ProjectPane.getInstance(myProject).showNodeStructure();
+      }
+    });
     myTree = tree;
 
     myScrollPane = new MyScrollPane(getTree());

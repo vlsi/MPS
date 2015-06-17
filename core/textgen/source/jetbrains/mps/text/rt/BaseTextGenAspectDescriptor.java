@@ -20,5 +20,5 @@ package jetbrains.mps.text.rt;
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public abstract class BaseTextGenAspectDescriptor implements TextGenAspectDescriptor {
+public abstract class BaseTextGenAspectDescriptor extends TextGenAspectBase {
 }

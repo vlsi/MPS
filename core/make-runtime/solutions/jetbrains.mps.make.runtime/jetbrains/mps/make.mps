@@ -5,8 +5,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" />
@@ -184,12 +184,10 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -656,24 +654,6 @@
         <node concept="10P_77" id="2BjwmTxT8fT" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="7JDtVAB5S$7" role="lGtFl">
-        <node concept="TUZQ0" id="7JDtVAB5S$a" role="TUOzN">
-          <property role="TUZQ4" value="MPS project to run make at" />
-          <node concept="zr_55" id="7JDtVAB5S$c" role="zr_5Q">
-            <ref role="zr_51" node="2BjwmTxT8bc" resolve="mpsProject" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="7JDtVAB5S$d" role="TUOzN">
-          <property role="TUZQ4" value="where to pipe make messages" />
-          <node concept="zr_55" id="7JDtVAB5S$f" role="zr_5Q">
-            <ref role="zr_51" node="2BjwmTxT8ca" resolve="messageHandler" />
-          </node>
-        </node>
-        <node concept="TUZQ0" id="7JDtVAB5S$g" role="TUOzN">
-          <property role="TUZQ4" value="&lt;code&gt;true&lt;/code&gt; to perform complete rebuild, not make of dirty models only." />
-          <node concept="zr_55" id="7JDtVAB5S$i" role="zr_5Q">
-            <ref role="zr_51" node="2BjwmTxT8eP" resolve="cleanMake" />
-          </node>
-        </node>
         <node concept="TZ5HA" id="7JDtVAB5SL5" role="TZ5H$">
           <node concept="1dT_AC" id="7JDtVAB5SL6" role="1dT_Ay">
             <property role="1dT_AB" value="" />
@@ -776,6 +756,24 @@
             <property role="1dT_AB" value=" or any tailored handler for non-IDE uses." />
           </node>
         </node>
+        <node concept="TUZQ0" id="7JDtVAB5S$a" role="3nqlJM">
+          <property role="TUZQ4" value="MPS project to run make at" />
+          <node concept="zr_55" id="7JDtVAB5S$c" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8bc" resolve="mpsProject" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="7JDtVAB5S$d" role="3nqlJM">
+          <property role="TUZQ4" value="where to pipe make messages" />
+          <node concept="zr_55" id="7JDtVAB5S$f" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8ca" resolve="messageHandler" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="7JDtVAB5S$g" role="3nqlJM">
+          <property role="TUZQ4" value="&lt;code&gt;true&lt;/code&gt; to perform complete rebuild, not make of dirty models only." />
+          <node concept="zr_55" id="7JDtVAB5S$i" role="zr_5Q">
+            <ref role="zr_51" node="2BjwmTxT8eP" resolve="cleanMake" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="2BjwmTxTf34" role="jymVt">
@@ -837,7 +835,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="2BjwmTy5Cq1" role="lGtFl">
-        <node concept="TZ5HI" id="2BjwmTy5Cq2" role="TZ5Hx">
+        <node concept="TZ5HI" id="2BjwmTy5Cq2" role="3nqlJM">
           <node concept="TZ5HA" id="2BjwmTy5Cq3" role="3HnX3l">
             <node concept="1dT_AC" id="2BjwmTy5CKd" role="1dT_Ay">
               <property role="1dT_AB" value="according to Fedor, obsolete functionality. There are usecases when we can benefit from sticky make session and its explicit shutdown, perhaps shall resurrect." />

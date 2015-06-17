@@ -32,7 +32,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptGenerateTextDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f412f8790L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L)).alias("do generate text", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptIncreaseDepthOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f41648039L)).super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4153bc8cL)).parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4153bc8cL)).alias("increase depth", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptIndentBufferOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b64a5c9L)).super_("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4153bc8cL)).parents("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4153bc8cL)).alias("indent buffer", "").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptInfoAppendPart = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.InfoAppendPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201524338cL)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).childDescriptors(new ConceptDescriptorBuilder.Link(1237305885953L, "value", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"value"}, new boolean[]{false}).alias("$resolve{", "resolve info").create();
   /*package*/ final ConceptDescriptor myConceptLanguageTextGenDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL)).super_("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).parents("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f60f06a49L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1234781160172L, "baseTextGen", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL), true)).references("baseTextGen").childDescriptors(new ConceptDescriptorBuilder.Link(1233922432965L, "operation", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b80e9d3L), true, true, false), new ConceptDescriptorBuilder.Link(1234526822589L, "function", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6f6a18e4L), true, true, false)).children(new String[]{"operation", "function"}, new boolean[]{true, true}).create();
   /*package*/ final ConceptDescriptor myConceptNewLineAppendPart = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015232fd0L)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).alias("\\n", "new line").create();
   /*package*/ final ConceptDescriptor myConceptNodeAppendPart = new ConceptDescriptorBuilder("jetbrains.mps.lang.textGen.structure.NodeAppendPart", MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015251a28L)).super_("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").super_(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).parents("jetbrains.mps.lang.textGen.structure.AbstractAppendPart").parentIds(MetaIdFactory.conceptId(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201521c456L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1237306318654L, "withIndent")).properties("withIndent").childDescriptors(new ConceptDescriptorBuilder.Link(1237305790512L, "value", MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), false, false, false)).children(new String[]{"value"}, new boolean[]{false}).alias("${", "node or property").create();
@@ -48,13 +47,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptBufferParameter, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextParameter, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptInfoAppendPart, myConceptLanguageTextGenDeclaration, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptReferenceAppendPart, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
+    return Arrays.asList(myConceptAbstractAppendPart, myConceptAbstractTextGenDeclaration, myConceptAbstractTextGenParameter, myConceptAppendOperation, myConceptBufferParameter, myConceptCollectionAppendPart, myConceptConceptTextGenDeclaration, myConceptConstantStringAppendPart, myConceptContextParameter, myConceptDecreaseDepthOperation, myConceptEncodingDeclaration, myConceptEncodingDeclarationBase, myConceptEncodingLiteral, myConceptExtensionDeclaration, myConceptFilenameFunction, myConceptFoundErrorOperation, myConceptGenerateTextDeclaration, myConceptIncreaseDepthOperation, myConceptIndentBufferOperation, myConceptLanguageTextGenDeclaration, myConceptNewLineAppendPart, myConceptNodeAppendPart, myConceptNodeParameter, myConceptOperationCall, myConceptOperationDeclaration, myConceptReferenceAppendPart, myConceptSimpleTextGenOperation, myConceptStubOperationDeclaration, myConceptUtilityMethodCall, myConceptUtilityMethodDeclaration, myConceptWithIndentOperation);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0kb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
       case 0:
         return myConceptAbstractAppendPart;
       case 1:
@@ -94,34 +93,32 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 18:
         return myConceptIndentBufferOperation;
       case 19:
-        return myConceptInfoAppendPart;
-      case 20:
         return myConceptLanguageTextGenDeclaration;
-      case 21:
+      case 20:
         return myConceptNewLineAppendPart;
-      case 22:
+      case 21:
         return myConceptNodeAppendPart;
-      case 23:
+      case 22:
         return myConceptNodeParameter;
-      case 24:
+      case 23:
         return myConceptOperationCall;
-      case 25:
+      case 24:
         return myConceptOperationDeclaration;
-      case 26:
+      case 25:
         return myConceptReferenceAppendPart;
-      case 27:
+      case 26:
         return myConceptSimpleTextGenOperation;
-      case 28:
+      case 27:
         return myConceptStubOperationDeclaration;
-      case 29:
+      case 28:
         return myConceptUtilityMethodCall;
-      case 30:
+      case 29:
         return myConceptUtilityMethodDeclaration;
-      case 31:
+      case 30:
         return myConceptWithIndentOperation;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0kb = new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", "jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.BufferParameter", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.ContextParameter", "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", "jetbrains.mps.lang.textGen.structure.FilenameFunction", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", "jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.IndentBufferOperation", "jetbrains.mps.lang.textGen.structure.InfoAppendPart", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.NodeParameter", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.lang.textGen.structure.AbstractAppendPart", "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", "jetbrains.mps.lang.textGen.structure.AppendOperation", "jetbrains.mps.lang.textGen.structure.BufferParameter", "jetbrains.mps.lang.textGen.structure.CollectionAppendPart", "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", "jetbrains.mps.lang.textGen.structure.ContextParameter", "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.EncodingDeclaration", "jetbrains.mps.lang.textGen.structure.EncodingDeclarationBase", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", "jetbrains.mps.lang.textGen.structure.FilenameFunction", "jetbrains.mps.lang.textGen.structure.FoundErrorOperation", "jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", "jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", "jetbrains.mps.lang.textGen.structure.IndentBufferOperation", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.NewLineAppendPart", "jetbrains.mps.lang.textGen.structure.NodeAppendPart", "jetbrains.mps.lang.textGen.structure.NodeParameter", "jetbrains.mps.lang.textGen.structure.OperationCall", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", "jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", "jetbrains.mps.lang.textGen.structure.StubOperationDeclaration", "jetbrains.mps.lang.textGen.structure.UtilityMethodCall", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", "jetbrains.mps.lang.textGen.structure.WithIndentOperation"};
 }

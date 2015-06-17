@@ -4,17 +4,20 @@ package jetbrains.mps.baseLanguageInternal.textGen;
 
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.textGen.SNodeTextGen;
+import jetbrains.mps.text.rt.TextGenContext;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.textGen.SNodeTextGen;
 
 public abstract class BaseLangInternal extends BaseLanguageTextGen {
-  public static void className(String fqClassName, SNode contextNode, final SNodeTextGen textGen) {
+  public static void className(String fqClassName, SNode contextNode, final TextGenContext ctx) {
+    final TextGenSupport tgs = new TextGenSupport(ctx);
     if (fqClassName == null) {
-      textGen.foundError("Class name is undefined");
-      textGen.append("???");
+      tgs.reportError("Class name is undefined");
+      tgs.append("???");
     } else {
       if (fqClassName.contains("@")) {
-        textGen.foundError("fq name can not contain '@'");
+        tgs.reportError("fq name can not contain '@'");
       }
       String packageName;
       String className;
@@ -26,7 +29,13 @@ public abstract class BaseLangInternal extends BaseLanguageTextGen {
         packageName = JavaNameUtil.packageName(fqClassName);
         className = JavaNameUtil.shortName(fqClassName);
       }
-      BaseLanguageTextGen.internalClassName(packageName, className, contextNode, textGen);
+      BaseLanguageTextGen.internalClassName(packageName, className, contextNode, ctx);
     }
+  }
+  public static void className(String fqClassName, SNode contextNode, SNodeTextGen ctx) {
+    // method left for compile-time compatibility for generated textgen code (MPS 3.2). 
+    // MPS compiles modules on start-up. If client keeps generated source code AND if an old TextGen  
+    // references utility operations of MPS-supplied TextGen, existing sources won't compile without 
+    // this method present. 
   }
 }

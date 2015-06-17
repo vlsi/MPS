@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -241,13 +241,10 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -379,13 +376,13 @@
             <property role="1dT_AB" value="Returns all available elements in the scope." />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6Tbs" role="TUOzN">
+        <node concept="TUZQ0" id="379IfaV6Tbs" role="3nqlJM">
           <property role="TUZQ4" value="(if not null) filters out elements whose reference text doesn't start with prefix" />
           <node concept="zr_55" id="379IfaV6Tbt" role="zr_5Q">
             <ref role="zr_51" node="3fifI_xCtPd" resolve="prefix" />
           </node>
         </node>
-        <node concept="x79VA" id="379IfaV6Tbu" role="x79VK">
+        <node concept="x79VA" id="379IfaV6Tbu" role="3nqlJM">
           <property role="x79VB" value="list of nodes in the scope" />
         </node>
       </node>
@@ -439,13 +436,13 @@
             <property role="1dT_AB" value="Invariant: contains(node) == getAvailableElements(null).contains(node)" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6Tbl" role="TUOzN">
+        <node concept="TUZQ0" id="379IfaV6Tbl" role="3nqlJM">
           <property role="TUZQ4" value="element to check presence for" />
           <node concept="zr_55" id="379IfaV6Tbm" role="zr_5Q">
             <ref role="zr_51" node="379IfaV6Tb8" resolve="node" />
           </node>
         </node>
-        <node concept="x79VA" id="379IfaV6Tbn" role="x79VK">
+        <node concept="x79VA" id="379IfaV6Tbn" role="3nqlJM">
           <property role="x79VB" value="&lt;tt&gt;true&lt;/tt&gt; if this scope contains the specified element" />
         </node>
       </node>
@@ -481,19 +478,19 @@
             <property role="1dT_AB" value="Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6_gq" role="TUOzN">
+        <node concept="TUZQ0" id="379IfaV6_gq" role="3nqlJM">
           <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
           <node concept="zr_55" id="379IfaV6_gr" role="zr_5Q">
             <ref role="zr_51" node="3fifI_xCtPf" resolve="contextNode" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6_gs" role="TUOzN">
+        <node concept="TUZQ0" id="379IfaV6_gs" role="3nqlJM">
           <property role="TUZQ4" value="reference text" />
           <node concept="zr_55" id="379IfaV6_gt" role="zr_5Q">
             <ref role="zr_51" node="3fifI_xCtPh" resolve="refText" />
           </node>
         </node>
-        <node concept="x79VA" id="379IfaV6_gu" role="x79VK">
+        <node concept="x79VA" id="379IfaV6_gu" role="3nqlJM">
           <property role="x79VB" value="resolved element when reference text unambiguously identifies element, null otherwise" />
         </node>
       </node>
@@ -534,25 +531,25 @@
             <property role="1dT_AB" value="" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6_gy" role="TUOzN">
+        <node concept="TZ5HA" id="379IfaV6TeH" role="TZ5H$">
+          <node concept="1dT_AC" id="379IfaV6TeI" role="1dT_Ay">
+            <property role="1dT_AB" value="Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="379IfaV6_gy" role="3nqlJM">
           <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
           <node concept="zr_55" id="379IfaV6_gz" role="zr_5Q">
             <ref role="zr_51" node="3fifI_xCtPp" resolve="contextNode" />
           </node>
         </node>
-        <node concept="TUZQ0" id="379IfaV6_g$" role="TUOzN">
+        <node concept="TUZQ0" id="379IfaV6_g$" role="3nqlJM">
           <property role="TUZQ4" value="element from the current scope (contains(node) == true)" />
           <node concept="zr_55" id="379IfaV6_g_" role="zr_5Q">
             <ref role="zr_51" node="3fifI_xCtPr" resolve="node" />
           </node>
         </node>
-        <node concept="x79VA" id="379IfaV6_gA" role="x79VK">
+        <node concept="x79VA" id="379IfaV6_gA" role="3nqlJM">
           <property role="x79VB" value="reference text for the node element in the current scope" />
-        </node>
-        <node concept="TZ5HA" id="379IfaV6TeH" role="TZ5H$">
-          <node concept="1dT_AC" id="379IfaV6TeI" role="1dT_Ay">
-            <property role="1dT_AB" value="Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node" />
-          </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="379IfaV6Teo" role="2AJF6D">
@@ -1092,7 +1089,7 @@
         <node concept="17QB3L" id="7ipADkTevU4" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="1pnkBUIVoXF" role="lGtFl">
-        <node concept="TZ5HI" id="1pnkBUIVoXG" role="TZ5Hx">
+        <node concept="TZ5HI" id="1pnkBUIVoXG" role="3nqlJM">
           <node concept="TZ5HA" id="1pnkBUIVoXH" role="3HnX3l">
             <node concept="1dT_AC" id="1pnkBUIVp6H" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink variant" />
@@ -1232,7 +1229,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="5TYh2YDX_tW" role="lGtFl">
-        <node concept="TZ5HI" id="5TYh2YDX_tX" role="TZ5Hx">
+        <node concept="TZ5HI" id="5TYh2YDX_tX" role="3nqlJM">
           <node concept="TZ5HA" id="5TYh2YDX_tY" role="3HnX3l">
             <node concept="1dT_AC" id="5TYh2YDX_Dz" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink variant" />
@@ -1862,7 +1859,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="6t3ylNOzDNW" role="lGtFl">
-        <node concept="TZ5HI" id="6t3ylNOzDNX" role="TZ5Hx">
+        <node concept="TZ5HI" id="6t3ylNOzDNX" role="3nqlJM">
           <node concept="TZ5HA" id="6t3ylNOzDNY" role="3HnX3l">
             <node concept="1dT_AC" id="6t3ylNOzGww" role="1dT_Ay">
               <property role="1dT_AB" value="use SContainmentLink variant, to remove after 3.3" />
@@ -2970,7 +2967,7 @@
         <node concept="17QB3L" id="7ipADkTfyPu" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="4k9eBec$R4e" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBec$R4f" role="TZ5Hx">
+        <node concept="TZ5HI" id="4k9eBec$R4f" role="3nqlJM">
           <node concept="TZ5HA" id="4k9eBec$R4g" role="3HnX3l">
             <node concept="1dT_AC" id="4k9eBec$R6Z" role="1dT_Ay">
               <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
@@ -4551,7 +4548,7 @@
         <node concept="17QB3L" id="VXQuBi35f" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="4k9eBec$CgV" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBec$CgW" role="TZ5Hx">
+        <node concept="TZ5HI" id="4k9eBec$CgW" role="3nqlJM">
           <node concept="TZ5HA" id="4k9eBec$CgX" role="3HnX3l">
             <node concept="1dT_AC" id="4k9eBec$CC$" role="1dT_Ay">
               <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />

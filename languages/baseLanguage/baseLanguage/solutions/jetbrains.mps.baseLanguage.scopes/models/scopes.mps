@@ -10,8 +10,8 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
@@ -334,13 +334,10 @@
         <reference id="6832197706140518108" name="param" index="zr_51" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -1164,29 +1161,29 @@
         <property role="TrG5h" value="collectImplementedAndExtended" />
         <property role="DiZV1" value="false" />
         <node concept="P$JXv" id="1zNL$bX4aZ1" role="lGtFl">
-          <node concept="x79VA" id="1zNL$bX4aZa" role="x79VK">
-            <property role="x79VB" value="is hierarchy cyclic?" />
-          </node>
           <node concept="TZ5HA" id="1zNL$bX4aZ2" role="TZ5H$">
             <node concept="1dT_AC" id="1zNL$bX4aZ3" role="1dT_Ay" />
           </node>
-          <node concept="TUZQ0" id="1zNL$bX4aZ4" role="TUOzN">
+          <node concept="TUZQ0" id="1zNL$bX4aZ4" role="3nqlJM">
             <property role="TUZQ4" value="classifier" />
             <node concept="zr_55" id="1zNL$bX4aZ5" role="zr_5Q">
               <ref role="zr_51" node="5o2t_EckfoD" resolve="classifier" />
             </node>
           </node>
-          <node concept="TUZQ0" id="1zNL$bX4aZ6" role="TUOzN">
+          <node concept="TUZQ0" id="1zNL$bX4aZ6" role="3nqlJM">
             <property role="TUZQ4" value="subClassifiers" />
             <node concept="zr_55" id="1zNL$bX4aZ7" role="zr_5Q">
               <ref role="zr_51" node="1zNL$bX4aYa" resolve="subClassifiers" />
             </node>
           </node>
-          <node concept="TUZQ0" id="1zNL$bX4aZ8" role="TUOzN">
+          <node concept="TUZQ0" id="1zNL$bX4aZ8" role="3nqlJM">
             <property role="TUZQ4" value="typeParams" />
             <node concept="zr_55" id="1zNL$bX4aZ9" role="zr_5Q">
               <ref role="zr_51" node="5o2t_EckfoI" resolve="typeParms" />
             </node>
+          </node>
+          <node concept="x79VA" id="1zNL$bX4aZa" role="3nqlJM">
+            <property role="x79VB" value="is hierarchy cyclic?" />
           </node>
         </node>
         <node concept="3clFbS" id="5o2t_EckfoO" role="3clF47">
@@ -4502,7 +4499,7 @@
         <node concept="10P_77" id="4QHmtG_Stqz" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="4k9eBecBa44" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBecBa45" role="TZ5Hx">
+        <node concept="TZ5HI" id="4k9eBecBa45" role="3nqlJM">
           <node concept="TZ5HA" id="4k9eBecBa46" role="3HnX3l">
             <node concept="1dT_AC" id="4k9eBec$CC$" role="1dT_Ay">
               <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />
@@ -4621,7 +4618,7 @@
         <node concept="17QB3L" id="4QHmtG_SOmX" role="1tU5fm" />
       </node>
       <node concept="P$JXv" id="4k9eBecB9Zo" role="lGtFl">
-        <node concept="TZ5HI" id="4k9eBecB9Zp" role="TZ5Hx">
+        <node concept="TZ5HI" id="4k9eBecB9Zp" role="3nqlJM">
           <node concept="TZ5HA" id="4k9eBecB9Zq" role="3HnX3l">
             <node concept="1dT_AC" id="4k9eBecBabF" role="1dT_Ay">
               <property role="1dT_AB" value="use concept/../ variant, remove after 3.3" />

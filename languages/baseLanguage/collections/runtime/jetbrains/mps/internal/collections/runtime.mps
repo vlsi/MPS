@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="kos1" ref="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)" />
@@ -287,11 +287,9 @@
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
-        <child id="8465538089690331499" name="deprecated" index="TZ5Hx" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -1266,11 +1264,11 @@
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
       </node>
       <node concept="P$JXv" id="3lc436X8yJ6" role="lGtFl">
-        <node concept="x79VA" id="3lc436X8yJ9" role="x79VK">
-          <property role="x79VB" value="compatibility collection" />
-        </node>
-        <node concept="TZ5HI" id="3lc436X8DZx" role="TZ5Hx">
+        <node concept="TZ5HI" id="3lc436X8DZx" role="3nqlJM">
           <node concept="TZ5HA" id="3lc436X8DZy" role="3HnX3l" />
+        </node>
+        <node concept="x79VA" id="3lc436X8yJ9" role="3nqlJM">
+          <property role="x79VB" value="compatibility collection" />
         </node>
       </node>
       <node concept="2AHcQZ" id="3lc436X8DZz" role="2AJF6D">
@@ -1335,7 +1333,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="3lc436X4CFv" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4CFw" role="TZ5Hx">
+        <node concept="TZ5HI" id="3lc436X4CFw" role="3nqlJM">
           <node concept="TZ5HA" id="3lc436X4CFx" role="3HnX3l">
             <node concept="1dT_AC" id="3lc436X4EUJ" role="1dT_Ay">
               <property role="1dT_AB" value="regenerate to get rid of this method The method will be removed after 3.3" />
@@ -1697,7 +1695,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="3lc436X4St8" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4St9" role="TZ5Hx">
+        <node concept="TZ5HI" id="3lc436X4St9" role="3nqlJM">
           <node concept="TZ5HA" id="3lc436X4Sta" role="3HnX3l">
             <node concept="1dT_AC" id="3lc436X4UoN" role="1dT_Ay">
               <property role="1dT_AB" value="regenerate to get rid of this method The method will be removed after 3.3" />
@@ -2054,7 +2052,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="3lc436X4MWN" role="lGtFl">
-        <node concept="TZ5HI" id="3lc436X4MWO" role="TZ5Hx">
+        <node concept="TZ5HI" id="3lc436X4MWO" role="3nqlJM">
           <node concept="TZ5HA" id="3lc436X4MWP" role="3HnX3l">
             <node concept="1dT_AC" id="3lc436X4OUD" role="1dT_Ay">
               <property role="1dT_AB" value="regenerate to get rid of this method. The method will be removed after 3.3" />
@@ -11814,7 +11812,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="6gPw0iARzwB" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iARzwC" role="TZ5Hx">
+        <node concept="TZ5HI" id="6gPw0iARzwC" role="3nqlJM">
           <node concept="TZ5HA" id="6gPw0iARzwD" role="3HnX3l">
             <node concept="1dT_AC" id="6gPw0iAZBXP" role="1dT_Ay">
               <property role="1dT_AB" value="use " />
@@ -12218,7 +12216,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="6gPw0iB13Rh" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iB13Ri" role="TZ5Hx">
+        <node concept="TZ5HI" id="6gPw0iB13Ri" role="3nqlJM">
           <node concept="TZ5HA" id="6gPw0iB13Rj" role="3HnX3l" />
         </node>
       </node>
@@ -12571,7 +12569,7 @@
         </node>
       </node>
       <node concept="P$JXv" id="6gPw0iB45bB" role="lGtFl">
-        <node concept="TZ5HI" id="6gPw0iB45bC" role="TZ5Hx">
+        <node concept="TZ5HI" id="6gPw0iB45bC" role="3nqlJM">
           <node concept="TZ5HA" id="6gPw0iB45bD" role="3HnX3l">
             <node concept="1dT_AC" id="6gPw0iB4arN" role="1dT_Ay">
               <property role="1dT_AB" value="use " />

@@ -206,9 +206,11 @@ public class TextGen_Facet extends IFacet.Stub {
               Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
 
+              // Perhaps, shall check res.status.isError(), however not sure if there 
+              // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
               final Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {
                 public boolean accept(GResource it) {
-                  return SModuleOperations.getOutputPathFor(it.model()) != null;
+                  return SModuleOperations.getOutputPathFor(it.model()) != null && it.status().getOutputModel() != null;
                 }
               });
 

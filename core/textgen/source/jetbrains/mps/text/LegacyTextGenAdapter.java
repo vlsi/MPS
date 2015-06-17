@@ -15,16 +15,19 @@
  */
 package jetbrains.mps.text;
 
+import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Adapt existing generated {@link SNodeTextGen} class to contemporary API of {@link TextGenDescriptor}
  * @author Artem Tikhomirov
  */
+@ToRemove(version = 3.3)
 public class LegacyTextGenAdapter implements TextGenDescriptor {
   private final Class<? extends SNodeTextGen> myTextGenClass;
 
@@ -36,12 +39,12 @@ public class LegacyTextGenAdapter implements TextGenDescriptor {
   public void generateText(TextGenContext context) {
     TextGenTransitionContext tc = (TextGenTransitionContext) context;
     final SNodeTextGen textGen = getInstance();
-    textGen.setBuffer(tc.getBuffer());
+    textGen.setBuffer(tc.getLegacyBuffer());
     try {
       textGen.setSNode(tc.getPrimaryInput());
       textGen.doGenerateText(tc.getPrimaryInput());
     } catch (Exception e) {
-      tc.getBuffer().foundError("failed to generate text for " + SNodeOperations.getDebugText(tc.getPrimaryInput()), tc.getPrimaryInput(), e);
+      tc.getLegacyBuffer().foundError("failed to generate text for " + SNodeOperations.getDebugText(tc.getPrimaryInput()), tc.getPrimaryInput(), e);
     }
   }
 

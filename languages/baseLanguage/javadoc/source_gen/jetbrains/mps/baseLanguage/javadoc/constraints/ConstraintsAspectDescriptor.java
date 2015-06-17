@@ -35,6 +35,15 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x60a0f9237ac5e83bL) {
       return new ValueInlineDocTag_Constraints();
     }
+    if (id == 0x757ba20a4c87f964L) {
+      return new DeprecatedBlockDocTag_Constraints();
+    }
+    if (id == 0x757ba20a4c905f8aL) {
+      return new ParameterBlockDocTag_Constraints();
+    }
+    if (id == 0x514c0f68704ec270L) {
+      return new ThrowsBlockDocTag_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

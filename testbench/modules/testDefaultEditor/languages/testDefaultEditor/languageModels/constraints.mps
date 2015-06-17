@@ -110,11 +110,9 @@
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-        <child id="8465538089690917625" name="param" index="TUOzN" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
         <property id="8465538089690881934" name="text" index="TUZQ4" />
         <child id="6832197706140518123" name="parameter" index="zr_5Q" />
@@ -205,13 +203,13 @@
                           <property role="1dT_AB" value="Returns all available elements in the scope." />
                         </node>
                       </node>
-                      <node concept="TUZQ0" id="5dui9Ybt7gW" role="TUOzN">
+                      <node concept="TUZQ0" id="7XxYwsA8cfs" role="3nqlJM">
                         <property role="TUZQ4" value="(if not null) filters out elements whose reference text doesn't start with prefix" />
-                        <node concept="zr_55" id="5dui9Ybt7gX" role="zr_5Q">
+                        <node concept="zr_55" id="7XxYwsA8cgk" role="zr_5Q">
                           <ref role="zr_51" node="5dui9Ybt7gQ" resolve="prefix" />
                         </node>
                       </node>
-                      <node concept="x79VA" id="5dui9Ybt7gY" role="x79VK">
+                      <node concept="x79VA" id="7XxYwsA8crL" role="3nqlJM">
                         <property role="x79VB" value="list of nodes in the scope" />
                       </node>
                     </node>
@@ -380,19 +378,19 @@
                           <property role="1dT_AB" value="Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText" />
                         </node>
                       </node>
-                      <node concept="TUZQ0" id="5dui9Ybt7hh" role="TUOzN">
-                        <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
-                        <node concept="zr_55" id="5dui9Ybt7hi" role="zr_5Q">
-                          <ref role="zr_51" node="5dui9Ybt7h5" resolve="contextNode" />
-                        </node>
-                      </node>
-                      <node concept="TUZQ0" id="5dui9Ybt7hj" role="TUOzN">
+                      <node concept="TUZQ0" id="7XxYwsA8d1J" role="3nqlJM">
                         <property role="TUZQ4" value="reference text" />
-                        <node concept="zr_55" id="5dui9Ybt7hk" role="zr_5Q">
+                        <node concept="zr_55" id="7XxYwsA8d1X" role="zr_5Q">
                           <ref role="zr_51" node="5dui9Ybt7h7" resolve="refText" />
                         </node>
                       </node>
-                      <node concept="x79VA" id="5dui9Ybt7hl" role="x79VK">
+                      <node concept="TUZQ0" id="7XxYwsA8cWI" role="3nqlJM">
+                        <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
+                        <node concept="zr_55" id="7XxYwsA8cWU" role="zr_5Q">
+                          <ref role="zr_51" node="5dui9Ybt7h5" resolve="contextNode" />
+                        </node>
+                      </node>
+                      <node concept="x79VA" id="7XxYwsA8cWt" role="3nqlJM">
                         <property role="x79VB" value="resolved element when reference text unambiguously identifies element, null otherwise" />
                       </node>
                     </node>
@@ -437,25 +435,25 @@
                           <property role="1dT_AB" value="" />
                         </node>
                       </node>
-                      <node concept="TUZQ0" id="5dui9Ybt7hD" role="TUOzN">
-                        <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
-                        <node concept="zr_55" id="5dui9Ybt7hE" role="zr_5Q">
-                          <ref role="zr_51" node="5dui9Ybt7ht" resolve="contextNode" />
-                        </node>
-                      </node>
-                      <node concept="TUZQ0" id="5dui9Ybt7hF" role="TUOzN">
-                        <property role="TUZQ4" value="element from the current scope (contains(node) == true)" />
-                        <node concept="zr_55" id="5dui9Ybt7hG" role="zr_5Q">
-                          <ref role="zr_51" node="5dui9Ybt7hv" resolve="node" />
-                        </node>
-                      </node>
-                      <node concept="x79VA" id="5dui9Ybt7hH" role="x79VK">
-                        <property role="x79VB" value="reference text for the node element in the current scope" />
-                      </node>
                       <node concept="TZ5HA" id="5dui9Ybt7hI" role="TZ5H$">
                         <node concept="1dT_AC" id="5dui9Ybt7hJ" role="1dT_Ay">
                           <property role="1dT_AB" value="Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node" />
                         </node>
+                      </node>
+                      <node concept="TUZQ0" id="7XxYwsA8drh" role="3nqlJM">
+                        <property role="TUZQ4" value="element from the current scope (contains(node) == true)" />
+                        <node concept="zr_55" id="7XxYwsA8drv" role="zr_5Q">
+                          <ref role="zr_51" node="5dui9Ybt7hv" resolve="node" />
+                        </node>
+                      </node>
+                      <node concept="TUZQ0" id="7XxYwsA8dmc" role="3nqlJM">
+                        <property role="TUZQ4" value="source node for the reference, or its nearest parent node (if source node is unavailable)" />
+                        <node concept="zr_55" id="7XxYwsA8dmo" role="zr_5Q">
+                          <ref role="zr_51" node="5dui9Ybt7ht" resolve="contextNode" />
+                        </node>
+                      </node>
+                      <node concept="x79VA" id="7XxYwsA8dlV" role="3nqlJM">
+                        <property role="x79VB" value="reference text for the node element in the current scope" />
                       </node>
                     </node>
                     <node concept="2AHcQZ" id="5dui9Ybt7hK" role="2AJF6D">

@@ -273,6 +273,7 @@
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -660,6 +661,16 @@
               </node>
             </node>
             <node concept="3clFbH" id="7A08csWbOAQ" role="3cqZAp" />
+            <node concept="3SKdUt" id="TDp769cy3u" role="3cqZAp">
+              <node concept="3SKdUq" id="TDp769cygf" role="3SKWNk">
+                <property role="3SKdUp" value="Perhaps, shall check res.status.isError(), however not sure if there" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="TDp769c_6r" role="3cqZAp">
+              <node concept="3SKdUq" id="TDp769c_j9" role="3SKWNk">
+                <property role="3SKdUp" value="couldn't be an output model with error state, and we'd like to see erroneous text to localize error" />
+              </node>
+            </node>
             <node concept="3cpWs8" id="22g6WSWEB1" role="3cqZAp">
               <node concept="3cpWsn" id="22g6WSWEB4" role="3cpWs9">
                 <property role="TrG5h" value="resourcesWithOutput" />
@@ -674,20 +685,38 @@
                     <node concept="1bVj0M" id="4g8ToP3X6Ri" role="23t8la">
                       <node concept="3clFbS" id="4g8ToP3X6Rj" role="1bW5cS">
                         <node concept="3clFbF" id="4g8ToP3X6Rk" role="3cqZAp">
-                          <node concept="3y3z36" id="4g8ToP3X6Rl" role="3clFbG">
-                            <node concept="2YIFZM" id="741MqB3umXf" role="3uHU7B">
-                              <ref role="37wK5l" to="vsqj:~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getOutputPathFor" />
-                              <ref role="1Pybhc" to="vsqj:~SModuleOperations" resolve="SModuleOperations" />
-                              <node concept="2OqwBi" id="741MqB3umXg" role="37wK5m">
-                                <node concept="37vLTw" id="741MqB3umXh" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="4g8ToP3X6Rv" resolve="it" />
+                          <node concept="1Wc70l" id="TDp769cFsV" role="3clFbG">
+                            <node concept="3y3z36" id="TDp769cLvk" role="3uHU7w">
+                              <node concept="10Nm6u" id="TDp769cMbF" role="3uHU7w" />
+                              <node concept="2OqwBi" id="TDp769cJuj" role="3uHU7B">
+                                <node concept="2OqwBi" id="TDp769cHhH" role="2Oq$k0">
+                                  <node concept="37vLTw" id="TDp769cGpm" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4g8ToP3X6Rv" resolve="it" />
+                                  </node>
+                                  <node concept="2sxana" id="TDp769cI_R" role="2OqNvi">
+                                    <ref role="2sxfKC" to="fn29:1Xl3kQ1uadG" resolve="status" />
+                                  </node>
                                 </node>
-                                <node concept="2sxana" id="741MqB3umXi" role="2OqNvi">
-                                  <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
+                                <node concept="liA8E" id="TDp769cKyu" role="2OqNvi">
+                                  <ref role="37wK5l" to="y5px:~GenerationStatus.getOutputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOutputModel" />
                                 </node>
                               </node>
                             </node>
-                            <node concept="10Nm6u" id="4g8ToP3X6Ru" role="3uHU7w" />
+                            <node concept="3y3z36" id="4g8ToP3X6Rl" role="3uHU7B">
+                              <node concept="2YIFZM" id="741MqB3umXf" role="3uHU7B">
+                                <ref role="37wK5l" to="vsqj:~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getOutputPathFor" />
+                                <ref role="1Pybhc" to="vsqj:~SModuleOperations" resolve="SModuleOperations" />
+                                <node concept="2OqwBi" id="741MqB3umXg" role="37wK5m">
+                                  <node concept="37vLTw" id="741MqB3umXh" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4g8ToP3X6Rv" resolve="it" />
+                                  </node>
+                                  <node concept="2sxana" id="741MqB3umXi" role="2OqNvi">
+                                    <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="10Nm6u" id="4g8ToP3X6Ru" role="3uHU7w" />
+                            </node>
                           </node>
                         </node>
                       </node>

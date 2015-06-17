@@ -12,7 +12,7 @@ public class MpsRunnerTask extends GenerateTask {
 
   @Override
   protected String getWorkerClass() {
-    return "jetbrains.mps.tool.builder.make.MpsRunnerWorker";
+    return "jetbrains.mps.build.mps.runner.runtime.MpsRunnerWorker";
   }
 
   public String getSolution() {

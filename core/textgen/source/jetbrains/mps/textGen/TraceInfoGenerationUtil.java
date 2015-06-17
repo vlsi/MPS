@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,17 +17,33 @@ package jetbrains.mps.textGen;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.text.TextMark;
+import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @deprecated This class shall not be used externally, from generated code.
+ * Though it's not public API, it's left to provide compile-time compatibility with TextGen classes generated in MPS 3.2
+ * MPS own implementation methods may access this class to support legacy code.
+ * There's no direct replacement for functionality of this class, check {@link TraceInfoCollector} and {@link jetbrains.mps.text.TextUnit} for
+ * present API.
+ * Note, new TextGenDescriptorBase mimics behavior of this class with new API, sharing TraceInfoCollector instance with this
+ * implementation for interoperability of existing and textgen classes. Though it's tempting not to duplicate code (TGDB could delegate
+ * here, where we could have exposed methods with TextGenBuffer), it seems easier just to throw this class altogether in 3.3 than to bother with 2 refactorings.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 // FIXME revisit public constants with user objects instead of named accessors, really?!
 public class TraceInfoGenerationUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(TraceInfoGenerationUtil.class));
@@ -55,43 +71,45 @@ public class TraceInfoGenerationUtil {
   }
 
   public static void createPositionInfo(SNodeTextGen nodeTextGen, SNode node) {
-    TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
-
-    TraceablePositionInfo info = new TraceablePositionInfo();
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
-    putUserObject(buffer, POSITION_INFO, node, info);
+    final TextGenBuffer buffer = nodeTextGen.getBuffer();
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
+    buffer.getRealBuffer().pushMark();
   }
 
   public static void fillPositionInfo(SNodeTextGen nodeTextGen, SNode node, String propertyString) {
     TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
 
-    TraceablePositionInfo info = getUserObject(buffer, POSITION_INFO, node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
-    info.setConceptFqName(node.getConcept().getQualifiedName());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    TraceablePositionInfo info = tic.createTracePosition(m, node);
     info.setPropertyString(propertyString);
   }
 
   public static void createScopeInfo(SNodeTextGen nodeTextGen, SNode node) {
     TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
 
-    ScopePositionInfo info = new ScopePositionInfo();
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
-    putUserObject(buffer, SCOPE_INFO, node, info);
+    buffer.getRealBuffer().pushMark();
   }
 
   public static void fillScopeInfo(SNodeTextGen nodeTextGen, SNode node, List<SNode> vars) {
     TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
 
-    ScopePositionInfo info = getUserObject(buffer, SCOPE_INFO, node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    ScopePositionInfo info = tic.createScopePosition(m, node);
     for (SNode var : vars) {
       if (var != null) {
         info.addVarInfo(var);
@@ -101,32 +119,44 @@ public class TraceInfoGenerationUtil {
 
   public static void createUnitInfo(SNodeTextGen nodeTextGen, SNode node) {
     TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
 
-    UnitPositionInfo info = new UnitPositionInfo();
-    info.setStartLine(buffer.getLineNumber());
-    info.setStartPosition(buffer.getPosition());
-    putUserObject(buffer, UNIT_INFO, node, info);
+    buffer.getRealBuffer().pushMark();
   }
 
   public static void fillUnitInfo(SNodeTextGen nodeTextGen, SNode node, String unitName) {
     TextGenBuffer buffer = nodeTextGen.getBuffer();
-    if(!buffer.hasPositionsSupport()) return;
+    final TraceInfoCollector tic = getTraceInfoCollector(buffer);
+    if (tic == null) {
+      return;
+    }
 
-    UnitPositionInfo info = getUserObject(buffer, UNIT_INFO, node);
-    info.setEndLine(buffer.getLineNumber());
-    info.setEndPosition(buffer.getPosition());
+    final TextMark m = buffer.getRealBuffer().popMark();
+    UnitPositionInfo info = tic.createUnitPosition(m, node);
     info.setUnitName(unitName);
 
     warnIfUnitNameInvalid(unitName, node);
   }
 
-  private static void warnIfUnitNameInvalid(String unitName, SNode node) {
+  public static void warnIfUnitNameInvalid(String unitName, SNode node) {
     String longName = SModelStereotype.withoutStereotype(node.getModel().getReference().getModelName());
     if (!(unitName.startsWith(longName))) {
       LOG.warning("Unit name has to start with model fqName. Fix " + unitName + " in " + longName + ".", node);
     } else if (unitName.length() <= longName.length() + 1 || !(unitName.substring(longName.length()).startsWith(".")) || unitName.substring(longName.length()+1).contains(".")) {
       LOG.warning("Unit name has to match \"modelFqName.shortUnitName\" where short unit name does not contain dots. Fix " + unitName + " in " + longName + ".", node);
     }
+  }
+
+  @ToRemove(version = 3.3)
+  /*package*/ static void setTraceInfoCollector(TextGenBuffer buffer, TraceInfoCollector tic) {
+    buffer.putUserObject(TraceInfoCollector.class, tic);
+  }
+
+  @Nullable
+  public static TraceInfoCollector getTraceInfoCollector(TextGenBuffer buffer) {
+    return (TraceInfoCollector) buffer.getUserObject(TraceInfoCollector.class);
   }
 }
