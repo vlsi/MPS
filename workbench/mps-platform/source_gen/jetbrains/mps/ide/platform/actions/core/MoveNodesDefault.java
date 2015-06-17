@@ -26,12 +26,12 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.HashMap;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class MoveNodesDefault implements MoveNodesRefactoring {
@@ -109,8 +109,12 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           }
         }), "reference");
         RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
-          public void invoke(Set<SNode> included) {
-            Map<SReference, SNode> usagesMap = classifyUsages(refUsages);
+          public void invoke(final Set<SNode> included) {
+            Map<SReference, SNode> usagesMap = classifyUsages(SetSequence.fromSet(refUsages).where(new IWhereFilter<SReference>() {
+              public boolean accept(SReference it) {
+                return SetSequence.fromSet(included).contains(it.getSourceNode());
+              }
+            }));
             newLocation.insertNodes(nodesToMove);
             for (IMapping<SReference, SNode> mapping : MapSequence.fromMap(usagesMap)) {
               updateUsage(mapping.key(), mapping.value());
@@ -121,17 +125,17 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
     });
   }
 
-  public Set<SReference> findUsages(MPSProject project, List<SNode> nodes) {
-    return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(nodes).translate(new ITranslator2<SNode, SNode>() {
+  public Set<SReference> findUsages(MPSProject project, Iterable<SNode> nodes) {
+    return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), Sequence.fromIterable(nodes).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
       }
     })), new EmptyProgressMonitor());
   }
 
-  public Map<SReference, SNode> classifyUsages(Set<SReference> usages) {
+  public Map<SReference, SNode> classifyUsages(Iterable<SReference> usages) {
     Map<SReference, SNode> result = MapSequence.fromMap(new HashMap<SReference, SNode>());
-    for (SReference ref : SetSequence.fromSet(usages)) {
+    for (SReference ref : Sequence.fromIterable(usages)) {
       MapSequence.fromMap(result).put(ref, ref.getTargetNode());
     }
     return result;

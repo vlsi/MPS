@@ -19,6 +19,7 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute_Behavior;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class RefactoringRuntime {
 
@@ -64,8 +65,9 @@ public class RefactoringRuntime {
     node.setReferenceTarget(oldLink, null);
   }
 
-  public static SNode copyWithNewConcept(SNode node, SAbstractConcept newConcept) {
-    SNode newInstance = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(newConcept));
+  public static SNode replaceWithNewConcept(SNode node, SAbstractConcept newConcept) {
+    jetbrains.mps.smodel.SNode newInstance = (jetbrains.mps.smodel.SNode) SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(newConcept));
+    newInstance.setId(((jetbrains.mps.smodel.SNode) node).getNodeId());
 
     for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
       newInstance.setProperty(prop, node.getProperty(prop));
@@ -78,9 +80,20 @@ public class RefactoringRuntime {
       node.removeChild(child);
       newInstance.addChild(containmentLink, child);
     }
-    return newInstance;
+    if (SNodeOperations.getModel(node) instanceof SModelInternal) {
+      if (!(as_7voxfg_a0a0a0a6a7_0(SNodeOperations.getModel(node), SModelInternal.class).importedLanguageIds().contains(newConcept.getLanguage()))) {
+        as_7voxfg_a0a0a0a6a7(SNodeOperations.getModel(node), SModelInternal.class).addLanguage(newConcept.getLanguage());
+      }
+    }
+    return SNodeOperations.replaceWithAnother(node, newInstance);
   }
 
 
 
+  private static <T> T as_7voxfg_a0a0a0a6a7(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_7voxfg_a0a0a0a6a7_0(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }
