@@ -53,7 +53,7 @@ public class MovePropertyUp extends MoveFeatureUp {
         ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).addElement(SNodeOperations.cast(property, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")));
         SProperty newProp = MetaAdapterByDeclaration.getProperty(property);
         for (SNode node : SetSequence.fromSet(instances)) {
-          RefactoringRuntime.refactorPropertyInstance(node, oldProp, newProp);
+          RefactoringRuntime.changePropertyInstance(node, oldProp, newProp);
         }
       }
     };

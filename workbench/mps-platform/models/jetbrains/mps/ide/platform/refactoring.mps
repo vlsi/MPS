@@ -38,6 +38,7 @@
     <import index="y38" ref="r:4c8c6241-8bf4-4d04-84a1-f7fd7fcbdc2c(jetbrains.mps.refactoring.runtime.access)" />
     <import index="lfzw" ref="r:cc08a4fa-e4f1-443c-b8f2-4a41972141bb(jetbrains.mps.ide.platform.actions.core)" />
     <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
+    <import index="tk08" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.findusages.view(MPS.Platform/jetbrains.mps.ide.findusages.view@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -211,7 +212,9 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
+      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
+        <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
+      </concept>
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -4689,6 +4692,26 @@
       <node concept="3cqZAl" id="3g3N8kb3DkY" role="3clF45" />
       <node concept="3Tm1VV" id="3g3N8kb3DkZ" role="1B3o_S" />
       <node concept="3clFbS" id="3g3N8kb3Dl0" role="3clF47" />
+    </node>
+    <node concept="3HP615" id="6gEjUfBDWeY" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="RefactoringViewItemEx" />
+      <node concept="3clFb_" id="6gEjUfBDWfV" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="TrG5h" value="getIncludedResultNodes" />
+        <node concept="3uibUv" id="7TfAUXYnxhV" role="3clF45">
+          <ref role="3uigEE" to="k7g3:~List" resolve="List" />
+          <node concept="3uibUv" id="7TfAUXYnxid" role="11_B2D">
+            <ref role="3uigEE" to="ec5l:~SNodeReference" resolve="SNodeReference" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="6gEjUfBDWfY" role="1B3o_S" />
+        <node concept="3clFbS" id="6gEjUfBDWfZ" role="3clF47" />
+      </node>
+      <node concept="3Tm1VV" id="6gEjUfBDWeZ" role="1B3o_S" />
+      <node concept="3uibUv" id="6gEjUfBDWWS" role="3HQHJm">
+        <ref role="3uigEE" node="3g3N8kb3DkV" resolve="RefactoringViewItem" />
+      </node>
     </node>
   </node>
   <node concept="3HP615" id="1F5g4zQtlkd">

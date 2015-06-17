@@ -620,9 +620,12 @@
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/3748064186690606395">
     <file name="RefactoringViewItem.java">
-      <node id="3748064186690606397" at="7,0,8,0" concept="6" trace="close#()V" />
-      <scope id="3748064186690606397" at="7,0,8,0" />
-      <unit id="3748064186690606395" at="6,0,9,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
+      <node id="3748064186690606397" at="9,0,10,0" concept="6" trace="close#()V" />
+      <node id="7217668918199436283" at="11,0,12,0" concept="6" trace="getIncludedResultNodes#()Ljava/util/List;" />
+      <scope id="3748064186690606397" at="9,0,10,0" />
+      <scope id="7217668918199436283" at="11,0,12,0" />
+      <unit id="7217668918199436222" at="10,0,13,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem$RefactoringViewItemEx" />
+      <unit id="3748064186690606395" at="8,0,14,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     </file>
   </root>
   <root nodeRef="r:986938bb-bdb1-4307-b062-e4647a4db0f9(jetbrains.mps.ide.platform.refactoring)/5814231631271705710">

@@ -15,28 +15,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-import java.util.Map;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccessEx;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
-import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import java.util.HashMap;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class MoveNodesDefault implements MoveNodesRefactoring {
 
@@ -106,61 +102,55 @@ public class MoveNodesDefault implements MoveNodesRefactoring {
           return;
         }
 
-        final Map<SNode, List<SReference>> usages = MapSequence.fromMap(new HashMap<SNode, List<SReference>>());
-        Set<SReference> allUsages = findUsages(project, nodesToMove);
-        for (SReference ref : SetSequence.fromSet(allUsages)) {
-          if (MapSequence.fromMap(usages).get(ref.getTargetNode()) == null) {
-            MapSequence.fromMap(usages).put(ref.getTargetNode(), ListSequence.fromList(new ArrayList<SReference>()));
+        final Set<SReference> refUsages = findUsages(project, nodesToMove);
+        SearchResults<SNode> searchResults = nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
+          public SNode select(SReference it) {
+            return it.getSourceNode();
           }
-          ListSequence.fromList(MapSequence.fromMap(usages).get(ref.getTargetNode())).addElement(ref);
-        }
-        SearchResults<SNode> searchResults = usagesToSearchResults(nodesToMove, usages);
-
-        RefactoringAccessEx.getInstance().showRefactoringView(ProjectHelper.toIdeaProject(project), new RefactoringViewAction() {
-          public void performAction(RefactoringViewItem refactoringViewItem) {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                newLocation.insertNodes(nodesToMove);
-                for (SNode node : SetSequence.fromSet(MapSequence.fromMap(usages).keySet())) {
-                  updateUsages(MapSequence.fromMap(usages).get(node), node);
-                }
-              }
-            });
-            refactoringViewItem.close();
+        }), "reference");
+        RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+          public void invoke(Set<SNode> included) {
+            Map<SReference, SNode> usagesMap = classifyUsages(refUsages);
+            newLocation.insertNodes(nodesToMove);
+            for (IMapping<SReference, SNode> mapping : MapSequence.fromMap(usagesMap)) {
+              updateUsage(mapping.key(), mapping.value());
+            }
           }
-        }, searchResults, false, "Move nodes");
-
+        }, "Move nodes");
       }
     });
   }
 
-  public Set<SReference> findUsages(MPSProject project, List<SNode> node) {
-    return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(node).translate(new ITranslator2<SNode, SNode>() {
+  public Set<SReference> findUsages(MPSProject project, List<SNode> nodes) {
+    return FindUsagesFacade.getInstance().findUsages(project.getScope(), SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(nodes).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SNodeOperations.getNodeDescendants(it, null, true, new SAbstractConcept[]{});
       }
     })), new EmptyProgressMonitor());
   }
 
-  public SearchResults usagesToSearchResults(Collection<SNode> originalNodes, Map<SNode, List<SReference>> usages) {
-    SearchResults<SNode> searchResults = new SearchResults<SNode>();
-    searchResults.getSearchedNodes().addAll(originalNodes);
-    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(usages).keySet())) {
-      searchResults.getSearchResults().addAll(ListSequence.fromList(MapSequence.fromMap(usages).get(node)).select(new ISelector<SReference, SearchResult<SNode>>() {
-        public SearchResult<SNode> select(SReference it) {
-          return new SearchResult<SNode>(it.getSourceNode(), "");
-        }
-      }).toListSequence());
+  public Map<SReference, SNode> classifyUsages(Set<SReference> usages) {
+    Map<SReference, SNode> result = MapSequence.fromMap(new HashMap<SReference, SNode>());
+    for (SReference ref : SetSequence.fromSet(usages)) {
+      MapSequence.fromMap(result).put(ref, ref.getTargetNode());
     }
+    return result;
+  }
+
+  public SearchResults<SNode> nodesToRefactoringResult(Collection<SNode> searchedNodes, Iterable<SNode> usages, final String category) {
+    SearchResults<SNode> searchResults = new SearchResults<SNode>();
+    searchResults.getSearchedNodes().addAll(searchedNodes);
+    searchResults.getSearchResults().addAll(Sequence.fromIterable(usages).select(new ISelector<SNode, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(SNode it) {
+        return new SearchResult<SNode>(it, category);
+      }
+    }).toListSequence());
     return searchResults;
   }
 
-  public void updateUsages(Iterable<SReference> usages, final SNode newTarget) {
-    Sequence.fromIterable(usages).visitAll(new IVisitor<SReference>() {
-      public void visit(SReference it) {
-        it.getSourceNode().setReferenceTarget(it.getLink(), newTarget);
-      }
-    });
+
+  public void updateUsage(SReference usage, SNode newTarget) {
+    usage.getSourceNode().setReferenceTarget(usage.getLink(), newTarget);
   }
 
   private static boolean eq_92fyi8_a0a0a0a0a0a0a4a0a0a0a2a8(Object a, Object b) {

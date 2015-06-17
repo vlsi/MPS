@@ -54,7 +54,7 @@ public class MoveReferenceLinkUp extends MoveFeatureUp {
         ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6bL, "linkDeclaration"))).addElement(SNodeOperations.cast(link, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")));
         SReferenceLink newLink = MetaAdapterByDeclaration.getReferenceLink(link);
         for (SNode node : SetSequence.fromSet(instances)) {
-          RefactoringRuntime.refactorReferenceLinkInstances(node, oldLink, newLink);
+          RefactoringRuntime.changeReferenceLinkInstances(node, oldLink, newLink);
         }
       }
     };

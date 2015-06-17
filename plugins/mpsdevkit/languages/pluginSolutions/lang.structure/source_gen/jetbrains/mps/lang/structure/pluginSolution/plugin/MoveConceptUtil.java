@@ -43,14 +43,11 @@ public class MoveConceptUtil {
       }
     }).toListSequence();
   }
-  public static List<SNode> getConceptAspects(Iterable<SNode> concepts, SModel aspectModel) {
-    return getConceptsAspects(concepts, aspectModel);
-  }
   public static Map<LanguageAspect, List<SNode>> getAspectNodes(Language language, Iterable<SNode> nodes) {
     // map with aspects to roots solely attached to list of given nodes 
     Map<LanguageAspect, List<SNode>> aspectNodesMap = MapSequence.fromMap(new HashMap<LanguageAspect, List<SNode>>());
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      List<SNode> aspectNodes = MoveConceptUtil.getConceptAspects(nodes, aspect.get(language));
+      List<SNode> aspectNodes = MoveConceptUtil.getConceptsAspects(nodes, aspect.get(language));
       if (ListSequence.fromList(aspectNodes).isNotEmpty()) {
         MapSequence.fromMap(aspectNodesMap).put(aspect, aspectNodes);
       }
@@ -79,7 +76,7 @@ public class MoveConceptUtil {
       }
     }).distinct().select(new ISelector<SModel, SModuleReference>() {
       public SModuleReference select(SModel it) {
-        return check_ce40do_a0a0a0a0b0h(Language.getLanguageFor(it));
+        return check_ce40do_a0a0a0a0b0g(Language.getLanguageFor(it));
       }
     }).where(new IWhereFilter<SModuleReference>() {
       public boolean accept(SModuleReference it) {
@@ -129,7 +126,7 @@ public class MoveConceptUtil {
 
   public static void moveConcept(SNode oldConcept, SNode newConcept, SModel targetModel) {
 
-    AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_ce40do_a0b0m("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
+    AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_ce40do_a0b0l("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
 
 
     MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(Language.getLanguageFor(SNodeOperations.getModel(oldConcept)));
@@ -142,15 +139,15 @@ public class MoveConceptUtil {
   }
 
   private static SNode replaceExactInstances(SNode oldConcept, SNode newConcept, SNode moveOwnMembersMethod) {
-    SNode oldNode = _quotation_createNode_ce40do_a0a0o();
-    SNode newNode = _quotation_createNode_ce40do_a0b0o(newConcept);
-    SNode moveOwnMembersCall = (moveOwnMembersMethod == null ? null : _quotation_createNode_ce40do_a0a2a41(moveOwnMembersMethod, newNode));
-    return createTransformStatement_ce40do_a3a41(SNodeOperations.cast(HUtil.copyIfNecessary(_quotation_createNode_ce40do_a0a0b0a3a41(oldConcept)), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), Sequence.<SNode>singleton(oldNode), SNodeOperations.cast(HUtil.copyIfNecessary(_quotation_createNode_ce40do_a0a0b0c0a3a41(newNode, newNode, oldNode, oldNode, newNode, oldNode, oldNode, newNode, oldNode, moveOwnMembersCall, newNode)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList")));
+    SNode oldNode = _quotation_createNode_ce40do_a0a0n();
+    SNode newNode = _quotation_createNode_ce40do_a0b0n(newConcept);
+    SNode moveOwnMembersCall = (moveOwnMembersMethod == null ? null : _quotation_createNode_ce40do_a0a2a31(moveOwnMembersMethod, newNode));
+    return createTransformStatement_ce40do_a3a31(SNodeOperations.cast(HUtil.copyIfNecessary(_quotation_createNode_ce40do_a0a0b0a3a31(oldConcept)), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), Sequence.<SNode>singleton(oldNode), SNodeOperations.cast(HUtil.copyIfNecessary(_quotation_createNode_ce40do_a0a0b0c0a3a31(newNode, newNode, oldNode, oldNode, newNode, oldNode, oldNode, newNode, oldNode, moveOwnMembersCall, newNode)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList")));
   }
 
   private static SNode moveOwnMembers(final SNode oldConcept, final SNode newConcept) {
-    final SNode nodeToMigrate = _quotation_createNode_ce40do_a0a0q();
-    SNode result = _quotation_createNode_ce40do_a0b0q(ListSequence.fromList(SLinkOperations.getChildren(oldConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
+    final SNode nodeToMigrate = _quotation_createNode_ce40do_a0a0p();
+    SNode result = _quotation_createNode_ce40do_a0b0p(ListSequence.fromList(SLinkOperations.getChildren(oldConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode prop) {
         return SLinkOperations.getChildren(changeProperty(nodeToMigrate, prop, ListSequence.fromList(SLinkOperations.getChildren(newConcept, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0xf979c3ba6cL, "propertyDeclaration"))).getElement(SNodeOperations.getIndexInParent(prop))), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));
       }
@@ -179,30 +176,30 @@ public class MoveConceptUtil {
   }
 
   public static SNode changeProperty(SNode node, SNode oldProp, SNode newProp) {
-    return _quotation_createNode_ce40do_a0a81(node, SNodeOperations.getParent(newProp), newProp, node, SNodeOperations.getParent(oldProp), oldProp, node, SNodeOperations.getParent(oldProp), oldProp);
+    return _quotation_createNode_ce40do_a0a71(node, SNodeOperations.getParent(newProp), newProp, node, SNodeOperations.getParent(oldProp), oldProp, node, SNodeOperations.getParent(oldProp), oldProp);
   }
 
   public static SNode changeChild(SNode node, SNode oldLink, SNode newLink) {
-    return _quotation_createNode_ce40do_a0a02(node, node, SNodeOperations.getParent(newLink), newLink, node, SNodeOperations.getParent(oldLink), oldLink);
+    return _quotation_createNode_ce40do_a0a91(node, node, SNodeOperations.getParent(newLink), newLink, node, SNodeOperations.getParent(oldLink), oldLink);
   }
 
   public static SNode changeReference(SNode node, SNode oldLink, SNode newLink) {
-    return _quotation_createNode_ce40do_a0a22(node, SNodeOperations.getParent(newLink), newLink, node, SNodeOperations.getParent(oldLink), oldLink, node, SNodeOperations.getParent(oldLink), oldLink);
+    return _quotation_createNode_ce40do_a0a12(node, SNodeOperations.getParent(newLink), newLink, node, SNodeOperations.getParent(oldLink), oldLink, node, SNodeOperations.getParent(oldLink), oldLink);
   }
 
-  private static SModuleReference check_ce40do_a0a0a0a0b0h(Language checkedDotOperand) {
+  private static SModuleReference check_ce40do_a0a0a0a0b0g(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SNode createDeprecatedNodeAnnotation_ce40do_a0b0m(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_ce40do_a0b0l(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
     return n1;
   }
-  private static SNode _quotation_createNode_ce40do_a0a0o() {
+  private static SNode _quotation_createNode_ce40do_a0a0n() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -213,7 +210,7 @@ public class MoveConceptUtil {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ce40do_a0b0o(Object parameter_1) {
+  private static SNode _quotation_createNode_ce40do_a0b0n(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -234,7 +231,7 @@ public class MoveConceptUtil {
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), quotedNode_4);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ce40do_a0a2a41(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ce40do_a0a2a31(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -248,7 +245,7 @@ public class MoveConceptUtil {
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), quotedNode_4);
     return quotedNode_3;
   }
-  private static SNode createTransformStatement_ce40do_a3a41(Object p0, Object p1, Object p2) {
+  private static SNode createTransformStatement_ce40do_a3a31(Object p0, Object p1, Object p2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, "jetbrains.mps.lang.migration.structure.TransformStatement"), null, null, false);
     {
@@ -264,7 +261,7 @@ public class MoveConceptUtil {
     }
     return n1;
   }
-  private static SNode _quotation_createNode_ce40do_a0a0b0a3a41(Object parameter_1) {
+  private static SNode _quotation_createNode_ce40do_a0a0b0a3a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -303,7 +300,7 @@ public class MoveConceptUtil {
     quotedNode_10.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_3);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ce40do_a0a0b0c0a3a41(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11) {
+  private static SNode _quotation_createNode_ce40do_a0a0b0c0a3a31(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_12 = null;
     SNode quotedNode_13 = null;
@@ -524,7 +521,7 @@ public class MoveConceptUtil {
     quotedNode_72.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), quotedNode_20);
     return quotedNode_12;
   }
-  private static SNode _quotation_createNode_ce40do_a0a0q() {
+  private static SNode _quotation_createNode_ce40do_a0a0p() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -535,7 +532,7 @@ public class MoveConceptUtil {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ce40do_a0b0q(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+  private static SNode _quotation_createNode_ce40do_a0b0p(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
@@ -593,7 +590,7 @@ public class MoveConceptUtil {
     quotedNode_7.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), quotedNode_12);
     return quotedNode_7;
   }
-  private static SNode _quotation_createNode_ce40do_a0a81(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9) {
+  private static SNode _quotation_createNode_ce40do_a0a71(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_10 = null;
     SNode quotedNode_11 = null;
@@ -656,7 +653,7 @@ public class MoveConceptUtil {
     quotedNode_10.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"), quotedNode_12);
     return quotedNode_10;
   }
-  private static SNode _quotation_createNode_ce40do_a0a02(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7) {
+  private static SNode _quotation_createNode_ce40do_a0a91(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
@@ -755,7 +752,7 @@ public class MoveConceptUtil {
     quotedNode_33.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_18);
     return quotedNode_8;
   }
-  private static SNode _quotation_createNode_ce40do_a0a22(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9) {
+  private static SNode _quotation_createNode_ce40do_a0a12(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_10 = null;
     SNode quotedNode_11 = null;

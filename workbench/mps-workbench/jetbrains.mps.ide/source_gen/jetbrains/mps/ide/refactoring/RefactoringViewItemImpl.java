@@ -27,8 +27,10 @@ import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Container;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
+public abstract class RefactoringViewItemImpl implements RefactoringViewItem.RefactoringViewItemEx {
   private final Project myProject;
   private RefactoringViewAction myRefactoringViewAction;
   private SearchResults mySearchResults;
@@ -140,5 +142,8 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     public Component getDefaultComponent(Container aContainer) {
       return myDoRefactorButton;
     }
+  }
+  public List<SNodeReference> getIncludedResultNodes() {
+    return getUsagesView().getIncludedResultNodes();
   }
 }

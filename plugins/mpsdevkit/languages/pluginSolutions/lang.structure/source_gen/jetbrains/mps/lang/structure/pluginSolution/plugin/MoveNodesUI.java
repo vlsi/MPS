@@ -4,10 +4,12 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.refactoring.MoveUpDialog;
+import jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil;
 
 public interface MoveNodesUI {
 
@@ -21,7 +23,7 @@ public interface MoveNodesUI {
   public void showWarningDialog(MPSProject project, String text, String header);
   public SNode askTargetConcept(MPSProject project, SNode conceptFeature, String featureKind);
   public MoveNodesUI.WhetherWriteMigration askAboutMigration(MPSProject project);
-  public void showRefactoringViewAndRefactorSelected(MPSProject project, Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header);
+  public void showRefactoringViewAndRefactorSelected(MPSProject project, SearchResults<SNode> usagesToShow, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header);
 
 
   public static class MoveNodesUIImpl implements MoveNodesUI {
@@ -52,8 +54,8 @@ public interface MoveNodesUI {
           throw new IllegalStateException("showYesNoCancelDialog returned " + result);
       }
     }
-    public void showRefactoringViewAndRefactorSelected(MPSProject project, Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header) {
-      RefactoringViewUtil.refactor(project, nodes, toExecuteWithIncluded, header);
+    public void showRefactoringViewAndRefactorSelected(MPSProject project, SearchResults<SNode> usagesToShow, final _FunctionTypes._void_P1_E0<? super Set<SNode>> toExecuteWithIncluded, String header) {
+      RefactoringViewUtil.refactor(project, usagesToShow, toExecuteWithIncluded, header);
     }
 
   }
