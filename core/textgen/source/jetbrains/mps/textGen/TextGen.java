@@ -58,6 +58,10 @@ public class TextGen {
 
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
 
+  public static final Object COMPATIBILITY_USE_ATTRIBUTES = "use-attributes";
+
+  private static boolean ourEnabledNodeAttributes = true;
+
   // api
   public static TextGenerationResult generateText(SNode node) {
     return generateText(node, false, false, null);
@@ -97,6 +101,7 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
+    buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
@@ -143,6 +148,11 @@ public class TextGen {
       }
     }
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
+  }
+
+  @ToRemove(version = 3.3)
+  public static void enableNodeAttributes(boolean enable) {
+    ourEnabledNodeAttributes = enable;
   }
 
   private static void appendNodeText(TextGenBuffer buffer, SNode node) {

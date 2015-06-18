@@ -115,9 +115,6 @@ public final class TextGeneratorEngine {
     }
   }
 
-  /**
-   * FIXME shall be part of TextGenAspect, now it's primitive 'output file per root node'
-   */
   private List<TextUnit> breakdownToUnits(@NotNull SModel model) {
     Collection<TextGenAspectDescriptor> tgad = TextGenRegistry.getInstance().getAspects(model);
     ArrayList<TextUnit> rv = new ArrayList<TextUnit>();

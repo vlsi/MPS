@@ -28,6 +28,8 @@ import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.text.TextGeneratorEngine;
@@ -202,6 +204,8 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
                 }
               }
+              // XXX remove this code after 3.3. It's compatibility setting not to handle node attributes in textgen 
+              TextGen.enableNodeAttributes(GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen());
               final IMessageHandler messageHandler = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler();
               Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
@@ -411,6 +415,7 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
+              TextGen.enableNodeAttributes(GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen());
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler());
               try {
                 int modelsCount = Sequence.fromIterable(input).count();
