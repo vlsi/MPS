@@ -12,12 +12,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -59,18 +59,18 @@ public class MoveConcepts extends MoveNodesDefault {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = ListSequence.fromList(target).all(new IWhereFilter<SNode>() {
+        result.value = ListSequence.fromList(target).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) && SNodeOperations.getModel(it) == SNodeOperations.getModel(ListSequence.fromList(target).first());
+            return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
           }
         });
       }
     });
     return result.value;
   }
-  public void apply(final MPSProject project, List<SNode> target) {
-    final List<SNode> conceptsToMove = (List<SNode>) target;
-    final SModel sourceModel = SNodeOperations.getModel(ListSequence.fromList(conceptsToMove).first());
+  public void apply(final MPSProject project, final List<SNode> nodesToMove) {
+    final List<SNode> conceptsToMove = Sequence.fromIterable(SNodeOperations.ofConcept(nodesToMove, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).toListSequence();
+    final SModel sourceModel = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
     final Language sourceLanguage = Language.getLanguageFor(sourceModel);
 
     MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
@@ -113,7 +113,7 @@ public class MoveConcepts extends MoveNodesDefault {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        for (SNode concept : ListSequence.fromList(conceptsToMove)) {
+        for (SNode concept : ListSequence.fromList(nodesToMove)) {
           if (!(SNodeUtil.isAccessible(concept, project.getRepository()))) {
             return;
           }
@@ -139,8 +139,8 @@ public class MoveConcepts extends MoveNodesDefault {
           searchResults.addAll(nodesToRefactoringResult(conceptsToMove, aspectNodes, "concept aspect"));
 
 
-          final Set<SReference> refUsages = findUsages(project, ListSequence.fromList(conceptsToMove).concat(Sequence.fromIterable(aspectNodes)));
-          searchResults.addAll(nodesToRefactoringResult(conceptsToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
+          final Set<SReference> refUsages = findUsages(project, ListSequence.fromList(nodesToMove).concat(Sequence.fromIterable(aspectNodes)));
+          searchResults.addAll(nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
             public SNode select(SReference it) {
               return it.getSourceNode();
             }
