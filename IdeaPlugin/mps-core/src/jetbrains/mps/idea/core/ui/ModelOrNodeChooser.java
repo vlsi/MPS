@@ -31,6 +31,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation.NodeLocationChild;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation.NodeLocationRoot;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -48,13 +51,11 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementTargetChooser {
-  private Object myInitialValue;
   private Project myProject;
   private JComponent myComponent;
 
-  public ModelOrNodeChooser(Project project, Object initialValue) {
+  public ModelOrNodeChooser(Project project) {
     super(project);
-    myInitialValue = initialValue;
     myProject = project;
     myComponent = createComponent();
   }
@@ -130,13 +131,13 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   }
 
   @Override
-  public Object getSelectedObject() {
+  public NodeLocation getSelectedObject() {
     if ((getSelectedNode() != null) && (getSelectedNode().getUserObject() instanceof MPSPsiElementTreeNode)) {
-      return ((MPSPsiElementTreeNode) (getSelectedNode().getUserObject())).getValue().getSNodeReference().resolve(MPSModuleRepository.getInstance());
+      return new NodeLocationChild(((MPSPsiElementTreeNode) (getSelectedNode().getUserObject())).getValue().getSNodeReference().resolve(MPSModuleRepository.getInstance()));
     } else {
       Set<IFile> models = MPSDataKeys.MODEL_FILES.getData(this);
       if (models != null && models.size() == 1) {
-        return SModelFileTracker.getInstance().findModel(models.iterator().next());
+        return new NodeLocationRoot(SModelFileTracker.getInstance().findModel(models.iterator().next()));
       }
       // we could handle the case when we haven't got a model
       // perhaps, in plugin every directory (under module with MPS facet) should be transparently made into model
