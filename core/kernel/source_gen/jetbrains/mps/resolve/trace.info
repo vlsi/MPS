@@ -17,8 +17,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)/3671170675134061846">
     <file name="IResolver.java">
-      <node id="3671170675134103978" at="11,0,20,0" concept="6" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
-      <scope id="3671170675134103978" at="11,0,20,0">
+      <node id="3671170675134103978" at="19,0,20,0" concept="6" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
+      <scope id="3671170675134103978" at="19,0,20,0">
         <var name="reference" id="3671170675134103985" />
         <var name="repository" id="3671170675134103988" />
         <var name="sourceNode" id="3671170675134104082" />

@@ -50,12 +50,12 @@
       <node id="2283592493588086040" at="37,5,40,5" concept="3" />
       <node id="4484885613885012418" at="50,47,53,7" concept="4" />
       <node id="4484885613884972083" at="54,51,57,9" concept="3" />
+      <node id="2283592493587977671" at="71,0,74,0" concept="5" trace="getFlyingActions#()Ljava/util/Set;" />
       <node id="1031873601093433351" at="93,0,97,0" concept="9" trace="getAllFlyingActions#()Ljava/util/Set;" />
       <node id="4484885613884963101" at="53,7,58,7" concept="4" />
-      <node id="2283592493587977671" at="66,0,74,0" concept="5" trace="getFlyingActions#()Ljava/util/Set;" />
       <node id="4484885613884963047" at="48,22,59,5" concept="3" />
-      <node id="2283592493588134041" at="75,0,92,0" concept="9" trace="getMPSRootActionIds#()Ljava/util/Set;" />
-      <node id="2283592493588086014" at="24,0,43,0" concept="5" trace="getIdeaCoreActions#()Ljava/util/Set;" />
+      <node id="2283592493588134041" at="81,0,92,0" concept="9" trace="getMPSRootActionIds#()Ljava/util/Set;" />
+      <node id="2283592493588086014" at="30,0,43,0" concept="5" trace="getIdeaCoreActions#()Ljava/util/Set;" />
       <node id="1575175756409680469" at="44,0,65,0" concept="5" trace="findFlyingActions#()V" />
       <scope id="1575175756409680355" at="20,33,21,24" />
       <scope id="6926353569064033861" at="35,29,36,29" />
@@ -74,8 +74,8 @@
       <scope id="4484885613884972083" at="54,51,57,9">
         <var name="child" id="4484885613884972086" />
       </scope>
+      <scope id="2283592493587977671" at="71,0,74,0" />
       <scope id="1031873601093433351" at="93,0,97,0" />
-      <scope id="2283592493587977671" at="66,0,74,0" />
       <scope id="4484885613884963048" at="49,39,58,7" />
       <scope id="2283592493588134044" at="81,51,90,15">
         <var name="set" id="2283592493588119308" />
@@ -88,8 +88,8 @@
       <scope id="4484885613884963047" at="48,22,59,5">
         <var name="id" id="4484885613884963050" />
       </scope>
-      <scope id="2283592493588134041" at="75,0,92,0" />
-      <scope id="2283592493588086014" at="24,0,43,0" />
+      <scope id="2283592493588134041" at="81,0,92,0" />
+      <scope id="2283592493588086014" at="30,0,43,0" />
       <scope id="1575175756409680472" at="44,36,63,53">
         <var name="anAction" id="4484885613884963083" />
         <var name="childrenOrShortCutActionsSet" id="4484885613884963029" />

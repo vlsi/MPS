@@ -537,7 +537,7 @@
       <unit id="6531016554136912586" at="147,86,184,17" name="jetbrains.mps.ide.migration.MigrationTrigger$3" />
       <unit id="3527989988243441496" at="117,41,187,11" name="jetbrains.mps.ide.migration.MigrationTrigger$2" />
       <unit id="3754162703777747009" at="107,76,189,7" name="jetbrains.mps.ide.migration.MigrationTrigger$1" />
-      <unit id="6781485246382122239" at="58,0,433,0" name="jetbrains.mps.ide.migration.MigrationTrigger" />
+      <unit id="6781485246382122239" at="70,0,433,0" name="jetbrains.mps.ide.migration.MigrationTrigger" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)/6781485246382122828">

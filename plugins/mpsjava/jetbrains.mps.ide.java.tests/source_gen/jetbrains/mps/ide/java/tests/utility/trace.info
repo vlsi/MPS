@@ -671,11 +671,11 @@
       <node id="7030568040400429427" at="98,48,103,14" concept="4" />
       <node id="7303989191346963709" at="103,14,108,7" concept="4" />
       <node id="6528213125921253713" at="120,0,125,0" concept="12" trace="copyImportAttrs#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8083368042256398783" at="40,0,47,0" concept="12" trace="fixNonStatic#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7149447565294020025" at="57,0,64,0" concept="12" trace="removeExtendsObject#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2623182543841382813" at="111,52,118,5" concept="5" />
       <node id="7149447565294020318" at="72,67,81,132" concept="8" />
       <node id="2623182543840387799" at="111,0,120,0" concept="12" trace="removeSModelAttrs#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8083368042256398783" at="34,0,47,0" concept="12" trace="fixNonStatic#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7030568040400429275" at="97,0,111,0" concept="12" trace="sortNestedClass#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7149447565294020308" at="70,0,95,5" concept="5" />
       <node id="7149447565294020241" at="64,0,97,0" concept="12" trace="removeSourceLevelAnnotations#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -747,6 +747,9 @@
         <var name="from" id="6528213125921213763" />
         <var name="to" id="6528213125921213769" />
       </scope>
+      <scope id="8083368042256398783" at="40,0,47,0">
+        <var name="node" id="8083368042256398787" />
+      </scope>
       <scope id="7149447565294020025" at="57,0,64,0">
         <var name="node" id="7149447565294020029" />
       </scope>
@@ -759,9 +762,6 @@
       </scope>
       <scope id="7030568040400429278" at="97,50,109,232">
         <var name="nested" id="7030568040400429411" />
-      </scope>
-      <scope id="8083368042256398783" at="34,0,47,0">
-        <var name="node" id="8083368042256398787" />
       </scope>
       <scope id="7030568040400429275" at="97,0,111,0">
         <var name="node" id="7030568040400429279" />

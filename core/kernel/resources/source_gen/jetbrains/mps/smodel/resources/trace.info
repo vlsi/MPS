@@ -539,13 +539,13 @@
       <node id="3608835296802635779" at="36,0,39,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
       <node id="3608835296802635790" at="39,13,42,5" concept="7" />
       <node id="3608835296802640805" at="146,0,149,0" concept="8" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljetbrains/mps/make/resources/IResource;" />
+      <node id="7219626660275504881" at="26,0,30,0" concept="3" trace="ModelsToResources#(Ljetbrains/mps/smodel/IOperationContext;Ljava/lang/Iterable;)V" />
       <node id="3608835296802640729" at="61,27,65,23" concept="7" />
       <node id="3608835296802640733" at="68,27,72,23" concept="7" />
       <node id="3608835296802640753" at="75,27,79,23" concept="7" />
       <node id="3608835296802640755" at="82,28,86,23" concept="7" />
       <node id="3608835296802640790" at="89,28,93,23" concept="7" />
       <node id="3608835296802635773" at="34,69,39,13" concept="5" />
-      <node id="7219626660275504881" at="22,0,30,0" concept="3" trace="ModelsToResources#(Ljetbrains/mps/smodel/IOperationContext;Ljava/lang/Iterable;)V" />
       <node id="7219626660275509691" at="33,0,45,0" concept="8" trace="resources#(Z)Ljava/lang/Iterable;" />
       <node id="3608835296802640727" at="55,20,137,19" concept="13" />
       <node id="3608835296802640727" at="53,46,138,31" concept="4" />
@@ -597,15 +597,15 @@
       <scope id="3608835296802640805" at="146,0,149,0">
         <var name="r" id="3608835296802640805" />
       </scope>
+      <scope id="7219626660275504881" at="26,0,30,0">
+        <var name="context" id="3608835296802635842" />
+        <var name="models" id="7219626660275504885" />
+      </scope>
       <scope id="3608835296802640729" at="61,27,67,28" />
       <scope id="3608835296802640733" at="68,27,74,28" />
       <scope id="3608835296802640753" at="75,27,81,28" />
       <scope id="3608835296802640755" at="82,28,88,28" />
       <scope id="3608835296802640790" at="89,28,95,28" />
-      <scope id="7219626660275504881" at="22,0,30,0">
-        <var name="context" id="3608835296802635842" />
-        <var name="models" id="7219626660275504885" />
-      </scope>
       <scope id="7219626660275509694" at="33,59,43,33">
         <var name="smds" id="3608835296802635833" />
       </scope>
@@ -675,7 +675,7 @@
   </root>
   <root nodeRef="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)/8118537977657118022">
     <file name="CleanupActivityResource.java">
-      <unit id="8118537977657118022" at="7,0,14,0" name="jetbrains.mps.smodel.resources.CleanupActivityResource" />
+      <unit id="8118537977657118022" at="12,0,14,0" name="jetbrains.mps.smodel.resources.CleanupActivityResource" />
     </file>
   </root>
 </debug-info>

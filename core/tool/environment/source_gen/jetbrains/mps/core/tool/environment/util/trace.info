@@ -403,6 +403,7 @@
       <node id="4774692914340656762" at="363,5,364,135" concept="12" />
       <node id="6329919100248817617" at="367,56,368,62" concept="12" />
       <node id="6329919100248803356" at="371,43,372,61" concept="12" />
+      <node id="4774692914340655531" at="31,0,33,0" concept="15" trace="PROPERTIES_FILE" />
       <node id="4774692914340655536" at="33,0,35,0" concept="15" trace="PROPERTY_SYSTEM_PATH" />
       <node id="4774692914340655541" at="35,0,37,0" concept="15" trace="PROPERTY_CONFIG_PATH" />
       <node id="4774692914340655546" at="37,0,39,0" concept="15" trace="PROPERTY_PLUGINS_PATH" />
@@ -460,7 +461,6 @@
       <node id="4774692914340656469" at="291,0,295,0" concept="16" trace="getDefaultOptionsFile#()Ljava/io/File;" />
       <node id="4774692914340656629" at="331,0,335,0" concept="16" trace="substituteVars#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="4774692914340656724" at="354,0,358,0" concept="16" trace="getPluginTempPath#()Ljava/lang/String;" />
-      <node id="4774692914340655531" at="28,0,33,0" concept="15" trace="PROPERTIES_FILE" />
       <node id="4774692914340655937" at="141,5,146,5" concept="9" />
       <node id="4774692914340656041" at="178,5,183,5" concept="9" />
       <node id="4774692914340656140" at="210,45,215,7" concept="9" />
@@ -486,8 +486,8 @@
       <node id="4774692914340656165" at="220,0,230,0" concept="16" trace="getLogPath#()Ljava/lang/String;" />
       <node id="4774692914340656339" at="270,10,280,5" concept="9" />
       <node id="4774692914340656030" at="175,0,186,0" concept="16" trace="getConfigPathWithoutDialog#()Ljava/lang/String;" />
+      <node id="4774692914340656250" at="239,0,250,0" concept="16" trace="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="4774692914340655730" at="101,113,114,7" concept="9" />
-      <node id="4774692914340656250" at="236,0,250,0" concept="16" trace="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="4774692914340655708" at="99,10,115,5" concept="1" />
       <node id="4774692914340655926" at="138,0,155,0" concept="16" trace="getSystemPath#()Ljava/lang/String;" />
       <node id="4774692914340656643" at="336,0,353,0" concept="16" trace="substituteVars#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
@@ -497,7 +497,7 @@
       <node id="4774692914340656501" at="297,265,328,5" concept="9" />
       <node id="4774692914340655692" at="93,0,125,0" concept="16" trace="getHomePath#()Ljava/lang/String;" />
       <node id="4774692914340656481" at="296,0,330,0" concept="16" trace="loadProperties#()V" />
-      <node id="4774692914340656294" at="251,0,290,0" concept="16" trace="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4774692914340656294" at="254,0,290,0" concept="16" trace="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="4774692914340655691" at="90,24,90,24" />
       <scope id="4774692914340656108" at="203,0,203,35">
         <var name="ignored" id="4774692914340656110" />
@@ -663,7 +663,7 @@
         <var name="root" id="4774692914340655736" />
       </scope>
       <scope id="4774692914340656030" at="175,0,186,0" />
-      <scope id="4774692914340656250" at="236,0,250,0">
+      <scope id="4774692914340656250" at="239,0,250,0">
         <var name="context" id="4774692914340656253" />
         <var name="path" id="4774692914340656255" />
       </scope>
@@ -700,7 +700,7 @@
         <var name="resultPath" id="4774692914340656331" />
       </scope>
       <scope id="4774692914340656481" at="296,0,330,0" />
-      <scope id="4774692914340656294" at="251,0,290,0">
+      <scope id="4774692914340656294" at="254,0,290,0">
         <var name="resourcePath" id="4774692914340656299" />
         <var name="resourceURL" id="4774692914340656297" />
       </scope>

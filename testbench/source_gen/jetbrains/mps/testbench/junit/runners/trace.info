@@ -281,7 +281,7 @@
       <scope id="6450649963068983469" at="32,0,43,0">
         <var name="emptyProject" id="3021026760600020144" />
       </scope>
-      <unit id="6450649963068241995" at="17,0,49,0" name="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" />
+      <unit id="6450649963068241995" at="20,0,49,0" name="jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy" />
     </file>
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/6450649963068242592">
@@ -629,7 +629,7 @@
         <var name="testClass" id="2105519997959978538" />
       </scope>
       <unit id="935017990628671534" at="79,0,123,0" name="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner$TestClassRunnerForParameters" />
-      <unit id="935017990628671531" at="23,0,124,0" name="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" />
+      <unit id="935017990628671531" at="26,0,124,0" name="jetbrains.mps.testbench.junit.runners.TeamCityParameterizedRunner" />
     </file>
   </root>
 </debug-info>

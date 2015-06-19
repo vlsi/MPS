@@ -256,7 +256,7 @@
       <unit id="3751911615136892132" at="68,70,72,5" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$3" />
       <unit id="4653713283496888357" at="84,91,88,5" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$4" />
       <unit id="9200516641176985787" at="135,0,147,0" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap$MyCounterMapHandler" />
-      <unit id="3751911615136891847" at="22,0,155,0" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
+      <unit id="3751911615136891847" at="28,0,155,0" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
     </file>
   </root>
   <root nodeRef="r:0fdcfe58-6a3e-4b7d-bea2-685e5d104fd0(jetbrains.mps.vcs.changesmanager.tree)/3751911615136892572">
@@ -786,7 +786,7 @@
       <node id="5463596285346617786" at="182,0,205,0" concept="8" trace="compute#()Ljetbrains/mps/ide/ui/tree/TreeMessage;" />
       <node id="5463596285346575894" at="180,0,205,6" concept="9" />
       <node id="8308671070660562599" at="233,0,262,0" concept="8" trace="rehighlightFeatureAndDescendants#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-      <node id="4653713283496925998" at="173,0,213,0" concept="8" trace="rehighlightNode#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+      <node id="4653713283496925998" at="178,0,213,0" concept="8" trace="rehighlightNode#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
       <scope id="9200516641177032553" at="337,33,337,33" />
       <scope id="9200516641177032564" at="348,65,348,65" />
       <scope id="9200516641177032599" at="356,41,356,41" />
@@ -1062,7 +1062,7 @@
         <var name="cr" id="5463596285346575895" />
         <var name="message" id="5463596285346705484" />
       </scope>
-      <scope id="4653713283496925998" at="173,0,213,0">
+      <scope id="4653713283496925998" at="178,0,213,0">
         <var name="feature" id="4653713283496926005" />
         <var name="node" id="4653713283496926003" />
       </scope>
@@ -1077,7 +1077,7 @@
       <unit id="17187394613279095" at="363,0,379,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFileStatusListener" />
       <unit id="9200516641177032548" at="336,0,355,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyTreeNodeListener" />
       <unit id="5463596285346617784" at="181,50,205,5" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$3" />
-      <unit id="2105471615617473962" at="380,0,408,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyModelDisposeListener" />
+      <unit id="2105471615617473962" at="383,0,408,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyModelDisposeListener" />
       <unit id="9112654717583022094" at="409,0,446,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$FeaturesHolder" />
       <unit id="9200516641177001205" at="61,0,448,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" />
     </file>

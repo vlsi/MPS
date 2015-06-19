@@ -25,10 +25,10 @@
       <node id="9143630131837001707" at="49,27,50,32" concept="1" />
       <node id="6705512905417285731" at="48,218,51,7" concept="3" />
       <node id="9122198050634046349" at="22,0,26,0" concept="0" trace="GenerateFacetInitializer#(Ljetbrains/mps/make/MakeSession;)V" />
+      <node id="9122198050634860070" at="33,0,37,0" concept="4" trace="cleanMake#(Z)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
       <node id="6705512905417199665" at="37,0,41,0" concept="4" trace="setGenerationOptions#(Ljetbrains/mps/generator/GenerationOptions/OptionsBuilder;)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
       <node id="878521226301293368" at="42,178,46,5" concept="3" />
       <node id="6705512905417252853" at="46,5,52,5" concept="3" />
-      <node id="9122198050634860070" at="26,0,37,0" concept="4" trace="cleanMake#(Z)Ljetbrains/mps/internal/make/cfg/GenerateFacetInitializer;" />
       <node id="9122198050634046384" at="41,0,54,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
       <scope id="6705512905417285734" at="49,27,50,32" />
       <scope id="9122198050634046352" at="22,60,24,44" />
@@ -38,14 +38,14 @@
       <scope id="9122198050634046349" at="22,0,26,0">
         <var name="makeSession" id="9122198050634088692" />
       </scope>
+      <scope id="9122198050634860070" at="33,0,37,0">
+        <var name="cleanMake" id="9122198050634862071" />
+      </scope>
       <scope id="6705512905417199665" at="37,0,41,0">
         <var name="optionsBuilder" id="6705512905417199675" />
       </scope>
       <scope id="6705512905417252856" at="47,31,51,7">
         <var name="params" id="9143630131837001692" />
-      </scope>
-      <scope id="9122198050634860070" at="26,0,37,0">
-        <var name="cleanMake" id="9122198050634862071" />
       </scope>
       <scope id="9122198050634046390" at="41,47,52,5">
         <var name="vars" id="878521226301293351" />
@@ -53,7 +53,7 @@
       <scope id="9122198050634046384" at="41,0,54,0">
         <var name="ppool" id="9122198050634057965" />
       </scope>
-      <unit id="9122198050634039886" at="11,0,55,0" name="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
+      <unit id="9122198050634039886" at="18,0,55,0" name="jetbrains.mps.internal.make.cfg.GenerateFacetInitializer" />
     </file>
   </root>
   <root nodeRef="r:b828a96a-5bfa-4f8d-b09f-82ef58c36196(jetbrains.mps.internal.make.cfg)/9122198050634442574">

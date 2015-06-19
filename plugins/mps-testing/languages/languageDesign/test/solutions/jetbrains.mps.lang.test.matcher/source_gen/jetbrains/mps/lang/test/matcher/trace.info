@@ -205,24 +205,24 @@
       <node id="5558461639824824921" at="225,7,228,7" concept="7" />
       <node id="5558461639824824932" at="228,7,231,7" concept="7" />
       <node id="8984393347190227558" at="21,0,25,0" concept="1" trace="NodesMatcher#()V" />
+      <node id="8984393347190227615" at="58,0,62,0" concept="13" trace="matchNodes#(Ljava/util/List;Ljava/util/List;)Ljava/util/ArrayList;" />
+      <node id="8984393347190227852" at="128,0,132,0" concept="13" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
       <node id="8984393347190227928" at="133,89,137,5" concept="7" />
       <node id="5558461639824796231" at="166,12,170,7" concept="0" />
       <node id="7855208177632563997" at="175,20,179,5" concept="14" />
       <node id="5558461639824776273" at="195,54,199,7" concept="7" />
       <node id="8984393347190227601" at="47,72,52,5" concept="7" />
       <node id="8984393347190227704" at="70,29,76,5" concept="14" />
+      <node id="8984393347190227640" at="83,0,89,0" concept="13" trace="matchNodes#(Ljava/util/List;Ljava/util/List;Ljava/util/Map;)Ljava/util/ArrayList;" />
       <node id="5558461639824776305" at="202,65,208,7" concept="14" />
       <node id="5558461639825006858" at="30,0,37,0" concept="8" trace="getMap#()Ljava/util/Map;" />
       <node id="5558461639824670676" at="100,5,107,5" concept="6" />
       <node id="5558461639824872565" at="133,0,140,0" concept="8" trace="matchConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/ArrayList;)Z" />
-      <node id="8984393347190227615" at="54,0,62,0" concept="13" trace="matchNodes#(Ljava/util/List;Ljava/util/List;)Ljava/util/ArrayList;" />
-      <node id="8984393347190227852" at="124,0,132,0" concept="13" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
       <node id="7855208177632559881" at="174,0,182,0" concept="13" trace="countElements#(Ljava/util/Iterator;)I" />
       <node id="5558461639824796226" at="161,0,170,7" concept="7" />
-      <node id="8984393347190227640" at="79,0,89,0" concept="13" trace="matchNodes#(Ljava/util/List;Ljava/util/List;Ljava/util/Map;)Ljava/util/ArrayList;" />
+      <node id="8984393347190227562" at="42,0,54,0" concept="13" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
       <node id="5558461639824735010" at="111,0,124,0" concept="8" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
       <node id="5558461639824824891" at="219,5,232,5" concept="6" />
-      <node id="8984393347190227562" at="38,0,54,0" concept="13" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
       <node id="5558461639824884560" at="62,0,79,0" concept="8" trace="match#(Ljava/util/List;Ljava/util/List;)Ljava/util/List;" />
       <node id="5558461639824776236" at="190,5,209,5" concept="6" />
       <node id="5558461639824670616" at="90,0,110,0" concept="8" trace="populateMap#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -295,8 +295,17 @@
         <var name="p" id="5558461639824824886" />
       </scope>
       <scope id="8984393347190227558" at="21,0,25,0" />
+      <scope id="8984393347190227615" at="58,0,62,0">
+        <var name="a" id="8984393347190227619" />
+        <var name="b" id="8984393347190227622" />
+      </scope>
       <scope id="8984393347190227712" at="71,56,75,7">
         <var name="diff" id="8984393347190227714" />
+      </scope>
+      <scope id="8984393347190227852" at="128,0,132,0">
+        <var name="a" id="8984393347190227855" />
+        <var name="b" id="8984393347190227857" />
+        <var name="map" id="8984393347190227859" />
       </scope>
       <scope id="5558461639824776306" at="203,58,207,9">
         <var name="d" id="5558461639824776308" />
@@ -307,6 +316,11 @@
         <var name="iterator2" id="5558461639824670693" />
       </scope>
       <scope id="8984393347190227927" at="133,89,138,17" />
+      <scope id="8984393347190227640" at="83,0,89,0">
+        <var name="a" id="8984393347190227644" />
+        <var name="b" id="8984393347190227647" />
+        <var name="map" id="8984393347190227650" />
+      </scope>
       <scope id="7855208177632559884" at="174,52,180,19">
         <var name="counter" id="7855208177632564307" />
       </scope>
@@ -319,15 +333,6 @@
         <var name="b" id="8984393347190227922" />
         <var name="difference" id="8984393347190227924" />
       </scope>
-      <scope id="8984393347190227615" at="54,0,62,0">
-        <var name="a" id="8984393347190227619" />
-        <var name="b" id="8984393347190227622" />
-      </scope>
-      <scope id="8984393347190227852" at="124,0,132,0">
-        <var name="a" id="8984393347190227855" />
-        <var name="b" id="8984393347190227857" />
-        <var name="map" id="8984393347190227859" />
-      </scope>
       <scope id="7855208177632559881" at="174,0,182,0">
         <var name="it" id="7855208177632563768" />
       </scope>
@@ -336,17 +341,16 @@
         <var name="bList" id="8984393347190227583" />
         <var name="diffs" id="5558461639824958938" />
       </scope>
-      <scope id="8984393347190227640" at="79,0,89,0">
-        <var name="a" id="8984393347190227644" />
-        <var name="b" id="8984393347190227647" />
-        <var name="map" id="8984393347190227650" />
-      </scope>
       <scope id="5558461639824735022" at="111,49,122,16">
         <var name="difference" id="8984393347190227865" />
       </scope>
       <scope id="5558461639824824895" at="220,38,231,7">
         <var name="p1" id="5558461639824824897" />
         <var name="p2" id="5558461639824824904" />
+      </scope>
+      <scope id="8984393347190227562" at="42,0,54,0">
+        <var name="a" id="8984393347190227565" />
+        <var name="b" id="8984393347190227567" />
       </scope>
       <scope id="5558461639824735010" at="111,0,124,0">
         <var name="a" id="5558461639824735012" />
@@ -359,10 +363,6 @@
         <var name="iteratorA" id="8984393347190227656" />
         <var name="iteratorB" id="8984393347190227663" />
         <var name="ret" id="8984393347190227688" />
-      </scope>
-      <scope id="8984393347190227562" at="38,0,54,0">
-        <var name="a" id="8984393347190227565" />
-        <var name="b" id="8984393347190227567" />
       </scope>
       <scope id="5558461639824884560" at="62,0,79,0">
         <var name="a" id="5558461639824895180" />

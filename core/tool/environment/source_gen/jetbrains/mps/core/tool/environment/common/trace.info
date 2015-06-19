@@ -354,12 +354,12 @@
       <node id="5198178184416574954" at="88,127,96,7" concept="10" />
       <node id="5198178184416575010" at="103,145,111,7" concept="9" />
       <node id="5198178184416574843" at="50,32,59,9" concept="15" />
+      <node id="5198178184416574882" at="74,0,83,0" concept="13" trace="cacheOrGet#(Ljava/util/concurrent/ConcurrentMap;nullnull)null" />
       <node id="5198178184416574838" at="49,7,60,7" concept="6" />
       <node id="5198178184416574945" at="87,0,98,0" concept="13" trace="newSingleThreadExecutor#(Ljava/lang/String;I)Ljava/util/concurrent/ThreadPoolExecutor;" />
-      <node id="5198178184416574882" at="71,0,83,0" concept="13" trace="cacheOrGet#(Ljava/util/concurrent/ConcurrentMap;nullnull)null" />
       <node id="5198178184416575001" at="102,0,116,0" concept="13" trace="newSingleScheduledThreadExecutor#(Ljava/lang/String;I)Ljava/util/concurrent/ScheduledThreadPoolExecutor;" />
       <node id="5198178184416574788" at="40,25,68,5" concept="16" />
-      <node id="5198178184416574741" at="28,0,71,0" concept="13" trace="invokeAll#(Ljava/util/Collection;Ljava/util/concurrent/ExecutorService;)Ljava/util/List;" />
+      <node id="5198178184416574741" at="32,0,71,0" concept="13" trace="invokeAll#(Ljava/util/Collection;Ljava/util/concurrent/ExecutorService;)Ljava/util/List;" />
       <scope id="5198178184416574740" at="26,28,26,28" />
       <scope id="5198178184416574844" at="53,0,53,48">
         <var name="ignore" id="5198178184416574846" />
@@ -422,6 +422,11 @@
       </scope>
       <scope id="5198178184416574953" at="88,127,96,7" />
       <scope id="5198178184416574842" at="50,32,59,9" />
+      <scope id="5198178184416574882" at="74,0,83,0">
+        <var name="defaultValue" id="5198178184416574895" />
+        <var name="key" id="5198178184416574892" />
+        <var name="map" id="5198178184416574887" />
+      </scope>
       <scope id="5198178184416574838" at="49,7,60,7">
         <var name="f" id="5198178184416574840" />
       </scope>
@@ -432,11 +437,6 @@
       <scope id="5198178184416575009" at="103,145,114,20">
         <var name="executor" id="5198178184416575011" />
       </scope>
-      <scope id="5198178184416574882" at="71,0,83,0">
-        <var name="defaultValue" id="5198178184416574895" />
-        <var name="key" id="5198178184416574892" />
-        <var name="map" id="5198178184416574887" />
-      </scope>
       <scope id="5198178184416575001" at="102,0,116,0">
         <var name="threadFactoryName" id="5198178184416575004" />
         <var name="threadPriority" id="5198178184416575007" />
@@ -446,13 +446,13 @@
         <var name="done" id="5198178184416574785" />
         <var name="futures" id="5198178184416574773" />
       </scope>
-      <scope id="5198178184416574741" at="28,0,71,0">
+      <scope id="5198178184416574741" at="32,0,71,0">
         <var name="executorService" id="5198178184416574752" />
         <var name="tasks" id="5198178184416574747" />
       </scope>
       <unit id="5198178184416574966" at="89,108,96,5" name="jetbrains.mps.core.tool.environment.common.ConcurrencyUtil$1" />
       <unit id="5198178184416575018" at="104,82,111,5" name="jetbrains.mps.core.tool.environment.common.ConcurrencyUtil$2" />
-      <unit id="5198178184416574735" at="22,0,117,0" name="jetbrains.mps.core.tool.environment.common.ConcurrencyUtil" />
+      <unit id="5198178184416574735" at="25,0,117,0" name="jetbrains.mps.core.tool.environment.common.ConcurrencyUtil" />
     </file>
   </root>
   <root nodeRef="r:58ba176b-8a52-400c-bf27-725996471cb9(jetbrains.mps.core.tool.environment.common)/8638838189258387911">
@@ -484,6 +484,11 @@
       <node id="8638838189258388105" at="32,0,33,0" concept="12" trace="is32Bit" />
       <node id="8638838189258388116" at="33,0,34,0" concept="12" trace="is64Bit" />
       <node id="8638838189258388121" at="34,0,35,0" concept="12" trace="isAMD64" />
+      <node id="8638838189258388128" at="40,0,41,0" concept="12" trace="isMacOSTiger" />
+      <node id="8638838189258388139" at="46,0,47,0" concept="12" trace="isIntelMac" />
+      <node id="8638838189258388150" at="52,0,53,0" concept="12" trace="isMacOSLeopard" />
+      <node id="8638838189258388161" at="58,0,59,0" concept="12" trace="isMacOSSnowLeopard" />
+      <node id="8638838189258388172" at="63,0,64,0" concept="12" trace="X11PasteEnabledSystem" />
       <node id="8638838189258388192" at="66,36,67,216" concept="10" />
       <node id="8638838189258388222" at="69,39,70,65" concept="10" />
       <node id="8638838189258388233" at="72,38,73,99" concept="10" />
@@ -495,11 +500,6 @@
       <node id="8638838189258388229" at="72,0,75,0" concept="13" trace="isLeopard#()Z" />
       <node id="8638838189258388243" at="75,0,78,0" concept="13" trace="isSnowLeopard#()Z" />
       <node id="8638838189258388257" at="78,0,81,0" concept="13" trace="isJavaVersionAtLeast#(Ljava/lang/String;)Z" />
-      <node id="8638838189258388172" at="59,0,64,0" concept="12" trace="X11PasteEnabledSystem" />
-      <node id="8638838189258388128" at="35,0,41,0" concept="12" trace="isMacOSTiger" />
-      <node id="8638838189258388139" at="41,0,47,0" concept="12" trace="isIntelMac" />
-      <node id="8638838189258388150" at="47,0,53,0" concept="12" trace="isMacOSLeopard" />
-      <node id="8638838189258388161" at="53,0,59,0" concept="12" trace="isMacOSSnowLeopard" />
       <scope id="8638838189258388187" at="64,23,64,23" />
       <scope id="8638838189258388191" at="66,36,67,216" />
       <scope id="8638838189258388221" at="69,39,70,65" />

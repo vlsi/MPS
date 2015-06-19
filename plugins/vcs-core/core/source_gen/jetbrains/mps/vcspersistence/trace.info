@@ -532,7 +532,7 @@
         <var name="uri" id="5317173964874516754" />
       </scope>
       <unit id="5317173964874516734" at="279,0,324,0" name="jetbrains.mps.vcspersistence.VCSPersistenceSupport$MyDescriptorHandler" />
-      <unit id="5317173964874516731" at="53,0,325,0" name="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
+      <unit id="5317173964874516731" at="72,0,325,0" name="jetbrains.mps.vcspersistence.VCSPersistenceSupport" />
     </file>
   </root>
 </debug-info>

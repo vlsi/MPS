@@ -66,7 +66,7 @@
         <var name="sourceNode" id="3368017140643570617" />
         <var name="substituteInfo" id="2479108860611089562" />
       </scope>
-      <unit id="3368017140643570595" at="25,0,66,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
+      <unit id="3368017140643570595" at="28,0,66,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory" />
     </file>
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/4391314372875337327">
@@ -132,7 +132,7 @@
       </scope>
       <scope id="4391314372875424931" at="36,0,68,0" />
       <unit id="4391314372875510220" at="41,52,63,7" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
-      <unit id="4391314372875337327" at="22,0,69,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
+      <unit id="4391314372875337327" at="26,0,69,0" name="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
     </file>
   </root>
   <root nodeRef="r:e7d06f33-351b-4c9c-b848-ef96eff562e1(jetbrains.mps.editor.runtime.impl.cellMenu)/7279038390441828524">

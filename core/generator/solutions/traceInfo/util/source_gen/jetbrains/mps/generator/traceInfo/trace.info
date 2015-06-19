@@ -197,7 +197,7 @@
       <node id="4316047718124481694" at="136,35,192,9" concept="4" />
       <node id="24227610116395021" at="127,0,195,0" concept="6" trace="invoke#(Ljetbrains/mps/textgen/trace/DebugInfo;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7327404875649016967" at="125,105,195,7" concept="8" />
-      <node id="24227610116394271" at="116,0,197,0" concept="10" trace="getJavaNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="24227610116394271" at="124,0,197,0" concept="10" trace="getJavaNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="7521671656020565372" at="38,26,38,26" />
       <scope id="7921341742263216052" at="43,23,44,18" />
       <scope id="122630311409073468" at="52,23,53,18" />
@@ -490,7 +490,7 @@
         <var name="modelDescriptor" id="24227610116395021" />
       </scope>
       <scope id="24227610116394274" at="125,105,195,7" />
-      <scope id="24227610116394271" at="116,0,197,0">
+      <scope id="24227610116394271" at="124,0,197,0">
         <var name="fileName" id="24227610116394288" />
         <var name="lineNumber" id="24227610116394292" />
         <var name="unitName" id="24227610116394279" />

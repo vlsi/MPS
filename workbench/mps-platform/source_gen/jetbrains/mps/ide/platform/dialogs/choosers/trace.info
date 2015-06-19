@@ -1062,7 +1062,7 @@
       <unit id="121110127371512985" at="658,0,702,0" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructurePopupFilter" />
       <unit id="121110127371513691" at="829,0,875,0" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$FileStructureTree" />
       <unit id="121110127371513137" at="702,0,829,0" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup$MyTreeSpeedSearch" />
-      <unit id="121110127371512982" at="111,0,876,0" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
+      <unit id="121110127371512982" at="115,0,876,0" name="jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup" />
     </file>
   </root>
   <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/121110127371584518">
@@ -1117,7 +1117,7 @@
       <scope id="121110127371584547" at="24,0,40,0">
         <var name="name" id="121110127371584550" />
       </scope>
-      <unit id="121110127371584518" at="12,0,48,0" name="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
+      <unit id="121110127371584518" at="15,0,48,0" name="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" />
     </file>
   </root>
   <root nodeRef="r:bfb6ca7e-5411-4ee0-a5c0-1edd33370efd(jetbrains.mps.ide.platform.dialogs.choosers)/397101727194120959">
