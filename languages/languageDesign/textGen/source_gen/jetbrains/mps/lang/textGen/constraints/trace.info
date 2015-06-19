@@ -18,7 +18,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.lang.textGen.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,35,0" name="jetbrains.mps.lang.textGen.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)/1233750346381">
@@ -306,6 +306,52 @@
       <scope id="7166719696753421208" at="20,0,47,0" />
       <unit id="7166719696753421208" at="23,129,44,5" name="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints$1" />
       <unit id="7166719696753421208" at="16,0,54,0" name="jetbrains.mps.lang.textGen.constraints.EncodingLiteral_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)/782616555020524024">
+    <file name="AttributedNodePart_Constraints.java">
+      <node id="782616555020524024" at="19,43,20,98" concept="13" />
+      <node id="782616555020524024" at="23,43,24,16" concept="9" />
+      <node id="782616555020524024" at="27,200,28,96" concept="8" />
+      <node id="782616555020524024" at="28,96,29,0" concept="10" />
+      <node id="782616555020524024" at="30,51,31,67" concept="3" />
+      <node id="782616555020524024" at="32,5,33,0" concept="10" />
+      <node id="782616555020524024" at="33,0,34,18" concept="9" />
+      <node id="782616555020552350" at="36,148,37,230" concept="8" />
+      <node id="782616555020524345" at="37,230,38,481" concept="9" />
+      <node id="782616555020524024" at="40,0,41,0" concept="11" trace="canBeChildBreakingPoint" />
+      <node id="782616555020524024" at="19,0,22,0" concept="2" trace="AttributedNodePart_Constraints#()V" />
+      <node id="782616555020524024" at="29,0,32,5" concept="6" />
+      <node id="782616555020524024" at="22,0,26,0" concept="7" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="782616555020524024" at="36,0,40,0" concept="12" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="782616555020524024" at="26,0,36,0" concept="7" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="782616555020524024" at="19,43,20,98" />
+      <scope id="782616555020524024" at="23,43,24,16" />
+      <scope id="782616555020524024" at="30,51,31,67" />
+      <scope id="782616555020524026" at="36,148,38,481">
+        <var name="ctgd" id="782616555020552351" />
+      </scope>
+      <scope id="782616555020524024" at="19,0,22,0" />
+      <scope id="782616555020524024" at="22,0,26,0" />
+      <scope id="782616555020524024" at="36,0,40,0">
+        <var name="childConcept" id="782616555020524024" />
+        <var name="link" id="782616555020524024" />
+        <var name="node" id="782616555020524024" />
+        <var name="operationContext" id="782616555020524024" />
+        <var name="parentNode" id="782616555020524024" />
+      </scope>
+      <scope id="782616555020524024" at="27,200,34,18">
+        <var name="result" id="782616555020524024" />
+      </scope>
+      <scope id="782616555020524024" at="26,0,36,0">
+        <var name="checkingNodeContext" id="782616555020524024" />
+        <var name="childConcept" id="782616555020524024" />
+        <var name="link" id="782616555020524024" />
+        <var name="node" id="782616555020524024" />
+        <var name="operationContext" id="782616555020524024" />
+        <var name="parentNode" id="782616555020524024" />
+      </scope>
+      <unit id="782616555020524024" at="18,0,42,0" name="jetbrains.mps.lang.textGen.constraints.AttributedNodePart_Constraints" />
     </file>
   </root>
 </debug-info>
