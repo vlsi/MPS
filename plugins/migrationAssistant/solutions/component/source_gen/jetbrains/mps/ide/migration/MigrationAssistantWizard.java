@@ -51,4 +51,9 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       }
     });
   }
+
+  @Override
+  protected String getHelpID() {
+    return "migration.assistant";
+  }
 }
