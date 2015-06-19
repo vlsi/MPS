@@ -144,6 +144,20 @@ public class MoveConceptUtil {
     return _quotation_createNode_ce40do_a01a8(builder.getExecuteMethodModuleParameter(), moveConceptMemberInstancesStatements);
   }
 
+  public static void setExtendsDependencies(Iterable<SNode> conceptsToMove, SModel sourceModel, Language sourceLanguage, Language targetLanguage) {
+    Iterable<SNode> conceptsToRest = ListSequence.fromList(SModelOperations.roots(sourceModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).subtract(Sequence.fromIterable(conceptsToMove));
+    if (Sequence.fromIterable(conceptsToRest).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
+      }
+    }).intersect(Sequence.fromIterable(conceptsToMove)).isNotEmpty()) {
+      sourceLanguage.addExtendedLanguage(targetLanguage.getModuleReference());
+    }
+    for (SModuleReference ext : ListSequence.fromList(MoveConceptUtil.calculateExtendsDependencies(conceptsToMove))) {
+      targetLanguage.addExtendedLanguage(ext);
+    }
+  }
+
   private static SModuleReference check_ce40do_a0a0a0a0b0g(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();

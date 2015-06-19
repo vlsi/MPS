@@ -23,33 +23,30 @@ import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.project.GlobalScope;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.structure.plugin.RefactoringRuntime;
+import jetbrains.mps.ide.platform.actions.core.RefactoringViewUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -134,75 +131,64 @@ public class MoveConcepts extends MoveNodesDefault {
 
         final Map<LanguageAspect, List<SNode>> aspectsMap = MoveConceptUtil.getAspectNodes(sourceLanguage, conceptsToMove);
 
+        SearchResults<SNode> searchResults = new SearchResults<SNode>();
+
+        Iterable<SNode> aspectNodes = MapSequence.fromMap(aspectsMap).translate(new ITranslator2<IMapping<LanguageAspect, List<SNode>>, SNode>() {
+          public Iterable<SNode> translate(IMapping<LanguageAspect, List<SNode>> it) {
+            return it.value();
+          }
+        });
+        searchResults.addAll(nodesToRefactoringResult(conceptsToMove, aspectNodes, "concept aspect"));
+        Set<SReference> refUsages = findUsages(project, ListSequence.fromList(nodesToMove).concat(Sequence.fromIterable(aspectNodes)));
+        searchResults.addAll(nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
+          public SNode select(SReference it) {
+            return it.getSourceNode();
+          }
+        }), "reference"));
+        final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), ListSequence.fromList(conceptsToMove).select(new ISelector<SNode, SAbstractConcept>() {
+          public SAbstractConcept select(SNode it) {
+            return SNodeOperations.asSConcept(it);
+          }
+        })), false, new EmptyProgressMonitor());
+        searchResults.addAll(nodesToRefactoringResult(conceptsToMove, instances, "instance"));
+
         if (writeMigration == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
-          Map<SNode, SModel> moveAspects = MapSequence.fromMap(new HashMap<SNode, SModel>());
-          for (SNode concept : ListSequence.fromList(conceptsToMove)) {
-            MapSequence.fromMap(moveAspects).put(concept, targetModel);
-          }
-          for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectsMap).keySet())) {
-            SModel toModel = aspect.getOrCreate(targetLanguage);
-            for (SNode aspectNode : ListSequence.fromList(MapSequence.fromMap(aspectsMap).get(aspect))) {
-              MapSequence.fromMap(moveAspects).put(aspectNode, toModel);
+          updateReferences(project, searchResults, refUsages, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+            public void invoke(final Set<SNode> included) {
+              Map<SNode, SModel> moveAspects = MapSequence.fromMap(new HashMap<SNode, SModel>());
+              for (SNode concept : ListSequence.fromList(conceptsToMove)) {
+                MapSequence.fromMap(moveAspects).put(concept, targetModel);
+              }
+              for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectsMap).keySet())) {
+                SModel toModel = aspect.getOrCreate(targetLanguage);
+                for (SNode aspectNode : ListSequence.fromList(MapSequence.fromMap(aspectsMap).get(aspect)).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode it) {
+                    return SetSequence.fromSet(included).contains(it);
+                  }
+                })) {
+                  MapSequence.fromMap(moveAspects).put(aspectNode, toModel);
+                }
+              }
+
+              Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
+              MoveConceptUtil.copyNodesToModels(moveAspects, copyMap);
+              for (SNode concept : ListSequence.fromList(conceptsToMove)) {
+                SNode oldConcept = concept;
+                SNode newConcept = SNodeOperations.cast(MapSequence.fromMap(copyMap).get(concept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+                AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_u6ijv2_a0c0g0d0a0q0a91a4("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
+
+
+                MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(sourceLanguage).setName("Move_concept_" + SPropertyOperations.getString(oldConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+                builder.appendExecuteStatements(MoveConceptUtil.replaceExactInstances(oldConcept, newConcept, builder));
+                builder.addMissingImports();
+              }
+              MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage);
             }
-          }
-
-          Map<SNode, SNode> copyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
-          MoveConceptUtil.copyNodesToModels(moveAspects, copyMap);
-          for (SNode concept : ListSequence.fromList(conceptsToMove)) {
-            SNode oldConcept = concept;
-            SNode newConcept = SNodeOperations.cast(MapSequence.fromMap(copyMap).get(concept), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
-            AttributeOperations.setAttribute(oldConcept, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_u6ijv2_a0c0g0h0a91a4("The concept was moved to language \"" + targetModel.getModule().getModuleName() + "\""));
-
-
-            MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(sourceLanguage).setName("Move_concept_" + SPropertyOperations.getString(oldConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-            builder.appendExecuteStatements(MoveConceptUtil.replaceExactInstances(oldConcept, newConcept, builder));
-            builder.addMissingImports();
-          }
-
-          // set new "extends" dependencies for languages if necessary 
-          Iterable<SNode> conceptsToRest = ListSequence.fromList(SModelOperations.roots(sourceModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).subtract(ListSequence.fromList(conceptsToMove));
-          if (Sequence.fromIterable(conceptsToRest).translate(new ITranslator2<SNode, SNode>() {
-            public Iterable<SNode> translate(SNode it) {
-              return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getImmediateSuperconcepts_1222430305282", new Object[]{});
-            }
-          }).intersect(ListSequence.fromList(conceptsToMove)).isNotEmpty()) {
-            sourceLanguage.addExtendedLanguage(targetLanguage.getModuleReference());
-          }
-          for (SModuleReference ext : ListSequence.fromList(MoveConceptUtil.calculateExtendsDependencies(conceptsToMove))) {
-            targetLanguage.addExtendedLanguage(ext);
-          }
+          }, new MoveNodesUI.MoveNodesUIImpl());
         }
         if (writeMigration == MoveNodesUI.WhetherWriteMigration.LOCALLY) {
-          SearchResults<SNode> searchResults = new SearchResults<SNode>();
-
-          Iterable<SNode> aspectNodes = MapSequence.fromMap(aspectsMap).translate(new ITranslator2<IMapping<LanguageAspect, List<SNode>>, SNode>() {
-            public Iterable<SNode> translate(IMapping<LanguageAspect, List<SNode>> it) {
-              return it.value();
-            }
-          });
-          searchResults.addAll(nodesToRefactoringResult(conceptsToMove, aspectNodes, "concept aspect"));
-
-
-          final Set<SReference> refUsages = findUsages(project, ListSequence.fromList(nodesToMove).concat(Sequence.fromIterable(aspectNodes)));
-          searchResults.addAll(nodesToRefactoringResult(nodesToMove, SetSequence.fromSet(refUsages).select(new ISelector<SReference, SNode>() {
-            public SNode select(SReference it) {
-              return it.getSourceNode();
-            }
-          }), "reference"));
-          final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), SetSequence.fromSetWithValues(new HashSet<SAbstractConcept>(), ListSequence.fromList(conceptsToMove).select(new ISelector<SNode, SAbstractConcept>() {
-            public SAbstractConcept select(SNode it) {
-              return SNodeOperations.asSConcept(it);
-            }
-          })), false, new EmptyProgressMonitor());
-          searchResults.addAll(nodesToRefactoringResult(conceptsToMove, instances, "instance"));
-
-          RefactoringViewUtil.refactor(project, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+          updateReferences(project, searchResults, refUsages, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
             public void invoke(final Set<SNode> included) {
-              Map<SReference, SNode> usagesMap = classifyUsages(SetSequence.fromSet(refUsages).where(new IWhereFilter<SReference>() {
-                public boolean accept(SReference it) {
-                  return SetSequence.fromSet(included).contains(it.getSourceNode());
-                }
-              }));
               Map<SAbstractConcept, Tuples._2<MoveConcepts.ConceptInfo, MoveConcepts.ConceptInfo>> sConceptMap = MapSequence.fromMap(new HashMap<SAbstractConcept, Tuples._2<MoveConcepts.ConceptInfo, MoveConcepts.ConceptInfo>>());
               for (SNode concept : ListSequence.fromList(conceptsToMove)) {
                 SAbstractConcept oldConcept = SNodeOperations.asSConcept(concept);
@@ -258,9 +244,6 @@ public class MoveConcepts extends MoveNodesDefault {
                   toModel.addRootNode(aspectNode);
                 }
               }
-              for (IMapping<SReference, SNode> mapping : MapSequence.fromMap(usagesMap)) {
-                updateUsage(mapping.key(), mapping.value());
-              }
               for (final SNode instance : SetSequence.fromSet(instances).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SetSequence.fromSet(included).contains(it);
@@ -286,12 +269,29 @@ public class MoveConcepts extends MoveNodesDefault {
                   }
                 }
               }
+              MoveConceptUtil.setExtendsDependencies(conceptsToMove, sourceModel, sourceLanguage, targetLanguage);
             }
-          }, "Move concepts");
+          }, new MoveNodesUI.MoveNodesUIImpl());
         }
       }
     });
 
+  }
+
+  public void updateReferences(final MPSProject mpsProject, SearchResults searchResults, final Iterable<SReference> refUsages, final _FunctionTypes._void_P1_E0<? super Set<SNode>> executeBefore, MoveNodesUI moveNodesUI) {
+    RefactoringViewUtil.refactor(mpsProject, searchResults, new _FunctionTypes._void_P1_E0<Set<SNode>>() {
+      public void invoke(final Set<SNode> included) {
+        executeBefore.invoke(included);
+        Map<SReference, SNode> usagesMap = classifyUsages(Sequence.fromIterable(refUsages).where(new IWhereFilter<SReference>() {
+          public boolean accept(SReference it) {
+            return SetSequence.fromSet(included).contains(it.getSourceNode());
+          }
+        }));
+        for (IMapping<SReference, SNode> mapping : MapSequence.fromMap(usagesMap)) {
+          updateUsage(mapping.key(), mapping.value());
+        }
+      }
+    }, "Move concepts");
   }
 
   public static class ConceptInfo {
@@ -307,7 +307,7 @@ public class MoveConcepts extends MoveNodesDefault {
     }
   }
 
-  private static SNode createDeprecatedNodeAnnotation_u6ijv2_a0c0g0h0a91a4(Object p0) {
+  private static SNode createDeprecatedNodeAnnotation_u6ijv2_a0c0g0d0a0q0a91a4(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
