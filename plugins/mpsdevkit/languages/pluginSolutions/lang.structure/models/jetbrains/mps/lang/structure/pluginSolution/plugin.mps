@@ -3445,6 +3445,13 @@
                   <property role="TrG5h" value="node" />
                   <node concept="3Tqbb2" id="3JYspdAxEaf" role="1tU5fm">
                     <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                    <node concept="2c44tb" id="3JYspdAP2iM" role="lGtFl">
+                      <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                      <property role="2qtEX8" value="concept" />
+                      <node concept="37vLTw" id="3JYspdAP2Yc" role="2c44t1">
+                        <ref role="3cqZAo" node="3NNdDGSKe7o" resolve="oldConcept" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="3clFbS" id="3JYspdAxEag" role="1bW5cS" />
@@ -4028,6 +4035,13 @@
                     <node concept="A3Dl8" id="3JYspdAtn1y" role="1tU5fm">
                       <node concept="3Tqbb2" id="3JYspdAtn1z" role="A3Ik2">
                         <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                        <node concept="2c44tb" id="3JYspdAP0Sc" role="lGtFl">
+                          <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                          <property role="2qtEX8" value="concept" />
+                          <node concept="37vLTw" id="3JYspdAP13K" role="2c44t1">
+                            <ref role="3cqZAo" node="3NNdDGSKe7o" resolve="oldConcept" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                     <node concept="2OqwBi" id="3JYspdAtn1A" role="33vP2m">
@@ -4045,6 +4059,14 @@
                                 <node concept="2SmgA7" id="3JYspdAtn1I" role="2OqNvi">
                                   <node concept="chp4Y" id="3JYspdAtySG" role="1dBWTz">
                                     <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                    <node concept="2c44tb" id="3JYspdAP1i$" role="lGtFl">
+                                      <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" />
+                                      <property role="2qtEX8" value="conceptDeclaration" />
+                                      <property role="3hQQBS" value="RefConcept_Reference" />
+                                      <node concept="37vLTw" id="3JYspdAP1wW" role="2c44t1">
+                                        <ref role="3cqZAo" node="3NNdDGSKe7o" resolve="oldConcept" />
+                                      </node>
+                                    </node>
                                   </node>
                                 </node>
                               </node>
