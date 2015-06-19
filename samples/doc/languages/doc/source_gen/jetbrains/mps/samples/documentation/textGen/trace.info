@@ -15,8 +15,8 @@
       <node id="7205391946760606066" at="15,23,16,193" concept="0" />
       <node id="7205391946760606066" at="16,193,17,22" concept="0" />
       <node id="7205391946760606066" at="17,22,18,18" concept="0" />
-      <node id="7205391946760684596" at="18,18,19,17" concept="0" />
-      <node id="7205391946760685359" at="19,17,20,31" concept="0" />
+      <node id="7205391946760606066" at="18,18,19,17" concept="0" />
+      <node id="7205391946760606066" at="19,17,20,31" concept="0" />
       <node id="7205391946760606066" at="12,0,22,0" concept="1" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="7205391946760606066" at="13,54,20,31">
         <var name="tgs" id="7205391946760606066" />

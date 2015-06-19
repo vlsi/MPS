@@ -24,7 +24,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.AttributedNodePart_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,74,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,76,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BufferParameter_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.BufferParameter_BehaviorDescriptor" />
@@ -70,6 +70,9 @@
     </file>
     <file name="IndentBufferOperation_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.IndentBufferOperation_BehaviorDescriptor" />
+    </file>
+    <file name="IndentPart_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.textGen.behavior.IndentPart_BehaviorDescriptor" />
     </file>
     <file name="LanguageTextGenDeclaration_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />

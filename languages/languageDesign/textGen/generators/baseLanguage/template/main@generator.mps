@@ -2333,6 +2333,12 @@
         <ref role="v9R2y" node="7K9qoAEYpCR" resolve="reduce_AttributedNodePart" />
       </node>
     </node>
+    <node concept="3aamgX" id="3LSFvQrMF4o" role="3aUrZf">
+      <ref role="30HIoZ" to="2omo:3LSFvQrMELE" resolve="IndentPart" />
+      <node concept="j$656" id="3LSFvQrMFvw" role="1lVwrX">
+        <ref role="v9R2y" node="3LSFvQrMEWR" resolve="reduce_IndentPart" />
+      </node>
+    </node>
   </node>
   <node concept="13MO4I" id="hZitiFS">
     <property role="TrG5h" value="reduce_PropertyPart" />
@@ -4017,6 +4023,38 @@
         <node concept="37vLTG" id="7K9qoAEYqpQ" role="3clF46">
           <property role="TrG5h" value="tgs" />
           <node concept="3uibUv" id="7K9qoAEYqpR" role="1tU5fm">
+            <ref role="3uigEE" to="85wj:~TextGenSupport" resolve="TextGenSupport" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="3LSFvQrMEWR">
+    <property role="TrG5h" value="reduce_IndentPart" />
+    <property role="3GE5qa" value="append" />
+    <ref role="3gUMe" to="2omo:3LSFvQrMELE" resolve="IndentPart" />
+    <node concept="312cEu" id="3LSFvQrMFvR" role="13RCb5">
+      <property role="TrG5h" value="A" />
+      <node concept="3Tm1VV" id="3LSFvQrMFvS" role="1B3o_S" />
+      <node concept="3clFbW" id="3LSFvQrMFvT" role="jymVt">
+        <node concept="3cqZAl" id="3LSFvQrMFvU" role="3clF45" />
+        <node concept="3Tm1VV" id="3LSFvQrMFvV" role="1B3o_S" />
+        <node concept="3clFbS" id="3LSFvQrMFvW" role="3clF47">
+          <node concept="3clFbF" id="3LSFvQrMFvX" role="3cqZAp">
+            <node concept="2OqwBi" id="3LSFvQrMFvY" role="3clFbG">
+              <node concept="37vLTw" id="3LSFvQrMFvZ" role="2Oq$k0">
+                <ref role="3cqZAo" node="3LSFvQrMFw2" resolve="tgs" />
+              </node>
+              <node concept="liA8E" id="3LSFvQrMFw0" role="2OqNvi">
+                <ref role="37wK5l" to="85wj:~TextGenSupport.indent():jetbrains.mps.text.TextArea" resolve="indent" />
+              </node>
+            </node>
+            <node concept="raruj" id="3LSFvQrMFw1" role="lGtFl" />
+          </node>
+        </node>
+        <node concept="37vLTG" id="3LSFvQrMFw2" role="3clF46">
+          <property role="TrG5h" value="tgs" />
+          <node concept="3uibUv" id="3LSFvQrMFw3" role="1tU5fm">
             <ref role="3uigEE" to="85wj:~TextGenSupport" resolve="TextGenSupport" />
           </node>
         </node>

@@ -478,8 +478,15 @@
   <node concept="1TIwiD" id="7K9qoAEYlv1">
     <property role="3GE5qa" value="operation.append.part" />
     <property role="TrG5h" value="AttributedNodePart" />
-    <property role="R4oN_" value="attributed node" />
-    <property role="34LRSv" value="attributedNode" />
+    <property role="R4oN_" value="next attribute or parent node" />
+    <property role="34LRSv" value="${ attributed node }$" />
+    <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
+  </node>
+  <node concept="1TIwiD" id="3LSFvQrMELE">
+    <property role="3GE5qa" value="operation.append.part" />
+    <property role="TrG5h" value="IndentPart" />
+    <property role="34LRSv" value="indent" />
+    <property role="R4oN_" value="append indentation" />
     <ref role="1TJDcQ" node="i0l8shm" resolve="AbstractAppendPart" />
   </node>
 </model>
