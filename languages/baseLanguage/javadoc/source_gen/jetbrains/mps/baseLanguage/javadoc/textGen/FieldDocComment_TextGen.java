@@ -11,7 +11,7 @@ public class FieldDocComment_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     DocCommentTextGen.docCommentStart(ctx.getPrimaryInput(), ctx);
-
     DocCommentTextGen.docCommentEnd(ctx.getPrimaryInput(), ctx);
+    tgs.appendAttributedNode();
   }
 }
