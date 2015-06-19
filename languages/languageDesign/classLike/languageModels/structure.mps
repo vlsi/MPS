@@ -270,6 +270,9 @@
     <node concept="PrWs8" id="7aMlq14w5Qt" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
+    <node concept="PrWs8" id="3JYspdAJSjE" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU43nQM">
     <property role="3GE5qa" value="instances" />
