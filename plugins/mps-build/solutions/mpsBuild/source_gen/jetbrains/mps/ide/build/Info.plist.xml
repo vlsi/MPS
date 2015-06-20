@@ -77,7 +77,7 @@
         <key>CFBundleURLName</key>
         <string>Stacktrace</string>
         <key>CFBundleURLSchemes</key>
-        <array></array>
+        <array />
       </dict>
     </array>
     

@@ -23484,11 +23484,6 @@
         <property role="TrG5h" value="jetbrains.mps.core.properties" />
         <property role="3LESm3" value="58f98fef-90ad-4b72-a390-fad66ec7005a" />
         <property role="2GAjPV" value="false" />
-        <node concept="1yeLz9" id="7YI57w6Ka2s" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.core.properties#6896005762093550227" />
-          <property role="3LESm3" value="ae6a71ff-9b6b-4518-969c-289320a7c8e2" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="1SiIV0" id="568PkTlOK6s" role="3bR37C">
           <node concept="1Busua" id="568PkTlOK6t" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6LbO" resolve="jetbrains.mps.lang.traceable" />
