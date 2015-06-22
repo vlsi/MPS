@@ -37582,6 +37582,9 @@
       <ref role="tU$_T" node="5tc$o3kzWsk" resolve="PackageNewActions" />
     </node>
     <node concept="ftmFs" id="1wNvKTcoalp" role="ftER_">
+      <node concept="10WQ6h" id="6iZ8s2UYsKa" role="ftvYc">
+        <property role="TrG5h" value="mainRoot" />
+      </node>
       <node concept="10WQ6h" id="1wNvKTcoals" role="ftvYc">
         <property role="TrG5h" value="newRoot" />
       </node>
