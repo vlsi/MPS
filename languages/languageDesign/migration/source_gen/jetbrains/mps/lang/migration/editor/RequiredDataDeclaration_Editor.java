@@ -29,9 +29,6 @@ public class RequiredDataDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n7f8t_a");
     editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_n7f8t_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_n7f8t_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_n7f8t_c0(editorContext, node));

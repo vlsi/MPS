@@ -44,7 +44,6 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
-      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" flags="ln" index="11L4FC" />
       <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
@@ -113,9 +112,6 @@
         </node>
       </node>
       <node concept="l2Vlx" id="4XFiG3drnJ4" role="2iSdaV" />
-      <node concept="VPM3Z" id="4XFiG3drnJ5" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="4iMwkz$0vCB">
@@ -255,9 +251,6 @@
         </node>
       </node>
       <node concept="l2Vlx" id="3A3gNhf1VS8" role="2iSdaV" />
-      <node concept="VPM3Z" id="3A3gNhf1VS9" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3A3gNhf2pIn">

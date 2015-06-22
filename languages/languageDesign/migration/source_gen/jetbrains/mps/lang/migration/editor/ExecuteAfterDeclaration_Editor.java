@@ -29,9 +29,6 @@ public class ExecuteAfterDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l3byek_a");
     editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_l3byek_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_l3byek_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_l3byek_c0(editorContext, node));
