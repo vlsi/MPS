@@ -65,7 +65,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
   }
 
   public void apply(final MPSProject project, List<SNode> nodesToMove) {
-    final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
+    final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getInstance();
     final String featureKind = this.getKind();
 
     if (ListSequence.fromList(nodesToMove).count() > 1) {

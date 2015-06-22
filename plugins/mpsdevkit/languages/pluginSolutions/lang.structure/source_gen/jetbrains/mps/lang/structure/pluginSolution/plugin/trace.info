@@ -2959,7 +2959,7 @@
       <node id="7217668918196612136" at="51,29,52,58" concept="10" />
       <node id="7217668918196598616" at="53,16,54,86" concept="17" />
       <node id="7217668918196767236" at="57,202,58,89" concept="3" />
-      <node id="7217668918196631327" at="31,0,34,0" concept="14" trace="getIsntance#()Ljetbrains/mps/lang/structure/pluginSolution/plugin/MoveNodesUI;" />
+      <node id="7217668918196631327" at="31,0,34,0" concept="14" trace="getInstance#()Ljetbrains/mps/lang/structure/pluginSolution/plugin/MoveNodesUI;" />
       <node id="7217668918197193780" at="35,0,38,0" concept="8" trace="showErrorDialog#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="7217668918197939899" at="38,0,41,0" concept="8" trace="showWarningDialog#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljava/lang/String;)V" />
       <node id="7217668918196676787" at="41,0,44,0" concept="8" trace="askTargetConcept#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />

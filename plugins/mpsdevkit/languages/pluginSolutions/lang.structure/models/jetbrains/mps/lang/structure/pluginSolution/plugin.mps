@@ -4449,7 +4449,7 @@
               <ref role="3uigEE" node="6gEjUfBv2y2" resolve="MoveNodesUI" />
             </node>
             <node concept="2YIFZM" id="6gEjUfBzOu6" role="33vP2m">
-              <ref role="37wK5l" node="6gEjUfBvfsv" resolve="getIsntance" />
+              <ref role="37wK5l" node="6gEjUfBvfsv" resolve="getInstance" />
               <ref role="1Pybhc" node="6gEjUfBv3ou" resolve="MoveNodesUI.MoveNodesUIImpl" />
             </node>
           </node>
@@ -7103,7 +7103,7 @@
             </node>
             <node concept="2YIFZM" id="6gEjUfBvs3X" role="33vP2m">
               <ref role="1Pybhc" node="6gEjUfBv3ou" resolve="MoveNodesUI.MoveNodesUIImpl" />
-              <ref role="37wK5l" node="6gEjUfBvfsv" resolve="getIsntance" />
+              <ref role="37wK5l" node="6gEjUfBvfsv" resolve="getInstance" />
             </node>
           </node>
         </node>
@@ -8856,7 +8856,7 @@
       <property role="TrG5h" value="MoveNodesUIImpl" />
       <node concept="2tJIrI" id="6gEjUfBvflZ" role="jymVt" />
       <node concept="2YIFZL" id="6gEjUfBvfsv" role="jymVt">
-        <property role="TrG5h" value="getIsntance" />
+        <property role="TrG5h" value="getInstance" />
         <node concept="3uibUv" id="6gEjUfBvfAy" role="3clF45">
           <ref role="3uigEE" node="6gEjUfBv2y2" resolve="MoveNodesUI" />
         </node>

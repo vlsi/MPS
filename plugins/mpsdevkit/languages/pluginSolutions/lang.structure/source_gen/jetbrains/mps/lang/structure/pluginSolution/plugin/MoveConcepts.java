@@ -80,7 +80,7 @@ public class MoveConcepts extends MoveNodesDefault {
     final SModel sourceModel = SNodeOperations.getModel(ListSequence.fromList(nodesToMove).first());
     final Language sourceLanguage = Language.getLanguageFor(sourceModel);
 
-    MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
+    MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getInstance();
 
     final Wrappers._boolean hasGenerator = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {

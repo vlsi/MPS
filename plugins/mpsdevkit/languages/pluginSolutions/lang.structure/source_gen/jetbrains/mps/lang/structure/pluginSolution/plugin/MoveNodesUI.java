@@ -28,7 +28,7 @@ public interface MoveNodesUI {
 
   public static class MoveNodesUIImpl implements MoveNodesUI {
 
-    public static MoveNodesUI getIsntance() {
+    public static MoveNodesUI getInstance() {
       return new MoveNodesUI.MoveNodesUIImpl();
     }
 
