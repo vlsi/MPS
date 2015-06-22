@@ -19,6 +19,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelReadRunnable;
+import jetbrains.mps.text.impl.ModelOutline;
 import jetbrains.mps.text.rt.TextGenAspectBase;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.textGen.TextGenRegistry;
@@ -27,7 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -117,12 +117,12 @@ public final class TextGeneratorEngine {
 
   private List<TextUnit> breakdownToUnits(@NotNull SModel model) {
     Collection<TextGenAspectDescriptor> tgad = TextGenRegistry.getInstance().getAspects(model);
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
+    ModelOutline rv = new ModelOutline(model);
     for (TextGenAspectDescriptor d : tgad) {
       if (d instanceof TextGenAspectBase) {
-        rv.addAll(((TextGenAspectBase) d).breakdownToUnits(model));
+        ((TextGenAspectBase) d).breakdownToUnits(rv);
       }
     }
-    return rv;
+    return rv.getUnits();
   }
 }

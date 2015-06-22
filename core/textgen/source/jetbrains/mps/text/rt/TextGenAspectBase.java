@@ -52,4 +52,10 @@ public abstract class TextGenAspectBase implements TextGenAspectDescriptor {
     }
     return rv;
   }
+
+  public void breakdownToUnits(@NotNull TextGenModelOutline modelOutline) {
+    for (TextUnit tu : breakdownToUnits(modelOutline.getModel())) {
+      modelOutline.registerTextUnit(tu);
+    }
+  }
 }
