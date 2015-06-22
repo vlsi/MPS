@@ -27,7 +27,10 @@ public class FilteredGlobalScope extends FilteredScope {
 
   @Override
   protected boolean acceptModule(SModule module) {
-    return VisibleModuleRegistry.getInstance().isVisible(module);
+    // To do: add headless VisibleModuleRegistry component
+    VisibleModuleRegistry registry = VisibleModuleRegistry.getInstance();
+    if (registry == null)  return true;
+    return registry.isVisible(module);
   }
 
   @Override
