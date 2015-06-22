@@ -60,7 +60,7 @@ public class SModelOperations {
 
   /**
    * Plain code (i.e. BaseLanguage and SModel) counterpart for model.nodes(Concept) (i.e. from smodel language) which is translated into
-   * {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations#getNodes(org.jetbrains.mps.openapi.model.SModel, String)}
+   * {@link jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations#nodes(org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.language.SAbstractConcept)}
    * <p/>
    * Primary purpose of this method is to prevent using of FastNodeFinderManager from BL code.
    */
@@ -157,10 +157,12 @@ public class SModelOperations {
 
     for (SLanguage lang : getAllImportedLanguageIds(model)) {
       languages.add(lang);
-      for (Language l : LanguageDependenciesManager.getAllExtendedLanguages((Language) lang.getSourceModule())) {
-        languages.add(MetaAdapterByDeclaration.getLanguage(l));
+      SModule sourceModule = lang.getSourceModule();
+      if (sourceModule instanceof Language) {
+        for (Language l : LanguageDependenciesManager.getAllExtendedLanguages((Language) sourceModule)) {
+          languages.add(MetaAdapterByDeclaration.getLanguage(l));
+        }
       }
-
     }
     return new ArrayList<SLanguage>(languages);
   }
