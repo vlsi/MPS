@@ -354,5 +354,33 @@
       <property role="1uS6qo" value="left" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3Rc6kd0K$RF">
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="BaseCommentAttribute" />
+    <ref role="1TJDcQ" node="2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyi" id="2ETBKOyk5js" role="1TKVEl">
+      <property role="TrG5h" value="linkId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="2ETBKOyk6sF" role="1TKVEl">
+      <property role="TrG5h" value="linkRole" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="2ETBKOyieyt" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="commentedNodes" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="M6xJ_" id="3Rc6kd0K$RG" role="lGtFl">
+      <property role="Hh88m" value="comment" />
+      <node concept="trNpa" id="3Rc6kd0K$RJ" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="tn0Fv" id="3Rc6kd0K$RM" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+    </node>
+  </node>
 </model>
 

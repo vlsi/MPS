@@ -14,6 +14,22 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.intentions.CommentOut_Intention" file="CommentOut_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.util.CommentUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.DependencyHelper" file="DependencyHelper.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="jetbrains.mps.ide.editor.actions.ModelImporter" />
@@ -33,8 +49,10 @@
   <dependency className="jetbrains.mps.lang.core.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.core.intentions.CommentOut_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SuppressErrors_Intention" />
+    <classNode dependClassName="jetbrains.mps.lang.core.intentions.Uncomment_Intention" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" file="SetExportAnnotation_Intention.java">
@@ -75,6 +93,28 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.intentions.Uncomment_Intention" file="Uncomment_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.util.CommentUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />

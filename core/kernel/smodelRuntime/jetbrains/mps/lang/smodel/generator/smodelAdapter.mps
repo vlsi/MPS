@@ -45,7 +45,7 @@
     <import index="d2v5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
     <import index="gct0" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(jetbrains.mps.smodel.adapter.structure.concept@java_stub)" />
     <import index="q7r7" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.legacy(MPS.Core/jetbrains.mps.smodel.legacy@java_stub)" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1196,7 +1196,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyz00b" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~AbstractList.subList(int,int):java.util.List" resolve="subList" />
+              <ref role="37wK5l" to="k7g3:~ArrayList.subList(int,int):java.util.List" resolve="subList" />
               <node concept="37vLTw" id="2BHiRxgmrBh" role="37wK5m">
                 <ref role="3cqZAo" node="5IkW5anEKwA" resolve="fromIndex" />
               </node>
@@ -1611,7 +1611,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyzeB3" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
+              <ref role="37wK5l" to="k7g3:~ArrayList.iterator():java.util.Iterator" resolve="iterator" />
             </node>
           </node>
         </node>
@@ -1718,7 +1718,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyz9Jo" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
+              <ref role="37wK5l" to="k7g3:~ArrayList.iterator():java.util.Iterator" resolve="iterator" />
             </node>
           </node>
         </node>

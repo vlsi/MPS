@@ -14,11 +14,14 @@
     <file name="Attribute_BehaviorDescriptor.java">
       <unit at="9,0,29,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
     </file>
+    <file name="BaseCommentAttribute_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
+    </file>
     <file name="BaseConcept_BehaviorDescriptor.java">
       <unit at="11,0,37,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,38,0" name="jetbrains.mps.lang.core.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ExportScopeModule_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.core.behavior.ExportScopeModule_BehaviorDescriptor" />
@@ -475,6 +478,39 @@
       </scope>
       <unit id="8656690432819148317" at="46,134,50,7" name="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
       <unit id="2565736246230026577" at="21,0,80,0" name="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/3078666699043525871">
+    <file name="BaseCommentAttribute_Behavior.java">
+      <node id="3078666699043527485" at="16,191,17,18" concept="6" />
+      <node id="3078666699043525913" at="18,5,19,417" concept="6" />
+      <node id="3078666699043525926" at="21,98,22,186" concept="1" />
+      <node id="3078666699043525934" at="22,186,23,214" concept="1" />
+      <node id="3078666699043525912" at="25,52,26,44" concept="6" />
+      <node id="3078666699043525871" at="13,0,15,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3078666699043525891" at="15,83,18,5" concept="3" />
+      <node id="3078666699043525912" at="25,0,28,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="3078666699043525871" at="21,0,25,0" concept="9" trace="call_setLink_3078666699043525922#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)V" />
+      <node id="3078666699043525871" at="15,0,21,0" concept="9" trace="call_getLink_3078666699043525887#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SContainmentLink;" />
+      <scope id="3078666699043525873" at="13,43,13,43" />
+      <scope id="3078666699043525892" at="16,191,17,18" />
+      <scope id="3078666699043525912" at="25,52,26,44" />
+      <scope id="3078666699043525871" at="13,0,15,0">
+        <var name="thisNode" id="3078666699043525871" />
+      </scope>
+      <scope id="3078666699043525925" at="21,98,23,214" />
+      <scope id="3078666699043525912" at="25,0,28,0">
+        <var name="str" id="3078666699043525912" />
+      </scope>
+      <scope id="3078666699043525890" at="15,83,19,417" />
+      <scope id="3078666699043525871" at="21,0,25,0">
+        <var name="metaLink" id="3078666699043525943" />
+        <var name="thisNode" id="3078666699043525871" />
+      </scope>
+      <scope id="3078666699043525871" at="15,0,21,0">
+        <var name="thisNode" id="3078666699043525871" />
+      </scope>
+      <unit id="3078666699043525871" at="12,0,29,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/3393165121846091588">

@@ -409,6 +409,47 @@
       <unit id="2089287822043606602" at="38,0,403,0" name="jetbrains.mps.util.SNodeOperations" />
     </file>
   </root>
+  <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/3078666699043208145">
+    <file name="CommentUtil.java">
+      <node id="3078666699043491419" at="18,49,19,65" concept="11" />
+      <node id="4096976700762264640" at="19,65,20,51" concept="11" />
+      <node id="3078666699043189673" at="20,51,21,80" concept="11" />
+      <node id="3078666699045054548" at="22,29,23,34" concept="13" />
+      <node id="3078666699044806160" at="23,34,24,319" concept="5" />
+      <node id="3078666699043564749" at="24,319,25,191" concept="5" />
+      <node id="7518282355467864966" at="26,5,27,14" concept="13" />
+      <node id="3078666699043049930" at="27,14,28,225" concept="5" />
+      <node id="4096976700762265343" at="29,100,30,120" concept="5" />
+      <node id="3078666699043550624" at="35,39,36,213" concept="12" />
+      <node id="4096976700762262438" at="28,225,31,5" concept="9" />
+      <node id="3078666699043550622" at="35,0,38,0" concept="10" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3078666699043149405" at="21,80,26,5" concept="9" />
+      <node id="3078666699043550613" at="33,95,38,7" concept="12" />
+      <node id="3078666699043550776" at="33,0,40,0" concept="15" trace="getCommentAttribute#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3078666699043208180" at="18,0,33,0" concept="15" trace="commentOutNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4096976700762262440" at="29,100,30,120" />
+      <scope id="3078666699043550623" at="35,39,36,213" />
+      <scope id="3078666699043149407" at="22,29,25,191" />
+      <scope id="3078666699043550622" at="35,0,38,0">
+        <var name="it" id="3078666699043550622" />
+      </scope>
+      <scope id="3078666699043550470" at="33,95,38,7" />
+      <scope id="3078666699043550776" at="33,0,40,0">
+        <var name="containmentLink" id="3078666699043550635" />
+        <var name="node" id="3078666699043550633" />
+      </scope>
+      <scope id="3078666699043208183" at="18,49,31,5">
+        <var name="containmentLink" id="3078666699043491420" />
+        <var name="newComment" id="3078666699043189674" />
+        <var name="parent" id="4096976700762264641" />
+      </scope>
+      <scope id="3078666699043208180" at="18,0,33,0">
+        <var name="node" id="3078666699043208197" />
+      </scope>
+      <unit id="3078666699043550622" at="34,283,38,5" name="jetbrains.mps.util.CommentUtil$1" />
+      <unit id="3078666699043208145" at="17,0,41,0" name="jetbrains.mps.util.CommentUtil" />
+    </file>
+  </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/4972886494893373483">
     <file name="LongestCommonSubsequenceFinder.java">
       <node id="4972886494893402206" at="101,29,101,29" concept="1" />
