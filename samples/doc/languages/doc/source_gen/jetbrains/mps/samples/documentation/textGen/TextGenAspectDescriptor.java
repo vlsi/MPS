@@ -15,8 +15,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
   public TextGenAspectDescriptor() {
-    myId2Index = new long[1];
+    myId2Index = new long[2];
     myId2Index[0] = 0x63feb1ccbe205151L;
+    myId2Index[1] = 0x702703eb14011dd3L;
   }
   @Nullable
   @Override
@@ -25,6 +26,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     switch (index) {
       case 0:
         return new CommentAttribute_TextGen();
+      case 1:
+        return new CommentAttribute2_TextGen();
       default:
         return null;
     }

@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -49,11 +50,13 @@ import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -68,6 +71,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.util.InstanceOfCondition;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -106,6 +110,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
+  private final boolean myDoesCopyNodeAttribute;
   private boolean myAreMappingsReady = false;
 
   /* cached session data */
@@ -139,6 +144,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = stepArgs.ruleManager;
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
+    myDoesCopyNodeAttribute = GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen(); // FIXME use GenerationOptions instead!
     myDelayedChanges = new DelayedChanges();
     myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
@@ -367,10 +373,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void createRootNodeByRule(TemplateRootMappingRule rule, SNode inputNode, TemplateExecutionEnvironmentImpl env, boolean copyRootOnFailure)
     throws GenerationCanceledException, GenerationFailureException {
     try {
-      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, new DefaultTemplateContext(env, inputNode, null));
+      final DefaultTemplateContext templateContext = new DefaultTemplateContext(env, inputNode, null);
+      Collection<SNode> outputNodes = env.getQueryExecutor().applyRule(rule, templateContext);
       if (outputNodes == null) {
         return;
       }
+
+      copyNodeAttributes(templateContext, outputNodes);
 
       env.getTrace().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
@@ -651,6 +660,22 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
     if (parent == null && placeholder.getModel() != null) {
       myDependenciesBuilder.rootReplaced(placeholder, substitute);
+    }
+  }
+
+  void copyNodeAttributes(@NotNull TemplateContext ctx, @NotNull Collection<SNode> outputNodes) {
+    if (!myDoesCopyNodeAttribute) {
+      return;
+    }
+    final SNode input = ctx.getInput();
+    if (input == null) {
+      // context in create root rule might have no input
+      return;
+    }
+    for (SNode attr : new ConditionalIterable<SNode>(input.getChildren(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute), new InstanceOfCondition(RuleUtil.iface_PersistGeneration))) {
+      for (SNode output : outputNodes) {
+        output.addChild(jetbrains.mps.smodel.SNodeUtil.link_BaseConcept_smodelAttribute, CopyUtil.copy(attr));
+      }
     }
   }
 

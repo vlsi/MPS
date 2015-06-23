@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AttachComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AttachComment1_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AttachComment2_Intention());
   }
 }

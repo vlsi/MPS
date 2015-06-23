@@ -15,18 +15,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AttachComment_Intention implements IntentionFactory {
+public class AttachComment1_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public AttachComment_Intention() {
+  public AttachComment1_Intention() {
   }
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
   public String getPresentation() {
-    return "AttachComment";
+    return "AttachComment1";
   }
   public String getPersistentStateKey() {
-    return "jetbrains.mps.samples.documentation.intentions.AttachComment_Intention";
+    return "jetbrains.mps.samples.documentation.intentions.AttachComment1_Intention";
   }
   public String getLanguageFqName() {
     return "jetbrains.mps.samples.documentation";
@@ -48,7 +48,7 @@ public class AttachComment_Intention implements IntentionFactory {
   }
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AttachComment_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AttachComment1_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -56,13 +56,13 @@ public class AttachComment_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Attach comment attribute";
+      return "Attach comment attribute 1";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.createAndAddAttribute(node, new IAttributeDescriptor.AllAttributes(), "jetbrains.mps.samples.documentation.structure.CommentAttribute");
     }
     public IntentionDescriptor getDescriptor() {
-      return AttachComment_Intention.this;
+      return AttachComment1_Intention.this;
     }
   }
 }

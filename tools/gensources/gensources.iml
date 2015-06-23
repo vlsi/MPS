@@ -591,6 +591,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/doc/languages/doc/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/doc/languages/doc/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/doc/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/generator/source_gen" isTestSource="false" />
@@ -715,6 +716,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/doc/languages/doc/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/doc/languages/doc/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/doc/solutions/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/dslbook_example/languages/secretCompartmentLanguage/generator/classes_gen" />

@@ -55,7 +55,7 @@
     </language>
   </registry>
   <node concept="2S6QgY" id="6fYGsMY8g2w">
-    <property role="TrG5h" value="AttachComment" />
+    <property role="TrG5h" value="AttachComment1" />
     <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="2Sbjvc" id="6fYGsMY8g2x" role="2ZfgGD">
       <node concept="3clFbS" id="6fYGsMY8g2y" role="2VODD2">
@@ -78,7 +78,37 @@
       <node concept="3clFbS" id="6fYGsMY8g2$" role="2VODD2">
         <node concept="3clFbF" id="6fYGsMY8g7Y" role="3cqZAp">
           <node concept="Xl_RD" id="6fYGsMY8g7X" role="3clFbG">
-            <property role="Xl_RC" value="Attach comment attribute" />
+            <property role="Xl_RC" value="Attach comment attribute 1" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="70B0YGk0hXI">
+    <property role="TrG5h" value="AttachComment2" />
+    <ref role="2ZfgGC" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="2Sbjvc" id="70B0YGk0hXJ" role="2ZfgGD">
+      <node concept="3clFbS" id="70B0YGk0hXK" role="2VODD2">
+        <node concept="3clFbF" id="70B0YGk0hXL" role="3cqZAp">
+          <node concept="2OqwBi" id="70B0YGk0hXM" role="3clFbG">
+            <node concept="2OqwBi" id="70B0YGk0hXN" role="2Oq$k0">
+              <node concept="2Sf5sV" id="70B0YGk0hXO" role="2Oq$k0" />
+              <node concept="3CFZ6_" id="70B0YGk0hXP" role="2OqNvi">
+                <node concept="3CFTEB" id="70B0YGk0hXQ" role="3CFYIz" />
+              </node>
+            </node>
+            <node concept="WFELt" id="70B0YGk0hXR" role="2OqNvi">
+              <ref role="1A0vxQ" to="t1gd:70B0YGk0hRj" resolve="CommentAttribute2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2S6ZIM" id="70B0YGk0hXS" role="2ZfVej">
+      <node concept="3clFbS" id="70B0YGk0hXT" role="2VODD2">
+        <node concept="3clFbF" id="70B0YGk0hXU" role="3cqZAp">
+          <node concept="Xl_RD" id="70B0YGk0hXV" role="3clFbG">
+            <property role="Xl_RC" value="Attach comment attribute 2" />
           </node>
         </node>
       </node>

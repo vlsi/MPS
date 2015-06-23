@@ -48,6 +48,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
@@ -58,6 +59,7 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="6fYGsMY855M">
+    <property role="3GE5qa" value="pure-textgen" />
     <ref role="WuzLi" to="t1gd:6fYGsMY855h" resolve="CommentAttribute" />
     <node concept="11bSqf" id="6fYGsMY855N" role="11c4hB">
       <node concept="3clFbS" id="6fYGsMY855O" role="2VODD2">
@@ -89,7 +91,32 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="3fG6dkhfgJf">
+    <property role="3GE5qa" value="pure-textgen" />
     <ref role="WuzLi" to="t1gd:3fG6dkheFNp" resolve="HandlerAsRoot" />
+  </node>
+  <node concept="WtQ9Q" id="70B0YGk0iEE">
+    <property role="3GE5qa" value="generator-processed" />
+    <ref role="WuzLi" to="t1gd:70B0YGk0hRj" resolve="CommentAttribute2" />
+    <node concept="11bSqf" id="70B0YGk0iEF" role="11c4hB">
+      <node concept="3clFbS" id="70B0YGk0iEG" role="2VODD2">
+        <node concept="lc7rE" id="70B0YGk0iES" role="3cqZAp">
+          <node concept="la8eA" id="70B0YGk0iF6" role="lcghm">
+            <property role="lacIc" value="// " />
+          </node>
+          <node concept="l9hG8" id="70B0YGk0iHw" role="lcghm">
+            <node concept="2OqwBi" id="70B0YGk0iL0" role="lb14g">
+              <node concept="117lpO" id="70B0YGk0iIk" role="2Oq$k0" />
+              <node concept="3TrcHB" id="70B0YGk0poM" role="2OqNvi">
+                <ref role="3TsBF5" to="t1gd:70B0YGk0iGO" resolve="text" />
+              </node>
+            </node>
+          </node>
+          <node concept="l8MVK" id="70B0YGk0iG6" role="lcghm" />
+          <node concept="2BGw6n" id="70B0YGk0iFE" role="lcghm" />
+          <node concept="3mW3T8" id="70B0YGk0iG$" role="lcghm" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

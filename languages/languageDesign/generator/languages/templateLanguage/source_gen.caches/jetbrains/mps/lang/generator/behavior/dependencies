@@ -827,6 +827,7 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.generator.behavior.PersistGeneration_BehaviorDescriptor" file="PersistGeneration_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.generator.behavior.PropertyMacro_Behavior" file="PropertyMacro_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

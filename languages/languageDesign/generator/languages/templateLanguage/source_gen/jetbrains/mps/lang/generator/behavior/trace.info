@@ -180,6 +180,9 @@
     <file name="PatternReduction_MappingRule_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" />
     </file>
+    <file name="PersistGeneration_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.generator.behavior.PersistGeneration_BehaviorDescriptor" />
+    </file>
     <file name="PropertyMacro_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
     </file>

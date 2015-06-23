@@ -17,9 +17,15 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new CommentAttribute_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
+        return Collections.<ConceptEditor>singletonList(new CommentAttribute2_Editor());
       case 2:
+        return Collections.<ConceptEditor>singletonList(new HandlerAsChild_Editor());
+      case 3:
         return Collections.<ConceptEditor>singletonList(new HandlerAsRoot_Editor());
+      case 4:
+        return Collections.<ConceptEditor>singletonList(new SubConceptToTransform_Editor());
+      case 5:
+        return Collections.<ConceptEditor>singletonList(new SubConceptToTransformNested_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -29,5 +35,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute", "jetbrains.mps.samples.documentation.structure.HandlerAsChild", "jetbrains.mps.samples.documentation.structure.HandlerAsRoot"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute", "jetbrains.mps.samples.documentation.structure.CommentAttribute2", "jetbrains.mps.samples.documentation.structure.HandlerAsChild", "jetbrains.mps.samples.documentation.structure.HandlerAsRoot", "jetbrains.mps.samples.documentation.structure.SubConceptToTransform", "jetbrains.mps.samples.documentation.structure.SubConceptToTransformNested"};
 }

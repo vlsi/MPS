@@ -13,13 +13,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new CommentAttribute_BehaviorDescriptor();
-      case 2:
+      case 3:
         return new HandlerAsRoot_BehaviorDescriptor();
-      case 1:
+      case 2:
         return new HandlerAsChild_BehaviorDescriptor();
+      case 1:
+        return new CommentAttribute2_BehaviorDescriptor();
+      case 4:
+        return new SubConceptToTransform_BehaviorDescriptor();
+      case 5:
+        return new SubConceptToTransformNested_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute", "jetbrains.mps.samples.documentation.structure.HandlerAsChild", "jetbrains.mps.samples.documentation.structure.HandlerAsRoot"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute", "jetbrains.mps.samples.documentation.structure.CommentAttribute2", "jetbrains.mps.samples.documentation.structure.HandlerAsChild", "jetbrains.mps.samples.documentation.structure.HandlerAsRoot", "jetbrains.mps.samples.documentation.structure.SubConceptToTransform", "jetbrains.mps.samples.documentation.structure.SubConceptToTransformNested"};
 }

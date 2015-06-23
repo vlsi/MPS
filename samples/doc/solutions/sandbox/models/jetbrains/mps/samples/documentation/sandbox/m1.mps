@@ -26,7 +26,7 @@
       </concept>
     </language>
     <language id="e8e38af6-0cf3-4cc1-baa3-ba261722e8f3" name="jetbrains.mps.samples.documentation">
-      <concept id="3741392693834202329" name="jetbrains.mps.samples.documentation.structure.Handler" flags="ig" index="yPEgc" />
+      <concept id="3741392693834202329" name="jetbrains.mps.samples.documentation.structure.HandlerAsRoot" flags="ig" index="yPEgc" />
       <concept id="7205391946760606033" name="jetbrains.mps.samples.documentation.structure.CommentAttribute" flags="ng" index="3tRI2t">
         <property id="7205391946760606040" name="text" index="3tRI2k" />
       </concept>
