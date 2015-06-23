@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -41,9 +42,21 @@ public interface IGenerationSettings {
 
   boolean isIncrementalUseCache();
 
+  // FIXME this is TextGen option, has nothing to do with generation
   boolean isFailOnMissingTextGen();
 
+  // FIXME this is TextGen option, has nothing to do with generation
   boolean isGenerateDebugInfo();
+
+
+  /**
+   * Compatibility option, whether TextGen shall treat Node Attributes attached to a node as ordering element
+   * and delegate to them first (provided they've got associated textgen). Legacy textgen might have processed
+   * attributes in explicit way, and this option gives them chance to keep old behavior.
+   * default value: true
+   */
+  @ToRemove(version = 3.3)
+  boolean handleAttributesInTextGen();
 
   boolean isShowBadChildWarning();
 
@@ -52,6 +65,7 @@ public interface IGenerationSettings {
   boolean isSaveTransientModels();
 
   boolean useInplaceTransformations();
+
 
   /**
    * For references we've got resolve info only, we can create either a dynamic reference and let it get resolved by name through scope, or we can resolve

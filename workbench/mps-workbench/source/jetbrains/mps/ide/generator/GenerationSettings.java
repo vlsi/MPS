@@ -20,20 +20,15 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import javax.swing.JComponent;
 
 
 @State(
@@ -99,6 +94,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setIncrementalUseCache(state.myIncrementalUseCache);
     myState.setFailOnMissingTextGen(state.myFailOnMissingTextGen);
     myState.setGenerateDebugInfo(state.myGenerateDebugInfo);
+    myState.enableHandleAttributesInTextGen(state.myHandleAttributesInTextGen);
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
     myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
     myState.enableInplaceTransformations(state.myActiveInplaceTransform);
@@ -143,6 +139,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myTraceCompactTemplates;
     public boolean myTraceShowEmptySteps;
     public boolean myTraceGroupByChange;
+    public boolean myHandleAttributesInTextGen;
 
     public MyState() {
       // use defaults from a single place. PersistentStateComponent demands no-arg cons with default values set (case: no xml file yet)
@@ -165,6 +162,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myIncrementalUseCache = s.isIncrementalUseCache();
       myFailOnMissingTextGen = s.isFailOnMissingTextGen();
       myGenerateDebugInfo = s.isGenerateDebugInfo();
+      myHandleAttributesInTextGen = s.handleAttributesInTextGen();
       myShowBadChildWarning = s.isShowBadChildWarning();
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransformations();

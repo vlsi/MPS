@@ -1041,8 +1041,8 @@
   </root>
   <root nodeRef="r:351fe3d9-2ce5-4ea0-8afc-9b076259a949(jetbrains.mps.vcs.diff.ui.merge)/6422529625564141868">
     <file name="ISaveMergedModel.java">
-      <node id="8964527901281142662" at="8,0,14,0" concept="7" trace="save#(Ljetbrains/mps/vcs/diff/ui/merge/MergeModelsDialog;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <scope id="8964527901281142662" at="8,0,14,0">
+      <node id="8964527901281142662" at="13,0,14,0" concept="7" trace="save#(Ljetbrains/mps/vcs/diff/ui/merge/MergeModelsDialog;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <scope id="8964527901281142662" at="13,0,14,0">
         <var name="parent" id="8964527901281143188" />
         <var name="resultModel" id="8964527901282207768" />
       </scope>

@@ -141,7 +141,7 @@
         <var name="project" id="3021026760600228493" />
       </scope>
       <unit id="1884528325078879938" at="104,47,114,5" name="jetbrains.mps.testbench.junit.suites.MpsTestsSuite$1" />
-      <unit id="1884528325076767136" at="33,0,118,0" name="jetbrains.mps.testbench.junit.suites.MpsTestsSuite" />
+      <unit id="1884528325076767136" at="37,0,118,0" name="jetbrains.mps.testbench.junit.suites.MpsTestsSuite" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/4052780437579008133">
@@ -302,12 +302,12 @@
       <unit id="1594630302364453606" at="48,308,52,13" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
       <unit id="1594630302364055148" at="41,52,58,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$1" />
       <unit id="3798371591902428451" at="113,45,134,5" name="jetbrains.mps.testbench.junit.suites.ScopesTest$2" />
-      <unit id="4052780437579008133" at="32,0,137,0" name="jetbrains.mps.testbench.junit.suites.ScopesTest" />
+      <unit id="4052780437579008133" at="35,0,137,0" name="jetbrains.mps.testbench.junit.suites.ScopesTest" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/5835181105767457626">
     <file name="AntModuleTestSuite.java">
-      <unit id="5835181105767457626" at="7,0,13,0" name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" />
+      <unit id="5835181105767457626" at="10,0,13,0" name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" />
     </file>
   </root>
   <root nodeRef="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)/6944172844332268314">

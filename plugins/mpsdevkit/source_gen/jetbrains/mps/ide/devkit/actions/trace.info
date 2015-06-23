@@ -4441,7 +4441,7 @@
       <scope id="8911797107063455888" at="17,0,25,0">
         <var name="id" id="8911797107063455898" />
       </scope>
-      <unit id="8911797107063450124" at="9,0,29,0" name="jetbrains.mps.ide.devkit.actions.NewAspectModelActionHelper" />
+      <unit id="8911797107063450124" at="12,0,29,0" name="jetbrains.mps.ide.devkit.actions.NewAspectModelActionHelper" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/8970236339104100116">

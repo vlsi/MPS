@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class DefaultModifiableGenerationSettings implements IModifiableGenerationSettings {
   private boolean mySaveTransientModels = false;
@@ -37,6 +37,7 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myActiveInplaceTransform = true;
   private boolean myCreateStaticRefs = true;
   private GenTraceSettings myTraceSettings = new GenTraceSettings();
+  private boolean myHandleAttributesInTextGen = true;
 
   @Override
   public boolean isSaveTransientModels() {
@@ -188,6 +189,17 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
     myGenerateDebugInfo = generateDebugInfo;
   }
 
+
+  @Override
+  public void enableHandleAttributesInTextGen(boolean enable) {
+    myHandleAttributesInTextGen = enable;
+  }
+
+  @Override
+  public boolean handleAttributesInTextGen() {
+    return myHandleAttributesInTextGen;
+  }
+
   @Override
   public boolean isShowBadChildWarning() {
     return myShowBadChildWarning;
@@ -218,12 +230,13 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
     return myCreateStaticRefs;
   }
 
+  @NotNull
   @Override
   public GenTraceSettings getTraceSettings() {
     return myTraceSettings;
   }
 
-  public void setTraceSettings(@Nullable GenTraceSettings settings) {
+  public void setTraceSettings(@NotNull GenTraceSettings settings) {
     myTraceSettings = settings;
   }
 }

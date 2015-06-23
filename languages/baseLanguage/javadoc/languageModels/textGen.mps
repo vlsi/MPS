@@ -60,7 +60,7 @@
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
@@ -129,7 +129,7 @@
       <concept id="1233921373471" name="jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration" flags="ig" index="1bsvg0">
         <child id="1233922432965" name="operation" index="1bwxVq" />
       </concept>
-      <concept id="1233922353619" name="jetbrains.mps.lang.textGen.structure.OperationDeclaration" flags="sg" index="1bwezc" />
+      <concept id="1233922353619" name="jetbrains.mps.lang.textGen.structure.OperationDeclaration" flags="sg" stub="3147100357551177019" index="1bwezc" />
       <concept id="1233924848298" name="jetbrains.mps.lang.textGen.structure.OperationCall" flags="ng" index="1bDJIP">
         <reference id="1234190664409" name="function" index="1rvKf6" />
         <child id="1234191323697" name="parameter" index="1ryhcI" />
@@ -137,6 +137,7 @@
       <concept id="1236188139846" name="jetbrains.mps.lang.textGen.structure.WithIndentOperation" flags="nn" index="3izx1p">
         <child id="1236188238861" name="list" index="3izTki" />
       </concept>
+      <concept id="8937790975493363649" name="jetbrains.mps.lang.textGen.structure.AttributedNodePart" flags="ng" index="3mW3T8" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
@@ -401,6 +402,9 @@
             <ref role="1rvKf6" node="1Jj8OtqUcad" resolve="docCommentEnd" />
             <node concept="117lpO" id="1Jj8OtqUcaz" role="1ryhcI" />
           </node>
+        </node>
+        <node concept="lc7rE" id="5NnxLi4NA1H" role="3cqZAp">
+          <node concept="3mW3T8" id="5NnxLi4NA1I" role="lcghm" />
         </node>
       </node>
     </node>
@@ -864,12 +868,14 @@
             <node concept="117lpO" id="1Jj8OtqUca1" role="1ryhcI" />
           </node>
         </node>
-        <node concept="3clFbH" id="1Jj8OtqUc9U" role="3cqZAp" />
         <node concept="lc7rE" id="1Jj8OtqUcat" role="3cqZAp">
           <node concept="1bDJIP" id="1Jj8OtqUcau" role="lcghm">
             <ref role="1rvKf6" node="1Jj8OtqUcad" resolve="docCommentEnd" />
             <node concept="117lpO" id="1Jj8OtqUcav" role="1ryhcI" />
           </node>
+        </node>
+        <node concept="lc7rE" id="5NnxLi4N_Dj" role="3cqZAp">
+          <node concept="3mW3T8" id="5NnxLi4N_DZ" role="lcghm" />
         </node>
       </node>
     </node>
@@ -935,6 +941,9 @@
             <ref role="1rvKf6" node="1Jj8OtqUcad" resolve="docCommentEnd" />
             <node concept="117lpO" id="1Jj8OtqUcar" role="1ryhcI" />
           </node>
+        </node>
+        <node concept="lc7rE" id="5NnxLi4NAz$" role="3cqZAp">
+          <node concept="3mW3T8" id="5NnxLi4NAz_" role="lcghm" />
         </node>
       </node>
     </node>

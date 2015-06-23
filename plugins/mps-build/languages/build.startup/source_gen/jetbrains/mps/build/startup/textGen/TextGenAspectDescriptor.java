@@ -8,13 +8,9 @@ import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import java.util.List;
-import jetbrains.mps.text.TextUnit;
-import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
+import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.text.impl.RegularTextUnit;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
@@ -37,19 +33,16 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     }
   }
 
-  @NotNull
   @Override
-  public List<TextUnit> breakdownToUnits(@NotNull SModel model) {
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
-    for (SNode root : model.getRootNodes()) {
-      if (root.isInstanceOfConcept(MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"))) {
+  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
+    for (SNode root : outline.getModel().getRootNodes()) {
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d6687cL, "jetbrains.mps.build.startup.structure.TextFile"))) {
         String fname = getFileName_TextFile(root);
         String ext = getFileExtension_TextFile(root);
-        rv.add(new RegularTextUnit(root, (ext == null ? fname : (fname + '.' + ext))));
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
     }
-    return rv;
   }
   private static String getFileName_TextFile(SNode node) {
     return node.getName();

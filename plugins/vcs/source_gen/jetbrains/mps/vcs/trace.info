@@ -497,7 +497,7 @@
       <unit id="8964527901285344733" at="124,56,138,15" name="jetbrains.mps.vcs.TestMergeDialog$5" />
       <unit id="8964527901285338971" at="121,37,142,9" name="jetbrains.mps.vcs.TestMergeDialog$4" />
       <unit id="7314351270975609548" at="106,35,150,5" name="jetbrains.mps.vcs.TestMergeDialog$3" />
-      <unit id="7314351270975557769" at="45,0,154,0" name="jetbrains.mps.vcs.TestMergeDialog" />
+      <unit id="7314351270975557769" at="48,0,154,0" name="jetbrains.mps.vcs.TestMergeDialog" />
     </file>
   </root>
   <root nodeRef="r:cd7c9d90-25b3-4a54-a510-a0bcc7072c1d(jetbrains.mps.vcs)/8298649587588696257">

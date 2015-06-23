@@ -3169,10 +3169,10 @@
       <node id="3525722439544794318" at="164,64,179,7" concept="6" />
       <node id="7791284463049113994" at="130,0,148,5" concept="6" />
       <node id="7791284463049114037" at="162,0,180,5" concept="6" />
-      <node id="7791284463049113796" at="53,0,77,0" concept="13" trace="callInsertAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7791284463049113888" at="87,0,112,0" concept="13" trace="callInsertBeforeAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7791284463049113980" at="119,0,151,0" concept="13" trace="hasSingleRolesAtRightBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
-      <node id="7791284463049114023" at="151,0,183,0" concept="13" trace="hasSingleRolesAtLeftBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="7791284463049113796" at="56,0,77,0" concept="13" trace="callInsertAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7791284463049113888" at="90,0,112,0" concept="13" trace="callInsertBeforeAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7791284463049113980" at="126,0,151,0" concept="13" trace="hasSingleRolesAtRightBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="7791284463049114023" at="158,0,183,0" concept="13" trace="hasSingleRolesAtLeftBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <scope id="7791284463049114128" at="29,30,29,30" />
       <scope id="130230197973334066" at="31,87,32,133" />
       <scope id="795210086019271319" at="35,54,36,19" />
@@ -3282,18 +3282,18 @@
       <scope id="7791284463049113893" at="90,71,110,68">
         <var name="actionHandler" id="6715535892750455602" />
       </scope>
-      <scope id="7791284463049113985" at="126,73,149,16" />
-      <scope id="7791284463049114028" at="158,72,181,16" />
-      <scope id="7791284463049113796" at="53,0,77,0">
+      <scope id="7791284463049113796" at="56,0,77,0">
         <var name="cell" id="7791284463049113797" />
       </scope>
-      <scope id="7791284463049113888" at="87,0,112,0">
+      <scope id="7791284463049113888" at="90,0,112,0">
         <var name="cell" id="7791284463049113889" />
       </scope>
-      <scope id="7791284463049113980" at="119,0,151,0">
+      <scope id="7791284463049113985" at="126,73,149,16" />
+      <scope id="7791284463049114028" at="158,72,181,16" />
+      <scope id="7791284463049113980" at="126,0,151,0">
         <var name="cell" id="7791284463049113981" />
       </scope>
-      <scope id="7791284463049114023" at="151,0,183,0">
+      <scope id="7791284463049114023" at="158,0,183,0">
         <var name="cell" id="7791284463049114024" />
       </scope>
       <unit id="2034046503361585977" at="137,51,141,11" name="jetbrains.mps.ide.editor.actions.EditorActionUtils$1" />

@@ -8,13 +8,9 @@ import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import java.util.List;
-import jetbrains.mps.text.TextUnit;
-import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
+import jetbrains.mps.text.rt.TextGenModelOutline;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.text.impl.RegularTextUnit;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
@@ -448,37 +444,34 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     }
   }
 
-  @NotNull
   @Override
-  public List<TextUnit> breakdownToUnits(@NotNull SModel model) {
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
-    for (SNode root : model.getRootNodes()) {
-      if (root.isInstanceOfConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"))) {
+  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
+    for (SNode root : outline.getModel().getRootNodes()) {
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"))) {
         String fname = getFileName_Annotation(root);
         String ext = getFileExtension_Annotation(root);
-        rv.add(new RegularTextUnit(root, (ext == null ? fname : (fname + '.' + ext))));
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
-      if (root.isInstanceOfConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
         String fname = getFileName_ClassConcept(root);
         String ext = getFileExtension_ClassConcept(root);
-        rv.add(new RegularTextUnit(root, (ext == null ? fname : (fname + '.' + ext))));
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
-      if (root.isInstanceOfConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
         String fname = getFileName_Interface(root);
         String ext = getFileExtension_Interface(root);
-        rv.add(new RegularTextUnit(root, (ext == null ? fname : (fname + '.' + ext))));
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
-      if (root.isInstanceOfConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+      if (root.getConcept().equals(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         String fname = getFileName_EnumClass(root);
         String ext = getFileExtension_EnumClass(root);
-        rv.add(new RegularTextUnit(root, (ext == null ? fname : (fname + '.' + ext))));
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
     }
-    return rv;
   }
   private static String getFileName_Annotation(SNode node) {
     return node.getName();

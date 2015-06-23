@@ -30,5 +30,6 @@ public class ClassifierDocComment_TextGen extends TextGenDescriptorBase {
     }
 
     DocCommentTextGen.docCommentEnd(ctx.getPrimaryInput(), ctx);
+    tgs.appendAttributedNode();
   }
 }

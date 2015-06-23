@@ -163,6 +163,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.generator.ModelExports" />
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultStreamManager" />
     <classNode dependClassName="jetbrains.mps.generator.impl.cache.CacheGenLayout" />
@@ -206,6 +207,7 @@
     <classNode dependClassName="jetbrains.mps.text.TextGenResult" />
     <classNode dependClassName="jetbrains.mps.text.TextGeneratorEngine" />
     <classNode dependClassName="jetbrains.mps.text.TextUnit" />
+    <classNode dependClassName="jetbrains.mps.textGen.TextGen" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TraceInfoCache" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.util.IStatus" />

@@ -425,7 +425,7 @@
       <node id="9122198050635646926" at="115,0,124,0" concept="9" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
       <node id="878521226301293261" at="66,0,88,0" concept="9" trace="doMake#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
       <node id="9122198050635565472" at="97,75,124,6" concept="11" />
-      <node id="878521226301293323" at="88,0,126,0" concept="9" trace="completeController#(Ljetbrains/mps/make/MakeSession;Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IScriptController;" />
+      <node id="878521226301293323" at="94,0,126,0" concept="9" trace="completeController#(Ljetbrains/mps/make/MakeSession;Ljetbrains/mps/make/script/IScriptController;)Ljetbrains/mps/make/script/IScriptController;" />
       <scope id="878521226301293134" at="37,29,37,29" />
       <scope id="878521226301293242" at="56,49,56,49" />
       <scope id="878521226301293152" at="40,173,41,67" />
@@ -518,7 +518,7 @@
         <var name="gfi" id="9122198050634833448" />
         <var name="monitor" id="9122198050635559386" />
       </scope>
-      <scope id="878521226301293323" at="88,0,126,0">
+      <scope id="878521226301293323" at="94,0,126,0">
         <var name="ctl" id="878521226301293327" />
         <var name="msess" id="878521226301293324" />
       </scope>

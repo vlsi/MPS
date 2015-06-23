@@ -16,6 +16,7 @@
 package jetbrains.mps.text.impl;
 
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.text.TextArea;
 import jetbrains.mps.text.TextMark;
 import jetbrains.mps.text.rt.TextGenContext;
@@ -115,9 +116,54 @@ public final class TextGenSupport implements TextArea {
     return myTraceInfoCollector;
   }
 
-  public void appendNode(SNode node) {
+  public void appendAttributedNode() {
+    final SNode currentNode = myContext.getPrimaryInput();
+    if (!SNodeUtil.link_BaseConcept_smodelAttribute.equals(currentNode.getContainmentLink())) {
+      throw new IllegalStateException("Attempt to reference attributed node from a non-attribute node");
+    }
+    SNode attributedNode = currentNode.getParent();
+    boolean found = false;
+    for (SNode attribute : attributedNode.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
+      if (attribute == currentNode) {
+        found = true;
+        break;
+      }
+      attributedNode = attribute;
+    }
+    assert found;
+    // shall we process attribute of an attribute?
+    // Right now we do not. Unlike appendNode(), doAppendNode doesn't look for attributes of a node being appended
+    doAppendNode(attributedNode);
+  }
+
+  public void appendNode(@Nullable SNode node) {
+    if (node == null) {
+      append("???");
+      reportError("possible broken reference");
+      return;
+    }
+    // start with last attribute with textgen, if any
+    SNode n = node;
+    if (useAttributesToOverrideOrder()) {
+      for (SNode attribute : node.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
+        if (TextGenRegistry.getInstance().hasTextGen(attribute)) {
+          n = attribute;
+        }
+      }
+    }
+    doAppendNode(n);
+  }
+
+  private void doAppendNode(SNode node) {
     final TextGenBuffer buffer = getLegacyBuffer();
     TextGenRegistry.getInstance().getTextGenDescriptor(node).generateText(new TextGenTransitionContext(node, buffer));
+  }
+
+  private boolean useAttributesToOverrideOrder() {
+    // There might be TextGen that explicitly process node attributes (e.g. in MPS, BL did for bl.javadoc)
+    // For these, we shall not process attributes in automatic way (original generators for attributes didn't include
+    // call to attributedNode, hence only attributes were generated, without content of owner node.
+    return ((TextGenTransitionContext) myContext).getCompatibilityOption_EnableAttributes();
   }
 
   // FIXME copy of SNodeTextGen.foundError()

@@ -444,7 +444,7 @@
       <node id="3070226725409672081" at="98,0,107,0" concept="9" trace="run#()V" />
       <node id="4474271214082914515" at="33,0,43,0" concept="9" trace="findStackFrameIndex#()I" />
       <node id="3070226725409668931" at="96,74,107,7" concept="4" />
-      <node id="654837219998558871" at="87,0,109,0" concept="9" trace="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+      <node id="654837219998558871" at="96,0,109,0" concept="9" trace="invokeEvaluation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
       <scope id="4474271214082914421" at="21,59,22,37" />
       <scope id="4474271214082914442" at="30,0,31,0" />
       <scope id="4474271214082914450" at="31,0,32,0">
@@ -511,7 +511,7 @@
       <scope id="3070226725409672081" at="98,0,107,0" />
       <scope id="4474271214082914515" at="33,0,43,0" />
       <scope id="654837219998558875" at="96,74,107,7" />
-      <scope id="654837219998558871" at="87,0,109,0">
+      <scope id="654837219998558871" at="96,0,109,0">
         <var name="command" id="654837219998586805" />
       </scope>
       <unit id="3070226725409672081" at="97,66,107,5" name="jetbrains.mps.debug.api.AbstractUiState$1" />
@@ -825,8 +825,8 @@
       <node id="4474271214082914213" at="14,0,15,0" concept="9" trace="findDeepestDebuggableFrameIndex#(Ljava/util/List;)I" />
       <node id="4474271214082914220" at="15,0,16,0" concept="9" trace="isDebuggableFrame#(Ljetbrains/mps/debug/api/programState/IStackFrame;)Z" />
       <node id="4474271214082914227" at="16,0,17,0" concept="9" trace="isDebuggablePosition#(Ljava/lang/String;Ljava/lang/String;I)Z" />
+      <node id="4474271214082914237" at="20,0,21,0" concept="9" trace="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
       <node id="4474271214082914205" at="12,0,14,0" concept="9" trace="findDeepestDebuggableFrame#(Ljava/util/List;)Ljetbrains/mps/debug/api/programState/IStackFrame;" />
-      <node id="4474271214082914237" at="17,0,21,0" concept="9" trace="isSamePosition#(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;II)Z" />
       <scope id="4474271214082914213" at="14,0,15,0">
         <var name="frames" id="4474271214082914216" />
       </scope>
@@ -838,10 +838,7 @@
         <var name="position" id="4474271214082914234" />
         <var name="unitName" id="4474271214082914230" />
       </scope>
-      <scope id="4474271214082914205" at="12,0,14,0">
-        <var name="frames" id="4474271214082914208" />
-      </scope>
-      <scope id="4474271214082914237" at="17,0,21,0">
+      <scope id="4474271214082914237" at="20,0,21,0">
         <var name="lastFileName" id="4474271214082914242" />
         <var name="lastFrameCount" id="4474271214082914246" />
         <var name="lastLineNumber" id="4474271214082914244" />
@@ -850,6 +847,9 @@
         <var name="nextFrameCount" id="4474271214082914254" />
         <var name="nextLineNumber" id="4474271214082914252" />
         <var name="nextUnitName" id="4474271214082914248" />
+      </scope>
+      <scope id="4474271214082914205" at="12,0,14,0">
+        <var name="frames" id="4474271214082914208" />
       </scope>
       <unit id="4474271214082914203" at="11,0,22,0" name="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
     </file>
@@ -962,6 +962,7 @@
     <file name="BreakpointCreatorsManager.java">
       <node id="8149197049716796172" at="33,0,34,0" concept="5" trace="myCreators" />
       <node id="8149197049716796216" at="34,0,35,0" concept="5" trace="myAddedByConceptCreators" />
+      <node id="1713726972414750785" at="38,0,39,0" concept="5" trace="myOldToNewCreatorMap" />
       <node id="4474271214082914953" at="43,36,44,32" concept="11" />
       <node id="8149197049716797237" at="48,53,49,68" concept="11" />
       <node id="8149197049716797245" at="52,70,53,54" concept="11" />
@@ -1009,7 +1010,6 @@
       <node id="4474271214082915156" at="127,0,130,0" concept="9" trace="initComponent#()V" />
       <node id="4474271214082915160" at="130,0,133,0" concept="9" trace="disposeComponent#()V" />
       <node id="4474271214082914940" at="133,0,136,0" concept="15" trace="getInstance#()Ljetbrains/mps/debug/api/BreakpointCreatorsManager;" />
-      <node id="1713726972414750785" at="35,0,39,0" concept="5" trace="myOldToNewCreatorMap" />
       <node id="4474271214082914973" at="59,0,63,0" concept="9" trace="removeConceptBreakpointCreator#(Ljava/lang/String;)V" />
       <node id="4474271214082914949" at="41,0,46,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
       <node id="1713726972415952842" at="64,221,69,24" concept="10" />

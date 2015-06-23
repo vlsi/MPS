@@ -23,8 +23,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/4642948870877862679">
     <file name="IReferenceInfoResolver.java">
-      <node id="4642948870877888900" at="9,0,13,0" concept="9" trace="resolve#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4642948870877888900" at="9,0,13,0">
+      <node id="4642948870877888900" at="12,0,13,0" concept="9" trace="resolve#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="4642948870877888900" at="12,0,13,0">
         <var name="referenceInfo" id="4642948870877888903" />
         <var name="targetModelReference" id="4642948870877888905" />
       </scope>
@@ -489,7 +489,7 @@
       <unit id="8401916545537506435" at="41,38,50,7" name="jetbrains.mps.smodel.search.ISearchScope$1" />
       <unit id="7712479415687789291" at="68,0,93,0" name="jetbrains.mps.smodel.search.ISearchScope$RefAdapter" />
       <unit id="8401916545537503513" at="27,0,68,0" name="jetbrains.mps.smodel.search.ISearchScope$Adapter" />
-      <unit id="4642948870877889221" at="16,0,94,0" name="jetbrains.mps.smodel.search.ISearchScope" />
+      <unit id="4642948870877889221" at="19,0,94,0" name="jetbrains.mps.smodel.search.ISearchScope" />
     </file>
   </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/5889278117585265292">
@@ -850,7 +850,7 @@
         <var name="element" id="8484262519286299178" />
       </scope>
       <unit id="8484262519286299134" at="23,71,28,3" name="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache$1" />
-      <unit id="8484262519286299121" at="17,0,83,0" name="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
+      <unit id="8484262519286299121" at="20,0,83,0" name="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
     </file>
   </root>
   <root nodeRef="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)/8484262519286305935">

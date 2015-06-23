@@ -2388,6 +2388,7 @@
       <node id="6040198053169967807" at="784,0,793,5" concept="10" />
       <node id="7529829387576428871" at="869,0,878,0" concept="11" trace="convertExpression#(Lorg/eclipse/jdt/internal/compiler/ast/Expression;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6025856104340165327" at="954,5,963,5" concept="10" />
+      <node id="5432817038138100220" at="1013,0,1022,0" concept="3" trace="State#(Ljetbrains/mps/ide/java/newparser/ASTConverter/State;Ljava/util/Set;)V" />
       <node id="3493766494546486858" at="215,184,225,9" concept="10" />
       <node id="3493766494546487124" at="240,24,250,5" concept="10" />
       <node id="7428916848622667868" at="291,0,301,5" concept="10" />
@@ -2406,7 +2407,6 @@
       <node id="3493766494546486727" at="167,54,180,9" concept="23" />
       <node id="3493766494546487360" at="472,5,485,5" concept="10" />
       <node id="3493766494546487885" at="639,0,652,0" concept="11" trace="convertTypeRef#(Lorg/eclipse/jdt/internal/compiler/ast/TypeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5432817038138100220" at="1009,0,1022,0" concept="3" trace="State#(Ljetbrains/mps/ide/java/newparser/ASTConverter/State;Ljava/util/Set;)V" />
       <node id="3493766494546486481" at="90,0,104,0" concept="11" trace="convertRoot#(Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546486761" at="185,0,199,5" concept="1" />
       <node id="9140629538072462783" at="308,0,322,5" concept="10" />
@@ -2436,12 +2436,12 @@
       <node id="9140629538072462862" at="323,0,344,5" concept="10" />
       <node id="3493766494546487322" at="467,0,488,0" concept="11" trace="convertTypeVar#(Lorg/eclipse/jdt/internal/compiler/ast/TypeParameter;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5432817038137803964" at="1048,0,1069,7" concept="10" />
+      <node id="3493766494546487287" at="445,0,467,0" concept="11" trace="convertTypeVars#([Lorg/eclipse/jdt/internal/compiler/ast/TypeParameter;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/java/newparser/ASTConverter;" />
       <node id="6528213125912811851" at="695,0,717,0" concept="11" trace="tryConvertPrimitiveType#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546488103" at="652,59,675,5" concept="10" />
       <node id="8539625767970965711" at="111,0,135,5" concept="10" />
       <node id="9140629538072463908" at="418,0,442,0" concept="11" trace="convertClassContents#([Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="3493766494546488145" at="737,0,761,0" concept="11" trace="convertTypeRef#(Lorg/eclipse/jdt/internal/compiler/ast/QualifiedTypeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3493766494546487287" at="442,0,467,0" concept="11" trace="convertTypeVars#([Lorg/eclipse/jdt/internal/compiler/ast/TypeParameter;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/ide/java/newparser/ASTConverter;" />
       <node id="336459899685466651" at="895,64,920,5" concept="10" />
       <node id="3493766494546488100" at="652,0,678,0" concept="11" trace="convertTypeRef#(Lorg/eclipse/jdt/internal/compiler/ast/SingleTypeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3493766494546487414" at="495,0,522,0" concept="11" trace="convertAnnotation#(Lorg/eclipse/jdt/internal/compiler/ast/Annotation;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -3090,6 +3090,10 @@
       <scope id="7529829387576428871" at="869,0,878,0">
         <var name="x" id="7529829387576807405" />
       </scope>
+      <scope id="5432817038138100220" at="1013,0,1022,0">
+        <var name="base" id="5432817038138100595" />
+        <var name="typeVarNames" id="5432817038138101848" />
+      </scope>
       <scope id="5432817038133335824" at="1232,82,1241,24">
         <var name="facade" id="5432817038133335824" />
         <var name="quotedNode_2" id="5432817038133335824" />
@@ -3145,10 +3149,6 @@
       </scope>
       <scope id="3493766494546487885" at="639,0,652,0">
         <var name="typRef" id="3493766494546488098" />
-      </scope>
-      <scope id="5432817038138100220" at="1009,0,1022,0">
-        <var name="base" id="5432817038138100595" />
-        <var name="typeVarNames" id="5432817038138101848" />
       </scope>
       <scope id="5432817038137803969" at="1055,14,1068,26">
         <var name="ref" id="5432817038138145062" />
@@ -3241,6 +3241,10 @@
         <var name="node" id="9140629538072468312" />
         <var name="result" id="9140629538072464023" />
       </scope>
+      <scope id="3493766494546487287" at="445,0,467,0">
+        <var name="pars" id="3493766494546487288" />
+        <var name="result" id="3493766494546487291" />
+      </scope>
       <scope id="6528213125912811851" at="695,0,717,0">
         <var name="typ" id="6528213125912819098" />
       </scope>
@@ -3259,10 +3263,6 @@
       <scope id="3493766494546488103" at="652,59,676,0" />
       <scope id="3493766494546488145" at="737,0,761,0">
         <var name="typRef" id="3493766494546488224" />
-      </scope>
-      <scope id="3493766494546487287" at="442,0,467,0">
-        <var name="pars" id="3493766494546487288" />
-        <var name="result" id="3493766494546487291" />
       </scope>
       <scope id="3493766494546487417" at="495,77,520,16">
         <var name="name" id="3493766494546487426" />
@@ -3338,8 +3338,8 @@
       <unit id="5432817038142958545" at="452,143,456,5" name="jetbrains.mps.ide.java.newparser.ASTConverter$5" />
       <unit id="5432817038138117147" at="1016,53,1020,7" name="jetbrains.mps.ide.java.newparser.ASTConverter$1" />
       <unit id="2606592023504250188" at="1072,0,1083,0" name="jetbrains.mps.ide.java.newparser.ASTConverter$ASTConverterWithState" />
-      <unit id="2606592023504715705" at="998,0,1072,0" name="jetbrains.mps.ide.java.newparser.ASTConverter$State" />
-      <unit id="3493766494546486454" at="75,0,1280,0" name="jetbrains.mps.ide.java.newparser.ASTConverter" />
+      <unit id="2606592023504715705" at="1001,0,1072,0" name="jetbrains.mps.ide.java.newparser.ASTConverter$State" />
+      <unit id="3493766494546486454" at="78,0,1280,0" name="jetbrains.mps.ide.java.newparser.ASTConverter" />
     </file>
   </root>
   <root nodeRef="r:b1598fca-3527-4718-b3ee-193781dbf052(jetbrains.mps.ide.java.newparser)/3493766494546492050">

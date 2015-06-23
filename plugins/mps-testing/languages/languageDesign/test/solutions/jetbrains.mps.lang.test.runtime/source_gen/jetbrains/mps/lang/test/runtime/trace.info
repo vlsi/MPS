@@ -1493,10 +1493,10 @@
       <node id="4701684462952586438" at="185,0,192,0" concept="10" trace="run#()V" />
       <node id="2654128911719068535" at="207,0,214,0" concept="16" trace="clearSystemClipboard#()V" />
       <node id="5255291810367646554" at="108,0,116,0" concept="10" trace="findModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="5792583586807561984" at="145,0,154,0" concept="10" trace="anyOpenedProject#()Ljetbrains/mps/project/Project;" />
       <node id="4701684462952584138" at="183,23,192,9" concept="6" />
       <node id="7107617965856386232" at="238,31,247,5" concept="20" />
       <node id="7107617965856385946" at="220,91,230,7" concept="9" />
-      <node id="5792583586807561984" at="142,0,154,0" concept="10" trace="anyOpenedProject#()Ljetbrains/mps/project/Project;" />
       <node id="2034046503361585176" at="163,0,175,0" concept="10" trace="run#()V" />
       <node id="7107617965856385942" at="219,90,231,5" concept="8" />
       <node id="4355018683150685367" at="87,27,100,13" concept="6" />
@@ -1506,7 +1506,7 @@
       <node id="4355018683150685365" at="87,0,102,0" concept="10" trace="run#()V" />
       <node id="3879105416231611040" at="85,7,102,9" concept="6" />
       <node id="4787445426632226653" at="120,55,138,5" concept="9" />
-      <node id="2654128911718990531" at="215,0,236,0" concept="16" trace="readSystemMacro#()Ljetbrains/mps/project/PathMacrosProvider;" />
+      <node id="2654128911718990531" at="218,0,236,0" concept="16" trace="readSystemMacro#()Ljetbrains/mps/project/PathMacrosProvider;" />
       <node id="591841948921930792" at="82,10,105,5" concept="1" />
       <node id="4787445426632226713" at="118,0,141,0" concept="10" trace="openTestProject#(Ljava/lang/String;Z)Ljetbrains/mps/project/Project;" />
       <node id="591841948921639035" at="75,83,105,5" concept="9" />
@@ -1636,6 +1636,7 @@
       <scope id="4787445426632226654" at="121,77,130,7">
         <var name="openedProject" id="532317087509530626" />
       </scope>
+      <scope id="5792583586807561984" at="145,0,154,0" />
       <scope id="7107617965856386150" at="183,23,192,9" />
       <scope id="2034046503361585177" at="163,25,173,9">
         <var name="module" id="5189733185935200117" />
@@ -1644,7 +1645,6 @@
       <scope id="7107617965856386227" at="237,78,248,21">
         <var name="exception" id="7107617965856386229" />
       </scope>
-      <scope id="5792583586807561984" at="142,0,154,0" />
       <scope id="2034046503361585176" at="163,0,175,0" />
       <scope id="7107617965856385942" at="219,90,231,5">
         <var name="property" id="7107617965856385943" />
@@ -1660,11 +1660,11 @@
         <var name="macros" id="2966534639212639060" />
         <var name="provider" id="2654128911719134942" />
       </scope>
+      <scope id="2654128911718990531" at="218,0,236,0" />
       <scope id="4787445426632226652" at="118,84,139,52">
         <var name="expandedProjectPath" id="4787445426632226688" />
         <var name="projectToOpen" id="532317087509867593" />
       </scope>
-      <scope id="2654128911718990531" at="215,0,236,0" />
       <scope id="591841948921930793" at="82,12,104,49" />
       <scope id="4787445426632226713" at="118,0,141,0">
         <var name="projectPathName" id="1729512929062211033" />

@@ -2349,6 +2349,7 @@
       <node id="1176897142200" at="56,59,61,7" concept="1" />
       <node id="1176897185023" at="63,59,68,7" concept="1" />
       <node id="1203512292514" at="69,5,74,5" concept="1" />
+      <node id="3064704932540204336" at="183,0,188,0" concept="17" trace="inference_matchConcreteTypesWithTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
       <node id="1228174300650" at="200,60,205,11" concept="1" />
       <node id="6610038060571315990" at="208,7,213,7" concept="1" />
       <node id="8871292796545470697" at="234,73,239,5" concept="9" />
@@ -2400,7 +2401,6 @@
       <node id="3254522536313044089" at="788,0,795,0" concept="17" trace="_quotation_createNode_5ahx9e_a0c0a0i#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4460871289557451602" at="795,0,802,0" concept="17" trace="_quotation_createNode_5ahx9e_b0a0a0a0a1a91#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4460871289557451606" at="802,0,809,0" concept="17" trace="_quotation_createNode_5ahx9e_b0a0a0a0a1a91_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3064704932540204336" at="180,0,188,0" concept="17" trace="inference_matchConcreteTypesWithTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
       <node id="1228174300618" at="198,98,206,9" concept="10" />
       <node id="4293892367838067587" at="257,69,265,11" concept="10" />
       <node id="1219947615750" at="352,76,360,17" concept="22" />
@@ -2410,6 +2410,7 @@
       <node id="7249436257879820227" at="731,77,739,7" concept="10" />
       <node id="7790104442347402837" at="770,30,778,5" concept="1" />
       <node id="7790104442347402837" at="770,30,778,5" concept="1" />
+      <node id="684456904423889821" at="171,0,180,0" concept="17" trace="inference_InstanceMethodCallOperation#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5380162141339274295" at="388,167,397,127" concept="6" />
       <node id="1203452177636" at="477,0,486,0" concept="17" trace="putTypeVariable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
       <node id="4460871289557451560" at="580,39,589,13" concept="1" />
@@ -2424,7 +2425,6 @@
       <node id="1203452844809" at="427,26,437,9" concept="9" />
       <node id="1220347157774" at="336,39,347,23" concept="10" />
       <node id="1203431577170" at="460,139,471,5" concept="10" />
-      <node id="684456904423889821" at="168,0,180,0" concept="17" trace="inference_InstanceMethodCallOperation#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4293892367838067535" at="366,12,378,7" concept="1" />
       <node id="5380162141339274295" at="386,145,398,5" concept="1" />
       <node id="8531167801199654561" at="405,133,417,5" concept="10" />
@@ -2435,6 +2435,7 @@
       <node id="1220347102532" at="336,0,349,0" concept="11" trace="run#()V" />
       <node id="1219946816994" at="366,10,379,5" concept="1" />
       <node id="1203452801447" at="425,23,438,7" concept="9" />
+      <node id="1203431501558" at="444,0,458,0" concept="17" trace="inference_matchTypeWithTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7790104442347402837" at="767,0,781,0" concept="17" trace="_quotation_createNode_5ahx9e_a0c0a0f#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1203441371333" at="275,173,290,5" concept="10" />
       <node id="1220347102532" at="334,182,349,133" concept="6" />
@@ -2442,10 +2443,11 @@
       <node id="1203431515739" at="458,0,473,0" concept="17" trace="inference_mapTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
       <node id="1201700829805" at="501,38,516,7" concept="1" />
       <node id="4460871289557453850" at="662,16,677,11" concept="1" />
+      <node id="5380162141339274272" at="384,0,400,0" concept="17" trace="matchedType_supertypeOf_argument#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8531167801199645599" at="403,0,419,0" concept="17" trace="inference_setConcreteUpperBorders#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljava/util/Map;)V" />
       <node id="4460871289557453756" at="608,20,624,15" concept="10" />
       <node id="6468716278896139450" at="662,14,678,9" concept="1" />
       <node id="968206336460257705" at="687,94,703,5" concept="10" />
-      <node id="1203431501558" at="441,0,458,0" concept="17" trace="inference_matchTypeWithTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1201700777633" at="500,5,517,5" concept="10" />
       <node id="7249436257879820210" at="728,196,745,5" concept="10" />
       <node id="1220347102532" at="332,59,350,17" concept="1" />
@@ -2453,22 +2455,20 @@
       <node id="968206336460257690" at="687,0,705,0" concept="17" trace="concretifyType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4293892367838067567" at="248,464,267,7" concept="1" />
       <node id="1219946847997" at="296,24,315,7" concept="22" />
-      <node id="5380162141339274272" at="381,0,400,0" concept="17" trace="matchedType_supertypeOf_argument#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8531167801199645599" at="400,0,419,0" concept="17" trace="inference_setConcreteUpperBorders#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljava/util/Map;)V" />
+      <node id="1203452762080" at="422,0,441,0" concept="17" trace="inference_equateMatchingTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljava/util/Map;)V" />
       <node id="7249436257879820204" at="727,0,747,0" concept="17" trace="checkReturningExpression#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/lang/dataFlow/framework/AnalysisResult;)V" />
       <node id="1203433003332" at="193,217,214,5" concept="10" />
       <node id="7769835591074320054" at="247,169,268,5" concept="10" />
       <node id="6468716278896138869" at="640,242,661,11" concept="1" />
-      <node id="1203452762080" at="419,0,441,0" concept="17" trace="inference_equateMatchingTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljava/util/Map;)V" />
+      <node id="8871292796545636978" at="220,0,242,0" concept="17" trace="match_forInnerClassifiers#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+      <node id="1176897078110" at="53,0,76,0" concept="17" trace="comparisonOp#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3115327157609989881" at="522,35,546,5" concept="9" />
-      <node id="8871292796545636978" at="217,0,242,0" concept="17" trace="match_forInnerClassifiers#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
-      <node id="1176897078110" at="50,0,76,0" concept="17" trace="comparisonOp#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7769835591074320050" at="242,0,270,0" concept="17" trace="inference_matchConcreteTypesWithMethodTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+      <node id="7769835591074320050" at="245,0,270,0" concept="17" trace="inference_matchConcreteTypesWithMethodTypeVariables#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+      <node id="1203432943867" at="191,0,217,0" concept="17" trace="inference_matchConcreteTypesWithTypeVariablesInternal#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3115327157609983330" at="520,0,548,0" concept="17" trace="checkDuplicates#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)V" />
-      <node id="1203432943867" at="188,0,217,0" concept="17" trace="inference_matchConcreteTypesWithTypeVariablesInternal#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4460871289557451637" at="597,13,626,13" concept="10" />
+      <node id="1201699810579" at="489,0,520,0" concept="17" trace="isWithinStatic#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1220346991490" at="329,119,361,15" concept="10" />
-      <node id="1201699810579" at="486,0,520,0" concept="17" trace="isWithinStatic#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1219947571132" at="326,38,362,13" concept="1" />
       <node id="4460871289557451637" at="590,16,627,11" concept="1" />
       <node id="1219947571132" at="325,11,363,11" concept="10" />
@@ -2491,7 +2491,7 @@
       <node id="1219946738030" at="291,358,379,5" concept="10" />
       <node id="1178588449187" at="76,69,165,7" concept="12" />
       <node id="1178588381110" at="76,0,168,0" concept="17" trace="collectReturnStatements#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="1203441237747" at="270,0,381,0" concept="17" trace="inference_equateParametersAndReturnType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+      <node id="1203441237747" at="273,0,381,0" concept="17" trace="inference_equateParametersAndReturnType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
       <node id="1210182111329" at="552,0,687,0" concept="17" trace="check#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljava/util/Set;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
       <scope id="7152041109751866373" at="48,40,48,40" />
       <scope id="1227876792379" at="130,27,130,27" />
@@ -2735,6 +2735,12 @@
       <scope id="684456904423889824" at="173,181,178,97">
         <var name="mmap" id="684456904423889828" />
       </scope>
+      <scope id="3064704932540204336" at="183,0,188,0">
+        <var name="genericClassifier" id="3064704932540204410" />
+        <var name="instanceType" id="3064704932540204412" />
+        <var name="mmap" id="3064704932540204414" />
+        <var name="typeCheckingContext" id="3064704932540204336" />
+      </scope>
       <scope id="8871292796545470697" at="234,73,239,5">
         <var name="tvd" id="8871292796545470698" />
       </scope>
@@ -2822,18 +2828,19 @@
       <scope id="3254522536313044089" at="788,0,795,0" />
       <scope id="4460871289557451602" at="795,0,802,0" />
       <scope id="4460871289557451606" at="802,0,809,0" />
-      <scope id="3064704932540204336" at="180,0,188,0">
-        <var name="genericClassifier" id="3064704932540204410" />
-        <var name="instanceType" id="3064704932540204412" />
-        <var name="mmap" id="3064704932540204414" />
-        <var name="typeCheckingContext" id="3064704932540204336" />
-      </scope>
       <scope id="8531167801199654573" at="407,60,415,9">
         <var name="nodes" id="8531167801199654608" />
       </scope>
       <scope id="1203452844810" at="428,34,436,22" />
       <scope id="4989157187872834993" at="614,24,622,37" />
       <scope id="7790104442347402837" at="770,30,778,5" />
+      <scope id="684456904423889821" at="171,0,180,0">
+        <var name="imco" id="684456904423889853" />
+        <var name="instanceType" id="684456904423889859" />
+        <var name="methodClassifier" id="684456904423889863" />
+        <var name="returnType" id="684456904423889855" />
+        <var name="typeCheckingContext" id="684456904423889821" />
+      </scope>
       <scope id="1220347349780" at="351,22,360,17" />
       <scope id="1203452177636" at="477,0,486,0">
         <var name="mmap" id="1203452194237" />
@@ -2888,13 +2895,6 @@
         <var name="prev" id="1203452861430" />
       </scope>
       <scope id="1203431515742" at="460,139,471,5" />
-      <scope id="684456904423889821" at="168,0,180,0">
-        <var name="imco" id="684456904423889853" />
-        <var name="instanceType" id="684456904423889859" />
-        <var name="methodClassifier" id="684456904423889863" />
-        <var name="returnType" id="684456904423889855" />
-        <var name="typeCheckingContext" id="684456904423889821" />
-      </scope>
       <scope id="1219946816995" at="366,12,378,7" />
       <scope id="5380162141339274275" at="386,145,398,5" />
       <scope id="8531167801199645602" at="405,133,417,5" />
@@ -2921,6 +2921,11 @@
         <var name="_reporter_2309309498" id="4460871289557453850" />
         <var name="errorTarget" id="4460871289557453850" />
       </scope>
+      <scope id="1203431501558" at="444,0,458,0">
+        <var name="mmap" id="1203439370348" />
+        <var name="type" id="1203432062556" />
+        <var name="typeCheckingContext" id="1203431501558" />
+      </scope>
       <scope id="4460871289557453757" at="609,356,623,17">
         <var name="methodLike" id="4989157187872727231" />
       </scope>
@@ -2939,6 +2944,15 @@
       <scope id="1220347102532" at="333,17,349,133">
         <var name="actualType" id="1220347102532" />
       </scope>
+      <scope id="5380162141339274272" at="384,0,400,0">
+        <var name="arg" id="5380162141339274280" />
+        <var name="matchedType" id="5380162141339274284" />
+        <var name="typeCheckingContext" id="5380162141339274272" />
+      </scope>
+      <scope id="8531167801199645599" at="403,0,419,0">
+        <var name="mmap" id="8531167801199654557" />
+        <var name="typeCheckingContext" id="8531167801199645599" />
+      </scope>
       <scope id="968206336460257693" at="687,94,703,5" />
       <scope id="4293892367838067567" at="249,7,266,9">
         <var name="arg_it" id="4293892367838067567" />
@@ -2948,11 +2962,6 @@
       </scope>
       <scope id="1219946847999" at="297,20,314,9">
         <var name="matchedType" id="1219947530369" />
-      </scope>
-      <scope id="1203431501558" at="441,0,458,0">
-        <var name="mmap" id="1203439370348" />
-        <var name="type" id="1203432062556" />
-        <var name="typeCheckingContext" id="1203431501558" />
       </scope>
       <scope id="4460871289557453755" at="608,20,625,20" />
       <scope id="7249436257879820207" at="728,196,745,5" />
@@ -2970,14 +2979,9 @@
         <var name="params" id="1228174212945" />
       </scope>
       <scope id="7769835591074320067" at="248,464,267,7" />
-      <scope id="5380162141339274272" at="381,0,400,0">
-        <var name="arg" id="5380162141339274280" />
-        <var name="matchedType" id="5380162141339274284" />
-        <var name="typeCheckingContext" id="5380162141339274272" />
-      </scope>
-      <scope id="8531167801199645599" at="400,0,419,0">
-        <var name="mmap" id="8531167801199654557" />
-        <var name="typeCheckingContext" id="8531167801199645599" />
+      <scope id="1203452762080" at="422,0,441,0">
+        <var name="mmap" id="1203452785576" />
+        <var name="typeCheckingContext" id="1203452762080" />
       </scope>
       <scope id="6468716278896138869" at="641,11,660,13">
         <var name="_reporter_2309309498" id="6468716278896138869" />
@@ -2996,33 +3000,36 @@
       <scope id="7769835591074320053" at="247,169,268,5" />
       <scope id="6468716278896134170" at="640,242,661,11" />
       <scope id="1203432943870" at="193,217,215,90" />
-      <scope id="1203452762080" at="419,0,441,0">
-        <var name="mmap" id="1203452785576" />
-        <var name="typeCheckingContext" id="1203452762080" />
-      </scope>
-      <scope id="3115327157609989882" at="523,38,545,7">
-        <var name="namesakeErasureSignature" id="3115327157609989932" />
-      </scope>
-      <scope id="3115327157609989881" at="522,35,546,5">
-        <var name="namesake" id="3115327157609989968" />
-      </scope>
-      <scope id="8871292796545636978" at="217,0,242,0">
+      <scope id="8871292796545636978" at="220,0,242,0">
         <var name="declClassifier" id="8871292796545636991" />
         <var name="instanceType" id="8871292796545637001" />
         <var name="mmap" id="8871292796545637006" />
         <var name="typeCheckingContext" id="8871292796545636978" />
       </scope>
-      <scope id="3115327157609983333" at="521,143,546,5">
-        <var name="erasureSignature" id="3115327157609992937" />
+      <scope id="3115327157609989882" at="523,38,545,7">
+        <var name="namesakeErasureSignature" id="3115327157609989932" />
       </scope>
-      <scope id="1176897078110" at="50,0,76,0">
+      <scope id="1176897078110" at="53,0,76,0">
         <var name="binOp" id="1176897112129" />
         <var name="typeCheckingContext" id="1176897078110" />
       </scope>
-      <scope id="7769835591074320050" at="242,0,270,0">
+      <scope id="3115327157609989881" at="522,35,546,5">
+        <var name="namesake" id="3115327157609989968" />
+      </scope>
+      <scope id="7769835591074320050" at="245,0,270,0">
         <var name="methodCall" id="7769835591074320122" />
         <var name="mmap" id="7769835591074320126" />
         <var name="typeCheckingContext" id="7769835591074320050" />
+      </scope>
+      <scope id="3115327157609983333" at="521,143,546,5">
+        <var name="erasureSignature" id="3115327157609992937" />
+      </scope>
+      <scope id="1203432943867" at="191,0,217,0">
+        <var name="genericClassifier" id="1203432971226" />
+        <var name="instanceType" id="1203432988072" />
+        <var name="mmap" id="1203433215594" />
+        <var name="nodeToCheck" id="3064704932540204419" />
+        <var name="typeCheckingContext" id="1203432943867" />
       </scope>
       <scope id="1201699810582" at="490,52,518,17">
         <var name="ancestor" id="1201700296935" />
@@ -3035,19 +3042,12 @@
         <var name="ownMethod" id="3115327157609990362" />
         <var name="typeCheckingContext" id="3115327157609983330" />
       </scope>
-      <scope id="1203432943867" at="188,0,217,0">
-        <var name="genericClassifier" id="1203432971226" />
-        <var name="instanceType" id="1203432988072" />
-        <var name="mmap" id="1203433215594" />
-        <var name="nodeToCheck" id="3064704932540204419" />
-        <var name="typeCheckingContext" id="1203432943867" />
+      <scope id="1201699810579" at="489,0,520,0">
+        <var name="node" id="1201699944504" />
       </scope>
       <scope id="1219947571134" at="327,13,361,15">
         <var name="componentType" id="1219947749696" />
         <var name="matchedType" id="1219947702415" />
-      </scope>
-      <scope id="1201699810579" at="486,0,520,0">
-        <var name="node" id="1201699944504" />
       </scope>
       <scope id="1219947571132" at="326,38,362,13" />
       <scope id="4460871289557451637" at="590,18,626,13">
@@ -3097,7 +3097,7 @@
       <scope id="1203441237750" at="275,173,379,5">
         <var name="parameterDeclarations" id="1219946893022" />
       </scope>
-      <scope id="1203441237747" at="270,0,381,0">
+      <scope id="1203441237747" at="273,0,381,0">
         <var name="mc" id="1203441332134" />
         <var name="mmap" id="1206293722054" />
         <var name="returnType" id="1204066326154" />

@@ -282,7 +282,7 @@
       <unit id="4474271214083123731" at="193,0,205,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyEditorComponentCreateListener" />
       <unit id="4474271214083124341" at="91,80,104,5" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$1" />
       <unit id="4474271214083123747" at="169,0,193,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx$MyLeftMarginMouseListener" />
-      <unit id="2706316667685001040" at="27,0,206,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" />
+      <unit id="2706316667685001040" at="33,0,206,0" name="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" />
     </file>
   </root>
   <root nodeRef="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)/8589065642488591082">

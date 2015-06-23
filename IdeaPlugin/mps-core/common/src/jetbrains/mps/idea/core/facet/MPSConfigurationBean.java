@@ -49,7 +49,6 @@ public class MPSConfigurationBean {
 
   public MPSConfigurationBean() {
     myDescriptor = new SolutionDescriptor();
-    myDescriptor.setId(ModuleId.regular());
   }
 
   @Transient
@@ -57,12 +56,20 @@ public class MPSConfigurationBean {
     return myDescriptor;
   }
 
-  public String getUUID() {
+  public boolean isModuleIdSet() {
+    return myDescriptor.getId() != null;
+  }
+
+  public String getId() {
     return myDescriptor.getId().toString();
   }
 
-  public void setUUID(String uuid) {
+  public void setId(String uuid) {
     myDescriptor.setId(ModuleId.fromString(uuid));
+  }
+
+  public void setIdByModuleName(String moduleName) {
+    myDescriptor.setId(ModuleId.foreign(moduleName));
   }
 
   public void setUseModuleSourceFolder(boolean use) {
@@ -133,7 +140,7 @@ public class MPSConfigurationBean {
   }
 
   public void loadFrom(State state) {
-    setUUID(state.UUID);
+    setId(state.UUID);
     setGeneratorOutputPath(state.generatorOutputPath);
     setUseModuleSourceFolder(state.useModuleSourceFolder);
     setUseTransientOutputFolder(state.useTransientOutputFolder);
@@ -175,7 +182,7 @@ public class MPSConfigurationBean {
 
   public State toState() {
     State result = new State();
-    result.UUID = getUUID();
+    result.UUID = getId();
     result.generatorOutputPath = myDescriptor.getOutputPath();
     result.useModuleSourceFolder = myUseModuleSourceFolder;
     result.useTransientOutputFolder = myUseTransientOutputFolder;

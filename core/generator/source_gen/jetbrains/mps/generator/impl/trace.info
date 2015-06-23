@@ -75,6 +75,7 @@
       <node id="7527312772557219455" at="79,0,80,0" concept="13" trace="concept_InsertPrevOp" />
       <node id="7527312772557172293" at="80,0,81,0" concept="13" trace="concept_ReplaceNewOp" />
       <node id="7527312772557179266" at="81,0,82,0" concept="13" trace="concept_ReplaceOp" />
+      <node id="6985017052018534026" at="88,0,89,0" concept="13" trace="NodeMacroConcepts" />
       <node id="7006097710431053274" at="89,10,90,43" concept="3" />
       <node id="7006097710431085144" at="90,43,91,47" concept="3" />
       <node id="7006097710431089523" at="91,47,92,46" concept="3" />
@@ -92,13 +93,16 @@
       <node id="7006097710431114707" at="103,44,104,46" concept="3" />
       <node id="7813537385605160937" at="104,46,105,45" concept="3" />
       <node id="5142965544952215041" at="105,45,106,47" concept="3" />
+      <node id="7006097710431474324" at="111,0,112,0" concept="13" trace="TemplateLangElements" />
       <node id="7006097710431505255" at="112,10,113,53" concept="3" />
       <node id="7006097710431531864" at="113,53,114,52" concept="3" />
       <node id="7006097710431564923" at="114,52,115,55" concept="3" />
       <node id="7006097710431597263" at="115,55,116,61" concept="3" />
+      <node id="8632039839642640166" at="121,0,122,0" concept="13" trace="MandatoryQueryMacro" />
       <node id="8632039839642714021" at="122,10,123,47" concept="3" />
       <node id="8632039839642724340" at="123,47,124,53" concept="3" />
       <node id="8632039839642724744" at="124,53,125,54" concept="3" />
+      <node id="7527312772557234455" at="130,0,131,0" concept="13" trace="ModelChangeOperations" />
       <node id="7527312772557258161" at="131,10,132,54" concept="3" />
       <node id="7527312772557268472" at="132,54,133,54" concept="3" />
       <node id="7527312772557266939" at="133,54,134,55" concept="3" />
@@ -280,13 +284,9 @@
       <node id="8986013878447081927" at="417,0,420,0" concept="14" trace="getDismissTopRule_message#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7914477976583014926" at="420,0,423,0" concept="14" trace="getLoopMacroCounterVarName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="7527312772557322314" at="423,0,426,0" concept="14" trace="getModelChangeOperations#()Ljava/lang/Iterable;" />
-      <node id="7006097710431474324" at="108,0,112,0" concept="13" trace="TemplateLangElements" />
-      <node id="8632039839642640166" at="118,0,122,0" concept="13" trace="MandatoryQueryMacro" />
-      <node id="7527312772557234455" at="127,0,131,0" concept="13" trace="ModelChangeOperations" />
       <node id="3787796982867056160" at="368,0,372,0" concept="14" trace="getTemplateCall_Arguments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="6414589636559797566" at="221,64,226,5" concept="7" />
       <node id="5535664898596391456" at="229,60,234,5" concept="7" />
-      <node id="6985017052018534026" at="83,0,89,0" concept="13" trace="NodeMacroConcepts" />
       <node id="1733398552130483587" at="157,0,164,0" concept="14" trace="getMappingLabelName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="6414589636559797560" at="221,0,229,0" concept="14" trace="getMapSrc_PostMapperFunction#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5535664898596391452" at="229,0,237,0" concept="14" trace="getMapSrc_MapperFunction#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />

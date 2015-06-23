@@ -8,11 +8,7 @@ import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import java.util.List;
-import jetbrains.mps.text.TextUnit;
-import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.text.rt.TextGenModelOutline;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final long[] myId2Index;
@@ -104,12 +100,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     }
   }
 
-  @NotNull
   @Override
-  public List<TextUnit> breakdownToUnits(@NotNull SModel model) {
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
-    for (SNode root : model.getRootNodes()) {
-    }
-    return rv;
+  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
   }
 }
