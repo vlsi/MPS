@@ -2257,14 +2257,11 @@
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.textGen-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.textGen#1233678176149" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generators-baseLanguage-template">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/generators/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generator-models">
+      <fileset dir="${mps_home}/languages/languageDesign/textGen/generator/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageAccessories">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageModels">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-models">
+      <fileset dir="${mps_home}/languages/languageDesign/textGen/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.textGen-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/languages/languageDesign/textGen/generator/source_gen">
@@ -2276,9 +2273,8 @@
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generators-baseLanguage-template" prefix="module/generators/baseLanguage/template" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageAccessories" prefix="module/languageAccessories" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generator-models" prefix="module/generator/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.traceable.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.traceable.jar/META-INF" />
