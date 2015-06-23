@@ -24,9 +24,6 @@ public class ConceptTextGenDeclaration_BehaviorDescriptor extends AbstractTextGe
   public SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return ConceptTextGenDeclaration_Behavior.virtual_getBaseConcept_2621449412040133768(thisNode);
   }
-  public String virtual_getTextGenNode_1234784577703(SNode thisNode) {
-    return ConceptTextGenDeclaration_Behavior.virtual_getTextGenNode_1234784577703(thisNode);
-  }
   @Deprecated
   @ToRemove(version = 3.3)
   public boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {

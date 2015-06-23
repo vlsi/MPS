@@ -9,8 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.textGen.behavior.ConceptTextGenDeclaration_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,12 +20,9 @@ public class check_MissingTextGenBlock_NonTypesystemRule extends AbstractNonType
   }
   public void applyRule(final SNode tgDecl, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(tgDecl, MetaAdapterFactory.getContainmentLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, 0x11f41304578L, "textGenBlock")) == null)) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(tgDecl, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, 0x11f3c7a3d4dL, "conceptDeclaration")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+      if (ConceptTextGenDeclaration_Behavior.call_shallProduceOutputUnit_3741392693834396931(tgDecl)) {
         // allow empty textgen block for concepts we would produce files from, see MPS-22220 
-        SNode cd = SNodeOperations.cast(SLinkOperations.getTarget(tgDecl, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, 0x11f3c7a3d4dL, "conceptDeclaration")), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
-        if (SPropertyOperations.getBoolean(cd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"))) {
-          return;
-        }
+        return;
       }
       {
         MessageTarget errorTarget = new NodeMessageTarget();
