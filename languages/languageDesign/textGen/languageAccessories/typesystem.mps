@@ -13,6 +13,7 @@
     <import index="2omo" ref="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -85,6 +86,12 @@
       </concept>
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -160,8 +167,15 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <reference id="1140138128738" name="concept" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -966,6 +980,94 @@
     <node concept="1YaCAy" id="5ZG7NfXc0Gd" role="1YuTPh">
       <property role="TrG5h" value="part" />
       <ref role="1YaFvo" to="2omo:5ZG7NfXc0vS" resolve="ReferenceAppendPart" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3fG6dkheQ6l">
+    <property role="TrG5h" value="check_MissingTextGenBlock" />
+    <node concept="3clFbS" id="3fG6dkheQ6m" role="18ibNy">
+      <node concept="3clFbJ" id="3fG6dkheQJV" role="3cqZAp">
+        <node concept="3clFbS" id="3fG6dkheQJW" role="3clFbx">
+          <node concept="3clFbJ" id="3fG6dkheWIv" role="3cqZAp">
+            <node concept="3clFbS" id="3fG6dkheWIx" role="3clFbx">
+              <node concept="3SKdUt" id="3fG6dkheXBJ" role="3cqZAp">
+                <node concept="3SKdUq" id="3fG6dkheXC6" role="3SKWNk">
+                  <property role="3SKdUp" value="allow empty textgen block for concepts we would produce files from, see MPS-22220" />
+                </node>
+              </node>
+              <node concept="3cpWs8" id="3fG6dkheT6s" role="3cqZAp">
+                <node concept="3cpWsn" id="3fG6dkheT6t" role="3cpWs9">
+                  <property role="TrG5h" value="cd" />
+                  <node concept="3Tqbb2" id="3fG6dkheT6r" role="1tU5fm">
+                    <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                  </node>
+                  <node concept="1PxgMI" id="3fG6dkheT6u" role="33vP2m">
+                    <ref role="1PxNhF" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                    <node concept="2OqwBi" id="3fG6dkheT6v" role="1PxMeX">
+                      <node concept="1YBJjd" id="3fG6dkheT6w" role="2Oq$k0">
+                        <ref role="1YBMHb" node="3fG6dkheQJt" resolve="tgDecl" />
+                      </node>
+                      <node concept="3TrEf2" id="3fG6dkheT6x" role="2OqNvi">
+                        <ref role="3Tt5mk" to="2omo:hWWuzPd" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="3fG6dkheWVp" role="3cqZAp">
+                <node concept="3clFbS" id="3fG6dkheWVr" role="3clFbx">
+                  <node concept="3cpWs6" id="3fG6dkheXrO" role="3cqZAp" />
+                </node>
+                <node concept="2OqwBi" id="3fG6dkheWZu" role="3clFbw">
+                  <node concept="37vLTw" id="3fG6dkheWVJ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3fG6dkheT6t" resolve="cd" />
+                  </node>
+                  <node concept="3TrcHB" id="3fG6dkheXqO" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpce:fX9Ktp8" resolve="rootable" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3fG6dkheRiX" role="3clFbw">
+              <node concept="2OqwBi" id="3fG6dkheQNB" role="2Oq$k0">
+                <node concept="1YBJjd" id="3fG6dkheQK7" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3fG6dkheQJt" resolve="tgDecl" />
+                </node>
+                <node concept="3TrEf2" id="3fG6dkheR1m" role="2OqNvi">
+                  <ref role="3Tt5mk" to="2omo:hWWuzPd" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="3fG6dkheRHH" role="2OqNvi">
+                <node concept="chp4Y" id="3fG6dkheRIT" role="cj9EA">
+                  <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2MkqsV" id="3fG6dkheVDJ" role="3cqZAp">
+            <node concept="Xl_RD" id="3fG6dkheVEW" role="2MkJ7o">
+              <property role="Xl_RC" value="Missing text generator code block" />
+            </node>
+            <node concept="1YBJjd" id="3fG6dkheVEw" role="2OEOjV">
+              <ref role="1YBMHb" node="3fG6dkheQJt" resolve="tgDecl" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3fG6dkheUW_" role="3clFbw">
+          <node concept="2OqwBi" id="3fG6dkheU8U" role="2Oq$k0">
+            <node concept="1YBJjd" id="3fG6dkheU2k" role="2Oq$k0">
+              <ref role="1YBMHb" node="3fG6dkheQJt" resolve="tgDecl" />
+            </node>
+            <node concept="3TrEf2" id="3fG6dkheUCo" role="2OqNvi">
+              <ref role="3Tt5mk" to="2omo:hX1c4lS" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="3fG6dkheVyS" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3fG6dkheQJt" role="1YuTPh">
+      <property role="TrG5h" value="tgDecl" />
+      <ref role="1YaFvo" to="2omo:hWWtQdD" resolve="ConceptTextGenDeclaration" />
     </node>
   </node>
 </model>

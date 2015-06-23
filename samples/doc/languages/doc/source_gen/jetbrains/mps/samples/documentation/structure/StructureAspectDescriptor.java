@@ -13,21 +13,27 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptCommentAttribute = new ConceptDescriptorBuilder("jetbrains.mps.samples.documentation.structure.CommentAttribute", MetaIdFactory.conceptId(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x63feb1ccbe205151L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7205391946760606040L, "text")).properties("text").create();
+  /*package*/ final ConceptDescriptor myConceptHandlerAsChild = new ConceptDescriptorBuilder("jetbrains.mps.samples.documentation.structure.HandlerAsChild", MetaIdFactory.conceptId(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x33ec18d5113b4bdcL)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).create();
+  /*package*/ final ConceptDescriptor myConceptHandlerAsRoot = new ConceptDescriptorBuilder("jetbrains.mps.samples.documentation.structure.HandlerAsRoot", MetaIdFactory.conceptId(0xe8e38af60cf34cc1L, 0xbaa3ba261722e8f3L, 0x33ec18d5113abcd9L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCommentAttribute);
+    return Arrays.asList(myConceptCommentAttribute, myConceptHandlerAsChild, myConceptHandlerAsRoot);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptCommentAttribute;
+      case 1:
+        return myConceptHandlerAsChild;
+      case 2:
+        return myConceptHandlerAsRoot;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.samples.documentation.structure.CommentAttribute", "jetbrains.mps.samples.documentation.structure.HandlerAsChild", "jetbrains.mps.samples.documentation.structure.HandlerAsRoot"};
 }

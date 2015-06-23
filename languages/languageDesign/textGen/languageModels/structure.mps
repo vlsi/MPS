@@ -77,7 +77,7 @@
     <node concept="1TJgyj" id="hX1c4lS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="textGenBlock" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="hX1bSug" resolve="GenerateTextDeclaration" />
     </node>
     <node concept="1TJgyj" id="2wXN29Pz7c" role="1TKVEi">

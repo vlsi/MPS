@@ -5,11 +5,13 @@
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
   </languages>
   <imports>
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="t1gd" ref="r:e99786b4-cb81-48f5-ad96-d9e0d7c7aa3c(jetbrains.mps.samples.documentation.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
+      <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
@@ -42,6 +44,30 @@
         <ref role="1NtTu8" to="t1gd:6fYGsMY855o" resolve="text" />
       </node>
       <node concept="l2Vlx" id="6fYGsMY88VI" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3fG6dkheOJP">
+    <ref role="1XX52x" to="t1gd:3fG6dkheOJs" resolve="HandlerAsChild" />
+    <node concept="3EZMnI" id="3fG6dkheOK4" role="2wV5jI">
+      <node concept="3F0ifn" id="3fG6dkheOKe" role="3EZMnx">
+        <property role="3F0ifm" value="HandlerAsChild" />
+      </node>
+      <node concept="3F0A7n" id="3fG6dkheOKm" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="2iRfu4" id="3fG6dkheOK7" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3fG6dkheOKM">
+    <ref role="1XX52x" to="t1gd:3fG6dkheFNp" resolve="HandlerAsRoot" />
+    <node concept="3EZMnI" id="3fG6dkheOKO" role="2wV5jI">
+      <node concept="3F0ifn" id="3fG6dkheOKP" role="3EZMnx">
+        <property role="3F0ifm" value="HandlerAsRoot" />
+      </node>
+      <node concept="3F0A7n" id="3fG6dkheOKQ" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="2iRfu4" id="3fG6dkheOKR" role="2iSdaV" />
     </node>
   </node>
 </model>

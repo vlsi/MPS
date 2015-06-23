@@ -370,7 +370,7 @@ public class ConceptTextGenDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_9mcqjq_a8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("textGenBlock");
-    provider.setNoTargetText("<no textGenBlock>");
+    provider.setNoTargetText("use textgen of ancestor");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {

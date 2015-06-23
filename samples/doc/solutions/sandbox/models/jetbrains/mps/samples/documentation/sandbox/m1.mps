@@ -7,6 +7,12 @@
   </languages>
   <imports />
   <registry>
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
+        <child id="1178549979242" name="visibility" index="1B3o_S" />
+      </concept>
+      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+    </language>
     <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml">
       <concept id="6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" flags="ng" index="2pMbU2">
         <child id="6666499814681515201" name="document" index="2pMbU3" />
@@ -20,6 +26,7 @@
       </concept>
     </language>
     <language id="e8e38af6-0cf3-4cc1-baa3-ba261722e8f3" name="jetbrains.mps.samples.documentation">
+      <concept id="3741392693834202329" name="jetbrains.mps.samples.documentation.structure.Handler" flags="ig" index="yPEgc" />
       <concept id="7205391946760606033" name="jetbrains.mps.samples.documentation.structure.CommentAttribute" flags="ng" index="3tRI2t">
         <property id="7205391946760606040" name="text" index="3tRI2k" />
       </concept>
@@ -52,6 +59,10 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="yPEgc" id="3fG6dkheG44">
+    <property role="TrG5h" value="HandlerA" />
+    <node concept="3Tm1VV" id="3fG6dkheG45" role="1B3o_S" />
   </node>
 </model>
 

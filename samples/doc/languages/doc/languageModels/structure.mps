@@ -5,6 +5,7 @@
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="0" />
   </languages>
   <imports>
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -23,6 +24,7 @@
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
+        <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
       <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
@@ -53,6 +55,15 @@
         <ref role="trN6q" to="tpck:gw2VY9q" resolve="BaseConcept" />
       </node>
     </node>
+  </node>
+  <node concept="1TIwiD" id="3fG6dkheFNp">
+    <property role="TrG5h" value="HandlerAsRoot" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
+  </node>
+  <node concept="1TIwiD" id="3fG6dkheOJs">
+    <property role="TrG5h" value="HandlerAsChild" />
+    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
   </node>
 </model>
 

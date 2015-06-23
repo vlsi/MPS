@@ -524,6 +524,8 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="3F1sOY" id="hX1dJ8R" role="3EZMnx">
+          <property role="39s7Ar" value="true" />
+          <property role="1$x2rV" value="use textgen of ancestor" />
           <ref role="1NtTu8" to="2omo:hX1c4lS" />
           <node concept="ljvvj" id="i0Navxj" role="3F10Kt">
             <property role="VOm3f" value="true" />
