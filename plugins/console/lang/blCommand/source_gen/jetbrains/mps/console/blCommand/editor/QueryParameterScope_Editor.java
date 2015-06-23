@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class QueryParameterScope_Editor extends DefaultNodeEditor {
@@ -24,9 +25,6 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5iann0_a");
     editorCell.setBig(true);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, true);
-    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_5iann0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5iann0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5iann0_c0(editorContext, node));
@@ -34,6 +32,9 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_5iann0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
+    editorCell.getStyle().putAll(style);
     QueryParameter_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
@@ -55,9 +56,9 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("value");
     }
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
-    editorCell.getStyle().putAll(style);
+    if (true) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
     QueryParameterScopeValue_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
