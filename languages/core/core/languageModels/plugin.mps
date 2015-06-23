@@ -1081,6 +1081,59 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3clFbH" id="UI$PwTdQx4" role="3cqZAp" />
+                    <node concept="1DcWWT" id="UI$PwTdRLK" role="3cqZAp">
+                      <node concept="3clFbS" id="UI$PwTdRLM" role="2LFqv$">
+                        <node concept="3clFbJ" id="UI$PwTdTGT" role="3cqZAp">
+                          <node concept="3clFbS" id="UI$PwTdTGU" role="3clFbx">
+                            <node concept="1daRAt" id="UI$PwTdTGV" role="3cqZAp">
+                              <property role="1daRAr" value="ERROR" />
+                              <node concept="3cpWs3" id="UI$PwTdTGW" role="1daK9t">
+                                <node concept="2OqwBi" id="UI$PwTdTGX" role="3uHU7w">
+                                  <node concept="37vLTw" id="UI$PwTdTGY" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="UI$PwTdRLN" resolve="tu" />
+                                  </node>
+                                  <node concept="liA8E" id="UI$PwTdTGZ" role="2OqNvi">
+                                    <ref role="37wK5l" to="lv7v:~TextUnit.getFileName():java.lang.String" resolve="getFileName" />
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="UI$PwTdTH0" role="3uHU7B">
+                                  <property role="Xl_RC" value="Failed to generate text for " />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbC" id="UI$PwTdTH2" role="3clFbw">
+                            <node concept="2OqwBi" id="UI$PwTdTH3" role="3uHU7B">
+                              <node concept="37vLTw" id="UI$PwTdTH4" role="2Oq$k0">
+                                <ref role="3cqZAo" node="UI$PwTdRLN" resolve="tu" />
+                              </node>
+                              <node concept="liA8E" id="UI$PwTdTH5" role="2OqNvi">
+                                <ref role="37wK5l" to="lv7v:~TextUnit.getState():jetbrains.mps.text.TextUnit$Status" resolve="getState" />
+                              </node>
+                            </node>
+                            <node concept="Rm8GO" id="UI$PwTdTH6" role="3uHU7w">
+                              <ref role="Rm8GQ" to="lv7v:~TextUnit$Status.Failed" resolve="Failed" />
+                              <ref role="1Px2BO" to="lv7v:~TextUnit$Status" resolve="TextUnit.Status" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3cpWsn" id="UI$PwTdRLN" role="1Duv9x">
+                        <property role="TrG5h" value="tu" />
+                        <node concept="3uibUv" id="UI$PwTdSD3" role="1tU5fm">
+                          <ref role="3uigEE" to="lv7v:~TextUnit" resolve="TextUnit" />
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="UI$PwTdT6R" role="1DdaDG">
+                        <node concept="37vLTw" id="UI$PwTdT63" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7A08csWcILH" resolve="tgr" />
+                        </node>
+                        <node concept="liA8E" id="UI$PwTdTrK" role="2OqNvi">
+                          <ref role="37wK5l" to="lv7v:~TextGenResult.getUnits():java.util.List" resolve="getUnits" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbH" id="3xnl$BhH34L" role="3cqZAp" />
                     <node concept="1u1O0H" id="3xnl$BhH1aU" role="3cqZAp">
                       <ref role="h6aeV" node="3xnl$BhGB9W" />

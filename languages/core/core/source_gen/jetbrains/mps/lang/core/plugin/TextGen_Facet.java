@@ -41,6 +41,7 @@ import java.util.HashMap;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import java.util.concurrent.TimeUnit;
+import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -59,7 +60,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
@@ -243,6 +243,12 @@ public class TextGen_Facet extends IFacet.Stub {
                 final List<FileProcessor> fileProcessors2 = ListSequence.fromList(new ArrayList<FileProcessor>());
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
+
+                  for (TextUnit tu : tgr.getUnits()) {
+                    if (tu.getState() == TextUnit.Status.Failed) {
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text for " + tu.getFileName())));
+                    }
+                  }
 
                   monitor.currentProgress().advanceWork("Writing", 1, tgr.getModel().getReference().getModelName());
                   final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
