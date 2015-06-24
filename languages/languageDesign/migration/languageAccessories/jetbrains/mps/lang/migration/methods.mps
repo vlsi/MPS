@@ -37,9 +37,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -391,12 +391,19 @@
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="IkVTleEo52" role="3clFbw">
-            <node concept="3uibUv" id="IkVTleEoHW" role="2ZW6by">
-              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+          <node concept="2OqwBi" id="5h6wZRqYdIV" role="3clFbw">
+            <node concept="Rm8GO" id="5h6wZRqYdnK" role="2Oq$k0">
+              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
             </node>
-            <node concept="37vLTw" id="IkVTleEnxX" role="2ZW6bz">
-              <ref role="3cqZAo" node="IkVTleEjRc" resolve="module" />
+            <node concept="liA8E" id="5h6wZRqYfqi" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+              <node concept="2OqwBi" id="5h6wZRqYg24" role="37wK5m">
+                <node concept="37vLTw" id="5h6wZRqYfEG" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2VRROcY5O23" resolve="c" />
+                </node>
+                <node concept="I4A8Y" id="5h6wZRqYgSk" role="2OqNvi" />
+              </node>
             </node>
           </node>
         </node>
