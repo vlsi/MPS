@@ -260,6 +260,8 @@
       <modulePath path="$PROJECT_DIR$/samples/agreement/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/sandbox/jetbrains.mps.samples.agreementLanguage.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/attributes/languages/attr/jetbrains.mps.samples.attribute.mpl" folder="samples.attribute" />
+      <modulePath path="$PROJECT_DIR$/samples/attributes/solutions/sandbox/jetbrains.mps.samples.attribute.sandbox.msd" folder="samples.attribute" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/jetbrains.mps.calculator.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/jetbrains.mps.calculator.pluginSolution.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="samples" />
@@ -268,8 +270,6 @@
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/jetbrains.mps.samples.complex.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/jetbrains.mps.samples.componentDependencies.mpl" folder="samples.componentDependencies" />
       <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/jetbrains.mps.samples.componentDependencies.sandbox.msd" folder="samples.componentDependencies" />
-      <modulePath path="$PROJECT_DIR$/samples/doc/languages/doc/jetbrains.mps.samples.documentation.mpl" folder="samples.doc" />
-      <modulePath path="$PROJECT_DIR$/samples/doc/solutions/sandbox/jetbrains.mps.samples.documentation.sandbox.msd" folder="samples.doc" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/jetbrains.mps.samples.secretCompartmentLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/dslbook_example/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" folder="samples" />

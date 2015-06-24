@@ -347,6 +347,10 @@
       <directory url="file://$PROJECT_DIR$/samples/agreement/framework/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/attributes/languages/attr/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/attributes/languages/attr/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/attributes/solutions/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/test_gen" includeSubdirectories="true" />
@@ -362,10 +366,6 @@
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/doc/languages/doc/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/doc/languages/doc/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/doc/solutions/sandbox/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/samples/doc/solutions/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/languages/secretCompartmentLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/dslbook_example/solutions/runtime/source_gen" includeSubdirectories="true" />

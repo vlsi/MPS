@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <root nodeRef="r:a95dc7a2-e9e9-436a-8ee4-e1e0d11cb88b(jetbrains.mps.samples.attribute.sandbox.m2)/8081432364527544736">
+    <file name="AAA.java">
+      <node id="8081432364527561636" at="9,2,10,0" concept="0" trace="x" />
+      <node id="8081432364527561642" at="11,2,12,0" concept="0" trace="y" />
+      <node id="8081432364527561651" at="13,2,14,0" concept="0" trace="z" />
+      <unit id="8081432364527544736" at="7,0,15,0" name="jetbrains.mps.samples.attribute.sandbox.m2.AAA" />
+    </file>
+  </root>
+</debug-info>
+

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.documentation.sandbox.m1.HandlerA" file="HandlerA" />
-  <dependency className="jetbrains.mps.samples.documentation.sandbox.m1.test1" file="test1.xml" />
-</dependenciesRoot>
-
