@@ -39,6 +39,9 @@ public class ExecuteAfterDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_l3byek_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, 0, false);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   private EditorCell createConstant_l3byek_b0(EditorContext editorContext, SNode node) {
