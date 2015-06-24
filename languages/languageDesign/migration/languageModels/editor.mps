@@ -9,9 +9,9 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="9lvf" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.editor)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -59,6 +59,7 @@
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
+        <reference id="1139959269582" name="actionMap" index="1ERwB7" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -103,6 +104,7 @@
       <node concept="3F2HdR" id="6QXKeyZ37Yv" role="3EZMnx">
         <property role="1cu_pB" value="2" />
         <ref role="1NtTu8" to="53vh:6QXKeyZ2WwE" />
+        <ref role="1ERwB7" to="9lvf:7T23sO8tbnq" resolve="RealObject2Placeholder" />
         <node concept="l2Vlx" id="6QXKeyZ37Yx" role="2czzBx" />
         <node concept="pj6Ft" id="6QXKeyZ38op" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -190,6 +192,7 @@
       </node>
       <node concept="1iCGBv" id="4XFiG3drnKW" role="3EZMnx">
         <ref role="1NtTu8" to="53vh:536fTXa3qOl" />
+        <ref role="1ERwB7" to="9lvf:7T23sO8tbnq" resolve="RealObject2Placeholder" />
         <node concept="1sVBvm" id="4XFiG3drnKY" role="1sWHZn">
           <node concept="3F0A7n" id="4XFiG3drnLi" role="2wV5jI">
             <property role="1Intyy" value="true" />
@@ -199,6 +202,7 @@
       </node>
       <node concept="3F0ifn" id="4XFiG3drnK_" role="3EZMnx">
         <property role="3F0ifm" value="&gt;" />
+        <ref role="1ERwB7" to="9lvf:7T23sO8tbnq" resolve="RealObject2Placeholder" />
         <node concept="11L4FC" id="7fCCGqboGpf" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -242,6 +246,7 @@
       <node concept="3F2HdR" id="3A3gNhf1VS4" role="3EZMnx">
         <property role="1cu_pB" value="2" />
         <ref role="1NtTu8" to="53vh:3A3gNhf2pyH" />
+        <ref role="1ERwB7" to="9lvf:7T23sO8tbnq" resolve="RealObject2Placeholder" />
         <node concept="l2Vlx" id="3A3gNhf1VS5" role="2czzBx" />
         <node concept="pj6Ft" id="3A3gNhf1VS6" role="3F10Kt">
           <property role="VOm3f" value="true" />
