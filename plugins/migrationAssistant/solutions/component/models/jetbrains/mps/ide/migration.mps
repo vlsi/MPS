@@ -3131,6 +3131,27 @@
       <node concept="3Tmbuc" id="5SsFeroaavv" role="1B3o_S" />
       <node concept="3cqZAl" id="5SsFeroaavw" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="3krW$SwdH7D" role="jymVt" />
+    <node concept="3clFb_" id="3krW$SwdKRG" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getHelpID" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tmbuc" id="3krW$SwdKRH" role="1B3o_S" />
+      <node concept="3uibUv" id="3krW$SwdKRJ" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="3krW$SwdKRK" role="3clF47">
+        <node concept="3clFbF" id="3krW$SwdRWx" role="3cqZAp">
+          <node concept="Xl_RD" id="3krW$SwdRWw" role="3clFbG">
+            <property role="Xl_RC" value="migration.assistant" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3krW$SwdKRL" role="2AJF6D">
+        <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+    </node>
   </node>
   <node concept="3HP615" id="5SsFeroaabl">
     <property role="TrG5h" value="MigrationManager" />

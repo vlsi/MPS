@@ -340,7 +340,7 @@
     <property role="TrG5h" value="ClassLikes" />
     <node concept="tT9cl" id="2WSWNq1OgZ9" role="2f5YQi">
       <ref role="tU$_T" to="tprs:1wNvKTcoaln" resolve="CreateRootNode" />
-      <ref role="2f8Tey" to="tprs:1wNvKTcoals" resolve="newRoot" />
+      <ref role="2f8Tey" to="tprs:6iZ8s2UYsKa" resolve="mainRoot" />
     </node>
     <node concept="2OiAzN" id="2WSWNq1PUpW" role="ftER_">
       <node concept="2OiTZ2" id="2WSWNq1PUpZ" role="2Oj6PV">
