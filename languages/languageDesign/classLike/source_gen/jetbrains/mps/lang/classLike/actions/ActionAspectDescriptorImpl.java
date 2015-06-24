@@ -17,12 +17,10 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
           return Collections.<NodeFactory>singletonList(new DependentType_factory.NodeFactory_9097849371504700258());
-        case 1:
-          return Collections.<NodeFactory>singletonList(new Factories.NodeFactory_3855110916776743292());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"DependentTypeDeclaration", "GenerateModifier"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"DependentTypeDeclaration"};
 }
