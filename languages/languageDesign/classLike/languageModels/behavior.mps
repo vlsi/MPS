@@ -2533,7 +2533,21 @@
     <property role="3GE5qa" value="instances.property" />
     <ref role="13h7C2" to="oubp:5BD$AU43p5h" resolve="ClassLikeProperty" />
     <node concept="13hLZK" id="7T23sO8w32Y" role="13h7CW">
-      <node concept="3clFbS" id="7T23sO8w32Z" role="2VODD2" />
+      <node concept="3clFbS" id="7T23sO8w32Z" role="2VODD2">
+        <node concept="3clFbF" id="UBgfI9dQAH" role="3cqZAp">
+          <node concept="37vLTI" id="UBgfI9dSoJ" role="3clFbG">
+            <node concept="2c44tf" id="UBgfI9dSvF" role="37vLTx">
+              <node concept="3Tm1VV" id="UBgfI9dSyz" role="2c44tc" />
+            </node>
+            <node concept="2OqwBi" id="UBgfI9dQKi" role="37vLTJ">
+              <node concept="13iPFW" id="UBgfI9dQAG" role="2Oq$k0" />
+              <node concept="3TrEf2" id="UBgfI9dRLB" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="7T23sO8w338" role="13h7CS">
       <property role="13i0iv" value="false" />
