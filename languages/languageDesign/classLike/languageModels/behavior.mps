@@ -2796,5 +2796,22 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="UBgfI9eMAq">
+    <property role="3GE5qa" value="instances" />
+    <ref role="13h7C2" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+    <node concept="13i0hz" id="UBgfI9eMAt" role="13h7CS">
+      <property role="13i0iv" value="true" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="getDescriptor" />
+      <node concept="3Tm1VV" id="UBgfI9eMAu" role="1B3o_S" />
+      <node concept="3Tqbb2" id="UBgfI9eMA_" role="3clF45">
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+      </node>
+      <node concept="3clFbS" id="UBgfI9eMAw" role="3clF47" />
+    </node>
+    <node concept="13hLZK" id="UBgfI9eMAr" role="13h7CW">
+      <node concept="3clFbS" id="UBgfI9eMAs" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

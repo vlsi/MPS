@@ -8,8 +8,8 @@
   <imports>
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -383,6 +383,10 @@
     <node concept="PrWs8" id="1QReUKIFP7K" role="PzmwI">
       <ref role="PrY4T" node="2WSWNq1TGnY" resolve="MemberModifier" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="UBgfI9exfH">
+    <property role="3GE5qa" value="instances" />
+    <property role="TrG5h" value="AutoInitClassLike" />
   </node>
 </model>
 

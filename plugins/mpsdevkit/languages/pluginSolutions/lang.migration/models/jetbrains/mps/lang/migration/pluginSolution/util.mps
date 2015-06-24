@@ -3,6 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="0" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,9 +16,11 @@
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" />
     <import index="oubp" ref="r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike.structure)" />
+    <import index="rduf" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.actions)" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -128,6 +132,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
+    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions">
+      <concept id="7776141288922801652" name="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" flags="nn" index="q_SaT" />
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
@@ -139,8 +146,12 @@
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
+      <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
+        <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
       </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -206,9 +217,7 @@
         <node concept="3cpWs8" id="2BXC8DkHiah" role="3cqZAp">
           <node concept="3cpWsn" id="2BXC8DkHiai" role="3cpWs9">
             <property role="TrG5h" value="migrationModel" />
-            <node concept="3uibUv" id="2BXC8DkHiaj" role="1tU5fm">
-              <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
-            </node>
+            <node concept="H_c77" id="UBgfI9eGdc" role="1tU5fm" />
             <node concept="2OqwBi" id="2BXC8DkHiak" role="33vP2m">
               <node concept="Rm8GO" id="2BXC8DkHial" role="2Oq$k0">
                 <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
@@ -228,16 +237,27 @@
             <node concept="37vLTw" id="2BXC8DkHiOk" role="37vLTJ">
               <ref role="3cqZAo" node="2BXC8DkHgq2" resolve="myScript" />
             </node>
-            <node concept="1PxgMI" id="2BXC8DkHias" role="37vLTx">
-              <ref role="1PxNhF" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
-              <node concept="2YIFZM" id="2BXC8DkHiat" role="1PxMeX">
-                <ref role="37wK5l" to="6j0q:1E0uMqHvZkv" resolve="createNewClassLike" />
-                <ref role="1Pybhc" to="6j0q:1E0uMqHvYTB" resolve="ClassLikeUtil" />
-                <node concept="3B5_sB" id="2BXC8DkHiau" role="37wK5m">
-                  <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
-                </node>
-                <node concept="37vLTw" id="2BXC8DkHiav" role="37wK5m">
-                  <ref role="3cqZAo" node="2BXC8DkHiai" resolve="migrationModel" />
+            <node concept="2OqwBi" id="2VRROcYakOZ" role="37vLTx">
+              <node concept="37vLTw" id="UBgfI9fBl5" role="2Oq$k0">
+                <ref role="3cqZAo" node="2BXC8DkHiai" resolve="migrationModel" />
+              </node>
+              <node concept="3BYIHo" id="UBgfI9eDqX" role="2OqNvi">
+                <node concept="1PxgMI" id="2iCqkkxCXuJ" role="3BYIHq">
+                  <ref role="1PxNhF" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
+                  <node concept="2OqwBi" id="2gRrw8RnlRQ" role="1PxMeX">
+                    <node concept="2OqwBi" id="2iCqkkxCWQZ" role="2Oq$k0">
+                      <node concept="2OqwBi" id="2gRrw8RnlRR" role="2Oq$k0">
+                        <node concept="2qgKlT" id="2gRrw8RnlRV" role="2OqNvi">
+                          <ref role="37wK5l" to="9nqt:1_lSsE3TA5X" resolve="getPreferredConcept" />
+                        </node>
+                        <node concept="3B5_sB" id="2BXC8DkHiau" role="2Oq$k0">
+                          <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
+                        </node>
+                      </node>
+                      <node concept="1rGIog" id="2iCqkkxCXgg" role="2OqNvi" />
+                    </node>
+                    <node concept="q_SaT" id="2gRrw8RnlRW" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
             </node>

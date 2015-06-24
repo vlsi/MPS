@@ -16,11 +16,13 @@ public class ActionAspectDescriptorImpl implements ActionAspectDescriptor {
     if (LANGUAGE_FQ_NAME.equals(concept.getLanguage().getQualifiedName())) {
       switch (Arrays.binarySearch(stringSwitchCases_tpto26_a0a0a0c, concept.getName())) {
         case 0:
+          return Collections.<NodeFactory>singletonList(new ClassLike.NodeFactory_1055884086724932454());
+        case 1:
           return Collections.<NodeFactory>singletonList(new DependentType_factory.NodeFactory_9097849371504700258());
         default:
       }
     }
     return Collections.<NodeFactory>emptyList();
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"DependentTypeDeclaration"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AutoInitClassLike", "DependentTypeDeclaration"};
 }
