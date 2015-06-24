@@ -1100,6 +1100,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3r5LMLzk2PE" role="3cqZAp">
+          <node concept="3SKdUq" id="3r5LMLzk2Z5" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME it's suspicious to check existence of a model directory to tell existence of a module" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3r5LMLzk3hd" role="3cqZAp">
+          <node concept="3SKdUq" id="3r5LMLzk3qE" role="3SKWNk">
+            <property role="3SKdUp" value="E.g. it might be empty, or named differently. Left intact for now, although deserves a refactoring" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="5AqjJyeyivO" role="3cqZAp">
           <node concept="3clFbS" id="5AqjJyeyivP" role="3clFbx">
             <node concept="3cpWs6" id="5AqjJyeypv6" role="3cqZAp">
@@ -1109,21 +1119,40 @@
             </node>
           </node>
           <node concept="22lmx$" id="5AqjJyeyiJQ" role="3clFbw">
-            <node concept="2OqwBi" id="5AqjJyeyiJI" role="3uHU7B">
-              <node concept="2OqwBi" id="5AqjJyeyiwW" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagTw7R" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
-                </node>
-                <node concept="liA8E" id="5AqjJyeyix1" role="2OqNvi">
-                  <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
-                  <node concept="10M0yZ" id="5AqjJyeyixc" role="37wK5m">
-                    <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
-                    <ref role="3cqZAo" to="cu2c:~Language.LANGUAGE_MODELS" resolve="LANGUAGE_MODELS" />
+            <node concept="22lmx$" id="3r5LMLzk3wL" role="3uHU7B">
+              <node concept="2OqwBi" id="5AqjJyeyiJI" role="3uHU7B">
+                <node concept="2OqwBi" id="5AqjJyeyiwW" role="2Oq$k0">
+                  <node concept="37vLTw" id="3GM_nagTw7R" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
+                  </node>
+                  <node concept="liA8E" id="5AqjJyeyix1" role="2OqNvi">
+                    <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
+                    <node concept="10M0yZ" id="5AqjJyeyixc" role="37wK5m">
+                      <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
+                      <ref role="3cqZAo" to="cu2c:~Language.LANGUAGE_MODELS" resolve="LANGUAGE_MODELS" />
+                    </node>
                   </node>
                 </node>
+                <node concept="liA8E" id="5AqjJyeyiJN" role="2OqNvi">
+                  <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                </node>
               </node>
-              <node concept="liA8E" id="5AqjJyeyiJN" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+              <node concept="2OqwBi" id="3r5LMLzk3As" role="3uHU7w">
+                <node concept="2OqwBi" id="3r5LMLzk3At" role="2Oq$k0">
+                  <node concept="37vLTw" id="3r5LMLzk3Au" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
+                  </node>
+                  <node concept="liA8E" id="3r5LMLzk3Av" role="2OqNvi">
+                    <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
+                    <node concept="10M0yZ" id="3r5LMLzk3Aw" role="37wK5m">
+                      <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
+                      <ref role="3cqZAo" to="cu2c:~Language.LEGACY_LANGUAGE_MODELS" resolve="LEGACY_LANGUAGE_MODELS" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3r5LMLzk3Ax" role="2OqNvi">
+                  <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="5AqjJyeyiJT" role="3uHU7w">

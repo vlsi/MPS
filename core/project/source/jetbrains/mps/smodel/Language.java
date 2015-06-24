@@ -69,7 +69,17 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   private static final Logger LOG = LogManager.getLogger(Language.class);
 
-  public static final String LANGUAGE_MODELS = "languageModels";
+  /**
+   * Default, although not mandatory location we save our models to.
+   * Made public just for the sake of tests.
+   */
+  public static final String LANGUAGE_MODELS = "models";
+  /**
+   * @deprecated Use of default value to detect aspect source root or to check module existence is wrong.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static final String LEGACY_LANGUAGE_MODELS = "languageModels";
 
   static {
     ModelsAutoImportsManager.registerContributor(new LanguageModelsAutoImports());
