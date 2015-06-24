@@ -16,6 +16,9 @@ public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_Behav
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+  public String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
+    return CustomMemberDescriptor_Behavior.virtual_getMatchingText_2736582054146581585(thisNode);
+  }
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CustomMemberDescriptor_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

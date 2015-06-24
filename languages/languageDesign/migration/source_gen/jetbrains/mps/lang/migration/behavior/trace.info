@@ -94,6 +94,16 @@
       <unit id="5636302460526286563" at="14,0,34,0" name="jetbrains.mps.lang.migration.behavior.TransformStatement_Behavior" />
     </file>
   </root>
+  <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/6376334641304540206">
+    <file name="ExecuteAfterDeclaration_Behavior.java">
+      <node id="6376334641304540206" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6376334641304540208" at="8,43,8,43" />
+      <scope id="6376334641304540206" at="8,0,10,0">
+        <var name="thisNode" id="6376334641304540206" />
+      </scope>
+      <unit id="6376334641304540206" at="7,0,11,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_Behavior" />
+    </file>
+  </root>
   <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/7153805464398619454">
     <file name="RequiredDataDeclaration_Behavior.java">
       <node id="7153805464398641649" at="17,35,18,36" concept="0" />

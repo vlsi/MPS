@@ -22,4 +22,7 @@ public class EmptyMember_Behavior {
   public static Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
     return null;
   }
+  public static String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
+    return "empty line";
+  }
 }

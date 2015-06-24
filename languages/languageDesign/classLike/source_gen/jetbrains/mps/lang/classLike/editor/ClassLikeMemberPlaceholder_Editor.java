@@ -12,7 +12,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class ClassLikeMemberPlaceholder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,6 +33,8 @@ public class ClassLikeMemberPlaceholder_Editor extends DefaultNodeEditor {
             EditorCell_Label cell = new EditorCell_Constant(context, node, "");
             cell.setDefaultText(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db3L, "caption")));
             cell.setSelectable(true);
+            cell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ClassLikeMemberPlaceholderMenu()}));
+
             // this is a dirty hack. TODO remove this code when MPS-22216 is fixed 
             Placeholder2RealObject.setCellActions(cell, node, context);
             return cell;
@@ -39,6 +48,10 @@ public class ClassLikeMemberPlaceholder_Editor extends DefaultNodeEditor {
     if (bigCell != null) {
       bigCell.setBig(true);
     }
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
+    style.set(StyleAttributes.SELECTABLE, 0, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }
