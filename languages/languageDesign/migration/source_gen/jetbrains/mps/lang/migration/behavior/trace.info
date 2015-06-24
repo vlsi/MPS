@@ -21,7 +21,7 @@
       <unit at="16,0,51,0" name="jetbrains.mps.lang.migration.behavior.DataDependency_BehaviorDescriptor" />
     </file>
     <file name="ExecuteAfterDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_BehaviorDescriptor" />
+      <unit at="12,0,44,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_BehaviorDescriptor" />
     </file>
     <file name="LinkPatternVariableReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
@@ -48,7 +48,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.QuotationConsequence_BehaviorDescriptor" />
     </file>
     <file name="RequiredDataDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
+      <unit at="12,0,44,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
     </file>
     <file name="TransformConsequence_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.migration.behavior.TransformConsequence_BehaviorDescriptor" />
