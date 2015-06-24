@@ -13,11 +13,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +39,21 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SubstituteUtil.getMethodDescriptors(_context.getParentNode());
+            return Sequence.fromIterable(SubstituteUtil.getMethodDescriptors(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode it) {
+                boolean noPlaceholder = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode member) {
+                    return SLinkOperations.getTarget(member, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == it;
+                  }
+                }).isEmpty();
+                boolean noMember = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode member) {
+                    return SLinkOperations.getTarget(member, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, 0x443e89bb321537L, "decl")) == it;
+                  }
+                }).isEmpty();
+                return noPlaceholder && noMember;
+              }
+            });
           }
         }.compute();
         if (queryResult != null) {
@@ -64,7 +82,21 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SubstituteUtil.getPropertyDescriptors(_context.getParentNode());
+            return Sequence.fromIterable(SubstituteUtil.getPropertyDescriptors(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+              public boolean accept(final SNode it) {
+                boolean noPlaceholder = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode member) {
+                    return SLinkOperations.getTarget(member, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == it;
+                  }
+                }).isEmpty();
+                boolean noMember = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.lang.classLike.structure.ClassLikeProperty"))).where(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode member) {
+                    return SLinkOperations.getTarget(member, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, 0x772497abf2e77969L, "decl")) == it;
+                  }
+                }).isEmpty();
+                return noPlaceholder && noMember;
+              }
+            });
           }
         }.compute();
         if (queryResult != null) {
@@ -88,31 +120,32 @@ public class QueriesGenerated {
       }
     }
     {
-      SNode outputConcept = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember").getDeclarationNode();
-      SNode childConcept = (SNode) _context.getChildConcept();
-      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
-        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
-          public Iterable<SNode> compute() {
-            return SubstituteUtil.getCustomDescriptors(_context.getParentNode());
-          }
-        }.compute();
-        if (queryResult != null) {
-          for (final SNode item : queryResult) {
-            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
-              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{});
-              }
-              public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString(SLinkOperations.getTarget((item), MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
-              }
-              public String getVisibleMatchingText(String pattern) {
-                return getMatchingText(pattern);
-              }
-              public String getDescriptionText(String pattern) {
-                return "custom member";
-              }
-            });
-          }
+      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return Sequence.fromIterable(SubstituteUtil.getCustomDescriptors(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+            public boolean accept(final SNode it) {
+              boolean noPlaceholder = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode member) {
+                  return SLinkOperations.getTarget(member, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == it;
+                }
+              }).isEmpty();
+              boolean noMember = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode member) {
+                  return SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt"))));
+                }
+              }).isEmpty();
+              return noPlaceholder && noMember;
+            }
+          }).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return ((SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
+            }
+          });
+        }
+      }.compute();
+      if (queryResult != null) {
+        for (SNode item : queryResult) {
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
         }
       }
     }
