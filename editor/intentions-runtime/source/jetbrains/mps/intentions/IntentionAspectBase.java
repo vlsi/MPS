@@ -15,18 +15,11 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.util.annotation.ToRemove;
-
 /**
- * @deprecated Replaced with {@link IntentionAspectBase}.
- * This class is used in intentions generated with MPS 3.2, we keep it for binary compatibility.
+ * Base implementation of {@link IntentionAspectDescriptor} for generated classes to subclass.
+ * FIXME Extends BaseIntentionsDescriptor for now while we migrate to proper aspect instantiation mechanism (regular, through LanguageRuntime)
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-@Deprecated
-@ToRemove(version = 3.3)
-public abstract class BaseIntentionsDescriptor {
-  protected BaseIntentionsDescriptor() {
-
-  }
-  // FIXME shall pass IntentionsManager instance into init() to get populated with intentions
-  public abstract void init();
+public abstract class IntentionAspectBase extends BaseIntentionsDescriptor implements IntentionAspectDescriptor {
 }

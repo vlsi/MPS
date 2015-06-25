@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.intentions.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionAspectBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention" file="MakeSurroundWith_Intention.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -20,7 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionDescriptorBase" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
 </dependenciesRoot>

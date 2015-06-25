@@ -15,18 +15,10 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.util.annotation.ToRemove;
-
 /**
- * @deprecated Replaced with {@link IntentionAspectBase}.
- * This class is used in intentions generated with MPS 3.2, we keep it for binary compatibility.
+ * Base class for {@link IntentionExecutable} to use in generated code, to facilitate API changes
+ * @author Artem Tikhomirov
+ * @since 3.3
  */
-@Deprecated
-@ToRemove(version = 3.3)
-public abstract class BaseIntentionsDescriptor {
-  protected BaseIntentionsDescriptor() {
-
-  }
-  // FIXME shall pass IntentionsManager instance into init() to get populated with intentions
-  public abstract void init();
+public abstract class IntentionExecutableBase implements IntentionExecutable {
 }
