@@ -10,9 +10,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />

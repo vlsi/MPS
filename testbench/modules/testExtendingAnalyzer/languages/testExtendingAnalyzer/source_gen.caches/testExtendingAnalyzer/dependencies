@@ -8,6 +8,7 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
@@ -17,6 +18,7 @@
     <classNode dependClassName="testExtendingAnalyzer.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="testExtendingAnalyzer.dataFlow.DataFlowAspectDescriptorImpl" />
     <classNode dependClassName="testExtendingAnalyzer.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="testExtendingAnalyzer.intentions.IntentionsDescriptor" />
     <classNode dependClassName="testExtendingAnalyzer.structure.StructureAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>

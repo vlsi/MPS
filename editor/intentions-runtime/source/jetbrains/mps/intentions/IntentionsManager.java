@@ -40,6 +40,9 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -50,11 +53,13 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
+import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -272,6 +277,16 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
+        // FIXME (a) need list of all intentions for the purpose of UI enablement setting in Project Preferences
+        // FIXME (b) Need to deal with intentions from Migration Scripts somehow
+//        for (LanguageRuntime lr : LanguageRegistry.getInstance().getAvailableLanguages()) {
+//          final IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
+//          if (intentionAspect == null) {
+//            continue;
+//          }
+//          intentionAspect.getAllIntentions();
+//        }
+
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
           String className = getDescriptorClassName(language.getModuleReference());
@@ -326,7 +341,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private void initIntentionsDescriptor(Language language, String classShortName) {
     try {
       Class<?> cls = myClassLoaderManager.getOwnClass(language, language.getModuleName() + "." + LanguageAspect.INTENTIONS.getName() + "." + classShortName);
-      if (cls != null) {
+      if (cls != null && BaseIntentionsDescriptor.class.isAssignableFrom(cls) && !IntentionAspectBase.class.isAssignableFrom(cls)) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();
       }
@@ -340,18 +355,51 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return true;
     Set<String> langNames = new HashSet<String>();
-    for (Language l : SModelOperations.getLanguages(node.getModel())) {
-      langNames.add(l.getModuleName());
+    for (SLanguage l : SModelOperations.getAllLanguageImports(node.getModel())) {
+      langNames.add(l.getQualifiedName());
     }
 
 
     Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
+    // provisional code to address intention factories coming both from new aspects and legacy map initialized from classloading
+    HashSet<String> classNameOfSeenIntentionFactories = new HashSet<String>();
     // there's no special meaning in using depth-first iterator, it's just the only one available at the moment
+    // and looks pretty reasonable for the task (super-concepts first, then implemented interfaces)
+    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(node.getConcept()))) {
+      if (langNames.contains(concept.getLanguage().getQualifiedName())) {
+        final LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(concept.getLanguage());
+        final IntentionAspectDescriptor intentionAspect = lr == null ? null : lr.getAspect(IntentionAspectDescriptor.class);
+        if (intentionAspect != null) {
+          final Collection<IntentionFactory> intentions = intentionAspect.getIntentions(MetaIdHelper.getConcept(concept));
+          if (intentions == null) {
+            continue;
+          }
+          for (IntentionFactory intentionFactory : intentions) {
+            if (isAncestor && !intentionFactory.isAvailableInChildNodes()) {
+              continue;
+            }
+            classNameOfSeenIntentionFactories.add(intentionFactory.getClass().getName());
+            if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
+              continue;
+            }
+            if (!visitor.visit(intentionFactory)) {
+              return false;
+            }
+          }
+        }
+      }
+    }
+    //
+    // compatibility code
     for (SAbstractConcept concept : new DepthFirstConceptIterator(node.getConcept())) {
       final String conceptId = concept.getQualifiedName();
       if (concept2FactoriesMap.containsKey(conceptId)) {
         for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
           if (!langNames.contains(intentionFactory.getLanguageFqName())) continue;
+          if (classNameOfSeenIntentionFactories.contains(intentionFactory.getClass().getName())) {
+            // if by any chance same IntentionFactory got registered through both LanguageAspect and init() of this class, process it only once
+            continue;
+          }
           if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
             continue;
           }
