@@ -8092,6 +8092,11 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="hP_xM3OlEh" role="3bR37C">
+          <node concept="1Busua" id="hP_xM3OlEi" role="1SiIV1">
+            <ref role="1Busuk" node="1CtrbKI2fIc" resolve="jetbrains.mps.lang.classLike" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6L62" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -8329,6 +8334,11 @@
         <node concept="1SiIV0" id="410MhscK8St" role="3bR37C">
           <node concept="1Busua" id="410MhscK8Su" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="hP_xM3Ol7t" role="3bR37C">
+          <node concept="1Busua" id="hP_xM3Ol7u" role="1SiIV1">
+            <ref role="1Busuk" node="1CtrbKI2fIc" resolve="jetbrains.mps.lang.classLike" />
           </node>
         </node>
       </node>
@@ -8991,6 +9001,12 @@
             <ref role="3bR37D" node="1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
         </node>
+        <node concept="1SiIV0" id="hP_xM3OgUt" role="3bR37C">
+          <node concept="3bR9La" id="hP_xM3OgUu" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="1CtrbKI23Wm" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -9217,6 +9233,11 @@
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="hP_xM3Ohsz" role="3bR37C">
+          <node concept="1Busua" id="hP_xM3Ohs$" role="1SiIV1">
+            <ref role="1Busuk" node="1CtrbKI2fIc" resolve="jetbrains.mps.lang.classLike" />
           </node>
         </node>
       </node>
