@@ -4,24 +4,34 @@ package jetbrains.mps.lang.intentions.intentions;
 
 import jetbrains.mps.intentions.IntentionAspectBase;
 import jetbrains.mps.intentions.IntentionFactory;
+import org.jetbrains.annotations.Nullable;
+import java.util.Collection;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
 import jetbrains.mps.intentions.IntentionsManager;
 
-public class IntentionsDescriptor extends IntentionAspectBase {
+public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
+  private IntentionFactory[] myIntentions0;
 
   public IntentionsDescriptor() {
     myId2Index = new long[1];
     myId2Index[0] = 0x2303633a9c3cc675L;
   }
 
-  /*package*/ IntentionFactory getIntention(SConceptId conceptId) {
+  @Override
+  @Nullable
+  public Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId) {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
     switch (index) {
       case 0:
         // Concept: BaseIntentionDeclaration 
-        return new MakeSurroundWith_Intention();
+        if (myIntentions0 == null) {
+          myIntentions0 = new IntentionFactory[1];
+          myIntentions0[0] = new MakeSurroundWith_Intention();
+        }
+        return Arrays.asList(myIntentions0);
       default:
         return null;
     }

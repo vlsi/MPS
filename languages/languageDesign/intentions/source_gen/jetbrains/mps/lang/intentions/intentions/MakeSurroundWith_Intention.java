@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
+import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -46,9 +47,10 @@ public class MakeSurroundWith_Intention extends IntentionDescriptorBase implemen
     }
     return myCachedExecutable;
   }
-  public class IntentionImplementation implements IntentionExecutable {
+  /*package*/ final class IntentionImplementation extends IntentionExecutableBase {
     public IntentionImplementation() {
     }
+    @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"))) {
         return "Make Plain Intention";
@@ -56,6 +58,7 @@ public class MakeSurroundWith_Intention extends IntentionDescriptorBase implemen
         return "Make a Surround with Intention";
       }
     }
+    @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode sd;
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3e6815L, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"))) {
