@@ -230,6 +230,7 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -2070,6 +2071,9 @@
                           <node concept="37vLTw" id="2VRROcY8GwC" role="37wK5m">
                             <ref role="3cqZAo" node="2VRROcY8Cdk" resolve="classLike" />
                           </node>
+                          <node concept="37vLTw" id="3CPpk7pE5XY" role="37wK5m">
+                            <ref role="3cqZAo" node="3CPpk7pE5_O" resolve="futureModel" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -2128,6 +2132,10 @@
       <node concept="37vLTG" id="2VRROcY8Cdk" role="3clF46">
         <property role="TrG5h" value="classLike" />
         <node concept="3Tqbb2" id="2VRROcY8Cdj" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="3CPpk7pE5_O" role="3clF46">
+        <property role="TrG5h" value="futureModel" />
+        <node concept="H_c77" id="3CPpk7pE5P9" role="1tU5fm" />
       </node>
     </node>
     <node concept="13i0hz" id="2VRROcY7Vt6" role="13h7CS">

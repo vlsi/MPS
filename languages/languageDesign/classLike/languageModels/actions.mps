@@ -17,6 +17,9 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
+      <concept id="1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" flags="nn" index="1Q6Npb" />
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
@@ -24,7 +27,6 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
-      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -97,9 +99,6 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
       </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -169,21 +168,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
-        <child id="3542851458883491298" name="languageId" index="2V$M_3" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
-      </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
-        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
-      </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
-        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
-        <property id="3542851458883439833" name="version" index="2V$B1S" />
-        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
@@ -1600,47 +1587,7 @@
                 <node concept="37vLTw" id="UBgfI9fEJy" role="37wK5m">
                   <ref role="3cqZAo" node="UBgfI9fEJk" resolve="newClass" />
                 </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbH" id="UBgfI9fEJ3" role="3cqZAp" />
-          <node concept="3cpWs8" id="UBgfI9fEJ4" role="3cqZAp">
-            <node concept="3cpWsn" id="UBgfI9fEJ5" role="3cpWs9">
-              <property role="TrG5h" value="m" />
-              <node concept="3uibUv" id="UBgfI9fEJ6" role="1tU5fm">
-                <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
-              </node>
-              <node concept="1eOMI4" id="UBgfI9fEJ7" role="33vP2m">
-                <node concept="10QFUN" id="UBgfI9fEJ8" role="1eOMHV">
-                  <node concept="3uibUv" id="UBgfI9fEJ9" role="10QFUM">
-                    <ref role="3uigEE" to="cu2c:~SModelInternal" resolve="SModelInternal" />
-                  </node>
-                  <node concept="2JrnkZ" id="UBgfI9fEJa" role="10QFUP">
-                    <node concept="2OqwBi" id="UBgfI9fEJb" role="2JrQYb">
-                      <node concept="37vLTw" id="UBgfI9fEJz" role="2Oq$k0">
-                        <ref role="3cqZAo" node="UBgfI9fEJk" resolve="newClass" />
-                      </node>
-                      <node concept="I4A8Y" id="UBgfI9fEJd" role="2OqNvi" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="UBgfI9fEJe" role="3cqZAp">
-            <node concept="2OqwBi" id="UBgfI9fEJf" role="3clFbG">
-              <node concept="37vLTw" id="UBgfI9fEJg" role="2Oq$k0">
-                <ref role="3cqZAo" node="UBgfI9fEJ5" resolve="m" />
-              </node>
-              <node concept="liA8E" id="UBgfI9fEJh" role="2OqNvi">
-                <ref role="37wK5l" to="cu2c:~SModelInternal.addLanguage(org.jetbrains.mps.openapi.language.SLanguage):void" resolve="addLanguage" />
-                <node concept="pHN19" id="UBgfI9fEJi" role="37wK5m">
-                  <node concept="2V$Bhx" id="UBgfI9fEJj" role="2V$M_3">
-                    <property role="2V$B1T" value="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" />
-                    <property role="2V$B1Q" value="jetbrains.mps.lang.classLike" />
-                    <property role="2V$B1S" value="-1" />
-                  </node>
-                </node>
+                <node concept="1Q6Npb" id="3CPpk7pE6cL" role="37wK5m" />
               </node>
             </node>
           </node>

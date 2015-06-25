@@ -15,8 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class ClassLike {
   public static class NodeFactory_1055884086724932454 implements NodeFactory {
@@ -30,10 +28,7 @@ public class ClassLike {
           BehaviorReflection.invokeVirtual(Void.class, it, "virtual_init_6478870542308635887", new Object[]{newClass});
         }
       });
-      ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(descr, newClass);
-
-      SModelInternal m = ((SModelInternal) SNodeOperations.getModel(newClass));
-      m.addLanguage(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L), "jetbrains.mps.lang.classLike"));
+      ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(descr, newClass, model);
     }
   }
 }

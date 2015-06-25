@@ -23,36 +23,32 @@
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.actions)/1055884086724932453">
     <file name="ClassLike.java">
-      <node id="1055884086725225430" at="23,91,24,200" concept="4" />
-      <node id="1055884086725225434" at="24,200,25,162" concept="4" />
-      <node id="1055884086725225373" at="25,162,26,470" concept="1" />
-      <node id="1055884086725225382" at="26,470,27,414" concept="1" />
-      <node id="1055884086725225399" at="29,37,30,119" concept="1" />
-      <node id="1055884086725225406" at="32,9,33,96" concept="1" />
-      <node id="1055884086725225411" at="33,96,34,0" concept="6" />
-      <node id="1055884086725225412" at="34,0,35,79" concept="4" />
-      <node id="1055884086725225422" at="35,79,36,148" concept="1" />
-      <node id="1055884086725225397" at="29,0,32,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1055884086725225391" at="27,414,32,9" concept="1" />
-      <node id="1055884086724932454" at="23,0,38,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <scope id="1055884086725225398" at="29,37,30,119" />
-      <scope id="1055884086725225397" at="29,0,32,0">
+      <node id="1055884086725225430" at="21,91,22,200" concept="4" />
+      <node id="1055884086725225434" at="22,200,23,162" concept="4" />
+      <node id="1055884086725225373" at="23,162,24,470" concept="1" />
+      <node id="1055884086725225382" at="24,470,25,414" concept="1" />
+      <node id="1055884086725225399" at="27,37,28,119" concept="1" />
+      <node id="1055884086725225406" at="30,9,31,103" concept="1" />
+      <node id="1055884086725225397" at="27,0,30,0" concept="3" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1055884086725225391" at="25,414,30,9" concept="1" />
+      <node id="1055884086724932454" at="21,0,33,0" concept="3" trace="setup#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="1055884086725225398" at="27,37,28,119" />
+      <scope id="1055884086725225397" at="27,0,30,0">
         <var name="it" id="1055884086725225397" />
       </scope>
-      <scope id="1055884086724932454" at="23,91,36,148">
+      <scope id="1055884086724932454" at="21,91,31,103">
         <var name="descr" id="1055884086725225432" />
-        <var name="m" id="1055884086725225413" />
         <var name="newClass" id="1055884086725225428" />
       </scope>
-      <scope id="1055884086724932454" at="23,0,38,0">
+      <scope id="1055884086724932454" at="21,0,33,0">
         <var name="enclosingNode" id="1055884086724932454" />
         <var name="model" id="1055884086724932454" />
         <var name="newNode" id="1055884086724932454" />
         <var name="sampleNode" id="1055884086724932454" />
       </scope>
-      <unit id="1055884086725225397" at="28,123,32,7" name="jetbrains.mps.lang.classLike.actions.ClassLike$1" />
-      <unit id="1055884086724932454" at="22,0,39,0" name="jetbrains.mps.lang.classLike.actions.ClassLike$NodeFactory_1055884086724932454" />
-      <unit id="1055884086724932453" at="21,0,40,0" name="jetbrains.mps.lang.classLike.actions.ClassLike" />
+      <unit id="1055884086725225397" at="26,123,30,7" name="jetbrains.mps.lang.classLike.actions.ClassLike$1" />
+      <unit id="1055884086724932454" at="20,0,34,0" name="jetbrains.mps.lang.classLike.actions.ClassLike$NodeFactory_1055884086724932454" />
+      <unit id="1055884086724932453" at="19,0,35,0" name="jetbrains.mps.lang.classLike.actions.ClassLike" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:c730ea65-7d27-4707-a3cf-753587482880(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.actions)/2260648088428400642">

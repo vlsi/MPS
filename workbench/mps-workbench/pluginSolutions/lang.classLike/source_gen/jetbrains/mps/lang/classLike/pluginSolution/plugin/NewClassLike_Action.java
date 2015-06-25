@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -58,7 +58,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    SNode newClass = SModelOperations.addRootNode(((SModel) event.getData(MPSCommonDataKeys.MODEL)), SNodeOperations.cast(SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr))), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+    SNode newClass = SNodeOperations.cast(SNodeFactoryOperations.createNewRootNode(event.getData(MPSCommonDataKeys.MODEL), ((SConcept) SNodeOperations.asSConcept(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr))), null), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     if (!(NewRootNodeAction.trySelectInCurrentPane(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass))) {
       NavigationSupport.getInstance().selectInTree(event.getData(MPSCommonDataKeys.MPS_PROJECT), newClass, false);
     }
