@@ -5,7 +5,6 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
-import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 import jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup;
 import jetbrains.mps.ide.actions.GeneratorActions_ActionGroup;
@@ -75,7 +74,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new LanguageNewActionsEx_ActionGroup());
     addGroup(new LanguageNewCustomPartActions_ActionGroup());
     addGroup(new LanguageNewGenerator_ActionGroup());
-    addGroup(new LanguageRefactoring_ActionGroup());
     addGroup(new NamespaceNewActionsEx_ActionGroup());
     addGroup(new ProjectNewActionsEx_ActionGroup());
     addGroup(new ShowNodeIn_ActionGroup());
@@ -85,7 +83,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   public void adjustRegularGroups() {
     insertGroupIntoAnother(GenerateEditorPopup_ActionGroup.ID, "EditorPopup_ActionGroupgoto", null);
     insertGroupIntoAnother(ProjectNewActionsEx_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, ProjectNewActions_ActionGroup.LABEL_ID_languageExt);
-    insertGroupIntoAnother(LanguageRefactoring_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
     insertGroupIntoAnother(StructureAdditions_ActionGroup.ID, "Code_ActionGroupstructure", null);
     insertGroupIntoAnother(GenerationTraceActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_generator);
     insertGroupIntoAnother(LanguageNewGenerator_ActionGroup.ID, LanguageNewActions_ActionGroup.ID, LanguageNewActions_ActionGroup.LABEL_ID_newSubModule);

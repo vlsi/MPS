@@ -14,9 +14,9 @@ import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RenameModuleDialog;
 
-public class RenameSolution_Action extends BaseAction {
+public class RenameModule_Action extends BaseAction {
   private static final Icon ICON = null;
-  public RenameSolution_Action() {
+  public RenameModule_Action() {
     super("Rename Module", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
