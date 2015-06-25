@@ -51,11 +51,8 @@ public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_qnkj9j_g0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_qnkj9j_h0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qnkj9j_i0(editorContext, node));
-    if (renderingCondition_qnkj9j_a9a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_qnkj9j_j0(editorContext, node));
-    }
-    editorCell.addEditorCell(this.createComponent_qnkj9j_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_qnkj9j_l0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_qnkj9j_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qnkj9j_k0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_qnkj9j_a0(EditorContext editorContext, SNode node) {
@@ -255,19 +252,9 @@ public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_qnkj9j_a9a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer")) != null;
-  }
-  private EditorCell createComponent_qnkj9j_k0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-  private EditorCell createConstant_qnkj9j_l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qnkj9j_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_qnkj9j_l0");
+    editorCell.setCellId("Constant_qnkj9j_k0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);

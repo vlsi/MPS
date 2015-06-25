@@ -13,10 +13,7 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
-        <property id="1225118929411" name="build" index="YLPcu" />
-        <property id="1225118933224" name="comment" index="YLQ7P" />
-      </concept>
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -107,10 +104,6 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="initializer" />
       <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
-      <node concept="asaX9" id="4auf8pYaX55" role="lGtFl">
-        <property role="YLPcu" value="MPS 3.3" />
-        <property role="YLQ7P" value="use class-like method init()" />
-      </node>
     </node>
     <node concept="1TJgyj" id="7aMlq14vYj8" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

@@ -6,9 +6,7 @@
       <sourceRoot path="${module}/languageAccessories" />
     </modelRoot>
   </models>
-  <accessoryModels>
-    <model modelUID="r:bda4f8a3-5658-4624-a3f1-ef4d37b30baa(jetbrains.mps.lang.classLike.methods)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator name="" generatorUID="jetbrains.mps.lang.classLike#3751132065236752909" uuid="cedbe277-2e6e-42bf-ae23-90ac9db5a8e3">
       <models>
