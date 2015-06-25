@@ -26,6 +26,8 @@
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="6xgk" ref="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -197,6 +199,9 @@
       </concept>
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
@@ -914,6 +919,46 @@
       <node concept="3uibUv" id="1QReUKILbMB" role="3clF45">
         <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
+    </node>
+    <node concept="13i0hz" id="UBgfI9gert" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDescriptor" />
+      <ref role="13i0hy" to="9nqt:UBgfI9eMAt" resolve="getDescriptor" />
+      <node concept="3Tm1VV" id="UBgfI9geru" role="1B3o_S" />
+      <node concept="3clFbS" id="UBgfI9gerv" role="3clF47">
+        <node concept="3cpWs6" id="UBgfI9gerw" role="3cqZAp">
+          <node concept="3B5_sB" id="UBgfI9gerx" role="3cqZAk">
+            <ref role="3B5MYn" to="90d:7z8Vrj4Zy7l" resolve="ExtensionOverlapping" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="UBgfI9gery" role="3clF45">
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="UBgfI9ge6e">
+    <ref role="13h7C2" to="v54s:7335HkeYeM" resolve="Extension" />
+    <node concept="13i0hz" id="UBgfI9gdE3" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDescriptor" />
+      <ref role="13i0hy" to="9nqt:UBgfI9eMAt" resolve="getDescriptor" />
+      <node concept="3Tm1VV" id="UBgfI9gdE4" role="1B3o_S" />
+      <node concept="3clFbS" id="UBgfI9gdE7" role="3clF47">
+        <node concept="3cpWs6" id="UBgfI9gdWW" role="3cqZAp">
+          <node concept="3B5_sB" id="UBgfI9gdWX" role="3cqZAk">
+            <ref role="3B5MYn" to="90d:3zLwYDe0svo" resolve="Extension" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="UBgfI9gdE8" role="3clF45">
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+      </node>
+    </node>
+    <node concept="13hLZK" id="UBgfI9ge6f" role="13h7CW">
+      <node concept="3clFbS" id="UBgfI9ge6g" role="2VODD2" />
     </node>
   </node>
 </model>
