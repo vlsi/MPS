@@ -36,7 +36,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.scripts.ScriptAspectDescriptor" file="ScriptAspectDescriptor.java">
+  <dependency className="jetbrains.mps.lang.smodel.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

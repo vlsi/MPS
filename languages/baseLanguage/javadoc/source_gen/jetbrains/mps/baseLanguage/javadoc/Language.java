@@ -16,6 +16,8 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.baseLanguage.javadoc.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor;
+import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
+import jetbrains.mps.baseLanguage.javadoc.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 
@@ -60,6 +62,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == IntentionAspectDescriptor.class) {
       return (T) new IntentionsDescriptor();
+    }
+    if (aspectClass == ScriptAspectDescriptor.class) {
+      return (T) new ScriptsDescriptor();
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.baseLanguage.javadoc.structure.StructureAspectDescriptor();

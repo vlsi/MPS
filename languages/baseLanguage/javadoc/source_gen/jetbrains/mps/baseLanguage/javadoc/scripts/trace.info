@@ -7,8 +7,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
-    <file name="ScriptAspectDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.ScriptAspectDescriptor" />
+    <file name="ScriptsDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.ScriptsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)/992603585967257187">

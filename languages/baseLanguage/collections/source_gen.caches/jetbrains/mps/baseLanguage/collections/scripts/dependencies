@@ -62,7 +62,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ParameterType" file="ParameterType.java" />
-  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ScriptAspectDescriptor" file="ScriptAspectDescriptor.java">
+  <dependency className="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />

@@ -8,10 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.Arrays;
 
-public final class ScriptAspectDescriptor extends ScriptAspectBase {
+public final class ScriptsDescriptor extends ScriptAspectBase {
   private final RefactoringScript[] myRefactoringScripts;
 
-  public ScriptAspectDescriptor() {
+  public ScriptsDescriptor() {
     myRefactoringScripts = new RefactoringScript[1];
     myRefactoringScripts[0] = new ConvertExtensionMethodCallToLocal_MigrationScript();
   }

@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.intentions.IntentionsDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.structure.StructureAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
@@ -18,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />

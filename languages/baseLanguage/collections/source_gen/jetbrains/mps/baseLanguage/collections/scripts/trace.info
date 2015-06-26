@@ -12,8 +12,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
-    <file name="ScriptAspectDescriptor.java">
-      <unit at="11,0,27,0" name="jetbrains.mps.baseLanguage.collections.scripts.ScriptAspectDescriptor" />
+    <file name="ScriptsDescriptor.java">
+      <unit at="11,0,27,0" name="jetbrains.mps.baseLanguage.collections.scripts.ScriptsDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)/1236765926225">

@@ -407,7 +407,7 @@
   <node concept="bUwia" id="h8AmF5t">
     <property role="TrG5h" value="mc_migrationScript" />
     <node concept="2VPoh5" id="qXQceEtAA2" role="2VS0gm">
-      <ref role="2VPoh2" node="qXQceEtMJi" resolve="ScriptAspectDescriptor" />
+      <ref role="2VPoh2" node="qXQceEtMJi" resolve="ScriptsDescriptor" />
       <node concept="2VP$b9" id="qXQceEtAA4" role="2VPoh3">
         <node concept="3clFbS" id="qXQceEtAA5" role="2VODD2">
           <node concept="3cpWs8" id="3jb7BNzEsYB" role="3cqZAp">
@@ -6644,7 +6644,7 @@
     </node>
   </node>
   <node concept="312cEu" id="qXQceEtMJi">
-    <property role="TrG5h" value="ScriptAspectDescriptor" />
+    <property role="TrG5h" value="ScriptsDescriptor" />
     <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="qXQceEtN94" role="jymVt">
       <property role="34CwA1" value="false" />

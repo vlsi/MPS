@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.build.scripts.ScriptAspectDescriptor" file="ScriptAspectDescriptor.java">
+  <dependency className="jetbrains.mps.build.scripts.ScriptsDescriptor" file="ScriptsDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
