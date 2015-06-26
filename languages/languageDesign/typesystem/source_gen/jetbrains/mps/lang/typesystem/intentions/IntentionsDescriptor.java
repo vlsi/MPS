@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -65,11 +64,15 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertInferenceRuleToNonTypesystemRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateTypesystemIntention_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new FlipInequality_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MakeInequalityCheckOnly_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[5];
+    rv[0] = new ConvertInferenceRuleToNonTypesystemRule_Intention();
+    rv[1] = new CreateTypesystemIntention_Intention();
+    rv[2] = new FlipInequality_Intention();
+    rv[3] = new MakeInequalityCheckOnly_Intention();
+    rv[4] = new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention();
+    return Arrays.asList(rv);
   }
 }

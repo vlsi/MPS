@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ElsifSwapWithMain_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ElsifSwapWithMain_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ElsifSwapWithMain_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, "jetbrains.mps.baseLanguage.structure.ElsifClause"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1206066794083"));
@@ -30,6 +30,7 @@ public class ElsifSwapWithMain_Intention extends IntentionDescriptorBase impleme
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class ElsifSwapWithMain_Intention extends IntentionDescriptorBase impleme
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0983eL, "condition"), condition);
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118ceceb41aL, 0x118ced0f8fdL, "statementList"), statementList);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ElsifSwapWithMain_Intention.this;
     }

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ExtractRoutine_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ExtractRoutine_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ExtractRoutine_Intention() {
     super(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand"), IntentionType.NORMAL, true, new SNodePointer("r:c23df2a3-084e-497b-b2a5-1671f4fbf9de(jetbrains.mps.samples.Kaja.intentions)", "7446293342517485574"));
@@ -34,6 +34,7 @@ public class ExtractRoutine_Intention extends IntentionDescriptorBase implements
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -63,6 +64,7 @@ public class ExtractRoutine_Intention extends IntentionDescriptorBase implements
       }
       editorContext.selectWRTFocusPolicy(routineDefinition);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ExtractRoutine_Intention.this;
     }

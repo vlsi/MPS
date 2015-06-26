@@ -17,9 +17,9 @@ package jetbrains.mps.intentions;
 
 /**
  * Base implementation of {@link IntentionAspectDescriptor} for generated classes to subclass.
- * FIXME Extends BaseIntentionsDescriptor for now while we migrate to proper aspect instantiation mechanism (regular, through LanguageRuntime)
+ * Facilitates future {@link IntentionAspectDescriptor} API changes.
  * @author Artem Tikhomirov
  * @since 3.3
  */
-public abstract class IntentionAspectBase extends BaseIntentionsDescriptor implements IntentionAspectDescriptor {
+public abstract class IntentionAspectBase implements IntentionAspectDescriptor {
 }

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SwitchToComplexIsApplicable_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SwitchToComplexIsApplicable_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SwitchToComplexIsApplicable_Intention() {
     super(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem"), IntentionType.NORMAL, false, new SNodePointer("r:e5ea276a-79c7-4383-9407-3428086d3297(jetbrains.mps.debugger.api.lang.intentions)", "8751745335399757635"));
@@ -31,6 +31,7 @@ public class SwitchToComplexIsApplicable_Intention extends IntentionDescriptorBa
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -62,6 +63,7 @@ public class SwitchToComplexIsApplicable_Intention extends IntentionDescriptorBa
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2b1681328a5d11f6L, "isApplicableBreakpoint"), null);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SwitchToComplexIsApplicable_Intention.this;
     }

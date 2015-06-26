@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -73,11 +72,15 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationDependency_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomLocationRuntime_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddCustomPackaging_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ReloadModulesFromDisk_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ToggleCompactMpsModule_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[5];
+    rv[0] = new ToggleCompactMpsModule_Intention();
+    rv[1] = new AddCustomLocationDependency_Intention();
+    rv[2] = new AddCustomLocationRuntime_Intention();
+    rv[3] = new AddCustomPackaging_Intention();
+    rv[4] = new ReloadModulesFromDisk_Intention();
+    return Arrays.asList(rv);
   }
 }

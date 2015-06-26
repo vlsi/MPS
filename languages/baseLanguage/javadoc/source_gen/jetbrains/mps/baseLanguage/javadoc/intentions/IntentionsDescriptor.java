@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -98,20 +97,24 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddAuthorBlockDocTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddClassifierDocComment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedBlockDocTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddFieldDocComment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddMethodDocComment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddParameterBlockDocTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddReturnBlockTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddSeeBlockTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddSinceBlockDocTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddStaticFieldDocComment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddThrowBlockDocTag_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddVersionBlockTagDoc_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new FoldHTMLElement_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new OrganizeTags_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[14];
+    rv[0] = new AddMethodDocComment_Intention();
+    rv[1] = new AddAuthorBlockDocTag_Intention();
+    rv[2] = new AddSinceBlockDocTag_Intention();
+    rv[3] = new AddVersionBlockTagDoc_Intention();
+    rv[4] = new AddParameterBlockDocTag_Intention();
+    rv[5] = new AddReturnBlockTag_Intention();
+    rv[6] = new AddFieldDocComment_Intention();
+    rv[7] = new AddClassifierDocComment_Intention();
+    rv[8] = new AddSeeBlockTag_Intention();
+    rv[9] = new AddStaticFieldDocComment_Intention();
+    rv[10] = new FoldHTMLElement_Intention();
+    rv[11] = new AddThrowBlockDocTag_Intention();
+    rv[12] = new AddDeprecatedBlockDocTag_Intention();
+    rv[13] = new OrganizeTags_Intention();
+    return Arrays.asList(rv);
   }
 }

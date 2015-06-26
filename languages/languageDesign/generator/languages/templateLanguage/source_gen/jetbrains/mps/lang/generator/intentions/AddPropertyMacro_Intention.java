@@ -18,7 +18,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddPropertyMacro_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddPropertyMacro_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddPropertyMacro_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1207154194671"));
@@ -40,6 +40,7 @@ public class AddPropertyMacro_Intention extends IntentionDescriptorBase implemen
     }
     return EditingUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class AddPropertyMacro_Intention extends IntentionDescriptorBase implemen
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, propertyMacro, SelectionManager.FIRST_CELL, 0);
       editorContext.openInspector();
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddPropertyMacro_Intention.this;
     }

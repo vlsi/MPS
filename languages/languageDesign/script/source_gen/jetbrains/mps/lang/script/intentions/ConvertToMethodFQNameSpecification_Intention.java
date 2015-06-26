@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertToMethodFQNameSpecification_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertToMethodFQNameSpecification_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertToMethodFQNameSpecification_Intention() {
     super(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"), IntentionType.NORMAL, false, new SNodePointer("r:b58ac159-1e62-40c6-8c0d-e9511a9824de(jetbrains.mps.lang.script.intentions)", "4126624587000694735"));
@@ -32,6 +32,7 @@ public class ConvertToMethodFQNameSpecification_Intention extends IntentionDescr
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -54,6 +55,7 @@ public class ConvertToMethodFQNameSpecification_Intention extends IntentionDescr
       SPropertyOperations.set(methodSpecification, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4243146ba1b412e3L, 0x1fcdfeb518d2fe29L, "snodeId"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration")).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertToMethodFQNameSpecification_Intention.this;
     }

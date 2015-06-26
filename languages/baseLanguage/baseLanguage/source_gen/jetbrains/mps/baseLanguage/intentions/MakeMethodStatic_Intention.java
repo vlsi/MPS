@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeMethodStatic_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeMethodStatic_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeMethodStatic_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9408L, "jetbrains.mps.baseLanguage.structure.MethodDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "47041348238355115"));
@@ -41,6 +41,7 @@ public class MakeMethodStatic_Intention extends IntentionDescriptorBase implemen
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false, false) != null) && (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) || SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -79,6 +80,7 @@ public class MakeMethodStatic_Intention extends IntentionDescriptorBase implemen
       SNodeOperations.deleteNode(node);
       editorContext.selectWRTFocusPolicy(method);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeMethodStatic_Intention.this;
     }

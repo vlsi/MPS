@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class DivExpressionFractionToDiv_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class DivExpressionFractionToDiv_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public DivExpressionFractionToDiv_Intention() {
     super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction"), IntentionType.NORMAL, false, new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1237104496404"));
@@ -33,6 +33,7 @@ public class DivExpressionFractionToDiv_Intention extends IntentionDescriptorBas
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -53,6 +54,7 @@ public class DivExpressionFractionToDiv_Intention extends IntentionDescriptorBas
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_smjisl_a0a0a0(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x12009149b1aL, "denominator")), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x12008f4e805L, 0x1200914977fL, "numerator"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return DivExpressionFractionToDiv_Intention.this;
     }

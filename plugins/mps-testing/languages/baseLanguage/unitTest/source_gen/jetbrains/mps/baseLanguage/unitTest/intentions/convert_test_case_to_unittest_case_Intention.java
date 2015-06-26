@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class convert_test_case_to_unittest_case_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class convert_test_case_to_unittest_case_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public convert_test_case_to_unittest_case_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), IntentionType.NORMAL, false, new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "2230548360390192818"));
@@ -47,6 +47,7 @@ public class convert_test_case_to_unittest_case_Intention extends IntentionDescr
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept").getDeclarationNode() && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")), _quotation_createNode_g240td_b0a0a0a());
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -82,6 +83,7 @@ public class convert_test_case_to_unittest_case_Intention extends IntentionDescr
         ListSequence.fromList(SLinkOperations.getChildren(testCase, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(SNodeOperations.detachNode(f));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return convert_test_case_to_unittest_case_Intention.this;
     }

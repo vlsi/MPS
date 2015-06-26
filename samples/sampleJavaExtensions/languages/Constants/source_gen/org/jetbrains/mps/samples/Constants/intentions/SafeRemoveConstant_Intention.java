@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SafeRemoveConstant_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SafeRemoveConstant_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SafeRemoveConstant_Intention() {
     super(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L, "org.jetbrains.mps.samples.Constants.structure.Constant"), IntentionType.NORMAL, false, new SNodePointer("r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)", "3986994675334573802"));
@@ -35,6 +35,7 @@ public class SafeRemoveConstant_Intention extends IntentionDescriptorBase implem
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -65,6 +66,7 @@ public class SafeRemoveConstant_Intention extends IntentionDescriptorBase implem
       });
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SafeRemoveConstant_Intention.this;
     }

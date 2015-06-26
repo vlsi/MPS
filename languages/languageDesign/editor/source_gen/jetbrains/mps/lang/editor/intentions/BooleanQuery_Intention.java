@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class BooleanQuery_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class BooleanQuery_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public BooleanQuery_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1223387565994"));
@@ -38,6 +38,7 @@ public class BooleanQuery_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -66,6 +67,7 @@ public class BooleanQuery_Intention extends IntentionDescriptorBase implements I
         SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, 0x11cd79149a9L, "query")));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return BooleanQuery_Intention.this;
     }

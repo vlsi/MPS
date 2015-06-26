@@ -25,7 +25,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class AddProducer_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddProducer_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddProducer_Intention() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration"), IntentionType.NORMAL, true, new SNodePointer("r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)", "2557661505909760572"));
@@ -49,6 +49,7 @@ public class AddProducer_Intention extends IntentionDescriptorBase implements In
       }
     }).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -73,6 +74,7 @@ public class AddProducer_Intention extends IntentionDescriptorBase implements In
       SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), producer, true, false);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddProducer_Intention.this;
     }

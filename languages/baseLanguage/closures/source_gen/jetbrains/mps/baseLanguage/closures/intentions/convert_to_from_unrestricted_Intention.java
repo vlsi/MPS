@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class convert_to_from_unrestricted_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class convert_to_from_unrestricted_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public convert_to_from_unrestricted_Intention() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), IntentionType.NORMAL, false, new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1230480249136"));
@@ -39,6 +39,7 @@ public class convert_to_from_unrestricted_Intention extends IntentionDescriptorB
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral").getDeclarationNode() || SNodeOperations.getConceptDeclaration(node) == MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cdf7cbL, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral").getDeclarationNode();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -66,6 +67,7 @@ public class convert_to_from_unrestricted_Intention extends IntentionDescriptorB
       }
       SLinkOperations.setTarget(cl, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"), SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return convert_to_from_unrestricted_Intention.this;
     }

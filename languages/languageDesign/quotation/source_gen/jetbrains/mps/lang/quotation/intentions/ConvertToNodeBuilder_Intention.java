@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertToNodeBuilder_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertToNodeBuilder_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertToNodeBuilder_Intention() {
     super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), IntentionType.NORMAL, false, new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "8182547171709991153"));
@@ -29,6 +29,7 @@ public class ConvertToNodeBuilder_Intention extends IntentionDescriptorBase impl
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -49,6 +50,7 @@ public class ConvertToNodeBuilder_Intention extends IntentionDescriptorBase impl
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, new QuotationConverter(node).convert());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertToNodeBuilder_Intention.this;
     }

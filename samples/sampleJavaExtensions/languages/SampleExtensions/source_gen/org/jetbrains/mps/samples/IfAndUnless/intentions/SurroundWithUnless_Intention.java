@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithUnless_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithUnless_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithUnless_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), IntentionType.NORMAL, false, new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024647596"));
@@ -33,6 +33,7 @@ public class SurroundWithUnless_Intention extends IntentionDescriptorBase implem
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -60,6 +61,7 @@ public class SurroundWithUnless_Intention extends IntentionDescriptorBase implem
       editorContext.select(SLinkOperations.getTarget(unlessStatement, MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, 0x57547b70f36dc0eL, "condition")));
 
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithUnless_Intention.this;
     }

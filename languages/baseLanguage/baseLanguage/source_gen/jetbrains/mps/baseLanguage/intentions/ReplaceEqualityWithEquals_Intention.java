@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class ReplaceEqualityWithEquals_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceEqualityWithEquals_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReplaceEqualityWithEquals_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199557092807"));
@@ -42,6 +42,7 @@ public class ReplaceEqualityWithEquals_Intention extends IntentionDescriptorBase
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -69,6 +70,7 @@ public class ReplaceEqualityWithEquals_Intention extends IntentionDescriptorBase
       ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).insertElement(0, rightExpression);
       SNodeOperations.replaceWithAnother(node, equalsExpression);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceEqualityWithEquals_Intention.this;
     }

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertClassConceptToExtract_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertClassConceptToExtract_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertClassConceptToExtract_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "34229510189607557"));
@@ -42,6 +42,7 @@ public class ConvertClassConceptToExtract_Intention extends IntentionDescriptorB
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -79,6 +80,7 @@ public class ConvertClassConceptToExtract_Intention extends IntentionDescriptorB
       }
       SNodeOperations.replaceWithAnother(node, newNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertClassConceptToExtract_Intention.this;
     }

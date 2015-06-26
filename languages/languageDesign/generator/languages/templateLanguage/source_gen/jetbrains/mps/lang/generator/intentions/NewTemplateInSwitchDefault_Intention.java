@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewTemplateInSwitchDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewTemplateInSwitchDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewTemplateInSwitchDefault_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216323872536"));
@@ -41,6 +41,7 @@ public class NewTemplateInSwitchDefault_Intention extends IntentionDescriptorBas
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11013877b73L, "defaultConsequence")) == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -72,6 +73,7 @@ public class NewTemplateInSwitchDefault_Intention extends IntentionDescriptorBas
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11013877b73L, "defaultConsequence"), tr);
       SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInSwitchDefault_Intention.this;
     }

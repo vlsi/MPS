@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeFinal_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeFinal_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeFinal_Intention() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "4672725010143787708"));
@@ -29,6 +29,7 @@ public class MakeFinal_Intention extends IntentionDescriptorBase implements Inte
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -52,6 +53,7 @@ public class MakeFinal_Intention extends IntentionDescriptorBase implements Inte
         SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), "" + (false));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeFinal_Intention.this;
     }

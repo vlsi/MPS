@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class GenerateSingleLineDefaultEditor_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class GenerateSingleLineDefaultEditor_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public GenerateSingleLineDefaultEditor_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5469351333089013987"));
@@ -36,6 +36,7 @@ public class GenerateSingleLineDefaultEditor_Intention extends IntentionDescript
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class GenerateSingleLineDefaultEditor_Intention extends IntentionDescript
     public void execute(final SNode node, final EditorContext editorContext) {
       ConceptEditorDeclaration_Behavior.call_createDefaultEditor_2970389781192937380(node, false);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return GenerateSingleLineDefaultEditor_Intention.this;
     }

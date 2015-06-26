@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class RemoveIndent_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class RemoveIndent_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public RemoveIndent_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1237403857170"));
@@ -38,6 +38,7 @@ public class RemoveIndent_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isIndented_1237383418148(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -58,6 +59,7 @@ public class RemoveIndent_Intention extends IntentionDescriptorBase implements I
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem").getDeclarationNode())).first());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return RemoveIndent_Intention.this;
     }

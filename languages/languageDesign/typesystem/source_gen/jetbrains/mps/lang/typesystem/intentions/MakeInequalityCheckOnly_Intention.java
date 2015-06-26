@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeInequalityCheckOnly_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeInequalityCheckOnly_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeInequalityCheckOnly_Intention() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "6840209722389750234"));
@@ -29,6 +29,7 @@ public class MakeInequalityCheckOnly_Intention extends IntentionDescriptorBase i
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -53,6 +54,7 @@ public class MakeInequalityCheckOnly_Intention extends IntentionDescriptorBase i
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly")))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeInequalityCheckOnly_Intention.this;
     }

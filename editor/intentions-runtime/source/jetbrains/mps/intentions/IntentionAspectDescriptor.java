@@ -29,10 +29,25 @@ import java.util.Collection;
  */
 public interface IntentionAspectDescriptor extends LanguageAspectDescriptor {
   /**
-   * WORK IN PROGRESS. PROVISIONAL API
+   * WORK IN PROGRESS. PROVISIONAL API.
+   * Whether we use SConceptId ir SAbstractConcept is yet uncertain, present approach is to stick to id not to expose ways to obtain it (MetaIdHelper) in generated code
+   * Return value of collection is dubious as well.
+   * <p/>
+   * Provided IntentionFactory instances are deemed stateless and might be cached.
+   *
    * @param conceptId identity of a concept
    * @return <code>null</code> if no intentions for the concept are known, non-empty collection with intentions associated with the given concept otherwise
    */
   @Nullable
   Collection<IntentionFactory> getIntentions(@NotNull SConceptId conceptId);
+
+  /**
+   * PROVISIONAL API.
+   * The only use of this method is UI-related code that needs a list of intentions to enable/disable.
+   * Thus, present implementation doesn't care to give same instances as from {@link #getIntentions(SConceptId)}, and perhaps
+   * shall provide something else but IntentionFactory. Sort of identity/description object (the sole use of IntentionDescriptor#getPresentation() is that UI piece)?
+   * @return all intentions declared in this aspect
+   */
+  @NotNull
+  Collection<IntentionFactory> getAllIntentions();
 }

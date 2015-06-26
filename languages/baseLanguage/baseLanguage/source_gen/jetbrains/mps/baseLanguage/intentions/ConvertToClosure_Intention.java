@@ -21,7 +21,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertToClosure_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertToClosure_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertToClosure_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "7638980610829995124"));
@@ -54,6 +54,7 @@ public class ConvertToClosure_Intention extends IntentionDescriptorBase implemen
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -80,6 +81,7 @@ public class ConvertToClosure_Intention extends IntentionDescriptorBase implemen
       ListSequence.fromList(SLinkOperations.getChildren(closureLiteral, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))));
       SNodeOperations.replaceWithAnother(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), false, false), closureLiteral);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertToClosure_Intention.this;
     }

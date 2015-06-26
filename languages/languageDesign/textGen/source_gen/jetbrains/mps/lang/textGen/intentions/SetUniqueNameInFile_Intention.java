@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SetUniqueNameInFile_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SetUniqueNameInFile_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SetUniqueNameInFile_Intention() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart"), IntentionType.NORMAL, true, new SNodePointer("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)", "590757823759470534"));
@@ -29,6 +29,7 @@ public class SetUniqueNameInFile_Intention extends IntentionDescriptorBase imple
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -49,6 +50,7 @@ public class SetUniqueNameInFile_Intention extends IntentionDescriptorBase imple
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, 0x42be23a782c8ba04L, "uniqNameInFile"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x5fec1f33fd3007f8L, 0x42be23a782c8ba04L, "uniqNameInFile")))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SetUniqueNameInFile_Intention.this;
     }

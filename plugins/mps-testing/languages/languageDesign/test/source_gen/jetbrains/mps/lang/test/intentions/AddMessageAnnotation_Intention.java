@@ -20,7 +20,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddMessageAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddMessageAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddMessageAnnotation_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "9057440207251474622"));
@@ -39,6 +39,7 @@ public class AddMessageAnnotation_Intention extends IntentionDescriptorBase impl
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"))) == null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -60,6 +61,7 @@ public class AddMessageAnnotation_Intention extends IntentionDescriptorBase impl
       BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
       SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2bb0fe622a9eb078L, "jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"))), SelectionManager.FIRST_EDITABLE_CELL);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddMessageAnnotation_Intention.this;
     }

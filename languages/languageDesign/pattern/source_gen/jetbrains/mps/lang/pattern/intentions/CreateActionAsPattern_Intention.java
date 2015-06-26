@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateActionAsPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateActionAsPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateActionAsPattern_Intention() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "4413230749907735528"));
@@ -39,6 +39,7 @@ public class CreateActionAsPattern_Intention extends IntentionDescriptorBase imp
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return PatternAddingUtil.isPatternApplicable(editorContext);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -61,6 +62,7 @@ public class CreateActionAsPattern_Intention extends IntentionDescriptorBase imp
       SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, "jetbrains.mps.lang.pattern.structure.ActionAsPattern")));
       SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern"))), MetaAdapterFactory.getProperty(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4793L, 0x108a9cb4794L, "varName"), "action_var_" + currentNode.getNodeId().toString());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateActionAsPattern_Intention.this;
     }

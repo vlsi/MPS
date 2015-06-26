@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateAsPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateAsPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateAsPattern_Intention() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371789469"));
@@ -37,6 +37,7 @@ public class CreateAsPattern_Intention extends IntentionDescriptorBase implement
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return PatternAddingUtil.isPatternApplicable(editorContext);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -58,6 +59,7 @@ public class CreateAsPattern_Intention extends IntentionDescriptorBase implement
       SNode currentNode = editorContext.getSelectedNode();
       SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb478dL, "jetbrains.mps.lang.pattern.structure.AsPattern")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateAsPattern_Intention.this;
     }

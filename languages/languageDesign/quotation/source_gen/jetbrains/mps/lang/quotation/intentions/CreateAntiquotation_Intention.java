@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateAntiquotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateAntiquotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateAntiquotation_Intention() {
     super(MetaAdapterFactory.getConcept(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, "jetbrains.mps.lang.quotation.structure.Quotation"), IntentionType.NORMAL, true, new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227885451240"));
@@ -32,6 +32,7 @@ public class CreateAntiquotation_Intention extends IntentionDescriptorBase imple
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -65,6 +66,7 @@ public class CreateAntiquotation_Intention extends IntentionDescriptorBase imple
         editorContext.selectWRTFocusPolicy(antiquotation);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateAntiquotation_Intention.this;
     }

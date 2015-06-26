@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class TrimConstantCell_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class TrimConstantCell_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public TrimConstantCell_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1224530037892"));
@@ -42,6 +42,7 @@ public class TrimConstantCell_Intention extends IntentionDescriptorBase implemen
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -62,6 +63,7 @@ public class TrimConstantCell_Intention extends IntentionDescriptorBase implemen
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, 0xf9eb01232fL, "text")).trim());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return TrimConstantCell_Intention.this;
     }

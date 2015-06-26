@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MultiForeachLoop_replaceWith_MultiForEachStatement_Intention() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb6d46fL, "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop"), IntentionType.ERROR, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "8293956702610699517"));
@@ -41,6 +41,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -84,6 +85,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
         }
       });
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.this;
     }

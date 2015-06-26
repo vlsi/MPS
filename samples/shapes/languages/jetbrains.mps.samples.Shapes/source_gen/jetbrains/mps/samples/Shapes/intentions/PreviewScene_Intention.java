@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.samples.Shapes.behavior.Canvas_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class PreviewScene_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class PreviewScene_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public PreviewScene_Intention() {
     super(MetaAdapterFactory.getConcept(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fa71dL, "jetbrains.mps.samples.Shapes.structure.Canvas"), IntentionType.NORMAL, true, new SNodePointer("r:9acda20f-f1e0-485f-bac0-18b2eef5c3e9(jetbrains.mps.samples.Shapes.intentions)", "1082824515535656124"));
@@ -29,6 +29,7 @@ public class PreviewScene_Intention extends IntentionDescriptorBase implements I
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -49,6 +50,7 @@ public class PreviewScene_Intention extends IntentionDescriptorBase implements I
     public void execute(final SNode node, final EditorContext editorContext) {
       Canvas_Behavior.call_interpret_1082824515535528722(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return PreviewScene_Intention.this;
     }

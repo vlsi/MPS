@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertInlineTemplateToTemplateFragment_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertInlineTemplateToTemplateFragment_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertInlineTemplateToTemplateFragment_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1203775431223"));
@@ -43,6 +43,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends Intention
     }
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -73,6 +74,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends Intention
 
       SelectionUtil.selectNode(editorContext, templateNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertInlineTemplateToTemplateFragment_Intention.this;
     }

@@ -15,7 +15,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddMissingDependency_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddMissingDependency_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddMissingDependency_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.ERROR, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "6125986282171430130"));
@@ -34,6 +34,7 @@ public class AddMissingDependency_Intention extends IntentionDescriptorBase impl
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return new DependencyHelper(node, editorContext).isApplicable();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -54,6 +55,7 @@ public class AddMissingDependency_Intention extends IntentionDescriptorBase impl
     public void execute(final SNode node, final EditorContext editorContext) {
       new DependencyHelper(node, editorContext).execute();
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddMissingDependency_Intention.this;
     }

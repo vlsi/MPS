@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddUnits_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddUnits_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddUnits_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"), IntentionType.NORMAL, false, new SNodePointer("r:94797e6d-aa66-4368-83b5-1cd1a89f672d(testWrappedType.intentions)", "1252378774017439690"));
@@ -36,6 +36,7 @@ public class AddUnits_Intention extends IntentionDescriptorBase implements Inten
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c532bL, "testWrappedType.structure.TypeWithUnits")));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class AddUnits_Intention extends IntentionDescriptorBase implements Inten
       SNode twi = SNodeOperations.replaceWithNewChild(node, MetaAdapterFactory.getConcept(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c532bL, "testWrappedType.structure.TypeWithUnits"));
       SLinkOperations.setTarget(twi, MetaAdapterFactory.getContainmentLink(0x9290638e635b4ec6L, 0xbcad945ecb88a928L, 0x116157dc0d8c52bcL, 0x116157dc0d8c52bdL, "wrapped"), node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddUnits_Intention.this;
     }

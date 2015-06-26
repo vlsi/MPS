@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -43,13 +42,17 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateActionAsPattern_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateAsPattern_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateListPattern_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateOrPattern_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreatePatternVariable_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreatePropertyPatternVariable_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateWildcardPattern_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[7];
+    rv[0] = new CreatePatternVariable_Intention();
+    rv[1] = new CreatePropertyPatternVariable_Intention();
+    rv[2] = new CreateListPattern_Intention();
+    rv[3] = new CreateWildcardPattern_Intention();
+    rv[4] = new CreateAsPattern_Intention();
+    rv[5] = new CreateActionAsPattern_Intention();
+    rv[6] = new CreateOrPattern_Intention();
+    return Arrays.asList(rv);
   }
 }

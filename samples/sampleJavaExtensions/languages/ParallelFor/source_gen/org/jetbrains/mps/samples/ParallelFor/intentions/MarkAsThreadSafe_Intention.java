@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MarkAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MarkAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MarkAsThreadSafe_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), IntentionType.NORMAL, false, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "2975785153735208385"));
@@ -37,6 +37,7 @@ public class MarkAsThreadSafe_Intention extends IntentionDescriptorBase implemen
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -58,6 +59,7 @@ public class MarkAsThreadSafe_Intention extends IntentionDescriptorBase implemen
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")));
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b8450380L, "org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")), null);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MarkAsThreadSafe_Intention.this;
     }

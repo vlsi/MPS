@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ExtractGroup_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ExtractGroup_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ExtractGroup_Intention() {
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)", "1204990433124"));
@@ -38,6 +38,7 @@ public class ExtractGroup_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getParent(node) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -61,6 +62,7 @@ public class ExtractGroup_Intention extends IntentionDescriptorBase implements I
       SLinkOperations.setTarget(rootGroup, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, 0x1190f76acfcL, "contents"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L, 0x1190f76acfcL, "contents")));
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ExtractGroup_Intention.this;
     }

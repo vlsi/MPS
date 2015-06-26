@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SetLinkMergeHint_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SetLinkMergeHint_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SetLinkMergeHint_Intention() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:fb6ad0f1-e6b1-43e0-ae40-6b43fa1f4536(jetbrains.mps.vcs.mergehints.intentions)", "6307349610828070962"));
@@ -31,6 +31,7 @@ public class SetLinkMergeHint_Intention extends IntentionDescriptorBase implemen
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -55,6 +56,7 @@ public class SetLinkMergeHint_Intention extends IntentionDescriptorBase implemen
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x37e03aa1728949bcL, 0x826930de5eceec76L, 0x657f08af7deb331aL, "jetbrains.mps.vcs.mergehints.structure.MergeHint"))));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SetLinkMergeHint_Intention.this;
     }

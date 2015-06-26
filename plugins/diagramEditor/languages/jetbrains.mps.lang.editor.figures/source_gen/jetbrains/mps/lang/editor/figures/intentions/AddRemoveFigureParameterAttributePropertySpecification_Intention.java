@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveFigureParameterAttributePropertySpecification_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemoveFigureParameterAttributePropertySpecification_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemoveFigureParameterAttributePropertySpecification_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)", "7319867929567458791"));
@@ -51,6 +51,7 @@ public class AddRemoveFigureParameterAttributePropertySpecification_Intention ex
     Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
     return SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~ViewPropertySpec"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -76,6 +77,7 @@ public class AddRemoveFigureParameterAttributePropertySpecification_Intention ex
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x6595651980a1f8ecL, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty")), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x6595651980a1f8ecL, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"))));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemoveFigureParameterAttributePropertySpecification_Intention.this;
     }

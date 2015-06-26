@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewTemplateFragment_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewTemplateFragment_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewTemplateFragment_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "9092065972411421046"));
@@ -45,6 +45,7 @@ public class NewTemplateFragment_Intention extends IntentionDescriptorBase imple
     }
     return EditingUtil.isAnyMacroApplicable(node) && !(EditingUtil.isInsideTemplateFragment(node));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -70,6 +71,7 @@ public class NewTemplateFragment_Intention extends IntentionDescriptorBase imple
       }).first();
       EditingUtil.createTemplateFragment(applyToNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewTemplateFragment_Intention.this;
     }

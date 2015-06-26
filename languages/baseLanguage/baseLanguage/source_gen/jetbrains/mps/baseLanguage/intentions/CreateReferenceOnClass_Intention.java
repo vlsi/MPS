@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateReferenceOnClass_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateReferenceOnClass_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateReferenceOnClass_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1215507513710"));
@@ -44,6 +44,7 @@ public class CreateReferenceOnClass_Intention extends IntentionDescriptorBase im
     }
     return (outerConcept != null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -72,6 +73,7 @@ public class CreateReferenceOnClass_Intention extends IntentionDescriptorBase im
       }
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"), outerConcept);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClass_Intention.this;
     }

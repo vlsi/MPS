@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveSeparator_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemoveSeparator_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemoveSeparator_Intention() {
     super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), IntentionType.NORMAL, true, new SNodePointer("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)", "1237984182824"));
@@ -29,6 +29,7 @@ public class AddRemoveSeparator_Intention extends IntentionDescriptorBase implem
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -52,6 +53,7 @@ public class AddRemoveSeparator_Intention extends IntentionDescriptorBase implem
       }
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x1203d98429fL, "withSeparator"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1201527819cL, 0x1203d98429fL, "withSeparator")))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemoveSeparator_Intention.this;
     }

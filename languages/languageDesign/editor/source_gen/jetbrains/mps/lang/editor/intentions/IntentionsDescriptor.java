@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -178,36 +177,40 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddDominance_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddExtendsClause_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddIndent_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOnNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveNewLineForChildren_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new BooleanQuery_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeNonEmptyProperty_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationAlternation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeOrientationList_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeProperty_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangePropertyWithNonEmpty_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeTransactionalProperty_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ColorQuery_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ExtractComponent_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new FontStyleQuery_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new GenerateMultiLineDefaultEditor_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new GenerateSingleLineDefaultEditor_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MigrateToIndentLayout_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new RemoveIndent_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new RemoveNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new RemoveOnNewLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SplitConstantCellIntoWords_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithHorizontalCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithIndentCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SurroundWithVerticalCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new TrimConstantCell_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInCollection_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UseIndentLayoutInRefNodeList_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[30];
+    rv[0] = new SurroundWithVerticalCollection_Intention();
+    rv[1] = new SurroundWithHorizontalCollection_Intention();
+    rv[2] = new ColorQuery_Intention();
+    rv[3] = new FontStyleQuery_Intention();
+    rv[4] = new BooleanQuery_Intention();
+    rv[5] = new SplitConstantCellIntoWords_Intention();
+    rv[6] = new TrimConstantCell_Intention();
+    rv[7] = new ChangeOrientationCollection_Intention();
+    rv[8] = new ChangeOrientationList_Intention();
+    rv[9] = new ChangeOrientationAlternation_Intention();
+    rv[10] = new ChangeProperty_Intention();
+    rv[11] = new ChangeTransactionalProperty_Intention();
+    rv[12] = new UseIndentLayoutInCollection_Intention();
+    rv[13] = new UseIndentLayoutInRefNodeList_Intention();
+    rv[14] = new AddNewLine_Intention();
+    rv[15] = new AddIndent_Intention();
+    rv[16] = new AddOnNewLine_Intention();
+    rv[17] = new RemoveIndent_Intention();
+    rv[18] = new RemoveNewLine_Intention();
+    rv[19] = new RemoveOnNewLine_Intention();
+    rv[20] = new MigrateToIndentLayout_Intention();
+    rv[21] = new AddExtendsClause_Intention();
+    rv[22] = new AddRemoveNewLineForChildren_Intention();
+    rv[23] = new SurroundWithIndentCollection_Intention();
+    rv[24] = new ChangePropertyWithNonEmpty_Intention();
+    rv[25] = new ChangeNonEmptyProperty_Intention();
+    rv[26] = new ExtractComponent_Intention();
+    rv[27] = new GenerateMultiLineDefaultEditor_Intention();
+    rv[28] = new GenerateSingleLineDefaultEditor_Intention();
+    rv[29] = new AddDominance_Intention();
+    return Arrays.asList(rv);
   }
 }

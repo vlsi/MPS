@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveMessage_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemoveMessage_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemoveMessage_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder"), IntentionType.NORMAL, true, new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "7080278351417190887"));
@@ -30,6 +30,7 @@ public class AddRemoveMessage_Intention extends IntentionDescriptorBase implemen
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -54,6 +55,7 @@ public class AddRemoveMessage_Intention extends IntentionDescriptorBase implemen
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x110e5250918L, 0x110e52557daL, "message"), null);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemoveMessage_Intention.this;
     }

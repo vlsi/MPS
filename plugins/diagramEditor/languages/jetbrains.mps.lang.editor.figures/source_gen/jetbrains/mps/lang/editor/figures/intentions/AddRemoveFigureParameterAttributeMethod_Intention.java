@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveFigureParameterAttributeMethod_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemoveFigureParameterAttributeMethod_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemoveFigureParameterAttributeMethod_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)", "2084788800270642821"));
@@ -54,6 +54,7 @@ public class AddRemoveFigureParameterAttributeMethod_Intention extends Intention
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -78,6 +79,7 @@ public class AddRemoveFigureParameterAttributeMethod_Intention extends Intention
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59954L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod")), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1ceea85e3fd59954L, "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod"))));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemoveFigureParameterAttributeMethod_Intention.this;
     }

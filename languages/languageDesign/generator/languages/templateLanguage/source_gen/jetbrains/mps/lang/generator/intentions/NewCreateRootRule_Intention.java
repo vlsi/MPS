@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewCreateRootRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewCreateRootRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewCreateRootRule_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1227216572218"));
@@ -68,6 +68,7 @@ public class NewCreateRootRule_Intention extends IntentionDescriptorBase impleme
     //  not used in rule yet? 
     return usage == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -108,6 +109,7 @@ public class NewCreateRootRule_Intention extends IntentionDescriptorBase impleme
       //  open in editor 
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), rule, true, true);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewCreateRootRule_Intention.this;
     }

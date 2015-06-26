@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeMultiLiner_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeMultiLiner_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeMultiLiner_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4467513934994713259"));
@@ -36,6 +36,7 @@ public class MakeMultiLiner_Intention extends IntentionDescriptorBase implements
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return IfStatement_Behavior.call_isGuardIf_1237547453258(node) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e371L, "forceMultiLine")));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class MakeMultiLiner_Intention extends IntentionDescriptorBase implements
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e371L, "forceMultiLine"), "" + (true));
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0x3dffcc410476e370L, "forceOneLine"), "" + (false));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeMultiLiner_Intention.this;
     }

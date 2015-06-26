@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ChangeTransactionalProperty_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ChangeTransactionalProperty_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ChangeTransactionalProperty_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1235490923121"));
@@ -37,6 +37,7 @@ public class ChangeTransactionalProperty_Intention extends IntentionDescriptorBa
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -72,6 +73,7 @@ public class ChangeTransactionalProperty_Intention extends IntentionDescriptorBa
       }
       SNodeOperations.replaceWithAnother(node, transactional);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ChangeTransactionalProperty_Intention.this;
     }

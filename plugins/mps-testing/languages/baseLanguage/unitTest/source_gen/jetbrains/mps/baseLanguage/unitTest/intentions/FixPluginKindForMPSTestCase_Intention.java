@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class FixPluginKindForMPSTestCase_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class FixPluginKindForMPSTestCase_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public FixPluginKindForMPSTestCase_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), IntentionType.ERROR, false, new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "8797237962361678880"));
@@ -35,6 +35,7 @@ public class FixPluginKindForMPSTestCase_Intention extends IntentionDescriptorBa
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(CheckUtils.checkPluginKindForMPSTestCase(node));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class FixPluginKindForMPSTestCase_Intention extends IntentionDescriptorBa
         // todo: ? 
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return FixPluginKindForMPSTestCase_Intention.this;
     }

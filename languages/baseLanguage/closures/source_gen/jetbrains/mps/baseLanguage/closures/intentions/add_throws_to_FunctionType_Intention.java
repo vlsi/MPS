@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class add_throws_to_FunctionType_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class add_throws_to_FunctionType_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public add_throws_to_FunctionType_Intention() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), IntentionType.NORMAL, false, new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229717881949"));
@@ -37,6 +37,7 @@ public class add_throws_to_FunctionType_Intention extends IntentionDescriptorBas
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x11ad99d9c36L, "throwsType"))).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class add_throws_to_FunctionType_Intention extends IntentionDescriptorBas
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x11ad99d9c36L, "throwsType"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return add_throws_to_FunctionType_Intention.this;
     }

@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreatePatternVariable_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreatePatternVariable_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreatePatternVariable_Intention() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371682052"));
@@ -35,6 +35,7 @@ public class CreatePatternVariable_Intention extends IntentionDescriptorBase imp
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return PatternAddingUtil.isPatternApplicable(editorContext);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -55,6 +56,7 @@ public class CreatePatternVariable_Intention extends IntentionDescriptorBase imp
     public void execute(final SNode node, final EditorContext editorContext) {
       PatternAddingUtil.addVariablePattern(editorContext);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreatePatternVariable_Intention.this;
     }

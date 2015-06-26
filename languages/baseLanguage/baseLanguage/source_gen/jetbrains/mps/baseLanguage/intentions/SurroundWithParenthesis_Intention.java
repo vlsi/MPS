@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithParenthesis_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithParenthesis_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithParenthesis_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "985108658453262823"));
@@ -46,6 +46,7 @@ public class SurroundWithParenthesis_Intention extends IntentionDescriptorBase i
     }
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -67,6 +68,7 @@ public class SurroundWithParenthesis_Intention extends IntentionDescriptorBase i
       SNode replacing = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, replacing, "openParen", -1);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithParenthesis_Intention.this;
     }

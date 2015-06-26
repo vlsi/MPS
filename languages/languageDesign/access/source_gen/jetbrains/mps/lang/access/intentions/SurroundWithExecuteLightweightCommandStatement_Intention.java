@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithExecuteLightweightCommandStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithExecuteLightweightCommandStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithExecuteLightweightCommandStatement_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), IntentionType.NORMAL, false, new SNodePointer("r:4df57e9b-2a09-44c7-b16d-4af6620e3aaa(jetbrains.mps.lang.access.intentions)", "1616052750811363739"));
@@ -33,6 +33,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention extends In
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -59,6 +60,7 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention extends In
       }
       editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(readActionStatement, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x7c8b08a50a3ea20bL, "commandClosureLiteral")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).first());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithExecuteLightweightCommandStatement_Intention.this;
     }

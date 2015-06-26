@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -66,12 +65,16 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new ToggleMultiLine_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new add_throws_to_FunctionType_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_from_unrestricted_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_restricted_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new convert_to_unrestricted_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new replace_invokeOperation_with_compactInvoke_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[6];
+    rv[0] = new add_throws_to_FunctionType_Intention();
+    rv[1] = new convert_to_unrestricted_Intention();
+    rv[2] = new convert_to_restricted_Intention();
+    rv[3] = new convert_to_from_unrestricted_Intention();
+    rv[4] = new replace_invokeOperation_with_compactInvoke_Intention();
+    rv[5] = new ToggleMultiLine_Intention();
+    return Arrays.asList(rv);
   }
 }

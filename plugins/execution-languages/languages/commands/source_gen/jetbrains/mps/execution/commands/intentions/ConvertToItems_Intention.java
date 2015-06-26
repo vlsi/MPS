@@ -18,7 +18,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertToItems_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertToItems_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertToItems_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart"), IntentionType.NORMAL, true, new SNodePointer("r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)", "2168104298250372811"));
@@ -48,6 +48,7 @@ public class ConvertToItems_Intention extends IntentionDescriptorBase implements
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_icoqxr_a0a0f(SNodeOperations.getContainingLinkRole(childNode), "list");
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -70,6 +71,7 @@ public class ConvertToItems_Intention extends IntentionDescriptorBase implements
       SNodeOperations.detachNode(list);
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(list, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, 0x10ab847b486L, "creator")), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertToItems_Intention.this;
     }

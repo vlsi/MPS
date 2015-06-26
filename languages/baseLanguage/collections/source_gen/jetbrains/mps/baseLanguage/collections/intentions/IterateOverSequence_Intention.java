@@ -21,7 +21,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class IterateOverSequence_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class IterateOverSequence_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public IterateOverSequence_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "309173295241374789"));
@@ -41,6 +41,7 @@ public class IterateOverSequence_Intention extends IntentionDescriptorBase imple
     // TODO replace with isSubtype() when MPS-10610 is fixed 
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType")) || TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(node), _quotation_createNode_7wizo7_b0a0b0a());
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -69,6 +70,7 @@ public class IterateOverSequence_Intention extends IntentionDescriptorBase imple
       }
       editorContext.select(SLinkOperations.getTarget(forStatement, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return IterateOverSequence_Intention.this;
     }

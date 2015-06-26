@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ToggleDeprecatedAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ToggleDeprecatedAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ToggleDeprecatedAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), IntentionType.NORMAL, false, new SNodePointer("r:2f15cca9-9d4b-4caa-8c6d-31f12b9faf00(jetbrains.mps.execution.settings.intentions)", "9191251033651652580"));
@@ -32,6 +32,7 @@ public class ToggleDeprecatedAnnotation_Intention extends IntentionDescriptorBas
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -59,6 +60,7 @@ public class ToggleDeprecatedAnnotation_Intention extends IntentionDescriptorBas
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ToggleDeprecatedAnnotation_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithNegation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithNegation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithNegation_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "418779379562176548"));
@@ -37,6 +37,7 @@ public class SurroundWithNegation_Intention extends IntentionDescriptorBase impl
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d6513eL, "jetbrains.mps.baseLanguage.structure.BooleanType"));
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -57,6 +58,7 @@ public class SurroundWithNegation_Intention extends IntentionDescriptorBase impl
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithNegation_Intention.this;
     }

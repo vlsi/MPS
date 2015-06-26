@@ -16,7 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class DetachFromThreadPool_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class DetachFromThreadPool_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public DetachFromThreadPool_Intention() {
     super(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), IntentionType.NORMAL, false, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "633195941006988431"));
@@ -35,6 +35,7 @@ public class DetachFromThreadPool_Intention extends IntentionDescriptorBase impl
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x40a8d217b6d881feL, "threadPool")) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -55,6 +56,7 @@ public class DetachFromThreadPool_Intention extends IntentionDescriptorBase impl
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, 0x40a8d217b6d881feL, "threadPool"), null);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return DetachFromThreadPool_Intention.this;
     }

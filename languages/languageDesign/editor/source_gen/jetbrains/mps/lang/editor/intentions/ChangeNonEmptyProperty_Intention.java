@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ChangeNonEmptyProperty_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ChangeNonEmptyProperty_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ChangeNonEmptyProperty_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5137527105085214125"));
@@ -37,6 +37,7 @@ public class ChangeNonEmptyProperty_Intention extends IntentionDescriptorBase im
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -71,6 +72,7 @@ public class ChangeNonEmptyProperty_Intention extends IntentionDescriptorBase im
       }
       jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, property);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ChangeNonEmptyProperty_Intention.this;
     }

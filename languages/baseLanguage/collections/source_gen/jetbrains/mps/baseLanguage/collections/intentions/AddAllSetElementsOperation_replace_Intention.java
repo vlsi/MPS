@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class AddAllSetElementsOperation_replace_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddAllSetElementsOperation_replace_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddAllSetElementsOperation_replace_Intention() {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L, "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation"), IntentionType.ERROR, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "4863683935051516260"));
@@ -33,6 +33,7 @@ public class AddAllSetElementsOperation_replace_Intention extends IntentionDescr
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -53,6 +54,7 @@ public class AddAllSetElementsOperation_replace_Intention extends IntentionDescr
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_vjw581_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d969dca87L, 0x11d969e1c69L, "argument")))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddAllSetElementsOperation_replace_Intention.this;
     }

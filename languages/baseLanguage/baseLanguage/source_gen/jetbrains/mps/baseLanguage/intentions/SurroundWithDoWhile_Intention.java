@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithDoWhile_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithDoWhile_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithDoWhile_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3366354716707819213"));
@@ -33,6 +33,7 @@ public class SurroundWithDoWhile_Intention extends IntentionDescriptorBase imple
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -59,6 +60,7 @@ public class SurroundWithDoWhile_Intention extends IntentionDescriptorBase imple
       }
       editorContext.select(SLinkOperations.getTarget(whileStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, 0x11232679422L, "condition")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithDoWhile_Intention.this;
     }

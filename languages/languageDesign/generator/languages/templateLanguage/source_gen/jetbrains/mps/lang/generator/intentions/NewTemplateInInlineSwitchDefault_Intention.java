@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewTemplateInInlineSwitchDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewTemplateInInlineSwitchDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewTemplateInInlineSwitchDefault_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "8004199436029429270"));
@@ -41,6 +41,7 @@ public class NewTemplateInInlineSwitchDefault_Intention extends IntentionDescrip
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, 0x11644fb7f64L, "defaultConsequence")) == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -76,6 +77,7 @@ public class NewTemplateInInlineSwitchDefault_Intention extends IntentionDescrip
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11644fa2edeL, 0x11644fb7f64L, "defaultConsequence"), tr);
       SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInInlineSwitchDefault_Intention.this;
     }

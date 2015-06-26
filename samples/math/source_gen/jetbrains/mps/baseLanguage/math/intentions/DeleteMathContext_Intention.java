@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class DeleteMathContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class DeleteMathContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public DeleteMathContext_Intention() {
     super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120568d9c5bL, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation"), IntentionType.NORMAL, false, new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1238942880468"));
@@ -30,6 +30,7 @@ public class DeleteMathContext_Intention extends IntentionDescriptorBase impleme
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -50,6 +51,7 @@ public class DeleteMathContext_Intention extends IntentionDescriptorBase impleme
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, MathUtil.convert1(node));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return DeleteMathContext_Intention.this;
     }

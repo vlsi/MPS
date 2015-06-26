@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -64,10 +63,14 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new DeleteMathContext_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new DivExpressionDivToFraction_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new DivExpressionFractionToDiv_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SpecifyMathContext_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[4];
+    rv[0] = new DivExpressionFractionToDiv_Intention();
+    rv[1] = new DivExpressionDivToFraction_Intention();
+    rv[2] = new SpecifyMathContext_Intention();
+    rv[3] = new DeleteMathContext_Intention();
+    return Arrays.asList(rv);
   }
 }

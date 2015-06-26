@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class Replace_ListType_withNodeListType_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class Replace_ListType_withNodeListType_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public Replace_ListType_withNodeListType_Intention() {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1205354609722"));
@@ -37,6 +37,7 @@ public class Replace_ListType_withNodeListType_Intention extends IntentionDescri
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, 0x10c25fe95c5L, "elementType")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class Replace_ListType_withNodeListType_Intention extends IntentionDescri
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10aae26be32L, "jetbrains.mps.lang.smodel.structure.SNodeListType")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return Replace_ListType_withNodeListType_Intention.this;
     }

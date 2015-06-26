@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ReplaceConditionalWithIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceConditionalWithIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReplaceConditionalWithIf_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199561300578"));
@@ -38,6 +38,7 @@ public class ReplaceConditionalWithIf_Intention extends IntentionDescriptorBase 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.cast(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement")) != null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -89,6 +90,7 @@ public class ReplaceConditionalWithIf_Intention extends IntentionDescriptorBase 
       SLinkOperations.setTarget(ifNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement"), falseBlockStmt);
       SNodeOperations.replaceWithAnother(stmtNode, ifNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceConditionalWithIf_Intention.this;
     }

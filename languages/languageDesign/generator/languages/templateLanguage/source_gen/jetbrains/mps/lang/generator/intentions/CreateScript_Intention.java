@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateScript_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateScript_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateScript_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "2357139912674486242"));
@@ -38,6 +38,7 @@ public class CreateScript_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, 0x116597b663aL, "mappingScript")) == null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class CreateScript_Intention extends IntentionDescriptorBase implements I
       }
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, 0x116597b663aL, "mappingScript"), script);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateScript_Intention.this;
     }

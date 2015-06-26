@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.editor.runtime.ExtractComponentUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ExtractComponent_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ExtractComponent_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ExtractComponent_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "98380422618971761"));
@@ -29,6 +29,7 @@ public class ExtractComponent_Intention extends IntentionDescriptorBase implemen
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -49,6 +50,7 @@ public class ExtractComponent_Intention extends IntentionDescriptorBase implemen
     public void execute(final SNode node, final EditorContext editorContext) {
       ExtractComponentUtil.extractComponent(node, editorContext);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ExtractComponent_Intention.this;
     }

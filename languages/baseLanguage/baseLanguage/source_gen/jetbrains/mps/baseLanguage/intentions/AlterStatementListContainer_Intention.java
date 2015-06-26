@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AlterStatementListContainer_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AlterStatementListContainer_Intention extends IntentionDescriptorBase implements IntentionFactory {
   public AlterStatementListContainer_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120237c2cebL, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "8176191621190087466"));
   }
@@ -40,6 +40,7 @@ public class AlterStatementListContainer_Intention extends IntentionDescriptorBa
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -88,6 +89,7 @@ public class AlterStatementListContainer_Intention extends IntentionDescriptorBa
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
       editorContext.selectWRTFocusPolicy(newInitializedInstance);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AlterStatementListContainer_Intention.this;
     }

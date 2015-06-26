@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddMayBeUnreachable_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddMayBeUnreachable_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddMayBeUnreachable_Intention() {
     super(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5a42658L, "jetbrains.mps.lang.dataFlow.structure.EmitStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)", "1206534589230"));
@@ -38,6 +38,7 @@ public class AddMayBeUnreachable_Intention extends IntentionDescriptorBase imple
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable")));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -61,6 +62,7 @@ public class AddMayBeUnreachable_Intention extends IntentionDescriptorBase imple
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118eb0b6674L, 0x118eb0b872cL, "emitStatement"), node);
       SelectionUtil.selectNode(editorContext, node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddMayBeUnreachable_Intention.this;
     }

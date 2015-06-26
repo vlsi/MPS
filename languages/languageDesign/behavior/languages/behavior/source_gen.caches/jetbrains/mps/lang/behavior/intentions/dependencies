@@ -5,7 +5,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeStatic_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention" />

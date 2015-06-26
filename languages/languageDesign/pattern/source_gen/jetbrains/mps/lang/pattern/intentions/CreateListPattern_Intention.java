@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreateListPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateListPattern_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateListPattern_Intention() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371785881"));
@@ -40,6 +40,7 @@ public class CreateListPattern_Intention extends IntentionDescriptorBase impleme
     SNode currentNode = editorContext.getSelectedNode();
     return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(currentNode) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -65,6 +66,7 @@ public class CreateListPattern_Intention extends IntentionDescriptorBase impleme
         SNodeOperations.deleteNode(sibling);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateListPattern_Intention.this;
     }

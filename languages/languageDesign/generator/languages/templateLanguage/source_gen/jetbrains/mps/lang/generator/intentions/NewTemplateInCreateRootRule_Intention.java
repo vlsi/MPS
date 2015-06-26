@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewTemplateInCreateRootRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewTemplateInCreateRootRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewTemplateInCreateRootRule_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216337594117"));
@@ -43,6 +43,7 @@ public class NewTemplateInCreateRootRule_Intention extends IntentionDescriptorBa
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, 0x10fbbd5854dL, "templateNode")) == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -95,6 +96,7 @@ public class NewTemplateInCreateRootRule_Intention extends IntentionDescriptorBa
         }
       });
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInCreateRootRule_Intention.this;
     }

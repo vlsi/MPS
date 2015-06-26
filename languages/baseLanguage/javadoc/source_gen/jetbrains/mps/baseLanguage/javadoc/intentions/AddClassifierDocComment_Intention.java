@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-public class AddClassifierDocComment_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddClassifierDocComment_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddClassifierDocComment_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), IntentionType.NORMAL, true, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "2068944020170372970"));
@@ -43,6 +43,7 @@ public class AddClassifierDocComment_Intention extends IntentionDescriptorBase i
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), true, false) == null) && (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), true, false) == null) && (SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), true, false) == null) && SNodeOperations.getNodeAncestor(childNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false) == node;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -84,6 +85,7 @@ public class AddClassifierDocComment_Intention extends IntentionDescriptorBase i
 
       editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1cb65d9fe66a764cL, "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f96eL, "body"))).first());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddClassifierDocComment_Intention.this;
     }

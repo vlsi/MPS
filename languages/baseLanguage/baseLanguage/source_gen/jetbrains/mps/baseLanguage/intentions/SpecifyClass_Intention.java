@@ -20,7 +20,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SpecifyClass_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SpecifyClass_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SpecifyClass_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1230290102486"));
@@ -39,6 +39,7 @@ public class SpecifyClass_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -72,6 +73,7 @@ public class SpecifyClass_Intention extends IntentionDescriptorBase implements I
       }
       editorContext.selectWRTFocusPolicy(smc);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SpecifyClass_Intention.this;
     }

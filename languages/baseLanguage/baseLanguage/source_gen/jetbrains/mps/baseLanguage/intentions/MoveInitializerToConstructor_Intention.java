@@ -21,7 +21,7 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MoveInitializerToConstructor_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MoveInitializerToConstructor_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MoveInitializerToConstructor_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1201102619707"));
@@ -46,6 +46,7 @@ public class MoveInitializerToConstructor_Intention extends IntentionDescriptorB
     }
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -80,6 +81,7 @@ public class MoveInitializerToConstructor_Intention extends IntentionDescriptorB
       // 
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MoveInitializerToConstructor_Intention.this;
     }

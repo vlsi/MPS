@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public class AddOverrideAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddOverrideAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddOverrideAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1645752949779063112"));
@@ -57,6 +57,7 @@ public class AddOverrideAnnotation_Intention extends IntentionDescriptorBase imp
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classConcept, Sequence.<SNode>singleton(node));
     return SetSequence.fromSet(finder.getOverridingMethods()).isNotEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -82,6 +83,7 @@ public class AddOverrideAnnotation_Intention extends IntentionDescriptorBase imp
       }
 
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddOverrideAnnotation_Intention.this;
     }

@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.baseLanguage.javadoc.editor.DocTagHelper;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class OrganizeTags_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class OrganizeTags_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public OrganizeTags_Intention() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), IntentionType.NORMAL, true, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "7427066632718011033"));
@@ -36,6 +36,7 @@ public class OrganizeTags_Intention extends IntentionDescriptorBase implements I
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BaseDocComment_Behavior.call_hasTags_4948473272651019109(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class OrganizeTags_Intention extends IntentionDescriptorBase implements I
     public void execute(final SNode node, final EditorContext editorContext) {
       DocTagHelper.organizeTags(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return OrganizeTags_Intention.this;
     }

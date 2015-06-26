@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddSeeBlockTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddSeeBlockTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddSeeBlockTag_Intention() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), IntentionType.NORMAL, true, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "2217234381367409810"));
@@ -29,6 +29,7 @@ public class AddSeeBlockTag_Intention extends IntentionDescriptorBase implements
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -51,6 +52,7 @@ public class AddSeeBlockTag_Intention extends IntentionDescriptorBase implements
       BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
 
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddSeeBlockTag_Intention.this;
     }

@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddCustomLocationJavaJar_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddCustomLocationJavaJar_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddCustomLocationJavaJar_Intention() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, "jetbrains.mps.build.structure.BuildSource_JavaJar"), IntentionType.NORMAL, true, new SNodePointer("r:9e44d7c5-70f5-4986-acea-57d3ad3ce28f(jetbrains.mps.build.intentions)", "8706695667516275787"));
@@ -36,6 +36,7 @@ public class AddCustomLocationJavaJar_Intention extends IntentionDescriptorBase 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x78d465945dbd7c46L, "customLocation")) == null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class AddCustomLocationJavaJar_Intention extends IntentionDescriptorBase 
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x78d465945dbd7c46L, "customLocation"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddCustomLocationJavaJar_Intention.this;
     }

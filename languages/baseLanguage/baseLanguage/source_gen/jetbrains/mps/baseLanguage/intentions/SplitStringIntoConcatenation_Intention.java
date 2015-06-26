@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SplitStringIntoConcatenation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SplitStringIntoConcatenation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SplitStringIntoConcatenation_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647385815"));
@@ -37,6 +37,7 @@ public class SplitStringIntoConcatenation_Intention extends IntentionDescriptorB
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedCell() instanceof EditorCell_Property;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class SplitStringIntoConcatenation_Intention extends IntentionDescriptorB
       SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"))), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), s1);
       SPropertyOperations.set(SNodeFactoryOperations.setNewChild(plusExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"))), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), s2);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SplitStringIntoConcatenation_Intention.this;
     }

@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SetExportAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SetExportAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   public SetExportAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4075196924244322258"));
   }
@@ -42,6 +42,7 @@ public class SetExportAnnotation_Intention extends IntentionDescriptorBase imple
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isRoot(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -79,6 +80,7 @@ public class SetExportAnnotation_Intention extends IntentionDescriptorBase imple
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameter), null));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SetExportAnnotation_Intention.this;
     }

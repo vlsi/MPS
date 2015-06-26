@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class FlipAssertEquals_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class FlipAssertEquals_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public FlipAssertEquals_Intention() {
     super(MetaAdapterFactory.getConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert"), IntentionType.NORMAL, false, new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "7523560072226634120"));
@@ -30,6 +30,7 @@ public class FlipAssertEquals_Intention extends IntentionDescriptorBase implemen
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -53,6 +54,7 @@ public class FlipAssertEquals_Intention extends IntentionDescriptorBase implemen
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, 0x74f562a3a993fd44L, "expected"), SNodeOperations.copyNode(actual));
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x74f562a3a993fd3dL, 0x74f562a3a993fd45L, "actual"), SNodeOperations.copyNode(expected));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return FlipAssertEquals_Intention.this;
     }

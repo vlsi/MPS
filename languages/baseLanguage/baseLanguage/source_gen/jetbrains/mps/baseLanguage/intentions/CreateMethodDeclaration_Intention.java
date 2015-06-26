@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class CreateMethodDeclaration_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateMethodDeclaration_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateMethodDeclaration_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L, "jetbrains.mps.baseLanguage.structure.IOperation"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "5742179528877834612"));
@@ -45,6 +45,7 @@ public class CreateMethodDeclaration_Intention extends IntentionDescriptorBase i
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return CreateMethodDeclarationUtil.isApplicable(editorContext, node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -87,6 +88,7 @@ public class CreateMethodDeclaration_Intention extends IntentionDescriptorBase i
         editor.getEditorContext().selectWRTFocusPolicy(method);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateMethodDeclaration_Intention.this;
     }

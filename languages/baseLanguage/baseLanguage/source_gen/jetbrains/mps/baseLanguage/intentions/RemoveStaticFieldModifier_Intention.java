@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class RemoveStaticFieldModifier_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class RemoveStaticFieldModifier_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public RemoveStaticFieldModifier_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93c84351fL, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1809470990894798934"));
@@ -45,6 +45,7 @@ public class RemoveStaticFieldModifier_Intention extends IntentionDescriptorBase
     return true;
 
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -75,6 +76,7 @@ public class RemoveStaticFieldModifier_Intention extends IntentionDescriptorBase
       SNodeOperations.deleteNode(node);
       editorContext.selectWRTFocusPolicy(field);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return RemoveStaticFieldModifier_Intention.this;
     }

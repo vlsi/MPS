@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ReplaceForLoopWithWhileLoop_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceForLoopWithWhileLoop_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReplaceForLoopWithWhileLoop_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, "jetbrains.mps.baseLanguage.structure.ForStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199623693658"));
@@ -38,6 +38,7 @@ public class ReplaceForLoopWithWhileLoop_Intention extends IntentionDescriptorBa
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -75,6 +76,7 @@ public class ReplaceForLoopWithWhileLoop_Intention extends IntentionDescriptorBa
       // adjust exit condition 
       SLinkOperations.setTarget(whileStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, 0xfaa4bf0f30L, "condition"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, 0x10a69819132L, "condition")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceForLoopWithWhileLoop_Intention.this;
     }

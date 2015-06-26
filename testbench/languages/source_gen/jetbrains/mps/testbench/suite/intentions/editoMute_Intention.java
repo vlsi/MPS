@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class editoMute_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class editoMute_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public editoMute_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, "jetbrains.mps.testbench.suite.structure.ITestRef"), IntentionType.NORMAL, true, new SNodePointer("r:7344827c-92d1-4046-9d4e-c93304e0d649(jetbrains.mps.testbench.suite.intentions)", "8605005254686393770"));
@@ -29,6 +29,7 @@ public class editoMute_Intention extends IntentionDescriptorBase implements Inte
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -50,6 +51,7 @@ public class editoMute_Intention extends IntentionDescriptorBase implements Inte
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted")))));
       editorContext.getEditorComponent().rebuildEditorContent();
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return editoMute_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SplitIntoDeclarationAndAssignment_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SplitIntoDeclarationAndAssignment_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SplitIntoDeclarationAndAssignment_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647309293"));
@@ -37,6 +37,7 @@ public class SplitIntoDeclarationAndAssignment_Intention extends IntentionDescri
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer")) != null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -62,6 +63,7 @@ public class SplitIntoDeclarationAndAssignment_Intention extends IntentionDescri
       SLinkOperations.setTarget(local, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), node);
       SNodeOperations.insertNextSiblingChild(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), false, false), eStatement);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SplitIntoDeclarationAndAssignment_Intention.this;
     }

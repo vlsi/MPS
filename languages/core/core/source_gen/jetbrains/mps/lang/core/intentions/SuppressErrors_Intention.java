@@ -19,7 +19,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SuppressErrors_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SuppressErrors_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SuppressErrors_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2f16f1b357e19f42L, "jetbrains.mps.lang.core.structure.ICanSuppressErrors"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4222318806802430725"));
@@ -45,6 +45,7 @@ public class SuppressErrors_Intention extends IntentionDescriptorBase implements
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -69,6 +70,7 @@ public class SuppressErrors_Intention extends IntentionDescriptorBase implements
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3a98b0957fe8e5d2L, "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")), null);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SuppressErrors_Intention.this;
     }

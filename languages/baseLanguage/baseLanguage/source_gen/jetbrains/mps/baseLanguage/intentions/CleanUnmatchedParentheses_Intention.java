@@ -22,7 +22,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CleanUnmatchedParentheses_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CleanUnmatchedParentheses_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CleanUnmatchedParentheses_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.ERROR, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "528847182406392848"));
@@ -45,6 +45,7 @@ public class CleanUnmatchedParentheses_Intention extends IntentionDescriptorBase
       }
     });
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -74,6 +75,7 @@ public class CleanUnmatchedParentheses_Intention extends IntentionDescriptorBase
         }
       });
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CleanUnmatchedParentheses_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertIfConditionToTernaryOperator_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertIfConditionToTernaryOperator_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertIfConditionToTernaryOperator_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "2040594400225005124"));
@@ -43,6 +43,7 @@ public class ConvertIfConditionToTernaryOperator_Intention extends IntentionDesc
     SNode s2 = IntentionUtils.optimizeNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")));
     return (s1 != null) && (s2 != null) && IntentionUtils.canBeConvertedToTernary(s1, s2);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -66,6 +67,7 @@ public class ConvertIfConditionToTernaryOperator_Intention extends IntentionDesc
         SNodeOperations.replaceWithAnother(node, result);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertIfConditionToTernaryOperator_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MarkVariableDeclarationAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MarkVariableDeclarationAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MarkVariableDeclarationAsThreadSafe_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "2975785153735290139"));
@@ -37,6 +37,7 @@ public class MarkVariableDeclarationAsThreadSafe_Intention extends IntentionDesc
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"))) == null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class MarkVariableDeclarationAsThreadSafe_Intention extends IntentionDesc
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MarkVariableDeclarationAsThreadSafe_Intention.this;
     }

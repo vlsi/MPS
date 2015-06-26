@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SpecifyRuleReferences_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SpecifyRuleReferences_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SpecifyRuleReferences_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "7796829026680792390"));
@@ -36,6 +36,7 @@ public class SpecifyRuleReferences_Intention extends IntentionDescriptorBase imp
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return Sequence.fromIterable(SpecifyUtil.getErrorReporters(node)).isNotEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -57,6 +58,7 @@ public class SpecifyRuleReferences_Intention extends IntentionDescriptorBase imp
       SpecifyUtil.attachNewContainer(node);
       SpecifyUtil.fillContainerWithRuleMessages(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SpecifyRuleReferences_Intention.this;
     }

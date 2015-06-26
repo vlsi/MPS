@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.actions.ModuleDependencyUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeDeprecated_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeDeprecated_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeDeprecated_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1223648378225"));
@@ -31,6 +31,7 @@ public class MakeDeprecated_Intention extends IntentionDescriptorBase implements
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -60,6 +61,7 @@ public class MakeDeprecated_Intention extends IntentionDescriptorBase implements
         BehaviorReflection.invokeVirtual(Void.class, node, "virtual_markDeprecated_7983358747957651026", new Object[]{});
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeDeprecated_Intention.this;
     }

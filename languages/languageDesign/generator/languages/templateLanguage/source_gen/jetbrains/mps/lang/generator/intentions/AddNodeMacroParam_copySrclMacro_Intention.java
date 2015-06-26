@@ -23,7 +23,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddNodeMacroParam_copySrclMacro_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddNodeMacroParam_copySrclMacro_Intention extends IntentionDescriptorBase implements IntentionFactory {
   public AddNodeMacroParam_copySrclMacro_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595864245"));
   }
@@ -44,6 +44,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends IntentionDescript
     }
     return EditingUtil.isNodeMacroApplicable(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -88,6 +89,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends IntentionDescript
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, copySrcListMacro, SelectionManager.FIRST_CELL, 1);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddNodeMacroParam_copySrclMacro_Intention.this;
     }

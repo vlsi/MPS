@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class TurnToForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class TurnToForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public TurnToForEachStatement_Intention() {
     super(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x7bd8445d1e8770aaL, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), IntentionType.NORMAL, false, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952504715"));
@@ -36,6 +36,7 @@ public class TurnToForEachStatement_Intention extends IntentionDescriptorBase im
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -78,6 +79,7 @@ public class TurnToForEachStatement_Intention extends IntentionDescriptorBase im
       SNodeOperations.replaceWithAnother(node, forStatement);
       editorContext.selectWRTFocusPolicy(variable);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return TurnToForEachStatement_Intention.this;
     }

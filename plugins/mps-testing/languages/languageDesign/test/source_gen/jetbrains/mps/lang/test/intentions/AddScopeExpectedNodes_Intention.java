@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddScopeExpectedNodes_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddScopeExpectedNodes_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddScopeExpectedNodes_Intention() {
     super(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "3100207102209325314"));
@@ -41,6 +41,7 @@ public class AddScopeExpectedNodes_Intention extends IntentionDescriptorBase imp
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference")) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -66,6 +67,7 @@ public class AddScopeExpectedNodes_Intention extends IntentionDescriptorBase imp
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x32ba5b0ec25fea03L, "nodes"))).addElement(expectedNode);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddScopeExpectedNodes_Intention.this;
     }

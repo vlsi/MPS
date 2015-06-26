@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -186,36 +185,40 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddContext_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrcMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_copySrclMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_ifMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_loopMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeMacroParam_switch_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddPropertyMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddPropertyMacroParam_property_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddReferenceMacro_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddReferenceMacroParam_link_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertClassConceptToExtract_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertInlineTemplateToTemplateFragment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertLoopWithCopySrc_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertSwitchToParameterized_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertTemplateDeclRefToInlineTemplate_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateScript_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewCreateRootRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewRootMappingRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateFragment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInCreateRootRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInInlineSwitchCase_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInInlineSwitchDefault_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInReductionRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInRootMappingRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInSwitchCase_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInSwitchDefault_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInWeaveEach_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new NewTemplateInWeavingRule_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ReplaceWithConcreteSubconcept_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[30];
+    rv[0] = new ConvertInlineTemplateToTemplateFragment_Intention();
+    rv[1] = new ConvertTemplateDeclRefToInlineTemplate_Intention();
+    rv[2] = new AddNodeMacro_Intention();
+    rv[3] = new AddPropertyMacro_Intention();
+    rv[4] = new AddReferenceMacro_Intention();
+    rv[5] = new NewTemplateInWeaveEach_Intention();
+    rv[6] = new NewTemplateInReductionRule_Intention();
+    rv[7] = new NewTemplateInSwitchDefault_Intention();
+    rv[8] = new NewTemplateInRootMappingRule_Intention();
+    rv[9] = new NewTemplateInCreateRootRule_Intention();
+    rv[10] = new NewCreateRootRule_Intention();
+    rv[11] = new NewRootMappingRule_Intention();
+    rv[12] = new AddNodeMacroParam_ifMacro_Intention();
+    rv[13] = new AddReferenceMacroParam_link_Intention();
+    rv[14] = new AddPropertyMacroParam_property_Intention();
+    rv[15] = new AddNodeMacroParam_copySrcMacro_Intention();
+    rv[16] = new AddNodeMacroParam_copySrclMacro_Intention();
+    rv[17] = new AddNodeMacroParam_loopMacro_Intention();
+    rv[18] = new NewTemplateFragment_Intention();
+    rv[19] = new NewTemplateInWeavingRule_Intention();
+    rv[20] = new CreateScript_Intention();
+    rv[21] = new NewTemplateInSwitchCase_Intention();
+    rv[22] = new NewTemplateInInlineSwitchDefault_Intention();
+    rv[23] = new NewTemplateInInlineSwitchCase_Intention();
+    rv[24] = new AddNodeMacroParam_switch_Intention();
+    rv[25] = new ConvertClassConceptToExtract_Intention();
+    rv[26] = new ReplaceWithConcreteSubconcept_Intention();
+    rv[27] = new AddContext_Intention();
+    rv[28] = new ConvertLoopWithCopySrc_Intention();
+    rv[29] = new ConvertSwitchToParameterized_Intention();
+    return Arrays.asList(rv);
   }
 }

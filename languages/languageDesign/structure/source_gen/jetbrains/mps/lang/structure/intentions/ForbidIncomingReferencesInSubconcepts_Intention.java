@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ForbidIncomingReferencesInSubconcepts_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ForbidIncomingReferencesInSubconcepts_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ForbidIncomingReferencesInSubconcepts_Intention() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "1957700446084421329"));
@@ -46,6 +46,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention extends IntentionDe
     // todo: temporary disabled, see MPS-18470 
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -87,6 +88,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention extends IntentionDe
         }
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ForbidIncomingReferencesInSubconcepts_Intention.this;
     }

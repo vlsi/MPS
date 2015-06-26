@@ -27,7 +27,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class ReloadModulesFromDisk_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReloadModulesFromDisk_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReloadModulesFromDisk_Intention() {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), IntentionType.NORMAL, true, new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "1753793013241722025"));
@@ -46,6 +46,7 @@ public class ReloadModulesFromDisk_Intention extends IntentionDescriptorBase imp
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SAbstractConcept[]{})).isNotEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -88,6 +89,7 @@ public class ReloadModulesFromDisk_Intention extends IntentionDescriptorBase imp
         }
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReloadModulesFromDisk_Intention.this;
     }

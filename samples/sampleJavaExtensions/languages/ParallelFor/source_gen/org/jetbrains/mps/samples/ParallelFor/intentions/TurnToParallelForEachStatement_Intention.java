@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class TurnToParallelForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class TurnToParallelForEachStatement_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public TurnToParallelForEachStatement_Intention() {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"), IntentionType.NORMAL, false, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952529816"));
@@ -43,6 +43,7 @@ public class TurnToParallelForEachStatement_Intention extends IntentionDescripto
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return eq_gp9k9k_a0a0e(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac65f399L, 0x10cac7231f1L, "variable"))), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068431790189"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -82,6 +83,7 @@ public class TurnToParallelForEachStatement_Intention extends IntentionDescripto
       SNodeOperations.replaceWithAnother(node, parallelFor);
       editorContext.selectWRTFocusPolicy(variable);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return TurnToParallelForEachStatement_Intention.this;
     }

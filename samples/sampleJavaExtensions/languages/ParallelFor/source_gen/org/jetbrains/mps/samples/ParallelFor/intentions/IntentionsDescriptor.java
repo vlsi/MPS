@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -101,23 +100,27 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new DetachFromThreadPool_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkAsNonThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkInstanceMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkLocalInstanceMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkLocalStaticMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkStaticMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MarkVariableDeclarationAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new TurnToForEachStatement_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new TurnToParallelForEachStatement_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkAsNonThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkInstanceMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkLocalStaticMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkStaticMethodCallAsThreadSafe_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new UnmarkVariableAsThreadSafe_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[17];
+    rv[0] = new DetachFromThreadPool_Intention();
+    rv[1] = new MarkAsThreadSafe_Intention();
+    rv[2] = new UnmarkAsThreadSafe_Intention();
+    rv[3] = new MarkAsNonThreadSafe_Intention();
+    rv[4] = new UnmarkAsNonThreadSafe_Intention();
+    rv[5] = new MarkVariableDeclarationAsThreadSafe_Intention();
+    rv[6] = new UnmarkVariableAsThreadSafe_Intention();
+    rv[7] = new MarkInstanceMethodCallAsThreadSafe_Intention();
+    rv[8] = new MarkStaticMethodCallAsThreadSafe_Intention();
+    rv[9] = new UnmarkStaticMethodCallAsThreadSafe_Intention();
+    rv[10] = new TurnToForEachStatement_Intention();
+    rv[11] = new TurnToParallelForEachStatement_Intention();
+    rv[12] = new UnmarkInstanceMethodCallAsThreadSafe_Intention();
+    rv[13] = new MarkLocalStaticMethodCallAsThreadSafe_Intention();
+    rv[14] = new UnmarkLocalStaticMethodCallAsThreadSafe_Intention();
+    rv[15] = new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention();
+    rv[16] = new MarkLocalInstanceMethodCallAsThreadSafe_Intention();
+    return Arrays.asList(rv);
   }
 }

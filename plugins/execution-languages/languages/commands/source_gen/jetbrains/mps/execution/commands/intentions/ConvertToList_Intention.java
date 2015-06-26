@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class ConvertToList_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertToList_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertToList_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, "jetbrains.mps.execution.commands.structure.ListCommandPart"), IntentionType.NORMAL, true, new SNodePointer("r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)", "2168104298250389155"));
@@ -48,6 +48,7 @@ public class ConvertToList_Intention extends IntentionDescriptorBase implements 
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_63cojg_a0a0f(SNodeOperations.getContainingLinkRole(childNode), "items");
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -74,6 +75,7 @@ public class ConvertToList_Intention extends IntentionDescriptorBase implements 
       });
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"), _quotation_createNode_mz75hy_a0a2a0(items));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;
     }

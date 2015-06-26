@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class convert_to_unrestricted_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class convert_to_unrestricted_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public convert_to_unrestricted_Intention() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), IntentionType.NORMAL, false, new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229783473290"));
@@ -39,6 +39,7 @@ public class convert_to_unrestricted_Intention extends IntentionDescriptorBase i
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType").getDeclarationNode();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -68,6 +69,7 @@ public class convert_to_unrestricted_Intention extends IntentionDescriptorBase i
         ListSequence.fromList(SLinkOperations.getChildren(uft, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, 0x11ad99d9c36L, "throwsType"))).addElement(SNodeOperations.detachNode(tt));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return convert_to_unrestricted_Intention.this;
     }

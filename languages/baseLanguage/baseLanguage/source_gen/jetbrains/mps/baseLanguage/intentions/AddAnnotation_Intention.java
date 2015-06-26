@@ -20,7 +20,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddAnnotation_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647284978"));
@@ -49,6 +49,7 @@ public class AddAnnotation_Intention extends IntentionDescriptorBase implements 
     }
     return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{})).contains(selectedNode);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -70,6 +71,7 @@ public class AddAnnotation_Intention extends IntentionDescriptorBase implements 
       SNode annotationInstance = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")));
       editorContext.selectWRTFocusPolicy(annotationInstance);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddAnnotation_Intention.this;
     }

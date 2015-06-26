@@ -408,7 +408,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddContext_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrcMacro_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention" />

@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AttachComment1_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AttachComment1_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AttachComment1_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:72e47166-8f77-453a-8c51-48d556a5cc3b(jetbrains.mps.samples.attribute.intentions)", "7205391946760650912"));
@@ -30,6 +30,7 @@ public class AttachComment1_Intention extends IntentionDescriptorBase implements
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -50,6 +51,7 @@ public class AttachComment1_Intention extends IntentionDescriptorBase implements
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.createAndAddAttribute(node, new IAttributeDescriptor.AllAttributes(), "jetbrains.mps.samples.attribute.structure.CommentAttribute");
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AttachComment1_Intention.this;
     }

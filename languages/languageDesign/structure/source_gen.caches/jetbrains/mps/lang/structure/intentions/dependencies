@@ -85,7 +85,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention" />

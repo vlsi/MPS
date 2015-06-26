@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertMyIfToIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertMyIfToIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertMyIfToIf_Intention() {
     super(MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0xd403d58ad448ccaL, "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement"), IntentionType.NORMAL, false, new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "954830572076058611"));
@@ -32,6 +32,7 @@ public class ConvertMyIfToIf_Intention extends IntentionDescriptorBase implement
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class ConvertMyIfToIf_Intention extends IntentionDescriptorBase implement
       SNodeOperations.replaceWithAnother(node, statement);
       editorContext.select(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertMyIfToIf_Intention.this;
     }

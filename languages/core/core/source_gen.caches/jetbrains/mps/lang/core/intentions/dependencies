@@ -38,7 +38,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SuppressErrors_Intention" />

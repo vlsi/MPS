@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -128,18 +127,22 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddAllSetElementsOperation_replace_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddSetElementOperation_replace_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new Add_Comparator_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertForEachStatementToForeachStatement_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertForeachStatementToForEach_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateInitializer_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new IterateOverSequence_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new RemoveAllSetElementsOperation_replace_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new RemoveSetElementOperation_replace_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new add_copy_from_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new add_init_values_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new add_sequence_initializer_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[12];
+    rv[0] = new ConvertForEachStatementToForeachStatement_Intention();
+    rv[1] = new CreateInitializer_Intention();
+    rv[2] = new add_init_values_Intention();
+    rv[3] = new add_copy_from_Intention();
+    rv[4] = new add_sequence_initializer_Intention();
+    rv[5] = new Add_Comparator_Intention();
+    rv[6] = new IterateOverSequence_Intention();
+    rv[7] = new RemoveSetElementOperation_replace_Intention();
+    rv[8] = new AddSetElementOperation_replace_Intention();
+    rv[9] = new AddAllSetElementsOperation_replace_Intention();
+    rv[10] = new RemoveAllSetElementsOperation_replace_Intention();
+    rv[11] = new ConvertForeachStatementToForEach_Intention();
+    return Arrays.asList(rv);
   }
 }

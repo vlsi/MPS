@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SurroundWithSynchronized_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithSynchronized_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithSynchronized_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3366354716707929843"));
@@ -33,6 +33,7 @@ public class SurroundWithSynchronized_Intention extends IntentionDescriptorBase 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -59,6 +60,7 @@ public class SurroundWithSynchronized_Intention extends IntentionDescriptorBase 
       }
       editorContext.select(SLinkOperations.getTarget(synchronizedStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1106df1d8d8L, 0x1106df2b910L, "expression")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithSynchronized_Intention.this;
     }

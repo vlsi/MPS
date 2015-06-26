@@ -27,7 +27,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class ReplaceForEachLoopWithIndexedLoop_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceForEachLoopWithIndexedLoop_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReplaceForEachLoopWithIndexedLoop_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199627182107"));
@@ -46,6 +46,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends IntentionDescri
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, 0x10a6934ab66L, "iterable"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")) || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, 0x10a6934ab66L, "iterable"))), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -149,6 +150,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends IntentionDescri
       // 
       SNodeOperations.replaceWithAnother(node, forStatement);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceForEachLoopWithIndexedLoop_Intention.this;
     }

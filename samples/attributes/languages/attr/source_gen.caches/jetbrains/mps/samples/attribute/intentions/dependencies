@@ -41,7 +41,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.intentions.AttachComment1_Intention" />
     <classNode dependClassName="jetbrains.mps.samples.attribute.intentions.AttachComment2_Intention" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />

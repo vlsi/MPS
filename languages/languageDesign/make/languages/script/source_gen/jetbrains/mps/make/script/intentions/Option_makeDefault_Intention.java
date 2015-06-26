@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class Option_makeDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class Option_makeDefault_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public Option_makeDefault_Intention() {
     super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L, "jetbrains.mps.make.script.structure.Option"), IntentionType.NORMAL, false, new SNodePointer("r:5909e14d-efc7-4305-a9c5-848760da6cbc(jetbrains.mps.make.script.intentions)", "8626841540115943116"));
@@ -30,6 +30,7 @@ public class Option_makeDefault_Intention extends IntentionDescriptorBase implem
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -51,6 +52,7 @@ public class Option_makeDefault_Intention extends IntentionDescriptorBase implem
       boolean makeDefault = SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, 0x3318e2a89ff0296cL, "defaultOption"));
       SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, "jetbrains.mps.make.script.structure.ExpectedOption")), MetaAdapterFactory.getProperty(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL, 0x3318e2a89ff0296cL, "defaultOption"), "" + ((makeDefault ? SNodeOperations.getIndexInParent(node) : -1)));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return Option_makeDefault_Intention.this;
     }

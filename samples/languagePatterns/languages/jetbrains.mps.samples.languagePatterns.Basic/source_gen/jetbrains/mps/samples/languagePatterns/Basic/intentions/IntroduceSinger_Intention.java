@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class IntroduceSinger_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class IntroduceSinger_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public IntroduceSinger_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78db30bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AgendaItem"), IntentionType.NORMAL, false, new SNodePointer("r:c5491b56-9eb5-4130-90fd-7da3cef76a4e(jetbrains.mps.samples.languagePatterns.Basic.intentions)", "6918512748467657857"));
@@ -39,6 +39,7 @@ public class IntroduceSinger_Intention extends IntentionDescriptorBase implement
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedCell() instanceof EditorCell_Error && isNotEmptyString(((EditorCell_Error) editorContext.getSelectedCell()).getText());
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -65,6 +66,7 @@ public class IntroduceSinger_Intention extends IntentionDescriptorBase implement
       SNode performance = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, "jetbrains.mps.samples.languagePatterns.Basic.structure.Performance")));
       SLinkOperations.setTarget(performance, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae7895ce1L, 0x34c8853ae7895ce2L, "singer"), singer);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return IntroduceSinger_Intention.this;
     }

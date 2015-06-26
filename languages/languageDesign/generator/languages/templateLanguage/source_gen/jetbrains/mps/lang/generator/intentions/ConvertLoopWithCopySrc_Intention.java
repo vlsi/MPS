@@ -20,7 +20,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertLoopWithCopySrc_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertLoopWithCopySrc_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertLoopWithCopySrc_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, "jetbrains.mps.lang.generator.structure.LoopMacro"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "7834938100936599479"));
@@ -61,6 +61,7 @@ public class ConvertLoopWithCopySrc_Intention extends IntentionDescriptorBase im
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -97,6 +98,7 @@ public class ConvertLoopWithCopySrc_Intention extends IntentionDescriptorBase im
         }
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertLoopWithCopySrc_Intention.this;
     }

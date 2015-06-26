@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertTemplateDeclRefToInlineTemplate_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertTemplateDeclRefToInlineTemplate_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertTemplateDeclRefToInlineTemplate_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1205436780371"));
@@ -44,6 +44,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends IntentionD
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3173L, "template")) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -84,6 +85,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends IntentionD
         SNodeOperations.deleteNode(oldTemplate);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertTemplateDeclRefToInlineTemplate_Intention.this;
     }

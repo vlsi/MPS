@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -154,20 +153,24 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOperationParameter_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddSNodeCastStatement_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ChangeAsCast_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConceptName2Concept_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConceptRef2Concept_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertCastToNodeCast_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertInstanceofToNodeInstanceof_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertLinkSetToAssignment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ConvertPropertySetToAssignment_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new LinkName2Link_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new LinkRef2Link_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ReplaceConceptIsWithConceptEquals_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new Replace_ListType_withNodeListType_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SConceptType2Concept_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[14];
+    rv[0] = new AddSNodeCastStatement_Intention();
+    rv[1] = new ReplaceConceptIsWithConceptEquals_Intention();
+    rv[2] = new Replace_ListType_withNodeListType_Intention();
+    rv[3] = new AddOperationParameter_Intention();
+    rv[4] = new ConvertPropertySetToAssignment_Intention();
+    rv[5] = new ConvertLinkSetToAssignment_Intention();
+    rv[6] = new ChangeAsCast_Intention();
+    rv[7] = new ConvertCastToNodeCast_Intention();
+    rv[8] = new ConvertInstanceofToNodeInstanceof_Intention();
+    rv[9] = new LinkRef2Link_Intention();
+    rv[10] = new LinkName2Link_Intention();
+    rv[11] = new ConceptRef2Concept_Intention();
+    rv[12] = new ConceptName2Concept_Intention();
+    rv[13] = new SConceptType2Concept_Intention();
+    return Arrays.asList(rv);
   }
 }

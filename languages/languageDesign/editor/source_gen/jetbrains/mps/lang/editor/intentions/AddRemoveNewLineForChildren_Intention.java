@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemoveNewLineForChildren_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemoveNewLineForChildren_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemoveNewLineForChildren_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1445505956982000110"));
@@ -49,6 +49,7 @@ public class AddRemoveNewLineForChildren_Intention extends IntentionDescriptorBa
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -79,6 +80,7 @@ public class AddRemoveNewLineForChildren_Intention extends IntentionDescriptorBa
         SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem").getDeclarationNode())).first());
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemoveNewLineForChildren_Intention.this;
     }

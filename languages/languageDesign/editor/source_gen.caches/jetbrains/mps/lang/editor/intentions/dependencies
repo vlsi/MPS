@@ -426,7 +426,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.AddDominance_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.AddExtendsClause_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.AddIndent_Intention" />

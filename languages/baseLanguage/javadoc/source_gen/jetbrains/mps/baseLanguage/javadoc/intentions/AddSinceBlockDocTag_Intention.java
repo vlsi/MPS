@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddSinceBlockDocTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddSinceBlockDocTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddSinceBlockDocTag_Intention() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), IntentionType.NORMAL, true, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "8465538089690815842"));
@@ -37,6 +37,7 @@ public class AddSinceBlockDocTag_Intention extends IntentionDescriptorBase imple
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x757ba20a4c87f962L, "since"))).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -59,6 +60,7 @@ public class AddSinceBlockDocTag_Intention extends IntentionDescriptorBase imple
       BlockDocTagHelper.setFocus(editorContext, addedNode);
 
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddSinceBlockDocTag_Intention.this;
     }

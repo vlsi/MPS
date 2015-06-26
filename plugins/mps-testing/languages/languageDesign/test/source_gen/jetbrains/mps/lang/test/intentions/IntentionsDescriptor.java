@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -62,16 +61,20 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddCellAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddMessageAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddMockAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasErrorAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddNodeHasWarningAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddOperationsAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddScopeExpectedNodes_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddScopeTestAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new AddTestAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new SpecifyRuleReferences_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[10];
+    rv[0] = new AddTestAnnotation_Intention();
+    rv[1] = new AddOperationsAnnotation_Intention();
+    rv[2] = new AddCellAnnotation_Intention();
+    rv[3] = new AddMockAnnotation_Intention();
+    rv[4] = new AddNodeHasErrorAnnotation_Intention();
+    rv[5] = new AddScopeTestAnnotation_Intention();
+    rv[6] = new AddScopeExpectedNodes_Intention();
+    rv[7] = new AddNodeHasWarningAnnotation_Intention();
+    rv[8] = new AddMessageAnnotation_Intention();
+    rv[9] = new SpecifyRuleReferences_Intention();
+    return Arrays.asList(rv);
   }
 }

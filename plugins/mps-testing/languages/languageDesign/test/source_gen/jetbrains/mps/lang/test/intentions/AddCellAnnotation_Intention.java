@@ -29,7 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddCellAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddCellAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddCellAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "1225963656881"));
@@ -48,6 +48,7 @@ public class AddCellAnnotation_Intention extends IntentionDescriptorBase impleme
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, "jetbrains.mps.lang.test.structure.EditorTestCase"), false, false) != null;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -102,6 +103,7 @@ public class AddCellAnnotation_Intention extends IntentionDescriptorBase impleme
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e0d52da47L, "jetbrains.mps.lang.test.structure.INodeAnnotation")), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddCellAnnotation_Intention.this;
     }

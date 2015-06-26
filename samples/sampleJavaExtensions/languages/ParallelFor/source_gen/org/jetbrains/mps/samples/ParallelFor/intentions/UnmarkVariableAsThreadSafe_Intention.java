@@ -18,7 +18,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class UnmarkVariableAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class UnmarkVariableAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public UnmarkVariableAsThreadSafe_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), IntentionType.NORMAL, true, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "2975785153735291445"));
@@ -43,6 +43,7 @@ public class UnmarkVariableAsThreadSafe_Intention extends IntentionDescriptorBas
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(childNode, MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class UnmarkVariableAsThreadSafe_Intention extends IntentionDescriptorBas
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), null);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return UnmarkVariableAsThreadSafe_Intention.this;
     }

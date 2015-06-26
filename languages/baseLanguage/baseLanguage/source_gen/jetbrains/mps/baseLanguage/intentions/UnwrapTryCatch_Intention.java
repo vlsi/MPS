@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class UnwrapTryCatch_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class UnwrapTryCatch_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public UnwrapTryCatch_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3399756d2c03d422L, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "7093209195843978568"));
@@ -46,6 +46,7 @@ public class UnwrapTryCatch_Intention extends IntentionDescriptorBase implements
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -81,6 +82,7 @@ public class UnwrapTryCatch_Intention extends IntentionDescriptorBase implements
         SLinkOperations.setTarget(statement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements"), body);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return UnwrapTryCatch_Intention.this;
     }

@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class CreatePropertyPatternVariable_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreatePropertyPatternVariable_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreatePropertyPatternVariable_Intention() {
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, "jetbrains.mps.lang.pattern.structure.PatternExpression"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371724198"));
@@ -41,6 +41,7 @@ public class CreatePropertyPatternVariable_Intention extends IntentionDescriptor
     EditorCell selectedCell = editorContext.getSelectedCell();
     return selectedCell instanceof EditorCell_Property && ((EditorCell_Property) selectedCell).getModelAccessor() instanceof PropertyAccessor && PatternAddingUtil.isPatternApplicable(editorContext);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -64,6 +65,7 @@ public class CreatePropertyPatternVariable_Intention extends IntentionDescriptor
       SNode cellNode = cell.getSNode();
       SNodeFactoryOperations.setNewAttribute(cellNode, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), propertyName), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreatePropertyPatternVariable_Intention.this;
     }

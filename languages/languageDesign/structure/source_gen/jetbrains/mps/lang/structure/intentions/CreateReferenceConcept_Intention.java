@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
-public class CreateReferenceConcept_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateReferenceConcept_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateReferenceConcept_Intention() {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), IntentionType.NORMAL, false, new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "6895093993902311021"));
@@ -49,6 +49,7 @@ public class CreateReferenceConcept_Intention extends IntentionDescriptorBase im
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -85,6 +86,7 @@ public class CreateReferenceConcept_Intention extends IntentionDescriptorBase im
       IOperationContext context = editorContext.getOperationContext();
       NavigationSupport.getInstance().openNode(context, concept, true, true);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceConcept_Intention.this;
     }

@@ -25,9 +25,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Generated
 public class QueriesGenerated {
@@ -61,6 +61,12 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3927053800882740493(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("cv:k"));
   }
+  public static Object propertyMacro_GetPropertyValue_5378595502815609483(final PropertyMacroContext _context) {
+    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).count();
+  }
+  public static Object propertyMacro_GetPropertyValue_5378595502815589441(final PropertyMacroContext _context) {
+    return ((Integer) _context.getVariable("cv:k"));
+  }
   public static Object propertyMacro_GetPropertyValue_7991477654791693985(final PropertyMacroContext _context) {
     SModule module = _context.getOriginalInputModel().getModule();
     assert module instanceof Language;
@@ -92,7 +98,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_3927053800882737266(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IntentionFactoryConstructor");
   }
-  public static Object referenceMacro_GetReferent_647666612127273161(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_5378595502815589451(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IntentionFactoryConstructor");
   }
   public static Object referenceMacro_GetReferent_3927053800880514570(final ReferenceMacroContext _context) {
@@ -173,12 +179,8 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_32126802637527394(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("var:sortedConcepts"));
   }
-  public static Iterable<SNode> sourceNodesQuery_647666612127306266(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).sort(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      }
-    }, true);
+  public static Iterable<SNode> sourceNodesQuery_5378595502815589459(final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"));
   }
   public static Iterable<SNode> sourceNodesQuery_2230972008180086208(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, 0x120cd55c89bL, "queryBlock")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"));

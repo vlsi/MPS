@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class UnwrapUnlessBlock_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class UnwrapUnlessBlock_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public UnwrapUnlessBlock_Intention() {
     super(MetaAdapterFactory.getConcept(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"), IntentionType.NORMAL, false, new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024667052"));
@@ -46,6 +46,7 @@ public class UnwrapUnlessBlock_Intention extends IntentionDescriptorBase impleme
     }
     return false;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -80,6 +81,7 @@ public class UnwrapUnlessBlock_Intention extends IntentionDescriptorBase impleme
       }
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return UnwrapUnlessBlock_Intention.this;
     }

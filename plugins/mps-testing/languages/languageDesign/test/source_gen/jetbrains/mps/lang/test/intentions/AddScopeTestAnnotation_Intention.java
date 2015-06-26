@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddScopeTestAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddScopeTestAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddScopeTestAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "3100207102208970627"));
@@ -45,6 +45,7 @@ public class AddScopeTestAnnotation_Intention extends IntentionDescriptorBase im
     SNode selectedNode = editorContext.getSelectedNode();
     return ScopesTest_Behavior.call_isApplicable_5449224527592368025(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest").getDeclarationNode()), node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -79,6 +80,7 @@ public class AddScopeTestAnnotation_Intention extends IntentionDescriptorBase im
 
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddScopeTestAnnotation_Intention.this;
     }

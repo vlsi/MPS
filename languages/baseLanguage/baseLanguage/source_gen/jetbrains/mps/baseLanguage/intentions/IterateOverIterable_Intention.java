@@ -29,7 +29,7 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 
-public class IterateOverIterable_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class IterateOverIterable_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public IterateOverIterable_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1238764345596"));
@@ -48,6 +48,7 @@ public class IterateOverIterable_Intention extends IntentionDescriptorBase imple
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))), new IterateOverIterable_Intention.Pattern_w1n2qe_a1a0a0a0e(), true) != null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -81,6 +82,7 @@ public class IterateOverIterable_Intention extends IntentionDescriptorBase imple
         }
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return IterateOverIterable_Intention.this;
     }

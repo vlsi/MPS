@@ -18,7 +18,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ElsifTransform_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ElsifTransform_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ElsifTransform_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1206065955177"));
@@ -38,6 +38,7 @@ public class ElsifTransform_Intention extends IntentionDescriptorBase implements
     SNode ifFalseStatement = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement"));
     return (ifFalseStatement != null) && SNodeOperations.isInstanceOf(ifFalseStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -72,6 +73,7 @@ public class ElsifTransform_Intention extends IntentionDescriptorBase implements
         }
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ElsifTransform_Intention.this;
     }

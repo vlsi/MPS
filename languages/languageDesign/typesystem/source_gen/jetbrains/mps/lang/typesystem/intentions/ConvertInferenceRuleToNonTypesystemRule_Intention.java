@@ -23,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertInferenceRuleToNonTypesystemRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertInferenceRuleToNonTypesystemRule_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertInferenceRuleToNonTypesystemRule_Intention() {
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "1195490883262"));
@@ -43,6 +43,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends Intention
     List<SNode> descendants = SNodeOperations.getNodeDescendantsWhereConceptInList(node, new SAbstractConcept[]{MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f85df7bL, "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL, "jetbrains.mps.lang.typesystem.structure.TypeVarReference"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f0ad10aL, "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114177ce6cdL, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement")}, false, new SAbstractConcept[]{});
     return ListSequence.fromList(descendants).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -74,6 +75,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends Intention
       SNodeOperations.deleteNode(node);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), nonTypesystemRule, true, !(jetbrains.mps.util.SNodeOperations.isRoot(nonTypesystemRule)));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertInferenceRuleToNonTypesystemRule_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddRemovePresenceAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddRemovePresenceAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddRemovePresenceAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782beb1bcL, "testAnnotatedType.structure.PrimType"), IntentionType.NORMAL, false, new SNodePointer("r:a7745672-f4c2-4dce-a52a-935356e84c72(testAnnotatedType.intentions)", "6405009306797652635"));
@@ -31,6 +31,7 @@ public class AddRemovePresenceAnnotation_Intention extends IntentionDescriptorBa
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -55,6 +56,7 @@ public class AddRemovePresenceAnnotation_Intention extends IntentionDescriptorBa
         SNodeOperations.deleteNode(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x2f74e72e3e3d480eL, 0xbae1cc709d588366L, 0x58e32a0782be61ecL, "testAnnotatedType.structure.SubstituteAnnotation"))));
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddRemovePresenceAnnotation_Intention.this;
     }

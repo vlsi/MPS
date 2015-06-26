@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class SurroundWithTypeCast_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SurroundWithTypeCast_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SurroundWithTypeCast_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "418779379561917490"));
@@ -43,6 +43,7 @@ public class SurroundWithTypeCast_Intention extends IntentionDescriptorBase impl
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedNodes().size() == 1;
   }
+  @Override
   public boolean isSurroundWith() {
     return true;
   }
@@ -78,6 +79,7 @@ public class SurroundWithTypeCast_Intention extends IntentionDescriptorBase impl
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, castExpression, "leftParen", -1);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SurroundWithTypeCast_Intention.this;
     }

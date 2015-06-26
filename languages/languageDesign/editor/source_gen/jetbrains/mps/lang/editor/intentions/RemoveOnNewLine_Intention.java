@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class RemoveOnNewLine_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class RemoveOnNewLine_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public RemoveOnNewLine_Intention() {
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1237404019413"));
@@ -38,6 +38,7 @@ public class RemoveOnNewLine_Intention extends IntentionDescriptorBase implement
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -58,6 +59,7 @@ public class RemoveOnNewLine_Intention extends IntentionDescriptorBase implement
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem").getDeclarationNode())).first());
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return RemoveOnNewLine_Intention.this;
     }

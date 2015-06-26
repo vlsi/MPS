@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ToggleMultiLine_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ToggleMultiLine_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ToggleMultiLine_Intention() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), IntentionType.NORMAL, false, new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "890797661671409032"));
@@ -29,6 +29,7 @@ public class ToggleMultiLine_Intention extends IntentionDescriptorBase implement
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -54,6 +55,7 @@ public class ToggleMultiLine_Intention extends IntentionDescriptorBase implement
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0xc5cbfc0eeac457bL, "forceMultiLine"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0xc5cbfc0eeac457bL, "forceMultiLine")))));
       editorContext.getEditorComponent().rebuildEditorContent();
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ToggleMultiLine_Intention.this;
     }

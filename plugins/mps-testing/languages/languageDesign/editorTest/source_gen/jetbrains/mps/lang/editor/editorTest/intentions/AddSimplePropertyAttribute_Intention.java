@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddSimplePropertyAttribute_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddSimplePropertyAttribute_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddSimplePropertyAttribute_Intention() {
     super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"), IntentionType.NORMAL, false, new SNodePointer("r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)", "5527270534710867991"));
@@ -32,6 +32,7 @@ public class AddSimplePropertyAttribute_Intention extends IntentionDescriptorBas
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -52,6 +53,7 @@ public class AddSimplePropertyAttribute_Intention extends IntentionDescriptorBas
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"), MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, 0x2c59702023f818ddL, "property")), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddSimplePropertyAttribute_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class MakeDotExpressionChecked_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class MakeDotExpressionChecked_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public MakeDotExpressionChecked_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), IntentionType.NORMAL, false, new SNodePointer("r:e7b16359-4f7b-4995-8330-19c6bbadce25(jetbrains.mps.baseLanguage.checkedDots.intentions)", "1038097819968653124"));
@@ -31,6 +31,7 @@ public class MakeDotExpressionChecked_Intention extends IntentionDescriptorBase 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -61,6 +62,7 @@ public class MakeDotExpressionChecked_Intention extends IntentionDescriptorBase 
         SNodeOperations.replaceWithAnother(node, checkedDot);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return MakeDotExpressionChecked_Intention.this;
     }

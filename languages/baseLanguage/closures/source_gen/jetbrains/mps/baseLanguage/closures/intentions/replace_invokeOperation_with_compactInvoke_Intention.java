@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class replace_invokeOperation_with_compactInvoke_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class replace_invokeOperation_with_compactInvoke_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public replace_invokeOperation_with_compactInvoke_Intention() {
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), IntentionType.NORMAL, false, new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1235748072133"));
@@ -40,6 +40,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends Intent
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -61,6 +62,7 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends Intent
       SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"));
       SNodeOperations.replaceWithAnother(parent, _quotation_createNode_7ste6_a0a1a0(SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11d67349093L, 0x11d67375fccL, "parameter")), SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return replace_invokeOperation_with_compactInvoke_Intention.this;
     }

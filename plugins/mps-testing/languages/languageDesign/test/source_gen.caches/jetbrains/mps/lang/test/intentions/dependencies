@@ -223,7 +223,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddMessageAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />

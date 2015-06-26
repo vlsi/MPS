@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SwitchToNullSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SwitchToNullSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SwitchToNullSafe_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), IntentionType.NORMAL, false, new SNodePointer("r:24bf2ceb-413d-48b7-a7ea-ab65995b3a1b(testExtendingAnalyzer.intentions)", "1417601170173123978"));
@@ -31,6 +31,7 @@ public class SwitchToNullSafe_Intention extends IntentionDescriptorBase implemen
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -54,6 +55,7 @@ public class SwitchToNullSafe_Intention extends IntentionDescriptorBase implemen
       SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")));
       SNodeOperations.replaceWithAnother(node, result);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SwitchToNullSafe_Intention.this;
     }

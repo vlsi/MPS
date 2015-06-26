@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddTestReferenceAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddTestReferenceAnnotation_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddTestReferenceAnnotation_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)", "7658393498702987309"));
@@ -40,6 +40,7 @@ public class AddTestReferenceAnnotation_Intention extends IntentionDescriptorBas
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return NodesTestCase_Behavior.call_isIntentionApplicable_1217250498008(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()), node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -63,6 +64,7 @@ public class AddTestReferenceAnnotation_Intention extends IntentionDescriptorBas
       SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
       SNode result = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), linkRole), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion")));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddTestReferenceAnnotation_Intention.this;
     }

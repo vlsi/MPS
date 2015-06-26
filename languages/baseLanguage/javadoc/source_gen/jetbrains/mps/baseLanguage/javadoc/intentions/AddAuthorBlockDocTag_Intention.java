@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddAuthorBlockDocTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddAuthorBlockDocTag_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddAuthorBlockDocTag_Intention() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), IntentionType.NORMAL, true, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "8465538089690783660"));
@@ -31,6 +31,7 @@ public class AddAuthorBlockDocTag_Intention extends IntentionDescriptorBase impl
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -53,6 +54,7 @@ public class AddAuthorBlockDocTag_Intention extends IntentionDescriptorBase impl
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4a3c146b7fae70d3L, 0x4ab5c2019ddc99f3L, "tags"))).addElement(authorTag);
       BlockDocTagHelper.setFocus(editorContext, authorTag);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddAuthorBlockDocTag_Intention.this;
     }

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class OrToAndAndBack_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class OrToAndAndBack_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public OrToAndAndBack_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3832376534040308203"));
@@ -43,6 +43,7 @@ public class OrToAndAndBack_Intention extends IntentionDescriptorBase implements
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_x6eozt_a0a0f(SNodeOperations.getParent(childNode), node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -80,6 +81,7 @@ public class OrToAndAndBack_Intention extends IntentionDescriptorBase implements
       SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), rightCandidate);
       SNodeOperations.replaceWithAnother(node, operation);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return OrToAndAndBack_Intention.this;
     }

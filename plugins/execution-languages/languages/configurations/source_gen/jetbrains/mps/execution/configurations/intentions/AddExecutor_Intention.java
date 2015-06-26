@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class AddExecutor_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddExecutor_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddExecutor_Intention() {
     super(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L, "jetbrains.mps.execution.configurations.structure.RunConfiguration"), IntentionType.NORMAL, true, new SNodePointer("r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)", "2557661505909893922"));
@@ -47,6 +47,7 @@ public class AddExecutor_Intention extends IntentionDescriptorBase implements In
       }
     }).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -71,6 +72,7 @@ public class AddExecutor_Intention extends IntentionDescriptorBase implements In
       SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), executor, true, false);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddExecutor_Intention.this;
     }

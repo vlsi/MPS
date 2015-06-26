@@ -74,7 +74,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.intentions.FlipInequality_Intention" />

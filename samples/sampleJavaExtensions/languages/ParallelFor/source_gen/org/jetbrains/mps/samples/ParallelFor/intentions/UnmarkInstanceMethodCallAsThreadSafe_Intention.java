@@ -19,7 +19,7 @@ import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class UnmarkInstanceMethodCallAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class UnmarkInstanceMethodCallAsThreadSafe_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public UnmarkInstanceMethodCallAsThreadSafe_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), IntentionType.NORMAL, true, new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952537573"));
@@ -44,6 +44,7 @@ public class UnmarkInstanceMethodCallAsThreadSafe_Intention extends IntentionDes
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.getParent(childNode) == node;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -64,6 +65,7 @@ public class UnmarkInstanceMethodCallAsThreadSafe_Intention extends IntentionDes
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xcb7388e8f1824cdaL, 0xbd839796e8634856L, 0x294c1cd4b84332e6L, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")), null);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return UnmarkInstanceMethodCallAsThreadSafe_Intention.this;
     }

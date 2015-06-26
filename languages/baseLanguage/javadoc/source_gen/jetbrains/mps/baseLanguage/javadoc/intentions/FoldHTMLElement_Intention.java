@@ -20,7 +20,7 @@ import java.util.Locale;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class FoldHTMLElement_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class FoldHTMLElement_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public FoldHTMLElement_Intention() {
     super(MetaAdapterFactory.getConcept(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement"), IntentionType.NORMAL, false, new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "6612597108004799966"));
@@ -33,6 +33,7 @@ public class FoldHTMLElement_Intention extends IntentionDescriptorBase implement
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -59,6 +60,7 @@ public class FoldHTMLElement_Intention extends IntentionDescriptorBase implement
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).clear();
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return FoldHTMLElement_Intention.this;
     }

@@ -21,7 +21,7 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class CreateTypesystemIntention_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class CreateTypesystemIntention_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public CreateTypesystemIntention_Intention() {
     super(MetaAdapterFactory.getInterfaceConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, "jetbrains.mps.lang.typesystem.structure.MessageStatement"), IntentionType.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "3302086321380606109"));
@@ -40,6 +40,7 @@ public class CreateTypesystemIntention_Intention extends IntentionDescriptorBase
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e7L, "helginsIntention"))).isEmpty();
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -65,6 +66,7 @@ public class CreateTypesystemIntention_Intention extends IntentionDescriptorBase
       SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e7L, "helginsIntention"))).addElement(quickFixCall);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return CreateTypesystemIntention_Intention.this;
     }

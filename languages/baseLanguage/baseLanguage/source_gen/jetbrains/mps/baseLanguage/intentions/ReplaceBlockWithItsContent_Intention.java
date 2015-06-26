@@ -22,7 +22,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import java.util.List;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ReplaceBlockWithItsContent_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceBlockWithItsContent_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReplaceBlockWithItsContent_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199892779474"));
@@ -57,6 +57,7 @@ public class ReplaceBlockWithItsContent_Intention extends IntentionDescriptorBas
     }
     return applicable;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -81,6 +82,7 @@ public class ReplaceBlockWithItsContent_Intention extends IntentionDescriptorBas
       }
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceBlockWithItsContent_Intention.this;
     }

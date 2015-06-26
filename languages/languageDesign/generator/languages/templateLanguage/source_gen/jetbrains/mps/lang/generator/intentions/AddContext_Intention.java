@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
-public class AddContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class AddContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public AddContext_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x112103dd1e8L, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "3462145372628250475"));
@@ -34,6 +34,7 @@ public class AddContext_Intention extends IntentionDescriptorBase implements Int
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -62,6 +63,7 @@ public class AddContext_Intention extends IntentionDescriptorBase implements Int
       }
       EditingUtil.createTemplateFragment(tNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return AddContext_Intention.this;
     }

@@ -16,7 +16,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class convertToNamed_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class convertToNamed_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public convertToNamed_Intention() {
     super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), IntentionType.NORMAL, false, new SNodePointer("r:5c2005a8-261b-4759-9059-c2decf025b8a(jetbrains.mps.baseLanguage.regexp.intentions)", "305848682816615072"));
@@ -29,6 +29,7 @@ public class convertToNamed_Intention extends IntentionDescriptorBase implements
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -51,6 +52,7 @@ public class convertToNamed_Intention extends IntentionDescriptorBase implements
       editorContext.flushEvents();
       editorContext.selectWRTFocusPolicy(n);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return convertToNamed_Intention.this;
     }

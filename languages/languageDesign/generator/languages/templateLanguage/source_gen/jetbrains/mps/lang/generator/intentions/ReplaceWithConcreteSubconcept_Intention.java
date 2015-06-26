@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ReplaceWithConcreteSubconcept_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ReplaceWithConcreteSubconcept_Intention extends IntentionDescriptorBase implements IntentionFactory {
   public ReplaceWithConcreteSubconcept_Intention() {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1210374656847760938"));
   }
@@ -45,6 +45,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends IntentionDescriptor
     SNode selectedNodeConcept = SNodeOperations.getConceptDeclaration(node);
     return SPropertyOperations.getBoolean(selectedNodeConcept, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -80,6 +81,7 @@ public class ReplaceWithConcreteSubconcept_Intention extends IntentionDescriptor
       SNodeOperations.replaceWithAnother(node, concreteConceptInstance);
       SNodeOperations.deleteNode(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithConcreteSubconcept_Intention.this;
     }

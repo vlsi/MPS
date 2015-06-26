@@ -9,7 +9,6 @@ import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import java.util.Arrays;
-import jetbrains.mps.intentions.IntentionsManager;
 
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
@@ -58,12 +57,16 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     }
   }
 
-  public void init() {
-    IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedAnnotation_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new CreateReferenceConcept_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new ForbidIncomingReferencesInSubconcepts_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MakeAbstract_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MakeFinal_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new MakeRootable_Intention());
+  @NotNull
+  @Override
+  public Collection<IntentionFactory> getAllIntentions() {
+    IntentionFactory[] rv = new IntentionFactory[6];
+    rv[0] = new AddDeprecatedAnnotation_Intention();
+    rv[1] = new MakeRootable_Intention();
+    rv[2] = new CreateReferenceConcept_Intention();
+    rv[3] = new MakeFinal_Intention();
+    rv[4] = new MakeAbstract_Intention();
+    rv[5] = new ForbidIncomingReferencesInSubconcepts_Intention();
+    return Arrays.asList(rv);
   }
 }

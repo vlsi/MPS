@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class SpecifyMathContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class SpecifyMathContext_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public SpecifyMathContext_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), IntentionType.NORMAL, false, new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1238402928175"));
@@ -36,6 +36,7 @@ public class SpecifyMathContext_Intention extends IntentionDescriptorBase implem
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return MathUtil.applicable(node);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class SpecifyMathContext_Intention extends IntentionDescriptorBase implem
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, MathUtil.convert2(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))));
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return SpecifyMathContext_Intention.this;
     }

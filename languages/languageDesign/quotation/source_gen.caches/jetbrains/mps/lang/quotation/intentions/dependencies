@@ -110,7 +110,6 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionFactory" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.ConvertToNodeBuilder_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.CreateAntiquotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.intentions.CreateListAntiquotation_Intention" />

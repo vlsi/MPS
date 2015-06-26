@@ -22,7 +22,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class NewTemplateInWeaveEach_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class NewTemplateInWeaveEach_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public NewTemplateInWeaveEach_Intention() {
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216319039419"));
@@ -41,6 +41,7 @@ public class NewTemplateInWeaveEach_Intention extends IntentionDescriptorBase im
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, 0x1104fcbaec2L, "template")) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"));
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -86,6 +87,7 @@ public class NewTemplateInWeaveEach_Intention extends IntentionDescriptorBase im
       SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1104fcac3b1L, 0x1104fcbaec2L, "template"), t);
       SelectionUtil.selectCell(editorContext, node, "templateName");
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInWeaveEach_Intention.this;
     }

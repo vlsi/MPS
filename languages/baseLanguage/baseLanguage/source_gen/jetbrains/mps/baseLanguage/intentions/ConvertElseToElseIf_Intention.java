@@ -17,7 +17,7 @@ import jetbrains.mps.intentions.IntentionExecutableBase;
 import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertElseToElseIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertElseToElseIf_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertElseToElseIf_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1217838039231"));
@@ -36,6 +36,7 @@ public class ConvertElseToElseIf_Intention extends IntentionDescriptorBase imple
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xfc092b6b76L, "ifFalseStatement")) != null);
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -56,6 +57,7 @@ public class ConvertElseToElseIf_Intention extends IntentionDescriptorBase imple
     public void execute(final SNode node, final EditorContext editorContext) {
       IfStatement_Behavior.call_convertElseToElseIf_1217845914183(node);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertElseToElseIf_Intention.this;
     }

@@ -20,7 +20,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertAssignmentToVariableDeclaration_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertAssignmentToVariableDeclaration_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertAssignmentToVariableDeclaration_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1221573777472"));
@@ -46,6 +46,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends IntentionD
     SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e96L, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
     return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e97L, "lValue")) == node;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -76,6 +77,7 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends IntentionD
       SNode result = AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment, suggestedName);
       editorContext.selectWRTFocusPolicy(result);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertAssignmentToVariableDeclaration_Intention.this;
     }

@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertForeachStatementToForEach_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertForeachStatementToForEach_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertForeachStatementToForEach_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2442451895696290638"));
@@ -35,6 +35,7 @@ public class ConvertForeachStatementToForEach_Intention extends IntentionDescrip
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -69,6 +70,7 @@ public class ConvertForeachStatementToForEach_Intention extends IntentionDescrip
         SLinkOperations.setTarget(SNodeFactoryOperations.replaceWithNewChild(oldRef, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"))), MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), newVariable);
       }
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertForeachStatementToForEach_Intention.this;
     }

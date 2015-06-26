@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ExpandBoolean_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ExpandBoolean_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ExpandBoolean_Intention() {
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199627245932"));
@@ -49,6 +49,7 @@ public class ExpandBoolean_Intention extends IntentionDescriptorBase implements 
     }
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -105,6 +106,7 @@ public class ExpandBoolean_Intention extends IntentionDescriptorBase implements 
       // 
       SNodeOperations.deleteNode(statementNode);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ExpandBoolean_Intention.this;
     }

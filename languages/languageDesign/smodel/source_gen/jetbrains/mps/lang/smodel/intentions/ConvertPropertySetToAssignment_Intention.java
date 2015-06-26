@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertPropertySetToAssignment_Intention extends IntentionDescriptorBase implements IntentionFactory {
+public final class ConvertPropertySetToAssignment_Intention extends IntentionDescriptorBase implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ConvertPropertySetToAssignment_Intention() {
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L, "jetbrains.mps.lang.smodel.structure.Property_SetOperation"), IntentionType.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1224687584077"));
@@ -32,6 +32,7 @@ public class ConvertPropertySetToAssignment_Intention extends IntentionDescripto
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
+  @Override
   public boolean isSurroundWith() {
     return false;
   }
@@ -60,6 +61,7 @@ public class ConvertPropertySetToAssignment_Intention extends IntentionDescripto
       SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, 0xf8c77f1e99L, "rValue"), rValue);
       SNodeOperations.replaceWithAnother(dotExpr, assignment);
     }
+    @Override
     public IntentionDescriptor getDescriptor() {
       return ConvertPropertySetToAssignment_Intention.this;
     }
