@@ -16,7 +16,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,119,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,122,0" name="jetbrains.mps.lang.smodel.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/1213104840262">
@@ -1333,6 +1333,69 @@
       <unit id="5253134957341870624" at="38,19,47,9" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints$2" />
       <unit id="5253134957341870624" at="30,128,49,5" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints$1" />
       <unit id="5253134957341870624" at="23,0,54,0" name="jetbrains.mps.lang.smodel.constraints.PropertyNameRefExpression_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/5534894399153286998">
+    <file name="ChildAttributeQualifier_Constraints.java">
+      <node id="5534894399153286998" at="26,48,27,97" concept="12" />
+      <node id="5534894399153286998" at="30,98,31,135" concept="6" />
+      <node id="5534894399153286998" at="34,44,35,20" concept="7" />
+      <node id="5534894399153286998" at="42,44,43,24" concept="7" />
+      <node id="5534894399153287011" at="47,17,48,104" concept="6" />
+      <node id="5534894399153287018" at="49,33,50,28" concept="7" />
+      <node id="5534894399153287027" at="52,36,53,24" concept="8" />
+      <node id="5534894399153287029" at="54,13,55,192" concept="7" />
+      <node id="5534894399153287002" at="58,142,59,395" concept="7" />
+      <node id="5534894399153286998" at="62,63,63,58" concept="7" />
+      <node id="5534894399153286998" at="67,7,68,22" concept="7" />
+      <node id="5534894399153286998" at="70,0,71,0" concept="10" trace="breakingNode_gfut80_a0a3a0a0a1a0b0a1a1" />
+      <node id="5534894399153286998" at="26,0,29,0" concept="1" trace="ChildAttributeQualifier_Constraints#()V" />
+      <node id="5534894399153287016" at="48,104,51,15" concept="4" />
+      <node id="5534894399153286998" at="33,0,37,0" concept="5" trace="hasOwnScopeProvider#()Z" />
+      <node id="5534894399153286998" at="41,0,45,0" concept="5" trace="hasPresentation#()Z" />
+      <node id="5534894399153286998" at="57,0,61,0" concept="5" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="5534894399153286998" at="61,0,65,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5534894399153287009" at="46,128,54,13" concept="13" />
+      <node id="5534894399153286998" at="45,0,57,0" concept="5" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
+      <node id="5534894399153286998" at="39,56,65,10" concept="7" />
+      <node id="5534894399153286998" at="37,0,67,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="5534894399153286998" at="31,135,67,7" concept="2" />
+      <node id="5534894399153286998" at="29,0,70,0" concept="5" trace="getNotDefaultSReferenceLinks#()Ljava/util/Map;" />
+      <scope id="5534894399153286998" at="26,48,27,97" />
+      <scope id="5534894399153286998" at="34,44,35,20" />
+      <scope id="5534894399153286998" at="42,44,43,24" />
+      <scope id="5534894399153287017" at="49,33,50,28" />
+      <scope id="5534894399153287023" at="52,0,53,24">
+        <var name="ex" id="5534894399153287024" />
+      </scope>
+      <scope id="5534894399153287026" at="52,36,53,24" />
+      <scope id="5534894399153287001" at="58,142,59,395" />
+      <scope id="5534894399153286998" at="62,63,63,58" />
+      <scope id="5534894399153286998" at="26,0,29,0" />
+      <scope id="5534894399153286998" at="33,0,37,0" />
+      <scope id="5534894399153286998" at="41,0,45,0" />
+      <scope id="5534894399153287010" at="47,17,51,15">
+        <var name="role" id="5534894399153287012" />
+      </scope>
+      <scope id="5534894399153286998" at="57,0,61,0">
+        <var name="_context" id="5534894399153286998" />
+        <var name="operationContext" id="5534894399153286998" />
+      </scope>
+      <scope id="5534894399153286998" at="61,0,65,0" />
+      <scope id="5534894399153287008" at="46,128,55,192" />
+      <scope id="5534894399153286998" at="45,0,57,0">
+        <var name="_context" id="5534894399153286998" />
+        <var name="operationContext" id="5534894399153286998" />
+      </scope>
+      <scope id="5534894399153286998" at="39,56,65,10" />
+      <scope id="5534894399153286998" at="37,0,67,0" />
+      <scope id="5534894399153286998" at="30,98,68,22">
+        <var name="references" id="5534894399153286998" />
+      </scope>
+      <scope id="5534894399153286998" at="29,0,70,0" />
+      <unit id="5534894399153286998" at="40,19,65,9" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints$2" />
+      <unit id="5534894399153286998" at="32,126,67,5" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints$1" />
+      <unit id="5534894399153286998" at="25,0,72,0" name="jetbrains.mps.lang.smodel.constraints.ChildAttributeQualifier_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)/559557797393041555">

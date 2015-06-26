@@ -13,12 +13,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.lang.core.behavior.BaseCommentAttribute_Behavior;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.CommentUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -42,7 +36,7 @@ public class Uncomment_Intention implements IntentionFactory {
     return IntentionType.NORMAL;
   }
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
@@ -72,29 +66,7 @@ public class Uncomment_Intention implements IntentionFactory {
       return "Uncomment";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode attribute = SNodeOperations.getParent(node);
-      SNode mainParent = SNodeOperations.getParent(attribute);
-      SContainmentLink resultLink = null;
-      for (SContainmentLink link : CollectionSequence.fromCollection(SNodeOperations.getConcept(mainParent).getContainmentLinks())) {
-        if (link.equals(BaseCommentAttribute_Behavior.call_getLink_3078666699043525887(SNodeOperations.cast(attribute, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))))) {
-          resultLink = link;
-          break;
-        }
-      }
-      if (resultLink != null) {
-        List<SNode> children = SNodeOperations.getChildren(mainParent, resultLink);
-        attribute.removeChild(node);
-        if (ListSequence.fromList(children).isEmpty()) {
-          SNodeOperations.deleteNode(attribute);
-        } else {
-          ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
-            public void visit(SNode it) {
-              CommentUtil.commentOutNode(it);
-            }
-          });
-        }
-        mainParent.addChild(resultLink, node);
-      }
+      CommentUtil.uncomment(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
     }
     public IntentionDescriptor getDescriptor() {
       return Uncomment_Intention.this;

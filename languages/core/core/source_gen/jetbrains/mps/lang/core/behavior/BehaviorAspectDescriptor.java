@@ -11,27 +11,29 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 3:
-        return new ExportScopePublic_BehaviorDescriptor();
-      case 2:
-        return new ExportScopeNamespace_BehaviorDescriptor();
-      case 1:
-        return new ExportScopeModule_BehaviorDescriptor();
       case 4:
-        return new LinkAttribute_BehaviorDescriptor();
+        return new ExportScopePublic_BehaviorDescriptor();
+      case 3:
+        return new ExportScopeNamespace_BehaviorDescriptor();
+      case 2:
+        return new ExportScopeModule_BehaviorDescriptor();
       case 5:
-        return new NodeAttribute_BehaviorDescriptor();
+        return new LinkAttribute_BehaviorDescriptor();
       case 6:
-        return new PropertyAttribute_BehaviorDescriptor();
-      case 8:
-        return new SuppressErrorsAnnotation_BehaviorDescriptor();
+        return new NodeAttribute_BehaviorDescriptor();
       case 7:
+        return new PropertyAttribute_BehaviorDescriptor();
+      case 9:
+        return new SuppressErrorsAnnotation_BehaviorDescriptor();
+      case 8:
         return new SideTransformInfo_BehaviorDescriptor();
       case 0:
         return new BaseCommentAttribute_BehaviorDescriptor();
+      case 1:
+        return new ChildAttribute_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.ChildAttribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.core.structure.PropertyAttribute", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
 }

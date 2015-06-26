@@ -2120,5 +2120,22 @@
     <property role="TrG5h" value="LanguageIdentity" />
     <property role="3GE5qa" value="identity" />
   </node>
+  <node concept="1TIwiD" id="BpxLfMiwTr">
+    <property role="TrG5h" value="ChildAttributeQualifier" />
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1TJDcQ" node="5zEkxuKhrAF" resolve="AttributeQualifier" />
+    <node concept="1TJgyj" id="BpxLfMiwTs" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="linkQualifier" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2qM$EmJLWME" resolve="ILinkQualifier" />
+    </node>
+    <node concept="1TJgyj" id="BpxLfMiwTt" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="attributeConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+    </node>
+  </node>
 </model>
 

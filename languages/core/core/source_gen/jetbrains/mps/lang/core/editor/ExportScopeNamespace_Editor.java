@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
 public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -46,11 +46,15 @@ public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_namespace");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
+    Iterable<SNode> attributeNodes = provider.getRoleAttributes();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if (attributeNodes.iterator().hasNext()) {
       EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+      if (attributeKind.equals(AttributeKind.Child.class)) {
+        return manager.createNodeRoleAttributeCell(attributeNodes, attributeKind, editorCell);
+      } else {
+        return manager.createNodeRoleAttributeCell(attributeNodes.iterator().next(), attributeKind, editorCell);
+      }
     } else
     return editorCell;
   }

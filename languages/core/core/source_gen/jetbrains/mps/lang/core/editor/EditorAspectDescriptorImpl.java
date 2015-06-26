@@ -39,12 +39,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0d, descriptor.getConceptFqName())) {
       case 0:
-        if ("jetbrains.mps.lang.core.editor.BaseCommentAttribute_Component".equals(editorComponentId)) {
-          return Collections.<ConceptEditorComponent>singletonList(new BaseCommentAttribute_Component());
-        }
-        break;
-      case 1:
-        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b0a3, editorComponentId)) {
+        switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a3, editorComponentId)) {
           case 0:
             return Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage());
           case 1:
@@ -66,6 +61,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor, Edito
   }
 
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.SideTransformInfo", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0b0a3 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.VirtualPackage", "jetbrains.mps.lang.core.editor.alias"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.core.structure.BaseCommentAttribute", "jetbrains.mps.lang.core.structure.BaseConcept"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a3 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.VirtualPackage", "jetbrains.mps.lang.core.editor.alias"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0d = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }

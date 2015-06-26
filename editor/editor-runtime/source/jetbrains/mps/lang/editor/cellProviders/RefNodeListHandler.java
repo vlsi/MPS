@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -24,7 +25,10 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
+import jetbrains.mps.util.CommentUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -95,7 +99,8 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      Collection<? extends SNode> listElements1 = IterableUtil.asCollection(getOwner().getChildren(getElementRole()));
+      Collection<? extends SNode> listElements1 = IterableUtil.asCollection(
+          AttributeOperations.getChildNodesAndAttributes(myOwnerNode, ((ConceptMetaInfoConverter) myOwnerNode.getConcept()).convertAggregation(myElementRole)));
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements1.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -114,17 +119,22 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
+    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) myOwnerNode.getConcept()).convertAggregation(myElementRole);
+    Iterable<SNode> nodesAndComments =
+        AttributeOperations.getChildNodesAndAttributes(myOwnerNode, containmentLink);
     if (!myIsReverseOrder) {
-      resultList.addAll(IterableUtil.asCollection(myOwnerNode.getChildren(getElementRole())));
+      resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
-      List<? extends SNode> children = IterableUtil.copyToList(myOwnerNode.getChildren(getElementRole()));
+      List<? extends SNode> children = IterableUtil.copyToList(nodesAndComments);
       Collections.reverse(children);
       resultList.addAll(children);
     }
 
     Iterator<SNode> it = resultList.iterator();
     while (it.hasNext()) {
-      if (!filter(it.next())) {
+      SNode next = it.next();
+      if (next.isInstanceOfConcept(containmentLink.getTargetConcept()))
+      if (!filter(next)) {
         it.remove();
       }
     }

@@ -6,17 +6,49 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
 public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAttributedNodeCell_si1ien_a(editorContext, node);
+    return this.createCollection_si1ien_a(editorContext, node);
   }
-  private EditorCell createAttributedNodeCell_si1ien_a(EditorContext editorContext, SNode node) {
-    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
+  private EditorCell createCollection_si1ien_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_si1ien_a");
     editorCell.setBig(true);
+    try {
+      editorContext.getCellFactory().pushCellContext();
+      editorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
+      editorCell.addEditorCell(this.createRefNode_si1ien_a0(editorContext, node));
+    } finally {
+      editorContext.getCellFactory().popCellContext();
+    }
+    return editorCell;
+  }
+  private EditorCell createRefNode_si1ien_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("commentedNode");
+    provider.setNoTargetText("<no commentedNode>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("commentedNode");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    Iterable<SNode> attributeNodes = provider.getRoleAttributes();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeNodes.iterator().hasNext()) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      if (attributeKind.equals(AttributeKind.Child.class)) {
+        return manager.createNodeRoleAttributeCell(attributeNodes, attributeKind, editorCell);
+      } else {
+        return manager.createNodeRoleAttributeCell(attributeNodes.iterator().next(), attributeKind, editorCell);
+      }
+    } else
     return editorCell;
   }
 }

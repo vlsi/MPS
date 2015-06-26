@@ -16,12 +16,17 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.CommentUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,22 +35,6 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
   public RefNodeCellProvider(SNode node, EditorContext context) {
     super(node, context);
   }
-
-  @Override
-  protected EditorCell createCell_internal(EditorContext context) {
-    EditorCell editorCell = super.createCell_internal(context);
-    SNode commentAttribute = CommentUtil.getCommentAttribute(getSNode(), MetaAdapterByDeclaration.getContainmentLink(myLinkDeclaration));
-    if (commentAttribute != null) {
-      EditorCell component = context.getCellFactory().createEditorComponentCell(commentAttribute, "jetbrains.mps.lang.core.editor.BaseCommentAttribute_Component");
-      EditorCell_Collection commentCollection = EditorCell_Collection.createIndent2(context, getSNode());
-      commentCollection.addEditorCell(component);
-      commentCollection.addEditorCell(editorCell);
-      return commentCollection;
-    } else {
-      return editorCell;
-    }
-  }
-
   @Override
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
@@ -61,5 +50,15 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     return editorCell;
+  }
+
+  @Override
+  public Iterable<SNode> getRoleAttributes() {
+    return AttributeOperations.getChildAttributes(getSNode(), ((ConceptMetaInfoConverter) getSNode().getConcept()).convertAggregation(myRole));
+  }
+
+  @Override
+  public Class getRoleAttributeClass() {
+    return AttributeKind.Child.class;
   }
 }

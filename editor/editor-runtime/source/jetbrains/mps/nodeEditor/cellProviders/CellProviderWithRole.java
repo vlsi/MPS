@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellProviders;
 
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -53,7 +54,13 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public abstract void setRole(Object role);
 
   //gets an attribute for this provider's node hanging on this provider's role
-  public abstract SNode getRoleAttribute();
+  public SNode getRoleAttribute() {
+    // todo: why only first?
+    return IterableUtils.first(getRoleAttributes());
+  }
+
+  //gets an attribute for this provider's node hanging on this provider's role
+  public abstract Iterable<SNode> getRoleAttributes();
 
   // gets a kind of attributes possibly hanging on this provider's role.
   //todo replace with AttributeKind

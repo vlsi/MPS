@@ -40,6 +40,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
+
 public class PropertyCellProvider extends CellProviderWithRole {
   private static final Logger LOG = LogManager.getLogger(PropertyCellProvider.class);
 
@@ -82,9 +84,8 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
   @Override
-  public SNode getRoleAttribute() {
-    // todo: why only first?
-    return IterableUtils.first(AttributeOperations.getPropertyAttributes(getSNode(), myPropertyName));
+  public Iterable<SNode> getRoleAttributes() {
+    return AttributeOperations.getPropertyAttributes(getSNode(), myPropertyName);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
