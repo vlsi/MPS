@@ -320,7 +320,6 @@
       <concept id="1214918975462" name="jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression" flags="nn" index="3uO5VW" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
-      <concept id="1172058436953" name="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" flags="nn" index="3$87h9" />
       <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
         <child id="1184951007469" name="componentType" index="3$_nBY" />
         <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
@@ -55633,7 +55632,7 @@
                     </node>
                     <node concept="3clFbH" id="35TjSxcXqbR" role="3cqZAp" />
                     <node concept="3clFbF" id="7o4ozN$lF59" role="3cqZAp">
-                      <node concept="3$87h9" id="7o4ozN$lF5a" role="3clFbG">
+                      <node concept="1rXfSq" id="7cdZoO_NpCV" role="3clFbG">
                         <ref role="37wK5l" node="7o4ozN$kYjh" resolve="reattachMethodArguments" />
                         <node concept="3cpWs2" id="7o4ozN$lF5b" role="37wK5m">
                           <ref role="3cqZAo" node="7o4ozN$lF4d" resolve="x" />
