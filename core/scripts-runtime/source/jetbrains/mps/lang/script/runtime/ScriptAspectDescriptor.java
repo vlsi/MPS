@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,26 +15,16 @@
  */
 package jetbrains.mps.lang.script.runtime;
 
-import java.util.ArrayList;
-import java.util.List;
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import org.jetbrains.annotations.NotNull;
 
-public class BaseMigrationScript {
-  private List<AbstractMigrationRefactoring> myRefactorings = new ArrayList<AbstractMigrationRefactoring>();
-  private String myName;
+import java.util.Collection;
 
-  public BaseMigrationScript(String name) {
-    myName = name;
-  }
-
-  public String getName() {
-    return myName;
-  }
-
-  public void addRefactoring(AbstractMigrationRefactoring refactoring) {
-    myRefactorings.add(refactoring);
-  }
-
-  public List<AbstractMigrationRefactoring> getRefactorings() {
-    return myRefactorings;
-  }
+/**
+ * @author Artem Tikhomirov
+ * @since 3.3
+ */
+public interface ScriptAspectDescriptor extends LanguageAspectDescriptor {
+  @NotNull
+  Collection<RefactoringScript> getRefactoringScripts();
 }
