@@ -14,7 +14,6 @@
     <import index="cmon" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.script.runtime(MPS.Core/jetbrains.mps.lang.script.runtime@java_stub)" />
     <import index="g9ly" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" />
     <import index="qh3o" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)" />
-    <import index="dhz7" ref="r:eb359f8b-b521-4c1b-bcbd-ac058df58bd6(jetbrains.mps.lang.script.runtime)" />
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="8q6x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -3104,8 +3103,8 @@
               </node>
             </node>
             <node concept="2YIFZM" id="6m98d5YYbI9" role="33vP2m">
-              <ref role="37wK5l" to="dhz7:36t87nSQNEL" resolve="getScriptInstances" />
-              <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
+              <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+              <ref role="37wK5l" to="cmon:~MigrationScriptUtil.getScriptInstances(java.util.List,jetbrains.mps.smodel.IOperationContext):java.util.List" resolve="getScriptInstances" />
               <node concept="37vLTw" id="2BHiRxeuktG" role="37wK5m">
                 <ref role="3cqZAo" node="6m98d5YYbH4" resolve="myScripts" />
               </node>
@@ -3300,8 +3299,8 @@
                       <node concept="3clFbS" id="6m98d5YYbJd" role="2LFqv$">
                         <node concept="3clFbJ" id="6m98d5YYbJe" role="3cqZAp">
                           <node concept="2YIFZM" id="6m98d5YYbJf" role="3clFbw">
-                            <ref role="37wK5l" to="dhz7:36t87nSQNHC" resolve="isApplicableRefactoring" />
-                            <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
+                            <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+                            <ref role="37wK5l" to="cmon:~MigrationScriptUtil.isApplicableRefactoring(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring):boolean" resolve="isApplicableRefactoring" />
                             <node concept="37vLTw" id="3GM_nagTydr" role="37wK5m">
                               <ref role="3cqZAo" node="6m98d5YYbJb" resolve="instance" />
                             </node>
@@ -4137,8 +4136,8 @@
                     <node concept="3clFbJ" id="6HfXUkaV7VW" role="3cqZAp">
                       <node concept="3fqX7Q" id="kzqLMIteQu" role="3clFbw">
                         <node concept="2YIFZM" id="6HfXUkaV7VX" role="3fr31v">
-                          <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
-                          <ref role="37wK5l" to="dhz7:36t87nSQNHC" resolve="isApplicableRefactoring" />
+                          <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+                          <ref role="37wK5l" to="cmon:~MigrationScriptUtil.isApplicableRefactoring(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring):boolean" resolve="isApplicableRefactoring" />
                           <node concept="37vLTw" id="3GM_nagTu53" role="37wK5m">
                             <ref role="3cqZAo" node="DTcS_ly80x" resolve="node" />
                           </node>
@@ -4154,8 +4153,8 @@
                     <node concept="3clFbH" id="kzqLMIthbq" role="3cqZAp" />
                     <node concept="3clFbF" id="6HfXUkaV7W1" role="3cqZAp">
                       <node concept="2YIFZM" id="6HfXUkaV7W2" role="3clFbG">
-                        <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
-                        <ref role="37wK5l" to="dhz7:36t87nSQNI7" resolve="performRefactoring" />
+                        <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+                        <ref role="37wK5l" to="cmon:~MigrationScriptUtil.performRefactoring(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring):void" resolve="performRefactoring" />
                         <node concept="37vLTw" id="3GM_nagTxQR" role="37wK5m">
                           <ref role="3cqZAo" node="DTcS_ly80x" resolve="node" />
                         </node>

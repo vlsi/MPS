@@ -3780,6 +3780,7 @@
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/scripts-runtime/source" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
@@ -3824,6 +3825,7 @@
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/scripts-runtime/source" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -3854,6 +3856,7 @@
       <fileset dir="${mps_home}/core/findUsages-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/refactoring-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/scripts-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

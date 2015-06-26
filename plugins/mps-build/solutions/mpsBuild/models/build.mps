@@ -791,6 +791,21 @@
           </node>
         </node>
       </node>
+      <node concept="398b2D" id="1ukulDg548J" role="398b2p">
+        <node concept="398BVA" id="1ukulDg55cc" role="398b2C">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="1ukulDg55cd" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="1ukulDg55ce" role="2Ry0An">
+              <property role="2Ry0Am" value="scripts-runtime" />
+            </node>
+          </node>
+        </node>
+        <node concept="nFU4i" id="1ukulDg57hC" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="source" />
+        </node>
+      </node>
       <node concept="nCB5N" id="1FaKCGJSzEz" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />

@@ -14,7 +14,6 @@
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <import index="dhz7" ref="r:eb359f8b-b521-4c1b-bcbd-ac058df58bd6(jetbrains.mps.lang.script.runtime)" />
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <import index="gsmj" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" />
     <import index="1t7x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -30,6 +29,7 @@
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="ubyd" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)" />
+    <import index="cmon" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.script.runtime(MPS.Core/jetbrains.mps.lang.script.runtime@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1602,8 +1602,8 @@
                 </node>
                 <node concept="X8dFx" id="1sm0cSmT9nj" role="2OqNvi">
                   <node concept="2YIFZM" id="56tLxOTMLVx" role="25WWJ7">
-                    <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
-                    <ref role="37wK5l" to="dhz7:36t87nSQNEl" resolve="getMigrationScripts" />
+                    <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+                    <ref role="37wK5l" to="cmon:~MigrationScriptUtil.getMigrationScripts(jetbrains.mps.smodel.Language):java.util.List" resolve="getMigrationScripts" />
                     <node concept="37vLTw" id="3GM_nagT_bu" role="37wK5m">
                       <ref role="3cqZAo" node="6m98d5YYbLU" resolve="language" />
                     </node>
@@ -2770,8 +2770,8 @@
               <ref role="2I9WkF" to="tp33:h8_UgsH" resolve="MigrationScript" />
             </node>
             <node concept="2YIFZM" id="56tLxOTMNub" role="33vP2m">
-              <ref role="37wK5l" to="dhz7:36t87nSQNEl" resolve="getMigrationScripts" />
-              <ref role="1Pybhc" to="dhz7:36t87nSQNEa" resolve="MigrationScriptUtil" />
+              <ref role="1Pybhc" to="cmon:~MigrationScriptUtil" resolve="MigrationScriptUtil" />
+              <ref role="37wK5l" to="cmon:~MigrationScriptUtil.getMigrationScripts(jetbrains.mps.smodel.Language):java.util.List" resolve="getMigrationScripts" />
               <node concept="37vLTw" id="2BHiRxgl00S" role="37wK5m">
                 <ref role="3cqZAo" node="6m98d5YYbQs" resolve="language" />
               </node>
