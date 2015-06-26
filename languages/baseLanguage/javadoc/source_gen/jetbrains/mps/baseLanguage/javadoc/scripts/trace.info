@@ -6,47 +6,50 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ScriptAspectDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.ScriptAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)/992603585967257187">
     <file name="UpdateDeprecatedBlockDocTags_MigrationScript.java">
-      <node id="992603585967257187" at="15,91,16,42" concept="5" />
-      <node id="992603585967261966" at="19,31,20,99" concept="4" />
-      <node id="992603585967261966" at="23,41,24,99" concept="4" />
-      <node id="992603585967261966" at="27,54,28,178" concept="4" />
-      <node id="992603585967339909" at="31,59,32,188" concept="4" />
-      <node id="992603585967423760" at="35,52,36,376" concept="2" />
-      <node id="992603585967261966" at="39,42,40,21" concept="4" />
-      <node id="992603585967261966" at="18,0,22,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="992603585967261966" at="22,0,26,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="992603585967261966" at="26,0,30,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="992603585967261966" at="30,0,34,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="992603585967261966" at="34,0,38,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="992603585967261966" at="38,0,42,0" concept="3" trace="isShowAsIntention#()Z" />
-      <node id="992603585967257187" at="16,42,42,7" concept="0" />
-      <node id="992603585967261966" at="16,42,42,7" concept="2" />
-      <node id="992603585967257187" at="15,0,44,0" concept="1" trace="UpdateDeprecatedBlockDocTags_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <scope id="992603585967261966" at="19,31,20,99" />
-      <scope id="992603585967261966" at="23,41,24,99" />
-      <scope id="992603585967261966" at="27,54,28,178" />
-      <scope id="992603585967339884" at="31,59,32,188" />
-      <scope id="992603585967261968" at="35,52,36,376" />
-      <scope id="992603585967261966" at="39,42,40,21" />
-      <scope id="992603585967261966" at="18,0,22,0" />
-      <scope id="992603585967261966" at="22,0,26,0" />
-      <scope id="992603585967261966" at="26,0,30,0" />
-      <scope id="992603585967261966" at="30,0,34,0">
+      <node id="992603585967257187" at="14,57,15,42" concept="5" />
+      <node id="992603585967261966" at="18,31,19,99" concept="4" />
+      <node id="992603585967261966" at="22,41,23,99" concept="4" />
+      <node id="992603585967261966" at="26,54,27,178" concept="4" />
+      <node id="992603585967339909" at="30,59,31,188" concept="4" />
+      <node id="992603585967423760" at="34,52,35,376" concept="2" />
+      <node id="992603585967261966" at="38,42,39,21" concept="4" />
+      <node id="992603585967261966" at="17,0,21,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="992603585967261966" at="21,0,25,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="992603585967261966" at="25,0,29,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="992603585967261966" at="29,0,33,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="992603585967261966" at="33,0,37,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="992603585967261966" at="37,0,41,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="992603585967257187" at="15,42,41,7" concept="0" />
+      <node id="992603585967261966" at="15,42,41,7" concept="2" />
+      <node id="992603585967257187" at="14,0,43,0" concept="1" trace="UpdateDeprecatedBlockDocTags_MigrationScript#()V" />
+      <scope id="992603585967261966" at="18,31,19,99" />
+      <scope id="992603585967261966" at="22,41,23,99" />
+      <scope id="992603585967261966" at="26,54,27,178" />
+      <scope id="992603585967339884" at="30,59,31,188" />
+      <scope id="992603585967261968" at="34,52,35,376" />
+      <scope id="992603585967261966" at="38,42,39,21" />
+      <scope id="992603585967261966" at="17,0,21,0" />
+      <scope id="992603585967261966" at="21,0,25,0" />
+      <scope id="992603585967261966" at="25,0,29,0" />
+      <scope id="992603585967261966" at="29,0,33,0">
         <var name="node" id="992603585967261966" />
       </scope>
-      <scope id="992603585967261966" at="34,0,38,0">
+      <scope id="992603585967261966" at="33,0,37,0">
         <var name="node" id="992603585967261966" />
       </scope>
-      <scope id="992603585967261966" at="38,0,42,0" />
-      <scope id="992603585967261966" at="16,42,42,7" />
-      <scope id="992603585967257187" at="15,91,42,7" />
-      <scope id="992603585967257187" at="15,0,44,0">
-        <var name="operationContext" id="992603585967257187" />
-      </scope>
-      <unit id="992603585967261966" at="17,28,42,5" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript$1" />
-      <unit id="992603585967257187" at="14,0,45,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript" />
+      <scope id="992603585967261966" at="37,0,41,0" />
+      <scope id="992603585967261966" at="15,42,41,7" />
+      <scope id="992603585967257187" at="14,57,41,7" />
+      <scope id="992603585967257187" at="14,0,43,0" />
+      <unit id="992603585967261966" at="16,28,41,5" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript$1" />
+      <unit id="992603585967257187" at="13,0,44,0" name="jetbrains.mps.baseLanguage.javadoc.scripts.UpdateDeprecatedBlockDocTags_MigrationScript" />
     </file>
   </root>
 </debug-info>

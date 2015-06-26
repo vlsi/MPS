@@ -29,6 +29,7 @@
     <import index="kqhl" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" />
     <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -42,6 +43,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" flags="nn" index="AH0OO">
         <child id="1173175577737" name="index" index="AHEQo" />
         <child id="1173175590490" name="array" index="AHHXb" />
@@ -6656,6 +6658,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="16vVohMfMxD" role="jymVt" />
     <node concept="3clFbW" id="qXQceEtS1G" role="jymVt">
       <node concept="3cqZAl" id="qXQceEtS1J" role="3clF45" />
       <node concept="3Tm1VV" id="qXQceEtS1K" role="1B3o_S" />
@@ -6756,6 +6759,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="16vVohMfMdl" role="jymVt" />
     <node concept="3clFb_" id="qXQceEtMJJ" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getRefactoringScripts" />
@@ -6781,6 +6785,9 @@
       </node>
       <node concept="2AHcQZ" id="qXQceEtMNX" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="qXQceEvGRe" role="2AJF6D">
+        <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="3Tm1VV" id="qXQceEtMJj" role="1B3o_S" />

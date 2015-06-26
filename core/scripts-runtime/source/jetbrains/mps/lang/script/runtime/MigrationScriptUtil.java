@@ -1,29 +1,29 @@
 package jetbrains.mps.lang.script.runtime;
 
-import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.IOperationContext;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModule;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class was generated in MPS and used to be part of the [kernel]. Now, with extraction of [scripts-runtime]
@@ -60,7 +60,6 @@ public class MigrationScriptUtil {
       return null;
     }
     String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(scriptNode);
-    Class<BaseMigrationScript> aClass;
     String languageNamespace = NameUtil.namespaceFromLongName(fqClassName);
     languageNamespace = languageNamespace.substring(0, languageNamespace.length() - ".scripts".length());
     SModule mod = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
@@ -78,17 +77,27 @@ public class MigrationScriptUtil {
       LOG.error("Module can't load classes: " + languageNamespace);
       return null;
     }
+    Class<BaseMigrationScript> aClass;
     try {
-      aClass = ((Class<BaseMigrationScript>) ((ReloadableModule) mod).getOwnClass(fqClassName));
+      Class c = ((ReloadableModule) mod).getOwnClass(fqClassName);
+      if (BaseMigrationScript.class.isAssignableFrom(c)) {
+        aClass = c.asSubclass(BaseMigrationScript.class);
+      } else {
+        return null;
+      }
     } catch (ClassNotFoundException e) {
       return null;
     }
-    if (aClass == null) {
-      return null;
-    }
     try {
-      Constructor<BaseMigrationScript> constructor = aClass.getConstructor(IOperationContext.class);
-      return constructor.newInstance(context);
+      Constructor<BaseMigrationScript> constructor;
+      try {
+        constructor = aClass.getConstructor();
+        return constructor.newInstance();
+      } catch (NoSuchMethodException ex) {
+        // legacy instantiation
+        constructor = aClass.getConstructor(IOperationContext.class);
+        return constructor.newInstance(context);
+      }
     } catch (InstantiationException e) {
       throw new RuntimeException(e);
     } catch (IllegalAccessException e) {

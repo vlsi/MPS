@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.test.scripts.ScriptAspectDescriptor" file="ScriptAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.lang.script.runtime.RefactoringScript" />
+    <classNode dependClassName="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.lang.script.runtime.ScriptAspectBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.scripts.SpecifyRuleReferencesInTests_MigrationScript" file="SpecifyRuleReferencesInTests_MigrationScript.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring" />
     <classNode dependClassName="jetbrains.mps.lang.test.scripts.SpecifyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
