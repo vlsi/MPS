@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.lang.script.runtime;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,5 +42,11 @@ public class BaseMigrationScript implements RefactoringScript {
   @Override
   public List<AbstractMigrationRefactoring> getRefactorings() {
     return myRefactorings;
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getScriptNode() {
+    return null;
   }
 }

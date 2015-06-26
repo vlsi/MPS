@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.lang.script.runtime;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 import java.util.Collection;
 
 /**
@@ -27,4 +30,10 @@ public interface RefactoringScript {
   // XXX AbstractMigrationRefactoring deserves an extracted interface, but as long as there's no confidence in future of script aspect
   // I don't see too much value in effort to make it plausible.
   Collection<AbstractMigrationRefactoring> getRefactorings();
+
+  /**
+   * @return Pointer to node this script originates from, if any. For navigation purposes only.
+   */
+  @Nullable
+  SNodeReference getScriptNode();
 }
