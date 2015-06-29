@@ -32,6 +32,7 @@ import java.util.List;
  * to introduce all the burden of solution/model to keep this file generated, and just copied it as it is.
  *
  * @deprecated left for binary compatibility with code generated in MPS 3.2, use {@link ScriptAspectDescriptor} instead
+ *      Once 3.3 is out, just drop this class, there are no uses in MPS code already, and once 3.3 is there, no uses in client code shall be kept.
  */
 @Deprecated
 @ToRemove(version = 3.3)

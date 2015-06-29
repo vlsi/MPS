@@ -4,20 +4,19 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.ThreadUtils;
 import java.awt.Frame;
 import com.intellij.openapi.progress.TaskInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collections;
+import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -32,12 +31,10 @@ import jetbrains.mps.project.MPSProject;
 public class MigrationScriptExecutor {
   private Project project;
   private SNodeReference script;
-  private IOperationContext context;
   private String title;
-  public MigrationScriptExecutor(SNodeReference script, String title, IOperationContext context, Project project) {
+  public MigrationScriptExecutor(SNodeReference script, String title, Project project) {
     this.project = project;
     this.script = script;
-    this.context = context;
     this.title = title;
   }
   public void execImmediately(ProgressMonitor promon) {
@@ -94,7 +91,12 @@ public class MigrationScriptExecutor {
     return new Runnable() {
       @Override
       public void run() {
-        final MigrationScriptFinder finder = new MigrationScriptFinder(Collections.singletonList(script), context);
+        SNode scriptNode = (SNode) script.resolve(getMPSProject().getRepository());
+        if (scriptNode == null) {
+          return;
+        }
+        // BLOODY SH!T... If there's a person who understands all these processes, commands and controllers, I'd worship him. 
+        final MigrationScriptFinder finder = new MigrationScriptFinder(Collections.singletonList(AbstractMigrationScriptHelper.toExecutable(scriptNode, getMPSProject())));
         final MigrationScriptsController controller = new MigrationScriptsController(finder) {
           @Override
           public void runCommand(Runnable cmd) {

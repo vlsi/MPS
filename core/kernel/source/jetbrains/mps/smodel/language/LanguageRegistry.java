@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,14 +19,17 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -51,7 +54,25 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   private static LanguageRegistry INSTANCE;
 
+  /**
+   * @deprecated use context-specific alternative {@link #getInstance(Project)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static LanguageRegistry getInstance() {
+    return INSTANCE;
+  }
+
+  /**
+   * At the moment, there's only 1 global LanguageRegistry. However, we move slowly towards independent
+   * projects and thus would need project-specific registries, and use of the method is the proper way to
+   * obtain registry and to think about proper context in the client code right away.
+   *
+   * @param mpsProject context to retrieve language registry from
+   * @return collection of languages available in the given project/context
+   */
+  @NotNull
+  public static LanguageRegistry getInstance(@NotNull Project mpsProject) {
     return INSTANCE;
   }
 

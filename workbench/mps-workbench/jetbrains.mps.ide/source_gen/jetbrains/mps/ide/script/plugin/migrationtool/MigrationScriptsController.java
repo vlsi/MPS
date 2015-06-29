@@ -7,44 +7,41 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.ThreadUtils;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public abstract class MigrationScriptsController {
   private final MigrationScriptFinder myFinder;
   public MigrationScriptsController(MigrationScriptFinder finder) {
     myFinder = finder;
   }
-  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
+  public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes, SRepository repo) {
+    // apparently, requires model read. why does it demand EDT, is unclear 
     ThreadUtils.assertEDT();
     final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     final Set aliveIncludedNodes = new HashSet<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        List<SNodeReference> includedNodes = includedResultNodes;
-        for (SNodeReference includedNode : includedNodes) {
-          if (((SNodePointer) includedNode).resolve(MPSModuleRepository.getInstance()) != null) {
-            aliveIncludedNodes.add(((SNodePointer) includedNode).resolve(MPSModuleRepository.getInstance()));
-          }
-        }
-        List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
-        for (SearchResult aliveResult : aliveResults) {
-          if (aliveIncludedNodes.contains(aliveResult.getObject())) {
-            aliveIncludedResults.add(aliveResult);
-          }
-        }
+    List<SNodeReference> includedNodes = includedResultNodes;
+    for (SNodeReference includedNode : includedNodes) {
+      SNode n;
+      if ((n = includedNode.resolve(repo)) != null) {
+        aliveIncludedNodes.add(n);
       }
-    });
+    }
+    List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
+    for (SearchResult aliveResult : aliveResults) {
+      if (aliveIncludedNodes.contains(aliveResult.getObject())) {
+        aliveIncludedResults.add(aliveResult);
+      }
+    }
     return Collections.unmodifiableCollection(aliveIncludedResults);
   }
   public void process(final ProgressMonitor pmonitor, final Collection<SearchResult<SNode>> searchResults) {
@@ -64,11 +61,15 @@ public abstract class MigrationScriptsController {
           }
 
           final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
-          if (!(MigrationScriptUtil.isApplicableRefactoring(node, migrationRefactoring))) {
-            return;
+          try {
+            if (migrationRefactoring.isApplicableInstanceNode(node)) {
+              migrationRefactoring.doUpdateInstanceNode(node);
+            }
+          } catch (Throwable th) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Script execution failed", th);
+            }
           }
-
-          MigrationScriptUtil.performRefactoring(node, migrationRefactoring);
         }
       });
 
@@ -81,4 +82,5 @@ public abstract class MigrationScriptsController {
     });
   }
   public abstract void runCommand(Runnable cmd);
+  protected static Logger LOG = LogManager.getLogger(MigrationScriptsController.class);
 }

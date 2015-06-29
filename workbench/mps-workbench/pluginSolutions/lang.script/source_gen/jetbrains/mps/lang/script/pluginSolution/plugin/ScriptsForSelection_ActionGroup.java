@@ -18,7 +18,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.extensions.PluginId;
@@ -46,19 +47,19 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
         return;
       }
       event.getPresentation().setVisible(true);
-      IOperationContext context = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (context == null || context.getProject() == null) {
+      MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
+      if (project == null) {
         event.getPresentation().setEnabled(false);
         return;
       }
       event.getPresentation().setEnabled(true);
 
-      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(true);
+      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, true);
       BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
       for (AnAction a : catGroup.getChildren(null)) {
         ScriptsForSelection_ActionGroup.this.add(a);
       }
-      ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder.getAllScripts(), true), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder.getAllScripts(), true);
+      ScriptsForSelection_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

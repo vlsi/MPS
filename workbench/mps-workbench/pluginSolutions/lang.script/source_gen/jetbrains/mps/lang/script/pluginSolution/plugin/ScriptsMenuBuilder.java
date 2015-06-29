@@ -5,6 +5,7 @@ package jetbrains.mps.lang.script.pluginSolution.plugin;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -12,11 +13,11 @@ import java.util.Comparator;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.workbench.action.BaseGroup;
 
-public class ScriptsMenuBuilder {
+/*package*/ final class ScriptsMenuBuilder {
   private boolean applyToSelection;
   private List<Language> allLanguages;
   private List<SNode> allScripts;
-  public ScriptsMenuBuilder(boolean applyToSelection) {
+  public ScriptsMenuBuilder(MPSProject mpsProject, boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
     this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
     ListSequence.fromList(this.allLanguages).sort(new Comparator<Language>() {
@@ -32,20 +33,11 @@ public class ScriptsMenuBuilder {
     ScriptsActionGroupHelper.populateByCategoryGroup(this.allScripts, byCategoryGroup, this.applyToSelection);
     return byCategoryGroup;
   }
-  public BaseGroup create_ByBuildPopup() {
-    BaseGroup byBuildGroup = new BaseGroup("By Build");
-    byBuildGroup.setPopup(true);
-    ScriptsActionGroupHelper.populateByBuildGroup(this.allScripts, byBuildGroup, this.applyToSelection);
-    return byBuildGroup;
+
+  /*package*/ boolean isSelectionOnly() {
+    return applyToSelection;
   }
-  public BaseGroup create_ByLanguagePopup() {
-    BaseGroup byLanguageGroup = new BaseGroup("By Language");
-    byLanguageGroup.setPopup(true);
-    for (Language language : ListSequence.fromList(this.allLanguages)) {
-      ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup, this.applyToSelection);
-    }
-    return byLanguageGroup;
-  }
+
   public List<SNode> getAllScripts() {
     return this.allScripts;
   }

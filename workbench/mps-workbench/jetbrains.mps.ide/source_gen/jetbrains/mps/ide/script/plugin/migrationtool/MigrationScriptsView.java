@@ -155,7 +155,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
 
     final Collection<SearchResult<SNode>> aliveIncludedResults = new ModelAccessHelper(getMPSProject().getModelAccess()).runReadAction(new Computable<Collection<SearchResult<SNode>>>() {
       public Collection<SearchResult<SNode>> compute() {
-        return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
+        return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes(), getMPSProject().getRepository());
       }
     });
     if (aliveIncludedResults.size() == 0) {
@@ -186,7 +186,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     ((ApplicationEx) ApplicationManagerEx.getApplicationEx()).runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), myProject, getComponent(), task.getCancelText());
   }
   private void checkMigrationResults() {
-    final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
+    final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts());
     getMPSProject().getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {

@@ -6,11 +6,10 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.awt.Frame;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -36,12 +35,6 @@ public class WrapNotExpressionInParens_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       Project p = event.getData(CommonDataKeys.PROJECT);
       if (p == null) {
         return false;
@@ -56,7 +49,7 @@ public class WrapNotExpressionInParens_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "4536253685767003451");
 
-    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Wrap NotExpressions in parentheses where necessary", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(CommonDataKeys.PROJECT));
+    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Wrap NotExpressions in parentheses where necessary", event.getData(CommonDataKeys.PROJECT));
     if (ModelAccess.instance().canWrite()) {
       executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
     } else {
