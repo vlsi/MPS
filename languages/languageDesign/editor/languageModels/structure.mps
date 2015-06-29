@@ -1121,6 +1121,14 @@
       <property role="1uS6qv" value="show_message_action_id" />
       <property role="1uS6qo" value="SHOW_MESSAGE" />
     </node>
+    <node concept="M4N5e" id="4yOeMfyOIuH" role="M5hS2">
+      <property role="1uS6qv" value="comment_out_action_id" />
+      <property role="1uS6qo" value="COMMENT" />
+    </node>
+    <node concept="M4N5e" id="4yOeMfyOIvr" role="M5hS2">
+      <property role="1uS6qv" value="uncomment_action_id" />
+      <property role="1uS6qo" value="UNCOMMENT" />
+    </node>
   </node>
   <node concept="1TIwiD" id="g_hAIk0">
     <property role="R5$K7" value="false" />
