@@ -19,11 +19,13 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public abstract class MigrationScriptsController {
+public class MigrationScriptsController {
   private final MigrationScriptFinder myFinder;
+
   public MigrationScriptsController(MigrationScriptFinder finder) {
     myFinder = finder;
   }
+
   public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes, SRepository repo) {
     // apparently, requires model read. why does it demand EDT, is unclear 
     ThreadUtils.assertEDT();
@@ -44,43 +46,29 @@ public abstract class MigrationScriptsController {
     }
     return Collections.unmodifiableCollection(aliveIncludedResults);
   }
+
   public void process(final ProgressMonitor pmonitor, final Collection<SearchResult<SNode>> searchResults) {
+    // requires model write 
     pmonitor.start("", searchResults.size());
-    for (final SearchResult<SNode> seachResult : searchResults) {
-      runCommand(new Runnable() {
-        @Override
-        public void run() {
-          pmonitor.advance(1);
-        }
-      });
-      runCommand(new Runnable() {
-        public void run() {
-          final SNode node = seachResult.getObject();
-          if (node == null || node.getModel() == null) {
-            return;
-          }
-
-          final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
-          try {
-            if (migrationRefactoring.isApplicableInstanceNode(node)) {
-              migrationRefactoring.doUpdateInstanceNode(node);
-            }
-          } catch (Throwable th) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Script execution failed", th);
-            }
-          }
-        }
-      });
-
-    }
-    runCommand(new Runnable() {
-      @Override
-      public void run() {
-        pmonitor.done();
+    for (SearchResult<SNode> seachResult : searchResults) {
+      pmonitor.advance(1);
+      final SNode node = seachResult.getObject();
+      if (node == null || node.getModel() == null) {
+        return;
       }
-    });
+
+      final AbstractMigrationRefactoring migrationRefactoring = myFinder.getRefactoring(seachResult);
+      try {
+        if (migrationRefactoring.isApplicableInstanceNode(node)) {
+          migrationRefactoring.doUpdateInstanceNode(node);
+        }
+      } catch (Throwable th) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error("Script execution failed", th);
+        }
+      }
+    }
+    pmonitor.done();
   }
-  public abstract void runCommand(Runnable cmd);
   protected static Logger LOG = LogManager.getLogger(MigrationScriptsController.class);
 }

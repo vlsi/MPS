@@ -24,7 +24,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
@@ -81,22 +80,17 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
   /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     ThreadUtils.assertEDT();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()) {
       @Override
-      public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()) {
-          @Override
-          public void close() {
-            int index = myViews.indexOf(this);
-            closeTab(index);
-          }
-        };
-        myViews.add(view);
-        String tabName = "    ";
-        Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
-        getContentManager().setSelectedContent(content);
+      public void close() {
+        int index = myViews.indexOf(this);
+        closeTab(index);
       }
-    });
+    };
+    myViews.add(view);
+    String tabName = "    ";
+    Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
+    getContentManager().setSelectedContent(content);
   }
   public int getPriority() {
     return -1;

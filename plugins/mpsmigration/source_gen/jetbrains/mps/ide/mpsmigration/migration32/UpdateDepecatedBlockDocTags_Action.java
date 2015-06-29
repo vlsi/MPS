@@ -6,15 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -35,25 +32,17 @@ public class UpdateDepecatedBlockDocTags_Action extends BaseAction {
       return false;
     }
     {
-      Project p = event.getData(CommonDataKeys.PROJECT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
     }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:5cc40f3f-8490-4eff-97dc-454147d36c2e(jetbrains.mps.baseLanguage.javadoc.scripts)", "992603585967257187");
-
-    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Initialize the text child for all DeprecatedBlockDocTag instances", event.getData(CommonDataKeys.PROJECT));
-    if (ModelAccess.instance().canWrite()) {
-      executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
-    } else {
-      executor.execAsCommand(event.getData(MPSCommonDataKeys.FRAME));
-    }
+    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, UpdateDepecatedBlockDocTags_Action.this.getTemplatePresentation().getText(), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
   }
 }
