@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,13 +29,21 @@ public interface UndoRunnable extends Runnable {
   @Nullable
   String getGroupId();
 
+  boolean shallConfirmUndo();
+
   public static abstract class Base implements UndoRunnable {
     private final String myName;
     private final String myGroupId;
+    private final boolean myConfirmUndo;
 
     public Base(String name, String groupId) {
+      this(name, groupId, false);
+    }
+
+    public Base(String name, String groupId, boolean shallConfirmUndo) {
       myName = name;
       myGroupId = groupId;
+      myConfirmUndo = shallConfirmUndo;
     }
 
     @Override
@@ -48,5 +56,9 @@ public interface UndoRunnable extends Runnable {
       return myGroupId;
     }
 
+    @Override
+    public boolean shallConfirmUndo() {
+      return myConfirmUndo;
+    }
   }
 }
