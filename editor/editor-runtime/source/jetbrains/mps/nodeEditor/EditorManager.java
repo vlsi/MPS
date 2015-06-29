@@ -147,13 +147,6 @@ public class EditorManager {
     return createNodeRoleAttributeCell(roleAttribute, attributeKind, cellWithRole);
   }
 
-  public EditorCell createNodeRoleAttributeCell(Iterable<SNode> roleAttribute, Class<AttributeKind.Child> attributeKind, EditorCell cellWithRole) {
-    for (SNode node : roleAttribute) {
-      cellWithRole = createNodeRoleAttributeCell(node, attributeKind, cellWithRole);
-    }
-    return cellWithRole;
-  }
-
   public EditorCell createNodeRoleAttributeCell(SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
     EditorCell attributeCell =
@@ -211,13 +204,6 @@ public class EditorManager {
   // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
   public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute,
       List<Pair<SNode, SNodeReference>> modifications) {
-    if (attributeKind.equals(AttributeKind.Child.class)) {
-      EditorCell editorCell = createEditorCell(modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
-      jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = EditorCell_Collection.createIndent2(myEditorContext, cellWithRole.getSNode());
-      collection.addEditorCell(editorCell);
-      collection.addEditorCell(cellWithRole);
-      return collection;
-    }
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();

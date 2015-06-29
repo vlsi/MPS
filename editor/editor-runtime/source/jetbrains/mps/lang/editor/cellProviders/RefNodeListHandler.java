@@ -99,10 +99,10 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      Collection<? extends SNode> listElements1 = IterableUtil.asCollection(
+      Collection<? extends SNode> listElements = IterableUtil.asCollection(
           AttributeOperations.getChildNodesAndAttributes(myOwnerNode, ((ConceptMetaInfoConverter) myOwnerNode.getConcept()).convertAggregation(myElementRole)));
       // anchor should be directly referenced from "list owner"
-      while (anchorNode != null && !listElements1.contains(anchorNode)) {
+      while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
       }
     }
