@@ -116,7 +116,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
    *
    */
   @Deprecated
-  private void update(final boolean refreshFiles) {
+  public void update(final boolean refreshFiles) {
     final Set<SLibrary> currentLibs = new HashSet<SLibrary>();
     List<LibraryContributor> contributors = myContributors;
     for (LibraryContributor contributor : contributors) {
