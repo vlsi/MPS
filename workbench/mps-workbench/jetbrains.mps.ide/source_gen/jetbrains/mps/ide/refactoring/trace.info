@@ -811,35 +811,35 @@
       <scope id="2303821416583659905" at="38,23,39,18" />
       <scope id="6188135140809447970" at="45,30,46,74" />
       <scope id="6188135140809514246" at="48,46,49,34" />
-      <scope id="1381464911436071836" at="56,41,57,59" />
-      <scope id="6188135140809479907" at="63,43,64,18" />
-      <scope id="6188135140809479914" at="67,69,68,34" />
-      <scope id="6188135140809479918" at="71,37,72,23" />
+      <scope id="2556458257919161527" at="56,41,57,62" />
+      <scope id="6188135140809479907" at="62,43,63,18" />
+      <scope id="6188135140809479914" at="66,69,67,34" />
+      <scope id="6188135140809479918" at="70,37,71,23" />
       <scope id="2034046503361595363" at="25,0,28,0" />
       <scope id="6188135140808769462" at="31,0,34,0" />
       <scope id="6188135140809447967" at="45,0,48,0" />
       <scope id="6188135140809514243" at="48,0,51,0">
         <var name="node" id="6188135140809514247" />
       </scope>
-      <scope id="1381464911436071835" at="56,0,59,0">
-        <var name="it" id="1381464911436071835" />
+      <scope id="2556458257919161526" at="56,0,59,0">
+        <var name="it" id="2556458257919161526" />
       </scope>
-      <scope id="6188135140809479902" at="62,0,66,0">
+      <scope id="6188135140809479902" at="61,0,65,0">
         <var name="node" id="6188135140809479905" />
       </scope>
-      <scope id="6188135140809479908" at="66,0,70,0">
+      <scope id="6188135140809479908" at="65,0,69,0">
         <var name="node" id="6188135140809479912" />
         <var name="visited" id="5373778178059746772" />
       </scope>
-      <scope id="6188135140809479915" at="70,0,74,0" />
+      <scope id="6188135140809479915" at="69,0,73,0" />
       <scope id="6188135140808769475" at="36,37,41,60">
         <var name="path" id="2303821416583659894" />
       </scope>
       <scope id="6188135140808769473" at="36,0,43,0" />
-      <scope id="6188135140809479901" at="52,73,60,25">
+      <scope id="6188135140809479901" at="52,73,59,10">
         <var name="descendants" id="1381464911435851913" />
       </scope>
-      <scope id="6188135140809479895" at="51,0,62,0">
+      <scope id="6188135140809479895" at="51,0,61,0">
         <var name="node" id="6188135140809479899" />
         <var name="visited" id="5373778178059754720" />
       </scope>
@@ -849,9 +849,9 @@
       </scope>
       <unit id="2034046503361595363" at="24,45,28,5" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
       <unit id="6188135140808769462" at="30,40,34,5" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$2" />
-      <unit id="1381464911436071835" at="55,97,59,7" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
-      <unit id="6188135140809447965" at="43,0,75,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$MyHierarchyTree" />
-      <unit id="6188135140808769438" at="19,0,76,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" />
+      <unit id="2556458257919161526" at="55,108,59,7" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$1" />
+      <unit id="6188135140809447965" at="43,0,74,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser$MyHierarchyTree" />
+      <unit id="6188135140808769438" at="19,0,75,0" name="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" />
     </file>
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/7012097027058828343">
