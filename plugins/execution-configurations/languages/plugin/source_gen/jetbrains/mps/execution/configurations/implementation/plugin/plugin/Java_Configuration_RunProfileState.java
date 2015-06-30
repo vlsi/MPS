@@ -20,7 +20,6 @@ import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -56,7 +55,7 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
     {
       ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), pointer);
       final ConsoleView _consoleView = console;
-      _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
+      _consoleView.attachToProcess(_processHandler);
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           _consoleView.dispose();

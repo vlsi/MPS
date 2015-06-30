@@ -3574,20 +3574,15 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="48oTQQ_5up6" role="3cqZAp">
-          <node concept="2OqwBi" id="48oTQQ_5up7" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTuni" role="2Oq$k0">
-              <ref role="3cqZAo" node="48oTQQ_5uph" resolve="_processHandler" />
+        <node concept="3clFbF" id="2LU2uraeggx" role="3cqZAp">
+          <node concept="2OqwBi" id="2LU2uraegms" role="3clFbG">
+            <node concept="37vLTw" id="2LU2uraeggv" role="2Oq$k0">
+              <ref role="3cqZAo" node="48oTQQ_5sI6" resolve="_consoleView" />
             </node>
-            <node concept="liA8E" id="48oTQQ_5up9" role="2OqNvi">
-              <ref role="37wK5l" to="ymw7:~ProcessHandler.addProcessListener(com.intellij.execution.process.ProcessListener):void" resolve="addProcessListener" />
-              <node concept="2ShNRf" id="48oTQQ_5upa" role="37wK5m">
-                <node concept="1pGfFk" id="48oTQQ_5upb" role="2ShVmc">
-                  <ref role="37wK5l" to="eibu:3oW7HLfqDhj" resolve="ConsoleProcessListener" />
-                  <node concept="37vLTw" id="3GM_nagTAig" role="37wK5m">
-                    <ref role="3cqZAo" node="48oTQQ_5sI6" resolve="_consoleView" />
-                  </node>
-                </node>
+            <node concept="liA8E" id="2LU2uraehH4" role="2OqNvi">
+              <ref role="37wK5l" to="l9cs:~ConsoleView.attachToProcess(com.intellij.execution.process.ProcessHandler):void" resolve="attachToProcess" />
+              <node concept="37vLTw" id="2LU2uraehHl" role="37wK5m">
+                <ref role="3cqZAo" node="48oTQQ_5uph" resolve="_processHandler" />
               </node>
             </node>
           </node>
@@ -3820,20 +3815,15 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbF" id="6hGfvQPbJwF" role="3cqZAp">
-                      <node concept="2OqwBi" id="6hGfvQPbJwG" role="3clFbG">
-                        <node concept="37vLTw" id="3GM_nagTBHw" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6hGfvQPbJva" resolve="_processHandler" />
+                    <node concept="3clFbF" id="2LU2uraehLU" role="3cqZAp">
+                      <node concept="2OqwBi" id="2LU2uraehLV" role="3clFbG">
+                        <node concept="37vLTw" id="2LU2uraehLW" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6hGfvQPbJwp" resolve="_consoleView" />
                         </node>
-                        <node concept="liA8E" id="6hGfvQPbJwI" role="2OqNvi">
-                          <ref role="37wK5l" to="ymw7:~ProcessHandler.addProcessListener(com.intellij.execution.process.ProcessListener):void" resolve="addProcessListener" />
-                          <node concept="2ShNRf" id="6hGfvQPbJwR" role="37wK5m">
-                            <node concept="1pGfFk" id="6hGfvQPbKVh" role="2ShVmc">
-                              <ref role="37wK5l" to="eibu:3oW7HLfqDhj" resolve="ConsoleProcessListener" />
-                              <node concept="37vLTw" id="3GM_nagTrai" role="37wK5m">
-                                <ref role="3cqZAo" node="6hGfvQPbJwp" resolve="_consoleView" />
-                              </node>
-                            </node>
+                        <node concept="liA8E" id="2LU2uraehLX" role="2OqNvi">
+                          <ref role="37wK5l" to="l9cs:~ConsoleView.attachToProcess(com.intellij.execution.process.ProcessHandler):void" resolve="attachToProcess" />
+                          <node concept="37vLTw" id="2LU2uraehLY" role="37wK5m">
+                            <ref role="3cqZAo" node="6hGfvQPbJva" resolve="_processHandler" />
                           </node>
                         </node>
                       </node>
