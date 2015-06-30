@@ -25,6 +25,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Iterator;
+
 
 /**
  * @author simon
@@ -46,28 +48,45 @@ public abstract class SingleRoleCellProvider {
   }
 
   public EditorCell createCell() {
+    if (areAttributesEmpty()) {
+      return createSingleCell();
+    } else {
+      return createManyCells();
+    }
+  }
+
+  private EditorCell_Collection createManyCells() {
     EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
     for (SNode child : getNodesToPresent()) {
       resultCell.addEditorCell(createNodeCell(myEditorContext, child));
     }
-    if (isEmpty()) {
+    if (isChildEmpty()) {
       resultCell.addEditorCell(createEmptyCell());
     }
     return resultCell;
   }
 
-  private boolean isEmpty() {
+  private EditorCell createSingleCell() {
+    Iterator<? extends SNode> iterator = myOwnerNode.getChildren(myContainmentLink).iterator();
+    if (iterator.hasNext()) {
+      return createNodeCell(myEditorContext, iterator.next());
+    } else {
+      return createEmptyCell();
+    }
+  }
+
+  private boolean areAttributesEmpty() {
+    return !AttributeOperations.getChildAttributes(myOwnerNode, myContainmentLink).iterator().hasNext();
+  }
+
+  private boolean isChildEmpty() {
     return !myOwnerNode.getChildren(myContainmentLink).iterator().hasNext();
   }
 
   protected EditorCell createEmptyCell() {
-    EditorCell_Label emptyCell = myContainmentLink.isOptional() ?
+    return myContainmentLink.isOptional() ?
         new EditorCell_Constant(myEditorContext, myOwnerNode, "") :
         new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
-    emptyCell.setDefaultText(getNoTargetText());
-    emptyCell.setEditable(true);
-    emptyCell.setRole(getRole());
-    return emptyCell;
   }
 
   protected String getNoTargetText() {
