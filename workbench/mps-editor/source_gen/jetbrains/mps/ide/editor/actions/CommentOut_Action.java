@@ -12,10 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.CommentUtil;
+import jetbrains.mps.ide.editor.util.CommentUtil;
 
 public class CommentOut_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -52,6 +53,12 @@ public class CommentOut_Action extends BaseAction {
       }
     }
     {
+      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
       if (p == null) {
         return false;
@@ -68,9 +75,9 @@ public class CommentOut_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
-      CommentUtil.uncomment(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)));
+      CommentUtil.uncomment(SNodeOperations.cast(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
     } else {
-      CommentUtil.commentOut(event.getData(MPSCommonDataKeys.NODE));
+      CommentUtil.commentOut(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true);
     }
   }
 }

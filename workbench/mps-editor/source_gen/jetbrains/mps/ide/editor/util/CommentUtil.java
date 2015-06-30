@@ -4,12 +4,20 @@ package jetbrains.mps.ide.editor.util;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -23,25 +31,47 @@ public class CommentUtil {
    * @param node node to comment. This node must have parent
    * @throws IllegalStateException if node has no parent
    */
-  public static void commentOut(@NotNull SNode node) {
+  public static void commentOut(@NotNull SNode node, EditorContext editorContext, boolean doSelect) {
     SNode parent = SNodeOperations.getParent(node);
     if (parent == null) {
       throw new IllegalStateException("Node to comment has no parent. Node: " + BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{}) + " Node id: " + node.getNodeId());
     }
-    SContainmentLink containmentLink = node.getContainmentLink();
+    final SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
     SNode newComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
+    CommentUtil.insertInProperPlace(parent, containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), node, newComment);
     BehaviorReflection.invokeNonVirtual(Void.class, newComment, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_setLink_709746936026609906", new Object[]{containmentLink});
-    SNode prev = CommentUtil.getPrevious(parent, node, containmentLink);
-    SNode next = CommentUtil.getNext(parent, node, containmentLink);
-    parent.removeChild(node);
     SLinkOperations.setTarget(newComment, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), node);
+    SAbstractConcept targetConcept = containmentLink.getTargetConcept();
+    if (!(containmentLink.isMultiple()) && !(containmentLink.isOptional()) && targetConcept instanceof SConcept) {
+      parent.addChild(containmentLink, new jetbrains.mps.smodel.SNode(((SConcept) targetConcept)));
+    }
+
+    if (doSelect) {
+      editorContext.flushEvents();
+      if (containmentLink.isMultiple()) {
+        SelectionUtil.selectCell(editorContext, newComment, SelectionManager.LAST_CELL);
+      } else {
+        EditorCell parentCell = editorContext.getEditorComponent().findNodeCell(parent);
+        EditorCell cellToSelect = CellFinderUtil.findChildByCondition(parentCell, new Condition<EditorCell>() {
+          public boolean met(EditorCell cell) {
+            return eq_v6pl68_a0a0a0a0b0a1a0b0l0b(cell.getRole(), containmentLink.getRole()) && !(SNodeOperations.isInstanceOf(((SNode) cell.getSNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
+          }
+        }, true);
+        editorContext.getSelectionManager().setSelection(cellToSelect);
+      }
+    }
+  }
+
+  private static void insertInProperPlace(SNode parent, SContainmentLink containmentLink, SContainmentLink linkToInsert, SNode oldChild, SNode newChild) {
+    SNode prev = CommentUtil.getPrevious(parent, oldChild, containmentLink);
+    SNode next = CommentUtil.getNext(parent, oldChild, containmentLink);
     if (prev != null) {
-      parent.insertChildAfter(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment, prev);
+      parent.insertChildAfter(linkToInsert, newChild, prev);
     } else if (next != null) {
-      parent.insertChildBefore(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment, next);
+      parent.insertChildBefore(linkToInsert, newChild, next);
     } else {
-      parent.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment);
+      parent.addChild(linkToInsert, newChild);
     }
   }
 
@@ -51,7 +81,7 @@ public class CommentUtil {
    * @param attribute attribute containing commented node. This node must have parent
    * @throws IllegalStateException if attribute has no parent   
    */
-  public static void uncomment(@NotNull SNode attribute) {
+  public static void uncomment(@NotNull SNode attribute, EditorContext editorContext) {
     SNode parent = SNodeOperations.getParent(attribute);
     if (parent == null) {
       throw new IllegalStateException("Node to comment has no parent. Node: " + BehaviorReflection.invokeVirtual(String.class, attribute, "virtual_getPresentation_1213877396640", new Object[]{}) + " Node id: " + attribute.getNodeId());
@@ -63,20 +93,11 @@ public class CommentUtil {
       if (!(containmentLink.isMultiple())) {
         SNode currentChild = ListSequence.fromList(SNodeOperations.getChildren(parent, containmentLink)).first();
         if ((currentChild != null)) {
-          CommentUtil.commentOut(currentChild);
+          CommentUtil.commentOut(currentChild, editorContext, false);
         }
       }
-
-      SNode prev = CommentUtil.getPrevious(parent, attribute, containmentLink);
-      SNode next = CommentUtil.getNext(parent, attribute, containmentLink);
-      parent.removeChild(attribute);
-      if (prev != null) {
-        parent.insertChildAfter(containmentLink, commentedNode, prev);
-      } else if (next != null) {
-        parent.insertChildBefore(containmentLink, commentedNode, next);
-      } else {
-        parent.addChild(containmentLink, commentedNode);
-      }
+      CommentUtil.insertInProperPlace(parent, containmentLink, containmentLink, attribute, commentedNode);
+      SelectionUtil.selectNode(editorContext, commentedNode);
     }
     SNodeOperations.deleteNode(attribute);
   }
@@ -102,5 +123,8 @@ public class CommentUtil {
       }
     }
     return null;
+  }
+  private static boolean eq_v6pl68_a0a0a0a0b0a1a0b0l0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
