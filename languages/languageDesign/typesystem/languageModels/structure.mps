@@ -82,7 +82,7 @@
     <property role="R5$K7" value="true" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplicableNodeCondition" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="762ve2tTWqW" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -96,7 +96,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ConceptReference" />
     <property role="34LRSv" value="concept =" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1TJDcQ" node="h5Yat_Q" resolve="ApplicableNodeCondition" />
     <node concept="1TJgyj" id="h5YaFr9" role="1TKVEi">
       <property role="20kJfa" value="concept" />
@@ -109,7 +109,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="PatternCondition" />
     <property role="34LRSv" value="pattern condition" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1TJDcQ" node="h5Yat_Q" resolve="ApplicableNodeCondition" />
     <node concept="1TJgyj" id="h5YbcJD" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -163,7 +163,7 @@
   <node concept="1TIwiD" id="h5YBJns">
     <property role="TrG5h" value="ApplicableNodeReference" />
     <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="h5YBMDq" role="1TKVEi">
       <property role="20kJfa" value="applicableNode" />
@@ -821,6 +821,11 @@
       <property role="20kJfa" value="body" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
+    </node>
+    <node concept="1TJgyj" id="1y5tROjsjnW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="overridesFun" />
+      <ref role="20lvS9" node="1y5tROjsd_V" resolve="OverridesConceptFunction" />
     </node>
     <node concept="PrWs8" id="4FhjFA_0uio" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
@@ -1921,6 +1926,11 @@
     <property role="TrG5h" value="SubstituteTypeRuleFunction_OriginalNode" />
     <property role="34LRSv" value="originalNode" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="1y5tROjsd_V">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <property role="TrG5h" value="OverridesConceptFunction" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

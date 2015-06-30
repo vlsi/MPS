@@ -338,7 +338,7 @@
   </registry>
   <node concept="1YbPZF" id="h6M$2IJ">
     <property role="TrG5h" value="typeOf_PatternCondition" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <node concept="3clFbS" id="h6M$2IK" role="18ibNy">
       <node concept="3cpWs8" id="h6M$7Qr" role="3cqZAp">
         <node concept="3cpWsn" id="h6M$7Qs" role="3cpWs9">
@@ -380,7 +380,7 @@
   </node>
   <node concept="1YbPZF" id="h6M$nvY">
     <property role="TrG5h" value="typeOf_ConceptReference" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <node concept="3clFbS" id="h6M$nvZ" role="18ibNy">
       <node concept="3cpWs8" id="h6M$t6c" role="3cqZAp">
         <node concept="3cpWsn" id="h6M$t6d" role="3cpWs9">
@@ -428,7 +428,7 @@
   </node>
   <node concept="1YbPZF" id="h6M_Kii">
     <property role="TrG5h" value="typeOf_applicableNodeReference" />
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <node concept="3clFbS" id="h6M_Kij" role="18ibNy">
       <node concept="3cpWs8" id="h6M_VqZ" role="3cqZAp">
         <node concept="3cpWsn" id="h6M_Vr0" role="3cpWs9">

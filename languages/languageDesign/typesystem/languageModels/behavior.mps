@@ -343,14 +343,14 @@
     </node>
   </node>
   <node concept="13h7C7" id="hEwIguD">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="13h7C2" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="13hLZK" id="hEwIguE" role="13h7CW">
       <node concept="3clFbS" id="hEwIguF" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="hEwIszK">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="13h7C2" to="tpd4:h5Yat_Q" resolve="ApplicableNodeCondition" />
     <node concept="13i0hz" id="hEwIszL" role="13h7CS">
       <property role="13i0iv" value="true" />
@@ -368,7 +368,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="hEwItz6">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="13h7C2" to="tpd4:h5YaCyN" resolve="ConceptReference" />
     <node concept="13i0hz" id="hEwItz7" role="13h7CS">
       <property role="13i0is" value="false" />
@@ -394,7 +394,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="hEwIuKn">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="13h7C2" to="tpd4:h5Yb3TC" resolve="PatternCondition" />
     <node concept="13i0hz" id="hEwIuKo" role="13h7CS">
       <property role="13i0is" value="false" />
@@ -3697,7 +3697,9 @@
                 <node concept="3B5_sB" id="2EOQLmJ9rrf" role="2HTEbv">
                   <ref role="3B5MYn" to="tpd4:2EOQLmJ9owp" resolve="SubstituteTypeRuleFunction_OriginalNode" />
                 </node>
-                <node concept="3Tqbb2" id="2EOQLmJ9rqt" role="2HTBi0" />
+                <node concept="3Tqbb2" id="2EOQLmJ9rqt" role="2HTBi0">
+                  <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                </node>
               </node>
             </node>
             <node concept="ANE8D" id="2EOQLmJ9HYM" role="2OqNvi" />
@@ -3749,6 +3751,29 @@
       <node concept="3Tqbb2" id="2EOQLmJ9oMR" role="3clF45">
         <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1y5tROjsfwm">
+    <property role="3GE5qa" value="definition.conceptFunction" />
+    <ref role="13h7C2" to="tpd4:1y5tROjsd_V" resolve="OverridesConceptFunction" />
+    <node concept="13hLZK" id="1y5tROjsfwn" role="13h7CW">
+      <node concept="3clFbS" id="1y5tROjsfwo" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1y5tROjsfwp" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="1y5tROjsfwt" role="1B3o_S" />
+      <node concept="3clFbS" id="1y5tROjsfwv" role="3clF47">
+        <node concept="3cpWs6" id="1y5tROjsfyB" role="3cqZAp">
+          <node concept="2c44tf" id="1y5tROjsfyT" role="3cqZAk">
+            <node concept="10P_77" id="1y5tROjsfzg" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1y5tROjsfww" role="3clF45" />
     </node>
   </node>
 </model>

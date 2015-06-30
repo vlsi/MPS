@@ -13,13 +13,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 18:
         return new ConceptReference_BehaviorDescriptor();
-      case 61:
+      case 62:
         return new PatternCondition_BehaviorDescriptor();
       case 32:
         return new InferenceRule_BehaviorDescriptor();
       case 3:
         return new ApplicableNodeReference_BehaviorDescriptor();
-      case 91:
+      case 92:
         return new TypeOfExpression_BehaviorDescriptor();
       case 21:
         return new CreateEquationStatement_BehaviorDescriptor();
@@ -29,23 +29,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CreateGreaterThanInequationStatement_BehaviorDescriptor();
       case 19:
         return new CreateComparableEquationStatement_BehaviorDescriptor();
-      case 92:
-        return new TypeVarDeclaration_BehaviorDescriptor();
       case 93:
+        return new TypeVarDeclaration_BehaviorDescriptor();
+      case 94:
         return new TypeVarReference_BehaviorDescriptor();
-      case 62:
+      case 63:
         return new PatternVariableReference_BehaviorDescriptor();
       case 41:
         return new LinkPatternVariableReference_BehaviorDescriptor();
-      case 67:
+      case 68:
         return new PropertyPatternVariableReference_BehaviorDescriptor();
-      case 89:
+      case 90:
         return new SubtypingRule_BehaviorDescriptor();
       case 4:
         return new AssertStatement_BehaviorDescriptor();
-      case 78:
+      case 79:
         return new ReportErrorStatement_BehaviorDescriptor();
-      case 90:
+      case 91:
         return new TypeCheckerAccessExpression_BehaviorDescriptor();
       case 37:
         return new IsSubtypeExpression_BehaviorDescriptor();
@@ -75,13 +75,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new CreateStrongLessThanInequationStatement_BehaviorDescriptor();
       case 20:
         return new CreateComparableEquationStatementStrong_BehaviorDescriptor();
-      case 81:
+      case 82:
         return new RuntimeErrorType_BehaviorDescriptor();
-      case 84:
+      case 85:
         return new RuntimeTypeVariable_BehaviorDescriptor();
       case 52:
         return new NormalTypeClause_BehaviorDescriptor();
-      case 104:
+      case 105:
         return new WhenConcreteStatement_BehaviorDescriptor();
       case 45:
         return new MeetType_BehaviorDescriptor();
@@ -93,55 +93,55 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new InequationReplacementRule_BehaviorDescriptor();
       case 27:
         return new ErrorInfoExpression_BehaviorDescriptor();
-      case 83:
+      case 84:
         return new RuntimeListVariable_BehaviorDescriptor();
-      case 105:
-        return new WhenConcreteVariableDeclaration_BehaviorDescriptor();
       case 106:
+        return new WhenConcreteVariableDeclaration_BehaviorDescriptor();
+      case 107:
         return new WhenConcreteVariableReference_BehaviorDescriptor();
-      case 101:
+      case 102:
         return new WarningStatement_BehaviorDescriptor();
-      case 94:
-        return new TypesystemIntention_BehaviorDescriptor();
       case 95:
+        return new TypesystemIntention_BehaviorDescriptor();
+      case 96:
         return new TypesystemIntentionArgument_BehaviorDescriptor();
       case 1:
         return new AbstractInequationStatement_BehaviorDescriptor();
-      case 96:
+      case 97:
         return new TypesystemQuickFix_BehaviorDescriptor();
-      case 71:
+      case 72:
         return new QuickFixExecuteBlock_BehaviorDescriptor();
       case 16:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 68:
-        return new QuickFixArgument_BehaviorDescriptor();
       case 69:
-        return new QuickFixArgumentReference_BehaviorDescriptor();
+        return new QuickFixArgument_BehaviorDescriptor();
       case 70:
+        return new QuickFixArgumentReference_BehaviorDescriptor();
+      case 71:
         return new QuickFixDescriptionBlock_BehaviorDescriptor();
       case 2:
         return new AddDependencyStatement_BehaviorDescriptor();
-      case 64:
+      case 65:
         return new Processed_BehaviorDescriptor();
       case 33:
         return new InfoStatement_BehaviorDescriptor();
-      case 65:
-        return new PropertyMessageTarget_BehaviorDescriptor();
-      case 75:
-        return new ReferenceMessageTarget_BehaviorDescriptor();
       case 66:
-        return new PropertyNameTarget_BehaviorDescriptor();
+        return new PropertyMessageTarget_BehaviorDescriptor();
       case 76:
+        return new ReferenceMessageTarget_BehaviorDescriptor();
+      case 67:
+        return new PropertyNameTarget_BehaviorDescriptor();
+      case 77:
         return new ReferenceRoleTarget_BehaviorDescriptor();
-      case 97:
-        return new VariableConverterItem_BehaviorDescriptor();
       case 98:
+        return new VariableConverterItem_BehaviorDescriptor();
+      case 99:
         return new VariableConverterItem_ApplicableBlock_BehaviorDescriptor();
       case 17:
         return new ConceptFunctionParameter_var_BehaviorDescriptor();
-      case 99:
-        return new VariableConverterItem_ConvertBlock_BehaviorDescriptor();
       case 100:
+        return new VariableConverterItem_ConvertBlock_BehaviorDescriptor();
+      case 101:
         return new VariableConvertersContainer_BehaviorDescriptor();
       case 13:
         return new ConceptFunctionParameter_Role_BehaviorDescriptor();
@@ -149,7 +149,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_isAggregation_BehaviorDescriptor();
       case 11:
         return new ConceptFunctionParameter_ContextNode_BehaviorDescriptor();
-      case 82:
+      case 83:
         return new RuntimeHoleType_BehaviorDescriptor();
       case 60:
         return new OverloadedOperatorTypeRule_BehaviorDescriptor();
@@ -159,7 +159,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new LeftOperandType_parameter_BehaviorDescriptor();
       case 53:
         return new Operation_parameter_BehaviorDescriptor();
-      case 80:
+      case 81:
         return new RightOperandType_parameter_BehaviorDescriptor();
       case 28:
         return new GetOperationType_BehaviorDescriptor();
@@ -187,23 +187,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new OriginalNodeId_BehaviorDescriptor();
       case 56:
         return new OverloadedOpIsApplicableFunction_BehaviorDescriptor();
-      case 74:
+      case 75:
         return new QuickFixSetSelectionBlock_BehaviorDescriptor();
       case 12:
         return new ConceptFunctionParameter_EditorContext_BehaviorDescriptor();
-      case 72:
-        return new QuickFixField_BehaviorDescriptor();
       case 73:
+        return new QuickFixField_BehaviorDescriptor();
+      case 74:
         return new QuickFixFieldReference_BehaviorDescriptor();
-      case 85:
+      case 86:
         return new SelectionType_BehaviorDescriptor();
       case 14:
         return new ConceptFunctionParameter_Selection_BehaviorDescriptor();
       case 5:
         return new CaretPositionOperation_BehaviorDescriptor();
-      case 103:
+      case 104:
         return new WasSelectedNodeOperation_BehaviorDescriptor();
-      case 77:
+      case 78:
         return new ReplacementRuleReference_BehaviorDescriptor();
       case 24:
         return new CreateStrongGreaterThanInequationStatement_BehaviorDescriptor();
@@ -211,23 +211,25 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new AbstractComparableStatement_BehaviorDescriptor();
       case 54:
         return new OrStatement_BehaviorDescriptor();
-      case 63:
+      case 64:
         return new PrintToTrace_BehaviorDescriptor();
-      case 79:
+      case 80:
         return new ReportErrorStatementAnnotation_BehaviorDescriptor();
       case 34:
         return new InfoStatementAnnotation_BehaviorDescriptor();
-      case 102:
+      case 103:
         return new WarningStatementAnnotation_BehaviorDescriptor();
-      case 86:
-        return new SubstituteTypeRule_BehaviorDescriptor();
       case 87:
-        return new SubstituteTypeRuleFunction_BehaviorDescriptor();
+        return new SubstituteTypeRule_BehaviorDescriptor();
       case 88:
+        return new SubstituteTypeRuleFunction_BehaviorDescriptor();
+      case 89:
         return new SubstituteTypeRuleFunction_OriginalNode_BehaviorDescriptor();
+      case 61:
+        return new OverridesConceptFunction_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRuleFunction", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRuleFunction_OriginalNode", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement", "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.AssertStatement", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.CoerceExpression", "jetbrains.mps.lang.typesystem.structure.CoerceStatement", "jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_EditorContext", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Selection", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatementStrong", "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", "jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongGreaterThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", "jetbrains.mps.lang.typesystem.structure.GetOperationType", "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.InfoStatement", "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", "jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MatchStatement", "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", "jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", "jetbrains.mps.lang.typesystem.structure.NodeInfo", "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.lang.typesystem.structure.OrStatement", "jetbrains.mps.lang.typesystem.structure.OriginalNodeId", "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", "jetbrains.mps.lang.typesystem.structure.OverridesConceptFunction", "jetbrains.mps.lang.typesystem.structure.PatternCondition", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PrintToTrace", "jetbrains.mps.lang.typesystem.structure.Processed", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgument", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", "jetbrains.mps.lang.typesystem.structure.QuickFixField", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.QuickFixSetSelectionBlock", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", "jetbrains.mps.lang.typesystem.structure.SelectionType", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRule", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRuleFunction", "jetbrains.mps.lang.typesystem.structure.SubstituteTypeRuleFunction_OriginalNode", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeCheckerAccessExpression", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntention", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", "jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ConvertBlock", "jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", "jetbrains.mps.lang.typesystem.structure.WarningStatement", "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
 }
