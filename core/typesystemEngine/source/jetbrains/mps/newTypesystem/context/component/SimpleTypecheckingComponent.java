@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
@@ -26,8 +27,8 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.UseCarefully;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -146,12 +147,54 @@ import java.util.Set;
     }
   }
 
+  /**
+   * Search for and apply the inference rules to the given node.
+   *
+   * In case the node has node attributes, also search for inference rules for these attributes and apply them *before* rules for the
+   * node given.
+   *
+   * @param node
+   * @return
+   */
   protected boolean applyRulesToNode(SNode node) {
-    List<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = TypeChecker.getInstance().getRulesManager().getInferenceRules(node);
-    if (newRules != null) {
-      applyRulesToNode(node, newRules);
+    final List<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>> nodesAndRules = new ArrayList<Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>>();
+    for (SNode nodeOrAttr : nodesToApplyRulesTo(node)) {
+      List<Pair<InferenceRule_Runtime, IsApplicableStatus>> rules = TypeChecker.getInstance().getRulesManager().getInferenceRules(nodeOrAttr);
+      if (rules != null && !rules.isEmpty()) {
+        nodesAndRules.add(new Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>>(nodeOrAttr, rules));
+
+        // check if the last rule applicable to an attribute overrides other rules (last one wins)
+        Pair<InferenceRule_Runtime, IsApplicableStatus> lastPair = rules.get(rules.size() - 1);
+        if (lastPair.o1.overrides(nodeOrAttr, lastPair.o2)) {
+          break;
+        }
+      }
     }
-    return false;
+
+    if (nodesAndRules.isEmpty()) return false;
+
+    for (Pair<SNode, List<Pair<InferenceRule_Runtime, IsApplicableStatus>>> pair : nodesAndRules) {
+      applyRulesToNode(pair.o1, pair.o2);
+    }
+
+    return true;
+  }
+
+  /**
+   * Returns the list of all node attributes and the node itself as the last element.
+   * Earlier attributes have precedence over the ones added later.
+   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
+   *
+   * @param origNode
+   * @return
+   */
+  protected List<SNode> nodesToApplyRulesTo(SNode origNode) {
+    if (origNode == null) return Collections.emptyList();
+
+    ArrayList<SNode> nodesToTest = new ArrayList<SNode>(AttributeOperations.getAllAttributes(origNode));
+    nodesToTest.add(origNode);
+
+    return nodesToTest;
   }
 
   public SNode getType(SNode node) {
