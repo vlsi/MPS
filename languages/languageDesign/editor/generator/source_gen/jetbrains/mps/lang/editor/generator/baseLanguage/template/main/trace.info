@@ -2390,11 +2390,11 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/4820515453827608594">
     <file name="QueriesGenerated.java">
       <node id="4820515453829457686" at="1086,109,1087,108" concept="6" />
-      <node id="2780009905244974732" at="1405,94,1406,232" concept="6" />
-      <node id="2780009905245009955" at="1408,94,1409,232" concept="6" />
+      <node id="2780009905244974732" at="1405,94,1406,235" concept="6" />
+      <node id="2780009905245009955" at="1408,94,1409,235" concept="6" />
       <scope id="4820515453829457007" at="1086,109,1087,108" />
-      <scope id="2780009905244988699" at="1405,94,1406,232" />
-      <scope id="2780009905245009332" at="1408,94,1409,232" />
+      <scope id="2780009905244988699" at="1405,94,1406,235" />
+      <scope id="2780009905245009332" at="1408,94,1409,235" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)/4820515453828757973">
