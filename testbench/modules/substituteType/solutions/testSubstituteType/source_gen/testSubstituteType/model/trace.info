@@ -243,5 +243,47 @@
       <unit id="6405009306797629708" at="14,0,119,0" name="testSubstituteType.model.AnnotatedType_Test" />
     </file>
   </root>
+  <root nodeRef="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)/6572489169071277734">
+    <file name="OverridingInference_Test.java">
+      <node id="6572489169071277734" at="17,73,18,108" concept="0" />
+      <node id="6572489169071277734" at="18,108,19,127" concept="0" />
+      <node id="6572489169071277734" at="22,73,23,108" concept="0" />
+      <node id="6572489169071277734" at="23,108,24,127" concept="0" />
+      <node id="6572489169071277734" at="27,77,28,108" concept="0" />
+      <node id="6572489169071277734" at="28,108,29,131" concept="0" />
+      <node id="6572489169071277734" at="33,75,34,235" concept="2" />
+      <node id="6572489169071277734" at="34,235,35,159" concept="0" />
+      <node id="6572489169071277734" at="37,75,38,235" concept="2" />
+      <node id="6572489169071277734" at="38,235,39,159" concept="0" />
+      <node id="6572489169071277734" at="41,79,42,235" concept="2" />
+      <node id="6572489169071277734" at="42,235,43,159" concept="0" />
+      <node id="6572489169071277734" at="33,0,37,0" concept="1" trace="test_NodeErrorCheck6572489169071449300#()V" />
+      <node id="6572489169071277734" at="37,0,41,0" concept="1" trace="test_NodeErrorCheck6572489169071450944#()V" />
+      <node id="6572489169071277734" at="41,0,45,0" concept="1" trace="test_ErrorMessagesCheck6572489169071449409#()V" />
+      <node id="6572489169071277734" at="16,0,21,0" concept="1" trace="test_NodeErrorCheck6572489169071449300#()V" />
+      <node id="6572489169071277734" at="21,0,26,0" concept="1" trace="test_NodeErrorCheck6572489169071450944#()V" />
+      <node id="6572489169071277734" at="26,0,31,0" concept="1" trace="test_ErrorMessagesCheck6572489169071449409#()V" />
+      <scope id="6572489169071277734" at="17,73,19,127" />
+      <scope id="6572489169071277734" at="22,73,24,127" />
+      <scope id="6572489169071277734" at="27,77,29,131" />
+      <scope id="6572489169071277734" at="33,75,35,159">
+        <var name="operation" id="6572489169071277734" />
+      </scope>
+      <scope id="6572489169071277734" at="37,75,39,159">
+        <var name="operation" id="6572489169071277734" />
+      </scope>
+      <scope id="6572489169071277734" at="41,79,43,159">
+        <var name="operation" id="6572489169071277734" />
+      </scope>
+      <scope id="6572489169071277734" at="33,0,37,0" />
+      <scope id="6572489169071277734" at="37,0,41,0" />
+      <scope id="6572489169071277734" at="41,0,45,0" />
+      <scope id="6572489169071277734" at="16,0,21,0" />
+      <scope id="6572489169071277734" at="21,0,26,0" />
+      <scope id="6572489169071277734" at="26,0,31,0" />
+      <unit id="6572489169071277734" at="31,0,46,0" name="testSubstituteType.model.OverridingInference_Test$TestBody" />
+      <unit id="6572489169071277734" at="14,0,47,0" name="testSubstituteType.model.OverridingInference_Test" />
+    </file>
+  </root>
 </debug-info>
 
