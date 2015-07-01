@@ -917,7 +917,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
         if (refTarget.getModel() != null && refTarget.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(refTarget)) {
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
-          new PostponedReference(inputReference.getLink(), outputNode, refInfo).setAndRegister(myEnv.getGenerator());
+          new PostponedReference(inputReference.getLink(), outputNode, refInfo).registerWith(myEnv.getGenerator());
         } else if (refTarget.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
         } else {
