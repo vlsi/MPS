@@ -8392,6 +8392,7 @@
       <property role="TrG5h" value="_context_" />
       <node concept="312cEu" id="heOoiGW" role="jymVt">
         <property role="TrG5h" value="class_SingleRoleCellProvider" />
+        <property role="2bfB8j" value="true" />
         <node concept="3Tm6S6" id="1y7DiaVv336" role="1B3o_S" />
         <node concept="17Uvod" id="heOoiMo" role="lGtFl">
           <property role="2qtEX9" value="name" />
@@ -8887,8 +8888,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="4R_sg7WER1d" role="3cqZAp">
-                  <node concept="3nyPlj" id="4R_sg7WER1c" role="3clFbG">
+                <node concept="3cpWs6" id="5B3NHHiPW75" role="3cqZAp">
+                  <node concept="3nyPlj" id="5B3NHHiPWVV" role="3cqZAk">
                     <ref role="37wK5l" to="o70u:~SingleRoleCellProvider.createCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="createCell" />
                   </node>
                 </node>
