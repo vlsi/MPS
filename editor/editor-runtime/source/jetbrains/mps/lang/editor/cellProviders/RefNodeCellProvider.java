@@ -18,16 +18,10 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.util.CommentUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefNodeCellProvider extends AbstractReferentCellProvider {

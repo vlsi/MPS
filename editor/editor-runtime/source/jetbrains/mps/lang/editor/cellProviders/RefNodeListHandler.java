@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
-import jetbrains.mps.util.CommentUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
