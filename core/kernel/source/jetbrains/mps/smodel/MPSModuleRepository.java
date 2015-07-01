@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryBase;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -27,7 +28,7 @@ import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -42,7 +43,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
+public class MPSModuleRepository extends SRepositoryBase implements CoreComponent, SRepositoryExt {
   private static final Logger LOG = LogManager.getLogger(MPSModuleRepository.class);
   private static MPSModuleRepository ourInstance;
 
@@ -64,6 +65,9 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
    * {@link jetbrains.mps.project.Project#getRepository()}}
    *
    * So in each case you must have an MPS project within your scope and request SRepository explicitily from the project.
+   * <p/>
+   * To access register/unregister methods for modules, consider using {@link SRepositoryExt}
+   *
    * @deprecated
    * @since 3.2
    */
@@ -94,6 +98,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //-----------------register/unregister-merge-----------
 
+  @Override
   public <T extends SModule> T registerModule(T moduleToRegister, MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
@@ -156,6 +161,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     }
   }
 
+  @Override
   public void unregisterModule(SModule module, MPSModuleOwner owner) {
     getModelAccess().checkWriteAccess();
 
