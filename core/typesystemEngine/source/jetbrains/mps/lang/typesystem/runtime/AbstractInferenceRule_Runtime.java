@@ -40,4 +40,14 @@ public abstract class AbstractInferenceRule_Runtime implements InferenceRule_Run
   @Override
   public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
   }
+
+  @Override
+  public boolean overrides(SNode argument, IsApplicableStatus status) {
+    return overrides();
+  }
+
+  @Override
+  public boolean overrides() {
+    return false;
+  }
 }
