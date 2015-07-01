@@ -53,6 +53,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ClassLoadersHolder {
   private static final Logger LOG = LogManager.getLogger(ClassLoadersHolder.class);
 
+  private static final List<String> INTERNAL_EXCLUDES = Arrays.asList("jetbrains.mps.samples.xmlPersistence");
+
   private final ModelAccess myModelAccess;
   private final ModulesWatcher myModulesWatcher;
   private final MPSClassLoadersRegistry myMPSClassLoadersRegistry = new MPSClassLoadersRegistry();
@@ -65,7 +67,7 @@ public class ClassLoadersHolder {
     private void checkPluginIsValid(@NotNull SModule module) {
       CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
       if (customClassLoadingFacet != null) {
-        if (!customClassLoadingFacet.isValid()) {
+        if (!customClassLoadingFacet.isValid() && !INTERNAL_EXCLUDES.contains(module.getModuleName())) {
           LOG.warn("Facet of the module " + module + " is not valid --" +
               " possibly the provided idea plugin (in the properties dialog/idea plugin facet tab) cannot be found among the bundled plugins");
         }

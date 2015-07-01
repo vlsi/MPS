@@ -31,6 +31,7 @@
         <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" fqName="jetbrains.mps.lang.quotation" version="0" />
         <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" fqName="jetbrains.mps.lang.smodel" version="1" />
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" fqName="jetbrains.mps.lang.traceable" version="0" />
+        <language id="e8e38af6-0cf3-4cc1-baa3-ba261722e8f3" fqName="jetbrains.mps.samples.attribute" version="0" />
       </languageVersions>
       <mapping-priorities />
     </generator>

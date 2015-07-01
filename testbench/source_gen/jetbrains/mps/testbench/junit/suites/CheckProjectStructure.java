@@ -7,7 +7,6 @@ import org.junit.Test;
 import jetbrains.mps.testbench.junit.Order;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -23,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
+import org.junit.Assume;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import java.util.Collection;
@@ -37,30 +37,26 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Order(value = 1)
   public void checkModuleProperties() {
     final List<String> errors = new ArrayList<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
-            if (myModule instanceof Language) {
-              ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
-            }
+        List<SModule> modules = ListSequence.fromListAndArray(new ArrayList<SModule>(), myModule);
+        if (myModule instanceof Language) {
+          ListSequence.fromList(modules).addSequence(CollectionSequence.fromCollection(((Language) myModule).getGenerators()));
+        }
 
-            for (SModule sm : modules) {
-              MessageCollectProcessor processor = new MessageCollectProcessor(false);
-              ValidationUtil.validateModule(sm, processor);
-              if (processor.getErrors().isEmpty()) {
-                continue;
-              }
-
-              StringBuilder errorMessages = new StringBuilder();
-              for (String item : processor.getErrors()) {
-                errorMessages.append("\t").append(item).append("\n");
-              }
-              errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
-            }
+        for (SModule sm : modules) {
+          MessageCollectProcessor processor = new MessageCollectProcessor(false);
+          ValidationUtil.validateModule(sm, processor);
+          if (processor.getErrors().isEmpty()) {
+            continue;
           }
-        });
+
+          StringBuilder errorMessages = new StringBuilder();
+          for (String item : processor.getErrors()) {
+            errorMessages.append("\t").append(item).append("\n");
+          }
+          errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
+        }
       }
     });
     Assert.assertTrue("Module property or dependency errors:\n" + CheckingTestsUtil.formatErrors(errors), errors.isEmpty());
@@ -166,6 +162,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
   @Test
   @Order(value = 5)
   public void checkGenerationStatus() {
+    Assume.assumeFalse("Generation status is meaningless for packaged modules", myModule.isPackaged());
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {

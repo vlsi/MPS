@@ -15,16 +15,20 @@
  */
 package jetbrains.mps.repository;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.BootstrapLibraryContributor;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.PluginLibraryContributor;
 import jetbrains.mps.library.contributor.WorkbenchLibraryContributor;
 import jetbrains.mps.workbench.action.IRegistryManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.List;
 
 public final class RepositoryInitializingComponent implements ApplicationComponent {
   private final LibraryInitializer myLibraryInitializer;
@@ -48,7 +52,23 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
     myBootstrapLibraryContributor = new BootstrapLibraryContributor();
     myWorkbenchLibraryContributor = new WorkbenchLibraryContributor();
     myPluginLibraryContributor = new PluginLibraryContributor();
-    myLibraryInitializer.load(Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor));
+    List<LibraryContributor> contributors = Arrays.asList(myBootstrapLibraryContributor, myWorkbenchLibraryContributor, myPluginLibraryContributor);
+
+    for (LibraryContributor contributor : contributors) {
+      myLibraryInitializer.addContributor(contributor);
+    }
+    final Application application = ApplicationManager.getApplication();
+    application.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        application.runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            myLibraryInitializer.update(true);
+          }
+        });
+      }
+    });
   }
 
   @Override
