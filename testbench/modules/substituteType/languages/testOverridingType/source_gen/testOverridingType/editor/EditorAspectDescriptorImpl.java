@@ -15,6 +15,8 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
+        return Collections.<ConceptEditor>singletonList(new OverrideAnnotation_Editor());
+      case 1:
         return Collections.<ConceptEditor>singletonList(new OverridingPrimNumConstant_Editor());
       default:
     }
@@ -25,5 +27,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testOverridingType.structure.OverridingPrimNumConstant"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testOverridingType.structure.OverrideAnnotation", "testOverridingType.structure.OverridingPrimNumConstant"};
 }

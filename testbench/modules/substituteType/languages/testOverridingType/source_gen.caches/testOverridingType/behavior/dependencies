@@ -5,10 +5,17 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
+    <classNode dependClassName="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimFloatType_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimIntType_BehaviorDescriptor" />
     <classNode dependClassName="testOverridingType.behavior.OverridingPrimNumConstant_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="testOverridingType.behavior.OverrideAnnotation_BehaviorDescriptor" file="OverrideAnnotation_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="testOverridingType.behavior.OverridingPrimFloatType_BehaviorDescriptor" file="OverridingPrimFloatType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
