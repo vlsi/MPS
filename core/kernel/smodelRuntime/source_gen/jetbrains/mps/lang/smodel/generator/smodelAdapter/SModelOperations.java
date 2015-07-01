@@ -23,9 +23,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -131,24 +132,28 @@ public final class SModelOperations {
   }
   public static SNode getModuleStub(SModel model) {
     final SModule module = model.getModule();
+    SRepository repo = model.getRepository();
+    if (repo == null || ProjectStructureModule.getInstance(repo) == null) {
+      return null;
+    }
     if (module instanceof Generator) {
       Language lang = ((Generator) module).getSourceLanguage();
-      SModel m = ProjectStructureModule.getInstance().getModelByModule(lang);
+      SModel m = ProjectStructureModule.getInstance(repo).getModelByModule(lang);
       if (m == null) {
         return null;
       }
       SNode l = ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, "jetbrains.mps.lang.project.structure.Language"))).first();
       return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5869770da61dfe37L, "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_kkj9n5_a0a0a0a0a0a4a1a11(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
+          return eq_kkj9n5_a0a0a0a0a0a4a3a11(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")), module.getModuleReference().getModuleId().toString());
         }
       }));
     } else {
-      SModel m = ProjectStructureModule.getInstance().getModelByModule(module);
+      SModel m = ProjectStructureModule.getInstance(repo).getModelByModule(module);
       return (m == null ? null : ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, "jetbrains.mps.lang.project.structure.Module"))).first());
     }
   }
-  private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a11(Object a, Object b) {
+  private static boolean eq_kkj9n5_a0a0a0a0a0a4a3a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

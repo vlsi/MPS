@@ -15,7 +15,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.extapi.module.SRepositoryExt;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -50,7 +53,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private static final String MODULE_REF = "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)";
   private Map<SModelId, ProjectStructureModule.ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelId, ProjectStructureModule.ProjectStructureSModelDescriptor>();
   private static ProjectStructureModule INSTANCE;
-  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {};
+  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
   private final SModuleListener myModuleListener = new SModuleAdapter() {
     @Override
     public void moduleChanged(SModule module) {
@@ -69,14 +72,34 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       refreshModule(module, true);
     }
   };
-  private final MPSModuleRepository myRepository;
+  private final SRepositoryExt myRepository;
+
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.project.structure.ProjectStructureModule#getInstance(SRepository) } instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static ProjectStructureModule getInstance() {
     return INSTANCE;
   }
-  public ProjectStructureModule(MPSModuleRepository repository) {
-    myRepository = repository;
-    setModuleReference(PersistenceFacade.getInstance().createModuleReference(MODULE_REF));
+
+  /**
+   * There's single ProjectStructureModule per project, thus if you use Project.getRepository(), you are guaranteed to get an instance. 
+   */
+  @Nullable
+  public static ProjectStructureModule getInstance(@NotNull SRepository repo) {
+    // FIXME likely, shall do it with myModuleRef.resolve(mpsProject.getRepository) 
+    // Generally, I'd prefer plain SModule as return value, however exact instance of the class are needed to access #getModelByModule. 
+    // The only reason to have a helper access method here is to hide module reference we use (so that client code shall not keep MODULE_REF). 
+    return getInstance();
   }
+
+  public ProjectStructureModule(@NotNull SRepositoryExt repository, @NotNull PersistenceFacade persistenceFacade) {
+    myRepository = repository;
+    setModuleReference(persistenceFacade.createModuleReference(MODULE_REF));
+  }
+
   private void refreshModule(SModule module, boolean isDeleted) {
     assertCanChange();
     if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
@@ -96,6 +119,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       createModel(module);
     }
   }
+
   public SModel getModelByModule(SModule module) {
     myRepository.getModelAccess().checkReadAccess();
     if (module == null) {
@@ -105,6 +129,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     ProjectStructureModule.ProjectStructureSModelDescriptor descriptor = myModels.get(ref.getModelId());
     return (descriptor == null ? null : descriptor);
   }
+
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -119,6 +144,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     });
   }
+
   @Override
   public void dispose() {
     // it is disposed as CoreComponent 
@@ -135,6 +161,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     });
     myRepository.removeRepositoryListener(myListener);
   }
+
   public void clearAll() {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
@@ -145,16 +172,19 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     });
   }
+
   private void removeAll() {
-    List<SModel> models = this.getProjectStructureModels();
+    List<SModel> models = getProjectStructureModels();
     for (SModel model : models) {
       removeModel(model);
     }
   }
+
   @Override
   public Set<SLanguage> getUsedLanguages() {
     return Collections.singleton(MetaAdapterFactory.getLanguage(MetaIdFactory.langId(0x86ef829012bb4ca7L, 0x947f093788f263a9L), "jetbrains.mps.lang.project"));
   }
+
   private void removeModel(SModel md) {
     if (myModels.remove(md.getReference().getModelId()) != null) {
       unregisterModel((SModelBase) md);
@@ -163,12 +193,14 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     }
   }
+
   public ProjectStructureModule.ProjectStructureSModelDescriptor createModel(SModule module) {
     ProjectStructureModule.ProjectStructureSModelDescriptor result = new ProjectStructureModule.ProjectStructureSModelDescriptor(getSModelReference(module), module);
     myModels.put(getSModelReference(module).getModelId(), result);
     registerModel(result);
     return result;
   }
+
   private SModelReference getSModelReference(SModule module) {
     SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = (moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null);
@@ -177,7 +209,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   public String toString() {
     return getModuleName();
   }
-  public List<SModel> getProjectStructureModels() {
+  private List<SModel> getProjectStructureModels() {
     return new ArrayList<SModel>(myModels.values());
   }
   @Override
@@ -188,6 +220,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   public SModel resolveInDependencies(SModelId ref) {
     return myModels.get(ref);
   }
+
   public class ProjectStructureSModelDescriptor extends BaseSpecialModelDescriptor {
     private final SModule myModule;
     private ProjectStructureSModelDescriptor(SModelReference ref, SModule module) {
@@ -237,6 +270,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       replaceModelAndFireEvent(oldModel, null);
     }
   }
+
   public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
