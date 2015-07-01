@@ -39,7 +39,7 @@ public class SwitchNodeBuilder__child extends TemplateSwitchBase implements Temp
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error);
+    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Illegal child initializer in NodeBuilder");
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
