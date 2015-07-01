@@ -278,7 +278,9 @@
       <concept id="982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" flags="ng" index="1s_3nv">
         <child id="982871510064032342" name="parameter" index="1s_3oS" />
       </concept>
-      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX" />
+      <concept id="982871510068000147" name="jetbrains.mps.lang.generator.structure.TemplateSwitchMacro" flags="lg" index="1sPUBX">
+        <child id="982871510068000158" name="sourceNodeQuery" index="1sPUBK" />
+      </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
       <concept id="1167756221419" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue" flags="nn" index="3zGtF$" />
       <concept id="1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" flags="in" index="3$xsQk" />
@@ -5072,12 +5074,6 @@
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4ZyFrBZyqkv" role="37wK5m">
-                  <node concept="3VmV3z" id="69EpS2a0zSM" role="2Oq$k0">
-                    <property role="3VnrPo" value="facade" />
-                    <node concept="3uibUv" id="69EpS2a0zSN" role="3Vn4Tt">
-                      <ref role="3uigEE" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
-                    </node>
-                  </node>
                   <node concept="liA8E" id="4ZyFrBZyqkw" role="2OqNvi">
                     <ref role="37wK5l" to="qx6n:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
                     <node concept="Xl_RD" id="4ZyFrBZyqkx" role="37wK5m">
@@ -5125,14 +5121,14 @@
                       </node>
                     </node>
                   </node>
-                </node>
-                <node concept="2OqwBi" id="4ZyFrBZyqkO" role="37wK5m">
-                  <node concept="3VmV3z" id="69EpS2a0wxd" role="2Oq$k0">
+                  <node concept="3VmV3z" id="69EpS2a0zSM" role="2Oq$k0">
                     <property role="3VnrPo" value="facade" />
-                    <node concept="3uibUv" id="69EpS2a0wWi" role="3Vn4Tt">
+                    <node concept="3uibUv" id="69EpS2a0zSN" role="3Vn4Tt">
                       <ref role="3uigEE" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
                     </node>
                   </node>
+                </node>
+                <node concept="2OqwBi" id="4ZyFrBZyqkO" role="37wK5m">
                   <node concept="liA8E" id="4ZyFrBZyqkP" role="2OqNvi">
                     <ref role="37wK5l" to="qx6n:~PersistenceFacade.createNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="createNodeId" />
                     <node concept="Xl_RD" id="4ZyFrBZyqkQ" role="37wK5m">
@@ -5173,6 +5169,12 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                  </node>
+                  <node concept="3VmV3z" id="69EpS2a0wxd" role="2Oq$k0">
+                    <property role="3VnrPo" value="facade" />
+                    <node concept="3uibUv" id="69EpS2a0wWi" role="3Vn4Tt">
+                      <ref role="3uigEE" to="qx6n:~PersistenceFacade" resolve="PersistenceFacade" />
                     </node>
                   </node>
                 </node>
@@ -5402,6 +5404,18 @@
         <node concept="3clFbF" id="4ZyFrBZDL7a" role="gfFT$">
           <node concept="1sPUBX" id="4ZyFrBZDL7s" role="lGtFl">
             <ref role="v9R2y" node="4ZyFrBZ_yy$" resolve="NodeBuilder_child" />
+            <node concept="3NFfHV" id="4IuFl2IUo$K" role="1sPUBK">
+              <node concept="3clFbS" id="4IuFl2IUo$L" role="2VODD2">
+                <node concept="3clFbF" id="4IuFl2IV$dG" role="3cqZAp">
+                  <node concept="2OqwBi" id="4IuFl2IV$gi" role="3clFbG">
+                    <node concept="30H73N" id="4IuFl2IV$dF" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="4IuFl2IV$q0" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tp3r:4IP40Bi2KcQ" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="1UUvTB" id="4ZyFrBZDNSi" role="v9R3O">
               <node concept="1UU6SM" id="4ZyFrBZDNSk" role="1UU7Ll">
                 <node concept="3clFbS" id="4ZyFrBZDNSm" role="2VODD2">
