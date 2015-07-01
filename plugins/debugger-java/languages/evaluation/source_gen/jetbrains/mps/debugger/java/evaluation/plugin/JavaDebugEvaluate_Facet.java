@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.GResource;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -26,7 +28,6 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
@@ -76,6 +77,7 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
               for (GResource res : Sequence.fromIterable(input)) {
                 final SModel originalModel = res.status().getOutputModel();
                 // The code below was copied from TransformingGenerationHandler 
+                final Wrappers._T<SNode> evaluator = new Wrappers._T<SNode>();
                 if (originalModel != null) {
                   TransientModelsModule module = Target_configure.vars(pa.global()).transientModelsProvider().getModule(res.module());
                   final SModel newModel = module.createTransientModel(PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), SModelId.generate(), res.model().getModelName() + "@evaluate"));
@@ -83,19 +85,20 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                     public void run() {
                       CopyUtil.copyModelContent(originalModel, newModel);
                       SModelOperations.validateLanguagesAndImports(newModel, false, false);
-                      SNode evaluator;
-                      evaluator = SModelOperations.getRootByName(newModel, Properties.EVALUATOR_NAME);
-                      if (evaluator != null) {
+                      evaluator.value = SModelOperations.getRootByName(newModel, Properties.EVALUATOR_NAME);
+                      if (evaluator.value != null) {
                         try {
-                          assert SNodeOperations.getModel(evaluator) != null;
-                          TransformatorBuilder.getInstance().build(evaluator, true).transformEvaluator();
+                          assert SNodeOperations.getModel(evaluator.value) != null;
+                          TransformatorBuilder.getInstance().build(evaluator.value, true).transformEvaluator();
                         } catch (Throwable ex) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ex)));
                         }
                       }
                     }
                   });
-                  res.status(new GenerationStatus(res.status().getInputModel(), newModel, res.status().getDependencies(), res.status().isError(), res.status().hasWarnings(), res.status().isCanceled()));
+                  if (evaluator.value != null) {
+                    res.status(new GenerationStatus(res.status().getInputModel(), newModel, res.status().getDependencies(), res.status().isError(), res.status().hasWarnings(), res.status().isCanceled()));
+                  }
                 }
               }
               _output_it4uid_a0a = Sequence.fromIterable(_output_it4uid_a0a).concat(Sequence.fromIterable(input));
