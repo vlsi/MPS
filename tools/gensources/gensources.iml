@@ -859,11 +859,15 @@
     <content url="file://$MODULE_DIR$/../../testbench/modules/substituteType">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testAnnotatedType/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testAnnotatedType/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testOverridingType/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testOverridingType/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testWrappedType/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testWrappedType/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/solutions/testSubstituteType/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testAnnotatedType/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testAnnotatedType/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testOverridingType/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testOverridingType/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testWrappedType/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/languages/testWrappedType/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/substituteType/solutions/testSubstituteType/classes_gen" />
@@ -885,7 +889,6 @@
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDefaultEditor/languages/testDefaultEditor/generator/source_gen" isTestSource="false" />
