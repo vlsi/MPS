@@ -42,7 +42,6 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -147,22 +146,11 @@
     <property role="TrG5h" value="ShowNullDFA" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Show Nullable DFA" />
-    <property role="1teQrl" value="true" />
     <node concept="2S4$dB" id="5GUQLVLhj1D" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="5GUQLVLhj1E" role="1oa70y" />
       <node concept="3Tm1VV" id="5GUQLVLhj1F" role="1B3o_S" />
       <node concept="3Tqbb2" id="5GUQLVLhj1G" role="1tU5fm" />
-    </node>
-    <node concept="1DS2jV" id="5GUQLVLhj1H" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="5GUQLVLhj1I" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="7ex9EVq1p0c" role="1NuT2Z">
-      <property role="TrG5h" value="ideaProject" />
-      <ref role="1DUlNI" to="nx1:~CommonDataKeys.PROJECT" resolve="PROJECT" />
-      <node concept="1oajcY" id="7ex9EVq1p0d" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="59D800tV42N" role="1NuT2Z">
       <property role="TrG5h" value="project" />
@@ -281,16 +269,10 @@
                 <node concept="37vLTw" id="3GM_nagTucf" role="37wK5m">
                   <ref role="3cqZAo" node="1ekf28usyL3" resolve="graph" />
                 </node>
-                <node concept="2OqwBi" id="1ekf28usArG" role="37wK5m">
-                  <node concept="2WthIp" id="1ekf28usArH" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="1ekf28usAsa" role="2OqNvi">
-                    <ref role="2WH_rO" node="5GUQLVLhj1H" resolve="context" />
-                  </node>
-                </node>
                 <node concept="2OqwBi" id="7ex9EVq1g$C" role="37wK5m">
                   <node concept="2WthIp" id="7ex9EVq1g$D" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7ex9EVq1p0f" role="2OqNvi">
-                    <ref role="2WH_rO" node="7ex9EVq1p0c" resolve="ideaProject" />
+                  <node concept="1DTwFV" id="4F1sLpFpH68" role="2OqNvi">
+                    <ref role="2WH_rO" node="59D800tV42N" resolve="project" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="4sNt2MbMlon" role="37wK5m">
