@@ -84,11 +84,9 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.ant.execution.Ant_Command" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeRunTask" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployScript" />
     <classNode dependClassName="jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />

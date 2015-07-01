@@ -9356,33 +9356,36 @@
           <node concept="3clFbS" id="3KKoaE5GAT2" role="SfCbr">
             <node concept="3clFbF" id="3KKoaE5G9t0" role="3cqZAp">
               <node concept="37vLTI" id="3KKoaE5GbL9" role="3clFbG">
-                <node concept="2LYoN1" id="3KKoaE5GT4R" role="37vLTx">
-                  <node concept="2LYoGx" id="7xMU3i03Sx8" role="2LYoN0">
-                    <ref role="3rFKlk" to="ximz:j$XAJDK0Ct" resolve="ant" />
-                    <node concept="2LYoGL" id="7xMU3i03Sx9" role="2LYoGw">
-                      <ref role="2LYoGK" to="ximz:j$XAJDK0Dr" resolve="antFilePath" />
-                      <node concept="37vLTw" id="4oL4a6snCNg" role="2LYoGN">
-                        <ref role="3cqZAo" node="4oL4a6snrZQ" resolve="deployScriptLocation" />
-                      </node>
-                    </node>
-                    <node concept="2LYoGL" id="7xMU3i03Sxd" role="2LYoGw">
-                      <ref role="2LYoGK" to="ximz:j$XAJDK0D$" resolve="targetName" />
-                      <node concept="Xl_RD" id="7xMU3i03Sxe" role="2LYoGN">
-                        <property role="Xl_RC" value="buildDependents assemble" />
-                      </node>
+                <node concept="2LYoGx" id="7xMU3i03Sx8" role="37vLTx">
+                  <ref role="3rFKlk" to="ximz:j$XAJDK0Ct" resolve="ant" />
+                  <node concept="2LYoGL" id="7xMU3i03Sx9" role="2LYoGw">
+                    <ref role="2LYoGK" to="ximz:j$XAJDK0Dr" resolve="antFilePath" />
+                    <node concept="37vLTw" id="4oL4a6snCNg" role="2LYoGN">
+                      <ref role="3cqZAo" node="4oL4a6snrZQ" resolve="deployScriptLocation" />
                     </node>
                   </node>
-                  <node concept="2ShNRf" id="7xMU3i04TQd" role="2LYoN3">
-                    <node concept="1pGfFk" id="7xMU3i051SB" role="2ShVmc">
-                      <ref role="37wK5l" to="eibu:3oW7HLfqDhj" resolve="ConsoleProcessListener" />
-                      <node concept="37vLTw" id="7xMU3i051SE" role="37wK5m">
-                        <ref role="3cqZAo" node="7xMU3i04Cyh" resolve="console" />
-                      </node>
+                  <node concept="2LYoGL" id="7xMU3i03Sxd" role="2LYoGw">
+                    <ref role="2LYoGK" to="ximz:j$XAJDK0D$" resolve="targetName" />
+                    <node concept="Xl_RD" id="7xMU3i03Sxe" role="2LYoGN">
+                      <property role="Xl_RC" value="buildDependents assemble" />
                     </node>
                   </node>
                 </node>
                 <node concept="37vLTw" id="3KKoaE5GbLd" role="37vLTJ">
                   <ref role="3cqZAo" node="7xMU3i03Sx7" resolve="process" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="4wBuV7D4DzK" role="3cqZAp">
+              <node concept="2OqwBi" id="4wBuV7D4DJd" role="3clFbG">
+                <node concept="37vLTw" id="4wBuV7D4DzI" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7xMU3i04Cyh" resolve="console" />
+                </node>
+                <node concept="liA8E" id="4wBuV7D4EUp" role="2OqNvi">
+                  <ref role="37wK5l" to="l9cs:~ConsoleView.attachToProcess(com.intellij.execution.process.ProcessHandler):void" resolve="attachToProcess" />
+                  <node concept="37vLTw" id="4wBuV7D4F4g" role="37wK5m">
+                    <ref role="3cqZAo" node="7xMU3i03Sx7" resolve="process" />
+                  </node>
                 </node>
               </node>
             </node>

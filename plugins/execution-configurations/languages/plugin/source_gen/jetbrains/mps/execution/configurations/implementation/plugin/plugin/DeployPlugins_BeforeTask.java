@@ -18,9 +18,7 @@ import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.execution.api.commands.OutputRedirector;
 import jetbrains.mps.ant.execution.Ant_Command;
-import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import com.intellij.execution.ExecutionException;
 import org.apache.log4j.Level;
 import com.intellij.execution.Executor;
@@ -95,7 +93,8 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
 
       final Wrappers._T<ProcessHandler> process = new Wrappers._T<ProcessHandler>();
       try {
-        process.value = OutputRedirector.redirect(new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation), new ConsoleProcessListener(console));
+        process.value = new Ant_Command().setTargetName_String("buildDependents assemble").createProcess(deployScriptLocation);
+        console.attachToProcess(process.value);
       } catch (ExecutionException e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can not deploy plugins", e);
