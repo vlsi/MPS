@@ -141,10 +141,12 @@
   <node concept="24kQdi" id="536fTXa3n48">
     <ref role="1XX52x" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
     <node concept="3EZMnI" id="536fTXa3qK2" role="2wV5jI">
+      <property role="1cu_pB" value="2" />
       <node concept="3F0ifn" id="536fTXa3qK9" role="3EZMnx">
         <property role="3F0ifm" value="migration" />
       </node>
       <node concept="3F0A7n" id="536fTXa3qKf" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0ifn" id="536fTXa3qKp" role="3EZMnx">
