@@ -357,9 +357,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               if (ex.isInfo()) {
                 getLogger().info(ruleNode, messageText);
               } else if (ex.isWarning()) {
-                getLogger().warning(ruleNode, messageText);
+                getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
               } else {
-                getLogger().error(ruleNode, messageText);
+                getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
               }
             }
           } finally {

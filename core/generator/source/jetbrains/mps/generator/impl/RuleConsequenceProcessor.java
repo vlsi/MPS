@@ -134,6 +134,7 @@ public abstract class RuleConsequenceProcessor {
         throw myAbandonInputException;
       }
       if (myDismissRuleException != null) {
+        myDismissRuleException.setTemplateContext(context);
         throw myDismissRuleException;
       }
       throw new IllegalStateException();
