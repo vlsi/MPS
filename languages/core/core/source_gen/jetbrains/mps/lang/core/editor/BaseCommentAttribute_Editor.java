@@ -10,10 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
@@ -37,48 +33,36 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
     SingleRoleCellProvider provider = new BaseCommentAttribute_Editor.commentedNodeSingleRoleHandler_si1ien_a0(node, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), editorContext);
     return provider.createCell();
   }
-  private static class commentedNodeSingleRoleHandler_si1ien_a0 extends SingleRoleCellProvider {
+  private class commentedNodeSingleRoleHandler_si1ien_a0 extends SingleRoleCellProvider {
     public commentedNodeSingleRoleHandler_si1ien_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
-    public EditorCell createNodeCell(EditorContext editorContext, SNode child) {
-      EditorCell editorCell = super.createNodeCell(editorContext, child);
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
       installCellInfo(child, editorCell);
-      SNode node = myOwnerNode;
+      return editorCell;
+    }
+    public void installCellInfo(SNode node, EditorCell editorCell) {
+      if (node != null) {
+      }
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("commentedNode");
       }
-      return editorCell;
-    }
-    public void installCellInfo(SNode node, EditorCell cell) {
-      if (node != null) {
-        cell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, ((SNode) myContainmentLink.getDeclarationNode()), node));
-        cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, ((SNode) myContainmentLink.getDeclarationNode()), node));
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
-          cell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(SNodeOperations.getParent(node)));
-          cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(SNodeOperations.getParent(node)));
-        }
-      }
-      cell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
     }
 
 
     @Override
     protected EditorCell createEmptyCell() {
-      EditorContext editorContext = myEditorContext;
       EditorCell editorCell = super.createEmptyCell();
       editorCell.setCellId("empty_commentedNode");
       installCellInfo(null, editorCell);
-      SNode node = myOwnerNode;
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("commentedNode");
-      }
       return editorCell;
-
     }
 
-    protected String getRole() {
-      return "commentedNode";
+    protected String getNoTargetText() {
+      return "<no " + "commentedNode" + ">";
     }
+
   }
 }
