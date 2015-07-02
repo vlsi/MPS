@@ -8,6 +8,7 @@
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
+    <import index="g3pv" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.impl.cellActions(MPS.Editor/jetbrains.mps.editor.runtime.impl.cellActions@java_stub)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
@@ -107,6 +108,7 @@
       <concept id="1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" flags="sg" stub="3708815482283559694" index="1HlG4h">
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
+      <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
       <concept id="1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" flags="lg" index="3Xmtl4">
         <child id="1950447826683828796" name="target" index="3XvnJa" />
@@ -116,9 +118,13 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
+        <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
@@ -139,6 +145,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -430,6 +437,32 @@
       <node concept="2w$q5c" id="4NfTi62PfCP" role="2whIAn">
         <node concept="2aJ2om" id="4NfTi62PfCQ" role="2w$qW5">
           <ref role="2$4xQ3" node="3Rc6kd0K$RQ" resolve="comment" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="5FzO4t9jA_b">
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="BaseCommentAttribute_Uncomment" />
+    <ref role="1h_SK9" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+    <node concept="1hA7zw" id="5FzO4t9jA_M" role="1h_SK8">
+      <property role="1hAc7j" value="comment_out_action_id" />
+      <node concept="1hAIg9" id="5FzO4t9jA_N" role="1hA7z_">
+        <node concept="3clFbS" id="5FzO4t9jA_O" role="2VODD2">
+          <node concept="3clFbF" id="5FzO4t9jBka" role="3cqZAp">
+            <node concept="2OqwBi" id="5FzO4t9jBz2" role="3clFbG">
+              <node concept="2ShNRf" id="5FzO4t9jBk8" role="2Oq$k0">
+                <node concept="1pGfFk" id="5FzO4t9jBq_" role="2ShVmc">
+                  <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="Cell_Action_Uncomment" />
+                  <node concept="0IXxy" id="5FzO4t9jBwA" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="liA8E" id="5FzO4t9jBHc" role="2OqNvi">
+                <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="5FzO4t9jBHT" role="37wK5m" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

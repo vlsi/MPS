@@ -43,8 +43,6 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
       return editorCell;
     }
     public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("commentedNode");
