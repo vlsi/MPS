@@ -384,9 +384,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       env.getTrace().trace(inputNode.getNodeId(), GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
 
       final boolean inputIsRoot = inputNode.getParent() == null;
-      final boolean preserveInputRoot = inputIsRoot && rule.keepSourceRoot();
+      // if we picked a non-root node to produce a root, it would get processed later as part of copyRootInputNode(), hence inputPersists == true.
+      final boolean inputPersists = !inputIsRoot || rule.keepSourceRoot();
       for (SNode outputNode : outputNodes) {
-        registerRoot(new GeneratedRootDescriptor(outputNode, inputNode, preserveInputRoot, rule.getRuleNode()));
+        registerRoot(new GeneratedRootDescriptor(outputNode, inputNode, inputPersists, rule.getRuleNode()));
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
         // in addition, this copies TracingUtil.ORIGINAL_INPUT_NODE, so that outputNodes
@@ -629,6 +630,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (myDeltaBuilder != null) {
       if (rd.myIsInputPreserved) {
         // if a new root comes from root mapping rule with keepRoot == true, pretend it's completely new root
+        // if a new root comes from a non-root node, treat it as brand-new root, too. Input node in this case might
+        // be later processed by the rest of the rules (copied or reduced).
         // FIXME the whole thing with registerRoot shall be refactored - there's little sense to forget about context
         // root being added at, and to restore this knowledge inside DeltaBuilder.registerRoot based on two node values only.
         myDeltaBuilder.registerRoot(null, rd.myOutputRoot);
@@ -737,7 +740,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     final SNodeReference myTemplateNode;
     // true if root is a copy of a root in input model
     final boolean myIsCopied;
-    // true iff outputRoot is created from inputNode which is root and is kept in the output model as well.
+    /**
+     * true iff outputRoot is created from an inputNode which is either root and is kept in the output model
+     * or from non-root node that might get copied/reduced afterwards.
+     * IOW, indicates if the new myOutputRoot replaced a root or not.
+     */
     final boolean myIsInputPreserved;
 
     private GeneratedRootDescriptor(@NotNull SNode outputRoot, @Nullable SNode input, boolean isInputPreserved, SNodeReference templateNode, boolean isCopied) {
@@ -754,8 +761,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // new root produced based on existing node, possibly replacing it
-    public GeneratedRootDescriptor(@NotNull SNode outputRoot, @NotNull SNode input, boolean preserveInputRoot, @NotNull SNodeReference templateNode) {
-      this(outputRoot, input, preserveInputRoot, templateNode, false);
+    public GeneratedRootDescriptor(@NotNull SNode outputRoot, @NotNull SNode input, boolean inputPersists, @NotNull SNodeReference templateNode) {
+      this(outputRoot, input, inputPersists, templateNode, false);
     }
 
     // copy of input root in the output model
@@ -910,7 +917,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
         if (refTarget.getModel() != null && refTarget.getModel().equals(myInputModel) || myAdditionalInputNodes.contains(refTarget)) {
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, refTarget);
-          new PostponedReference(inputReference.getLink(), outputNode, refInfo).setAndRegister(myEnv.getGenerator());
+          new PostponedReference(inputReference.getLink(), outputNode, refInfo).registerWith(myEnv.getGenerator());
         } else if (refTarget.getModel() != null) {
           SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), refTarget);
         } else {

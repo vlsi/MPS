@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class ReloadableModuleBase extends AbstractModule implements ReloadableMo
   private final ClassLoaderManager myManager = ClassLoaderManager.getInstance();
   private final List<SModuleDependenciesListener> myListeners = new CopyOnWriteArrayList<SModuleDependenciesListener>();
 
-  protected ReloadableModuleBase(IFile file) {
+  protected ReloadableModuleBase(@Nullable IFile file) {
     super(file);
   }
 

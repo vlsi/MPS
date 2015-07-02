@@ -86,9 +86,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
-  private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner() {
-
-  };
+  private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner();
 
   @Before
   public void beforeTest() throws IOException {

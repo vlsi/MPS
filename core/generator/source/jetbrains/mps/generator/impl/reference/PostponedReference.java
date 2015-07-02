@@ -41,9 +41,28 @@ public class PostponedReference extends jetbrains.mps.smodel.SReference {
     myReferenceInfo = referenceInfo;
   }
 
-  public void setAndRegister(@NotNull TemplateGenerator generator) {
+  /*
+   * We used to set postponed references in output model nodes right away. With in-place transformation,
+   * however, when input model is the same as output, certain scenarios might lead to ordering dependency
+   * between postponed references.
+   * E.g. when DeltaBuilder.prepareReferences() replaces a reference in input-output model
+   * with PostponedReference, and one of ReferenceMacro resolvers already in the list of
+   * PostponedReferenceUpdate depends on that reference (i.e. ref1 in <code>genContext.get output LABEL for (node.ref1.value)</code>)
+   * During PostponedReferenceUpdate, RM has no chance to resolve its target as it first needs a PostponedReference far behind it in the
+   * list to get resolved.
+   *
+   * Therefore, we no longer change references of a source node, but merely collect references for later processing. Of course,
+   * we could have done this conditionally for in-place transformation only, but generally I don't see a reason not to do the
+   * same in a separate input/output models case.
+   *
+   * This change has an amusing side affect that no PostponedReference could ever stay in a model. On one hand, this avoids
+   * cryptic errors about unexpected PostponedReference and helps to eliminate checks for PR in a transient model. OTOH, potential
+   * problems are easy to overlook, and hard to trace down (i.e. no reference is created where previous generator would fail)
+   *
+   * @see https://youtrack.jetbrains.com/issue/MPS-22271
+   */
+  public void registerWith(@NotNull TemplateGenerator generator) {
     myGenerator = generator;
-    getSourceNode().setReference(getLink(), this);
     generator.register(this);
   }
 

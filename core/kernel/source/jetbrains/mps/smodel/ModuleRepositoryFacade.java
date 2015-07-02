@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,17 +159,17 @@ public class ModuleRepositoryFacade implements CoreComponent {
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
     LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
-      return newLanguageInstance(handle, owner);
+      return INSTANCE.newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-      return newSolutionInstance(handle, owner);
+      return INSTANCE.newSolutionInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-      return newDevKitInstance(handle, owner);
+      return INSTANCE.newDevKitInstance(handle, owner);
     } else {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
   }
 
-  private static Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+  private Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
     assert descriptor != null;
     assert descriptor.getId() != null;
@@ -182,7 +182,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return language;
   }
 
-  private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+  private Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
     assert descriptor != null;
     assert descriptor.getId() != null;
@@ -190,14 +190,14 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return registerModule(new Solution(descriptor, handle.getFile()), moduleOwner);
   }
 
-  private static DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+  private DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
     assert descriptor != null;
     assert descriptor.getId() != null;
     return registerModule(new DevKit(descriptor, handle.getFile()), moduleOwner);
   }
 
-  private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    return MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
+  private <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
+    return REPO.registerModule(module, moduleOwner);
   }
 }

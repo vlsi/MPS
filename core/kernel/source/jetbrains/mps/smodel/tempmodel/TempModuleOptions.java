@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -49,9 +50,10 @@ public abstract class TempModuleOptions {
   }
 
   private static class NewModuleOptions extends TempModuleOptions {
-    private Set<ModelRootDescriptor> myModelRoots;
-    private boolean myWithSourceGen;
-    private boolean myWithJavaFacet;
+    private final Set<ModelRootDescriptor> myModelRoots;
+    private final boolean myWithSourceGen;
+    private final boolean myWithJavaFacet;
+    private final SRepositoryExt myRepository;
 
     private TempModule myCreatedModule;
 
@@ -59,19 +61,20 @@ public abstract class TempModuleOptions {
       myModelRoots = modelRoots;
       myWithSourceGen = withSourceGen;
       myWithJavaFacet = withJavaFacet;
+      myRepository = MPSModuleRepository.getInstance();
     }
 
     @Override
     public SModule createModule() {
       myCreatedModule = new TempModule(myModelRoots, myWithSourceGen, myWithJavaFacet);
-      TempModule regModule = MPSModuleRepository.getInstance().registerModule(myCreatedModule, myCreatedModule);
+      TempModule regModule = myRepository.registerModule(myCreatedModule, myCreatedModule);
       assert myCreatedModule == regModule : "Temporary module with same id already registered";
       return myCreatedModule;
     }
 
     @Override
     public void disposeModule() {
-      MPSModuleRepository.getInstance().unregisterModule(myCreatedModule, myCreatedModule);
+      myRepository.unregisterModule(myCreatedModule, myCreatedModule);
     }
   }
 

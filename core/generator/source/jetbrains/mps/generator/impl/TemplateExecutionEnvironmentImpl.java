@@ -236,7 +236,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
-    new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).setAndRegister(generator);
+    new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).registerWith(generator);
   }
 
   @Override
@@ -247,7 +247,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void resolve(@NotNull ReferenceResolver2 resolver) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
-    new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).setAndRegister(generator);
+    new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).registerWith(generator);
   }
 
   /*

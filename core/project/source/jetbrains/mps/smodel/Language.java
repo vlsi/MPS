@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.classloading.ModuleIsNotLoadableException;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -90,7 +91,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   private ClassLoader myStubsLoader = new StubsClassLoader();
 
-  protected Language(LanguageDescriptor descriptor, IFile file) {
+  protected Language(@NotNull LanguageDescriptor descriptor, @Nullable IFile file) {
     super(file);
     myLanguageDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
@@ -190,7 +191,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
         getModuleDescriptor() != null && getModuleDescriptor().getGenerators() != null ? getModuleDescriptor().getGenerators().iterator() :
             Collections.<GeneratorDescriptor>emptyList().iterator();
 
-    MPSModuleRepository moduleRepository = (MPSModuleRepository) getRepository();
+    SRepositoryExt moduleRepository = (SRepositoryExt) getRepository();
     while (generatorDescriptors.hasNext()) {
       GeneratorDescriptor nextDescriptor = generatorDescriptors.next();
       Generator nextGenerator = null;

@@ -25,7 +25,6 @@
     <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
     <import index="vsqj" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
-    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -35,7 +34,6 @@
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
-        <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083461638" name="executeFunction" index="tncku" />
         <child id="1217413222820" name="parameter" index="1NuT2Z" />
       </concept>
@@ -229,7 +227,6 @@
     <property role="TrG5h" value="ShowDFA" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Show Data Flow Graph" />
-    <property role="1teQrl" value="true" />
     <node concept="tnohg" id="4KDfkUwM7DY" role="tncku">
       <node concept="3clFbS" id="4KDfkUwM7DZ" role="2VODD2">
         <node concept="3cpWs8" id="4KDfkUwM7E0" role="3cqZAp">
@@ -331,21 +328,10 @@
                 <node concept="37vLTw" id="3GM_nagT$2g" role="37wK5m">
                   <ref role="3cqZAo" node="1ekf28usyL3" resolve="graph" />
                 </node>
-                <node concept="2OqwBi" id="4KDfkUwM7Ed" role="37wK5m">
-                  <node concept="2WthIp" id="4KDfkUwM7Ee" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="4KDfkUwM7Ef" role="2OqNvi">
-                    <ref role="2WH_rO" node="4KDfkUwM7Ej" resolve="context" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="3D0DuOpy10c" role="37wK5m">
-                  <node concept="2OqwBi" id="3D0DuOpy0zQ" role="2Oq$k0">
-                    <node concept="2WthIp" id="3D0DuOpy0zT" role="2Oq$k0" />
-                    <node concept="1DTwFV" id="3D0DuOpy0zV" role="2OqNvi">
-                      <ref role="2WH_rO" node="3D0DuOpxYDJ" resolve="mpsProject" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="3D0DuOpy1_c" role="2OqNvi">
-                    <ref role="37wK5l" to="jrbx:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                <node concept="2OqwBi" id="3D0DuOpy0zQ" role="37wK5m">
+                  <node concept="2WthIp" id="3D0DuOpy0zT" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="3D0DuOpy0zV" role="2OqNvi">
+                    <ref role="2WH_rO" node="3D0DuOpxYDJ" resolve="mpsProject" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="4sNt2MbMjht" role="37wK5m">
@@ -359,11 +345,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="4KDfkUwM7Ej" role="1NuT2Z">
-      <property role="TrG5h" value="context" />
-      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.OPERATION_CONTEXT" resolve="OPERATION_CONTEXT" />
-      <node concept="1oajcY" id="4KDfkUwM7Ek" role="1oa70y" />
     </node>
     <node concept="2S4$dB" id="4KDfkUwM7El" role="1NuT2Z">
       <property role="TrG5h" value="node" />

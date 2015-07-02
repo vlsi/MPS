@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
@@ -79,8 +80,7 @@ import java.util.UUID;
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
-  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
-  };
+  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner();
 
   private static Environment CREATED_ENV;
 
@@ -166,7 +166,9 @@ public class GenerationTestBase {
     p.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        MPSModuleRepository.getInstance().registerModule(tm, myOwner);
+        // FIXME once ProjectRepository implements SRepositoryExt, take one from p
+        final SRepositoryExt repo = MPSModuleRepository.getInstance();
+        repo.registerModule(tm, myOwner);
       }
     });
 

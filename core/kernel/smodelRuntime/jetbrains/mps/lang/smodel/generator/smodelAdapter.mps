@@ -4542,6 +4542,47 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4F1sLpFr2iY" role="3cqZAp">
+          <node concept="3cpWsn" id="4F1sLpFr2iZ" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <node concept="3uibUv" id="4F1sLpFr2iV" role="1tU5fm">
+              <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2OqwBi" id="4F1sLpFr2j0" role="33vP2m">
+              <node concept="37vLTw" id="4F1sLpFr2j1" role="2Oq$k0">
+                <ref role="3cqZAo" node="64mzzgysvs4" resolve="model" />
+              </node>
+              <node concept="liA8E" id="4F1sLpFr2j2" role="2OqNvi">
+                <ref role="37wK5l" to="ec5l:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4F1sLpFr2Cz" role="3cqZAp">
+          <node concept="3clFbS" id="4F1sLpFr2C_" role="3clFbx">
+            <node concept="3cpWs6" id="4F1sLpFr2ZE" role="3cqZAp">
+              <node concept="10Nm6u" id="4F1sLpFr3fi" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="22lmx$" id="4F1sLpFrpHj" role="3clFbw">
+            <node concept="3clFbC" id="4F1sLpFr2Se" role="3uHU7B">
+              <node concept="37vLTw" id="4F1sLpFr2MH" role="3uHU7B">
+                <ref role="3cqZAo" node="4F1sLpFr2iZ" resolve="repo" />
+              </node>
+              <node concept="10Nm6u" id="4F1sLpFr2Z4" role="3uHU7w" />
+            </node>
+            <node concept="3clFbC" id="4F1sLpFrpSd" role="3uHU7w">
+              <node concept="10Nm6u" id="4F1sLpFrpTq" role="3uHU7w" />
+              <node concept="2YIFZM" id="4F1sLpFrpOx" role="3uHU7B">
+                <ref role="37wK5l" to="itts:~ProjectStructureModule.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.project.structure.ProjectStructureModule" resolve="getInstance" />
+                <ref role="1Pybhc" to="itts:~ProjectStructureModule" resolve="ProjectStructureModule" />
+                <node concept="37vLTw" id="4F1sLpFrpOy" role="37wK5m">
+                  <ref role="3cqZAo" node="4F1sLpFr2iZ" resolve="repo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="7Jb9ybfPGV7" role="3cqZAp">
           <node concept="3clFbS" id="7Jb9ybfPGV8" role="3clFbx">
             <node concept="3cpWs8" id="7Jb9ybfPOP4" role="3cqZAp">
@@ -4573,7 +4614,10 @@
                 <node concept="2OqwBi" id="7Jb9ybfPOPj" role="33vP2m">
                   <node concept="2YIFZM" id="7Jb9ybfPOPk" role="2Oq$k0">
                     <ref role="1Pybhc" to="itts:~ProjectStructureModule" resolve="ProjectStructureModule" />
-                    <ref role="37wK5l" to="itts:~ProjectStructureModule.getInstance():jetbrains.mps.project.structure.ProjectStructureModule" resolve="getInstance" />
+                    <ref role="37wK5l" to="itts:~ProjectStructureModule.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.project.structure.ProjectStructureModule" resolve="getInstance" />
+                    <node concept="37vLTw" id="4F1sLpFrpwc" role="37wK5m">
+                      <ref role="3cqZAo" node="4F1sLpFr2iZ" resolve="repo" />
+                    </node>
                   </node>
                   <node concept="liA8E" id="7Jb9ybfPOPl" role="2OqNvi">
                     <ref role="37wK5l" to="itts:~ProjectStructureModule.getModelByModule(org.jetbrains.mps.openapi.module.SModule):org.jetbrains.mps.openapi.model.SModel" resolve="getModelByModule" />
@@ -4695,8 +4739,11 @@
                   <node concept="H_c77" id="2qlyicVrB4p" role="1tU5fm" />
                   <node concept="2OqwBi" id="2qlyicVrC_5" role="33vP2m">
                     <node concept="2YIFZM" id="2qlyicVrC_4" role="2Oq$k0">
-                      <ref role="37wK5l" to="itts:~ProjectStructureModule.getInstance():jetbrains.mps.project.structure.ProjectStructureModule" resolve="getInstance" />
                       <ref role="1Pybhc" to="itts:~ProjectStructureModule" resolve="ProjectStructureModule" />
+                      <ref role="37wK5l" to="itts:~ProjectStructureModule.getInstance(org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.project.structure.ProjectStructureModule" resolve="getInstance" />
+                      <node concept="37vLTw" id="4F1sLpFrpDW" role="37wK5m">
+                        <ref role="3cqZAo" node="4F1sLpFr2iZ" resolve="repo" />
+                      </node>
                     </node>
                     <node concept="liA8E" id="2qlyicVrCPP" role="2OqNvi">
                       <ref role="37wK5l" to="itts:~ProjectStructureModule.getModelByModule(org.jetbrains.mps.openapi.module.SModule):org.jetbrains.mps.openapi.model.SModel" resolve="getModelByModule" />
