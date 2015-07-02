@@ -432,6 +432,7 @@
     <node concept="3EZMnI" id="4NfTi62PfCM" role="2wV5jI">
       <node concept="3F1sOY" id="4NfTi62PfCN" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:2ETBKOyieyt" />
+        <ref role="1ERwB7" node="5FzO4t9jA_b" resolve="BaseCommentAttribute_Uncomment" />
       </node>
       <node concept="l2Vlx" id="4NfTi62PfCO" role="2iSdaV" />
       <node concept="2w$q5c" id="4NfTi62PfCP" role="2whIAn">
@@ -460,6 +461,27 @@
               <node concept="liA8E" id="5FzO4t9jBHc" role="2OqNvi">
                 <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                 <node concept="1Q80Hx" id="5FzO4t9jBHT" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1hA7zw" id="4aotOFCaJWD" role="1h_SK8">
+      <property role="1hAc7j" value="uncomment_action_id" />
+      <node concept="1hAIg9" id="4aotOFCaJWE" role="1hA7z_">
+        <node concept="3clFbS" id="4aotOFCaJWF" role="2VODD2">
+          <node concept="3clFbF" id="4aotOFCaJXH" role="3cqZAp">
+            <node concept="2OqwBi" id="4aotOFCaJXI" role="3clFbG">
+              <node concept="2ShNRf" id="4aotOFCaJXJ" role="2Oq$k0">
+                <node concept="1pGfFk" id="4aotOFCaJXK" role="2ShVmc">
+                  <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="Cell_Action_Uncomment" />
+                  <node concept="0IXxy" id="4aotOFCaJXL" role="37wK5m" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4aotOFCaJXM" role="2OqNvi">
+                <ref role="37wK5l" to="g3pv:~Cell_Action_Uncomment.execute(jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                <node concept="1Q80Hx" id="4aotOFCaJXN" role="37wK5m" />
               </node>
             </node>
           </node>

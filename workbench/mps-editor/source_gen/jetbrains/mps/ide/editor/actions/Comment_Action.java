@@ -10,11 +10,18 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.openapi.editor.selection.MultipleSelection;
+import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 
-public class CommentOut_Action extends BaseAction {
+public class Comment_Action extends BaseAction {
   private static final Icon ICON = null;
-  public CommentOut_Action() {
+  public Comment_Action() {
     super("Comment Out", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -46,10 +53,26 @@ public class CommentOut_Action extends BaseAction {
         return false;
       }
     }
+    {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection().executeAction(CellActionType.COMMENT);
+    Selection selection = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection();
+    boolean uncomment = true;
+    if (selection instanceof MultipleSelection || selection instanceof EditorCellSelection || (selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection())) {
+      uncomment = false;
+    }
+    uncomment = uncomment && SNodeOperations.getNodeAncestor(event.getData(MPSCommonDataKeys.NODE), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
+    if (uncomment) {
+      selection.executeAction(CellActionType.UNCOMMENT);
+    } else {
+      selection.executeAction(CellActionType.COMMENT);
+    }
   }
 }
