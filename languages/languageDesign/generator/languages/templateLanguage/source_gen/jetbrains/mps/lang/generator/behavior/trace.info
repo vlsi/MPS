@@ -145,7 +145,7 @@
       <unit at="9,0,23,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_BehaviorDescriptor" />
     </file>
     <file name="MapSrcNodeMacro_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
     </file>
     <file name="MappingConfiguration_BehaviorDescriptor.java">
       <unit at="17,0,52,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
@@ -2740,6 +2740,89 @@
         <var name="thisNode" id="650531548511609558" />
       </scope>
       <unit id="650531548511609558" at="7,0,11,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6635545314668025207">
+    <file name="MapSrcNodeMacro_Behavior.java">
+      <node id="6635545314668025525" at="17,5,18,107" concept="9" />
+      <node id="6635545314668025525" at="18,107,19,317" concept="9" />
+      <node id="6635545314668025536" at="20,43,21,80" concept="10" />
+      <node id="6635545314668025525" at="22,12,23,7" concept="0" />
+      <node id="6635545314668025538" at="24,5,25,16" concept="10" />
+      <node id="6635545314668025527" at="28,0,29,0" concept="5" trace="patternVar_concept" />
+      <node id="6635545314668025527" at="31,34,32,150" concept="10" />
+      <node id="6635545314668025527" at="35,7,36,54" concept="9" />
+      <node id="6635545314668025527" at="37,201,38,23" concept="10" />
+      <node id="6635545314668025527" at="39,9,40,196" concept="0" />
+      <node id="6635545314668025527" at="39,9,40,196" concept="4" />
+      <node id="6635545314668025527" at="41,7,42,18" concept="10" />
+      <node id="6635545314668025527" at="44,40,45,19" concept="10" />
+      <node id="6635545314668025527" at="48,69,49,81" concept="4" />
+      <node id="6635545314668025527" at="53,51,54,34" concept="10" />
+      <node id="6635545314668025527" at="55,7,56,18" concept="10" />
+      <node id="6635545314668025207" at="14,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6635545314668025527" at="29,0,31,0" concept="2" trace="Pattern_untfvr_a0a0a0a1#()V" />
+      <node id="6635545314668025527" at="58,0,60,0" concept="8" trace="performActions#(Ljava/lang/Object;)V" />
+      <node id="6635545314668025527" at="31,0,34,0" concept="8" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SConcept;" />
+      <node id="6635545314668025527" at="36,54,39,9" concept="7" />
+      <node id="6635545314668025527" at="44,0,47,0" concept="8" trace="hasAntiquotations#()Z" />
+      <node id="6635545314668025527" at="47,71,50,7" concept="7" />
+      <node id="6635545314668025527" at="52,51,55,7" concept="0" />
+      <node id="6635545314668025527" at="52,51,55,7" concept="7" />
+      <node id="6635545314668025525" at="19,317,23,7" concept="7" />
+      <node id="6635545314668025527" at="36,54,40,196" concept="0" />
+      <node id="6635545314668025527" at="47,0,52,0" concept="8" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+      <node id="6635545314668025527" at="52,0,58,0" concept="8" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+      <node id="6635545314668025527" at="34,45,41,7" concept="0" />
+      <node id="6635545314668025525" at="16,91,24,5" concept="0" />
+      <node id="6635545314668025527" at="34,0,44,0" concept="8" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6635545314668025207" at="16,0,27,0" concept="13" trace="virtual_getInputNodeTypeInsideOfMacro_1213877290799#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6635545314668025209" at="14,43,14,43" />
+      <scope id="6635545314668025527" at="29,38,29,38" />
+      <scope id="6635545314668025527" at="58,42,58,42" />
+      <scope id="6635545314668025535" at="20,43,21,80" />
+      <scope id="6635545314668025527" at="31,34,32,150" />
+      <scope id="6635545314668025527" at="37,201,38,23" />
+      <scope id="6635545314668025527" at="39,9,40,196" />
+      <scope id="6635545314668025527" at="44,40,45,19" />
+      <scope id="6635545314668025527" at="48,69,49,81" />
+      <scope id="6635545314668025527" at="53,51,54,34" />
+      <scope id="6635545314668025207" at="14,0,16,0">
+        <var name="thisNode" id="6635545314668025207" />
+      </scope>
+      <scope id="6635545314668025527" at="29,0,31,0" />
+      <scope id="6635545314668025527" at="58,0,60,0">
+        <var name="o" id="6635545314668025527" />
+      </scope>
+      <scope id="6635545314668025527" at="31,0,34,0" />
+      <scope id="6635545314668025527" at="44,0,47,0" />
+      <scope id="6635545314668025527" at="47,71,50,7" />
+      <scope id="6635545314668025527" at="52,51,55,7" />
+      <scope id="6635545314668025527" at="36,54,40,196" />
+      <scope id="6635545314668025527" at="52,51,56,18" />
+      <scope id="6635545314668025527" at="35,7,40,196">
+        <var name="nodeToMatch_untfvr_a0a0a0" id="6635545314668025527" />
+      </scope>
+      <scope id="6635545314668025527" at="47,0,52,0">
+        <var name="pattern" id="6635545314668025527" />
+      </scope>
+      <scope id="6635545314668025525" at="17,5,23,7">
+        <var name="coercedNode_untfvr_a0a" id="6635545314668025525" />
+        <var name="pattern_untfvr_a0a" id="6635545314668025525" />
+      </scope>
+      <scope id="6635545314668025527" at="52,0,58,0">
+        <var name="fieldName" id="6635545314668025527" />
+      </scope>
+      <scope id="6635545314668025527" at="34,45,42,18" />
+      <scope id="6635545314668025235" at="16,91,25,16" />
+      <scope id="6635545314668025527" at="34,0,44,0">
+        <var name="nodeToMatch" id="6635545314668025527" />
+      </scope>
+      <scope id="6635545314668025207" at="16,0,27,0">
+        <var name="thisNode" id="6635545314668025207" />
+      </scope>
+      <unit id="6635545314668025527" at="27,0,61,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_Behavior$Pattern_untfvr_a0a0a0a1" />
+      <unit id="6635545314668025207" at="13,0,62,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743014802">

@@ -6676,5 +6676,56 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="5KmckUrMTlR">
+    <property role="3GE5qa" value="macro" />
+    <ref role="13h7C2" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+    <node concept="13hLZK" id="5KmckUrMTlS" role="13h7CW">
+      <node concept="3clFbS" id="5KmckUrMTlT" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5KmckUrMTlU" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getInputNodeTypeInsideOfMacro" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
+      <node concept="3Tm1VV" id="5KmckUrMTmi" role="1B3o_S" />
+      <node concept="3clFbS" id="5KmckUrMTmj" role="3clF47">
+        <node concept="3Knyl0" id="5KmckUrMTqP" role="3cqZAp">
+          <node concept="1Yb3XT" id="5KmckUrMTqQ" role="3KnVwV">
+            <property role="TrG5h" value="aa" />
+            <node concept="2DMOqp" id="5KmckUrMTqR" role="1YbcFS">
+              <node concept="3Tqbb2" id="5KmckUrMTqS" role="2DMOqq">
+                <node concept="3jrphi" id="5KmckUrMTqT" role="lGtFl">
+                  <property role="2qtEX8" value="concept" />
+                  <property role="3jrwYG" value="concept" />
+                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5KmckUrMTqU" role="3Ko5Z1">
+            <node concept="2OqwBi" id="5KmckUrMTqV" role="2Oq$k0">
+              <node concept="13iPFW" id="5KmckUrMTqW" role="2Oq$k0" />
+              <node concept="3TrEf2" id="5KmckUrMTJN" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:h031$YD" />
+              </node>
+            </node>
+            <node concept="3JvlWi" id="5KmckUrMTqY" role="2OqNvi" />
+          </node>
+          <node concept="3clFbS" id="5KmckUrMTqZ" role="3KnTvU">
+            <node concept="3cpWs6" id="5KmckUrMTr0" role="3cqZAp">
+              <node concept="2iQiJ2" id="5KmckUrMTr1" role="3cqZAk">
+                <ref role="2iQyjY" node="5KmckUrMTqT" resolve="#concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrMTr2" role="3cqZAp">
+          <node concept="10Nm6u" id="5KmckUrMTr3" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3THzug" id="5KmckUrMTmk" role="3clF45" />
+    </node>
+  </node>
 </model>
 
