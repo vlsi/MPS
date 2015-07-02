@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -32,6 +33,8 @@ import java.util.List;
 
 public class IFileUtils {
   private static final Logger LOG = LogManager.getLogger(IFileUtils.class);
+  private static final String JAR_SEPARATOR = "!/";
+  private static final String JAR = ".jar";
 
   public static boolean copyFileContent(IFile oldFile, IFile newFile) {
     BufferedInputStream in = null;
@@ -50,6 +53,21 @@ public class IFileUtils {
       FileUtil.closeFileSafe(out);
     }
   }
+
+  public static boolean isJarFile(@NotNull IFile file) {
+    return file.getPath().endsWith(JAR);
+  }
+
+  /**
+   * Resulting file is already inside jar, i.e. file in JarFileSystem, because we added JAR_SEPARATOR
+   * @param jarFile shall be {@link #isJarFile(IFile) java archive file}
+   */
+  @NotNull
+  public static IFile stepIntoJar(@NotNull IFile jarFile) {
+    assert isJarFile(jarFile);
+    return FileSystem.getInstance().getFileByPath(jarFile.getPath() + JAR_SEPARATOR);
+  }
+
 
   public static IFile createTmpDir() {
     IFile tmpHome = FileSystem.getInstance().getFileByPath(System.getProperty("java.io.tmpdir"));
