@@ -65,6 +65,7 @@ public class MigrationsProgressWizardStep extends MigrationWizardStep {
         try {
           doRun(progress);
         } catch (Throwable t) {
+          addElementToMigrationList("Finished with exception");
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("exception occured on migration", t);
           }

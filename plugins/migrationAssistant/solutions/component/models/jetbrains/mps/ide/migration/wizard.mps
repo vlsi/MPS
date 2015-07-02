@@ -1155,6 +1155,14 @@
                       <node concept="2GUZhq" id="2htE_P_NHLz" role="3cqZAp">
                         <node concept="TDmWw" id="4pYGyBVuTXl" role="TEXxN">
                           <node concept="3clFbS" id="4pYGyBVuTXm" role="TDEfX">
+                            <node concept="3clFbF" id="6urLm480k$l" role="3cqZAp">
+                              <node concept="1rXfSq" id="6urLm480k$m" role="3clFbG">
+                                <ref role="37wK5l" node="513ZrA4x4$8" resolve="addElementToMigrationList" />
+                                <node concept="Xl_RD" id="6urLm480k$n" role="37wK5m">
+                                  <property role="Xl_RC" value="Finished with exception" />
+                                </node>
+                              </node>
+                            </node>
                             <node concept="34ab3g" id="4pYGyBVuU58" role="3cqZAp">
                               <property role="35gtTG" value="error" />
                               <property role="34fQS0" value="true" />
