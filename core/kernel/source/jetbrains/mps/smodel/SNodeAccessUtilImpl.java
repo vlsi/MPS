@@ -109,7 +109,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       if (descriptor != null) {
         descriptor.setValue(node, propertyValue);
       } else {
-        LOG.warning(
+        LOG.error(
             "Can't find property constraints for property `" + property.getName() + "`. Setting directly. Value: `" + propertyValue + "`.", node);
         node.setProperty(property, propertyValue);
       }
@@ -140,7 +140,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     ReferenceConstraintsDescriptor descriptor = getReferenceConstraintsDescriptor(node, referenceLink);
 
     if (descriptor == null) {
-      LOG.warning(
+      LOG.error(
           "Can't find reference constraints for reference `" + referenceLink.getRoleName() + "`. Setting directly.", node);
       node.setReferenceTarget(referenceLink, target);
       return;
