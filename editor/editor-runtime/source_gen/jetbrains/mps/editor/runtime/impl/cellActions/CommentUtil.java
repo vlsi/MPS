@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -39,14 +39,6 @@ public class CommentUtil {
     if (!(containmentLink.isMultiple()) && !(containmentLink.isOptional())) {
       parent.addChild(containmentLink, NodeFactoryManager.createNode(targetConcept, null, parent, SNodeOperations.getModel(parent)));
     }
-    return newComment;
-  }
-  @NotNull
-  private static SNode createAndInsertNewComment(SNode parent, SContainmentLink containmentLink, SNode anchor) {
-    SNode newComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
-    insertInProperPlace(parent, anchor, containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment);
-    BehaviorReflection.invokeNonVirtual(Void.class, newComment, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_setLink_709746936026609906", new Object[]{containmentLink});
-    SLinkOperations.setTarget(newComment, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), anchor);
     return newComment;
   }
 
@@ -78,6 +70,14 @@ public class CommentUtil {
     }
     SNodeOperations.deleteNode(attribute);
     return commentedNode;
+  }
+  @NotNull
+  private static SNode createAndInsertNewComment(SNode parent, SContainmentLink containmentLink, SNode anchor) {
+    SNode newComment = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
+    insertInProperPlace(parent, anchor, containmentLink, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), newComment);
+    BehaviorReflection.invokeNonVirtual(Void.class, newComment, "jetbrains.mps.lang.core.structure.ChildAttribute", "call_setLink_709746936026609906", new Object[]{containmentLink});
+    SLinkOperations.setTarget(newComment, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), anchor);
+    return newComment;
   }
 
 
@@ -122,5 +122,4 @@ public class CommentUtil {
     }
     return null;
   }
-
 }

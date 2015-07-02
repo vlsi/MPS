@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -26,8 +27,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Iterator;
 
 
 /**
@@ -54,15 +53,8 @@ public abstract class SingleRoleCellProvider {
   }
 
   public EditorCell createCell() {
-    if (areAttributesEmpty()) {
-      return createSingleCell();
-    } else {
-      return createManyCells();
-    }
-  }
-
-  private EditorCell_Collection createManyCells() {
     EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
+    resultCell.setSelectable(false);
     for (SNode child : getNodesToPresent()) {
       resultCell.addEditorCell(createChildCell(myEditorContext, child));
     }
@@ -70,19 +62,6 @@ public abstract class SingleRoleCellProvider {
       resultCell.addEditorCell(createEmptyCell());
     }
     return resultCell;
-  }
-
-  private EditorCell createSingleCell() {
-    Iterator<? extends SNode> iterator = myOwnerNode.getChildren(myContainmentLink).iterator();
-    if (iterator.hasNext()) {
-      return createChildCell(myEditorContext, iterator.next());
-    } else {
-      return createEmptyCell();
-    }
-  }
-
-  private boolean areAttributesEmpty() {
-    return !AttributeOperations.getChildAttributes(myOwnerNode, myContainmentLink).iterator().hasNext();
   }
 
   private boolean isChildEmpty() {
@@ -94,6 +73,7 @@ public abstract class SingleRoleCellProvider {
         new EditorCell_Constant(myEditorContext, myOwnerNode, "") :
         new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
     result.setDefaultText(getNoTargetText());
+    result.setAction(CellActionType.COMMENT, new CellAction_Comment(myOwnerNode));
     return result;
   }
 

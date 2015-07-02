@@ -74,6 +74,5 @@ public enum CellActionType {
   SHOW_MESSAGE,
   CLEAR_SELECTION,
 
-  COMMENT,
-  UNCOMMENT
+  COMMENT
 }

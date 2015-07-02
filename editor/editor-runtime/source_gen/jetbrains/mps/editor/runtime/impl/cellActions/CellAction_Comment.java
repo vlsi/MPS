@@ -5,56 +5,47 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.editor.runtime.selection.SelectionUtil;
-import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.jetbrains.mps.util.Condition;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.selection.Selection;
+import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 
 public class CellAction_Comment extends AbstractCellAction {
   private final SNode myNode;
+  private SNode myParent;
 
-  /**
-   * 
-   * @param node node to comment. This node must have parent when executing action
-   */
   public CellAction_Comment(@NotNull SNode node) {
     this.myNode = node;
+    this.myParent = SNodeOperations.getParent(myNode);
   }
 
-  /**
-   * 
-   * @param editorContext editor context
-   * @throws IllegalStateException if commenting node does not have parent
-   */
+  @Override
+  public boolean canExecute(EditorContext editorContext) {
+    Selection selection = editorContext.getSelectionManager().getSelection();
+    return this.myParent != null && selection != null && selection instanceof SingularSelection && needToComment(editorContext);
+  }
+
   public void execute(EditorContext editorContext) {
-    SNode parent = SNodeOperations.getParent(myNode);
-    if (parent == null) {
-      throw new IllegalStateException("Node to comment has no parent. Node: " + BehaviorReflection.invokeVirtual(String.class, myNode, "virtual_getPresentation_1213877396640", new Object[]{}) + " Node id: " + myNode.getNodeId());
-
-    }
+    Selection selection = editorContext.getSelectionManager().getSelection();
     SNode newComment = CommentUtil.commentOut(myNode);
-    editorContext.flushEvents();
-    final SContainmentLink containmentLink = myNode.getContainmentLink();
-    assert containmentLink != null;
-    if (containmentLink.isMultiple()) {
-      SelectionUtil.selectCell(editorContext, newComment, SelectionManager.LAST_CELL);
+  }
+  private boolean needToComment(EditorContext editorContext) {
+    boolean needToComment;
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
+      needToComment = false;
+    } else if ((SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) == null)) {
+      needToComment = true;
     } else {
-      EditorCell parentCell = editorContext.getEditorComponent().findNodeCell(parent);
-      EditorCell cellToSelect = CellFinderUtil.findChildByCondition(parentCell, new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          return eq_9lx3n0_a0a0a0a0b0a1a0g0e(cell.getRole(), containmentLink.getRole()) && !(SNodeOperations.isInstanceOf(((SNode) cell.getSNode()), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")));
-        }
-      }, true);
-      editorContext.getSelectionManager().setSelection(cellToSelect);
+      Selection selection = editorContext.getSelectionManager().getSelection();
+      if ((selection instanceof EditorCellLabelSelection && !(((EditorCellLabelSelection) selection).hasNonTrivialSelection()))) {
+        needToComment = false;
+      } else {
+        needToComment = true;
+      }
     }
+    return needToComment;
   }
-  private static boolean eq_9lx3n0_a0a0a0a0b0a1a0g0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
+
 }
