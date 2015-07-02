@@ -8,15 +8,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.ide.editor.util.CommentUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class CommentOut_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,7 +26,7 @@ public class CommentOut_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     Selection selection = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection();
-    return SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)) != null && selection != null && EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells());
+    return selection != null && EditorActionUtils.isWriteActionEnabled(event.getData(MPSEditorDataKeys.EDITOR_COMPONENT), selection.getSelectedCells());
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -52,32 +46,10 @@ public class CommentOut_Action extends BaseAction {
         return false;
       }
     }
-    {
-      EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      EditorCell p = event.getData(MPSEditorDataKeys.EDITOR_CELL);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node == null) {
-        return false;
-      }
-    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
-      CommentUtil.uncomment(SNodeOperations.cast(SNodeOperations.getParent(event.getData(MPSCommonDataKeys.NODE)), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute")), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
-    } else {
-      CommentUtil.commentOut(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), true);
-    }
+    event.getData(MPSEditorDataKeys.EDITOR_COMPONENT).getSelectionManager().getSelection().executeAction(CellActionType.COMMENT);
   }
 }
