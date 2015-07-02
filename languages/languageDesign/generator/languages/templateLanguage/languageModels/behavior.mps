@@ -1985,6 +1985,31 @@
       <node concept="3THzug" id="hEwIDMI" role="3clF45" />
       <node concept="3Tm1VV" id="hJrm0ry" role="1B3o_S" />
     </node>
+    <node concept="13i0hz" id="5KmckUrI7Lz" role="13h7CS">
+      <property role="TrG5h" value="getCounterVarName" />
+      <node concept="3Tm1VV" id="5KmckUrI7L$" role="1B3o_S" />
+      <node concept="17QB3L" id="5KmckUrI8Pj" role="3clF45" />
+      <node concept="3clFbS" id="5KmckUrI7LA" role="3clF47">
+        <node concept="3SKdUt" id="5KmckUrIgog" role="3cqZAp">
+          <node concept="3SKdUq" id="5KmckUrIgse" role="3SKWNk">
+            <property role="3SKdUp" value="name of counter as available in TemplateContext, similar to VarMacro.getName()" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrIfhP" role="3cqZAp">
+          <node concept="3cpWs3" id="5KmckUrIfnY" role="3cqZAk">
+            <node concept="2OqwBi" id="5KmckUrIfDw" role="3uHU7w">
+              <node concept="13iPFW" id="5KmckUrIfz1" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5KmckUrIggo" role="2OqNvi">
+                <ref role="3TsBF5" to="tpf8:6suuiWX_Ud4" resolve="counterVarName" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="5KmckUrIfi2" role="3uHU7B">
+              <property role="Xl_RC" value="cv:" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13hLZK" id="hEwIDMJ" role="13h7CW">
       <node concept="3clFbS" id="hEwIDMK" role="2VODD2" />
     </node>
