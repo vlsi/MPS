@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import java.util.Collections;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.List;
@@ -84,7 +83,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
         if (QueriesGenerated.ifMacro_Condition_1196351887167(new IfMacroContext(context, ifMacroRef_swz52f_b0a0b0c0b0c))) {
           Collection<SNode> tlist8 = null;
           final Object varValue8 = QueriesGenerated.insertMacro_varValue_5625022412249398387(new TemplateVarContext(context, varMacroRef_swz52f_b0a0a1a1a2a1a2));
-          TemplateContext context8 = context.subContext(Collections.<String,Object>singletonMap("var:quotedNode", varValue8));
+          TemplateContext context8 = context.withVariable("var:quotedNode", varValue8);
           final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
           try {
             environment.nodeCopied(context8, tnode9, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886757");

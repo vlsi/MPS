@@ -103,6 +103,7 @@
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -1445,6 +1446,45 @@
         </node>
       </node>
       <node concept="3Tm6S6" id="hJrm0_z" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="5KmckUrKj9u" role="13h7CS">
+      <property role="TrG5h" value="hasMappingLabel" />
+      <node concept="3Tm1VV" id="5KmckUrKj9v" role="1B3o_S" />
+      <node concept="10P_77" id="5KmckUrKjoT" role="3clF45" />
+      <node concept="3clFbS" id="5KmckUrKj9x" role="3clF47">
+        <node concept="3SKdUt" id="5KmckUrKjoW" role="3cqZAp">
+          <node concept="3SKdUq" id="5KmckUrKjoY" role="3SKWNk">
+            <property role="3SKdUp" value="to avoid coding same code that check non-empty mapping label" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrKjp4" role="3cqZAp">
+          <node concept="1Wc70l" id="5KmckUrKkBM" role="3cqZAk">
+            <node concept="2OqwBi" id="5KmckUrKlXe" role="3uHU7w">
+              <node concept="2OqwBi" id="5KmckUrKltd" role="2Oq$k0">
+                <node concept="2OqwBi" id="5KmckUrKkJH" role="2Oq$k0">
+                  <node concept="13iPFW" id="5KmckUrKkEb" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="5KmckUrKlcL" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="5KmckUrKlEh" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+              <node concept="17RvpY" id="5KmckUrKmf3" role="2OqNvi" />
+            </node>
+            <node concept="2OqwBi" id="5KmckUrKjVC" role="3uHU7B">
+              <node concept="2OqwBi" id="5KmckUrKjsT" role="2Oq$k0">
+                <node concept="13iPFW" id="5KmckUrKjpk" role="2Oq$k0" />
+                <node concept="3TrEf2" id="5KmckUrKjEA" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="5KmckUrKkhZ" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="hEwIouX" role="13h7CW">
       <node concept="3clFbS" id="hEwIouY" role="2VODD2" />

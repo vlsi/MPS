@@ -14,7 +14,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -39,7 +38,7 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
   protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
     final Object varValue1 = QueriesGenerated.insertMacro_varValue_429601079676845415(new TemplateVarContext(context, varMacroRef_g27wod_b0a0a1a2));
-    TemplateContext context1 = context.subContext(Collections.<String,Object>singletonMap("var:root", varValue1));
+    TemplateContext context1 = context.withVariable("var:root", varValue1);
     final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676709783");
@@ -1365,7 +1364,7 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
               TemplateContext context134 = context.subContext(itnode134);
               Collection<SNode> tlist135 = null;
               final Object varValue135 = QueriesGenerated.insertMacro_varValue_429601079676789872(new TemplateVarContext(context134, varMacroRef_g27wod_b0a0a3a2a9a1a1a1a3));
-              TemplateContext context135 = context134.subContext(Collections.<String,Object>singletonMap("var:outer", varValue135));
+              TemplateContext context135 = context134.withVariable("var:outer", varValue135);
               final List<SNode> tlist136 = new ArrayList<SNode>();
               final Iterable<SNode> loopList136 = QueriesGenerated.sourceNodesQuery_429601079676789878(new SourceSubstituteMacroNodesContext(context135, loopMacroRef_g27wod_b0a0a6a2a9a1a1a1a3));
               for (SNode itnode136 : loopList136) {
@@ -1623,7 +1622,7 @@ public class Templatereduce__NodeBuilderNode extends TemplateDeclarationBase imp
               TemplateContext context160 = context.subContext(itnode160);
               Collection<SNode> tlist161 = null;
               final Object varValue161 = QueriesGenerated.insertMacro_varValue_429601079676789499(new TemplateVarContext(context160, varMacroRef_g27wod_b0a0a3a2a21a1a1a1a3));
-              TemplateContext context161 = context160.subContext(Collections.<String,Object>singletonMap("var:outer", varValue161));
+              TemplateContext context161 = context160.withVariable("var:outer", varValue161);
               final List<SNode> tlist162 = new ArrayList<SNode>();
               final Iterable<SNode> loopList162 = QueriesGenerated.sourceNodesQuery_429601079676789520(new SourceSubstituteMacroNodesContext(context161, loopMacroRef_g27wod_b0a0a6a2a21a1a1a1a3));
               for (SNode itnode162 : loopList162) {
