@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,202,0" name="jetbrains.mps.lang.typesystem.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,204,0" name="jetbrains.mps.lang.typesystem.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/1076452857759748203">
@@ -14436,6 +14436,50 @@
         <var name="node" id="2370039984926512333" />
       </scope>
       <unit id="2370039984926492997" at="16,0,111,0" name="jetbrains.mps.lang.typesystem.editor.OriginalNodeId_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/2401040147804162783">
+    <file name="AttributedNodeExpression_Editor.java">
+      <node id="2401040147804162783" at="19,79,20,63" concept="6" />
+      <node id="2401040147804162783" at="22,89,23,96" concept="5" />
+      <node id="2401040147804162783" at="23,96,24,48" concept="2" />
+      <node id="2401040147804162783" at="24,48,25,28" concept="2" />
+      <node id="2401040147804162783" at="25,28,26,82" concept="0" />
+      <node id="2401040147804162783" at="25,28,26,82" concept="2" />
+      <node id="2401040147804162783" at="26,82,27,22" concept="6" />
+      <node id="2401040147804256065" at="29,89,30,131" concept="5" />
+      <node id="2401040147804256065" at="30,131,31,34" concept="5" />
+      <node id="2401040147804256065" at="31,34,32,66" concept="2" />
+      <node id="2401040147804256065" at="32,66,33,62" concept="2" />
+      <node id="2401040147804256065" at="33,62,34,81" concept="2" />
+      <node id="2401040147804256065" at="34,81,35,82" concept="2" />
+      <node id="2401040147804256065" at="35,82,36,40" concept="2" />
+      <node id="2401040147804256065" at="36,40,37,22" concept="6" />
+      <node id="2401040147804162783" at="19,0,22,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2401040147804162783" at="22,0,29,0" concept="4" trace="createCollection_f01105_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2401040147804256065" at="29,0,39,0" concept="4" trace="createComponent_f01105_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="2401040147804162783" at="19,79,20,63" />
+      <scope id="2401040147804162783" at="25,28,26,82" />
+      <scope id="2401040147804162783" at="19,0,22,0">
+        <var name="editorContext" id="2401040147804162783" />
+        <var name="node" id="2401040147804162783" />
+      </scope>
+      <scope id="2401040147804162783" at="22,89,27,22">
+        <var name="editorCell" id="2401040147804162783" />
+      </scope>
+      <scope id="2401040147804162783" at="22,0,29,0">
+        <var name="editorContext" id="2401040147804162783" />
+        <var name="node" id="2401040147804162783" />
+      </scope>
+      <scope id="2401040147804256065" at="29,89,37,22">
+        <var name="editorCell" id="2401040147804256065" />
+        <var name="style" id="2401040147804256065" />
+      </scope>
+      <scope id="2401040147804256065" at="29,0,39,0">
+        <var name="editorContext" id="2401040147804256065" />
+        <var name="node" id="2401040147804256065" />
+      </scope>
+      <unit id="2401040147804162783" at="18,0,40,0" name="jetbrains.mps.lang.typesystem.editor.AttributedNodeExpression_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902b0(jetbrains.mps.lang.typesystem.editor)/3148295837107408672">

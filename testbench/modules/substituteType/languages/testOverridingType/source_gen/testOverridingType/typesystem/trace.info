@@ -16,9 +16,9 @@
   <root nodeRef="r:d8c6e16f-e698-4fc4-9c7f-4a279bcfaaf0(testOverridingType.typesystem)/6560794580689850748">
     <file name="typeof_OverrideAnnotation_InferenceRule.java">
       <node id="6560794580689851406" at="20,87,21,258" concept="6" />
-      <node id="6560794580689883543" at="25,7,26,89" concept="5" />
-      <node id="6560794580689883543" at="26,89,27,197" concept="5" />
-      <node id="6560794580689883543" at="27,197,28,420" concept="2" />
+      <node id="2401040147804524711" at="25,7,26,89" concept="5" />
+      <node id="2401040147804524711" at="26,89,27,197" concept="5" />
+      <node id="2401040147804524711" at="27,197,28,420" concept="2" />
       <node id="6560794580689850748" at="32,50,33,155" concept="6" />
       <node id="6560794580689850748" at="35,68,36,102" concept="0" />
       <node id="6560794580689850748" at="35,68,36,102" concept="6" />
@@ -26,7 +26,7 @@
       <node id="6560794580689850748" at="20,0,23,0" concept="4" trace="overrides#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Z" />
       <node id="6560794580689850748" at="32,0,35,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6560794580689850748" at="35,0,38,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="6560794580689883543" at="24,257,29,7" concept="0" />
+      <node id="2401040147804524711" at="24,257,29,7" concept="0" />
       <node id="6560794580689888618" at="23,131,30,5" concept="3" />
       <node id="6560794580689850748" at="23,0,32,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="6560794580689850748" at="18,52,18,52" />
@@ -38,9 +38,9 @@
         <var name="overrideAnnotation" id="6560794580689850748" />
         <var name="status" id="6560794580689850748" />
       </scope>
-      <scope id="6560794580689883543" at="25,7,28,420">
-        <var name="_info_12389875345" id="6560794580689883543" />
-        <var name="_nodeToCheck_1029348928467" id="6560794580689883543" />
+      <scope id="2401040147804524711" at="25,7,28,420">
+        <var name="_info_12389875345" id="2401040147804524711" />
+        <var name="_nodeToCheck_1029348928467" id="2401040147804524711" />
       </scope>
       <scope id="6560794580689850748" at="32,0,35,0" />
       <scope id="6560794580689850748" at="35,0,38,0">

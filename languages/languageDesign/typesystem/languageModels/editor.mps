@@ -4659,5 +4659,24 @@
       <node concept="l2Vlx" id="1y5tROjugU$" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="25idkGdkoFv">
+    <ref role="1XX52x" to="tpd4:25idkGdk026" resolve="AttributedNodeExpression" />
+    <node concept="3EZMnI" id="25idkGdkoFx" role="2wV5jI">
+      <node concept="PMmxH" id="25idkGdkJt1" role="3EZMnx">
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <node concept="Vb9p2" id="25idkGdksQQ" role="3F10Kt">
+          <property role="Vbekb" value="ITALIC" />
+        </node>
+        <node concept="3$7fVu" id="25idkGdksQR" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
+        </node>
+        <node concept="3$7jql" id="25idkGdksQS" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="25idkGdkoF$" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

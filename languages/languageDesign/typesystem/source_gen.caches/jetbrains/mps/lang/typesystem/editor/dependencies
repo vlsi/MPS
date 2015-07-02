@@ -186,6 +186,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.typesystem.editor.AttributedNodeExpression_Editor" file="AttributedNodeExpression_Editor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.Measure" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.Padding" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.editor.CaretPositionOperation_Editor" file="CaretPositionOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -381,6 +395,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ApplicableNodeCondition_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.ApplicableNodeReference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.AssertStatement_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.AttributedNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.CaretPositionOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.CoerceExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.editor.CoerceStatement_Editor" />

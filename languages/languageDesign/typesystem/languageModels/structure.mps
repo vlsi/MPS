@@ -1932,5 +1932,14 @@
     <property role="TrG5h" value="OverridesConceptFunction" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
+  <node concept="1TIwiD" id="25idkGdk026">
+    <property role="3GE5qa" value="definition.expression" />
+    <property role="TrG5h" value="AttributedNodeExpression" />
+    <property role="34LRSv" value="attributedNode" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="25idkGdk027" role="PzmwI">
+      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
