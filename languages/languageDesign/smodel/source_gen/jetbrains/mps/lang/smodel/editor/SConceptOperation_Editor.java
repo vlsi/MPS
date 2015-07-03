@@ -50,7 +50,6 @@ public class SConceptOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SConceptOperation_Editor.ReplaceWith_SConceptOperation_cellMenu_z8oglp_a0a0()}));
     return editorCell;
   }
@@ -64,7 +63,6 @@ public class SConceptOperation_Editor extends DefaultNodeEditor {
   private EditorCell createError_z8oglp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_z8oglp_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

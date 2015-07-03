@@ -41,7 +41,6 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0.5, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.5, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,7 +85,6 @@ public class CompositeWithParentScopeExpression_Editor extends DefaultNodeEditor
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0.5, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.5, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

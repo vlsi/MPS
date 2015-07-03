@@ -45,7 +45,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,7 +52,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new OperationParm_ConceptList_Editor.conceptListHandler_cly5ih_b0(node, "concept", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_concept");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -109,7 +107,6 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_operationParameter(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

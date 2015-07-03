@@ -38,7 +38,6 @@ public class Not_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RemoveNot.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

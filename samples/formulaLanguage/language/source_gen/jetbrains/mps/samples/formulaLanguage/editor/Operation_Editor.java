@@ -70,7 +70,6 @@ public class Operation_Editor extends DefaultNodeEditor {
   private EditorCell createError_ujw05e_b0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, " ");
     editorCell.setCellId("Error_ujw05e_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Operation_Editor.ReplaceWith_Operation_cellMenu_ujw05e_a0b0()}));
     return editorCell;

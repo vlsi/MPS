@@ -34,14 +34,12 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createIndentCell_hy8r7y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_hy8r7y_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ParametersDeclaration_Editor.componentListHandler_hy8r7y_b0(node, "component", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_component");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -82,7 +80,6 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_hy8r7y_a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_hy8r7y_a1a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("Enter creates a property");
       return editorCell;
     }

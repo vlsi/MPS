@@ -39,7 +39,6 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     DataFlow_StyleSheet.apply_MayBeUnreachable(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -85,7 +84,6 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     DataFlow_StyleSheet.apply_MayBeUnreachable(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DataFlowEditorAction_DeleteMayBeUnreachable.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

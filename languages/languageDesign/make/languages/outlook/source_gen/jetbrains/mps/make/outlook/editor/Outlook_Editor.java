@@ -44,7 +44,6 @@ public class Outlook_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_qlzo2n_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qlzo2n_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qlzo2n_c0a(editorContext, node));
@@ -53,7 +52,6 @@ public class Outlook_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qlzo2n_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make outlook");
     editorCell.setCellId("Constant_qlzo2n_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,7 +62,6 @@ public class Outlook_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,7 +74,6 @@ public class Outlook_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_qlzo2n_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_qlzo2n_c0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -87,21 +83,18 @@ public class Outlook_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_qlzo2n_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_qlzo2n_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_qlzo2n_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_qlzo2n_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Outlook_Editor.facetListHandler_qlzo2n_b1a(node, "facet", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_facet");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -142,7 +135,6 @@ public class Outlook_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_qlzo2n_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_qlzo2n_a1b0");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("<no facets>");
       return editorCell;
     }

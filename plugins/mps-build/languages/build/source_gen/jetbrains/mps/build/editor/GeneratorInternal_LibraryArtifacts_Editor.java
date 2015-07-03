@@ -38,7 +38,6 @@ public class GeneratorInternal_LibraryArtifacts_Editor extends DefaultNodeEditor
   private EditorCell createConstant_hkdrh7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attrs");
     editorCell.setCellId("Constant_hkdrh7_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,7 +45,6 @@ public class GeneratorInternal_LibraryArtifacts_Editor extends DefaultNodeEditor
     AbstractCellListHandler handler = new GeneratorInternal_LibraryArtifacts_Editor.attrsListHandler_hkdrh7_b0(node, "attrs", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_attrs");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -89,7 +87,6 @@ public class GeneratorInternal_LibraryArtifacts_Editor extends DefaultNodeEditor
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "paren-attrs");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

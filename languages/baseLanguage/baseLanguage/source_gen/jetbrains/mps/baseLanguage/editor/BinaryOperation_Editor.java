@@ -87,7 +87,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     BinaryOperation_Symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_b0b0()}));
     return editorCell;

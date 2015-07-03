@@ -82,7 +82,6 @@ public class IncompleteCommand_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("<draw command>");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncompleteCommand_Editor.ReplaceWith_DrawLine_cellMenu_ehgky7_a0b0(), new IncompleteCommand_Editor.ReplaceWith_DrawRect_cellMenu_ehgky7_b0b0()}));
     return editorCell;

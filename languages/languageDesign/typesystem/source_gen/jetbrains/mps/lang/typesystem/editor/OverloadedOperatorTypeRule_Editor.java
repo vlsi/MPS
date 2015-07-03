@@ -56,7 +56,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_xc5f9o_b0a(editorContext, node));
     return editorCell;
@@ -64,7 +63,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concepts:");
     editorCell.setCellId("Constant_xc5f9o_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,7 +70,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new OverloadedOperatorTypeRule_Editor.operationConceptListHandler_xc5f9o_b0a(node, "operationConcept", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_operationConcept");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -128,7 +125,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_c1a(editorContext, node));
@@ -142,7 +138,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand type:");
     editorCell.setCellId("Constant_xc5f9o_a1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -183,7 +178,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -194,7 +188,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_leftIsExact");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -210,7 +203,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_a4b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4b0(editorContext, node));
     return editorCell;
@@ -221,7 +213,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_a4b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -232,7 +223,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_leftIsStrong");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -248,7 +238,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -259,7 +248,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xc5f9o_b2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_c2a(editorContext, node));
@@ -272,7 +260,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand type:");
     editorCell.setCellId("Constant_xc5f9o_a2a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -313,7 +300,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c2a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -324,7 +310,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_rightIsExact");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -340,7 +325,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_a4c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4c0(editorContext, node));
     return editorCell;
@@ -351,7 +335,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -362,7 +345,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_rightIsStrong");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -375,7 +357,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_xc5f9o_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -416,7 +397,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_xc5f9o_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
     editorCell.setCellId("Constant_xc5f9o_f0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -461,7 +441,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -45,7 +45,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_ksgn1c_b0(EditorContext editorContext, SNode node) {
@@ -55,7 +54,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, true);
     style.set(StyleAttributes.HORIZONTAL_ALIGN, 0, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_ksgn1c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCustom_ksgn1c_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ksgn1c_c1a(editorContext, node));
@@ -107,7 +105,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_ksgn1c_c1a(EditorContext editorContext, SNode node) {
@@ -153,7 +150,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

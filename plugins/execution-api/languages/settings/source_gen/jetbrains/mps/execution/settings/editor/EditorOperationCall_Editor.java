@@ -54,7 +54,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("editorOperationDeclaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,7 +78,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       RunConfigurations_StyleSheet.apply_operation(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -89,7 +87,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -100,7 +97,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -154,7 +150,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_jn1wx6_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_jn1wx6_a2a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -165,7 +160,6 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

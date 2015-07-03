@@ -46,14 +46,12 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
   private EditorCell createConstant_bem9lq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output to input port connector");
     editorCell.setCellId("Constant_bem9lq_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_bem9lq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "src");
     editorCell.setCellId("Constant_bem9lq_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +66,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       editorCell.setReferenceCell(true);
       editorCell.setRole("src");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,7 +92,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -109,7 +105,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
   private EditorCell createConstant_bem9lq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dst");
     editorCell.setCellId("Constant_bem9lq_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -124,7 +119,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       editorCell.setReferenceCell(true);
       editorCell.setRole("dst");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -151,7 +145,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -168,7 +161,6 @@ public class OutputToInputPortConnector_DiagramTestTextual_Editor extends Defaul
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

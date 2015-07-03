@@ -34,14 +34,12 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_s783cw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical layout");
     editorCell.setCellId("Constant_s783cw_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_s783cw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_s783cw_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createRefNodeList_s783cw_a1a(editorContext, node));
     return editorCell;
@@ -50,7 +48,6 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new VerticalLayoutBlockList_Editor.statementListHandler_s783cw_a1a(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statement");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

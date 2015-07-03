@@ -9,8 +9,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -29,7 +27,6 @@ public class ClassLikeProperty_Name_EditorComponent implements ConceptEditorComp
   private EditorCell createCollection_pwqhgb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pwqhgb_a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createProperty_pwqhgb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pwqhgb_b0(editorContext, node));
     return editorCell;
@@ -44,7 +41,6 @@ public class ClassLikeProperty_Name_EditorComponent implements ConceptEditorComp
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RealObject2Placeholder.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -58,7 +54,6 @@ public class ClassLikeProperty_Name_EditorComponent implements ConceptEditorComp
   private EditorCell createConstant_pwqhgb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pwqhgb_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RealObject2Placeholder.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

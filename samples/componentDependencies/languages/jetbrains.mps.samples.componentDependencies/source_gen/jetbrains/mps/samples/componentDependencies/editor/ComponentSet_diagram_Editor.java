@@ -68,7 +68,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createDiagram_amytw9_a0a(editorContext, node));
     return editorCell;
   }

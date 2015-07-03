@@ -22,11 +22,10 @@
       <node id="6919151941181560080" at="23,81,24,22" concept="4" />
       <node id="6919151941181560084" at="26,88,27,90" concept="3" />
       <node id="6919151941181560084" at="27,90,28,47" concept="1" />
-      <node id="6919151941181560084" at="28,47,29,79" concept="1" />
-      <node id="6919151941181560084" at="29,79,30,34" concept="1" />
-      <node id="6919151941181560084" at="30,34,31,22" concept="4" />
+      <node id="6919151941181560084" at="28,47,29,34" concept="1" />
+      <node id="6919151941181560084" at="29,34,30,22" concept="4" />
       <node id="6919151941181560080" at="15,0,18,0" concept="2" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="6919151941181560084" at="26,0,33,0" concept="2" trace="createConstant_7o5gsr_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="6919151941181560084" at="26,0,32,0" concept="2" trace="createConstant_7o5gsr_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="6919151941181560080" at="18,0,26,0" concept="2" trace="createCollection_7o5gsr_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="6919151941181560080" at="15,79,16,63" />
       <scope id="6919151941181560080" at="22,79,23,81" />
@@ -34,13 +33,13 @@
         <var name="editorContext" id="6919151941181560080" />
         <var name="node" id="6919151941181560080" />
       </scope>
-      <scope id="6919151941181560084" at="26,88,31,22">
+      <scope id="6919151941181560084" at="26,88,30,22">
         <var name="editorCell" id="6919151941181560084" />
       </scope>
       <scope id="6919151941181560080" at="18,89,24,22">
         <var name="editorCell" id="6919151941181560080" />
       </scope>
-      <scope id="6919151941181560084" at="26,0,33,0">
+      <scope id="6919151941181560084" at="26,0,32,0">
         <var name="editorContext" id="6919151941181560084" />
         <var name="node" id="6919151941181560084" />
       </scope>
@@ -48,7 +47,7 @@
         <var name="editorContext" id="6919151941181560080" />
         <var name="node" id="6919151941181560080" />
       </scope>
-      <unit id="6919151941181560080" at="14,0,34,0" name="testPackagedLanguage.editor.TestConcept_Editor" />
+      <unit id="6919151941181560080" at="14,0,33,0" name="testPackagedLanguage.editor.TestConcept_Editor" />
     </file>
   </root>
 </debug-info>

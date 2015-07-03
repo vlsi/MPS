@@ -44,7 +44,6 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
       editorCell.setReferenceCell(true);
       editorCell.setRole("targetModule");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,7 +71,6 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +84,6 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
   private EditorCell createConstant_zc1akc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reexported");
     editorCell.setCellId("Constant_zc1akc_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -172,7 +172,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_dbn5di_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_dbn5di_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

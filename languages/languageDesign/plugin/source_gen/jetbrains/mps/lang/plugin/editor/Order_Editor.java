@@ -54,7 +54,6 @@ public class Order_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yh3zz3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yh3zz3_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_yh3zz3_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_yh3zz3_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yh3zz3_c0a(editorContext, node));
@@ -63,7 +62,6 @@ public class Order_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yh3zz3_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_yh3zz3_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,7 +69,6 @@ public class Order_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Order_Editor.tabListHandler_yh3zz3_b0a(node, "tab", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_tab");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -123,14 +120,12 @@ public class Order_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yh3zz3_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_yh3zz3_c0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_yh3zz3_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yh3zz3_a0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_yh3zz3_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yh3zz3_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yh3zz3_c0a_0(editorContext, node));
@@ -143,7 +138,6 @@ public class Order_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_yh3zz3_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yh3zz3_b0a0(editorContext, node));
     return editorCell;
@@ -151,7 +145,6 @@ public class Order_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yh3zz3_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "order");
     editorCell.setCellId("Constant_yh3zz3_a0a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -162,7 +155,6 @@ public class Order_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -175,14 +167,12 @@ public class Order_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yh3zz3_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_yh3zz3_b0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_yh3zz3_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tabs:");
     editorCell.setCellId("Constant_yh3zz3_c0a_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -190,7 +180,6 @@ public class Order_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Order_Editor.tabListHandler_yh3zz3_d0a(node, "tab", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_tab_1");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -41,7 +41,6 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_bordered(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

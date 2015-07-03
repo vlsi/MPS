@@ -33,7 +33,6 @@ public class AttractsFocusBlock_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_on5i7m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attracts focus");
     editorCell.setCellId("Constant_on5i7m_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

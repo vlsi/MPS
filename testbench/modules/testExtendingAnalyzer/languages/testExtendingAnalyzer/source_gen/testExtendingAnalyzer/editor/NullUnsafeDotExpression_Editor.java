@@ -33,7 +33,6 @@ public class NullUnsafeDotExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yu15xo_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null unsafe");
     editorCell.setCellId("Constant_yu15xo_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +73,6 @@ public class NullUnsafeDotExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yu15xo_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_yu15xo_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

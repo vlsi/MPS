@@ -31,14 +31,12 @@ public class LanguageDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jnz8pu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "language descriptor");
     editorCell.setCellId("Constant_jnz8pu_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_jnz8pu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jnz8pu_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_jnz8pu_a1a(editorContext, node));
     return editorCell;
   }

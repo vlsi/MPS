@@ -40,7 +40,6 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_47eu07_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
     editorCell.setCellId("Constant_47eu07_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -81,7 +80,6 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_47eu07_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
     editorCell.setCellId("Constant_47eu07_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -96,7 +94,6 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_SIZE, 0, 10);
     style.set(StyleAttributes.SCRIPT_KIND, 0, ScriptKind.SUBSCRIPT);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

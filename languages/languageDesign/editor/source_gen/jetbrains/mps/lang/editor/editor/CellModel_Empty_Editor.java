@@ -33,7 +33,6 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_uq4f57_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_uq4f57_a_0(EditorContext editorContext, SNode node) {
@@ -49,7 +48,6 @@ public class CellModel_Empty_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_uq4f57_a0_0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

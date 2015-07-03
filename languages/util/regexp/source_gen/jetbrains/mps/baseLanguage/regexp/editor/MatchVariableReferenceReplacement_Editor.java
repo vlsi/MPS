@@ -42,7 +42,6 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
     RegexpStylesheet_StyleSheet.apply_RegexpBrace(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,7 +56,6 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
       editorCell.setReferenceCell(true);
       editorCell.setRole("match");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -89,7 +87,6 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
       style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

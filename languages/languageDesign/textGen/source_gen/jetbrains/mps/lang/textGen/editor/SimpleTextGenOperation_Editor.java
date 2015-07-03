@@ -34,7 +34,6 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_yb6w4b_b0(EditorContext editorContext, SNode node) {
@@ -44,7 +43,6 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(-1.0, Measure.SPACES));
     style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

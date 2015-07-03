@@ -24,7 +24,6 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_ic75k4_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

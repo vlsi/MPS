@@ -33,7 +33,6 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.apply_Operation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ClearSetOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_vs9kjh_a0a0()}));
     return editorCell;
   }

@@ -67,7 +67,6 @@ public class AsExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k61n5d_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k61n5d_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_k61n5d_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_k61n5d_b1a(editorContext, node));
@@ -79,7 +78,6 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

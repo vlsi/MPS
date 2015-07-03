@@ -77,7 +77,6 @@ public class ArithmeticSimpleMathExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     SimpleMath_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -46,7 +46,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_lbq9sy_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lbq9sy_b0a(editorContext, node));
     return editorCell;
@@ -54,7 +53,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
   private EditorCell createConstant_lbq9sy_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "side transform actions");
     editorCell.setCellId("Constant_lbq9sy_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -69,7 +67,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,7 +82,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -95,7 +91,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNodeList_lbq9sy_a2a(editorContext, node));
     return editorCell;
   }
@@ -106,7 +101,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

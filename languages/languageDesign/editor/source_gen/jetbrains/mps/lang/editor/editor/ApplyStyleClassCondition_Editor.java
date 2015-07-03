@@ -42,7 +42,6 @@ public class ApplyStyleClassCondition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_item(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ApplyStyleClassCondition_Editor.ReplaceWith_StyleClassItem_cellMenu_w35i2r_a0a0()}));
     return editorCell;
   }
@@ -56,7 +55,6 @@ public class ApplyStyleClassCondition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_w35i2r_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_w35i2r_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,7 +95,6 @@ public class ApplyStyleClassCondition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_w35i2r_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition:");
     editorCell.setCellId("Constant_w35i2r_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

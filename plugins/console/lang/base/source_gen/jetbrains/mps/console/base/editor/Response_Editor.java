@@ -36,7 +36,6 @@ public class Response_Editor extends DefaultNodeEditor {
   }
   private EditorCell createIndentCell_mesn11_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_mesn11_b0(EditorContext editorContext, SNode node) {
@@ -45,7 +44,6 @@ public class Response_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_mesn11_a1a(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_mesn11_b1a(editorContext, node));
     return editorCell;
@@ -56,7 +54,6 @@ public class Response_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNodeList_mesn11_a0b0(editorContext, node));
     return editorCell;
   }
@@ -64,7 +61,6 @@ public class Response_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Response_Editor.itemListHandler_mesn11_a0b0(node, "item", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_item");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -102,7 +98,6 @@ public class Response_Editor extends DefaultNodeEditor {
   }
   private EditorCell createIndentCell_mesn11_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

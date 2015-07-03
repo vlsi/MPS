@@ -53,7 +53,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_r7pcfy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r7pcfy_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_r7pcfy_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_r7pcfy_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r7pcfy_c0a(editorContext, node));
@@ -65,7 +64,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -79,7 +77,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new SubstituteTypeRule_Editor.SubstituteTypeRule_name_cellMenu_r7pcfy_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -111,7 +108,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -121,14 +117,12 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r7pcfy_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r7pcfy_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r7pcfy_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_r7pcfy_b1a(EditorContext editorContext, SNode node) {
@@ -137,7 +131,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_r7pcfy_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r7pcfy_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r7pcfy_c1b0(editorContext, node));
@@ -146,7 +139,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_r7pcfy_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r7pcfy_a1b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_r7pcfy_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r7pcfy_b0b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r7pcfy_c0b1a(editorContext, node));
@@ -155,7 +147,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_r7pcfy_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable");
     editorCell.setCellId("Constant_r7pcfy_a0b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -165,7 +156,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -212,21 +202,18 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_r7pcfy_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_r7pcfy_c1b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r7pcfy_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r7pcfy_b2b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r7pcfy_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r7pcfy_b2b1a(EditorContext editorContext, SNode node) {
@@ -270,7 +257,6 @@ public class SubstituteTypeRule_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

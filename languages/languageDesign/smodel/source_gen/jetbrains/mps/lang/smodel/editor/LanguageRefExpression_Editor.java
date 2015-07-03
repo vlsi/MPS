@@ -57,7 +57,6 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     structure_StyleSheet.apply_Keyword(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_9pn6lo_b0(EditorContext editorContext, SNode node) {
@@ -66,7 +65,6 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -129,7 +127,6 @@ public class LanguageRefExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

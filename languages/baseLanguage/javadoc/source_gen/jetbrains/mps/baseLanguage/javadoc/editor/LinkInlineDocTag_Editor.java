@@ -45,7 +45,6 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LinkInlineDocTag_Editor.ReplaceWith_BaseInlineDocTag_cellMenu_bju3wr_a0a0()}));
     return editorCell;
   }
@@ -94,7 +93,6 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new LinkInlineDocTag_Editor.lineListHandler_bju3wr_c0(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

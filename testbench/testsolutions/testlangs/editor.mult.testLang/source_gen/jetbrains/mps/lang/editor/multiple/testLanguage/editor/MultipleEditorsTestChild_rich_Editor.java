@@ -48,7 +48,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_3qkmki_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3qkmki_b0a(editorContext, node));
@@ -60,7 +59,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_3qkmki_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3qkmki_b0a0(editorContext, node));
     return editorCell;
@@ -73,7 +71,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -88,7 +85,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -104,7 +100,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_3qkmki_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3qkmki_b1a0(editorContext, node));
     return editorCell;
@@ -112,7 +107,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3qkmki_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3qkmki_a1a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -127,7 +121,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -140,7 +133,6 @@ public class MultipleEditorsTestChild_rich_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3qkmki_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3qkmki_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

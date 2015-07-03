@@ -43,7 +43,6 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jxypb2_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_jxypb2_b0a(editorContext, node));
     return editorCell;
@@ -51,7 +50,6 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_jxypb2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
     editorCell.setCellId("Constant_jxypb2_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,7 +60,6 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,7 +76,6 @@ public class InternalConceptDeclarationsHolder_Editor extends DefaultNodeEditor 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

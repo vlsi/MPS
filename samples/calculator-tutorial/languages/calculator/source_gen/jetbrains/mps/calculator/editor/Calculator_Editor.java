@@ -45,7 +45,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_uh00px_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_uh00px_b0a(editorContext, node));
     return editorCell;
@@ -53,7 +52,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_uh00px_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "calculator");
     editorCell.setCellId("Constant_uh00px_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,7 +62,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -78,7 +75,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Calculator_Editor.inputFieldListHandler_uh00px_b0(node, "inputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputField");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -117,7 +113,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_uh00px_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_uh00px_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,7 +120,6 @@ public class Calculator_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Calculator_Editor.outputFieldListHandler_uh00px_d0(node, "outputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputField");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

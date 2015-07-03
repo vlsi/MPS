@@ -40,7 +40,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
   private EditorCell createConstant_4clv4k_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "participants for");
     editorCell.setCellId("Constant_4clv4k_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,7 +54,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
       editorCell.setReferenceCell(true);
       editorCell.setRole("for");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -83,7 +81,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -98,7 +95,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
     AbstractCellListHandler handler = new GeneratorInternal_IWorkfowParticipants_Editor.participantListHandler_4clv4k_c0(node, "participant", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_participant");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

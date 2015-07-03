@@ -60,7 +60,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lhhqxl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lhhqxl_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createEmpty_lhhqxl_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_lhhqxl_b0a(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_lhhqxl_c0a(editorContext, node));
@@ -74,7 +73,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_lhhqxl_b0a(EditorContext editorContext, SNode node) {
@@ -86,7 +84,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DEFAULT_BASE_LINE, 0, DefaultBaseLine.CENTER);
     style.set(StyleAttributes.TABLE_COMPONENT, 0, TableComponent.VERTICAL_COLLECTION);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -130,13 +127,11 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_lhhqxl_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lhhqxl_a0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createEmpty_lhhqxl_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_lhhqxl_b0a_0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_lhhqxl_c0a_0(editorContext, node));
@@ -150,7 +145,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_lhhqxl_b0a_0(EditorContext editorContext, SNode node) {
@@ -162,7 +156,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DEFAULT_BASE_LINE, 0, DefaultBaseLine.CENTER);
     style.set(StyleAttributes.TABLE_COMPONENT, 0, TableComponent.HORIZONTAL_COLLECTION);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -219,7 +212,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_lhhqxl_a(EditorContext editorContext, SNode node) {
@@ -234,7 +226,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_lhhqxl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "column:");
     editorCell.setCellId("Constant_lhhqxl_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -245,7 +236,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_column");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

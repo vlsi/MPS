@@ -44,7 +44,6 @@ public class JavaImports_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new JavaImports_Editor.entriesListHandler_1bs0fk_a0(node, "entries", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entries");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -83,7 +82,6 @@ public class JavaImports_Editor extends DefaultNodeEditor {
   private EditorCell createAttributedNodeCell_1bs0fk_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

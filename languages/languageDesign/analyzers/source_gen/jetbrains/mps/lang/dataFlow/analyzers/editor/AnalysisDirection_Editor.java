@@ -24,7 +24,6 @@ public class AnalysisDirection_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_f69is_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

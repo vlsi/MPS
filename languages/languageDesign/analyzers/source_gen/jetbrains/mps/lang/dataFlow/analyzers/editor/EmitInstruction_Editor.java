@@ -38,7 +38,6 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tx9kns_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_tx9kns_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,7 +81,6 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_tx9kns_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tx9kns_b2a(editorContext, node));
     return editorCell;

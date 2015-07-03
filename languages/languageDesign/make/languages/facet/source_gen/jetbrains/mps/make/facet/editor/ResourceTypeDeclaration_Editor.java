@@ -38,7 +38,6 @@ public class ResourceTypeDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ResourceTypeDeclaration_Editor.resourceTypeListHandler_57opql_a0(node, "resourceType", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_resourceType");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -42,7 +42,6 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
       editorCell.setReferenceCell(true);
       editorCell.setRole("folder");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -68,7 +67,6 @@ public class BuildSource_JavaExternalJarFolderRef_Editor extends DefaultNodeEdit
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }

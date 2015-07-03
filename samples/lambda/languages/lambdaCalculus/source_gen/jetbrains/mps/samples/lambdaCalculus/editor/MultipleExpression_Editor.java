@@ -38,7 +38,6 @@ public class MultipleExpression_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MultipleExpression_Editor.expressionsListHandler_24hnc2_a0(node, "expressions", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_expressions");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

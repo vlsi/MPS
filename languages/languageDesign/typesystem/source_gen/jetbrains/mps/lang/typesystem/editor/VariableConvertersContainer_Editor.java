@@ -38,7 +38,6 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hoc63h_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Variable Converters:");
     editorCell.setCellId("Constant_hoc63h_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,7 +47,6 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -56,7 +54,6 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new VariableConvertersContainer_Editor.converterItemListHandler_hoc63h_c0(node, "converterItem", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_converterItem");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

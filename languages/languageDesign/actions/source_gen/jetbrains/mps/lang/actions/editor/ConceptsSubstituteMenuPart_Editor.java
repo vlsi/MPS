@@ -40,7 +40,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_a32wui_a0a(editorContext, node));
     return editorCell;
   }
@@ -50,7 +49,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_a32wui_b0(EditorContext editorContext, SNode node) {
@@ -59,14 +57,12 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_a32wui_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_a32wui_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_a32wui_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_a32wui_b1a(EditorContext editorContext, SNode node) {
@@ -75,7 +71,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_a32wui_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_a32wui_b1b0(editorContext, node));
     return editorCell;
@@ -86,7 +81,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -96,14 +90,12 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_a32wui_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a32wui_b1b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_a32wui_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_a32wui_b1b1a(EditorContext editorContext, SNode node) {

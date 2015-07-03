@@ -36,7 +36,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_85l3fq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_85l3fq_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_85l3fq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_85l3fq_b0a(editorContext, node));
     return editorCell;
@@ -46,7 +45,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createProperty_85l3fq_b0a(EditorContext editorContext, SNode node) {
@@ -56,7 +54,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

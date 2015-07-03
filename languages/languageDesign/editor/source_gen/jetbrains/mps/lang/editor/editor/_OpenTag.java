@@ -18,7 +18,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import java.awt.Color;
 
 public class _OpenTag implements ConceptEditorComponent {
@@ -47,7 +46,6 @@ public class _OpenTag implements ConceptEditorComponent {
     style.set(StyleAttributes.BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(_OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))));
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_mtiojs_a0a(EditorContext editorContext, SNode node) {

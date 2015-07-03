@@ -65,7 +65,6 @@ public class OrPatternClause_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jkilyg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_jkilyg_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

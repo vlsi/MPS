@@ -66,7 +66,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_bqk3nx_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_bqk3nx_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

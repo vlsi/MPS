@@ -48,7 +48,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       editorCell.setReferenceCell(true);
       editorCell.setRole("declaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,7 +80,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -106,7 +104,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_u0vlk9_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_u0vlk9_b0a(editorContext, node));
     return editorCell;
@@ -114,7 +111,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   private EditorCell createConstant_u0vlk9_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Description:");
     editorCell.setCellId("Constant_u0vlk9_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -129,7 +125,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       editorCell.setReferenceCell(true);
       editorCell.setRole("declaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -157,7 +152,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_description");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

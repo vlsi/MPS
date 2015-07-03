@@ -84,7 +84,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
   }
   private EditorCell createComponent_1nfcr6_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_1nfcr6_c0(EditorContext editorContext, SNode node) {
@@ -93,7 +92,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_1nfcr6_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1nfcr6_b2a(editorContext, node));
     return editorCell;
@@ -107,7 +105,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -151,7 +148,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -173,7 +169,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -184,7 +179,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isRequired");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

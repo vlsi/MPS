@@ -36,7 +36,6 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_pt4ick_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transform");
     editorCell.setCellId("Constant_pt4ick_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -77,7 +76,6 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_pt4ick_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_pt4ick_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -130,7 +128,6 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_pt4ick_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precondition:");
     editorCell.setCellId("Constant_pt4ick_a0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -171,14 +168,12 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_pt4ick_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pt4ick_c0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_pt4ick_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "postprocess:");
     editorCell.setCellId("Constant_pt4ick_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

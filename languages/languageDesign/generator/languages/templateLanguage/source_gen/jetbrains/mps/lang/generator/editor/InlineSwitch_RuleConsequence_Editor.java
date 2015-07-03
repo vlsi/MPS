@@ -48,7 +48,6 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new InlineSwitch_RuleConsequence_Editor.caseListHandler_yn898b_a0(node, "case", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_case");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -91,7 +90,6 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -101,7 +99,6 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_yn898b_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yn898b_b2a(editorContext, node));
     return editorCell;
@@ -112,7 +109,6 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -59,7 +59,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_rpszz1_a0a(editorContext, node));
     if (renderingCondition_rpszz1_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_rpszz1_b0a(editorContext, node));
@@ -69,7 +68,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rpszz1_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpszz1_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rpszz1_b0a0(editorContext, node));
     return editorCell;
@@ -77,7 +75,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "language aspect");
     editorCell.setCellId("Constant_rpszz1_a0a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -88,7 +85,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -106,7 +102,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,20 +114,17 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_rpszz1_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_rpszz1_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_rpszz1_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rpszz1_b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_rpszz1_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rpszz1_c1b0(editorContext, node));
@@ -149,7 +141,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rpszz1_b0b1a(editorContext, node));
     return editorCell;
@@ -157,7 +148,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aspect model name:");
     editorCell.setCellId("Constant_rpszz1_a0b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -172,7 +162,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -188,7 +177,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rpszz1_b1b1a(editorContext, node));
     return editorCell;
@@ -196,7 +184,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main language:");
     editorCell.setCellId("Constant_rpszz1_a1b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -240,7 +227,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_rpszz1_b2b1a(editorContext, node));
     return editorCell;
@@ -248,7 +234,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "additional languages:");
     editorCell.setCellId("Constant_rpszz1_a2b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -256,7 +241,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new SimpleLanguageAspectDescriptor_Editor.additionalLanguagesListHandler_rpszz1_b2b1a(node, "additionalLanguages", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_additionalLanguages");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -313,7 +297,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -324,7 +307,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a3b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rpszz1_b3b1a(editorContext, node));
     return editorCell;
@@ -332,7 +314,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "helpUrl:");
     editorCell.setCellId("Constant_rpszz1_a3b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -343,7 +324,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_helpUrl");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -359,7 +339,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpszz1_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rpszz1_b4b1a(editorContext, node));
     return editorCell;
@@ -367,7 +346,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_rpszz1_a4b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -408,14 +386,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rpszz1_f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_rpszz1_f1b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_rpszz1_g1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Generation");
     editorCell.setCellId("Constant_rpszz1_g1b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -425,14 +401,12 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_rpszz1_a7b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rpszz1_b7b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_rpszz1_a7b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_rpszz1_b7b1a(EditorContext editorContext, SNode node) {
@@ -477,7 +451,6 @@ public class SimpleLanguageAspectDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

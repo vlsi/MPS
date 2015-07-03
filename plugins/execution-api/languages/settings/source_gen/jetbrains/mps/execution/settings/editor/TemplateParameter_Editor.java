@@ -76,7 +76,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.apply_constructorParameter(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_cy34jy_c0(EditorContext editorContext, SNode node) {
@@ -85,7 +84,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_cy34jy_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cy34jy_b2a(editorContext, node));
     return editorCell;
@@ -99,7 +97,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

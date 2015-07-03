@@ -41,7 +41,6 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
       editorCell.setReferenceCell(true);
       editorCell.setRole("participant");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,7 +71,6 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

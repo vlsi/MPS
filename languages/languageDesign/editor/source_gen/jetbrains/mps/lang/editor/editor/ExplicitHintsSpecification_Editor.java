@@ -38,7 +38,6 @@ public class ExplicitHintsSpecification_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ExplicitHintsSpecification_Editor.hintsListHandler_a0aq3k_a0(node, "hints", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_hints");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

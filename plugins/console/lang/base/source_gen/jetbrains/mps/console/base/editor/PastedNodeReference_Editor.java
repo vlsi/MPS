@@ -62,7 +62,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_7k9x8q_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7k9x8q_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7k9x8q_c0a(editorContext, node));
@@ -77,7 +76,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -92,7 +90,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("target");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -131,7 +128,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.UNDERLINED, 0, true);
       style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -144,7 +140,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -165,7 +160,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

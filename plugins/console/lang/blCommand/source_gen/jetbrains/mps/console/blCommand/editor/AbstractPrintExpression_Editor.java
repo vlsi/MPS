@@ -33,7 +33,6 @@ public class AbstractPrintExpression_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_9ckmec_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     AbstractPrintExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPrintExpression_Editor.ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0()}));
     return editorCell;
