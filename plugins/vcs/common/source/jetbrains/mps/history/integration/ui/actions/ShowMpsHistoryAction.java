@@ -26,7 +26,7 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ExcludingTraversalPolicy;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.vcs.platform.integration.ModelDiffTool;
+import jetbrains.mps.vcs.platform.integration.ModelDiffToolOld;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -53,7 +53,7 @@ public class ShowMpsHistoryAction extends com.intellij.history.integration.ui.ac
           final FileDifferenceModel diffModel = model.getDifferenceModel();
           return new Runnable() {
             public void run() {
-              ModelDiffTool diffTool = new ModelDiffTool();
+              ModelDiffToolOld diffTool = new ModelDiffToolOld();
               JComponent diffView = diffTool.getDiffView(createDifference(diffModel));
               myComponent.removeAll();
               myComponent.add(diffView, BorderLayout.CENTER);
