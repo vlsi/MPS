@@ -73,6 +73,7 @@ public abstract class SingleRoleCellProvider {
         new EditorCell_Constant(myEditorContext, myOwnerNode, "") :
         new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
     result.setDefaultText(getNoTargetText());
+    result.setEditable(true);
     result.setAction(CellActionType.COMMENT, new CellAction_Comment(myOwnerNode));
     return result;
   }
