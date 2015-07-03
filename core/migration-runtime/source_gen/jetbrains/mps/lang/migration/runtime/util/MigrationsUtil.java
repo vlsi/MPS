@@ -72,6 +72,20 @@ public class MigrationsUtil {
     }
     return result;
   }
+  public static Iterable<MigrationScriptReference> getAllScriptsToBeExecuted(SModule module) {
+    List<MigrationScriptReference> result = ListSequence.fromList(new ArrayList<MigrationScriptReference>());
+    for (SLanguage lang : SetSequence.fromSet(new SLanguageHierarchy(module.getUsedLanguages()).getExtended())) {
+      int currentLangVersion = lang.getLanguageVersion();
+      int ver = module.getUsedLanguageVersion(lang);
+
+      ver = Math.max(ver, 0);
+      currentLangVersion = Math.max(currentLangVersion, 0);
+      for (int i = ver; i < currentLangVersion; i++) {
+        ListSequence.fromList(result).addElement(new MigrationScriptReference(lang, i));
+      }
+    }
+    return result;
+  }
   public static boolean isApplied(MigrationScriptReference script, SModule module) {
     return !(new SLanguageHierarchy(module.getUsedLanguages()).getExtended().contains(script.getLanguage())) || script.getFromVersion() < module.getUsedLanguageVersion(script.getLanguage());
   }

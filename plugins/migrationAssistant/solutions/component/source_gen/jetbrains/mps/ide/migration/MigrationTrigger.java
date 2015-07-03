@@ -49,7 +49,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -70,7 +69,6 @@ import org.jetbrains.annotations.Nullable;
 @State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
 })
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
-  private static final String DIALOG_TEXT = "Some of the modules in project require migration.\n" + "In case the migration is postponed, this notification will not appear until the project is reopened.\n" + "Migration Assistant can be invoked at any time by clicking Tools->Run Migration Assistant.\n" + "Would you like to reload project and start the migration immediately?";
 
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
@@ -139,7 +137,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0s(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0r(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -313,7 +311,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       }
     });
     if (!(migrationRequired.value)) {
-      Messages.showMessageDialog(myProject, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
+      MigrationDialogUtil.showNoMigrationMessage(myProject);
       myMigrationQueued = false;
       return;
     }
@@ -326,9 +324,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         // as we use ui, postpone to EDT 
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            int result = Messages.showYesNoDialog(myProject, DIALOG_TEXT, "Migration Required", "Migrate", "Postpone", null);
+            boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myProject, allModules, myMigrationManager);
             restoreTipsState();
-            if (result == Messages.NO) {
+            if (!(migrate)) {
               return;
             }
 
@@ -426,7 +424,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0s(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0r(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
