@@ -1197,7 +1197,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyz00b" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~ArrayList.subList(int,int):java.util.List" resolve="subList" />
+              <ref role="37wK5l" to="k7g3:~AbstractList.subList(int,int):java.util.List" resolve="subList" />
               <node concept="37vLTw" id="2BHiRxgmrBh" role="37wK5m">
                 <ref role="3cqZAo" node="5IkW5anEKwA" resolve="fromIndex" />
               </node>
@@ -1612,7 +1612,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyzeB3" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~ArrayList.iterator():java.util.Iterator" resolve="iterator" />
+              <ref role="37wK5l" to="k7g3:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
             </node>
           </node>
         </node>
@@ -1719,7 +1719,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="4hiugqyz9Jo" role="33vP2m">
-              <ref role="37wK5l" to="k7g3:~ArrayList.iterator():java.util.Iterator" resolve="iterator" />
+              <ref role="37wK5l" to="k7g3:~AbstractList.iterator():java.util.Iterator" resolve="iterator" />
             </node>
           </node>
         </node>
