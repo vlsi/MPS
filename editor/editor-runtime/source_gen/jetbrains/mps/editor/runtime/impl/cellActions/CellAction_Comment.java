@@ -31,20 +31,18 @@ public class CellAction_Comment extends AbstractCellAction {
     CommentUtil.commentOut(myNode);
   }
   private boolean needToComment(EditorContext editorContext) {
-    boolean needToComment;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"))) {
-      needToComment = false;
+      return false;
     } else if ((SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, "jetbrains.mps.lang.core.structure.BaseCommentAttribute"), false, false) == null)) {
-      needToComment = true;
+      return true;
     } else {
       Selection selection = editorContext.getSelectionManager().getSelection();
       if ((selection instanceof EditorCellLabelSelection && !(((EditorCellLabelSelection) selection).hasNonTrivialSelection()))) {
-        needToComment = false;
+        return false;
       } else {
-        needToComment = true;
+        return true;
       }
     }
-    return needToComment;
   }
 
 }

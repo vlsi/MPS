@@ -155,26 +155,24 @@
       <node id="6552822018369854019" at="25,58,26,77" concept="8" />
       <node id="6552822018369781884" at="26,77,27,128" concept="9" />
       <node id="3459162043709010570" at="30,52,31,35" concept="3" />
-      <node id="6552822018369813545" at="33,62,34,26" concept="8" />
-      <node id="6552822018369818111" at="35,226,36,28" concept="3" />
-      <node id="6552822018369824011" at="37,233,38,27" concept="3" />
-      <node id="6552822018369824892" at="39,12,40,79" concept="8" />
-      <node id="6552822018369813565" at="41,130,42,30" concept="3" />
-      <node id="6552822018369826139" at="43,14,44,29" concept="3" />
-      <node id="6552822018369827304" at="46,5,47,25" concept="9" />
-      <node id="6552822018369826024" at="43,12,45,7" concept="1" />
+      <node id="976829882994433847" at="34,226,35,19" concept="9" />
+      <node id="976829882994434914" at="36,233,37,18" concept="9" />
+      <node id="6552822018369824892" at="38,12,39,79" concept="8" />
+      <node id="976829882994435999" at="40,130,41,21" concept="9" />
+      <node id="976829882994436810" at="42,14,43,20" concept="9" />
+      <node id="6552822018369826024" at="42,12,44,7" concept="1" />
       <node id="6468240931219648514" at="30,0,33,0" concept="7" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="6549307287717216940" at="19,0,23,0" concept="2" trace="CellAction_Comment#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6552822018369779695" at="24,0,29,0" concept="7" trace="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-      <node id="6552822018369813563" at="40,79,45,7" concept="6" />
-      <node id="6552822018369824517" at="39,10,46,5" concept="1" />
-      <node id="6552822018369815627" at="34,26,46,5" concept="6" />
-      <node id="6552822018369813542" at="33,0,49,0" concept="7" trace="needToComment#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="6552822018369813563" at="39,79,44,7" concept="6" />
+      <node id="6552822018369824517" at="38,10,45,5" concept="1" />
+      <node id="6552822018369815627" at="33,62,45,5" concept="6" />
+      <node id="6552822018369813542" at="33,0,47,0" concept="7" trace="needToComment#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="6468240931219648522" at="30,52,31,35" />
-      <scope id="6552822018369815629" at="35,226,36,28" />
-      <scope id="6552822018369818770" at="37,233,38,27" />
-      <scope id="6552822018369813564" at="41,130,42,30" />
-      <scope id="6552822018369826025" at="43,14,44,29" />
+      <scope id="6552822018369815629" at="34,226,35,19" />
+      <scope id="6552822018369818770" at="36,233,37,18" />
+      <scope id="6552822018369813564" at="40,130,41,21" />
+      <scope id="6552822018369826025" at="42,14,43,20" />
       <scope id="6549307287717216944" at="19,50,21,54" />
       <scope id="6552822018369779701" at="25,58,27,128">
         <var name="selection" id="6552822018369854020" />
@@ -188,16 +186,14 @@
       <scope id="6552822018369779695" at="24,0,29,0">
         <var name="editorContext" id="6552822018369779699" />
       </scope>
-      <scope id="6552822018369824518" at="39,12,45,7">
+      <scope id="6552822018369824518" at="38,12,44,7">
         <var name="selection" id="6987866763927700913" />
       </scope>
-      <scope id="6552822018369813544" at="33,62,47,25">
-        <var name="needToComment" id="6552822018369813546" />
-      </scope>
-      <scope id="6552822018369813542" at="33,0,49,0">
+      <scope id="6552822018369813544" at="33,62,45,5" />
+      <scope id="6552822018369813542" at="33,0,47,0">
         <var name="editorContext" id="6552822018369813588" />
       </scope>
-      <unit id="3078666699043208145" at="15,0,51,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
+      <unit id="3078666699043208145" at="15,0,49,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment" />
     </file>
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/3766068586453539585">
