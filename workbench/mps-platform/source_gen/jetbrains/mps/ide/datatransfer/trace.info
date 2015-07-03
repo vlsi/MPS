@@ -219,6 +219,7 @@
       <node id="1963440973928775614" at="398,0,401,0" concept="15" trace="isConversionAvailable#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1963440973928775634" at="401,0,404,0" concept="15" trace="getConvertedFromClipboard#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/project/Project;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
       <node id="227596504051975136" at="411,81,414,5" concept="8" />
+      <node id="6299533519672650641" at="196,0,200,0" concept="15" trace="copyNodesAndTextToClipboard#(Ljava/util/List;Ljava/lang/String;)V" />
       <node id="6299533519672649909" at="73,62,78,5" concept="7" />
       <node id="6299533519672650102" at="100,57,105,5" concept="7" />
       <node id="6299533519672650363" at="147,14,152,9" concept="8" />
@@ -233,7 +234,6 @@
       <node id="6299533519672650258" at="120,39,126,9" concept="8" />
       <node id="6299533519672650785" at="258,32,264,5" concept="7" />
       <node id="227596504051975136" at="411,0,417,0" concept="15" trace="check_lwiaog_c0a31a3#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="6299533519672650641" at="193,0,200,0" concept="15" trace="copyNodesAndTextToClipboard#(Ljava/util/List;Ljava/lang/String;)V" />
       <node id="3237530507069942615" at="220,55,227,7" concept="8" />
       <node id="6299533519672650703" at="239,28,246,5" concept="7" />
       <node id="6299533519672649810" at="56,5,64,5" concept="7" />
@@ -252,6 +252,7 @@
       <node id="2534666358906274923" at="379,97,392,5" concept="7" />
       <node id="6299533519672650248" at="118,67,132,5" concept="7" />
       <node id="6299533519672650481" at="169,14,184,9" concept="1" />
+      <node id="3237530507069942593" at="218,0,233,0" concept="15" trace="setClipboardContents#(Ljava/awt/datatransfer/Transferable;)V" />
       <node id="6299533519672650816" at="267,5,282,5" concept="8" />
       <node id="6299533519672649764" at="50,0,66,0" concept="15" trace="processImportsAndLanguages#(Ljava/util/Set;Ljava/util/Set;Ljava/util/Map;Ljava/util/Set;)V" />
       <node id="6299533519672650025" at="92,0,109,0" concept="15" trace="createNodeDataOut#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/util/Set;Ljava/util/Set;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
@@ -265,7 +266,6 @@
       <node id="6299533519672650467" at="163,30,185,7" concept="8" />
       <node id="6299533519672649843" at="66,0,92,0" concept="15" trace="createNodeDataIn#(Ljava/util/List;Ljava/util/Map;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
       <node id="6299533519672650183" at="109,0,135,0" concept="15" trace="copyNode_internal#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Ljava/util/Map;Ljava/util/Set;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3237530507069942593" at="206,0,233,0" concept="15" trace="setClipboardContents#(Ljava/awt/datatransfer/Transferable;)V" />
       <node id="6299533519672650767" at="257,0,285,0" concept="15" trace="getPasteNodeDataFromClipboard#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
       <node id="2199634891381804955" at="346,0,374,0" concept="9" trace="run#()V" />
       <node id="6299533519672650433" at="157,158,187,5" concept="7" />
@@ -433,6 +433,10 @@
       <scope id="6299533519672650261" at="121,59,125,11">
         <var name="nodes" id="6299533519672650263" />
       </scope>
+      <scope id="6299533519672650641" at="196,0,200,0">
+        <var name="nodes" id="6299533519672650644" />
+        <var name="text" id="6299533519672650647" />
+      </scope>
       <scope id="6299533519672650791" at="259,82,263,12" />
       <scope id="227596504051975136" at="411,81,415,16" />
       <scope id="6299533519672649909" at="73,62,78,5">
@@ -464,10 +468,6 @@
       <scope id="2534666358906290477" at="382,68,388,11" />
       <scope id="227596504051975136" at="411,0,417,0">
         <var name="checkedDotOperand" id="227596504051975136" />
-      </scope>
-      <scope id="6299533519672650641" at="193,0,200,0">
-        <var name="nodes" id="6299533519672650644" />
-        <var name="text" id="6299533519672650647" />
       </scope>
       <scope id="6299533519672650703" at="239,28,246,5">
         <var name="node" id="6299533519672650705" />
@@ -534,6 +534,9 @@
         <var name="result" id="6299533519672650054" />
         <var name="sourceNodesToNewNodes" id="6299533519672650073" />
       </scope>
+      <scope id="3237530507069942593" at="218,0,233,0">
+        <var name="content" id="3237530507069942598" />
+      </scope>
       <scope id="6299533519672649764" at="50,0,66,0">
         <var name="allReferences" id="6299533519672649777" />
         <var name="necessaryImports" id="6299533519672649767" />
@@ -596,9 +599,6 @@
       </scope>
       <scope id="6299533519672650772" at="257,75,283,66">
         <var name="content" id="6299533519672650782" />
-      </scope>
-      <scope id="3237530507069942593" at="206,0,233,0">
-        <var name="content" id="3237530507069942598" />
       </scope>
       <scope id="6299533519672650437" at="158,54,186,71">
         <var name="newReference" id="6299533519672650465" />
@@ -715,11 +715,11 @@
       <node id="6591585676811136588" at="119,0,123,0" concept="9" trace="saveNodeReference#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7543585797633354521" at="74,0,79,0" concept="3" trace="SNodeTransferable#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7543585797632680861" at="123,0,128,0" concept="9" trace="saveText#(Ljava/lang/String;)V" />
+      <node id="6299533519672652070" at="68,0,74,0" concept="3" trace="SNodeTransferable#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6299533519672652126" at="94,12,100,7" concept="8" />
       <node id="6299533519672652019" at="40,0,47,0" concept="3" trace="SNodeTransferable#(Ljava/util/List;Ljava/lang/String;)V" />
       <node id="6299533519672652047" at="58,0,65,0" concept="3" trace="SNodeTransferable#(Ljava/util/List;Ljava/lang/String;Ljava/util/Map;)V" />
-      <node id="6299533519672652070" at="65,0,74,0" concept="3" trace="SNodeTransferable#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6299533519672652036" at="47,0,58,0" concept="3" trace="SNodeTransferable#(Ljava/util/List;)V" />
+      <node id="6299533519672652036" at="50,0,58,0" concept="3" trace="SNodeTransferable#(Ljava/util/List;)V" />
       <node id="6299533519672652119" at="89,40,100,7" concept="8" />
       <node id="6299533519672652165" at="107,0,119,0" concept="9" trace="saveNodes#(Ljava/util/List;Ljava/util/Map;)V" />
       <node id="7543585797633196474" at="88,99,101,5" concept="8" />
@@ -764,6 +764,9 @@
       <scope id="7543585797632680861" at="123,0,128,0">
         <var name="text" id="7543585797632769099" />
       </scope>
+      <scope id="6299533519672652070" at="68,0,74,0">
+        <var name="node" id="6299533519672652073" />
+      </scope>
       <scope id="6299533519672652019" at="40,0,47,0">
         <var name="nodes" id="6299533519672652022" />
         <var name="text" id="6299533519672652025" />
@@ -773,14 +776,11 @@
         <var name="nodesAndAttributes" id="6299533519672652056" />
         <var name="text" id="6299533519672652054" />
       </scope>
-      <scope id="6299533519672652070" at="65,0,74,0">
-        <var name="node" id="6299533519672652073" />
+      <scope id="6299533519672652036" at="50,0,58,0">
+        <var name="nodes" id="6299533519672652039" />
       </scope>
       <scope id="6299533519672652178" at="107,107,117,55">
         <var name="pasteNodeData" id="6299533519672652200" />
-      </scope>
-      <scope id="6299533519672652036" at="47,0,58,0">
-        <var name="nodes" id="6299533519672652039" />
       </scope>
       <scope id="7543585797633196477" at="89,40,100,7" />
       <scope id="6299533519672652165" at="107,0,119,0">

@@ -22,9 +22,9 @@
     <import index="a7z3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="tilo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.language(MPS.Core/jetbrains.mps.smodel.adapter.structure.language@java_stub)" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -37,9 +37,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
-        <child id="1081256993305" name="classType" index="2ZW6by" />
-        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
@@ -166,7 +166,7 @@
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
       </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
+      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
@@ -311,11 +311,8 @@
             </node>
             <node concept="2OqwBi" id="IkVTleEjRd" role="33vP2m">
               <node concept="2JrnkZ" id="IkVTleEjRe" role="2Oq$k0">
-                <node concept="2OqwBi" id="7fCCGqbno$F" role="2JrQYb">
-                  <node concept="37vLTw" id="7fCCGqbnodg" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2VRROcY5O23" resolve="c" />
-                  </node>
-                  <node concept="I4A8Y" id="7fCCGqbnq0x" role="2OqNvi" />
+                <node concept="37vLTw" id="3CPpk7pERXD" role="2JrQYb">
+                  <ref role="3cqZAo" node="3CPpk7pENlW" resolve="futureModel" />
                 </node>
               </node>
               <node concept="liA8E" id="IkVTleEjRg" role="2OqNvi">
@@ -398,12 +395,16 @@
               </node>
             </node>
           </node>
-          <node concept="2ZW3vV" id="IkVTleEo52" role="3clFbw">
-            <node concept="3uibUv" id="IkVTleEoHW" role="2ZW6by">
-              <ref role="3uigEE" to="cu2c:~Language" resolve="Language" />
+          <node concept="2OqwBi" id="5h6wZRqYdIV" role="3clFbw">
+            <node concept="Rm8GO" id="5h6wZRqYdnK" role="2Oq$k0">
+              <ref role="Rm8GQ" to="cu2c:~LanguageAspect.MIGRATION" resolve="MIGRATION" />
+              <ref role="1Px2BO" to="cu2c:~LanguageAspect" resolve="LanguageAspect" />
             </node>
-            <node concept="37vLTw" id="IkVTleEnxX" role="2ZW6bz">
-              <ref role="3cqZAo" node="IkVTleEjRc" resolve="module" />
+            <node concept="liA8E" id="5h6wZRqYfqi" role="2OqNvi">
+              <ref role="37wK5l" to="cu2c:~LanguageAspect.is(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="is" />
+              <node concept="37vLTw" id="3CPpk7pERXE" role="37wK5m">
+                <ref role="3cqZAo" node="3CPpk7pENlW" resolve="futureModel" />
+              </node>
             </node>
           </node>
         </node>
@@ -423,11 +424,8 @@
                   <node concept="3uibUv" id="7fCCGqbnLtw" role="10QFUM">
                     <ref role="3uigEE" to="ec5l:~SModel" resolve="SModel" />
                   </node>
-                  <node concept="2OqwBi" id="7fCCGqbnOMf" role="10QFUP">
-                    <node concept="37vLTw" id="7fCCGqbnOmw" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2VRROcY5O23" resolve="c" />
-                    </node>
-                    <node concept="I4A8Y" id="7fCCGqbnPOo" role="2OqNvi" />
+                  <node concept="37vLTw" id="3CPpk7pERXG" role="10QFUP">
+                    <ref role="3cqZAo" node="3CPpk7pENlW" resolve="futureModel" />
                   </node>
                 </node>
               </node>
@@ -565,6 +563,10 @@
         <node concept="3Tqbb2" id="2VRROcY5O22" role="1tU5fm">
           <ref role="ehGHo" to="53vh:7fCCGqboGqz" resolve="MigrationScript" />
         </node>
+      </node>
+      <node concept="37vLTG" id="3CPpk7pENlW" role="1bW2Oz">
+        <property role="TrG5h" value="futureModel" />
+        <node concept="H_c77" id="3CPpk7pENBd" role="1tU5fm" />
       </node>
     </node>
   </node>

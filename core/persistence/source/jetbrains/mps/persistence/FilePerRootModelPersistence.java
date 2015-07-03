@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -216,10 +217,12 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       throw new IOException("empty list of source roots");
     }
 
+    final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
+
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
       String tmpSR = null;
       for (String sr : sourceRoots) {
-        if (modelRoot instanceof DefaultModelRoot && ((DefaultModelRoot) modelRoot).isLanguageAspectsSourceRoot(sr)) {
+        if (isModelRootInLanguage && DefaultModelRoot.isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
         if(sourceRoot != null && FileUtil.isSubPath(sr, sourceRoot)) {

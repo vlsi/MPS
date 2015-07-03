@@ -78,24 +78,24 @@
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/2620437876315875804">
     <file name="MigrationErrorDescriptor.java">
+      <node id="2620437876315896327" at="15,0,16,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
+      <node id="2620437876315896352" at="21,0,22,0" concept="7" trace="getProblems#()Ljava/lang/Iterable;" />
       <node id="2620437876315875815" at="8,0,10,0" concept="2" trace="MigrationErrorDescriptor#()V" />
-      <node id="2620437876315896327" at="11,0,16,0" concept="7" trace="getMessage#()Ljava/lang/String;" />
-      <node id="2620437876315896352" at="17,0,22,0" concept="7" trace="getProblems#()Ljava/lang/Iterable;" />
       <scope id="2620437876315875818" at="8,37,8,37" />
+      <scope id="2620437876315896327" at="15,0,16,0" />
+      <scope id="2620437876315896352" at="21,0,22,0" />
       <scope id="2620437876315875815" at="8,0,10,0" />
-      <scope id="2620437876315896327" at="11,0,16,0" />
-      <scope id="2620437876315896352" at="17,0,22,0" />
       <unit id="2620437876315875804" at="7,0,23,0" name="jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor" />
     </file>
   </root>
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:49062720-8530-4489-916a-fdd3a02a7b82(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.wizard)/2620437876316714136">
     <file name="MigrationErrorContainer.java">
       <node id="2620437876315903508" at="15,0,16,0" concept="7" trace="setErrorDescriptor#(Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;)V" />
-      <node id="2620437876315903502" at="8,0,14,0" concept="7" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;" />
+      <node id="2620437876315903502" at="12,0,14,0" concept="7" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;" />
       <scope id="2620437876315903508" at="15,0,16,0">
         <var name="errors" id="2620437876315903515" />
       </scope>
-      <scope id="2620437876315903502" at="8,0,14,0" />
+      <scope id="2620437876315903502" at="12,0,14,0" />
       <unit id="2620437876316714136" at="7,0,17,0" name="jetbrains.mps.ide.migration.wizard.MigrationErrorContainer" />
     </file>
   </root>
@@ -103,6 +103,7 @@
     <file name="InitialStep.java">
       <node id="6781485246382121554" at="34,0,35,0" concept="12" trace="ID" />
       <node id="4705032494360248084" at="36,0,37,0" concept="12" trace="TEXT" />
+      <node id="1694748743345485671" at="41,0,42,0" concept="12" trace="ourOptions" />
       <node id="1694748743345036021" at="43,0,44,0" concept="4" trace="myComponents" />
       <node id="6781485246382339100" at="45,39,46,45" concept="14" />
       <node id="6781485246382121580" at="50,58,51,97" concept="8" />
@@ -146,7 +147,6 @@
       <node id="1694748743344763711" at="74,0,77,0" concept="7" trace="accept#(Ljetbrains/mps/migration/global/ProjectMigrationWithOptions;)Z" />
       <node id="1694748743344779493" at="78,0,81,0" concept="7" trace="translate#(Ljetbrains/mps/migration/global/ProjectMigrationWithOptions;)Ljava/lang/Iterable;" />
       <node id="1694748743345551750" at="101,0,104,0" concept="13" trace="getOptions#()Ljava/util/Map;" />
-      <node id="1694748743345485671" at="38,0,42,0" concept="12" trace="ourOptions" />
       <node id="6781485246382121660" at="91,0,95,0" concept="7" trace="getNextStepId#()Ljava/lang/Object;" />
       <node id="6781485246382121667" at="96,0,100,0" concept="7" trace="getPreviousStepId#()Ljava/lang/Object;" />
       <node id="1694748743344797631" at="82,0,87,0" concept="7" trace="visit#(Ljava/lang/String;)V" />

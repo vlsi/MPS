@@ -8,10 +8,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -42,28 +38,12 @@ public class ShowNullDFA_Action extends BaseAction {
     }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", node);
       if (node == null) {
         return false;
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      MapSequence.fromMap(_params).put("ideaProject", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
-      MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
         return false;
       }
@@ -74,12 +54,12 @@ public class ShowNullDFA_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>> runner = new Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>>();
     final Wrappers._T<ControlFlowGraph<InstructionWrapper>> graph = new Wrappers._T<ControlFlowGraph<InstructionWrapper>>();
-    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        runner.value = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
+        runner.value = new NullableAnalyzerRunner(event.getData(MPSCommonDataKeys.NODE));
         graph.value = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(runner.value.getProgramCopy()), new GraphCreator());
       }
     });
-    new ShowCFGDialog(graph.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("ideaProject")), "Nullable DFA").show();
+    new ShowCFGDialog(graph.value, event.getData(MPSCommonDataKeys.MPS_PROJECT), "Nullable DFA").show();
   }
 }

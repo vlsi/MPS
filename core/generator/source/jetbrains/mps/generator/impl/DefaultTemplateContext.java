@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -203,6 +204,12 @@ public class DefaultTemplateContext implements TemplateContext {
       return this;
     }
     return new DefaultTemplateContext(this, variables);
+  }
+
+  @Override
+  public TemplateContext withVariable(String name, Object value) {
+    assert name != null;
+    return new DefaultTemplateContext(this, getInputName(), getInput(), null, Collections.singletonMap(name, value));
   }
 
   @Override

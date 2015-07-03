@@ -20,4 +20,7 @@ public class ExtensionOverlapping_Behavior {
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
+  public static SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
+    return SNodeOperations.getNode("r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)", "8703467640548368853");
+  }
 }

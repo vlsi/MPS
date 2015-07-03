@@ -7,53 +7,56 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ScriptsDescriptor.java">
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.generator.scripts.ScriptsDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e7(jetbrains.mps.lang.generator.scripts)/982871510076818109">
     <file name="UpdateSwitchMacro_MigrationScript.java">
-      <node id="982871510076818109" at="16,80,17,56" concept="6" />
-      <node id="982871510076825112" at="20,31,21,62" concept="5" />
-      <node id="982871510076825112" at="24,41,25,62" concept="5" />
-      <node id="982871510076825112" at="28,54,29,157" concept="5" />
-      <node id="982871510076825112" at="32,59,33,20" concept="5" />
-      <node id="982871510076879349" at="36,52,37,215" concept="4" />
-      <node id="982871510076930574" at="37,215,38,332" concept="2" />
-      <node id="982871510076982429" at="38,332,39,316" concept="2" />
-      <node id="982871510077010307" at="39,316,40,342" concept="2" />
-      <node id="982871510077038385" at="40,342,41,322" concept="2" />
-      <node id="982871510076825112" at="44,42,45,21" concept="5" />
-      <node id="982871510076825112" at="19,0,23,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="982871510076825112" at="23,0,27,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="982871510076825112" at="27,0,31,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="982871510076825112" at="31,0,35,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="982871510076825112" at="43,0,47,0" concept="3" trace="isShowAsIntention#()Z" />
-      <node id="982871510076825112" at="35,0,43,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="982871510076818109" at="17,56,47,7" concept="0" />
-      <node id="982871510076825112" at="17,56,47,7" concept="2" />
-      <node id="982871510076818109" at="16,0,49,0" concept="1" trace="UpdateSwitchMacro_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <scope id="982871510076825112" at="20,31,21,62" />
-      <scope id="982871510076825112" at="24,41,25,62" />
-      <scope id="982871510076825112" at="28,54,29,157" />
-      <scope id="982871510076825112" at="32,59,33,20" />
-      <scope id="982871510076825112" at="44,42,45,21" />
-      <scope id="982871510076825112" at="19,0,23,0" />
-      <scope id="982871510076825112" at="23,0,27,0" />
-      <scope id="982871510076825112" at="27,0,31,0" />
-      <scope id="982871510076825112" at="31,0,35,0">
+      <node id="982871510076818109" at="15,46,16,56" concept="6" />
+      <node id="982871510076825112" at="19,31,20,62" concept="5" />
+      <node id="982871510076825112" at="23,41,24,62" concept="5" />
+      <node id="982871510076825112" at="27,54,28,157" concept="5" />
+      <node id="982871510076825112" at="31,59,32,20" concept="5" />
+      <node id="982871510076879349" at="35,52,36,215" concept="4" />
+      <node id="982871510076930574" at="36,215,37,332" concept="2" />
+      <node id="982871510076982429" at="37,332,38,316" concept="2" />
+      <node id="982871510077010307" at="38,316,39,342" concept="2" />
+      <node id="982871510077038385" at="39,342,40,322" concept="2" />
+      <node id="982871510076825112" at="43,42,44,21" concept="5" />
+      <node id="982871510076825112" at="18,0,22,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="22,0,26,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="26,0,30,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="982871510076825112" at="30,0,34,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="982871510076825112" at="42,0,46,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="982871510076825112" at="34,0,42,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="982871510076818109" at="16,56,46,7" concept="0" />
+      <node id="982871510076825112" at="16,56,46,7" concept="2" />
+      <node id="982871510076818109" at="15,0,48,0" concept="1" trace="UpdateSwitchMacro_MigrationScript#()V" />
+      <scope id="982871510076825112" at="19,31,20,62" />
+      <scope id="982871510076825112" at="23,41,24,62" />
+      <scope id="982871510076825112" at="27,54,28,157" />
+      <scope id="982871510076825112" at="31,59,32,20" />
+      <scope id="982871510076825112" at="43,42,44,21" />
+      <scope id="982871510076825112" at="18,0,22,0" />
+      <scope id="982871510076825112" at="22,0,26,0" />
+      <scope id="982871510076825112" at="26,0,30,0" />
+      <scope id="982871510076825112" at="30,0,34,0">
         <var name="node" id="982871510076825112" />
       </scope>
-      <scope id="982871510076825112" at="43,0,47,0" />
-      <scope id="982871510076825114" at="36,52,41,322">
+      <scope id="982871510076825112" at="42,0,46,0" />
+      <scope id="982871510076825114" at="35,52,40,322">
         <var name="n" id="982871510076879352" />
       </scope>
-      <scope id="982871510076825112" at="35,0,43,0">
+      <scope id="982871510076825112" at="34,0,42,0">
         <var name="node" id="982871510076825112" />
       </scope>
-      <scope id="982871510076825112" at="17,56,47,7" />
-      <scope id="982871510076818109" at="16,80,47,7" />
-      <scope id="982871510076818109" at="16,0,49,0">
-        <var name="operationContext" id="982871510076818109" />
-      </scope>
-      <unit id="982871510076825112" at="18,28,47,5" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
-      <unit id="982871510076818109" at="15,0,50,0" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
+      <scope id="982871510076825112" at="16,56,46,7" />
+      <scope id="982871510076818109" at="15,46,46,7" />
+      <scope id="982871510076818109" at="15,0,48,0" />
+      <unit id="982871510076825112" at="17,28,46,5" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
+      <unit id="982871510076818109" at="14,0,49,0" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
     </file>
   </root>
 </debug-info>

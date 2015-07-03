@@ -146,31 +146,31 @@
       <node id="1218034168005182175" at="134,56,137,7" concept="7" />
       <node id="1218034168005182223" at="149,43,152,9" concept="7" />
       <node id="1218034168005182278" at="158,5,161,5" concept="7" />
+      <node id="1218034168005182046" at="87,0,91,0" concept="8" trace="consumeClassHeader#()V" />
+      <node id="1218034168005182060" at="94,0,98,0" concept="8" trace="consumeEmptyTypeDeclaration#()V" />
+      <node id="1218034168005182074" at="101,0,105,0" concept="8" trace="consumeInterfaceHeader#()V" />
       <node id="1218034168005182097" at="109,58,113,5" concept="7" />
       <node id="1218034168005182552" at="196,56,200,5" concept="6" />
+      <node id="1218034168005182602" at="206,0,210,0" concept="8" trace="initialize#(Z)V" />
+      <node id="1218034168005182618" at="213,0,217,0" concept="8" trace="initialize#()V" />
       <node id="1218034168005182779" at="240,52,244,9" concept="7" />
+      <node id="1218034168005182862" at="255,0,259,0" concept="8" trace="resetModifiers#()V" />
       <node id="1218034168005181929" at="60,83,65,7" concept="7" />
       <node id="1218034168005182007" at="76,70,82,5" concept="7" />
-      <node id="1218034168005182046" at="84,0,91,0" concept="8" trace="consumeClassHeader#()V" />
-      <node id="1218034168005182060" at="91,0,98,0" concept="8" trace="consumeEmptyTypeDeclaration#()V" />
-      <node id="1218034168005182074" at="98,0,105,0" concept="8" trace="consumeInterfaceHeader#()V" />
-      <node id="1218034168005182602" at="203,0,210,0" concept="8" trace="initialize#(Z)V" />
-      <node id="1218034168005182618" at="210,0,217,0" concept="8" trace="initialize#()V" />
+      <node id="1218034168005182088" at="108,0,116,0" concept="8" trace="endParse#(I)Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;" />
+      <node id="1218034168005182534" at="195,0,203,0" concept="8" trace="getCommentsPositions#()[[I" />
       <node id="1218034168005182760" at="238,177,247,7" concept="7" />
-      <node id="1218034168005182862" at="250,0,259,0" concept="8" trace="resetModifiers#()V" />
-      <node id="1218034168005182088" at="105,0,116,0" concept="8" trace="endParse#(I)Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;" />
+      <node id="1218034168005182631" at="221,0,231,0" concept="8" trace="initializeScanner#()V" />
       <node id="1218034168005182188" at="128,23,140,5" concept="17" />
-      <node id="1218034168005182534" at="191,0,203,0" concept="8" trace="getCommentsPositions#()[[I" />
       <node id="1218034168005182277" at="144,34,157,7" concept="17" />
-      <node id="1218034168005182631" at="217,0,231,0" concept="8" trace="initializeScanner#()V" />
       <node id="1218034168005182681" at="234,56,248,5" concept="6" />
       <node id="1218034168005182189" at="142,67,158,5" concept="7" />
-      <node id="1218034168005182675" at="231,0,250,0" concept="8" trace="pushOnCommentsStack#(II)V" />
+      <node id="1218034168005182675" at="234,0,250,0" concept="8" trace="pushOnCommentsStack#(II)V" />
       <node id="1218034168005182290" at="164,42,187,5" concept="14" />
       <node id="1218034168005181849" at="48,47,72,5" concept="6" />
       <node id="1218034168005181858" at="46,62,72,5" concept="0" />
       <node id="1218034168005181807" at="38,0,84,0" concept="8" trace="checkComment#()V" />
-      <node id="1218034168005182123" at="116,0,191,0" concept="8" trace="flushCommentsDefinedPriorTo#(I)I" />
+      <node id="1218034168005182123" at="120,0,191,0" concept="8" trace="flushCommentsDefinedPriorTo#(I)I" />
       <scope id="1218034168005181801" at="35,97,36,51" />
       <scope id="1218034168005181830" at="40,78,41,61" />
       <scope id="1218034168005181911" at="54,177,55,29" />
@@ -200,37 +200,38 @@
       <scope id="1218034168005182294" at="166,13,169,71" />
       <scope id="1218034168005182291" at="183,14,186,113" />
       <scope id="1218034168005182014" at="77,51,81,7" />
+      <scope id="1218034168005182046" at="87,0,91,0" />
+      <scope id="1218034168005182060" at="94,0,98,0" />
+      <scope id="1218034168005182074" at="101,0,105,0" />
       <scope id="1218034168005182410" at="178,13,182,14" />
       <scope id="1218034168005182552" at="196,56,200,5">
         <var name="i" id="1218034168005182553" />
       </scope>
+      <scope id="1218034168005182602" at="206,0,210,0">
+        <var name="initializeNLS" id="1218034168005182603" />
+      </scope>
+      <scope id="1218034168005182618" at="213,0,217,0" />
+      <scope id="1218034168005182862" at="255,0,259,0" />
       <scope id="1218034168005182091" at="108,58,114,16">
         <var name="unit" id="1218034168005182092" />
       </scope>
       <scope id="1218034168005182535" at="195,41,201,21">
         <var name="positions" id="1218034168005182536" />
       </scope>
-      <scope id="1218034168005182046" at="84,0,91,0" />
-      <scope id="1218034168005182060" at="91,0,98,0" />
-      <scope id="1218034168005182074" at="98,0,105,0" />
       <scope id="1218034168005182298" at="170,13,177,14" />
-      <scope id="1218034168005182602" at="203,0,210,0">
-        <var name="initializeNLS" id="1218034168005182603" />
-      </scope>
-      <scope id="1218034168005182618" at="210,0,217,0" />
       <scope id="1218034168005182770" at="239,62,246,74">
         <var name="stackLength" id="1218034168005182771" />
       </scope>
+      <scope id="1218034168005182088" at="108,0,116,0">
+        <var name="act" id="1218034168005182089" />
+      </scope>
+      <scope id="1218034168005182534" at="195,0,203,0" />
       <scope id="1218034168005182632" at="221,35,229,250" />
-      <scope id="1218034168005182862" at="250,0,259,0" />
       <scope id="1218034168005182154" at="129,24,139,19">
         <var name="commentEnd" id="1218034168005182155" />
       </scope>
-      <scope id="1218034168005182088" at="105,0,116,0">
-        <var name="act" id="1218034168005182089" />
-      </scope>
+      <scope id="1218034168005182631" at="221,0,231,0" />
       <scope id="1218034168005182219" at="145,109,156,16" />
-      <scope id="1218034168005182534" at="191,0,203,0" />
       <scope id="1218034168005182693" at="235,40,247,7">
         <var name="commentStart" id="1218034168005182722" />
         <var name="scannerStart" id="1218034168005182694" />
@@ -238,12 +239,11 @@
       <scope id="1218034168005182194" at="143,25,157,7">
         <var name="immediateCommentEnd" id="1218034168005182195" />
       </scope>
-      <scope id="1218034168005182631" at="217,0,231,0" />
       <scope id="1218034168005182680" at="234,56,248,5" />
       <scope id="1218034168005182681" at="234,56,248,5">
         <var name="i" id="1218034168005182682" />
       </scope>
-      <scope id="1218034168005182675" at="231,0,250,0">
+      <scope id="1218034168005182675" at="234,0,250,0">
         <var name="end" id="1218034168005182678" />
         <var name="start" id="1218034168005182676" />
       </scope>
@@ -264,10 +264,10 @@
         <var name="lastCommentIndex" id="1218034168005182127" />
         <var name="validCount" id="1218034168005182146" />
       </scope>
-      <scope id="1218034168005182123" at="116,0,191,0">
+      <scope id="1218034168005182123" at="120,0,191,0">
         <var name="position" id="1218034168005182124" />
       </scope>
-      <unit id="1218034168005181764" at="14,0,260,0" name="org.eclipse.jdt.internal.core.util.CommentRecorderParser" />
+      <unit id="1218034168005181764" at="30,0,260,0" name="org.eclipse.jdt.internal.core.util.CommentRecorderParser" />
     </file>
   </root>
   <root nodeRef="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)/1218034168005183012">
@@ -296,7 +296,7 @@
       <scope id="1218034168005183080" at="34,0,40,0">
         <var name="compilationResult" id="1218034168005183081" />
       </scope>
-      <unit id="1218034168005183012" at="8,0,41,0" name="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
+      <unit id="1218034168005183012" at="23,0,41,0" name="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
     </file>
   </root>
   <root nodeRef="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)/1218034168005183146">
@@ -521,7 +521,7 @@
         <var name="settings" id="1218034168005183387" />
         <var name="source" id="1218034168005183384" />
       </scope>
-      <unit id="1218034168005183146" at="21,0,165,0" name="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" />
+      <unit id="1218034168005183146" at="35,0,165,0" name="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" />
     </file>
   </root>
 </debug-info>

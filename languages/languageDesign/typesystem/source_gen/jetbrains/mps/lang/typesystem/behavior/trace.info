@@ -45,8 +45,11 @@
     <file name="AssertStatement_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.AssertStatement_BehaviorDescriptor" />
     </file>
+    <file name="AttributedNodeExpression_BehaviorDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.typesystem.behavior.AttributedNodeExpression_BehaviorDescriptor" />
+    </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,234,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,238,0" name="jetbrains.mps.lang.typesystem.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CaretPositionOperation_BehaviorDescriptor.java">
       <unit at="11,0,34,0" name="jetbrains.mps.lang.typesystem.behavior.CaretPositionOperation_BehaviorDescriptor" />
@@ -230,6 +233,9 @@
     </file>
     <file name="OverloadedOperatorTypeRule_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.typesystem.behavior.OverloadedOperatorTypeRule_BehaviorDescriptor" />
+    </file>
+    <file name="OverridesConceptFunction_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.typesystem.behavior.OverridesConceptFunction_BehaviorDescriptor" />
     </file>
     <file name="PatternCondition_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.typesystem.behavior.PatternCondition_BehaviorDescriptor" />
@@ -976,6 +982,35 @@
         <var name="nameString" id="1597542831859274287" />
       </scope>
       <unit id="1597542831863639892" at="13,0,58,0" name="jetbrains.mps.lang.typesystem.behavior.MessageStatementUtil" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/1766949807893575702">
+    <file name="OverridesConceptFunction_Behavior.java">
+      <node id="1766949807893575847" at="13,83,14,47" concept="8" />
+      <node id="1766949807893575865" at="16,60,17,63" concept="7" />
+      <node id="1766949807893575865" at="17,63,18,30" concept="7" />
+      <node id="1766949807893575865" at="18,30,19,223" concept="0" />
+      <node id="1766949807893575865" at="18,30,19,223" concept="0" />
+      <node id="1766949807893575865" at="18,30,19,223" concept="2" />
+      <node id="1766949807893575865" at="19,223,20,24" concept="8" />
+      <node id="1766949807893575702" at="11,0,13,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1766949807893575702" at="13,0,16,0" concept="10" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1766949807893575865" at="16,0,22,0" concept="10" trace="_quotation_createNode_b5kzt8_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1766949807893575704" at="11,43,11,43" />
+      <scope id="1766949807893575711" at="13,83,14,47" />
+      <scope id="1766949807893575865" at="18,30,19,223" />
+      <scope id="1766949807893575702" at="11,0,13,0">
+        <var name="thisNode" id="1766949807893575702" />
+      </scope>
+      <scope id="1766949807893575702" at="13,0,16,0">
+        <var name="thisNode" id="1766949807893575702" />
+      </scope>
+      <scope id="1766949807893575865" at="16,60,20,24">
+        <var name="facade" id="1766949807893575865" />
+        <var name="quotedNode_1" id="1766949807893575865" />
+      </scope>
+      <scope id="1766949807893575865" at="16,0,22,0" />
+      <unit id="1766949807893575702" at="10,0,23,0" name="jetbrains.mps.lang.typesystem.behavior.OverridesConceptFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)/3044950653914718969">

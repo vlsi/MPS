@@ -15,32 +15,28 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SRepository;
 
-public class TestLanguage extends Language {
+/**
+ * INTENDED FOR INTERNAL USE, TESTS ONLY.
+ */
+public final class TestLanguage extends Language {
   private TestLanguage(LanguageDescriptor descriptor, IFile file) {
     super(descriptor, file);
   }
 
   /**
-   * @deprecated use {@link #newInstance(org.jetbrains.mps.openapi.module.SRepository, jetbrains.mps.project.structure.modules.LanguageDescriptor, MPSModuleOwner)} instead
+   * Factory for a Language, deemed for use solely in tests.
    */
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public static Language newInstance(LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    return newInstance(MPSModuleRepository.getInstance(), descriptor, moduleOwner);
-  }
-
-  // this is for tests only. Can be later converted into subclass
-  public static Language newInstance(SRepository repo, LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    assert repo instanceof MPSModuleRepository;
+  public static Language newInstance(SRepositoryExt repo, LanguageDescriptor descriptor, MPSModuleOwner moduleOwner) {
     Language newLanguage = new TestLanguage(descriptor, null);
 
-    Language language = ((MPSModuleRepository) repo).registerModule(newLanguage, moduleOwner);
+    Language language = repo.registerModule(newLanguage, moduleOwner);
     if (language == newLanguage) {
+      // FIXME ModuleRepositoryFacade shall deal with SRepository instance and keep the knowledge what to do with a registered module,
+      // shall not duplicate it here
       language.revalidateGenerators();
     }
     return language;

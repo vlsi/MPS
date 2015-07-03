@@ -118,13 +118,13 @@
       <node id="1237996670344" at="80,10,87,5" concept="1" />
       <node id="1917749888333266271" at="91,70,98,5" concept="7" />
       <node id="1917749888333781467" at="107,26,114,5" concept="14" />
+      <node id="4788436444168067054" at="143,0,153,0" concept="13" trace="isAssignableConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="1238254781295" at="55,0,66,0" concept="13" trace="getDirectSuperInterfacesAndTheirSupers#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="1917749888333537128" at="90,0,104,0" concept="13" trace="getDirectSuperConcepts#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
       <node id="1917749888333725137" at="104,0,118,0" concept="13" trace="getConceptAndAllSuperConcepts#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="4788436444168067054" at="139,0,153,0" concept="13" trace="isAssignableConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="7651139485607046792" at="157,0,173,0" concept="13" trace="isAssignableConcept#(Ljava/lang/String;Ljava/lang/String;)Z" />
+      <node id="1238251253599" at="122,0,139,0" concept="13" trace="isAssignableConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1237996328353" at="68,71,87,5" concept="7" />
-      <node id="7651139485607046792" at="153,0,173,0" concept="13" trace="isAssignableConcept#(Ljava/lang/String;Ljava/lang/String;)Z" />
-      <node id="1238251253599" at="118,0,139,0" concept="13" trace="isAssignableConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1237995590966" at="66,0,90,0" concept="13" trace="getDirectSuperConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <scope id="6963130675032169264" at="33,83,34,83" />
       <scope id="6799683357397516861" at="37,26,38,18" />
@@ -245,6 +245,10 @@
         <var name="conceptDecl" id="1237996518963" />
         <var name="extended" id="1237996347418" />
       </scope>
+      <scope id="4788436444168067054" at="143,0,153,0">
+        <var name="from" id="4788436444168067059" />
+        <var name="toFqName" id="4788436444168067061" />
+      </scope>
       <scope id="1238254781295" at="55,0,66,0">
         <var name="concept" id="1238254781344" />
       </scope>
@@ -264,20 +268,16 @@
       <scope id="1917749888333725137" at="104,0,118,0">
         <var name="concept" id="1917749888333725202" />
       </scope>
-      <scope id="4788436444168067054" at="139,0,153,0">
-        <var name="from" id="4788436444168067059" />
-        <var name="toFqName" id="4788436444168067061" />
-      </scope>
-      <scope id="7651139485607046792" at="153,0,173,0">
+      <scope id="7651139485607046792" at="157,0,173,0">
         <var name="fromFqName" id="7651139485607046797" />
         <var name="toFqName" id="7651139485607046799" />
       </scope>
-      <scope id="1237995590970" at="67,67,88,18">
-        <var name="result" id="1237996276627" />
-      </scope>
-      <scope id="1238251253599" at="118,0,139,0">
+      <scope id="1238251253599" at="122,0,139,0">
         <var name="from" id="1238251299214" />
         <var name="to" id="1238251304684" />
+      </scope>
+      <scope id="1237995590970" at="67,67,88,18">
+        <var name="result" id="1237996276627" />
       </scope>
       <scope id="1237995590966" at="66,0,90,0">
         <var name="concept" id="1237995590971" />
@@ -375,7 +375,7 @@
         <var name="importsToAdd" id="1653674023125892622" />
         <var name="module" id="1653674023125875869" />
       </scope>
-      <unit id="4193578441192064991" at="19,0,85,0" name="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
+      <unit id="4193578441192064991" at="22,0,85,0" name="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
     </file>
   </root>
 </debug-info>

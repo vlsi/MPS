@@ -4,15 +4,13 @@ package jetbrains.mps.lang.script.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.awt.Frame;
-import jetbrains.mps.smodel.IOperationContext;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
@@ -20,16 +18,15 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.ide.script.plugin.ScriptsActionGroupHelper;
 import jetbrains.mps.ide.script.plugin.RunMigrationScriptsDialog;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
 public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
-  private List<SNode> scripts;
-  private boolean selectionOnly;
-  public RunMigrationScripts_Action(List<SNode> scripts_par, boolean selectionOnly_par) {
+  private ScriptsMenuBuilder menuBuilder;
+  public RunMigrationScripts_Action(ScriptsMenuBuilder menuBuilder_par) {
     super("All Scripts...", "", ICON);
-    this.scripts = scripts_par;
-    this.selectionOnly = selectionOnly_par;
+    this.menuBuilder = menuBuilder_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -57,13 +54,6 @@ public class RunMigrationScripts_Action extends BaseAction {
       }
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       List<SModel> p = event.getData(MPSCommonDataKeys.MODELS);
       MapSequence.fromMap(_params).put("models", p);
     }
@@ -76,7 +66,7 @@ public class RunMigrationScripts_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SearchScope scope;
-    if (RunMigrationScripts_Action.this.selectionOnly) {
+    if (RunMigrationScripts_Action.this.menuBuilder.isSelectionOnly()) {
       scope = AbstractMigrationScriptHelper.createMigrationScope(((List<SModule>) MapSequence.fromMap(_params).get("modules")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
     } else {
       scope = AbstractMigrationScriptHelper.createMigrationScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
@@ -84,17 +74,17 @@ public class RunMigrationScripts_Action extends BaseAction {
     if (!(scope.getModels().iterator().hasNext())) {
       return;
     }
-    ScriptsActionGroupHelper.sortScripts(RunMigrationScripts_Action.this.scripts);
-    RunMigrationScriptsDialog dialog = new RunMigrationScriptsDialog(((Frame) MapSequence.fromMap(_params).get("frame")), RunMigrationScripts_Action.this.scripts, ScriptsActionGroupHelper.getSelectedScripts());
+    ScriptsActionGroupHelper.sortScripts(RunMigrationScripts_Action.this.menuBuilder.getAllScripts());
+    RunMigrationScriptsDialog dialog = new RunMigrationScriptsDialog(((Frame) MapSequence.fromMap(_params).get("frame")), RunMigrationScripts_Action.this.menuBuilder.getAllScripts(), ScriptsActionGroupHelper.getSelectedScripts());
     int x = ((Frame) MapSequence.fromMap(_params).get("frame")).getX() + ((Frame) MapSequence.fromMap(_params).get("frame")).getWidth() / 2 - dialog.getWidth() / 2;
     int y = ((Frame) MapSequence.fromMap(_params).get("frame")).getY() + ((Frame) MapSequence.fromMap(_params).get("frame")).getHeight() / 2 - dialog.getHeight() / 2;
     dialog.setLocation(x, y);
     dialog.setVisible(true);
     if (dialog.isRunChecked()) {
-      AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } else if (dialog.isOpenSelected()) {
       SNode selectedScript = dialog.getSelectedScripts().get(0);
-      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), selectedScript, true, true);
+      NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), selectedScript, true, true);
     }
   }
   @NotNull
@@ -102,13 +92,11 @@ public class RunMigrationScripts_Action extends BaseAction {
     StringBuilder res = new StringBuilder();
     res.append(super.getActionId());
     res.append("#");
-    res.append(scripts_State((List<SNode>) this.scripts));
-    res.append("!");
-    res.append(((Object) this.selectionOnly).toString());
+    res.append(menuBuilder_State((ScriptsMenuBuilder) this.menuBuilder));
     res.append("!");
     return res.toString();
   }
-  public static String scripts_State(List<SNode> object) {
+  public static String menuBuilder_State(ScriptsMenuBuilder object) {
     return "";
   }
 }

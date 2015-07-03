@@ -1440,6 +1440,10 @@
     <property role="3GE5qa" value="operation.reference" />
     <property role="34LRSv" value="role" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="7cdZoO_MeqH" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="use getLink() method" />
+    </node>
     <node concept="PrWs8" id="4VYGy97ZKb3" role="PzmwI">
       <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
     </node>
@@ -1461,6 +1465,10 @@
     <property role="3GE5qa" value="operation.node" />
     <property role="34LRSv" value="containingRole" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+    <node concept="asaX9" id="7cdZoO_MeDD" role="lGtFl">
+      <property role="YLPcu" value="MPS 3.3" />
+      <property role="YLQ7P" value="use SNode.getContainmentLink() method" />
+    </node>
   </node>
   <node concept="1TIwiD" id="38ovo3PI8w0">
     <property role="R5$K7" value="false" />

@@ -86,12 +86,12 @@
       <node id="5918389564640884298" at="52,52,53,28" concept="2" />
       <node id="6352952732705562050" at="56,31,57,21" concept="8" />
       <node id="1685972956014264581" at="23,0,26,0" concept="6" trace="getRefactorAction#()Ljavax/swing/Action;" />
+      <node id="1685972956014264632" at="43,0,46,0" concept="6" trace="doRefactoringAction#()V" />
       <node id="6352952732705562046" at="56,0,59,0" concept="6" trace="getProject#()Lcom/intellij/openapi/project/Project;" />
       <node id="1685972956014264565" at="19,0,23,0" concept="1" trace="RefactoringDialog#(Lcom/intellij/openapi/project/Project;Z)V" />
       <node id="1685972956014264543" at="47,0,51,0" concept="1" trace="RefactorAction#()V" />
       <node id="1685972956014264557" at="51,0,55,0" concept="6" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="1685972956014264620" at="34,0,39,0" concept="6" trace="createDefaultActions#()V" />
-      <node id="1685972956014264632" at="39,0,46,0" concept="6" trace="doRefactoringAction#()V" />
       <node id="1685972956014264594" at="26,0,34,0" concept="6" trace="createActions#()[Ljavax/swing/Action;" />
       <scope id="1685972956014264583" at="23,46,24,28" />
       <scope id="1685972956014264635" at="43,40,44,24" />
@@ -101,6 +101,7 @@
       <scope id="1685972956014264623" at="35,41,37,62" />
       <scope id="1685972956014264546" at="47,29,49,59" />
       <scope id="1685972956014264581" at="23,0,26,0" />
+      <scope id="1685972956014264632" at="43,0,46,0" />
       <scope id="6352952732705562046" at="56,0,59,0" />
       <scope id="1685972956014264565" at="19,0,23,0">
         <var name="canBeParent" id="1685972956014264569" />
@@ -114,7 +115,6 @@
         <var name="event" id="1685972956014264560" />
       </scope>
       <scope id="1685972956014264620" at="34,0,39,0" />
-      <scope id="1685972956014264632" at="39,0,46,0" />
       <scope id="1685972956014264594" at="26,0,34,0" />
       <unit id="1685972956014264541" at="46,0,56,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringDialog$RefactorAction" />
       <unit id="1685972956014264534" at="16,0,60,0" name="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />

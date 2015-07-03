@@ -89,6 +89,11 @@ public class RuleSet<T extends IApplicableToConcept> {
     existingRules.add(rule);
   }
 
+  /**
+   * Returns a set of rules with predictable iteration order: on the node concept, from most specific to most generic.
+   * @param term
+   * @return
+   */
   public Set<T> getRules(SNode term) {
     return mySingleTermRules.lookupRules(term);
   }

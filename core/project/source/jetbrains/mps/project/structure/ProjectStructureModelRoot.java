@@ -127,7 +127,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       final jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference());
       final IFile file = getSource().getFile();
 
-      final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);
+      final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleHandle(file).getDescriptor();
       new ProjectStructureBuilder(moduleDesc, file, model) {
         @Override
         public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor) {

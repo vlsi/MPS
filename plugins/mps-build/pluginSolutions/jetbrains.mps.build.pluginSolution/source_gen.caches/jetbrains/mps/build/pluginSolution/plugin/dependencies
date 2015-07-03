@@ -92,7 +92,6 @@
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleCreator" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.ConsoleProcessListener" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionConsole" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.DefaultExecutionResult" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

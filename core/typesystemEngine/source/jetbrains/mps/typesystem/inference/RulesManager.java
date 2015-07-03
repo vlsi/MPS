@@ -159,6 +159,9 @@ public class RulesManager {
       if (status.isApplicable()) {
         result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
       }
+      if (rule.overrides(node, status)) {
+        break;
+      }
     }
     return result;
   }

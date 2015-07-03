@@ -180,7 +180,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$kObKm">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="3_znuS" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="3__wT9" id="h$kObKn" role="3_A6iZ">
       <node concept="3clFbS" id="h$kObKo" role="2VODD2">
@@ -196,7 +196,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$kOujw">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="3_znuS" to="tpd4:h5Yat_Q" resolve="ApplicableNodeCondition" />
     <node concept="3__wT9" id="h$kOujx" role="3_A6iZ">
       <node concept="3clFbS" id="h$kOujy" role="2VODD2">
@@ -617,7 +617,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="h$ljiUl">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="3_znuS" to="tpd4:h5Yb3TC" resolve="PatternCondition" />
     <node concept="3__wT9" id="h$ljiUm" role="3_A6iZ">
       <node concept="3clFbS" id="h$ljiUn" role="2VODD2">

@@ -35,7 +35,7 @@ public class Templatereduce__InputNode__A extends TemplateDeclarationBase implem
       if (itnode1 == null) {
         continue;
       }
-      TemplateContext context1 = context.subContext(null, itnode1);
+      TemplateContext context1 = context.subContext(itnode1);
       final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
       try {
         environment.nodeCopied(context1, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");

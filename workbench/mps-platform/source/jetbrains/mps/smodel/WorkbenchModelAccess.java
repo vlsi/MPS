@@ -401,12 +401,14 @@ public class WorkbenchModelAccess extends ModelAccess implements ApplicationComp
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
     String name = "", groupId = null;
+    boolean confirmUndo = false;
     if (r instanceof UndoRunnable) {
       UndoRunnable ur = (UndoRunnable) r;
       name = ur.getName();
       groupId = ur.getGroupId();
+      confirmUndo = ur.shallConfirmUndo();
     }
-    runWriteActionInCommand(r, name, groupId, false, project);
+    runWriteActionInCommand(r, name, groupId, confirmUndo, project);
   }
 
   @Override

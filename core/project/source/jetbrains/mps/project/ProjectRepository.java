@@ -16,15 +16,14 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
+import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.Collections;
 
 /**
  * evgeny, 5/9/13
@@ -32,7 +31,7 @@ import java.util.Collections;
  * currently delegates everything to the ugly singleton {@link MPSModuleRepository}.
  * TODO: the common editable parent class for the repository must be extracted from the {@link MPSModuleRepository}
  */
-public class ProjectRepository extends SRepositoryBase {
+public class ProjectRepository extends SRepositoryBase implements SRepositoryExt {
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
 
@@ -74,5 +73,15 @@ public class ProjectRepository extends SRepositoryBase {
   @Override
   public void saveAll() {
     getRootRepository().saveAll();
+  }
+
+  @Override
+  public <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner) {
+    return getRootRepository().registerModule(module, owner);
+  }
+
+  @Override
+  public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
+    getRootRepository().unregisterModule(module, owner);
   }
 }

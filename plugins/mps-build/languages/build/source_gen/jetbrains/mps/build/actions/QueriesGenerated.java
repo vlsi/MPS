@@ -792,7 +792,9 @@ public class QueriesGenerated {
   private static SNode createBuildCompositePath_i7jjd8_a0a0a0a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath"), null, null, false);
-    n1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), (SNode) p0);
+    if (p0 != null) {
+      n1.addChild(MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"), (SNode) p0);
+    }
     return n1;
   }
   private static Pattern REGEXP_x583g4_a0a0b0b0a0a0a0c0a0c0d = Pattern.compile("[^\\$].*", 0);

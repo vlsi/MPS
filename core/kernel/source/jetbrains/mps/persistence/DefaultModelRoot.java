@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,11 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -234,9 +234,11 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
 
     String filenameSuffix = modelName;
-    if (isLanguageAspectsSourceRoot(sourceRoot)) {
+    if (getModule() instanceof Language) {
+      // we assume there are not too many models in a language, and they represent distinct aspects
+      // and thus are unique. We don't need to keep folder structure (relative path) then.
       String moduleName = getModule().getModuleName();
-      if (filenameSuffix.startsWith(moduleName + ".")) {
+      if (filenameSuffix.startsWith(moduleName + '.')) {
         filenameSuffix = filenameSuffix.substring(moduleName.length() + 1);
       }
     } else if (isGeneratorTemplateModel(modelName)){
@@ -249,9 +251,19 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return new FileDataSource(file, this);
   }
 
-  public boolean isLanguageAspectsSourceRoot(String sourceRoot) {
-    if (!(getModule() instanceof Language)) return false;
-    return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
+  /**
+   * @deprecated naming convention is plain wrong way to tell whether source root keeps aspect models
+   *             Besides, String is awful contract for something like path - it's unclear where its root is,
+   *             nor whether we can resolve it to IFile at all.
+   *             The only client of the method left, FilePerRootModelPersistence, shall demand relative path
+   *             specification rather than try to guess proper root for a new model. It's also unclear why
+   *             can't I save aspect models in a per-root persistence
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static boolean isLanguageAspectsSourceRoot(String sourceRoot) {
+    final String rootName = FileSystem.getInstance().getFileByPath(sourceRoot).getName();
+    return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
   }
 
   private boolean isGeneratorTemplateModel(String modelName) {

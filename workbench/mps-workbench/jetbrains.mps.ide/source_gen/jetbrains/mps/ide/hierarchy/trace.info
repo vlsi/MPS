@@ -129,6 +129,7 @@
       <node id="5797068448049411036" at="124,0,129,0" concept="10" trace="select#()V" />
       <node id="5797068448049411072" at="139,0,144,0" concept="10" trace="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
       <node id="5797068448049411096" at="151,0,156,0" concept="10" trace="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+      <node id="5797068448049411196" at="204,0,209,0" concept="10" trace="showItemInHierarchy#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
       <node id="89776410085707149" at="107,0,113,0" concept="10" trace="run#()V" />
       <node id="5797068448049411106" at="156,6,162,6" concept="11" />
       <node id="5797068448049411124" at="162,6,168,6" concept="11" />
@@ -139,7 +140,6 @@
       <node id="5797068448049411030" at="122,6,129,6" concept="11" />
       <node id="2353285998750712536" at="220,0,227,0" concept="10" trace="getData#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="89776410085680018" at="105,5,113,7" concept="5" />
-      <node id="5797068448049411196" at="200,0,209,0" concept="10" trace="showItemInHierarchy#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)V" />
       <node id="3684544815287379321" at="64,0,76,0" concept="10" trace="createDescriptorForNode#(Ljavax/swing/tree/DefaultMutableTreeNode;)Lcom/intellij/pom/Navigatable;" />
       <node id="5797068448049411058" at="132,34,144,6" concept="11" />
       <node id="5797068448049411082" at="144,6,156,6" concept="11" />
@@ -238,6 +238,10 @@
         <var name="e" id="5797068448049411099" />
         <var name="state" id="5797068448049411101" />
       </scope>
+      <scope id="5797068448049411196" at="204,0,209,0">
+        <var name="_context" id="5797068448049411201" />
+        <var name="node" id="5797068448049411199" />
+      </scope>
       <scope id="89776410085707149" at="107,0,113,0" />
       <scope id="1466595955268239423" at="53,0,60,0" />
       <scope id="2353285998750712536" at="220,0,227,0">
@@ -246,10 +250,6 @@
       <scope id="3684544815287379327" at="66,82,74,44">
         <var name="n" id="3684544815287383717" />
         <var name="ptr" id="3684544815287379999" />
-      </scope>
-      <scope id="5797068448049411196" at="200,0,209,0">
-        <var name="_context" id="5797068448049411201" />
-        <var name="node" id="5797068448049411199" />
       </scope>
       <scope id="5797068448049411405" at="185,25,196,9">
         <var name="project" id="5797068448049411407" />
@@ -1927,7 +1927,7 @@
       <unit id="5200543944415608128" at="91,79,95,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$3" />
       <unit id="4565282503346013543" at="99,54,108,9" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$5" />
       <unit id="4565282503345986527" at="96,49,110,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$4" />
-      <unit id="5797068448049414443" at="31,0,113,0" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
+      <unit id="5797068448049414443" at="34,0,113,0" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
     </file>
   </root>
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415534">

@@ -1457,7 +1457,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFLXt">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1M2myG" to="tpd4:h5YaCyN" resolve="ConceptReference" />
     <node concept="1N5Pfh" id="hDMFLXu" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h5YaFr9" />
@@ -1563,7 +1563,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="hDMFMrJ">
-    <property role="3GE5qa" value="definition.condition" />
+    <property role="3GE5qa" value="definition.expression" />
     <ref role="1M2myG" to="tpd4:h5YBJns" resolve="ApplicableNodeReference" />
     <node concept="1N5Pfh" id="hDMFMrK" role="1Mr941">
       <ref role="1N5Vy1" to="tpd4:h5YBMDq" />

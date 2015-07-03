@@ -804,19 +804,11 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.devkit.actions.LanguageRefactoring_ActionGroup" file="LanguageRefactoring_ActionGroup.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" file="Mpsdevkit_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
@@ -857,7 +849,6 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageRefactoring_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />

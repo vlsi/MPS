@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 public class StubSolution extends Solution {
   protected StubSolution(SolutionDescriptor descriptor, @Nullable IFile file) {
@@ -29,14 +27,13 @@ public class StubSolution extends Solution {
   }
 
   //this is for stubs framework & tests only. Can be later converted into subclass
-  public static Solution newInstance(SRepository repo, SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
+  public static Solution newInstance(SRepositoryExt repo, SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
     return register(repo, moduleOwner, new StubSolution(descriptor, null));
   }
 
-  protected static Solution register(SRepository repo, MPSModuleOwner moduleOwner, Solution solution) {
-    // unless we add interface which extends SRepository and adds register/unregister methods, expect the only repo kind we have
-    assert repo instanceof MPSModuleRepository;
-    return ((MPSModuleRepository) repo).registerModule(solution, moduleOwner);
+  // there's StubSolutionIdea that uses this method
+  protected static Solution register(SRepositoryExt repo, MPSModuleOwner moduleOwner, Solution solution) {
+    return repo.registerModule(solution, moduleOwner);
   }
 
   @Override

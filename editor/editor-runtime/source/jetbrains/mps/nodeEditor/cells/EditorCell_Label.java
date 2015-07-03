@@ -1000,6 +1000,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     public String getGroupId() {
       return getCommandGroupId();
     }
+
+    @Override
+    public boolean shallConfirmUndo() {
+      return false;
+    }
   }
 
   /**
@@ -1060,6 +1065,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     @Override
     public String getGroupId() {
       return getCommandGroupId();
+    }
+
+    @Override
+    public boolean shallConfirmUndo() {
+      return false;
     }
   }
 

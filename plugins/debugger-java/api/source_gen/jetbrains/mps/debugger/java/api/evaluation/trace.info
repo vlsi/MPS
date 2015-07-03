@@ -90,8 +90,8 @@
       <node id="4968420405390505277" at="104,50,109,7" concept="5" />
       <node id="4963955491753976918" at="123,115,146,5" concept="15" />
       <node id="4727801710070562672" at="86,121,112,5" concept="15" />
-      <node id="4963955491753976908" at="114,0,149,0" concept="10" trace="consumeEvaluationException#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
-      <node id="4727801710070562664" at="78,0,114,0" concept="10" trace="handleInvocationExceptions#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/Invocatable;)null" />
+      <node id="4963955491753976908" at="123,0,149,0" concept="10" trace="consumeEvaluationException#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
+      <node id="4727801710070562664" at="86,0,114,0" concept="10" trace="handleInvocationExceptions#(Ljetbrains/mps/debugger/java/api/evaluation/EvaluationUtils/Invocatable;)null" />
       <scope id="4727801710070561580" at="34,28,34,28" />
       <scope id="7494124042451449857" at="36,0,37,0" />
       <scope id="7494124042451449861" at="37,0,38,0" />
@@ -262,16 +262,16 @@
       <scope id="4968420405390489433" at="104,50,109,7" />
       <scope id="4963955491753976911" at="123,115,147,19" />
       <scope id="4727801710070562671" at="86,121,112,5" />
-      <scope id="4963955491753976908" at="114,0,149,0">
+      <scope id="4963955491753976908" at="123,0,149,0">
         <var name="failure" id="4963955491753977105" />
         <var name="invocatable" id="4963955491753976914" />
       </scope>
-      <scope id="4727801710070562664" at="78,0,114,0">
+      <scope id="4727801710070562664" at="86,0,114,0">
         <var name="invocatable" id="4727801710070562668" />
       </scope>
-      <unit id="4727801710070560806" at="149,0,157,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$Invocatable" />
-      <unit id="4963955491753976889" at="157,0,165,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$EvaluationInvocatable" />
-      <unit id="4727801710070560807" at="165,0,179,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$ThreadInvocatable" />
+      <unit id="4727801710070560806" at="154,0,157,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$Invocatable" />
+      <unit id="4963955491753976889" at="162,0,165,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$EvaluationInvocatable" />
+      <unit id="4727801710070560807" at="170,0,179,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils$ThreadInvocatable" />
       <unit id="4727801710070561555" at="30,0,181,0" name="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />
     </file>
   </root>
@@ -341,7 +341,7 @@
       <scope id="4727801710070563684" at="20,0,23,0">
         <var name="cause" id="4727801710070563687" />
       </scope>
-      <unit id="4727801710070563657" at="6,0,24,0" name="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
+      <unit id="4727801710070563657" at="10,0,24,0" name="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
     </file>
   </root>
   <root nodeRef="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)/4727801710070563829">
@@ -450,7 +450,7 @@
         <var name="e" id="4727801710070563998" />
         <var name="threadReference" id="4727801710070564001" />
       </scope>
-      <unit id="4727801710070563977" at="15,0,46,0" name="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException" />
+      <unit id="4727801710070563977" at="19,0,46,0" name="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException" />
     </file>
   </root>
   <root nodeRef="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)/4727801710070564141">
@@ -478,7 +478,7 @@
       <scope id="4727801710070564168" at="19,0,22,0">
         <var name="cause" id="4727801710070564171" />
       </scope>
-      <unit id="4727801710070564141" at="6,0,23,0" name="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
+      <unit id="4727801710070564141" at="9,0,23,0" name="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
     </file>
   </root>
   <root nodeRef="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)/4963955491753979760">
@@ -505,7 +505,7 @@
       <scope id="4963955491753979796" at="18,0,21,0">
         <var name="cause" id="4963955491753979802" />
       </scope>
-      <unit id="4963955491753979760" at="6,0,22,0" name="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException" />
+      <unit id="4963955491753979760" at="9,0,22,0" name="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException" />
     </file>
   </root>
 </debug-info>

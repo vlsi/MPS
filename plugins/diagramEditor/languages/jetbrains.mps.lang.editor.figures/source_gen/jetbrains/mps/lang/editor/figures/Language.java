@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.figures.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.intentions.IntentionAspectDescriptor;
+import jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.editor.figures.typesystem.TypesystemDescriptor;
@@ -52,6 +54,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
+    }
+    if (aspectClass == IntentionAspectDescriptor.class) {
+      return (T) new IntentionsDescriptor();
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.lang.editor.figures.structure.StructureAspectDescriptor();

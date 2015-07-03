@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
  * Settings #isCheckModelsBeforeGeneration and #isGenerateDebugInfo are not generator-specific, but
  * refer to tasks that runs along with generator. That's why they are not in IGenerationSettions.
@@ -54,6 +56,9 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
   void setFailOnMissingTextGen(boolean fail);
 
   void setGenerateDebugInfo(boolean generateDebugInfo);
+
+  @ToRemove(version = 3.3)
+  void enableHandleAttributesInTextGen(boolean enable);
 
   void setShowBadChildWarning(boolean showBadChildWarning);
 

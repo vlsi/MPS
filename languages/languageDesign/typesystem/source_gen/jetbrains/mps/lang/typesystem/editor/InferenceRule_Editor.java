@@ -219,14 +219,14 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   }
   private EditorCell createCollection_robprv_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_robprv_b1b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_robprv_a1b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_robprv_b1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_robprv_b1b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_robprv_a1b1a(EditorContext editorContext, SNode node) {
@@ -236,7 +236,39 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createProperty_robprv_b1b1a(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_robprv_b1b1a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = InferenceRule_Editor.renderingCondition_robprv_a1b1b0(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createRefNode_robprv_a1b1b0(editorContext, node);
+    } else {
+      editorCell = this.createProperty_robprv_a1b1b0(editorContext, node);
+    }
+    return editorCell;
+  }
+  private static boolean renderingCondition_robprv_a1b1b0(SNode node, EditorContext editorContext) {
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1164847e929L, 0x1885777d137135fcL, "overridesFun")) != null);
+  }
+  private EditorCell createRefNode_robprv_a1b1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("overridesFun");
+    provider.setNoTargetText("<no overridesFun>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("overridesFun");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
+      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createProperty_robprv_a1b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("overrides");
     provider.setNoTargetText("<no overrides>");

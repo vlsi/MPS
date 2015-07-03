@@ -1423,11 +1423,11 @@
       <node id="7797884084018607153" at="13,0,17,0" concept="11" trace="error#(Ljava/lang/String;)V" />
       <node id="7797884084018607147" at="17,0,21,0" concept="11" trace="warning#(Ljava/lang/String;)V" />
       <node id="7797884084018607120" at="21,0,25,0" concept="11" trace="info#(Ljava/lang/String;)V" />
+      <node id="7797884084018600974" at="32,0,36,0" concept="3" trace="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" />
       <node id="4277212308181635843" at="37,63,41,5" concept="10" />
       <node id="4061343222277638464" at="45,66,49,5" concept="10" />
       <node id="4277212308181635867" at="59,66,63,5" concept="10" />
       <node id="4277212308181635805" at="51,39,56,5" concept="10" />
-      <node id="7797884084018600974" at="29,0,36,0" concept="3" trace="LoggingProgressStrategy#(Ljetbrains/mps/internal/make/runtime/script/LoggingProgressStrategy/Log;)V" />
       <node id="7797884084018533776" at="36,0,44,0" concept="11" trace="begunWork#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)V" />
       <node id="7797884084018559952" at="58,0,66,0" concept="11" trace="finishedWork#(Ljetbrains/mps/internal/make/runtime/script/AbstractProgressStrategy/Work;)V" />
       <node id="7797884084018600982" at="12,0,26,0" concept="7" trace="logger" />
@@ -1461,11 +1461,11 @@
       <scope id="7797884084018607120" at="21,0,25,0">
         <var name="text" id="7797884084018607123" />
       </scope>
-      <scope id="7797884084018533779" at="37,63,42,48" />
-      <scope id="7797884084018559955" at="59,66,64,49" />
-      <scope id="7797884084018600974" at="29,0,36,0">
+      <scope id="7797884084018600974" at="32,0,36,0">
         <var name="log" id="7797884084018600978" />
       </scope>
+      <scope id="7797884084018533779" at="37,63,42,48" />
+      <scope id="7797884084018559955" at="59,66,64,49" />
       <scope id="7797884084018533776" at="36,0,44,0">
         <var name="wrk" id="4061343222277827155" />
       </scope>

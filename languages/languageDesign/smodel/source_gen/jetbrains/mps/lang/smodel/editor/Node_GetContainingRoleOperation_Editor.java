@@ -7,13 +7,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -31,14 +29,15 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     if (bigCell != null) {
       bigCell.setBig(true);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, 0, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
   private EditorCell createCollection_ylb7pt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ylb7pt_a");
     editorCell.setBig(true);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ylb7pt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ylb7pt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ylb7pt_c0(editorContext, node));
@@ -51,14 +50,12 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_ylb7pt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ylb7pt_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +65,6 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

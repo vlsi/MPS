@@ -260,6 +260,8 @@
       <modulePath path="$PROJECT_DIR$/samples/agreement/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/sandbox/jetbrains.mps.samples.agreementLanguage.sandbox.msd" folder="samples" />
+      <modulePath path="$PROJECT_DIR$/samples/attributes/languages/attr/jetbrains.mps.samples.attribute.mpl" folder="samples.attribute" />
+      <modulePath path="$PROJECT_DIR$/samples/attributes/solutions/sandbox/jetbrains.mps.samples.attribute.sandbox.msd" folder="samples.attribute" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/jetbrains.mps.calculator.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/jetbrains.mps.calculator.pluginSolution.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="samples" />
@@ -355,6 +357,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/migrationAssistant/solutions/migratingSolution/migratingSolution.msd" folder="tests.migrations" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/simpleProject/solutions/simpleProject/simpleProject.msd" folder="tests.diskMemoryConflict" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/languages/testAnnotatedType/testAnnotatedType.mpl" folder="tests.substituteType" />
+      <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/languages/testOverridingType/testOverridingType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/languages/testWrappedType/testWrappedType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/substituteType/solutions/testSubstituteType/testSubstituteType.msd" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testActions/jetbrains.mps.testActions.msd" folder="tests" />

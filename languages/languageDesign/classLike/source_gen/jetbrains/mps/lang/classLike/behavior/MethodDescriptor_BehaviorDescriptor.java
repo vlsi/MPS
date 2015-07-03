@@ -16,6 +16,9 @@ public class MethodDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+  public String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
+    return ClassLikeMember_Behavior.virtual_getMatchingText_2736582054146581585(thisNode);
+  }
   public Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
     return MethodDescriptor_Behavior.virtual_get_2603987804376013077(thisNode, cls);
   }

@@ -139,7 +139,7 @@
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3205778618063801970">
     <file name="MPSEditorActions.xml">
-      <unit id="3205778618063801970" at="1,0,321,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
+      <unit id="3205778618063801970" at="1,0,317,13" name="jetbrains.mps.ide.editor.actions.MPSEditorActions" />
     </file>
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/3207605520775490121">
@@ -1997,67 +1997,6 @@
       <unit id="5062223007361662154" at="17,0,69,0" name="jetbrains.mps.ide.editor.actions.FoldSelection_Action" />
     </file>
   </root>
-  <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/5238877291854194705">
-    <file name="Comment_Action.java">
-      <node id="5238877291854194705" at="16,0,17,0" concept="12" trace="ICON" />
-      <node id="5238877291854194705" at="17,27,18,35" concept="14" />
-      <node id="5238877291854194705" at="18,35,19,35" concept="3" />
-      <node id="5238877291854194705" at="19,35,20,41" concept="3" />
-      <node id="5238877291854194705" at="23,32,24,16" concept="9" />
-      <node id="5238877291854252879" at="27,87,28,113" concept="8" />
-      <node id="5238877291854252889" at="28,113,29,152" concept="9" />
-      <node id="5238877291854194705" at="32,89,33,85" concept="3" />
-      <node id="5238877291854194705" at="37,53,38,19" concept="9" />
-      <node id="5238877291854194705" at="40,5,41,90" concept="8" />
-      <node id="5238877291854194705" at="42,67,43,31" concept="3" />
-      <node id="5238877291854194705" at="45,36,46,21" concept="9" />
-      <node id="5238877291854194705" at="48,5,49,16" concept="9" />
-      <node id="6552822018369882461" at="52,96,53,129" concept="3" />
-      <node id="5238877291854194705" at="36,95,39,5" concept="6" />
-      <node id="5238877291854194705" at="41,90,44,7" concept="6" />
-      <node id="5238877291854194705" at="44,7,47,7" concept="6" />
-      <node id="5238877291854194705" at="22,0,26,0" concept="7" trace="isDumbAware#()Z" />
-      <node id="5238877291854194705" at="31,0,35,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="5238877291854194705" at="51,0,55,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="5238877291854194705" at="17,0,22,0" concept="2" trace="Comment_Action#()V" />
-      <node id="5238877291854194705" at="26,0,31,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="5238877291854194705" at="39,5,48,5" concept="0" />
-      <node id="5238877291854194705" at="35,0,51,0" concept="7" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="5238877291854194705" at="23,32,24,16" />
-      <scope id="5238877291854194705" at="32,89,33,85" />
-      <scope id="5238877291854194705" at="37,53,38,19" />
-      <scope id="5238877291854194705" at="42,67,43,31" />
-      <scope id="5238877291854194705" at="45,36,46,21" />
-      <scope id="5238877291854194705" at="52,96,53,129" />
-      <scope id="5238877291854249713" at="27,87,29,152">
-        <var name="selection" id="5238877291854252880" />
-      </scope>
-      <scope id="5238877291854194705" at="17,27,20,41" />
-      <scope id="5238877291854194705" at="22,0,26,0" />
-      <scope id="5238877291854194705" at="31,0,35,0">
-        <var name="_params" id="5238877291854194705" />
-        <var name="event" id="5238877291854194705" />
-      </scope>
-      <scope id="5238877291854194705" at="51,0,55,0">
-        <var name="_params" id="5238877291854194705" />
-        <var name="event" id="5238877291854194705" />
-      </scope>
-      <scope id="5238877291854194705" at="17,0,22,0" />
-      <scope id="5238877291854194705" at="26,0,31,0">
-        <var name="_params" id="5238877291854194705" />
-        <var name="event" id="5238877291854194705" />
-      </scope>
-      <scope id="5238877291854194705" at="40,5,47,7">
-        <var name="editorComponent" id="5238877291854194705" />
-      </scope>
-      <scope id="5238877291854194705" at="36,95,49,16" />
-      <scope id="5238877291854194705" at="35,0,51,0">
-        <var name="_params" id="5238877291854194705" />
-        <var name="event" id="5238877291854194705" />
-      </scope>
-      <unit id="5238877291854194705" at="15,0,56,0" name="jetbrains.mps.ide.editor.actions.Comment_Action" />
-    </file>
-  </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/5724017946447267512">
     <file name="HintsDialog.java">
       <node id="5724017946447324166" at="33,0,34,0" concept="4" trace="myPage" />
@@ -3230,10 +3169,10 @@
       <node id="3525722439544794318" at="164,64,179,7" concept="6" />
       <node id="7791284463049113994" at="130,0,148,5" concept="6" />
       <node id="7791284463049114037" at="162,0,180,5" concept="6" />
-      <node id="7791284463049113796" at="53,0,77,0" concept="13" trace="callInsertAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7791284463049113888" at="87,0,112,0" concept="13" trace="callInsertBeforeAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="7791284463049113980" at="119,0,151,0" concept="13" trace="hasSingleRolesAtRightBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
-      <node id="7791284463049114023" at="151,0,183,0" concept="13" trace="hasSingleRolesAtLeftBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="7791284463049113796" at="56,0,77,0" concept="13" trace="callInsertAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7791284463049113888" at="90,0,112,0" concept="13" trace="callInsertBeforeAction#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="7791284463049113980" at="126,0,151,0" concept="13" trace="hasSingleRolesAtRightBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
+      <node id="7791284463049114023" at="158,0,183,0" concept="13" trace="hasSingleRolesAtLeftBoundary#(Ljetbrains/mps/openapi/editor/cells/EditorCell;)Z" />
       <scope id="7791284463049114128" at="29,30,29,30" />
       <scope id="130230197973334066" at="31,87,32,133" />
       <scope id="795210086019271319" at="35,54,36,19" />
@@ -3343,18 +3282,18 @@
       <scope id="7791284463049113893" at="90,71,110,68">
         <var name="actionHandler" id="6715535892750455602" />
       </scope>
-      <scope id="7791284463049113985" at="126,73,149,16" />
-      <scope id="7791284463049114028" at="158,72,181,16" />
-      <scope id="7791284463049113796" at="53,0,77,0">
+      <scope id="7791284463049113796" at="56,0,77,0">
         <var name="cell" id="7791284463049113797" />
       </scope>
-      <scope id="7791284463049113888" at="87,0,112,0">
+      <scope id="7791284463049113888" at="90,0,112,0">
         <var name="cell" id="7791284463049113889" />
       </scope>
-      <scope id="7791284463049113980" at="119,0,151,0">
+      <scope id="7791284463049113985" at="126,73,149,16" />
+      <scope id="7791284463049114028" at="158,72,181,16" />
+      <scope id="7791284463049113980" at="126,0,151,0">
         <var name="cell" id="7791284463049113981" />
       </scope>
-      <scope id="7791284463049114023" at="151,0,183,0">
+      <scope id="7791284463049114023" at="158,0,183,0">
         <var name="cell" id="7791284463049114024" />
       </scope>
       <unit id="2034046503361585977" at="137,51,141,11" name="jetbrains.mps.ide.editor.actions.EditorActionUtils$1" />

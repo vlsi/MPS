@@ -229,13 +229,13 @@
       <node id="5682549678865143159" at="211,0,226,5" concept="8" />
       <node id="7757477914030257799" at="77,0,94,0" concept="15" trace="collectClasspath#([Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V" />
       <node id="3983419922567637793" at="108,0,125,0" concept="15" trace="getAntJARRelativeHome#()Ljava/io/File;" />
+      <node id="7841036633973694965" at="133,0,150,0" concept="15" trace="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="7841036633973695117" at="160,0,178,5" concept="8" />
       <node id="569227341201137655" at="58,0,77,0" concept="15" trace="getHomeFolders#(Lorg/apache/tools/ant/Project;Ljava/io/File;)Ljava/util/List;" />
-      <node id="7841036633973694965" at="130,0,150,0" concept="15" trace="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="569227341150172137" at="203,0,230,0" concept="15" trace="getClassPathRootsFromDependencies#(Lorg/apache/tools/ant/Project;)Ljava/util/List;" />
       <node id="569227341172616369" at="230,0,257,0" concept="15" trace="gatherAllClassesAndJarsUnder#(Ljava/io/File;Ljava/util/Set;)V" />
       <node id="3983419922567544155" at="28,0,58,0" concept="15" trace="buildClasspath#(Lorg/apache/tools/ant/Project;Ljava/io/File;Z)Ljava/util/Collection;" />
-      <node id="7841036633973695083" at="150,0,189,0" concept="15" trace="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7841036633973695083" at="153,0,189,0" concept="15" trace="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="8081443080800218296" at="145,0,145,39">
         <var name="e" id="8081443080800218285" />
       </scope>
@@ -363,13 +363,13 @@
         <var name="result" id="7757477914030257791" />
       </scope>
       <scope id="3983419922567637793" at="108,0,125,0" />
+      <scope id="7841036633973694965" at="133,0,150,0">
+        <var name="context" id="7841036633973694967" />
+        <var name="path" id="7841036633973694969" />
+      </scope>
       <scope id="569227341201137655" at="58,0,77,0">
         <var name="antProject" id="569227341201364596" />
         <var name="mpsHomeArg" id="569227341201569636" />
-      </scope>
-      <scope id="7841036633973694965" at="130,0,150,0">
-        <var name="context" id="7841036633973694967" />
-        <var name="path" id="7841036633973694969" />
       </scope>
       <scope id="569227341150172140" at="203,79,228,17">
         <var name="ideaHome" id="5682549678865143145" />
@@ -404,7 +404,7 @@
         <var name="protocol" id="7841036633973695108" />
         <var name="resultPath" id="7841036633973695113" />
       </scope>
-      <scope id="7841036633973695083" at="150,0,189,0">
+      <scope id="7841036633973695083" at="153,0,189,0">
         <var name="resourcePath" id="7841036633973695088" />
         <var name="resourceURL" id="7841036633973695085" />
       </scope>

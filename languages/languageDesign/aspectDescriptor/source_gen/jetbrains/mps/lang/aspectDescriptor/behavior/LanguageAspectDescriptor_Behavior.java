@@ -19,4 +19,7 @@ public class LanguageAspectDescriptor_Behavior {
       }
     });
   }
+  public static SNode virtual_getDescriptor_1055884086724995485(SNode thisNode) {
+    return SNodeOperations.getNode("r:10b498c7-d1bd-4b96-8a49-bb59f0e63af3(jetbrains.mps.lang.aspectDescriptor.methods)", "293220601665589234");
+  }
 }

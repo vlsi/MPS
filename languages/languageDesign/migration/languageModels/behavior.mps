@@ -23,6 +23,7 @@
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -554,6 +555,23 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="UBgfI9gdE3" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDescriptor" />
+      <ref role="13i0hy" to="9nqt:UBgfI9eMAt" resolve="getDescriptor" />
+      <node concept="3Tm1VV" id="UBgfI9gdE4" role="1B3o_S" />
+      <node concept="3clFbS" id="UBgfI9gdE7" role="3clF47">
+        <node concept="3cpWs6" id="UBgfI9gdWW" role="3cqZAp">
+          <node concept="3B5_sB" id="UBgfI9gdWX" role="3cqZAk">
+            <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="UBgfI9gdE8" role="3clF45">
+        <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+      </node>
+    </node>
     <node concept="13hLZK" id="7fCCGqboPK$" role="13h7CW">
       <node concept="3clFbS" id="7fCCGqboPK_" role="2VODD2" />
     </node>
@@ -931,6 +949,13 @@
     </node>
     <node concept="13hLZK" id="4SSaNAQl5r$" role="13h7CW">
       <node concept="3clFbS" id="4SSaNAQl5r_" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5xXiDaJYpgI">
+    <property role="3GE5qa" value="member" />
+    <ref role="13h7C2" to="53vh:3A3gNhf1Vg4" resolve="ExecuteAfterDeclaration" />
+    <node concept="13hLZK" id="5xXiDaJYpgJ" role="13h7CW">
+      <node concept="3clFbS" id="5xXiDaJYpgK" role="2VODD2" />
     </node>
   </node>
 </model>

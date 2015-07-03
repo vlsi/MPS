@@ -76,6 +76,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
   private JCheckBox myFailOnMissingTextgen = new JCheckBox("Fail if textgen not found");
   private JCheckBox myGenerateDebugInfo = new JCheckBox("Generate debug information");
+  private JCheckBox myEnableAttributesTextGen = new JCheckBox("Enable node attributes");
 
   private JLabel myStatusLabel;
   private final ItemListener myStatusUpdater = new ItemListener() {
@@ -94,6 +95,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myPage = createPage();
     myButtonState.reset();
     myAvoidDynamicRefs.setToolTipText("Best effort to use static references, not dynamic, when target is referenced by name/resolveInfo");
+    myEnableAttributesTextGen.setToolTipText("Un-check to activate compatibility mode, with no special treatment of node attributes");
   }
 
   public String getName() {
@@ -293,8 +295,9 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     textgenPanel.setLayout(new BoxLayout(textgenPanel, BoxLayout.Y_AXIS));
     textgenPanel.add(myFailOnMissingTextgen);
     textgenPanel.add(myGenerateDebugInfo);
+    textgenPanel.add(myEnableAttributesTextGen);
     textgenPanel.setBorder(IdeBorderFactory.createTitledBorder("TextGen options"));
-    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo);
+    myButtonState.track(myFailOnMissingTextgen, myGenerateDebugInfo, myEnableAttributesTextGen);
     return textgenPanel;
   }
 
@@ -324,6 +327,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
     myGenerationSettings.setFailOnMissingTextGen(myFailOnMissingTextgen.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
+    myGenerationSettings.enableHandleAttributesInTextGen(myEnableAttributesTextGen.isSelected());
 
     myButtonState.reset(); // memorize the new state
 
@@ -387,6 +391,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
 
     myFailOnMissingTextgen.setSelected(myGenerationSettings.isFailOnMissingTextGen());
     myGenerateDebugInfo.setSelected(myGenerationSettings.isGenerateDebugInfo());
+    myEnableAttributesTextGen.setSelected(myGenerationSettings.handleAttributesInTextGen());
 
     final JRadioButton[] allbuttons = {myTraceNone, myTraceSteps, myTraceLanguages, myTraceTypes};
     allbuttons[myGenerationSettings.getPerformanceTracingLevel()].setSelected(true);

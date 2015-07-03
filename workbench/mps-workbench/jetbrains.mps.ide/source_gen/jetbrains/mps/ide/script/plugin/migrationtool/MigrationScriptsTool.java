@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import org.jetbrains.mps.openapi.model.SNode;
+import java.util.Collection;
+import jetbrains.mps.lang.script.runtime.RefactoringScript;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -25,7 +24,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
 
@@ -47,12 +45,8 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   protected boolean forceCloseOnReload() {
     return true;
   }
-  public void startMigration(List<SNode> scriptNodes, final SearchScope scope, final IOperationContext context) {
+  public void startMigration(final Collection<RefactoringScript> scripts, final SearchScope scope) {
     ThreadUtils.assertEDT();
-    myScripts = new ArrayList<SNodeReference>();
-    for (SNode scriptNode : scriptNodes) {
-      myScripts.add(new SNodePointer(scriptNode));
-    }
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {
@@ -60,7 +54,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
+            final MigrationScriptFinder finder = new MigrationScriptFinder(scripts);
             final IResultProvider provider = FindUtils.makeProvider(finder);
             final SearchQuery query = new SearchQuery(scope);
             final SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
@@ -86,22 +80,17 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
   /*package*/ void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     ThreadUtils.assertEDT();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()) {
       @Override
-      public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()) {
-          @Override
-          public void close() {
-            int index = myViews.indexOf(this);
-            closeTab(index);
-          }
-        };
-        myViews.add(view);
-        String tabName = "    ";
-        Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
-        getContentManager().setSelectedContent(content);
+      public void close() {
+        int index = myViews.indexOf(this);
+        closeTab(index);
       }
-    });
+    };
+    myViews.add(view);
+    String tabName = "    ";
+    Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
+    getContentManager().setSelectedContent(content);
   }
   public int getPriority() {
     return -1;

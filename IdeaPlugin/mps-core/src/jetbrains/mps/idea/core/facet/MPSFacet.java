@@ -21,12 +21,9 @@ import com.intellij.facet.FacetType;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.internal.statistic.UsageTrigger;
-import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.diagnostic.Logger;
-import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -39,10 +36,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * evgeny, 10/26/11

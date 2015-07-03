@@ -403,7 +403,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
       for (SNode newInputNode : newInputNodes) {
         TemplateContext ctx = templateContext;
         if (counterVarName != null) {
-          ctx = ctx.subContext(Collections.<String,Object>singletonMap("cv:" + counterVarName, i));
+          ctx = ctx.withVariable("cv:" + counterVarName, i);
         }
         ctx = ctx.subContext(newInputNode);
         List<SNode> _outputNodes = nextMacro(ctx);

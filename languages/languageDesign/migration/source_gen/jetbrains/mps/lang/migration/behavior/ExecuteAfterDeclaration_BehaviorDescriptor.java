@@ -4,13 +4,12 @@ package jetbrains.mps.lang.migration.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
-import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class ExecuteAfterDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class ExecuteAfterDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {
   public ExecuteAfterDeclaration_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {

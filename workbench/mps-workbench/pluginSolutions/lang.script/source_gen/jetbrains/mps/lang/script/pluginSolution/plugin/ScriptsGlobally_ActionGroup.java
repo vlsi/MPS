@@ -13,7 +13,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -38,19 +38,19 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     try {
       ScriptsGlobally_ActionGroup.this.removeAll();
       event.getPresentation().setVisible(true);
-      Project project = event.getData(MPSDataKeys.PROJECT);
+      MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
       if (project == null) {
         event.getPresentation().setEnabled(false);
         return;
       }
       event.getPresentation().setEnabled(true);
 
-      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(false);
+      ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(project, false);
       BaseGroup catGroup = menuBuilder.create_ByCategoryPopup();
       for (AnAction a : catGroup.getChildren(null)) {
         ScriptsGlobally_ActionGroup.this.add(a);
       }
-      ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder.getAllScripts(), false), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder.getAllScripts(), false);
+      ScriptsGlobally_ActionGroup.this.addParameterizedAction(new RunMigrationScripts_Action(menuBuilder), PluginId.getId("jetbrains.mps.lang.script.pluginSolution"), menuBuilder);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

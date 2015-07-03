@@ -35,6 +35,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new BuildAllIntentions_Action());
     addAction(new BuildAllLanguageDescriptors_Action());
     addAction(new BuildAllRefactorings_Action());
+    addAction(new BuildAllScripts_Action());
     addAction(new BuildAllStructures_Action());
     addAction(new BuildAllTextGens_Action());
     addAction(new CheckModelsBeforeGeneration_Action());

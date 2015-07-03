@@ -3089,6 +3089,9 @@
     <ref role="1XX52x" to="tp25:4VYGy97ZKaB" resolve="Reference_GetRoleOperation" />
     <node concept="PMmxH" id="4VYGy97ZKaG" role="2wV5jI">
       <ref role="PMmxG" node="1lUJQtrPk1t" resolve="AliasComponent" />
+      <node concept="3nxI2P" id="7cdZoO_MMfr" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
     </node>
     <node concept="3EZMnI" id="4VYGy97ZKaI" role="6VMZX">
       <node concept="l2Vlx" id="4VYGy97ZKaK" role="2iSdaV" />
@@ -3147,6 +3150,9 @@
     <ref role="1XX52x" to="tp25:1GPSoCqeMMq" resolve="Node_GetContainingRoleOperation" />
     <node concept="PMmxH" id="1GPSoCqeMMB" role="2wV5jI">
       <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
+      <node concept="3nxI2P" id="7cdZoO_MMmB" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
     </node>
     <node concept="3EZMnI" id="1GPSoCqeMMJ" role="6VMZX">
       <node concept="2iRkQZ" id="1GPSoCqeMMK" role="2iSdaV" />
@@ -4016,6 +4022,9 @@
       <node concept="3F0A7n" id="3wj3sjzQQ$I" role="3EZMnx">
         <property role="1Intyy" value="true" />
         <ref role="1NtTu8" to="tp25:3wj3sjzQPFN" resolve="moduleId" />
+        <node concept="VPxyj" id="5WE35DbSX1c" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
       </node>
     </node>
   </node>

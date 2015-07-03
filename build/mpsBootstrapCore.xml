@@ -2257,14 +2257,11 @@
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.textGen-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.textGen#1233678176149" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generators-baseLanguage-template">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/generators/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generator-models">
+      <fileset dir="${mps_home}/languages/languageDesign/textGen/generator/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageAccessories">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageModels">
-      <fileset dir="${mps_home}/languages/languageDesign/textGen/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-models">
+      <fileset dir="${mps_home}/languages/languageDesign/textGen/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.textGen-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/languages/languageDesign/textGen/generator/source_gen">
@@ -2276,9 +2273,8 @@
         <exclude name="**/exports" />
       </fileset>
       <zipfileset file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generators-baseLanguage-template" prefix="module/generators/baseLanguage/template" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageAccessories" prefix="module/languageAccessories" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-languageModels" prefix="module/languageModels" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-generator-models" prefix="module/generator/models" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-textGen-models" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.traceable.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.traceable.jar/META-INF" />
@@ -3784,6 +3780,7 @@
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/scripts-runtime/source" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
@@ -3828,6 +3825,7 @@
         <pathelement path="${mps_home}/core/findUsages-runtime/source_gen" />
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/scripts-runtime/source" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -3858,6 +3856,7 @@
       <fileset dir="${mps_home}/core/findUsages-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/refactoring-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/scripts-runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -7523,7 +7522,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.descriptor" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.aspectDescriptor, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.descriptor" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.aspectDescriptor, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.classLike, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, fetchDependencies">
     <mkdir dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -7561,6 +7560,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.actions" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.aspectDescriptor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.checkedName" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.classLike" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers" />
@@ -7590,7 +7590,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.descriptor#9020561928507175817" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.aspectDescriptor, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.descriptor#9020561928507175817" depends="java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-smodel, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-kernel, java.compile.mps-editor-api, java.compile.mps-editorlang-runtime, java.compile.mps-editor, java.compile.mps-generator, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.mps-migration, java.compile.mps-persistence, java.compile.mps-environment, java.compile.mps-platform, java.compile.mps-textgen, java.compile.jetbrains.mps.baseLanguage, java.compile.jetbrains.mps.baseLanguage.blTypes, java.compile.jetbrains.mps.baseLanguage.classifiers, java.compile.jetbrains.mps.baseLanguage.closures, java.compile.jetbrains.mps.baseLanguage.collections, java.compile.jetbrains.mps.baseLanguage.scopes, java.compile.jetbrains.mps.baseLanguage.tuples, java.compile.jetbrains.mps.lang.actions, java.compile.jetbrains.mps.lang.aspectDescriptor, java.compile.jetbrains.mps.lang.checkedName, java.compile.jetbrains.mps.lang.classLike, java.compile.jetbrains.mps.lang.constraints, java.compile.jetbrains.mps.lang.core, java.compile.jetbrains.mps.lang.dataFlow.analyzers, java.compile.jetbrains.mps.lang.descriptor, java.compile.jetbrains.mps.lang.editor, java.compile.jetbrains.mps.lang.findUsages, java.compile.jetbrains.mps.lang.generator, java.compile.jetbrains.mps.lang.pattern, java.compile.jetbrains.mps.lang.project, java.compile.jetbrains.mps.lang.scopes.runtime, java.compile.jetbrains.mps.lang.sharedConcepts, java.compile.jetbrains.mps.lang.smodel, java.compile.jetbrains.mps.lang.structure, java.compile.jetbrains.mps.lang.traceable, java.compile.jetbrains.mps.make.facet, java.compile.jetbrains.mps.make.script, fetchDependencies">
     <mkdir dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor#9020561928507175817" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.descriptor#9020561928507175817" fork="false" includeantruntime="false" debug="true" source="1.6" target="1.6">
@@ -7628,6 +7628,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.actions" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.aspectDescriptor" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.checkedName" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.classLike" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.constraints" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.dataFlow.analyzers" />

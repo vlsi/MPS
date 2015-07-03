@@ -190,7 +190,7 @@ public class TemplateQuotation__to__staticMethodCall extends TemplateDeclaration
                   if (itnode17 == null) {
                     continue;
                   }
-                  TemplateContext context17 = context.subContext(null, itnode17);
+                  TemplateContext context17 = context.subContext(itnode17);
                   final SNode tnode18 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"));
                   try {
                     environment.nodeCopied(context17, tnode18, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396681222");
@@ -275,7 +275,7 @@ public class TemplateQuotation__to__staticMethodCall extends TemplateDeclaration
                   if (itnode28 == null) {
                     continue;
                   }
-                  TemplateContext context28 = context.subContext(null, itnode28);
+                  TemplateContext context28 = context.subContext(itnode28);
                   final SNode tnode29 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                   try {
                     environment.nodeCopied(context28, tnode29, "tpl/r:00000000-0000-4000-0000-011c8959034c/2038730470042870207");

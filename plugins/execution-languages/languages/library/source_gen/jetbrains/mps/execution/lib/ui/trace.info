@@ -617,7 +617,7 @@
       <unit id="1895567659272474946" at="130,0,145,0" name="jetbrains.mps.execution.lib.ui.ListPanel$MyAbstractListModel" />
       <unit id="1895567659272475109" at="183,0,215,0" name="jetbrains.mps.execution.lib.ui.ListPanel$MyListRemoveAction" />
       <unit id="1895567659272474993" at="145,0,183,0" name="jetbrains.mps.execution.lib.ui.ListPanel$MyListAddAction" />
-      <unit id="1895567659272474648" at="39,0,216,0" name="jetbrains.mps.execution.lib.ui.ListPanel" />
+      <unit id="1895567659272474648" at="43,0,216,0" name="jetbrains.mps.execution.lib.ui.ListPanel" />
     </file>
   </root>
   <root nodeRef="r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)/8278380780105768516">

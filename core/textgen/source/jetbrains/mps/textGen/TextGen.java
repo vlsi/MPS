@@ -20,6 +20,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
@@ -56,6 +57,10 @@ public class TextGen {
   public static final String ROOT_NODE = "ROOT_NODE";
 
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
+
+  public static final Object COMPATIBILITY_USE_ATTRIBUTES = "use-attributes";
+
+  private static boolean ourEnabledNodeAttributes = true;
 
   // api
   public static TextGenerationResult generateText(SNode node) {
@@ -96,6 +101,7 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
+    buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
@@ -144,13 +150,19 @@ public class TextGen {
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
+  @ToRemove(version = 3.3)
+  public static void enableNodeAttributes(boolean enable) {
+    ourEnabledNodeAttributes = enable;
+  }
+
   private static void appendNodeText(TextGenBuffer buffer, SNode node) {
     if (node == null) {
       buffer.append("???");
       return;
     }
 
-    getTextGenForNode(node).generateText(new TextGenTransitionContext(node, buffer));
+    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer));
+    tgs.appendNode(node);
   }
 
   // helper stuff

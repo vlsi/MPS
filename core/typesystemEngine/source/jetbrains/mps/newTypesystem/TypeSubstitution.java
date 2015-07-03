@@ -73,6 +73,14 @@ public class TypeSubstitution {
     return TypeChecker.getInstance().getRulesManager().getSubstituteTypeRules(test);
   }
 
+  /**
+   * Returns the list consisting of the original node and all its attributes, from last to first.
+   * This way the attribute coming earlier has precedence over the ones coming later.
+   * This logic is in sync with the editor's policy for overriding editor cells using attributes.
+   *
+   * @param origNode
+   * @return
+   */
   private List<SNode> nodesToTest(SNode origNode) {
     if (origNode == null) return Collections.emptyList();
 

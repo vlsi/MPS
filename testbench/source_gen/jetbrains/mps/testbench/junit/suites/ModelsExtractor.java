@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 
 public class ModelsExtractor {
   private Set<SModel> models = new HashSet<SModel>();
@@ -40,6 +40,6 @@ public class ModelsExtractor {
     }
   }
   private boolean includeModel(SModel model) {
-    return SModelStereotype.isUserModel(model) && (myIncludeDoNotGenerate || (SNodeOperations.isGeneratable(model) && !(model.isReadOnly())));
+    return SModelStereotype.isUserModel(model) && (myIncludeDoNotGenerate || GenerationFacade.canGenerate(model));
   }
 }

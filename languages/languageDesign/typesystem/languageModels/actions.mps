@@ -19,6 +19,8 @@
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="tpd5" ref="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+    <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
@@ -241,6 +243,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -1392,6 +1397,61 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3FK_9_" id="25idkGdk02m">
+    <property role="3GE5qa" value="definition.expression" />
+    <property role="TrG5h" value="SubstituteAttributedNode" />
+    <node concept="3FOIzC" id="25idkGdk02n" role="3FOPby">
+      <ref role="3FOWKa" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="3buRE8" id="25idkGdk02o" role="3bvWUf">
+        <node concept="3clFbS" id="25idkGdk02p" role="2VODD2">
+          <node concept="3cpWs8" id="25idkGdk8Me" role="3cqZAp">
+            <node concept="3cpWsn" id="25idkGdk8Mf" role="3cpWs9">
+              <property role="TrG5h" value="infRule" />
+              <node concept="3Tqbb2" id="25idkGdk8Mc" role="1tU5fm">
+                <ref role="ehGHo" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+              </node>
+              <node concept="2OqwBi" id="25idkGdk8Mg" role="33vP2m">
+                <node concept="3bvxqY" id="25idkGdk8Mh" role="2Oq$k0" />
+                <node concept="2Xjw5R" id="25idkGdk8Mi" role="2OqNvi">
+                  <node concept="1xMEDy" id="25idkGdk8Mj" role="1xVPHs">
+                    <node concept="chp4Y" id="25idkGdk8Mk" role="ri$Ld">
+                      <ref role="cht4Q" to="tpd4:h5YbPVU" resolve="InferenceRule" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="25idkGdk07o" role="3cqZAp">
+            <node concept="2OqwBi" id="25idkGdkaw7" role="3clFbG">
+              <node concept="2OqwBi" id="25idkGdk9R9" role="2Oq$k0">
+                <node concept="2OqwBi" id="25idkGdk98f" role="2Oq$k0">
+                  <node concept="37vLTw" id="25idkGdk8Ml" role="2Oq$k0">
+                    <ref role="3cqZAo" node="25idkGdk8Mf" resolve="infRule" />
+                  </node>
+                  <node concept="3TrEf2" id="25idkGdk9tX" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="25idkGdkalr" role="2OqNvi">
+                  <ref role="37wK5l" to="tpdd:hEwIszL" resolve="getApplicableConcept" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="25idkGdkaZQ" role="2OqNvi">
+                <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+                <node concept="3TUQnm" id="25idkGdkb8x" role="37wK5m">
+                  <ref role="3TV0OU" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="35xCft" id="25idkGdkbn1" role="tZc4B">
+        <ref role="35y72J" to="tpd4:25idkGdk026" resolve="AttributedNodeExpression" />
       </node>
     </node>
   </node>

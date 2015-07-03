@@ -65,7 +65,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
   }
 
   public void apply(final MPSProject project, List<SNode> nodesToMove) {
-    final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getIsntance();
+    final MoveNodesUI moveNodesUI = MoveNodesUI.MoveNodesUIImpl.getInstance();
     final String featureKind = this.getKind();
 
     if (ListSequence.fromList(nodesToMove).count() > 1) {
@@ -108,7 +108,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
         String usagesViewHeader = "Move " + featureKind + " " + featureName;
         if (writeMigration == MoveNodesUI.WhetherWriteMigration.LOCALLY) {
           final Set<SNode> instances = FindUsagesManager.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(SNodeOperations.asSConcept(currentConcept)), false, new EmptyProgressMonitor());
-          changeReferences(project, usages, feature, feature, new _FunctionTypes._void_P0_E0() {
+          updateReferences(project, usages, feature, feature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               featureAccess.doMoveAndRefactorInstances(instances);
             }
@@ -117,7 +117,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
 
         if (writeMigration == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
           final SNode newFeature = SNodeOperations.copyNode(feature);
-          changeReferences(project, usages, feature, newFeature, new _FunctionTypes._void_P0_E0() {
+          updateReferences(project, usages, feature, newFeature, new _FunctionTypes._void_P0_E0() {
             public void invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
               AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
@@ -132,7 +132,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
     });
   }
 
-  public void changeReferences(final MPSProject mpsProject, final Set<SReference> usages, SNode oldTarget, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String header, MoveNodesUI moveNodesUI) {
+  public void updateReferences(final MPSProject mpsProject, final Set<SReference> usages, SNode oldTarget, final SNode newTarget, final _FunctionTypes._void_P0_E0 executeBefore, String header, MoveNodesUI moveNodesUI) {
     SearchResults<SNode> searchResults = nodesToRefactoringResult(CollectionSequence.fromCollectionAndArray(new ArrayList<SNode>(), oldTarget), SetSequence.fromSet(usages).select(new ISelector<SReference, SNode>() {
       public SNode select(SReference it) {
         return it.getSourceNode();

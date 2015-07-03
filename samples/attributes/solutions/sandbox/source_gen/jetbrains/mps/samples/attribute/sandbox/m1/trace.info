@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root nodeRef="r:f48f0ed1-9e87-4fe2-b856-6867d346bad4(jetbrains.mps.samples.attribute.sandbox.m1)/3741392693834203396">
+    <file name="HandlerA">
+      <unit id="3741392693834203396" at="6,0,8,0" name="jetbrains.mps.samples.attribute.sandbox.m1.HandlerA" />
+    </file>
+  </root>
+  <root nodeRef="r:f48f0ed1-9e87-4fe2-b856-6867d346bad4(jetbrains.mps.samples.attribute.sandbox.m1)/7205391946760684193">
+    <file name="test1.xml">
+      <unit id="7205391946760684193" at="1,0,7,7" name="jetbrains.mps.samples.attribute.sandbox.m1.test1" />
+    </file>
+  </root>
+</debug-info>
+

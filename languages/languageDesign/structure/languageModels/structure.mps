@@ -10,7 +10,6 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -130,11 +129,6 @@
       <property role="TrG5h" value="unordered" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="2NG7qWdS8uc" role="1TKVEl">
-      <property role="TrG5h" value="doNotGenerate" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="5eo3iW6UoLM" role="lGtFl" />
-    </node>
     <node concept="1TJgyj" id="fA0ks94" role="1TKVEi">
       <property role="20kJfa" value="specializedLink" />
       <property role="20lbJX" value="0..1" />
@@ -160,10 +154,6 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="50$LP2ztBgn" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
-    </node>
-    <node concept="1TJgyi" id="7P69c1f2OEx" role="1TKVEl">
-      <property role="TrG5h" value="doNotGenerate" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="PrWs8" id="h0TBbGY" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

@@ -250,7 +250,7 @@ public class TemplateFindUsagesDescriptor extends TemplateDeclarationBase implem
                   if (itnode21 == null) {
                     continue;
                   }
-                  TemplateContext context21 = context.subContext(null, itnode21);
+                  TemplateContext context21 = context.subContext(itnode21);
                   final SNode tnode22 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                   try {
                     environment.nodeCopied(context21, tnode22, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670199");

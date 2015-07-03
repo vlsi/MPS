@@ -161,7 +161,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" file="ShowCFGDialog.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
@@ -187,9 +186,7 @@
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlockListener" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

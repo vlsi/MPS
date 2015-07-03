@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassLikeMember_Behavior {
   public static void init(SNode thisNode) {
@@ -28,5 +29,11 @@ public class ClassLikeMember_Behavior {
     } else if ((ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode) != null)) {
       PlaceholderModifier_Behavior.call_init_6478870542308777138(ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode), cls);
     }
+  }
+  public static String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
+    if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      return SPropertyOperations.getString(SNodeOperations.cast(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+    return SNodeOperations.getConcept(thisNode).getName();
   }
 }

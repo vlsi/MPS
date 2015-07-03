@@ -81,9 +81,9 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameFavoritesList_Action());
     addAction(new RenameFileOrDirectory_Action());
     addAction(new RenameModel_Action());
+    addAction(new RenameModule_Action());
     addAction(new RenameNamespace_Action());
     addAction(new RenamePackage_Action());
-    addAction(new RenameSolution_Action());
     addAction(new RevertMemoryChanges_Action());
     addAction(new SafeDeleteModuleDependency_Action());
     addAction(new SafeDelete_Action());

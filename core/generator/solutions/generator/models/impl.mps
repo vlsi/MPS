@@ -71,10 +71,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" flags="ig" index="Qs71p">
-        <child id="1083245396908" name="enumConstant" index="Qtgdg" />
-      </concept>
-      <concept id="1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" flags="ig" index="QsSxf" />
       <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
         <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
         <reference id="1144432896254" name="enumClass" index="1Px2BO" />
@@ -86,7 +82,6 @@
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
-      <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -113,7 +108,6 @@
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
-        <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -244,7 +238,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
-      <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -1035,8 +1028,8 @@
     </node>
     <node concept="2YIFZL" id="7MOJ0cN_5Vj" role="jymVt">
       <property role="TrG5h" value="getGeneratorMessage_kind" />
-      <node concept="3uibUv" id="7MOJ0cN_ifn" role="3clF45">
-        <ref role="3uigEE" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
+      <node concept="3uibUv" id="46jbpXDXSRd" role="3clF45">
+        <ref role="3uigEE" to="ojcp:~DismissTopMappingRuleException$MessageType" resolve="DismissTopMappingRuleException.MessageType" />
       </node>
       <node concept="3Tm1VV" id="7MOJ0cN_5Vm" role="1B3o_S" />
       <node concept="3clFbS" id="7MOJ0cN_5Vn" role="3clF47">
@@ -1064,8 +1057,8 @@
               <node concept="3clFbS" id="7MOJ0cN_rC9" role="9aQI4">
                 <node concept="3cpWs6" id="7MOJ0cN_tAk" role="3cqZAp">
                   <node concept="Rm8GO" id="7MOJ0cN_tJV" role="3cqZAk">
-                    <ref role="Rm8GQ" node="4bh6pgvbn4B" resolve="info" />
-                    <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
+                    <ref role="1Px2BO" to="ojcp:~DismissTopMappingRuleException$MessageType" resolve="DismissTopMappingRuleException.MessageType" />
+                    <ref role="Rm8GQ" to="ojcp:~DismissTopMappingRuleException$MessageType.info" resolve="info" />
                   </node>
                 </node>
               </node>
@@ -1073,8 +1066,8 @@
             <node concept="3clFbS" id="7MOJ0cN_rCm" role="3clFbx">
               <node concept="3cpWs6" id="7MOJ0cN_sZW" role="3cqZAp">
                 <node concept="Rm8GO" id="7MOJ0cN_rCq" role="3cqZAk">
-                  <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-                  <ref role="Rm8GQ" node="4bh6pgvbn4C" resolve="warning" />
+                  <ref role="1Px2BO" to="ojcp:~DismissTopMappingRuleException$MessageType" resolve="DismissTopMappingRuleException.MessageType" />
+                  <ref role="Rm8GQ" to="ojcp:~DismissTopMappingRuleException$MessageType.warning" resolve="warning" />
                 </node>
               </node>
             </node>
@@ -1097,8 +1090,8 @@
           <node concept="3clFbS" id="7MOJ0cN_rCD" role="3clFbx">
             <node concept="3cpWs6" id="7MOJ0cN_sdL" role="3cqZAp">
               <node concept="Rm8GO" id="7MOJ0cN_srJ" role="3cqZAk">
-                <ref role="Rm8GQ" node="4bh6pgvbn4D" resolve="error" />
-                <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
+                <ref role="1Px2BO" to="ojcp:~DismissTopMappingRuleException$MessageType" resolve="DismissTopMappingRuleException.MessageType" />
+                <ref role="Rm8GQ" to="ojcp:~DismissTopMappingRuleException$MessageType.error" resolve="error" />
               </node>
             </node>
           </node>
@@ -1733,6 +1726,20 @@
       </node>
       <node concept="35c_gC" id="7vbaBZCVz9U" role="33vP2m">
         <ref role="35c_gD" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6pv6r6HK$LX" role="jymVt" />
+    <node concept="Wx3nA" id="6pv6r6HKEii" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="iface_PersistGeneration" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="6pv6r6HKB$F" role="1B3o_S" />
+      <node concept="3uibUv" id="6pv6r6HKFKR" role="1tU5fm">
+        <ref role="3uigEE" to="t3eg:~SAbstractConcept" resolve="SAbstractConcept" />
+      </node>
+      <node concept="35c_gC" id="6pv6r6HKFjO" role="33vP2m">
+        <ref role="35c_gD" to="tpf8:6pv6r6HKtLr" resolve="PersistGeneration" />
       </node>
     </node>
     <node concept="2tJIrI" id="4Eh_7JwtesV" role="jymVt" />
@@ -4903,181 +4910,6 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="6xQoLnhytc6" role="1B3o_S" />
-    </node>
-  </node>
-  <node concept="312cEu" id="4bh6pgvbn3v">
-    <property role="TrG5h" value="DismissTopMappingRuleException" />
-    <node concept="3Tm1VV" id="4bh6pgvbn3w" role="1B3o_S" />
-    <node concept="3uibUv" id="4bh6pgvbn3x" role="1zkMxy">
-      <ref role="3uigEE" to="icf3:~GenerationException" resolve="GenerationException" />
-    </node>
-    <node concept="312cEg" id="4bh6pgvbn3y" role="jymVt">
-      <property role="TrG5h" value="myMessageType" />
-      <node concept="3uibUv" id="4bh6pgvbn4E" role="1tU5fm">
-        <ref role="3uigEE" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-      </node>
-      <node concept="3Tm6S6" id="4bh6pgvbn3$" role="1B3o_S" />
-    </node>
-    <node concept="3clFbW" id="4bh6pgvbn3_" role="jymVt">
-      <node concept="3Tm1VV" id="4bh6pgvbn3A" role="1B3o_S" />
-      <node concept="3cqZAl" id="4bh6pgvbn3B" role="3clF45" />
-      <node concept="37vLTG" id="4bh6pgvbn3C" role="3clF46">
-        <property role="TrG5h" value="messageType" />
-        <node concept="3uibUv" id="4bh6pgvbn4F" role="1tU5fm">
-          <ref role="3uigEE" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4bh6pgvbn3E" role="3clF47">
-        <node concept="1VxSAg" id="5$_bj9MyGR3" role="3cqZAp">
-          <ref role="37wK5l" node="5$_bj9MyvP$" resolve="DismissTopMappingRuleException" />
-          <node concept="37vLTw" id="5$_bj9MyGWf" role="37wK5m">
-            <ref role="3cqZAo" node="4bh6pgvbn3C" resolve="messageType" />
-          </node>
-          <node concept="10Nm6u" id="5$_bj9MyGXP" role="37wK5m" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbW" id="5$_bj9MyvP$" role="jymVt">
-      <node concept="3Tm1VV" id="5$_bj9MyvP_" role="1B3o_S" />
-      <node concept="3cqZAl" id="5$_bj9MyvPA" role="3clF45" />
-      <node concept="37vLTG" id="5$_bj9MyvPB" role="3clF46">
-        <property role="TrG5h" value="messageType" />
-        <node concept="3uibUv" id="5$_bj9MyvPC" role="1tU5fm">
-          <ref role="3uigEE" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="5$_bj9MywDU" role="3clF46">
-        <property role="TrG5h" value="message" />
-        <node concept="17QB3L" id="5$_bj9MyGDe" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="5$_bj9MyvPD" role="3clF47">
-        <node concept="XkiVB" id="5$_bj9MyH7g" role="3cqZAp">
-          <ref role="37wK5l" to="icf3:~GenerationException.&lt;init&gt;(java.lang.String)" resolve="GenerationException" />
-          <node concept="37vLTw" id="5$_bj9MyHdo" role="37wK5m">
-            <ref role="3cqZAo" node="5$_bj9MywDU" resolve="message" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5$_bj9MyvPE" role="3cqZAp">
-          <node concept="37vLTI" id="5$_bj9MyvPF" role="3clFbG">
-            <node concept="37vLTw" id="5$_bj9MyvPG" role="37vLTJ">
-              <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-            </node>
-            <node concept="37vLTw" id="5$_bj9MyvPH" role="37vLTx">
-              <ref role="3cqZAo" node="5$_bj9MyvPB" resolve="messageType" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="4bh6pgvbn3J" role="jymVt">
-      <property role="TrG5h" value="isLoggingNeeded" />
-      <node concept="3Tm1VV" id="4bh6pgvbn3K" role="1B3o_S" />
-      <node concept="10P_77" id="4bh6pgvbn3L" role="3clF45" />
-      <node concept="3clFbS" id="4bh6pgvbn3M" role="3clF47">
-        <node concept="3cpWs6" id="4bh6pgvbn3N" role="3cqZAp">
-          <node concept="3y3z36" id="4bh6pgvbn3O" role="3cqZAk">
-            <node concept="37vLTw" id="2BHiRxeukoV" role="3uHU7B">
-              <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-            </node>
-            <node concept="10Nm6u" id="4bh6pgvbn3Q" role="3uHU7w" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="4bh6pgvbn3R" role="jymVt">
-      <property role="TrG5h" value="isInfo" />
-      <node concept="3Tm1VV" id="4bh6pgvbn3S" role="1B3o_S" />
-      <node concept="10P_77" id="4bh6pgvbn3T" role="3clF45" />
-      <node concept="3clFbS" id="4bh6pgvbn3U" role="3clF47">
-        <node concept="3cpWs6" id="4bh6pgvbn3V" role="3cqZAp">
-          <node concept="1Wc70l" id="4bh6pgvbn3W" role="3cqZAk">
-            <node concept="3y3z36" id="4bh6pgvbn3X" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxeuh$c" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="10Nm6u" id="4bh6pgvbn3Z" role="3uHU7w" />
-            </node>
-            <node concept="3clFbC" id="4bh6pgvbn40" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeumub" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="Rm8GO" id="4bh6pgvbn4I" role="3uHU7w">
-                <ref role="Rm8GQ" node="4bh6pgvbn4B" resolve="info" />
-                <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="4bh6pgvbn43" role="jymVt">
-      <property role="TrG5h" value="isWarning" />
-      <node concept="3Tm1VV" id="4bh6pgvbn44" role="1B3o_S" />
-      <node concept="10P_77" id="4bh6pgvbn45" role="3clF45" />
-      <node concept="3clFbS" id="4bh6pgvbn46" role="3clF47">
-        <node concept="3cpWs6" id="4bh6pgvbn47" role="3cqZAp">
-          <node concept="1Wc70l" id="4bh6pgvbn48" role="3cqZAk">
-            <node concept="3y3z36" id="4bh6pgvbn49" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxeunkJ" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="10Nm6u" id="4bh6pgvbn4b" role="3uHU7w" />
-            </node>
-            <node concept="3clFbC" id="4bh6pgvbn4c" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeuGzN" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="Rm8GO" id="4bh6pgvbn4L" role="3uHU7w">
-                <ref role="Rm8GQ" node="4bh6pgvbn4C" resolve="warning" />
-                <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="4bh6pgvbn4f" role="jymVt">
-      <property role="TrG5h" value="isError" />
-      <node concept="3Tm1VV" id="4bh6pgvbn4g" role="1B3o_S" />
-      <node concept="10P_77" id="4bh6pgvbn4h" role="3clF45" />
-      <node concept="3clFbS" id="4bh6pgvbn4i" role="3clF47">
-        <node concept="3cpWs6" id="4bh6pgvbn4j" role="3cqZAp">
-          <node concept="1Wc70l" id="4bh6pgvbn4k" role="3cqZAk">
-            <node concept="3y3z36" id="4bh6pgvbn4l" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxeucST" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="10Nm6u" id="4bh6pgvbn4n" role="3uHU7w" />
-            </node>
-            <node concept="3clFbC" id="4bh6pgvbn4o" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeutoB" role="3uHU7B">
-                <ref role="3cqZAo" node="4bh6pgvbn3y" resolve="myMessageType" />
-              </node>
-              <node concept="Rm8GO" id="4bh6pgvbn4O" role="3uHU7w">
-                <ref role="Rm8GQ" node="4bh6pgvbn4D" resolve="error" />
-                <ref role="1Px2BO" node="4bh6pgvbn4u" resolve="DismissTopMappingRuleException.MessageType" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="Qs71p" id="4bh6pgvbn4u" role="jymVt">
-      <property role="TrG5h" value="MessageType" />
-      <property role="2bfB8j" value="true" />
-      <node concept="QsSxf" id="4bh6pgvbn4B" role="Qtgdg">
-        <property role="TrG5h" value="info" />
-        <ref role="37wK5l" to="ojcp:~DismissTopMappingRuleException$MessageType.&lt;init&gt;(java.lang.String,int)" resolve="DismissTopMappingRuleException.MessageType" />
-      </node>
-      <node concept="QsSxf" id="4bh6pgvbn4C" role="Qtgdg">
-        <property role="TrG5h" value="warning" />
-        <ref role="37wK5l" to="ojcp:~DismissTopMappingRuleException$MessageType.&lt;init&gt;(java.lang.String,int)" resolve="DismissTopMappingRuleException.MessageType" />
-      </node>
-      <node concept="QsSxf" id="4bh6pgvbn4D" role="Qtgdg">
-        <property role="TrG5h" value="error" />
-        <ref role="37wK5l" to="ojcp:~DismissTopMappingRuleException$MessageType.&lt;init&gt;(java.lang.String,int)" resolve="DismissTopMappingRuleException.MessageType" />
-      </node>
-      <node concept="3Tm1VV" id="4bh6pgvbn4v" role="1B3o_S" />
     </node>
   </node>
   <node concept="312cEu" id="7f3ulFtx2Ai">

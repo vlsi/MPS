@@ -133,7 +133,9 @@ public class NewModuleUtil {
       return "Enter valid namespace";
     }
     IFile moduleDir = getModuleFile(namespace, rootPath, extension).getParent();
-    if (moduleDir.getDescendant(Language.LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Solution.SOLUTION_MODELS).exists()) {
+    // FIXME it's suspicious to check existence of a model directory to tell existence of a module 
+    // E.g. it might be empty, or named differently. Left intact for now, although deserves a refactoring 
+    if (moduleDir.getDescendant(Language.LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Language.LEGACY_LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Solution.SOLUTION_MODELS).exists()) {
       return "Module already exists in this folder";
     }
 

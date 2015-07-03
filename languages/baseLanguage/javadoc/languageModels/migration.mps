@@ -141,10 +141,13 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
@@ -207,15 +210,15 @@
     </node>
     <node concept="3tTeZs" id="49IRVjgsYgA" role="jymVt">
       <property role="3tTeZt" value="&lt;no execute after&gt;" />
-      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
     </node>
     <node concept="3tTeZs" id="49IRVjgsYgB" role="jymVt">
       <property role="3tTeZt" value="&lt;no required data&gt;" />
-      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" />
+      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" resolve="requires data" />
     </node>
     <node concept="3tTeZs" id="49IRVjgsYgC" role="jymVt">
       <property role="3tTeZt" value="&lt;no produced data&gt;" />
-      <ref role="3tTeZr" to="slm6:536fTXa4WHO" />
+      <ref role="3tTeZr" to="slm6:536fTXa4WHO" resolve="produces data" />
     </node>
     <node concept="2tJIrI" id="49IRVjgsYgD" role="jymVt" />
     <node concept="3tYpXE" id="49IRVjgsYDd" role="jymVt">
@@ -302,15 +305,15 @@
     </node>
     <node concept="3tTeZs" id="1FHjNS954Rj" role="jymVt">
       <property role="3tTeZt" value="&lt;no execute after&gt;" />
-      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
     </node>
     <node concept="3tTeZs" id="1FHjNS954Rk" role="jymVt">
       <property role="3tTeZt" value="&lt;no required data&gt;" />
-      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" />
+      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" resolve="requires data" />
     </node>
     <node concept="3tTeZs" id="1FHjNS954Rl" role="jymVt">
       <property role="3tTeZt" value="&lt;no produced data&gt;" />
-      <ref role="3tTeZr" to="slm6:536fTXa4WHO" />
+      <ref role="3tTeZr" to="slm6:536fTXa4WHO" resolve="produces data" />
     </node>
     <node concept="2tJIrI" id="1FHjNS954Rm" role="jymVt" />
     <node concept="3tTeZs" id="1FHjNS954Rn" role="jymVt">
@@ -360,7 +363,9 @@
                           <ref role="3cqZAo" node="50ErsgSMTw" resolve="model" />
                         </node>
                         <node concept="2SmgA7" id="50ErsgSXlr" role="2OqNvi">
-                          <ref role="2SmgA8" to="m373:1MQnpZAqBpc" resolve="ClassifierDocComment" />
+                          <node concept="chp4Y" id="3JYspdAnVj0" role="1dBWTz">
+                            <ref role="cht4Q" to="m373:1MQnpZAqBpc" resolve="ClassifierDocComment" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -413,7 +418,9 @@
                           <ref role="3cqZAo" node="6sifs2eiyYB" resolve="model" />
                         </node>
                         <node concept="2SmgA7" id="6sifs2eiyYA" role="2OqNvi">
-                          <ref role="2SmgA8" to="m373:4CW56HZFIGO" resolve="MethodDocComment" />
+                          <node concept="chp4Y" id="3JYspdAnVj2" role="1dBWTz">
+                            <ref role="cht4Q" to="m373:4CW56HZFIGO" resolve="MethodDocComment" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -466,7 +473,9 @@
                           <ref role="3cqZAo" node="6sifs2eizbn" resolve="model" />
                         </node>
                         <node concept="2SmgA7" id="6sifs2eizbm" role="2OqNvi">
-                          <ref role="2SmgA8" to="m373:5VgPTPXL4JM" resolve="FieldDocComment" />
+                          <node concept="chp4Y" id="3JYspdAnVj4" role="1dBWTz">
+                            <ref role="cht4Q" to="m373:5VgPTPXL4JM" resolve="FieldDocComment" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -519,7 +528,9 @@
                           <ref role="3cqZAo" node="6sifs2eiztv" resolve="model" />
                         </node>
                         <node concept="2SmgA7" id="6sifs2eiztu" role="2OqNvi">
-                          <ref role="2SmgA8" to="m373:4CW56HZFB3j" resolve="BaseDocComment" />
+                          <node concept="chp4Y" id="3JYspdAnVj6" role="1dBWTz">
+                            <ref role="cht4Q" to="m373:4CW56HZFB3j" resolve="BaseDocComment" />
+                          </node>
                         </node>
                       </node>
                     </node>

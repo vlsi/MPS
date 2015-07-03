@@ -57,6 +57,7 @@
       <node id="4352118152439833475" at="53,0,54,0" concept="4" trace="myConnectionSettings" />
       <node id="4352118152439833478" at="54,0,55,0" concept="4" trace="myEventsProcessor" />
       <node id="4352118152439833481" at="55,0,56,0" concept="4" trace="myIsFailed" />
+      <node id="4352118152439833485" at="59,0,60,0" concept="4" trace="myProcessListeners" />
       <node id="4352118152439833495" at="60,0,61,0" concept="4" trace="myExecutionResult" />
       <node id="4352118152439833498" at="61,0,62,0" concept="4" trace="myDebuggerSession" />
       <node id="4352118152439833507" at="62,37,63,102" concept="3" />
@@ -203,7 +204,6 @@
       <node id="4352118152439834386" at="319,36,322,7" concept="7" />
       <node id="4352118152439834403" at="329,0,332,0" concept="8" trace="getConnectionSettings#()Ljetbrains/mps/debugger/java/api/settings/DebugConnectionSettings;" />
       <node id="4352118152439833412" at="335,0,338,0" concept="2" trace="RunsAfterProcessStarted#(Ljava/lang/Runnable;)V" />
-      <node id="4352118152439833485" at="56,0,60,0" concept="4" trace="myProcessListeners" />
       <node id="4352118152439833622" at="87,61,91,9" concept="7" />
       <node id="4352118152439833680" at="107,0,111,0" concept="8" trace="createVmFailed#(Ljava/lang/Throwable;)V" />
       <node id="4352118152439833697" at="111,0,115,0" concept="8" trace="createVmFailed#(Ljava/lang/String;)V" />

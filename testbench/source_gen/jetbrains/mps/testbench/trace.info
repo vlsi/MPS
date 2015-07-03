@@ -52,12 +52,12 @@
       <node id="5294483648489407810" at="77,86,80,5" concept="5" />
       <node id="3727517784851940532" at="86,49,89,9" concept="5" />
       <node id="6450649963068680324" at="98,0,104,0" concept="11" trace="closeClonedProject#(Ljetbrains/mps/project/Project;Ljava/io/File;)V" />
+      <node id="6944172844332521578" at="29,0,36,0" concept="11" trace="tearDownBase#()V" />
       <node id="6450649963068714450" at="37,0,45,0" concept="11" trace="getEnvironment#()Ljetbrains/mps/tool/environment/Environment;" />
       <node id="5294483648489407851" at="84,53,93,7" concept="13" />
-      <node id="6944172844332521578" at="25,0,36,0" concept="11" trace="tearDownBase#()V" />
       <node id="5294483648489407829" at="83,10,94,5" concept="0" />
       <node id="5294483648489407819" at="80,5,94,5" concept="5" />
-      <node id="6450649963068679671" at="74,0,97,0" concept="11" trace="openClonedProject#(Ljava/io/File;Ljava/io/File;)Ljetbrains/mps/project/Project;" />
+      <node id="6450649963068679671" at="77,0,97,0" concept="11" trace="openClonedProject#(Ljava/io/File;Ljava/io/File;)Ljetbrains/mps/project/Project;" />
       <scope id="6944172844332521909" at="32,55,33,37" />
       <scope id="6450649963068170500" at="40,22,41,81" />
       <scope id="694564436393193919" at="46,67,47,53" />
@@ -111,11 +111,11 @@
         <var name="destinationDir" id="5294483648489407935" />
         <var name="project" id="5294483648489407933" />
       </scope>
+      <scope id="6944172844332521578" at="29,0,36,0" />
       <scope id="6450649963068714450" at="37,0,45,0" />
       <scope id="5294483648489407830" at="83,12,93,7" />
-      <scope id="6944172844332521578" at="25,0,36,0" />
       <scope id="5294483648489407789" at="77,86,95,56" />
-      <scope id="6450649963068679671" at="74,0,97,0">
+      <scope id="6450649963068679671" at="77,0,97,0">
         <var name="destinationDir" id="5294483648489407782" />
         <var name="source" id="5294483648489407780" />
       </scope>
@@ -212,7 +212,7 @@
       </scope>
       <scope id="5294483648489414003" at="45,45,70,5" />
       <scope id="5294483648489414002" at="45,0,72,0" />
-      <unit id="5294483648489413878" at="15,0,73,0" name="jetbrains.mps.testbench.PerformanceMessenger" />
+      <unit id="5294483648489413878" at="18,0,73,0" name="jetbrains.mps.testbench.PerformanceMessenger" />
     </file>
   </root>
 </debug-info>

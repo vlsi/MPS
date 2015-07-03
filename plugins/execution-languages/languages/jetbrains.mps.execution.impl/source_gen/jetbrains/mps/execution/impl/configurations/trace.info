@@ -264,7 +264,7 @@
       <unit id="4426601056068794241" at="142,18,146,5" name="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager$3" />
       <unit id="5138467354513155859" at="103,56,127,5" name="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager$1" />
       <unit id="8565799187151772190" at="196,0,228,0" name="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager$RunConfigurationsState" />
-      <unit id="5145867626676099642" at="40,0,230,0" name="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" />
+      <unit id="5145867626676099642" at="45,0,230,0" name="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" />
     </file>
   </root>
 </debug-info>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +32,11 @@ import java.util.NoSuchElementException;
  * @author Artem Tikhomirov
  */
 public final class FilterIterator<T> implements Iterator<T> {
-  private final Iterator<T> myIterator;
+  private final Iterator<? extends T> myIterator;
   private final Condition<T> myCondition;
   private T myNext;
 
-  public FilterIterator(@NotNull Iterator<T> iterator, @NotNull Condition<T> condition) {
+  public FilterIterator(@NotNull Iterator<? extends T> iterator, @NotNull Condition<T> condition) {
     myIterator = iterator;
     myCondition = condition;
     myNext = nextInternal();

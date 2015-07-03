@@ -519,7 +519,7 @@
       <node id="7706854513804995252" at="89,0,101,0" concept="7" trace="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8428317315592447781" at="63,0,76,0" concept="12" trace="getList_ContextOwner_ifMethod_ParmsUsedInClosure#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Ljava/util/List;" />
       <node id="8428317315592447877" at="87,55,101,8" concept="8" />
-      <node id="8428317315592447869" at="83,0,115,0" concept="12" trace="create_closureContextObject#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8428317315592447869" at="86,0,115,0" concept="12" trace="create_closureContextObject#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/ITemplateGenerator;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="8428317315592447596" at="23,25,23,25" />
       <scope id="8428317315592447625" at="29,35,30,30" />
       <scope id="8428317315592447643" at="35,118,36,129" />
@@ -614,7 +614,7 @@
         <var name="enclosingClosureOrContextOwner" id="8428317315592447878" />
         <var name="model" id="8428317315592447908" />
       </scope>
-      <scope id="8428317315592447869" at="83,0,115,0">
+      <scope id="8428317315592447869" at="86,0,115,0">
         <var name="generator" id="8428317315592447874" />
         <var name="nodeInsideClosure" id="8428317315592447872" />
       </scope>

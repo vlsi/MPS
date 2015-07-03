@@ -127,7 +127,7 @@
       <unit id="6781485246382122008" at="48,52,70,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
       <unit id="6781485246382122069" at="72,64,96,13" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
       <unit id="6781485246382121998" at="45,76,99,7" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1" />
-      <unit id="6781485246382121925" at="31,0,122,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
+      <unit id="6781485246382121925" at="34,0,122,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
     </file>
   </root>
 </debug-info>

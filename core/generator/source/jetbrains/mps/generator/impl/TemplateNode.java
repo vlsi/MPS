@@ -23,7 +23,6 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.RefResolver.RefResolverAdapter;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
-import jetbrains.mps.generator.runtime.ReferenceResolver2;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -109,7 +108,7 @@ class TemplateNode {
       final SReferenceLink refMacroRole = e.getKey();
       final MacroResolver mr = e.getValue();
       ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(new RefResolverAdapter(outputNode, refMacroRole, context, mr));
-      new PostponedReference(refMacroRole, outputNode, refInfo).setAndRegister(generator);
+      new PostponedReference(refMacroRole, outputNode, refInfo).registerWith(generator);
     }
     for (RefInfo r : myMold.myStaticRefs) {
       // optimization for external static references (do not resolve them)
@@ -118,7 +117,7 @@ class TemplateNode {
     }
     for (RefInfo r : myMold.myInnerRefs) {
       ReferenceInfo_Template refInfo = new ReferenceInfo_Template(getTemplateNodeReference(), GeneratorUtil.getTemplateNodeId(r.targetNode), r.resolveInfo, context);
-      new PostponedReference(r.role, outputNode, refInfo).setAndRegister(generator);
+      new PostponedReference(r.role, outputNode, refInfo).registerWith(generator);
     }
     for (RefInfo r : myMold.myOtherRefs) {
       outputNode.setReferenceTarget(r.role, r.targetNode);

@@ -211,7 +211,7 @@
         <var name="millis" id="5294483648489409563" />
       </scope>
       <unit id="5294483648489409098" at="18,0,85,0" name="jetbrains.mps.testbench.util.ThreadWatcher$ThreadState" />
-      <unit id="5294483648489409095" at="11,0,155,0" name="jetbrains.mps.testbench.util.ThreadWatcher" />
+      <unit id="5294483648489409095" at="14,0,155,0" name="jetbrains.mps.testbench.util.ThreadWatcher" />
     </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489409912">
@@ -329,7 +329,7 @@
       <scope id="5294483648489410470" at="28,0,41,0">
         <var name="loggingEvent" id="5294483648489410472" />
       </scope>
-      <unit id="5294483648489410428" at="15,0,91,0" name="jetbrains.mps.testbench.util.CachingAppender" />
+      <unit id="5294483648489410428" at="18,0,91,0" name="jetbrains.mps.testbench.util.CachingAppender" />
     </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410732">
@@ -626,7 +626,7 @@
       </scope>
       <scope id="5294483648489410851" at="52,44,61,21" />
       <scope id="5294483648489410849" at="51,0,63,0" />
-      <unit id="5294483648489410732" at="10,0,243,0" name="jetbrains.mps.testbench.util.CachingPrintStream" />
+      <unit id="5294483648489410732" at="13,0,243,0" name="jetbrains.mps.testbench.util.CachingPrintStream" />
     </file>
   </root>
 </debug-info>

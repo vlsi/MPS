@@ -64,7 +64,7 @@
         <var name="monitor" id="1151761026712845035" />
         <var name="query" id="1151761026712845033" />
       </scope>
-      <unit id="1151761026712845018" at="17,0,55,0" name="jetbrains.mps.ide.ui.finders.LanguageImportFinder" />
+      <unit id="1151761026712845018" at="24,0,55,0" name="jetbrains.mps.ide.ui.finders.LanguageImportFinder" />
     </file>
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486520986">
@@ -76,6 +76,7 @@
       <node id="4132059805486521003" at="36,0,37,0" concept="13" trace="EXTENDING_GENERATORS" />
       <node id="4132059805486521007" at="37,0,38,0" concept="13" trace="EXPORTED_BY" />
       <node id="4132059805486521011" at="38,0,39,0" concept="13" trace="MODELS_WRITTEN_IN_LANGUAGE" />
+      <node id="2432409624890567310" at="43,0,44,0" concept="5" trace="myModels2Visit" />
       <node id="4132059805486521034" at="48,73,49,54" concept="9" />
       <node id="4132059805486521039" at="49,54,50,55" concept="9" />
       <node id="3192119158421690939" at="50,55,51,34" concept="9" />
@@ -182,7 +183,6 @@
       <node id="2432409624890547064" at="214,44,217,7" concept="7" />
       <node id="954099380646504049" at="226,60,229,7" concept="7" />
       <node id="3192119158421818759" at="245,54,248,7" concept="6" />
-      <node id="2432409624890567310" at="40,0,44,0" concept="5" trace="myModels2Visit" />
       <node id="2432409624890596903" at="99,117,103,7" concept="6" />
       <node id="4132059805486521149" at="109,126,113,5" concept="7" />
       <node id="8016074595323510763" at="115,118,119,5" concept="7" />
@@ -396,7 +396,7 @@
         <var name="monitor" id="4132059805486521031" />
         <var name="query" id="4132059805486521029" />
       </scope>
-      <unit id="3192119158421818735" at="234,0,260,0" name="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder$ModuleUseInModel" />
+      <unit id="3192119158421818735" at="241,0,260,0" name="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder$ModuleUseInModel" />
       <unit id="4132059805486520986" at="31,0,261,0" name="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder" />
     </file>
   </root>
@@ -458,7 +458,7 @@
         <var name="monitor" id="4132059805486521485" />
         <var name="query" id="4132059805486521483" />
       </scope>
-      <unit id="4132059805486521473" at="19,0,61,0" name="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
+      <unit id="4132059805486521473" at="23,0,61,0" name="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
     </file>
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486521762">
@@ -541,7 +541,7 @@
         <var name="monitor" id="4132059805486521799" />
         <var name="query" id="4132059805486521797" />
       </scope>
-      <unit id="4132059805486521762" at="26,0,87,0" name="jetbrains.mps.ide.ui.finders.LanguageUsagesFinder" />
+      <unit id="4132059805486521762" at="31,0,87,0" name="jetbrains.mps.ide.ui.finders.LanguageUsagesFinder" />
     </file>
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/6355759290342865490">
@@ -581,7 +581,7 @@
         <var name="monitor" id="6355759290342865502" />
         <var name="query" id="6355759290342865500" />
       </scope>
-      <unit id="6355759290342865490" at="17,0,47,0" name="jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder" />
+      <unit id="6355759290342865490" at="22,0,47,0" name="jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder" />
     </file>
   </root>
 </debug-info>

@@ -248,7 +248,7 @@
         <var name="what" id="6793838228148721422" />
       </scope>
       <unit id="6793838228148721056" at="55,35,64,5" name="jetbrains.mps.watching.WatchedRootsUpdater$1" />
-      <unit id="6793838228148720923" at="26,0,129,0" name="jetbrains.mps.watching.WatchedRootsUpdater" />
+      <unit id="6793838228148720923" at="30,0,129,0" name="jetbrains.mps.watching.WatchedRootsUpdater" />
     </file>
   </root>
 </debug-info>

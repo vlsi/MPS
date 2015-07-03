@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -37,7 +38,7 @@ public class TransientModelsProvider {
 
   private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<SModule, TransientModelsModule>();
   private int myModelsToKeepMax = 0; /* unlimited */
-  private Project myProject;
+  private final Project myProject;
   private int myKeptModels;
   private final TransientSwapOwner myTransientSwapOwner;
   private String mySessionId;
@@ -85,7 +86,9 @@ public class TransientModelsProvider {
     }
 
     final TransientModelsModule transientModelsModule = new TransientModelsModule(module, TransientModelsProvider.this);
-    MPSModuleRepository.getInstance().registerModule(transientModelsModule, myOwner);
+    // FIXME once ProjectRepository implements SRepositoryExt, take one from myProject
+    final SRepositoryExt repo = MPSModuleRepository.getInstance();
+    repo.registerModule(transientModelsModule, myOwner);
     myModuleMap.put(module, transientModelsModule);
   }
 

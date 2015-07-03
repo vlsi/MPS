@@ -512,12 +512,12 @@
       <node id="4691049906353704816" at="21,19,22,40" concept="2" />
       <node id="9000373783400696065" at="25,40,26,19" concept="8" />
       <node id="5646063728432307518" at="32,36,33,19" concept="8" />
+      <node id="7797884084018629453" at="13,0,15,0" concept="6" trace="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
       <node id="5646063728432307503" at="18,0,21,0" concept="1" trace="Stub#(Ljetbrains/mps/make/script/IProgress;)V" />
       <node id="4691049906353704810" at="21,0,24,0" concept="1" trace="Stub#()V" />
       <node id="3668957831723303243" at="28,0,31,0" concept="6" trace="reportFeedback#(Ljetbrains/mps/make/script/IFeedback;)V" />
       <node id="5646063728432307508" at="24,0,28,0" concept="6" trace="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
       <node id="5646063728432307512" at="31,0,35,0" concept="6" trace="stopRequested#()Z" />
-      <node id="7797884084018629453" at="8,0,15,0" concept="6" trace="currentProgress#()Ljetbrains/mps/make/script/IProgress;" />
       <scope id="3668957831723303248" at="29,48,29,48" />
       <scope id="6168415856807657251" at="7,0,8,0" />
       <scope id="3668957831723303232" at="15,0,16,0">
@@ -527,6 +527,7 @@
       <scope id="4691049906353704815" at="21,19,22,40" />
       <scope id="5646063728432307511" at="25,40,26,19" />
       <scope id="5646063728432307515" at="32,36,33,19" />
+      <scope id="7797884084018629453" at="13,0,15,0" />
       <scope id="5646063728432307503" at="18,0,21,0">
         <var name="pstub" id="9000373783400696053" />
       </scope>
@@ -536,7 +537,6 @@
       </scope>
       <scope id="5646063728432307508" at="24,0,28,0" />
       <scope id="5646063728432307512" at="31,0,35,0" />
-      <scope id="7797884084018629453" at="8,0,15,0" />
       <unit id="5646063728432307501" at="16,0,36,0" name="jetbrains.mps.make.script.IJobMonitor$Stub" />
       <unit id="6168415856807657250" at="6,0,37,0" name="jetbrains.mps.make.script.IJobMonitor" />
     </file>

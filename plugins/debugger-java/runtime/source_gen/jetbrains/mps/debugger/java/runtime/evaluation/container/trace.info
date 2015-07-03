@@ -486,7 +486,7 @@
       <node id="846214144110270394" at="22,0,23,0" concept="7" trace="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
       <node id="846214144110310399" at="23,0,24,0" concept="7" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="846214144110820115" at="24,0,25,0" concept="7" trace="updateState#()V" />
-      <node id="846214144110547687" at="15,0,21,0" concept="7" trace="addGenerationListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+      <node id="846214144110547687" at="19,0,21,0" concept="7" trace="addGenerationListener#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
       <scope id="846214144108011498" at="12,0,13,0">
         <var name="isWatch" id="846214144108614170" />
         <var name="onNodeSetUp" id="6658728357876954841" />
@@ -499,7 +499,7 @@
       <scope id="846214144110270394" at="22,0,23,0" />
       <scope id="846214144110310399" at="23,0,24,0" />
       <scope id="846214144110820115" at="24,0,25,0" />
-      <scope id="846214144110547687" at="15,0,21,0">
+      <scope id="846214144110547687" at="19,0,21,0">
         <var name="listener" id="846214144110548187" />
       </scope>
       <unit id="846214144108011478" at="11,0,26,0" name="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />

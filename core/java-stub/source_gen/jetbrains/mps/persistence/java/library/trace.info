@@ -18,8 +18,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
   <root nodeRef="r:adc783db-1c21-4910-9cf7-6a22bf949a4a(jetbrains.mps.persistence.java.library)/6619269785060746035">
     <file name="JavaClassStubConstants.java">
+      <node id="6619269785060746037" at="11,0,12,0" concept="13" trace="STUB_TYPE" />
       <node id="6619269785060746044" at="12,0,14,0" concept="2" trace="JavaClassStubConstants#()V" />
-      <node id="6619269785060746037" at="8,0,12,0" concept="13" trace="STUB_TYPE" />
       <scope id="6619269785060746047" at="12,35,12,35" />
       <scope id="6619269785060746044" at="12,0,14,0" />
       <unit id="6619269785060746035" at="7,0,15,0" name="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
@@ -237,6 +237,7 @@
       <node id="6619269785060746493" at="119,0,123,0" concept="8" trace="canCreateModels#()Z" />
       <node id="6619269785060746499" at="123,0,127,0" concept="8" trace="canCreateModel#(Ljava/lang/String;)Z" />
       <node id="6619269785060746507" at="127,0,131,0" concept="8" trace="createModel#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="3386915806549340785" at="194,0,198,0" concept="8" trace="getModelAlreadyRegistered#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="6619269785060746456" at="39,0,44,0" concept="8" trace="getModel#(Lorg/jetbrains/mps/openapi/model/SModelId;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="3051278116272009066" at="95,7,100,7" concept="4" />
       <node id="3051278116272184212" at="143,53,148,9" concept="9" />
@@ -245,7 +246,6 @@
       <node id="6619269785060746595" at="171,14,178,9" concept="1" />
       <node id="3051278116271968205" at="86,0,95,7" concept="4" />
       <node id="501345590222512275" at="44,0,54,0" concept="8" trace="load#(Lorg/jetbrains/mps/openapi/persistence/Memento;)V" />
-      <node id="3386915806549340785" at="185,0,198,0" concept="8" trace="getModelAlreadyRegistered#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="7942557300398506535" at="70,0,85,5" concept="6" />
       <node id="5100636186365760111" at="104,0,119,0" concept="8" trace="collectJarFiles#(Ljetbrains/mps/vfs/IFile;Ljava/util/Collection;Ljava/util/Set;)V" />
       <node id="6619269785060746588" at="154,83,178,9" concept="7" />
@@ -315,6 +315,10 @@
       <scope id="6619269785060746507" at="127,0,131,0">
         <var name="string" id="6619269785060746510" />
       </scope>
+      <scope id="3386915806549340785" at="194,0,198,0">
+        <var name="modelReference" id="3386915806549340638" />
+        <var name="module" id="3386915806549352793" />
+      </scope>
       <scope id="6619269785060746456" at="39,0,44,0">
         <var name="id" id="6619269785060746459" />
       </scope>
@@ -331,10 +335,6 @@
         <var name="memento" id="501345590222512279" />
       </scope>
       <scope id="5100636186365760117" at="104,97,117,5" />
-      <scope id="3386915806549340785" at="185,0,198,0">
-        <var name="modelReference" id="3386915806549340638" />
-        <var name="module" id="3386915806549352793" />
-      </scope>
       <scope id="7942557300398506535" at="70,0,85,5">
         <var name="file" id="7942557300398506551" />
       </scope>

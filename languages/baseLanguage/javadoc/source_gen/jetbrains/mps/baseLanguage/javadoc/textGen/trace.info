@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TextGenAspectDescriptor.java">
-      <unit at="17,0,116,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
+      <unit at="13,0,107,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.TextGenAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/2099616960330110596">
@@ -64,6 +64,7 @@
       <node id="3926476116131896611" at="52,204,53,206" concept="1" />
       <node id="2004985048484774442" at="55,5,56,0" concept="9" />
       <node id="2004985048484856481" at="56,0,57,64" concept="1" />
+      <node id="6689964293679374445" at="57,64,58,31" concept="1" />
       <node id="6978502240659452817" at="22,0,25,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2004985048484774481" at="27,5,30,5" concept="3" />
       <node id="6978502240659453943" at="32,0,35,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -76,7 +77,7 @@
       <node id="6978502240659452810" at="20,0,27,5" concept="3" />
       <node id="6978502240659453936" at="30,5,37,5" concept="3" />
       <node id="6978502240659457461" at="40,5,55,5" concept="4" />
-      <node id="4021391592914129117" at="16,0,59,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4021391592914129117" at="16,0,60,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="6978502240659452818" at="22,39,23,211" />
       <scope id="6978502240659452810" at="25,9,26,27" />
       <scope id="2004985048484774481" at="28,207,29,27" />
@@ -112,17 +113,17 @@
       <scope id="6978502240659453936" at="30,5,37,5">
         <var name="item" id="6978502240659453936" />
       </scope>
-      <scope id="4021391592914129117" at="17,54,57,64">
+      <scope id="4021391592914129117" at="17,54,58,31">
         <var name="tgs" id="4021391592914129117" />
       </scope>
-      <scope id="4021391592914129117" at="16,0,59,0">
+      <scope id="4021391592914129117" at="16,0,60,0">
         <var name="ctx" id="4021391592914129117" />
       </scope>
       <unit id="6978502240659452817" at="21,237,25,5" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen$1" />
       <unit id="6978502240659453943" at="31,237,35,5" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen$2" />
       <unit id="6978502240659498468" at="41,221,45,5" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen$4" />
       <unit id="6978502240659455268" at="46,236,50,7" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen$3" />
-      <unit id="4021391592914129117" at="15,0,60,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" />
+      <unit id="4021391592914129117" at="15,0,61,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.MethodDocComment_TextGen" />
     </file>
   </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/4021391592914689930">
@@ -312,10 +313,10 @@
     <file name="FieldDocComment_TextGen.java">
       <node id="4021391592916003644" at="11,54,12,55" concept="6" />
       <node id="2004985048484856443" at="12,55,13,66" concept="1" />
-      <node id="2004985048484856442" at="13,66,14,0" concept="9" />
-      <node id="2004985048484856477" at="14,0,15,64" concept="1" />
+      <node id="2004985048484856477" at="13,66,14,64" concept="1" />
+      <node id="6689964293679372883" at="14,64,15,31" concept="1" />
       <node id="4021391592916003644" at="10,0,17,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="4021391592916003644" at="11,54,15,64">
+      <scope id="4021391592916003644" at="11,54,15,31">
         <var name="tgs" id="4021391592916003644" />
       </scope>
       <scope id="4021391592916003644" at="10,0,17,0">
@@ -334,10 +335,11 @@
       <node id="2004985048484774339" at="28,207,29,27" concept="1" />
       <node id="2004985048484774398" at="30,5,31,0" concept="9" />
       <node id="2004985048484856472" at="31,0,32,64" concept="1" />
+      <node id="6689964293679376612" at="32,64,33,31" concept="1" />
       <node id="6978502240659451212" at="22,0,25,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="2004985048484774339" at="27,5,30,5" concept="3" />
       <node id="6978502240659451205" at="20,0,27,5" concept="3" />
-      <node id="4021391592916003702" at="16,0,34,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4021391592916003702" at="16,0,35,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="6978502240659451213" at="22,39,23,211" />
       <scope id="6978502240659451205" at="25,9,26,27" />
       <scope id="2004985048484774339" at="28,207,29,27" />
@@ -350,14 +352,14 @@
       <scope id="6978502240659451205" at="20,0,27,5">
         <var name="item" id="6978502240659451205" />
       </scope>
-      <scope id="4021391592916003702" at="17,54,32,64">
+      <scope id="4021391592916003702" at="17,54,33,31">
         <var name="tgs" id="4021391592916003702" />
       </scope>
-      <scope id="4021391592916003702" at="16,0,34,0">
+      <scope id="4021391592916003702" at="16,0,35,0">
         <var name="ctx" id="4021391592916003702" />
       </scope>
       <unit id="6978502240659451212" at="21,237,25,5" name="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen$1" />
-      <unit id="4021391592916003702" at="15,0,35,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
+      <unit id="4021391592916003702" at="15,0,36,0" name="jetbrains.mps.baseLanguage.javadoc.textGen.ClassifierDocComment_TextGen" />
     </file>
   </root>
   <root nodeRef="r:84fe4b11-ad68-47d5-a834-0274798d73f7(jetbrains.mps.baseLanguage.javadoc.textGen)/4021391592916005381">

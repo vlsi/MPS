@@ -81,7 +81,7 @@ public class ChildAdopter {
       if (inputModelRef.equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(inputNode, ref.getTargetNode());
-        new PostponedReference(ref.getLink(), node, refInfo).setAndRegister(myGenerator);
+        new PostponedReference(ref.getLink(), node, refInfo).registerWith(myGenerator);
       }
     }
     for (SNode child : node.getChildren()) {
