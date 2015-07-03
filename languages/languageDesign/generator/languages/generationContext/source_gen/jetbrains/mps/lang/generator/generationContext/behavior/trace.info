@@ -14,7 +14,7 @@
       <unit at="12,0,35,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ContextVarRef_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
@@ -297,6 +297,22 @@
       </scope>
       <scope id="5452844340287052760" at="16,0,22,0" />
       <unit id="5452844340287052613" at="10,0,23,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/5797301543953587954">
+    <file name="GenerationContextOp_ContextVarRef_Behavior.java">
+      <node id="5797301543953599219" at="13,78,14,420" concept="4" />
+      <node id="5797301543953587954" at="11,0,13,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5797301543953587954" at="13,0,16,0" concept="5" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5797301543953587956" at="11,43,11,43" />
+      <scope id="5797301543953588195" at="13,78,14,420" />
+      <scope id="5797301543953587954" at="11,0,13,0">
+        <var name="thisNode" id="5797301543953587954" />
+      </scope>
+      <scope id="5797301543953587954" at="13,0,16,0">
+        <var name="thisNode" id="5797301543953587954" />
+      </scope>
+      <unit id="5797301543953587954" at="10,0,17,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_Behavior" />
     </file>
   </root>
 </debug-info>
