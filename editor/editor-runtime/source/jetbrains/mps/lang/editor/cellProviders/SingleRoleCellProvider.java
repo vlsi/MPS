@@ -28,6 +28,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Iterator;
+
 
 /**
  * @author simon
@@ -53,8 +55,15 @@ public abstract class SingleRoleCellProvider {
   }
 
   public EditorCell createCell() {
+    if (areAttributesEmpty()) {
+      return createSingleCell();
+    } else {
+      return createManyCells();
+    }
+  }
+
+  private EditorCell_Collection createManyCells() {
     EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
-    resultCell.setSelectable(false);
     for (SNode child : getNodesToPresent()) {
       resultCell.addEditorCell(createChildCell(myEditorContext, child));
     }
@@ -62,6 +71,19 @@ public abstract class SingleRoleCellProvider {
       resultCell.addEditorCell(createEmptyCell());
     }
     return resultCell;
+  }
+
+  private EditorCell createSingleCell() {
+    Iterator<? extends SNode> iterator = myOwnerNode.getChildren(myContainmentLink).iterator();
+    if (iterator.hasNext()) {
+      return createChildCell(myEditorContext, iterator.next());
+    } else {
+      return createEmptyCell();
+    }
+  }
+
+  private boolean areAttributesEmpty() {
+    return !AttributeOperations.getChildAttributes(myOwnerNode, myContainmentLink).iterator().hasNext();
   }
 
   private boolean isChildEmpty() {
