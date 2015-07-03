@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -20,13 +22,8 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_si1ien_a");
     editorCell.setBig(true);
-    try {
-      editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
-      editorCell.addEditorCell(this.createRefNode_si1ien_a0(editorContext, node));
-    } finally {
-      editorContext.getCellFactory().popCellContext();
-    }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
+    editorCell.addEditorCell(this.createRefNode_si1ien_a0(editorContext, node));
     return editorCell;
   }
   private EditorCell createRefNode_si1ien_a0(EditorContext editorContext, SNode node) {
@@ -42,10 +39,23 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("commentedNode");
+      }
+      BaseCommentAttribute_Uncomment.setCellActions(editorCell, myOwnerNode, myEditorContext);
+    }
+    @Override
+    public EditorCell createCell() {
+      try {
+
+        myEditorContext.getCellFactory().pushCellContext();
+        myEditorContext.getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
+        myEditorContext.getCellFactory().removeCellContextHints();
+        return super.createCell();
+      } finally {
+        myEditorContext.getCellFactory().popCellContext();
       }
     }
 

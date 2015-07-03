@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -31,6 +33,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     if (bigCell != null) {
       bigCell.setBig(true);
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_5v10so_a(EditorContext editorContext, SNode node) {
@@ -40,6 +43,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_5v10so_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5v10so_c0(editorContext, node));
@@ -54,6 +58,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_5v10so_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0a(editorContext, node));
     return editorCell;
@@ -64,6 +69,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_5v10so_b0a(EditorContext editorContext, SNode node) {
@@ -73,6 +79,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,6 +89,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -90,6 +98,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_5v10so_d0(EditorContext editorContext, SNode node) {
@@ -98,6 +107,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,6 +117,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -116,6 +127,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_5v10so_a5a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b5a(editorContext, node));
@@ -139,6 +151,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a0f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b0f0(editorContext, node));
     return editorCell;
@@ -146,6 +159,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a0f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_5v10so_a0f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -155,6 +169,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -164,6 +179,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a1f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1f0(editorContext, node));
     return editorCell;
@@ -171,6 +187,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a1f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "exists");
     editorCell.setCellId("Constant_5v10so_a1f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -180,6 +197,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -189,6 +207,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a2f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b2f0(editorContext, node));
     return editorCell;
@@ -196,6 +215,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a2f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contextNode");
     editorCell.setCellId("Constant_5v10so_a2f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -205,6 +225,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -214,6 +235,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a3f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b3f0(editorContext, node));
     return editorCell;
@@ -221,6 +243,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a3f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contextRole");
     editorCell.setCellId("Constant_5v10so_a3f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -230,6 +253,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -239,6 +263,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a4f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b4f0(editorContext, node));
     return editorCell;
@@ -246,6 +271,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a4f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position");
     editorCell.setCellId("Constant_5v10so_a4f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -255,6 +281,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -264,6 +291,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a5f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b5f0(editorContext, node));
     return editorCell;
@@ -274,6 +302,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createConstant_5v10so_a5f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterNode");
     editorCell.setCellId("Constant_5v10so_a5f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -283,6 +312,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -292,12 +322,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a6f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_5v10so_a6f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5v10so_a6f0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -307,6 +339,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a7f0(editorContext, node));
     return editorCell;
   }
@@ -316,6 +349,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -325,6 +359,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a8f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b8f0(editorContext, node));
     return editorCell;
@@ -335,6 +370,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -344,6 +380,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a1i5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1i5a(editorContext, node));
     return editorCell;
@@ -354,6 +391,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -364,6 +402,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -373,6 +412,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a9f0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b9f0(editorContext, node));
     return editorCell;
@@ -383,6 +423,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -392,6 +433,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -401,6 +443,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a01f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b01f0(editorContext, node));
     return editorCell;
@@ -411,6 +454,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -420,6 +464,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a1k5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1k5a(editorContext, node));
     return editorCell;
@@ -430,6 +475,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -439,6 +485,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -448,6 +495,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a11f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5v10so_b11f0(editorContext, node));
     return editorCell;
@@ -458,6 +506,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -467,6 +516,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_5v10so_a1l5a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5v10so_b1l5a(editorContext, node));
     return editorCell;
@@ -477,6 +527,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -486,6 +537,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

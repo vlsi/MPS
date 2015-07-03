@@ -8,6 +8,8 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class StyleTestElement_EditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -18,6 +20,7 @@ public class StyleTestElement_EditorComponent implements ConceptEditorComponent 
   }
   private EditorCell createComponent_xnjtth_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

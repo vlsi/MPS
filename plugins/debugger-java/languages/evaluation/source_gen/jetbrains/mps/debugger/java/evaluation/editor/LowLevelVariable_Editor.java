@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -34,6 +36,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefCell_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
     if (renderingCondition_f5bzsg_a2a(node, editorContext)) {
@@ -55,6 +58,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("type");
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,6 +81,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_f5bzsg_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0a0");
+      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a0a(editorContext, node));
       return editorCell;
     }
@@ -93,9 +98,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
         installCellInfo(child, editorCell);
         return editorCell;
       }
-      public void installCellInfo(SNode node, EditorCell editorCell) {
-        if (node != null) {
-        }
+      public void installCellInfo(SNode child, EditorCell editorCell) {
         editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
         if (editorCell.getRole() == null) {
           editorCell.setRole("highType");
@@ -124,6 +127,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -136,6 +140,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f5bzsg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_c0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_f5bzsg_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_f5bzsg_b2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_c2a(editorContext, node));
@@ -151,6 +156,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -165,6 +171,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("type");
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -187,6 +194,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_f5bzsg_a0b2a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0b2a");
+      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a1c0(editorContext, node));
       return editorCell;
     }
@@ -203,9 +211,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
         installCellInfo(child, editorCell);
         return editorCell;
       }
-      public void installCellInfo(SNode node, EditorCell editorCell) {
-        if (node != null) {
-        }
+      public void installCellInfo(SNode child, EditorCell editorCell) {
         editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
         if (editorCell.getRole() == null) {
           editorCell.setRole("lowType");
@@ -234,6 +240,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_lowLevelName");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -249,6 +256,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -258,6 +266,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -20,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -42,6 +43,7 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_3bcydw_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3bcydw_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3bcydw_c0(editorContext, node));
@@ -50,6 +52,7 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3bcydw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Painting");
     editorCell.setCellId("Constant_3bcydw_a0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,6 +66,7 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,6 +79,7 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3bcydw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_c0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNodeList_3bcydw_a2a(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_3bcydw_b2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3bcydw_c2a(editorContext, node));
@@ -84,6 +89,7 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new Canvas_ScenePreview_Editor.shapesListHandler_3bcydw_a2a(node, "shapes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shapes");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -121,17 +127,20 @@ public class Canvas_ScenePreview_Editor extends DefaultNodeEditor {
   }
   private EditorCell createIndentCell_3bcydw_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_3bcydw_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3bcydw_c2a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createJComponent_3bcydw_a2c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createJComponent_3bcydw_a2c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, Canvas_ScenePreview_Editor._QueryFunction_JComponent_3bcydw_a0c2a(node, editorContext), "_3bcydw_a2c0");
     editorCell.setCellId("JComponent_3bcydw_a2c0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static JComponent _QueryFunction_JComponent_3bcydw_a0c2a(final SNode node, final EditorContext editorContext) {

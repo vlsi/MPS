@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -40,6 +42,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   private EditorCell createCollection_6g738i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6g738i_a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createAlternation_6g738i_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6g738i_b0(editorContext, node));
     return editorCell;
@@ -53,6 +56,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     } else {
       editorCell = this.createConstant_6g738i_a0a(editorContext, node);
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_6g738i_a0a(SNode node, EditorContext editorContext) {
@@ -74,12 +78,14 @@ public class IconSelectorComponent implements ConceptEditorComponent {
       }
     }).invoke());
     editorCell.setCellId("Image_6g738i_a0a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDescent(0);
     return editorCell;
   }
   private EditorCell createConstant_6g738i_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_6g738i_a0a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -89,6 +95,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_6g738i_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6g738i_b1a(editorContext, node));
     editorCell.addEditorCell(this.createJComponent_6g738i_c1a(editorContext, node));
@@ -97,6 +104,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   private EditorCell createConstant_6g738i_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_6g738i_a1a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -111,6 +119,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_StringLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -123,6 +132,7 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   private EditorCell createJComponent_6g738i_c1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, IconSelectorComponent._QueryFunction_JComponent_6g738i_a2b0(node, editorContext), "_6g738i_c1a");
     editorCell.setCellId("JComponent_6g738i_c1a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static JComponent _QueryFunction_JComponent_6g738i_a2b0(final SNode node, final EditorContext editorContext) {

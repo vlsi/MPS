@@ -58,7 +58,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,472,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,474,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
       <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
@@ -74,6 +74,9 @@
     </file>
     <file name="CellActionMapItem_BehaviorDescriptor.java">
       <unit at="9,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellActionMapItem_BehaviorDescriptor" />
+    </file>
+    <file name="CellActionMap_CanExecuteFunction_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_CanExecuteFunction_BehaviorDescriptor" />
     </file>
     <file name="CellActionMap_ExecuteFunction_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_ExecuteFunction_BehaviorDescriptor" />
@@ -4713,6 +4716,27 @@
       </scope>
       <scope id="2893726635879185694" at="26,0,32,0" />
       <unit id="3044950653914726099" at="15,0,33,0" name="jetbrains.mps.lang.editor.behavior.QueryFunction_String_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3459162043708467367">
+    <file name="CellActionMap_CanExecuteFunction_Behavior.java">
+      <node id="3459162043708467375" at="15,125,16,289" concept="11" />
+      <node id="3459162043708467382" at="16,289,17,166" concept="5" />
+      <node id="3459162043708467387" at="17,166,18,172" concept="5" />
+      <node id="3459162043708467392" at="18,172,19,18" concept="12" />
+      <node id="3459162043708467367" at="13,0,15,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3459162043708467367" at="15,0,21,0" concept="15" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="3459162043708467369" at="13,43,13,43" />
+      <scope id="3459162043708467367" at="13,0,15,0">
+        <var name="thisNode" id="3459162043708467367" />
+      </scope>
+      <scope id="3459162043708467374" at="15,125,19,18">
+        <var name="result" id="3459162043708467376" />
+      </scope>
+      <scope id="3459162043708467367" at="15,0,21,0">
+        <var name="thisConcept" id="3459162043708467367" />
+      </scope>
+      <unit id="3459162043708467367" at="12,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_CanExecuteFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3525058663444342705">

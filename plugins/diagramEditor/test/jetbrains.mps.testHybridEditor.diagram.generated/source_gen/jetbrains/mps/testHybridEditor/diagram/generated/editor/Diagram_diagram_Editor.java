@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -58,6 +60,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
     editorCell.setCanBeSynchronized(true);
     editorCell.setCellId("Collection_32adaa_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_32adaa_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_32adaa_b0(editorContext, node));
     editorCell.addEditorCell(this.createDiagram_32adaa_c0(editorContext, node));
@@ -68,6 +71,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_32adaa_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_32adaa_a0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_32adaa_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_32adaa_b0a(editorContext, node));
     return editorCell;
@@ -75,6 +79,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_32adaa_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "diagram");
     editorCell.setCellId("Constant_32adaa_a0a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -85,6 +90,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -97,6 +103,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_32adaa_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-1:");
     editorCell.setCellId("Constant_32adaa_b0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -226,6 +233,7 @@ public class Diagram_diagram_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_32adaa_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version-2:");
     editorCell.setCellId("Constant_32adaa_d0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

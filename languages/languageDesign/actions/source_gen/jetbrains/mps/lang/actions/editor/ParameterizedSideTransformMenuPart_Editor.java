@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -29,6 +31,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_r514zz_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_r514zz_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b0(editorContext, node));
     return editorCell;
@@ -39,6 +42,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,12 +52,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_r514zz_b1a(EditorContext editorContext, SNode node) {
@@ -62,6 +68,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_r514zz_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_c1b0(editorContext, node));
@@ -86,6 +93,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_r514zz_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b0b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_c0b1a(editorContext, node));
@@ -97,12 +105,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_r514zz_b0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_r514zz_b0b1a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,9 +129,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("type");
@@ -148,6 +156,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -157,12 +166,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b2b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b2b1a(EditorContext editorContext, SNode node) {
@@ -178,9 +189,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("query");
@@ -207,6 +216,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -216,12 +226,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b4b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b4b1a(EditorContext editorContext, SNode node) {
@@ -237,9 +249,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("matchingText");
@@ -266,6 +276,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -275,12 +286,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a6b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b6b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a6b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b6b1a(EditorContext editorContext, SNode node) {
@@ -296,9 +309,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("descriptionText");
@@ -325,6 +336,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_r514zz_a7b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_r514zz_b7b1a(editorContext, node));
     return editorCell;
@@ -338,6 +350,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_r514zz_a0h1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_r514zz_b0h1b0(editorContext, node));
     return editorCell;
@@ -348,6 +361,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -357,6 +371,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -366,12 +381,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a1h1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b1h1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a1h1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b1h1b0(EditorContext editorContext, SNode node) {
@@ -387,9 +404,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("icon");
@@ -416,6 +431,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -425,12 +441,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a9b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b9b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a9b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b9b1a(EditorContext editorContext, SNode node) {
@@ -446,9 +464,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("iconNode");
@@ -475,6 +491,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -484,12 +501,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a11b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b11b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a11b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b11b1a(EditorContext editorContext, SNode node) {
@@ -505,9 +524,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("actionType");
@@ -534,6 +551,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -543,12 +561,14 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_r514zz_a31b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_r514zz_b31b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_r514zz_a31b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_r514zz_b31b1a(EditorContext editorContext, SNode node) {
@@ -564,9 +584,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       installCellInfo(child, editorCell);
       return editorCell;
     }
-    public void installCellInfo(SNode node, EditorCell editorCell) {
-      if (node != null) {
-      }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
       editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
       if (editorCell.getRole() == null) {
         editorCell.setRole("handler");
