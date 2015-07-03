@@ -21,7 +21,7 @@ public class Cell_Action_Uncomment extends AbstractCellAction {
   }
 
   public void execute(EditorContext editorContext) {
-    SNode commentedNode = CommentUtil.uncomment(myNode);
+    CommentUtil.uncomment(myNode);
   }
 
 }

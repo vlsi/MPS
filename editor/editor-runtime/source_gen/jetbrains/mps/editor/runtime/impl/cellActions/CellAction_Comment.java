@@ -28,8 +28,7 @@ public class CellAction_Comment extends AbstractCellAction {
   }
 
   public void execute(EditorContext editorContext) {
-    Selection selection = editorContext.getSelectionManager().getSelection();
-    SNode newComment = CommentUtil.commentOut(myNode);
+    CommentUtil.commentOut(myNode);
   }
   private boolean needToComment(EditorContext editorContext) {
     boolean needToComment;

@@ -1727,37 +1727,12 @@
         </node>
       </node>
       <node concept="3clFbS" id="5B3NHHiZj0a" role="3clF47">
-        <node concept="3cpWs8" id="5FKjex9iMMW" role="3cqZAp">
-          <node concept="3cpWsn" id="5FKjex9iMMX" role="3cpWs9">
-            <property role="TrG5h" value="selection" />
-            <node concept="3uibUv" id="5FKjex9iMMS" role="1tU5fm">
-              <ref role="3uigEE" to="y596:~Selection" resolve="Selection" />
-            </node>
-            <node concept="2OqwBi" id="5FKjex9iMMY" role="33vP2m">
-              <node concept="2OqwBi" id="5FKjex9iMMZ" role="2Oq$k0">
-                <node concept="liA8E" id="5FKjex9iMN0" role="2OqNvi">
-                  <ref role="37wK5l" to="srng:~EditorContext.getSelectionManager():jetbrains.mps.openapi.editor.selection.SelectionManager" resolve="getSelectionManager" />
-                </node>
-                <node concept="37vLTw" id="5FKjex9iMN1" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5B3NHHiZj06" resolve="editorContext" />
-                </node>
-              </node>
-              <node concept="liA8E" id="5FKjex9iMN2" role="2OqNvi">
-                <ref role="37wK5l" to="y596:~SelectionManager.getSelection():jetbrains.mps.openapi.editor.selection.Selection" resolve="getSelection" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5FKjex9ibml" role="3cqZAp">
-          <node concept="3cpWsn" id="5FKjex9ibmm" role="3cpWs9">
-            <property role="TrG5h" value="newComment" />
-            <node concept="3Tqbb2" id="5FKjex9ibmn" role="1tU5fm" />
-            <node concept="2YIFZM" id="5FKjex9ibmo" role="33vP2m">
-              <ref role="37wK5l" node="2ETBKOyiRJO" resolve="commentOut" />
-              <ref role="1Pybhc" node="5FzO4t9gN3W" resolve="CommentUtil" />
-              <node concept="37vLTw" id="5FKjex9ibmp" role="37wK5m">
-                <ref role="3cqZAo" node="5FzO4t9hvqi" resolve="myNode" />
-              </node>
+        <node concept="3clFbF" id="301qoOzMzaa" role="3cqZAp">
+          <node concept="2YIFZM" id="5FKjex9ibmo" role="3clFbG">
+            <ref role="37wK5l" node="2ETBKOyiRJO" resolve="commentOut" />
+            <ref role="1Pybhc" node="5FzO4t9gN3W" resolve="CommentUtil" />
+            <node concept="37vLTw" id="5FKjex9ibmp" role="37wK5m">
+              <ref role="3cqZAo" node="5FzO4t9hvqi" resolve="myNode" />
             </node>
           </node>
         </node>
@@ -2990,16 +2965,12 @@
         </node>
       </node>
       <node concept="3clFbS" id="5FzO4t9hGR2" role="3clF47">
-        <node concept="3cpWs8" id="40Agflwuuny" role="3cqZAp">
-          <node concept="3cpWsn" id="40Agflwuunz" role="3cpWs9">
-            <property role="TrG5h" value="commentedNode" />
-            <node concept="3Tqbb2" id="40Agflwuunu" role="1tU5fm" />
-            <node concept="2YIFZM" id="5FzO4t9hIHO" role="33vP2m">
-              <ref role="37wK5l" node="74g66v1JYfH" resolve="uncomment" />
-              <ref role="1Pybhc" node="5FzO4t9gN3W" resolve="CommentUtil" />
-              <node concept="37vLTw" id="5FzO4t9hIIt" role="37wK5m">
-                <ref role="3cqZAo" node="5FzO4t9hFUe" resolve="myNode" />
-              </node>
+        <node concept="3clFbF" id="301qoOzMzgv" role="3cqZAp">
+          <node concept="2YIFZM" id="5FzO4t9hIHO" role="3clFbG">
+            <ref role="1Pybhc" node="5FzO4t9gN3W" resolve="CommentUtil" />
+            <ref role="37wK5l" node="74g66v1JYfH" resolve="uncomment" />
+            <node concept="37vLTw" id="5FzO4t9hIIt" role="37wK5m">
+              <ref role="3cqZAo" node="5FzO4t9hFUe" resolve="myNode" />
             </node>
           </node>
         </node>
