@@ -1325,6 +1325,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5170495790389308607(final IfMacroContext _context) {
     return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1074c7a5760L, "attractsFocus"), "0", "0"));
   }
+  public static boolean ifMacro_Condition_976829882994501815(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"));
+  }
   public static boolean ifMacro_Condition_2623569482669770103(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, 0x1096ade08ceL, "actionMap")) != null;
   }
