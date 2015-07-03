@@ -16246,5 +16246,73 @@
       </node>
     </node>
   </node>
+  <node concept="13h7C7" id="301qoOzKuyB">
+    <ref role="13h7C2" to="tpc2:301qoOzKuuh" resolve="CellActionMap_CanExecuteFunction" />
+    <node concept="13i0hz" id="301qoOzKuyE" role="13h7CS">
+      <property role="2Ki8OM" value="true" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <node concept="3Tm1VV" id="301qoOzKuyF" role="1B3o_S" />
+      <node concept="_YKpA" id="301qoOzKuyG" role="3clF45">
+        <node concept="3Tqbb2" id="301qoOzKuyH" role="_ZDj9">
+          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="301qoOzKuyI" role="3clF47">
+        <node concept="3cpWs8" id="301qoOzKuyJ" role="3cqZAp">
+          <node concept="3cpWsn" id="301qoOzKuyK" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="_YKpA" id="301qoOzKuyL" role="1tU5fm">
+              <node concept="3Tqbb2" id="301qoOzKuyM" role="_ZDj9">
+                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="301qoOzKuyN" role="33vP2m">
+              <node concept="13iAh5" id="301qoOzKuyO" role="2Oq$k0">
+                <ref role="3eA5LN" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+              </node>
+              <node concept="2qgKlT" id="301qoOzKuyP" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="301qoOzKuyQ" role="3cqZAp">
+          <node concept="2OqwBi" id="301qoOzKuyR" role="3clFbG">
+            <node concept="37vLTw" id="301qoOzKuyS" role="2Oq$k0">
+              <ref role="3cqZAo" node="301qoOzKuyK" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="301qoOzKuyT" role="2OqNvi">
+              <node concept="3B5_sB" id="301qoOzKuyU" role="25WWJ7">
+                <ref role="3B5MYn" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="301qoOzKuyV" role="3cqZAp">
+          <node concept="2OqwBi" id="301qoOzKuyW" role="3clFbG">
+            <node concept="37vLTw" id="301qoOzKuyX" role="2Oq$k0">
+              <ref role="3cqZAo" node="301qoOzKuyK" resolve="result" />
+            </node>
+            <node concept="TSZUe" id="301qoOzKuyY" role="2OqNvi">
+              <node concept="3B5_sB" id="301qoOzKuyZ" role="25WWJ7">
+                <ref role="3B5MYn" to="tpc2:1dS7XWjKWuX" resolve="CellActionMap_FunctionParm_selectedNode" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="301qoOzKuz0" role="3cqZAp">
+          <node concept="37vLTw" id="301qoOzKuz1" role="3cqZAk">
+            <ref role="3cqZAo" node="301qoOzKuyK" resolve="result" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="301qoOzKuyC" role="13h7CW">
+      <node concept="3clFbS" id="301qoOzKuyD" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

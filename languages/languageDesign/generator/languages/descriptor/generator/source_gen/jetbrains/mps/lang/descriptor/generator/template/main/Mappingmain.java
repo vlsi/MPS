@@ -336,7 +336,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
             if (itnode2 == null) {
               continue;
             }
-            TemplateContext context2 = context.subContext(null, itnode2);
+            TemplateContext context2 = context.subContext(itnode2);
             Collection<SNode> tlist3 = null;
             final SNode copySrcInput3 = context2.getInput();
             tlist3 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput3), copySrcMacro_417xrn_b0a0e0c0d0c0b21, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840044", context2);

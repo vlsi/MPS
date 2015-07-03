@@ -2558,5 +2558,87 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="4NfTi62PaXm">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1M2myG" to="tp25:BpxLfMiwTr" resolve="ChildAttributeQualifier" />
+    <node concept="1N5Pfh" id="4NfTi62PaXn" role="1Mr941">
+      <ref role="1N5Vy1" to="tp25:BpxLfMiwTt" />
+      <node concept="1MUpDS" id="4NfTi62PaXo" role="1N6uqs">
+        <node concept="3clFbS" id="4NfTi62PaXp" role="2VODD2">
+          <node concept="3clFbF" id="4NfTi62PaXq" role="3cqZAp">
+            <node concept="2YIFZM" id="4NfTi62PaXr" role="3clFbG">
+              <ref role="37wK5l" to="tpcn:6_gUeurcK7u" resolve="getApplicableAttributes" />
+              <ref role="1Pybhc" to="tpcn:6_gUeuqI_Vn" resolve="AttributeDesignTimeOperations" />
+              <node concept="1PxgMI" id="4NfTi62PaXs" role="37wK5m">
+                <property role="1BlNFB" value="true" />
+                <ref role="1PxNhF" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />
+                <node concept="21POm0" id="4NfTi62PaXt" role="1PxMeX" />
+              </node>
+              <node concept="3B5_sB" id="4NfTi62PaXu" role="37wK5m">
+                <ref role="3B5MYn" to="tpck:BpxLfMhSxq" resolve="ChildAttribute" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="Bn3R3" id="4NfTi62PaXv" role="Bn3R6">
+        <node concept="3clFbS" id="4NfTi62PaXw" role="2VODD2">
+          <node concept="SfApY" id="4NfTi62PaXx" role="3cqZAp">
+            <node concept="3clFbS" id="4NfTi62PaXy" role="SfCbr">
+              <node concept="3cpWs8" id="4NfTi62PaXz" role="3cqZAp">
+                <node concept="3cpWsn" id="4NfTi62PaX$" role="3cpWs9">
+                  <property role="TrG5h" value="role" />
+                  <node concept="17QB3L" id="4NfTi62PaX_" role="1tU5fm" />
+                  <node concept="2YIFZM" id="4NfTi62PaXA" role="33vP2m">
+                    <ref role="37wK5l" to="tpcn:6_gUeuqINwd" resolve="getAttributeRole" />
+                    <ref role="1Pybhc" to="tpcn:6_gUeuqI_Vn" resolve="AttributeDesignTimeOperations" />
+                    <node concept="Bn53e" id="4NfTi62PaXB" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="4NfTi62PaXC" role="3cqZAp">
+                <node concept="3clFbS" id="4NfTi62PaXD" role="3clFbx">
+                  <node concept="3cpWs6" id="4NfTi62PaXE" role="3cqZAp">
+                    <node concept="37vLTw" id="4NfTi62PaXF" role="3cqZAk">
+                      <ref role="3cqZAo" node="4NfTi62PaX$" resolve="role" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3y3z36" id="4NfTi62PaXG" role="3clFbw">
+                  <node concept="10Nm6u" id="4NfTi62PaXH" role="3uHU7w" />
+                  <node concept="37vLTw" id="4NfTi62PaXI" role="3uHU7B">
+                    <ref role="3cqZAo" node="4NfTi62PaX$" resolve="role" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="TDmWw" id="4NfTi62PaXJ" role="TEbGg">
+              <node concept="3cpWsn" id="4NfTi62PaXK" role="TDEfY">
+                <property role="TrG5h" value="ex" />
+                <node concept="3uibUv" id="4NfTi62PaXL" role="1tU5fm">
+                  <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4NfTi62PaXM" role="TDEfX">
+                <node concept="3SKdUt" id="4NfTi62PaXN" role="3cqZAp">
+                  <node concept="3SKdUq" id="4NfTi62PaXO" role="3SKWNk">
+                    <property role="3SKdUp" value="ignore" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs6" id="4NfTi62PaXP" role="3cqZAp">
+            <node concept="2OqwBi" id="4NfTi62PaXQ" role="3cqZAk">
+              <node concept="Bn53e" id="4NfTi62PaXR" role="2Oq$k0" />
+              <node concept="3TrcHB" id="4NfTi62PaXS" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

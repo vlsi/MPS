@@ -13,7 +13,6 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -41,7 +40,7 @@ public class TemplateLanguage extends TemplateDeclarationBase implements Templat
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
     final Object varValue1 = QueriesGenerated.insertMacro_varValue_2509399947043525756(new TemplateVarContext(context, varMacroRef_gw04jt_b0a0a1a2));
-    TemplateContext context1 = context.subContext(Collections.<String,Object>singletonMap("var:langModule", varValue1));
+    TemplateContext context1 = context.withVariable("var:langModule", varValue1);
     final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/9020561928507177266");
@@ -531,7 +530,7 @@ public class TemplateLanguage extends TemplateDeclarationBase implements Templat
                               if (itnode47 == null) {
                                 continue;
                               }
-                              TemplateContext context47 = context1.subContext(null, itnode47);
+                              TemplateContext context47 = context1.subContext(itnode47);
                               final SNode tnode48 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                               try {
                                 environment.nodeCopied(context47, tnode48, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2229091780083391520");
@@ -657,7 +656,7 @@ public class TemplateLanguage extends TemplateDeclarationBase implements Templat
                             if (itnode59 == null) {
                               continue;
                             }
-                            TemplateContext context59 = context1.subContext(null, itnode59);
+                            TemplateContext context59 = context1.subContext(itnode59);
                             Collection<SNode> tlist60 = null;
                             if (QueriesGenerated.ifMacro_Condition_5554116809065233232(new IfMacroContext(context59, ifMacroRef_gw04jt_b0a0d0c0d0b0b0b0b0b0b0e0b0m0e0c))) {
                               final SNode tnode61 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ab8473cc5L, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"));
@@ -898,10 +897,10 @@ public class TemplateLanguage extends TemplateDeclarationBase implements Templat
                   if (itnode81 == null) {
                     continue;
                   }
-                  TemplateContext context81 = context1.subContext(null, itnode81);
+                  TemplateContext context81 = context1.subContext(itnode81);
                   Collection<SNode> tlist82 = null;
                   final Object varValue82 = QueriesGenerated.insertMacro_varValue_931939946132747150(new TemplateVarContext(context81, varMacroRef_gw04jt_b0a0a3a2a1a1a9a1a31a4a2));
-                  TemplateContext context82 = context81.subContext(Collections.<String,Object>singletonMap("var:modelRef", varValue82));
+                  TemplateContext context82 = context81.withVariable("var:modelRef", varValue82);
                   Collection<SNode> tlist83 = null;
                   try {
                     TemplateContext switchContext83;
@@ -976,7 +975,7 @@ public class TemplateLanguage extends TemplateDeclarationBase implements Templat
                   if (itnode89 == null) {
                     continue;
                   }
-                  TemplateContext context89 = context1.subContext(null, itnode89);
+                  TemplateContext context89 = context1.subContext(itnode89);
                   final SNode tnode90 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, "jetbrains.mps.baseLanguage.structure.IfStatement"));
                   try {
                     environment.nodeCopied(context89, tnode90, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5100536058472494904");

@@ -476,7 +476,7 @@ public class TemplateGenerator extends TemplateDeclarationBase implements Templa
                                 if (itnode48 == null) {
                                   continue;
                                 }
-                                TemplateContext context48 = context.subContext(null, itnode48);
+                                TemplateContext context48 = context.subContext(itnode48);
                                 Collection<SNode> tlist49 = null;
                                 final SNode copySrcInput49 = context48.getInput();
                                 tlist49 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput49), copySrcMacro_g5r92k_b0a0e0c0d0b0c0b0b0b0b0c0b0d0b0k0b0c, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839743", context48);
@@ -559,7 +559,7 @@ public class TemplateGenerator extends TemplateDeclarationBase implements Templa
                                 if (itnode58 == null) {
                                   continue;
                                 }
-                                TemplateContext context58 = context.subContext(null, itnode58);
+                                TemplateContext context58 = context.subContext(itnode58);
                                 final SNode tnode59 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
                                 try {
                                   environment.nodeCopied(context58, tnode59, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/3829836699770929428");
@@ -645,7 +645,7 @@ public class TemplateGenerator extends TemplateDeclarationBase implements Templa
                                 if (itnode68 == null) {
                                   continue;
                                 }
-                                TemplateContext context68 = context.subContext(null, itnode68);
+                                TemplateContext context68 = context.subContext(itnode68);
                                 final SNode tnode69 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                                 try {
                                   environment.nodeCopied(context68, tnode69, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475344443");
@@ -729,7 +729,7 @@ public class TemplateGenerator extends TemplateDeclarationBase implements Templa
                               if (itnode77 == null) {
                                 continue;
                               }
-                              TemplateContext context77 = context.subContext(null, itnode77);
+                              TemplateContext context77 = context.subContext(itnode77);
                               final SNode tnode78 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
                               try {
                                 environment.nodeCopied(context77, tnode78, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1250389701475431809");

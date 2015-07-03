@@ -50,7 +50,8 @@ public enum CellActionId {
   FOLD_ALL("FOLD_ALL", "fold_all_action_id"),
   UNFOLD_ALL("UNFOLD_ALL", "unfold_all_action_id"),
   TOGGLE_FOLDING("TOGGLE_FOLDING", "toggle_folding_action_id"),
-  SHOW_MESSAGE("SHOW_MESSAGE", "show_message_action_id");
+  SHOW_MESSAGE("SHOW_MESSAGE", "show_message_action_id"),
+  COMMENT("COMMENT", "comment_out_action_id");
 
   private String myName;
   public String getName() {
@@ -105,6 +106,7 @@ public enum CellActionId {
     ListSequence.fromList(list).addElement(CellActionId.UNFOLD_ALL);
     ListSequence.fromList(list).addElement(CellActionId.TOGGLE_FOLDING);
     ListSequence.fromList(list).addElement(CellActionId.SHOW_MESSAGE);
+    ListSequence.fromList(list).addElement(CellActionId.COMMENT);
     return list;
   }
   public static CellActionId getDefault() {
@@ -245,6 +247,9 @@ public enum CellActionId {
     }
     if (value.equals(CellActionId.SHOW_MESSAGE.getValueAsString())) {
       return CellActionId.SHOW_MESSAGE;
+    }
+    if (value.equals(CellActionId.COMMENT.getValueAsString())) {
+      return CellActionId.COMMENT;
     }
     return CellActionId.getDefault();
   }

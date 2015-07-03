@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -27,6 +29,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qyzwn3_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createAlternation_qyzwn3_a0(editorContext, node));
     if (renderingCondition_qyzwn3_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_qyzwn3_b0(editorContext, node));
@@ -42,6 +45,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createProperty_qyzwn3_a0a_0(editorContext, node);
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
@@ -59,6 +63,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addKeyMap(new XmlTextValue_text());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -87,6 +92,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlAttributeValue(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addKeyMap(new XmlTextValue_text());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlTextValue_Editor.ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -111,6 +117,7 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -10,8 +10,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<MakeDeployScripts_BeforeTask.MakeDeployScripts_BeforeTask_RunTask> {
@@ -40,13 +40,13 @@ public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<Make
       }
 
       final Wrappers._T<DeployScript> script = new Wrappers._T<DeployScript>();
-      final Project projectFinal = project;
+      final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
-          ProjectHelper.getModelAccess(projectFinal).executeCommand(new Runnable() {
+          mpsProject.getModelAccess().executeCommand(new Runnable() {
             public void run() {
-              script.value = new DeployScript(projectFinal, myPlugins);
+              script.value = new DeployScript(mpsProject, myPlugins);
             }
           });
         }

@@ -59,7 +59,7 @@ public class TemplateOutputRoot__2 extends TemplateDeclarationBase implements Te
               if (itnode4 == null) {
                 continue;
               }
-              TemplateContext context4 = context3.subContext(null, itnode4);
+              TemplateContext context4 = context3.subContext(itnode4);
               final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
               try {
                 environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");

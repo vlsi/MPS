@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -27,6 +29,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
   private EditorCell createCollection_525l3g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_525l3g_a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_525l3g_a0(editorContext, node));
     if (renderingCondition_525l3g_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createComponent_525l3g_b0(editorContext, node));
@@ -42,6 +45,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     style.set(StyleAttributes.FIRST_POSITION_ALLOWED, 0, false);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -50,6 +54,7 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
   }
   private EditorCell createComponent_525l3g_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_525l3g_a1a(SNode node, EditorContext editorContext) {

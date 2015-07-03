@@ -23,6 +23,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -62,7 +63,7 @@ public abstract class SingleTermRules<K> {
   }
 
   private Set<K> computeRules(SAbstractConcept concept, LanguageScope langScope) {
-    THashSet<K> result = new THashSet<K>();
+    LinkedHashSet<K> result = new LinkedHashSet<K>();
 
     LinkedList<SAbstractConcept> queue = new LinkedList<SAbstractConcept>();
     queue.add(concept);

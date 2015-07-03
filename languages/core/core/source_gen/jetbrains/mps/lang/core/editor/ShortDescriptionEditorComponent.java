@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class ShortDescriptionEditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -38,6 +39,7 @@ public class ShortDescriptionEditorComponent implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_37ao6w_a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -57,18 +57,22 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
   }
   private synchronized void init() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    final SRepository repository = myDebugSession.getProject().getRepository();
+    assert repository instanceof SRepositoryExt;
+    repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         EvaluationModule module = new EvaluationModule();
-        MPSModuleRepository.getInstance().registerModule(module, myDebugSession.getProject());
+        ((SRepositoryExt) repository).registerModule(module, myDebugSession.getProject());
         myContainerModule = module.getModuleReference();
       }
     });
   }
   private synchronized void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    final SRepository repository = myDebugSession.getProject().getRepository();
+    repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().unregisterModule((AbstractModule) myContainerModule.resolve(MPSModuleRepository.getInstance()), myDebugSession.getProject());
+        SModule resolved = myContainerModule.resolve(repository);
+        ((SRepositoryExt) repository).unregisterModule(resolved, myDebugSession.getProject());
         myContainerModule = null;
       }
     });

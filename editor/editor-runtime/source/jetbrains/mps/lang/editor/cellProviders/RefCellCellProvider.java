@@ -17,8 +17,11 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteOnErrorReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
@@ -32,6 +35,7 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 public class RefCellCellProvider extends AbstractReferentCellProvider {
@@ -94,6 +98,15 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
         setSemanticNodeToCells(children.next(), semanticNode);
       }
     }
+  }
+  // gets a kind of attributes possibly hanging on this provider's role
+  @Override
+  public Class getRoleAttributeClass() {
+    return AttributeKind.Reference.class;
+  }
+  @Override
+  public Iterable<SNode> getRoleAttributes() {
+    return AttributeOperations.getLinkAttributes(getSNode(), myGenuineRole);
   }
 
   @Override

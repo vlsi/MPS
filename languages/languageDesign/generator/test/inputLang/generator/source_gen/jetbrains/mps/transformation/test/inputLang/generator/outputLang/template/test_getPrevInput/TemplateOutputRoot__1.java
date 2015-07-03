@@ -53,7 +53,7 @@ public class TemplateOutputRoot__1 extends TemplateDeclarationBase implements Te
           if (itnode3 == null) {
             continue;
           }
-          TemplateContext context3 = context2.subContext(null, itnode3);
+          TemplateContext context3 = context2.subContext(itnode3);
           final List<SNode> tlist4 = new ArrayList<SNode>();
           final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
           try {

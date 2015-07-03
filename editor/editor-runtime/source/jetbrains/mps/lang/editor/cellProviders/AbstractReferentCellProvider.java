@@ -87,19 +87,6 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     });
   }
 
-  //gets an attribute for this provider's node hanging on this provider's role
-  @Override
-  public SNode getRoleAttribute() {
-    // todo: why only first?
-    return IterableUtils.first(AttributeOperations.getLinkAttributes(getSNode(), myGenuineRole));
-  }
-
-  // gets a kind of attributes possibly hanging on this provider's role
-  @Override
-  public Class getRoleAttributeClass() {
-    return AttributeKind.Reference.class;
-  }
-
   @Override
   public EditorCell createEditorCell(EditorContext context) {
     return createCell_internal(myEditorContext);

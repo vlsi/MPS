@@ -7,6 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,6 +30,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1yxynp_a");
     editorCell.setBig(true);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefCell_1yxynp_a0(editorContext, node));
     if (renderingCondition_1yxynp_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_1yxynp_b0(editorContext, node));
@@ -45,6 +48,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       editorCell.setReferenceCell(true);
       editorCell.setRole("module");
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,6 +79,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       Style style = new StyleImpl();
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -91,6 +96,7 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     delete_javaDepReexport.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

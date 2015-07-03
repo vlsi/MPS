@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class ImplementationRemovedInStubMessage implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -25,6 +27,7 @@ public class ImplementationRemovedInStubMessage implements ConceptEditorComponen
     Style style = new StyleImpl();
     BaseStyles_StyleSheet.apply_StubImplementation(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

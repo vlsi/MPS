@@ -15,8 +15,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/1733398552130474119">
@@ -202,7 +200,7 @@
       <node id="1566698074411058905" at="380,196,381,329" concept="10" />
       <node id="1566698074411058927" at="382,194,383,326" concept="10" />
       <node id="1566698074411058950" at="384,192,385,18" concept="10" />
-      <node id="1566698074411058954" at="386,5,387,41" concept="17" />
+      <node id="1566698074411058954" at="386,5,387,41" concept="15" />
       <node id="1566698074411060173" at="389,76,390,175" concept="10" />
       <node id="1566698074411060792" at="392,84,393,177" concept="10" />
       <node id="4941415056451965809" at="395,70,396,176" concept="10" />
@@ -631,43 +629,6 @@
       <unit id="1733398552130474119" at="23,0,429,0" name="jetbrains.mps.generator.impl.RuleUtil" />
     </file>
   </root>
-  <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/4814657600604696799">
-    <file name="DismissTopMappingRuleException.java">
-      <node id="4814657600604696802" at="8,0,9,0" concept="4" trace="myMessageType" />
-      <node id="6423590138207194563" at="9,97,10,28" concept="16" />
-      <node id="6423590138207195600" at="12,113,13,19" concept="15" />
-      <node id="6423590138207141226" at="13,19,14,32" concept="3" />
-      <node id="4814657600604696819" at="16,36,17,33" concept="10" />
-      <node id="4814657600604696827" at="19,27,20,101" concept="10" />
-      <node id="4814657600604696839" at="22,30,23,104" concept="10" />
-      <node id="4814657600604696851" at="25,28,26,102" concept="10" />
-      <node id="4814657600604696805" at="9,0,12,0" concept="2" trace="DismissTopMappingRuleException#(Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;)V" />
-      <node id="4814657600604696815" at="16,0,19,0" concept="8" trace="isLoggingNeeded#()Z" />
-      <node id="4814657600604696823" at="19,0,22,0" concept="8" trace="isInfo#()Z" />
-      <node id="4814657600604696835" at="22,0,25,0" concept="8" trace="isWarning#()Z" />
-      <node id="4814657600604696847" at="25,0,28,0" concept="8" trace="isError#()Z" />
-      <node id="6423590138207141220" at="12,0,16,0" concept="2" trace="DismissTopMappingRuleException#(Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;Ljava/lang/String;)V" />
-      <scope id="4814657600604696810" at="9,97,10,28" />
-      <scope id="4814657600604696818" at="16,36,17,33" />
-      <scope id="4814657600604696826" at="19,27,20,101" />
-      <scope id="4814657600604696838" at="22,30,23,104" />
-      <scope id="4814657600604696850" at="25,28,26,102" />
-      <scope id="6423590138207141225" at="12,113,14,32" />
-      <scope id="4814657600604696805" at="9,0,12,0">
-        <var name="messageType" id="4814657600604696808" />
-      </scope>
-      <scope id="4814657600604696815" at="16,0,19,0" />
-      <scope id="4814657600604696823" at="19,0,22,0" />
-      <scope id="4814657600604696835" at="22,0,25,0" />
-      <scope id="4814657600604696847" at="25,0,28,0" />
-      <scope id="6423590138207141220" at="12,0,16,0">
-        <var name="message" id="6423590138207144570" />
-        <var name="messageType" id="6423590138207141223" />
-      </scope>
-      <unit id="4814657600604696862" at="28,0,34,0" name="jetbrains.mps.generator.impl.DismissTopMappingRuleException$MessageType" />
-      <unit id="4814657600604696799" at="7,0,35,0" name="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
-    </file>
-  </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/8341644365990734226">
     <file name="TemplateModelScanner.java">
       <node id="8341644365990734232" at="18,0,19,0" concept="4" trace="myTemplateModel" />
@@ -915,7 +876,7 @@
       <node id="4142636298191035947" at="25,0,33,0" concept="14" trace="getMappingName_TemplateFragment#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <node id="8986013878447356422" at="84,5,92,5" concept="7" />
       <node id="8986013878447267539" at="80,0,94,0" concept="14" trace="getGeneratorMessage_kind#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/generator/impl/DismissTopMappingRuleException/MessageType;" />
-      <node id="1092206164221444149" at="40,209,55,5" concept="18" />
+      <node id="1092206164221444149" at="40,209,55,5" concept="16" />
       <node id="6651023989395411271" at="58,133,75,5" concept="7" />
       <node id="707218259217355210" at="58,0,77,0" concept="14" trace="dispatchRuleConsequence#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/impl/GeneratorUtilEx/ConsequenceDispatch;)V" />
       <node id="3381130103055954271" at="36,0,58,0" concept="14" trace="getTemplateFragments#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />

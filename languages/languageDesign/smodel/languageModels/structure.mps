@@ -1440,12 +1440,12 @@
     <property role="3GE5qa" value="operation.reference" />
     <property role="34LRSv" value="role" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="4VYGy97ZKb3" role="PzmwI">
-      <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
-    </node>
     <node concept="asaX9" id="7cdZoO_MeqH" role="lGtFl">
       <property role="YLPcu" value="MPS 3.3" />
       <property role="YLQ7P" value="use getLink() method" />
+    </node>
+    <node concept="PrWs8" id="4VYGy97ZKb3" role="PzmwI">
+      <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
     </node>
   </node>
   <node concept="1TIwiD" id="536fMNl52qn">
@@ -2127,6 +2127,23 @@
   <node concept="PlHQZ" id="34EJa6aIcco">
     <property role="TrG5h" value="LanguageIdentity" />
     <property role="3GE5qa" value="identity" />
+  </node>
+  <node concept="1TIwiD" id="BpxLfMiwTr">
+    <property role="TrG5h" value="ChildAttributeQualifier" />
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1TJDcQ" node="5zEkxuKhrAF" resolve="AttributeQualifier" />
+    <node concept="1TJgyj" id="BpxLfMiwTs" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="linkQualifier" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2qM$EmJLWME" resolve="ILinkQualifier" />
+    </node>
+    <node concept="1TJgyj" id="BpxLfMiwTt" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="attributeConcept" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+    </node>
   </node>
 </model>
 

@@ -354,5 +354,42 @@
       <property role="1uS6qo" value="left" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3Rc6kd0K$RF">
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="BaseCommentAttribute" />
+    <ref role="1TJDcQ" node="BpxLfMhSxq" resolve="ChildAttribute" />
+    <node concept="1TJgyj" id="2ETBKOyieyt" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="commentedNode" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="gw2VY9q" resolve="BaseConcept" />
+    </node>
+    <node concept="M6xJ_" id="3Rc6kd0K$RG" role="lGtFl">
+      <property role="Hh88m" value="comment" />
+      <node concept="trNpa" id="3Rc6kd0K$RJ" role="EQaZv">
+        <ref role="trN6q" node="gw2VY9q" resolve="BaseConcept" />
+      </node>
+      <node concept="tn0Fv" id="3Rc6kd0K$RM" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="BpxLfMhSxq">
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="ChildAttribute" />
+    <ref role="1TJDcQ" node="4uZwTti3_$T" resolve="Attribute" />
+    <node concept="1TJgyi" id="BpxLfMirm5" role="1TKVEl">
+      <property role="TrG5h" value="linkRole" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="BpxLfMirm6" role="lGtFl">
+        <property role="YLQ7P" value="linkRole and linkId should not be used directly. Use getLink() behaviour method" />
+      </node>
+    </node>
+    <node concept="1TJgyi" id="BpxLfMirm7" role="1TKVEl">
+      <property role="TrG5h" value="linkId" />
+      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+    </node>
+    <node concept="M6xJ_" id="BpxLfMirm2" role="lGtFl" />
+  </node>
 </model>
 

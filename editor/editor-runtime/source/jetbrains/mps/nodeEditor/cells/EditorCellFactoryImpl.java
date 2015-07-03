@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
-import jetbrains.mps.nodeEditor.DefaultEditor;
+import jetbrains.mps.nodeEditor.DefaultCommentEditor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -25,11 +25,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
@@ -55,6 +56,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       return false;
     }
   };
+  public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -73,7 +75,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       ConceptEditor editor = myConceptEditorRegistry.getEditor(conceptDescriptor);
 
       if (editor != null) {
-        result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+        result = createCellWRTComment(node, isInspector, editor);
         assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by " + editor.getClass().getName() + " ConceptEditor.";
       }
     } catch (RuntimeException e) {
@@ -86,11 +88,25 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
     if (result == null) {
       ConceptEditor editor = conceptDescriptor.isInterfaceConcept() || conceptDescriptor.isAbstract() ? new DefaultInterfaceEditor() : AbstractDefaultEditor.createEditor(node, conceptDescriptor);
-      result = isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+      result = createCellWRTComment(node, isInspector, editor);
       assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
     }
 
     result.setCellContext(getCellContext());
+    return result;
+  }
+
+  private EditorCell createCell(SNode node, boolean isInspector, ConceptEditor editor) {
+    return isInspector ? editor.createInspectedCell(myEditorContext, node) : editor.createEditorCell(myEditorContext, node);
+  }
+
+  private EditorCell createCellWRTComment(SNode node, boolean isInspector, @NotNull ConceptEditor editor) {
+    EditorCell result;
+    if (getCellContext().hasContextHint(BASE_COMMENT_HINT) && !editor.getContextHints().contains(BASE_COMMENT_HINT)) {
+      result = createCell(node, isInspector, new DefaultCommentEditor(editor));
+    } else {
+      result = createCell(node, isInspector, editor);
+    }
     return result;
   }
 

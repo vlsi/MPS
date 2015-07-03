@@ -32,8 +32,8 @@
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <import index="n55e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
+    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -4022,6 +4022,9 @@
       <node concept="3F0A7n" id="3wj3sjzQQ$I" role="3EZMnx">
         <property role="1Intyy" value="true" />
         <ref role="1NtTu8" to="tp25:3wj3sjzQPFN" resolve="moduleId" />
+        <node concept="VPxyj" id="5WE35DbSX1c" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
       </node>
     </node>
   </node>
@@ -5146,6 +5149,52 @@
         </node>
       </node>
       <node concept="2EHx9g" id="34EJa6aJI4t" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="BpxLfMiy78">
+    <property role="3GE5qa" value="attributes" />
+    <ref role="1XX52x" to="tp25:BpxLfMiwTr" resolve="ChildAttributeQualifier" />
+    <node concept="3EZMnI" id="BpxLfMiy7a" role="2wV5jI">
+      <property role="3EZMnw" value="false" />
+      <node concept="1iCGBv" id="BpxLfMiy7b" role="3EZMnx">
+        <ref role="1NtTu8" to="tp25:BpxLfMiwTt" />
+        <node concept="1sVBvm" id="BpxLfMiy7c" role="1sWHZn">
+          <node concept="3SHvHV" id="BpxLfMiy7d" role="2wV5jI" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="BpxLfMiy7e" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;" />
+        <ref role="1k5W1q" to="tpen:i18cmFm" resolve="BaseAngleBracket" />
+        <node concept="VPM3Z" id="BpxLfMiy7f" role="3F10Kt" />
+        <node concept="11L4FC" id="BpxLfMiy7g" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="BpxLfMiy7h" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="BpxLfMiy7i" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;link&gt;" />
+        <ref role="1NtTu8" to="tp25:BpxLfMiwTs" />
+        <node concept="3$7jql" id="BpxLfMiy7j" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="BpxLfMiy7k" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+        <ref role="1k5W1q" to="tpen:i18cmFm" resolve="BaseAngleBracket" />
+        <node concept="3CHQLq" id="BpxLfMiy7l" role="3F10Kt" />
+        <node concept="11L4FC" id="BpxLfMiy7m" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="BpxLfMiy7n" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3CIbrd" id="BpxLfMiy7o" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="BpxLfMiy7p" role="2iSdaV" />
     </node>
   </node>
 </model>

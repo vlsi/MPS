@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import java.util.Collections;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.List;
@@ -84,7 +83,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
         if (QueriesGenerated.ifMacro_Condition_1196351887167(new IfMacroContext(context, ifMacroRef_swz52f_b0a0b0c0b0c))) {
           Collection<SNode> tlist8 = null;
           final Object varValue8 = QueriesGenerated.insertMacro_varValue_5625022412249398387(new TemplateVarContext(context, varMacroRef_swz52f_b0a0a1a1a2a1a2));
-          TemplateContext context8 = context.subContext(Collections.<String,Object>singletonMap("var:quotedNode", varValue8));
+          TemplateContext context8 = context.withVariable("var:quotedNode", varValue8);
           final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
           try {
             environment.nodeCopied(context8, tnode9, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886757");
@@ -281,7 +280,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
                     if (itnode30 == null) {
                       continue;
                     }
-                    TemplateContext context30 = context8.subContext(null, itnode30);
+                    TemplateContext context30 = context8.subContext(itnode30);
                     final SNode tnode31 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context30, tnode31, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886782");
@@ -375,7 +374,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
                     if (itnode39 == null) {
                       continue;
                     }
-                    TemplateContext context39 = context8.subContext(null, itnode39);
+                    TemplateContext context39 = context8.subContext(itnode39);
                     final SNode tnode40 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context39, tnode40, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196871487513");
@@ -495,7 +494,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
                     if (itnode50 == null) {
                       continue;
                     }
-                    TemplateContext context50 = context8.subContext(null, itnode50);
+                    TemplateContext context50 = context8.subContext(itnode50);
                     final SNode tnode51 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context50, tnode51, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886844");
@@ -741,7 +740,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
                     if (itnode72 == null) {
                       continue;
                     }
-                    TemplateContext context72 = context8.subContext(null, itnode72);
+                    TemplateContext context72 = context8.subContext(itnode72);
                     final SNode tnode73 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
                     try {
                       environment.nodeCopied(context72, tnode73, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886940");
@@ -861,7 +860,7 @@ public class TemplateQuotedNode__to__statementList extends TemplateDeclarationBa
                     if (itnode83 == null) {
                       continue;
                     }
-                    TemplateContext context83 = context8.subContext(null, itnode83);
+                    TemplateContext context83 = context8.subContext(itnode83);
                     final SNode tnode84 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, "jetbrains.mps.baseLanguage.structure.BlockStatement"));
                     try {
                       environment.nodeCopied(context83, tnode84, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887019");

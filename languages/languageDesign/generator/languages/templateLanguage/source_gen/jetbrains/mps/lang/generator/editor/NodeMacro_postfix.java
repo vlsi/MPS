@@ -14,8 +14,9 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -47,6 +48,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.HORIZONTAL_GAP, 0, new Padding(3, Measure.PIXELS));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createEmpty_crgygw_a0(editorContext, node));
     if (renderingCondition_crgygw_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_crgygw_b0(editorContext, node));
@@ -62,11 +64,13 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_crgygw_a0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_crgygw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_crgygw_b0");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_crgygw_a1a(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_crgygw_b1a(editorContext, node));
     return editorCell;
@@ -79,6 +83,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
   private EditorCell createConstant_crgygw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bad role:");
     editorCell.setCellId("Constant_crgygw_a1a");
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -99,6 +104,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefCell_crgygw_c0(EditorContext editorContext, SNode node) {
@@ -112,6 +118,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       editorCell.setReferenceCell(true);
       editorCell.setRole("mappingLabel");
     }
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,6 +149,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
       editorCell.getStyle().putAll(style);
+      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -161,6 +169,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_nodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);
+    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

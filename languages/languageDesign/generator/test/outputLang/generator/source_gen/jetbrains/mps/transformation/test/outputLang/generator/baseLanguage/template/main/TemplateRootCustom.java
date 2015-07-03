@@ -15,7 +15,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.TemplateVarContext;
-import java.util.Collections;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -115,7 +114,7 @@ public class TemplateRootCustom extends TemplateDeclarationBase implements Templ
                   {
                     Collection<SNode> tlist11 = null;
                     final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(new TemplateVarContext(context, varMacroRef_kyghau_b0a0a1a1a1a1a1a3a1a4a1a2));
-                    TemplateContext context11 = context.subContext(Collections.<String,Object>singletonMap("var:var1", varValue11));
+                    TemplateContext context11 = context.withVariable("var:var1", varValue11);
                     final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
                     try {
                       environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103");
