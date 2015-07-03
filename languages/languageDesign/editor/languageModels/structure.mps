@@ -934,6 +934,12 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="g_hAIk0" resolve="CellActionMap_ExecuteFunction" />
     </node>
+    <node concept="1TJgyj" id="301qoOzKuGW" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canExecuteFunction" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="301qoOzKuuh" resolve="CellActionMap_CanExecuteFunction" />
+    </node>
     <node concept="PrWs8" id="1653mnvANBA" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -4011,6 +4017,14 @@
     <property role="3GE5qa" value="CellModel" />
     <property role="TrG5h" value="StubCellModel_Block" />
     <ref role="1TJDcQ" node="CzpafHMSVi" resolve="StubEditorCellModel" />
+  </node>
+  <node concept="1TIwiD" id="301qoOzKuuh">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="CellActionMap_CanExecuteFunction" />
+    <property role="2_RsDV" value="none" />
+    <property role="34LRSv" value="can execute block" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
 </model>
 

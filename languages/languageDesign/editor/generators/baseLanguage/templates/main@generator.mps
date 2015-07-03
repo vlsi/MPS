@@ -6859,6 +6859,7 @@
         </node>
         <node concept="17QB3L" id="hP36EnJ" role="3clF45" />
       </node>
+      <node concept="2tJIrI" id="301qoOzKwmf" role="jymVt" />
       <node concept="3clFb_" id="heKbDcv" role="jymVt">
         <property role="TrG5h" value="execute" />
         <node concept="37vLTG" id="heKbDcC" role="3clF46">
@@ -6925,6 +6926,79 @@
           <node concept="3Tqbb2" id="i2nPOBq" role="1tU5fm" />
         </node>
       </node>
+      <node concept="3clFb_" id="301qoOzKyws" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="canExecute" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="301qoOzKywt" role="1B3o_S" />
+        <node concept="10P_77" id="301qoOzKywv" role="3clF45" />
+        <node concept="37vLTG" id="301qoOzKyww" role="3clF46">
+          <property role="TrG5h" value="editorContext" />
+          <node concept="3uibUv" id="301qoOzKywx" role="1tU5fm">
+            <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="301qoOzKywy" role="3clF47">
+          <node concept="3clFbF" id="301qoOzKARp" role="3cqZAp">
+            <node concept="2OqwBi" id="301qoOzKARq" role="3clFbG">
+              <node concept="liA8E" id="301qoOzKARr" role="2OqNvi">
+                <ref role="37wK5l" node="301qoOzK$g1" resolve="canExecute_internal" />
+                <node concept="37vLTw" id="301qoOzKARs" role="37wK5m">
+                  <ref role="3cqZAo" node="301qoOzKyww" resolve="editorContext" />
+                </node>
+                <node concept="2OqwBi" id="301qoOzKARt" role="37wK5m">
+                  <node concept="2OwXpG" id="301qoOzKARu" role="2OqNvi">
+                    <ref role="2Oxat5" node="heKbDbW" resolve="myNode" />
+                  </node>
+                  <node concept="Xjq3P" id="301qoOzKARv" role="2Oq$k0" />
+                </node>
+              </node>
+              <node concept="Xjq3P" id="301qoOzKARw" role="2Oq$k0" />
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="301qoOzKywz" role="2AJF6D">
+          <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="3clFb_" id="301qoOzK$g1" role="jymVt">
+        <property role="TrG5h" value="canExecute_internal" />
+        <node concept="37vLTG" id="301qoOzK$g2" role="3clF46">
+          <property role="TrG5h" value="editorContext" />
+          <node concept="3uibUv" id="301qoOzK$g3" role="1tU5fm">
+            <ref role="3uigEE" to="srng:~EditorContext" resolve="EditorContext" />
+          </node>
+        </node>
+        <node concept="3Tm1VV" id="301qoOzK$g4" role="1B3o_S" />
+        <node concept="10P_77" id="301qoOzKDCZ" role="3clF45" />
+        <node concept="3clFbS" id="301qoOzK$g6" role="3clF47">
+          <node concept="29HgVG" id="301qoOzK$g7" role="lGtFl">
+            <node concept="3NFfHV" id="301qoOzK$g8" role="3NFExx">
+              <node concept="3clFbS" id="301qoOzK$g9" role="2VODD2">
+                <node concept="3cpWs6" id="301qoOzK$ga" role="3cqZAp">
+                  <node concept="2OqwBi" id="301qoOzK$gb" role="3cqZAk">
+                    <node concept="2OqwBi" id="301qoOzK$gc" role="2Oq$k0">
+                      <node concept="30H73N" id="301qoOzK$gd" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="301qoOzKERg" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:301qoOzKuGW" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="301qoOzK$gf" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTG" id="301qoOzK$gg" role="3clF46">
+          <property role="TrG5h" value="node" />
+          <node concept="3Tqbb2" id="301qoOzK$gh" role="1tU5fm" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="301qoOzKzUT" role="jymVt" />
     </node>
     <node concept="17Uvod" id="g_EV1RU" role="lGtFl">
       <property role="2qtEX9" value="name" />
