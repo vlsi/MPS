@@ -60,7 +60,11 @@ public class CommentUtil {
       if (!(containmentLink.isMultiple())) {
         SNode currentChild = ListSequence.fromList(SNodeOperations.getChildren(parent, containmentLink)).first();
         if ((currentChild != null)) {
-          createAndInsertNewComment(parent, containmentLink, currentChild);
+          if (currentChild.getConcept().isAbstract()) {
+            SNodeOperations.deleteNode(currentChild);
+          } else {
+            createAndInsertNewComment(parent, containmentLink, currentChild);
+          }
         }
       }
       if (commentedNode != null) {

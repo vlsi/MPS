@@ -2261,17 +2261,48 @@
                 </node>
                 <node concept="3clFbJ" id="5FzO4t9hoTn" role="3cqZAp">
                   <node concept="3clFbS" id="5FzO4t9hoTo" role="3clFbx">
-                    <node concept="3clFbF" id="5FzO4t9huGp" role="3cqZAp">
-                      <node concept="1rXfSq" id="5FzO4t9huGo" role="3clFbG">
-                        <ref role="37wK5l" node="5FzO4t9hupd" resolve="createAndInsertNewComment" />
-                        <node concept="37vLTw" id="5FzO4t9huHz" role="37wK5m">
-                          <ref role="3cqZAo" node="74g66v1JLsp" resolve="parent" />
+                    <node concept="3clFbJ" id="301qoOzM_NC" role="3cqZAp">
+                      <node concept="3clFbS" id="301qoOzM_NE" role="3clFbx">
+                        <node concept="3clFbF" id="301qoOzMAKH" role="3cqZAp">
+                          <node concept="2OqwBi" id="301qoOzMAM_" role="3clFbG">
+                            <node concept="37vLTw" id="301qoOzMAKF" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5FzO4t9hoTe" resolve="currentChild" />
+                            </node>
+                            <node concept="1PgB_6" id="301qoOzMARl" role="2OqNvi" />
+                          </node>
                         </node>
-                        <node concept="37vLTw" id="5FzO4t9huJF" role="37wK5m">
-                          <ref role="3cqZAo" node="5FzO4t9hoSW" resolve="containmentLink" />
+                      </node>
+                      <node concept="2OqwBi" id="301qoOzMArK" role="3clFbw">
+                        <node concept="2OqwBi" id="301qoOzMA2I" role="2Oq$k0">
+                          <node concept="2JrnkZ" id="301qoOzMA1A" role="2Oq$k0">
+                            <node concept="37vLTw" id="301qoOzM_Qh" role="2JrQYb">
+                              <ref role="3cqZAo" node="5FzO4t9hoTe" resolve="currentChild" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="301qoOzMAb7" role="2OqNvi">
+                            <ref role="37wK5l" to="ec5l:~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
+                          </node>
                         </node>
-                        <node concept="37vLTw" id="5FzO4t9huM$" role="37wK5m">
-                          <ref role="3cqZAo" node="5FzO4t9hoTe" resolve="currentChild" />
+                        <node concept="liA8E" id="301qoOzMA$E" role="2OqNvi">
+                          <ref role="37wK5l" to="t3eg:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
+                        </node>
+                      </node>
+                      <node concept="9aQIb" id="301qoOzMARD" role="9aQIa">
+                        <node concept="3clFbS" id="301qoOzMARE" role="9aQI4">
+                          <node concept="3clFbF" id="5FzO4t9huGp" role="3cqZAp">
+                            <node concept="1rXfSq" id="5FzO4t9huGo" role="3clFbG">
+                              <ref role="37wK5l" node="5FzO4t9hupd" resolve="createAndInsertNewComment" />
+                              <node concept="37vLTw" id="5FzO4t9huHz" role="37wK5m">
+                                <ref role="3cqZAo" node="74g66v1JLsp" resolve="parent" />
+                              </node>
+                              <node concept="37vLTw" id="5FzO4t9huJF" role="37wK5m">
+                                <ref role="3cqZAo" node="5FzO4t9hoSW" resolve="containmentLink" />
+                              </node>
+                              <node concept="37vLTw" id="5FzO4t9huM$" role="37wK5m">
+                                <ref role="3cqZAo" node="5FzO4t9hoTe" resolve="currentChild" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
