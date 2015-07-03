@@ -42,4 +42,7 @@ public class Expression_Behavior {
   public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return false;
   }
+  public static boolean virtual_singleValue_1587718783750602974(SAbstractConcept thisConcept) {
+    return Expression_Behavior.virtual_constant_1262430001741498050(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"));
+  }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnaryMinus_Behavior {
   public static void init(SNode thisNode) {
@@ -14,5 +15,8 @@ public class UnaryMinus_Behavior {
   }
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression"), expr);
+  }
+  public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
   }
 }

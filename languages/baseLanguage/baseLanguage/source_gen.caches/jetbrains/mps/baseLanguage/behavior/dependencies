@@ -3319,6 +3319,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.NotExpression_Behavior" file="NotExpression_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NextProgramPoint" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -3327,8 +3328,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.NotExpression_BehaviorDescriptor" file="NotExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
@@ -3339,6 +3342,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.NotExpression_Behavior" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -4715,8 +4719,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.UnaryMinus_Behavior" file="UnaryMinus_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.UnaryMinus_BehaviorDescriptor" file="UnaryMinus_BehaviorDescriptor.java">

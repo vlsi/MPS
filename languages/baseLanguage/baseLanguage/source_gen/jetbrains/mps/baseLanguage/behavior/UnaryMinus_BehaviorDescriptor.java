@@ -10,6 +10,9 @@ public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_
   public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
   }
+  public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return UnaryMinus_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
+  }
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     UnaryMinus_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }

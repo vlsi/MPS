@@ -108,6 +108,9 @@ public class VariableReference_Behavior {
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
+  public static boolean virtual_singleValue_1587718783750602974(SAbstractConcept thisConcept) {
+    return true;
+  }
   private static SModule check_gidzrl_a0e0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

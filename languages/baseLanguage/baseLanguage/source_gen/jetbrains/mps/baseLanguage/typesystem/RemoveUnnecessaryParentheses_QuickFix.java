@@ -6,9 +6,9 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemoveUnnecessaryParentheses_QuickFix extends QuickFix_Runtime {
   public RemoveUnnecessaryParentheses_QuickFix() {
@@ -18,7 +18,7 @@ public class RemoveUnnecessaryParentheses_QuickFix extends QuickFix_Runtime {
     return "Remove Unnecessary Parentheses";
   }
   public void execute(SNode node) {
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")))), "virtual_singleValue_1587718783750602974", new Object[]{})) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")));
     }
     SNodeOperations.replaceWithAnother(node, ((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]));

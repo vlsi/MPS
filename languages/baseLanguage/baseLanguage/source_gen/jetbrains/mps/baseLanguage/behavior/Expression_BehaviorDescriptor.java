@@ -37,6 +37,9 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return Expression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
+  public boolean virtual_singleValue_1587718783750602974(SConcept thisConcept) {
+    return Expression_Behavior.virtual_singleValue_1587718783750602974(thisConcept);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
