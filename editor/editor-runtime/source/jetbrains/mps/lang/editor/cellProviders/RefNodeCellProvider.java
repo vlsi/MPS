@@ -24,6 +24,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated use jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider
+ */
+
+@Deprecated
 public class RefNodeCellProvider extends AbstractReferentCellProvider {
 
   public RefNodeCellProvider(SNode node, EditorContext context) {

@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
@@ -41,10 +43,18 @@ public class DefaultCommentEditor extends DefaultNodeEditor {
     EditorCell_Collection result = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(editorContext, node);
     result.setBig(true);
     result.getStyle().putAll(StyleRegistry.getInstance().getStyle("LINE_COMMENT"), 1);
-    result.addEditorCell(new EditorCell_Constant(editorContext, node, "/*", false));
+    result.addEditorCell(createCommentConstantCell(editorContext, node, true));
     result.addEditorCell(mainCell);
-    result.addEditorCell(new EditorCell_Constant(editorContext, node, "*/", false));
+    result.addEditorCell(createCommentConstantCell(editorContext, node, false));
     return result;
+  }
+
+  private EditorCell_Constant createCommentConstantCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node, boolean left) {
+    EditorCell_Constant cell = new EditorCell_Constant(editorContext, node, left ? "/*" : "*/", false);
+    StyleImpl style = new StyleImpl();
+    style.set(left ? StyleAttributes.PUNCTUATION_RIGHT : StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    cell.getStyle().putAll(style, 0);
+    return cell;
   }
 
   @Override
