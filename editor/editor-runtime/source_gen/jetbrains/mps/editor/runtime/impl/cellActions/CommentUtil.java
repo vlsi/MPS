@@ -106,11 +106,13 @@ public class CommentUtil {
   private static SNode getPrevious(SNode parent, SNode anchor, SContainmentLink containmentLink) {
     Iterator<SNode> iterator = Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(parent, containmentLink)).iterator();
     SNode prev = null;
+    SNode next;
     while (iterator.hasNext()) {
-      SNode next = iterator.next();
+      next = iterator.next();
       if (next == anchor) {
         return prev;
       }
+      prev = next;
     }
     return null;
   }
