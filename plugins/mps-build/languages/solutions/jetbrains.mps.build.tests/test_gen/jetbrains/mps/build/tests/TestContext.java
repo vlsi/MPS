@@ -125,11 +125,6 @@ public class TestContext extends Context {
     public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode node, String string) {
       throw new UnsupportedOperationException();
     }
-    @Deprecated
-    @Override
-    public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode node, SNode node1, String string) {
-      throw new UnsupportedOperationException();
-    }
     @Override
     public SNode getOutputNodeByInputNodeAndMappingLabel(SNode node, String string) {
       throw new UnsupportedOperationException();
@@ -140,11 +135,6 @@ public class TestContext extends Context {
     }
     @Override
     public ITemplateGenerator getGenerator() {
-      throw new UnsupportedOperationException();
-    }
-    @Override
-    @Deprecated
-    public SModel getSourceModel() {
       throw new UnsupportedOperationException();
     }
     @Override
