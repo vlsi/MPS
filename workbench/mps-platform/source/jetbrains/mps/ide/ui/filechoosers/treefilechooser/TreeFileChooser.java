@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +54,6 @@ public class TreeFileChooser {
 
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
-  private IOperationContext myContext = null;
   private String myTitle = null;
   private boolean myDirectoriesAlwaysVisible = false;
 
@@ -80,8 +80,12 @@ public class TreeFileChooser {
     myFileFilter = fileFilter;
   }
 
+  /**
+   * @deprecated no-op method
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void setContext(IOperationContext context) {
-    myContext = context;
   }
 
   public void setTitle(String title) {

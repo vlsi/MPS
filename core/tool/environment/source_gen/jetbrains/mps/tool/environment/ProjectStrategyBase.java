@@ -4,7 +4,7 @@ package jetbrains.mps.tool.environment;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
-import java.util.List;
+import java.util.Collection;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -40,7 +40,7 @@ public abstract class ProjectStrategyBase implements ProjectStrategy {
   protected abstract Project construct(@NotNull Project emptyProject);
 
   @NotNull
-  protected Project loadProjectFromModuleHandles(@NotNull Project emptyProject, List<ModulesMiner.ModuleHandle> moduleHandles) {
+  protected Project loadProjectFromModuleHandles(@NotNull Project emptyProject, Collection<ModulesMiner.ModuleHandle> moduleHandles) {
     Project projectFilledWithModules = new ProjectModulesFiller(emptyProject, moduleHandles).load();
     return projectFilledWithModules;
   }

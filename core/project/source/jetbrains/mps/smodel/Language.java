@@ -157,7 +157,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   @Override
   protected ModuleDescriptor loadDescriptor() {
-    return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
+    return new ModulesMiner().loadModuleHandle(getDescriptorFile()).getDescriptor();
   }
 
   public void validateExtends() {

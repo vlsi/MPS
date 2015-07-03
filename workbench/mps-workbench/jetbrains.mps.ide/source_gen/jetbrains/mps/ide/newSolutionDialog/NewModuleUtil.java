@@ -153,7 +153,7 @@ public class NewModuleUtil {
     }
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    Language language = (Language) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    Language language = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
 
     if (createMainAspectModels) {
       try {
@@ -208,14 +208,14 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    return (Solution) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
   }
   @Deprecated
   private static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-    return (DevKit) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (DevKit) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
   public static void createMainLanguageAspects(Language language) throws IOException {

@@ -4606,8 +4606,9 @@
       </node>
       <node concept="37vLTG" id="7fR23ZqldRI" role="3clF46">
         <property role="TrG5h" value="moduleHandles" />
-        <node concept="_YKpA" id="2BGPXkEwDVa" role="1tU5fm">
-          <node concept="3uibUv" id="2BGPXkEwDVc" role="_ZDj9">
+        <node concept="3uibUv" id="7LkutxgTjLM" role="1tU5fm">
+          <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+          <node concept="3uibUv" id="7LkutxgTk5J" role="11_B2D">
             <ref role="3uigEE" to="ztul:~ModulesMiner$ModuleHandle" resolve="ModulesMiner.ModuleHandle" />
           </node>
         </node>

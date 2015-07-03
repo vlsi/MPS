@@ -226,8 +226,9 @@ public abstract class MpsWorker {
       tmpmodules = Collections.singletonList(moduleByFile);
     } else {
       IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
+      // XXX new owner for each module?! 
       BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
-      for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
+      for (ModulesMiner.ModuleHandle moduleHandle : new ModulesMiner().collectModules(file).getCollectedModules()) {
         SModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
         if (module != null) {
           tmpmodules.add(module);

@@ -194,7 +194,7 @@ public class Solution extends ReloadableModuleBase {
   protected SolutionDescriptor loadDescriptor() {
     IFile file = getDescriptorFile();
     assert file != null;
-    return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
+    return (SolutionDescriptor) new ModulesMiner().loadModuleHandle(file).getDescriptor();
   }
 
   @Override
