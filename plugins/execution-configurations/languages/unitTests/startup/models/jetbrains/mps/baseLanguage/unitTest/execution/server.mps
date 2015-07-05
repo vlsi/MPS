@@ -3967,10 +3967,10 @@
         <node concept="3clFbJ" id="5Vet53CQdJF" role="3cqZAp">
           <node concept="3clFbS" id="5Vet53CQdJI" role="3clFbx">
             <node concept="34ab3g" id="5Vet53CQe0I" role="3cqZAp">
-              <property role="35gtTG" value="warn" />
+              <property role="35gtTG" value="error" />
               <node concept="3cpWs3" id="5Vet53CQeMS" role="34bqiv">
                 <node concept="Xl_RD" id="5Vet53CQeN4" role="3uHU7w">
-                  <property role="Xl_RC" value=" was not found" />
+                  <property role="Xl_RC" value=" was not found. Possibly the solution which contains tests has plugin kind NONE. Try setting it to the plugin kind PLUGIN_OTHER." />
                 </node>
                 <node concept="3cpWs3" id="5Vet53CQexk" role="3uHU7B">
                   <node concept="Xl_RD" id="5Vet53CQe0K" role="3uHU7B">
