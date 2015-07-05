@@ -47,6 +47,7 @@
     <import index="r9fo" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.util(MPS.OpenAPI/org.jetbrains.mps.util@java_stub)" />
     <import index="dbrf" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" implicit="true" />
     <import index="810" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.ui(MPS.IDEA/com.intellij.openapi.ui@java_stub)" implicit="true" />
+    <import index="kqhl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1861,17 +1862,21 @@
                         <ref role="37wK5l" to="k7g3:~Set.removeAll(java.util.Collection):boolean" resolve="removeAll" />
                         <node concept="2OqwBi" id="1KUoCipvxhk" role="37wK5m">
                           <node concept="liA8E" id="1KUoCipvxhl" role="2OqNvi">
-                            <ref role="37wK5l" to="nhkf:~JavaModuleFacet.getClassPath():java.util.Set" resolve="getClassPath" />
+                            <ref role="37wK5l" to="kqhl:~ModuleDescriptor.getAdditionalJavaStubPaths():java.util.Collection" resolve="getAdditionalJavaStubPaths" />
                           </node>
                           <node concept="2OqwBi" id="1KUoCipvxhm" role="2Oq$k0">
-                            <node concept="liA8E" id="1KUoCipvxhn" role="2OqNvi">
-                              <ref role="37wK5l" to="88zw:~SModule.getFacet(java.lang.Class):org.jetbrains.mps.openapi.module.SModuleFacet" resolve="getFacet" />
-                              <node concept="3VsKOn" id="1KUoCipvxho" role="37wK5m">
-                                <ref role="3VsUkX" to="nhkf:~JavaModuleFacet" resolve="JavaModuleFacet" />
-                              </node>
+                            <node concept="liA8E" id="a9P96JfIfA" role="2OqNvi">
+                              <ref role="37wK5l" to="vsqj:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
                             </node>
-                            <node concept="3rM5sP" id="1KUoCipvxhp" role="2Oq$k0">
-                              <property role="3rM5sR" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+                            <node concept="1eOMI4" id="a9P96JfHjC" role="2Oq$k0">
+                              <node concept="10QFUN" id="a9P96JfHj_" role="1eOMHV">
+                                <node concept="3uibUv" id="a9P96JfHH$" role="10QFUM">
+                                  <ref role="3uigEE" to="vsqj:~AbstractModule" resolve="AbstractModule" />
+                                </node>
+                                <node concept="3rM5sP" id="1KUoCipvxhp" role="10QFUP">
+                                  <property role="3rM5sR" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
