@@ -924,7 +924,7 @@
     <node concept="Zd509" id="4yOeMfyQ2za" role="Zd508">
       <ref role="1bYAoF" node="4yOeMfyP6wh" resolve="Comment" />
       <node concept="pLAjd" id="4yOeMfyQ2zc" role="Zd501">
-        <property role="pLAjc" value="ctrl+alt" />
+        <property role="pLAjc" value="ctrl" />
         <property role="pLAjf" value="VK_SLASH" />
       </node>
     </node>
