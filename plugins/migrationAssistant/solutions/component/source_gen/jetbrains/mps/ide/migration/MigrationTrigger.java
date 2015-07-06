@@ -18,8 +18,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
 import javax.swing.SwingUtilities;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
@@ -109,7 +109,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
               VirtualFileManager.getInstance().syncRefresh();
               ReloadManager.getInstance().flush();
-              ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
             }
           });
           SwingUtilities.invokeLater(new Runnable() {
@@ -336,7 +335,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     ReloadManager.getInstance().flush();
-                    ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
                     // set flag to execute migration after startup 
                     myState.migrationRequired = true;
                     // reload project and start migration assist 
