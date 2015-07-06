@@ -4,32 +4,31 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class TestUtils {
   public TestUtils() {
   }
   @NotNull
-  public static Iterable<ITestNodeWrapper> wrapPointerStrings(@Nullable final Iterable<String> strings) {
+  public static Iterable<ITestNodeWrapper> wrapPointerStrings(final Project mpsProject, @Nullable final Iterable<String> strings) {
     if (strings == null) {
       return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     }
@@ -79,7 +78,7 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 4:
-                      this._6_node = check_6qi07j_a0a0a0a0a1a1(((SNodePointer) PointerUtils.stringToPointer(_2_pointerString)));
+                      this._6_node = check_6qi07j_a0a0a0a0a1a1(PointerUtils.stringToPointer(_2_pointerString), mpsProject);
                       this.__CP__ = 7;
                       break;
                     case 8:
@@ -107,19 +106,19 @@ __switch__:
   }
 
   @Nullable
-  public static SModel getModel(@Nls String modelName) {
+  public static SModel getModel(Project mpsProject, @Nls String modelName) {
     if ((modelName == null || modelName.length() == 0)) {
       return null;
     }
-    return SModelRepository.getInstance().getModelDescriptor(modelName);
+    return new ModuleRepositoryFacade(mpsProject).getModelByName(modelName);
   }
 
   @Nullable
-  public static SModule getModule(@Nls String moduleName) {
+  public static SModule getModule(Project mpsProject, @Nls String moduleName) {
     if ((moduleName == null || moduleName.length() == 0)) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
+    return new ModuleRepositoryFacade(mpsProject).getModule(moduleName, SModule.class);
   }
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model, ProgressMonitor monitor, boolean breakOnFirstFound) {
@@ -193,9 +192,9 @@ __switch__:
     }
     return result;
   }
-  private static SNode check_6qi07j_a0a0a0a0a1a1(SNodePointer checkedDotOperand) {
+  private static SNode check_6qi07j_a0a0a0a0a1a1(SNodeReference checkedDotOperand, Project mpsProject) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
+      return checkedDotOperand.resolve(mpsProject.getRepository());
     }
     return null;
   }

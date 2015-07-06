@@ -28,8 +28,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
@@ -38,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -68,17 +67,25 @@ public final class GenerationFacade {
         continue;
       }
 
+      final SRepository repository = sm.getRepository();
+      if (repository == null) {
+        // no idea how to treat a model which hands in the air; expect it to be editable and tell isChanged if desires re-generation
+        continue;
+      }
       GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
+      // FIXME use SRepository to pick proper GenerationDependenciesCache instance
       if (oldDependencies == null) {
         // TODO turn on when generated file will be mandatory
         //result.add(sm);
         continue;
       }
 
+
+
       Map<String, String> externalHashes = oldDependencies.getExternalHashes();
       for (Entry<String, String> entry : externalHashes.entrySet()) {
         String modelReference = entry.getKey();
-        SModel rmd = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
+        SModel rmd = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(repository);
         if (rmd == null) {
           result.add(sm);
           break;

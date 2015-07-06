@@ -159,7 +159,7 @@ public abstract class ChangesTestBase {
   }
 
   protected void makeChangeAndWait(Runnable change) {
-    ProjectHelper.toMPSProject(myIdeaProject).getRepository().getModelAccess().executeCommandInEDT(change);
+    ourProject.getModelAccess().executeCommandInEDT(change);
 
     ourEnvironment.flushAllEvents();
     myWaitHelper.waitForChangesManager();

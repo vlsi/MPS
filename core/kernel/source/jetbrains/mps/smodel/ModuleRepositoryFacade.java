@@ -16,9 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -30,8 +32,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -41,14 +45,37 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class ModuleRepositoryFacade implements CoreComponent {
+/**
+ * Mediator between API aspects of an SRepository and out implementation aspects, like SRepositoryExt.
+ * Use this class to avoid casts to SRepositoryExt
+ */
+public final class ModuleRepositoryFacade implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
 
+  /**
+   * @deprecated  This class shall cease to be CoreComponent and singleton. Instead, shall be
+   * instantiated directly with {@link #ModuleRepositoryFacade(SRepository)} when our implementation code need to deal with repository internals
+   * @param repo
+   */
+  @Deprecated
   public ModuleRepositoryFacade(MPSModuleRepository repo) {
-    REPO = repo;
+    this((SRepositoryExt) repo);
+  }
+
+  public ModuleRepositoryFacade(@NotNull Project mpsProject) {
+    this((SRepositoryExt) mpsProject.getRepository());
+  }
+
+  public ModuleRepositoryFacade(@NotNull SRepository repository) {
+    this((SRepositoryExt) repository);
+  }
+
+  private ModuleRepositoryFacade(SRepositoryExt repo) {
+    // FIXME REPO shall become SRepositoryExt once we add methods like getByFQN() and getOwners() there
+    REPO = MPSModuleRepository.getInstance();
   }
 
   @Override
@@ -115,6 +142,17 @@ public class ModuleRepositoryFacade implements CoreComponent {
       }
     }
     return list;
+  }
+
+  /**
+   * This is provisional API to keep all uses of SModelRepository.getModelDescriptor(String) in a single, controlled place.
+   * I could had had created ModelRepositoryFacade, similar to this class, however, it seems just too much for a single method that we shall drop anyway.
+   * @param modelQualifiedName
+   * @return named model
+   */
+  @Nullable
+  public SModel getModelByName(@Nullable String modelQualifiedName) {
+    return SModelRepository.getInstance().getModelDescriptor(modelQualifiedName);
   }
 
   /**

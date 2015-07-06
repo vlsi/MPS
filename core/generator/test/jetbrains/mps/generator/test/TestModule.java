@@ -23,7 +23,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -42,7 +41,6 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -82,17 +80,9 @@ public class TestModule extends AbstractModule {
     dependenciesChanged();
   }
 
-  private boolean isValidName(String modelName) {
-    return SModelRepository.getInstance().getModelDescriptor(modelName) == null
-        && !myModels.containsKey(modelName);
-  }
-
   public SModel createModel(SModel originalModel) {
     String originalLong = SNodeOperations.getModelLongName(originalModel);
     String newModelName = originalLong + "@999";
-    while (!isValidName(newModelName)) {
-      newModelName += "_";
-    }
 
     SModel result = new TestSModelDescriptor(newModelName, originalModel);
 

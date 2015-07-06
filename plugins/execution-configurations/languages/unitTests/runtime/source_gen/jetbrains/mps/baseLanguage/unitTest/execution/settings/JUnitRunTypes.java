@@ -12,8 +12,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.lib.PointerUtils;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
@@ -56,7 +54,7 @@ public enum JUnitRunTypes {
   MODULE() {
     @Override
     protected Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor) {
-      SModule module = TestUtils.getModule(configuration.getModule());
+      SModule module = TestUtils.getModule(project, configuration.getModule());
       if (module == null) {
         return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
@@ -66,7 +64,7 @@ public enum JUnitRunTypes {
       if (isEmptyString(configuration.getModule())) {
         return "Module is not selected.";
       }
-      SModule module = TestUtils.getModule(configuration.getModule());
+      SModule module = TestUtils.getModule(project, configuration.getModule());
       if (module == null) {
         return "Module " + configuration.getModule() + " does not exist.";
       }
@@ -76,7 +74,7 @@ public enum JUnitRunTypes {
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, Project project) {
-      SModule module = TestUtils.getModule(configuration.getModule());
+      SModule module = TestUtils.getModule(project, configuration.getModule());
       if (module == null) {
         return false;
       }
@@ -87,7 +85,7 @@ public enum JUnitRunTypes {
   MODEL() {
     @Override
     protected Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor) {
-      SModel model = TestUtils.getModel(configuration.getModel());
+      SModel model = TestUtils.getModel(project, configuration.getModel());
       if (model == null) {
         return Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
       }
@@ -97,7 +95,7 @@ public enum JUnitRunTypes {
       if (configuration.getModel() == null) {
         return "Model is not selected.";
       }
-      SModel model = TestUtils.getModel(configuration.getModel());
+      SModel model = TestUtils.getModel(project, configuration.getModel());
       if (model == null) {
         return "Could not find model " + configuration.getModel();
       }
@@ -107,7 +105,7 @@ public enum JUnitRunTypes {
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, Project project) {
-      SModel model = TestUtils.getModel(configuration.getModel());
+      SModel model = TestUtils.getModel(project, configuration.getModel());
       if (model == null) {
         return false;
       }
@@ -118,7 +116,7 @@ public enum JUnitRunTypes {
   NODE() {
     @Override
     protected Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor) {
-      return TestUtils.wrapPointerStrings(configuration.getTestCases());
+      return TestUtils.wrapPointerStrings(project, configuration.getTestCases());
     }
     public String check(JUnitSettings_Configuration configuration, Project project) {
       if ((configuration.getTestCases() == null || configuration.getTestCases().isEmpty())) {
@@ -127,7 +125,7 @@ public enum JUnitRunTypes {
       if (configuration.getTestCases() != null) {
         for (String testCase : configuration.getTestCases()) {
           SNodeReference pointer = PointerUtils.stringToPointer(testCase);
-          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
+          if (pointer == null || pointer.resolve(project.getRepository()) == null || TestNodeWrapperFactory.tryToWrap(pointer.resolve(project.getRepository())) == null) {
             return "Could not find test case for id " + testCase + ".";
           }
         }
@@ -142,7 +140,7 @@ public enum JUnitRunTypes {
   METHOD() {
     @Override
     protected Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor) {
-      return TestUtils.wrapPointerStrings(configuration.getTestMethods());
+      return TestUtils.wrapPointerStrings(project, configuration.getTestMethods());
     }
     @Override
     public String check(JUnitSettings_Configuration configuration, Project project) {
@@ -152,7 +150,7 @@ public enum JUnitRunTypes {
       if (configuration.getTestMethods() != null) {
         for (String method : configuration.getTestMethods()) {
           SNodeReference pointer = PointerUtils.stringToPointer(method);
-          if (pointer == null || ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()) == null || TestNodeWrapperFactory.tryToWrap(((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance())) == null) {
+          if (pointer == null || pointer.resolve(project.getRepository()) == null || TestNodeWrapperFactory.tryToWrap(pointer.resolve(project.getRepository())) == null) {
             return "Could not find test method for id " + method + ".";
           }
         }

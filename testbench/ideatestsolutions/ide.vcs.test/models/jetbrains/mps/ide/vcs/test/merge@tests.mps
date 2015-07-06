@@ -1322,19 +1322,10 @@
             </node>
             <node concept="2OqwBi" id="7HgS$Vk7A9H" role="2Oq$k0">
               <node concept="liA8E" id="7HgS$Vk7A9I" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
-              <node concept="2OqwBi" id="7HgS$Vk7A9J" role="2Oq$k0">
-                <node concept="liA8E" id="7HgS$Vk7A9K" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-                <node concept="2YIFZM" id="7HgS$Vk7A9L" role="2Oq$k0">
-                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                  <node concept="37vLTw" id="7HgS$Vk7A9M" role="37wK5m">
-                    <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="4d72gVMuQ_u" role="2Oq$k0">
+                <ref role="3cqZAo" node="6hwF4wZOtrP" resolve="ourProject" />
               </node>
             </node>
           </node>
