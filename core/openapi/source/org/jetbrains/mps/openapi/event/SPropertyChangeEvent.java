@@ -22,12 +22,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about modified property.
+ *
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SPropertyChangeEvent {
+public final class SPropertyChangeEvent  extends AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myNode;
   private final SProperty myProperty;

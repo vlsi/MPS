@@ -15,26 +15,14 @@
  */
 package org.jetbrains.mps.openapi.event;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.model.SNode;
-
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
- * SHALL DOCUMENT WHEN NODE READ IS SENT (in comparison with property/reference reads)
- * @since 3.3
+ * Base class for node (property and reference) read events.
+ * @see SPropertyReadEvent
+ * @see SReferenceReadEvent
+ * @see SNodeReadEvent
+ * @see org.jetbrains.mps.openapi.model.SNodeAccessListener
  * @author Artem Tikhomirov
+ * @since 3.3
  */
-@Immutable
-public final class SNodeReadEvent extends AbstractModelReadEvent {
-  private final SNode myNode;
-
-  public SNodeReadEvent(@NotNull SNode node) {
-    myNode = node;
-  }
-
-  @NotNull
-  public SNode getNode() {
-    return myNode;
-  }
+public abstract class AbstractModelReadEvent extends AbstractModelEvent {
 }

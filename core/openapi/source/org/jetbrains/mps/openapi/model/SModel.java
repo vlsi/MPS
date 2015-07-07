@@ -172,14 +172,14 @@ public interface SModel {
   void addChangeListener(SNodeChangeListener l);
 
   /**
-   * @param l listener to remove, tolerates <code>null</code>
+   * @param l listener to remove, tolerates <code>null</code> and unknown (not registered) listeners
    * @since 3.3
    */
   void removeChangeListener(SNodeChangeListener l);
 
 
   /**
-   * Represents a problem with the persitence.
+   * Represents a problem with the persistence.
    */
   interface Problem {
 

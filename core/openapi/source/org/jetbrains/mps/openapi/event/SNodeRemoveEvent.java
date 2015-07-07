@@ -23,12 +23,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about node removed from a model.
+ * To tell removed root from removed child, use {@link #isRoot()}
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SNodeRemoveEvent {
+public final class SNodeRemoveEvent extends AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myParent;
   private final SNode myChild;
