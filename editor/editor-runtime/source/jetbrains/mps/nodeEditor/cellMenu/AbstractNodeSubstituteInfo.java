@@ -21,7 +21,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
@@ -93,7 +93,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
 
   @Override
   public boolean hasExactlyNActions(final String pattern, final boolean strictMatching, final int n) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         int count = 0;
@@ -152,7 +152,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
 
   @Override
   public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
         List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
@@ -176,7 +176,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private List<SubstituteAction> getActions() {
     if (myCachedActionList == null) {
       try {
-        myCachedActionList = ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+        myCachedActionList = new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
           @Override
           public List<SubstituteAction> compute() {
             return createActions();
