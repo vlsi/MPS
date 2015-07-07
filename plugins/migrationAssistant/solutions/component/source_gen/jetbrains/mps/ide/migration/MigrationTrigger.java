@@ -5,6 +5,7 @@ package jetbrains.mps.ide.migration;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
+import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
@@ -66,8 +67,8 @@ import org.jetbrains.annotations.Nullable;
  * 1. The reload cycle with migration wizard happens w/o adding repo listeners
  * 2. Models should be unloaded after migration
  */
-@State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
-})
+@State(name = "MigrationTrigger", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE, scheme = StorageScheme.DIRECTORY_BASED)
+}, reloadable = true)
 public class MigrationTrigger extends AbstractProjectComponent implements PersistentStateComponent<MigrationTrigger.MyState>, IStartupMigrationExecutor, MigrationErrorContainer {
 
   private Project myMpsProject;
