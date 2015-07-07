@@ -215,6 +215,9 @@
     <group id="IDE_Edit_ActionGroupcustom" />
     <group id="jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.Backspace_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.Comment_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.Complete_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.CompleteSmart_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.Delete_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />
