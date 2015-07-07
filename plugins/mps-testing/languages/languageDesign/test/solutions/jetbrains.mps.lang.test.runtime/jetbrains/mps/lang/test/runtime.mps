@@ -9828,6 +9828,36 @@
                       </node>
                     </node>
                     <node concept="3clFbJ" id="5s44y2LiJ_v" role="3cqZAp">
+                      <node concept="3clFbS" id="5s44y2LiJ_w" role="3clFbx">
+                        <node concept="3SKdUt" id="5s44y2LiJ_x" role="3cqZAp">
+                          <node concept="3SKdUq" id="5s44y2LiJ_y" role="3SKWNk">
+                            <property role="3SKdUp" value="todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="5s44y2LiJ_z" role="3cqZAp">
+                          <node concept="3SKdUq" id="5s44y2LiJ_$" role="3SKWNk">
+                            <property role="3SKdUp" value="There is currently no good complete cross-platform code to char conversion utility, it seems" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="5s44y2LiJ__" role="3cqZAp">
+                          <node concept="3SKdUq" id="5s44y2LiJ_A" role="3SKWNk">
+                            <property role="3SKdUp" value="KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem" />
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="5s44y2LiJ_B" role="3cqZAp">
+                          <node concept="37vLTI" id="5s44y2LiJ_C" role="3clFbG">
+                            <node concept="10QFUN" id="5s44y2LiJ_D" role="37vLTx">
+                              <node concept="37vLTw" id="5s44y2LiJ_E" role="10QFUP">
+                                <ref role="3cqZAo" node="5s44y2LiJ_k" resolve="keyCode" />
+                              </node>
+                              <node concept="10Pfzv" id="5s44y2LiJ_F" role="10QFUM" />
+                            </node>
+                            <node concept="37vLTw" id="5s44y2LiJ_G" role="37vLTJ">
+                              <ref role="3cqZAo" node="5s44y2LiJ_q" resolve="keyChar" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="1Wc70l" id="5s44y2LiJ_H" role="3clFbw">
                         <node concept="1Wc70l" id="5s44y2LiJ_I" role="3uHU7B">
                           <node concept="3clFbC" id="5s44y2LiJ_J" role="3uHU7B">
@@ -9894,36 +9924,6 @@
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="5s44y2LiJ_w" role="3clFbx">
-                        <node concept="3SKdUt" id="5s44y2LiJ_x" role="3cqZAp">
-                          <node concept="3SKdUq" id="5s44y2LiJ_y" role="3SKWNk">
-                            <property role="3SKdUp" value="todo it may be worthwhile to also detect other unicode chars from keyCode and supply them into keyChar" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="5s44y2LiJ_z" role="3cqZAp">
-                          <node concept="3SKdUq" id="5s44y2LiJ_$" role="3SKWNk">
-                            <property role="3SKdUp" value="There is currently no good complete cross-platform code to char conversion utility, it seems" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="5s44y2LiJ__" role="3cqZAp">
-                          <node concept="3SKdUq" id="5s44y2LiJ_A" role="3SKWNk">
-                            <property role="3SKdUp" value="KEY_PRESSED events may or may not contain a concrete keyChar. Its presence is definitely not a problem" />
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="5s44y2LiJ_B" role="3cqZAp">
-                          <node concept="37vLTI" id="5s44y2LiJ_C" role="3clFbG">
-                            <node concept="10QFUN" id="5s44y2LiJ_D" role="37vLTx">
-                              <node concept="37vLTw" id="5s44y2LiJ_E" role="10QFUP">
-                                <ref role="3cqZAo" node="5s44y2LiJ_k" resolve="keyCode" />
-                              </node>
-                              <node concept="10Pfzv" id="5s44y2LiJ_F" role="10QFUM" />
-                            </node>
-                            <node concept="37vLTw" id="5s44y2LiJ_G" role="37vLTJ">
-                              <ref role="3cqZAo" node="5s44y2LiJ_q" resolve="keyChar" />
                             </node>
                           </node>
                         </node>
