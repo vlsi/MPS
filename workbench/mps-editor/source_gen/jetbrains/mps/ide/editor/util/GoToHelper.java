@@ -7,7 +7,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Set;
@@ -24,7 +24,6 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 
 public class GoToHelper {
@@ -39,7 +38,9 @@ public class GoToHelper {
   }
   public static void executeFinders(final SNode method, Project project, final String finderClassName, RelativePoint relativePoint) {
     final Wrappers._T<String> methodName = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+
+    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         methodName.value = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
         assert hasApplicableFinder(method, finderClassName);
@@ -50,7 +51,7 @@ public class GoToHelper {
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching...", true) {
       @Override
       public void run(@NotNull final ProgressIndicator p) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             List<SNode> list = FindUtils.executeFinder(finderClassName, method, GlobalScope.getInstance(), new ProgressMonitorAdapter(p));
             SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(list).select(new ISelector<SNode, SNodePointer>() {
@@ -63,8 +64,7 @@ public class GoToHelper {
       }
     });
 
-    jetbrains.mps.project.Project project1 = ProjectHelper.toMPSProject(project);
     String title = "Choose overriding method of " + methodName.value + "() to navigate to";
-    GoToContextMenuUtil.showMenu(project1, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(), relativePoint);
+    GoToContextMenuUtil.showMenu(mpsProject, title, SetSequence.fromSet(nodes).toListSequence(), new DefaultMethodRenderer(), relativePoint);
   }
 }

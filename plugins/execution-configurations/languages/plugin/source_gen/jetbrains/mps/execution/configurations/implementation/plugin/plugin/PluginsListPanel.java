@@ -7,10 +7,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
@@ -29,7 +29,9 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.navigation.ItemPresentation;
 import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class PluginsListPanel extends ListPanel<SNodeReference> {
@@ -48,16 +50,18 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
   @Override
   protected String getFqName(final SNodeReference element) {
     final Wrappers._T<String> fqName = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        fqName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) element.resolve(MPSModuleRepository.getInstance())), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x5b7be37b4dee5919L, "plugin")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bb6fL, "id"));
+        fqName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) element.resolve(repo)), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, 0x5b7be37b4dee5919L, "plugin")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bb6fL, "id"));
       }
     });
     return fqName.value;
   }
   @Override
   protected void collectCandidates() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(GlobalScope.getInstance(), Collections.singleton(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin")), false, new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
         synchronized (myLock) {

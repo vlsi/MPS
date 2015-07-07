@@ -12,7 +12,6 @@ import javax.swing.JComboBox;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.HeadlessException;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -83,7 +82,7 @@ public class NewModelDialog extends DialogWrapper {
     myProject = project;
     myModule = module;
     myNamespace = (namespace == null ? "" : namespace);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         assert myModule.getModelRoots().iterator().hasNext() : "Can't create a model in solution with no model roots";
         initContentPane();
@@ -255,8 +254,7 @@ public class NewModelDialog extends DialogWrapper {
       newModelRoot.save(memento);
       final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
 
-      myProject.getModelAccess().runWriteAction(new Runnable() {
-        @Override
+      myProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           final LanguageDescriptor languageDescriptor = ((Language) myModule).getModuleDescriptor();
           Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
@@ -275,7 +273,7 @@ public class NewModelDialog extends DialogWrapper {
         }
       });
 
-      ModelAccess.instance().runReadAction(new Runnable() {
+      myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           for (ModelRoot modelRoot : myModule.getModelRoots()) {
             if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals(selectedModelRoot.getContentRoot())) {

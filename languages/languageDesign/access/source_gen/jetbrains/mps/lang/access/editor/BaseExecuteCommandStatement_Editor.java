@@ -13,11 +13,11 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -32,6 +32,8 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_lfwa2a_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_lfwa2a_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lfwa2a_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_lfwa2a_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lfwa2a_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_lfwa2a_a0(EditorContext editorContext, SNode node) {
@@ -42,8 +44,51 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_lfwa2a_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_lfwa2a_b0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_lfwa2a_c0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BaseExecuteCommandStatement_Editor.repoSingleRoleHandler_lfwa2a_c0(node, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x13bfe1ec0ded851eL, "repo"), editorContext);
+    return provider.createCell();
+  }
+  private class repoSingleRoleHandler_lfwa2a_c0 extends SingleRoleCellProvider {
+    public repoSingleRoleHandler_lfwa2a_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("repo");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_repo");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "global repository";
+    }
+
+  }
+  private EditorCell createConstant_lfwa2a_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    editorCell.setCellId("Constant_lfwa2a_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
@@ -51,12 +96,12 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_lfwa2a_c0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BaseExecuteCommandStatement_Editor.commandClosureLiteralSingleRoleHandler_lfwa2a_c0(node, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x7c8b08a50a3ea20bL, "commandClosureLiteral"), editorContext);
+  private EditorCell createRefNode_lfwa2a_e0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new BaseExecuteCommandStatement_Editor.commandClosureLiteralSingleRoleHandler_lfwa2a_e0(node, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20aL, 0x7c8b08a50a3ea20bL, "commandClosureLiteral"), editorContext);
     return provider.createCell();
   }
-  private class commandClosureLiteralSingleRoleHandler_lfwa2a_c0 extends SingleRoleCellProvider {
-    public commandClosureLiteralSingleRoleHandler_lfwa2a_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class commandClosureLiteralSingleRoleHandler_lfwa2a_e0 extends SingleRoleCellProvider {
+    public commandClosureLiteralSingleRoleHandler_lfwa2a_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {
@@ -89,9 +134,9 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     }
 
   }
-  private EditorCell createConstant_lfwa2a_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lfwa2a_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_lfwa2a_d0");
+    editorCell.setCellId("Constant_lfwa2a_f0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Brace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);

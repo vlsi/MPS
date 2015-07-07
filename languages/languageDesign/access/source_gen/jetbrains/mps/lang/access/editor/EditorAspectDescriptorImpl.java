@@ -18,8 +18,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
         return Collections.<ConceptEditor>singletonList(new BaseExecuteCommandStatement_Editor());
       case 1:
         return Collections.<ConceptEditor>singletonList(new CommandClosureLiteral_Editor());
-      case 2:
-        return Collections.<ConceptEditor>singletonList(new ExecuteCommandInEDTStatement_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -29,5 +27,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.CommandClosureLiteral"};
 }

@@ -7,11 +7,10 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -42,7 +41,7 @@ public class DeleteNode_Action extends BaseAction {
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._boolean res = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         res.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).count() != 0;
       }
@@ -84,7 +83,7 @@ public class DeleteNode_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<List<SNode>> affNodes = new Wrappers._T<List<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         affNodes.value = Sequence.fromIterable(DeleteNode_Action.this.getAffectedNodes(_params)).toListSequence();
       }
@@ -92,7 +91,7 @@ public class DeleteNode_Action extends BaseAction {
     final DeleteNodesHelper helper = new DeleteNodesHelper(affNodes.value, ((MPSProject) MapSequence.fromMap(_params).get("project")));
 
     final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         dialogNeeded.value = helper.hasOptions();
       }

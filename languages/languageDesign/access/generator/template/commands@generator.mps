@@ -11,6 +11,7 @@
   <imports>
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="qff7" ref="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" />
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -30,6 +31,10 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
@@ -44,12 +49,18 @@
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -68,14 +79,20 @@
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="1167328349397" name="reductionMappingRule" index="3acgRq" />
       </concept>
+      <concept id="1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" flags="lg" index="gft3U">
+        <child id="1177093586806" name="templateNode" index="gfFT$" />
+      </concept>
       <concept id="1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" flags="ln" index="j$656" />
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
         <reference id="1722980698497626483" name="template" index="v9R2y" />
       </concept>
+      <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
+        <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
         <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
@@ -109,7 +126,78 @@
   </registry>
   <node concept="bUwia" id="hPi0mDT">
     <property role="TrG5h" value="mc_commands" />
+    <node concept="3aamgX" id="1eZSuKdVyuA" role="3acgRq">
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8h" resolve="ExecuteCommandStatement" />
+      <node concept="gft3U" id="1eZSuKdV$9O" role="1lVwrX">
+        <node concept="3clFbF" id="1eZSuKdV$gA" role="gfFT$">
+          <node concept="2OqwBi" id="1eZSuKdV$gB" role="3clFbG">
+            <node concept="2OqwBi" id="1eZSuKdV$gC" role="2Oq$k0">
+              <node concept="1eOMI4" id="1eZSuKdV$gD" role="2Oq$k0">
+                <node concept="10QFUN" id="1eZSuKdV$gE" role="1eOMHV">
+                  <node concept="3uibUv" id="1eZSuKdV$gF" role="10QFUM">
+                    <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="10Nm6u" id="1eZSuKdV$gG" role="10QFUP" />
+                </node>
+                <node concept="29HgVG" id="1eZSuKdV$gH" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdV$gI" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdV$gJ" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdV$gK" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdV$gL" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdV$gM" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdV$gN" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1eZSuKdV$gO" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdV$gP" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommand(java.lang.Runnable):void" resolve="executeCommand" />
+              <node concept="10Nm6u" id="1eZSuKdV$gQ" role="37wK5m">
+                <node concept="29HgVG" id="1eZSuKdV$gR" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdV$gS" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdV$gT" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdV$gU" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdV$gV" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdV$gW" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdV$gX" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="1eZSuKdVyIF" role="30HLyM">
+        <node concept="3clFbS" id="1eZSuKdVyIG" role="2VODD2">
+          <node concept="3clFbF" id="1eZSuKdVyNF" role="3cqZAp">
+            <node concept="2OqwBi" id="1eZSuKdVzQX" role="3clFbG">
+              <node concept="2OqwBi" id="1eZSuKdVyUd" role="2Oq$k0">
+                <node concept="30H73N" id="1eZSuKdVyNE" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1eZSuKdVzzZ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="1eZSuKdV$3a" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="hPi0mDU" role="3acgRq">
+      <property role="2n97ot" value="Drop this rule once repo is mandatory" />
       <ref role="30HIoZ" to="qff7:7Mb2akafE8h" resolve="ExecuteCommandStatement" />
       <node concept="j$656" id="hPi0mDV" role="1lVwrX">
         <ref role="v9R2y" node="hPi0mE4" resolve="reduce_ExecuteCommand" />
@@ -123,23 +211,307 @@
     </node>
     <node concept="3aamgX" id="hPi0mDW" role="3acgRq">
       <ref role="30HIoZ" to="qff7:7Mb2akafE8l" resolve="ExecuteLightweightCommandStatement" />
-      <node concept="j$656" id="hPi0mDX" role="1lVwrX">
+      <node concept="30G5F_" id="1eZSuKdVpSy" role="30HLyM">
+        <node concept="3clFbS" id="1eZSuKdVpSz" role="2VODD2">
+          <node concept="3clFbF" id="1eZSuKdVpXy" role="3cqZAp">
+            <node concept="2OqwBi" id="1eZSuKdVqIB" role="3clFbG">
+              <node concept="2OqwBi" id="1eZSuKdVq44" role="2Oq$k0">
+                <node concept="30H73N" id="1eZSuKdVpXx" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1eZSuKdVqog" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="1eZSuKdVr0C" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="gft3U" id="1eZSuKdVstP" role="1lVwrX">
+        <node concept="3clFbF" id="1eZSuKdVs$v" role="gfFT$">
+          <node concept="2OqwBi" id="1eZSuKdVs6W" role="3clFbG">
+            <node concept="2OqwBi" id="1eZSuKdVrCJ" role="2Oq$k0">
+              <node concept="1eOMI4" id="1eZSuKdVrXz" role="2Oq$k0">
+                <node concept="10QFUN" id="1eZSuKdVrXw" role="1eOMHV">
+                  <node concept="3uibUv" id="1eZSuKdVrXT" role="10QFUM">
+                    <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="10Nm6u" id="1eZSuKdVrCV" role="10QFUP" />
+                </node>
+                <node concept="29HgVG" id="1eZSuKdVsBJ" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVsBK" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVsBL" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVsBR" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVsBM" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVsBP" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVsBQ" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1eZSuKdVs5O" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdVsem" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="10Nm6u" id="1eZSuKdVsiM" role="37wK5m">
+                <node concept="29HgVG" id="1eZSuKdVsjv" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVsjw" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVsjx" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVsjB" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVsjy" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVsj_" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVsjA" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="1eZSuKdVpSi" role="3acgRq">
+      <property role="2n97ot" value="Drop this rule once repo is mandatory" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8l" resolve="ExecuteLightweightCommandStatement" />
+      <node concept="j$656" id="1eZSuKdVpSj" role="1lVwrX">
         <ref role="v9R2y" node="hPi0mF0" resolve="reduce_ExecuteLightweightCommand" />
       </node>
     </node>
-    <node concept="3aamgX" id="hPi0mDY" role="3acgRq">
-      <ref role="30HIoZ" to="qff7:7Mb2akafE8j" resolve="ExecuteEDTCommandStatement" />
-      <node concept="j$656" id="hPi0mDZ" role="1lVwrX">
-        <ref role="v9R2y" node="hPi0mEG" resolve="reduce_ExecuteEDTCommand" />
+    <node concept="3aamgX" id="1eZSuKdVsTP" role="3acgRq">
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8n" resolve="ExecuteWriteActionStatement" />
+      <node concept="gft3U" id="1eZSuKdVupZ" role="1lVwrX">
+        <node concept="3clFbF" id="1eZSuKdVuwL" role="gfFT$">
+          <node concept="2OqwBi" id="1eZSuKdVuwM" role="3clFbG">
+            <node concept="2OqwBi" id="1eZSuKdVuwN" role="2Oq$k0">
+              <node concept="1eOMI4" id="1eZSuKdVuwO" role="2Oq$k0">
+                <node concept="10QFUN" id="1eZSuKdVuwP" role="1eOMHV">
+                  <node concept="3uibUv" id="1eZSuKdVuwQ" role="10QFUM">
+                    <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="10Nm6u" id="1eZSuKdVuwR" role="10QFUP" />
+                </node>
+                <node concept="29HgVG" id="1eZSuKdVuwS" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVuwT" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVuwU" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVuwV" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVuwW" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVuwX" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVuwY" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1eZSuKdVuwZ" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdVux0" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+              <node concept="10Nm6u" id="1eZSuKdVux1" role="37wK5m">
+                <node concept="29HgVG" id="1eZSuKdVux2" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVux3" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVux4" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVux5" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVux6" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVux7" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVux8" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="1eZSuKdVt3r" role="30HLyM">
+        <node concept="3clFbS" id="1eZSuKdVt3s" role="2VODD2">
+          <node concept="3clFbF" id="1eZSuKdVt8r" role="3cqZAp">
+            <node concept="2OqwBi" id="1eZSuKdVtQ7" role="3clFbG">
+              <node concept="2OqwBi" id="1eZSuKdVteX" role="2Oq$k0">
+                <node concept="30H73N" id="1eZSuKdVt8q" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1eZSuKdVtz9" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="1eZSuKdVu88" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3aamgX" id="hPi0mE0" role="3acgRq">
+      <property role="2n97ot" value="Drop this rule once repo is mandatory" />
       <ref role="30HIoZ" to="qff7:7Mb2akafE8n" resolve="ExecuteWriteActionStatement" />
       <node concept="j$656" id="hPi0mE1" role="1lVwrX">
         <ref role="v9R2y" node="hPi0mFk" resolve="reduce_ExecuteWriteAction" />
       </node>
     </node>
+    <node concept="3aamgX" id="1eZSuKdVuW9" role="3acgRq">
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8j" resolve="ExecuteEDTCommandStatement" />
+      <node concept="gft3U" id="1eZSuKdVwvm" role="1lVwrX">
+        <node concept="3clFbF" id="1eZSuKdVwA6" role="gfFT$">
+          <node concept="2OqwBi" id="1eZSuKdVwA7" role="3clFbG">
+            <node concept="2OqwBi" id="1eZSuKdVwA8" role="2Oq$k0">
+              <node concept="1eOMI4" id="1eZSuKdVwA9" role="2Oq$k0">
+                <node concept="10QFUN" id="1eZSuKdVwAa" role="1eOMHV">
+                  <node concept="3uibUv" id="1eZSuKdVwAb" role="10QFUM">
+                    <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="10Nm6u" id="1eZSuKdVwAc" role="10QFUP" />
+                </node>
+                <node concept="29HgVG" id="1eZSuKdVwAd" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVwAe" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVwAf" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVwAg" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVwAh" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVwAi" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVwAj" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1eZSuKdVwAk" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdVwAl" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolve="runReadInEDT" />
+              <node concept="10Nm6u" id="1eZSuKdVwAm" role="37wK5m">
+                <node concept="29HgVG" id="1eZSuKdVwAn" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVwAo" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVwAp" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVwAq" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVwAr" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVwAs" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVwAt" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="1eZSuKdVv95" role="30HLyM">
+        <node concept="3clFbS" id="1eZSuKdVv96" role="2VODD2">
+          <node concept="3clFbF" id="1eZSuKdVve5" role="3cqZAp">
+            <node concept="2OqwBi" id="1eZSuKdVvSi" role="3clFbG">
+              <node concept="2OqwBi" id="1eZSuKdVvkc" role="2Oq$k0">
+                <node concept="30H73N" id="1eZSuKdVve4" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1eZSuKdVvAQ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="1eZSuKdVwae" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="hPi0mDY" role="3acgRq">
+      <property role="2n97ot" value="Drop this rule once repo is mandatory" />
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8j" resolve="ExecuteEDTCommandStatement" />
+      <node concept="j$656" id="hPi0mDZ" role="1lVwrX">
+        <ref role="v9R2y" node="hPi0mEG" resolve="reduce_ExecuteEDTCommand" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="1eZSuKdV_So" role="3acgRq">
+      <ref role="30HIoZ" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
+      <node concept="gft3U" id="1eZSuKdVBE9" role="1lVwrX">
+        <node concept="3clFbF" id="1eZSuKdVBKI" role="gfFT$">
+          <node concept="2OqwBi" id="1eZSuKdVBKJ" role="3clFbG">
+            <node concept="2OqwBi" id="1eZSuKdVBKK" role="2Oq$k0">
+              <node concept="1eOMI4" id="1eZSuKdVBKL" role="2Oq$k0">
+                <node concept="10QFUN" id="1eZSuKdVBKM" role="1eOMHV">
+                  <node concept="3uibUv" id="1eZSuKdVBKN" role="10QFUM">
+                    <ref role="3uigEE" to="88zw:~SRepository" resolve="SRepository" />
+                  </node>
+                  <node concept="10Nm6u" id="1eZSuKdVBKO" role="10QFUP" />
+                </node>
+                <node concept="29HgVG" id="1eZSuKdVBKP" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVBKQ" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVBKR" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVBKS" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVBKT" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVBKU" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVBKV" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1eZSuKdVBKW" role="2OqNvi">
+                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdVBKX" role="2OqNvi">
+              <ref role="37wK5l" to="88zw:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
+              <node concept="10Nm6u" id="1eZSuKdVBKY" role="37wK5m">
+                <node concept="29HgVG" id="1eZSuKdVBKZ" role="lGtFl">
+                  <node concept="3NFfHV" id="1eZSuKdVBL0" role="3NFExx">
+                    <node concept="3clFbS" id="1eZSuKdVBL1" role="2VODD2">
+                      <node concept="3clFbF" id="1eZSuKdVBL2" role="3cqZAp">
+                        <node concept="2OqwBi" id="1eZSuKdVBL3" role="3clFbG">
+                          <node concept="3TrEf2" id="1eZSuKdVBL4" role="2OqNvi">
+                            <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                          </node>
+                          <node concept="30H73N" id="1eZSuKdVBL5" role="2Oq$k0" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="1eZSuKdVAbP" role="30HLyM">
+        <node concept="3clFbS" id="1eZSuKdVAbQ" role="2VODD2">
+          <node concept="3clFbF" id="1eZSuKdVAgP" role="3cqZAp">
+            <node concept="2OqwBi" id="1eZSuKdVAS_" role="3clFbG">
+              <node concept="2OqwBi" id="1eZSuKdVAmW" role="2Oq$k0">
+                <node concept="30H73N" id="1eZSuKdVAgO" role="2Oq$k0" />
+                <node concept="3TrEf2" id="1eZSuKdVAB9" role="2OqNvi">
+                  <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="1eZSuKdVBax" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="hPi0mE2" role="3acgRq">
+      <property role="2n97ot" value="Drop this rule once repo is mandatory" />
       <ref role="30HIoZ" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
       <node concept="j$656" id="hPi0mE3" role="1lVwrX">
         <ref role="v9R2y" node="hPi0mEo" resolve="reduce_ExecuteCommandInEDTStatement" />

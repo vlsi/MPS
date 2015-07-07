@@ -232,29 +232,29 @@
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3321948346081461817">
     <file name="InterpretedCommand_Behavior.java">
-      <node id="3321948346081461867" at="14,188,15,25" concept="1" />
-      <node id="3321948346081469924" at="17,25,18,136" concept="1" />
-      <node id="3321948346081463867" at="20,7,21,24" concept="1" />
-      <node id="3321948346081461817" at="12,0,14,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4110587197471197493" at="17,0,20,0" concept="5" trace="run#()V" />
-      <node id="4110587197471197491" at="15,25,20,7" concept="1" />
-      <node id="3321948346081461817" at="14,0,23,0" concept="10" trace="virtual_execute_6854397602732226506#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;Ljava/lang/Runnable;)V" />
-      <scope id="3321948346081461819" at="12,43,12,43" />
-      <scope id="4110587197471197495" at="17,25,18,136" />
-      <scope id="3321948346081461817" at="12,0,14,0">
+      <node id="3321948346081461867" at="13,188,14,25" concept="1" />
+      <node id="3321948346081469924" at="16,25,17,136" concept="1" />
+      <node id="3321948346081463867" at="19,7,20,24" concept="1" />
+      <node id="3321948346081461817" at="11,0,13,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4110587197471197493" at="16,0,19,0" concept="5" trace="run#()V" />
+      <node id="4110587197471197491" at="14,25,19,7" concept="1" />
+      <node id="3321948346081461817" at="13,0,22,0" concept="10" trace="virtual_execute_6854397602732226506#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;Ljava/lang/Runnable;Ljava/lang/Runnable;)V" />
+      <scope id="3321948346081461819" at="11,43,11,43" />
+      <scope id="4110587197471197495" at="16,25,17,136" />
+      <scope id="3321948346081461817" at="11,0,13,0">
         <var name="thisNode" id="3321948346081461817" />
       </scope>
-      <scope id="4110587197471197493" at="17,0,20,0" />
-      <scope id="3321948346081461830" at="14,188,21,24" />
-      <scope id="3321948346081461817" at="14,0,23,0">
+      <scope id="4110587197471197493" at="16,0,19,0" />
+      <scope id="3321948346081461830" at="13,188,20,24" />
+      <scope id="3321948346081461817" at="13,0,22,0">
         <var name="afterCallback" id="3321948346081480146" />
         <var name="beforeCallback" id="3321948346081461835" />
         <var name="console" id="3321948346081461833" />
         <var name="context" id="3321948346081461831" />
         <var name="thisNode" id="3321948346081461817" />
       </scope>
-      <unit id="4110587197471197493" at="16,55,20,5" name="jetbrains.mps.console.base.behavior.InterpretedCommand_Behavior$1" />
-      <unit id="3321948346081461817" at="11,0,24,0" name="jetbrains.mps.console.base.behavior.InterpretedCommand_Behavior" />
+      <unit id="4110587197471197493" at="15,77,19,5" name="jetbrains.mps.console.base.behavior.InterpretedCommand_Behavior$1" />
+      <unit id="3321948346081461817" at="10,0,23,0" name="jetbrains.mps.console.base.behavior.InterpretedCommand_Behavior" />
     </file>
   </root>
   <root nodeRef="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)/3894227536041770958">

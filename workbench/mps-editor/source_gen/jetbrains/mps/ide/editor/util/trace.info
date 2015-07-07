@@ -119,67 +119,68 @@
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206283880">
     <file name="GoToHelper.java">
-      <node id="2808756344206465636" at="37,81,38,78" concept="9" />
-      <node id="2808756344206270545" at="40,133,41,69" concept="8" />
-      <node id="2034046503361624962" at="43,25,44,179" concept="4" />
-      <node id="2034046503361624970" at="44,179,45,60" concept="0" />
-      <node id="2808756344206270592" at="47,7,48,0" concept="11" />
-      <node id="2808756344206270593" at="48,0,49,89" concept="8" />
-      <node id="2034046503361622266" at="54,29,55,138" concept="8" />
-      <node id="2034046503361622292" at="57,52,58,44" concept="9" />
-      <node id="2808756344206270692" at="64,7,65,0" concept="11" />
-      <node id="1616056205645235507" at="65,0,66,81" concept="8" />
-      <node id="1616056205645235484" at="66,81,67,91" concept="8" />
-      <node id="1616056205645235492" at="67,91,68,139" concept="4" />
-      <node id="2808756344206284066" at="31,0,33,0" concept="3" trace="GoToHelper#()V" />
-      <node id="2808756344206463161" at="37,0,40,0" concept="13" trace="hasApplicableFinder#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="2034046503361622287" at="57,0,60,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
-      <node id="1616056205645497137" at="43,0,47,0" concept="7" trace="run#()V" />
-      <node id="2034046503361622280" at="55,138,60,16" concept="4" />
-      <node id="1616056205645497135" at="41,69,47,7" concept="4" />
-      <node id="1616056205645501054" at="54,0,62,0" concept="7" trace="run#()V" />
-      <node id="1616056205645501052" at="52,59,62,11" concept="4" />
-      <node id="2808756344206270608" at="51,0,64,0" concept="7" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="2808756344206270600" at="49,89,64,7" concept="4" />
-      <node id="2808756344206463602" at="40,0,70,0" concept="13" trace="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Lcom/intellij/ui/awt/RelativePoint;)V" />
-      <scope id="2808756344206284069" at="31,23,31,23" />
-      <scope id="2808756344206463164" at="37,81,38,78" />
-      <scope id="2034046503361622290" at="57,52,58,44" />
-      <scope id="2808756344206284066" at="31,0,33,0" />
-      <scope id="1616056205645497139" at="43,25,45,60" />
-      <scope id="2808756344206463161" at="37,0,40,0">
+      <node id="2808756344206465636" at="36,81,37,78" concept="9" />
+      <node id="2808756344206270545" at="39,133,40,69" concept="8" />
+      <node id="1616056205645235507" at="40,69,41,89" concept="8" />
+      <node id="1423104411235833755" at="41,89,42,0" concept="11" />
+      <node id="2034046503361624962" at="44,25,45,179" concept="4" />
+      <node id="2034046503361624970" at="45,179,46,60" concept="0" />
+      <node id="2808756344206270592" at="48,7,49,0" concept="11" />
+      <node id="2808756344206270593" at="49,0,50,89" concept="8" />
+      <node id="2034046503361622266" at="55,29,56,138" concept="8" />
+      <node id="2034046503361622292" at="58,52,59,44" concept="9" />
+      <node id="2808756344206270692" at="65,7,66,0" concept="11" />
+      <node id="1616056205645235484" at="66,0,67,91" concept="8" />
+      <node id="1616056205645235492" at="67,91,68,141" concept="4" />
+      <node id="2808756344206284066" at="30,0,32,0" concept="3" trace="GoToHelper#()V" />
+      <node id="2808756344206463161" at="36,0,39,0" concept="13" trace="hasApplicableFinder#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2034046503361622287" at="58,0,61,0" concept="7" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+      <node id="1616056205645497137" at="44,0,48,0" concept="7" trace="run#()V" />
+      <node id="2034046503361622280" at="56,138,61,16" concept="4" />
+      <node id="1616056205645497135" at="42,0,48,7" concept="4" />
+      <node id="1616056205645501054" at="55,0,63,0" concept="7" trace="run#()V" />
+      <node id="1616056205645501052" at="53,59,63,11" concept="4" />
+      <node id="2808756344206270608" at="52,0,65,0" concept="7" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="2808756344206270600" at="50,89,65,7" concept="4" />
+      <node id="2808756344206463602" at="39,0,70,0" concept="13" trace="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Lcom/intellij/ui/awt/RelativePoint;)V" />
+      <scope id="2808756344206284069" at="30,23,30,23" />
+      <scope id="2808756344206463164" at="36,81,37,78" />
+      <scope id="2034046503361622290" at="58,52,59,44" />
+      <scope id="2808756344206284066" at="30,0,32,0" />
+      <scope id="1616056205645497139" at="44,25,46,60" />
+      <scope id="2808756344206463161" at="36,0,39,0">
         <var name="finderClassName" id="2808756344206463204" />
         <var name="node" id="2808756344206463585" />
       </scope>
-      <scope id="2034046503361622287" at="57,0,60,0">
+      <scope id="2034046503361622287" at="58,0,61,0">
         <var name="it" id="2034046503361622287" />
       </scope>
-      <scope id="1616056205645497137" at="43,0,47,0" />
-      <scope id="1616056205645501056" at="54,29,60,16">
+      <scope id="1616056205645497137" at="44,0,48,0" />
+      <scope id="1616056205645501056" at="55,29,61,16">
         <var name="list" id="2034046503361622268" />
       </scope>
-      <scope id="1616056205645501054" at="54,0,62,0" />
-      <scope id="2808756344206270614" at="52,59,62,11" />
-      <scope id="2808756344206270608" at="51,0,64,0">
+      <scope id="1616056205645501054" at="55,0,63,0" />
+      <scope id="2808756344206270614" at="53,59,63,11" />
+      <scope id="2808756344206270608" at="52,0,65,0">
         <var name="p" id="2808756344206270611" />
       </scope>
-      <scope id="2808756344206463605" at="40,133,68,139">
+      <scope id="2808756344206463605" at="39,133,68,141">
         <var name="methodName" id="2808756344206270546" />
+        <var name="mpsProject" id="1616056205645235505" />
         <var name="nodes" id="2808756344206270594" />
-        <var name="project1" id="1616056205645235505" />
         <var name="title" id="1616056205645235485" />
       </scope>
-      <scope id="2808756344206463602" at="40,0,70,0">
+      <scope id="2808756344206463602" at="39,0,70,0">
         <var name="finderClassName" id="2808756344206463625" />
         <var name="method" id="2808756344206463621" />
         <var name="project" id="2808756344206463722" />
         <var name="relativePoint" id="2808756344206465166" />
       </scope>
-      <unit id="2034046503361622287" at="56,90,60,13" name="jetbrains.mps.ide.editor.util.GoToHelper$4" />
-      <unit id="1616056205645497137" at="42,45,47,5" name="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-      <unit id="1616056205645501054" at="53,49,62,9" name="jetbrains.mps.ide.editor.util.GoToHelper$3" />
-      <unit id="2808756344206270606" at="50,42,64,5" name="jetbrains.mps.ide.editor.util.GoToHelper$2" />
-      <unit id="2808756344206283880" at="30,0,71,0" name="jetbrains.mps.ide.editor.util.GoToHelper" />
+      <unit id="2034046503361622287" at="57,90,61,13" name="jetbrains.mps.ide.editor.util.GoToHelper$4" />
+      <unit id="1616056205645497137" at="43,66,48,5" name="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+      <unit id="1616056205645501054" at="54,70,63,9" name="jetbrains.mps.ide.editor.util.GoToHelper$3" />
+      <unit id="2808756344206270606" at="51,42,65,5" name="jetbrains.mps.ide.editor.util.GoToHelper$2" />
+      <unit id="2808756344206283880" at="29,0,71,0" name="jetbrains.mps.ide.editor.util.GoToHelper" />
     </file>
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/4491627601716787026">

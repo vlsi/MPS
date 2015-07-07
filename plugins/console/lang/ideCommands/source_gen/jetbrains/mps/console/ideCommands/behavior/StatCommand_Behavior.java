@@ -5,7 +5,6 @@ package jetbrains.mps.console.ideCommands.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.console.ideCommands.util.OutputUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -15,12 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, 0x67f2bafb7a579cb3L, "target")), "virtual_getStat_7490254719527247609", new Object[]{context}));
-      }
-    });
-
+  public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
+    OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a558c98L, 0x67f2bafb7a579cb3L, "target")), "virtual_getStat_7490254719527247609", new Object[]{context}));
   }
 }

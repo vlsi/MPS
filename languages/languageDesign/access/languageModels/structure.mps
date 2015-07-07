@@ -10,7 +10,12 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -31,6 +36,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -47,6 +53,11 @@
       <property role="20kJfa" value="commandClosureLiteral" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="7Mb2akafE8d" resolve="CommandClosureLiteral" />
+    </node>
+    <node concept="1TJgyj" id="1eZSuKdVoku" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="repo" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8c">
@@ -68,11 +79,16 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="execute command in EDT" />
+    <property role="R4oN_" value="Schedule command to run from EDT asynchronously" />
     <ref role="1TJDcQ" node="7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
     <node concept="1TJgyj" id="7Mb2akafE8f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="project" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+      <node concept="asaX9" id="1eZSuKdVCdG" role="lGtFl">
+        <property role="YLPcu" value="MPS 3.3" />
+        <property role="YLQ7P" value="Shall specify repository, BaseExecuteCommandStatement.repo, instead" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8h">
@@ -82,6 +98,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="command" />
+    <property role="R4oN_" value="Synchronous model command" />
     <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8j">
@@ -91,6 +108,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="execute in EDT" />
+    <property role="R4oN_" value="Schedule asynchronous model read from EDT" />
     <ref role="1TJDcQ" node="7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8l">
@@ -100,6 +118,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="read action" />
+    <property role="R4oN_" value="Synchronous model read" />
     <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="1TIwiD" id="7Mb2akafE8n">
@@ -109,6 +128,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Command" />
     <property role="34LRSv" value="write action" />
+    <property role="R4oN_" value="Synchronous model write" />
     <ref role="1TJDcQ" node="7Mb2akafE8c" resolve="BaseExecuteCommandStatementSync" />
   </node>
   <node concept="PlHQZ" id="7Mb2akafE8p">
