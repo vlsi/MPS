@@ -243,7 +243,7 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior" file="ModelReference_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

@@ -55,7 +55,7 @@ public class TestPersistence_Test extends TestCase {
     });
 
     Assert.assertTrue(c.myConcepts.contains(((SConceptAdapterById) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")).getId()));
-    Assert.assertTrue(c.myImports.contains(((DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor("java.io@java_stub")).getReference()));
+    Assert.assertTrue(c.myImports.contains((SModelRepository.getInstance().getModelDescriptor("java.io@java_stub")).getReference()));
     Assert.assertTrue(c.myExtRefs.contains(new SNodeId.Foreign("~System")));
     Assert.assertTrue(c.myLocalRefs.contains(new SNodePointer("r:b44bed60-e0f0-4d48-bb29-e0fdb2041a66(tests.testPersistence.testModel)", "3895553186365322355").getNodeId()));
   }

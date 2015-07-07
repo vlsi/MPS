@@ -555,6 +555,7 @@
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -11698,6 +11699,14 @@
                   <node concept="BaHAS" id="791rit5f5Cc" role="2JrQYb">
                     <property role="BaGAP" value="" />
                     <property role="BaHAW" value="jetbrains.mps.ide.build" />
+                    <node concept="2OqwBi" id="1eZSuKdTKed" role="up2gk">
+                      <node concept="37vLTw" id="1eZSuKdTK8v" role="2Oq$k0">
+                        <ref role="3cqZAo" node="38bQ8pLeEO2" resolve="smodel" />
+                      </node>
+                      <node concept="liA8E" id="1eZSuKdTKmI" role="2OqNvi">
+                        <ref role="37wK5l" to="ec5l:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="liA8E" id="791rit5f5C9" role="2OqNvi">

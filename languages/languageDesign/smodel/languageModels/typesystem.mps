@@ -230,6 +230,9 @@
       </concept>
       <concept id="1228487445949" name="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation" flags="nn" index="7zGMz" />
       <concept id="1228487523202" name="jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_ContextNode" flags="nn" index="7zZEs" />
+      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
+        <child id="1207055552304" name="warningText" index="a7wSD" />
+      </concept>
       <concept id="1174989242422" name="jetbrains.mps.lang.typesystem.structure.PatternVariableReference" flags="nn" index="2iOg4B">
         <reference id="1174989274720" name="patternVarDecl" index="2iOnXL" />
       </concept>
@@ -8682,6 +8685,33 @@
           </node>
         </node>
       </node>
+      <node concept="1Z5TYs" id="1eZSuKdRrjK" role="3cqZAp">
+        <node concept="mw_s8" id="1eZSuKdRrkf" role="1ZfhKB">
+          <node concept="2pJPEk" id="1eZSuKdRrkb" role="mwGJk">
+            <node concept="2pJPED" id="1eZSuKdRrkq" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="1eZSuKdRrkT" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="1eZSuKdRrlp" role="2pJxcZ">
+                  <ref role="36bGnp" to="88zw:~SRepository" resolve="SRepository" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1eZSuKdRrjN" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1eZSuKdRqZz" role="mwGJk">
+            <node concept="2OqwBi" id="1eZSuKdRr1N" role="1Z2MuG">
+              <node concept="1YBJjd" id="1eZSuKdRr08" role="2Oq$k0">
+                <ref role="1YBMHb" node="v3WHCwUNuX" resolve="modelRef" />
+              </node>
+              <node concept="3TrEf2" id="1eZSuKdRrh0" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:1eZSuKdQWnS" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="1YaCAy" id="v3WHCwUNuX" role="1YuTPh">
       <property role="TrG5h" value="modelRef" />
@@ -11437,6 +11467,39 @@
     <node concept="1YaCAy" id="5WE35DbSsVk" role="1YuTPh">
       <property role="TrG5h" value="moduleRefExpr" />
       <ref role="1YaFvo" to="tp25:3wj3sjzQPFL" resolve="ModuleReferenceExpression" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1eZSuKdSqLC">
+    <property role="TrG5h" value="check_ModelReferenceExpression" />
+    <property role="3GE5qa" value="reference" />
+    <node concept="3clFbS" id="1eZSuKdSqLD" role="18ibNy">
+      <node concept="3clFbJ" id="1eZSuKdSqMm" role="3cqZAp">
+        <node concept="3clFbS" id="1eZSuKdSqMo" role="3clFbx">
+          <node concept="a7r0C" id="1eZSuKdSrhT" role="3cqZAp">
+            <node concept="Xl_RD" id="1eZSuKdSri_" role="a7wSD">
+              <property role="Xl_RC" value="Shall specify repository to look up model at" />
+            </node>
+            <node concept="1YBJjd" id="1eZSuKdSrii" role="2OEOjV">
+              <ref role="1YBMHb" node="1eZSuKdSqLF" resolve="modelRefExpr" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="1eZSuKdSr4E" role="3clFbw">
+          <node concept="2OqwBi" id="1eZSuKdSqOp" role="2Oq$k0">
+            <node concept="1YBJjd" id="1eZSuKdSqM_" role="2Oq$k0">
+              <ref role="1YBMHb" node="1eZSuKdSqLF" resolve="modelRefExpr" />
+            </node>
+            <node concept="3TrEf2" id="1eZSuKdSqW0" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp25:1eZSuKdQWnS" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="1eZSuKdSrhk" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1eZSuKdSqLF" role="1YuTPh">
+      <property role="TrG5h" value="modelRefExpr" />
+      <ref role="1YaFvo" to="tp25:v3WHCwUiHy" resolve="ModelReferenceExpression" />
     </node>
   </node>
 </model>

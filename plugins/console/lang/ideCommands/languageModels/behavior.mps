@@ -1927,12 +1927,26 @@
       <node concept="3clFbS" id="67MRmR$z8Z5" role="3clF47">
         <node concept="3cpWs6" id="67MRmR$za_k" role="3cqZAp">
           <node concept="2OqwBi" id="67MRmR$za_l" role="3cqZAk">
-            <node concept="2YIFZM" id="67MRmR$za_m" role="2Oq$k0">
-              <ref role="1Pybhc" to="cu2c:~SModelRepository" resolve="SModelRepository" />
-              <ref role="37wK5l" to="cu2c:~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository" resolve="getInstance" />
+            <node concept="2ShNRf" id="1eZSuKdU7yF" role="2Oq$k0">
+              <node concept="1pGfFk" id="1eZSuKdU8pI" role="2ShVmc">
+                <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModuleRepositoryFacade" />
+                <node concept="2OqwBi" id="1eZSuKdU9h1" role="37wK5m">
+                  <node concept="2OqwBi" id="1eZSuKdU94x" role="2Oq$k0">
+                    <node concept="2JrnkZ" id="1eZSuKdU90y" role="2Oq$k0">
+                      <node concept="13iPFW" id="1eZSuKdU8rz" role="2JrQYb" />
+                    </node>
+                    <node concept="liA8E" id="1eZSuKdU9fz" role="2OqNvi">
+                      <ref role="37wK5l" to="ec5l:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1eZSuKdU9rv" role="2OqNvi">
+                    <ref role="37wK5l" to="ec5l:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="liA8E" id="67MRmR$za_n" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModelRepository.getModelDescriptor(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelDescriptor" />
+              <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.getModelByName(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelByName" />
               <node concept="2OqwBi" id="67MRmR$za_o" role="37wK5m">
                 <node concept="2qgKlT" id="7K4mn_BfkLE" role="2OqNvi">
                   <ref role="37wK5l" to="tpeu:7K4mn_BeEzv" resolve="getFQName" />

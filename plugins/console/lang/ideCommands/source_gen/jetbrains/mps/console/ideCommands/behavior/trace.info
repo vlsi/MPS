@@ -566,11 +566,11 @@
   </root>
   <root nodeRef="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)/7057947030098579391">
     <file name="ModelReference_Behavior.java">
-      <node id="7057947030098585940" at="13,74,14,141" concept="10" />
+      <node id="7057947030098585940" at="13,74,14,170" concept="10" />
       <node id="7057947030098579391" at="11,0,13,0" concept="12" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="7057947030098579391" at="13,0,16,0" concept="12" trace="call_getModel_7057947030098579394#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <scope id="7057947030098579393" at="11,43,11,43" />
-      <scope id="7057947030098579397" at="13,74,14,141" />
+      <scope id="7057947030098579397" at="13,74,14,170" />
       <scope id="7057947030098579391" at="11,0,13,0">
         <var name="thisNode" id="7057947030098579391" />
       </scope>

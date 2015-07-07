@@ -10,12 +10,11 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import java.util.List;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -73,7 +72,7 @@ public class Utils {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.java.testMaterial.placeholder");
+      mdl = new ModuleRepositoryFacade(SNodeOperations.getModel(expected).getRepository()).getModelByName("jetbrains.mps.ide.java.testMaterial.placeholder");
       FeatureKind howToParse = (onlyStubs ? FeatureKind.CLASS_STUB : FeatureKind.CLASS);
       List<SNode> res = parser.parse(code, howToParse, null, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
