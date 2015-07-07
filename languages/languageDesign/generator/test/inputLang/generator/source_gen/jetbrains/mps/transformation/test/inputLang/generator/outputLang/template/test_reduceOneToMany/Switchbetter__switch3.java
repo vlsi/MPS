@@ -30,7 +30,7 @@ public class Switchbetter__switch3 extends TemplateSwitchBase implements Templat
     return Collections.emptySet();
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info);
+    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info, "WARNING!");
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

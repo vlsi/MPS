@@ -87,7 +87,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
         Collection<SNode> tlist2 = new TemplatereduceWithArgs(((String) QueriesGenerated.templateArgumentQuery_7496726876599937591(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0a0c0c8)))).apply(environment, context);
         tlist1 = tlist2;
       } else {
-        throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error);
+        throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "shall not hit here");
       }
       return tlist1;
     }
