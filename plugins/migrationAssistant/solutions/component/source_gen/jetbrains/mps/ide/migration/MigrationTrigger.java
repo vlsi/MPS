@@ -326,6 +326,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
           public void run() {
             boolean migrate = MigrationDialogUtil.showMigrationConfirmation(myProject, allModules, myMigrationManager);
             restoreTipsState();
+
+            // set flag to execute migration after startup 
+            // NOTE we need to set it here as in invokeLater it can  
+            // be executed when save session already passed, see MPS-22045 
+            myState.migrationRequired = migrate;
+
             if (!(migrate)) {
               return;
             }
@@ -336,8 +342,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     ReloadManager.getInstance().flush();
-                    // set flag to execute migration after startup 
-                    myState.migrationRequired = true;
                     // reload project and start migration assist 
                     ProjectManagerEx.getInstance().reloadProject(ideaProject);
                   }
