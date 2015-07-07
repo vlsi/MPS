@@ -16,8 +16,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -108,13 +106,6 @@ public class EditorActionUtils {
     }
 
     actionHandler.executeAction(cell, CellActionType.INSERT_BEFORE);
-  }
-  /*package*/ static void runEditorComponentAction(EditorComponent editorComponent, CellActionType actionType) {
-    CellAction action = editorComponent.getComponentAction(actionType);
-    EditorContext editorContext = editorComponent.getEditorContext();
-    if (action != null && action.canExecute(editorContext)) {
-      action.execute(editorContext);
-    }
   }
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding

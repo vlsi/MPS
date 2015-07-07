@@ -612,9 +612,6 @@ public class NodeEditorActions {
   public static class Complete extends AbstractCellAction {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
-      if (context.getEditorComponent().isReadOnly()) {
-        return false;
-      }
       EditorCell selection = context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
     }
@@ -630,9 +627,6 @@ public class NodeEditorActions {
   public static class CompleteSmart extends AbstractCellAction {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
-      if (context.getEditorComponent().isReadOnly()) {
-        return false;
-      }
       EditorCell selection = context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
     }
