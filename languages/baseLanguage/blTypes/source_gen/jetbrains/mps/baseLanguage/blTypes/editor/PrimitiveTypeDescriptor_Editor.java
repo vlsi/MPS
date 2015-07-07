@@ -44,7 +44,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7ntfj2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Primitive");
     editorCell.setCellId("Constant_7ntfj2_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,7 +57,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -71,7 +69,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7ntfj2_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_7ntfj2_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -79,7 +76,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new PrimitiveTypeDescriptor_Editor.extendsListHandler_7ntfj2_d0(node, "extends", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_extends");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

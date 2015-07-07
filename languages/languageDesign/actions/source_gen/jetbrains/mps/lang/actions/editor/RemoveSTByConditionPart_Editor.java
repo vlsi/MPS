@@ -39,7 +39,6 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_9b05zh_a0a(editorContext, node));
     return editorCell;
   }
@@ -49,7 +48,6 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,14 +57,12 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_9b05zh_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9b05zh_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_9b05zh_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_9b05zh_b1a(EditorContext editorContext, SNode node) {

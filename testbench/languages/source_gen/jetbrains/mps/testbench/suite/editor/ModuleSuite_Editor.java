@@ -44,7 +44,6 @@ public class ModuleSuite_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_of3p2o_a0a(editorContext, node));
     return editorCell;
   }
@@ -84,14 +83,12 @@ public class ModuleSuite_Editor extends DefaultNodeEditor {
   }
   private EditorCell createIndentCell_of3p2o_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_of3p2o_c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ModuleSuite_Editor.testRefListHandler_of3p2o_c0(node, "testRef", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_testRef");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

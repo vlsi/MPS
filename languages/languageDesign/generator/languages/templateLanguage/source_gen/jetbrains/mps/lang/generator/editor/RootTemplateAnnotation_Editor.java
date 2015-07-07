@@ -46,7 +46,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     style.set(StyleAttributes.BRACKETS_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_1qmre8_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1qmre8_b0a(editorContext, node));
@@ -60,7 +59,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,7 +68,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_1qmre8_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1qmre8_b1a0(editorContext, node));
     return editorCell;
@@ -82,7 +79,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.apply_GeneratorKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,7 +93,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("applicableConcept");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -128,7 +123,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -145,14 +139,12 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createAttributedNodeCell_1qmre8_b0(EditorContext editorContext, SNode node) {
     EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

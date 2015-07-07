@@ -39,7 +39,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,7 +52,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_content");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,7 +68,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, XmlCDATA_Editor._StyleParameter_QueryFunction_ei20sr_a1c0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

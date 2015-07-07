@@ -32,7 +32,6 @@ public class TextMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_sc1nl2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
     editorCell.setCellId("Constant_sc1nl2_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,7 +72,6 @@ public class TextMacro_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_sc1nl2_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_sc1nl2_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

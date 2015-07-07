@@ -40,7 +40,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteParenthesisLeft_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
     editorCell.setDefaultText("");
@@ -94,7 +93,6 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteParenthesisRight_Action.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new CloseParenthesis_KeyMap());
     editorCell.setDefaultText("");

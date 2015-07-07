@@ -42,7 +42,6 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,7 +54,6 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_Instruction(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

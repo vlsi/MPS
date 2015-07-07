@@ -39,7 +39,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
   }
   private EditorCell createComponent_s8z18l_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_s8z18l_b0(EditorContext editorContext, SNode node) {
@@ -48,7 +47,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,7 +61,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
       editorCell.setReferenceCell(true);
       editorCell.setRole("concept");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -94,7 +91,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -111,7 +107,6 @@ public class Node_InsertNewPrevSiblingOperation_Editor extends DefaultNodeEditor
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -38,7 +38,6 @@ public class CustomArgumentClause_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CustomArgumentClause_Editor.parameterListHandler_iqoiiv_a0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

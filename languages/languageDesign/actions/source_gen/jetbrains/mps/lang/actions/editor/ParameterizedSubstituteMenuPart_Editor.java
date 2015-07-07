@@ -41,7 +41,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,14 +50,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_60liib_b1a(EditorContext editorContext, SNode node) {
@@ -67,7 +64,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_60liib_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_60liib_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_c1b0(editorContext, node));
@@ -94,7 +90,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_60liib_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_60liib_b0b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_c0b1a(editorContext, node));
@@ -106,14 +101,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_60liib_b0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_60liib_b0b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -157,7 +150,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -167,14 +159,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b2b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b2b1a(EditorContext editorContext, SNode node) {
@@ -217,7 +207,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -227,14 +216,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b4b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b4b1a(EditorContext editorContext, SNode node) {
@@ -277,7 +264,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -287,14 +273,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a6b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b6b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a6b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b6b1a(EditorContext editorContext, SNode node) {
@@ -337,7 +321,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_60liib_a7b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_b7b1a(editorContext, node));
     return editorCell;
@@ -351,7 +334,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_60liib_a0h1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_60liib_b0h1b0(editorContext, node));
     return editorCell;
@@ -362,7 +344,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -372,7 +353,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -382,14 +362,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a1h1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b1h1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a1h1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b1h1b0(EditorContext editorContext, SNode node) {
@@ -432,7 +410,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -442,14 +419,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a9b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b9b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a9b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b9b1a(EditorContext editorContext, SNode node) {
@@ -492,7 +467,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -502,14 +476,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a11b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b11b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a11b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b11b1a(EditorContext editorContext, SNode node) {
@@ -552,7 +524,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -562,14 +533,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a31b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b31b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a31b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b31b1a(EditorContext editorContext, SNode node) {
@@ -612,7 +581,6 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -622,14 +590,12 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_60liib_a51b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_60liib_b51b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_60liib_a51b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_60liib_b51b1a(EditorContext editorContext, SNode node) {

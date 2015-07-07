@@ -52,7 +52,6 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
     transformationTest_StyleSheet.apply_NodeOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
@@ -60,7 +59,6 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NodeTypeSetCheckOperation_Editor.typeListHandler_95e583_b0(node, "type", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_type");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -120,7 +118,6 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_TestLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,7 +139,6 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_95e583_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_95e583_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -157,7 +153,6 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

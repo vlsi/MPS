@@ -59,7 +59,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6iwt9a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Editor test case");
     editorCell.setCellId("Constant_6iwt9a_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,7 +72,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +84,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6iwt9a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
     editorCell.setCellId("Constant_6iwt9a_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -101,7 +98,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -114,7 +110,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6iwt9a_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before:");
     editorCell.setCellId("Constant_6iwt9a_e0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -159,7 +154,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6iwt9a_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "result:");
     editorCell.setCellId("Constant_6iwt9a_g0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -207,7 +201,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -260,7 +253,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6iwt9a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6iwt9a_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_6iwt9a_a0a(editorContext, node));
     editorCell.addEditorCell(this.createModelAccess_6iwt9a_b0a(editorContext, node));
     return editorCell;
@@ -268,7 +260,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6iwt9a_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Can execute-in-process:");
     editorCell.setCellId("Constant_6iwt9a_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -292,7 +283,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_6iwt9a_b0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText(" ");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EditorTestCase_Editor.EditorTestCase_generic_cellMenu_6iwt9a_a0b0a(), new EditorTestCase_Editor.EditorTestCase_generic_cellMenu_6iwt9a_b0b0a()}));
     return editorCell;

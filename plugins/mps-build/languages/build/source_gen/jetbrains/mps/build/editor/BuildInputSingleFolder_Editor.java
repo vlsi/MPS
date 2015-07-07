@@ -39,7 +39,6 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputSingleFolder_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_cend0t_a0a0()}));
     return editorCell;
   }

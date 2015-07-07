@@ -35,7 +35,6 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rpze0j_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpze0j_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_rpze0j_a0a(editorContext, node));
     return editorCell;
   }
@@ -45,21 +44,18 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_FirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_rpze0j_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpze0j_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_rpze0j_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rpze0j_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_rpze0j_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_rpze0j_b1a(EditorContext editorContext, SNode node) {

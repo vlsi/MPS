@@ -45,7 +45,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_x7b2gi_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x7b2gi_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x7b2gi_c0a(editorContext, node));
@@ -61,7 +60,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -142,7 +140,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_x7b2gi_b0(EditorContext editorContext, SNode node) {
@@ -151,7 +148,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createAttributedNodeCell_x7b2gi_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x7b2gi_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x7b2gi_c1a(editorContext, node));
@@ -168,7 +164,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.DRAW_BRACKETS, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_x7b2gi_b1a(EditorContext editorContext, SNode node) {
@@ -177,7 +172,6 @@ public class ActionAsPattern_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

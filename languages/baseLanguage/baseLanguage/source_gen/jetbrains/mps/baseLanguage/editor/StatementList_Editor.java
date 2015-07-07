@@ -52,7 +52,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, StatementList_Editor._StyleParameter_QueryFunction_u338ov_a1a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -99,7 +98,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, 0, true);
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }

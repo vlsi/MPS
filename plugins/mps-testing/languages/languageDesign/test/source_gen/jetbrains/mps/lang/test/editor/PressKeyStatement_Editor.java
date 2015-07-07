@@ -42,14 +42,12 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_pkvqak_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new PressKeyStatement_Editor.keyStrokesListHandler_pkvqak_b0(node, "keyStrokes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_keyStrokes");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -104,7 +102,6 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Semicolon(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

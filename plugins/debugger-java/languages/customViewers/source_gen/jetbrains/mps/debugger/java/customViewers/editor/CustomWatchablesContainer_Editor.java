@@ -44,7 +44,6 @@ public class CustomWatchablesContainer_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_8ahkcj_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8ahkcj_b0a(editorContext, node));
     return editorCell;
@@ -52,7 +51,6 @@ public class CustomWatchablesContainer_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8ahkcj_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom watchables");
     editorCell.setCellId("Constant_8ahkcj_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,7 +61,6 @@ public class CustomWatchablesContainer_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -76,7 +73,6 @@ public class CustomWatchablesContainer_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8ahkcj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8ahkcj_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +80,6 @@ public class CustomWatchablesContainer_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new CustomWatchablesContainer_Editor.watchableListHandler_8ahkcj_c0(node, "watchable", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_watchable");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

@@ -30,7 +30,6 @@ public class ActionTestSidetransformAnotherChild1_Editor extends DefaultNodeEdit
   private EditorCell createConstant_po6iq8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test sidetransform another child1");
     editorCell.setCellId("Constant_po6iq8_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -40,7 +39,6 @@ public class ActionTestSidetransformAnotherChild1_Editor extends DefaultNodeEdit
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

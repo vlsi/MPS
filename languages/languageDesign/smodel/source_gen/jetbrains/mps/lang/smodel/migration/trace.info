@@ -16,7 +16,7 @@
   </root>
   <root nodeRef="r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)/3164834233148532313">
     <file name="Migrate_ModelNodesOperation_concept.java">
-      <node id="3164834233148532313" at="33,30,34,85" concept="7" />
+      <node id="3164834233148532313" at="33,30,34,49" concept="7" />
       <node id="3164834233148532313" at="36,35,37,109" concept="6" />
       <node id="3164834233148532313" at="39,51,40,92" concept="7" />
       <node id="3164834233148532313" at="43,39,44,33" concept="7" />
@@ -90,7 +90,7 @@
       <node id="3164834233148532313" at="36,0,86,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3164834233148790020" at="92,36,92,36" />
       <scope id="3164834233148790020" at="121,42,121,42" />
-      <scope id="3164834233148532313" at="33,30,34,85" />
+      <scope id="3164834233148532313" at="33,30,34,49" />
       <scope id="3164834233148532313" at="39,51,40,92" />
       <scope id="3164834233148532313" at="43,39,44,33" />
       <scope id="3815816958996284431" at="48,66,49,23" />

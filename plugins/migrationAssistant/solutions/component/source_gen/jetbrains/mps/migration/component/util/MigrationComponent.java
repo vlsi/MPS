@@ -33,10 +33,14 @@ import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.ArrayList;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -44,7 +48,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import java.util.Collection;
@@ -186,6 +189,33 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     });
     boolean languageMig = isLanguageMigrationRequired(modules);
     return projectMig || languageMig;
+  }
+
+  public Set<String> getProjectMigrationsToApply(final Project p) {
+    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
+    Iterable<String> names = ListSequence.fromList(pMig).where(new IWhereFilter<ProjectMigration>() {
+      public boolean accept(ProjectMigration it) {
+        return it.shouldBeExecuted(p);
+      }
+    }).select(new ISelector<ProjectMigration, String>() {
+      public String select(ProjectMigration it) {
+        return it.getDescription();
+      }
+    });
+    return SetSequence.fromSetWithValues(new HashSet<String>(), names);
+  }
+
+  public Set<String> getLanguageMigrationsToApply(Iterable<SModule> modules) {
+    Iterable<String> names = Sequence.fromIterable(modules).ofType(AbstractModule.class).translate(new ITranslator2<AbstractModule, MigrationScriptReference>() {
+      public Iterable<MigrationScriptReference> translate(AbstractModule module) {
+        return MigrationsUtil.getAllScriptsToBeExecuted(module);
+      }
+    }).select(new ISelector<MigrationScriptReference, String>() {
+      public String select(MigrationScriptReference it) {
+        return fetchScript(it).getCaption();
+      }
+    });
+    return SetSequence.fromSetWithValues(new HashSet<String>(), names);
   }
 
   public List<Tuples._3<SModule, SLanguage, Integer>> getMissingMigrations() {

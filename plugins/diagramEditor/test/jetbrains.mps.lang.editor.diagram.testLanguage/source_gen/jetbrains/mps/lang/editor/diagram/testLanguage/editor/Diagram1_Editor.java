@@ -58,7 +58,6 @@ public class Diagram1_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createDiagram_yfdxtz_a0a(editorContext, node));
     return editorCell;
   }

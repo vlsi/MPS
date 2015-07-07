@@ -48,7 +48,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,7 +58,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_suffix");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,7 +73,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,7 +116,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     delete_reexport_inJavaDependencyImportedJarFromFolder.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -142,7 +138,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,7 +148,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_reexport");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

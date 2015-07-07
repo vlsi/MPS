@@ -4177,9 +4177,10 @@
                       <ref role="3uigEE" to="ztul:~ModulesMiner$ModuleHandle" resolve="ModulesMiner.ModuleHandle" />
                     </node>
                     <node concept="2OqwBi" id="5KmckUrN6nf" role="33vP2m">
-                      <node concept="2YIFZM" id="5KmckUrN6ng" role="2Oq$k0">
-                        <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                        <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
+                      <node concept="2ShNRf" id="7LkutxgTqqA" role="2Oq$k0">
+                        <node concept="1pGfFk" id="7LkutxgTqR7" role="2ShVmc">
+                          <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                        </node>
                       </node>
                       <node concept="liA8E" id="5KmckUrN6nh" role="2OqNvi">
                         <ref role="37wK5l" to="ztul:~ModulesMiner.loadModuleHandle(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner$ModuleHandle" resolve="loadModuleHandle" />

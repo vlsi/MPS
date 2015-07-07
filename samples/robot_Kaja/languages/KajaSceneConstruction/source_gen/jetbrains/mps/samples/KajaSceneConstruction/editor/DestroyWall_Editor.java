@@ -31,12 +31,10 @@ public class DestroyWall_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     KajakStyles_StyleSheet.apply_Command(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createComponent_d48ed0_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.KajaSceneConstruction.editor.Position");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

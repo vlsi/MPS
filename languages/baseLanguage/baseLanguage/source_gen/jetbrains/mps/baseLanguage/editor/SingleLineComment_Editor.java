@@ -44,7 +44,6 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD_ITALIC);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     UncommentSingleLineComment.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -53,7 +52,6 @@ public class SingleLineComment_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new SingleLineComment_Editor.commentPartListHandler_5ng77o_b0(node, "commentPart", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_commentPart");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     SingleLineCommentActions.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

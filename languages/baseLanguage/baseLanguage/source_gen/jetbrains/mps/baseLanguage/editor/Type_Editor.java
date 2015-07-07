@@ -42,7 +42,6 @@ public class Type_Editor extends DefaultNodeEditor {
   private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
     editorCell.setCellId("Error_a1nfgp_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createComponent_a1nfgp_a0(EditorContext editorContext, SNode node) {
@@ -50,7 +49,6 @@ public class Type_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

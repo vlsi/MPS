@@ -43,7 +43,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_8khnja_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8khnja_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_8khnja_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8khnja_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8khnja_c0a(editorContext, node));
@@ -100,7 +99,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -141,7 +139,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_8khnja_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8khnja_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -12,8 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -35,14 +33,12 @@ public class EditorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_8q27zs_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8q27zs_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_8q27zs_b0(EditorContext editorContext, SNode node) {
@@ -51,7 +47,6 @@ public class EditorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_8q27zs_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8q27zs_b1a(editorContext, node));
     return editorCell;
@@ -62,7 +57,6 @@ public class EditorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,14 +66,12 @@ public class EditorComponent implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_8q27zs_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8q27zs_b1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_8q27zs_b1b0(EditorContext editorContext, SNode node) {

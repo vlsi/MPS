@@ -56,7 +56,6 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.NAVIGATABLE_NODE, 0, FigureParameterMapping_Editor._StyleParameter_QueryFunction_3uf681_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.AUTO_DELETABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     FigureParameterMappingName_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new FigureParameterMapping_Editor.FigureParameterMapping_generic_cellMenu_3uf681_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -94,7 +93,6 @@ public class FigureParameterMapping_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

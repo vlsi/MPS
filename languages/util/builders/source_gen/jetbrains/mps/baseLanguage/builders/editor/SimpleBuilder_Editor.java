@@ -58,7 +58,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("declaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -89,7 +88,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       StyleSheet_StyleSheet.apply_Builder(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -106,7 +104,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jpvk41_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_jpvk41_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jpvk41_c1a(editorContext, node));
@@ -122,7 +119,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -130,7 +126,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new SimpleBuilder_Editor.argumentListHandler_jpvk41_b1a(node, "argument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_argument");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -190,7 +185,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
       if (true) {
         editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
       }
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -201,7 +195,6 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

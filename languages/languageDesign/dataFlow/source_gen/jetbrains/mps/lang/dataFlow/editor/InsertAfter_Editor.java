@@ -36,7 +36,6 @@ public class InsertAfter_Editor extends DefaultNodeEditor {
     DataFlow_StyleSheet.apply_InsertPosition(style, editorCell);
     style.set(StyleAttributes.EDITABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_z5xyec_b0(EditorContext editorContext, SNode node) {

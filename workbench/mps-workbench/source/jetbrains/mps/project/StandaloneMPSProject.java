@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -191,11 +191,12 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
     // load solutions
     Set<SModuleReference> existingModules = getModuleReferences();
+    final ModulesMiner modulesMiner = new ModulesMiner();
     for (Path modulePath : myProjectDescriptor.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+        ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
         if (handle.getDescriptor() != null) {
           SModule module = ModuleRepositoryFacade.createModule(handle, this);
           SModuleReference moduleReference = module.getModuleReference();

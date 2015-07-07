@@ -32,7 +32,6 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
   private EditorCell createConstant_wcbhig_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Concept");
     editorCell.setCellId("Constant_wcbhig_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -47,7 +46,6 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
       editorCell.setReferenceCell(true);
       editorCell.setRole("concept");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,7 +73,6 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

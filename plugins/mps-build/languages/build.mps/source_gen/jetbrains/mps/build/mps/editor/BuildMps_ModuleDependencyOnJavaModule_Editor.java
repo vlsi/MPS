@@ -48,7 +48,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       editorCell.setReferenceCell(true);
       editorCell.setRole("module");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,7 +78,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
       Style style = new StyleImpl();
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_2_RTransform");
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +94,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_Editor extends DefaultNodeEdi
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     delete_javaDepReexport.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

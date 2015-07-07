@@ -71,7 +71,6 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ArrayCreator_Editor.dimensionExpressionListHandler_qich58_b0(node, "dimensionExpression", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dimensionExpression");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

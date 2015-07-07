@@ -31,7 +31,6 @@ public class BCA_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_9p3a6e_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BCA");
     editorCell.setCellId("Constant_9p3a6e_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -43,7 +42,6 @@ public class BCA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +52,6 @@ public class BCA_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

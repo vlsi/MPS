@@ -49,7 +49,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     if (renderingCondition_anqw30_a0a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_anqw30_a0a(editorContext, node));
     }
@@ -62,7 +61,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_anqw30_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(plugin.xml)");
     editorCell.setCellId("Constant_anqw30_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,7 +70,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_anqw30_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap changes");
     editorCell.setCellId("Constant_anqw30_b0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -83,7 +80,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +92,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_anqw30_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_anqw30_d0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,7 +102,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_keymap");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -120,7 +114,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_anqw30_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_anqw30_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -128,7 +121,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new KeymapChangesDeclaration_Editor.shortcutChangeListHandler_anqw30_c0(node, "shortcutChange", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shortcutChange");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -177,7 +169,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_anqw30_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
     editorCell.setCellId("Constant_anqw30_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -188,7 +179,6 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isPluginXmlKeymap");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

@@ -45,7 +45,6 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DataFlow_StyleSheet.apply_Position(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_wv5dgr_b0(EditorContext editorContext, SNode node) {

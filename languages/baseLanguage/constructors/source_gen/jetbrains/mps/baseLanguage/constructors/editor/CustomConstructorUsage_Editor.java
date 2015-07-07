@@ -63,7 +63,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,7 +118,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_pubti2_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createModelAccess_pubti2_c0(final EditorContext editorContext, final SNode node) {
@@ -141,7 +139,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

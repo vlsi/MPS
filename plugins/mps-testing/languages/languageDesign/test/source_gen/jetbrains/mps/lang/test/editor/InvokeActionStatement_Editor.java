@@ -34,7 +34,6 @@ public class InvokeActionStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     transformationTest_StyleSheet.apply_EditorOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_i7chpx_b0(EditorContext editorContext, SNode node) {

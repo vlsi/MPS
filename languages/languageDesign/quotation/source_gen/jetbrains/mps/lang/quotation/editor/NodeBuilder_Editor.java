@@ -52,7 +52,6 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -102,7 +101,6 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(7644360)));
     style.set(StyleAttributes.MATCHING_LABEL, 0, (String) null);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addKeyMap(new _Quotation_createModel());
     editorCell.setDefaultText("");
     return editorCell;
@@ -113,7 +111,6 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_x54h4p_a3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x54h4p_b3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x54h4p_c3a(editorContext, node));
@@ -125,7 +122,6 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x54h4p_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");
     editorCell.setCellId("Constant_x54h4p_a3a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,7 +162,6 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x54h4p_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_x54h4p_c3a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

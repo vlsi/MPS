@@ -1011,9 +1011,6 @@
       <node id="2544153442907237154" at="65,48,66,49" concept="3" />
       <node id="2544153442907232287" at="67,7,68,13" concept="10" />
       <node id="5487985028841902936" at="69,5,70,163" concept="3" />
-      <node id="5487985028841902928" at="73,31,74,44" concept="9" />
-      <node id="5487985028841902928" at="74,44,75,30" concept="3" />
-      <node id="5487985028841902928" at="75,30,76,26" concept="10" />
       <node id="2544153442907207437" at="34,38,37,7" concept="7" />
       <node id="5487985028841902928" at="45,95,48,5" concept="7" />
       <node id="5487985028841902928" at="48,5,51,5" concept="1" />
@@ -1022,7 +1019,6 @@
       <node id="2544153442907224505" at="64,38,67,7" concept="7" />
       <node id="5487985028841902928" at="25,0,29,0" concept="8" trace="isDumbAware#()Z" />
       <node id="5487985028841902928" at="19,0,25,0" concept="2" trace="ShowDefaultHelp_Action#()V" />
-      <node id="5487985028841902928" at="72,0,78,0" concept="8" trace="getActionId#()Ljava/lang/String;" />
       <node id="2544153442907217359" at="61,96,69,5" concept="7" />
       <node id="5487985028841902962" at="31,203,40,5" concept="7" />
       <node id="5487985028841902928" at="60,0,72,0" concept="8" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
@@ -1041,16 +1037,12 @@
         <var name="node" id="5487985028841902928" />
       </scope>
       <scope id="2544153442907224508" at="65,48,66,49" />
-      <scope id="5487985028841902928" at="73,31,76,26">
-        <var name="res" id="5487985028841902928" />
-      </scope>
       <scope id="5487985028841902928" at="19,35,23,24" />
       <scope id="5487985028841902928" at="25,0,29,0" />
       <scope id="5487985028841902928" at="19,0,25,0" />
       <scope id="2544153442907217362" at="62,183,68,13">
         <var name="contextHelpAction" id="2544153442907224029" />
       </scope>
-      <scope id="5487985028841902928" at="72,0,78,0" />
       <scope id="5487985028841902963" at="32,30,39,13">
         <var name="contextHelpAction" id="2544153442906930562" />
       </scope>
@@ -1072,7 +1064,7 @@
         <var name="_params" id="5487985028841902928" />
         <var name="event" id="5487985028841902928" />
       </scope>
-      <unit id="5487985028841902928" at="17,0,79,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" />
+      <unit id="5487985028841902928" at="17,0,73,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" />
     </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/5487985028841902996">
@@ -1082,8 +1074,8 @@
       <node id="5487985028841902996" at="12,33,13,26" concept="15" />
       <node id="5487985028841902996" at="13,26,14,30" concept="3" />
       <node id="5487985028841902996" at="14,30,15,25" concept="3" />
-      <node id="5487985028841902998" at="16,9,17,57" concept="3" />
-      <node id="5487985028841902999" at="17,57,18,119" concept="3" />
+      <node id="5487985028841902998" at="16,9,17,119" concept="3" />
+      <node id="5487985028841902999" at="17,119,18,119" concept="3" />
       <node id="5487985028841903000" at="18,119,19,119" concept="3" />
       <node id="5487985028841903001" at="19,119,20,121" concept="3" />
       <node id="5487985028841902996" at="21,27,22,39" concept="3" />

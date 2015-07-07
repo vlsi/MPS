@@ -48,7 +48,6 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NegativeSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_wznzt8_a0a0()}));
@@ -68,7 +67,6 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     NegativeSymbolClassRegexp_toPositive.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -77,7 +75,6 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NegativeSymbolClassRegexp_Editor.partListHandler_wznzt8_c0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -119,7 +116,6 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

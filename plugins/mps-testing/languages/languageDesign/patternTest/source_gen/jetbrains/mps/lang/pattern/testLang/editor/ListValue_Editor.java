@@ -76,7 +76,6 @@ public class ListValue_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_9xngu4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_9xngu4_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +83,6 @@ public class ListValue_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ListValue_Editor.valueListHandler_9xngu4_c0(node, "value", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_value");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

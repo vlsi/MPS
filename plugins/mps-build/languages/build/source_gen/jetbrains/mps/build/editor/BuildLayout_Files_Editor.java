@@ -49,7 +49,6 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Files_Editor.ReplaceWith_BuildLayout_Node_cellMenu_qm6fq6_a0a0()}));
     return editorCell;
   }
@@ -103,7 +102,6 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createRefNodeList_qm6fq6_a2a_0(editorContext, node);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_qm6fq6_a2a(SNode node, EditorContext editorContext) {
@@ -113,7 +111,6 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BuildLayout_Files_Editor.parametersListHandler_qm6fq6_a2a(node, "parameters", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameters");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -158,7 +155,6 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, 0, true);
       style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -172,7 +168,6 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

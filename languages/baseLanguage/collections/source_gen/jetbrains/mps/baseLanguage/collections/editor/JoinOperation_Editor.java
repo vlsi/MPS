@@ -48,7 +48,6 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     Collections_Style_StyleSheet.apply_Operation(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "default_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new JoinOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_9t56qv_a0a0()}));
     return editorCell;
   }
@@ -66,7 +65,6 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_9t56qv_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9t56qv_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9t56qv_c1a(editorContext, node));
@@ -81,7 +79,6 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,7 +122,6 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -141,7 +137,6 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_9t56qv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delimeter:");
     editorCell.setCellId("Constant_9t56qv_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

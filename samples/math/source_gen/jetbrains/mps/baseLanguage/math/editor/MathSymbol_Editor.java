@@ -55,7 +55,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_b0ego6_b0(EditorContext editorContext, SNode node) {
@@ -65,7 +64,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.HORIZONTAL_ALIGN, 0, CellAlign.CENTER);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     if (renderingCondition_b0ego6_a0b0(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_b0ego6_a1a(editorContext, node));
     }
@@ -79,7 +77,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0ego6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_a1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_a0b0(editorContext, node));
     return editorCell;
   }
@@ -143,13 +140,11 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.SELECTABLE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_b0ego6_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_c1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_a2b0(editorContext, node));
     return editorCell;
   }
@@ -193,7 +188,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0ego6_d1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_d1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_a3b0(editorContext, node));
     return editorCell;
   }
@@ -283,7 +277,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.BASE_LINE_CELL, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_b0ego6_a_0(EditorContext editorContext, SNode node) {
@@ -310,12 +303,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_b0ego6_c0_0(EditorContext editorContext, SNode node) {

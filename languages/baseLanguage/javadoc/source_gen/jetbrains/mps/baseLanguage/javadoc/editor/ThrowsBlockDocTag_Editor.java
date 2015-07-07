@@ -40,7 +40,6 @@ public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.apply_CommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,7 +86,6 @@ public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteDocTag.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

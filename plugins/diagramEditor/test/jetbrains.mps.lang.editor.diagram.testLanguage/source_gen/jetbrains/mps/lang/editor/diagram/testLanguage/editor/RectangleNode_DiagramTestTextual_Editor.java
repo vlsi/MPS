@@ -37,7 +37,6 @@ public class RectangleNode_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6pm15k_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rectangle node");
     editorCell.setCellId("Constant_6pm15k_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -47,7 +46,6 @@ public class RectangleNode_DiagramTestTextual_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

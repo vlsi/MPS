@@ -12,8 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -34,7 +32,6 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     if (renderingCondition_pmdlax_a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createCollection_pmdlax_a0(editorContext, node));
     }
@@ -46,7 +43,6 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_pmdlax_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pmdlax_b0a(editorContext, node));
     return editorCell;
@@ -57,7 +53,6 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
   private EditorCell createConstant_pmdlax_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy applicable:");
     editorCell.setCellId("Constant_pmdlax_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -67,7 +62,6 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createRefNode_pmdlax_a1a0(editorContext, node));
     return editorCell;
   }

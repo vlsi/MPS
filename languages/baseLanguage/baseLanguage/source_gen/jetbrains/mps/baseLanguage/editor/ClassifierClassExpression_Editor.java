@@ -60,7 +60,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ClassifierClassExpression_Editor.ClassifierClassExpression_generic_cellMenu_ejwutq_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -86,7 +85,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -112,7 +110,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Dot(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,7 +122,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     ClassifierClassExpression_DeleteClass.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

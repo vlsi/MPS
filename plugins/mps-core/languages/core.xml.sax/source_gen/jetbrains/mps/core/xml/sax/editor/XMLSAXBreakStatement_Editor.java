@@ -37,14 +37,12 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_898x9g_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addKeyMap(new XMLSAXBreakReturn());
     return editorCell;
   }
   private EditorCell createCollection_898x9g_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_898x9g_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_898x9g_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_898x9g_b1a(editorContext, node));
     return editorCell;
@@ -55,7 +53,6 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_898x9g_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_898x9g_a1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -99,7 +96,6 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

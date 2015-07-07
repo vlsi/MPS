@@ -51,7 +51,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_3ev9w4_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3ev9w4_b0a(editorContext, node));
     return editorCell;
@@ -59,7 +58,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3ev9w4_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output root:");
     editorCell.setCellId("Constant_3ev9w4_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,7 +68,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -83,7 +80,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3ev9w4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -94,7 +90,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,7 +102,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3ev9w4_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -117,7 +111,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_3ev9w4_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3ev9w4_b4a(editorContext, node));
     return editorCell;
@@ -125,7 +118,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3ev9w4_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "special child:");
     editorCell.setCellId("Constant_3ev9w4_a4a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,7 +158,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_3ev9w4_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ev9w4_f0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -174,7 +165,6 @@ public class OutputRoot_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new OutputRoot_Editor.outputChildListHandler_3ev9w4_g0(node, "outputChild", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputChild");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

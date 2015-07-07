@@ -44,7 +44,7 @@ public class BaseCommentAttribute_Editor extends DefaultNodeEditor {
       if (editorCell.getRole() == null) {
         editorCell.setRole("commentedNode");
       }
-      BaseCommentAttribute_Uncomment.setCellActions(editorCell, myOwnerNode, myEditorContext);
+      BaseCommentAttribute_Actions.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
     @Override
     public EditorCell createCell() {

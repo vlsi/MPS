@@ -8,8 +8,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -39,7 +37,6 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
     } else {
       editorCell = this.createError_gk1mhy_a0(editorContext, node);
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean renderingCondition_gk1mhy_a0(SNode node, EditorContext editorContext) {
@@ -50,7 +47,6 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAlias_Comp.ReplaceWith_SNodeOperation_cellMenu_gk1mhy_a0a0()}));
     return editorCell;
   }
@@ -64,7 +60,6 @@ public class ReplaceableAlias_Comp implements ConceptEditorComponent {
   private EditorCell createError_gk1mhy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_gk1mhy_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

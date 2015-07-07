@@ -38,7 +38,6 @@ public class StyleClassReferenceList_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new StyleClassReferenceList_Editor.elementListHandler_o1ag05_a0(node, "element", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_element");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

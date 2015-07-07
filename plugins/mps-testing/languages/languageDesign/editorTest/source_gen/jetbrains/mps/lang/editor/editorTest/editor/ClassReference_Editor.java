@@ -37,7 +37,6 @@ public class ClassReference_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_u9fvp8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "myClass:");
     editorCell.setCellId("Constant_u9fvp8_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,7 +51,6 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("class");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -78,7 +76,6 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, 0, false);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       if (renderingCondition_u9fvp8_a0a0b0(node, editorContext)) {
         editorCell.addEditorCell(this.createConstant_u9fvp8_a0a1a(editorContext, node));
       }
@@ -88,7 +85,6 @@ public class ClassReference_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_u9fvp8_a0a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
       editorCell.setCellId("Constant_u9fvp8_a0a1a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -103,7 +99,6 @@ public class ClassReference_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

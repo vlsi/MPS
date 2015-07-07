@@ -89,7 +89,6 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_n7yf1e_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ActionParameter_NameCellComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_n7yf1e_c0(EditorContext editorContext, SNode node) {
@@ -99,7 +98,6 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -117,14 +115,12 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_n7yf1e_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_n7yf1e_e0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ActionParameterDeclaration_Editor.conditionListHandler_n7yf1e_e0(node, "condition", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_condition");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

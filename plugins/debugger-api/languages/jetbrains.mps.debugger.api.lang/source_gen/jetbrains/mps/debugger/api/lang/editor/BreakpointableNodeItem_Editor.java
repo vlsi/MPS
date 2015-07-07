@@ -53,7 +53,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4n0rw6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_4n0rw6_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4n0rw6_b0a(editorContext, node));
     return editorCell;
@@ -64,7 +63,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4n0rw6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concepts:");
     editorCell.setCellId("Constant_4n0rw6_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,21 +72,18 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4n0rw6_b1a0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_4n0rw6_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_4n0rw6_b1a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BreakpointableNodeItem_Editor.conceptsToCreateBreakpointListHandler_4n0rw6_b1a0(node, "conceptsToCreateBreakpoint", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_conceptsToCreateBreakpoint");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -130,7 +125,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_4n0rw6_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4n0rw6_b1a(editorContext, node));
     return editorCell;
@@ -141,21 +135,18 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4n0rw6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filter concepts:");
     editorCell.setCellId("Constant_4n0rw6_a1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_4n0rw6_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4n0rw6_b1b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_4n0rw6_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_4n0rw6_b1b0(EditorContext editorContext, SNode node) {
@@ -198,7 +189,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_4n0rw6_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4n0rw6_b2a(editorContext, node));
     return editorCell;
@@ -209,21 +199,18 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4n0rw6_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is breakpoint applicable:");
     editorCell.setCellId("Constant_4n0rw6_a2a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_4n0rw6_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_b2a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a1c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4n0rw6_b1c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_4n0rw6_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_4n0rw6_b1c0(EditorContext editorContext, SNode node) {
@@ -263,7 +250,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4n0rw6_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create breakpoint:");
     editorCell.setCellId("Constant_4n0rw6_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -273,14 +259,12 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_4n0rw6_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4n0rw6_b4a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_4n0rw6_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_4n0rw6_b4a(EditorContext editorContext, SNode node) {
@@ -320,7 +304,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4n0rw6_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4n0rw6_f0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

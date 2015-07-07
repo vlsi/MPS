@@ -48,7 +48,6 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NewProcessBuilderExpression_Editor.commandPartListHandler_u94itw_a0(node, "commandPart", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_commandPart");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -90,7 +89,6 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_u94itw_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u94itw_b1a(editorContext, node));
     return editorCell;
@@ -104,7 +102,6 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,7 +151,6 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u94itw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_u94itw_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_u94itw_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u94itw_b0a(editorContext, node));
     return editorCell;
@@ -165,7 +161,6 @@ public class NewProcessBuilderExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

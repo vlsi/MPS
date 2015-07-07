@@ -35,7 +35,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BracesBlock_Editor.statementListHandler_nhnpdb_a0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_statement");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -76,7 +75,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_nhnpdb_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no statements");
       editorCell.setCellId("Constant_nhnpdb_a0a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }

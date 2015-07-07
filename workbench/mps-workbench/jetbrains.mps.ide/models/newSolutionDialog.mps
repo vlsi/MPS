@@ -1311,14 +1311,15 @@
                 <ref role="1Pybhc" to="cu2c:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
                 <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
                 <node concept="2OqwBi" id="1Yd98ZZnqHL" role="37wK5m">
-                  <node concept="2YIFZM" id="2DWNAT6xr$2" role="2Oq$k0">
-                    <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                    <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                  </node>
                   <node concept="liA8E" id="1Yd98ZZnqHP" role="2OqNvi">
                     <ref role="37wK5l" to="ztul:~ModulesMiner.loadModuleHandle(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner$ModuleHandle" resolve="loadModuleHandle" />
                     <node concept="37vLTw" id="2BHiRxgm6CV" role="37wK5m">
                       <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="7LkutxgTCBI" role="2Oq$k0">
+                    <node concept="1pGfFk" id="7LkutxgTCBJ" role="2ShVmc">
+                      <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
                     </node>
                   </node>
                 </node>
@@ -1903,9 +1904,10 @@
               <ref role="1Pybhc" to="cu2c:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
               <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
               <node concept="2OqwBi" id="1Yd98ZZnqFZ" role="37wK5m">
-                <node concept="2YIFZM" id="2DWNAT6xmWb" role="2Oq$k0">
-                  <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                  <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
+                <node concept="2ShNRf" id="7LkutxgTBWX" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7LkutxgTCsh" role="2ShVmc">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="1Yd98ZZnqG3" role="2OqNvi">
                   <ref role="37wK5l" to="ztul:~ModulesMiner.loadModuleHandle(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner$ModuleHandle" resolve="loadModuleHandle" />
@@ -2003,9 +2005,10 @@
                     <ref role="3cqZAo" node="1Yd98ZZnqJk" resolve="descriptorFile" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="2DWNAT6xtn4" role="2Oq$k0">
-                  <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                  <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
+                <node concept="2ShNRf" id="7LkutxgTCy4" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7LkutxgTCy5" role="2ShVmc">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                  </node>
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxglK3h" role="37wK5m">

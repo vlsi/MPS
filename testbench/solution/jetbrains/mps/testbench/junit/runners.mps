@@ -337,11 +337,11 @@
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
       </concept>
-      <concept id="540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" flags="nn" index="25WWJ4">
-        <child id="540871147943773366" name="argument" index="25WWJ7" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
+      <concept id="1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" flags="in" index="A3Dl8">
+        <child id="1151689745422" name="elementType" index="A3Ik2" />
       </concept>
       <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
@@ -352,12 +352,7 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
-      <concept id="1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" flags="nn" index="HWqM0">
-        <child id="1237721435807" name="elementType" index="HW$YZ" />
-      </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
-      <concept id="1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" flags="nn" index="Tc6Ow" />
-      <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
@@ -1784,23 +1779,6 @@
         <ref role="2AI5Lk" to="as9o:~NotNull" resolve="NotNull" />
       </node>
       <node concept="3clFbS" id="5A5jZrz7gyN" role="3clF47">
-        <node concept="3cpWs8" id="7fR23Zqm3DH" role="3cqZAp">
-          <node concept="3cpWsn" id="7fR23Zqm3DI" role="3cpWs9">
-            <property role="TrG5h" value="handles" />
-            <node concept="2ShNRf" id="7fR23Zqm3DJ" role="33vP2m">
-              <node concept="Tc6Ow" id="7fR23Zqm3DK" role="2ShVmc">
-                <node concept="3uibUv" id="7fR23Zqm4hG" role="HW$YZ">
-                  <ref role="3uigEE" to="ztul:~ModulesMiner$ModuleHandle" resolve="ModulesMiner.ModuleHandle" />
-                </node>
-              </node>
-            </node>
-            <node concept="_YKpA" id="7fR23Zqm3DM" role="1tU5fm">
-              <node concept="3uibUv" id="7fR23Zqm4hC" role="_ZDj9">
-                <ref role="3uigEE" to="ztul:~ModulesMiner$ModuleHandle" resolve="ModulesMiner.ModuleHandle" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="7fR23Zqm3E0" role="3cqZAp">
           <node concept="3cpWsn" id="7fR23Zqm3E1" role="3cpWs9">
             <property role="TrG5h" value="modules" />
@@ -1818,6 +1796,19 @@
               </node>
               <node concept="37vLTw" id="2BGPXkEvjrL" role="2Oq$k0">
                 <ref role="3cqZAo" node="2BGPXkEvhcu" resolve="myModulesPath" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7LkutxgThrq" role="3cqZAp">
+          <node concept="3cpWsn" id="7LkutxgThrr" role="3cpWs9">
+            <property role="TrG5h" value="mm" />
+            <node concept="3uibUv" id="7LkutxgThrs" role="1tU5fm">
+              <ref role="3uigEE" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
+            </node>
+            <node concept="2ShNRf" id="7LkutxgTh_b" role="33vP2m">
+              <node concept="1pGfFk" id="7LkutxgThU4" role="2ShVmc">
+                <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
               </node>
             </node>
           </node>
@@ -1850,26 +1841,15 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="7fR23Zqmuv3" role="3cqZAp">
-              <node concept="2OqwBi" id="7fR23ZqmvcH" role="3clFbG">
-                <node concept="37vLTw" id="7fR23Zqmuv2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7fR23Zqm3DI" resolve="handles" />
+            <node concept="3clFbF" id="7LkutxgTkAE" role="3cqZAp">
+              <node concept="2OqwBi" id="7LkutxgTkEA" role="3clFbG">
+                <node concept="37vLTw" id="7LkutxgTkAC" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7LkutxgThrr" resolve="mm" />
                 </node>
-                <node concept="X8dFx" id="7fR23Zqm_rk" role="2OqNvi">
-                  <node concept="2OqwBi" id="2eUoA5EcVt4" role="25WWJ7">
-                    <node concept="liA8E" id="2eUoA5EcVt5" role="2OqNvi">
-                      <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile,boolean):java.util.List" resolve="collectModules" />
-                      <node concept="37vLTw" id="5ICuv4ILaTH" role="37wK5m">
-                        <ref role="3cqZAo" node="5ICuv4ILaTC" resolve="fileByPath" />
-                      </node>
-                      <node concept="3clFbT" id="2eUoA5EcVta" role="37wK5m">
-                        <property role="3clFbU" value="false" />
-                      </node>
-                    </node>
-                    <node concept="2YIFZM" id="2eUoA5EcVtb" role="2Oq$k0">
-                      <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                      <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                    </node>
+                <node concept="liA8E" id="7LkutxgTkKE" role="2OqNvi">
+                  <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner" resolve="collectModules" />
+                  <node concept="37vLTw" id="7LkutxgTkLB" role="37wK5m">
+                    <ref role="3cqZAo" node="5ICuv4ILaTC" resolve="fileByPath" />
                   </node>
                 </node>
               </node>
@@ -1882,8 +1862,13 @@
             <node concept="37vLTw" id="2BGPXkEwQIi" role="37wK5m">
               <ref role="3cqZAo" node="2BGPXkEwQiK" resolve="emptyProject" />
             </node>
-            <node concept="37vLTw" id="2BGPXkEwJD3" role="37wK5m">
-              <ref role="3cqZAo" node="7fR23Zqm3DI" resolve="handles" />
+            <node concept="2OqwBi" id="7LkutxgTkRB" role="37wK5m">
+              <node concept="37vLTw" id="7LkutxgTkNq" role="2Oq$k0">
+                <ref role="3cqZAo" node="7LkutxgThrr" resolve="mm" />
+              </node>
+              <node concept="liA8E" id="7LkutxgTl2J" role="2OqNvi">
+                <ref role="37wK5l" to="ztul:~ModulesMiner.getCollectedModules():java.util.Collection" resolve="getCollectedModules" />
+              </node>
             </node>
           </node>
         </node>
@@ -2509,27 +2494,30 @@
         <node concept="3cpWs8" id="43Ra3NM$EEV" role="3cqZAp">
           <node concept="3cpWsn" id="43Ra3NM$EEY" role="3cpWs9">
             <property role="TrG5h" value="minedHandles" />
-            <node concept="_YKpA" id="43Ra3NM$EER" role="1tU5fm">
-              <node concept="3uibUv" id="43Ra3NM$EFC" role="_ZDj9">
+            <node concept="A3Dl8" id="7LkutxgRHml" role="1tU5fm">
+              <node concept="3uibUv" id="7LkutxgRHmn" role="A3Ik2">
                 <ref role="3uigEE" to="ztul:~ModulesMiner$ModuleHandle" resolve="ModulesMiner.ModuleHandle" />
               </node>
             </node>
-            <node concept="2OqwBi" id="43Ra3NM$F4M" role="33vP2m">
-              <node concept="2YIFZM" id="43Ra3NM$F0U" role="2Oq$k0">
-                <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
+            <node concept="2OqwBi" id="7LkutxgRGc2" role="33vP2m">
+              <node concept="2OqwBi" id="43Ra3NM$F4M" role="2Oq$k0">
+                <node concept="2ShNRf" id="7LkutxgRCH_" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7LkutxgRENz" role="2ShVmc">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;(java.util.Collection)" resolve="ModulesMiner" />
+                    <node concept="37vLTw" id="7LkutxgREYI" role="37wK5m">
+                      <ref role="3cqZAo" node="3Pdq2ILxdvS" resolve="EXCLUDE_SET" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="43Ra3NM$FK$" role="2OqNvi">
+                  <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner" resolve="collectModules" />
+                  <node concept="37vLTw" id="2BGPXkEwCq2" role="37wK5m">
+                    <ref role="3cqZAo" node="2BGPXkEwCpV" resolve="fileByPath" />
+                  </node>
+                </node>
               </node>
-              <node concept="liA8E" id="43Ra3NM$FK$" role="2OqNvi">
-                <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile,java.util.Set,boolean):java.util.List" resolve="collectModules" />
-                <node concept="37vLTw" id="2BGPXkEwCq2" role="37wK5m">
-                  <ref role="3cqZAo" node="2BGPXkEwCpV" resolve="fileByPath" />
-                </node>
-                <node concept="37vLTw" id="2BGPXkEvbzN" role="37wK5m">
-                  <ref role="3cqZAo" node="3Pdq2ILxdvS" resolve="EXCLUDE_SET" />
-                </node>
-                <node concept="3clFbT" id="43Ra3NM$Kbl" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
+              <node concept="liA8E" id="7LkutxgRGpm" role="2OqNvi">
+                <ref role="37wK5l" to="ztul:~ModulesMiner.getCollectedModules():java.util.Collection" resolve="getCollectedModules" />
               </node>
             </node>
           </node>

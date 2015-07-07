@@ -39,7 +39,6 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createComponent_cuaozy_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuaozy_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cuaozy_c0a(editorContext, node));
@@ -50,7 +49,6 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_cuaozy_b0a(EditorContext editorContext, SNode node) {
@@ -59,7 +57,6 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -100,14 +97,12 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cuaozy_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cuaozy_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_cuaozy_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cuaozy_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_cuaozy_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_cuaozy_b1a(EditorContext editorContext, SNode node) {

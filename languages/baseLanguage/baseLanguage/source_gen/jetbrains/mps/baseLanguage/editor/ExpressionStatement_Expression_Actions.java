@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
 
 public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -47,16 +46,13 @@ public class ExpressionStatement_Expression_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      CellAction_Comment action = new CellAction_Comment(node);
-      action.execute(editorContext);
     }
     @Override
     public boolean canExecute(EditorContext editorContext) {
       return this.canExecute_internal(editorContext, this.myNode);
     }
     public boolean canExecute_internal(EditorContext editorContext, SNode node) {
-      CellAction_Comment action = new CellAction_Comment(node);
-      return action.canExecute(editorContext);
+      return false;
     }
   }
   public static class ExpressionStatement_Expression_Actions_BACKSPACE extends AbstractCellAction {

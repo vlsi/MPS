@@ -36,7 +36,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
   private EditorCell createConstant_n4v22l_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test sidetransofrm test ancestor");
     editorCell.setCellId("Constant_n4v22l_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -47,7 +46,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,7 +55,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_n4v22l_a2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_n4v22l_b2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_n4v22l_c2a(editorContext, node));
@@ -66,7 +63,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
   private EditorCell createConstant_n4v22l_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container");
     editorCell.setCellId("Constant_n4v22l_a2a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -77,7 +73,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,7 +120,6 @@ public class ActionTestSidetransformTestAncestor_Editor extends DefaultNodeEdito
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-brace");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

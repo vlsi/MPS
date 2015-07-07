@@ -83,7 +83,7 @@ public class FileMPSProject extends Project {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        ModulesMiner.ModuleHandle moduleHandle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+        ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner().loadModuleHandle(descriptorFile);
         if (moduleHandle.getDescriptor() != null) {
           SModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
           SModuleReference moduleReference = m.getModuleReference();

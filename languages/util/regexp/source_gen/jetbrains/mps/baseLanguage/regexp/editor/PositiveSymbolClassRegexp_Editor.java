@@ -44,7 +44,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RegexpStylesheet_StyleSheet.apply_LeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PositiveSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_4p4aum_a0a0()}));
@@ -61,7 +60,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new PositiveSymbolClassRegexp_Editor.partListHandler_4p4aum_b0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -103,7 +101,6 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     RegexpStylesheet_StyleSheet.apply_RightRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     RegexpSequenceByEnter.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

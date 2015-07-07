@@ -49,7 +49,6 @@ public class RootConcept_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -62,28 +61,24 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aw3qer_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave");
     editorCell.setCellId("Constant_aw3qer_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_aw3qer_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_aw3qer_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b2a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_aw3qer_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_aw3qer_b2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveListHandler_aw3qer_b2a(node, "weave", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_weave");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -122,28 +117,24 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aw3qer_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each");
     editorCell.setCellId("Constant_aw3qer_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_aw3qer_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_e0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_aw3qer_a4a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b4a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_aw3qer_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_aw3qer_b4a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveEachListHandler_aw3qer_b4a(node, "weaveEach", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_weaveEach");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -182,28 +173,24 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aw3qer_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave many");
     editorCell.setCellId("Constant_aw3qer_f0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_aw3qer_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_g0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_aw3qer_a6a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b6a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_aw3qer_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_aw3qer_b6a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveManyListHandler_aw3qer_b6a(node, "weaveMany", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_weaveMany");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -242,28 +229,24 @@ public class RootConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aw3qer_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave each many");
     editorCell.setCellId("Constant_aw3qer_h0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_aw3qer_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aw3qer_i0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_aw3qer_a8a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_aw3qer_b8a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_aw3qer_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_aw3qer_b8a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new RootConcept_Editor.weaveEachManyListHandler_aw3qer_b8a(node, "weaveEachMany", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_weaveEachMany");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

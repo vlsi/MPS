@@ -43,7 +43,6 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     TextGenStyles_StyleSheet.apply_TextGenOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,7 +50,6 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new AppendOperation_Editor.partListHandler_yuehr3_b0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -93,7 +91,6 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(-1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

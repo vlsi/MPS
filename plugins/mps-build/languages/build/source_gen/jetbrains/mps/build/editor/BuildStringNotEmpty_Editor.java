@@ -40,7 +40,6 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BuildStringNotEmpty_Editor.partsListHandler_vy9fh5_a0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     forbid_Insert.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
@@ -82,7 +81,6 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
     private EditorCell createError_vy9fh5_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<empty>");
       editorCell.setCellId("Error_vy9fh5_a0a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }

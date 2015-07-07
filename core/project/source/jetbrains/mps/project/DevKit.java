@@ -64,7 +64,7 @@ public class DevKit extends AbstractModule {
 
   @Override
   protected ModuleDescriptor loadDescriptor() {
-    return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
+    return new ModulesMiner().loadModuleHandle(getDescriptorFile()).getDescriptor();
   }
 
   public List<Language> getExportedLanguages() {

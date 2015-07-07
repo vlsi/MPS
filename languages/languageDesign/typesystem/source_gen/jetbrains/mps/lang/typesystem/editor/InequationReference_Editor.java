@@ -48,7 +48,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("inequation");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -71,7 +70,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_boi5ax_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_boi5ax_a0a0");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.addEditorCell(this.createModelAccess_boi5ax_a0a0a(editorContext, node));
       editorCell.addEditorCell(this.createProperty_boi5ax_b0a0a(editorContext, node));
       return editorCell;
@@ -94,7 +92,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("<no name>");
       return editorCell;
     }
@@ -110,7 +107,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       TypesystemStyles_StyleSheet.apply_InequationLabel(style, editorCell);
       style.set(StyleAttributes.EDITABLE, 0, false);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

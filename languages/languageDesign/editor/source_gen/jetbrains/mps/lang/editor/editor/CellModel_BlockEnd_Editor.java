@@ -62,7 +62,6 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_8qemn7_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

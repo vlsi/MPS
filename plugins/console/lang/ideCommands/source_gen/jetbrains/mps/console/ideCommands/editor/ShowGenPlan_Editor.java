@@ -29,7 +29,6 @@ public class ShowGenPlan_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_mrkoqg_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_mrkoqg_b0(EditorContext editorContext, SNode node) {

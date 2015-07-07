@@ -69,7 +69,6 @@ public class LogicalSimpleMathExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     SimpleMath_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNode_hge5w8_c0(EditorContext editorContext, SNode node) {

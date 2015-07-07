@@ -72,7 +72,6 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_h1ymql_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Default:");
     editorCell.setCellId("Constant_h1ymql_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -118,7 +117,6 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     };
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_h1ymql_d0");
     editorCell.setCellId("Table_h1ymql_d0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

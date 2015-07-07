@@ -7,7 +7,7 @@ import com.intellij.openapi.diff.DiffManager;
 import org.jetbrains.annotations.NotNull;
 
 public class ToolsApplicationComponent implements ApplicationComponent {
-  private final ModelDiffTool myModelDiffTool = new ModelDiffTool();
+  private final ModelDiffToolOld myModelDiffTool = new ModelDiffToolOld();
   private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
   private final DiffManager myDiffManager;
   public ToolsApplicationComponent(DiffManager diffManager) {

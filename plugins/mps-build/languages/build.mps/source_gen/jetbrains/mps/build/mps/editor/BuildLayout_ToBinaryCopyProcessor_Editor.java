@@ -42,7 +42,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_3hb8bt_b0(EditorContext editorContext, SNode node) {
@@ -51,7 +50,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,7 +71,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +81,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_stripImplementation");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

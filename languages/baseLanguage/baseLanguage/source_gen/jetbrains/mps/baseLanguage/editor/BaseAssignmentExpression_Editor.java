@@ -92,7 +92,6 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0()}));
     return editorCell;
   }

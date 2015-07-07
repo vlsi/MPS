@@ -56,7 +56,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dgsw3q_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dgsw3q_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_dgsw3q_a0a(editorContext, node));
     editorCell.addEditorCell(this.createTable_dgsw3q_b0a(editorContext, node));
     return editorCell;
@@ -64,7 +63,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dgsw3q_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dgsw3q_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_dgsw3q_a0a0(editorContext, node));
     if (renderingCondition_dgsw3q_a1a0a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_dgsw3q_b0a0(editorContext, node));
@@ -87,7 +85,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,7 +94,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -153,7 +149,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_1_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DailyPlan_tabular_Editor.ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0()}));
@@ -173,7 +168,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     DeleteCustomizeInTabular.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -255,7 +249,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     };
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_dgsw3q_b0a");
     editorCell.setCellId("Table_dgsw3q_b0a_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createConstant_dgsw3q_b0(EditorContext editorContext, SNode node) {
@@ -264,7 +257,6 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

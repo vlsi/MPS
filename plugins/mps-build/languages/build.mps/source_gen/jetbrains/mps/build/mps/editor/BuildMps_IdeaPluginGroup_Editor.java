@@ -58,7 +58,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("group");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,7 +80,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_ulfewq_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "group");
       editorCell.setCellId("ReferencePresentation_ulfewq_a0a0");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -91,7 +89,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ulfewq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ulfewq_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ulfewq_c1a(editorContext, node));
@@ -108,7 +105,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -118,7 +114,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -126,7 +121,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BuildMps_IdeaPluginGroup_Editor.customPackagingListHandler_ulfewq_c1a(node, "customPackaging", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_customPackaging");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -182,7 +176,6 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

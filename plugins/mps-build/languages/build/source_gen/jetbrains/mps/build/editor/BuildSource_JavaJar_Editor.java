@@ -44,7 +44,6 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaJar_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_gw6hs4_a0a0()}));
     return editorCell;
   }
@@ -95,7 +94,6 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_gw6hs4_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gw6hs4_b2a(editorContext, node));
     return editorCell;
@@ -109,7 +107,6 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.apply_keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

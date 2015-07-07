@@ -48,7 +48,6 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
       editorCell.setReferenceCell(true);
       editorCell.setRole("baseMethodDeclaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -80,7 +79,6 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
       BaseLanguageStyle_StyleSheet.apply_MPSMethodCall(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -93,7 +91,6 @@ public class ExtractStaticMethod_CallExpression_Editor extends DefaultNodeEditor
   }
   private EditorCell createComponent_vnpzmb_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

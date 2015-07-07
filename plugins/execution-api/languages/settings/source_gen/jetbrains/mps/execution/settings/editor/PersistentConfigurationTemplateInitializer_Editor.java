@@ -65,7 +65,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       editorCell.setReferenceCell(true);
       editorCell.setRole("template");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -96,7 +95,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.apply_persistentConfigurationRef(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -121,7 +119,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       editorCell.setReferenceCell(true);
       editorCell.setRole("template");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -152,7 +149,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
       Style style = new StyleImpl();
       ExecutionSettings_StyleSheet.apply_persistentConfigurationRefDeprecated(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -173,7 +169,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     RunConfigurations_StyleSheet.apply_leftOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -181,7 +176,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     AbstractCellListHandler handler = new PersistentConfigurationTemplateInitializer_Editor.parameterListHandler_e5b6m9_d0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_parameter");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -235,7 +229,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     private EditorCell createConstant_e5b6m9_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_e5b6m9_a3a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -247,7 +240,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
     RunConfigurations_StyleSheet.apply_rightOperationBrace(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -32,7 +32,6 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
   private EditorCell createConstant_b31w58_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java library");
     editorCell.setCellId("Constant_b31w58_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -47,7 +46,6 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
       editorCell.setReferenceCell(true);
       editorCell.setRole("targetLibrary");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,7 +73,6 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -62,7 +62,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,7 +106,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ListCommandPart_Editor.itemsListHandler_fty1bq_c0(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_items");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -151,7 +149,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -165,7 +162,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_fty1bq_a3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fty1bq_b3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fty1bq_c3a(editorContext, node));
@@ -178,7 +174,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fty1bq_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "join");
     editorCell.setCellId("Constant_fty1bq_a3a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -188,7 +183,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -232,7 +226,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -243,7 +236,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -260,7 +252,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fty1bq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fty1bq_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_fty1bq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fty1bq_b0a(editorContext, node));
     return editorCell;
@@ -268,7 +259,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fty1bq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "separator");
     editorCell.setCellId("Constant_fty1bq_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -312,7 +302,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_fty1bq_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fty1bq_b1a(editorContext, node));
     return editorCell;
@@ -320,7 +309,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fty1bq_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list");
     editorCell.setCellId("Constant_fty1bq_a1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -364,7 +352,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_fty1bq_a2a_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_fty1bq_b2a(editorContext, node));
     return editorCell;
@@ -372,7 +359,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_fty1bq_a2a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "items");
     editorCell.setCellId("Constant_fty1bq_a2a_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -380,7 +366,6 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ListCommandPart_Editor.itemsListHandler_fty1bq_b2a(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_items_1");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

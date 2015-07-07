@@ -42,14 +42,12 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_s0kiw8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator internal_ child descriptor");
     editorCell.setCellId("Constant_s0kiw8_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_s0kiw8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child link declaration");
     editorCell.setCellId("Constant_s0kiw8_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,7 +62,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       editorCell.setReferenceCell(true);
       editorCell.setRole("childLinkDeclaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -91,7 +88,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -105,7 +101,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
   private EditorCell createConstant_s0kiw8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main node");
     editorCell.setCellId("Constant_s0kiw8_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -120,7 +115,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
       editorCell.setReferenceCell(true);
       editorCell.setRole("mainNode");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -143,7 +137,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     private EditorCell createReferencePresentation_s0kiw8_a0e0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_s0kiw8_a0e0");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -155,7 +148,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,7 +158,6 @@ public class GeneratorInternal_ChildDescriptor_Editor extends DefaultNodeEditor 
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -51,7 +51,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5emoq6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "method");
     editorCell.setCellId("Constant_5emoq6_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,7 +61,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -78,7 +76,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,7 +83,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MethodDescriptor_Editor.paramListHandler_5emoq6_d0(node, "param", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_param");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -144,7 +140,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, 0, true);
       style.set(StyleAttributes.EDITABLE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -157,7 +152,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, 0, true);
     style.set(StyleAttributes.RT_ANCHOR_TAG, 0, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -198,7 +192,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5emoq6_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_5emoq6_g0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -206,7 +199,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new MethodDescriptor_Editor.modifierListHandler_5emoq6_h0(node, "modifier", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_modifier");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -263,7 +255,6 @@ public class MethodDescriptor_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("");
       return editorCell;
     }

@@ -42,7 +42,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jiwbly_a0a(editorContext, node));
     return editorCell;
   }
@@ -53,7 +52,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,7 +61,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jiwbly_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jiwbly_b1a(editorContext, node));
     return editorCell;
@@ -74,7 +71,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +80,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.setFoldable(true);
     editorCell.addEditorCell(this.createCollection_jiwbly_a1b0(editorContext, node));
@@ -98,7 +93,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jiwbly_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jiwbly_b0b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_jiwbly_c0b1a(editorContext, node));
@@ -107,7 +101,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jiwbly_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_jiwbly_a0b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -117,7 +110,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -131,7 +123,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -147,7 +138,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jiwbly_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jiwbly_b1b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_jiwbly_c1b1a(editorContext, node));
@@ -156,7 +146,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jiwbly_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_jiwbly_a1b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -166,7 +155,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -181,7 +169,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -197,7 +184,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jiwbly_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jiwbly_b2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jiwbly_c2b1a(editorContext, node));
@@ -206,7 +192,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jiwbly_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create new child");
     editorCell.setCellId("Constant_jiwbly_a2b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -216,7 +201,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

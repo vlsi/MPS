@@ -64,7 +64,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_tdrdn7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     BinaryOperation_Right_actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }

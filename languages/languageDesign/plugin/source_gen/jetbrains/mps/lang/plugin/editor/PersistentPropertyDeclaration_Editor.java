@@ -76,7 +76,6 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     PersistenPropertyDeclaration_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
@@ -86,7 +85,6 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_k4cjtr_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_k4cjtr_b2a(editorContext, node));
     return editorCell;
@@ -100,7 +98,6 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -141,7 +138,6 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_k4cjtr_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_k4cjtr_d0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

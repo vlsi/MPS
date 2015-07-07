@@ -41,7 +41,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_LEFT, 0, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, 0, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_91idit_a0a0(EditorContext editorContext, SNode node) {
@@ -54,7 +53,6 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

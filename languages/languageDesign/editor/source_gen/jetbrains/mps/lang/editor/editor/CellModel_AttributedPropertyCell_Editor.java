@@ -43,7 +43,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,7 +52,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_attributedCellLabel(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -65,7 +63,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,7 +79,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_6qfxmi_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
 }

@@ -75,7 +75,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   public static class IntervalLiteral_generic_cellMenu_yq81ip_a0a0 extends AbstractCellMenuPart_Generic_Item {
@@ -141,7 +140,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -202,7 +200,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_yq81ip_a0e0(), new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu_yq81ip_b0e0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_yq81ip_e0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   public static class IntervalLiteral_generic_cellMenu_yq81ip_a0e0 extends AbstractCellMenuPart_Generic_Item {
@@ -239,7 +236,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yq81ip_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "start incuded:");
     editorCell.setCellId("Constant_yq81ip_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -253,7 +249,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -266,7 +261,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yq81ip_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end included:");
     editorCell.setCellId("Constant_yq81ip_c0_0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -280,7 +274,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

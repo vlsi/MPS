@@ -69,14 +69,12 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createRefNodeList_ulpguu_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new NamedTupleLiteral_Editor.componentRefListHandler_ulpguu_b0(node, "componentRef", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_componentRef");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -130,7 +128,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_ulpguu_a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_ulpguu_a1a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("<<components>>");
       return editorCell;
     }
@@ -152,7 +149,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_ulpguu_a_0(EditorContext editorContext, SNode node) {
@@ -173,7 +169,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ulpguu_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ulpguu_b0a(editorContext, node));
     return editorCell;
@@ -181,7 +176,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ulpguu_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "declaration:");
     editorCell.setCellId("Constant_ulpguu_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -196,7 +190,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("tupleDeclaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -224,7 +217,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_nestedName");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -238,7 +230,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ulpguu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ulpguu_b0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_ulpguu_a1a_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ulpguu_b1a(editorContext, node));
     return editorCell;
@@ -249,7 +240,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -267,7 +257,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -290,7 +279,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_ulpguu_a0b1a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_ulpguu_a0b1a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.addEditorCell(this.createRefNodeList_ulpguu_a0a1b0(editorContext, node));
       return editorCell;
     }
@@ -301,7 +289,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, 0, true);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }

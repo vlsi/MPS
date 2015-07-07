@@ -35,7 +35,6 @@ public class LetExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tphyk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "let");
     editorCell.setCellId("Constant_tphyk_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +75,6 @@ public class LetExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tphyk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_tphyk_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -117,7 +115,6 @@ public class LetExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tphyk_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_tphyk_e0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

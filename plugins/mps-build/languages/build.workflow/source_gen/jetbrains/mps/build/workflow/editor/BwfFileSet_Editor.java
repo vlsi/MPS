@@ -34,7 +34,6 @@ public class BwfFileSet_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BwfFileSet_Editor.elementsListHandler_wd783v_a0(node, "elements", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_elements");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -75,7 +74,6 @@ public class BwfFileSet_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_wd783v_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_wd783v_a0a");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setDefaultText("<no fileset>");
       return editorCell;
     }

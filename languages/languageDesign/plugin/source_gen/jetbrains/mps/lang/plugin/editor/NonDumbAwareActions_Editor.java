@@ -37,7 +37,6 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zc6mlp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zc6mlp_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_zc6mlp_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_zc6mlp_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zc6mlp_c0a(editorContext, node));
@@ -46,7 +45,6 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_zc6mlp_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Set");
     editorCell.setCellId("Constant_zc6mlp_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,7 +55,6 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,7 +67,6 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_zc6mlp_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "of actions disabled while indexing");
     editorCell.setCellId("Constant_zc6mlp_c0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +74,6 @@ public class NonDumbAwareActions_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new NonDumbAwareActions_Editor.actionsListHandler_zc6mlp_b0(node, "actions", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_actions");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

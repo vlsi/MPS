@@ -48,7 +48,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   private EditorCell createConstant_vh2hfk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator internal_ reference descriptor");
     editorCell.setCellId("Constant_vh2hfk_a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,7 +58,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_model");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,7 +70,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
   private EditorCell createConstant_vh2hfk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "main node");
     editorCell.setCellId("Constant_vh2hfk_c0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -87,7 +84,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
       editorCell.setReferenceCell(true);
       editorCell.setRole("mainNode");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -110,7 +106,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     private EditorCell createReferencePresentation_vh2hfk_a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "mainNode");
       editorCell.setCellId("ReferencePresentation_vh2hfk_a0d0");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       return editorCell;
     }
   }
@@ -122,14 +117,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_vh2hfk_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role");
     editorCell.setCellId("Constant_vh2hfk_f0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -139,7 +132,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,7 +146,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
       editorCell.setReferenceCell(true);
       editorCell.setRole("referenceLinkDeclaration");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -182,7 +173,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_role");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -199,14 +189,12 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_vh2hfk_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id");
     editorCell.setCellId("Constant_vh2hfk_j0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -216,7 +204,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -227,7 +214,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_id");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -244,7 +230,6 @@ public class GeneratorInternal_ReferenceDescriptor_Editor extends DefaultNodeEdi
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "body-paren");
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

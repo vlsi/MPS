@@ -36,7 +36,6 @@ public class Transition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_jj4qz_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jj4qz_b0a(editorContext, node));
@@ -49,7 +48,6 @@ public class Transition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jj4qz_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jj4qz_b0a0(editorContext, node));
     return editorCell;
@@ -57,7 +55,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from:");
     editorCell.setCellId("Constant_jj4qz_a0a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     transitionActions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -102,7 +99,6 @@ public class Transition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jj4qz_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jj4qz_b1a0(editorContext, node));
     return editorCell;
@@ -110,7 +106,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to:");
     editorCell.setCellId("Constant_jj4qz_a1a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,7 +149,6 @@ public class Transition_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_jj4qz_a2a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_jj4qz_b2a0(editorContext, node));
     return editorCell;
@@ -162,7 +156,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_jj4qz_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "triggered by:");
     editorCell.setCellId("Constant_jj4qz_a2a0");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

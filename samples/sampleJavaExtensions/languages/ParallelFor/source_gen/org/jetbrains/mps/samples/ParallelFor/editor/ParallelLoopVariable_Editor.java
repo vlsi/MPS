@@ -43,7 +43,6 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -87,7 +86,6 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_d89sde_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }

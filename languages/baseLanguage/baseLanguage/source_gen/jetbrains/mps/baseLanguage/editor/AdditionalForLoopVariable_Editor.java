@@ -36,7 +36,6 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_165sw5_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_165sw5_b0(EditorContext editorContext, SNode node) {
@@ -45,7 +44,6 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_165sw5_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_165sw5_b1a(editorContext, node));
     return editorCell;
@@ -59,7 +57,6 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_Operator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;

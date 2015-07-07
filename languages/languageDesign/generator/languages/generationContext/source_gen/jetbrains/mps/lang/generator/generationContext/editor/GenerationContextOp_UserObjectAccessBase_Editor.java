@@ -42,7 +42,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_UserObjectAccessBase_Editor.ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0()}));
     return editorCell;
   }
@@ -60,7 +59,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -104,7 +102,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_genContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

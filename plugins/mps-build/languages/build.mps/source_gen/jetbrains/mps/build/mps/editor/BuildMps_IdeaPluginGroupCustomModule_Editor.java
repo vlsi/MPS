@@ -41,7 +41,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
       editorCell.setReferenceCell(true);
       editorCell.setRole("target");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -72,7 +71,6 @@ public class BuildMps_IdeaPluginGroupCustomModule_Editor extends DefaultNodeEdit
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, 0, false);
       editorCell.getStyle().putAll(style);
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

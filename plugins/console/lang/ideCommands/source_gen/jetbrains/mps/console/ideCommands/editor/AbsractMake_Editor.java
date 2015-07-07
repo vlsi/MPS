@@ -34,7 +34,6 @@ public class AbsractMake_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_uaz3qu_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.blCommand.editor.QueryExpression_EditorComponent");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_uaz3qu_b0(EditorContext editorContext, SNode node) {
@@ -43,7 +42,6 @@ public class AbsractMake_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_uaz3qu_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_uaz3qu_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uaz3qu_c1a(editorContext, node));
@@ -55,7 +53,6 @@ public class AbsractMake_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -99,7 +96,6 @@ public class AbsractMake_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -114,15 +114,6 @@ public class TemplateQueryContext {
   }
 
   /**
-   * 'sourceModel' mapping
-   *
-   * @deprecated
-   */
-  public SModel getSourceModel() {
-    return getInputModel();
-  }
-
-  /**
    * 'generator' mapping
    */
   public ITemplateGenerator getGenerator() {
@@ -142,12 +133,6 @@ public class TemplateQueryContext {
       myGenerator.getLogger().error(getTemplateNodeRef(), "'get output by input and label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
-  }
-
-  @Deprecated
-  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
-    if (inputNode == null) return null;
-    return getOutputNodeByInputNodeAndMappingLabel(inputNode, label); //output node ignored
   }
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {

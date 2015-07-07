@@ -47,7 +47,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_j13i3b_a0a(editorContext, node));
     if (renderingCondition_j13i3b_a1a0(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_j13i3b_b0a(editorContext, node));
@@ -57,7 +56,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_j13i3b_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referenceContainerSubConcept");
     editorCell.setCellId("Constant_j13i3b_a0a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -69,7 +67,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,20 +79,17 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createIndentCell_j13i3b_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_j13i3b_b1a(editorContext, node));
     return editorCell;
   }
   private EditorCell createIndentCell_j13i3b_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     return editorCell;
   }
   private EditorCell createCollection_j13i3b_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_j13i3b_b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createCollection_j13i3b_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_j13i3b_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_j13i3b_c1b0(editorContext, node));
@@ -107,7 +101,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_j13i3b_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_j13i3b_b0b1a(editorContext, node));
     return editorCell;
@@ -115,7 +108,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_j13i3b_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root:");
     editorCell.setCellId("Constant_j13i3b_a0b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -130,7 +122,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("root");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -158,7 +149,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -175,7 +165,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_j13i3b_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_j13i3b_b1b1a(editorContext, node));
     return editorCell;
@@ -183,7 +172,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_j13i3b_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "leftChild:");
     editorCell.setCellId("Constant_j13i3b_a1b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -198,7 +186,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("leftChild");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -226,7 +213,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -243,7 +229,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, 0, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.addEditorCell(this.createConstant_j13i3b_a2b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_j13i3b_b2b1a(editorContext, node));
     return editorCell;
@@ -251,7 +236,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_j13i3b_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializedRightChild:");
     editorCell.setCellId("Constant_j13i3b_a2b1a");
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -266,7 +250,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("rightChild");
     }
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -294,7 +277,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_2");
-      editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -313,7 +295,6 @@ public class ReferenceContainerSubConcept_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
-    editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
     editorCell.setDefaultText("");
     return editorCell;
   }
