@@ -9,6 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class PlusExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public PlusExpression_BehaviorDescriptor() {
   }
+  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
+    return PlusExpression_Behavior.virtual_calculateCompileTimeConstantValue_1587718783752756055(thisNode, leftValue, rightValue);
+  }
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return PlusExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }

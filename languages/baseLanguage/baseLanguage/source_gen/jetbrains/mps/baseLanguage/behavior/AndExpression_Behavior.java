@@ -16,6 +16,14 @@ public class AndExpression_Behavior {
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 3;
   }
+  public static Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
+    if (leftValue instanceof Boolean && rightValue instanceof Boolean) {
+      Boolean a = (Boolean) leftValue;
+      Boolean b = (Boolean) rightValue;
+      return a && b;
+    }
+    return null;
+  }
   public static NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
     if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))) {
       if (value && SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) != null) {

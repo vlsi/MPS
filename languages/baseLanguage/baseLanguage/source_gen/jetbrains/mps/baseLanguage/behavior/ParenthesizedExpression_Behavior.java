@@ -25,4 +25,10 @@ public class ParenthesizedExpression_Behavior {
     }
     return null;
   }
+  public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
+  }
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
+    return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
+  }
 }

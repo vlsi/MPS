@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class UnaryMinus_Behavior {
   public static void init(SNode thisNode) {
@@ -18,5 +19,30 @@ public class UnaryMinus_Behavior {
   }
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
+  }
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
+    Object value = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x120a4c1f269L, 0x120a4c433a6L, "expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
+    if (value instanceof Byte) {
+      return -((Byte) value);
+    }
+    if (value instanceof Short) {
+      return -((Short) value);
+    }
+    if (value instanceof Integer) {
+      return -((Integer) value);
+    }
+    if (value instanceof Long) {
+      return -((Long) value);
+    }
+    if (value instanceof Float) {
+      return -((Float) value);
+    }
+    if (value instanceof Double) {
+      return -((Double) value);
+    }
+    return null;
+  }
+  public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
+    return BehaviorReflection.invokeVirtual(Object.class, thisNode, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
   }
 }

@@ -12,7 +12,11 @@ public class FloatingPointFloatConstant_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
-    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, 0x494547eeedc219bbL, "value"));
+    try {
+      return Float.parseFloat(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219b9L, 0x494547eeedc219bbL, "value")));
+    } catch (NumberFormatException e) {
+      return null;
+    }
   }
   public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return true;

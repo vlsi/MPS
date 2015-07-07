@@ -9,6 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class AndExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor implements IConditional_BehaviorDescriptor {
   public AndExpression_BehaviorDescriptor() {
   }
+  public Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
+    return AndExpression_Behavior.virtual_calculateCompileTimeConstantValue_1587718783752756055(thisNode, leftValue, rightValue);
+  }
   public NextProgramPoint virtual_getNextProgramPoint_4235809288648213009(SNode thisNode, @NotNull SNode child, boolean value) {
     return AndExpression_Behavior.virtual_getNextProgramPoint_4235809288648213009(thisNode, child, value);
   }
