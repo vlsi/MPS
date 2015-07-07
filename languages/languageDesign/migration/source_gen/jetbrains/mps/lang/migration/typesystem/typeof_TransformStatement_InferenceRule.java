@@ -19,15 +19,19 @@ public class typeof_TransformStatement_InferenceRule extends AbstractInferenceRu
   public typeof_TransformStatement_InferenceRule() {
   }
   public void applyRule(final SNode ts, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ts, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529ef4L, "precondition"));
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526302954", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526300361", true), (SNode) _quotation_createNode_h6azqb_a0a0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(ts)), _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ts, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529ef4L, "precondition"));
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526302954", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526300361", true), (SNode) _quotation_createNode_h6azqb_a0a0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(ts)), true, _info_12389875345);
+      }
     }
-    {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ts, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529ef8L, "postprocess"));
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526309604", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526309615", true), (SNode) _quotation_createNode_h6azqb_a0b0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(ts), TransformStatement_Behavior.call_getQuotationConcept_5636302460526311664(ts)), _info_12389875345);
+    if (!(typeCheckingContext.isSingleTypeComputation())) {
+      {
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ts, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x4e382b39b6529ec9L, 0x4e382b39b6529ef8L, "postprocess"));
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526309604", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)", "5636302460526309615", true), (SNode) _quotation_createNode_h6azqb_a0b0b(TransformStatement_Behavior.call_getPatternConcept_5636302460526286899(ts), TransformStatement_Behavior.call_getQuotationConcept_5636302460526311664(ts)), true, _info_12389875345);
+      }
     }
   }
   public String getApplicableConceptFQName() {

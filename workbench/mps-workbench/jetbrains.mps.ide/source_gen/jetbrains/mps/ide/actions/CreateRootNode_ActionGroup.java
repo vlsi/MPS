@@ -12,12 +12,19 @@ import com.intellij.openapi.extensions.PluginId;
 public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(CreateRootNode_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup";
+  public static final String LABEL_ID_mainRoot = ID + "mainRoot";
   public static final String LABEL_ID_newRoot = ID + "newRoot";
   public CreateRootNode_ActionGroup() {
     super("CreateRootNode", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      {
+        LabelledAnchor action = new LabelledAnchor(CreateRootNode_ActionGroup.LABEL_ID_mainRoot);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+        CreateRootNode_ActionGroup.this.addAction(action);
+      }
       {
         LabelledAnchor action = new LabelledAnchor(CreateRootNode_ActionGroup.LABEL_ID_newRoot);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

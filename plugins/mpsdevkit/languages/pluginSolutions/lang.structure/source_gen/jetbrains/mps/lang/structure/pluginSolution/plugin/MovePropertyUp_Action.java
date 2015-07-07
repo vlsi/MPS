@@ -170,8 +170,8 @@ public class MovePropertyUp_Action extends BaseAction {
             SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), propName + "_old");
 
             SNode refactorInstances;
-            refactorInstances = _quotation_createNode_vnzymo_a0h0a0a0a0n0a(newProperty, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")));
-            SNode executeMethod = _quotation_createNode_vnzymo_a0i0a0a0a0n0a(currentConcept.value, currentConcept.value, refactorInstances, targetConcept, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, newProperty);
+            refactorInstances = _quotation_createNode_vnzymo_a0h0a0a0a0n0a(newProperty, ((SNode) MapSequence.fromMap(_params).get("target")), currentConcept.value, ((SNode) MapSequence.fromMap(_params).get("target")));
+            SNode executeMethod = _quotation_createNode_vnzymo_a0i0a0a0a0n0a(currentConcept.value, currentConcept.value, refactorInstances, currentConcept.value, ((SNode) MapSequence.fromMap(_params).get("target")), targetConcept, newProperty);
             return MigrationScriptBuilder.createMigrationScript(currentLanguage.value).setName("Move_property_" + propName).setExecuteMethod(executeMethod);
           }
         }));

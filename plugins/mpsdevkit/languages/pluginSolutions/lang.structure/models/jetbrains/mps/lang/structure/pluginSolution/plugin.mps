@@ -2640,8 +2640,8 @@
                                           <node concept="2c44tb" id="7hNQXX6E9Jc" role="lGtFl">
                                             <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474302386080/2644386474302386081" />
                                             <property role="2qtEX8" value="conceptDeclaration" />
-                                            <node concept="37vLTw" id="7hNQXX6EeQ0" role="2c44t1">
-                                              <ref role="3cqZAo" node="3EqKdwuHdzB" resolve="targetConcept" />
+                                            <node concept="37vLTw" id="1N$kF6pTZv0" role="2c44t1">
+                                              <ref role="3cqZAo" node="3EqKdwuHd$b" resolve="currentConcept" />
                                             </node>
                                           </node>
                                           <node concept="2c44tb" id="7hNQXX6EaXi" role="lGtFl">
@@ -2818,8 +2818,8 @@
                                                     <node concept="2c44tb" id="3EqKdwuI_re" role="lGtFl">
                                                       <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474302386080/2644386474302386081" />
                                                       <property role="2qtEX8" value="conceptDeclaration" />
-                                                      <node concept="37vLTw" id="3EqKdwuI_IH" role="2c44t1">
-                                                        <ref role="3cqZAo" node="3EqKdwuHdzB" resolve="targetConcept" />
+                                                      <node concept="37vLTw" id="1N$kF6pTYGS" role="2c44t1">
+                                                        <ref role="3cqZAo" node="3EqKdwuHd$b" resolve="currentConcept" />
                                                       </node>
                                                     </node>
                                                     <node concept="2c44tb" id="3EqKdwuIA1Z" role="lGtFl">

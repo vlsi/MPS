@@ -23,7 +23,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new ClassLikes_ActionGroup());
   }
   public void adjustRegularGroups() {
-    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, CreateRootNode_ActionGroup.ID, CreateRootNode_ActionGroup.LABEL_ID_newRoot);
+    insertGroupIntoAnother(ClassLikes_ActionGroup.ID, CreateRootNode_ActionGroup.ID, CreateRootNode_ActionGroup.LABEL_ID_mainRoot);
   }
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
