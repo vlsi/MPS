@@ -386,12 +386,12 @@
       <node id="1847435758022971113" at="136,0,142,0" concept="14" trace="check_jwqyzj_a0a0a0a0a12#(Ljetbrains/mps/project/facets/JavaModuleFacet;)Ljetbrains/mps/vfs/IFile;" />
       <node id="9082867613205933216" at="65,0,73,0" concept="8" trace="run#()V" />
       <node id="9082867613205909094" at="104,0,112,0" concept="14" trace="removeClassesGen#(Ljetbrains/mps/project/Project;)V" />
+      <node id="1232410988205674831" at="121,0,130,0" concept="14" trace="refreshAndDelete#(Ljetbrains/mps/vfs/IFile;)V" />
       <node id="9082867613205933212" at="63,83,73,7" concept="4" />
       <node id="2840424593983234568" at="87,0,101,0" concept="8" trace="visit#(Ljetbrains/mps/project/AbstractModule;)V" />
       <node id="2840424593983234555" at="85,51,101,7" concept="4" />
       <node id="9082867613205936432" at="63,0,80,0" concept="14" trace="removeGeneratedFiles#(ZLjetbrains/mps/project/Project;)V" />
-      <node id="1232410988205674831" at="113,0,130,0" concept="14" trace="refreshAndDelete#(Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="9082867613205906527" at="81,0,103,0" concept="14" trace="removeGenSources#(Ljetbrains/mps/project/Project;)V" />
+      <node id="9082867613205906527" at="85,0,103,0" concept="14" trace="removeGenSources#(Ljetbrains/mps/project/Project;)V" />
       <scope id="7485988173703007663" at="32,34,33,36" />
       <scope id="7679731643767338775" at="36,49,37,26" />
       <scope id="7485988173703007668" at="41,34,42,70" />
@@ -446,6 +446,9 @@
       <scope id="9082867613205909094" at="104,0,112,0">
         <var name="p" id="9082867613205901169" />
       </scope>
+      <scope id="1232410988205674831" at="121,0,130,0">
+        <var name="f" id="1232410988205677436" />
+      </scope>
       <scope id="2840424593983234569" at="87,44,99,9">
         <var name="outputDir" id="5308946314779639397" />
         <var name="testDir" id="2840424593983837327" />
@@ -459,10 +462,7 @@
         <var name="p" id="9082867613205933236" />
         <var name="sources" id="9082867613205933234" />
       </scope>
-      <scope id="1232410988205674831" at="113,0,130,0">
-        <var name="f" id="1232410988205677436" />
-      </scope>
-      <scope id="9082867613205906527" at="81,0,103,0">
+      <scope id="9082867613205906527" at="85,0,103,0">
         <var name="p" id="9082867613205891304" />
       </scope>
       <unit id="593258804431423159" at="74,46,78,5" name="jetbrains.mps.ide.mpsmigration.migration32.migrations.CleanSourcesMigration$2" />

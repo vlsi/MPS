@@ -157,12 +157,12 @@ public class FilesDelta implements IDelta {
       return true;
     }
   }
-  public   /**
+  /**
    * DELETED are files explicitly requested to be removed
    * STALE are files that are likely to need removal, unless there's another subsequent 
    * delta that bring them back to life.
    */
-static   enum Status {
+  public static   enum Status {
     WRITTEN(),
     KEPT(),
     DELETED(),

@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Migrate_ModelNodesOperation_concept extends MigrationScriptBase {
   public String getCaption() {
-    return "jetbrains.mps.lang.smodel.migration.Migrate_ModelNodesOperation_concept";
+    return "Migrate_ModelNodesOperation_concept";
   }
   public SNode execute(SModule m) {
     final GeneratedMatchingPattern pattern = new Migrate_ModelNodesOperation_concept.Pattern_vs95qi_a0a0a1();

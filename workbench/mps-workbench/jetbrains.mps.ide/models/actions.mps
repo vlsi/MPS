@@ -4743,7 +4743,7 @@
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Solution" />
     <node concept="ftmFs" id="hN1AxnS" role="ftER_">
       <node concept="tCFHf" id="3fhZBTgeb9v" role="ftvYc">
-        <ref role="tCJdB" node="3fhZBTge84q" resolve="RenameSolution" />
+        <ref role="tCJdB" node="3fhZBTge84q" resolve="RenameModule" />
       </node>
     </node>
     <node concept="tT9cl" id="hN1B1v1" role="2f5YQi">
@@ -12726,7 +12726,7 @@
     </node>
   </node>
   <node concept="sE7Ow" id="3fhZBTge84q">
-    <property role="TrG5h" value="RenameSolution" />
+    <property role="TrG5h" value="RenameModule" />
     <property role="72QZ$" value="true" />
     <property role="2uzpH1" value="Rename Module" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Solution.Actions" />
@@ -21809,7 +21809,7 @@
       </node>
     </node>
     <node concept="Zd509" id="64AN2EWtFZv" role="Zd508">
-      <ref role="1bYAoF" node="3fhZBTge84q" resolve="RenameSolution" />
+      <ref role="1bYAoF" node="3fhZBTge84q" resolve="RenameModule" />
       <node concept="pLAjd" id="64AN2EWtFZw" role="Zd501">
         <property role="pLAjf" value="VK_F6" />
         <property role="pLAjc" value="shift" />
@@ -37801,6 +37801,9 @@
       <ref role="tU$_T" node="5tc$o3kzWsk" resolve="PackageNewActions" />
     </node>
     <node concept="ftmFs" id="1wNvKTcoalp" role="ftER_">
+      <node concept="10WQ6h" id="6iZ8s2UYsKa" role="ftvYc">
+        <property role="TrG5h" value="mainRoot" />
+      </node>
       <node concept="10WQ6h" id="1wNvKTcoals" role="ftvYc">
         <property role="TrG5h" value="newRoot" />
       </node>

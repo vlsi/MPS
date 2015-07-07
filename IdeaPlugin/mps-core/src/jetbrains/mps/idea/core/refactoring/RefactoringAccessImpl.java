@@ -59,12 +59,12 @@ public class RefactoringAccessImpl extends RefactoringAccessEx implements Applic
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    return new ModelOrNodeChooser(project, node);
+    return new ModelOrNodeChooser(project);
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModel model) {
-    return new ModelOrNodeChooser(project, model);
+    return new ModelOrNodeChooser(project);
   }
 
   @Override

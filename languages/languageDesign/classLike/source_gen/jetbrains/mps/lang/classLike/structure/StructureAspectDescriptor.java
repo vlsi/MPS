@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
+  /*package*/ final ConceptDescriptor myConceptAutoInitClassLike = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.AutoInitClassLike", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0xea740fb893a13edL)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptClassLikeAnnotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3571587574961717879L, "descriptor", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L), false)).references("descriptor").create();
   /*package*/ final ConceptDescriptor myConceptClassLikeBooleanProperty = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L)).super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parentIds(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6478870542308871876L, "value")).properties("value").create();
   /*package*/ final ConceptDescriptor myConceptClassLikeDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1825613483881131410L, "preferredConcept", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), true)).references("preferredConcept").childDescriptors(new ConceptDescriptorBuilder.Link(1825613483881472526L, "initializer", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), true, false, false), new ConceptDescriptorBuilder.Link(8264762413010642120L, "classLikeMember", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L), true, true, false)).children(new String[]{"initializer", "classLikeMember"}, new boolean[]{false, true}).create();
@@ -22,7 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptClassLikeMethod = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(19209059688387895L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L), false)).references("decl").create();
   /*package*/ final ConceptDescriptor myConceptClassLikeProperty = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeProperty", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L)).parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8585153554445465961L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L), false)).references("decl").abstract_().create();
   /*package*/ final ConceptDescriptor myConceptClassLikeStringProperty = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L)).super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parentIds(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6478870542308871429L, "value")).properties("value").create();
-  /*package*/ final ConceptDescriptor myConceptCustomMemberDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8264762413010673055L, "cncpt", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), false)).references("cncpt").alias("custom member", "").create();
+  /*package*/ final ConceptDescriptor myConceptCustomMemberDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8264762413010673055L, "cncpt", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), false)).references("cncpt").alias("custom member", "").create();
   /*package*/ final ConceptDescriptor myConceptDependentTypeDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).childDescriptors(new ConceptDescriptorBuilder.Link(3751132065236767069L, "getter", MetaIdFactory.conceptId(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L), false, false, false)).children(new String[]{"getter"}, new boolean[]{false}).alias("deptype", "").create();
   /*package*/ final ConceptDescriptor myConceptDependentTypeInstance = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeInstance", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3751132065236767084L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL), false), new ConceptDescriptorBuilder.Ref(9097849371505568270L, "point", MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), false)).references("decl", "point").create();
   /*package*/ final ConceptDescriptor myConceptEmptyMember = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.EmptyMember", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x50c63f9f4a0dea5fL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L)).alias("empty line", "").create();
@@ -37,60 +38,62 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptClassLikeAnnotation, myConceptClassLikeBooleanProperty, myConceptClassLikeDescriptor, myConceptClassLikeIntegerProperty, myConceptClassLikeMember, myConceptClassLikeMemberInstance, myConceptClassLikeMemberPlaceholder, myConceptClassLikeMethod, myConceptClassLikeProperty, myConceptClassLikeStringProperty, myConceptCustomMemberDescriptor, myConceptDependentTypeDeclaration, myConceptDependentTypeInstance, myConceptEmptyMember, myConceptGenerateModifier, myConceptMemberModifier, myConceptMethodDescriptor, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptRequiredModifier);
+    return Arrays.asList(myConceptAutoInitClassLike, myConceptClassLikeAnnotation, myConceptClassLikeBooleanProperty, myConceptClassLikeDescriptor, myConceptClassLikeIntegerProperty, myConceptClassLikeMember, myConceptClassLikeMemberInstance, myConceptClassLikeMemberPlaceholder, myConceptClassLikeMethod, myConceptClassLikeProperty, myConceptClassLikeStringProperty, myConceptCustomMemberDescriptor, myConceptDependentTypeDeclaration, myConceptDependentTypeInstance, myConceptEmptyMember, myConceptGenerateModifier, myConceptMemberModifier, myConceptMethodDescriptor, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptRequiredModifier);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ab, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0bb, conceptFqName)) {
       case 0:
-        return myConceptClassLikeAnnotation;
+        return myConceptAutoInitClassLike;
       case 1:
-        return myConceptClassLikeBooleanProperty;
+        return myConceptClassLikeAnnotation;
       case 2:
-        return myConceptClassLikeDescriptor;
+        return myConceptClassLikeBooleanProperty;
       case 3:
-        return myConceptClassLikeIntegerProperty;
+        return myConceptClassLikeDescriptor;
       case 4:
-        return myConceptClassLikeMember;
+        return myConceptClassLikeIntegerProperty;
       case 5:
-        return myConceptClassLikeMemberInstance;
+        return myConceptClassLikeMember;
       case 6:
-        return myConceptClassLikeMemberPlaceholder;
+        return myConceptClassLikeMemberInstance;
       case 7:
-        return myConceptClassLikeMethod;
+        return myConceptClassLikeMemberPlaceholder;
       case 8:
-        return myConceptClassLikeProperty;
+        return myConceptClassLikeMethod;
       case 9:
-        return myConceptClassLikeStringProperty;
+        return myConceptClassLikeProperty;
       case 10:
-        return myConceptCustomMemberDescriptor;
+        return myConceptClassLikeStringProperty;
       case 11:
-        return myConceptDependentTypeDeclaration;
+        return myConceptCustomMemberDescriptor;
       case 12:
-        return myConceptDependentTypeInstance;
+        return myConceptDependentTypeDeclaration;
       case 13:
-        return myConceptEmptyMember;
+        return myConceptDependentTypeInstance;
       case 14:
-        return myConceptGenerateModifier;
+        return myConceptEmptyMember;
       case 15:
-        return myConceptMemberModifier;
+        return myConceptGenerateModifier;
       case 16:
-        return myConceptMethodDescriptor;
+        return myConceptMemberModifier;
       case 17:
-        return myConceptMultipleModifier;
+        return myConceptMethodDescriptor;
       case 18:
-        return myConceptParameterDescriptor;
+        return myConceptMultipleModifier;
       case 19:
-        return myConceptPlaceholderModifier;
+        return myConceptParameterDescriptor;
       case 20:
-        return myConceptPropertyDescriptor;
+        return myConceptPlaceholderModifier;
       case 21:
+        return myConceptPropertyDescriptor;
+      case 22:
         return myConceptRequiredModifier;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0ab = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.EmptyMember", "jetbrains.mps.lang.classLike.structure.GenerateModifier", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.MultipleModifier", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_1htk8d_a0a0bb = new String[]{"jetbrains.mps.lang.classLike.structure.AutoInitClassLike", "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.EmptyMember", "jetbrains.mps.lang.classLike.structure.GenerateModifier", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.MultipleModifier", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

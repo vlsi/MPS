@@ -69,10 +69,4 @@ public class ShowDefaultHelp_Action extends BaseAction {
     }
     HelpHelper.showHelpFor(event.getData(MPSCommonDataKeys.CONTEXT_MODULE), event.getData(MPSCommonDataKeys.CONTEXT_MODEL), event.getData(MPSCommonDataKeys.NODE));
   }
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append("ContextHelp");
-    return res.toString();
-  }
 }

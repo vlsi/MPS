@@ -28,6 +28,8 @@ import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.text.TextGeneratorEngine;
@@ -39,6 +41,7 @@ import java.util.HashMap;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import java.util.concurrent.TimeUnit;
+import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -57,7 +60,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
@@ -202,6 +204,8 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
                 }
               }
+              // XXX remove this code after 3.3. It's compatibility setting not to handle node attributes in textgen 
+              TextGen.enableNodeAttributes(GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen());
               final IMessageHandler messageHandler = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler();
               Project mpsProject = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getProject();
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(messageHandler);
@@ -239,6 +243,12 @@ public class TextGen_Facet extends IFacet.Stub {
                 final List<FileProcessor> fileProcessors2 = ListSequence.fromList(new ArrayList<FileProcessor>());
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
+
+                  for (TextUnit tu : tgr.getUnits()) {
+                    if (tu.getState() == TextUnit.Status.Failed) {
+                      monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text for " + tu.getFileName())));
+                    }
+                  }
 
                   monitor.currentProgress().advanceWork("Writing", 1, tgr.getModel().getReference().getModelName());
                   final GResource inputResource = textGenInput2Resource.get(tgr.getModel());
@@ -411,6 +421,7 @@ public class TextGen_Facet extends IFacet.Stub {
           final Iterable<GResource> input = (Iterable<GResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
+              TextGen.enableNodeAttributes(GenerationSettingsProvider.getInstance().getGenerationSettings().handleAttributesInTextGen());
               final TextGeneratorEngine tgEngine = new TextGeneratorEngine(TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler());
               try {
                 int modelsCount = Sequence.fromIterable(input).count();

@@ -30,14 +30,15 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
-import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 
 /**
@@ -81,7 +82,14 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     setConfigurationDefaults();
   }
 
+  public SModuleReference createModuleReference(String moduleName) {
+    return new ModuleReference(moduleName, ModuleId.foreign(moduleName));
+  }
+
   private void setConfigurationDefaults() {
+    if (!myConfigurationBean.isModuleIdSet()) {
+      myConfigurationBean.setIdByModuleName(myMpsFacet.getModule().getName());
+    }
     if (myConfigurationBean.isUseTransientOutputFolder()) {
       myConfigurationBean.setUseModuleSourceFolder(false);
     } else if (myConfigurationBean.isUseModuleSourceFolder()) {

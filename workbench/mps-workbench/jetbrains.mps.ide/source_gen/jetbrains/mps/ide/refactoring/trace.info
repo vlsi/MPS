@@ -101,166 +101,170 @@
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2482360940803571464">
     <file name="RefactoringViewItemImpl.java">
-      <node id="3923570236741645203" at="32,0,33,0" concept="2" trace="myProject" />
-      <node id="2482360940803571506" at="33,0,34,0" concept="2" trace="myRefactoringViewAction" />
-      <node id="2482360940803571509" at="34,0,35,0" concept="2" trace="mySearchResults" />
-      <node id="2482360940803571512" at="35,0,36,0" concept="2" trace="myUsagesView" />
-      <node id="2482360940803571515" at="36,0,37,0" concept="2" trace="myPanel" />
-      <node id="2482360940803571518" at="37,0,38,0" concept="2" trace="myButtonsPanel" />
-      <node id="2482360940803571521" at="38,0,39,0" concept="2" trace="myDoRefactorButton" />
-      <node id="2482360940803571524" at="39,0,40,0" concept="2" trace="myCancelButton" />
-      <node id="2482360940803571552" at="42,194,43,46" concept="1" />
-      <node id="3923570236741655064" at="43,46,44,56" concept="1" />
-      <node id="2482360940803571556" at="44,56,45,68" concept="1" />
-      <node id="3923570236741656357" at="47,148,48,18" concept="1" />
-      <node id="2482360940803571577" at="48,18,49,68" concept="1" />
-      <node id="2482360940803571595" at="51,124,52,52" concept="1" />
-      <node id="2482360940803571599" at="52,52,53,36" concept="1" />
-      <node id="2482360940803571608" at="54,34,55,66" concept="11" />
-      <node id="2482360940803571612" at="56,5,57,45" concept="1" />
-      <node id="2482360940803571619" at="57,45,58,64" concept="1" />
-      <node id="2482360940803571929" at="60,62,61,45" concept="1" />
-      <node id="3923570236741673929" at="63,7,64,44" concept="1" />
-      <node id="2482360940803571651" at="64,44,65,65" concept="1" />
-      <node id="2482360940803571944" at="68,50,69,21" concept="1" />
-      <node id="2482360940803571954" at="75,37,76,23" concept="1" />
-      <node id="2482360940803571685" at="79,7,80,43" concept="1" />
-      <node id="2482360940803571958" at="83,50,84,16" concept="1" />
-      <node id="2482360940803571704" at="86,7,87,39" concept="1" />
-      <node id="2482360940803571717" at="87,39,88,66" concept="1" />
-      <node id="2482360940803571725" at="88,66,89,52" concept="1" />
-      <node id="2482360940803571731" at="89,52,90,71" concept="5" />
-      <node id="2482360940803571737" at="90,71,91,93" concept="1" />
-      <node id="2482360940803571796" at="93,36,94,19" concept="6" />
-      <node id="2482360940803571802" at="96,32,97,30" concept="6" />
-      <node id="2482360940803571808" at="99,37,100,24" concept="6" />
-      <node id="2482360940803571865" at="102,29,103,48" concept="1" />
-      <node id="2482360940803571878" at="107,25,108,27" concept="1" />
-      <node id="2482360940803571981" at="113,25,114,42" concept="1" />
-      <node id="2482360940803571469" at="119,0,120,0" concept="2" trace="myFtp" />
-      <node id="2482360940803571895" at="120,61,121,18" concept="1" />
-      <node id="2482360940803571900" at="124,84,125,61" concept="6" />
-      <node id="2482360940803571907" at="128,85,129,62" concept="6" />
-      <node id="2482360940803571914" at="132,62,133,49" concept="6" />
-      <node id="2482360940803571920" at="136,61,137,48" concept="6" />
-      <node id="2482360940803571926" at="140,64,141,32" concept="6" />
-      <node id="2482360940803571527" at="40,0,42,0" concept="2" trace="myRefactoringContext" />
-      <node id="2482360940803571870" at="105,0,107,0" concept="4" trace="close#()V" />
-      <node id="2482360940803571603" at="53,36,56,5" concept="3" />
-      <node id="3923570236741368901" at="60,0,63,0" concept="4" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-      <node id="2482360940803571947" at="74,40,77,9" concept="3" />
-      <node id="2482360940803571792" at="93,0,96,0" concept="4" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <node id="2482360940803571798" at="96,0,99,0" concept="4" trace="getOkButton#()Ljavax/swing/JButton;" />
-      <node id="2482360940803571804" at="99,0,102,0" concept="4" trace="getUsagesView#()Ljetbrains/mps/ide/findusages/view/UsagesView;" />
-      <node id="2482360940803571823" at="102,0,105,0" concept="4" trace="doRefactor#()V" />
-      <node id="2482360940803571874" at="107,0,110,0" concept="4" trace="dispose#()V" />
-      <node id="2482360940803571472" at="120,0,123,0" concept="0" trace="MyFocusTraversalPolicy#(Ljava/awt/FocusTraversalPolicy;)V" />
-      <node id="2482360940803571565" at="47,0,51,0" concept="0" trace="RefactoringViewItemImpl#(Ljetbrains/mps/project/Project;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
-      <node id="2482360940803571667" at="67,0,71,0" concept="4" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="2482360940803571698" at="82,0,86,0" concept="4" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="2482360940803571891" at="112,0,116,0" concept="4" trace="run#()V" />
-      <node id="2482360940803571477" at="123,0,127,0" concept="4" trace="getComponentAfter#(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;" />
-      <node id="2482360940803571484" at="127,0,131,0" concept="4" trace="getComponentBefore#(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;" />
-      <node id="2482360940803571491" at="131,0,135,0" concept="4" trace="getFirstComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
-      <node id="2482360940803571496" at="135,0,139,0" concept="4" trace="getLastComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
-      <node id="2482360940803571501" at="139,0,143,0" concept="4" trace="getDefaultComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
-      <node id="2482360940803571538" at="42,0,47,0" concept="0" trace="RefactoringViewItemImpl#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
-      <node id="3923570236741340012" at="58,64,63,7" concept="1" />
-      <node id="2482360940803571659" at="65,65,71,7" concept="1" />
-      <node id="2482360940803571680" at="73,0,79,0" concept="4" trace="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
-      <node id="2482360940803571690" at="80,43,86,7" concept="1" />
-      <node id="2482360940803571886" at="110,30,116,7" concept="1" />
-      <node id="2482360940803571673" at="71,7,79,7" concept="1" />
-      <node id="2482360940803571882" at="110,0,118,0" concept="4" trace="requestFocus#()V" />
-      <node id="2482360940803571583" at="51,0,93,0" concept="4" trace="init#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
-      <scope id="2482360940803571607" at="54,34,55,66" />
-      <scope id="3923570236741368908" at="60,62,61,45" />
-      <scope id="2482360940803571943" at="68,50,69,21" />
-      <scope id="2482360940803571953" at="75,37,76,23" />
-      <scope id="2482360940803571957" at="83,50,84,16" />
-      <scope id="2482360940803571795" at="93,36,94,19" />
-      <scope id="2482360940803571801" at="96,32,97,30" />
-      <scope id="2482360940803571807" at="99,37,100,24" />
-      <scope id="2482360940803571826" at="102,29,103,48" />
-      <scope id="2482360940803571877" at="107,25,108,27" />
-      <scope id="2482360940803571980" at="113,25,114,42" />
-      <scope id="2482360940803571894" at="120,61,121,18" />
-      <scope id="2482360940803571899" at="124,84,125,61" />
-      <scope id="2482360940803571906" at="128,85,129,62" />
-      <scope id="2482360940803571913" at="132,62,133,49" />
-      <scope id="2482360940803571919" at="136,61,137,48" />
-      <scope id="2482360940803571925" at="140,64,141,32" />
-      <scope id="2482360940803571576" at="47,148,49,68" />
-      <scope id="2482360940803571870" at="105,0,107,0" />
-      <scope id="2482360940803571551" at="42,194,45,68" />
-      <scope id="3923570236741368901" at="60,0,63,0">
+      <node id="3923570236741645203" at="34,0,35,0" concept="2" trace="myProject" />
+      <node id="2482360940803571506" at="35,0,36,0" concept="2" trace="myRefactoringViewAction" />
+      <node id="2482360940803571509" at="36,0,37,0" concept="2" trace="mySearchResults" />
+      <node id="2482360940803571512" at="37,0,38,0" concept="2" trace="myUsagesView" />
+      <node id="2482360940803571515" at="38,0,39,0" concept="2" trace="myPanel" />
+      <node id="2482360940803571518" at="39,0,40,0" concept="2" trace="myButtonsPanel" />
+      <node id="2482360940803571521" at="40,0,41,0" concept="2" trace="myDoRefactorButton" />
+      <node id="2482360940803571524" at="41,0,42,0" concept="2" trace="myCancelButton" />
+      <node id="2482360940803571552" at="44,194,45,46" concept="1" />
+      <node id="3923570236741655064" at="45,46,46,56" concept="1" />
+      <node id="2482360940803571556" at="46,56,47,68" concept="1" />
+      <node id="3923570236741656357" at="49,148,50,18" concept="1" />
+      <node id="2482360940803571577" at="50,18,51,68" concept="1" />
+      <node id="2482360940803571595" at="53,124,54,52" concept="1" />
+      <node id="2482360940803571599" at="54,52,55,36" concept="1" />
+      <node id="2482360940803571608" at="56,34,57,66" concept="11" />
+      <node id="2482360940803571612" at="58,5,59,45" concept="1" />
+      <node id="2482360940803571619" at="59,45,60,64" concept="1" />
+      <node id="2482360940803571929" at="62,62,63,45" concept="1" />
+      <node id="3923570236741673929" at="65,7,66,44" concept="1" />
+      <node id="2482360940803571651" at="66,44,67,65" concept="1" />
+      <node id="2482360940803571944" at="70,50,71,21" concept="1" />
+      <node id="2482360940803571954" at="77,37,78,23" concept="1" />
+      <node id="2482360940803571685" at="81,7,82,43" concept="1" />
+      <node id="2482360940803571958" at="85,50,86,16" concept="1" />
+      <node id="2482360940803571704" at="88,7,89,39" concept="1" />
+      <node id="2482360940803571717" at="89,39,90,66" concept="1" />
+      <node id="2482360940803571725" at="90,66,91,52" concept="1" />
+      <node id="2482360940803571731" at="91,52,92,71" concept="5" />
+      <node id="2482360940803571737" at="92,71,93,93" concept="1" />
+      <node id="2482360940803571796" at="95,36,96,19" concept="6" />
+      <node id="2482360940803571802" at="98,32,99,30" concept="6" />
+      <node id="2482360940803571808" at="101,37,102,24" concept="6" />
+      <node id="2482360940803571865" at="104,29,105,48" concept="1" />
+      <node id="2482360940803571878" at="109,25,110,27" concept="1" />
+      <node id="2482360940803571981" at="115,25,116,42" concept="1" />
+      <node id="2482360940803571469" at="121,0,122,0" concept="2" trace="myFtp" />
+      <node id="2482360940803571895" at="122,61,123,18" concept="1" />
+      <node id="2482360940803571900" at="126,84,127,61" concept="6" />
+      <node id="2482360940803571907" at="130,85,131,62" concept="6" />
+      <node id="2482360940803571914" at="134,62,135,49" concept="6" />
+      <node id="2482360940803571920" at="138,61,139,48" concept="6" />
+      <node id="2482360940803571926" at="142,64,143,32" concept="6" />
+      <node id="9101664549980819944" at="146,56,147,52" concept="6" />
+      <node id="2482360940803571527" at="42,0,44,0" concept="2" trace="myRefactoringContext" />
+      <node id="2482360940803571870" at="107,0,109,0" concept="4" trace="close#()V" />
+      <node id="2482360940803571603" at="55,36,58,5" concept="3" />
+      <node id="3923570236741368901" at="62,0,65,0" concept="4" trace="actionPerformed#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="2482360940803571947" at="76,40,79,9" concept="3" />
+      <node id="2482360940803571792" at="95,0,98,0" concept="4" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="2482360940803571798" at="98,0,101,0" concept="4" trace="getOkButton#()Ljavax/swing/JButton;" />
+      <node id="2482360940803571804" at="101,0,104,0" concept="4" trace="getUsagesView#()Ljetbrains/mps/ide/findusages/view/UsagesView;" />
+      <node id="2482360940803571823" at="104,0,107,0" concept="4" trace="doRefactor#()V" />
+      <node id="2482360940803571874" at="109,0,112,0" concept="4" trace="dispose#()V" />
+      <node id="2482360940803571472" at="122,0,125,0" concept="0" trace="MyFocusTraversalPolicy#(Ljava/awt/FocusTraversalPolicy;)V" />
+      <node id="9101664549980817560" at="146,0,149,0" concept="4" trace="getIncludedResultNodes#()Ljava/util/List;" />
+      <node id="2482360940803571565" at="49,0,53,0" concept="0" trace="RefactoringViewItemImpl#(Ljetbrains/mps/project/Project;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
+      <node id="2482360940803571667" at="69,0,73,0" concept="4" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="2482360940803571698" at="84,0,88,0" concept="4" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="2482360940803571891" at="114,0,118,0" concept="4" trace="run#()V" />
+      <node id="2482360940803571477" at="125,0,129,0" concept="4" trace="getComponentAfter#(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;" />
+      <node id="2482360940803571484" at="129,0,133,0" concept="4" trace="getComponentBefore#(Ljava/awt/Container;Ljava/awt/Component;)Ljava/awt/Component;" />
+      <node id="2482360940803571491" at="133,0,137,0" concept="4" trace="getFirstComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
+      <node id="2482360940803571496" at="137,0,141,0" concept="4" trace="getLastComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
+      <node id="2482360940803571501" at="141,0,145,0" concept="4" trace="getDefaultComponent#(Ljava/awt/Container;)Ljava/awt/Component;" />
+      <node id="2482360940803571538" at="44,0,49,0" concept="0" trace="RefactoringViewItemImpl#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
+      <node id="3923570236741340012" at="60,64,65,7" concept="1" />
+      <node id="2482360940803571659" at="67,65,73,7" concept="1" />
+      <node id="2482360940803571680" at="75,0,81,0" concept="4" trace="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="2482360940803571690" at="82,43,88,7" concept="1" />
+      <node id="2482360940803571886" at="112,30,118,7" concept="1" />
+      <node id="2482360940803571673" at="73,7,81,7" concept="1" />
+      <node id="2482360940803571882" at="112,0,120,0" concept="4" trace="requestFocus#()V" />
+      <node id="2482360940803571583" at="53,0,95,0" concept="4" trace="init#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewAction;Ljetbrains/mps/ide/findusages/model/SearchResults;Z)V" />
+      <scope id="2482360940803571607" at="56,34,57,66" />
+      <scope id="3923570236741368908" at="62,62,63,45" />
+      <scope id="2482360940803571943" at="70,50,71,21" />
+      <scope id="2482360940803571953" at="77,37,78,23" />
+      <scope id="2482360940803571957" at="85,50,86,16" />
+      <scope id="2482360940803571795" at="95,36,96,19" />
+      <scope id="2482360940803571801" at="98,32,99,30" />
+      <scope id="2482360940803571807" at="101,37,102,24" />
+      <scope id="2482360940803571826" at="104,29,105,48" />
+      <scope id="2482360940803571877" at="109,25,110,27" />
+      <scope id="2482360940803571980" at="115,25,116,42" />
+      <scope id="2482360940803571894" at="122,61,123,18" />
+      <scope id="2482360940803571899" at="126,84,127,61" />
+      <scope id="2482360940803571906" at="130,85,131,62" />
+      <scope id="2482360940803571913" at="134,62,135,49" />
+      <scope id="2482360940803571919" at="138,61,139,48" />
+      <scope id="2482360940803571925" at="142,64,143,32" />
+      <scope id="9101664549980817565" at="146,56,147,52" />
+      <scope id="2482360940803571576" at="49,148,51,68" />
+      <scope id="2482360940803571870" at="107,0,109,0" />
+      <scope id="2482360940803571551" at="44,194,47,68" />
+      <scope id="3923570236741368901" at="62,0,65,0">
         <var name="p0" id="3923570236741368905" />
       </scope>
-      <scope id="2482360940803571946" at="74,40,77,9" />
-      <scope id="2482360940803571792" at="93,0,96,0" />
-      <scope id="2482360940803571798" at="96,0,99,0" />
-      <scope id="2482360940803571804" at="99,0,102,0" />
-      <scope id="2482360940803571823" at="102,0,105,0" />
-      <scope id="2482360940803571874" at="107,0,110,0" />
-      <scope id="2482360940803571472" at="120,0,123,0">
+      <scope id="2482360940803571946" at="76,40,79,9" />
+      <scope id="2482360940803571792" at="95,0,98,0" />
+      <scope id="2482360940803571798" at="98,0,101,0" />
+      <scope id="2482360940803571804" at="101,0,104,0" />
+      <scope id="2482360940803571823" at="104,0,107,0" />
+      <scope id="2482360940803571874" at="109,0,112,0" />
+      <scope id="2482360940803571472" at="122,0,125,0">
         <var name="ftp" id="2482360940803571475" />
       </scope>
-      <scope id="2482360940803571565" at="47,0,51,0">
+      <scope id="9101664549980817560" at="146,0,149,0" />
+      <scope id="2482360940803571565" at="49,0,53,0">
         <var name="hasModelsToGenerate" id="2482360940803571574" />
         <var name="p" id="2482360940803571568" />
         <var name="refactoringViewAction" id="2482360940803571570" />
         <var name="searchResults" id="2482360940803571572" />
       </scope>
-      <scope id="2482360940803571667" at="67,0,71,0">
+      <scope id="2482360940803571667" at="69,0,73,0">
         <var name="e" id="2482360940803571670" />
       </scope>
-      <scope id="2482360940803571698" at="82,0,86,0">
+      <scope id="2482360940803571698" at="84,0,88,0">
         <var name="e" id="2482360940803571701" />
       </scope>
-      <scope id="2482360940803571891" at="112,0,116,0" />
-      <scope id="2482360940803571477" at="123,0,127,0">
+      <scope id="2482360940803571891" at="114,0,118,0" />
+      <scope id="2482360940803571477" at="125,0,129,0">
         <var name="aComponent" id="2482360940803571482" />
         <var name="aContainer" id="2482360940803571480" />
       </scope>
-      <scope id="2482360940803571484" at="127,0,131,0">
+      <scope id="2482360940803571484" at="129,0,133,0">
         <var name="aComponent" id="2482360940803571489" />
         <var name="aContainer" id="2482360940803571487" />
       </scope>
-      <scope id="2482360940803571491" at="131,0,135,0">
+      <scope id="2482360940803571491" at="133,0,137,0">
         <var name="aContainer" id="2482360940803571494" />
       </scope>
-      <scope id="2482360940803571496" at="135,0,139,0">
+      <scope id="2482360940803571496" at="137,0,141,0">
         <var name="aContainer" id="2482360940803571499" />
       </scope>
-      <scope id="2482360940803571501" at="139,0,143,0">
+      <scope id="2482360940803571501" at="141,0,145,0">
         <var name="aContainer" id="2482360940803571504" />
       </scope>
-      <scope id="2482360940803571538" at="42,0,47,0">
+      <scope id="2482360940803571538" at="44,0,49,0">
         <var name="hasModelsToGenerate" id="2482360940803571549" />
         <var name="refactoringContext" id="2482360940803571541" />
         <var name="refactoringViewAction" id="2482360940803571544" />
         <var name="searchResults" id="2482360940803571547" />
       </scope>
-      <scope id="2482360940803571680" at="73,0,79,0">
+      <scope id="2482360940803571680" at="75,0,81,0">
         <var name="e" id="2482360940803571683" />
       </scope>
-      <scope id="2482360940803571885" at="110,30,116,7" />
-      <scope id="2482360940803571882" at="110,0,118,0" />
-      <scope id="2482360940803571594" at="51,124,91,93">
+      <scope id="2482360940803571885" at="112,30,118,7" />
+      <scope id="2482360940803571882" at="112,0,120,0" />
+      <scope id="2482360940803571594" at="53,124,93,93">
         <var name="ftp" id="2482360940803571732" />
       </scope>
-      <scope id="2482360940803571583" at="51,0,93,0">
+      <scope id="2482360940803571583" at="53,0,95,0">
         <var name="hasModelsToGenerate" id="2482360940803571590" />
         <var name="refactoringViewAction" id="2482360940803571586" />
         <var name="searchResults" id="2482360940803571588" />
       </scope>
-      <unit id="3923570236741368899" at="59,32,63,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$1" />
-      <unit id="2482360940803571666" at="66,41,71,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$2" />
-      <unit id="2482360940803571697" at="81,37,86,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$4" />
-      <unit id="2482360940803571890" at="111,35,116,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$5" />
-      <unit id="2482360940803571679" at="72,42,79,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$3" />
-      <unit id="2482360940803571466" at="118,0,144,0" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$MyFocusTraversalPolicy" />
-      <unit id="2482360940803571464" at="31,0,145,0" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl" />
+      <unit id="3923570236741368899" at="61,32,65,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$1" />
+      <unit id="2482360940803571666" at="68,41,73,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$2" />
+      <unit id="2482360940803571697" at="83,37,88,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$4" />
+      <unit id="2482360940803571890" at="113,35,118,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$5" />
+      <unit id="2482360940803571679" at="74,42,81,5" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$3" />
+      <unit id="2482360940803571466" at="120,0,146,0" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl$MyFocusTraversalPolicy" />
+      <unit id="2482360940803571464" at="33,0,150,0" name="jetbrains.mps.ide.refactoring.RefactoringViewItemImpl" />
     </file>
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2482360940803571985">
@@ -672,64 +676,64 @@
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/7012097027058828343">
     <file name="ModelOrNodeChooser.java">
-      <node id="4284078376668155142" at="20,0,21,0" concept="2" trace="myTree" />
-      <node id="2270577049313342679" at="23,37,24,44" concept="6" />
-      <node id="4366542054834703279" at="27,78,28,12" concept="10" />
-      <node id="4366542054834703280" at="28,12,29,66" concept="1" />
-      <node id="4930770434913670938" at="29,66,30,28" concept="1" />
-      <node id="4366542054834703299" at="32,25,33,28" concept="1" />
-      <node id="4366542054834703313" at="35,29,36,40" concept="5" />
-      <node id="4366542054834705990" at="37,48,38,88" concept="1" />
-      <node id="4366542054834708873" at="39,56,40,89" concept="1" />
-      <node id="4366542054834703324" at="42,35,43,21" concept="6" />
-      <node id="4366542054834703329" at="44,13,45,40" concept="1" />
-      <node id="3548249452606133128" at="52,37,53,72" concept="5" />
-      <node id="3548249452606133177" at="53,72,54,25" concept="5" />
-      <node id="3548249452606133145" at="55,45,56,54" concept="1" />
-      <node id="3548249452606133162" at="57,53,58,55" concept="1" />
-      <node id="3548249452606133174" at="59,5,60,18" concept="6" />
-      <node id="4930770434913670928" at="63,36,64,16" concept="6" />
-      <node id="4366542054834703322" at="41,13,44,13" concept="3" />
-      <node id="2270577049313342667" at="22,0,26,0" concept="4" trace="getTree#()Ljetbrains/mps/ide/projectPane/logicalview/ProjectTree;" />
-      <node id="4930770434913670920" at="62,0,66,0" concept="4" trace="getComponent#()Ljavax/swing/JComponent;" />
-      <node id="4366542054834705994" at="36,40,41,13" concept="3" />
-      <node id="3548249452606133143" at="54,25,59,5" concept="3" />
-      <node id="2270577049313323323" at="21,0,27,0" concept="2" trace="myHelper" />
-      <node id="7012097027058891183" at="51,0,62,0" concept="4" trace="getSelectedObject#()Ljava/lang/Object;" />
-      <node id="4366542054834703311" at="35,0,47,0" concept="4" trace="run#()V" />
-      <node id="4366542054834703305" at="33,28,47,11" concept="1" />
-      <node id="4366542054834703297" at="32,0,49,0" concept="4" trace="run#()V" />
-      <node id="4366542054834703295" at="30,28,49,7" concept="1" />
-      <node id="4366542054834703768" at="27,0,51,0" concept="0" trace="ModelOrNodeChooser#(Lcom/intellij/openapi/project/Project;Ljava/lang/Object;)V" />
-      <scope id="2270577049313342670" at="23,37,24,44" />
-      <scope id="4366542054834705995" at="37,48,38,88" />
-      <scope id="4366542054834708868" at="39,56,40,89" />
-      <scope id="4366542054834703323" at="42,35,43,21" />
-      <scope id="3548249452606133144" at="55,45,56,54" />
-      <scope id="3548249452606133161" at="57,53,58,55" />
-      <scope id="4930770434913670923" at="63,36,64,16" />
-      <scope id="2270577049313342667" at="22,0,26,0" />
-      <scope id="4930770434913670920" at="62,0,66,0" />
-      <scope id="7012097027058891185" at="52,37,60,18">
+      <node id="4284078376668155142" at="21,0,22,0" concept="2" trace="myTree" />
+      <node id="2270577049313342679" at="24,37,25,44" concept="6" />
+      <node id="4366542054834703279" at="28,78,29,12" concept="10" />
+      <node id="4366542054834703280" at="29,12,30,66" concept="1" />
+      <node id="4930770434913670938" at="30,66,31,28" concept="1" />
+      <node id="4366542054834703299" at="33,25,34,28" concept="1" />
+      <node id="4366542054834703313" at="36,29,37,40" concept="5" />
+      <node id="4366542054834705990" at="38,48,39,88" concept="1" />
+      <node id="4366542054834708873" at="40,56,41,89" concept="1" />
+      <node id="4366542054834703324" at="43,35,44,21" concept="6" />
+      <node id="4366542054834703329" at="45,13,46,40" concept="1" />
+      <node id="3548249452606133128" at="53,43,54,72" concept="5" />
+      <node id="3548249452606133177" at="54,72,55,31" concept="5" />
+      <node id="3548249452606133145" at="56,45,57,90" concept="1" />
+      <node id="3548249452606133162" at="58,53,59,90" concept="1" />
+      <node id="3548249452606133174" at="60,5,61,18" concept="6" />
+      <node id="4930770434913670928" at="64,36,65,16" concept="6" />
+      <node id="4366542054834703322" at="42,13,45,13" concept="3" />
+      <node id="2270577049313342667" at="23,0,27,0" concept="4" trace="getTree#()Ljetbrains/mps/ide/projectPane/logicalview/ProjectTree;" />
+      <node id="4930770434913670920" at="63,0,67,0" concept="4" trace="getComponent#()Ljavax/swing/JComponent;" />
+      <node id="4366542054834705994" at="37,40,42,13" concept="3" />
+      <node id="3548249452606133143" at="55,31,60,5" concept="3" />
+      <node id="2270577049313323323" at="22,0,28,0" concept="2" trace="myHelper" />
+      <node id="7012097027058891183" at="52,0,63,0" concept="4" trace="getSelectedObject#()Ljetbrains/mps/ide/platform/refactoring/NodeLocation;" />
+      <node id="4366542054834703311" at="36,0,48,0" concept="4" trace="run#()V" />
+      <node id="4366542054834703305" at="34,28,48,11" concept="1" />
+      <node id="4366542054834703297" at="33,0,50,0" concept="4" trace="run#()V" />
+      <node id="4366542054834703295" at="31,28,50,7" concept="1" />
+      <node id="4366542054834703768" at="28,0,52,0" concept="0" trace="ModelOrNodeChooser#(Lcom/intellij/openapi/project/Project;Ljava/lang/Object;)V" />
+      <scope id="2270577049313342670" at="24,37,25,44" />
+      <scope id="4366542054834705995" at="38,48,39,88" />
+      <scope id="4366542054834708868" at="40,56,41,89" />
+      <scope id="4366542054834703323" at="43,35,44,21" />
+      <scope id="3548249452606133144" at="56,45,57,90" />
+      <scope id="3548249452606133161" at="58,53,59,90" />
+      <scope id="4930770434913670923" at="64,36,65,16" />
+      <scope id="2270577049313342667" at="23,0,27,0" />
+      <scope id="4930770434913670920" at="63,0,67,0" />
+      <scope id="7012097027058891185" at="53,43,61,18">
         <var name="result" id="3548249452606133178" />
         <var name="selection" id="3548249452606133129" />
       </scope>
-      <scope id="4366542054834703312" at="35,29,45,40">
+      <scope id="4366542054834703312" at="36,29,46,40">
         <var name="treeNode" id="4366542054834703314" />
       </scope>
-      <scope id="7012097027058891183" at="51,0,62,0" />
-      <scope id="4366542054834703311" at="35,0,47,0" />
-      <scope id="4366542054834703298" at="32,25,47,11" />
-      <scope id="4366542054834703297" at="32,0,49,0" />
-      <scope id="4366542054834703771" at="27,78,49,7" />
-      <scope id="4366542054834703768" at="27,0,51,0">
+      <scope id="7012097027058891183" at="52,0,63,0" />
+      <scope id="4366542054834703311" at="36,0,48,0" />
+      <scope id="4366542054834703298" at="33,25,48,11" />
+      <scope id="4366542054834703297" at="33,0,50,0" />
+      <scope id="4366542054834703771" at="28,78,50,7" />
+      <scope id="4366542054834703768" at="28,0,52,0">
         <var name="initialValue" id="4366542054834705987" />
         <var name="project" id="4366542054834703773" />
       </scope>
-      <unit id="2270577049313342665" at="21,47,26,3" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$1" />
-      <unit id="4366542054834703311" at="34,39,47,9" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$3" />
-      <unit id="4366542054834703297" at="31,40,49,5" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$2" />
-      <unit id="7012097027058828343" at="19,0,67,0" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
+      <unit id="2270577049313342665" at="22,47,27,3" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$1" />
+      <unit id="4366542054834703311" at="35,39,48,9" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$3" />
+      <unit id="4366542054834703297" at="32,40,50,5" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser$2" />
+      <unit id="7012097027058828343" at="20,0,68,0" name="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" />
     </file>
   </root>
 </debug-info>

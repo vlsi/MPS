@@ -58,7 +58,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.behavior.BaseLineCell_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,472,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,474,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
       <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
@@ -74,6 +74,9 @@
     </file>
     <file name="CellActionMapItem_BehaviorDescriptor.java">
       <unit at="9,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellActionMapItem_BehaviorDescriptor" />
+    </file>
+    <file name="CellActionMap_CanExecuteFunction_BehaviorDescriptor.java">
+      <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_CanExecuteFunction_BehaviorDescriptor" />
     </file>
     <file name="CellActionMap_ExecuteFunction_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_ExecuteFunction_BehaviorDescriptor" />
@@ -4713,6 +4716,46 @@
       </scope>
       <scope id="2893726635879185694" at="26,0,32,0" />
       <unit id="3044950653914726099" at="15,0,33,0" name="jetbrains.mps.lang.editor.behavior.QueryFunction_String_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3459162043708467367">
+    <file name="CellActionMap_CanExecuteFunction_Behavior.java">
+      <node id="3459162043708467375" at="18,125,19,289" concept="11" />
+      <node id="3459162043708467382" at="19,289,20,166" concept="5" />
+      <node id="3459162043708467387" at="20,166,21,172" concept="5" />
+      <node id="3459162043708467392" at="21,172,22,18" concept="12" />
+      <node id="976829882994670129" at="24,83,25,47" concept="12" />
+      <node id="976829882994670127" at="27,60,28,63" concept="11" />
+      <node id="976829882994670127" at="28,63,29,30" concept="11" />
+      <node id="976829882994670127" at="29,30,30,223" concept="1" />
+      <node id="976829882994670127" at="29,30,30,223" concept="1" />
+      <node id="976829882994670127" at="29,30,30,223" concept="5" />
+      <node id="976829882994670127" at="30,223,31,24" concept="12" />
+      <node id="3459162043708467367" at="16,0,18,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3459162043708467367" at="24,0,27,0" concept="15" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3459162043708467367" at="18,0,24,0" concept="15" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="976829882994670127" at="27,0,33,0" concept="15" trace="_quotation_createNode_pqu67w_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3459162043708467369" at="16,43,16,43" />
+      <scope id="976829882994661477" at="24,83,25,47" />
+      <scope id="976829882994670127" at="29,30,30,223" />
+      <scope id="3459162043708467367" at="16,0,18,0">
+        <var name="thisNode" id="3459162043708467367" />
+      </scope>
+      <scope id="3459162043708467367" at="24,0,27,0">
+        <var name="thisNode" id="3459162043708467367" />
+      </scope>
+      <scope id="3459162043708467374" at="18,125,22,18">
+        <var name="result" id="3459162043708467376" />
+      </scope>
+      <scope id="976829882994670127" at="27,60,31,24">
+        <var name="facade" id="976829882994670127" />
+        <var name="quotedNode_1" id="976829882994670127" />
+      </scope>
+      <scope id="3459162043708467367" at="18,0,24,0">
+        <var name="thisConcept" id="3459162043708467367" />
+      </scope>
+      <scope id="976829882994670127" at="27,0,33,0" />
+      <unit id="3459162043708467367" at="15,0,34,0" name="jetbrains.mps.lang.editor.behavior.CellActionMap_CanExecuteFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3525058663444342705">

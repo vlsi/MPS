@@ -12,9 +12,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -26,10 +23,11 @@ import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 import org.apache.log4j.Level;
-import java.util.List;
+import java.util.Collection;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
+import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.apache.log4j.Logger;
@@ -62,23 +60,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       }
     }
     {
-      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
-      if (editorComponent != null && editorComponent.isInvalid()) {
-        editorComponent = null;
-      }
-      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
-      if (editorComponent == null) {
-        return false;
-      }
-    }
-    {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      MapSequence.fromMap(_params).put("context", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       Frame p = event.getData(MPSCommonDataKeys.FRAME);
       MapSequence.fromMap(_params).put("frame", p);
       if (p == null) {
@@ -99,7 +80,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    chooser.setContext(((IOperationContext) MapSequence.fromMap(_params).get("context")));
     final Wrappers._T<IFile> projectFolder = new Wrappers._T<IFile>(null);
     final Wrappers._T<String> basePath = new Wrappers._T<String>(null);
 
@@ -127,7 +107,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
-        List<ModulesMiner.ModuleHandle> modules = ModulesMiner.getInstance().collectModules(dir, false);
+        Collection<ModulesMiner.ModuleHandle> modules = new ModulesMiner().collectModules(dir).getCollectedModules();
         VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
         visible.collect();
 

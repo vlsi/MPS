@@ -16,11 +16,12 @@
 package jetbrains.mps.nodeEditor.attribute;
 
 public enum AttributeKind {
-  NODE, REFERENCE, PROPERTY, NOTHING;
+  NODE, REFERENCE, CHILD, PROPERTY, NOTHING;
 
   //todo temp for compatibility
   public static class Node {}
   public static class Reference {}
+  public static class Child {}
   public static class Property {}
   public static class Nothing {}
 }

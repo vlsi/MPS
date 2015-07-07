@@ -6,11 +6,8 @@ import jetbrains.mps.tool.environment.ProjectStrategyBase;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
-import java.util.List;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.io.File;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -32,13 +29,13 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
   @NotNull
   @Override
   public Project construct(@NotNull Project emptyProject) {
-    List<ModulesMiner.ModuleHandle> handles = ListSequence.fromList(new ArrayList<ModulesMiner.ModuleHandle>());
     final String[] modules = myModulesPath.split(File.pathSeparator);
+    ModulesMiner mm = new ModulesMiner();
     for (String modulePath : modules) {
       IFile fileByPath = FileSystem.getInstance().getFileByPath(modulePath);
-      ListSequence.fromList(handles).addSequence(ListSequence.fromList(ModulesMiner.getInstance().collectModules(fileByPath, false)));
+      mm.collectModules(fileByPath);
     }
-    return loadProjectFromModuleHandles(emptyProject, handles);
+    return loadProjectFromModuleHandles(emptyProject, mm.getCollectedModules());
   }
 
   @Override

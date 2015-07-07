@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -21,7 +22,7 @@ public class ClassLikeDescriptor_Behavior {
   public static SNode call_getPreferredConcept_1825613483881161085(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")) == null ? SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198") : SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")));
   }
-  public static void call_initializeInstance_3384419124890469048(SNode thisNode, SNode classLike) {
+  public static void call_initializeInstance_3384419124890469048(SNode thisNode, SNode classLike, SModel futureModel) {
     if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer")) == null) {
       return;
     }
@@ -32,7 +33,7 @@ public class ClassLikeDescriptor_Behavior {
       for (Method m : methods) {
         if (m.getName().equals("init")) {
           m.setAccessible(true);
-          m.invoke(null, classLike);
+          m.invoke(null, classLike, futureModel);
         }
       }
     } catch (Exception e) {

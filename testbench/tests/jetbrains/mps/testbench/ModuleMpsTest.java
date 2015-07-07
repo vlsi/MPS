@@ -16,6 +16,7 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.CoreMpsTest;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
@@ -35,7 +36,6 @@ import jetbrains.mps.smodel.TestLanguage;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.After;
 
 import java.util.UUID;
@@ -72,7 +72,7 @@ public class ModuleMpsTest extends CoreMpsTest {
    * This is the repository test modules get created/registered in.
    * At the moment, bound to be instance of MPSModuleRepository (the only way to register/unregister module)
    */
-  protected final SRepository getTestRepository() {
+  protected final SRepositoryExt getTestRepository() {
     return MPSModuleRepository.getInstance();
   }
 
@@ -159,7 +159,7 @@ public class ModuleMpsTest extends CoreMpsTest {
         String uuid = UUID.randomUUID().toString();
         d.setNamespace(TEST_PREFIX_DEVKIT + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
-        devKits[0] = ((MPSModuleRepository) getTestRepository()).registerModule(new DevKit(d, null), OWNER);
+        devKits[0] = getTestRepository().registerModule(new DevKit(d, null), OWNER);
         populate(devKits[0]);
       }
     });
@@ -176,7 +176,7 @@ public class ModuleMpsTest extends CoreMpsTest {
     getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ((MPSModuleRepository) getTestRepository()).unregisterModule(module, OWNER);
+        getTestRepository().unregisterModule(module, OWNER);
       }
     });
   }

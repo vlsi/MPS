@@ -17,6 +17,7 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.vfs.FileRefresh;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -104,7 +105,7 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
   public void update(ProgressMonitor monitor, FileSystemEvent event) {
     boolean changed = false;
     for (IFile f : event.getCreated()) {
-      if (ModulesMiner.getInstance().isModuleFile(f)) {
+      if (ModulesMiner.isModuleFile(f)) {
         changed = true;
         break;
       }
@@ -115,7 +116,11 @@ public class SLibrary implements FileSystemListener, MPSModuleOwner, Comparable<
   }
 
   void collectAndRegisterModules(boolean refreshFiles) {
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(myFile, refreshFiles);
+    if (refreshFiles) {
+      new FileRefresh(myFile).run();
+    }
+    final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
+    List<ModuleHandle> moduleHandles = new ArrayList<ModuleHandle>(modulesMiner.getCollectedModules());
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {

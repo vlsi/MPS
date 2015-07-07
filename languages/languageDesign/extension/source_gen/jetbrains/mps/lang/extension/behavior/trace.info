@@ -32,7 +32,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_BehaviorDescriptor" />
     </file>
     <file name="ExtensionOverlapping_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ExtensionOverlapping_BehaviorDescriptor" />
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.extension.behavior.ExtensionOverlapping_BehaviorDescriptor" />
     </file>
     <file name="ExtensionPointDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointDeclaration_BehaviorDescriptor" />
@@ -47,7 +47,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.extension.behavior.ExtensionPointType_BehaviorDescriptor" />
     </file>
     <file name="Extension_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.Extension_BehaviorDescriptor" />
     </file>
     <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.GetExtensionObjectsOperation_BehaviorDescriptor" />
@@ -63,6 +63,22 @@
     </file>
     <file name="OverridesReference_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.OverridesReference_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/1055884086725370254">
+    <file name="Extension_Behavior.java">
+      <node id="1055884086725369660" at="11,81,12,138" concept="4" />
+      <node id="1055884086725370254" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1055884086725370254" at="11,0,14,0" concept="5" trace="virtual_getDescriptor_1055884086724995485#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1055884086725370256" at="9,43,9,43" />
+      <scope id="1055884086725368455" at="11,81,12,138" />
+      <scope id="1055884086725370254" at="9,0,11,0">
+        <var name="thisNode" id="1055884086725370254" />
+      </scope>
+      <scope id="1055884086725370254" at="11,0,14,0">
+        <var name="thisNode" id="1055884086725370254" />
+      </scope>
+      <unit id="1055884086725370254" at="8,0,15,0" name="jetbrains.mps.lang.extension.behavior.Extension_Behavior" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/1262430001741719871">
@@ -219,12 +235,18 @@
     <file name="ExtensionOverlapping_Behavior.java">
       <node id="8287904403586941277" at="18,228,19,380" concept="4" />
       <node id="2141245758543019181" at="20,5,21,185" concept="4" />
+      <node id="1055884086725371616" at="23,81,24,138" concept="4" />
       <node id="2141245758543019119" at="15,0,17,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8287904403586658959" at="17,101,20,5" concept="2" />
+      <node id="2141245758543019119" at="23,0,26,0" concept="5" trace="virtual_getDescriptor_1055884086724995485#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2141245758543019119" at="17,0,23,0" concept="5" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="2141245758543019121" at="15,43,15,43" />
       <scope id="8287904403586658962" at="18,228,19,380" />
+      <scope id="1055884086725371615" at="23,81,24,138" />
       <scope id="2141245758543019119" at="15,0,17,0">
+        <var name="thisNode" id="2141245758543019119" />
+      </scope>
+      <scope id="2141245758543019119" at="23,0,26,0">
         <var name="thisNode" id="2141245758543019119" />
       </scope>
       <scope id="2141245758543019170" at="17,101,21,185" />
@@ -233,7 +255,7 @@
         <var name="kind" id="2141245758543019171" />
         <var name="thisNode" id="2141245758543019119" />
       </scope>
-      <unit id="2141245758543019119" at="14,0,24,0" name="jetbrains.mps.lang.extension.behavior.ExtensionOverlapping_Behavior" />
+      <unit id="2141245758543019119" at="14,0,27,0" name="jetbrains.mps.lang.extension.behavior.ExtensionOverlapping_Behavior" />
     </file>
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/3175313036448544059">

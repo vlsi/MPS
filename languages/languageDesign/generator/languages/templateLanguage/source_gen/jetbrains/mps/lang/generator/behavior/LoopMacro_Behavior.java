@@ -7,9 +7,9 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,6 +35,10 @@ public class LoopMacro_Behavior {
     }
     return null;
   }
+  public static String call_getCounterVarName_6635545314666773603(SNode thisNode) {
+    // name of counter as available in TemplateContext, similar to VarMacro.getName() 
+    return "cv:" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName"));
+  }
   public static List<SNode> virtual_contextVariables_7430509679011531975(SNode thisNode) {
     List<SNode> rv = new ArrayList<SNode>();
     if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName")))) {
@@ -42,7 +46,7 @@ public class LoopMacro_Behavior {
     }
     SNode counterVar = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d94989fL, "jetbrains.mps.lang.generator.structure.ContextVariableDeclaration")));
     SPropertyOperations.set(counterVar, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x1047ce009c3L, 0x671e792f3d97a344L, "counterVarName")));
-    SLinkOperations.setTarget(counterVar, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d94989fL, 0x671e792f3d9580f4L, "type"), createIntegerType_cdqxf8_a0e0b());
+    SLinkOperations.setTarget(counterVar, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d94989fL, 0x671e792f3d9580f4L, "type"), createIntegerType_cdqxf8_a0e0c());
     ListSequence.fromList(rv).addElement(counterVar);
     return rv;
   }
@@ -98,7 +102,7 @@ public class LoopMacro_Behavior {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode createIntegerType_cdqxf8_a0e0b() {
+  private static SNode createIntegerType_cdqxf8_a0e0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d22479L, "jetbrains.mps.baseLanguage.structure.IntegerType"), null, null, false);
     return n1;

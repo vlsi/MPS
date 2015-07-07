@@ -33,7 +33,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,292,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,294,0" name="jetbrains.mps.lang.smodel.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BootstrapAwareMetaObject_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.BootstrapAwareMetaObject_BehaviorDescriptor" />
@@ -43,6 +43,9 @@
     </file>
     <file name="CheckedModuleReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.CheckedModuleReference_BehaviorDescriptor" />
+    </file>
+    <file name="ChildAttributeQualifier_BehaviorDescriptor.java">
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.ChildAttributeQualifier_BehaviorDescriptor" />
     </file>
     <file name="ChildNodeRefExpression_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.ChildNodeRefExpression_BehaviorDescriptor" />
@@ -2692,6 +2695,22 @@
         <var name="thisConcept" id="334628810661446364" />
       </scope>
       <unit id="334628810661446364" at="8,0,24,0" name="jetbrains.mps.lang.smodel.behavior.AsSConcept_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3413985912806470428">
+    <file name="ChildAttributeQualifier_Behavior.java">
+      <node id="3413985912806475629" at="12,84,13,194" concept="7" />
+      <node id="3413985912806470428" at="10,0,12,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3413985912806470428" at="12,0,15,0" concept="8" trace="virtual_getTargetConcept_6407023681583066586#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3413985912806470430" at="10,43,10,43" />
+      <scope id="3413985912806475628" at="12,84,13,194" />
+      <scope id="3413985912806470428" at="10,0,12,0">
+        <var name="thisNode" id="3413985912806470428" />
+      </scope>
+      <scope id="3413985912806470428" at="12,0,15,0">
+        <var name="thisNode" id="3413985912806470428" />
+      </scope>
+      <unit id="3413985912806470428" at="9,0,16,0" name="jetbrains.mps.lang.smodel.behavior.ChildAttributeQualifier_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/3476105411552591981">

@@ -15,7 +15,7 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
 public class MoveDocTagsIntoTagsChildCollection extends MigrationScriptBase {
   public String getCaption() {
-    return "jetbrains.mps.baseLanguage.javadoc.migration.MoveDocTagsIntoTagsChildCollection";
+    return "MoveDocTagsIntoTagsChildCollection";
   }
   public SNode execute(SModule m) {
     Iterable<SModel> models = m.getModels();

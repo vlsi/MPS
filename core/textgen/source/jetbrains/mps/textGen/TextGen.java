@@ -20,15 +20,16 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.BufferSnapshot;
 import jetbrains.mps.text.MissingTextGenDescriptor;
+import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.text.impl.TextGenTransitionContext;
 import jetbrains.mps.text.impl.TraceInfoCollector;
 import jetbrains.mps.text.rt.TextGenDescriptor;
-import jetbrains.mps.textgen.trace.PositionInfo;
 import jetbrains.mps.textgen.trace.ScopePositionInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,13 +37,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.text.TextGeneratorEngine} to produce text from models.
+ * There's yet no alternative to transform single node to text, FIXME shall implement
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class TextGen {
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
@@ -51,6 +57,10 @@ public class TextGen {
   public static final String ROOT_NODE = "ROOT_NODE";
 
   public static final String NO_TEXTGEN = "\33\33NO TEXTGEN\33\33";
+
+  public static final Object COMPATIBILITY_USE_ATTRIBUTES = "use-attributes";
+
+  private static boolean ourEnabledNodeAttributes = true;
 
   // api
   public static TextGenerationResult generateText(SNode node) {
@@ -91,6 +101,7 @@ public class TextGen {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
     buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
+    buffer.putUserObject(COMPATIBILITY_USE_ATTRIBUTES, ourEnabledNodeAttributes);
     final TraceInfoCollector tic;
     if (withDebugInfo)  {
       tic = new TraceInfoCollector();
@@ -139,13 +150,19 @@ public class TextGen {
     return new TextGenerationResult(node, result, buffer.hasErrors(), buffer.problems(), positionInfo, scopeInfo, unitInfo, deps);
   }
 
+  @ToRemove(version = 3.3)
+  public static void enableNodeAttributes(boolean enable) {
+    ourEnabledNodeAttributes = enable;
+  }
+
   private static void appendNodeText(TextGenBuffer buffer, SNode node) {
     if (node == null) {
       buffer.append("???");
       return;
     }
 
-    getTextGenForNode(node).generateText(new TextGenTransitionContext(node, buffer));
+    TextGenSupport tgs = new TextGenSupport(new TextGenTransitionContext(node, buffer));
+    tgs.appendNode(node);
   }
 
   // helper stuff
@@ -158,7 +175,7 @@ public class TextGen {
   private static SNodeTextGen getLegacyTextGen(@NotNull SNode node) {
     try {
       Class<? extends SNodeTextGen> textgenClass = TextGenRegistry.getInstance().getLegacyTextGenClass(node.getConcept());
-      if (textgenClass != null) {
+      if (textgenClass != null && SNodeTextGen.class.isAssignableFrom(textgenClass)) {
         return textgenClass.newInstance();
       }
     } catch (InstantiationException ex) {
@@ -169,13 +186,6 @@ public class TextGen {
       // fall-through
     }
     return new DefaultTextGen();
-  }
-
-  private static void adjustPositions(int delta, Collection<? extends PositionInfo> positionInfo) {
-    for (PositionInfo position : positionInfo) {
-      position.setStartLine(position.getStartLine() + delta);
-      position.setEndLine(position.getEndLine() + delta);
-    }
   }
 
   private static List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {

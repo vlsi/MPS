@@ -182,7 +182,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
             if (itnode13 == null) {
               continue;
             }
-            TemplateContext context13 = context.subContext(null, itnode13);
+            TemplateContext context13 = context.subContext(itnode13);
             final SNode tnode14 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
             try {
               environment.nodeCopied(context13, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763933");
@@ -222,7 +222,7 @@ public class Mappingmain extends MapConfigBase implements TemplateMappingConfigu
             if (itnode2 == null) {
               continue;
             }
-            TemplateContext context2 = context.subContext(null, itnode2);
+            TemplateContext context2 = context.subContext(itnode2);
             final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
             try {
               environment.nodeCopied(context2, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517848");

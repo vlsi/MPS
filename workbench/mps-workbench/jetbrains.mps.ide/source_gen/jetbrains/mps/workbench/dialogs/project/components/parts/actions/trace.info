@@ -154,7 +154,7 @@
       <scope id="1560298786499494263" at="22,0,29,0">
         <var name="e" id="1560298786499494266" />
       </scope>
-      <unit id="1560298786499494244" at="10,0,34,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
+      <unit id="1560298786499494244" at="14,0,34,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
     </file>
   </root>
 </debug-info>

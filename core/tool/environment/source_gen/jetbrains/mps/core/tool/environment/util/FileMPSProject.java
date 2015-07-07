@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -84,9 +83,8 @@ public class FileMPSProject extends Project {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-        if (descriptor != null) {
-          ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner.ModuleHandle(descriptorFile, descriptor);
+        ModulesMiner.ModuleHandle moduleHandle = new ModulesMiner().loadModuleHandle(descriptorFile);
+        if (moduleHandle.getDescriptor() != null) {
           SModule m = ModuleRepositoryFacade.createModule(moduleHandle, this);
           SModuleReference moduleReference = m.getModuleReference();
           if (!(existingModules.remove(moduleReference))) {

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class FromDirWithModulesProjectStrategy extends ProjectStrategyBase {
@@ -49,8 +49,8 @@ public class FromDirWithModulesProjectStrategy extends ProjectStrategyBase {
 
   private List<ModulesMiner.ModuleHandle> collectHandles(File rootFolder) {
     IFile fileByPath = FileSystem.getInstance().getFileByPath(rootFolder.getAbsolutePath());
-    List<ModulesMiner.ModuleHandle> minedHandles = ModulesMiner.getInstance().collectModules(fileByPath, EXCLUDE_SET, false);
-    return ListSequence.fromList(minedHandles).where(new IWhereFilter<ModulesMiner.ModuleHandle>() {
+    Iterable<ModulesMiner.ModuleHandle> minedHandles = new ModulesMiner(EXCLUDE_SET).collectModules(fileByPath).getCollectedModules();
+    return Sequence.fromIterable(minedHandles).where(new IWhereFilter<ModulesMiner.ModuleHandle>() {
       public boolean accept(ModulesMiner.ModuleHandle it) {
         // temporary ignore .iml files 
         return !(it.getFile().getName().endsWith(".iml"));

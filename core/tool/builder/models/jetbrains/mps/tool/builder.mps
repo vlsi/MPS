@@ -1861,6 +1861,11 @@
                   </node>
                 </node>
               </node>
+              <node concept="3SKdUt" id="7LkutxgTdUZ" role="3cqZAp">
+                <node concept="3SKdUq" id="7LkutxgTe10" role="3SKWNk">
+                  <property role="3SKdUp" value="XXX new owner for each module?!" />
+                </node>
+              </node>
               <node concept="3cpWs8" id="KL8Aqlj5v0" role="3cqZAp">
                 <node concept="3cpWsn" id="KL8Aqlj5v1" role="3cpWs9">
                   <property role="TrG5h" value="owner" />
@@ -1875,19 +1880,22 @@
                 </node>
               </node>
               <node concept="1DcWWT" id="KL8Aqlj5vd" role="3cqZAp">
-                <node concept="2OqwBi" id="KL8Aqlj5ve" role="1DdaDG">
-                  <node concept="2YIFZM" id="KL8Aqlj5vf" role="2Oq$k0">
-                    <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                    <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
+                <node concept="2OqwBi" id="7LkutxgTf36" role="1DdaDG">
+                  <node concept="2OqwBi" id="KL8Aqlj5ve" role="2Oq$k0">
+                    <node concept="2ShNRf" id="7LkutxgTe3r" role="2Oq$k0">
+                      <node concept="1pGfFk" id="7LkutxgTeVD" role="2ShVmc">
+                        <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="KL8Aqlj5vg" role="2OqNvi">
+                      <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner" resolve="collectModules" />
+                      <node concept="37vLTw" id="3GM_nagTvA_" role="37wK5m">
+                        <ref role="3cqZAo" node="KL8Aqlj5uS" resolve="file" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="liA8E" id="KL8Aqlj5vg" role="2OqNvi">
-                    <ref role="37wK5l" to="ztul:~ModulesMiner.collectModules(jetbrains.mps.vfs.IFile,boolean):java.util.List" resolve="collectModules" />
-                    <node concept="37vLTw" id="3GM_nagTvA_" role="37wK5m">
-                      <ref role="3cqZAo" node="KL8Aqlj5uS" resolve="file" />
-                    </node>
-                    <node concept="3clFbT" id="KL8Aqlj5vi" role="37wK5m">
-                      <property role="3clFbU" value="false" />
-                    </node>
+                  <node concept="liA8E" id="7LkutxgTfi2" role="2OqNvi">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.getCollectedModules():java.util.Collection" resolve="getCollectedModules" />
                   </node>
                 </node>
                 <node concept="3cpWsn" id="KL8Aqlj5vj" role="1Duv9x">

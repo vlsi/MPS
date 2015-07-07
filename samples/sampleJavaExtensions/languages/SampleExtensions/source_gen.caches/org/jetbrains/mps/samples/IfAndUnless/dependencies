@@ -8,6 +8,7 @@
     <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AbstractDataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
@@ -18,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.intentions.IntentionsDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.structure.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.samples.IfAndUnless.typesystem.TypesystemDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />

@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.smodel.structure.ExtensionFunction.FunctionInstance;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -28,16 +29,17 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
     super(id);
   }
 
-  public R apply(T arg) {
+  @Nullable
+  public FunctionInstance<R> find(T arg) {
     Iterable<ExtensionFunction<T, R>> objects = getObjects();
     List<ExtensionFunction<T, R>> allApplicable = new ArrayList<ExtensionFunction<T, R>>();
     for (ExtensionFunction<T, R> ext : objects) {
-      if (ext.applicable(arg)) {
+      if (ext.instantiate(arg).applicable()) {
         allApplicable.add(ext);
       }
     }
     if (allApplicable.isEmpty()) {
-      throw new IllegalStateException("No applicable extensions for extension point " + toString());
+      return null;
     }
     for (ExtensionFunction<T, R> ext1 : allApplicable) {
       Set<ExtensionFunction<T, R>> allOverridden = new HashSet<ExtensionFunction<T, R>>(ext1.getOverridden());
@@ -63,10 +65,18 @@ public class ExtensionFunctionPoint<T, R> extends ExtensionPoint<ExtensionFuncti
       }
       if (ext1OverridesAll) {
         allApplicable.remove(ext1);
-        return ext1.apply(arg);
+        return ext1.instantiate(arg);
       }
     }
     throw new IllegalStateException("Multiple applicable extensions for extension point " + toString());
+  }
+
+  public R apply(T arg) {
+    FunctionInstance<R> functionInstance = find(arg);
+    if (functionInstance == null) {
+      throw new IllegalStateException("No applicable extensions for extension point " + toString());
+    }
+    return functionInstance.apply();
   }
 
 }

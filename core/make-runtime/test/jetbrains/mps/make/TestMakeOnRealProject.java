@@ -86,9 +86,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
   private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
-  private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner() {
-
-  };
+  private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner();
 
   @Before
   public void beforeTest() throws IOException {
@@ -310,7 +308,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     solutionDescriptor.getDependencies().add(new Dependency(BootstrapLanguages.jdkRef(), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
-    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);
+    ModuleHandle handle = new ModulesMiner().loadModuleHandle(runtimeSolutionDescriptorFile);
     return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
 
@@ -330,7 +328,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
 
-    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    ModuleHandle handle = new ModulesMiner().loadModuleHandle(descriptorFile);
     return (Language) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
 
@@ -352,7 +350,7 @@ public class TestMakeOnRealProject extends WorkbenchMpsTest {
     
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 
-    ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
+    ModuleHandle handle = new ModulesMiner().loadModuleHandle(descriptorFile);
     final Solution rv = (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
     final SModel m1 = rv.getModelRoots().iterator().next().createModel("m1");
     ((SModelInternal) m1).addLanguage(MetaAdapterFactory.getLanguage(myCreatedLanguage.getModuleReference()));

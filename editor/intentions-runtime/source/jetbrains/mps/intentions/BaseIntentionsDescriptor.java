@@ -15,6 +15,14 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+/**
+ * @deprecated Replaced with {@link IntentionAspectBase}.
+ * This class is used in intentions generated with MPS 3.2, we keep it for binary compatibility.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public abstract class BaseIntentionsDescriptor {
   protected BaseIntentionsDescriptor() {
 

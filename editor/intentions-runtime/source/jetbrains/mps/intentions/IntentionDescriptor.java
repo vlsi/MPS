@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,12 +27,28 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * Date: 11/9/12
  */
 public interface IntentionDescriptor {
+  /**
+   * @deprecated concept is implied by {@link IntentionAspectDescriptor#getIntentions(SConceptId)}
+   * @return qualified name of the concept this intention is activated with
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   String getConcept();
 
+  /**
+   * @return name of the intention visible in general UI (without any context, as opposed to {@link IntentionExecutable#getDescription(SNode, EditorContext)})
+   */
   String getPresentation();
 
   String getPersistentStateKey();
 
+  /**
+   * @deprecated we don't use this value to filter out intentions, language is implied by aspect which provides the intention.
+   * @return name of the language this intention is active for.
+   * IMPORTANT Does not necessarily match that of applicable concept (e.g. intentions in lang.generator for core.BaseConcept)
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   String getLanguageFqName();
 
   IntentionType getType();

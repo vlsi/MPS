@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.ide.platform.refactoring.NodeLocation;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import javax.swing.JComponent;
@@ -49,13 +50,13 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     });
   }
   @Override
-  public Object getSelectedObject() {
+  public NodeLocation getSelectedObject() {
     Object selection = myTree.getSelectionPath().getLastPathComponent();
-    Object result = null;
+    NodeLocation result = null;
     if (selection instanceof SNodeTreeNode) {
-      result = ((SNodeTreeNode) selection).getSNode();
+      result = new NodeLocation.NodeLocationChild(((SNodeTreeNode) selection).getSNode());
     } else if (selection instanceof SModelTreeNode) {
-      result = ((SModelTreeNode) selection).getModel();
+      result = new NodeLocation.NodeLocationRoot(((SModelTreeNode) selection).getModel());
     }
     return result;
   }

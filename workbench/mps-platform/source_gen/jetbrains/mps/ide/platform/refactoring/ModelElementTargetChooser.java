@@ -6,5 +6,5 @@ import javax.swing.JComponent;
 
 public interface ModelElementTargetChooser {
   public JComponent getComponent();
-  public Object getSelectedObject();
+  public NodeLocation getSelectedObject();
 }

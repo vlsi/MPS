@@ -69,8 +69,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(dir, false);
-    for (ModuleHandle handle : moduleHandles) {
+    for (ModuleHandle handle : new ModulesMiner().collectModules(dir).getCollectedModules()) {
       if (!seen.add(handle.getDescriptor().getId())) continue;
       FileDataSource source = new FileDataSource(handle.getFile(), this);
       String stereotype = SModelStereotype.getStubStereotypeForId("project");
@@ -127,7 +126,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       final jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getReference());
       final IFile file = getSource().getFile();
 
-      final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);
+      final ModuleDescriptor moduleDesc = new ModulesMiner().loadModuleHandle(file).getDescriptor();
       new ProjectStructureBuilder(moduleDesc, file, model) {
         @Override
         public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor) {

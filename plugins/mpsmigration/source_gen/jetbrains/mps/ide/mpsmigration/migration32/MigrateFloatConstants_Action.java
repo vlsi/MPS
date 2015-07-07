@@ -6,16 +6,12 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.CommonDataKeys;
-import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 
@@ -36,19 +32,10 @@ public class MigrateFloatConstants_Action extends BaseAction {
       return false;
     }
     {
-      IOperationContext p = event.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       if (p == null) {
         return false;
       }
-    }
-    {
-      Project p = event.getData(CommonDataKeys.PROJECT);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
     }
     return true;
   }
@@ -56,11 +43,7 @@ public class MigrateFloatConstants_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)", "2214637407304092437");
 
-    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Migrate float constants with f|F", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT), event.getData(CommonDataKeys.PROJECT));
-    if (ModelAccess.instance().canWrite()) {
-      executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
-    } else {
-      executor.execAsCommand(event.getData(MPSCommonDataKeys.FRAME));
-    }
+    MigrationScriptExecutor executor = new MigrationScriptExecutor(script, MigrateFloatConstants_Action.this.getTemplatePresentation().getText(), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
   }
 }

@@ -14,7 +14,7 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      ShowHelp_ActionGroup.this.addAction("ContextHelp");
+      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action");
       ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForNode_Action");
       ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForRoot_Action");
       ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForAspect_Action");

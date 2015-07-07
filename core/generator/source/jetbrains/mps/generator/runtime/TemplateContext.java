@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,6 +68,17 @@ public interface TemplateContext {
    * @return new context that preserves input, but discards {@link #getInputName() mapping label}
    */
   TemplateContext subContext(Map<String, Object> variables);
+
+  /**
+   * Alternative to {@link #subContext(Map)} as it's rarely required to inject more than 1 variable at once, and to
+   * get a new contract, which preserves {@link #getInputName() mapping label}.
+   *
+   * @param name variable name, {@link #getVariable(String)}, not <code>null</code>
+   * @param value varaible value, can be <code>null</code>
+   * @return new context that preserves input and {@link #getInputName() mapping label}, with new value for named variable.
+   * @since 3.3
+   */
+  TemplateContext withVariable(String name, Object value);
 
   /**
    * @return new context that preserves input, but discards {@link #getInputName() mapping label}

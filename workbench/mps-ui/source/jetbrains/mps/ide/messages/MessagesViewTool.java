@@ -38,7 +38,6 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JList;
@@ -82,12 +81,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void openToolLater(final boolean setActive) {
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        getDefaultList().show(setActive);
-      }
-    });
+    new ShowList(getDefaultList(), setActive).execute();
   }
 
   public void clear() {
@@ -327,9 +321,15 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   private static class ShowList implements Runnable {
     private final MessageList myList;
+    private final boolean mySetActive;
 
     ShowList(@NotNull MessageList list) {
+      this(list, false);
+    }
+
+    ShowList(@NotNull MessageList list, boolean setActive) {
       myList = list;
+      mySetActive = setActive;
     }
 
     public void execute() {
@@ -338,7 +338,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
     @Override
     public void run() {
-      myList.show(false);
+      myList.show(mySetActive);
     }
   }
 }

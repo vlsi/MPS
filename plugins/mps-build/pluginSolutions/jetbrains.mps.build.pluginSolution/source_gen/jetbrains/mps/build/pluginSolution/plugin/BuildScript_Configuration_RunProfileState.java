@@ -32,7 +32,6 @@ import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.execution.api.configurations.ConsoleProcessListener;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -91,7 +90,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
     {
       ProcessHandler _processHandler = new Ant_Command().setTargetName_String(mainTaskName.value).setAntLocation_String((myRunConfiguration.getSettings().getUseOtherAntLocation() ? myRunConfiguration.getSettings().getOtherAntLocation() : null)).setOptions_String(myRunConfiguration.getSettings().getAntOptions()).setMacroToDefine_ListString(undefinedMacro.value).createProcess(file.value.getPath());
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
-      _processHandler.addProcessListener(new ConsoleProcessListener(_consoleView));
+      _consoleView.attachToProcess(_processHandler);
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           _consoleView.dispose();

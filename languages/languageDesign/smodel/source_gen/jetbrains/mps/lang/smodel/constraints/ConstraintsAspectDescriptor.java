@@ -113,6 +113,9 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x24b2bf7ce1a42fa0L) {
       return new PropertyIdRefExpression_Constraints();
     }
+    if (id == 0x9d98713f24a0e5bL) {
+      return new ChildAttributeQualifier_Constraints();
+    }
     return new BaseConstraintsDescriptor(conceptId);
   }
 }

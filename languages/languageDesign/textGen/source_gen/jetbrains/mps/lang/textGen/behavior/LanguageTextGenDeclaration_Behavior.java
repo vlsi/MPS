@@ -57,9 +57,6 @@ public class LanguageTextGenDeclaration_Behavior {
       return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode) SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, 0x11f7eb142ecL, "baseTextGen")));
     }
   }
-  public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
-    return "textGen";
-  }
   public static List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SAbstractConcept thisConcept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,14 +22,11 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.platform.watching.WatchedRoots;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -194,13 +191,13 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
     // load solutions
     Set<SModuleReference> existingModules = getModuleReferences();
+    final ModulesMiner modulesMiner = new ModulesMiner();
     for (Path modulePath : myProjectDescriptor.getModules()) {
       String path = modulePath.getPath();
       IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
-        ModuleDescriptor descriptor = ModulesMiner.getInstance().loadModuleDescriptor(descriptorFile);
-        if (descriptor != null) {
-          ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
+        ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
+        if (handle.getDescriptor() != null) {
           SModule module = ModuleRepositoryFacade.createModule(handle, this);
           SModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {

@@ -10,7 +10,6 @@ import java.io.File;
 import junit.framework.Assert;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.ant.execution.Ant_Command;
-import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.api.commands.OutputRedirector;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
@@ -50,7 +49,7 @@ public class RunCodeFromSolution_Test extends TestCase {
     ProcessHandler process = null;
     try {
       process = new Ant_Command().createProcess(scriptFile.getPath());
-    } catch (ExecutionException ex) {
+    } catch (Throwable ex) {
       ex.printStackTrace();
       Assert.fail("Exception during execution.");
     }

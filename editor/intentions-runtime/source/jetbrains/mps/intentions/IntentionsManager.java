@@ -28,8 +28,8 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTypeVisitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
-import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
+import jetbrains.mps.lang.script.runtime.RefactoringScript;
+import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -38,23 +38,30 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.util.DepthFirstConceptIterator;
+import org.jetbrains.mps.util.UniqueIterator;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -93,6 +100,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return ApplicationManager.getApplication().getComponent(IntentionsManager.class);
   }
 
+  // Collection of legacy intentions (i.e. originating not from IntentionAspectDescriptor, but loaded through class name mangling + migration scripts at the moment)
+  // Intentions coming from aspect are not cached in IntentionsManager and are managed as part of LanguageRuntime instance.
+  @Deprecated
+  @ToRemove(version = 3.3)
   private Set<IntentionFactory> myIntentionFactories = new HashSet<IntentionFactory>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactories = new HashMap<String, Set<IntentionFactory>>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactoriesAvailableInChildNodes = new HashMap<String, Set<IntentionFactory>>();
@@ -201,7 +212,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public synchronized boolean isIntentionDisabled(String persistentStateKey) {
-    checkLoaded();
     return getDisabledIntentions().contains(persistentStateKey);
   }
 
@@ -220,13 +230,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public synchronized void disableIntention(String persistentStateKey) {
-    checkLoaded();
-    myState.myDisabledIntentions.add(persistentStateKey);
+    getDisabledIntentions().add(persistentStateKey);
   }
 
   public synchronized void enableIntention(String persistentStateKey) {
-    checkLoaded();
-    myState.myDisabledIntentions.remove(persistentStateKey);
+    getDisabledIntentions().remove(persistentStateKey);
   }
 
   //-------------node info by intention-----------------
@@ -234,11 +242,34 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   @NotNull
   public synchronized Set<IntentionFactory> getAllIntentionFactories() {
     checkLoaded();
-    return Collections.unmodifiableSet(myIntentionFactories);
+    return new ModelAccessHelper(myRepository).runReadAction(new Computable<Set<IntentionFactory>>() {
+      @Override
+      public Set<IntentionFactory> compute() {
+        final HashSet<IntentionFactory> rv = new HashSet<IntentionFactory>();
+        for (LanguageRuntime lr : LanguageRegistry.getInstance().getAvailableLanguages()) {
+          final IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
+          if (intentionAspect != null) {
+            rv.addAll(intentionAspect.getAllIntentions());
+          }
+          final ScriptAspectDescriptor scriptAspect = lr.getAspect(ScriptAspectDescriptor.class);
+          if (scriptAspect != null) {
+            rv.addAll(new MigrationRefactoringIntentions(lr, scriptAspect).getIntentions());
+          }
+        }
+        rv.addAll(myIntentionFactories);
+        return rv;
+      }
+    });
   }
 
   //-------------reloading-----------------
 
+  /**
+   * @deprecated No direct registration of IntentionFactory shall happen any more, use {@link IntentionAspectDescriptor} and
+   * general {@link LanguageRuntime#getAspect(Class)} mechanism.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public synchronized void registerIntentionFactory(IntentionFactory intentionFactory) {
     if (!myIntentionFactories.add(intentionFactory)) {
       return;
@@ -262,12 +293,13 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void checkLoaded() {
-    if (myLoaded) return;
-    myLoaded = true;
-    load();
+    if (!myLoaded) {
+      myLoaded = true;
+      loadLegacyNonAspectIntentions();
+    }
   }
 
-  private void load() {
+  private void loadLegacyNonAspectIntentions() {
     // XXX here we assume ModuleRepositoryFacade is in fact facade to MPSModuleRepository, that's why we use ModelAccess of the latter
     myRepository.getModelAccess().runReadAction(new Runnable() {
       @Override
@@ -275,40 +307,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
           String className = getDescriptorClassName(language.getModuleReference());
-          initIntentionsDescriptor(language, className);
-        }
-        for (Language language : allLanguages) {
-          addMigrationsFromLanguage(language);
+          initLegacyIntentionsDescriptor(language, className);
         }
       }
     });
   }
-
-  private void addMigrationsFromLanguage(Language language) {
-    List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
-
-    Map<BaseMigrationScript, SNode> scripts = new HashMap<BaseMigrationScript, SNode>();
-    for (SNode migrationScript : migrationScripts) {
-      // IOperationContext operationContext = new ModuleContext(language, ...);
-      //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
-      BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null, migrationScript);
-      if (script == null) continue;
-      scripts.put(script, migrationScript);
-    }
-
-    for (BaseMigrationScript script : scripts.keySet()) {
-      SNode migrationScript = scripts.get(script);
-      for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
-        if (refactoring.isShowAsIntention()) {
-          SModuleReference languageReference = language.getModuleReference();
-          SNodeReference migrationReference = migrationScript.getReference();
-          IntentionFactory intention = new MigrationRefactoringAdapter(languageReference, refactoring, migrationReference);
-          IntentionsManager.getInstance().registerIntentionFactory(intention);
-        }
-      }
-    }
-  }
-
 
   private void clear() {
     myRepository.getModelAccess().runReadAction(new Runnable() {
@@ -323,10 +326,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  private void initIntentionsDescriptor(Language language, String classShortName) {
+  private void initLegacyIntentionsDescriptor(Language language, String classShortName) {
     try {
       Class<?> cls = myClassLoaderManager.getOwnClass(language, language.getModuleName() + "." + LanguageAspect.INTENTIONS.getName() + "." + classShortName);
-      if (cls != null) {
+      if (cls != null && BaseIntentionsDescriptor.class.isAssignableFrom(cls)) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();
       }
@@ -340,23 +343,69 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return true;
     Set<String> langNames = new HashSet<String>();
-    for (Language l : SModelOperations.getLanguages(node.getModel())) {
-      langNames.add(l.getModuleName());
+    // respect intentions from imported languages only
+    ArrayList<IntentionAspectDescriptor> activeIntentionAspects = new ArrayList<IntentionAspectDescriptor>();
+    // respect migration scripts from imported languages only
+    ArrayList<MigrationRefactoringIntentions> activeIntentionsFromMigrationScripts = new ArrayList<MigrationRefactoringIntentions>();
+    for (SLanguage l : SModelOperations.getAllLanguageImports(node.getModel())) {
+      langNames.add(l.getQualifiedName());
+      final LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(l);
+      if (lr == null) {
+        continue;
+      }
+      final IntentionAspectDescriptor intentionAspect = lr.getAspect(IntentionAspectDescriptor.class);
+      if (intentionAspect != null) {
+        activeIntentionAspects.add(intentionAspect);
+      }
+      final ScriptAspectDescriptor scriptsAspect = lr.getAspect(ScriptAspectDescriptor.class);
+      if (scriptsAspect != null) {
+        activeIntentionsFromMigrationScripts.add(new MigrationRefactoringIntentions(lr, scriptsAspect));
+      }
     }
 
 
     Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
     // there's no special meaning in using depth-first iterator, it's just the only one available at the moment
-    for (SAbstractConcept concept : new DepthFirstConceptIterator(node.getConcept())) {
-      final String conceptId = concept.getQualifiedName();
-      if (concept2FactoriesMap.containsKey(conceptId)) {
-        for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
-          if (!langNames.contains(intentionFactory.getLanguageFqName())) continue;
-          if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
-            continue;
-          }
-          if (!visitor.visit(intentionFactory)) {
-            return false;
+    // and looks pretty reasonable for the task (super-concepts first, then implemented interfaces)
+    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new DepthFirstConceptIterator(node.getConcept()))) {
+      final SConceptId conceptId = MetaIdHelper.getConcept(concept);
+      ArrayList<IntentionFactory> intentionsForConcept = new ArrayList<IntentionFactory>();
+      for (IntentionAspectDescriptor intentionAspect : activeIntentionAspects) {
+        final Collection<IntentionFactory> intentions = intentionAspect.getIntentions(conceptId);
+        if (intentions == null) {
+          continue;
+        }
+        intentionsForConcept.addAll(intentions);
+      }
+      for (MigrationRefactoringIntentions refactoringIntentions : activeIntentionsFromMigrationScripts) {
+        intentionsForConcept.addAll(refactoringIntentions.getIntentions(concept));
+      }
+      for (IntentionFactory intentionFactory : intentionsForConcept) {
+        if (isAncestor && !intentionFactory.isAvailableInChildNodes()) {
+          continue;
+        }
+        if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
+          continue;
+        }
+        if (!visitor.visit(intentionFactory)) {
+          return false;
+        }
+      }
+    }
+    if (!concept2FactoriesMap.isEmpty()) {
+      //
+      // compatibility code
+      for (SAbstractConcept concept : new DepthFirstConceptIterator(node.getConcept())) {
+        final String conceptId = concept.getQualifiedName();
+        if (concept2FactoriesMap.containsKey(conceptId)) {
+          for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
+            if (!langNames.contains(intentionFactory.getLanguageFqName())) continue;
+            if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
+              continue;
+            }
+            if (!visitor.visit(intentionFactory)) {
+              return false;
+            }
           }
         }
       }
@@ -450,6 +499,44 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     public void setDisabledIntentions(Set<String> disabledIntentions) {
       myDisabledIntentions = disabledIntentions;
+    }
+  }
+
+  /**
+   * Factory and filter by concept for intentions that originate from migration scripts
+   */
+  private static class MigrationRefactoringIntentions {
+    private final Collection<MigrationRefactoringAdapter> myIntentionAdapters;
+
+    public MigrationRefactoringIntentions(@NotNull LanguageRuntime lr, @NotNull ScriptAspectDescriptor scriptAspect) {
+      ArrayList<MigrationRefactoringAdapter> adapters = new ArrayList<MigrationRefactoringAdapter>();
+      for (RefactoringScript rs : scriptAspect.getRefactoringScripts()) {
+        for (AbstractMigrationRefactoring refactoring : rs.getRefactorings()) {
+          if (refactoring.isShowAsIntention()) {
+            adapters.add(new MigrationRefactoringAdapter(lr.getNamespace(), refactoring, rs.getScriptNode()));
+          }
+        }
+      }
+      myIntentionAdapters = adapters.isEmpty() ? Collections.<MigrationRefactoringAdapter>emptyList() : adapters;
+    }
+    @NotNull
+    public Collection<? extends IntentionFactory> getIntentions() {
+      return myIntentionAdapters;
+    }
+
+    @NotNull
+    public Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept) {
+      if (myIntentionAdapters.isEmpty()) {
+        return Collections.emptyList();
+      }
+      ArrayList<IntentionFactory> rv = new ArrayList<IntentionFactory>(myIntentionAdapters.size());
+      for (MigrationRefactoringAdapter a : myIntentionAdapters) {
+        // don't want to use IntentionDescriptor.getConcept():String, thus exposed AbstractMigrationRefactoring
+        if (a.getRefactoring().getApplicableConcept().equals(concept)) {
+          rv.add(a);
+        }
+      }
+      return rv;
     }
   }
 }

@@ -26,6 +26,9 @@
       <keyboard-shortcut first-keystroke="ctrl SUBTRACT" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl MINUS" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.Comment_Action" class="jetbrains.mps.ide.editor.actions.Comment_Action">
+      <keyboard-shortcut first-keystroke="ctrl SLASH" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.CompleteSmart_Action" class="jetbrains.mps.ide.editor.actions.CompleteSmart_Action">
       <keyboard-shortcut first-keystroke="ctrl shift SPACE" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl shift SPACE" keymap="Mac OS X" />
@@ -212,8 +215,6 @@
     <group id="IDE_Edit_ActionGroupcustom" />
     <group id="jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.editor.actions.Backspace_Action" />
-      <reference ref="jetbrains.mps.ide.editor.actions.Complete_Action" />
-      <reference ref="jetbrains.mps.ide.editor.actions.CompleteSmart_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.CopyThisDown_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.Delete_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />

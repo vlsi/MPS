@@ -141,7 +141,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
                   if (itnode12 == null) {
                     continue;
                   }
-                  TemplateContext context12 = context.subContext(null, itnode12);
+                  TemplateContext context12 = context.subContext(itnode12);
                   Collection<SNode> tlist13 = null;
                   final SNode copySrcInput13 = context12.getInput();
                   tlist13 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput13), copySrcMacro_8w4ply_b0a0e0c0b0b0f0b0f0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039571100", context12);
@@ -175,7 +175,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
           if (itnode15 == null) {
             continue;
           }
-          TemplateContext context15 = context.subContext(null, itnode15);
+          TemplateContext context15 = context.subContext(itnode15);
           Collection<SNode> tlist16 = null;
           final SNode copySrcInput16 = context15.getInput();
           tlist16 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput16), copySrcMacro_8w4ply_b0a0e0c0g0b0c, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/3308300503039720831", context15);
@@ -195,7 +195,7 @@ public class Templatemap__Script extends TemplateDeclarationBase implements Temp
           if (itnode18 == null) {
             continue;
           }
-          TemplateContext context18 = context.subContext(null, itnode18);
+          TemplateContext context18 = context.subContext(itnode18);
           Collection<SNode> tlist19 = null;
           final Iterable<SNode> copyListInput19 = QueriesGenerated.sourceNodesQuery_4394627182934963575(new SourceSubstituteMacroNodesContext(context18, copySrcListMacro_8w4ply_b0a0a3a2a7a1a2));
           tlist19 = environment.copyNodes(copyListInput19, copySrcListMacro_8w4ply_b0a0a3a2a7a1a2, "tpl/r:3ab3501c-2f4b-48e6-9b6c-e31ff8ef3185/4394627182934963449", context18);

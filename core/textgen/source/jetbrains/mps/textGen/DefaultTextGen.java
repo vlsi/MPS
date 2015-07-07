@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated part of legacy TextGen API, shall be removed along with the rest of API.
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class DefaultTextGen extends SNodeTextGen {
   @Override
   public void doGenerateText(SNode node) {

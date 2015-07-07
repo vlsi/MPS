@@ -20,7 +20,7 @@
     <file name="Order.java">
       <node id="4480898598423846009" at="16,0,17,0" concept="0" trace="value#()I" />
       <scope id="4480898598423846009" at="16,0,17,0" />
-      <unit id="5294483648489411750" at="10,0,18,0" name="jetbrains.mps.testbench.junit.Order" />
+      <unit id="5294483648489411750" at="13,0,18,0" name="jetbrains.mps.testbench.junit.Order" />
     </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411798">
@@ -96,7 +96,7 @@
       <scope id="5294483648489411924" at="60,0,64,0">
         <var name="listener" id="5294483648489411926" />
       </scope>
-      <unit id="5294483648489411798" at="12,0,65,0" name="jetbrains.mps.testbench.junit.DelegatingRunNotifier" />
+      <unit id="5294483648489411798" at="15,0,65,0" name="jetbrains.mps.testbench.junit.DelegatingRunNotifier" />
     </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411978">
@@ -151,7 +151,7 @@
         <var name="a" id="5294483648489412050" />
         <var name="b" id="5294483648489412052" />
       </scope>
-      <unit id="5294483648489412039" at="9,0,43,0" name="jetbrains.mps.testbench.junit.OrderComparator" />
+      <unit id="5294483648489412039" at="12,0,43,0" name="jetbrains.mps.testbench.junit.OrderComparator" />
     </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412205">
@@ -283,7 +283,7 @@
       <scope id="5294483648489412457" at="89,0,106,0">
         <var name="desc" id="5294483648489412458" />
       </scope>
-      <unit id="5294483648489412205" at="18,0,123,0" name="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+      <unit id="5294483648489412205" at="21,0,123,0" name="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
     </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412683">
@@ -325,7 +325,7 @@
       <scope id="5294483648489412694" at="14,0,33,0">
         <var name="outputs" id="5294483648489412695" />
       </scope>
-      <unit id="5294483648489412683" at="7,0,34,0" name="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
+      <unit id="5294483648489412683" at="10,0,34,0" name="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
     </file>
   </root>
 </debug-info>

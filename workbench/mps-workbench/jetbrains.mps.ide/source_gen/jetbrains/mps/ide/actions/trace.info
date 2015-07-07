@@ -2581,11 +2581,11 @@
       <node id="1223018726868" at="12,44,13,29" concept="18" />
       <node id="1223018726868" at="13,29,14,30" concept="6" />
       <node id="1223018726868" at="14,30,15,25" concept="6" />
-      <node id="3734045384532079199" at="16,9,17,104" concept="6" />
+      <node id="3734045384532079199" at="16,9,17,102" concept="6" />
       <node id="1223018726868" at="18,27,19,39" concept="6" />
       <node id="1223018726868" at="15,25,20,5" concept="20" />
       <node id="1223018726868" at="12,0,22,0" concept="4" trace="SolutionRefactoring_ActionGroup#()V" />
-      <scope id="1223018726868" at="16,9,17,104" />
+      <scope id="1223018726868" at="16,9,17,102" />
       <scope id="1223018726868" at="18,0,19,39">
         <var name="t" id="1223018726868" />
       </scope>
@@ -4956,30 +4956,40 @@
     <file name="CreateRootNode_ActionGroup.java">
       <node id="1743877180110185815" at="13,0,14,0" concept="16" trace="LOG" />
       <node id="1743877180110185815" at="14,0,15,0" concept="16" trace="ID" />
-      <node id="1743877180110185815" at="15,0,16,0" concept="16" trace="LABEL_ID_newRoot" />
-      <node id="1743877180110185815" at="16,39,17,32" concept="18" />
-      <node id="1743877180110185815" at="17,32,18,30" concept="6" />
-      <node id="1743877180110185815" at="18,30,19,25" concept="6" />
-      <node id="1743877180110185820" at="21,7,22,96" concept="12" />
-      <node id="1743877180110185820" at="22,96,23,66" concept="12" />
-      <node id="1743877180110185820" at="23,66,24,92" concept="6" />
-      <node id="1743877180110185820" at="24,92,25,58" concept="6" />
-      <node id="1743877180110185815" at="27,27,28,39" concept="6" />
-      <node id="1743877180110185820" at="20,9,26,7" concept="1" />
-      <node id="1743877180110185815" at="19,25,29,5" concept="20" />
-      <node id="1743877180110185815" at="16,0,31,0" concept="4" trace="CreateRootNode_ActionGroup#()V" />
-      <scope id="1743877180110185815" at="27,0,28,39">
+      <node id="1743877180110185815" at="15,0,16,0" concept="16" trace="LABEL_ID_mainRoot" />
+      <node id="1743877180110185815" at="16,0,17,0" concept="16" trace="LABEL_ID_newRoot" />
+      <node id="1743877180110185815" at="17,39,18,32" concept="18" />
+      <node id="1743877180110185815" at="18,32,19,30" concept="6" />
+      <node id="1743877180110185815" at="19,30,20,25" concept="6" />
+      <node id="7259558235998899210" at="22,7,23,97" concept="12" />
+      <node id="7259558235998899210" at="23,97,24,66" concept="12" />
+      <node id="7259558235998899210" at="24,66,25,92" concept="6" />
+      <node id="7259558235998899210" at="25,92,26,58" concept="6" />
+      <node id="1743877180110185820" at="28,7,29,96" concept="12" />
+      <node id="1743877180110185820" at="29,96,30,66" concept="12" />
+      <node id="1743877180110185820" at="30,66,31,92" concept="6" />
+      <node id="1743877180110185820" at="31,92,32,58" concept="6" />
+      <node id="1743877180110185815" at="34,27,35,39" concept="6" />
+      <node id="7259558235998899210" at="21,9,27,7" concept="1" />
+      <node id="1743877180110185820" at="27,7,33,7" concept="1" />
+      <node id="1743877180110185815" at="20,25,36,5" concept="20" />
+      <node id="1743877180110185815" at="17,0,38,0" concept="4" trace="CreateRootNode_ActionGroup#()V" />
+      <scope id="1743877180110185815" at="34,0,35,39">
         <var name="t" id="1743877180110185815" />
       </scope>
-      <scope id="1743877180110185815" at="27,27,28,39" />
-      <scope id="1743877180110185820" at="21,7,25,58">
+      <scope id="1743877180110185815" at="34,27,35,39" />
+      <scope id="7259558235998899210" at="22,7,26,58">
+        <var name="action" id="7259558235998899210" />
+        <var name="manager" id="7259558235998899210" />
+      </scope>
+      <scope id="1743877180110185820" at="28,7,32,58">
         <var name="action" id="1743877180110185820" />
         <var name="manager" id="1743877180110185820" />
       </scope>
-      <scope id="1743877180110185815" at="20,9,26,7" />
-      <scope id="1743877180110185815" at="16,39,29,5" />
-      <scope id="1743877180110185815" at="16,0,31,0" />
-      <unit id="1743877180110185815" at="12,0,32,0" name="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
+      <scope id="1743877180110185815" at="21,9,33,7" />
+      <scope id="1743877180110185815" at="17,39,36,5" />
+      <scope id="1743877180110185815" at="17,0,38,0" />
+      <unit id="1743877180110185815" at="12,0,39,0" name="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1755502566255660776">
@@ -6228,9 +6238,9 @@
       <node id="2443880313834662249" at="39,91,40,106" concept="6" />
       <node id="2443880313834662249" at="40,106,41,105" concept="6" />
       <node id="2443880313834662249" at="41,105,42,95" concept="6" />
-      <node id="2443880313834662249" at="42,95,43,97" concept="6" />
-      <node id="2443880313834662249" at="43,97,44,98" concept="6" />
-      <node id="2443880313834662249" at="44,98,45,96" concept="6" />
+      <node id="2443880313834662249" at="42,95,43,96" concept="6" />
+      <node id="2443880313834662249" at="43,96,44,97" concept="6" />
+      <node id="2443880313834662249" at="44,97,45,96" concept="6" />
       <node id="2443880313834662249" at="45,96,46,99" concept="6" />
       <node id="2443880313834662249" at="46,99,47,104" concept="6" />
       <node id="2443880313834662249" at="47,104,48,102" concept="6" />
@@ -7740,9 +7750,9 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/3734045384532066586">
-    <file name="RenameSolution_Action.java">
+    <file name="RenameModule_Action.java">
       <node id="3734045384532066586" at="18,0,19,0" concept="16" trace="ICON" />
-      <node id="3734045384532066586" at="19,34,20,37" concept="18" />
+      <node id="3734045384532066586" at="19,32,20,37" concept="18" />
       <node id="3734045384532066586" at="20,37,21,35" concept="6" />
       <node id="3734045384532066586" at="21,35,22,40" concept="6" />
       <node id="3734045384532066586" at="25,32,26,16" concept="13" />
@@ -7768,7 +7778,7 @@
       <node id="3734045384532066586" at="28,0,32,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="3734045384532066586" at="32,0,36,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="3734045384532066586" at="64,0,68,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="3734045384532066586" at="19,0,24,0" concept="4" trace="RenameSolution_Action#()V" />
+      <node id="3734045384532066586" at="19,0,24,0" concept="4" trace="RenameModule_Action#()V" />
       <node id="3734045384532066586" at="40,5,47,5" concept="1" />
       <node id="3734045384532066586" at="47,5,54,5" concept="1" />
       <node id="3734045384532066586" at="54,5,61,5" concept="1" />
@@ -7781,7 +7791,7 @@
       <scope id="3734045384532066586" at="51,22,52,21" />
       <scope id="3734045384532066586" at="58,22,59,21" />
       <scope id="3734045384532066586" at="65,96,66,182" />
-      <scope id="3734045384532066586" at="19,34,22,40" />
+      <scope id="3734045384532066586" at="19,32,22,40" />
       <scope id="3734045384532066586" at="24,0,28,0" />
       <scope id="3734045384532066586" at="28,0,32,0">
         <var name="_params" id="3734045384532066586" />
@@ -7810,7 +7820,7 @@
         <var name="_params" id="3734045384532066586" />
         <var name="event" id="3734045384532066586" />
       </scope>
-      <unit id="3734045384532066586" at="17,0,69,0" name="jetbrains.mps.ide.actions.RenameSolution_Action" />
+      <unit id="3734045384532066586" at="17,0,69,0" name="jetbrains.mps.ide.actions.RenameModule_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/3734045384533036331">
@@ -12062,10 +12072,10 @@
       <node id="7162597690968192621" at="80,50,81,48" concept="6" />
       <node id="7162597690968192621" at="81,48,82,50" concept="6" />
       <node id="7162597690968192621" at="82,50,83,40" concept="6" />
-      <node id="7162597690968192621" at="83,40,84,44" concept="6" />
-      <node id="7162597690968192621" at="84,44,85,42" concept="6" />
-      <node id="7162597690968192621" at="85,42,86,43" concept="6" />
-      <node id="7162597690968192621" at="86,43,87,48" concept="6" />
+      <node id="7162597690968192621" at="83,40,84,41" concept="6" />
+      <node id="7162597690968192621" at="84,41,85,44" concept="6" />
+      <node id="7162597690968192621" at="85,44,86,42" concept="6" />
+      <node id="7162597690968192621" at="86,42,87,48" concept="6" />
       <node id="7162597690968192621" at="87,48,88,55" concept="6" />
       <node id="7162597690968192621" at="88,55,89,39" concept="6" />
       <node id="7162597690968192621" at="89,39,90,48" concept="6" />

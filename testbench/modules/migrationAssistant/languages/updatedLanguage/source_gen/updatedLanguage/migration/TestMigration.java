@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 public class TestMigration extends MigrationScriptBase {
   public String getCaption() {
-    return "updatedLanguage.migration.TestMigration";
+    return "TestMigration";
   }
   public SNode execute(SModule m) {
     final GeneratedMatchingPattern pattern = new TestMigration.Pattern_53jq1q_a0a0a1();

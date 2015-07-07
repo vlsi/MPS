@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.COMMENT, new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_COMMENT(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_BACKSPACE(node));
   }
   public static class ExpressionStatement_Expression_Actions_DELETE extends AbstractCellAction {
@@ -34,6 +35,24 @@ public class ExpressionStatement_Expression_Actions {
       } else {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))));
       }
+    }
+  }
+  public static class ExpressionStatement_Expression_Actions_COMMENT extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public ExpressionStatement_Expression_Actions_COMMENT(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+    }
+    @Override
+    public boolean canExecute(EditorContext editorContext) {
+      return this.canExecute_internal(editorContext, this.myNode);
+    }
+    public boolean canExecute_internal(EditorContext editorContext, SNode node) {
+      return false;
     }
   }
   public static class ExpressionStatement_Expression_Actions_BACKSPACE extends AbstractCellAction {

@@ -9,11 +9,11 @@ import javax.swing.JButton;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.icons.AllIcons;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import java.awt.BorderLayout;
@@ -33,12 +33,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import javax.swing.JOptionPane;
-import com.intellij.openapi.command.CommandProcessorEx;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import com.intellij.openapi.application.ex.ApplicationEx;
-import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -58,9 +54,9 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private final Project myProject;
   private InlineProgressIndicator myIndicator;
   private MigrationScriptsController myController;
-  public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
-    myProject = project;
+  public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, @NotNull Project project) {
     ThreadUtils.assertEDT();
+    myProject = project;
     myFinder = finder;
     myFinder.addResultsListener(this);
     myQuery = query;
@@ -93,17 +89,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     myControlsPanel.add(myStatusPanel);
     myMainPanel.add(myControlsPanel, BorderLayout.SOUTH);
     this.myIndicator = new InlineProgressIndicator(true, createTaskInfo());
-    this.myController = new MigrationScriptsController(myFinder) {
-      @Override
-      public void runCommand(final Runnable cmd) {
-        getMPSProject().getModelAccess().executeCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            cmd.run();
-          }
-        });
-      }
-    };
+    this.myController = new MigrationScriptsController(myFinder);
   }
   public UsagesView getUsagesView() {
     return myUsagesView;
@@ -148,14 +134,14 @@ public abstract class MigrationScriptsView implements ResultsListener {
     };
   }
   private MPSProject getMPSProject() {
-    return (myProject != null ? myProject.getComponent(MPSProject.class) : null);
+    return myProject.getComponent(MPSProject.class);
   }
   private void applyMigrations() {
     ThreadUtils.assertEDT();
 
     final Collection<SearchResult<SNode>> aliveIncludedResults = new ModelAccessHelper(getMPSProject().getModelAccess()).runReadAction(new Computable<Collection<SearchResult<SNode>>>() {
       public Collection<SearchResult<SNode>> compute() {
-        return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes());
+        return myController.computeAliveIncludedResults(myUsagesView.getIncludedResultNodes(), getMPSProject().getRepository());
       }
     });
     if (aliveIncludedResults.size() == 0) {
@@ -166,27 +152,18 @@ public abstract class MigrationScriptsView implements ResultsListener {
     updateControls(false, myIndicator.getComponent());
 
     final TaskInfo task = createTaskInfo();
-    final Object cmd = ((CommandProcessorEx) CommandProcessor.getInstance()).startCommand(myProject, task.getTitle(), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION);
-    final Runnable finishCommand = new Runnable() {
-      @Override
-      public void run() {
-        ((CommandProcessorEx) CommandProcessor.getInstance()).finishCommand(myProject, cmd, null);
-      }
-    };
-
-    Runnable process = new Runnable() {
-      @Override
+    // There's no hidden knowledge in use of task.getProcessId(), just picked first string that might serve as group indicator,  
+    // as groupId is irrelevant for us anyway 
+    UndoRunnable ur = new UndoRunnable.Base(task.getTitle(), task.getProcessId(), true) {
       public void run() {
         myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
-        getMPSProject().getModelAccess().executeCommandInEDT(finishCommand);
         checkMigrationResults();
       }
     };
-    // execute the process on a pooled thread 
-    ((ApplicationEx) ApplicationManagerEx.getApplicationEx()).runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), myProject, getComponent(), task.getCancelText());
+    getMPSProject().getModelAccess().executeCommandInEDT(ur);
   }
   private void checkMigrationResults() {
-    final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
+    final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts());
     getMPSProject().getModelAccess().runReadInEDT(new Runnable() {
       @Override
       public void run() {

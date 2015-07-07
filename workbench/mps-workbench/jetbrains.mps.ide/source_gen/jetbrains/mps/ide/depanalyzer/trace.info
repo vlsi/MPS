@@ -310,8 +310,8 @@
       <node id="4327272822834353548" at="58,0,61,0" concept="13" trace="eq_tn82ka_a0a0a0b0g#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="4327272822834353487" at="33,41,38,5" concept="7" />
       <node id="4327272822834353528" at="44,31,50,9" concept="7" />
+      <node id="4327272822834357642" at="24,0,33,0" concept="8" trace="cyclePaths#(Ljetbrains/mps/ide/depanalyzer/DepLink;)Ljava/util/List;" />
       <node id="4327272822834353526" at="43,9,52,7" concept="7" />
-      <node id="4327272822834357642" at="19,0,33,0" concept="8" trace="cyclePaths#(Ljetbrains/mps/ide/depanalyzer/DepLink;)Ljava/util/List;" />
       <node id="4327272822834353520" at="38,5,56,5" concept="6" />
       <node id="4327272822834511844" at="33,0,58,0" concept="8" trace="nextPathLevel#(Ljetbrains/mps/ide/depanalyzer/DepLink;)V" />
       <scope id="4327272822834332267" at="16,61,17,37" />
@@ -333,10 +333,10 @@
         <var name="cycles" id="4327272822834353447" />
       </scope>
       <scope id="4327272822834353527" at="44,31,51,17" />
-      <scope id="4327272822834353525" at="43,9,55,22" />
-      <scope id="4327272822834357642" at="19,0,33,0">
+      <scope id="4327272822834357642" at="24,0,33,0">
         <var name="depLink" id="4327272822834353474" />
       </scope>
+      <scope id="4327272822834353525" at="43,9,55,22" />
       <scope id="4327272822834353520" at="38,5,56,5">
         <var name="ch" id="4327272822834353521" />
       </scope>
@@ -387,6 +387,7 @@
       <node id="8308695187244013109" at="96,32,97,82" concept="10" />
       <node id="8308695187244536096" at="36,10,38,5" concept="0" />
       <node id="7957327820049819316" at="40,0,43,0" concept="8" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="7957327820042468423" at="46,0,49,0" concept="8" trace="getCapturedDependencies#()Ljava/lang/Iterable;" />
       <node id="6015823014695284494" at="49,0,52,0" concept="8" trace="isUsedLanguage#()Z" />
       <node id="978271742633931677" at="52,0,55,0" concept="8" trace="setCycles#(Ljava/lang/Iterable;)V" />
       <node id="1942098792227681896" at="55,0,58,0" concept="8" trace="isCyclic#()Z" />
@@ -398,7 +399,6 @@
       <node id="8308695187244534875" at="33,39,38,5" concept="7" />
       <node id="196824748695318789" at="69,32,74,7" concept="16" />
       <node id="8308695187244664237" at="85,70,90,8" concept="9" />
-      <node id="7957327820042468423" at="43,0,49,0" concept="8" trace="getCapturedDependencies#()Ljava/lang/Iterable;" />
       <node id="1687929941448032767" at="24,0,32,0" concept="2" trace="ModuleDependencyNode#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljava/lang/Iterable;Z)V" />
       <node id="8308695187244502995" at="32,0,40,0" concept="8" trace="updateIcon#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="4327272822835647176" at="64,53,75,5" concept="6" />
@@ -417,6 +417,7 @@
       <scope id="8308695187244634851" at="91,20,92,13" />
       <scope id="8308695187243976594" at="96,32,97,82" />
       <scope id="7957327820049819316" at="40,0,43,0" />
+      <scope id="7957327820042468423" at="46,0,49,0" />
       <scope id="6015823014695284494" at="49,0,52,0" />
       <scope id="978271742633931677" at="52,0,55,0">
         <var name="cycles" id="4327272822835569979" />
@@ -433,7 +434,6 @@
       <scope id="8308695187244502999" at="32,49,38,5">
         <var name="m" id="8308695187244534121" />
       </scope>
-      <scope id="7957327820042468423" at="43,0,49,0" />
       <scope id="1687929941448032767" at="24,0,32,0">
         <var name="isUsedLanguage" id="1687929941448042093" />
         <var name="module" id="1687929941448041032" />
@@ -803,7 +803,7 @@
       <node id="4327272822834154162" at="70,52,75,5" concept="16" />
       <node id="7016418403676320291" at="22,0,29,0" concept="2" trace="DepLink#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;Ljetbrains/mps/ide/depanalyzer/DependencyUtil/LinkType;)V" />
       <node id="7016418403676320338" at="45,0,53,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
-      <node id="4327272822834154140" at="64,0,78,0" concept="8" trace="allDependencies#()Ljava/util/List;" />
+      <node id="4327272822834154140" at="67,0,78,0" concept="8" trace="allDependencies#()Ljava/util/List;" />
       <scope id="7016418403676320329" at="29,35,30,22" />
       <scope id="7016418403676320335" at="32,27,33,20" />
       <scope id="7016418403678079802" at="39,30,40,27" />
@@ -842,7 +842,7 @@
         <var name="q" id="4327272822834154151" />
         <var name="rv" id="4327272822834154144" />
       </scope>
-      <scope id="4327272822834154140" at="64,0,78,0" />
+      <scope id="4327272822834154140" at="67,0,78,0" />
       <unit id="7016418403676320274" at="14,0,79,0" name="jetbrains.mps.ide.depanalyzer.DepLink" />
     </file>
   </root>
@@ -1107,8 +1107,8 @@
       <node id="7957327820041262890" at="50,95,65,5" concept="16" />
       <node id="3805046970175494610" at="157,29,172,9" concept="7" />
       <node id="7957327820038848458" at="86,66,107,11" concept="15" />
+      <node id="7957327820040430523" at="46,0,68,0" concept="8" trace="build#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/ide/depanalyzer/DepLink;" />
       <node id="7957327820038680658" at="85,9,108,9" concept="6" />
-      <node id="7957327820040430523" at="43,0,68,0" concept="8" trace="build#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/ide/depanalyzer/DepLink;" />
       <node id="978271742633845015" at="74,5,187,5" concept="15" />
       <node id="7016418403676706046" at="68,0,190,0" concept="8" trace="dependencies#(Ljetbrains/mps/ide/depanalyzer/DependencyUtil/Role;Lorg/jetbrains/mps/openapi/module/SModuleReference;)Ljava/util/List;" />
       <scope id="7016418403677376099" at="76,26,76,26" />
@@ -1322,11 +1322,11 @@
         <var name="visited" id="7016418403677739624" />
       </scope>
       <scope id="7957327820038680661" at="86,66,107,11" />
+      <scope id="7957327820040430523" at="46,0,68,0">
+        <var name="module" id="7957327820040598376" />
+      </scope>
       <scope id="7957327820038680658" at="85,9,108,9">
         <var name="dep" id="7957327820038680664" />
-      </scope>
-      <scope id="7957327820040430523" at="43,0,68,0">
-        <var name="module" id="7957327820040598376" />
       </scope>
       <scope id="978271742633845018" at="77,16,120,0" />
       <scope id="978271742633845001" at="68,92,188,18">
@@ -1343,9 +1343,9 @@
       <unit id="978271742633845246" at="205,18,209,5" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$3" />
       <unit id="978271742633845272" at="212,126,216,5" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$4" />
       <unit id="978271742633845282" at="216,18,220,5" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$5" />
+      <unit id="7693590883518970021" at="258,0,278,0" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$Role" />
       <unit id="3926887065466327645" at="278,0,302,0" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$Dependency" />
       <unit id="7693590883518970005" at="222,0,248,0" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$LinkType" />
-      <unit id="7693590883518970021" at="248,0,278,0" name="jetbrains.mps.ide.depanalyzer.DependencyUtil$Role" />
       <unit id="978271742633844808" at="32,0,354,0" name="jetbrains.mps.ide.depanalyzer.DependencyUtil" />
     </file>
   </root>

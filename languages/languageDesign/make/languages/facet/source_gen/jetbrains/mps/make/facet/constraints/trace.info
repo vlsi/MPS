@@ -340,8 +340,8 @@
       <node id="6311899720716100469" at="93,0,98,0" concept="5" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="8900048180537911692" at="39,56,45,5" concept="4" />
       <node id="5848593913396914462" at="62,0,69,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+      <node id="8900048180537901814" at="39,0,48,0" concept="11" trace="hackCondition#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
       <node id="5848593913396898489" at="60,22,69,7" concept="6" />
-      <node id="8900048180537901814" at="35,0,48,0" concept="11" trace="hackCondition#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
       <node id="8857655676208326520" at="71,22,88,7" concept="6" />
       <node id="6311899720715974635" at="49,0,92,0" concept="11" trace="getAvailableFacets#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <scope id="4799451663045878233" at="30,41,31,43" />
@@ -382,7 +382,7 @@
       <scope id="5848593913396914462" at="62,0,69,0">
         <var name="it" id="5848593913396914462" />
       </scope>
-      <scope id="8900048180537901814" at="35,0,48,0">
+      <scope id="8900048180537901814" at="39,0,48,0">
         <var name="module" id="8900048180537903614" />
       </scope>
       <scope id="6311899720715974639" at="49,71,90,18">

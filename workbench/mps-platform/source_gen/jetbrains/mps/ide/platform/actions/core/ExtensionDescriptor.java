@@ -4,20 +4,14 @@ package jetbrains.mps.ide.platform.actions.core;
 
 import jetbrains.mps.smodel.structure.DefaultExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.ide.platform.MoveNodesAction")};
-  private Extension[] extensions = new Extension[]{new MoveNodesDefault.ExtensionFunction()};
+  private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.ide.platform.MoveNodes"), new ExtensionPoint("jetbrains.mps.ide.platform.MoveNodesAction_Old")};
   public ExtensionDescriptor() {
   }
   @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
     return Arrays.asList(extensionPoints);
-  }
-  @Override
-  public Iterable<? extends Extension> getExtensions() {
-    return Arrays.asList(extensions);
   }
 }

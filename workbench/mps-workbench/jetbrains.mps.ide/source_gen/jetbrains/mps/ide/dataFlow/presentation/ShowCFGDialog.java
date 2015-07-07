@@ -4,9 +4,8 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JScrollPane;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -15,9 +14,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
@@ -34,8 +31,10 @@ public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
-  public ShowCFGDialog(@NotNull ControlFlowGraph<InstructionWrapper> graph, @NotNull final IOperationContext operationContext, @NotNull Project project, @NotNull String title) {
-    super(project);
+  private final MPSProject myProject;
+  public ShowCFGDialog(@NotNull ControlFlowGraph<InstructionWrapper> graph, @NotNull MPSProject project, @NotNull String title) {
+    super(project.getProject());
+    myProject = project;
     this.myComponent = new ShowCFGDialog.MyComponent();
     this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
     this.myScrollPane.setBackground(this.getBackground());
@@ -60,16 +59,16 @@ public class ShowCFGDialog extends DialogWrapper {
           menu.show(event.getComponent(), event.getX(), event.getY());
           ruleItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent p0) {
-              openNode(operationContext, ruleNodeReference);
+              openNode(ruleNodeReference);
             }
           });
           nodeItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent p0) {
-              openNode(operationContext, sourceRef);
+              openNode(sourceRef);
             }
           });
         } else {
-          openNode(operationContext, sourceRef);
+          openNode(sourceRef);
         }
       }
     });
@@ -77,13 +76,13 @@ public class ShowCFGDialog extends DialogWrapper {
     setTitle(title);
     init();
   }
-  private void openNode(final IOperationContext operationContext, final SNodeReference nodeReference) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+  private void openNode(final SNodeReference nodeReference) {
+    myProject.getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
         if (nodeReference != null) {
-          SNode node = nodeReference.resolve(MPSModuleRepository.getInstance());
+          SNode node = nodeReference.resolve(myProject.getRepository());
           if (node != null) {
-            NavigationSupport.getInstance().openNode(operationContext, node, true, true);
+            NavigationSupport.getInstance().openNode(myProject, node, true, true);
           }
         }
       }

@@ -96,7 +96,7 @@
       <node id="8010731360436062912" at="12,0,17,0" concept="10" trace="init#()V" />
       <node id="6339244025084690529" at="22,65,27,5" concept="20" />
       <node id="6339244025084693332" at="31,0,36,0" concept="10" trace="processThrowable#(Ljava/lang/Throwable;)V" />
-      <node id="3310779261129642871" at="18,0,30,0" concept="16" trace="main#([Ljava/lang/String;)V" />
+      <node id="3310779261129642871" at="21,0,30,0" concept="16" trace="main#([Ljava/lang/String;)V" />
       <scope id="3310779261129642943" at="8,45,9,16" />
       <scope id="6339244025084690530" at="23,9,24,21" />
       <scope id="6339244025084690535" at="25,0,26,35">
@@ -115,7 +115,7 @@
       <scope id="3310779261129642874" at="21,42,28,20">
         <var name="executor" id="8010731360436131052" />
       </scope>
-      <scope id="3310779261129642871" at="18,0,30,0">
+      <scope id="3310779261129642871" at="21,0,30,0">
         <var name="args" id="3310779261129642936" />
       </scope>
       <unit id="3310779261129642822" at="7,0,37,0" name="jetbrains.mps.baseLanguage.unitTest.execution.server.CachingTestExecutor" />
@@ -163,8 +163,8 @@
       <node id="7740092685901106555" at="64,24,70,5" concept="21" />
       <node id="6339244025084642560" at="64,0,72,0" concept="10" trace="run#()V" />
       <node id="8104042066207042265" at="41,0,50,0" concept="10" trace="createTestsContributor#()Ljetbrains/mps/baseLanguage/unitTest/execution/server/TestsContributor;" />
+      <node id="5881102044690167887" at="54,0,63,0" concept="16" trace="main#([Ljava/lang/String;)V" />
       <node id="6339244025084675860" at="78,0,88,0" concept="10" trace="exit#()V" />
-      <node id="5881102044690167887" at="51,0,63,0" concept="16" trace="main#([Ljava/lang/String;)V" />
       <scope id="8104042066207042255" at="37,68,38,47" />
       <scope id="704749968834663894" at="44,9,45,53" />
       <scope id="704749968834663889" at="46,0,47,36">
@@ -205,10 +205,10 @@
         <var name="listener" id="6339244025084616494" />
       </scope>
       <scope id="8104042066207042265" at="41,0,50,0" />
-      <scope id="6339244025084675860" at="78,0,88,0" />
-      <scope id="5881102044690167887" at="51,0,63,0">
+      <scope id="5881102044690167887" at="54,0,63,0">
         <var name="args" id="5881102044690167897" />
       </scope>
+      <scope id="6339244025084675860" at="78,0,88,0" />
       <unit id="5881102044690167886" at="13,0,89,0" name="jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor" />
     </file>
   </root>

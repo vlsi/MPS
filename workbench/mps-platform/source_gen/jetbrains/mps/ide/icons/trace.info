@@ -22,6 +22,7 @@
       <node id="2434140849679604373" at="58,0,59,0" concept="12" trace="LOG" />
       <node id="2434140849679604378" at="59,0,60,0" concept="12" trace="IMAGE_LOADED" />
       <node id="2434140849679604388" at="60,0,61,0" concept="12" trace="ourPathsToIcons" />
+      <node id="189703917320704808" at="64,0,65,0" concept="12" trace="ourAspectsToIcons" />
       <node id="2434140849679605140" at="70,31,71,16" concept="9" />
       <node id="2434140849679605143" at="74,32,75,16" concept="9" />
       <node id="2434140849679604462" at="80,78,81,34" concept="9" />
@@ -176,7 +177,6 @@
       <node id="2434140849679604949" at="301,34,304,7" concept="6" />
       <node id="2434140849679604997" at="312,30,315,7" concept="6" />
       <node id="189703917320704793" at="323,67,326,5" concept="6" />
-      <node id="189703917320704808" at="61,0,65,0" concept="12" trace="ourAspectsToIcons" />
       <node id="2434140849679604414" at="69,0,73,0" concept="7" trace="getIconWidth#()I" />
       <node id="2434140849679604417" at="73,0,77,0" concept="7" trace="getIconHeight#()I" />
       <node id="2434140849679604600" at="171,21,175,5" concept="6" />
@@ -209,7 +209,7 @@
       <node id="2434140849679605156" at="91,64,106,5" concept="6" />
       <node id="2434140849679604775" at="250,0,265,0" concept="13" trace="getIconFor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljavax/swing/Icon;" />
       <node id="2434140849679604669" at="188,100,205,7" concept="6" />
-      <node id="2434140849679604580" at="163,0,185,0" concept="13" trace="getIconForConceptFQName#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="2434140849679604580" at="167,0,185,0" concept="13" trace="getIconForConceptFQName#(Ljava/lang/String;)Ljavax/swing/Icon;" />
       <node id="2434140849679604651" at="186,50,208,5" concept="14" />
       <node id="2434140849679604868" at="278,28,300,7" concept="15" />
       <node id="2434140849679604639" at="185,0,211,0" concept="13" trace="getIconForNamespace#(Ljava/lang/String;)Ljavax/swing/Icon;" />
@@ -386,11 +386,11 @@
         <var name="module" id="2434140849679604778" />
       </scope>
       <scope id="189703917320704822" at="329,10,345,106" />
+      <scope id="2434140849679604580" at="167,0,185,0">
+        <var name="conceptFQName" id="2434140849679604583" />
+      </scope>
       <scope id="2434140849679604661" at="187,9,205,7">
         <var name="language" id="2434140849679604663" />
-      </scope>
-      <scope id="2434140849679604580" at="163,0,185,0">
-        <var name="conceptFQName" id="2434140849679604583" />
       </scope>
       <scope id="2434140849679604644" at="185,60,209,22">
         <var name="className" id="2434140849679604646" />

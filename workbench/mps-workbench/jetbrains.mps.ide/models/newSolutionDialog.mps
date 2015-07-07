@@ -1100,6 +1100,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3r5LMLzk2PE" role="3cqZAp">
+          <node concept="3SKdUq" id="3r5LMLzk2Z5" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME it's suspicious to check existence of a model directory to tell existence of a module" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="3r5LMLzk3hd" role="3cqZAp">
+          <node concept="3SKdUq" id="3r5LMLzk3qE" role="3SKWNk">
+            <property role="3SKdUp" value="E.g. it might be empty, or named differently. Left intact for now, although deserves a refactoring" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="5AqjJyeyivO" role="3cqZAp">
           <node concept="3clFbS" id="5AqjJyeyivP" role="3clFbx">
             <node concept="3cpWs6" id="5AqjJyeypv6" role="3cqZAp">
@@ -1109,21 +1119,40 @@
             </node>
           </node>
           <node concept="22lmx$" id="5AqjJyeyiJQ" role="3clFbw">
-            <node concept="2OqwBi" id="5AqjJyeyiJI" role="3uHU7B">
-              <node concept="2OqwBi" id="5AqjJyeyiwW" role="2Oq$k0">
-                <node concept="37vLTw" id="3GM_nagTw7R" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
-                </node>
-                <node concept="liA8E" id="5AqjJyeyix1" role="2OqNvi">
-                  <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
-                  <node concept="10M0yZ" id="5AqjJyeyixc" role="37wK5m">
-                    <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
-                    <ref role="3cqZAo" to="cu2c:~Language.LANGUAGE_MODELS" resolve="LANGUAGE_MODELS" />
+            <node concept="22lmx$" id="3r5LMLzk3wL" role="3uHU7B">
+              <node concept="2OqwBi" id="5AqjJyeyiJI" role="3uHU7B">
+                <node concept="2OqwBi" id="5AqjJyeyiwW" role="2Oq$k0">
+                  <node concept="37vLTw" id="3GM_nagTw7R" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
+                  </node>
+                  <node concept="liA8E" id="5AqjJyeyix1" role="2OqNvi">
+                    <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
+                    <node concept="10M0yZ" id="5AqjJyeyixc" role="37wK5m">
+                      <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
+                      <ref role="3cqZAo" to="cu2c:~Language.LANGUAGE_MODELS" resolve="LANGUAGE_MODELS" />
+                    </node>
                   </node>
                 </node>
+                <node concept="liA8E" id="5AqjJyeyiJN" role="2OqNvi">
+                  <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                </node>
               </node>
-              <node concept="liA8E" id="5AqjJyeyiJN" role="2OqNvi">
-                <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+              <node concept="2OqwBi" id="3r5LMLzk3As" role="3uHU7w">
+                <node concept="2OqwBi" id="3r5LMLzk3At" role="2Oq$k0">
+                  <node concept="37vLTw" id="3r5LMLzk3Au" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5AqjJyeyix3" resolve="moduleDir" />
+                  </node>
+                  <node concept="liA8E" id="3r5LMLzk3Av" role="2OqNvi">
+                    <ref role="37wK5l" to="59et:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
+                    <node concept="10M0yZ" id="3r5LMLzk3Aw" role="37wK5m">
+                      <ref role="1PxDUh" to="cu2c:~Language" resolve="Language" />
+                      <ref role="3cqZAo" to="cu2c:~Language.LEGACY_LANGUAGE_MODELS" resolve="LEGACY_LANGUAGE_MODELS" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="liA8E" id="3r5LMLzk3Ax" role="2OqNvi">
+                  <ref role="37wK5l" to="59et:~IFile.exists():boolean" resolve="exists" />
+                </node>
               </node>
             </node>
             <node concept="2OqwBi" id="5AqjJyeyiJT" role="3uHU7w">
@@ -1282,14 +1311,15 @@
                 <ref role="1Pybhc" to="cu2c:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
                 <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
                 <node concept="2OqwBi" id="1Yd98ZZnqHL" role="37wK5m">
-                  <node concept="2YIFZM" id="2DWNAT6xr$2" role="2Oq$k0">
-                    <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                    <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                  </node>
                   <node concept="liA8E" id="1Yd98ZZnqHP" role="2OqNvi">
                     <ref role="37wK5l" to="ztul:~ModulesMiner.loadModuleHandle(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner$ModuleHandle" resolve="loadModuleHandle" />
                     <node concept="37vLTw" id="2BHiRxgm6CV" role="37wK5m">
                       <ref role="3cqZAo" node="7BBl3KIwk$e" resolve="descriptorFile" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="7LkutxgTCBI" role="2Oq$k0">
+                    <node concept="1pGfFk" id="7LkutxgTCBJ" role="2ShVmc">
+                      <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
                     </node>
                   </node>
                 </node>
@@ -1874,9 +1904,10 @@
               <ref role="1Pybhc" to="cu2c:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
               <ref role="37wK5l" to="cu2c:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
               <node concept="2OqwBi" id="1Yd98ZZnqFZ" role="37wK5m">
-                <node concept="2YIFZM" id="2DWNAT6xmWb" role="2Oq$k0">
-                  <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
-                  <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
+                <node concept="2ShNRf" id="7LkutxgTBWX" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7LkutxgTCsh" role="2ShVmc">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="1Yd98ZZnqG3" role="2OqNvi">
                   <ref role="37wK5l" to="ztul:~ModulesMiner.loadModuleHandle(jetbrains.mps.vfs.IFile):jetbrains.mps.library.ModulesMiner$ModuleHandle" resolve="loadModuleHandle" />
@@ -1974,9 +2005,10 @@
                     <ref role="3cqZAo" node="1Yd98ZZnqJk" resolve="descriptorFile" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="2DWNAT6xtn4" role="2Oq$k0">
-                  <ref role="37wK5l" to="ztul:~ModulesMiner.getInstance():jetbrains.mps.library.ModulesMiner" resolve="getInstance" />
-                  <ref role="1Pybhc" to="ztul:~ModulesMiner" resolve="ModulesMiner" />
+                <node concept="2ShNRf" id="7LkutxgTCy4" role="2Oq$k0">
+                  <node concept="1pGfFk" id="7LkutxgTCy5" role="2ShVmc">
+                    <ref role="37wK5l" to="ztul:~ModulesMiner.&lt;init&gt;()" resolve="ModulesMiner" />
+                  </node>
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxglK3h" role="37wK5m">

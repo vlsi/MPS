@@ -43,7 +43,7 @@ public class Templatestring_x0020switch_x0020template extends TemplateDeclaratio
           if (itnode2 == null) {
             continue;
           }
-          TemplateContext context2 = context.subContext(null, itnode2);
+          TemplateContext context2 = context.subContext(itnode2);
           final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, "jetbrains.mps.baseLanguage.structure.SwitchCase"));
           try {
             environment.nodeCopied(context2, tnode3, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422211");

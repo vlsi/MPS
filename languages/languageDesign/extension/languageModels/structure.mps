@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -213,6 +214,9 @@
     <node concept="PrWs8" id="3zLwYDe0E2G" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="PrWs8" id="UBgfI9ge5M" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2UKVRofbKn5">
     <property role="19KtqR" value="true" />
@@ -269,6 +273,9 @@
     <node concept="PrWs8" id="3tZJV06aagS" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="PrWs8" id="UBgfI9gejr" role="PzmwI">
+      <ref role="PrY4T" to="oubp:UBgfI9exfH" resolve="AutoInitClassLike" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1it1kXyre2A">
     <property role="3GE5qa" value="overlapping" />
@@ -312,7 +319,7 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="ApplyOverlappingExtensionOperation" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="apply" />
+    <property role="34LRSv" value="get" />
     <property role="3GE5qa" value="overlapping" />
     <ref role="1TJDcQ" to="tpee:h_B$H5g" resolve="AbstractOperation" />
     <node concept="1TJgyj" id="21KXiZCIMF8" role="1TKVEi">

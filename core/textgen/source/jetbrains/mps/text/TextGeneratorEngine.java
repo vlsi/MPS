@@ -18,20 +18,17 @@ package jetbrains.mps.text;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.text.impl.JavaTextUnit;
-import jetbrains.mps.text.impl.RegularTextUnit;
-import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.text.impl.ModelOutline;
+import jetbrains.mps.text.rt.TextGenAspectBase;
+import jetbrains.mps.text.rt.TextGenAspectDescriptor;
+import jetbrains.mps.textGen.TextGenRegistry;
 import jetbrains.mps.util.NamedThreadFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -118,16 +115,14 @@ public final class TextGeneratorEngine {
     }
   }
 
-  /**
-   * FIXME shall be part of TextGenAspect, now it's primitive 'output file per root node'
-   */
   private List<TextUnit> breakdownToUnits(@NotNull SModel model) {
-    final boolean needsJava = SModelOperations.getAllLanguageImports(model).contains(MetaAdapterFactory.getLanguage(BootstrapLanguages.baseLanguageRef()));
-    ArrayList<TextUnit> rv = new ArrayList<TextUnit>();
-    for (SNode root : model.getRootNodes()) {
-      String name = TextGen.getFileName(root);
-      rv.add(needsJava ? new JavaTextUnit(root, name) : new RegularTextUnit(root, name));
+    Collection<TextGenAspectDescriptor> tgad = TextGenRegistry.getInstance().getAspects(model);
+    ModelOutline rv = new ModelOutline(model);
+    for (TextGenAspectDescriptor d : tgad) {
+      if (d instanceof TextGenAspectBase) {
+        ((TextGenAspectBase) d).breakdownToUnits(rv);
+      }
     }
-    return rv;
+    return rv.getUnits();
   }
 }

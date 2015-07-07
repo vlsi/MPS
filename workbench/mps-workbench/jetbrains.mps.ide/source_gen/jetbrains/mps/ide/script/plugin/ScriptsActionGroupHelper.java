@@ -12,8 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.NameUtil;
@@ -30,6 +32,7 @@ public class ScriptsActionGroupHelper {
   public ScriptsActionGroupHelper() {
   }
   public static Set<String> getSelectedScripts() {
+    // OMG... static field to keep state of checked scripts in an action... 
     return ourSelectedScripts;
   }
   public static void sortScripts(List<SNode> scripts) {
@@ -63,7 +66,10 @@ public class ScriptsActionGroupHelper {
   public static List<SNode> getMigrationScripts(List<Language> languages) {
     List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
-      ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(MigrationScriptUtil.getMigrationScripts(language)));
+      SModel m = LanguageAspect.SCRIPTS.get(language);
+      if (m != null) {
+        ListSequence.fromList(migrationScripts).addSequence(ListSequence.fromList(SModelOperations.roots(m, MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"))));
+      }
     }
     return migrationScripts;
   }
@@ -155,43 +161,6 @@ public class ScriptsActionGroupHelper {
       }
     }
     return result;
-  }
-  public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
-    Map<String, List<SNode>> byBuild = new HashMap<String, List<SNode>>();
-    for (SNode migrationScript : migrationScripts) {
-      String build = SPropertyOperations.getString(migrationScript, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild"));
-      if (build == null) {
-        build = "<unspecified>";
-      }
-      if (!(byBuild.containsKey(build))) {
-        byBuild.put(build, new ArrayList<SNode>());
-      }
-      ListSequence.fromList(byBuild.get(build)).addElement(migrationScript);
-    }
-    Set<String> sorted = new TreeSet<String>(byBuild.keySet());
-    for (String build : sorted) {
-      BaseGroup categoryGroup = new BaseGroup("migrate to " + build, "");
-      for (SNode script : byBuild.get(build)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement"), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title")), null), applyToSelection));
-      }
-      categoryGroup.setPopup(true);
-      ownerGroup.add(categoryGroup);
-    }
-  }
-  public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
-    List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
-    if (ListSequence.fromList(migrationScripts).isEmpty()) {
-      return;
-    }
-    BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleName(), "");
-    for (SNode script : migrationScripts) {
-      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), "enhancement"), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title")), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild"))), applyToSelection));
-    }
-    if (!((migrationScripts.isEmpty()))) {
-      languageScriptsGroup.addSeparator();
-    }
-    languageScriptsGroup.setPopup(true);
-    ownerGroup.add(languageScriptsGroup);
   }
   public static String makeScriptActionName(String category, String title, String build) {
     StringBuilder sb = new StringBuilder();

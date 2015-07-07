@@ -5,11 +5,10 @@ package jetbrains.mps.ide.script.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -20,10 +19,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private SNode myScript;
   private boolean myApplyToSelection;
-  private IOperationContext myContext;
   private List<SModel> myModels;
   private List<SModule> myModules;
-  private Project myProject;
+  private MPSProject myProject;
   public RunMigrationScriptAction(SNode script, String name, boolean applyToSelection) {
     super(name);
     myScript = script;
@@ -42,15 +40,11 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     }
     List<SNode> scripts = new ArrayList<SNode>();
     scripts.add(myScript);
-    AbstractMigrationScriptHelper.doRunScripts(scripts, scope, myContext);
+    AbstractMigrationScriptHelper.doRunScripts(scripts, scope, myProject);
   }
   @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!(super.collectActionData(e, _params))) {
-      return false;
-    }
-    myContext = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-    if (myContext == null) {
       return false;
     }
     myProject = e.getData(MPSCommonDataKeys.MPS_PROJECT);

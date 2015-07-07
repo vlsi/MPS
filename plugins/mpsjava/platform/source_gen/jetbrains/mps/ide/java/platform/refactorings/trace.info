@@ -270,7 +270,7 @@
       <node id="2370003301082295" at="93,0,101,0" concept="8" trace="addVisibilityPanel#(Ljava/awt/GridBagConstraints;)V" />
       <node id="2370003301082373" at="102,0,111,0" concept="8" trace="doRefactoring#()V" />
       <node id="2370003301082412" at="114,0,125,0" concept="8" trace="initPanel#()V" />
-      <node id="2370003301082481" at="125,0,145,0" concept="8" trace="doRefactoringAction#()V" />
+      <node id="2370003301082481" at="129,0,145,0" concept="8" trace="doRefactoringAction#()V" />
       <node id="2370003301082037" at="48,0,81,0" concept="8" trace="createNamePanel#()Ljavax/swing/JPanel;" />
       <scope id="6421564267611622759" at="45,32,46,44" />
       <scope id="2370003301082139" at="63,51,64,128" />
@@ -326,7 +326,7 @@
       <scope id="2370003301082489" at="130,40,143,25">
         <var name="name" id="2370003301082491" />
       </scope>
-      <scope id="2370003301082481" at="125,0,145,0" />
+      <scope id="2370003301082481" at="129,0,145,0" />
       <scope id="2370003301082040" at="48,36,79,18">
         <var name="c" id="2370003301082049" />
         <var name="expectedNames" id="2370003301082091" />
@@ -728,9 +728,9 @@
       <node id="4507335185602802942" at="406,95,428,9" concept="3" />
       <node id="4507335185602804292" at="338,67,363,5" concept="7" />
       <node id="4507335185602804116" at="300,0,326,0" concept="8" trace="chooseStaticContainer#()V" />
+      <node id="4507335185602804279" at="336,0,369,0" concept="8" trace="doRefactoringAction#()V" />
       <node id="4507335185602803179" at="104,0,139,0" concept="8" trace="getMessagesText#()Ljava/lang/String;" />
       <node id="4507335185602803793" at="228,0,265,0" concept="8" trace="createMethodPanel#()Ljavax/swing/JComponent;" />
-      <node id="4507335185602804279" at="332,0,369,0" concept="8" trace="doRefactoringAction#()V" />
       <node id="4507335185602802853" at="391,0,444,0" concept="8" trace="initPanel#()V" />
       <node id="4507335185602803361" at="139,0,202,0" concept="8" trace="createCenterPanel#()Ljavax/swing/JComponent;" />
       <scope id="6421564267611446391" at="91,32,92,40" />
@@ -872,13 +872,13 @@
         <var name="methodName" id="4507335185602803193" />
         <var name="overrides" id="4507335185602803286" />
       </scope>
+      <scope id="4507335185602804279" at="336,0,369,0" />
       <scope id="4507335185602803179" at="104,0,139,0" />
       <scope id="4507335185602803794" at="228,42,263,23">
         <var name="c" id="4507335185602803811" />
         <var name="methodPanel" id="4507335185602803796" />
       </scope>
       <scope id="4507335185602803793" at="228,0,265,0" />
-      <scope id="4507335185602804279" at="332,0,369,0" />
       <scope id="4507335185602802856" at="391,30,442,0">
         <var name="c" id="4507335185602803020" />
       </scope>
@@ -1364,6 +1364,7 @@
       <node id="4507335185602809275" at="173,0,180,0" concept="8" trace="createNorthPanel#()Ljavax/swing/JComponent;" />
       <node id="4317009991304269842" at="203,42,210,10" concept="9" />
       <node id="4507335185602809050" at="73,5,81,5" concept="7" />
+      <node id="4507335185602809236" at="130,0,138,0" concept="8" trace="doRefactoringAction#()V" />
       <node id="4317009991304269628" at="153,0,161,0" concept="8" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <node id="4507335185602808957" at="48,0,57,0" concept="2" trace="InlineMethodDialog#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/smodel/IOperationContext;)V" />
       <node id="4317009991304230540" at="138,0,147,0" concept="8" trace="canExecuteRefactoring#(Ljetbrains/mps/ide/findusages/model/SearchResults;)Z" />
@@ -1372,7 +1373,6 @@
       <node id="2034046503373008020" at="182,25,192,9" concept="7" />
       <node id="4317009991304366972" at="202,56,212,7" concept="7" />
       <node id="4507335185602809139" at="98,0,110,0" concept="8" trace="createButton#(Ljavax/swing/ButtonGroup;Ljavax/swing/JPanel;ZLjava/lang/String;)Ljavax/swing/JRadioButton;" />
-      <node id="4507335185602809236" at="126,0,138,0" concept="8" trace="doRefactoringAction#()V" />
       <node id="2034046503373008017" at="182,0,194,0" concept="8" trace="run#()V" />
       <node id="4507335185602809098" at="85,0,98,0" concept="8" trace="tryToShow#(Ljava/awt/Component;)V" />
       <node id="2034046503373008013" at="180,70,194,7" concept="3" />
@@ -1440,6 +1440,7 @@
         <var name="analyzer" id="4317009991304269793" />
       </scope>
       <scope id="4507335185602809275" at="173,0,180,0" />
+      <scope id="4507335185602809236" at="130,0,138,0" />
       <scope id="4317009991304269628" at="153,0,161,0">
         <var name="indicator" id="4317009991304269629" />
       </scope>
@@ -1470,7 +1471,6 @@
         <var name="group" id="4507335185602809142" />
         <var name="text" id="4507335185602809148" />
       </scope>
-      <scope id="4507335185602809236" at="126,0,138,0" />
       <scope id="2034046503373008017" at="182,0,194,0" />
       <scope id="4507335185602809266" at="201,48,213,40">
         <var name="usages" id="4317009991304299159" />

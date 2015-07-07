@@ -611,7 +611,7 @@
       </scope>
       <scope id="9170334376388144573" at="62,0,76,0" />
       <unit id="9170334376386357148" at="53,30,58,5" name="jetbrains.mps.testbench.ProjectTest$1" />
-      <unit id="9170334376388144449" at="24,0,89,0" name="jetbrains.mps.testbench.ProjectTest" />
+      <unit id="9170334376388144449" at="27,0,89,0" name="jetbrains.mps.testbench.ProjectTest" />
     </file>
   </root>
 </debug-info>

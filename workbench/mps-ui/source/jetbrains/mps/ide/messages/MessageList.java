@@ -151,7 +151,12 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   public void show(boolean setActive) {
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
+    if (myIsDisposed) {
+      return;
+    }
 
     ToolWindow window = ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
     if (!window.isAvailable()) window.setAvailable(true, null);
@@ -164,7 +169,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   @Override
   public void clear() {
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
 
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -187,7 +194,9 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   @Override
   public void add(IMessage message) {
-    if (RuntimeFlags.isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) {
+      return;
+    }
 
     myMessagesInProgress.incrementAndGet();
     myMessagesQueue.add(message);

@@ -33,7 +33,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage", "jetbrains.mps.lang.smodel"};
+    return new String[]{"jetbrains.mps.baseLanguage", "jetbrains.mps.lang.smodel", "jetbrains.mps.lang.classLike"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {

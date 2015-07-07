@@ -40,7 +40,7 @@ import jetbrains.mps.persistence.PersistenceUtil;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
-  public static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffTool.DIFF_SUPPORTED_TYPES);
+  public static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffToolOld.DIFF_SUPPORTED_TYPES);
   public ModelMergeTool() {
   }
   @Override

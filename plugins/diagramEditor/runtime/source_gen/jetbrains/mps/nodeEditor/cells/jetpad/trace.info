@@ -373,7 +373,7 @@
       <scope id="3214568801910223818" at="29,0,45,0">
         <var name="view" id="3214568801910224354" />
       </scope>
-      <unit id="6277411742335784369" at="16,0,46,0" name="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
+      <unit id="6277411742335784369" at="20,0,46,0" name="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     </file>
   </root>
   <root nodeRef="r:18b1829d-108a-465e-a7a8-862d91582bc3(jetbrains.mps.nodeEditor.cells.jetpad)/6365639112244092433">

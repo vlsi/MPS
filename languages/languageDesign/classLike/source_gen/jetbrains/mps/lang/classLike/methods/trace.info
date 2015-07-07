@@ -1,36 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
-  <root nodeRef="r:bda4f8a3-5658-4624-a3f1-ef4d37b30baa(jetbrains.mps.lang.classLike.methods)/4800340801163356978">
-    <file name="ClassLikeDescriptor_Queries.java">
-      <node id="4800340801163334159" at="14,51,15,333" concept="3" />
-      <node id="4800340801163575984" at="17,81,18,63" concept="2" />
-      <node id="4800340801163575984" at="18,63,19,30" concept="2" />
-      <node id="4800340801163575984" at="19,30,20,221" concept="1" />
-      <node id="4800340801163575984" at="20,221,21,196" concept="1" />
-      <node id="4800340801163575984" at="21,196,22,24" concept="3" />
-      <node id="4800340801163575984" at="19,30,21,196" concept="0" />
-      <node id="4800340801163575984" at="19,30,21,196" concept="0" />
-      <node id="4800340801163356978" at="14,0,17,0" concept="4" trace="init_classLike#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4800340801163575984" at="17,0,24,0" concept="4" trace="_quotation_createNode_544usv_a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4800340801163334070" at="14,51,15,333" />
-      <scope id="4800340801163575984" at="19,30,21,196" />
-      <scope id="4800340801163356978" at="14,0,17,0">
-        <var name="point" id="4800340801163334068" />
-      </scope>
-      <scope id="4800340801163575984" at="17,81,22,24">
-        <var name="facade" id="4800340801163575984" />
-        <var name="quotedNode_2" id="4800340801163575984" />
-      </scope>
-      <scope id="4800340801163575984" at="17,0,24,0">
-        <var name="parameter_1" id="4800340801163575984" />
-      </scope>
-      <unit id="4800340801163356978" at="13,0,25,0" name="jetbrains.mps.lang.classLike.methods.ClassLikeDescriptor_Queries" />
-    </file>
-  </root>
-</debug-info>
+<debug-info />
 

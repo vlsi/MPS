@@ -19,7 +19,9 @@ public class CursorFocusUtils {
       previousCell = parent.getCellAt(index - 1);
       nextCell = parent.getCellAt(index + 1);
       editorContext.selectWRTFocusPolicy((backspace ? previousCell : nextCell));
-      nextCell.setCaretX(0);
+      if (!(backspace)) {
+        editorContext.getSelectedCell().setCaretX(0);
+      }
     } else if (index == parent.getCellsCount() - 1) {
       // try cells one level up (needed only for methods when Delete) 
       EditorCell_Collection parentParent = parent.getParent();
@@ -27,10 +29,10 @@ public class CursorFocusUtils {
       nextCell = parentParent.getCellAt(index + 1);
       if (nextCell != null) {
         editorContext.selectWRTFocusPolicy(nextCell);
+        editorContext.getSelectedCell().setCaretX(0);
       } else {
         editorContext.selectWRTFocusPolicy(node);
       }
-      nextCell.setCaretX(0);
     } else {
       editorContext.selectWRTFocusPolicy(node);
     }

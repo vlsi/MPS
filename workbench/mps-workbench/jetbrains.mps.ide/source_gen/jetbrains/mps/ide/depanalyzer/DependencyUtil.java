@@ -245,7 +245,7 @@ public class DependencyUtil {
       return myText;
     }
   }
-  public   /**
+  /**
    * None is a fake role to get initial set of dependencies
    * UsedLanguage reflects language in use by the module. languages extended by UsedLanguage are reflected with the same role, too.
    * DependencyLanguage language in use by a module dependency other than 'used language'
@@ -255,7 +255,7 @@ public class DependencyUtil {
    * OwnedGenerator - dependency between a language and its generators
    * SourceLanguage - dependency from generator to its owning language
    */
-static   enum Role {
+  public static   enum Role {
     None(),
     RegularDependency(),
     RuntimeDependency(),

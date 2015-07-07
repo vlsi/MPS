@@ -59,6 +59,7 @@ import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
 
+@Deprecated
 public class ModelDifferenceDialog extends DialogWrapper implements DataProvider {
   private Project myProject;
   private ModelChangeSet myChangeSet;
@@ -81,6 +82,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   private boolean myOldRegistered;
   private boolean myNewRegistered;
 
+  @Deprecated
   public ModelDifferenceDialog(Project project, final SModel oldModel, final SModel newModel, String oldTitle, String newTitle, @Nullable DiffRequest diffRequest) {
     super(project);
     myProject = project;

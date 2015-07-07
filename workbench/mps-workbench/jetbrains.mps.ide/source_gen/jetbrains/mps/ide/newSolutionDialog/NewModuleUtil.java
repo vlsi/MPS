@@ -133,7 +133,9 @@ public class NewModuleUtil {
       return "Enter valid namespace";
     }
     IFile moduleDir = getModuleFile(namespace, rootPath, extension).getParent();
-    if (moduleDir.getDescendant(Language.LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Solution.SOLUTION_MODELS).exists()) {
+    // FIXME it's suspicious to check existence of a model directory to tell existence of a module 
+    // E.g. it might be empty, or named differently. Left intact for now, although deserves a refactoring 
+    if (moduleDir.getDescendant(Language.LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Language.LEGACY_LANGUAGE_MODELS).exists() || moduleDir.getDescendant(Solution.SOLUTION_MODELS).exists()) {
       return "Module already exists in this folder";
     }
 
@@ -151,7 +153,7 @@ public class NewModuleUtil {
     }
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    Language language = (Language) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    Language language = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
 
     if (createMainAspectModels) {
       try {
@@ -206,14 +208,14 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    return (Solution) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
   }
   @Deprecated
   private static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-    return (DevKit) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (DevKit) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
   public static void createMainLanguageAspects(Language language) throws IOException {

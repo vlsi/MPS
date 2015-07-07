@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,25 +22,38 @@ import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
- * Detects modules in a folder. Loads them into MPSModuleRepository
+ * Detects modules in a folder.
+ * Methods of this class are not thread-safe, do not share instances of this class between threads.
  */
-public class ModulesMiner {
+public final class ModulesMiner {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ModulesMiner.class));
-  private static final ModulesMiner INSTANCE = new ModulesMiner();
   public static final String META_INF = "META-INF";
   public static final String MODULE_XML = "module.xml";
   public static final String META_INF_MODULE_XML = META_INF + "/" + MODULE_XML;
@@ -49,86 +62,102 @@ public class ModulesMiner {
   public static final String JAR = ".jar";
   public static final String MODULES_DIR = "modules";
 
+  // excludes is going to be updated from #processExcludes, ensure it can be changed.
+  private final Set<IFile> myExcludes = new HashSet<IFile>();
+  private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
+
+  /**
+   * @deprecated use {@link #ModulesMiner()} constructor} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static ModulesMiner getInstance() {
-    return INSTANCE;
+    return new ModulesMiner();
   }
 
-  private ModulesMiner() {
+  public ModulesMiner() {
+    this(Collections.<IFile>emptySet());
   }
 
+  public ModulesMiner(@NotNull Collection<IFile> excludes) {
+    myExcludes.addAll(excludes);
+  }
+
+  @NotNull
+  public ModulesMiner collectModules(IFile dir) {
+    LOG.debug("Reading modules from " + dir);
+    readModuleDescriptors(dir);
+    return this;
+  }
+
+  @NotNull
+  public Collection<ModuleHandle> getCollectedModules() {
+    return Collections.unmodifiableList(myOutcome);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.3)
   public List<ModuleHandle> collectModules(IFile dir, boolean refreshFiles) {
-    return collectModules(dir, new HashSet<IFile>(), refreshFiles);
+    return collectModules(dir, null, refreshFiles);
   }
 
+  /**
+   * @deprecated use {@link #collectModules(IFile)} instead.
+   *             To refresh files, use {@link FileRefresh} directly
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
-    List<ModuleHandle> result = new ArrayList<ModuleHandle>();
+    // I assume invocations of this method
+    if (excludes != null) {
+      myExcludes.addAll(excludes);
+    }
     if (refreshFiles) {
       LOG.debug("Refreshing recursively in the " + dir);
-      refreshRecursivelyIntoJars(dir);
+      new FileRefresh(dir).run();
     }
-    LOG.debug("Reading modules from " + dir);
-    readModuleDescriptors(dir, excludes, result, new DescriptorReader<ModuleHandle>() {
-      @Override
-      public ModuleHandle read(ModuleHandle handle) {
-        return handle;
-      }
-    });
-    return result;
+    myOutcome.clear();
+    collectModules(dir);
+    return new ArrayList<ModuleHandle>(myOutcome);
   }
 
-  private void refreshRecursivelyIntoJars(IFile file) {
-    FileSystem.getInstance().refresh(file);
-    if (file.isDirectory()) {
-      for (IFile child: file.getChildren()) {
-        refreshRecursivelyIntoJars(child);
-      }
-    } else if (file.getPath().endsWith(JAR)) {
-      IFile jarRoot = stepIntoJar(file);
-      refreshRecursivelyIntoJars(jarRoot);
+  private boolean needProcess(IFile file) {
+    return !FileSystem.getInstance().isFileIgnored(file.getName()) && !myExcludes.contains(file);
+  }
+
+  private void readModuleDescriptors(IFile file) {
+    if (!needProcess(file)) {
+      return;
     }
-  }
-
-  // Resulting file is already inside jar, i.e. file in JarFileSystem, because we added JAR_SEPARATOR
-  private IFile stepIntoJar(IFile jarFile) {
-    return FileSystem.getInstance().getFileByPath(jarFile.getPath() + JAR_SEPARATOR);
-  }
-
-  private boolean needProcess(IFile file, Set<IFile> excludes) {
-    return !FileSystem.getInstance().isFileIgnored(file.getName()) && !excludes.contains(file);
-  }
-
-  private <T> void readModuleDescriptors(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
-    if (!needProcess(file, excludes)) return;
 
     if (file.isDirectory()) {
-      readModuleDescriptorsFromFolder(file, excludes, result, reader);
+      readModuleDescriptorsFromFolder(file);
     } else {
-      readModuleDescriptorsFromFile(file, excludes, result, reader);
+      readModuleDescriptorsFromFile(file);
     }
   }
 
-  private <T> void readModuleDescriptorsFromFile(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
-    if (!needProcess(file, excludes)) return;
+  private void readModuleDescriptorsFromFile(IFile file) {
+    if (!needProcess(file)) {
+      return;
+    }
 
-    if (file.getName().endsWith(JAR)) {
-      IFile jarRoot = stepIntoJar(file);
-      if (jarRoot != null) {
-        readModuleDescriptorsFromFolder(jarRoot, excludes, result, reader);
-      }
+    if (IFileUtils.isJarFile(file)) {
+      IFile jarRoot = IFileUtils.stepIntoJar(file);
+      readModuleDescriptorsFromFolder(jarRoot);
     } else {
-      if (!isModuleFile(file)) return;
-      ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file, excludes);
+      if (!isModuleFile(file)) {
+        return;
+      }
+      ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file);
       if (moduleDescriptor != null) {
-        T descriptor = reader.read(new ModuleHandle(file, moduleDescriptor));
-        if (descriptor != null) {
-          result.add(descriptor);
-        }
+        myOutcome.add(new ModuleHandle(file, moduleDescriptor));
       }
     }
   }
 
-  private <T> void readModuleDescriptorsFromFolder(IFile file, Set<IFile> excludes, List<T> result, DescriptorReader<T> reader) {
-    if (!needProcess(file, excludes)) return;
+  private void readModuleDescriptorsFromFolder(IFile file) {
+    if (!needProcess(file)) return;
 
     // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
     // if this is just good old plain directory, we check every file in it
@@ -139,15 +168,12 @@ public class ModulesMiner {
       if (moduleXml.exists() && !moduleXml.isDirectory()) {
         ModuleDescriptor moduleDescriptor = loadModuleDescriptor(moduleXml);
         if (moduleDescriptor != null) {
-          T descriptor = reader.read(new ModuleHandle(moduleXml, moduleDescriptor));
-          if (descriptor != null) {
-            result.add(descriptor);
-          }
+          myOutcome.add(new ModuleHandle(moduleXml, moduleDescriptor));
         }
       } else {
         IFile dirInJar = file.getDescendant(MODULES_DIR);
         if (dirInJar.exists() && dirInJar.isDirectory()) {
-          readModuleDescriptorsFromFolder(dirInJar, excludes, result, reader);
+          readModuleDescriptorsFromFolder(dirInJar);
         }
       }
 
@@ -159,7 +185,7 @@ public class ModulesMiner {
       ArrayList<IFile> folders = new ArrayList<IFile>();
       for (IFile child : children) {
         if (!child.isDirectory()) {
-          readModuleDescriptorsFromFile(child, excludes, result, reader);
+          readModuleDescriptorsFromFile(child);
         } else {
           folders.add(child);
         }
@@ -167,16 +193,30 @@ public class ModulesMiner {
 
       // now read from folders
       for (IFile child : folders) {
-        readModuleDescriptorsFromFolder(child, excludes, result, reader);
+        readModuleDescriptorsFromFolder(child);
       }
 
     }
   }
 
-  public ModuleHandle loadModuleHandle(IFile file) {
-    return new ModuleHandle(file, loadModuleDescriptor(file));
+  /**
+   * Attempts to load module descriptor from file.
+   * Updates {@link #getCollectedModules()} collection.
+   * @param file descriptor file to parse for module information
+   * @return handle for descriptor loaded from file
+   */
+  @NotNull
+  public ModuleHandle loadModuleHandle(@NotNull IFile file) {
+    final ModuleHandle moduleHandle = new ModuleHandle(file, loadModuleDescriptor(file));
+    myOutcome.add(moduleHandle);
+    return moduleHandle;
   }
 
+  /**
+   * @deprecated shall become private, clients shall use {@link #loadModuleHandle(IFile)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public ModuleDescriptor loadModuleDescriptor(IFile file) {
     try {
       String filePath = file.getPath();
@@ -202,11 +242,12 @@ public class ModulesMiner {
     }
   }
 
-  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile, Set<IFile> excludes) {
+  // read a module file and update excludes set with output locations (classes, generated sources) of the module
+  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile) {
     try {
       ModuleDescriptor descriptor = loadModuleDescriptor(descriptorFile);
       if (descriptor != null) {
-        processExcludes(descriptorFile, descriptor, excludes);
+        processExcludes(descriptorFile, descriptor);
       }
       return descriptor;
     } catch (Exception t) {
@@ -215,18 +256,20 @@ public class ModulesMiner {
     return null;
   }
 
-  private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+  private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor) {
+    // in fact, descriptorFile.isReadOnly doesn't really mean there could be no dirs to exclude
+    // perhaps, there should be two distinct miners, one to look up source modules, and another one for deployed?
     if (descriptor == null || descriptorFile.isReadOnly()) {
       return;
     }
 
-    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor), excludes);
-    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor), excludes);
-    excludeIdeaClassesGen(descriptorFile, descriptor, excludes);
-    excludeClassesGen(descriptorFile, descriptor, excludes);
+    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor));
+    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor));
+    excludeIdeaClassesGen(descriptorFile, descriptor);
+    excludeClassesGen(descriptorFile, descriptor);
 
     for (String p : descriptor.getSourcePaths()) {
-      excludes.add(FileSystem.getInstance().getFileByPath(p));
+      myExcludes.add(FileSystem.getInstance().getFileByPath(p));
     }
 
     for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
@@ -235,50 +278,46 @@ public class ModulesMiner {
         continue;
       }
 
-      excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
+      myExcludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
     for (String entry : descriptor.getAdditionalJavaStubPaths()) {
-      excludes.add(FileSystem.getInstance().getFileByPath(entry));
+      myExcludes.add(FileSystem.getInstance().getFileByPath(entry));
     }
 
     if (descriptor instanceof LanguageDescriptor) {
       for (GeneratorDescriptor generator : ((LanguageDescriptor) descriptor).getGenerators()) {
-        processExcludes(descriptorFile, generator, excludes);
+        processExcludes(descriptorFile, generator);
       }
     }
   }
 
-  private void excludeGeneratedSourcesDir(IFile sourceDir, Set<IFile> excludes) {
+  private void excludeGeneratedSourcesDir(IFile sourceDir) {
     if (sourceDir != null) {
-      excludes.add(sourceDir);
+      myExcludes.add(sourceDir);
       // todo: why?
       if (!sourceDir.isReadOnly()) {
-        excludes.add(FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+        myExcludes.add(FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
       }
     }
   }
 
-  private void excludeClassesGen(IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+  private void excludeClassesGen(IFile descriptorFile, ModuleDescriptor descriptor) {
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile, descriptor instanceof GeneratorDescriptor);
     if (classesGen != null) {
-      excludes.add(classesGen);
+      myExcludes.add(classesGen);
     }
   }
 
-  private void excludeIdeaClassesGen(IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
+  private void excludeIdeaClassesGen(IFile descriptorFile, ModuleDescriptor descriptor) {
     IFile classesDir = ProjectPathUtil.getClassesFolder(descriptorFile);
     if (classesDir != null) {
-      excludes.add(classesDir);
+      myExcludes.add(classesDir);
     }
   }
 
-  boolean isModuleFile(IFile file) {
+  static boolean isModuleFile(IFile file) {
     return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
-  }
-
-  private static interface DescriptorReader<T> {
-    T read(ModuleHandle module);
   }
 
   @Nullable
@@ -327,18 +366,20 @@ public class ModulesMiner {
   }
 
   public static class ModuleHandle {
-    private IFile file;
-    private ModuleDescriptor descriptor;
+    private final IFile file;
+    private final ModuleDescriptor descriptor;
 
     public ModuleHandle(IFile file, ModuleDescriptor descriptor) {
       this.file = file;
       this.descriptor = descriptor;
     }
 
+    @NotNull
     public IFile getFile() {
       return file;
     }
 
+    @Nullable
     public ModuleDescriptor getDescriptor() {
       return descriptor;
     }

@@ -17,7 +17,9 @@ package jetbrains.mps.text.impl;
 
 import jetbrains.mps.text.TextBuffer;
 import jetbrains.mps.text.rt.TextGenContext;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenBuffer;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * This class is not intended for use in client code, only MPS internals may use it.
  * @author Artem Tikhomirov
  */
+@ToRemove(version = 3.3)
 public final class TextGenTransitionContext implements TextGenContext {
   private final SNode myInput;
   private final TextGenBuffer myBuffer;
@@ -48,5 +51,10 @@ public final class TextGenTransitionContext implements TextGenContext {
 
   public TextGenBuffer getLegacyBuffer() {
     return myBuffer;
+  }
+
+  /*package*/ boolean getCompatibilityOption_EnableAttributes() {
+    final Object value = myBuffer.getUserObject(TextGen.COMPATIBILITY_USE_ATTRIBUTES);
+    return value instanceof Boolean && ((Boolean) value);
   }
 }

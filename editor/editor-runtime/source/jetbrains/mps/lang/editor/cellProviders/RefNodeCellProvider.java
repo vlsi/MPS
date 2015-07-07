@@ -16,17 +16,24 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated use jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider
+ */
+
+@Deprecated
 public class RefNodeCellProvider extends AbstractReferentCellProvider {
 
   public RefNodeCellProvider(SNode node, EditorContext context) {
     super(node, context);
   }
-
   @Override
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
@@ -42,5 +49,15 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     return editorCell;
+  }
+
+  @Override
+  public Iterable<SNode> getRoleAttributes() {
+    return AttributeOperations.getChildAttributes(getSNode(), ((ConceptMetaInfoConverter) getSNode().getConcept()).convertAggregation(myRole));
+  }
+
+  @Override
+  public Class getRoleAttributeClass() {
+    return AttributeKind.Child.class;
   }
 }

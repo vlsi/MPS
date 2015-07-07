@@ -236,7 +236,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(sourceNode, templateNodeId, resolveInfo, context);
-    new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).setAndRegister(generator);
+    new PostponedReference(((ConceptMetaInfoConverter) outputNode.getConcept()).convertAssociation(role), outputNode, refInfo).registerWith(generator);
   }
 
   @Override
@@ -247,7 +247,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public void resolve(@NotNull ReferenceResolver2 resolver) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(resolver);
-    new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).setAndRegister(generator);
+    new PostponedReference(resolver.getReferenceRole(), resolver.getOutputNode(), refInfo).registerWith(generator);
   }
 
   /*
@@ -346,6 +346,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
             if (outputNodes != null) {
               SNodeId in = context.getInput() == null ? null : context.getInput().getNodeId();
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
+              generator.copyNodeAttributes(context, outputNodes);
               return outputNodes;
             }
           } catch (DismissTopMappingRuleException ex) {
@@ -356,9 +357,9 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               if (ex.isInfo()) {
                 getLogger().info(ruleNode, messageText);
               } else if (ex.isWarning()) {
-                getLogger().warning(ruleNode, messageText);
+                getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
               } else {
-                getLogger().error(ruleNode, messageText);
+                getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
               }
             }
           } finally {

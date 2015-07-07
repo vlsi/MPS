@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.text.impl;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.text.CompatibilityTextUnit;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.textGen.TextGen;
@@ -28,7 +31,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.nio.charset.Charset;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -59,7 +65,14 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
 
   @Override
   public void generate() {
-    myResult = TextGen.generateText(myStartNode, true, true, null);
+    try {
+      myResult = TextGen.generateText(myStartNode, true, true, null);
+    } catch (Throwable th) {
+      final StringWriter out = new StringWriter();
+      th.printStackTrace(new PrintWriter(out));
+      IMessage m = new Message(MessageKind.ERROR, getClass(), "Text generation failed").setException(th).setHintObject(myStartNode);
+      myResult = new TextGenerationResult(myStartNode, out.toString(), true, Collections.singleton(m), null, null, null, null);
+    }
   }
 
   @Override

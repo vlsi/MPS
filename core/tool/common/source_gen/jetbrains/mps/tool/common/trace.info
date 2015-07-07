@@ -113,6 +113,7 @@
       <node id="3938719774424713014" at="12,0,13,0" concept="14" trace="NO_WARNINGS" />
       <node id="3415722583340939337" at="13,0,14,0" concept="14" trace="STRICT_MODE" />
       <node id="3415722583340939341" at="14,0,15,0" concept="14" trace="PARALLEL_MODE" />
+      <node id="7766370779597747102" at="18,0,19,0" concept="14" trace="USE_STATIC_REFS" />
       <node id="3415722583341620943" at="20,0,21,0" concept="5" trace="myScript" />
       <node id="3415722583341620947" at="22,45,23,22" concept="4" />
       <node id="5682549678865142920" at="25,64,26,68" concept="4" />
@@ -140,7 +141,6 @@
       <node id="3415722583341320045" at="54,0,57,0" concept="9" trace="isInplaceTransform#()Z" />
       <node id="3938719774424675061" at="61,0,64,0" concept="9" trace="isHideWarnings#()Z" />
       <node id="7766370779597763617" at="68,0,71,0" concept="9" trace="isCreateStaticRefs#()Z" />
-      <node id="7766370779597747102" at="15,0,19,0" concept="14" trace="USE_STATIC_REFS" />
       <node id="5682549678865142914" at="25,0,29,0" concept="9" trace="setStrictMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="5682549678865142958" at="32,0,36,0" concept="9" trace="setParallelMode#(Z)Ljetbrains/mps/tool/common/GeneratorProperties;" />
       <node id="4297162197629886268" at="39,0,43,0" concept="9" trace="setParallelThreads#(I)Ljetbrains/mps/tool/common/GeneratorProperties;" />
@@ -194,7 +194,7 @@
       </scope>
       <scope id="4297162197629902833" at="43,35,48,5" />
       <scope id="4297162197629902829" at="43,0,50,0" />
-      <unit id="3415722583340914388" at="6,0,72,0" name="jetbrains.mps.tool.common.GeneratorProperties" />
+      <unit id="3415722583340914388" at="9,0,72,0" name="jetbrains.mps.tool.common.GeneratorProperties" />
     </file>
   </root>
   <root nodeRef="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)/3919148072087678241">
@@ -1259,7 +1259,7 @@
       <node id="8797607015334523210" at="194,16,212,11" concept="1" />
       <node id="8797607015334522953" at="115,32,136,5" concept="6" />
       <node id="8797607015334523069" at="146,117,167,5" concept="16" />
-      <node id="8797607015334523058" at="142,0,170,0" concept="15" trace="escapeChar#(CZZZ)Ljava/lang/String;" />
+      <node id="8797607015334523058" at="145,0,170,0" concept="15" trace="escapeChar#(CZZZ)Ljava/lang/String;" />
       <node id="8797607015334522938" at="113,0,142,0" concept="15" trace="escapeText#(Ljava/lang/String;ZZZ)Ljava/lang/String;" />
       <node id="8797607015334523205" at="179,60,212,11" concept="8" />
       <node id="8797607015334523190" at="177,53,216,9" concept="8" />
@@ -1388,14 +1388,14 @@
         <var name="i" id="8797607015334522954" />
       </scope>
       <scope id="8797607015334523068" at="146,117,168,16" />
-      <scope id="8797607015334522948" at="114,121,140,55">
-        <var name="buffer" id="8797607015334522950" />
-      </scope>
-      <scope id="8797607015334523058" at="142,0,170,0">
+      <scope id="8797607015334523058" at="145,0,170,0">
         <var name="c" id="8797607015334523060" />
         <var name="escapeApostrophes" id="8797607015334523062" />
         <var name="escapeLineEnds" id="8797607015334523066" />
         <var name="escapeSpaces" id="8797607015334523064" />
+      </scope>
+      <scope id="8797607015334522948" at="114,121,140,55">
+        <var name="buffer" id="8797607015334522950" />
       </scope>
       <scope id="8797607015334522938" at="113,0,142,0">
         <var name="escapeApostrophes" id="8797607015334522942" />

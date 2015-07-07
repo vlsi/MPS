@@ -30,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Igor Alshannikov
  * Mar 29, 2005
  *
- * @deprecated use DefaultChildSubstituteAction
+ * @deprecated use jetbrains.mps.smodel.action.DefaultSChildSubstituteAction
  *
  */
 @Deprecated

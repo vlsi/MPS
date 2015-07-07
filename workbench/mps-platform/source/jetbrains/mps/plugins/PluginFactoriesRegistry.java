@@ -15,18 +15,22 @@
  */
 package jetbrains.mps.plugins;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 
 public class PluginFactoriesRegistry {
-  private static Collection<AbstractPluginFactory> myPluginFactories = Collections.synchronizedCollection(new ArrayList<AbstractPluginFactory>());
+  private static Collection<AbstractPluginFactory> ourPluginFactories = new ArrayList<AbstractPluginFactory>();
 
-  public static void registerPluginFactory(AbstractPluginFactory contributor) {
-    myPluginFactories.add(contributor);
+  public synchronized static void registerPluginFactory(@NotNull AbstractPluginFactory contributor) {
+    ourPluginFactories.add(contributor);
   }
 
-  public static Collection<AbstractPluginFactory> getPluginFactories() {
-    return myPluginFactories;
+  public synchronized static Collection<AbstractPluginFactory> flush() {
+    List<AbstractPluginFactory> factories = new ArrayList<AbstractPluginFactory>(ourPluginFactories);
+    ourPluginFactories.clear();
+    return factories;
   }
 }

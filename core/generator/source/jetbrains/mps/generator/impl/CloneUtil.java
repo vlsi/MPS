@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,26 +15,25 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Map.Entry;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class CloneUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
@@ -105,6 +104,7 @@ public class CloneUtil {
     }
   }
 
+  // FIXME CopyUtil.copy() respects references within cloned sub-tree, but doesn't work with node factory. Shall combine both into single utility
   public SNode clone(SNode inputNode) {
     SNode outputNode = myFactory.create(inputNode);
 
@@ -119,12 +119,12 @@ public class CloneUtil {
       SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : myOutputModelRef;
       SReference outRef = myFactory.create(reference, outputNode, targetModelReference);
       if (outRef != null) {
-        outputNode.setReference(outRef.getRole(), outRef);
+        outputNode.setReference(outRef.getLink(), outRef);
       }
     }
 
     for (SNode child : inputNode.getChildren()) {
-      String role = child.getRoleInParent();
+      SContainmentLink role = child.getContainmentLink();
       assert role != null;
       outputNode.addChild(role, clone(child));
     }
@@ -133,7 +133,7 @@ public class CloneUtil {
 
   public static DynamicReference create(SNode outputNode, SModelReference targetModelRef, DynamicReference prototype) {
     DynamicReference outputReference = new DynamicReference(
-        prototype.getRole(),
+        prototype.getLink(),
         outputNode,
         targetModelRef,
         prototype.getResolveInfo());
@@ -159,10 +159,10 @@ public class CloneUtil {
       // Besides, what if there's custom openapi.SReference impl (GenSReference) I'm not aware of? How am I supposed to clone it here?
       if (prototype instanceof StaticReference) {
         if (targetModelRef == null) {
-          LOG.warning("broken reference '" + prototype.getRole() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+          LOG.warning("broken reference '" + prototype.getLink().getName() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
         } else {
           StaticReference outputReference = new StaticReference(
-              prototype.getRole(),
+              prototype.getLink(),
               outputNode,
               targetModelRef,
               prototype.getTargetNodeId(),
@@ -172,7 +172,7 @@ public class CloneUtil {
       } else if (prototype instanceof DynamicReference) {
         return CloneUtil.create(outputNode, targetModelRef, (DynamicReference) prototype);
       } else {
-        LOG.error("internal error: can't clone reference '" + prototype.getRole() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+        LOG.error("internal error: can't clone reference '" + prototype.getLink().getName() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
         LOG.error(" -- was reference class : " + prototype.getClass().getName());
       }
       return null;

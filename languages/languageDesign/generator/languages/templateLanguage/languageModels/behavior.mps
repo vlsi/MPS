@@ -103,6 +103,7 @@
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -1446,6 +1447,45 @@
       </node>
       <node concept="3Tm6S6" id="hJrm0_z" role="1B3o_S" />
     </node>
+    <node concept="13i0hz" id="5KmckUrKj9u" role="13h7CS">
+      <property role="TrG5h" value="hasMappingLabel" />
+      <node concept="3Tm1VV" id="5KmckUrKj9v" role="1B3o_S" />
+      <node concept="10P_77" id="5KmckUrKjoT" role="3clF45" />
+      <node concept="3clFbS" id="5KmckUrKj9x" role="3clF47">
+        <node concept="3SKdUt" id="5KmckUrKjoW" role="3cqZAp">
+          <node concept="3SKdUq" id="5KmckUrKjoY" role="3SKWNk">
+            <property role="3SKdUp" value="to avoid coding same code that check non-empty mapping label" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrKjp4" role="3cqZAp">
+          <node concept="1Wc70l" id="5KmckUrKkBM" role="3cqZAk">
+            <node concept="2OqwBi" id="5KmckUrKlXe" role="3uHU7w">
+              <node concept="2OqwBi" id="5KmckUrKltd" role="2Oq$k0">
+                <node concept="2OqwBi" id="5KmckUrKkJH" role="2Oq$k0">
+                  <node concept="13iPFW" id="5KmckUrKkEb" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="5KmckUrKlcL" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="5KmckUrKlEh" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+              <node concept="17RvpY" id="5KmckUrKmf3" role="2OqNvi" />
+            </node>
+            <node concept="2OqwBi" id="5KmckUrKjVC" role="3uHU7B">
+              <node concept="2OqwBi" id="5KmckUrKjsT" role="2Oq$k0">
+                <node concept="13iPFW" id="5KmckUrKjpk" role="2Oq$k0" />
+                <node concept="3TrEf2" id="5KmckUrKjEA" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpf8:hurW$JJ" />
+                </node>
+              </node>
+              <node concept="3x8VRR" id="5KmckUrKkhZ" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13hLZK" id="hEwIouX" role="13h7CW">
       <node concept="3clFbS" id="hEwIouY" role="2VODD2" />
     </node>
@@ -1984,6 +2024,31 @@
       </node>
       <node concept="3THzug" id="hEwIDMI" role="3clF45" />
       <node concept="3Tm1VV" id="hJrm0ry" role="1B3o_S" />
+    </node>
+    <node concept="13i0hz" id="5KmckUrI7Lz" role="13h7CS">
+      <property role="TrG5h" value="getCounterVarName" />
+      <node concept="3Tm1VV" id="5KmckUrI7L$" role="1B3o_S" />
+      <node concept="17QB3L" id="5KmckUrI8Pj" role="3clF45" />
+      <node concept="3clFbS" id="5KmckUrI7LA" role="3clF47">
+        <node concept="3SKdUt" id="5KmckUrIgog" role="3cqZAp">
+          <node concept="3SKdUq" id="5KmckUrIgse" role="3SKWNk">
+            <property role="3SKdUp" value="name of counter as available in TemplateContext, similar to VarMacro.getName()" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrIfhP" role="3cqZAp">
+          <node concept="3cpWs3" id="5KmckUrIfnY" role="3cqZAk">
+            <node concept="2OqwBi" id="5KmckUrIfDw" role="3uHU7w">
+              <node concept="13iPFW" id="5KmckUrIfz1" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5KmckUrIggo" role="2OqNvi">
+                <ref role="3TsBF5" to="tpf8:6suuiWX_Ud4" resolve="counterVarName" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="5KmckUrIfi2" role="3uHU7B">
+              <property role="Xl_RC" value="cv:" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="hEwIDMJ" role="13h7CW">
       <node concept="3clFbS" id="hEwIDMK" role="2VODD2" />
@@ -6609,6 +6674,57 @@
       <node concept="2I9FWS" id="6suuiWX_$D0" role="3clF45">
         <ref role="2I9WkF" to="tpf8:6suuiWX_9yv" resolve="ContextVariableDeclaration" />
       </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="5KmckUrMTlR">
+    <property role="3GE5qa" value="macro" />
+    <ref role="13h7C2" to="tpf8:gtpdMPS" resolve="MapSrcNodeMacro" />
+    <node concept="13hLZK" id="5KmckUrMTlS" role="13h7CW">
+      <node concept="3clFbS" id="5KmckUrMTlT" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5KmckUrMTlU" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getInputNodeTypeInsideOfMacro" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="hEwIosJ" resolve="getInputNodeTypeInsideOfMacro" />
+      <node concept="3Tm1VV" id="5KmckUrMTmi" role="1B3o_S" />
+      <node concept="3clFbS" id="5KmckUrMTmj" role="3clF47">
+        <node concept="3Knyl0" id="5KmckUrMTqP" role="3cqZAp">
+          <node concept="1Yb3XT" id="5KmckUrMTqQ" role="3KnVwV">
+            <property role="TrG5h" value="aa" />
+            <node concept="2DMOqp" id="5KmckUrMTqR" role="1YbcFS">
+              <node concept="3Tqbb2" id="5KmckUrMTqS" role="2DMOqq">
+                <node concept="3jrphi" id="5KmckUrMTqT" role="lGtFl">
+                  <property role="2qtEX8" value="concept" />
+                  <property role="3jrwYG" value="concept" />
+                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="5KmckUrMTqU" role="3Ko5Z1">
+            <node concept="2OqwBi" id="5KmckUrMTqV" role="2Oq$k0">
+              <node concept="13iPFW" id="5KmckUrMTqW" role="2Oq$k0" />
+              <node concept="3TrEf2" id="5KmckUrMTJN" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpf8:h031$YD" />
+              </node>
+            </node>
+            <node concept="3JvlWi" id="5KmckUrMTqY" role="2OqNvi" />
+          </node>
+          <node concept="3clFbS" id="5KmckUrMTqZ" role="3KnTvU">
+            <node concept="3cpWs6" id="5KmckUrMTr0" role="3cqZAp">
+              <node concept="2iQiJ2" id="5KmckUrMTr1" role="3cqZAk">
+                <ref role="2iQyjY" node="5KmckUrMTqT" resolve="#concept" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KmckUrMTr2" role="3cqZAp">
+          <node concept="10Nm6u" id="5KmckUrMTr3" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3THzug" id="5KmckUrMTmk" role="3clF45" />
     </node>
   </node>
 </model>

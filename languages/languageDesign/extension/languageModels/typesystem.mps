@@ -885,8 +885,17 @@
           </node>
           <node concept="1Z5TYs" id="21KXiZCJ625" role="3cqZAp">
             <node concept="mw_s8" id="21KXiZCJ626" role="1ZfhKB">
-              <node concept="37vLTw" id="21KXiZCJ6YX" role="mwGJk">
-                <ref role="3cqZAo" node="21KXiZCJ61Q" resolve="resultType" />
+              <node concept="2c44tf" id="4u7uetTQC3Q" role="mwGJk">
+                <node concept="3uibUv" id="4u7uetTQC4I" role="2c44tc">
+                  <ref role="3uigEE" to="bltl:~ExtensionFunction$FunctionInstance" resolve="ExtensionFunction.FunctionInstance" />
+                  <node concept="33vP2l" id="4u7uetTQC5k" role="11_B2D">
+                    <node concept="2c44te" id="4u7uetTQC5T" role="lGtFl">
+                      <node concept="37vLTw" id="4u7uetTQC64" role="2c44t1">
+                        <ref role="3cqZAo" node="21KXiZCJ61Q" resolve="resultType" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="mw_s8" id="21KXiZCJ62c" role="1ZfhK$">

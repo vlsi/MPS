@@ -727,20 +727,6 @@
       <concept id="5686963296372475025" name="jetbrains.mps.baseLanguage.collections.structure.QueueType" flags="in" index="3O6Q9H" />
     </language>
   </registry>
-  <node concept="tC5Ba" id="7sF2r9CilGS">
-    <property role="TrG5h" value="LanguageRefactoring" />
-    <property role="3GE5qa" value="Refactoring.Group" />
-    <property role="2f7twF" value="Refactoring" />
-    <node concept="tT9cl" id="hN1B1v1" role="2f5YQi">
-      <ref role="tU$_T" to="tprs:miYJQAr2Uj" resolve="CommonModuleActions" />
-      <ref role="2f8Tey" to="tprs:miYJQAr2UA" resolve="refactoring" />
-    </node>
-    <node concept="ftmFs" id="7sF2r9CilGT" role="ftER_">
-      <node concept="tCFHf" id="7msLDqMFe8Y" role="ftvYc">
-        <ref role="tCJdB" to="tprs:3fhZBTge84q" resolve="RenameSolution" />
-      </node>
-    </node>
-  </node>
   <node concept="Zd50a" id="7sF2r9CilGW">
     <property role="TrG5h" value="Default" />
     <node concept="Zd509" id="7LWFAMfAqWi" role="Zd508">

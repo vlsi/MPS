@@ -20,9 +20,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.tool.environment.Environment;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vfs.IFile;
@@ -31,8 +32,6 @@ import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectOptions;
 import junit.framework.Assert;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -58,18 +57,42 @@ public class ProjectCreationTest {
       PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT);
   private static final List<String> EMPTY_PROJECT_PATH_LIST_DB = PROJECT_PROPERTIES_DIR_CONTENT;
 
-  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = Arrays.asList(
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/structure" + MPSExtentions.DOT_MODEL,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/constraints" + MPSExtentions.DOT_MODEL,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/editor" + MPSExtentions.DOT_MODEL,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/behavior" + MPSExtentions.DOT_MODEL,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/languageModels/typesystem" + MPSExtentions.DOT_MODEL,
-    PROJECT_NAME + "/languages/" + LANGUAGE_NAMESPACE + "/generator/template/main@generator" + MPSExtentions.DOT_MODEL,
+  static final String LANGUAGES_ROOT = "languages";
+  static final String SOLUTIONS_ROOT = "solutions";
 
-    PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION,
-    PROJECT_NAME + "/solutions/" + SOLUTION_NAMESPACE + "/" + "models/CreatedSandbox/sandbox" + MPSExtentions.DOT_MODEL
-  );
+  private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE;
+  static {
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE = new ArrayList<String>();
+    final String languageModule = PROJECT_NAME + "/" + LANGUAGES_ROOT + "/" + LANGUAGE_NAMESPACE + "/" + LANGUAGE_NAMESPACE + MPSExtentions.DOT_LANGUAGE;
+    final String solutionModule = PROJECT_NAME + "/" + SOLUTIONS_ROOT + "/" + SOLUTION_NAMESPACE + "/" + SOLUTION_NAMESPACE + MPSExtentions.DOT_SOLUTION;
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(languageModule);
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.add(solutionModule);
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(languageModels(PROJECT_NAME, LANGUAGE_NAMESPACE));
+    PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE.addAll(solutionModels(PROJECT_NAME, SOLUTION_NAMESPACE));
+  }
+
+  // project/root/module/...
+  private static final String PATH_IN_PROJECT = "%s/%s/%s/%s/%s.%s";
+
+  private static List<String> languageModels(String projectName, String languageNamespace) {
+    final LanguageAspect[] aspects = new LanguageAspect[] {
+        LanguageAspect.STRUCTURE, LanguageAspect.CONSTRAINTS, LanguageAspect.EDITOR, LanguageAspect.BEHAVIOR, LanguageAspect.TYPESYSTEM
+    };
+    String[] rv = new String[aspects.length + 1];
+    for (int i = 0; i < aspects.length; i++) {
+      rv[i] = String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, Language.LANGUAGE_MODELS, aspects[i].getName(), MPSExtentions.MODEL);
+    }
+    rv[aspects.length] = String.format(PATH_IN_PROJECT, projectName, LANGUAGES_ROOT, languageNamespace, "generator/template", "main@generator", MPSExtentions.MODEL);
+    return Arrays.asList(rv);
+  }
+
+  private static List<String> solutionModels(String projectName, String solutionNamespace) {
+    return Collections.singletonList(
+        String.format(PATH_IN_PROJECT, projectName, SOLUTIONS_ROOT, solutionNamespace, Solution.SOLUTION_MODELS, solutionNamespace + "/sandbox",
+            MPSExtentions.MODEL));
+  }
+
+
   private static final List<String> PROJECT_WITH_MODULES_PATH_LIST_FB = CollectionUtil.union(
       Arrays.asList(PROJECT_NAME + "/" + PROJECT_NAME + ".iws", PROJECT_NAME + "/" + PROJECT_NAME + MPSExtentions.DOT_MPS_PROJECT),
       PROJECT_WITH_MODULES_PATH_LIST_TEMPLATE);
@@ -212,11 +235,11 @@ public class ProjectCreationTest {
 
       options.setCreateNewLanguage(true);
       options.setLanguageNamespace(LANGUAGE_NAMESPACE);
-      options.setLanguagePath(projectDir.getDescendant("languages").getDescendant(LANGUAGE_NAMESPACE).getPath());
+      options.setLanguagePath(projectDir.getDescendant(LANGUAGES_ROOT).getDescendant(LANGUAGE_NAMESPACE).getPath());
 
       options.setCreateNewSolution(true);
       options.setSolutionNamespace(SOLUTION_NAMESPACE);
-      options.setSolutionPath(projectDir.getDescendant("solutions").getDescendant(SOLUTION_NAMESPACE).getPath());
+      options.setSolutionPath(projectDir.getDescendant(SOLUTIONS_ROOT).getDescendant(SOLUTION_NAMESPACE).getPath());
       options.setCreateModel(true);
 
       return options;

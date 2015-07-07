@@ -61,7 +61,7 @@
       <scope id="9122198050634957916" at="46,0,50,0">
         <var name="query" id="9122198050634957917" />
       </scope>
-      <unit id="9122198050634810078" at="34,0,51,0" name="jetbrains.mps.make.service.AbstractMakeService$DefaultMonitor" />
+      <unit id="9122198050634810078" at="37,0,51,0" name="jetbrains.mps.make.service.AbstractMakeService$DefaultMonitor" />
       <unit id="2298333944697014852" at="19,0,52,0" name="jetbrains.mps.make.service.AbstractMakeService" />
     </file>
   </root>

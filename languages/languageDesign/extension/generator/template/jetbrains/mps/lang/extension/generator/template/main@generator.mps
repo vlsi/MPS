@@ -27,6 +27,7 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -317,6 +318,10 @@
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <reference id="1140138128738" name="concept" index="1PxNhF" />
+        <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -610,7 +615,7 @@
                 <ref role="3cqZAo" node="21KXiZCJaQd" resolve="ep" />
               </node>
               <node concept="liA8E" id="21KXiZCJaQk" role="2OqNvi">
-                <ref role="37wK5l" to="bltl:~ExtensionFunctionPoint.apply(java.lang.Object):java.lang.Object" resolve="apply" />
+                <ref role="37wK5l" to="bltl:~ExtensionFunctionPoint.find(java.lang.Object):jetbrains.mps.smodel.structure.ExtensionFunction$FunctionInstance" resolve="find" />
                 <node concept="raruj" id="21KXiZCJaQl" role="lGtFl" />
                 <node concept="10Nm6u" id="21KXiZCJfPO" role="37wK5m">
                   <node concept="29HgVG" id="21KXiZCJfQN" role="lGtFl">
@@ -1930,7 +1935,55 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2gzehMf6BcA" role="jymVt" />
+    <node concept="3clFb_" id="4u7uetTLwVN" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getName" />
+      <property role="DiZV1" value="false" />
+      <property role="IEkAT" value="false" />
+      <node concept="3Tm1VV" id="4u7uetTLwVO" role="1B3o_S" />
+      <node concept="3uibUv" id="4u7uetTLwVQ" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="4u7uetTLwVR" role="3clF47">
+        <node concept="3cpWs6" id="4u7uetTLTJr" role="3cqZAp">
+          <node concept="Xl_RD" id="4u7uetTM5X2" role="3cqZAk">
+            <node concept="17Uvod" id="4u7uetTNc9h" role="lGtFl">
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="4u7uetTNc9i" role="3zH0cK">
+                <node concept="3clFbS" id="4u7uetTNc9j" role="2VODD2">
+                  <node concept="3clFbF" id="4u7uetTN_6X" role="3cqZAp">
+                    <node concept="2OqwBi" id="4u7uetTPklR" role="3clFbG">
+                      <node concept="1PxgMI" id="4u7uetTPjP0" role="2Oq$k0">
+                        <ref role="1PxNhF" to="oubp:5BD$AU440O4" resolve="ClassLikeStringProperty" />
+                        <node concept="2OqwBi" id="4u7uetTOe6v" role="1PxMeX">
+                          <node concept="2OqwBi" id="4u7uetTN_qY" role="2Oq$k0">
+                            <node concept="3fl2lp" id="4u7uetTNDLx" role="2Oq$k0">
+                              <ref role="3fl3PK" to="90d:4u7uetTJQD6" resolve="name" />
+                              <node concept="3B5_sB" id="4u7uetTN_6W" role="3fl3PI">
+                                <ref role="3B5MYn" to="90d:7z8Vrj4Zy7l" resolve="ExtensionOverlapping" />
+                              </node>
+                            </node>
+                            <node concept="2qgKlT" id="4u7uetTNE56" role="2OqNvi">
+                              <ref role="37wK5l" to="9nqt:2gzehMfi1$l" resolve="get" />
+                              <node concept="30H73N" id="4u7uetTNPAK" role="37wK5m" />
+                            </node>
+                          </node>
+                          <node concept="1uHKPH" id="4u7uetTOeqx" role="2OqNvi" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="4u7uetTPoJF" role="2OqNvi">
+                        <ref role="3TsBF5" to="oubp:5BD$AU440O5" resolve="value" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3clFb_" id="2vnI1ojwzW9" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="applicable" />
@@ -2423,7 +2476,7 @@
                   <node concept="1uHKPH" id="2gzehMeTRxo" role="2OqNvi" />
                 </node>
                 <node concept="liA8E" id="2gzehMeVrSo" role="2OqNvi">
-                  <ref role="37wK5l" to="bltl:~BaseOverlappingExtension.instantiate(java.lang.Object):jetbrains.mps.smodel.structure.ExtensionFunction$FunctionInstance" resolve="instantiate" />
+                  <ref role="37wK5l" to="bltl:~ExtensionFunction.instantiate(java.lang.Object):jetbrains.mps.smodel.structure.ExtensionFunction$FunctionInstance" resolve="instantiate" />
                   <node concept="3VmV3z" id="2gzehMeVIMY" role="37wK5m">
                     <property role="3VnrPo" value="arg" />
                     <node concept="3uibUv" id="2gzehMeVOZI" role="3Vn4Tt">
