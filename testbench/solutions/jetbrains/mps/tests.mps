@@ -69,11 +69,11 @@
     <import index="cl80" ref="r:dfcc07af-60f0-4854-8074-3994ccf0ed1f(jetbrains.mps.migration.test.tests@tests)" />
     <import index="s223" ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)" />
     <import index="tw7x" ref="r:f6873416-2681-4a14-803b-33f9e8bdd0a6(testSubtypingTest.model)" />
+    <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="i6g3" ref="r:0af7a888-e26c-490d-b05f-51add6a8920b(testPackagedLanguage.test@tests)" />
     <import index="cpet" ref="r:8ef4c1fc-fb61-4d5c-806c-7a971cfb9392(tests.testPersistence.test@tests)" />
     <import index="qffu" ref="r:0f4db6eb-148d-44cb-ac9d-a618b0bc8a92(testSubstituteType.model)" />
     <import index="rv78" ref="r:819dd2c2-a64b-45e6-ae94-42a9c653de39(tests.testDepViewer.test@tests)" />
-    <import index="65l5" ref="r:686abb70-e3f7-4623-b559-272901399ab3(jetbrains.mps.lang.editor.cells.transactional.test)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -367,6 +367,18 @@
     </node>
     <node concept="lpD6D" id="6LcR7GqywmP" role="lpD6w">
       <ref role="lpD7u" to="e6od:6LcR7GqvFCf" resolve="DelOnChild1ReplaceItWithLinkTarget" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzUtF" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzQ8M" resolve="Subst_MiddleChild_AddNewChildByEnter" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzUqZ" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJr4" resolve="Subst_MiddleChild_AddNewChildBySeparator" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzVNe" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJpI" resolve="Subst_MultiChild_AddNewChildByEnter" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzVQ2" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJes" resolve="Subst_MultiChild_AddNewChildBySeparator" />
     </node>
     <node concept="lpD6D" id="P9hc2KhcFg" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgOoG" resolve="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
@@ -3886,16 +3898,14 @@
       <ref role="lpD7u" to="tw7x:Bcyb5kJ5eX" resolve="NullProperties" />
     </node>
   </node>
-  <node concept="lpD6F" id="5GF7bt500qz">
-    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
-      <property role="2R4zub" value="testSubstituteType" />
-      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
+  <node concept="lpD6F" id="3ofMfJ4Yh7E">
+    <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
+      <property role="2R4zub" value="testPackagedLanguage.test" />
+      <property role="2R4zu8" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
     </node>
-    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
-      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
-    </node>
-    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
-      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
+    <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
+      <property role="1wBEbI" value="true" />
+      <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="1lM6JtOM9Yh">
@@ -3907,16 +3917,6 @@
       <ref role="lpD7u" to="rv78:1KN7CHZp6qE" resolve="TestDepViewer_Test" />
     </node>
   </node>
-  <node concept="lpD6F" id="3ofMfJ4Yh7E">
-    <node concept="2R4zua" id="3ofMfJ4Yh7F" role="2R4z3u">
-      <property role="2R4zub" value="testPackagedLanguage.test" />
-      <property role="2R4zu8" value="2f5af9e7-34c8-45f3-b417-4dcbb52409b8" />
-    </node>
-    <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
-      <property role="1wBEbI" value="true" />
-      <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
-    </node>
-  </node>
   <node concept="lpD6F" id="3ofMfJ4Yh7N">
     <node concept="2R4zua" id="3ofMfJ4Yh7O" role="2R4z3u">
       <property role="2R4zub" value="tests.testPersistence" />
@@ -3924,6 +3924,18 @@
     </node>
     <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
       <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
+    </node>
+  </node>
+  <node concept="lpD6F" id="5GF7bt500qz">
+    <node concept="2R4zua" id="5GF7bt500q$" role="2R4z3u">
+      <property role="2R4zub" value="testSubstituteType" />
+      <property role="2R4zu8" value="f4227833-0d14-4ab5-8560-70880fd9d5ef" />
+    </node>
+    <node concept="lpD6D" id="5GF7bt500q_" role="lpD6w">
+      <ref role="lpD7u" to="qffu:5zzawu2JA4c" resolve="AnnotatedType" />
+    </node>
+    <node concept="lpD6D" id="TfJhvku548" role="lpD6w">
+      <ref role="lpD7u" to="qffu:15xlXKdz7s3" resolve="WrappedType" />
     </node>
   </node>
 </model>

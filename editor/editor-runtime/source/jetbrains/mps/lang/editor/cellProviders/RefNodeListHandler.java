@@ -109,9 +109,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   @Override
-  protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
+  protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
-    getOwner().insertChildBefore(getElementRole(), myInsertedNode,
+    getOwner().insertChildBefore(getElementRole(), nodeToInsert,
         insertBefore ? anchorNode : anchorNode == null ? getOwner().getFirstChild() : anchorNode.getNextSibling());
   }
 

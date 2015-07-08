@@ -65,7 +65,9 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       }, effectiveNode, myGenuineRole);
       CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
     }
-    setSemanticNodeToCells(editorCell, node);
+    if (!myIsAggregation) {
+      setSemanticNodeToCells(editorCell, node);
+    }
 
     if (myIsCardinality1) {
       if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {

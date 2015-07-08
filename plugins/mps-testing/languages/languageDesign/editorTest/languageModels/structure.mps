@@ -358,6 +358,17 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
+    <node concept="1TJgyj" id="7UZdOvgzajQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="separatorChild" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="7UZdOvgzaJT" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="middlewareChild" />
+      <ref role="20lvS9" node="7UZdOvgzaIm" resolve="SubstMiddlewareChild" />
+    </node>
   </node>
   <node concept="1TIwiD" id="P9hc2Kf3iI">
     <property role="3GE5qa" value="substitute" />
@@ -403,6 +414,17 @@
     <node concept="M4N5e" id="P9hc2KfQnm" role="M5hS2">
       <property role="1uS6qo" value="v3" />
       <property role="1uS6qv" value="v3" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7UZdOvgzaIm">
+    <property role="3GE5qa" value="substitute" />
+    <property role="TrG5h" value="SubstMiddlewareChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7UZdOvgzaJQ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="P9hc2Kf3iI" resolve="SubstTestAbstractChild" />
     </node>
   </node>
 </model>

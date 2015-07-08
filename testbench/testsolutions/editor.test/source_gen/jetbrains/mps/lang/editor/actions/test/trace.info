@@ -47,96 +47,184 @@
       <unit id="7803854675610520166" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911890332">
+    <file name="Subst_MultiChild_AddNewChildBySeparator_Test.java">
+      <node id="9133079350911890332" at="15,79,16,115" concept="1" />
+      <node id="9133079350911890332" at="16,115,17,134" concept="1" />
+      <node id="9133079350911890332" at="24,51,25,63" concept="1" />
+      <node id="406476292284589395" at="25,63,26,27" concept="1" />
+      <node id="9133079350911890332" at="12,0,14,0" concept="0" trace="Subst_MultiChild_AddNewChildBySeparator_Test#()V" />
+      <node id="9133079350911890332" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911890332" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_AddNewChildBySeparator#()V" />
+      <node id="9133079350911890332" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911890332" at="12,57,12,57" />
+      <scope id="9133079350911890332" at="21,23,21,23" />
+      <scope id="9133079350911890332" at="12,0,14,0" />
+      <scope id="9133079350911890332" at="15,79,17,134" />
+      <scope id="9133079350911890332" at="21,0,23,0" />
+      <scope id="9133079350911890332" at="24,51,26,27" />
+      <scope id="9133079350911890332" at="14,0,19,0" />
+      <scope id="9133079350911890332" at="23,0,28,0" />
+      <unit id="9133079350911890332" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildBySeparator_Test$TestBody" />
+      <unit id="9133079350911890332" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildBySeparator_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911891054">
+    <file name="Subst_MultiChild_AddNewChildByEnter_Test.java">
+      <node id="9133079350911891054" at="15,75,16,115" concept="1" />
+      <node id="9133079350911891054" at="16,115,17,130" concept="1" />
+      <node id="9133079350911891054" at="24,51,25,63" concept="1" />
+      <node id="406476292283855901" at="25,63,26,74" concept="1" />
+      <node id="9133079350911891054" at="12,0,14,0" concept="0" trace="Subst_MultiChild_AddNewChildByEnter_Test#()V" />
+      <node id="9133079350911891054" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911891054" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_AddNewChildByEnter#()V" />
+      <node id="9133079350911891054" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911891054" at="12,53,12,53" />
+      <scope id="9133079350911891054" at="21,23,21,23" />
+      <scope id="9133079350911891054" at="12,0,14,0" />
+      <scope id="9133079350911891054" at="15,75,17,130" />
+      <scope id="9133079350911891054" at="21,0,23,0" />
+      <scope id="9133079350911891054" at="24,51,26,74" />
+      <scope id="9133079350911891054" at="14,0,19,0" />
+      <scope id="9133079350911891054" at="23,0,28,0" />
+      <unit id="9133079350911891054" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test$TestBody" />
+      <unit id="9133079350911891054" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_AddNewChildByEnter_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911891140">
+    <file name="Subst_MiddleChild_AddNewChildBySeparator_Test.java">
+      <node id="9133079350911891140" at="15,80,16,115" concept="1" />
+      <node id="9133079350911891140" at="16,115,17,135" concept="1" />
+      <node id="9133079350911891140" at="24,51,25,63" concept="1" />
+      <node id="406476292284593129" at="25,63,26,27" concept="1" />
+      <node id="9133079350911891140" at="12,0,14,0" concept="0" trace="Subst_MiddleChild_AddNewChildBySeparator_Test#()V" />
+      <node id="9133079350911891140" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911891140" at="14,0,19,0" concept="2" trace="test_Subst_MiddleChild_AddNewChildBySeparator#()V" />
+      <node id="9133079350911891140" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911891140" at="12,58,12,58" />
+      <scope id="9133079350911891140" at="21,23,21,23" />
+      <scope id="9133079350911891140" at="12,0,14,0" />
+      <scope id="9133079350911891140" at="15,80,17,135" />
+      <scope id="9133079350911891140" at="21,0,23,0" />
+      <scope id="9133079350911891140" at="24,51,26,27" />
+      <scope id="9133079350911891140" at="14,0,19,0" />
+      <scope id="9133079350911891140" at="23,0,28,0" />
+      <unit id="9133079350911891140" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildBySeparator_Test$TestBody" />
+      <unit id="9133079350911891140" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildBySeparator_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/9133079350911918642">
+    <file name="Subst_MiddleChild_AddNewChildByEnter_Test.java">
+      <node id="9133079350911918642" at="15,76,16,115" concept="1" />
+      <node id="9133079350911918642" at="16,115,17,131" concept="1" />
+      <node id="9133079350911918642" at="24,51,25,63" concept="1" />
+      <node id="406476292283852709" at="25,63,26,74" concept="1" />
+      <node id="9133079350911918642" at="12,0,14,0" concept="0" trace="Subst_MiddleChild_AddNewChildByEnter_Test#()V" />
+      <node id="9133079350911918642" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="9133079350911918642" at="14,0,19,0" concept="2" trace="test_Subst_MiddleChild_AddNewChildByEnter#()V" />
+      <node id="9133079350911918642" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9133079350911918642" at="12,54,12,54" />
+      <scope id="9133079350911918642" at="21,23,21,23" />
+      <scope id="9133079350911918642" at="12,0,14,0" />
+      <scope id="9133079350911918642" at="15,76,17,131" />
+      <scope id="9133079350911918642" at="21,0,23,0" />
+      <scope id="9133079350911918642" at="24,51,26,74" />
+      <scope id="9133079350911918642" at="14,0,19,0" />
+      <scope id="9133079350911918642" at="23,0,28,0" />
+      <unit id="9133079350911918642" at="19,0,29,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildByEnter_Test$TestBody" />
+      <unit id="9133079350911918642" at="10,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MiddleChild_AddNewChildByEnter_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174085944">
     <file name="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test.java">
-      <node id="957371990174085944" at="15,90,16,115" concept="1" />
-      <node id="957371990174085944" at="16,115,17,145" concept="1" />
-      <node id="957371990174085944" at="24,51,25,61" concept="1" />
-      <node id="957371990174537433" at="25,61,26,28" concept="1" />
-      <node id="3694071247855998061" at="26,28,27,76" concept="1" />
-      <node id="957371990174085944" at="12,0,14,0" concept="0" trace="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test#()V" />
-      <node id="957371990174085944" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="957371990174085944" at="14,0,19,0" concept="2" trace="test_Subst_SingleChild_OnlyBooleanProperty_with_Another#()V" />
-      <node id="957371990174085944" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="957371990174085944" at="12,68,12,68" />
-      <scope id="957371990174085944" at="21,23,21,23" />
-      <scope id="957371990174085944" at="12,0,14,0" />
-      <scope id="957371990174085944" at="15,90,17,145" />
-      <scope id="957371990174085944" at="21,0,23,0" />
-      <scope id="957371990174085944" at="24,51,27,76" />
-      <scope id="957371990174085944" at="14,0,19,0" />
-      <scope id="957371990174085944" at="23,0,29,0" />
-      <unit id="957371990174085944" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
-      <unit id="957371990174085944" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test" />
+      <node id="957371990174085944" at="17,90,18,115" concept="1" />
+      <node id="957371990174085944" at="18,115,19,145" concept="1" />
+      <node id="957371990174085944" at="26,51,27,61" concept="1" />
+      <node id="957371990174537433" at="27,61,28,28" concept="1" />
+      <node id="957371990174483467" at="28,28,29,91" concept="1" />
+      <node id="957371990174085944" at="14,0,16,0" concept="0" trace="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test#()V" />
+      <node id="957371990174085944" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="957371990174085944" at="16,0,21,0" concept="2" trace="test_Subst_SingleChild_OnlyBooleanProperty_with_Another#()V" />
+      <node id="957371990174085944" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="957371990174085944" at="14,68,14,68" />
+      <scope id="957371990174085944" at="23,23,23,23" />
+      <scope id="957371990174085944" at="14,0,16,0" />
+      <scope id="957371990174085944" at="17,90,19,145" />
+      <scope id="957371990174085944" at="23,0,25,0" />
+      <scope id="957371990174085944" at="26,51,29,91" />
+      <scope id="957371990174085944" at="16,0,21,0" />
+      <scope id="957371990174085944" at="25,0,31,0" />
+      <unit id="957371990174085944" at="21,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
+      <unit id="957371990174085944" at="12,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyBooleanProperty_with_Another_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174539535">
     <file name="Subst_SingleChild_OnlyEnumProperty_with_Another_Test.java">
-      <node id="957371990174539535" at="15,87,16,115" concept="1" />
-      <node id="957371990174539535" at="16,115,17,142" concept="1" />
-      <node id="957371990174539535" at="24,51,25,61" concept="1" />
-      <node id="957371990174539543" at="25,61,26,29" concept="1" />
-      <node id="3694071247855998025" at="26,29,27,76" concept="1" />
-      <node id="957371990174539535" at="12,0,14,0" concept="0" trace="Subst_SingleChild_OnlyEnumProperty_with_Another_Test#()V" />
-      <node id="957371990174539535" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="957371990174539535" at="14,0,19,0" concept="2" trace="test_Subst_SingleChild_OnlyEnumProperty_with_Another#()V" />
-      <node id="957371990174539535" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="957371990174539535" at="12,65,12,65" />
-      <scope id="957371990174539535" at="21,23,21,23" />
-      <scope id="957371990174539535" at="12,0,14,0" />
-      <scope id="957371990174539535" at="15,87,17,142" />
-      <scope id="957371990174539535" at="21,0,23,0" />
-      <scope id="957371990174539535" at="24,51,27,76" />
-      <scope id="957371990174539535" at="14,0,19,0" />
-      <scope id="957371990174539535" at="23,0,29,0" />
-      <unit id="957371990174539535" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyEnumProperty_with_Another_Test$TestBody" />
-      <unit id="957371990174539535" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyEnumProperty_with_Another_Test" />
+      <node id="957371990174539535" at="17,87,18,115" concept="1" />
+      <node id="957371990174539535" at="18,115,19,142" concept="1" />
+      <node id="957371990174539535" at="26,51,27,61" concept="1" />
+      <node id="957371990174539543" at="27,61,28,29" concept="1" />
+      <node id="957371990174539544" at="28,29,29,91" concept="1" />
+      <node id="957371990174539535" at="14,0,16,0" concept="0" trace="Subst_SingleChild_OnlyEnumProperty_with_Another_Test#()V" />
+      <node id="957371990174539535" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="957371990174539535" at="16,0,21,0" concept="2" trace="test_Subst_SingleChild_OnlyEnumProperty_with_Another#()V" />
+      <node id="957371990174539535" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="957371990174539535" at="14,65,14,65" />
+      <scope id="957371990174539535" at="23,23,23,23" />
+      <scope id="957371990174539535" at="14,0,16,0" />
+      <scope id="957371990174539535" at="17,87,19,142" />
+      <scope id="957371990174539535" at="23,0,25,0" />
+      <scope id="957371990174539535" at="26,51,29,91" />
+      <scope id="957371990174539535" at="16,0,21,0" />
+      <scope id="957371990174539535" at="25,0,31,0" />
+      <unit id="957371990174539535" at="21,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyEnumProperty_with_Another_Test$TestBody" />
+      <unit id="957371990174539535" at="12,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Subst_SingleChild_OnlyEnumProperty_with_Another_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174549548">
     <file name="Subst_MultiChild_OnlyBooleanProperty_with_Another_Test.java">
-      <node id="957371990174549548" at="15,89,16,115" concept="1" />
-      <node id="957371990174549548" at="16,115,17,144" concept="1" />
-      <node id="957371990174549548" at="24,51,25,61" concept="1" />
-      <node id="957371990174549556" at="25,61,26,28" concept="1" />
-      <node id="3694071247855998049" at="26,28,27,76" concept="1" />
-      <node id="957371990174549548" at="12,0,14,0" concept="0" trace="Subst_MultiChild_OnlyBooleanProperty_with_Another_Test#()V" />
-      <node id="957371990174549548" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="957371990174549548" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_OnlyBooleanProperty_with_Another#()V" />
-      <node id="957371990174549548" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="957371990174549548" at="12,67,12,67" />
-      <scope id="957371990174549548" at="21,23,21,23" />
-      <scope id="957371990174549548" at="12,0,14,0" />
-      <scope id="957371990174549548" at="15,89,17,144" />
-      <scope id="957371990174549548" at="21,0,23,0" />
-      <scope id="957371990174549548" at="24,51,27,76" />
-      <scope id="957371990174549548" at="14,0,19,0" />
-      <scope id="957371990174549548" at="23,0,29,0" />
-      <unit id="957371990174549548" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
-      <unit id="957371990174549548" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyBooleanProperty_with_Another_Test" />
+      <node id="957371990174549548" at="17,89,18,115" concept="1" />
+      <node id="957371990174549548" at="18,115,19,144" concept="1" />
+      <node id="957371990174549548" at="26,51,27,61" concept="1" />
+      <node id="957371990174549556" at="27,61,28,28" concept="1" />
+      <node id="957371990174549557" at="28,28,29,91" concept="1" />
+      <node id="957371990174549548" at="14,0,16,0" concept="0" trace="Subst_MultiChild_OnlyBooleanProperty_with_Another_Test#()V" />
+      <node id="957371990174549548" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="957371990174549548" at="16,0,21,0" concept="2" trace="test_Subst_MultiChild_OnlyBooleanProperty_with_Another#()V" />
+      <node id="957371990174549548" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="957371990174549548" at="14,67,14,67" />
+      <scope id="957371990174549548" at="23,23,23,23" />
+      <scope id="957371990174549548" at="14,0,16,0" />
+      <scope id="957371990174549548" at="17,89,19,144" />
+      <scope id="957371990174549548" at="23,0,25,0" />
+      <scope id="957371990174549548" at="26,51,29,91" />
+      <scope id="957371990174549548" at="16,0,21,0" />
+      <scope id="957371990174549548" at="25,0,31,0" />
+      <unit id="957371990174549548" at="21,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyBooleanProperty_with_Another_Test$TestBody" />
+      <unit id="957371990174549548" at="12,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyBooleanProperty_with_Another_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/957371990174637109">
     <file name="Subst_MultiChild_OnlyEnumProperty_with_Another_Test.java">
-      <node id="957371990174637109" at="15,86,16,115" concept="1" />
-      <node id="957371990174637109" at="16,115,17,141" concept="1" />
-      <node id="957371990174637109" at="24,51,25,61" concept="1" />
-      <node id="957371990174637117" at="25,61,26,29" concept="1" />
-      <node id="3694071247855997999" at="26,29,27,76" concept="1" />
-      <node id="957371990174637109" at="12,0,14,0" concept="0" trace="Subst_MultiChild_OnlyEnumProperty_with_Another_Test#()V" />
-      <node id="957371990174637109" at="21,0,23,0" concept="0" trace="TestBody#()V" />
-      <node id="957371990174637109" at="14,0,19,0" concept="2" trace="test_Subst_MultiChild_OnlyEnumProperty_with_Another#()V" />
-      <node id="957371990174637109" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="957371990174637109" at="12,64,12,64" />
-      <scope id="957371990174637109" at="21,23,21,23" />
-      <scope id="957371990174637109" at="12,0,14,0" />
-      <scope id="957371990174637109" at="15,86,17,141" />
-      <scope id="957371990174637109" at="21,0,23,0" />
-      <scope id="957371990174637109" at="24,51,27,76" />
-      <scope id="957371990174637109" at="14,0,19,0" />
-      <scope id="957371990174637109" at="23,0,29,0" />
-      <unit id="957371990174637109" at="19,0,30,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyEnumProperty_with_Another_Test$TestBody" />
-      <unit id="957371990174637109" at="10,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyEnumProperty_with_Another_Test" />
+      <node id="957371990174637109" at="17,86,18,115" concept="1" />
+      <node id="957371990174637109" at="18,115,19,141" concept="1" />
+      <node id="957371990174637109" at="26,51,27,61" concept="1" />
+      <node id="957371990174637117" at="27,61,28,29" concept="1" />
+      <node id="957371990174637118" at="28,29,29,91" concept="1" />
+      <node id="957371990174637109" at="14,0,16,0" concept="0" trace="Subst_MultiChild_OnlyEnumProperty_with_Another_Test#()V" />
+      <node id="957371990174637109" at="23,0,25,0" concept="0" trace="TestBody#()V" />
+      <node id="957371990174637109" at="16,0,21,0" concept="2" trace="test_Subst_MultiChild_OnlyEnumProperty_with_Another#()V" />
+      <node id="957371990174637109" at="25,0,31,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="957371990174637109" at="14,64,14,64" />
+      <scope id="957371990174637109" at="23,23,23,23" />
+      <scope id="957371990174637109" at="14,0,16,0" />
+      <scope id="957371990174637109" at="17,86,19,141" />
+      <scope id="957371990174637109" at="23,0,25,0" />
+      <scope id="957371990174637109" at="26,51,29,91" />
+      <scope id="957371990174637109" at="16,0,21,0" />
+      <scope id="957371990174637109" at="25,0,31,0" />
+      <unit id="957371990174637109" at="21,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyEnumProperty_with_Another_Test$TestBody" />
+      <unit id="957371990174637109" at="12,0,33,0" name="jetbrains.mps.lang.editor.actions.test.Subst_MultiChild_OnlyEnumProperty_with_Another_Test" />
     </file>
   </root>
 </debug-info>

@@ -21,8 +21,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
   private AbstractCellListHandler myListHandler;
@@ -38,10 +36,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
 
         @Override
         public void execute(EditorContext context) {
-          SNode anchorNode = getAnchorNode(context);
-          SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          SNode parentNode = myListHandler.getOwner();
-          parentNode.insertChildBefore(myListHandler.getElementRole(), nodeToInsert, anchorNode);
+          myListHandler.insertNewChild(context, context.getContextCell(), true);
         }
       };
       insertAction.setCaretPolicy(KeyMapAction.CARET_AT_FIRST_POSITION);
@@ -54,9 +49,7 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
 
         @Override
         public void execute(EditorContext context) {
-          SNode anchorNode = getAnchorNode(context);
-          SNode nodeToInsert = myListHandler.createNodeToInsert(context);
-          myListHandler.getOwner().insertChildBefore(myListHandler.getElementRole(), nodeToInsert, anchorNode.getNextSibling());
+          myListHandler.insertNewChild(context, context.getContextCell(), false);
         }
       };
       addAction.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
@@ -67,17 +60,5 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
         putAction(KeyMap.KEY_MODIFIERS_ANY, elementSeparator, addAction);
       }
     }
-  }
-
-  @NotNull
-  private SNode getAnchorNode(EditorContext context) {
-    SNode owner = myListHandler.getOwner();
-    SNode anchorNode = context.getContextCell().getSNode();
-    assert anchorNode != null;
-    while (anchorNode.getParent() != owner) {
-      anchorNode = anchorNode.getParent();
-      assert anchorNode != null;
-    }
-    return anchorNode;
   }
 }
