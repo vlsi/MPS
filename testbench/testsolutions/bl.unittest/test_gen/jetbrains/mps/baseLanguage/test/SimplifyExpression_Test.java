@@ -59,6 +59,11 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8245314650934554098", true);
   }
   @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456913936588() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456913936588", true);
+  }
+  @Test
   public void test_NodeCanBeSimplifiedCheck2857825852308765476() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck2857825852308765476", true);
@@ -72,6 +77,11 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
   public void test_NodeCanBeSimplifiedCheck8626468694779705042() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck8626468694779705042", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456914053028() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456914053028", true);
   }
   @Test
   public void test_NodeCanBeSimplifiedCheck4477106456906125988() throws Throwable {
@@ -92,6 +102,51 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
   public void test_ErrorMessagesCheck2857825852308723301() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_ErrorMessagesCheck2857825852308723301", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456910957951() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456910957951", true);
+  }
+  @Test
+  public void test_NodeTheNotLogicalExpressionCheck4477106456913804782() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck4477106456913804782", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456910420974() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456910420974", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456911678890() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911678890", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456911590715() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911590715", true);
+  }
+  @Test
+  public void test_NodeTheNotLogicalExpressionCheck4477106456913803784() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheNotLogicalExpressionCheck4477106456913803784", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456911594718() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911594718", true);
+  }
+  @Test
+  public void test_NodeCanBeSimplifiedCheck4477106456911698964() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911698964", true);
+  }
+  @Test
+  public void test_ErrorMessagesCheck4477106456910414383() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_ErrorMessagesCheck4477106456910414383", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
@@ -131,6 +186,10 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8245314650934554098"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8245314650934553484")});
     }
+    public void test_NodeCanBeSimplifiedCheck4477106456913936588() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456913936588"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2857825852308764488")});
+    }
     public void test_NodeCanBeSimplifiedCheck2857825852308765476() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2857825852308765476"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2857825852308764486")});
@@ -142,6 +201,10 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
     public void test_NodeCanBeSimplifiedCheck8626468694779705042() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8626468694779705042"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8626468694779702469")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456914053028() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456914053028"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2857825852308756321")});
     }
     public void test_NodeCanBeSimplifiedCheck4477106456906125988() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456906125988"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
@@ -158,6 +221,42 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
     public void test_ErrorMessagesCheck2857825852308723301() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2857825852308723301"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2857825852308723295")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456910957951() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456910957951"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910425567")});
+    }
+    public void test_NodeTheNotLogicalExpressionCheck4477106456913804782() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456913804782"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910420970")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456910420974() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456910420974"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910420969")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456911678890() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456911678890"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456911667195")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456911590715() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456911590715"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910411887")});
+    }
+    public void test_NodeTheNotLogicalExpressionCheck4477106456913803784() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456913803784"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910972764")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456911594718() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456911594718"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910972763")});
+    }
+    public void test_NodeCanBeSimplifiedCheck4477106456911698964() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456911698964"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456911687811")});
+    }
+    public void test_ErrorMessagesCheck4477106456910414383() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456910414383"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456910351315")});
     }
   }
 }
