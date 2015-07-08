@@ -32,8 +32,8 @@
     <import index="ierg" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
     <import index="53gy" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" />
     <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="y5px" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" implicit="true" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -939,13 +939,8 @@
                                     <node concept="3CFTII" id="66_zkXuygkA" role="3CFYIz">
                                       <ref role="3CFTIH" to="tp3r:hqEMmm7" resolve="PropertyAntiquotation" />
                                       <node concept="25Kdxt" id="66_zkXuygkB" role="3CFTIG">
-                                        <node concept="2OqwBi" id="7hIo0WbYkY_" role="25KhWn">
-                                          <node concept="2GrUjf" id="66_zkXuySz3" role="2Oq$k0">
-                                            <ref role="2Gs0qQ" node="66_zkXuxRBv" resolve="property" />
-                                          </node>
-                                          <node concept="liA8E" id="7hIo0WbYm1a" role="2OqNvi">
-                                            <ref role="37wK5l" to="t3eg:~SProperty.getName():java.lang.String" resolve="getName" />
-                                          </node>
+                                        <node concept="2GrUjf" id="66_zkXuySz3" role="25KhWn">
+                                          <ref role="2Gs0qQ" node="66_zkXuxRBv" resolve="property" />
                                         </node>
                                       </node>
                                     </node>
@@ -1476,7 +1471,7 @@
                                       <node concept="25Kdxt" id="66_zkXut4av" role="3CFYM5">
                                         <node concept="2OqwBi" id="66_zkXutxzo" role="25KhWn">
                                           <node concept="liA8E" id="66_zkXutCOE" role="2OqNvi">
-                                            <ref role="37wK5l" to="ec5l:~SReference.getRole():java.lang.String" resolve="getRole" />
+                                            <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                                           </node>
                                           <node concept="2GrUjf" id="66_zkXutpLq" role="2Oq$k0">
                                             <ref role="2Gs0qQ" node="66_zkXustb3" resolve="ref" />
@@ -3668,7 +3663,7 @@
                                                           <ref role="3cqZAo" node="SVCbzOGB3q" resolve="reference" />
                                                         </node>
                                                         <node concept="liA8E" id="SVCbzOGB3H" role="2OqNvi">
-                                                          <ref role="37wK5l" to="ec5l:~SReference.getRole():java.lang.String" resolve="getRole" />
+                                                          <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                                                         </node>
                                                       </node>
                                                     </node>

@@ -204,7 +204,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -7537,13 +7537,8 @@
                                     <node concept="3CFTII" id="66_zkXuxbq0" role="3CFYIz">
                                       <ref role="3CFTIH" to="tpf8:fP7UvrK" resolve="PropertyMacro" />
                                       <node concept="25Kdxt" id="66_zkXuxbq1" role="3CFTIG">
-                                        <node concept="2OqwBi" id="3gafJvOUcU6" role="25KhWn">
-                                          <node concept="2GrUjf" id="66_zkXuxhL3" role="2Oq$k0">
-                                            <ref role="2Gs0qQ" node="66_zkXuwV5P" resolve="property" />
-                                          </node>
-                                          <node concept="liA8E" id="3gafJvOUu1H" role="2OqNvi">
-                                            <ref role="37wK5l" to="t3eg:~SProperty.getName():java.lang.String" resolve="getName" />
-                                          </node>
+                                        <node concept="2GrUjf" id="66_zkXuxhL3" role="25KhWn">
+                                          <ref role="2Gs0qQ" node="66_zkXuwV5P" resolve="property" />
                                         </node>
                                       </node>
                                     </node>
@@ -8062,7 +8057,7 @@
                                             <ref role="3cqZAo" node="3AFg8NT6hdp" resolve="reference" />
                                           </node>
                                           <node concept="liA8E" id="3AFg8NT6hdC" role="2OqNvi">
-                                            <ref role="37wK5l" to="ec5l:~SReference.getRole():java.lang.String" resolve="getRole" />
+                                            <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                                           </node>
                                         </node>
                                       </node>
