@@ -20,15 +20,15 @@ public class check_Expression_NonTypesystemRule extends AbstractNonTypesystemRul
   public check_Expression_NonTypesystemRule() {
   }
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode parent = SNodeOperations.getParent(expr);
-    if (((parent == null) || !(SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) || !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) || BehaviorReflection.invokeVirtual(Object.class, SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(parent).getModule()}) == null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(expr)), "virtual_constant_1262430001741498050", new Object[]{}))) {
-      Object v = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(expr).getModule()});
-      if (v != null && (v instanceof Number || v instanceof Boolean || v instanceof String || v instanceof Character)) {
+    if ((SNodeOperations.hasRole(expr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L, 0xf8cc56b218L, "condition")) || SNodeOperations.hasRole(expr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfaa4bf0f2fL, 0xfaa4bf0f30L, "condition")) || SNodeOperations.hasRole(expr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11232674988L, 0x11232679422L, "condition"))) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(expr)), "virtual_constant_1262430001741498050", new Object[]{})) && BehaviorReflection.invokeVirtual(Boolean.TYPE, expr, "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
+      Object value = BehaviorReflection.invokeVirtual(Object.class, expr, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(expr).getModule()});
+      if (value != null && value instanceof Boolean) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expr, "The expresion can be simplified to " + v.toString(), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2857825852301215120", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(expr, "The condition is always " + value, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8245314650935561947", null, errorTarget);
           {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyExpression_QuickFix", false);
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyCondition_QuickFix", false);
+            intentionProvider.putArgument("newValue", value.toString());
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }

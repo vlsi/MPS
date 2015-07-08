@@ -19,9 +19,9 @@ public class PropertySetterReturn_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeNotStatementCheck6696611297029671896", true);
   }
   @Test
-  public void test_NodeTheExpresionCanBeSimplifiedCheck2857825852305744070() throws Throwable {
+  public void test_NodeTheConditionIsAlwaysCheck2857825852305744070() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeTheExpresionCanBeSimplifiedCheck2857825852305744070", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.PropertySetterReturn_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305744070", true);
   }
   @Test
   public void test_NodeNoReturnValueExpectedCheck6696611297029670760() throws Throwable {
@@ -39,7 +39,7 @@ public class PropertySetterReturn_Test extends BaseTransformationTest {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6696611297029671896"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("5772383102105101132")});
     }
-    public void test_NodeTheExpresionCanBeSimplifiedCheck2857825852305744070() throws Exception {
+    public void test_NodeTheConditionIsAlwaysCheck2857825852305744070() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2857825852305744070"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("5772383102105103385")});
     }

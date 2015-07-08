@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SimplifyNotExpression_QuickFix extends QuickFix_Runtime {
   public SimplifyNotExpression_QuickFix() {
@@ -17,7 +17,7 @@ public class SimplifyNotExpression_QuickFix extends QuickFix_Runtime {
     return "Simplify Not Expression";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (!(SPropertyOperations.getBoolean(((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")))));
-    SNodeOperations.replaceWithAnother(node, ((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]));
+    SNode constant = SNodeFactoryOperations.replaceWithNewChild(node, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")));
+    SPropertyOperations.set(constant, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (!(((Boolean) SimplifyNotExpression_QuickFix.this.getField("value")[0]))));
   }
 }

@@ -29,9 +29,9 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeIsAssignedButNeverAccessedCheck6923385624927778168", true);
   }
   @Test
-  public void test_NodeTheExpresionCanBeSimplifiedCheck2857825852305588892() throws Throwable {
+  public void test_NodeTheConditionIsAlwaysCheck2857825852305588892() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeTheExpresionCanBeSimplifiedCheck2857825852305588892", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.FieldCanBeLocalVar_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2857825852305588892", true);
   }
   @Test
   public void test_ErrorMessagesCheck6640766779615226140() throws Throwable {
@@ -52,7 +52,7 @@ public class FieldCanBeLocalVar_Test extends BaseTransformationTest {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("6923385624927778168"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("3951985765451230524")});
     }
-    public void test_NodeTheExpresionCanBeSimplifiedCheck2857825852305588892() throws Exception {
+    public void test_NodeTheConditionIsAlwaysCheck2857825852305588892() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2857825852305588892"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("6476133814171477077")});
     }

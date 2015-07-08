@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -24,14 +26,18 @@ public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends Abstra
     while (SNodeOperations.isInstanceOf(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
       currentExpression = SLinkOperations.getTarget(SNodeOperations.cast(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"));
     }
-    if (SNodeOperations.isInstanceOf(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(notExpression, "The logical expression can be simplified", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534031039831", null, errorTarget);
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, currentExpression, "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
+      SModule module = SNodeOperations.getModel(notExpression).getModule();
+      Object value = BehaviorReflection.invokeVirtual(Object.class, currentExpression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
+      if (value != null && value instanceof Boolean) {
         {
-          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyNotExpression_QuickFix", false);
-          intentionProvider.putArgument("nestedConstant", SNodeOperations.cast(currentExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")));
-          _reporter_2309309498.addIntentionProvider(intentionProvider);
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(notExpression, "The Not logical expression can be simplified", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534031039831", null, errorTarget);
+          {
+            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyNotExpression_QuickFix", false);
+            intentionProvider.putArgument("value", (Boolean) value);
+            _reporter_2309309498.addIntentionProvider(intentionProvider);
+          }
         }
       }
     }

@@ -7,27 +7,32 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix extends QuickFix_Runtime {
   public SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix() {
     super(new SNodePointer("r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534028401955"));
   }
   public String getDescription(SNode node) {
-    return "Simplify Logical Expression";
+    return ((SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) ? "Simplify Binary Logical Expression" : "Simplify Ternary Operator Expression")) + " " + ExpressionPresentationUtil.getExpressionPresentation(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]));
   }
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"))) {
-      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")) == true) {
+      if (((Boolean) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("value")[0]) == true) {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("remainingNode")[0]));
       } else {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]));
       }
     } else if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
-      if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value")) == true) {
+      if (((Boolean) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("value")[0]) == true) {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]));
       } else {
         SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("remainingNode")[0]));
+      }
+    } else if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
+      if (((Boolean) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("value")[0]) == true) {
+        SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("remainingNode")[0]));
+      } else {
+        SNodeOperations.replaceWithAnother(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), ((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]));
       }
     } else {
       return;

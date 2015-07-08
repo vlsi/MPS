@@ -141,13 +141,15 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
       case 4:
         // Concept: Expression 
         if (myIntentions4 == null) {
-          myIntentions4 = new IntentionFactory[6];
+          myIntentions4 = new IntentionFactory[8];
           myIntentions4[0] = new SurroundWithParenthesis_Intention();
           myIntentions4[1] = new SurroundWithTypeCast_Intention();
           myIntentions4[2] = new SurroundWithNegation_Intention();
           myIntentions4[3] = new SurroundWithIfClause_Intention();
           myIntentions4[4] = new SurroundWithIfElseClause_Intention();
           myIntentions4[5] = new CleanUnmatchedParentheses_Intention();
+          myIntentions4[6] = new ComputeWholeExpressionValue_Intention();
+          myIntentions4[7] = new ComputeExpressionValue_Intention();
         }
         return Arrays.asList(myIntentions4);
       case 5:
@@ -457,7 +459,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[91];
+    IntentionFactory[] rv = new IntentionFactory[93];
     rv[0] = new AddCastStatement_Intention();
     rv[1] = new SplitStringIntoConcatenation_Intention();
     rv[2] = new SplitIntoDeclarationAndAssignment_Intention();
@@ -549,6 +551,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[88] = new SwitchToDefaultPropertyImplementation_Intention();
     rv[89] = new SwitchToCustomConstructorPropertyImplementation_Intention();
     rv[90] = new CleanUnmatchedParentheses_Intention();
+    rv[91] = new ComputeWholeExpressionValue_Intention();
+    rv[92] = new ComputeExpressionValue_Intention();
     return Arrays.asList(rv);
   }
 }

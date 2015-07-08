@@ -39,6 +39,16 @@ public class UnreachableStatements_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck2557916264120514158", true);
   }
   @Test
+  public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8245314650935054824", true);
+  }
+  @Test
+  public void test_ErrorMessagesCheck8245314650935052537() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_ErrorMessagesCheck8245314650935052537", true);
+  }
+  @Test
   public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.UnreachableStatements_Test$TestBody", "test_NodeUnreachableNodeErrorCheck8768955936813176762", true);
@@ -119,6 +129,14 @@ public class UnreachableStatements_Test extends BaseTransformationTest {
     public void test_ErrorMessagesCheck2557916264120514158() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("2557916264120514158"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2557916264120512203")});
+    }
+    public void test_NodeUnreachableNodeErrorCheck8245314650935054824() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8245314650935054824"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8245314650935053255")});
+    }
+    public void test_ErrorMessagesCheck8245314650935052537() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("8245314650935052537"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("8245314650935052522")});
     }
     public void test_NodeUnreachableNodeErrorCheck8768955936813176762() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("8768955936813176762"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
