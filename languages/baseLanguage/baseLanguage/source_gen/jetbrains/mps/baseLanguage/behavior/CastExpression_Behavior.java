@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class CastExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -16,11 +14,5 @@ public class CastExpression_Behavior {
   }
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression"), expr);
-  }
-  public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
-  }
-  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
-    return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL, 0xf940dabe4cL, "expression")), "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
   }
 }
