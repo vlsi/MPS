@@ -23,12 +23,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about node added to a model.
+ * To tell added root node from a child, use {@link #isRoot()}
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SNodeAddEvent {
+public final class SNodeAddEvent extends AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myParent;
   private final SNode myChild;

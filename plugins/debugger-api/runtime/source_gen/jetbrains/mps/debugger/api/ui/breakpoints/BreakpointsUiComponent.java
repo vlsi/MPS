@@ -22,7 +22,6 @@ import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.HashSet;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -39,6 +38,7 @@ import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import org.jdom.Element;
 import org.jdom.Attribute;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
@@ -99,7 +99,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   @Override
   protected Set<ILocationBreakpoint> getBreakpointsForComponent(@NotNull final EditorComponent editorComponent) {
     final Wrappers._T<Set<ILocationBreakpoint>> result = new Wrappers._T<Set<ILocationBreakpoint>>(new HashSet<ILocationBreakpoint>());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         final SNode editedNode = editorComponent.getEditedNode();
         if (editedNode == null) {

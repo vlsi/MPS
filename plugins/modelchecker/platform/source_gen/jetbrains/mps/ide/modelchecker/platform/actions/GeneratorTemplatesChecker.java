@@ -59,7 +59,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
             if (progressMonitor.isCanceled()) {
               return;
             }
-            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), SLinkOperations.getRole(ref))) != null)) {
+            if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), ref.getLink())) != null)) {
               continue;
             }
             SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);

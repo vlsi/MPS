@@ -21,14 +21,15 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about read access to a property.
+ *
  * If there are listeners that need property value along with the read notification,
  * we shall add value to event rather than let listeners query property value again.
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SPropertyReadEvent {
+public final class SPropertyReadEvent extends AbstractModelReadEvent {
   private final SNode myNode;
   private final SProperty myProperty;
 

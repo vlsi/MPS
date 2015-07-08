@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -75,7 +74,7 @@ public class EvaluateExpression_Action extends BaseAction {
       if (((EditorComponent) MapSequence.fromMap(_params).get("component")) != null) {
         final Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("component")).getSelectionManager().getSelection();
         if ((selection instanceof EditorCellLabelSelection && ((EditorCellLabelSelection) selection).hasNonTrivialSelection()) || (selection instanceof EditorCellSelection && !((selection instanceof EditorCellLabelSelection))) || (selection instanceof MultipleSelection)) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
             public void run() {
               ListSequence.fromList(nodePointers).addSequence(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
                 public Iterable<SNode> iterable() {

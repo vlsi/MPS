@@ -11,7 +11,6 @@ import javax.swing.JComponent;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.beans.PropertyChangeListener;
 import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.openapi.fileEditor.FileEditorLocation;
@@ -76,7 +75,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     final Wrappers._T<ConsoleFileEditor.MyFileEditorState> result = new Wrappers._T<ConsoleFileEditor.MyFileEditorState>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         result.value = new ConsoleFileEditor.MyFileEditorState(myEditor.getEditorContext().createMemento());
       }
@@ -85,7 +84,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
   }
   public void setState(@NotNull final FileEditorState state) {
     if (state instanceof ConsoleFileEditor.MyFileEditorState) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myEditor.getEditorContext().getRepository().getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           myEditor.getEditorContext().setMemento(((ConsoleFileEditor.MyFileEditorState) state).getMemento());
           myEditor.rebuildEditorContent();
@@ -129,7 +128,7 @@ public class ConsoleFileEditor implements DocumentsEditor {
   }
   public Document[] getDocuments() {
     final MPSNodeVirtualFile[] virtualFile = new MPSNodeVirtualFile[1];
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myEditor.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         virtualFile[0] = MPSNodesVirtualFileSystem.getInstance().getFileFor(myEditor.getEditedNode());
       }

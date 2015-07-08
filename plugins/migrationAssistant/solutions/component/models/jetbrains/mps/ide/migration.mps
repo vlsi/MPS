@@ -49,6 +49,8 @@
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="hy6y" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure(MPS.Core/jetbrains.mps.smodel.adapter.structure@java_stub)" />
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
+    <import index="hxfc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components.impl.stores(MPS.IDEA/com.intellij.openapi.components.impl.stores@java_stub)" />
+    <import index="mi91" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project.impl(MPS.IDEA/com.intellij.openapi.project.impl@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -97,6 +99,10 @@
       </concept>
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
@@ -507,11 +513,24 @@
             <node concept="2B6LJw" id="5OVuudBqM8T" role="2B76xF">
               <ref role="2B6OnR" to="iiw6:~Storage.file()" resolve="file" />
               <node concept="10M0yZ" id="5OVuudBqMaD" role="2B70Vg">
-                <ref role="3cqZAo" to="iiw6:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
                 <ref role="1PxDUh" to="iiw6:~StoragePathMacros" resolve="StoragePathMacros" />
+                <ref role="3cqZAo" to="iiw6:~StoragePathMacros.WORKSPACE_FILE" resolve="WORKSPACE_FILE" />
+              </node>
+            </node>
+            <node concept="2B6LJw" id="4BrXpLdA3nv" role="2B76xF">
+              <ref role="2B6OnR" to="iiw6:~Storage.scheme()" resolve="scheme" />
+              <node concept="Rm8GO" id="4BrXpLdA3rw" role="2B70Vg">
+                <ref role="Rm8GQ" to="iiw6:~StorageScheme.DIRECTORY_BASED" resolve="DIRECTORY_BASED" />
+                <ref role="1Px2BO" to="iiw6:~StorageScheme" resolve="StorageScheme" />
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="2B6LJw" id="3q33vpWnw5O" role="2B76xF">
+        <ref role="2B6OnR" to="iiw6:~State.reloadable()" resolve="reloadable" />
+        <node concept="3clFbT" id="3q33vpWnw83" role="2B70Vg">
+          <property role="3clFbU" value="true" />
         </node>
       </node>
     </node>
@@ -2227,6 +2246,38 @@
                                 <ref role="37wK5l" node="7lByCvUzt18" resolve="restoreTipsState" />
                               </node>
                             </node>
+                            <node concept="3clFbH" id="7tl_fUThKhR" role="3cqZAp" />
+                            <node concept="3SKdUt" id="3gptLqNHhOV" role="3cqZAp">
+                              <node concept="3SKdUq" id="3gptLqNHi4E" role="3SKWNk">
+                                <property role="3SKdUp" value="set flag to execute migration after startup" />
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="7tl_fUThKCV" role="3cqZAp">
+                              <node concept="3SKdUq" id="7tl_fUThKKl" role="3SKWNk">
+                                <property role="3SKdUp" value="NOTE we need to set it here as in invokeLater it can " />
+                              </node>
+                            </node>
+                            <node concept="3SKdUt" id="7tl_fUThPgR" role="3cqZAp">
+                              <node concept="3SKdUq" id="7tl_fUThPoj" role="3SKWNk">
+                                <property role="3SKdUp" value="be executed when save session already passed, see MPS-22045" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="3gptLqNIxva" role="3cqZAp">
+                              <node concept="37vLTI" id="3gptLqNIxvb" role="3clFbG">
+                                <node concept="37vLTw" id="7tl_fUThKbz" role="37vLTx">
+                                  <ref role="3cqZAo" node="1AzqgyAiINa" resolve="migrate" />
+                                </node>
+                                <node concept="2OqwBi" id="3gptLqNIxvd" role="37vLTJ">
+                                  <node concept="37vLTw" id="3gptLqNIxve" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+                                  </node>
+                                  <node concept="2OwXpG" id="3gptLqNIxvf" role="2OqNvi">
+                                    <ref role="2Oxat5" node="5SsFeroaak5" resolve="migrationRequired" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbH" id="7tl_fUThIMV" role="3cqZAp" />
                             <node concept="3clFbJ" id="1AzqgyAiJyJ" role="3cqZAp">
                               <node concept="3clFbS" id="1AzqgyAiJyM" role="3clFbx">
                                 <node concept="3cpWs6" id="1AzqgyAiL1s" role="3cqZAp" />
@@ -2237,7 +2288,7 @@
                                 </node>
                               </node>
                             </node>
-                            <node concept="3clFbH" id="1G0sYk64yg1" role="3cqZAp" />
+                            <node concept="3clFbH" id="7tl_fUThCeY" role="3cqZAp" />
                             <node concept="3clFbF" id="4tP09YuEobM" role="3cqZAp">
                               <node concept="2YIFZM" id="4tP09YuEoro" role="3clFbG">
                                 <ref role="37wK5l" to="p7r7:~VirtualFileUtils.refreshSynchronouslyRecursively(com.intellij.openapi.vfs.VirtualFile):void" resolve="refreshSynchronouslyRecursively" />
@@ -2280,26 +2331,6 @@
                                                     </node>
                                                     <node concept="liA8E" id="4tP09YuErl7" role="2OqNvi">
                                                       <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                                <node concept="3SKdUt" id="3gptLqNHhOV" role="3cqZAp">
-                                                  <node concept="3SKdUq" id="3gptLqNHi4E" role="3SKWNk">
-                                                    <property role="3SKdUp" value="set flag to execute migration after startup" />
-                                                  </node>
-                                                </node>
-                                                <node concept="3clFbF" id="3gptLqNIxva" role="3cqZAp">
-                                                  <node concept="37vLTI" id="3gptLqNIxvb" role="3clFbG">
-                                                    <node concept="3clFbT" id="3gptLqNIxvc" role="37vLTx">
-                                                      <property role="3clFbU" value="true" />
-                                                    </node>
-                                                    <node concept="2OqwBi" id="3gptLqNIxvd" role="37vLTJ">
-                                                      <node concept="37vLTw" id="3gptLqNIxve" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
-                                                      </node>
-                                                      <node concept="2OwXpG" id="3gptLqNIxvf" role="2OqNvi">
-                                                        <ref role="2Oxat5" node="5SsFeroaak5" resolve="migrationRequired" />
-                                                      </node>
                                                     </node>
                                                   </node>
                                                 </node>

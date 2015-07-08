@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.runtime;
 import jetbrains.mps.debug.api.source.NodePositionProvider;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.debug.api.source.PositionProvider;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
@@ -16,7 +17,8 @@ import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 
 public class JavaNodePositionProvider extends NodePositionProvider implements ProjectComponent {
   private final PositionProvider myProvider;
-  public JavaNodePositionProvider(PositionProvider provider) {
+  public JavaNodePositionProvider(PositionProvider provider, MPSProject mpsProject) {
+    super(mpsProject);
     myProvider = provider;
   }
   @Nullable

@@ -4,13 +4,13 @@ package jetbrains.mps.console.ideCommands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior;
 
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SModel call_getModel_7057947030098579394(SNode thisNode) {
-    return SModelRepository.getInstance().getModelDescriptor(ModelReferenceExpression_Behavior.call_getFQName_8936365938567719135(thisNode));
+    return new ModuleRepositoryFacade(thisNode.getModel().getRepository()).getModelByName(ModelReferenceExpression_Behavior.call_getFQName_8936365938567719135(thisNode));
   }
 }

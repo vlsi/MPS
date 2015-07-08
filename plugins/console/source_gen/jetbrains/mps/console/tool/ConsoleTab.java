@@ -11,15 +11,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -70,18 +70,14 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
   }
 
   private void setSelection() {
-    SwingUtilities.invokeLater(new Runnable() {
+    getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myEditor.selectNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
-            EditorCell lastLeaf = ((EditorCell) myEditor.getSelectedCell()).getLastLeaf();
-            myEditor.changeSelection(lastLeaf);
-            if (lastLeaf instanceof EditorCell_Label) {
-              ((EditorCell_Label) lastLeaf).end();
-            }
-          }
-        });
+        myEditor.selectNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
+        EditorCell lastLeaf = ((EditorCell) myEditor.getSelectedCell()).getLastLeaf();
+        myEditor.changeSelection(lastLeaf);
+        if (lastLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label) lastLeaf).end();
+        }
       }
     });
     myEditor.ensureSelectionVisible();

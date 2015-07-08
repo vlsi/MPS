@@ -56,7 +56,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.Project;
@@ -259,7 +258,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   @Nullable
   public String saveHistory() {
     final Wrappers._T<String> result = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
           result.value = (myModel == null ? null : Base64Converter.encode(PersistenceUtil.saveBinaryModel(myModel)));
@@ -347,7 +346,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   @NotNull
-  private Project getProject() {
+  protected final Project getProject() {
     Project mpsProject = ProjectHelper.toMPSProject(this.getConsoleTool().getProject());
     if (mpsProject == null) {
       throw new IllegalStateException("Cannot convert idea project to the mps project");
@@ -420,7 +419,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   public void selectNode(final SNode nodeToSelect) {
     myTool.getToolWindow().activate(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             myEditor.selectNode(nodeToSelect);
             getEditorComponent().ensureSelectionVisible();
@@ -503,7 +502,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   private static SNode createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a94(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"), null, null, false);
-    n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), String.valueOf(p0));
+    n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), p0 + "");
     return n1;
   }
   private static Highlighter check_6q36mf_a0o0gc(com.intellij.openapi.project.Project checkedDotOperand) {

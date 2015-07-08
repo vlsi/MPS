@@ -5612,7 +5612,9 @@
                           <ref role="3CFYIJ" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
                           <node concept="25Kdxt" id="3etVqSRK$7L" role="3CFYM5">
                             <node concept="2OqwBi" id="3etVqSRK$7M" role="25KhWn">
-                              <node concept="90r25" id="3etVqSRK$7N" role="2OqNvi" />
+                              <node concept="liA8E" id="3fee2iOA4Ef" role="2OqNvi">
+                                <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                              </node>
                               <node concept="2GrUjf" id="3etVqSRK$7O" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3etVqSRK$a3" resolve="ref" />
                               </node>
@@ -9585,7 +9587,9 @@
                                             <node concept="2GrUjf" id="3etVqSRT$KA" role="2Oq$k0">
                                               <ref role="2Gs0qQ" node="3etVqSRT$Lz" resolve="ref" />
                                             </node>
-                                            <node concept="90r25" id="3etVqSRT$KB" role="2OqNvi" />
+                                            <node concept="liA8E" id="3fee2iOA3s5" role="2OqNvi">
+                                              <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>

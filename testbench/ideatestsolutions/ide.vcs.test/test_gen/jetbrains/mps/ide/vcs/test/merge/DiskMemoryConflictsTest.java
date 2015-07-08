@@ -29,7 +29,7 @@ import org.junit.Test;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -163,7 +163,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   }
 
   private EditableSModel getModel() {
-    return (EditableSModel) SModelRepository.getInstance().getModelDescriptor("simpleModel");
+    return (EditableSModel) new ModuleRepositoryFacade(ourRepository).getModelByName("simpleModel");
   }
 
   private SNode getField() {

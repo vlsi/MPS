@@ -22,8 +22,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -34,7 +32,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
@@ -42,7 +39,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -63,13 +59,8 @@ public class ChildSubstituteActionsHelper {
     if (childConcept == null) {
       return Collections.emptyList();
     }
-    return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
-      @Override
-      public List<SubstituteAction> compute() {
-        // In case this becomes a performance bottleneck, use the SubtypingCache
-        return createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
-      }
-    });
+    // In case this becomes a performance bottleneck, use the SubtypingCache
+    return createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
   }
 
   private static List<SubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,

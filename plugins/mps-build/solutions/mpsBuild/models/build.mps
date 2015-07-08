@@ -19931,6 +19931,12 @@
             <ref role="3bR37D" node="7Kfy9QB6KZ6" resolve="jetbrains.mps.baseLanguage.blTypes" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4IuFl2KUzZi" role="3bR37C">
+          <node concept="3bR9La" id="4IuFl2KUzZj" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lc2" resolve="jetbrains.mps.lang.typesystem" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="3IKDaVZp4tZ" role="2G$12L">
         <property role="BnDLt" value="true" />

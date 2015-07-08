@@ -42,6 +42,8 @@ public interface SRepositoryExt extends SRepository {
    *    buy "single module in a repo, with multiple *owners*" story. If it's truly needed, we could accomplish the same
    *    with register(getModule(moduleRef), anotherOwner), rather than return value
    *
+   * Promise: once returns, module is attached to the repository
+   *
    * {@link jetbrains.mps.smodel.MPSModuleRepository#registerModule(SModule, MPSModuleOwner)}
    */
   <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner);

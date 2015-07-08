@@ -28,6 +28,10 @@
     <file name="MigrationDescriptorImpl.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MigrationDescriptorImpl" />
     </file>
+    <file name="_Adapters.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin._Adapters$_return_P0_E0_to__void_P0_E0_adapter" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin._Adapters" />
+    </file>
   </root>
   <root nodeRef="r:cf512d15-78eb-402a-a0bd-f5eea680b5a8(jetbrains.mps.lang.structure.pluginSolution.plugin)/2133534697609959955">
     <file name="MoveConceptUtil.java">
@@ -2430,12 +2434,12 @@
       <node id="7217668918195680073" at="112,34,113,66" concept="3" />
       <node id="7217668918196653747" at="116,9,117,0" concept="12" />
       <node id="7217668918195679964" at="118,82,119,69" concept="9" />
-      <node id="7217668918195679977" at="121,34,122,88" concept="3" />
+      <node id="7217668918195679977" at="121,52,122,88" concept="3" />
       <node id="7217668918195679984" at="122,88,123,486" concept="3" />
       <node id="7217668918195680004" at="123,486,124,57" concept="3" />
       <node id="7217668918195680009" at="124,57,125,0" concept="12" />
       <node id="7217668918195680010" at="125,0,126,160" concept="9" />
-      <node id="7217668918195680024" at="126,160,127,548" concept="3" />
+      <node id="7217668918195680024" at="126,160,127,555" concept="10" />
       <node id="7217668918200904023" at="137,42,138,34" concept="10" />
       <node id="7217668918200763782" at="142,53,143,31" concept="3" />
       <node id="7217668918200763792" at="145,48,146,78" concept="10" />
@@ -2443,9 +2447,9 @@
       <node id="7217668918200771088" at="157,152,158,287" concept="10" />
       <node id="7217668918195679990" at="162,90,163,63" concept="9" />
       <node id="7217668918195679990" at="163,63,164,235" concept="9" />
-      <node id="7217668918195679990" at="164,235,165,156" concept="1" />
-      <node id="7217668918195679990" at="164,235,165,156" concept="3" />
-      <node id="7217668918195679990" at="165,156,166,14" concept="10" />
+      <node id="7217668918195679990" at="164,235,165,145" concept="1" />
+      <node id="7217668918195679990" at="164,235,165,145" concept="3" />
+      <node id="7217668918195679990" at="165,145,166,14" concept="10" />
       <node id="7217668918200771089" at="168,179,169,63" concept="9" />
       <node id="7217668918200771089" at="169,63,170,30" concept="9" />
       <node id="7217668918200771089" at="170,30,171,30" concept="9" />
@@ -2642,13 +2646,13 @@
       <node id="7217668918200771089" at="292,166,298,168" concept="1" />
       <node id="7217668918200771089" at="292,166,298,168" concept="1" />
       <node id="7217668918195679961" at="108,76,116,9" concept="7" />
-      <node id="7217668918195679975" at="121,0,129,0" concept="8" trace="invoke#()V" />
+      <node id="7217668918195679975" at="121,0,129,0" concept="8" trace="invoke#()Ljetbrains/mps/lang/migration/pluginSolution/util/MigrationScriptBuilder;" />
       <node id="7217668918200771089" at="241,161,249,167" concept="1" />
       <node id="7217668918200771089" at="241,161,249,167" concept="1" />
       <node id="7217668918200763785" at="143,31,152,11" concept="3" />
       <node id="7217668918200771089" at="267,232,276,167" concept="1" />
       <node id="7217668918200771089" at="267,232,276,167" concept="1" />
-      <node id="7217668918196745258" at="119,69,129,44" concept="3" />
+      <node id="7217668918196745258" at="119,69,129,45" concept="3" />
       <node id="7217668918200771089" at="289,232,299,167" concept="1" />
       <node id="7217668918200771089" at="289,232,299,167" concept="1" />
       <node id="7217668918200771089" at="266,226,277,166" concept="1" />
@@ -2712,7 +2716,7 @@
       <scope id="7217668918200763791" at="145,48,146,78" />
       <scope id="7217668918200763803" at="149,47,150,81" />
       <scope id="7217668918200771087" at="157,152,158,287" />
-      <scope id="7217668918195679990" at="164,235,165,156" />
+      <scope id="7217668918195679990" at="164,235,165,145" />
       <scope id="7217668918200771089" at="216,32,217,205" />
       <scope id="7217668918200771089" at="222,32,223,206" />
       <scope id="7217668918200771089" at="295,32,296,191" />
@@ -2765,7 +2769,7 @@
       <scope id="7217668918195680050" at="109,74,115,44">
         <var name="instances" id="7217668918195680052" />
       </scope>
-      <scope id="7217668918195679976" at="121,34,127,548">
+      <scope id="7217668918195679976" at="121,52,127,555">
         <var name="builder" id="7217668918195680011" />
       </scope>
       <scope id="7217668918195679990" at="162,0,168,0">
@@ -2779,7 +2783,7 @@
       <scope id="7217668918200771089" at="267,232,276,167" />
       <scope id="7217668918200763781" at="142,53,152,11" />
       <scope id="7217668918200771089" at="289,232,299,167" />
-      <scope id="7217668918196656442" at="118,82,129,44">
+      <scope id="7217668918196656442" at="118,82,129,45">
         <var name="newFeature" id="7217668918195679965" />
       </scope>
       <scope id="7217668918200771089" at="266,226,277,166" />
@@ -2888,7 +2892,7 @@
       <unit id="7217668918200763790" at="144,46,148,9" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$4" />
       <unit id="7217668918200763802" at="148,24,152,9" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$4" />
       <unit id="1929018697513020653" at="42,0,47,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$FeatureAccess" />
-      <unit id="7217668918195679975" at="120,69,129,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$2" />
+      <unit id="7217668918195679975" at="120,120,129,11" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$2" />
       <unit id="1929018697512317205" at="56,0,66,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$FeatureSpecificMigrations" />
       <unit id="7217668918200763780" at="141,86,154,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$3" />
       <unit id="7217668918195679889" at="88,45,132,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveFeatureUp$1" />
@@ -3130,9 +3134,9 @@
       <node id="7217668918201682070" at="311,70,312,74" concept="3" />
       <node id="8795282871116667275" at="316,91,317,63" concept="9" />
       <node id="8795282871116667275" at="317,63,318,235" concept="9" />
-      <node id="8795282871116667275" at="318,235,319,156" concept="1" />
-      <node id="8795282871116667275" at="318,235,319,156" concept="3" />
-      <node id="8795282871116667275" at="319,156,320,14" concept="10" />
+      <node id="8795282871116667275" at="318,235,319,145" concept="1" />
+      <node id="8795282871116667275" at="318,235,319,145" concept="3" />
+      <node id="8795282871116667275" at="319,145,320,14" concept="10" />
       <node id="4323017570220625144" at="322,93,323,63" concept="9" />
       <node id="4323017570220625144" at="323,63,324,30" concept="9" />
       <node id="4323017570220625144" at="324,30,325,30" concept="9" />
@@ -3250,7 +3254,7 @@
       <scope id="7217668918202790927" at="270,136,271,275" />
       <scope id="4323017570218287546" at="292,48,293,78" />
       <scope id="4323017570218287561" at="296,84,297,54" />
-      <scope id="8795282871116667275" at="318,235,319,156" />
+      <scope id="8795282871116667275" at="318,235,319,145" />
       <scope id="8380389482647193256" at="253,21,255,50" />
       <scope id="7217668918201037731" at="273,62,275,145" />
       <scope id="7217668918197775395" at="62,0,65,0" />

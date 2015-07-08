@@ -21,12 +21,12 @@ import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 // FIXME myModel and myModule are DEFAULT_VALUE - why do we serialize this
 public class ScopeOptions extends BaseOptions {
@@ -92,9 +92,9 @@ public class ScopeOptions extends BaseOptions {
       case PROJECT:
         return new ProjectScope(project);
       case MODULE:
-        return new ModulesScope(MPSModuleRepository.getInstance().getModuleByFqName(myModule));
+        return new ModulesScope(new ModuleRepositoryFacade(project).getModule(myModule, SModule.class));
       case MODEL:
-        return new ModelsScope(SModelRepository.getInstance().getModelDescriptor(myModel));
+        return new ModelsScope(new ModuleRepositoryFacade(project).getModelByName(myModel));
       default:
         LOG.error("Illegal scope type: " + myScopeType);
         return new GlobalScope();
