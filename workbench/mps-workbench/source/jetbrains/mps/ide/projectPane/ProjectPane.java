@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -29,6 +30,8 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
@@ -45,7 +48,9 @@ import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
+import jetbrains.mps.ide.projectView.ProjectViewPaneOverride;
 import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
@@ -59,6 +64,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -70,7 +76,11 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @State(
@@ -82,7 +92,7 @@ import java.util.Set;
         )
     }
 )
-public class ProjectPane extends BaseLogicalViewProjectPane {
+public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectViewPaneOverride {
   private static final Logger LOG = LogManager.getLogger(ProjectPane.class);
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
     @Override
@@ -118,6 +128,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   };
   private Set<ComponentCreationListener> myComponentCreationListeners;
   private static boolean ourShowGenStatus = true;
+  private List<List<String>> myExpandedPathsRaw = Collections.emptyList();
+  private List<List<String>> mySelectedPathsRaw = Collections.emptyList();
 
   public ProjectPane(final Project project, ProjectView projectView) {
     super(project, projectView);
@@ -279,6 +291,125 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         rebuildTree();
       }
     });
+  }
+
+  @Override
+  protected void saveExpandedPaths() {
+    // this gets called from the IDEA's implementation of ProjectViewImpl
+    // thankfully, the method is declared protected
+    if (myTree != null) {
+      myExpandedPathsRaw = ((MPSTree) myTree).getExpandedPathsRaw();
+      mySelectedPathsRaw = ((MPSTree) myTree).getSelectedPathsRaw();
+    }
+    else {
+      myExpandedPathsRaw = Collections.emptyList();
+      mySelectedPathsRaw = Collections.emptyList();
+    }
+  }
+
+  @Override
+  public void restoreExpandedPathsOverride () {
+    // this gets called from the MPS's implementation of ProjectViewImpl
+    // we must resort to this hack because the method in the superclass is declared private
+
+    if (myTree != null) {
+      myUpdateQueue.queue(new AbstractUpdate(UpdateID.RESTORE_EXPAND) {
+        @Override
+        public void run() {
+          ((MPSTree) myTree).loadState(myExpandedPathsRaw, mySelectedPathsRaw);
+
+        }
+      });
+    }
+  }
+
+  @Override
+  public void writeExternal(Element element) throws WriteExternalException {
+    saveExpandedPaths();
+
+    // keep the binary format in sync with what IDEA writes
+    Element subPane = new Element("subPane");
+    // we probabbly don't need this...
+    if (getSubId() != null) {
+      subPane.setAttribute("subId", getSubId());
+    }
+
+    witePaths(subPane, myExpandedPathsRaw, "PATH");
+    witePaths(subPane, mySelectedPathsRaw, "SELECTED");
+
+    element.addContent(subPane);
+  }
+
+  private void witePaths(Element parentElement, List<List<String>> pathsRaw, String elementName) {
+    for (List<String> path: pathsRaw) {
+      Element pathElement = new Element(elementName);
+      writePath(path, pathElement);
+      parentElement.addContent(pathElement);
+    }
+  }
+
+  private void writePath(List<String> path, Element pathElement) {
+    for (String treeNodeId : path) {
+      Element elm = new Element("PATH_ELEMENT");
+      writeNodeId(treeNodeId, elm);
+      pathElement.addContent(elm);
+    }
+  }
+
+  private void writeNodeId(String treeNodeId, Element elm) {
+    Element option1 = new Element("option");
+    option1.setAttribute("name", "myItemId");
+    option1.setAttribute("value", treeNodeId);
+    elm.addContent(option1);
+    Element option2 = new Element("option");
+    option2.setAttribute("name", "myItemType");
+    option2.setAttribute("value", "");
+    elm.addContent(option2);
+  }
+
+  @Override
+  public void readExternal(Element element) throws InvalidDataException {
+    // emulate the superclass's readExternal using the same binary format
+    List<Element> subPanes = element.getChildren("subPane");
+    for (Element subPane : subPanes) {
+      myExpandedPathsRaw = readPaths(subPane, "PATH");
+      mySelectedPathsRaw = readPaths(subPane, "SELECTED");
+    }
+  }
+
+  private List<List<String>> readPaths(Element parentElement, String name) {
+    List<List<String>> result = new ArrayList<List<String>>();
+
+    for (Element pathElement : parentElement.getChildren(name)) {
+      List<String> path = readPath(pathElement);
+      result.add(path);
+    }
+    return result;
+  }
+
+  @NotNull
+  private List<String> readPath(Element pathElement) {
+    List<String> path = new ArrayList<String>();
+    for (Element elm : pathElement.getChildren("PATH_ELEMENT")) {
+      String treeNodeId = readNodeId(elm);
+      if (treeNodeId != null) {
+        path.add(treeNodeId);
+      }
+    }
+    return path;
+  }
+
+  @Nullable
+  private String readNodeId(Element elm) {
+    List<Element> options = elm.getChildren("option");
+    String treeNodeId = null;
+    for (Element option : options) {
+      if ("myItemId".equals(option.getAttributeValue("name"))) {
+        treeNodeId = option.getAttributeValue("value");
+        break;
+      }
+    }
+    return treeNodeId;
   }
 
   //----selection----
@@ -476,7 +607,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   private enum UpdateID {
     REBUILD(20),
-    SELECT(30);
+    SELECT(30),
+    RESTORE_EXPAND(40);
 
     private int myPriority;
 
