@@ -44,6 +44,7 @@ public class CustomScope_Editor extends DefaultNodeEditor {
       if (editorCell.getRole() == null) {
         editorCell.setRole("scope");
       }
+      CustomScope_Actions.setCellActions(editorCell, myOwnerNode, myEditorContext);
     }
 
 
