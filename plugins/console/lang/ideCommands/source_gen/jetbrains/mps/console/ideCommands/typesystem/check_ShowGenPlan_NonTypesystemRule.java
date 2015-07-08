@@ -7,10 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.ideCommands.behavior.ModelReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -20,8 +21,9 @@ public class check_ShowGenPlan_NonTypesystemRule extends AbstractNonTypesystemRu
   public check_ShowGenPlan_NonTypesystemRule() {
   }
   public void applyRule(final SNode showGenPlan, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel"))) != null) {
-      if (!(SNodeOperations.isGeneratable(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")))))) {
+    SModel model = ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), SNodeOperations.getModel(showGenPlan).getRepository());
+    if (model != null) {
+      if (!(jetbrains.mps.util.SNodeOperations.isGeneratable(model))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(showGenPlan, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), "model should be generatable", "r:71e81c80-d7fe-47f3-91de-9281cfae8376(jetbrains.mps.console.ideCommands.typesystem)", "9053534423438583802", null, errorTarget);
       }
