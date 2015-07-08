@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CrossModelUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
     <classNode dependClassName="jetbrains.mps.generator.impl.RuleUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
