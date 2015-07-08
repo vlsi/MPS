@@ -503,7 +503,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   private static SNode createTextResponseItem_6q36mf_a0a0a1a1a0a0a0a94(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, "jetbrains.mps.console.base.structure.TextResponseItem"), null, null, false);
-    n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), String.valueOf(p0));
+    n1.setProperty(MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171b35c38L, 0x4e3b035171b35d11L, "text"), p0 + "");
     return n1;
   }
   private static Highlighter check_6q36mf_a0o0gc(com.intellij.openapi.project.Project checkedDotOperand) {

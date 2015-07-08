@@ -204,7 +204,7 @@
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
         <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -18020,7 +18020,7 @@
             <node concept="YS8fn" id="2wIwnT8XeKW" role="3cqZAp">
               <node concept="2ShNRf" id="2wIwnT8XeKX" role="YScLw">
                 <node concept="1pGfFk" id="2wIwnT8XeKY" role="2ShVmc">
-                  <ref role="37wK5l" to="ojcp:~DismissTopMappingRuleException.&lt;init&gt;(jetbrains.mps.generator.impl.DismissTopMappingRuleException$MessageType)" resolve="DismissTopMappingRuleException" />
+                  <ref role="37wK5l" to="ojcp:~DismissTopMappingRuleException.&lt;init&gt;(jetbrains.mps.generator.impl.DismissTopMappingRuleException$MessageType,java.lang.String)" resolve="DismissTopMappingRuleException" />
                   <node concept="Rm8GO" id="5FNqxbsroF1" role="37wK5m">
                     <ref role="1Px2BO" to="ojcp:~DismissTopMappingRuleException$MessageType" resolve="DismissTopMappingRuleException.MessageType" />
                     <ref role="Rm8GQ" to="ojcp:~DismissTopMappingRuleException$MessageType.error" resolve="error" />
@@ -18109,6 +18109,47 @@
                       </node>
                       <node concept="gft3U" id="4OzJUXMijqU" role="UU_$l">
                         <node concept="10Nm6u" id="4OzJUXMijqW" role="gfFT$" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="4IuFl2J0qxH" role="37wK5m">
+                    <property role="Xl_RC" value="" />
+                    <node concept="17Uvod" id="4IuFl2J0qF_" role="lGtFl">
+                      <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                      <property role="2qtEX9" value="value" />
+                      <node concept="3zFVjK" id="4IuFl2J0qFA" role="3zH0cK">
+                        <node concept="3clFbS" id="4IuFl2J0qFB" role="2VODD2">
+                          <node concept="3clFbF" id="4IuFl2J0qTz" role="3cqZAp">
+                            <node concept="2OqwBi" id="4IuFl2J0rtN" role="3clFbG">
+                              <node concept="2OqwBi" id="4IuFl2J0qYQ" role="2Oq$k0">
+                                <node concept="30H73N" id="4IuFl2J0qTy" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="4IuFl2J0rez" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tpf8:h1lHHPV" />
+                                </node>
+                              </node>
+                              <node concept="3TrcHB" id="4IuFl2J0rGW" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpf8:h1lLB5n" resolve="messageText" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="1W57fq" id="4IuFl2J0sge" role="lGtFl">
+                      <node concept="3IZrLx" id="4IuFl2J0sgg" role="3IZSJc">
+                        <node concept="3clFbS" id="4IuFl2J0sgi" role="2VODD2">
+                          <node concept="3clFbF" id="4IuFl2J0suY" role="3cqZAp">
+                            <node concept="2OqwBi" id="4IuFl2J0suZ" role="3clFbG">
+                              <node concept="2OqwBi" id="4IuFl2J0sv0" role="2Oq$k0">
+                                <node concept="30H73N" id="4IuFl2J0sv1" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="4IuFl2J0sv2" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="tpf8:h1lHHPV" />
+                                </node>
+                              </node>
+                              <node concept="3x8VRR" id="4IuFl2J0sv3" role="2OqNvi" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -31971,9 +32012,6 @@
             <node concept="3cpWs8" id="4mp7qFmEbgt" role="3cqZAp">
               <node concept="3cpWsn" id="4mp7qFmEbgu" role="3cpWs9">
                 <property role="TrG5h" value="innerContext" />
-                <node concept="3uibUv" id="2FkpZfeFJhx" role="1tU5fm">
-                  <ref role="3uigEE" to="icf3:~TemplateContext" resolve="TemplateContext" />
-                </node>
                 <node concept="2OqwBi" id="4mp7qFmEbgw" role="33vP2m">
                   <node concept="liA8E" id="4mp7qFmEbgx" role="2OqNvi">
                     <ref role="37wK5l" to="icf3:~TemplateContext.withVariable(java.lang.String,java.lang.Object):jetbrains.mps.generator.runtime.TemplateContext" resolve="withVariable" />
@@ -32033,6 +32071,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="3uibUv" id="2FkpZfeFJhx" role="1tU5fm">
+                  <ref role="3uigEE" to="icf3:~TemplateContext" resolve="TemplateContext" />
                 </node>
                 <node concept="17Uvod" id="4mp7qFmEbgJ" role="lGtFl">
                   <property role="2qtEX9" value="name" />

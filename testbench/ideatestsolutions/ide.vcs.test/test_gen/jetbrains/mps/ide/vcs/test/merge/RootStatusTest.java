@@ -5,13 +5,13 @@ package jetbrains.mps.ide.vcs.test.merge;
 import org.junit.Test;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,11 +30,11 @@ public class RootStatusTest extends ChangesTestBase {
 
   @Test
   public void testAddRoot() {
-    makeChangeAndWait(new Runnable() {
-      public void run() {
-        SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_37f57n_a0a0a0a0a2());
+    makeChangeAndWait(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return SModelOperations.addRootNode(((SModel) getTestModel()), createClassConcept_37f57n_a0a0a0a0a2());
       }
-    });
+    }));
     checkRootStatuses(new RootStatusItem("NewRoot", FileStatus.ADDED));
   }
 

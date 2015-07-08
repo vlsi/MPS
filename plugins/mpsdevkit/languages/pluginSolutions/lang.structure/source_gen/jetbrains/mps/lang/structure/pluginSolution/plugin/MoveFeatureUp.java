@@ -19,10 +19,10 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.migration.pluginSolution.util.MigrationScriptBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -117,16 +117,16 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
 
         if (writeMigration == MoveNodesUI.WhetherWriteMigration.WRITE_MIGRATION) {
           final SNode newFeature = SNodeOperations.copyNode(feature);
-          updateReferences(project, usages, feature, newFeature, new _FunctionTypes._void_P0_E0() {
-            public void invoke() {
+          updateReferences(project, usages, feature, newFeature, new _Adapters._return_P0_E0_to__void_P0_E0_adapter(new _FunctionTypes._return_P0_E0<MigrationScriptBuilder>() {
+            public MigrationScriptBuilder invoke() {
               ListSequence.fromList(featureAccess.placeToMove()).addElement(newFeature);
               AttributeOperations.setAttribute(feature, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")), createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31("The " + featureKind + " was moved to superconcept \"" + BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{}) + "\""));
               MoveFeatureUp.this.markOldFeature(feature);
 
               MigrationScriptBuilder builder = MigrationScriptBuilder.createMigrationScript(currentLanguage).setName("Move_" + featureKind + "_" + featureName);
-              builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(builder, MoveFeatureUp.this.migrations(feature, newFeature), currentConcept), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));
+              return builder.appendExecuteStatements(SLinkOperations.getChildren(SLinkOperations.getTarget(moveStatements(builder, MoveFeatureUp.this.migrations(feature, newFeature), currentConcept), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addDependency(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.lang.structure.plugin"));
             }
-          }, usagesViewHeader, moveNodesUI);
+          }), usagesViewHeader, moveNodesUI);
         }
       }
     });
@@ -162,7 +162,7 @@ public abstract class MoveFeatureUp extends MoveNodesDefault {
   private static SNode createDeprecatedNodeAnnotation_g4dz8g_a0b0e0b0p0a31a31(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), null, null, false);
-    n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), String.valueOf(p0));
+    n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, 0x11d3ec760e8L, "comment"), p0 + "");
     return n1;
   }
   private static SNode _quotation_createNode_g4dz8g_a0a71(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
