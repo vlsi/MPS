@@ -4,42 +4,27 @@ package jetbrains.mps.lang.generator.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TemplateArgumentParameterExpression_Constraints extends BaseConstraintsDescriptor {
   public TemplateArgumentParameterExpression_Constraints() {
     super(MetaIdFactory.conceptId(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L));
-  }
-  @Override
-  public boolean hasOwnCanBeChildMethod() {
-    return true;
-  }
-  @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
-
-    if (!(result) && checkingNodeContext != null) {
-      checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
-    }
-
-    return result;
   }
   @Override
   protected Map<SReferenceLinkId, ReferenceConstraintsDescriptor> getNotDefaultSReferenceLinks() {
@@ -62,16 +47,12 @@ public class TemplateArgumentParameterExpression_Constraints extends BaseConstra
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_teh60w_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_teh60w_a0a1a0a0a1a0b0a1a1;
           }
         };
       }
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
-  }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925943770");
-  private static SNodePointer breakingNode_teh60w_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");
+  private static SNodePointer breakingNode_teh60w_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "5005282049925940096");
 }

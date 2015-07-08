@@ -287,6 +287,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -6725,6 +6726,43 @@
         </node>
       </node>
       <node concept="3THzug" id="5KmckUrMTmk" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5PVjbugreRo">
+    <property role="3GE5qa" value="functionParameter" />
+    <ref role="13h7C2" to="tpf8:gZ0H77W" resolve="TemplateFunctionParameter_sourceNode" />
+    <node concept="13hLZK" id="5PVjbugreRp" role="13h7CW">
+      <node concept="3clFbS" id="5PVjbugreRq" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5PVjbugreRr" role="13h7CS">
+      <property role="TrG5h" value="needConceptFunction" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hZKliUO" resolve="needConceptFunction" />
+      <node concept="3Tm1VV" id="5PVjbugreRw" role="1B3o_S" />
+      <node concept="3clFbS" id="5PVjbugreRx" role="3clF47">
+        <node concept="3SKdUt" id="5PVjbugrff2" role="3cqZAp">
+          <node concept="3SKdUq" id="5PVjbugrffg" role="3SKWNk">
+            <property role="3SKdUp" value="we could use this cf parameter in ITemplateCall argument expressions" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5PVjbugrf5Z" role="3cqZAp">
+          <node concept="2OqwBi" id="5PVjbugrfI6" role="3cqZAk">
+            <node concept="2OqwBi" id="5PVjbugrfi_" role="2Oq$k0">
+              <node concept="13iPFW" id="5PVjbugrffl" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="5PVjbugrfFk" role="2OqNvi">
+                <node concept="1xMEDy" id="5PVjbugrfFm" role="1xVPHs">
+                  <node concept="chp4Y" id="5PVjbugrfFR" role="ri$Ld">
+                    <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3w_OXm" id="5PVjbugrfWQ" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="5PVjbugreRy" role="3clF45" />
     </node>
   </node>
 </model>

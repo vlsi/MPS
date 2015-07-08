@@ -375,6 +375,7 @@
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1200917515464" name="labelDeclaration" index="2sgKRv" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
@@ -2728,6 +2729,26 @@
     <property role="TrG5h" value="TLB_main" />
     <property role="3$yP7D" value="true" />
     <property role="3GE5qa" value="generated" />
+    <node concept="3aamgX" id="5PVjbugrMDb" role="3acgRq">
+      <property role="2n97ot" value="We are inside of a TemplateQueryBase, and use expression designed for ITemplateCall argument as a shorthand for GenerationContextOp_ParameterRef" />
+      <ref role="30HIoZ" to="tpf8:4lQlo5qukTT" resolve="TemplateArgumentParameterExpression" />
+      <node concept="j$656" id="5PVjbugrMOG" role="1lVwrX">
+        <ref role="v9R2y" node="4UbAqfvNMQo" resolve="reduce_TemplateArgumentParameterExpr" />
+        <node concept="Xl_RD" id="5PVjbugrPDe" role="v9R3O">
+          <property role="Xl_RC" value="_context" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="5PVjbugrPD$" role="3acgRq">
+      <property role="2n97ot" value="We are inside of a TemplateQueryBase, and use expression designed for ITemplateCall argument as a shorthand for GenerationContextOp_VarRef" />
+      <ref role="30HIoZ" to="tpf8:3PJ9groyE0C" resolve="TemplateArgumentVariableRefExpression" />
+      <node concept="j$656" id="5PVjbugrPPc" role="1lVwrX">
+        <ref role="v9R2y" node="3PJ9groBV8Y" resolve="reduce_TemplateArgumentVariableRefExpression" />
+        <node concept="Xl_RD" id="5PVjbugrPPf" role="v9R3O">
+          <property role="Xl_RC" value="_context" />
+        </node>
+      </node>
+    </node>
     <node concept="3lhOvk" id="5tZsUhtDxLK" role="3lj3bC">
       <ref role="30HIoZ" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
       <ref role="3lhOvi" node="2FfeVoe9qZr" resolve="map_TemplateDeclaration" />

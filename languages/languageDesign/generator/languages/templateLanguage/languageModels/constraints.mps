@@ -718,20 +718,6 @@
         </node>
       </node>
     </node>
-    <node concept="nKS2y" id="4lQlo5qup7q" role="1MLUbF">
-      <node concept="3clFbS" id="4lQlo5qup7r" role="2VODD2">
-        <node concept="3clFbF" id="4lQlo5qup7s" role="3cqZAp">
-          <node concept="2OqwBi" id="4lQlo5qup7t" role="3clFbG">
-            <node concept="nLn13" id="4lQlo5qup7u" role="2Oq$k0" />
-            <node concept="1mIQ4w" id="4lQlo5qup7v" role="2OqNvi">
-              <node concept="chp4Y" id="4lQlo5qup7w" role="cj9EA">
-                <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="4YDZ92cLOVd">
     <property role="TrG5h" value="MappingRuleTemplateNodeSearchScope" />
