@@ -130,85 +130,89 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)/1202242680337">
     <file name="UseInTest.java">
-      <node id="1202242680337" at="20,0,21,0" concept="2" trace="myName" />
-      <node id="1202242680337" at="21,27,22,23" concept="6" />
-      <node id="1202242680337" at="24,36,25,24" concept="6" />
-      <node id="1202242680337" at="27,48,28,78" concept="5" />
-      <node id="1202242680337" at="28,78,29,60" concept="1" />
-      <node id="1202242680337" at="29,60,30,71" concept="1" />
-      <node id="1202242680337" at="30,71,31,71" concept="1" />
-      <node id="1202242680337" at="31,71,32,82" concept="1" />
-      <node id="1202242680337" at="32,82,33,78" concept="1" />
-      <node id="1202242680337" at="33,78,34,79" concept="1" />
-      <node id="1202242680337" at="34,79,35,70" concept="1" />
-      <node id="1202242680337" at="35,70,36,73" concept="1" />
-      <node id="1202242680337" at="36,73,37,59" concept="1" />
-      <node id="1202242680337" at="37,59,38,16" concept="6" />
-      <node id="1202242680337" at="40,40,41,26" concept="6" />
-      <node id="1202242680337" at="44,24,45,36" concept="6" />
-      <node id="1202242680337" at="47,59,48,29" concept="6" />
-      <node id="1202242680337" at="50,70,51,40" concept="6" />
-      <node id="1202242680337" at="53,70,54,40" concept="6" />
-      <node id="1202242680337" at="56,81,57,51" concept="6" />
-      <node id="1202242680337" at="59,77,60,47" concept="6" />
-      <node id="1202242680337" at="62,78,63,48" concept="6" />
-      <node id="1202242680337" at="65,69,66,39" concept="6" />
-      <node id="1202242680337" at="68,72,69,42" concept="6" />
-      <node id="1202242680337" at="71,58,72,28" concept="6" />
-      <node id="1202242680337" at="73,5,74,34" concept="6" />
-      <node id="1202242680337" at="76,0,77,0" concept="2" trace="myValue" />
-      <node id="1202242680337" at="77,40,78,23" concept="1" />
-      <node id="1202242680337" at="78,23,79,25" concept="1" />
-      <node id="1202242680337" at="81,28,82,24" concept="6" />
-      <node id="1202242680337" at="21,0,24,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1202242680337" at="24,0,27,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1202242680337" at="40,0,43,0" concept="7" trace="getDefault#()Ljetbrains/mps/transformation/test/inputLang/structure/UseInTest;" />
-      <node id="1202242680337" at="43,52,46,5" concept="3" />
-      <node id="1202242680337" at="46,5,49,5" concept="3" />
-      <node id="1202242680337" at="49,5,52,5" concept="3" />
-      <node id="1202242680337" at="52,5,55,5" concept="3" />
-      <node id="1202242680337" at="55,5,58,5" concept="3" />
-      <node id="1202242680337" at="58,5,61,5" concept="3" />
-      <node id="1202242680337" at="61,5,64,5" concept="3" />
-      <node id="1202242680337" at="64,5,67,5" concept="3" />
-      <node id="1202242680337" at="67,5,70,5" concept="3" />
-      <node id="1202242680337" at="70,5,73,5" concept="3" />
-      <node id="1202242680337" at="81,0,84,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1202242680337" at="77,0,81,0" concept="0" trace="UseInTest#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1202242680337" at="27,0,40,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1202242680337" at="43,0,76,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/transformation/test/inputLang/structure/UseInTest;" />
-      <scope id="1202242680337" at="21,27,22,23" />
-      <scope id="1202242680337" at="24,36,25,24" />
-      <scope id="1202242680337" at="40,40,41,26" />
-      <scope id="1202242680337" at="44,24,45,36" />
-      <scope id="1202242680337" at="47,59,48,29" />
-      <scope id="1202242680337" at="50,70,51,40" />
-      <scope id="1202242680337" at="53,70,54,40" />
-      <scope id="1202242680337" at="56,81,57,51" />
-      <scope id="1202242680337" at="59,77,60,47" />
-      <scope id="1202242680337" at="62,78,63,48" />
-      <scope id="1202242680337" at="65,69,66,39" />
-      <scope id="1202242680337" at="68,72,69,42" />
-      <scope id="1202242680337" at="71,58,72,28" />
-      <scope id="1202242680337" at="81,28,82,24" />
-      <scope id="1202242680337" at="77,40,79,25" />
-      <scope id="1202242680337" at="21,0,24,0" />
-      <scope id="1202242680337" at="24,0,27,0" />
-      <scope id="1202242680337" at="40,0,43,0" />
-      <scope id="1202242680337" at="81,0,84,0" />
-      <scope id="1202242680337" at="77,0,81,0">
+      <node id="1202242680337" at="21,0,22,0" concept="2" trace="myName" />
+      <node id="1202242680337" at="22,27,23,23" concept="6" />
+      <node id="1202242680337" at="25,36,26,24" concept="6" />
+      <node id="1202242680337" at="28,48,29,78" concept="5" />
+      <node id="1202242680337" at="29,78,30,60" concept="1" />
+      <node id="1202242680337" at="30,60,31,71" concept="1" />
+      <node id="1202242680337" at="31,71,32,71" concept="1" />
+      <node id="1202242680337" at="32,71,33,82" concept="1" />
+      <node id="1202242680337" at="33,82,34,78" concept="1" />
+      <node id="1202242680337" at="34,78,35,79" concept="1" />
+      <node id="1202242680337" at="35,79,36,70" concept="1" />
+      <node id="1202242680337" at="36,70,37,73" concept="1" />
+      <node id="1202242680337" at="37,73,38,73" concept="1" />
+      <node id="1202242680337" at="38,73,39,59" concept="1" />
+      <node id="1202242680337" at="39,59,40,16" concept="6" />
+      <node id="1202242680337" at="42,40,43,26" concept="6" />
+      <node id="1202242680337" at="46,24,47,36" concept="6" />
+      <node id="1202242680337" at="49,59,50,29" concept="6" />
+      <node id="1202242680337" at="52,70,53,40" concept="6" />
+      <node id="1202242680337" at="55,70,56,40" concept="6" />
+      <node id="1202242680337" at="58,81,59,51" concept="6" />
+      <node id="1202242680337" at="61,77,62,47" concept="6" />
+      <node id="1202242680337" at="64,78,65,48" concept="6" />
+      <node id="1202242680337" at="67,69,68,39" concept="6" />
+      <node id="1202242680337" at="70,72,71,42" concept="6" />
+      <node id="1202242680337" at="73,72,74,42" concept="6" />
+      <node id="1202242680337" at="76,58,77,28" concept="6" />
+      <node id="1202242680337" at="78,5,79,34" concept="6" />
+      <node id="1202242680337" at="81,0,82,0" concept="2" trace="myValue" />
+      <node id="1202242680337" at="82,40,83,23" concept="1" />
+      <node id="1202242680337" at="83,23,84,25" concept="1" />
+      <node id="1202242680337" at="86,28,87,24" concept="6" />
+      <node id="1202242680337" at="22,0,25,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="1202242680337" at="25,0,28,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1202242680337" at="42,0,45,0" concept="7" trace="getDefault#()Ljetbrains/mps/transformation/test/inputLang/structure/UseInTest;" />
+      <node id="1202242680337" at="45,52,48,5" concept="3" />
+      <node id="1202242680337" at="48,5,51,5" concept="3" />
+      <node id="1202242680337" at="51,5,54,5" concept="3" />
+      <node id="1202242680337" at="54,5,57,5" concept="3" />
+      <node id="1202242680337" at="57,5,60,5" concept="3" />
+      <node id="1202242680337" at="60,5,63,5" concept="3" />
+      <node id="1202242680337" at="63,5,66,5" concept="3" />
+      <node id="1202242680337" at="66,5,69,5" concept="3" />
+      <node id="1202242680337" at="69,5,72,5" concept="3" />
+      <node id="1202242680337" at="72,5,75,5" concept="3" />
+      <node id="1202242680337" at="75,5,78,5" concept="3" />
+      <node id="1202242680337" at="86,0,89,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1202242680337" at="82,0,86,0" concept="0" trace="UseInTest#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1202242680337" at="28,0,42,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1202242680337" at="45,0,81,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/transformation/test/inputLang/structure/UseInTest;" />
+      <scope id="1202242680337" at="22,27,23,23" />
+      <scope id="1202242680337" at="25,36,26,24" />
+      <scope id="1202242680337" at="42,40,43,26" />
+      <scope id="1202242680337" at="46,24,47,36" />
+      <scope id="1202242680337" at="49,59,50,29" />
+      <scope id="1202242680337" at="52,70,53,40" />
+      <scope id="1202242680337" at="55,70,56,40" />
+      <scope id="1202242680337" at="58,81,59,51" />
+      <scope id="1202242680337" at="61,77,62,47" />
+      <scope id="1202242680337" at="64,78,65,48" />
+      <scope id="1202242680337" at="67,69,68,39" />
+      <scope id="1202242680337" at="70,72,71,42" />
+      <scope id="1202242680337" at="73,72,74,42" />
+      <scope id="1202242680337" at="76,58,77,28" />
+      <scope id="1202242680337" at="86,28,87,24" />
+      <scope id="1202242680337" at="82,40,84,25" />
+      <scope id="1202242680337" at="22,0,25,0" />
+      <scope id="1202242680337" at="25,0,28,0" />
+      <scope id="1202242680337" at="42,0,45,0" />
+      <scope id="1202242680337" at="86,0,89,0" />
+      <scope id="1202242680337" at="82,0,86,0">
         <var name="name" id="1202242680337" />
         <var name="value" id="1202242680337" />
       </scope>
-      <scope id="1202242680337" at="27,48,38,16">
+      <scope id="1202242680337" at="28,48,40,16">
         <var name="list" id="1202242680337" />
       </scope>
-      <scope id="1202242680337" at="27,0,40,0" />
-      <scope id="1202242680337" at="43,52,74,34" />
-      <scope id="1202242680337" at="43,0,76,0">
+      <scope id="1202242680337" at="28,0,42,0" />
+      <scope id="1202242680337" at="45,52,79,34" />
+      <scope id="1202242680337" at="45,0,81,0">
         <var name="value" id="1202242680337" />
       </scope>
-      <unit id="1202242680337" at="9,0,85,0" name="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
+      <unit id="1202242680337" at="9,0,90,0" name="jetbrains.mps.transformation.test.inputLang.structure.UseInTest" />
     </file>
     <file name="UseInTest_PropertySupport.java">
       <node id="1202242680337" at="11,24,12,18" concept="6" />

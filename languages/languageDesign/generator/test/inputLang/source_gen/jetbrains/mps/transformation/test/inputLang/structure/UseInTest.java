@@ -15,6 +15,7 @@ public enum UseInTest {
   weaveManyToSingularChild("weaveManyToSingularChild", "weaveManyToSingularChild"),
   reduceOneToMany("reduceOneToMany", "reduceOneToMany"),
   argsInTemplDeclRef("argsInTemplDeclRef", "argsInTemplDeclRef"),
+  argsInTemplateCall("Expressions in ITemplateCall arguments", "argsInTemplateCall"),
   none("none", "none");
 
   private String myName;
@@ -34,6 +35,7 @@ public enum UseInTest {
     ListSequence.fromList(list).addElement(UseInTest.weaveManyToSingularChild);
     ListSequence.fromList(list).addElement(UseInTest.reduceOneToMany);
     ListSequence.fromList(list).addElement(UseInTest.argsInTemplDeclRef);
+    ListSequence.fromList(list).addElement(UseInTest.argsInTemplateCall);
     ListSequence.fromList(list).addElement(UseInTest.none);
     return list;
   }
@@ -67,6 +69,9 @@ public enum UseInTest {
     }
     if (value.equals(UseInTest.argsInTemplDeclRef.getValueAsString())) {
       return UseInTest.argsInTemplDeclRef;
+    }
+    if (value.equals(UseInTest.argsInTemplateCall.getValueAsString())) {
+      return UseInTest.argsInTemplateCall;
     }
     if (value.equals(UseInTest.none.getValueAsString())) {
       return UseInTest.none;
