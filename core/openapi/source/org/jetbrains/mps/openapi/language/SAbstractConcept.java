@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,12 +80,16 @@ public interface SAbstractConcept {
   /*
    * The methods below are temporary included in openapi.
    * They will be removed when there will exist some better way to retrieve concept alias, short description and help url from generated code.
+   * Methods return empty string if there's no value set (no idea why, this is just the way it's done in ConceptDescriptorBuilder)
    */
 
+  @NotNull
   String getConceptAlias();
 
+  @NotNull
   String getShortDescription();
 
+  @NotNull
   String getHelpUrl();
 
   //----------deprecated------------
