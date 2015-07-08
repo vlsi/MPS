@@ -2457,14 +2457,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   <T> T runRead(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
+    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    getModelAccess().runReadAction(r);
+    return r.getResult();
   }
 
 

@@ -21,7 +21,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -33,16 +33,15 @@ import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -102,13 +101,6 @@ public class ChildSubstituteActionsHelper {
       childConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
     }
 
-    Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept);
-    if (primaryLanguage == null) {
-      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept == null ? "<null>" :
-          SNodeOperations.getDebugText(childConcept));
-      return Collections.emptyList();
-    }
-
     List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>();
     List<SNode> allBuilders = ChildSubstituteActionsUtil.getActionsBuilders(parentNode, currentChild, childConcept, childSetter, context);
     if (!ChildSubstituteActionsUtil.containsRemoveDefaults(allBuilders)) {
@@ -153,7 +145,7 @@ public class ChildSubstituteActionsHelper {
       IChildNodeSetter childSetter) {
     assert childConceptNode != null;
 
-    List<Language> importedLangs = SModelOperations.getLanguages(parentNode.getModel());
+    Set<SLanguage> importedLangs = new SLanguageHierarchy(SModelOperations.getAllLanguageImports(parentNode.getModel())).getExtended();
     SAbstractConcept childConcept = MetaAdapterByDeclaration.getConcept(childConceptNode);
     final Set<SAbstractConcept> desc = ConceptDescendantsCache.getInstance().getDescendants(childConcept);
     Set<SConcept> concepts = new HashSet<SConcept>();
@@ -161,8 +153,9 @@ public class ChildSubstituteActionsHelper {
       if (!(concept instanceof SConcept)) continue;
       if (!SNodeUtil.isDefaultSubstitutable(concept)) continue;
 
-      SModule language = concept.getLanguage().getSourceModule();
-      if (language ==null || !importedLangs.contains(language)) continue;
+      if (!importedLangs.contains(concept.getLanguage())) {
+        continue;
+      }
 
       concepts.add((SConcept) concept);
     }

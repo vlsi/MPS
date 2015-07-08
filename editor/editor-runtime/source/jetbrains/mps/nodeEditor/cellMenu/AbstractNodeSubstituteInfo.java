@@ -176,12 +176,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private List<SubstituteAction> getActions() {
     if (myCachedActionList == null) {
       try {
-        myCachedActionList = new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute() {
-            return createActions();
-          }
-        });
+        myCachedActionList = createActions();
       } catch (Throwable th) {
         LOG.error("Exception while creating substitute actions in " + this.getClass(), th);
         return new LinkedList<SubstituteAction>();
