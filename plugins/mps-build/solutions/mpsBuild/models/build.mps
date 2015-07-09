@@ -4100,6 +4100,12 @@
             </node>
           </node>
         </node>
+        <node concept="1SiIV0" id="hE9hNB32OY" role="3bR37C">
+          <node concept="3bR9La" id="hE9hNB32OZ" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L6o" resolve="jetbrains.mps.lang.generator.generationContext" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="7Kfy9QB6LfC" role="2G$12L">
         <property role="BnDLt" value="true" />

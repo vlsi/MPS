@@ -248,6 +248,14 @@
       <concept id="1240171359678" name="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" flags="nn" index="2ZYiMu" />
       <concept id="1240173327827" name="jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation" flags="nn" index="305NjN" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
+      <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
+        <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
+        <reference id="2644386474302386082" name="propertyDeclaration" index="355D3u" />
+      </concept>
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -5383,9 +5391,9 @@
         <node concept="3cpWs8" id="hzGLpHx" role="3cqZAp">
           <node concept="3cpWsn" id="hzGLpHy" role="3cpWs9">
             <property role="TrG5h" value="concept" />
-            <node concept="3THzug" id="hzGLpHz" role="1tU5fm" />
+            <node concept="3bZ5Sz" id="3fee2iOCuVB" role="1tU5fm" />
             <node concept="2OqwBi" id="hzGLpH$" role="33vP2m">
-              <node concept="3NT_Vc" id="hzGLpH_" role="2OqNvi" />
+              <node concept="2yIwOk" id="3fee2iOCvcw" role="2OqNvi" />
               <node concept="2OqwBi" id="hzGLpHA" role="2Oq$k0">
                 <node concept="3CFZ6_" id="2EuZkDRzIpp" role="2OqNvi">
                   <node concept="3CFTII" id="2EuZkDRzIpq" role="3CFYIz">
@@ -5413,8 +5421,9 @@
                 <node concept="3CFTII" id="2EuZkDRzImr" role="3CFYIz">
                   <ref role="3CFTIH" to="tpf8:fP7UvrK" resolve="PropertyMacro" />
                   <node concept="25Kdxt" id="hzGNaQL" role="3CFTIG">
-                    <node concept="Xl_RD" id="hzGNaQM" role="25KhWn">
-                      <property role="Xl_RC" value="name" />
+                    <node concept="355D3s" id="3fee2iOAUtw" role="25KhWn">
+                      <ref role="355D3t" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                      <ref role="355D3u" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
                 </node>
@@ -5480,8 +5489,9 @@
                 <node concept="3CFTII" id="2EuZkDRzIob" role="3CFYIz">
                   <ref role="3CFTIH" to="tpf8:fP7UvrK" resolve="PropertyMacro" />
                   <node concept="25Kdxt" id="hzGN__V" role="3CFTIG">
-                    <node concept="Xl_RD" id="hzGNA9m" role="25KhWn">
-                      <property role="Xl_RC" value="name" />
+                    <node concept="355D3s" id="3fee2iOAUqS" role="25KhWn">
+                      <ref role="355D3t" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                      <ref role="355D3u" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
                 </node>
@@ -5556,8 +5566,9 @@
                 <node concept="3CFYIw" id="2EuZkDRzIko" role="3CFYIz">
                   <ref role="3CFYIJ" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
                   <node concept="25Kdxt" id="hzHcLLz" role="3CFYM5">
-                    <node concept="Xl_RD" id="hzHcNem" role="25KhWn">
-                      <property role="Xl_RC" value="localVariableDeclaration" />
+                    <node concept="359W_D" id="3fee2iOABM6" role="25KhWn">
+                      <ref role="359W_F" to="tpee:f_2PX25" />
+                      <ref role="359W_E" to="tpee:fzcpWvM" resolve="LocalVariableReference" />
                     </node>
                   </node>
                 </node>
@@ -5642,8 +5653,9 @@
                 <node concept="3CFYIw" id="2EuZkDRzImn" role="3CFYIz">
                   <ref role="3CFYIJ" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
                   <node concept="25Kdxt" id="hzHd1Bb" role="3CFYM5">
-                    <node concept="Xl_RD" id="hzHd1Bc" role="25KhWn">
-                      <property role="Xl_RC" value="localVariableDeclaration" />
+                    <node concept="359W_D" id="3fee2iOABJu" role="25KhWn">
+                      <ref role="359W_E" to="tpee:fzcpWvM" resolve="LocalVariableReference" />
+                      <ref role="359W_F" to="tpee:f_2PX25" />
                     </node>
                   </node>
                 </node>

@@ -429,6 +429,7 @@
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
         <property id="559557797393021807" name="stereotype" index="BaGAP" />
         <property id="559557797393017702" name="name" index="BaHAW" />
+        <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -1322,19 +1323,10 @@
             </node>
             <node concept="2OqwBi" id="7HgS$Vk7A9H" role="2Oq$k0">
               <node concept="liA8E" id="7HgS$Vk7A9I" role="2OqNvi">
-                <ref role="37wK5l" to="88zw:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                <ref role="37wK5l" to="vsqj:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
-              <node concept="2OqwBi" id="7HgS$Vk7A9J" role="2Oq$k0">
-                <node concept="liA8E" id="7HgS$Vk7A9K" role="2OqNvi">
-                  <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                </node>
-                <node concept="2YIFZM" id="7HgS$Vk7A9L" role="2Oq$k0">
-                  <ref role="37wK5l" to="pt5l:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
-                  <ref role="1Pybhc" to="pt5l:~ProjectHelper" resolve="ProjectHelper" />
-                  <node concept="37vLTw" id="7HgS$Vk7A9M" role="37wK5m">
-                    <ref role="3cqZAo" node="3oUomEoMJuI" resolve="myIdeaProject" />
-                  </node>
-                </node>
+              <node concept="37vLTw" id="4d72gVMuQ_u" role="2Oq$k0">
+                <ref role="3cqZAo" node="6hwF4wZOtrP" resolve="ourProject" />
               </node>
             </node>
           </node>
@@ -1821,6 +1813,14 @@
             <node concept="BaHAS" id="7HgS$VjLBXs" role="10QFUP">
               <property role="BaHAW" value="jetbrains.mps.ide.vcs.test.testModel" />
               <property role="BaGAP" value="" />
+              <node concept="2OqwBi" id="1eZSuKdTgHK" role="up2gk">
+                <node concept="37vLTw" id="1eZSuKdTgcE" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6hwF4wZOtrP" resolve="ourProject" />
+                </node>
+                <node concept="liA8E" id="1eZSuKdThwK" role="2OqNvi">
+                  <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
+              </node>
             </node>
             <node concept="3uibUv" id="7HgS$VjLBXt" role="10QFUM">
               <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />
@@ -4147,6 +4147,9 @@
             <node concept="BaHAS" id="7iTTs2U$$CO" role="10QFUP">
               <property role="BaHAW" value="simpleModel" />
               <property role="BaGAP" value="" />
+              <node concept="37vLTw" id="1eZSuKdRDuV" role="up2gk">
+                <ref role="3cqZAo" node="7iTTs2UxpKu" resolve="ourRepository" />
+              </node>
             </node>
             <node concept="3uibUv" id="7iTTs2U$EQV" role="10QFUM">
               <ref role="3uigEE" to="ec5l:~EditableSModel" resolve="EditableSModel" />

@@ -17,9 +17,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     if (id == 0x10fbbd5854aL) {
       return new CreateRootRule_Constraints();
     }
-    if (id == 0x17e941d108ce3120L) {
-      return new ITemplateCall_Constraints();
-    }
     if (id == 0x380132d742e8ccb0L) {
       return new TemplateArgumentQueryExpression_Constraints();
     }

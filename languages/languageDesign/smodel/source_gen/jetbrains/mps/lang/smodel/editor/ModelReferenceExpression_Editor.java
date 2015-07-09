@@ -16,6 +16,10 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -36,6 +40,8 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_uy53zt_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uy53zt_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uy53zt_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uy53zt_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_uy53zt_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_uy53zt_a0(EditorContext editorContext, SNode node) {
@@ -67,6 +73,49 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+  private EditorCell createConstant_uy53zt_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
+    editorCell.setCellId("Constant_uy53zt_e0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_uy53zt_f0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new ModelReferenceExpression_Editor.repoSingleRoleHandler_uy53zt_f0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x13bfe1ec0ddbc5f8L, "repo"), editorContext);
+    return provider.createCell();
+  }
+  private class repoSingleRoleHandler_uy53zt_f0 extends SingleRoleCellProvider {
+    public repoSingleRoleHandler_uy53zt_f0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(ownerNode, containmentLink, context);
+    }
+    public EditorCell createChildCell(EditorContext editorContext, SNode child) {
+      EditorCell editorCell = super.createChildCell(editorContext, child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    public void installCellInfo(SNode child, EditorCell editorCell) {
+      editorCell.setSubstituteInfo(new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext));
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("repo");
+      }
+    }
+
+
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_repo");
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+
+    protected String getNoTargetText() {
+      return "global repository";
+    }
+
   }
   private EditorCell createCollection_uy53zt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);

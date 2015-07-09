@@ -29,6 +29,8 @@
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
@@ -66,6 +68,15 @@
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
+      <node concept="3F0ifn" id="1eZSuKdVol1" role="3EZMnx">
+        <property role="3F0ifm" value="with" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F1sOY" id="1eZSuKdVokF" role="3EZMnx">
+        <property role="39s7Ar" value="true" />
+        <property role="1$x2rV" value="global repository" />
+        <ref role="1NtTu8" to="qff7:1eZSuKdVoku" />
+      </node>
       <node concept="3F0ifn" id="7Mb2akafE8t" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
@@ -101,51 +112,6 @@
         <ref role="1NtTu8" to="tp2c:htbW58J" />
       </node>
       <node concept="l2Vlx" id="7Mb2akafE8C" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7Mb2akafE8D">
-    <property role="3GE5qa" value="Command" />
-    <ref role="1XX52x" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
-    <node concept="3EZMnI" id="7Mb2akafE8E" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
-      <node concept="PMmxH" id="2wdLO7KhYbU" role="3EZMnx">
-        <property role="1cu_pB" value="0" />
-        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
-      </node>
-      <node concept="3F0ifn" id="7Mb2akafE8G" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-      </node>
-      <node concept="3F1sOY" id="7Mb2akafE8H" role="3EZMnx">
-        <ref role="1NtTu8" to="qff7:7Mb2akafE8f" />
-      </node>
-      <node concept="3F0ifn" id="7Mb2akafE8I" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-      </node>
-      <node concept="3F0ifn" id="7Mb2akafE8J" role="3EZMnx">
-        <property role="3F0ifm" value="{" />
-        <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
-        <node concept="ljvvj" id="7Mb2akafE8K" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F1sOY" id="7Mb2akafE8L" role="3EZMnx">
-        <ref role="1NtTu8" to="qff7:7Mb2akafE8b" />
-        <node concept="lj46D" id="7Mb2akafE8M" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="ljvvj" id="7Mb2akafE8N" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="7Mb2akafE8O" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
-        <ref role="1k5W1q" to="tpen:hF$iEdo" resolve="Brace" />
-        <node concept="ljvvj" id="7Mb2akafE8P" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="l2Vlx" id="7Mb2akafE8Q" role="2iSdaV" />
     </node>
   </node>
 </model>

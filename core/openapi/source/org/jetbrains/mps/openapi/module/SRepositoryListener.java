@@ -31,6 +31,9 @@ public interface SRepositoryListener {
 
   /**
    * use {@link org.jetbrains.mps.openapi.repository.CommandListener} instead
+   *
+   * We shall re-consider depreciation of these methods as it's convenient to have command notifications right in
+   * SRepositoryListener implementation, like RepositoryChangeTracker (the one where all changes within a command are collected)
    */
   @Deprecated
   void commandStarted(SRepository repository);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -192,6 +192,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return findInModel(strucModel);
   }
 
+  @NotNull
   @Override
   public String getConceptAlias() {
     ConceptDescriptor d = getConceptDescriptor();
@@ -199,6 +200,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return d.getConceptAlias();
   }
 
+  @NotNull
   @Override
   public String getShortDescription() {
     ConceptDescriptor d = getConceptDescriptor();
@@ -206,6 +208,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept, Conce
     return d.getConceptShortDescription();
   }
 
+  @NotNull
   @Override
   public String getHelpUrl() {
     ConceptDescriptor d = getConceptDescriptor();

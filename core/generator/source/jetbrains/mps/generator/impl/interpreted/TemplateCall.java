@@ -89,6 +89,8 @@ public class TemplateCall {
         ae.add(new QueryExpr(argExpr));
       } else if (argConcept.isSubConceptOf(RuleUtil.concept_TemplateArgumentVarRefExpression)) {
         ae.add(new VarRefExpr(argExpr));
+      } else if(GeneratorUtilEx.shallGenerateFunctionToEvaluate(argExpr)) {
+        ae.add(new GeneratedExpr(argExpr));
       } else {
         ae.add(new OtherExpr(argExpr, i));
       }
@@ -101,6 +103,7 @@ public class TemplateCall {
     public Object evaluate(TemplateContext context) throws GenerationFailureException;
   }
 
+  // TemplateArgumentParameterExpression
   private static class TemplateParameterExpr implements ArgumentExpression {
     private final String myParameterName;
     private final SNode myParameterExpr;
@@ -124,6 +127,7 @@ public class TemplateCall {
     }
   }
 
+  // TemplateArgumentPatternRef
   private static class PatternRefExpr implements ArgumentExpression {
     private final SNode myPatternExpr;
     private final int myArgIndex;
@@ -149,6 +153,7 @@ public class TemplateCall {
     }
   }
 
+  // TemplateArgumentQueryExpression
   private static class QueryExpr implements ArgumentExpression {
     private final SNode myQuery;
     public QueryExpr(SNode queryExpr) {
@@ -160,6 +165,7 @@ public class TemplateCall {
     }
   }
 
+  // TemplateArgumentVariableRefExpression
   private static class VarRefExpr implements ArgumentExpression {
     private final String myMacroVarName;
     public VarRefExpr(SNode varRefExpression) {
@@ -171,6 +177,26 @@ public class TemplateCall {
       return context.getVariable(myMacroVarName);
     }
   }
+
+  // Expression, requires generated code according to GeneratorUtilEx.shallGenerateFunctionToEvaluate
+  private static class GeneratedExpr implements ArgumentExpression {
+    private final SNode myExpr;
+
+    public GeneratedExpr(SNode expr) {
+      myExpr = expr;
+    }
+
+    @Override
+    public Object evaluate(TemplateContext context) throws GenerationFailureException {
+      // Here we utilize the fact we generate identical methods both for TemplateArgumentQueryExpression and plain Expressions,
+      // and rely on fact evaluateArgumentQuery doesn't look into SNode supplied (except to build a method name).
+      // XXX And yes, I'm aware methods generated for expressions do not expect to take IOperationContext,
+      // and if someone makes NEED_OPCONTEXT=true, this call would fail. I plan to drop IOperationContext support soon, thus do not care
+      return context.getEnvironment().getQueryExecutor().evaluateArgumentQuery(context.getInput(), myExpr, context);
+    }
+  }
+
+  // Expression, primitive value. Unlike GeneratedExpr, doesn't require generated code to evaluate
   private static class OtherExpr implements ArgumentExpression {
     private final SNode myExpression;
     private final int myArgIndex;
@@ -182,7 +208,7 @@ public class TemplateCall {
     @Override
     public Object evaluate(TemplateContext context) throws GenerationFailureException {
       try {
-        return RuleUtil.evaluateBaseLanguageExpression(myExpression);
+        return GeneratorUtilEx.evaluateExpression(myExpression);
       } catch(IllegalArgumentException ex) {
         context.getEnvironment().getLogger().error(myExpression.getReference(),
             String.format("cannot evaluate template argument #%d: %s", myArgIndex, ex.toString()),

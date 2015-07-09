@@ -349,7 +349,6 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
-      <concept id="5692182839349412519" name="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" flags="nn" index="90r25" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -2310,7 +2309,9 @@
                               <node concept="2GrUjf" id="2tRCcbzc1Fu" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="2tRCcbzc1Fi" resolve="ref" />
                               </node>
-                              <node concept="90r25" id="2tRCcbzc1Fv" role="2OqNvi" />
+                              <node concept="liA8E" id="3fee2iO_UKa" role="2OqNvi">
+                                <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -4137,7 +4138,9 @@
                           <ref role="3CFYIJ" to="tpf8:fPZhdom" resolve="ReferenceMacro" />
                           <node concept="25Kdxt" id="7U5B1qbQoIv" role="3CFYM5">
                             <node concept="2OqwBi" id="7U5B1qbQoIw" role="25KhWn">
-                              <node concept="90r25" id="7U5B1qbQoIx" role="2OqNvi" />
+                              <node concept="liA8E" id="3fee2iO_VE5" role="2OqNvi">
+                                <ref role="37wK5l" to="ec5l:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                              </node>
                               <node concept="2GrUjf" id="7U5B1qbQoIy" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="7U5B1qbQoKK" resolve="ref" />
                               </node>

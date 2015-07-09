@@ -9,6 +9,7 @@
     <import index="qff7" ref="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="vsqj" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -50,8 +51,27 @@
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
+      <concept id="5455284157994012186" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink" flags="ng" index="2pIpSj">
+        <reference id="5455284157994012188" name="link" index="2pIpSl" />
+      </concept>
+      <concept id="5455284157993911097" name="jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart" flags="ng" index="2pJxcK">
+        <child id="5455284157993911094" name="expression" index="2pJxcZ" />
+      </concept>
+      <concept id="5455284157993863837" name="jetbrains.mps.lang.quotation.structure.NodeBuilder" flags="nn" index="2pJPEk">
+        <child id="5455284157993863838" name="quotedNode" index="2pJPEn" />
+      </concept>
+      <concept id="5455284157993863840" name="jetbrains.mps.lang.quotation.structure.NodeBuilderNode" flags="nn" index="2pJPED">
+        <reference id="5455284157993910961" name="concept" index="2pJxaS" />
+        <child id="5455284157993911099" name="values" index="2pJxcM" />
+      </concept>
+      <concept id="8182547171709614739" name="jetbrains.mps.lang.quotation.structure.NodeBuilderRef" flags="nn" index="36bGnv">
+        <reference id="8182547171709614741" name="target" index="36bGnp" />
+      </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
+      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
+        <child id="1207055552304" name="warningText" index="a7wSD" />
+      </concept>
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
@@ -78,6 +98,7 @@
       <concept id="1174657487114" name="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" flags="nn" index="1Z2H0r">
         <child id="1174657509053" name="term" index="1Z2MuG" />
       </concept>
+      <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
@@ -98,6 +119,7 @@
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -206,6 +228,76 @@
     <node concept="1YaCAy" id="7Mb2akafE9A" role="1YuTPh">
       <property role="TrG5h" value="comminEDT" />
       <ref role="1YaFvo" to="qff7:7Mb2akafE8e" resolve="ExecuteCommandInEDTStatement" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1eZSuKdVol_">
+    <property role="TrG5h" value="typeof_BaseExecuteCommandStatement" />
+    <property role="3GE5qa" value="Command" />
+    <node concept="3clFbS" id="1eZSuKdVolA" role="18ibNy">
+      <node concept="1Z5TYs" id="1eZSuKdVoC2" role="3cqZAp">
+        <node concept="mw_s8" id="1eZSuKdVoCq" role="1ZfhKB">
+          <node concept="2pJPEk" id="1eZSuKdVoCm" role="mwGJk">
+            <node concept="2pJPED" id="1eZSuKdVoC_" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="1eZSuKdVoDv" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <node concept="36bGnv" id="1eZSuKdVoE6" role="2pJxcZ">
+                  <ref role="36bGnp" to="88zw:~SRepository" resolve="SRepository" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1eZSuKdVoC5" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1eZSuKdVolG" role="mwGJk">
+            <node concept="2OqwBi" id="1eZSuKdVooZ" role="1Z2MuG">
+              <node concept="1YBJjd" id="1eZSuKdVom8" role="2Oq$k0">
+                <ref role="1YBMHb" node="1eZSuKdVolC" resolve="baseExecuteCommandStatement" />
+              </node>
+              <node concept="3TrEf2" id="1eZSuKdVo_f" role="2OqNvi">
+                <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1eZSuKdVolC" role="1YuTPh">
+      <property role="TrG5h" value="baseExecuteCommandStatement" />
+      <ref role="1YaFvo" to="qff7:7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1eZSuKdVoFr">
+    <property role="TrG5h" value="check_BaseExecuteCommandStatement" />
+    <property role="3GE5qa" value="Command" />
+    <node concept="3clFbS" id="1eZSuKdVoFs" role="18ibNy">
+      <node concept="3clFbJ" id="1eZSuKdVoFy" role="3cqZAp">
+        <node concept="3clFbS" id="1eZSuKdVoFz" role="3clFbx">
+          <node concept="a7r0C" id="1eZSuKdVpmz" role="3cqZAp">
+            <node concept="Xl_RD" id="1eZSuKdVpo$" role="a7wSD">
+              <property role="Xl_RC" value="Shall specify a repository to lock" />
+            </node>
+            <node concept="1YBJjd" id="1eZSuKdVpm_" role="2OEOjV">
+              <ref role="1YBMHb" node="1eZSuKdVoFu" resolve="baseExecuteCommandStatement" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="1eZSuKdVp8g" role="3clFbw">
+          <node concept="2OqwBi" id="1eZSuKdVoIN" role="2Oq$k0">
+            <node concept="1YBJjd" id="1eZSuKdVoFI" role="2Oq$k0">
+              <ref role="1YBMHb" node="1eZSuKdVoFu" resolve="baseExecuteCommandStatement" />
+            </node>
+            <node concept="3TrEf2" id="1eZSuKdVoV0" role="2OqNvi">
+              <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="1eZSuKdVplj" role="2OqNvi" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1eZSuKdVoFu" role="1YuTPh">
+      <property role="TrG5h" value="baseExecuteCommandStatement" />
+      <ref role="1YaFvo" to="qff7:7Mb2akafE8a" resolve="BaseExecuteCommandStatement" />
     </node>
   </node>
 </model>

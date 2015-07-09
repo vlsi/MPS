@@ -374,7 +374,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_1190931377097(final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
     for (SProperty property : Sequence.fromIterable(_context.getNode().getProperties())) {
-      if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), property.getName())) != null) {
+      if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4795L, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), property)) != null) {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198f6eL, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor")));
@@ -410,7 +410,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_1190931377388(final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
     for (SReference ref : Sequence.fromIterable(_context.getNode().getReferences())) {
-      if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), ref.getRole())) != null) {
+      if (AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108d36d955aL, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), ref.getLink())) != null) {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4198b56L, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor")));

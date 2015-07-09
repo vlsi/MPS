@@ -4,6 +4,7 @@ package jetbrains.mps.debug.api.source;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,10 +20,12 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class PositionProvider implements ProjectComponent {
-  private final Project myProject;
+  private final Project myIdeaProject;
+  private final MPSProject myProject;
   private final Map<String, List<IPositionProvider>> myKeysToProviders = MapSequence.fromMap(new LinkedHashMap<String, List<IPositionProvider>>(16, (float) 0.75, false));
-  public PositionProvider(Project project) {
-    myProject = project;
+  public PositionProvider(Project project, MPSProject mpsProject) {
+    myIdeaProject = project;
+    myProject = mpsProject;
   }
   @Nullable
   public SourcePosition getPosition(@Nullable ILocation location, @NotNull final AbstractDebugSession session) {
@@ -82,8 +85,8 @@ public class PositionProvider implements ProjectComponent {
   }
   @Override
   public void initComponent() {
-    addProvider(new NodePositionProvider(), NodeSourcePosition.class.getName());
-    addProvider(new TextPositionProvider(myProject), TextSourcePosition.class.getName());
+    addProvider(new NodePositionProvider(myProject), NodeSourcePosition.class.getName());
+    addProvider(new TextPositionProvider(myIdeaProject), TextSourcePosition.class.getName());
   }
   @Override
   public void disposeComponent() {

@@ -17,7 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import com.intellij.ui.content.Content;
 
@@ -130,14 +131,15 @@ public class ConsoleTool extends BaseTabbedProjectTool implements PersistentStat
 
   public void executeCommand(final SNode command) {
     final ConsoleTool.TabState tabState = new ConsoleTool.TabState();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = ProjectHelper.toMPSProject(getProject()).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         tabState.title = BehaviorReflection.invokeVirtual(String.class, command, "virtual_getPresentation_1213877396640", new Object[]{});
       }
     });
     tabState.isHistoryTab = true;
     final BaseConsoleTab tab = addConsoleTab(tabState, null, true);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    repo.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         tab.execute(command, null, null);
       }

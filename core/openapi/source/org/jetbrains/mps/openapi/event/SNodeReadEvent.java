@@ -21,11 +21,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * PROVISIONAL API. WORK IN PROGRESS.
+ * SHALL DOCUMENT WHEN NODE READ IS SENT (in comparison with property/reference reads)
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SNodeReadEvent {
+public final class SNodeReadEvent extends AbstractModelReadEvent {
   private final SNode myNode;
 
   public SNodeReadEvent(@NotNull SNode node) {

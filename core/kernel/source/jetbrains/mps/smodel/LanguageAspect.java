@@ -101,8 +101,12 @@ public enum LanguageAspect {
   }
 
   private SModel get_internal(Language l, boolean doCreate) {
-    SModel md = SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
-    if (md != null && md.getModule() == l) return md;
+    final String aspectModelName = l.getModuleName() + "." + myName;
+    for (SModel md : l.getModels()) {
+      if (aspectModelName.equals(md.getModelName())) {
+        return md;
+      }
+    }
     return doCreate ? createNew(l) : null;
   }
 

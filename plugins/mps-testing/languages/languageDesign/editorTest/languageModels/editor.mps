@@ -2,18 +2,18 @@
 <model ref="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="68nn" ref="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -708,6 +708,53 @@
           <ref role="1NtTu8" to="68nn:P9hc2Kf3nJ" />
         </node>
         <node concept="l2Vlx" id="P9hc2KffCO" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="7UZdOvgzaO7" role="3EZMnx">
+        <node concept="3F0ifn" id="7UZdOvgzaQX" role="3EZMnx">
+          <property role="3F0ifm" value="children with separator" />
+          <node concept="ljvvj" id="7UZdOvgzaRu" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="7UZdOvgzaO8" role="2iSdaV" />
+        <node concept="3F2HdR" id="7UZdOvgza$Y" role="3EZMnx">
+          <property role="2czwfO" value="," />
+          <ref role="1NtTu8" to="68nn:7UZdOvgzajQ" />
+          <node concept="l2Vlx" id="7UZdOvgza_1" role="2czzBx" />
+          <node concept="ljvvj" id="7UZdOvgza_M" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="lj46D" id="7UZdOvgzaPu" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7UZdOvgzaSD" role="3EZMnx">
+        <node concept="l2Vlx" id="7UZdOvgzaSE" role="2iSdaV" />
+        <node concept="3EZMnI" id="7UZdOvgzaUi" role="3EZMnx">
+          <node concept="3F0ifn" id="7UZdOvgzaUj" role="3EZMnx">
+            <property role="3F0ifm" value="middleware child" />
+            <node concept="ljvvj" id="7UZdOvgzaUk" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+          </node>
+          <node concept="1iCGBv" id="7UZdOvgzaV6" role="3EZMnx">
+            <ref role="1NtTu8" to="68nn:7UZdOvgzaJT" />
+            <node concept="1sVBvm" id="7UZdOvgzaV8" role="1sWHZn">
+              <node concept="3F2HdR" id="7UZdOvgzaVm" role="2wV5jI">
+                <property role="2czwfO" value="," />
+                <ref role="1NtTu8" to="68nn:7UZdOvgzaJQ" />
+              </node>
+            </node>
+          </node>
+          <node concept="l2Vlx" id="7UZdOvgzaUl" role="2iSdaV" />
+        </node>
+        <node concept="lj46D" id="7UZdOvgzaTJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="7UZdOvgzaTN" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
       <node concept="3EZMnI" id="P9hc2KgOtf" role="3EZMnx">
         <node concept="VPM3Z" id="P9hc2KgOth" role="3F10Kt">

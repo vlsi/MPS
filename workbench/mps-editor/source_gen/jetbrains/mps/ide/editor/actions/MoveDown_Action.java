@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class MoveDown_Action extends BaseAction {
@@ -26,7 +25,7 @@ public class MoveDown_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible());
+    return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isFocusOwner() && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible()) && ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() != null;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -51,12 +50,6 @@ public class MoveDown_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
-    if (selection != null) {
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DOWN);
-    } else {
-      EditorActionUtils.runEditorComponentAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), CellActionType.DOWN);
-    }
-
+    ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection().executeAction(CellActionType.DOWN);
   }
 }

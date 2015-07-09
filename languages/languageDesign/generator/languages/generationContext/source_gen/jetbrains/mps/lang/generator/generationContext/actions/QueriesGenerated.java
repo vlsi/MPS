@@ -10,8 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -19,6 +20,12 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.generator.generationContext.constraints.TraverseUtil;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1216861714161(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -26,11 +33,12 @@ public class QueriesGenerated {
     {
       Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
         public Iterable<SNode> compute() {
+          Iterable<SNode> seq = Sequence.<SNode>singleton(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef").getDeclarationNode());
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").getDeclarationNode(), _context.getModel())).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
             }
-          }).toListSequence();
+          }).subtract(Sequence.fromIterable(seq)).toListSequence();
         }
       }.compute();
       if (queryResult != null) {
@@ -43,5 +51,46 @@ public class QueriesGenerated {
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1216861714162(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"))), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e1L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType"));
+  }
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_GenerationContextOp_ContextVarRef_5797301543953321049(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef").getDeclarationNode();
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
+        Iterable<String> queryResult = new Computable<Iterable<String>>() {
+          public Iterable<String> compute() {
+            SNode n = _context.getParentNode();
+            List<String> rv = ListSequence.fromList(new ArrayList<String>());
+            while (n != null) {
+              if (SNodeOperations.isInstanceOf(n, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d934cacL, "jetbrains.mps.lang.generator.structure.ContextVariableProvider"))) {
+                ListSequence.fromList(rv).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(n, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x671e792f3d934cacL, "jetbrains.mps.lang.generator.structure.ContextVariableProvider")), "virtual_contextVariables_7430509679011531975", new Object[]{})).select(new ISelector<SNode, String>() {
+                  public String select(SNode it) {
+                    return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+                  }
+                }));
+              }
+              n = TraverseUtil.parent(n);
+            }
+            return rv;
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final String item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode rv = SNodeFactoryOperations.createNewNode(model, SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef")), null);
+                SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL, 0x671e792f3dbdffa2L, "contextVarName"), (item));
+                return rv;
+              }
+              public String getDescriptionText(String pattern) {
+                return "Context variable " + (item);
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
   }
 }

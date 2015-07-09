@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class ConceptSubstitutePart_Test extends BaseTransformationTest {
@@ -26,7 +24,7 @@ public class ConceptSubstitutePart_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("3213804652589456691", "3213804652589456739");
       this.typeString("chil");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

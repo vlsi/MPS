@@ -12,11 +12,6 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
-import java.util.Iterator;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -37,26 +32,10 @@ public class QueriesGenerated {
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_8421689336187916451(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0b471fcL, "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode").getDeclarationNode(), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_8421689336187916452(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"));
-  }
-  public static void removeActionsByCondition_8421689336187917123(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
-    Iterator<SubstituteAction> actions = _context.getSubstituteActions();
-    while (actions.hasNext()) {
-      SubstituteAction current = actions.next();
-      SNode outputConcept = (SNode) current.getOutputConcept();
-      SNode applicableConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression").getDeclarationNode();
-      Condition<SNode> cond = new Condition<SNode>() {
-        public boolean met(SNode concept) {
-          return concept != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral").getDeclarationNode() && concept != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant").getDeclarationNode() && concept != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral").getDeclarationNode() && concept != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant").getDeclarationNode() && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"))) && !(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(concept), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"))) && concept != MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression").getDeclarationNode() && concept != MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression").getDeclarationNode();
-
-        }
-      };
-      if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
-        actions.remove();
-      }
-    }
+    return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"), true, false) != null);
   }
 }

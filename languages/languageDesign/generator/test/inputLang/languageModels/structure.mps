@@ -152,6 +152,10 @@
       <property role="1uS6qv" value="argsInTemplDeclRef" />
       <property role="1uS6qo" value="argsInTemplDeclRef" />
     </node>
+    <node concept="M4N5e" id="bxo68MyhqV" role="M5hS2">
+      <property role="1uS6qo" value="Expressions in ITemplateCall arguments" />
+      <property role="1uS6qv" value="argsInTemplateCall" />
+    </node>
     <node concept="M4N5e" id="hvFgq8F" role="M5hS2">
       <property role="1uS6qv" value="none" />
       <property role="1uS6qo" value="none" />

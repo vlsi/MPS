@@ -645,6 +645,7 @@
     <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
       <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
       <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
+        <child id="1423104411234567454" name="repo" index="ukAjM" />
         <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
       </concept>
       <concept id="8974276187400348181" name="jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement" flags="nn" index="1QHqEK" />
@@ -5519,6 +5520,17 @@
               </node>
             </node>
           </node>
+          <node concept="2OqwBi" id="1eZSuKdYcg9" role="ukAjM">
+            <node concept="2OqwBi" id="1eZSuKdYbPJ" role="2Oq$k0">
+              <node concept="2WthIp" id="1eZSuKdYbPM" role="2Oq$k0" />
+              <node concept="1DTwFV" id="1eZSuKdYbPO" role="2OqNvi">
+                <ref role="2WH_rO" node="OqYxEj4MBb" resolve="project" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdYcRD" role="2OqNvi">
+              <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
         </node>
         <node concept="3cpWs8" id="5qxx5IQ$a3Y" role="3cqZAp">
           <node concept="3cpWsn" id="5qxx5IQ$a3Z" role="3cpWs9">
@@ -5570,6 +5582,17 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1eZSuKdYd5H" role="ukAjM">
+            <node concept="2OqwBi" id="1eZSuKdYd5I" role="2Oq$k0">
+              <node concept="2WthIp" id="1eZSuKdYd5J" role="2Oq$k0" />
+              <node concept="1DTwFV" id="1eZSuKdYd5K" role="2OqNvi">
+                <ref role="2WH_rO" node="OqYxEj4MBb" resolve="project" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdYd5L" role="2OqNvi">
+              <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>
@@ -5744,6 +5767,17 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1eZSuKdYaY2" role="ukAjM">
+            <node concept="2OqwBi" id="1eZSuKdYayA" role="2Oq$k0">
+              <node concept="2WthIp" id="1eZSuKdYayD" role="2Oq$k0" />
+              <node concept="1DTwFV" id="1eZSuKdYayF" role="2OqNvi">
+                <ref role="2WH_rO" node="OqYxEj4MBb" resolve="project" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdYbBW" role="2OqNvi">
+              <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>
@@ -21352,6 +21386,11 @@
     <property role="2uzpH1" value="New..." />
     <property role="3GE5qa" value="Menu.ProjectPane.Common" />
     <property role="1teQrl" value="true" />
+    <node concept="1DS2jV" id="1eZSuKdYCHf" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="5xh9:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="1eZSuKdYCHg" role="1oa70y" />
+    </node>
     <node concept="tnohg" id="6R$xsE24akj" role="tncku">
       <node concept="3clFbS" id="6R$xsE24akk" role="2VODD2">
         <node concept="3cpWs8" id="6R$xsE24DTa" role="3cqZAp">
@@ -21516,6 +21555,17 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1eZSuKdYICd" role="ukAjM">
+            <node concept="2OqwBi" id="1eZSuKdYIcC" role="2Oq$k0">
+              <node concept="2WthIp" id="1eZSuKdYIcF" role="2Oq$k0" />
+              <node concept="1DTwFV" id="1eZSuKdYIcH" role="2OqNvi">
+                <ref role="2WH_rO" node="1eZSuKdYCHf" resolve="mpsProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1eZSuKdYJ8E" role="2OqNvi">
+              <ref role="37wK5l" to="vsqj:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
             </node>
           </node>
         </node>

@@ -23,12 +23,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about modified reference.
+ *
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SReferenceChangeEvent {
+public final class SReferenceChangeEvent extends  AbstractModelChangeEvent {
   private final SModel myModel;
   private final SNode myNode;
   private final SReferenceLink myLink;

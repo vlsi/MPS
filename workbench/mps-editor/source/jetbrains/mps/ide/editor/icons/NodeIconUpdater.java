@@ -18,53 +18,90 @@ package jetbrains.mps.ide.editor.icons;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.GlobalSModelEventsManager;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.extapi.model.SNodeBatchChangeListener;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
+import jetbrains.mps.smodel.event.RepositoryChangeTracker;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.event.AbstractModelChangeEvent;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
  * @since 10/3/11
  */
-public class NodeIconUpdater extends AbstractProjectComponent {
-  private SModelCommandListener myCommandListener = new MyCommandListener();
-  private FileEditorManagerEx myFileEditorManagerEx;
+public class NodeIconUpdater extends AbstractProjectComponent implements SNodeBatchChangeListener {
+  private final FileEditorManagerEx myFileEditorManagerEx;
+  private final MPSProject myMPSProject;
+  private final MPSNodesVirtualFileSystem myNodeVFS;
+  private final RepositoryChangeTracker myChangeTracker = new RepositoryChangeTracker();
 
   @Override
-  public void initComponent() {
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
+  public void projectOpened() {
+    // XXX there's little sense to have own RepositoryChangeTracker in each component like this, we shall
+    // rather share one. Therefore, I explicitly add/remove listeners here.
+    myChangeTracker.addListener(this);
+    // FIXME use project repository once it dispatches module events
+    new RepoListenerRegistrar(/*myMPSProject.getRepository()*/MPSModuleRepository.getInstance(), myChangeTracker).attach();
   }
 
   @Override
-  public void disposeComponent() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
+  public void projectClosed() {
+    myChangeTracker.removeListener(this);
+    // FIXME use project repository once it dispatches module events
+    new RepoListenerRegistrar(/*myMPSProject.getRepository()*/MPSModuleRepository.getInstance(), myChangeTracker).detach();
   }
 
-  public NodeIconUpdater(Project project, FileEditorManagerEx fileEditorManager) {
+  public NodeIconUpdater(Project project, MPSProject mpsProject, FileEditorManagerEx fileEditorManager, MPSNodesVirtualFileSystem nodeVFS) {
     super(project);
     myFileEditorManagerEx = fileEditorManager;
+    myMPSProject = mpsProject;
+    myNodeVFS = nodeVFS;
   }
 
-  private class MyCommandListener implements SModelCommandListener {
-    @Override
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      final MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
-      for (SModelEvent event : events) {
-        SNode root = event.getAffectedRoot();
-        if (root == null || root.getModel() == null) {
-          continue;
+  @Override
+  public void processEvents(@NotNull Collection<AbstractModelChangeEvent> events) {
+    HashSet<SNodeReference> affectedRoots = new HashSet<SNodeReference>(events.size());
+    for (AbstractModelChangeEvent event : events) {
+      SNode root = null;
+      if (event instanceof SNodeAddEvent) {
+        final SNodeAddEvent e = (SNodeAddEvent) event;
+        if (e.isRoot()) {
+          root = e.getChild();
+        } else {
+          root = e.getParent().getContainingRoot();
         }
-        final SNodeReference ptr = root.getReference();
-        if (nodeVfs.hasVirtualFileFor(ptr)) {
-          myFileEditorManagerEx.updateFilePresentation(nodeVfs.getFileFor(ptr));
+      } else if (event instanceof SNodeRemoveEvent) {
+        final SNodeRemoveEvent e = (SNodeRemoveEvent) event;
+        if (e.isRoot()) {
+          root = e.getChild();
+        } else {
+          // e.getChild().getContainingRoot() is unlikely to give proper value, as the node is not inside model, right?
+          root = e.getParent().getContainingRoot();
         }
+      } else if (event instanceof SPropertyChangeEvent) {
+        root = ((SPropertyChangeEvent) event).getNode().getContainingRoot();
+      } else if (event instanceof SReferenceChangeEvent) {
+        root = ((SReferenceChangeEvent) event).getNode().getContainingRoot();
+      }
+      if (root == null || root.getModel() == null) {
+        continue;
+      }
+      affectedRoots.add(root.getReference());
+    }
+    for (SNodeReference ptr : affectedRoots) {
+      if (myNodeVFS.hasVirtualFileFor(ptr)) {
+        myFileEditorManagerEx.updateFilePresentation(myNodeVFS.getFileFor(ptr));
       }
     }
   }

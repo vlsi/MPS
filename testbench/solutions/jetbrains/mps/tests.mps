@@ -368,6 +368,18 @@
     <node concept="lpD6D" id="6LcR7GqywmP" role="lpD6w">
       <ref role="lpD7u" to="e6od:6LcR7GqvFCf" resolve="DelOnChild1ReplaceItWithLinkTarget" />
     </node>
+    <node concept="lpD6D" id="7UZdOvgzUtF" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzQ8M" resolve="Subst_MiddleChild_AddNewChildByEnter" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzUqZ" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJr4" resolve="Subst_MiddleChild_AddNewChildBySeparator" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzVNe" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJpI" resolve="Subst_MultiChild_AddNewChildByEnter" />
+    </node>
+    <node concept="lpD6D" id="7UZdOvgzVQ2" role="lpD6w">
+      <ref role="lpD7u" to="e6od:7UZdOvgzJes" resolve="Subst_MultiChild_AddNewChildBySeparator" />
+    </node>
     <node concept="lpD6D" id="P9hc2KhcFg" role="lpD6w">
       <ref role="lpD7u" to="e6od:P9hc2KgOoG" resolve="Subst_MultiChild_OnlyBooleanProperty_with_Another" />
     </node>

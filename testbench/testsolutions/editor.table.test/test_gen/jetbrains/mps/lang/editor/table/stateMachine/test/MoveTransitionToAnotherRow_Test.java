@@ -25,7 +25,7 @@ public class MoveTransitionToAnotherRow_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("6170050146384285903", "6170050146384300225");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.typeString("another");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

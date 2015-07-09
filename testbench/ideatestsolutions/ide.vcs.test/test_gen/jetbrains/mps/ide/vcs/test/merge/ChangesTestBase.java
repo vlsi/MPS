@@ -48,7 +48,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -159,7 +159,7 @@ public abstract class ChangesTestBase {
   }
 
   protected void makeChangeAndWait(Runnable change) {
-    ProjectHelper.toMPSProject(myIdeaProject).getRepository().getModelAccess().executeCommandInEDT(change);
+    ourProject.getModelAccess().executeCommandInEDT(change);
 
     ourEnvironment.flushAllEvents();
     myWaitHelper.waitForChangesManager();
@@ -221,7 +221,7 @@ public abstract class ChangesTestBase {
   }
 
   protected EditableSModel getTestModel() {
-    return (EditableSModel) SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.ide.vcs.test.testModel");
+    return (EditableSModel) new ModuleRepositoryFacade(ourProject.getRepository()).getModelByName("jetbrains.mps.ide.vcs.test.testModel");
   }
 
   protected VirtualFile getTestModelFile() {

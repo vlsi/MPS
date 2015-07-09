@@ -26,7 +26,7 @@ public class SurroundExpressionWithParenthesis_Test extends BaseTransformationTe
     public void testMethodImpl() throws Exception {
       initEditor("1989240834983537721", "1989240834983537728");
       this.typeString("(e");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

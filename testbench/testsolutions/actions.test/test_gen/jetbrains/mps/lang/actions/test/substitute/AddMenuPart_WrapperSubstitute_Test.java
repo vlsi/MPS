@@ -25,7 +25,7 @@ public class AddMenuPart_WrapperSubstitute_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("5164819300892650549", "2747974755163732990");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

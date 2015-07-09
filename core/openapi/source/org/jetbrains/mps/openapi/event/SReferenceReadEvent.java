@@ -21,12 +21,12 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * PROVISIONAL API. WORK IN PROGRESS.
+ * Encapsulates information about accessed reference.
  * @since 3.3
  * @author Artem Tikhomirov
  */
 @Immutable
-public final class SReferenceReadEvent {
+public final class SReferenceReadEvent extends AbstractModelReadEvent {
   private final SNode myNode;
   private final SReferenceLink myLink;
 

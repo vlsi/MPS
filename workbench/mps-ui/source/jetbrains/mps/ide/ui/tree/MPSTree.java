@@ -53,9 +53,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -519,8 +521,18 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return null;
   }
 
+  private TreePath listToPath(List<String> pathComponents) {
+    return getTreePath(pathComponents, false);
+  }
+
   private TreePath stringToPath(String pathString) {
-    String[] components = pathString.split(TREE_PATH_SEPARATOR);
+    List<String> components = Arrays.asList(pathString.split(TREE_PATH_SEPARATOR));
+
+    return getTreePath(components, true);
+  }
+
+  @Nullable
+  private TreePath getTreePath(List<String> components, boolean escapePathSep) {
     List<Object> path = new ArrayList<Object>();
     MPSTreeNode current = getRootNode();
 
@@ -528,17 +540,20 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     path.add(current);
 
-    for (int j = 0; j < components.length; j++) {
-      String component = components[j];
+    for (Iterator<String> it = components.iterator(); it.hasNext(); ) {
+      String component = it.next();
       assert current.isInitialized();
       if (component == null || component.length() == 0) continue;
       boolean found = false;
       for (int i = 0; i < current.getChildCount(); i++) {
         MPSTreeNode node = (MPSTreeNode) current.getChildAt(i);
-        if (node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-").equals(component)) {
+        String treeNodeId =
+            escapePathSep ? node.getNodeIdentifier().replaceAll(TREE_PATH_SEPARATOR, "-") :
+                            node.getNodeIdentifier();
+        if (treeNodeId.equals(component)) {
           current = node;
           path.add(current);
-          if (!current.isInitialized() && j != components.length - 1) {
+          if (!current.isInitialized() && it.hasNext()) {
             current.init();
           }
           found = true;
@@ -550,6 +565,16 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     }
     return new TreePath(path.toArray());
+  }
+
+  protected void expandPathsRaw(List<List<String>> paths) {
+    for (List<String> path : paths) {
+      TreePath treePath = listToPath(path);
+      if (treePath != null) {
+        ensurePathInitialized(treePath);
+        expandPath(treePath);
+      }
+    }
   }
 
   protected void expandPaths(List<String> paths) {
@@ -577,6 +602,34 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
   }
 
+  protected void selectPathsRaw(List<List<String>> paths) {
+    List<TreePath> treePaths = new ArrayList<TreePath>();
+    for (List<String> path : paths) {
+      treePaths.add(listToPath(path));
+    }
+    setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+  }
+
+  // TODO: refactor TreeState to include these instead of the old format
+  public List<List<String>> getExpandedPathsRaw() {
+    List<List<String>> result = new ArrayList<List<String>>();
+    Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[]{getModel().getRoot()}));
+    if (expanded == null) return result;
+    while (expanded.hasMoreElements()) {
+      List<String> path = new ArrayList<String>();
+      TreePath expandedPath = expanded.nextElement();
+      if (expandedPath.getLastPathComponent() == getModel().getRoot()) {
+        continue;
+      }
+      for (int i = 1; i < expandedPath.getPathCount(); i++) {
+        MPSTreeNode node = (MPSTreeNode) expandedPath.getPathComponent(i);
+        path.add(node.getNodeIdentifier());
+      }
+      result.add(path);
+    }
+    return result;
+  }
+
   private List<String> getExpandedPaths() {
     List<String> result = new ArrayList<String>();
     Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[]{getModel().getRoot()}));
@@ -587,6 +640,21 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       if (result.contains(pathString))
         LOG.warn("two expanded paths have the same string representation");
       result.add(pathString);
+    }
+    return result;
+  }
+
+  // TODO: refactor TreeState to include these instead of the old format
+  public List<List<String>> getSelectedPathsRaw() {
+    List<List<String>> result = new ArrayList<List<String>>();
+    if (getSelectionPaths() == null) return result;
+    for (TreePath selectedPath: getSelectionPaths()) {
+      List<String> path = new ArrayList<String>();
+      for (int i = 1; i < selectedPath.getPathCount(); i++) {
+        MPSTreeNode node = (MPSTreeNode) selectedPath.getPathComponent(i);
+        path.add(node.getNodeIdentifier());
+      }
+      result.add(path);
     }
     return result;
   }
@@ -613,6 +681,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public void loadState(TreeState state) {
     selectPaths(state.mySelection);
     expandPaths(state.myExpansion);
+  }
+
+  // TODO: refactor TreeState to include these instead of the old format
+  public void loadState(List<List<String>> expandedPaths, List<List<String>> selectedPaths) {
+    expandPathsRaw(expandedPaths);
+    selectPathsRaw(selectedPaths);
   }
 
   @Override

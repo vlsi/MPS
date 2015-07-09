@@ -10,7 +10,8 @@ import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFacto
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -45,7 +46,8 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   @Override
   protected void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = ProjectHelper.toMPSProject(myProject).getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
           SAbstractConcept c = MetaAdapterByDeclaration.getConcept(concept);
@@ -57,7 +59,7 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
 
     if (myIsTestMethods) {
       final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+      repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           for (SNode testCase : nodesList) {
             ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
@@ -73,7 +75,7 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
         ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(methodsList));
       }
     } else {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      repo.getModelAccess().runReadAction(new Runnable() {
         public void run() {
           synchronized (myLock) {
             ListSequence.fromList(myCandidates).clear();

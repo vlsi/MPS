@@ -55,6 +55,47 @@ public final class GeneratorUtilEx {
     }
     return templateFragments;
   }
+
+  /**
+   * Arguments for ITemplateCall are expressions we need to evaluate. 
+   * Simple expressions, like literals or variable references we know how to process, don't require generated function while complex expressions 
+   * need a java code to get evaluated (unless we implement support for evaluation some day). 
+   * Simple expressions are to get evaluated with {@link jetbrains.mps.generator.impl.GeneratorUtilEx#evaluateExpression(SNode) }
+   * 
+   * @param expr expression to check
+   * @return true if expression is not simple enough to get evaluated in runtime without actual Java code generated
+   */
+  public static boolean shallGenerateFunctionToEvaluate(SNode expr) {
+    if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x380132d742e8ccb0L, "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression"))) {
+      return true;
+    }
+    boolean customProcessing = SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x3d6f2506d88aa028L, "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression"));
+    customProcessing |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a07e5L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternRef"));
+    customProcessing |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x457655815a794e79L, "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression"));
+    customProcessing |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation")), MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base"));
+    if (customProcessing) {
+      return false;
+    }
+    boolean literal = SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"));
+    literal |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"));
+    literal |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+    literal |= SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"));
+    return !(literal);
+  }
+
+  public static Object evaluateExpression(SNode expr) {
+    if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"));
+    } else if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant"))) {
+      return SPropertyOperations.getInteger(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, "jetbrains.mps.baseLanguage.structure.IntegerConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc59b314L, 0xf8cc59b315L, "value"));
+    } else if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
+      return SPropertyOperations.getString(SNodeOperations.cast(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
+    } else if (SNodeOperations.isInstanceOf(expr, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940cd6167L, "jetbrains.mps.baseLanguage.structure.NullLiteral"))) {
+      return null;
+    }
+    throw new IllegalArgumentException();
+  }
+
   public static void dispatchRuleConsequence(@NotNull SNode ruleConsequence, @NotNull GeneratorUtilEx.ConsequenceDispatch dispatch) {
     if (SNodeOperations.isInstanceOf(ruleConsequence, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"))) {
       dispatch.templateDeclarationReference(ruleConsequence);

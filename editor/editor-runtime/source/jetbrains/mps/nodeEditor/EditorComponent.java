@@ -1535,12 +1535,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (keyEvent.getKeyCode() == KeyEvent.VK_TAB && shiftDown(keyEvent)) {
       return jetbrains.mps.openapi.editor.cells.CellActionType.PREV;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlDown(keyEvent)) {
-      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE;
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && ctrlShiftDown(keyEvent)) {
-      return jetbrains.mps.openapi.editor.cells.CellActionType.COMPLETE_SMART;
-    }
     if (keyEvent.getModifiers() == KeyEvent.CTRL_MASK && keyEvent.getKeyCode() == KeyEvent.VK_F1) {
       return jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE;
     }
@@ -2463,14 +2457,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   <T> T runRead(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
+    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    getModelAccess().runReadAction(r);
+    return r.getResult();
   }
 
 

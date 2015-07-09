@@ -778,19 +778,14 @@
                 <node concept="2OqwBi" id="6BljlJl_l5E" role="37wK5m">
                   <node concept="2JrnkZ" id="6BljlJl_l5F" role="2Oq$k0">
                     <node concept="1eOMI4" id="6BljlJl_l5G" role="2JrQYb">
-                      <node concept="10QFUN" id="6BljlJl_l5H" role="1eOMHV">
-                        <node concept="BaHAS" id="6BljlJl_l5I" role="10QFUP">
-                          <property role="BaHAW" value="java.io" />
-                          <property role="BaGAP" value="java_stub" />
-                        </node>
-                        <node concept="3uibUv" id="6BljlJl_l5J" role="10QFUM">
-                          <ref role="3uigEE" to="cu2c:~DefaultSModelDescriptor" resolve="DefaultSModelDescriptor" />
-                        </node>
+                      <node concept="BaHAS" id="6BljlJl_l5I" role="1eOMHV">
+                        <property role="BaHAW" value="java.io" />
+                        <property role="BaGAP" value="java_stub" />
                       </node>
                     </node>
                   </node>
                   <node concept="liA8E" id="6BljlJl_l5K" role="2OqNvi">
-                    <ref role="37wK5l" to="51te:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                    <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                   </node>
                 </node>
               </node>

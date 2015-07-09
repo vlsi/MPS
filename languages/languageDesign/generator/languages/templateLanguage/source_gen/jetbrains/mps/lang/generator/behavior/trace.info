@@ -271,7 +271,7 @@
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_sourceNode_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor" />
@@ -2823,6 +2823,23 @@
       </scope>
       <unit id="6635545314668025527" at="27,0,61,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_Behavior$Pattern_untfvr_a0a0a0a1" />
       <unit id="6635545314668025207" at="13,0,62,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6736062018948492760">
+    <file name="TemplateFunctionParameter_sourceNode_Behavior.java">
+      <node id="6736062018948494274" at="12,83,13,76" concept="11" />
+      <node id="6736062018948493695" at="13,76,14,236" concept="10" />
+      <node id="6736062018948492760" at="10,0,12,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6736062018948492760" at="12,0,16,0" concept="13" trace="virtual_needConceptFunction_1236687728308#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="6736062018948492762" at="10,43,10,43" />
+      <scope id="6736062018948492760" at="10,0,12,0">
+        <var name="thisNode" id="6736062018948492760" />
+      </scope>
+      <scope id="6736062018948492769" at="12,83,14,236" />
+      <scope id="6736062018948492760" at="12,0,16,0">
+        <var name="thisNode" id="6736062018948492760" />
+      </scope>
+      <unit id="6736062018948492760" at="9,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743014802">

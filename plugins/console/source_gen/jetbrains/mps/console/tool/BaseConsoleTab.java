@@ -56,7 +56,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.Project;
@@ -259,7 +258,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   @Nullable
   public String saveHistory() {
     final Wrappers._T<String> result = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         try {
           result.value = (myModel == null ? null : Base64Converter.encode(PersistenceUtil.saveBinaryModel(myModel)));
@@ -347,7 +346,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   }
 
   @NotNull
-  private Project getProject() {
+  protected final Project getProject() {
     Project mpsProject = ProjectHelper.toMPSProject(this.getConsoleTool().getProject());
     if (mpsProject == null) {
       throw new IllegalStateException("Cannot convert idea project to the mps project");
@@ -420,7 +419,7 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
   public void selectNode(final SNode nodeToSelect) {
     myTool.getToolWindow().activate(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
             myEditor.selectNode(nodeToSelect);
             getEditorComponent().ensureSelectionVisible();

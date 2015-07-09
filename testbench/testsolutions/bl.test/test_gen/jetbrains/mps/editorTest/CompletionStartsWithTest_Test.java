@@ -26,7 +26,7 @@ public class CompletionStartsWithTest_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("9010159352460130215", "9010159352460131403");
       this.typeString("SNodeP");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
 
     }

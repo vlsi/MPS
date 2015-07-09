@@ -51,6 +51,7 @@
     <import index="4are" ref="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)" />
     <import index="ifim" ref="r:6dff38c0-3c4e-455b-9e65-d46014c8a7f5(jetbrains.mps.debugger.java.runtime.state.values)" />
     <import index="as9o" ref="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
+    <import index="jrbx" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -189,6 +190,12 @@
     <node concept="3clFbW" id="67iEga6IwjL" role="jymVt">
       <node concept="3cqZAl" id="67iEga6IwjM" role="3clF45" />
       <node concept="3clFbS" id="67iEga6IwjN" role="3clF47">
+        <node concept="XkiVB" id="4d72gVMtUJE" role="3cqZAp">
+          <ref role="37wK5l" to="8fo5:67iEga6IfD4" resolve="NodePositionProvider" />
+          <node concept="37vLTw" id="4d72gVMtUQi" role="37wK5m">
+            <ref role="3cqZAo" node="4d72gVMtROu" resolve="mpsProject" />
+          </node>
+        </node>
         <node concept="3clFbF" id="6$AhvwzeVvv" role="3cqZAp">
           <node concept="37vLTI" id="6$AhvwzeVvx" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm7b2" role="37vLTx">
@@ -205,6 +212,12 @@
         <property role="TrG5h" value="provider" />
         <node concept="3uibUv" id="6$AhvwzeVvn" role="1tU5fm">
           <ref role="3uigEE" to="8fo5:67iEga6If$x" resolve="PositionProvider" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4d72gVMtROu" role="3clF46">
+        <property role="TrG5h" value="mpsProject" />
+        <node concept="3uibUv" id="4d72gVMtUEb" role="1tU5fm">
+          <ref role="3uigEE" to="jrbx:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
     </node>

@@ -5,12 +5,13 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 import com.intellij.ui.components.JBPanel;
 import jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import jetbrains.mps.project.Project;
 import javax.swing.JComponent;
 import com.intellij.ui.components.JBRadioButton;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import com.intellij.openapi.project.Project;
 import java.awt.GridBagLayout;
+import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.BoxLayout;
 import com.intellij.ui.components.JBLabel;
 import javax.swing.ButtonGroup;
@@ -20,9 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.common.LayoutUtil;
 import com.intellij.ui.components.JBTextField;
-import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.JLabel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -31,12 +30,14 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
   private final JBLightExecCheckBox myLightExecCheckBox = new JBLightExecCheckBox("Execute in the same process ", true);
   private JBReuseCachesCheckBox myReuseCachesCheckBox = new JBReuseCachesCheckBox("Reuse caches", true);
   private FieldWithPathChooseDialog myCachesDir = new FieldWithPathChooseDialog(new FileChooserDescriptor(false, true, false, false, false, false));
 
+  private final Project myProject;
   private final ModuleChooser myModuleChooser;
   private final ModelChooser myModelChooser;
   private final TestListPanel myClassesList;
@@ -48,8 +49,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   private SModule myModule;
   private SModel myModel;
 
-  public JUnitConfigurationEditorComponent(Project project) {
+  public JUnitConfigurationEditorComponent(com.intellij.openapi.project.Project project) {
     super(new GridBagLayout());
+    myProject = ProjectHelper.toMPSProject(project);
     final JBPanel kindPanel = new JBPanel();
     kindPanel.setLayout(new BoxLayout(kindPanel, BoxLayout.X_AXIS));
     kindPanel.add(new JBLabel("Test scope:"));
@@ -119,7 +121,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modulePanel = new JBPanel(new GridBagLayout());
     modulePanel.add(new JBLabel("Module:"), LayoutUtil.createLabelConstraints(0));
-    myModuleChooser = new ModuleChooser(ProjectHelper.toMPSProject(project));
+    myModuleChooser = new ModuleChooser(myProject);
     myModuleChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModuleValue(myModuleChooser.getText());
@@ -129,7 +131,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     JBPanel modelPanel = new JBPanel(new GridBagLayout());
     modelPanel.add(new JBLabel("Model:"), LayoutUtil.createLabelConstraints(0));
-    myModelChooser = new ModelChooser(ProjectHelper.toMPSProject(project));
+    myModelChooser = new ModelChooser(myProject);
     myModelChooser.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         setModelValue(myModelChooser.getText());
@@ -161,17 +163,17 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   }
 
   private void setModuleValue(final String moduleName) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        myModule = TestUtils.getModule(moduleName);
+        myModule = TestUtils.getModule(myProject, moduleName);
       }
     });
   }
 
   private void setModelValue(final String modelName) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        myModel = TestUtils.getModel(modelName);
+        myModel = TestUtils.getModel(myProject, modelName);
       }
     });
   }
@@ -203,7 +205,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     final Wrappers._T<String> module = new Wrappers._T<String>();
 
     // we have to do all processing in read action 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testMethod : methods) {
           testMethods.add(PointerUtils.pointerToString(testMethod.getNodePointer()));
@@ -243,9 +245,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     // nodes 
     final List<ITestNodeWrapper> classes = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(settings.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(myProject, settings.getTestCases())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             ListSequence.fromList(classes).addElement(it);
           }
@@ -256,9 +258,9 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     // methods 
     final List<ITestNodeWrapper> methods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-    ModelAccess.instance().runReadAction(new Runnable() {
+    myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Sequence.fromIterable(TestUtils.wrapPointerStrings(settings.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
+        Sequence.fromIterable(TestUtils.wrapPointerStrings(myProject, settings.getTestMethods())).visitAll(new IVisitor<ITestNodeWrapper>() {
           public void visit(ITestNodeWrapper it) {
             ListSequence.fromList(methods).addElement(it);
           }
@@ -279,7 +281,7 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
         wrapperToTakeModelFrom.value = ListSequence.fromList(myMethodsList.getItems()).first();
       }
       if (wrapperToTakeModelFrom.value != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        myProject.getModelAccess().runReadAction(new Runnable() {
           public void run() {
             resetEditorModelWith(wrapperToTakeModelFrom.value.getNodePointer().getModelReference().getModelName());
           }

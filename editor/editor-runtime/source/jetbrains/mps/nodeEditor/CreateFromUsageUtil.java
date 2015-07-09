@@ -147,7 +147,7 @@ public final class CreateFromUsageUtil {
       myNewRootCallback = newRootCallback;
       setExecuteOutsideCommand(false);
       final Presentation tp = getTemplatePresentation();
-      tp.setText(concept.getConceptAlias() == null ? concept.getName() : concept.getConceptAlias());
+      tp.setText(concept.getConceptAlias().isEmpty() ? concept.getName() : concept.getConceptAlias());
       tp.setIcon(IconManager.getIcon(concept));
     }
 

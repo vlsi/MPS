@@ -34,7 +34,6 @@ public abstract class AbstractCellListHandler {
   protected SNode myOwnerNode;
   protected EditorContext myEditorContext;
   protected EditorCell_Collection myListEditorCell_Collection;
-  protected SNode myInsertedNode;
   protected String myElementRole;
 
   public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
@@ -57,31 +56,12 @@ public abstract class AbstractCellListHandler {
 
   protected abstract SNode getAnchorNode(EditorCell anchorCell);
 
-  protected abstract void doInsertNode(SNode anchorNode, boolean insertBefore);
+  protected abstract void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore);
 
-  public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
+  public void insertNewChild(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SNode anchorNode = getAnchorNode(anchorCell);
-    myInsertedNode = createNodeToInsert(editorContext);
-    doInsertNode(anchorNode, insertBefore);
-  }
-
-  protected void finishInsertMode(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    if (isInsertMode()) {
-      editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
-      myInsertedNode = null;
-    }
-  }
-
-  protected void cancelInsertMode(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    if (isInsertMode()) {
-      editorContext.getNodeEditorComponent().popKeyboardHandler(); // remove this handler from stack.
-      myInsertedNode.delete();
-      myInsertedNode = null;
-    }
-  }
-
-  protected boolean isInsertMode() {
-    return myInsertedNode != null;
+    SNode nodeToInsert = createNodeToInsert(editorContext);
+    doInsertNode(nodeToInsert, anchorNode, insertBefore);
   }
 
   public abstract EditorCell createNodeCell(EditorContext editorContext, SNode node);

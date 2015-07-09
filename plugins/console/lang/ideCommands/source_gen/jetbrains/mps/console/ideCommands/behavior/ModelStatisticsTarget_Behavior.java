@@ -28,7 +28,7 @@ public class ModelStatisticsTarget_Behavior {
       properties += SNodeOperations.getProperties(node).keySet().size();
     }
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
-    SModel model = ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")));
+    SModel model = ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository());
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Roots", ListSequence.fromList(SModelOperations.roots(model, null)).count()));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("Nodes", (model == null ? 0 : SNodeOperations.nodesCount(model))));
     ListSequence.fromList(result).addElement(MultiTuple.<String,Integer>from("References", references));
@@ -37,6 +37,6 @@ public class ModelStatisticsTarget_Behavior {
     return result;
   }
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
-    return SModelOperations.nodes(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target"))), null);
+    return SModelOperations.nodes(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x67f2bafb7a5cad96L, 0x67f2bafb7a5cad99L, "target")), context.getProject().getRepository()), null);
   }
 }

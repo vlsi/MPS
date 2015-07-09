@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import junit.framework.Assert;
 
 @MPSLaunch
@@ -26,7 +24,7 @@ public class RemoveDefaultsPart_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8349639607733719236", "8349639607733719255");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isVisible());
       Assert.assertTrue(this.getEditorComponent().getNodeSubstituteChooser().isMenuEmpty());
       this.getEditorComponent().getNodeSubstituteChooser().setVisible(false);

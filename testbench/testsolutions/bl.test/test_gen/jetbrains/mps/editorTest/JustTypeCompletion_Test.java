@@ -25,7 +25,7 @@ public class JustTypeCompletion_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("8933061889659376817", "8933061889659376890");
-      this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       this.typeString("bc");
       this.pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }

@@ -5,7 +5,6 @@ package jetbrains.mps.console.base.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class InterpretedCommand_Behavior {
@@ -13,7 +12,7 @@ public class InterpretedCommand_Behavior {
   }
   public static void virtual_execute_6854397602732226506(final SNode thisNode, final ConsoleContext context, final ConsoleStream console, Runnable beforeCallback, Runnable afterCallback) {
     beforeCallback.run();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    context.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_doExecute_3321948346081469500", new Object[]{context, console});
       }

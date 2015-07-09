@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ import org.jetbrains.annotations.NonNls;
 public class IdeCommandUtil {
   public static void make(final Project project, final Iterable<? extends SModel> models, final Iterable<? extends SModule> modules, final boolean dirtyOnly, final boolean depClosure) {
     final Wrappers._T<List<SModel>> modelsToGenerate = new Wrappers._T<List<SModel>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
           modelsToGenerate.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
@@ -105,7 +104,7 @@ public class IdeCommandUtil {
   public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      project.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           modelsToClean.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), new ProjectScope(project).getModels());
         }
@@ -131,7 +130,7 @@ public class IdeCommandUtil {
   public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(_modules.value).isEmpty()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      project.getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
           _modules.value = project.getModulesWithGenerators();
         }
