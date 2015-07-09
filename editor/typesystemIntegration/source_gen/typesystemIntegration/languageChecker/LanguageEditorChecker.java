@@ -13,12 +13,15 @@ import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelInternal;
@@ -50,7 +53,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ValidationProblem;
@@ -84,9 +86,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   };
 
-  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
+  private final SRepository myRepository;
+  private final SRepositoryContentAdapter myRepositoryListener = new SRepositoryContentAdapter() {
+
     @Override
-    public void beforeModelRemoved(SModel model) {
+    protected boolean isIncluded(SModule module) {
+      return !(module.isReadOnly());
+    }
+    @Override
+    protected void stopListening(SModel model) {
       if (!(MapSequence.fromMap(myModelToEditorComponentsMap).containsKey(model))) {
         return;
       }
@@ -111,16 +119,18 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   };
 
   private RefScopeCheckerInEditor myScopeChecker;
-  public LanguageEditorChecker() {
+  public LanguageEditorChecker(@NotNull SRepository projectRepo) {
+    myRepository = projectRepo;
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
     SetSequence.fromSet(myRules).addElement(new LanguageEditorChecker.InEditorStructureChecker());
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
 
-    SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
+    new RepoListenerRegistrar(projectRepo, myRepositoryListener).attach();
   }
   @Override
   protected void doDispose() {
+    new RepoListenerRegistrar(myRepository, myRepositoryListener).attach();
     Sequence.fromIterable(MapSequence.fromMap(myEditorComponentToErrorMap).values()).visitAll(new IVisitor<LanguageErrorsComponent>() {
       public void visit(LanguageErrorsComponent it) {
         it.dispose();
@@ -138,7 +148,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       }
     });
     myModelToEditorComponentsMap = null;
-    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     super.doDispose();
   }
   private void removeModelListener(SModel model) {

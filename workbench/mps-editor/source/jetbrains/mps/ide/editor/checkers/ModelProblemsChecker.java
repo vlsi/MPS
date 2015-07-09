@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,19 @@
 package jetbrains.mps.ide.editor.checkers;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.awt.Color;
@@ -38,7 +40,8 @@ import java.util.Set;
 public class ModelProblemsChecker extends EditorCheckerAdapter {
 
   private boolean myChanged = true;
-  private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
+  private final SRepository myProjectRepo;
+  private final SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     @Override
     protected void startListening(SModel model) {
       model.addModelListener(this);
@@ -70,13 +73,15 @@ public class ModelProblemsChecker extends EditorCheckerAdapter {
     }
   };
 
-  public ModelProblemsChecker() {
-    SRepositoryRegistry.getInstance().addGlobalListener(myListener);
+  public ModelProblemsChecker(@NotNull SRepository projectRepo) {
+    myProjectRepo = projectRepo;
+    // FIXME replace with projectRepo once it's capable to send events
+    new RepoListenerRegistrar(projectRepo, myListener).attach();
   }
 
   @Override
   protected void doDispose() {
-    SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
+    new RepoListenerRegistrar(myProjectRepo, myListener).detach();
     super.doDispose();
   }
 
