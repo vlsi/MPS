@@ -13,6 +13,12 @@ public class StringLiteral_Behavior {
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
   }
+  public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
+    return true;
+  }
+  public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
+  }
   public static boolean call_isCorrect_1221565233201(SNode thisNode) {
     boolean isEscapeMode = false;
     boolean isUnicodeMode = false;

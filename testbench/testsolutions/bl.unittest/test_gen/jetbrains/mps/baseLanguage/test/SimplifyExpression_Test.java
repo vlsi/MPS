@@ -144,6 +144,21 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeCanBeSimplifiedCheck4477106456911698964", true);
   }
   @Test
+  public void test_NodeTheConditionIsAlwaysCheck2403546691276100939() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691276100939", true);
+  }
+  @Test
+  public void test_NodeTheConditionIsAlwaysCheck2403546691276100958() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691276100958", true);
+  }
+  @Test
+  public void test_NodeTheConditionIsAlwaysCheck2403546691276100977() throws Throwable {
+    this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_NodeTheConditionIsAlwaysCheck2403546691276100977", true);
+  }
+  @Test
   public void test_ErrorMessagesCheck4477106456910414383() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
     this.runTest("jetbrains.mps.baseLanguage.test.SimplifyExpression_Test$TestBody", "test_ErrorMessagesCheck4477106456910414383", true);
@@ -253,6 +268,18 @@ public class SimplifyExpression_Test extends BaseTransformationTest {
     public void test_NodeCanBeSimplifiedCheck4477106456911698964() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456911698964"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
       BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("4477106456911687811")});
+    }
+    public void test_NodeTheConditionIsAlwaysCheck2403546691276100939() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("2403546691276100939"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2403546691276097631")});
+    }
+    public void test_NodeTheConditionIsAlwaysCheck2403546691276100958() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("2403546691276100958"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2403546691276097655")});
+    }
+    public void test_NodeTheConditionIsAlwaysCheck2403546691276100977() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("2403546691276100977"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));
+      BehaviorReflection.invokeVirtual(Void.class, operation, "virtual_perform_245688835340859348", new Object[]{this.getRealNodeById("2403546691274449286")});
     }
     public void test_ErrorMessagesCheck4477106456910414383() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("4477106456910414383"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07797e20L, "jetbrains.mps.lang.test.structure.NodeCheckOperation"));

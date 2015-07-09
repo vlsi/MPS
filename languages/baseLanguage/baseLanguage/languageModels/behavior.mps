@@ -37102,6 +37102,47 @@
       </node>
       <node concept="3Tm1VV" id="hJrm0AN" role="1B3o_S" />
     </node>
+    <node concept="13i0hz" id="25r7fGIzeB9" role="13h7CS">
+      <property role="TrG5h" value="isCompileTimeConstant" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="i1LOPRp" resolve="isCompileTimeConstant" />
+      <node concept="3Tm1VV" id="25r7fGIzeBa" role="1B3o_S" />
+      <node concept="3clFbS" id="25r7fGIzeBj" role="3clF47">
+        <node concept="3clFbF" id="25r7fGIzePg" role="3cqZAp">
+          <node concept="3clFbT" id="25r7fGIzePf" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="25r7fGIzeBk" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="25r7fGIzfaD" role="13h7CS">
+      <property role="TrG5h" value="getCompileTimeConstantValue" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="i1LP2xI" resolve="getCompileTimeConstantValue" />
+      <node concept="3Tm1VV" id="25r7fGIzfaG" role="1B3o_S" />
+      <node concept="3clFbS" id="25r7fGIzfaM" role="3clF47">
+        <node concept="3clFbF" id="25r7fGIzfmV" role="3cqZAp">
+          <node concept="2OqwBi" id="25r7fGIzfp9" role="3clFbG">
+            <node concept="13iPFW" id="25r7fGIzfmP" role="2Oq$k0" />
+            <node concept="3TrcHB" id="25r7fGIzfyc" role="2OqNvi">
+              <ref role="3TsBF5" to="tpee:f$Xl_Oh" resolve="value" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="25r7fGIzfaN" role="3clF46">
+        <property role="TrG5h" value="module" />
+        <node concept="3uibUv" id="25r7fGIzfaO" role="1tU5fm">
+          <ref role="3uigEE" to="88zw:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="25r7fGIzfaP" role="3clF45">
+        <ref role="3uigEE" to="e2lb:~Object" resolve="Object" />
+      </node>
+    </node>
     <node concept="13i0hz" id="hLEXzwL" role="13h7CS">
       <property role="TrG5h" value="isCorrect" />
       <node concept="3Tm1VV" id="hLEXzwM" role="1B3o_S" />
