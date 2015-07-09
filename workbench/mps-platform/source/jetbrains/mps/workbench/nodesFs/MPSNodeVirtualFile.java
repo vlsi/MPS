@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,20 +35,22 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class MPSNodeVirtualFile extends VirtualFile {
+public final class MPSNodeVirtualFile extends VirtualFile {
   private static final byte[] CONTENTS = new byte[0];
   private static final Logger LOG = LogManager.getLogger(MPSNodeVirtualFile.class);
   public static final String NODE_PREFIX = "node://";
 
   private SNodeReference myNode;
+  private final MPSNodesVirtualFileSystem myFileSystem;
   private String myPath;
   private String myName;
   private String myPresentationName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
   private long myTimeStamp = -1;
 
-  MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
+  MPSNodeVirtualFile(@NotNull SNodeReference nodePointer, @NotNull MPSNodesVirtualFileSystem vfs) {
     myNode = nodePointer;
+    myFileSystem = vfs;
     SModel model = nodePointer.getModelReference() == null ? null : nodePointer.getModelReference().resolve(MPSModuleRepository.getInstance());
     if (model != null) {
       myTimeStamp = model.getSource().getTimestamp();
@@ -97,7 +99,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @NotNull
   public VirtualFileSystem getFileSystem() {
-    return MPSNodesVirtualFileSystem.getInstance();
+    return myFileSystem;
   }
 
   @Override
@@ -150,7 +152,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
     if (modelRef.resolve(MPSModuleRepository.getInstance()) == null) {
       return null;
     }
-    MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(modelRef);
+    MPSModelVirtualFile modelVFile = myFileSystem.getFileFor(modelRef);
     if (modelVFile != null) {
       return modelVFile.getParent();
     }
@@ -184,7 +186,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   }
 
   public boolean hasValidMPSNode() {
-    return isValid() && MPSNodesVirtualFileSystem.getInstance().hasVirtualFileFor(myNode);
+    return isValid() && myFileSystem.hasVirtualFileFor(myNode);
   }
 
   @Override

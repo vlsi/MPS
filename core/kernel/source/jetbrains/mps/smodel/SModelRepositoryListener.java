@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Set;
 
@@ -24,14 +29,32 @@ import java.util.Set;
  * {@link jetbrains.mps.extapi.module.SRepositoryRegistry#addGlobalListener(org.jetbrains.mps.openapi.module.SRepositoryListener)}
  */
 @Deprecated
+@ToRemove(version = 3.2)
 public interface SModelRepositoryListener {
 
+  /**
+   * Comes during {@link org.jetbrains.mps.openapi.module.SModuleListener#beforeModelRemoved(SModule, SModel)}
+   * Is invoked for any model from a module removed from a repository
+   */
   void beforeModelRemoved(SModel modelDescriptor);
 
+  /**
+   * Comes during {@link org.jetbrains.mps.openapi.module.SModuleListener#beforeModelRemoved(SModule, SModel)}
+   * and before {@link org.jetbrains.mps.openapi.module.SModuleListener#modelRemoved(SModule, org.jetbrains.mps.openapi.model.SModelReference)} )}
+   * Is invoked for any model from a module removed from a repository
+   */
   void modelRemoved(SModel modelDescriptor);
 
+  /**
+   * Comes during {@link org.jetbrains.mps.openapi.module.SModuleListener#modelAdded(SModule, SModel)}
+   * Is invoked for any model from a module added to a repository
+   */
   void modelAdded(SModel modelDescriptor);
 
+  /**
+   * Comes during {@link jetbrains.mps.smodel.event.SModelListener#modelRenamed(SModelRenamedEvent)}
+   * EditableSModelBase send out both aforementioned event and {@link org.jetbrains.mps.openapi.module.SModuleListener#modelRenamed(SModule, SModel, SModelReference)}
+   */
   void modelRenamed(SModel modelDescriptor);
 
   /**
@@ -46,9 +69,11 @@ public interface SModelRepositoryListener {
    * It is not guaranteed that this method will be called immediately after the reload
    * <p/>
    * Old instance of SModelData will be disposed right after all listeners are notified
+   *
+   * SModelBase sends this out right before {@link SModelListener#modelReplaced(SModel)}
+   *
    * @param reloadedModels model descriptors which contents were replaced
    */
-
   void modelsReplaced(Set<SModel> reloadedModels);
 
   SModelRepositoryListenerPriority getPriority();

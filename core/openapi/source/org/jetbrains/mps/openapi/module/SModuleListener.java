@@ -28,6 +28,12 @@ public interface SModuleListener {
 
   void beforeModelRemoved(SModule module, SModel model);
 
+  /**
+   * Model is removed from a repository. Note, it doesn't necessarily mean model was deleted.
+   * Does NOT come for module's models when module is being un-registered from a repository
+   * @param module
+   * @param ref
+   */
   void modelRemoved(SModule module, SModelReference ref);
 
   /**

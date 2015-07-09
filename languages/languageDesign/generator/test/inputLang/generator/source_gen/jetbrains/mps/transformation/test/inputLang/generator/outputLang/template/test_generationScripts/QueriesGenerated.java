@@ -20,7 +20,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_1202245164352(final CreateRootRuleContext _context) {
     return QueriesUtil.isTest1(_context.getInputModel());
   }

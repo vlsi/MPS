@@ -17,7 +17,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_8979762117546981953(final PropertyMacroContext _context) {
     String pathString = "";
     String prefix = "$APP_PACKAGE/Contents/";

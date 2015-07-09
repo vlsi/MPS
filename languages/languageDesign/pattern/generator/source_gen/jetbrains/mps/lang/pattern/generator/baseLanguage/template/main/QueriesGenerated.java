@@ -39,7 +39,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_1190931376940(final PropertyMacroContext _context) {
     return _context.createUniqueName("nodeToMatch", SNodeOperations.getContainingRoot(_context.getNode()));
   }

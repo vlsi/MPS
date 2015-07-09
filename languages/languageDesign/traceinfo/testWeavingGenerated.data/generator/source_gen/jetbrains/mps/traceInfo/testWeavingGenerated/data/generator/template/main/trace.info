@@ -17,7 +17,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="18,0,76,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.QueriesGenerated" />
+      <unit at="18,0,75,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
       <unit at="19,0,61,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl" />
@@ -246,28 +246,28 @@
       <unit id="6186432342008486850" at="29,0,170,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="6186432342008522502" at="48,120,49,57" concept="9" />
-      <node id="6186432342008522534" at="51,120,52,195" concept="9" />
-      <node id="6186432342008533379" at="54,120,55,57" concept="9" />
-      <node id="6186432342008533364" at="57,120,58,199" concept="9" />
-      <node id="6186432342008531365" at="60,122,61,325" concept="9" />
-      <node id="6186432342008531375" at="63,122,64,99" concept="9" />
-      <node id="6186432342008533386" at="66,122,67,325" concept="9" />
-      <node id="6186432342008533370" at="69,122,70,99" concept="9" />
-      <scope id="6186432342008490343" at="48,120,49,57" />
-      <scope id="6186432342008522533" at="51,120,52,195" />
-      <scope id="6186432342008533378" at="54,120,55,57" />
-      <scope id="6186432342008533363" at="57,120,58,199" />
-      <scope id="6186432342008490340" at="60,122,61,325" />
-      <scope id="6186432342008522530" at="63,122,64,99" />
-      <scope id="6186432342008533385" at="66,122,67,325" />
-      <scope id="6186432342008533369" at="69,122,70,99" />
+      <node id="6186432342008522502" at="47,120,48,57" concept="9" />
+      <node id="6186432342008522534" at="50,120,51,195" concept="9" />
+      <node id="6186432342008533379" at="53,120,54,57" concept="9" />
+      <node id="6186432342008533364" at="56,120,57,199" concept="9" />
+      <node id="6186432342008531365" at="59,122,60,325" concept="9" />
+      <node id="6186432342008531375" at="62,122,63,99" concept="9" />
+      <node id="6186432342008533386" at="65,122,66,325" concept="9" />
+      <node id="6186432342008533370" at="68,122,69,99" concept="9" />
+      <scope id="6186432342008490343" at="47,120,48,57" />
+      <scope id="6186432342008522533" at="50,120,51,195" />
+      <scope id="6186432342008533378" at="53,120,54,57" />
+      <scope id="6186432342008533363" at="56,120,57,199" />
+      <scope id="6186432342008490340" at="59,122,60,325" />
+      <scope id="6186432342008522530" at="62,122,63,99" />
+      <scope id="6186432342008533385" at="65,122,66,325" />
+      <scope id="6186432342008533369" at="68,122,69,99" />
     </file>
   </root>
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008490321">
     <file name="QueriesGenerated.java">
-      <node id="6186432342008490333" at="21,112,22,175" concept="9" />
-      <scope id="6186432342008490332" at="21,112,22,175" />
+      <node id="6186432342008490333" at="20,112,21,175" concept="9" />
+      <scope id="6186432342008490332" at="20,112,21,175" />
     </file>
     <file name="Templatemap__RootConcept.java">
       <node id="6186432342008490321" at="25,43,26,32" concept="9" />
@@ -364,10 +364,10 @@
   </root>
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008522510">
     <file name="QueriesGenerated.java">
-      <node id="6186432342008526322" at="24,112,25,175" concept="9" />
-      <node id="6186432342008526290" at="27,112,28,247" concept="9" />
-      <scope id="6186432342008526321" at="24,112,25,175" />
-      <scope id="6186432342008522556" at="27,112,28,247" />
+      <node id="6186432342008526322" at="23,112,24,175" concept="9" />
+      <node id="6186432342008526290" at="26,112,27,247" concept="9" />
+      <scope id="6186432342008526321" at="23,112,24,175" />
+      <scope id="6186432342008522556" at="26,112,27,247" />
     </file>
     <file name="Templateweave__ChildConceptWeave.java">
       <node id="6186432342008522510" at="28,43,29,178" concept="9" />
@@ -557,18 +557,18 @@
   </root>
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008533395">
     <file name="QueriesGenerated.java">
-      <node id="6186432342008533410" at="30,112,31,175" concept="9" />
-      <node id="6186432342008533419" at="33,112,34,247" concept="9" />
-      <node id="6186432342008533451" at="36,112,37,175" concept="9" />
-      <node id="6186432342008533460" at="39,112,40,247" concept="9" />
-      <node id="6186432342008533484" at="42,112,43,175" concept="9" />
-      <node id="6186432342008533493" at="45,112,46,247" concept="9" />
-      <scope id="6186432342008533409" at="30,112,31,175" />
-      <scope id="6186432342008533418" at="33,112,34,247" />
-      <scope id="6186432342008533450" at="36,112,37,175" />
-      <scope id="6186432342008533459" at="39,112,40,247" />
-      <scope id="6186432342008533483" at="42,112,43,175" />
-      <scope id="6186432342008533492" at="45,112,46,247" />
+      <node id="6186432342008533410" at="29,112,30,175" concept="9" />
+      <node id="6186432342008533419" at="32,112,33,247" concept="9" />
+      <node id="6186432342008533451" at="35,112,36,175" concept="9" />
+      <node id="6186432342008533460" at="38,112,39,247" concept="9" />
+      <node id="6186432342008533484" at="41,112,42,175" concept="9" />
+      <node id="6186432342008533493" at="44,112,45,247" concept="9" />
+      <scope id="6186432342008533409" at="29,112,30,175" />
+      <scope id="6186432342008533418" at="32,112,33,247" />
+      <scope id="6186432342008533450" at="35,112,36,175" />
+      <scope id="6186432342008533459" at="38,112,39,247" />
+      <scope id="6186432342008533483" at="41,112,42,175" />
+      <scope id="6186432342008533492" at="44,112,45,247" />
     </file>
     <file name="Templateweave__ChildConceptWeaveMany.java">
       <node id="6186432342008533395" at="28,43,29,178" concept="9" />

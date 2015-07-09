@@ -20,7 +20,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7496726876599935510(final BaseMappingRuleContext _context) {
     return true;
   }

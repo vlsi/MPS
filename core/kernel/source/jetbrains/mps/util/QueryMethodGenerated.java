@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -172,7 +171,7 @@ public class QueryMethodGenerated implements CoreComponent {
     Method method = ourInstance.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
       Object[] arguments;
-      if (ourInstance.needsOpContext(method.getDeclaringClass())) {
+      if (method.getParameterTypes().length == 2) {
         arguments = new Object[] { context, contextObject };
       } else {
         arguments = new Object[] { contextObject };
@@ -194,39 +193,17 @@ public class QueryMethodGenerated implements CoreComponent {
     }
   }
 
-  private boolean needsOpContext(Class<?> cls) {
-    Boolean rv = myNeedOpContext.get(cls);
-    if (rv != null) {
-      return rv;
-    }
-    boolean result = true;
-    for (Field f : cls.getDeclaredFields()) {
-      if ("NEEDS_OPCONTEXT".equals(f.getName())) {
-        result = false;
-        break;
-      }
-    }
-    myNeedOpContext.putIfAbsent(cls, result);
-    // highly unlikely for another thread (if any) do get different result, ignore race condition chance
-    return result;
-  }
-
   /**
    * EXPERIMENTAL CODE. DO NOT USE
    */
   public static <T> QueryMethod<T> getQueryMethod(SModelReference sourceModel, String methodName) throws NoSuchMethodException, ClassNotFoundException {
     final Method method = ourInstance.getQueryMethod(sourceModel, methodName, true);
-    final boolean needOpContext = ourInstance.needsOpContext(method.getDeclaringClass());
     return new QueryMethod<T>() {
       @Override
       @SuppressWarnings("unchecked")
-      public T invoke(IOperationContext context, Object contextObject) {
+      public T invoke(Object contextObject) {
         try {
-          if (needOpContext) {
-            return (T) method.invoke(null, context, contextObject);
-          } else {
-            return (T) method.invoke(null, contextObject);
-          }
+          return (T) method.invoke(null, contextObject);
         } catch (IllegalArgumentException e) {
           throw new RuntimeException("error invocation method: \"" + method.getName() + "\" in " + method.getDeclaringClass().getName(), e);
         } catch (IllegalAccessException e) {
@@ -247,6 +224,6 @@ public class QueryMethodGenerated implements CoreComponent {
    * EXPERIMENTAL CODE. DO NOT USE
    */
   public interface QueryMethod<T> {
-    T invoke(IOperationContext context, Object contextObject);
+    T invoke(Object contextObject);
   }
 }

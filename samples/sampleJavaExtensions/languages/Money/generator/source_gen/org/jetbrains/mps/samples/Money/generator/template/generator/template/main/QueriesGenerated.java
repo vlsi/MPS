@@ -14,7 +14,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_5447719361346553354(final BaseMappingRuleContext _context) {
     return MoneyUtil.isMoneyOperation(_context.getNode());
   }

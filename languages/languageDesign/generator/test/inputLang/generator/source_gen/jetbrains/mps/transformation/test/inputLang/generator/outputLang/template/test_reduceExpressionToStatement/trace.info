@@ -15,7 +15,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="16,0,32,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
+      <unit at="16,0,31,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
       <unit at="19,0,53,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.TemplateModelImpl" />
@@ -106,16 +106,16 @@
       <unit id="1209150022679" at="27,0,91,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1209150621175" at="19,104,20,448" concept="8" />
-      <node id="1209150505329" at="22,104,23,218" concept="8" />
-      <scope id="1209150617831" at="19,104,20,448" />
-      <scope id="1209150502312" at="22,104,23,218" />
+      <node id="1209150621175" at="18,104,19,448" concept="8" />
+      <node id="1209150505329" at="21,104,22,218" concept="8" />
+      <scope id="1209150617831" at="18,104,19,448" />
+      <scope id="1209150502312" at="21,104,22,218" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)/1209150125542">
     <file name="QueriesGenerated.java">
-      <node id="1209150220871" at="25,102,26,187" concept="8" />
-      <scope id="1209150187922" at="25,102,26,187" />
+      <node id="1209150220871" at="24,102,25,187" concept="8" />
+      <scope id="1209150187922" at="24,102,25,187" />
     </file>
     <file name="Templateout__class.java">
       <node id="1209150125542" at="25,43,26,32" concept="8" />

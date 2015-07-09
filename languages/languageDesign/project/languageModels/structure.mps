@@ -209,10 +209,6 @@
       <property role="TrG5h" value="reflectiveQueries" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="6iByHjqzSnT" role="1TKVEl">
-      <property role="TrG5h" value="needOperationContext" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyj" id="1AZH1sZHi4b" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="priorityRules" />

@@ -1365,23 +1365,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="g8Q5y" id="6iByHjqB9OQ" role="3cqZAp">
-                    <node concept="3clFbS" id="6iByHjqB9OS" role="GGjiV" />
-                    <node concept="3tyRfN" id="6iByHjqB9OO" role="GIGjv">
-                      <ref role="3tyRfW" to="kqhl:~GeneratorDescriptor.setNeedOperationContext(boolean):void" resolve="setNeedOperationContext" />
-                      <node concept="2YIFZM" id="6iByHjqBerb" role="3tyRfI">
-                        <ref role="37wK5l" to="7a2w:4eI2K_Iuewr" resolve="booleanWithDefault" />
-                        <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
-                        <node concept="37vLTw" id="6iByHjqBfLL" role="37wK5m">
-                          <ref role="3cqZAo" node="IMUMWuHQyz" resolve="generatorElement" />
-                        </node>
-                        <node concept="Xl_RD" id="6iByHjqBfRk" role="37wK5m">
-                          <property role="Xl_RC" value="needs-opctx" />
-                        </node>
-                        <node concept="3clFbT" id="6iByHjqBjs8" role="37wK5m" />
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbH" id="1yoijmglWoi" role="3cqZAp" />
                   <node concept="3cpWs8" id="1Tieq1imglI" role="3cqZAp">
                     <node concept="3cpWsn" id="1Tieq1imglJ" role="3cpWs9">
@@ -2111,38 +2094,6 @@
               <node concept="liA8E" id="6kEPduOzRok" role="2OqNvi">
                 <ref role="37wK5l" to="kqhl:~GeneratorDescriptor.isReflectiveQueries():boolean" resolve="isReflectiveQueries" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6kEPduO$2lO" role="3cqZAp">
-          <node concept="3clFbS" id="6kEPduO$2lR" role="3clFbx">
-            <node concept="3clFbF" id="6kEPduO$9Z9" role="3cqZAp">
-              <node concept="2OqwBi" id="6kEPduO$a3r" role="3clFbG">
-                <node concept="37vLTw" id="6kEPduO$9Z8" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1Tieq1imh0G" resolve="generator" />
-                </node>
-                <node concept="liA8E" id="6kEPduO$bmG" role="2OqNvi">
-                  <ref role="37wK5l" to="zwkq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                  <node concept="Xl_RD" id="6kEPduO$cG_" role="37wK5m">
-                    <property role="Xl_RC" value="needs-opctx" />
-                  </node>
-                  <node concept="2YIFZM" id="6kEPduO$ew3" role="37wK5m">
-                    <ref role="37wK5l" to="e2lb:~Boolean.toString(boolean):java.lang.String" resolve="toString" />
-                    <ref role="1Pybhc" to="e2lb:~Boolean" resolve="Boolean" />
-                    <node concept="3clFbT" id="6kEPduO$fQC" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6kEPduO$830" role="3clFbw">
-            <node concept="37vLTw" id="6kEPduO$6MQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="IMUMWuHQyG" resolve="descriptor" />
-            </node>
-            <node concept="liA8E" id="6kEPduO$8Dk" role="2OqNvi">
-              <ref role="37wK5l" to="kqhl:~GeneratorDescriptor.needsOperationContext():boolean" resolve="needsOperationContext" />
             </node>
           </node>
         </node>

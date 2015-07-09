@@ -11,7 +11,6 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7287346816896135373(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0x99a58581851840c8L, 0x81f1e364306f5ffcL, 0x6521db51e82a7653L, 0x6521db51e82a9208L, "intval")) == 42;
   }

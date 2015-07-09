@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
@@ -109,6 +110,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   @Override
   public void moduleAdded(@NotNull SModule module) {
     startListening(module);
+    repositoryChanged();
   }
 
   @Override
@@ -160,6 +162,11 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   @Override
   public void beforeModelRemoved(SModule module, SModel model) {
     stopListening(model);
+  }
+
+  @Override
+  public void modelRemoved(SModule module, SModelReference ref) {
+    repositoryChanged();
   }
 
   // SModelChangeListener listeners
@@ -217,6 +224,11 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void referenceRead(SNode node, String role) {
   }
 
+  /**
+   * Handy notification about change in repository structure, namely added/removed modules and models.
+   * For unknown reason also notifies about {@link SModuleListener#moduleChanged(SModule) 'unspecified'} module changes
+   * no-op by default.
+   */
   public void repositoryChanged() {
   }
 

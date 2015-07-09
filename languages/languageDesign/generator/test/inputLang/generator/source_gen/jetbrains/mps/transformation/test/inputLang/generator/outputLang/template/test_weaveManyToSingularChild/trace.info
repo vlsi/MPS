@@ -14,7 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="16,0,35,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
+      <unit at="16,0,34,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
       <unit at="19,0,57,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.TemplateModelImpl" />
@@ -94,12 +94,12 @@
       <unit id="1218738629621" at="25,0,74,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1218738691459" at="19,104,20,215" concept="7" />
-      <node id="1218738882048" at="22,104,23,428" concept="7" />
-      <node id="1218739852064" at="28,116,29,311" concept="7" />
-      <scope id="1218738676458" at="19,104,20,215" />
-      <scope id="1218738876109" at="22,104,23,428" />
-      <scope id="1218738863686" at="28,116,29,311" />
+      <node id="1218738691459" at="18,104,19,215" concept="7" />
+      <node id="1218738882048" at="21,104,22,428" concept="7" />
+      <node id="1218739852064" at="27,116,28,311" concept="7" />
+      <scope id="1218738676458" at="18,104,19,215" />
+      <scope id="1218738876109" at="21,104,22,428" />
+      <scope id="1218738863686" at="27,116,28,311" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738789586">
@@ -153,8 +153,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)/1218738992784">
     <file name="QueriesGenerated.java">
-      <node id="1218740174302" at="25,106,26,206" concept="7" />
-      <scope id="1218740165113" at="25,106,26,206" />
+      <node id="1218740174302" at="24,106,25,206" concept="7" />
+      <scope id="1218740165113" at="24,106,25,206" />
     </file>
     <file name="Templateweave__InputNode__A.java">
       <node id="1218738992784" at="26,43,27,202" concept="7" />

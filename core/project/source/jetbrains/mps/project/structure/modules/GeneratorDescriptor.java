@@ -79,16 +79,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   }
 
   /**
-   * @return <code>true</code> if query methods in QueriesGenerated require IOperationContext parameter.
-   */
-  public boolean needsOperationContext() {
-    return myNeedsOpContext;
-  }
-  public void setNeedOperationContext(boolean value) {
-    myNeedsOpContext = value;
-  }
-
-  /**
    * Expects at least model read access (although likely no reason to invoke in any other case but from write that modified smth)
    */
   @Override
