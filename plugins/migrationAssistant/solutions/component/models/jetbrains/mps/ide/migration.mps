@@ -51,6 +51,7 @@
     <import index="pt5l" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.project(MPS.Platform/jetbrains.mps.ide.project@java_stub)" />
     <import index="hxfc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components.impl.stores(MPS.IDEA/com.intellij.openapi.components.impl.stores@java_stub)" />
     <import index="mi91" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project.impl(MPS.IDEA/com.intellij.openapi.project.impl@java_stub)" />
+    <import index="vft3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -70,6 +71,7 @@
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
+      <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
@@ -216,6 +218,10 @@
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+        <child id="1160998916832" name="message" index="1gVpfI" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -256,6 +262,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -581,6 +590,24 @@
         <property role="3clFbU" value="false" />
       </node>
     </node>
+    <node concept="312cEg" id="7RkTcA9ETzN" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myBlocked" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7RkTcA9EREL" role="1B3o_S" />
+      <node concept="3uibUv" id="7RkTcA9ETvR" role="1tU5fm">
+        <ref role="3uigEE" to="vft3:~AtomicInteger" resolve="AtomicInteger" />
+      </node>
+      <node concept="2ShNRf" id="7RkTcA9EV7y" role="33vP2m">
+        <node concept="1pGfFk" id="7RkTcA9EV7x" role="2ShVmc">
+          <ref role="37wK5l" to="vft3:~AtomicInteger.&lt;init&gt;(int)" resolve="AtomicInteger" />
+          <node concept="3cmrfG" id="7RkTcA9EVcI" role="37wK5m">
+            <property role="3cmrfH" value="0" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="7lByCvUxOz7" role="jymVt" />
     <node concept="312cEg" id="7lByCvUxRC$" role="jymVt">
       <property role="34CwA1" value="false" />
@@ -723,7 +750,132 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7RkTcA9EBoc" role="jymVt" />
+    <node concept="2YIFZL" id="7RkTcA9EEPt" role="jymVt">
+      <property role="TrG5h" value="getInstance" />
+      <node concept="3uibUv" id="7RkTcA9EGaZ" role="3clF45">
+        <ref role="3uigEE" node="5SsFeroaajZ" resolve="MigrationTrigger" />
+      </node>
+      <node concept="3Tm1VV" id="7RkTcA9EEPy" role="1B3o_S" />
+      <node concept="3clFbS" id="7RkTcA9EEPz" role="3clF47">
+        <node concept="3clFbF" id="7RkTcA9EGZO" role="3cqZAp">
+          <node concept="2OqwBi" id="7RkTcA9EH19" role="3clFbG">
+            <node concept="37vLTw" id="7RkTcA9EGZN" role="2Oq$k0">
+              <ref role="3cqZAo" node="7RkTcA9EGRE" resolve="p" />
+            </node>
+            <node concept="liA8E" id="7RkTcA9EHfJ" role="2OqNvi">
+              <ref role="37wK5l" to="iiw6:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+              <node concept="3VsKOn" id="7RkTcA9EHpf" role="37wK5m">
+                <ref role="3VsUkX" node="5SsFeroaajZ" resolve="MigrationTrigger" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7RkTcA9EGRE" role="3clF46">
+        <property role="TrG5h" value="p" />
+        <node concept="3uibUv" id="7RkTcA9EGRD" role="1tU5fm">
+          <ref role="3uigEE" to="b2mh:~Project" resolve="Project" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="3gptLqNJD1v" role="jymVt" />
+    <node concept="3clFb_" id="7RkTcA9EKKP" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="blockMigrationsCheck" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7RkTcA9EKKS" role="3clF47">
+        <node concept="3clFbF" id="7RkTcA9EViT" role="3cqZAp">
+          <node concept="2OqwBi" id="7RkTcA9EVoJ" role="3clFbG">
+            <node concept="37vLTw" id="7RkTcA9EViS" role="2Oq$k0">
+              <ref role="3cqZAo" node="7RkTcA9ETzN" resolve="myBlocked" />
+            </node>
+            <node concept="liA8E" id="7RkTcA9EVy_" role="2OqNvi">
+              <ref role="37wK5l" to="vft3:~AtomicInteger.incrementAndGet():int" resolve="incrementAndGet" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7RkTcA9EJft" role="1B3o_S" />
+      <node concept="3cqZAl" id="7RkTcA9EKGV" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="7RkTcA9ENAN" role="jymVt" />
+    <node concept="3clFb_" id="7RkTcA9EM7H" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="unblockMigrationsCheck" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7RkTcA9EM7I" role="3clF47">
+        <node concept="3cpWs8" id="7RkTcA9EVRF" role="3cqZAp">
+          <node concept="3cpWsn" id="7RkTcA9EVRG" role="3cpWs9">
+            <property role="TrG5h" value="locks" />
+            <node concept="10Oyi0" id="7RkTcA9EVRD" role="1tU5fm" />
+            <node concept="2OqwBi" id="7RkTcA9EVRH" role="33vP2m">
+              <node concept="37vLTw" id="7RkTcA9EVRI" role="2Oq$k0">
+                <ref role="3cqZAo" node="7RkTcA9ETzN" resolve="myBlocked" />
+              </node>
+              <node concept="liA8E" id="7RkTcA9EVRJ" role="2OqNvi">
+                <ref role="37wK5l" to="vft3:~AtomicInteger.decrementAndGet():int" resolve="decrementAndGet" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="7RkTcA9EW0u" role="3cqZAp">
+          <node concept="2d3UOw" id="7RkTcA9EWHD" role="1gVkn0">
+            <node concept="3cmrfG" id="7RkTcA9EWJ3" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="7RkTcA9EW3o" role="3uHU7B">
+              <ref role="3cqZAo" node="7RkTcA9EVRG" resolve="locks" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="7RkTcA9EX98" role="1gVpfI">
+            <property role="Xl_RC" value="Non-paired block-unblock method usage" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="7RkTcA9EXDz" role="3cqZAp">
+          <node concept="3clFbS" id="7RkTcA9EXD_" role="3clFbx">
+            <node concept="1QHqEM" id="7RkTcA9EYcF" role="3cqZAp">
+              <node concept="1QHqEC" id="7RkTcA9EYcG" role="1QHqEI">
+                <node concept="3clFbS" id="7RkTcA9EYcH" role="1bW5cS">
+                  <node concept="3clFbF" id="7RkTcA9EYcI" role="3cqZAp">
+                    <node concept="1rXfSq" id="7RkTcA9EYcJ" role="3clFbG">
+                      <ref role="37wK5l" node="1Ql1_c6N3AN" resolve="updateUsedLanguagesVersions" />
+                      <node concept="2YIFZM" id="7RkTcA9EYcK" role="37wK5m">
+                        <ref role="37wK5l" to="umn7:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                        <ref role="1Pybhc" to="umn7:3UfGsecu96G" resolve="MigrationsUtil" />
+                        <node concept="37vLTw" id="7FLry2XS$4W" role="37wK5m">
+                          <ref role="3cqZAo" node="1AzqgyAfbh5" resolve="myMpsProject" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7RkTcA9EYcM" role="3cqZAp">
+                    <node concept="1rXfSq" id="7RkTcA9EYcN" role="3clFbG">
+                      <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="7RkTcA9EYb2" role="3clFbw">
+            <node concept="3cmrfG" id="7RkTcA9EYcs" role="3uHU7w">
+              <property role="3cmrfH" value="0" />
+            </node>
+            <node concept="37vLTw" id="7RkTcA9EXI6" role="3uHU7B">
+              <ref role="3cqZAo" node="7RkTcA9EVRG" resolve="locks" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7RkTcA9EM7J" role="1B3o_S" />
+      <node concept="3cqZAl" id="7RkTcA9EM7K" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="7RkTcA9EHLz" role="jymVt" />
     <node concept="3clFb_" id="1AzqgyAfalq" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="projectOpened" />

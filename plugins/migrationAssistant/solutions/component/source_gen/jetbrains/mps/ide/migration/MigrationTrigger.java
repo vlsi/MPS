@@ -10,6 +10,7 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
 import jetbrains.mps.project.Project;
+import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -74,6 +75,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
   private boolean myMigrationQueued = false;
+  private final AtomicInteger myBlocked = new AtomicInteger(0);
 
   private ProjectMigrationProperties myProperties;
 
@@ -89,6 +91,27 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myMpsProject = p;
     myMigrationManager = migrationManager;
     myProperties = props;
+  }
+
+  public static MigrationTrigger getInstance(com.intellij.openapi.project.Project p) {
+    return p.getComponent(MigrationTrigger.class);
+  }
+
+  public void blockMigrationsCheck() {
+    myBlocked.incrementAndGet();
+  }
+
+  public void unblockMigrationsCheck() {
+    int locks = myBlocked.decrementAndGet();
+    assert locks >= 0 : "Non-paired block-unblock method usage";
+    if (locks == 0) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+          checkMigrationNeeded();
+        }
+      });
+    }
   }
 
   public void projectOpened() {
@@ -136,7 +159,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   }
                 });
               } else {
-                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0r(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
+                MigrationErrorWizardStep lastStep = as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0y(wizard.getCurrentStepObject(), MigrationErrorWizardStep.class);
                 if (lastStep == null) {
                   return;
                 }
@@ -417,7 +440,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     public boolean migrationRequired = false;
     public Boolean tips;
   }
-  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0r(Object o, Class<T> type) {
+  private static <T> T as_feb5zp_a0a0a0k0a0a0a1a0a0a0a1a0a0y(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
