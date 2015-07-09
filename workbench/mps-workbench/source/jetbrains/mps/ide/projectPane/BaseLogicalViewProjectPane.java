@@ -60,14 +60,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -75,13 +72,13 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.FileSystemModelHelper;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
@@ -94,11 +91,8 @@ import java.util.Set;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private final ProjectView myProjectView;
-  private MyCommandListener myModelAccessListener = new MyCommandListener();
-  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
-  private boolean myNeedRebuild = false;
-  private SRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
+  private final MyRepositoryListener myRepositoryListener = new MyRepositoryListener();
   protected boolean myDisposed;
 
   private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
@@ -201,6 +195,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   @Nullable
   public Comparator<Object> getTreeChildrenComparator() {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     return new Comparator<Object>() {
       @Override
       public int compare(final Object o1, final Object o2) {
@@ -208,7 +203,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
           if (o1 instanceof SNode && o2 instanceof SNode) {
             final SNode node1 = (SNode) o1;
             final SNode node2 = (SNode) o2;
-            return ModelAccess.instance().runReadAction(new Computable<Integer>() {
+            return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Integer>() {
               @Override
               public Integer compute() {
                 String concept1 = node1.getConcept().getQualifiedName();
@@ -231,9 +226,10 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   protected void removeListeners() {
     ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-    ModelAccess.instance().removeCommandListener(myModelAccessListener);
-    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    mpsProject.getModelAccess().removeCommandListener(myRepositoryListener);
+    // FIXME replace with ProjectRepository once it's capable to send notifications about modules added/removed
+    new RepoListenerRegistrar(/*mpsProject.getRepository()*/ MPSModuleRepository.getInstance(), myRepositoryListener).detach();
     if (IMakeService.INSTANCE.hasMakeService()) {
       IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
     }
@@ -242,9 +238,10 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   protected void addListeners() {
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
-    ModelAccess.instance().addCommandListener(myModelAccessListener);
-    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
+    // FIXME replace with ProjectRepository once it's capable to send notifications about modules added/removed
+    new RepoListenerRegistrar(/*mpsProject.getRepository()*/ MPSModuleRepository.getInstance(), myRepositoryListener).attach();
+    mpsProject.getModelAccess().addCommandListener(myRepositoryListener);
     if (IMakeService.INSTANCE.hasMakeService()) {
       IMakeService.INSTANCE.get().addListener(myMakeNotificationListener);
     }
@@ -439,13 +436,13 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return selectedFilesList.toArray(new VirtualFile[selectedFilesList.size()]);
   }
 
-  private AnActionEvent createEvent(DataContext context) {
+  /*package*/ static AnActionEvent createEvent(DataContext context) {
     return ActionUtils.createEvent(ActionPlaces.PROJECT_VIEW_POPUP, context);
   }
 
   protected abstract boolean isComponentCreated();
 
-  private class MyCopyProvider implements CopyProvider {
+  private static class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
 
     @Override
@@ -467,7 +464,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyPasteProvider implements PasteProvider {
+  private static class MyPasteProvider implements PasteProvider {
     private PasteNode_Action myAction = new PasteNode_Action();
 
     @Override
@@ -489,7 +486,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyCutProvider implements CutProvider {
+  private static class MyCutProvider implements CutProvider {
     private CutNode_Action myAction = new CutNode_Action();
 
     @Override
@@ -511,54 +508,10 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
-    @Override
-    public void moduleAdded(@NotNull SModule module) {
-      myNeedRebuild = true;
-    }
+  private class MyRepositoryListener extends SRepositoryContentAdapter implements CommandListener {
+    private boolean myNeedRebuild = false;
 
-    @Override
-    public void beforeModuleRemoved(@NotNull SModule module) {
-      myNeedRebuild = true;
-    }
-  }
-
-  private class MyCommandListener extends CommandListenerAdapter {
-    @Override
-    public void commandStarted() {
-      myNeedRebuild = false;
-    }
-
-    @Override
-    public void commandFinished() {
-      if (!myNeedRebuild) return;
-      JTree tree = getTree();
-      if (tree instanceof MPSTree) {
-        ((MPSTree) tree).rebuildLater();
-      }
-      myNeedRebuild = false;
-    }
-  }
-
-  //----listeners----
-
-  private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
-    @Override
-    public void modelRepositoryChanged() {
-      myNeedRebuild = true;
-    }
-  }
-
-  //----copy-paste----
-
-  private class RefreshListener implements VirtualFileManagerListener {
-    @Override
-    public void beforeRefreshStart(boolean asynchonous) {
-
-    }
-
-    @Override
-    public void afterRefreshFinish(boolean asynchonous) {
+    /*package*/ void rebuildTreeIfNeeded() {
       if (myNeedRebuild) {
         JTree tree = getTree();
         if (tree instanceof MPSTree) {
@@ -566,6 +519,54 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         }
         myNeedRebuild = false;
       }
+    }
+
+    @Override
+    public void repositoryChanged() {
+      myNeedRebuild = true;
+    }
+
+    @Override
+    public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+      myNeedRebuild = true;
+    }
+
+    @Override
+    protected void startListening(SModel model) {
+      if (!model.isReadOnly()) {
+        model.addModelListener(this);
+      }
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+    }
+
+    @Override
+    public void modelReplaced(SModel model) {
+      myNeedRebuild = true;
+    }
+
+    @Override
+    public void commandStarted() {
+      myNeedRebuild = false;
+    }
+
+    @Override
+    public void commandFinished() {
+      rebuildTreeIfNeeded();
+    }
+  }
+
+  private class RefreshListener implements VirtualFileManagerListener {
+    @Override
+    public void beforeRefreshStart(boolean asynchonous) {
+    }
+
+    @Override
+    public void afterRefreshFinish(boolean asynchonous) {
+      myRepositoryListener.rebuildTreeIfNeeded();
     }
   }
 
