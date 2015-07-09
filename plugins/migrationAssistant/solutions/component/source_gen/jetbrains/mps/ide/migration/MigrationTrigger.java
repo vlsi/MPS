@@ -49,7 +49,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -246,6 +245,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     return "MigrationTrigger";
   }
 
+  public synchronized void resetMigrationQueuedFlag() {
+    myMigrationQueued = false;
+  }
+
   public synchronized void checkMigrationNeeded() {
     postponeMigrationIfNeededOnModuleChange(myMpsProject, MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
   }
@@ -303,19 +306,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   public synchronized void postponeMigration() {
     final com.intellij.openapi.project.Project ideaProject = myProject;
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
-    final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-    myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        MigrationTrigger.updateUsedLanguagesVersions(allModules);
-        migrationRequired.value = myMigrationManager.isMigrationRequired();
-      }
-    });
-    if (!(migrationRequired.value)) {
-      MigrationDialogUtil.showNoMigrationMessage(myProject);
-      myMigrationQueued = false;
-      return;
-    }
-
     saveAndSetTipsState();
 
     // wait until project is fully loaded (if not yet) 
