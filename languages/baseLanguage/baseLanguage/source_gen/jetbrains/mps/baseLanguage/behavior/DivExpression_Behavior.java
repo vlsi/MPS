@@ -19,16 +19,16 @@ public class DivExpression_Behavior {
       if (b.doubleValue() == 0.0 || b.longValue() == 0) {
         return null;
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Double.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Double.class, a, b)) {
         return a.doubleValue() / b.doubleValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Float.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Float.class, a, b)) {
         return a.floatValue() / b.floatValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Long.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Long.class, a, b)) {
         return a.longValue() / b.longValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Integer.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Integer.class, a, b)) {
         return a.intValue() / b.intValue();
       }
     }

@@ -41,7 +41,7 @@ public class BinaryOperation_Behavior {
   public static Object virtual_calculateCompileTimeConstantValue_1587718783752756055(SNode thisNode, Object leftValue, Object rightValue) {
     return null;
   }
-  public static boolean call_shouldBeWidenedTo_6205351058571053912(SAbstractConcept thisConcept, Class type, Object a, Object b) {
+  public static boolean call_bothShouldBeWidenedTo_6205351058571053912(SAbstractConcept thisConcept, Class type, Object a, Object b) {
     return a.getClass().isAssignableFrom(type) || b.getClass().isAssignableFrom(type);
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {

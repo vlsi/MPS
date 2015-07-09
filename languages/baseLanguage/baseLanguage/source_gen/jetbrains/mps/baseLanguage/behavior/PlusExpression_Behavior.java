@@ -13,7 +13,6 @@ public class PlusExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    // todo remove 
     Object result;
     Object leftExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), "virtual_eval_1213877519769", new Object[]{module});
     Object rightExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")), "virtual_eval_1213877519769", new Object[]{module});
@@ -30,16 +29,16 @@ public class PlusExpression_Behavior {
     } else if (leftValue instanceof Number && rightValue instanceof Number) {
       Number a = (Number) leftValue;
       Number b = (Number) rightValue;
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Double.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Double.class, a, b)) {
         return a.doubleValue() + b.doubleValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Float.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Float.class, a, b)) {
         return a.floatValue() + b.floatValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Long.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Long.class, a, b)) {
         return a.longValue() + b.longValue();
       }
-      if (BinaryOperation_Behavior.call_shouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Integer.class, a, b)) {
+      if (BinaryOperation_Behavior.call_bothShouldBeWidenedTo_6205351058571053912(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), Integer.class, a, b)) {
         return a.intValue() + b.intValue();
       }
     }
