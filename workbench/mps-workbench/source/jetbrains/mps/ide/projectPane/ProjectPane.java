@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.SelectInTarget;
-import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -50,12 +49,10 @@ import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import jetbrains.mps.ide.projectView.ProjectViewPaneOverride;
 import jetbrains.mps.ide.ui.tree.MPSTree;
-import jetbrains.mps.ide.ui.tree.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -71,7 +68,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -80,7 +76,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @State(
@@ -102,7 +97,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   };
 
   private MyScrollPane myScrollPane;
-  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane, null, null, true);
+  private final MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("Project Pane Updates Queue", 500, true, myScrollPane, null, null, true);
 
   public static final String ID = ProjectViewPane.ID;
 
@@ -116,12 +111,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return;
           final SNode sNode = editorComponent.getEditedNode();
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            @Override
-            public void run() {
-              selectNodeWithoutExpansion(sNode);
-            }
-          });
+          selectNodeWithoutExpansion(sNode);
         }
       }
     }
@@ -246,13 +236,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     myScrollPane = new MyScrollPane(getTree());
     addListeners();
     if (!RuntimeFlags.isTestMode()) {
-      // Looks like this method can be called from different threads
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          rebuildTree();
-        }
-      });
+      rebuild();
     }
     TreeHighlighterExtension.attachHighlighters(tree, myProject);
     fireComponentCreated();
@@ -284,13 +268,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @Override
   public void rebuild() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (isDisposed() || getTree() == null) return;
-        rebuildTree();
-      }
-    });
+    // This method can be called from different threads, however rebuildTree()
+    // merely adds an update to the update queue, and thus it's safe to invoke it
+    // without runReadInEDT or runInUIThreadNoWait as it used to be.
+    rebuildTree();
   }
 
   @Override

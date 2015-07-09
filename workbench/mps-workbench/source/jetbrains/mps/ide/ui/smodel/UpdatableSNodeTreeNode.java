@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,7 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -45,7 +41,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private SNodeTreeUpdater myTreeUpdater;
   private SModelEventsListener myEventsListener;
   private SimpleModelListener mySNodeModelListener;
-  private SModelRepositoryListener myModelRepositoryListener;
 
   public UpdatableSNodeTreeNode(Project mpsProject, SNode node) {
     super(node);
@@ -56,12 +51,9 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
     ((SModelInternal) myEventsListener.getModelDescriptor()).addModelListener(mySNodeModelListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
   private void removeListeners() {
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-
     SModel md = getModelDescriptor();
     if (md == null) return;
     if (mySNodeModelListener != null) {
@@ -91,14 +83,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       }
     };
     mySNodeModelListener = new SimpleModelListener(updater);
-    myModelRepositoryListener = new SModelRepositoryAdapter() {
-      @Override
-      public void modelsReplaced(Set<SModel> replacedModels) {
-        if (replacedModels.contains(getModelDescriptor())) {
-          updater.update(true, true);
-        }
-      }
-    };
     if (getModelDescriptor() instanceof EditableSModel) {
       myTreeUpdater = new MySNodeTreeUpdater(myProject, this);
     }

@@ -28,7 +28,6 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -40,7 +39,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeNavigationProvider;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -76,14 +74,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   @Override
   public void rebuild() {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
-    mpsProject.getModelAccess().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (isDisposed()) return;
-        getTree().rebuildNow();
-      }
-    });
+    getTree().rebuildLater();
   }
 
   @Override
@@ -110,7 +101,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   @Override
   public JComponent createComponent() {
     if (isComponentCreated()) {
-      rebuildTree();
+      rebuild();
       return myScrollPane;
     }
     myTree = new MyLogicalViewTree(ProjectHelper.toMPSProject(getProject()));
@@ -146,19 +137,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       }
     };
     myFavoritesManager.addListener(myFavoritesListener);
-    // Looks like thid method can be called from different threads
-    rebuildTree();
+    rebuild();
 
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
-  }
-
-  private void rebuildTree() {
-    if (ThreadUtils.isInEDT()) {
-      getTree().rebuildNow();
-    } else {
-      getTree().rebuildLater();
-    }
   }
 
   @Override
@@ -266,7 +248,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         @Override
         public void run() {
           SNode node = treeNode.getSNode();
-          if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()) || node.getModel() == null) {
+          if (!SNodeUtil.isAccessible(node, myProject.getRepository()) || node.getModel() == null) {
             return;
           }
           FavoritesProjectPane.this.editNode(node, myProject, wasClicked);

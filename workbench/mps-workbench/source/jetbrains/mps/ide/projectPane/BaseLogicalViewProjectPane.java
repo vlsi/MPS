@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.module.GeneratorTreeNode;
@@ -63,9 +62,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -80,7 +77,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
-import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.util.ArrayList;
@@ -195,7 +191,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   @Nullable
   public Comparator<Object> getTreeChildrenComparator() {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(getProject());
     return new Comparator<Object>() {
       @Override
       public int compare(final Object o1, final Object o2) {
@@ -203,14 +198,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
           if (o1 instanceof SNode && o2 instanceof SNode) {
             final SNode node1 = (SNode) o1;
             final SNode node2 = (SNode) o2;
-            return new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<Integer>() {
-              @Override
-              public Integer compute() {
-                String concept1 = node1.getConcept().getQualifiedName();
-                String concept2 = node2.getConcept().getQualifiedName();
-                return concept1.compareTo(concept2);
-              }
-            });
+            // (1) node.getConcept() doesn't require model read, nor concept.getQualifiedName
+            // (2) If we got SNode, we're are already in model read
+            String concept1 = node1.getConcept().getQualifiedName();
+            String concept2 = node2.getConcept().getQualifiedName();
+            return concept1.compareTo(concept2);
           }
         }
         return 0;
@@ -513,10 +505,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
     /*package*/ void rebuildTreeIfNeeded() {
       if (myNeedRebuild) {
-        JTree tree = getTree();
-        if (tree instanceof MPSTree) {
-          ((MPSTree) tree).rebuildLater();
-        }
+        rebuild();
         myNeedRebuild = false;
       }
     }
