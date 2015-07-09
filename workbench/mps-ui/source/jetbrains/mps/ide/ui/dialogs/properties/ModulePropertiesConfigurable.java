@@ -98,7 +98,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
@@ -128,7 +127,6 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultCellEditor;
-import javax.swing.InputVerifier;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -156,7 +154,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.EventObject;
@@ -866,7 +863,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private GenPrioritiesTableModel myPrioritiesTableModel;
     private JBCheckBox myGenerateTemplates;
     private JBCheckBox myReflectiveQueries;
-    private JBCheckBox myNeedOpContext;
     private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings =
         new java.util.HashMap<MappingConfig_AbstractRef, GeneratorPrioritiesTree>();
     private JBTable myTable;
@@ -881,12 +877,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void apply() {
-      if (myTable.isEditing())
+      if (myTable.isEditing()) {
         myTable.getCellEditor().stopCellEditing();
+      }
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       genDescr.setGenerateTemplates(myGenerateTemplates.isSelected());
       genDescr.setReflectiveQueries(myReflectiveQueries.isSelected());
-      genDescr.setNeedOperationContext(myNeedOpContext.isSelected());
       myPrioritiesTableModel.apply(myDepGenerators);
     }
 
@@ -1080,11 +1076,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myGenerateTemplates.setToolTipText(PropertiesBundle.message("mps.properties.module.generator.gentemplates.tip"));
       myReflectiveQueries = new JBCheckBox("Reflective queries", genDescr.isReflectiveQueries());
       myReflectiveQueries.setToolTipText("Invoke generated queries via reflection. Compatibility option, turn off and rebuild generator");
-      myNeedOpContext = new JBCheckBox("IOperationContext parameter", genDescr.needsOperationContext());
-      myNeedOpContext.setToolTipText("This is compatibility option, turn off and rebuild generator");
       generationOptions.add(myGenerateTemplates);
       generationOptions.add(myReflectiveQueries);
-      generationOptions.add(myNeedOpContext);
       panel.add(generationOptions,
           new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -1097,9 +1090,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       final boolean b1 = genDescr.isGenerateTemplates();
       final boolean b2 = genDescr.isReflectiveQueries();
-      final boolean b3 = genDescr.needsOperationContext();
       return myPrioritiesTableModel.isModified()
-          || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2 || myNeedOpContext.isSelected() != b3;
+          || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2;
     }
   }
 

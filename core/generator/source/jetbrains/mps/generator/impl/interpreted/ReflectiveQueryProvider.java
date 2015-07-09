@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import jetbrains.mps.generator.impl.query.SourceNodeQuery;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import jetbrains.mps.generator.impl.query.WeaveRuleCondition;
 import jetbrains.mps.generator.impl.query.WeaveRuleQuery;
-import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.template.DropRootRuleContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -49,7 +48,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethodGenerated.QueryMethod;
@@ -241,13 +239,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       myDefValue = defValue;
     }
 
+    private <T> QueryMethod<T> createMethod() throws ClassNotFoundException, NoSuchMethodException {
+      return QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
+    }
+
     private QueryMethod<Boolean> getMethod(TemplateQueryContext ctx) {
       // I don't care to synchronize method evaluation as there's no difference for me which QM instance I use,
       // provided initialization of any is complete (that's why field is volatile)
       QueryMethod<Boolean> m = myMethod;
       if (m == null) {
         try {
-          m = QueryMethodGenerated.getQueryMethod(myTemplateNode.getModelReference(), myMethodName);
+          m = createMethod();
         } catch (ClassNotFoundException e) {
           ctx.showWarningMessage(null,
               String.format("cannot find condition method '%s' : evaluate to %s", myMethodName, String.valueOf(myDefValue).toUpperCase()));
@@ -258,7 +260,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
         if (m == null) {
           m = new QueryMethod<Boolean>() {
             @Override
-            public Boolean invoke(IOperationContext context, Object contextObject) {
+            public Boolean invoke(Object contextObject) {
               return myDefValue;
             }
           };
@@ -270,23 +272,23 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull CreateRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public boolean check(@NotNull DropRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public boolean check(@NotNull MapRootRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public GeneratedMatchingPattern pattern(@NotNull PatternRuleContext ctx) {
       try {
-        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
+        return this.<GeneratedMatchingPattern>createMethod().invoke(ctx);
       } catch (ClassNotFoundException e) {
         ctx.getGenerator().getLogger().warning(myTemplateNode, String.format("cannot find pattern condition method '%s' : not applied", myMethodName));
       } catch (NoSuchMethodException e) {
@@ -297,18 +299,18 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull ReductionRuleQueryContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public boolean check(@NotNull WeavingMappingRuleContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public SNode contextNode(WeavingMappingRuleContext ctx) {
       try {
-        return QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
+        return this.<SNode>createMethod().invoke(ctx);
       } catch (NoSuchMethodException e) {
         ctx.showWarningMessage(null, String.format("cannot find context node query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
@@ -320,7 +322,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public void invoke(MappingScriptContext ctx) {
       try {
-        QueryMethodGenerated.invoke(myMethodName, ctx.getInvocationContext(), ctx, myTemplateNode.getModelReference(), true);
+        createMethod().invoke(ctx);
       } catch (ClassNotFoundException e) {
         ctx.showWarningMessage(null, String.format("cannot run script '%s' : no generated code found", myMethodName));
       } catch (NoSuchMethodException e) {
@@ -330,17 +332,17 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
 
     @Override
     public boolean check(@NotNull TemplateQueryContext ctx) {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
 
     @Override
     public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
-      return getMethod(ctx).invoke(ctx.getInvocationContext(), ctx);
+      return getMethod(ctx).invoke(ctx);
     }
   }
 
@@ -354,11 +356,15 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       myMethodName = methodName;
     }
 
+    private <T> QueryMethod<T> createMethod() throws ClassNotFoundException, NoSuchMethodException {
+      return QueryMethodGenerated.getQueryMethod(myQuery.getModelReference(), myMethodName);
+    }
+
     @Nullable
     @Override
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
       try {
-        return QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
+        return this.<SNode>createMethod().invoke(context);
       } catch (NoSuchMethodException e) {
         context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to null", myMethodName));
       } catch (ClassNotFoundException ex) {
@@ -371,9 +377,8 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
     @Override
     public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext context) throws GenerationFailureException {
       try {
-        Iterable<SNode> result = QueryMethodGenerated.invoke(myMethodName, context.getInvocationContext(), context, myQuery.getModelReference(), true);
+        Iterable<SNode> result = this.<Iterable<SNode>>createMethod().invoke(context);
         return IterableUtil.asCollection(result);
-
       } catch (NoSuchMethodException e) {
         context.showWarningMessage(null, String.format("cannot find nodes query '%s' : evaluate to empty list", myMethodName));
       } catch (ClassNotFoundException e) {
@@ -398,7 +403,7 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
       if (myMethod == null) {
         myMethod = getMethod(context);
       }
-      return myMethod.invoke(context.getInvocationContext(), context);
+      return myMethod.invoke(context);
     }
 
     private QueryMethod<Object> getMethod(PropertyMacroContext context) throws GenerationFailureException{
