@@ -20,7 +20,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_4563030478605919789(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L, 0x5ea800dcf8cc71b3L, "customConstructor")), MetaAdapterFactory.getContainmentLink(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x7500da2cf0943c2L, 0x4aa85872b7431817L, "arguments")), MetaAdapterFactory.getConcept(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b742b6b9L, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"));
   }

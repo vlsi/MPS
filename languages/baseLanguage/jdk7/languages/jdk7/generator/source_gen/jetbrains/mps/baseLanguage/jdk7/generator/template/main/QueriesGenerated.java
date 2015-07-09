@@ -19,7 +19,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_400642802550422214(final PropertyMacroContext _context) {
     Map<String, Integer> m = SwitchGenUtil.getMap(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x96ee7a94411d4cf8L, 0x9b9496cad7e52411L, 0x58f5e8197ce2129L, "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement")), _context);
     return MapSequence.fromMap(m).get(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02cdd1bL, 0x10ef02d67cfL, "expression")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, "jetbrains.mps.baseLanguage.structure.StringLiteral")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value")));

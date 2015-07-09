@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_1236432114222(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fb848396cL, 0x11fb848396fL, "startIncluded"));
   }

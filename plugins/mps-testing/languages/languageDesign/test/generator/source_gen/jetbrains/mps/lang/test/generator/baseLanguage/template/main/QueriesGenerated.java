@@ -32,7 +32,6 @@ import java.util.ArrayList;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1227899006732(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getParent(_context.getNode()) == null);
   }

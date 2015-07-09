@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static SNode sourceNodeQuery_6143206611772089845(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, 0x57547b70f36dc0eL, "condition"));
   }

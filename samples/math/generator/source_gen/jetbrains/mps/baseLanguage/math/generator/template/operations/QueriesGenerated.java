@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1237111605288(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae7f6L, "var")), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca6da8L, "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex"));
   }
@@ -31,10 +30,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cd41a5L, "precondition")) != null;
   }
   public static boolean baseMappingRule_Condition_1418611629041289492(final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a4());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a3());
   }
   public static boolean baseMappingRule_Condition_1418611629041290683(final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a5());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), _quotation_createNode_x583g4_b0a0a4());
   }
   public static Object propertyMacro_GetPropertyValue_1237191873565(final PropertyMacroContext _context) {
     return _context.createUniqueName("r", null);
@@ -135,7 +134,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1237192427720(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0ca1899L, 0x11fe0cae874L, "expression"));
   }
-  private static SNode _quotation_createNode_x583g4_b0a0a4() {
+  private static SNode _quotation_createNode_x583g4_b0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -144,7 +143,7 @@ public class QueriesGenerated {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62684653L, "elementType"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_b0a0a5() {
+  private static SNode _quotation_createNode_x583g4_b0a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

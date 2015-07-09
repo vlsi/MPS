@@ -17,7 +17,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7980748436587793846(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x140c4818bfbc4850L, 0xbf7ce3d80739a03cL, 0x6ec1506b5491b782L, "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach"), false, false) != null);
   }

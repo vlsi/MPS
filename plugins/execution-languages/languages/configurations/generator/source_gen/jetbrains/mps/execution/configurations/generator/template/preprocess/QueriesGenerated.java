@@ -24,7 +24,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static void mappingScript_CodeBlock_5916922432461069146(final MappingScriptContext _context) {
     for (SNode executor : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -42,16 +41,16 @@ public class QueriesGenerated {
       })) {
         if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, 0x550ea9458ea1ac11L, "commandPart"))))) {
           SNode debuggerSettignsParameter = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x42d74d4aa8cbc400L, "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter")));
-          SNode debuggerSettings = _quotation_createNode_x583g4_a0b0a0a0a0b(debuggerSettignsParameter);
+          SNode debuggerSettings = _quotation_createNode_x583g4_a0b0a0a0a0a(debuggerSettignsParameter);
           SLinkOperations.setNewChild(debuggerSettings, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x42d74d4aa8cbc400L, "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter")));
-          SNode debuggerAssignment = _quotation_createNode_x583g4_a0d0a0a0a0b(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, 0x550ea9458ea1ac11L, "commandPart"))), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter")));
+          SNode debuggerAssignment = _quotation_createNode_x583g4_a0d0a0a0a0a(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, 0x550ea9458ea1ac11L, "commandPart"))), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, 0x75aadb0d4e6223baL, "debuggerParameter")));
           ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L, 0xbe3a0d5ba1a2bf5L, "argument"))).addElement(debuggerAssignment);
           SLinkOperations.setTarget(debuggerAssignment, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, 0xbe3a0d5ba1a2be6L, "value"), debuggerSettings);
         }
       }
     }
   }
-  private static SNode _quotation_createNode_x583g4_a0b0a0a0a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0b0a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -73,7 +72,7 @@ public class QueriesGenerated {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_x583g4_a0d0a0a0a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_x583g4_a0d0a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

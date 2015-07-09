@@ -38,7 +38,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_3341893916018742339(final CreateRootRuleContext _context) {
     if (LanguageAspect.ACTIONS.is(_context.getOriginalInputModel())) {
       return true;

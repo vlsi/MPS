@@ -31,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_3804167831988830136(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
     return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"))).isNotEmpty() && LanguageAspect.INTENTIONS.is(model);

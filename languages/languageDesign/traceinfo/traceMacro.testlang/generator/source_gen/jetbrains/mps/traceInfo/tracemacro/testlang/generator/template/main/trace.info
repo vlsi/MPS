@@ -14,7 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="18,0,43,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
+      <unit at="18,0,42,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.QueriesGenerated" />
     </file>
     <file name="TemplateModelImpl.java">
       <unit at="18,0,48,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.TemplateModelImpl" />
@@ -159,18 +159,18 @@
       <unit id="7980748436587788164" at="29,0,127,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Mappingmain" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="7980748436587793848" at="21,110,22,255" concept="7" />
-      <node id="7980748436587793605" at="24,112,25,336" concept="7" />
-      <node id="7980748436587793728" at="27,109,28,467" concept="7" />
-      <node id="7980748436587788182" at="30,108,31,187" concept="7" />
-      <node id="7980748436587788203" at="33,108,34,178" concept="7" />
-      <node id="7980748436587793695" at="36,108,37,182" concept="7" />
-      <scope id="7980748436587793847" at="21,110,22,255" />
-      <scope id="7980748436587793604" at="24,112,25,336" />
-      <scope id="7980748436587793727" at="27,109,28,467" />
-      <scope id="7980748436587788181" at="30,108,31,187" />
-      <scope id="7980748436587788202" at="33,108,34,178" />
-      <scope id="7980748436587793694" at="36,108,37,182" />
+      <node id="7980748436587793848" at="20,110,21,255" concept="7" />
+      <node id="7980748436587793605" at="23,112,24,336" concept="7" />
+      <node id="7980748436587793728" at="26,109,27,467" concept="7" />
+      <node id="7980748436587788182" at="29,108,30,187" concept="7" />
+      <node id="7980748436587788203" at="32,108,33,178" concept="7" />
+      <node id="7980748436587793695" at="35,108,36,182" concept="7" />
+      <scope id="7980748436587793847" at="20,110,21,255" />
+      <scope id="7980748436587793604" at="23,112,24,336" />
+      <scope id="7980748436587793727" at="26,109,27,467" />
+      <scope id="7980748436587788181" at="29,108,30,187" />
+      <scope id="7980748436587788202" at="32,108,33,178" />
+      <scope id="7980748436587793694" at="35,108,36,182" />
     </file>
   </root>
 </debug-info>

@@ -21,7 +21,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7329423411587633024(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb3a4L, "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"));
   }

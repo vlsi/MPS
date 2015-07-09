@@ -18,7 +18,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_815823070325289644(final PropertyMacroContext _context) {
     return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
   }

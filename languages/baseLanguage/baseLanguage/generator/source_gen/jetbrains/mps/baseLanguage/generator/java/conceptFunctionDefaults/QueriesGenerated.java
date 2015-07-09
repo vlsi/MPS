@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_1199879576743(final PropertyMacroContext _context) {
     return NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
   }

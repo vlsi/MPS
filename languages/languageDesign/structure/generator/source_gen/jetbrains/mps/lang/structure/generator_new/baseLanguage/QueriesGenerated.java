@@ -41,7 +41,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_3125857749401203974(final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).isNotEmpty() || ListSequence.fromList(SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfaL, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"))).isNotEmpty();
   }

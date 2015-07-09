@@ -28,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean createRootRule_Condition_485782669715990916(final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
     return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"))).isNotEmpty() && LanguageAspect.SCRIPTS.is(model);
@@ -241,7 +240,7 @@ public class QueriesGenerated {
     final SNode directMethodSpecification = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, 0x4243146ba1b41281L, "oldMethodSpecification")), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, "jetbrains.mps.lang.script.structure.DirectMethodSpecification"));
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(PullUpMethod_Behavior.call_getMigration_5166971494091017146(_context.getNode()), MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x5c5c941438573499L, 0x5c5c94143857349bL, "newClassifier")))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0b0mc(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(directMethodSpecification, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(directMethodSpecification, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
+        return eq_x583g4_a0a0a0a0a0a0b0lc(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), SPropertyOperations.getString(SLinkOperations.getTarget(directMethodSpecification, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))) && ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(directMethodSpecification, MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).count();
       }
     }).first();
   }
@@ -436,7 +435,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_485782669716077020(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.roots(_context.getInputModel(), MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, "jetbrains.mps.lang.script.structure.MigrationScript"));
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0b0mc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0b0lc(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_6736062018948578789(final PropertyMacroContext _context) {
     // here we demonstrate use of TemplateArgumentParameterExpression instead of GenerationContextOp_ParameterRef 
     return ((String) _context.getVariable("text"));

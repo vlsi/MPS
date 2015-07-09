@@ -18,7 +18,6 @@ import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final PropertyMacroContext _context) {
     String fqn = BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_fqClassName_2956932267233324537", new Object[]{});
     if ((fqn == null || fqn.length() == 0)) {

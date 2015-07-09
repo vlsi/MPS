@@ -34,7 +34,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_1210767206806(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2052L, "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration")) || SNodeOperations.isInstanceOf(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), MetaAdapterFactory.getConcept(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x6b059b0986f2058L, "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration"));
   }

@@ -8,7 +8,6 @@ import L2.generator.template.model2.Util2;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_3842746946078461646(final PropertyMacroContext _context) {
     Util2.foo();
     return 1;

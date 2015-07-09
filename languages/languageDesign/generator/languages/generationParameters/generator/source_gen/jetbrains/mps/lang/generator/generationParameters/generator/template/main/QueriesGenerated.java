@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_3064182000795632408(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x289fcc83654341e8L, 0xa5ca768235715ce4L, 0x2a86294b8491c07cL, 0x2a86294b8491c0c3L, "parameter")), "virtual_getUniqueId_650531548511609559", new Object[]{});
   }

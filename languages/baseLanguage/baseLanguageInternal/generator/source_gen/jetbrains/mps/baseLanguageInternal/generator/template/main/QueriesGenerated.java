@@ -29,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 @Generated
 public class QueriesGenerated {
-  public final boolean NEEDS_OPCONTEXT = false;
   public static boolean baseMappingRule_Condition_7805405506192340589(final BaseMappingRuleContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x6b63d4344723dac8L, 0x38fdeea21cec83e5L, "nonStatic")));
   }
