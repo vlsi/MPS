@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,10 +24,8 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -44,49 +42,46 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
+public final class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
   }
 
   public MPSNodesVirtualFileSystem(MPSCoreComponents coreComponents) {
+    // FIXME this component shall be ProjectComponent, pass MPSProject.getRepository(); initialize in projectOpened()
+    myRepositoryListener = new MyRepositoryListener(coreComponents.getModuleRepository());
   }
 
   private SModelCommandListener myCommandListener = new MyCommandListener();
   private SModelListener myModelListener = new MyModelListener();
-  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
+  private final SRepositoryContentAdapter myRepositoryListener;
   private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
   private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private boolean myDisposed = false;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
-      @Override
-      public MPSNodeVirtualFile compute() {
-        SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(node);
-        return getFileFor(nodePointer);
-      }
-    });
+    return getFileFor(node.getReference());
   }
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNodeReference nodePointer) {
-    if (myVirtualFiles.containsKey(nodePointer)) return myVirtualFiles.get(nodePointer);
+    if (hasVirtualFileFor(nodePointer)) {
+      return getVirtualFile(nodePointer);
+    }
 
-    MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer);
+    MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer, this);
     myVirtualFiles.put(nodePointer, vf);
     return vf;
   }
@@ -112,12 +107,14 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
 
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
+    // FIXME use mpsProject.getRepository once it's capable to send events
+    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myRepositoryListener).attach();
   }
 
   @Override
   public void disposeComponent() {
-    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+    // FIXME use mpsProject.getRepository once it's capable to send events
+    new RepoListenerRegistrar(MPSModuleRepository.getInstance(), myRepositoryListener).detach();
 
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
@@ -175,6 +172,25 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return myVirtualFiles.containsKey(nodePointer);
   }
 
+  @Nullable
+  /*package*/ MPSNodeVirtualFile getVirtualFile(SNodeReference nodeRef) {
+    return myVirtualFiles.get(nodeRef);
+  }
+
+  /*package*/ Collection<MPSNodeVirtualFile> getKnownVirtualFilesIn(SModelReference modelRef) {
+    ArrayList<MPSNodeVirtualFile> rv = new ArrayList<MPSNodeVirtualFile>();
+    for (MPSNodeVirtualFile vf : myVirtualFiles.values()) {
+      if (modelRef.equals(vf.getSNodePointer().getModelReference())) {
+        rv.add(vf);
+      }
+    }
+    return rv;
+  }
+
+  /*package*/ void forgetVirtualFile(SNodeReference nodeRef) {
+    myVirtualFiles.remove(nodeRef);
+  }
+
   @Override
   protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
@@ -207,12 +223,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     throw new UnsupportedOperationException();
   }
 
-  private void updateModificationStamp(SNode rootNode) {
-    if (rootNode.getModel() == null) return;
-    MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(rootNode.getContainingRoot()));
-    if (vf != null) {
-      vf.setModificationStamp(LocalTimeCounter.currentTime());
-      vf.setTimeStamp(System.currentTimeMillis());
+  /*package*/ void updateModificationStamp(Iterable<SNode> roots) {
+    // identical timestamp for all roots touched simultaneously
+    final long vfsStamp = LocalTimeCounter.currentTime();
+    final long localStamp = System.currentTimeMillis();
+    for (SNode rootNode : roots) {
+      if (rootNode.getModel() == null) {
+        continue;
+      }
+      MPSNodeVirtualFile vf = getVirtualFile(rootNode.getReference());
+      if (vf != null) {
+        vf.setModificationStamp(vfsStamp);
+        vf.setTimeStamp(localStamp);
+      }
     }
   }
 
@@ -226,17 +249,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       final VFSNotifier vfsNotifier = new VFSNotifier(visitor.myDeletedFiles, visitor.myRenamedFiles);
       if (vfsNotifier.hasPendingNotifications()) {
         for (MPSNodeVirtualFile deletedFile : visitor.myDeletedFiles) {
-          myVirtualFiles.remove(deletedFile.getSNodePointer());
+          forgetVirtualFile(deletedFile.getSNodePointer());
         }
-
-        SwingUtilities.invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            ModelAccess.instance().runWriteActionInCommand(vfsNotifier);
-          }
-        });
+        ModelAccess.instance().runWriteInEDT(vfsNotifier);
       }
-
     }
   }
 
@@ -249,7 +265,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (!event.isRemoved()) return;
 
       SNodeReference rootNodePointer = event.getRootRef();
-      MPSNodeVirtualFile vf = myVirtualFiles.get(rootNodePointer);
+      MPSNodeVirtualFile vf = getVirtualFile(rootNodePointer);
       if (vf != null) {
         myDeletedFiles.add(vf);
       }
@@ -259,7 +275,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void visitPropertyEvent(final SModelPropertyEvent event) {
       if (!SNodeUtil.isAccessible(event.getNode(), MPSModuleRepository.getInstance())) return;
 
-      MPSNodeVirtualFile vf = myVirtualFiles.get(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
+      MPSNodeVirtualFile vf = getVirtualFile(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getNode().getNodeId()));
       if (!(event.getNode().getModel() != null && event.getNode().getParent() == null) || vf == null)
         return;
       String newName = event.getNode().getPresentation();
@@ -269,58 +285,75 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
   }
 
-  private class MyModelRepositoryListener extends SModelRepositoryAdapter {
-    @Override
-    public void beforeModelRemoved(SModel modelDescriptor) {
-      if (!(modelDescriptor.isLoaded())) return;
+  private class MyRepositoryListener extends SRepositoryContentAdapter {
+    private final SRepository myRepository;
 
-      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      for (SNode root : modelDescriptor.getRootNodes()) {
-        SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(root);
-        MPSNodeVirtualFile vf = myVirtualFiles.get(pointer);
-        if (vf == null) continue;
-        deletedFiles.add(vf);
-        myVirtualFiles.remove(pointer);
-      }
-      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, Collections.<Pair<MPSNodeVirtualFile, String>>emptyList());
-      if (vfsNotifier.hasPendingNotifications()) {
-        ModelAccess.instance().runWriteInEDT(vfsNotifier);
-      }
+    public MyRepositoryListener(SRepository repo) {
+      myRepository = repo;
     }
 
     @Override
-    public void modelsReplaced(final Set<SModel> descriptors) {
-      for (SModel md : descriptors) {
-        if (md.getReference().resolve(MPSModuleRepository.getInstance()) != md) return;
+    protected boolean isIncluded(SModule module) {
+      return !module.isReadOnly();
+    }
 
-        for (SNode root : md.getRootNodes()) {
-          updateModificationStamp(root);
+    @Override
+    protected void startListening(SModel model) {
+      // we listen to SModelListener#modelReplaced
+      model.addModelListener(this);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+      forget(model);
+    }
+
+    private void forget(SModel modelDescriptor) {
+      if (!(modelDescriptor.isLoaded())) {
+        return;
+      }
+
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
+      for (SNode root : modelDescriptor.getRootNodes()) {
+        SNodeReference pointer = root.getReference();
+        MPSNodeVirtualFile vf = getVirtualFile(pointer);
+        if (vf != null) {
+          deletedFiles.add(vf);
+          forgetVirtualFile(pointer);
         }
+      }
+      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, Collections.<Pair<MPSNodeVirtualFile, String>>emptyList());
+      if (vfsNotifier.hasPendingNotifications()) {
+        myRepository.getModelAccess().runWriteInEDT(vfsNotifier);
+      }
+    }
 
-        Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-        Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
-        for (Iterator<Entry<SNodeReference, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
-          Entry<SNodeReference, MPSNodeVirtualFile> entry = it.next();
-          if (!entry.getKey().getModelReference().equals(md.getReference())) continue;
+    // SModelListener#modelReplaced
+    @Override
+    public void modelReplaced(SModel md) {
+      updateModificationStamp(md.getRootNodes());
 
-          SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
-          MPSNodeVirtualFile file = entry.getValue();
-          if (node == null) {
-            deletedFiles.add(file);
-            it.remove();
-          } else {
-            String oldName = file.getName();
-            String newName = node.getPresentation();
-            if (!oldName.equals(newName)) {
-              renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(file, newName));
-            }
+      Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
+      Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
+      for (MPSNodeVirtualFile vf : getKnownVirtualFilesIn(md.getReference())) {
+        // XXX reconsider vf.getNode() (with SRepository in file construction time), vf.getNode(myRepository) and explicit resolve here
+        SNode node = vf.getSNodePointer().resolve(myRepository);
+        if (node == null) {
+          deletedFiles.add(vf);
+          forgetVirtualFile(vf.getSNodePointer());
+        } else {
+          String oldName = vf.getName();
+          String newName = node.getPresentation(); // FIXME extract code that builds name of a file from node
+          if (!oldName.equals(newName)) {
+            renamedFiles.add(new Pair<MPSNodeVirtualFile, String>(vf, newName));
           }
         }
+      }
 
-        VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, renamedFiles);
-        if (vfsNotifier.hasPendingNotifications()) {
-          ModelAccess.instance().runWriteInEDT(vfsNotifier);
-        }
+      VFSNotifier vfsNotifier = new VFSNotifier(deletedFiles, renamedFiles);
+      if (vfsNotifier.hasPendingNotifications()) {
+        myRepository.getModelAccess().runWriteInEDT(vfsNotifier);
       }
     }
   }
@@ -329,12 +362,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     @Override
     public void eventFired(SModelEvent event) {
       SNode root = event.getAffectedRoot();
-      if (root == null) return;
-      if (root.getModel() == null) return;
-      updateModificationStamp(root);
+      if (root != null) {
+        updateModificationStamp(Collections.singleton(root));
+      }
     }
-
-
   }
 
   private class VFSNotifier implements Runnable {
