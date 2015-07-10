@@ -37,8 +37,9 @@ class GensourcesModuleFile {
   public static final String SOURCE_FOLDER = "sourceFolder";
   public static final String EXCLUDE_FOLDER = "excludeFolder";
 
-  private final File genSourcesIml;
+  private final File myGensourcesIml;
   private final Document myResult;
+  // initially blank; is populated with newly created CONTENT elements
   private final Element myRootManagerElement;
   // read
   private Set<String> myRegularModuleSources;
@@ -50,13 +51,9 @@ class GensourcesModuleFile {
   private final Set<String> myGeneratedModuleContentRoots = new HashSet<String>();
 
   public GensourcesModuleFile(File genSourcesIml) throws JDOMException, IOException  {
-    this.genSourcesIml = genSourcesIml;
+    myGensourcesIml = genSourcesIml;
     myResult = JDOMUtil.loadDocument(genSourcesIml);
-    myRootManagerElement = Utils.getComponentWithName(myResult, MODULE_ROOT_MANAGER);
-    // remove content roots, we shall re-create them
-    for (Element contentRoot : new ArrayList<Element>(myRootManagerElement.getChildren(CONTENT))) {
-      contentRoot.detach();
-    }
+    myRootManagerElement = new Element(MODULE_ROOT_MANAGER);
   }
 
   public void prepare() throws JDOMException, IOException {
@@ -67,7 +64,7 @@ class GensourcesModuleFile {
     Set<String> modelRoots = new HashSet<String>();
     Set<String> sourcesIncluded = new HashSet<String>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
-      if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
+      if (imlFile.getCanonicalPath().equals(myGensourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
       for (Element cRoot : rootManager.getChildren(CONTENT)) {
@@ -134,7 +131,22 @@ class GensourcesModuleFile {
   }
 
   public void serializeResult() throws IOException {
-    JDOMUtil.writeDocument(myResult, genSourcesIml);
+    ArrayList<Element> contentElements = new ArrayList<Element>(myRootManagerElement.getChildren(CONTENT));
+    myRootManagerElement.removeContent();
+    // it looks IDEA sorts content roots according to their URL value, do the same to avoid content roots jumping back and forth
+    Collections.sort(contentElements, new Comparator<Element>() {
+      @Override
+      public int compare(Element o1, Element o2) {
+        return o1.getAttributeValue(URL).compareTo(o2.getAttributeValue(URL));
+      }
+    });
+    final Element rootManager = Utils.getComponentWithName(myResult, MODULE_ROOT_MANAGER);
+    // remove content roots, we re-create them from scratch
+    int contentStart = rootManager.indexOf(rootManager.getChild(CONTENT));
+    rootManager.removeChildren(CONTENT);
+    rootManager.addContent(contentStart, contentElements);
+
+    JDOMUtil.writeDocument(myResult, myGensourcesIml);
   }
 
   public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {

@@ -69,11 +69,10 @@ public class Utils {
 
   public static Element getChildByAttribute(Element element, String tagName, String attributeName, String attributeValue) {
     Element result = null;
-    for (Object component : element.getChildren(tagName)) {
-      Element componentXml = (Element) component;
-      if (componentXml.getAttributeValue(attributeName).equals(attributeValue)) {
+    for (Element component : element.getChildren(tagName)) {
+      if (component.getAttributeValue(attributeName).equals(attributeValue)) {
         if (result == null) {
-          result = componentXml;
+          result = component;
         } else {
           return null;
         }
