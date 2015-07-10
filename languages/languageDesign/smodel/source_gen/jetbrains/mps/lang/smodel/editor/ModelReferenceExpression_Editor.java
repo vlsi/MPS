@@ -42,6 +42,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_uy53zt_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uy53zt_e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_uy53zt_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_uy53zt_g0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_uy53zt_a0(EditorContext editorContext, SNode node) {
@@ -116,6 +117,12 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
       return "global repository";
     }
 
+  }
+  private EditorCell createConstant_uy53zt_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_uy53zt_g0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
   private EditorCell createCollection_uy53zt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
