@@ -18,5 +18,6 @@
     <orderEntry type="module" module-name="platform" />
     <orderEntry type="module" module-name="mps-core" />
     <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="generator-engine" />
   </component>
 </module>

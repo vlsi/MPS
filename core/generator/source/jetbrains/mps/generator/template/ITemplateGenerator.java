@@ -30,6 +30,13 @@ public interface ITemplateGenerator {
 
   SModel getOutputModel();
 
+  /**
+   * Generally, mapping labels are not available till the end ot structure transformation, which may run in
+   * parallel threads and thus access to label would be unpredictable.
+   * Use this method to control retrieve of labels only, it's not suitable to tell whether it's
+   * possible to {@link #registerMappingLabel(SNode, String, SNode) add new label}
+   * @return <code>true</code> if it's proper time to query (!) for label
+   */
   boolean areMappingsAvailable();
 
   void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode);

@@ -144,9 +144,9 @@ public class TemplateQueryContext {
   }
 
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
-    if (myGenerator.areMappingsAvailable()) {
-      myGenerator.getLogger().error(getTemplateNodeRef(), "cannot register label anymore");
-    }
+    // technically, we could do myGenerator.isStrict() && myGenerator.areMappingsAvailable() -> fail "no more labels once transformation is over"
+    // but this would expose knowledge that areMappingsAvailable is meaningful only in strict mode.
+    // Since we do not restrict registration of mapping labels e.g. in TEEImpl, I decided not to keep a check here
     myGenerator.registerMappingLabel(inputNode, mappingName, outputNode);
   }
 
