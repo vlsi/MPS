@@ -25,25 +25,21 @@ public class check_TernaryOperationCanBeSimplified_NonTypesystemRule extends Abs
     SNode left = SLinkOperations.getTarget(ternaryOperatorExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012a1c0L, "ifTrue"));
     SNode right = SLinkOperations.getTarget(ternaryOperatorExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012cedcL, "ifFalse"));
     SNode condition = SLinkOperations.getTarget(ternaryOperatorExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition"));
-    SNode eliminatedNode;
     SNode remainingNode;
     Boolean value;
     SModule module = SNodeOperations.getModel(ternaryOperatorExpression).getModule();
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, condition, "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
       Object conditionValue = BehaviorReflection.invokeVirtual(Object.class, condition, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
       if (conditionValue != null && conditionValue instanceof Boolean) {
-        eliminatedNode = right;
-        remainingNode = left;
         value = (Boolean) conditionValue;
+        remainingNode = (value ? left : right);
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(ternaryOperatorExpression, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef01239c9L, 0x10ef012826fL, "condition")), "The ternary operator condition is always " + value, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2857825852308875366", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
-            intentionProvider.putArgument("eliminatedNode", eliminatedNode);
             intentionProvider.putArgument("remainingNode", remainingNode);
             intentionProvider.putArgument("operation", ternaryOperatorExpression);
-            intentionProvider.putArgument("value", value);
             _reporter_2309309498.addIntentionProvider(intentionProvider);
           }
         }

@@ -66346,15 +66346,7 @@
           </node>
         </node>
         <node concept="3cpWs6" id="1o8Ht9sFhPQ" role="3cqZAp">
-          <node concept="2OqwBi" id="1o8Ht9sFhFg" role="3cqZAk">
-            <node concept="13iAh5" id="1o8Ht9sFhFh" role="2Oq$k0" />
-            <node concept="2qgKlT" id="1o8Ht9sFhFi" role="2OqNvi">
-              <ref role="37wK5l" node="i1LP2xI" resolve="getCompileTimeConstantValue" />
-              <node concept="37vLTw" id="1o8Ht9sFhFf" role="37wK5m">
-                <ref role="3cqZAo" node="1o8Ht9sFhFc" resolve="module" />
-              </node>
-            </node>
-          </node>
+          <node concept="10Nm6u" id="K_mqoxvOd5" role="3cqZAk" />
         </node>
       </node>
       <node concept="37vLTG" id="1o8Ht9sFhFc" role="3clF46">

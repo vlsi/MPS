@@ -16,6 +16,8 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -27,7 +29,6 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     }
     SNode left = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
     SNode right = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
-    SNode eliminatedNode;
     SNode remainingNode;
     Boolean value;
     SModule module = SNodeOperations.getModel(binaryOperation).getModule();
@@ -54,25 +55,29 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     Object rightValue = (BehaviorReflection.invokeVirtual(Boolean.TYPE, right, "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ? BehaviorReflection.invokeVirtual(Object.class, right, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module}) : null);
 
     if (leftValue != null && leftValue instanceof Boolean) {
-      eliminatedNode = left;
-      remainingNode = right;
       value = (Boolean) leftValue;
+      remainingNode = right;
     } else if (rightValue != null && rightValue instanceof Boolean) {
-      eliminatedNode = right;
-      remainingNode = left;
       value = (Boolean) rightValue;
+      remainingNode = left;
     } else {
       return;
     }
+    if (SNodeOperations.isInstanceOf(binaryOperation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression")) && !(value)) {
+      remainingNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), null);
+      SPropertyOperations.set(SNodeOperations.cast(remainingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (false));
+    } else if (SNodeOperations.isInstanceOf(binaryOperation, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb8255689fL, "jetbrains.mps.baseLanguage.structure.OrExpression")) && value) {
+      remainingNode = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), null);
+      SPropertyOperations.set(SNodeOperations.cast(remainingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, "jetbrains.mps.baseLanguage.structure.BooleanConstant")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"), "" + (true));
+    }
+
     {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(binaryOperation, "The binary logical expression " + ExpressionPresentationUtil.getExpressionPresentation(binaryOperation) + " can be simplified", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3832376534028382760", null, errorTarget);
       {
         BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix", false);
-        intentionProvider.putArgument("eliminatedNode", eliminatedNode);
         intentionProvider.putArgument("remainingNode", remainingNode);
         intentionProvider.putArgument("operation", binaryOperation);
-        intentionProvider.putArgument("value", value);
         _reporter_2309309498.addIntentionProvider(intentionProvider);
       }
     }
