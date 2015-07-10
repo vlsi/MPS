@@ -80,7 +80,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
   @Test
   public void testEveryJavaFileIsCompiledInMPSOrInSourceFolder() throws JDOMException, IOException {
     File root = new File(".");
-    MultiMap<String, String> sources = Generators.getSourceFolders(root);
+    MultiMap<String, String> sources = GensourcesModuleFile.getSourceFolders(root);
     MultiMap<String, String> mpsModules = Utils.collectMPSCompiledModulesInfo(root);
 
     Set<String> allSources = new HashSet<String>();
@@ -129,16 +129,16 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     Element expManager = getManagerElement(exp);
 
 
-    List<Element> realContent = realManager.getChildren(Generators.CONTENT);
-    List<Element> expContent = expManager.getChildren(Generators.CONTENT);
+    List<Element> realContent = realManager.getChildren(GensourcesModuleFile.CONTENT);
+    List<Element> expContent = expManager.getChildren(GensourcesModuleFile.CONTENT);
 
     Assert.assertEquals("Run GeneratorsRunner run configuration. Content sizes differ.", expContent.size(), realContent.size());
 
     outer:
     for (Element rRoot : realContent) {
-      String rUrl = rRoot.getAttributeValue(Generators.URL);
+      String rUrl = rRoot.getAttributeValue(GensourcesModuleFile.URL);
       for (Element eRoot : expContent) {
-        String eUrl = eRoot.getAttributeValue(Generators.URL);
+        String eUrl = eRoot.getAttributeValue(GensourcesModuleFile.URL);
         if (rUrl.equals(eUrl)) {
           checkSamePathsUnder(rRoot, eRoot);
 
@@ -146,12 +146,12 @@ public class GenSourcesAndCompilerXmlGenerationTest {
         }
       }
 
-      showGensources("Run GeneratorsRunner run configuration. Url " + rRoot.getAttributeValue(Generators.URL) + " not expected");
+      showGensources("Run GeneratorsRunner run configuration. Url " + rRoot.getAttributeValue(GensourcesModuleFile.URL) + " not expected");
     }
   }
 
   private void checkSamePathsUnder(Element rRoot, Element eRoot) throws JDOMException, IOException {
-    checkHasSamePathsUnderTag(rRoot, eRoot, Generators.SOURCE_FOLDER);
+    checkHasSamePathsUnderTag(rRoot, eRoot, GensourcesModuleFile.SOURCE_FOLDER);
     //checkHasSamePathsUnderTag(rRoot, eRoot, Generators.EXCLUDE_FOLDER);
   }
 
@@ -159,24 +159,25 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     List<Element> realPaths = rRoot.getChildren(tag);
     List<Element> expPaths = eRoot.getChildren(tag);
 
-    Assert.assertEquals("Run GeneratorsRunner run configuration (and make sure your local empty folders for generated source/classes are pruned). Content sizes under tag " + tag + " differs for url " + rRoot.getAttributeValue(Generators.URL), expPaths.size(), realPaths.size());
+    Assert.assertEquals("Run GeneratorsRunner run configuration (and make sure your local empty folders for generated source/classes are pruned). Content sizes under tag " + tag + " differs for url " + rRoot.getAttributeValue(
+        GensourcesModuleFile.URL), expPaths.size(), realPaths.size());
 
     outer:
     for (Element rp : realPaths) {
-      String rUrl = rp.getAttributeValue(Generators.URL);
+      String rUrl = rp.getAttributeValue(GensourcesModuleFile.URL);
       for (Element ep : expPaths) {
-        String eUrl = ep.getAttributeValue(Generators.URL);
+        String eUrl = ep.getAttributeValue(GensourcesModuleFile.URL);
         if (rUrl.equals(eUrl)) {
           continue outer;
         }
       }
-      showGensources("Run GeneratorsRunner run configuration. Tag " + tag + ": Url " + rRoot.getAttributeValue(Generators.URL) + " not expected");
+      showGensources("Run GeneratorsRunner run configuration. Tag " + tag + ": Url " + rRoot.getAttributeValue(GensourcesModuleFile.URL) + " not expected");
     }
   }
 
   private Element getManagerElement(String real) throws IOException, JDOMException {
     Document doc = JDOMUtil.loadDocument(new StringReader(real));
-    return Utils.getComponentWithName(doc, Generators.MODULE_ROOT_MANAGER);
+    return Utils.getComponentWithName(doc, GensourcesModuleFile.MODULE_ROOT_MANAGER);
   }
 
   private void showGensources(String diff) throws JDOMException, IOException {

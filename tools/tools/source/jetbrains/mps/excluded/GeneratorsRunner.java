@@ -32,12 +32,20 @@ public class GeneratorsRunner {
   public static final File COMPILER_XML_FILE = new File(".idea" + File.separatorChar + "compiler.xml");
 
   public static void generateGenSourcesIml() throws JDOMException, IOException {
-    Generators.updateGenSourcesIml(GEN_SOURCES_IML, Utils.files("languages", "samples", "core"));
-    Generators.updateGenSourcesImlNoIntersections(GEN_SOURCES_IML, Utils.files("plugins", "testbench"));
+    final GensourcesModuleFile f = new GensourcesModuleFile(GEN_SOURCES_IML);
+    System.out.println("Analyzing MPS modules...");
+    f.prepare();
+    System.out.println("Building gensources module 1/2...");
+    f.updateGenSourcesIml(Utils.files("core", "languages", "samples"));
+    System.out.println("Building gensources module 2/2...");
+    f.updateGenSourcesImlNoIntersections(Utils.files("plugins", "testbench"));
+    System.out.println("Saving...");
+    f.serializeResult();
+    System.out.println("Done.");
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {
-    Generators.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins", "testbench"));
+    CompilerXml.updateCompilerExcludes(COMPILER_XML_FILE, Utils.files("languages", "samples", "core", "plugins", "testbench"));
   }
 
   public static void main(String[] args) throws JDOMException, IOException {

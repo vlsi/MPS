@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class Generators {
+class GensourcesModuleFile {
   // gensources.iml constants
   public static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
   public static final String CONTENT = "content";
@@ -37,64 +37,60 @@ public class Generators {
   public static final String SOURCE_FOLDER = "sourceFolder";
   public static final String EXCLUDE_FOLDER = "excludeFolder";
 
-  // compiler.xml constants
-  private static final String PATH_START_PROJECT = "file://$PROJECT_DIR$/";
-  private static final String COMPILER_CONFIGURATION = "CompilerConfiguration";
-  private static final String DIRECTORY = "directory";
+  private final File genSourcesIml;
+  private final Document myResult;
+  private final Element myRootManagerElement;
+  // read
+  private Set<String> myRegularModuleSources;
+  // built
+  private final Set<String> myGeneratedModuleSources = new HashSet<String>();
+  // read
+  private Set<String> myRegularModuleContentRoots;
+  // built
+  private final Set<String> myGeneratedModuleContentRoots = new HashSet<String>();
 
-  public static void updateCompilerExcludes(File compilerXmlFile, File... sourceDirs) throws JDOMException, IOException {
-    Document compiler = JDOMUtil.loadDocument(compilerXmlFile);
-
-    Element rootElement = Utils.getComponentWithName(compiler, COMPILER_CONFIGURATION);
-    Element excludeXml = rootElement.getChild("excludeFromCompile");
-    excludeXml.removeChildren(DIRECTORY);
-
-    List<String> paths = new ArrayList<String>();
-    for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(sourceDirs).entrySet()) {
-      for (String sourcePath : module.getValue()) {
-        paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(sourcePath));
-      }
+  public GensourcesModuleFile(File genSourcesIml) throws JDOMException, IOException  {
+    this.genSourcesIml = genSourcesIml;
+    myResult = JDOMUtil.loadDocument(genSourcesIml);
+    myRootManagerElement = Utils.getComponentWithName(myResult, MODULE_ROOT_MANAGER);
+    // remove content roots, we shall re-create them
+    for (Element contentRoot : new ArrayList<Element>(myRootManagerElement.getChildren(CONTENT))) {
+      contentRoot.detach();
     }
-    Collections.sort(paths);
-    for (String path : paths) {
-      Element excludedDir = new Element(DIRECTORY);
-      excludedDir.setAttribute(URL, path);
-      excludedDir.setAttribute("includeSubdirectories", "true");
-      excludeXml.addContent(excludedDir);
-    }
-
-    JDOMUtil.writeDocument(compiler, compilerXmlFile);
   }
 
-  public static void updateGenSourcesIml(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
+  public void prepare() throws JDOMException, IOException {
+    collectSourcesOfRegularModules();
+  }
+
+  private void collectSourcesOfRegularModules() throws JDOMException, IOException {
+    Set<String> modelRoots = new HashSet<String>();
     Set<String> sourcesIncluded = new HashSet<String>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
       if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
-      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
-        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
-          String imlFormattedRoot = sFolder.getAttributeValue(URL);
-          sourcesIncluded.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+      for (Element cRoot : rootManager.getChildren(CONTENT)) {
+        String imlFormattedRoot = cRoot.getAttributeValue(URL);
+        modelRoots.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+        for (Element sFolder : cRoot.getChildren(SOURCE_FOLDER)) {
+          String imlFormattedSourceRoot = sFolder.getAttributeValue(URL);
+          sourcesIncluded.add(new File(imlFormattedSourceRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
         }
       }
     }
+    myRegularModuleSources = sourcesIncluded;
+    myRegularModuleContentRoots = modelRoots;
+  }
 
-    Document doc = JDOMUtil.loadDocument(genSourcesIml);
-    Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+  public void updateGenSourcesIml(File... sourceDirs) throws JDOMException, IOException {
+    Set<String> sourcesIncluded = myRegularModuleSources;
 
-    Set<String> contentRootUrls = new HashSet<String>();
     for (File dir : sourceDirs) {
-      contentRootUrls.add(PATH_START_MODULE + dir);
-
-      // try to modify existing content roots
-      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, PATH_START_MODULE + dir);
-      if (contentRoot == null) {
-        contentRoot = new Element(CONTENT);
-        contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
-        rootManager.addContent(contentRoot);
-      }
-      contentRoot.removeContent();
+      Element contentRoot = new Element(CONTENT);
+      contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
+      myGeneratedModuleContentRoots.add(dir.getCanonicalPath());
+      myRootManagerElement.addContent(contentRoot);
 
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
@@ -106,6 +102,7 @@ public class Generators {
           if (!sourcesIncluded.contains(sourceCanonical)) {
             assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
             if (new File(sourcePath).exists()) {
+              myGeneratedModuleSources.add(sourcePath);
               String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
               sourceGenFolders.add(sFolder);
             }
@@ -134,45 +131,15 @@ public class Generators {
         contentRoot.addContent(excludeFolder);
       }
     }
-
-    // remove unnecessary content roots
-    List<Element> toRemove = new ArrayList<Element>();
-    for (Object _contentRoot : rootManager.getChildren(CONTENT)) {
-      Element contentRoot = (Element) _contentRoot;
-      if (!contentRootUrls.contains(contentRoot.getAttributeValue(URL))) {
-        toRemove.add(contentRoot);
-      }
-    }
-    for (Element element : toRemove) {
-      element.detach();
-    }
-
-    JDOMUtil.writeDocument(doc, genSourcesIml);
   }
 
-  public static void updateGenSourcesImlNoIntersections(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
-    System.out.println("Analyzing existing imls...");
-    Set<String> modelRoots = new HashSet<String>();
-    Set<String> sourcesIncluded = new HashSet<String>();
-    for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
-      //if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
-      Document doc = JDOMUtil.loadDocument(imlFile);
-      Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
-      for (Element cRoot : rootManager.getChildren(CONTENT)) {
-        String imlFormattedRoot = cRoot.getAttributeValue(URL);
-        modelRoots.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+  public void serializeResult() throws IOException {
+    JDOMUtil.writeDocument(myResult, genSourcesIml);
+  }
 
-        for (Element sFolder : cRoot.getChildren(SOURCE_FOLDER)) {
-          String imlFormattedSourceFolder = sFolder.getAttributeValue(URL);
-          String sourcePath = new File(imlFormattedSourceFolder.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath();
-          sourcesIncluded.add(sourcePath);
-        }
-      }
-    }
-
-    System.out.println("Analyzing MPS modules...");
-    Document doc = JDOMUtil.loadDocument(genSourcesIml);
-    Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+  public void updateGenSourcesImlNoIntersections(File... sourceDirs) throws JDOMException, IOException {
+    Set<String> modelRoots = new HashSet<String>(myRegularModuleContentRoots);
+    modelRoots.addAll(myGeneratedModuleContentRoots);
     List<String> sourceGen = new ArrayList<String>();
     List<String> classesGen = new ArrayList<String>();
     // FIXME BLOODY SH!T. QUITE SIMILAR CODE IS ABOVE. I BEG YOU TO FIX ME
@@ -192,11 +159,10 @@ public class Generators {
       }
     }
 
-    System.out.println("Building model roots for gensources module...");
-    sourceGen.removeAll(sourcesIncluded);
+    sourceGen.removeAll(myRegularModuleSources);
+    sourceGen.removeAll(myGeneratedModuleSources);
     Collections.sort(sourceGen);
     Collections.sort(classesGen);
-    //rootManager.removeChildren(CONTENT);
 
     Set<String> newRoots = new HashSet<String>();
     for (String sGen : sourceGen) {
@@ -221,11 +187,11 @@ public class Generators {
 
         Element contentRoot = new Element(CONTENT);
         contentRoot.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(root));
-        rootManager.addContent(contentRoot);
+        myRootManagerElement.addContent(contentRoot);
       }
 
       String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
-      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
+      Element contentRoot = Utils.getChildByAttribute(myRootManagerElement, CONTENT, URL, rootInImlFormat);
       assert contentRoot != null : "Root: "+root+"; iml formatted: " + rootInImlFormat + "; source folder: " + sGen;
 
       Element sourceFolder = new Element(SOURCE_FOLDER);
@@ -246,26 +212,21 @@ public class Generators {
       if (root == null) continue;
 
       String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
-      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
+      Element contentRoot = Utils.getChildByAttribute(myRootManagerElement, CONTENT, URL, rootInImlFormat);
 
       Element excludeFolder = new Element(EXCLUDE_FOLDER);
       excludeFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(cGen));
       contentRoot.addContent(excludeFolder);
     }
-
-    System.out.println("Saving...");
-    JDOMUtil.writeDocument(doc, genSourcesIml);
-
-    System.out.println("Done.");
   }
 
   public static MultiMap<String, String> getSourceFolders(File root) throws JDOMException, IOException {
     MultiMap<String, String> sourcesIncluded = new MultiMap<String, String>();
-    for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
+    for (File imlFile : Utils.withExtension(".iml", Utils.files(root))) {
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
-      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
-        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
+      for (Element cRoot : rootManager.getChildren(CONTENT)) {
+        for (Element sFolder : cRoot.getChildren(SOURCE_FOLDER)) {
           String imlFormattedRoot = sFolder.getAttributeValue(URL);
           String sourcePath = new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath();
           sourcesIncluded.putValue(imlFile.getCanonicalPath(), sourcePath);
