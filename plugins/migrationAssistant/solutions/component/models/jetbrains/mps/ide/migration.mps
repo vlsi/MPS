@@ -981,17 +981,6 @@
                                                   </node>
                                                 </node>
                                               </node>
-                                              <node concept="3clFbF" id="7prs2iB5Fcj" role="3cqZAp">
-                                                <node concept="2OqwBi" id="7prs2iB5FDv" role="3clFbG">
-                                                  <node concept="2YIFZM" id="7prs2iB5FqN" role="2Oq$k0">
-                                                    <ref role="37wK5l" to="ji0:~ProjectManagerEx.getInstanceEx():com.intellij.openapi.project.ex.ProjectManagerEx" resolve="getInstanceEx" />
-                                                    <ref role="1Pybhc" to="ji0:~ProjectManagerEx" resolve="ProjectManagerEx" />
-                                                  </node>
-                                                  <node concept="liA8E" id="7prs2iB5FZm" role="2OqNvi">
-                                                    <ref role="37wK5l" to="ji0:~ProjectManagerEx.unblockReloadingProjectOnExternalChanges():void" resolve="unblockReloadingProjectOnExternalChanges" />
-                                                  </node>
-                                                </node>
-                                              </node>
                                               <node concept="3clFbF" id="6MUcJMtBHVr" role="3cqZAp">
                                                 <node concept="1rXfSq" id="6MUcJMtBHVq" role="3clFbG">
                                                   <ref role="37wK5l" node="6MUcJMtBBjy" resolve="executeWizard" />
@@ -1757,6 +1746,27 @@
                                 </node>
                               </node>
                             </node>
+                            <node concept="3clFbH" id="7IFwG55_$zP" role="3cqZAp" />
+                            <node concept="3SKdUt" id="3gptLqNHhOV" role="3cqZAp">
+                              <node concept="3SKdUq" id="3gptLqNHi4E" role="3SKWNk">
+                                <property role="3SKdUp" value="set flag to execute migration after startup" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="3gptLqNIxva" role="3cqZAp">
+                              <node concept="37vLTI" id="3gptLqNIxvb" role="3clFbG">
+                                <node concept="3clFbT" id="3gptLqNIxvc" role="37vLTx">
+                                  <property role="3clFbU" value="true" />
+                                </node>
+                                <node concept="2OqwBi" id="3gptLqNIxvd" role="37vLTJ">
+                                  <node concept="37vLTw" id="3gptLqNIxve" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
+                                  </node>
+                                  <node concept="2OwXpG" id="3gptLqNIxvf" role="2OqNvi">
+                                    <ref role="2Oxat5" node="5SsFeroaak5" resolve="migrationRequired" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbH" id="1G0sYk64yg1" role="3cqZAp" />
                             <node concept="3clFbF" id="4tP09YuEobM" role="3cqZAp">
                               <node concept="2YIFZM" id="4tP09YuEoro" role="3clFbG">
@@ -1800,37 +1810,6 @@
                                                     </node>
                                                     <node concept="liA8E" id="4tP09YuErl7" role="2OqNvi">
                                                       <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                                <node concept="3clFbF" id="7prs2iB5Gwb" role="3cqZAp">
-                                                  <node concept="2OqwBi" id="7prs2iB5Gwc" role="3clFbG">
-                                                    <node concept="2YIFZM" id="7prs2iB5Gwd" role="2Oq$k0">
-                                                      <ref role="37wK5l" to="ji0:~ProjectManagerEx.getInstanceEx():com.intellij.openapi.project.ex.ProjectManagerEx" resolve="getInstanceEx" />
-                                                      <ref role="1Pybhc" to="ji0:~ProjectManagerEx" resolve="ProjectManagerEx" />
-                                                    </node>
-                                                    <node concept="liA8E" id="7prs2iB5Gwe" role="2OqNvi">
-                                                      <ref role="37wK5l" to="ji0:~ProjectManagerEx.unblockReloadingProjectOnExternalChanges():void" resolve="unblockReloadingProjectOnExternalChanges" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                                <node concept="3SKdUt" id="3gptLqNHhOV" role="3cqZAp">
-                                                  <node concept="3SKdUq" id="3gptLqNHi4E" role="3SKWNk">
-                                                    <property role="3SKdUp" value="set flag to execute migration after startup" />
-                                                  </node>
-                                                </node>
-                                                <node concept="3clFbF" id="3gptLqNIxva" role="3cqZAp">
-                                                  <node concept="37vLTI" id="3gptLqNIxvb" role="3clFbG">
-                                                    <node concept="3clFbT" id="3gptLqNIxvc" role="37vLTx">
-                                                      <property role="3clFbU" value="true" />
-                                                    </node>
-                                                    <node concept="2OqwBi" id="3gptLqNIxvd" role="37vLTJ">
-                                                      <node concept="37vLTw" id="3gptLqNIxve" role="2Oq$k0">
-                                                        <ref role="3cqZAo" node="5SsFeroaakm" resolve="myState" />
-                                                      </node>
-                                                      <node concept="2OwXpG" id="3gptLqNIxvf" role="2OqNvi">
-                                                        <ref role="2Oxat5" node="5SsFeroaak5" resolve="migrationRequired" />
-                                                      </node>
                                                     </node>
                                                   </node>
                                                 </node>

@@ -25,7 +25,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ide.GeneralSettings;
@@ -40,6 +39,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -140,7 +140,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                 SwingUtilities.invokeLater(new Runnable() {
                   public void run() {
                     ReloadManager.getInstance().flush();
-                    ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
                     executeWizard();
                   }
                 });
@@ -269,15 +268,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               return;
             }
 
+            // set flag to execute migration after startup 
+            myState.migrationRequired = true;
+
             VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
             VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
               public void run() {
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     ReloadManager.getInstance().flush();
-                    ProjectManagerEx.getInstanceEx().unblockReloadingProjectOnExternalChanges();
-                    // set flag to execute migration after startup 
-                    myState.migrationRequired = true;
                     // reload project and start migration assist 
                     ProjectManagerEx.getInstance().reloadProject(ideaProject);
                   }
