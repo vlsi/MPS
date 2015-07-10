@@ -17,7 +17,7 @@ public class CheckUtils {
 
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
     SModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_canRunInProcess_6436735966448788391", new Object[]{})) {
       return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
     } else {
       return true;
@@ -33,7 +33,6 @@ public class CheckUtils {
     SModule module = check_c4dr2s_a0c0e(SNodeOperations.getModel(testCase));
     if (module instanceof Solution) {
       SolutionDescriptor descriptor = ((Solution) module).getModuleDescriptor();
-      // todo: PLUGIN_OTHER ? 
       descriptor.setKind(SolutionKind.PLUGIN_OTHER);
       ((Solution) module).setChanged();
       return true;

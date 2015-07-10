@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -226,7 +227,7 @@ public class Java_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
-        classpath.value.removeAll(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)")).getFacet(JavaModuleFacet.class).getClassPath());
+        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
       }
     });
     return new ArrayList<String>(classpath.value);

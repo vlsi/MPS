@@ -28,8 +28,8 @@ public class TestsClassStorage {
   public Class<?> loadTestClass(String fqName, SModule module) {
     final Class<?> aClass = tryLoadTestClass(fqName, module);
     if (aClass == null) {
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("Test class " + fqName + " was not found");
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Test class " + fqName + " was not found. Possibly the solution which contains tests has plugin kind NONE. Try setting it to the plugin kind PLUGIN_OTHER.");
       }
     }
     return aClass;

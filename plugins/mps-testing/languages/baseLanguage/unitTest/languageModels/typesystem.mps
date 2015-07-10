@@ -20,6 +20,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -300,12 +301,22 @@
           </node>
         </node>
         <node concept="3clFbJ" id="7Cm4l4B9s7l" role="3cqZAp">
-          <node concept="2OqwBi" id="7Cm4l4B9s7m" role="3clFbw">
-            <node concept="37vLTw" id="7Cm4l4B9sCb" role="2Oq$k0">
-              <ref role="3cqZAo" node="7Cm4l4B9rXE" resolve="testCase" />
+          <node concept="22lmx$" id="57LGFPjW5Zo" role="3clFbw">
+            <node concept="2OqwBi" id="57LGFPjW65F" role="3uHU7w">
+              <node concept="37vLTw" id="57LGFPjW62Y" role="2Oq$k0">
+                <ref role="3cqZAo" node="7Cm4l4B9rXE" resolve="testCase" />
+              </node>
+              <node concept="2qgKlT" id="57LGFPjW6qT" role="2OqNvi">
+                <ref role="37wK5l" to="tpe5:5_jSk8paieB" resolve="canRunInProcess" />
+              </node>
             </node>
-            <node concept="2qgKlT" id="7Cm4l4B9s7n" role="2OqNvi">
-              <ref role="37wK5l" to="tpe5:2RMg39tmiFh" resolve="isMpsStartRequired" />
+            <node concept="2OqwBi" id="7Cm4l4B9s7m" role="3uHU7B">
+              <node concept="37vLTw" id="7Cm4l4B9sCb" role="2Oq$k0">
+                <ref role="3cqZAo" node="7Cm4l4B9rXE" resolve="testCase" />
+              </node>
+              <node concept="2qgKlT" id="7Cm4l4B9s7n" role="2OqNvi">
+                <ref role="37wK5l" to="tpe5:2RMg39tmiFh" resolve="isMpsStartRequired" />
+              </node>
             </node>
           </node>
           <node concept="3clFbS" id="7Cm4l4B9s7p" role="3clFbx">
@@ -435,11 +446,6 @@
                 <node concept="3uibUv" id="7Cm4l4B9FdR" role="1tU5fm">
                   <ref role="3uigEE" to="kqhl:~SolutionDescriptor" resolve="SolutionDescriptor" />
                 </node>
-              </node>
-            </node>
-            <node concept="3SKdUt" id="7Cm4l4B9Jnh" role="3cqZAp">
-              <node concept="3SKdUq" id="7Cm4l4B9Jny" role="3SKWNk">
-                <property role="3SKdUp" value="todo: PLUGIN_OTHER ?" />
               </node>
             </node>
             <node concept="3clFbF" id="7Cm4l4B9IvE" role="3cqZAp">
