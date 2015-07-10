@@ -2,23 +2,16 @@
 <model ref="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
-    <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
@@ -46,9 +39,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -129,16 +119,6 @@
     <node concept="PrWs8" id="1653mnvB6jI" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="hHn_CBK">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="access to SearchScope" />
-    <property role="TrG5h" value="GenerationContextOp_GetScope" />
-    <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="scope" />
-    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-    <node concept="asaX9" id="6LpCX$U1r05" role="lGtFl" />
   </node>
   <node concept="1TIwiD" id="hHr8y2F">
     <property role="R5$K7" value="false" />
@@ -546,6 +526,18 @@
       <property role="20kJfa" value="label" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpf8:hurT7o6" resolve="MappingLabelDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2cPzl2lSH22">
+    <property role="TrG5h" value="GenerationContextOp_CopyWithTrace" />
+    <property role="34LRSv" value="copy with trace" />
+    <property role="R4oN_" value="Analog of $TRACE$ to use in mapping scripts" />
+    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
+    <node concept="1TJgyj" id="2cPzl2lSLsJ" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodes" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
   </node>
 </model>

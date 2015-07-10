@@ -16,6 +16,9 @@
     <file name="GenerationContextOp_ContextVarRef_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
     </file>
+    <file name="GenerationContextOp_CopyWithTrace_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CopyWithTrace_BehaviorDescriptor" />
+    </file>
     <file name="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
     </file>
@@ -60,9 +63,6 @@
     </file>
     <file name="GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
-    </file>
-    <file name="GenerationContextOp_GetScope_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetScope_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetTemplateNode_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />

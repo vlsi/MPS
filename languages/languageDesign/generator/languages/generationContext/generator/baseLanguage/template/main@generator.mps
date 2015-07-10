@@ -21,6 +21,7 @@
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="q383" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
+    <import index="ierg" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.textgen.trace(MPS.Core/jetbrains.mps.textgen.trace@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2812,6 +2813,47 @@
           <node concept="37vLTG" id="4RJ0ilaWn53" role="3clF46">
             <property role="TrG5h" value="ctx" />
             <node concept="3uibUv" id="4RJ0ilaWn54" role="1tU5fm">
+              <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2cPzl2lSNSy" role="3acgRq">
+      <ref role="30HIoZ" to="tpf3:2cPzl2lSH22" resolve="GenerationContextOp_CopyWithTrace" />
+      <node concept="1Koe21" id="2cPzl2lSSGy" role="1lVwrX">
+        <node concept="3clFb_" id="2cPzl2lSSGz" role="1Koe22">
+          <property role="TrG5h" value="m" />
+          <node concept="3cqZAl" id="2cPzl2lSSG$" role="3clF45" />
+          <node concept="3Tm1VV" id="2cPzl2lSSG_" role="1B3o_S" />
+          <node concept="3clFbS" id="2cPzl2lSSGA" role="3clF47">
+            <node concept="3clFbF" id="2cPzl2lSTWS" role="3cqZAp">
+              <node concept="2YIFZM" id="2cPzl2lSUEg" role="3clFbG">
+                <ref role="37wK5l" to="ierg:~TracingUtil.copyWithTrace(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode" resolve="copyWithTrace" />
+                <ref role="1Pybhc" to="ierg:~TracingUtil" resolve="TracingUtil" />
+                <node concept="10Nm6u" id="2cPzl2lSUEr" role="37wK5m">
+                  <node concept="29HgVG" id="2cPzl2lSUJo" role="lGtFl">
+                    <node concept="3NFfHV" id="2cPzl2lSUJp" role="3NFExx">
+                      <node concept="3clFbS" id="2cPzl2lSUJq" role="2VODD2">
+                        <node concept="3clFbF" id="2cPzl2lSUJw" role="3cqZAp">
+                          <node concept="2OqwBi" id="2cPzl2lSUJr" role="3clFbG">
+                            <node concept="3TrEf2" id="2cPzl2lSUJu" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpf3:2cPzl2lSLsJ" />
+                            </node>
+                            <node concept="30H73N" id="2cPzl2lSUJv" role="2Oq$k0" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="raruj" id="2cPzl2lSUIv" role="lGtFl" />
+              </node>
+            </node>
+          </node>
+          <node concept="37vLTG" id="2cPzl2lSSHe" role="3clF46">
+            <property role="TrG5h" value="ctx" />
+            <node concept="3uibUv" id="2cPzl2lSSHf" role="1tU5fm">
               <ref role="3uigEE" to="q383:~TemplateQueryContext" resolve="TemplateQueryContext" />
             </node>
           </node>

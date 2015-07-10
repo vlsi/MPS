@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CopyWithTrace_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
@@ -19,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputModel_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetScope_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_BehaviorDescriptor" />
@@ -64,6 +64,12 @@
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ContextVarRef_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CopyWithTrace_BehaviorDescriptor" file="GenerationContextOp_CopyWithTrace_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" file="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java">
@@ -151,12 +157,6 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" file="GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetScope_BehaviorDescriptor" file="GenerationContextOp_GetScope_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />

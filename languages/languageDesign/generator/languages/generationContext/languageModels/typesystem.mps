@@ -18,7 +18,6 @@
     <import index="q383" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
     <import index="e2lb" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
-    <import index="88zw" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <import index="tpf6" ref="r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)" />
     <import index="tpfh" ref="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -1207,31 +1206,6 @@
     <node concept="1YaCAy" id="$lsh0EhCau" role="1YuTPh">
       <property role="TrG5h" value="operation" />
       <ref role="1YaFvo" to="tpf3:hHFEO4U" resolve="GenerationContextOp_GetOutputModel" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="$lsh0EhCmA">
-    <property role="TrG5h" value="typeof_GenerationContextOp_GetScope" />
-    <node concept="3clFbS" id="$lsh0EhCmB" role="18ibNy">
-      <node concept="1Z5TYs" id="$lsh0EhCnO" role="3cqZAp">
-        <node concept="mw_s8" id="$lsh0EhCnP" role="1ZfhKB">
-          <node concept="2c44tf" id="$lsh0EhCnQ" role="mwGJk">
-            <node concept="3uibUv" id="6LpCX$U1tey" role="2c44tc">
-              <ref role="3uigEE" to="88zw:~SearchScope" resolve="SearchScope" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="$lsh0EhCnS" role="1ZfhK$">
-          <node concept="1Z2H0r" id="$lsh0EhCnT" role="mwGJk">
-            <node concept="1YBJjd" id="$lsh0EhCnU" role="1Z2MuG">
-              <ref role="1YBMHb" node="$lsh0EhCmD" resolve="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="$lsh0EhCmD" role="1YuTPh">
-      <property role="TrG5h" value="operation" />
-      <ref role="1YaFvo" to="tpf3:hHn_CBK" resolve="GenerationContextOp_GetScope" />
     </node>
   </node>
   <node concept="1YbPZF" id="$lsh0EhCzH">
