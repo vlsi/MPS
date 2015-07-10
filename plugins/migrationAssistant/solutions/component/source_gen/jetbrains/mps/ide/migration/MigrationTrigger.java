@@ -10,9 +10,9 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorContainer;
 import jetbrains.mps.project.Project;
-import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
+import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.migration.runtime.util.MigrationsUtil;
 import com.intellij.openapi.startup.StartupManager;
@@ -74,8 +74,8 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private Project myMpsProject;
   private final MigrationManager myMigrationManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
+
   private boolean myMigrationQueued = false;
-  private final AtomicInteger myBlocked = new AtomicInteger(0);
 
   private ProjectMigrationProperties myProperties;
 
@@ -93,9 +93,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myProperties = props;
   }
 
-  public static MigrationTrigger getInstance(com.intellij.openapi.project.Project p) {
-    return p.getComponent(MigrationTrigger.class);
-  }
+  private final AtomicInteger myBlocked = new AtomicInteger(0);
 
   public void blockMigrationsCheck() {
     myBlocked.incrementAndGet();
@@ -107,7 +105,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     if (locks == 0) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+          MigrationTrigger.updateUsedLanguagesVersions(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
           checkMigrationNeeded();
         }
       });
@@ -327,6 +325,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   }
 
   public synchronized void postponeMigration() {
+    if (myBlocked.get() != 0) {
+      return;
+    }
+
     final com.intellij.openapi.project.Project ideaProject = myProject;
     final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
     saveAndSetTipsState();

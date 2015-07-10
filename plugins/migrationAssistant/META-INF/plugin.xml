@@ -39,6 +39,9 @@
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationMakeBlocker</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
     </component>
     <component>
