@@ -699,11 +699,6 @@
         <property role="TrG5h" value="jetbrains.mps.lang.editor.multiple.testLanguage" />
         <property role="3LESm3" value="7a80051c-66e9-4bfc-9698-b12adfed3d9f" />
         <property role="2GAjPV" value="false" />
-        <node concept="1yeLz9" id="5dj8Qcvw3Ed" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" />
-          <property role="3LESm3" value="1f867555-f29a-4703-a612-a41a9de4c68e" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="55IIr" id="4BLpc15eBPi" role="3LF7KH">
           <node concept="2Ry0Ak" id="4BLpc15eEgq" role="iGT6I">
             <property role="2Ry0Am" value="testbench" />
@@ -754,11 +749,6 @@
         <property role="TrG5h" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage" />
         <property role="3LESm3" value="2a136e2a-e48f-4b7a-bcbc-7b2a11f3bbeb" />
         <property role="2GAjPV" value="false" />
-        <node concept="1yeLz9" id="1_MaibiuEGc" role="1TViLv">
-          <property role="TrG5h" value="jetbrains.mps.lang.editor.multiple.extension.testLanguage#6822301196699110738" />
-          <property role="3LESm3" value="e5e59881-5506-41a5-b870-4b4703455d4c" />
-          <property role="2GAjPV" value="false" />
-        </node>
         <node concept="1SiIV0" id="1_MaibiuF4x" role="3bR37C">
           <node concept="1Busua" id="1_MaibiuF4y" role="1SiIV1">
             <ref role="1Busuk" node="4BLpc15eBPf" resolve="jetbrains.mps.lang.editor.multiple.testLanguage" />
