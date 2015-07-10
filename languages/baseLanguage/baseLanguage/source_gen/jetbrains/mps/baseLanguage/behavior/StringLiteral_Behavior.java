@@ -6,12 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class StringLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"));
+  }
+  public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
+    return true;
   }
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return true;
