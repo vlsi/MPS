@@ -16,7 +16,11 @@ public class Slot_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getCustomizedSlot_935069066463578518(final SNode thisNode) {
-    SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"));
+    SNode dailyPlan = SNodeOperations.as(SNodeOperations.getParent(thisNode), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"));
+    if (dailyPlan == null) {
+      return null;
+    }
+
     SNode found = null;
     List<SNode> visitedPlans = new ArrayList<SNode>();
     while (found == null && (SLinkOperations.getTarget(dailyPlan, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) != null)) {

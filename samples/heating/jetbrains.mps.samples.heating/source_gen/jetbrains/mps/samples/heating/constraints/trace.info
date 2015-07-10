@@ -133,7 +133,7 @@
         <var name="properties" id="5726447348463760016" />
       </scope>
       <scope id="5726447348463760016" at="24,0,44,0" />
-      <unit id="5726447348463760812" at="35,521,39,9" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$2" />
+      <unit id="5726447348463760812" at="35,519,39,9" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$2" />
       <unit id="5726447348463760016" at="27,129,41,5" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$1" />
       <unit id="5726447348463760016" at="20,0,48,0" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints" />
     </file>

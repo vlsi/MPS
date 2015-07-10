@@ -75,6 +75,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -119,6 +120,7 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
         <reference id="1140138128738" name="concept" index="1PxNhF" />
         <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
@@ -294,6 +296,7 @@
               <ref role="ehGHo" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
             </node>
             <node concept="1PxgMI" id="NU25Mr1aMX" role="33vP2m">
+              <property role="1BlNFB" value="true" />
               <ref role="1PxNhF" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
               <node concept="2OqwBi" id="NU25Mr1aMY" role="1PxMeX">
                 <node concept="13iPFW" id="NU25Mr1aMZ" role="2Oq$k0" />
@@ -302,6 +305,20 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="K_mqoxsN8$" role="3cqZAp">
+          <node concept="3clFbS" id="K_mqoxsN8A" role="3clFbx">
+            <node concept="3cpWs6" id="K_mqoxsNpp" role="3cqZAp">
+              <node concept="10Nm6u" id="K_mqoxsNyI" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="K_mqoxsNoK" role="3clFbw">
+            <node concept="10Nm6u" id="K_mqoxsNp5" role="3uHU7w" />
+            <node concept="37vLTw" id="K_mqoxsNmR" role="3uHU7B">
+              <ref role="3cqZAo" node="NU25Mr1aMW" resolve="dailyPlan" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="K_mqoxsNHx" role="3cqZAp" />
         <node concept="3cpWs8" id="NU25Mr1gHL" role="3cqZAp">
           <node concept="3cpWsn" id="NU25Mr1gHM" role="3cpWs9">
             <property role="TrG5h" value="found" />

@@ -45,6 +45,7 @@
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
         <reference id="1140138128738" name="concept" index="1PxNhF" />
         <child id="1140138123956" name="leftExpression" index="1PxMeX" />
       </concept>
@@ -69,6 +70,7 @@
       <node concept="3clFbS" id="6SYFRDkTQVZ" role="3clF47">
         <node concept="3clFbF" id="6SYFRDkTQW1" role="3cqZAp">
           <node concept="1PxgMI" id="6SYFRDkTQW8" role="3clFbG">
+            <property role="1BlNFB" value="true" />
             <ref role="1PxNhF" to="owg1:EpZY78hmIx" resolve="StateMachine" />
             <node concept="2OqwBi" id="6SYFRDkTQW3" role="1PxMeX">
               <node concept="13iPFW" id="6SYFRDkTQW2" role="2Oq$k0" />
