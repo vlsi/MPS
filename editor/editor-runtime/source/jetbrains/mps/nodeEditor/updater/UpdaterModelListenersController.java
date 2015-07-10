@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
-import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -33,8 +34,7 @@ import java.util.Set;
 class UpdaterModelListenersController {
   private final UpdaterImpl myUpdater;
   private UpdaterModelListener myModelListener;
-  private UpdaterRepositoryListener myRepositoryListener;
-  private UpdaterRepositoryContentAdapter myContentAdapter;
+  private UpdaterRepositoryContentAdapter myRepositoryListener;
   private Set<SModel> myListeningModels = Collections.emptySet();
 
   UpdaterModelListenersController(UpdaterImpl updater) {
@@ -45,6 +45,9 @@ class UpdaterModelListenersController {
     if (myModelListener == null) {
       myModelListener = new UpdaterModelListener(myUpdater);
     }
+
+    final SRepository repository = myUpdater.getEditorContext().getRepository();
+
     Set<SModel> modelsToListen = new HashSet<SModel>();
     if (relatedNodes != null) {
       for (SNode node : relatedNodes) {
@@ -52,19 +55,14 @@ class UpdaterModelListenersController {
         if (model == null) {
           continue;
         }
-
-        // Getting modelDescriptor via SModelRepository because sometimes
-        // node.getModel().getModelDescriptor() == null while reloading models from disk.
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
-        if (modelDescriptor != null) {
-          modelsToListen.add(modelDescriptor);
-        }
+        modelsToListen.add(model);
       }
     }
 
     if (relatedRefTargets != null) {
       for (SNodeReference nodeProxy : relatedRefTargets) {
-        SModel model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
+        final SModelReference modelRef = nodeProxy.getModelReference();
+        SModel model = modelRef == null ? null : modelRef.resolve(repository);
         if (model != null) {
           modelsToListen.add(model);
         }
@@ -84,14 +82,12 @@ class UpdaterModelListenersController {
 
     myListeningModels = modelsToListen;
     if (myRepositoryListener == null) {
-      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener = new UpdaterRepositoryListener(myUpdater.getEditorComponent()));
+      myRepositoryListener = new UpdaterRepositoryContentAdapter(myUpdater.getEditorComponent());
+      // it's already read action here (we've got nodes), just for symmetry with detach in dispose(), below.
+      new RepoListenerRegistrar(repository, myRepositoryListener).attach();
     }
     myRepositoryListener.setUsedModels(modelsToListen);
-
-    if (myContentAdapter == null) {
-      SRepositoryRegistry.getInstance().addGlobalListener(myContentAdapter = new UpdaterRepositoryContentAdapter(myUpdater.getEditorComponent()));
-    }
-    myContentAdapter.setMainModel(mainNode.getModel());
+    myRepositoryListener.setMainModel(mainNode.getModel());
 
     assertListenerAdded(mainNode);
   }
@@ -122,18 +118,8 @@ class UpdaterModelListenersController {
   }
 
   void dispose() {
-    if (myContentAdapter != null) {
-      // Read-action is here only for the compatibility with SRepositoryContentAdapter logic - it requires
-      // read-action inside stopListening(SModule module) method
-      myUpdater.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          SRepositoryRegistry.getInstance().removeGlobalListener(myContentAdapter);
-        }
-      });
-    }
     if (myRepositoryListener != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+      new RepoListenerRegistrar(myUpdater.getEditorContext().getRepository(), myRepositoryListener).detach();
     }
     if (myModelListener != null) {
       myModelListener.dispose();
