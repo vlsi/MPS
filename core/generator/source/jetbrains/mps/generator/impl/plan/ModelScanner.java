@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -175,7 +176,7 @@ public final class ModelScanner {
             continue;
           }
           SConcept targetNodeConcept = tn.getConcept();
-          if (RuleUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || RuleUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
+          if (SNodeUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || SNodeUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
             // n points with r to a concept node tn
             myConceptsInUse.add(targetNodeConcept);
           }
@@ -208,7 +209,7 @@ public final class ModelScanner {
 
     @Override
     public boolean met(SNode node) {
-      if (RuleUtil.link_BaseConcept_attrs.equals(node.getContainmentLink())) {
+      if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(node.getContainmentLink())) {
         return RuleUtil.isTemplateLanguageElement(node);
       }
       return false;

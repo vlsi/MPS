@@ -28,6 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
@@ -74,7 +75,7 @@ class TemplateNode {
     //
     // need to build linked list of macro nodes; use stack to start from the tail
     final ArrayDeque<SNode> attachedMacros = new ArrayDeque<SNode>(5);
-    for (SNode attrNode : templateNode.getChildren(RuleUtil.link_BaseConcept_attrs)) {
+    for (SNode attrNode : templateNode.getChildren(SNodeUtil.link_BaseConcept_smodelAttribute)) {
       if (RuleUtil.isNodeMacro(attrNode)) {
         attachedMacros.push(attrNode);
       }

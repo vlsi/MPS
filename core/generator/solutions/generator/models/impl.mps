@@ -292,10 +292,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
@@ -2084,53 +2080,7 @@
         <ref role="359W_F" to="tpf8:gcphYgk" />
       </node>
     </node>
-    <node concept="Wx3nA" id="4OwOEWIRLjl" role="jymVt">
-      <property role="TrG5h" value="link_BaseConcept_attrs" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="4OwOEWIRLjm" role="1B3o_S" />
-      <node concept="359W_D" id="4OwOEWIRQzw" role="33vP2m">
-        <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="359W_F" to="tpck:4uZwTti3__2" />
-      </node>
-      <node concept="3uibUv" id="4OwOEWIRVBP" role="1tU5fm">
-        <ref role="3uigEE" to="t3eg:~SContainmentLink" resolve="SContainmentLink" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="62KRWj_QxPJ" role="jymVt" />
-    <node concept="Wx3nA" id="15H8LO1Gu_m" role="jymVt">
-      <property role="TrG5h" value="link_BaseConcept_attrs_name" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="15H8LO1Gu_n" role="1B3o_S" />
-      <node concept="prKvN" id="15H8LO1Gu_o" role="33vP2m">
-        <ref role="prhl7" to="tpck:4uZwTti3__2" />
-        <ref role="prhl4" to="tpck:gw2VY9q" resolve="BaseConcept" />
-      </node>
-      <node concept="17QB3L" id="15H8LO1Gu_p" role="1tU5fm" />
-    </node>
-    <node concept="2tJIrI" id="7vbaBZCVEsd" role="jymVt" />
-    <node concept="Wx3nA" id="6xQoLnhxAoq" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="concept_AbstractConceptDeclaration" />
-      <node concept="3Tm1VV" id="62KRWj_QGdg" role="1B3o_S" />
-      <node concept="3uibUv" id="7vbaBZCVyyn" role="1tU5fm">
-        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
-      </node>
-      <node concept="35c_gC" id="7vbaBZCVzf2" role="33vP2m">
-        <ref role="35c_gD" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-      </node>
-    </node>
-    <node concept="Wx3nA" id="62KRWj_QGge" role="jymVt">
-      <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="concept_ConceptDeclaration" />
-      <node concept="3Tm1VV" id="62KRWj_QGgf" role="1B3o_S" />
-      <node concept="3uibUv" id="7vbaBZCVyOR" role="1tU5fm">
-        <ref role="3uigEE" to="t3eg:~SConcept" resolve="SConcept" />
-      </node>
-      <node concept="35c_gC" id="7vbaBZCVz9U" role="33vP2m">
-        <ref role="35c_gD" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6pv6r6HK$LX" role="jymVt" />
     <node concept="Wx3nA" id="6pv6r6HKEii" role="jymVt">
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
