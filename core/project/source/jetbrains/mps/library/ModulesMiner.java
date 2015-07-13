@@ -20,15 +20,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -270,15 +267,6 @@ public final class ModulesMiner {
 
     for (String p : descriptor.getSourcePaths()) {
       myExcludes.add(FileSystem.getInstance().getFileByPath(p));
-    }
-
-    for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
-      ModelRoot root = rootDescriptor.getRoot();
-      if (root == null || root.getManager() != null && root.getManager() != LanguageID.JAVA_MANAGER) {
-        continue;
-      }
-
-      myExcludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
     }
 
     for (String entry : descriptor.getAdditionalJavaStubPaths()) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,16 +57,6 @@ public final class ModelRootDescriptor {
 
   public Memento getMemento() {
     return memento;
-  }
-
-  @Deprecated
-  public ModelRoot getRoot() {
-    if (!PersistenceRegistry.OBSOLETE_MODEL_ROOT.equals(getType())) {
-      return null;
-    }
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.load(memento);
-    return modelRoot;
   }
 
   public void save(ModelOutputStream stream) throws IOException {

@@ -18,16 +18,6 @@
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" file="ManagerRenderer.java">
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JList" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
-  </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" file="ModelRenderer.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />

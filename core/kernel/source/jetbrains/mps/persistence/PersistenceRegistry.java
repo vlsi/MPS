@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
@@ -284,13 +283,6 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
         return new DefaultModelRoot();
       }
     });
-    setModelRootFactory(ProjectStructureModelRoot.TYPE, new ModelRootFactory() {
-      @Override
-      public ModelRoot create() {
-        return new ProjectStructureModelRoot();
-      }
-    });
-
     setNodeIdFactory(jetbrains.mps.smodel.SNodeId.TYPE, new SNodeIdFactory() {
       @Override
       public SNodeId create(String text) {

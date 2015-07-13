@@ -387,52 +387,6 @@
         </node>
       </node>
     </node>
-    <node concept="1bf$Pj" id="7OuC_CamBEu" role="1bf$Pm">
-      <property role="TrG5h" value="stubsManager" />
-      <node concept="3uibUv" id="7OuC_CamBEv" role="1nbxDZ">
-        <ref role="3uigEE" to="n8sb:~ModelRootManager" resolve="ModelRootManager" />
-      </node>
-      <node concept="2ShNRf" id="7OuC_CamBEw" role="1b3Zx5">
-        <node concept="1pGfFk" id="7OuC_CamBEx" role="2ShVmc">
-          <ref role="37wK5l" to="n8sb:~ModelRootManager.&lt;init&gt;()" resolve="ModelRootManager" />
-        </node>
-      </node>
-    </node>
-    <node concept="1bf$Pj" id="IMUMWuHQpZ" role="1bf$Pm">
-      <property role="1bfSUW" value="true" />
-      <property role="TrG5h" value="modelRoot" />
-      <node concept="3uibUv" id="IMUMWuHQq0" role="1nbxDZ">
-        <ref role="3uigEE" to="n8sb:~ModelRoot" resolve="ModelRoot" />
-      </node>
-      <node concept="2ShNRf" id="IMUMWuHQq1" role="1b3Zx5">
-        <node concept="1pGfFk" id="IMUMWuHQq2" role="2ShVmc">
-          <ref role="37wK5l" to="n8sb:~ModelRoot.&lt;init&gt;()" resolve="ModelRoot" />
-        </node>
-      </node>
-      <node concept="1bemph" id="4VRI6QuQ0Gt" role="1beWqJ">
-        <ref role="1bempg" node="4VRI6QuPMuY" resolve="manager" />
-        <node concept="3clFbF" id="4VRI6QuQ0Gv" role="1bevWK">
-          <node concept="2OqwBi" id="4VRI6QuQ0Gx" role="3clFbG">
-            <node concept="1bempn" id="4VRI6QuQ0Gw" role="2Oq$k0" />
-            <node concept="liA8E" id="4VRI6QuQ0G_" role="2OqNvi">
-              <ref role="37wK5l" to="n8sb:~ModelRoot.setManager(jetbrains.mps.project.structure.model.ModelRootManager):void" resolve="setManager" />
-              <node concept="1bempl" id="4VRI6QuQ0GA" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1bf$Pj" id="4VRI6QuPMuY" role="1bf$Pm">
-      <property role="TrG5h" value="manager" />
-      <node concept="3uibUv" id="4VRI6QuPZ2k" role="1nbxDZ">
-        <ref role="3uigEE" to="n8sb:~ModelRootManager" resolve="ModelRootManager" />
-      </node>
-      <node concept="2ShNRf" id="4VRI6QuPZ2l" role="1b3Zx5">
-        <node concept="1pGfFk" id="4VRI6QuQ0Gs" role="2ShVmc">
-          <ref role="37wK5l" to="n8sb:~ModelRootManager.&lt;init&gt;()" resolve="ModelRootManager" />
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="312cEu" id="IMUMWuHQq7">
     <property role="TrG5h" value="DevkitDescriptorPersistence" />

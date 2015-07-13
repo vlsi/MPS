@@ -197,29 +197,6 @@
       <unit id="1560298786499492868" at="14,0,44,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
     </file>
   </root>
-  <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499493036">
-    <file name="ManagerRenderer.java">
-      <node id="1560298786499493056" at="15,134,16,56" concept="8" />
-      <node id="1560298786499493062" at="16,56,17,115" concept="8" />
-      <node id="1560298786499493074" at="17,115,18,101" concept="9" />
-      <node id="1560298786499493039" at="12,0,14,0" concept="2" trace="ManagerRenderer#()V" />
-      <node id="1560298786499493042" at="14,0,20,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <scope id="1560298786499493041" at="12,28,12,28" />
-      <scope id="1560298786499493039" at="12,0,14,0" />
-      <scope id="1560298786499493055" at="15,134,18,101">
-        <var name="manager" id="1560298786499493057" />
-        <var name="representation" id="1560298786499493063" />
-      </scope>
-      <scope id="1560298786499493042" at="14,0,20,0">
-        <var name="cellHasFocus" id="1560298786499493053" />
-        <var name="index" id="1560298786499493049" />
-        <var name="isSelected" id="1560298786499493051" />
-        <var name="list" id="1560298786499493045" />
-        <var name="value" id="1560298786499493047" />
-      </scope>
-      <unit id="1560298786499493036" at="11,0,21,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" />
-    </file>
-  </root>
   <root nodeRef="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)/1560298786499494305">
     <file name="ListRendererAdapter.java">
       <node id="1560298786499494308" at="12,0,13,0" concept="4" trace="myCellRenderer" />
