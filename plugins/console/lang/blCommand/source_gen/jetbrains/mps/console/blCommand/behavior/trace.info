@@ -17,7 +17,7 @@
       <unit at="9,0,23,0" name="jetbrains.mps.console.blCommand.behavior.BLExpression_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,68,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,70,0" name="jetbrains.mps.console.blCommand.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ConsoleExpression_BehaviorDescriptor.java">
       <unit at="7,0,9,0" name="jetbrains.mps.console.blCommand.behavior.ConsoleExpression_BehaviorDescriptor" />
@@ -93,6 +93,9 @@
     </file>
     <file name="ScopeParameter_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ScopeParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ScopeProvider_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.console.blCommand.behavior.ScopeProvider_BehaviorDescriptor" />
     </file>
     <file name="ShowExpression_BehaviorDescriptor.java">
       <unit at="9,0,38,0" name="jetbrains.mps.console.blCommand.behavior.ShowExpression_BehaviorDescriptor" />

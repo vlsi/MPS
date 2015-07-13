@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.blCommand.constraints.ConstraintsAspectDescriptor" file="ConstraintsAspectDescriptor.java">
     <classNode dependClassName="jetbrains.mps.console.blCommand.constraints.InstancesExpression_Constraints" />
-    <classNode dependClassName="jetbrains.mps.console.blCommand.constraints.QueryExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.constraints.QueryParameter_Constraints" />
     <classNode dependClassName="jetbrains.mps.console.blCommand.constraints.UsagesExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
@@ -21,10 +20,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.blCommand.constraints.QueryExpression_Constraints" file="QueryExpression_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.console.blCommand.constraints.QueryParameter_Constraints" file="QueryParameter_Constraints.java">

@@ -96,10 +96,6 @@
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
   </registry>
-  <node concept="1M2fIO" id="6kp4dbAcANO">
-    <property role="3GE5qa" value="expression.query" />
-    <ref role="1M2myG" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
-  </node>
   <node concept="1M2fIO" id="30Cvt28Y34P">
     <property role="3GE5qa" value="expression.query" />
     <ref role="1M2myG" to="3xdn:6H$fNdLyE4d" resolve="InstancesExpression" />

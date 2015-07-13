@@ -2,7 +2,7 @@
 <model ref="r:7e8cfa8a-da13-467d-9878-63b90b943128(jetbrains.mps.console.blCommand.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -148,7 +148,7 @@
       </concept>
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -172,7 +172,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3THzug">
+      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
     </language>
@@ -347,10 +347,10 @@
                     <node concept="3cpWsn" id="5X1VVpPy2IZ" role="3cpWs9">
                       <property role="TrG5h" value="conceptType" />
                       <node concept="3Tqbb2" id="5X1VVpPy2J0" role="1tU5fm">
-                        <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+                        <ref role="ehGHo" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                       </node>
                       <node concept="1PxgMI" id="5X1VVpPy2J1" role="33vP2m">
-                        <ref role="1PxNhF" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+                        <ref role="1PxNhF" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                         <node concept="2X3wrD" id="5X1VVpPy2J2" role="1PxMeX">
                           <ref role="2X3Bk0" node="5X1VVpPy2Jj" resolve="conceptParameterType" />
                         </node>
@@ -428,7 +428,7 @@
                   </node>
                   <node concept="1mIQ4w" id="5X1VVpPy2Jd" role="2OqNvi">
                     <node concept="chp4Y" id="62y0BjE24Zz" role="cj9EA">
-                      <ref role="cht4Q" to="tp25:5MFgGQnlLNI" resolve="SConceptTypeSConcept" />
+                      <ref role="cht4Q" to="tp25:5MFgGQnlLNI" resolve="SConceptType" />
                     </node>
                   </node>
                 </node>
@@ -1194,6 +1194,54 @@
     <node concept="1YaCAy" id="31Tct3TxpmX" role="1YuTPh">
       <property role="TrG5h" value="customScope" />
       <ref role="1YaFvo" to="3xdn:31Tct3Txnn9" resolve="CustomScope" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3F2FyKbNNPn">
+    <property role="TrG5h" value="typeof_ScopeProvider" />
+    <property role="3GE5qa" value="expression.query" />
+    <node concept="3clFbS" id="3F2FyKbNNPo" role="18ibNy">
+      <node concept="2NvLDW" id="3F2FyKbNVdL" role="3cqZAp">
+        <node concept="mw_s8" id="3F2FyKbNVdO" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3F2FyKbNOjl" role="mwGJk">
+            <node concept="2OqwBi" id="3F2FyKbNOmx" role="1Z2MuG">
+              <node concept="1YBJjd" id="3F2FyKbNOjL" role="2Oq$k0">
+                <ref role="1YBMHb" node="3F2FyKbNNPq" resolve="scopeProvider" />
+              </node>
+              <node concept="3TrEf2" id="3F2FyKbNVb4" role="2OqNvi">
+                <ref role="3Tt5mk" to="3xdn:3F2FyKbNNqR" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3F2FyKbNVkL" role="1ZfhKB">
+          <node concept="2c44tf" id="3F2FyKbNVkM" role="mwGJk">
+            <node concept="2usRSg" id="3F2FyKbNVkN" role="2c44tc">
+              <node concept="A3Dl8" id="3F2FyKbNVkO" role="2usUpS">
+                <node concept="3Tqbb2" id="3F2FyKbNVkP" role="A3Ik2" />
+              </node>
+              <node concept="H_c77" id="3F2FyKbNVnk" role="2usUpS" />
+              <node concept="A3Dl8" id="3F2FyKbNVkS" role="2usUpS">
+                <node concept="H_c77" id="3F2FyKbNVkT" role="A3Ik2" />
+              </node>
+              <node concept="3uibUv" id="3F2FyKbNXXO" role="2usUpS">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+              <node concept="A3Dl8" id="3F2FyKbNVkU" role="2usUpS">
+                <node concept="3uibUv" id="3F2FyKbNVkV" role="A3Ik2">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                </node>
+              </node>
+              <node concept="3uibUv" id="3F2FyKbNY6e" role="2usUpS">
+                <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3F2FyKbNNPq" role="1YuTPh">
+      <property role="TrG5h" value="scopeProvider" />
+      <ref role="1YaFvo" to="3xdn:3F2FyKbNNqb" resolve="ScopeProvider" />
     </node>
   </node>
 </model>
