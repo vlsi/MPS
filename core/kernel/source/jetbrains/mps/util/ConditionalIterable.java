@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.FilterIterator;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 public class ConditionalIterable<T> implements Iterable<T> {
@@ -26,7 +27,7 @@ public class ConditionalIterable<T> implements Iterable<T> {
 
   public ConditionalIterable(Iterable<T> iter, Condition<T> condition) {
     myCondition = condition;
-    myIter = iter;
+    myIter = iter != null ? iter : Collections.<T>emptyList();
   }
 
   @Override
