@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -157,17 +156,6 @@ public class MPSConfigurationBean {
     }
 
     List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
-    if (state.modelRoots != null) {
-      ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
-      for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : state.modelRoots) {
-        Memento m = new MementoImpl();
-        modelRoot.save(m);
-        ModelRootDescriptor desc = ModuleDescriptorPersistence.createDescriptor(null, m, moduleContentRoot, moduleDefaultRoot);
-        if (desc != null) {
-          roots.add(desc);
-        }
-      }
-    }
     if (state.rootDescriptors != null) {
       for (RootDescriptor descriptor : state.rootDescriptors) {
         Memento m = new MementoImpl();
@@ -186,7 +174,6 @@ public class MPSConfigurationBean {
     result.generatorOutputPath = myDescriptor.getOutputPath();
     result.useModuleSourceFolder = myUseModuleSourceFolder;
     result.useTransientOutputFolder = myUseTransientOutputFolder;
-    result.modelRoots = null;
     result.usedLanguages = getUsedLanguages();
     if (result.usedLanguages != null && result.usedLanguages.length == 0) {
       result.usedLanguages = null;
@@ -211,7 +198,6 @@ public class MPSConfigurationBean {
     public String generatorOutputPath;
     public boolean useModuleSourceFolder = false;
     public boolean useTransientOutputFolder = false;
-    public Set<jetbrains.mps.project.structure.model.ModelRoot> modelRoots = new LinkedHashSet<jetbrains.mps.project.structure.model.ModelRoot>();
     public String[] usedLanguages;
     @Tag("modelRoots")
     @AbstractCollection(surroundWithTag = false)

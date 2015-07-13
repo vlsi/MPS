@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
@@ -31,23 +31,19 @@ import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.persistence.MementoImpl;
-import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.ModuleId;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
 import org.apache.log4j.Level;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -120,7 +116,7 @@ public class ModuleDescriptorPersistence {
     Element languageVersions = new Element("languageVersions");
     for (SLanguage l : langs) {
       Element languageVersion = new Element("language");
-      languageVersion.setAttribute("id", IdHelper.getLanguageId(l).serialize());
+      languageVersion.setAttribute("id", MetaIdHelper.getLanguage(l).serialize());
       languageVersion.setAttribute("fqName", l.getQualifiedName());
       languageVersion.setAttribute("version", String.valueOf(lver.get(l)));
       languageVersions.addContent(languageVersion);
@@ -175,53 +171,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] cache) {
-    if (type != null) {
-      return new ModelRootDescriptor(type, m);
-    }
-
-    // temporary code for migrating old model roots, type == null 
-    Memento manager = m.getChild("manager");
-    if (manager == null) {
-      String path = FileUtil.stripLastSlashes(m.get("path"));
-      return mergeFileBasedModelRoot(path, PersistenceRegistry.DEFAULT_MODEL_ROOT, moduleContentRoot, 0, cache);
-    } else if (matches(manager, LanguageID.JAVA_MANAGER)) {
-      // TODO use JavaClassStubConstants.STUB_TYPE 
-      String path = m.get("path");
-      m = new MementoImpl();
-      m.put("path", path);
-      return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
-    } else if ("jetbrains.mps.lang.project.stubs.ProjectStubs".equals(manager.get("className")) && "86ef8290-12bb-4ca7-947f-093788f263a9".equals(manager.get("moduleId"))) {
-      String path = FileUtil.stripLastSlashes(m.get("path"));
-      return mergeFileBasedModelRoot(path, ProjectStructureModelRoot.TYPE, moduleContentRoot, 1, cache);
-    } else {
-      return new ModelRootDescriptor(PersistenceRegistry.OBSOLETE_MODEL_ROOT, m);
-    }
-  }
-  private static ModelRootDescriptor mergeFileBasedModelRoot(String path, String type, @Nullable String moduleContentRoot, int cacheIndex, ModelRootDescriptor[] cache) {
-    if (moduleContentRoot != null && (path.startsWith(moduleContentRoot + "/") || path.equals(moduleContentRoot))) {
-      String relPath = path.substring(moduleContentRoot.length());
-      while (relPath.startsWith("/")) {
-        relPath = relPath.substring(1);
-      }
-      ModelRootDescriptor result = null;
-      Memento m;
-      if (cache[cacheIndex] == null) {
-        m = new MementoImpl();
-        m.put("contentPath", moduleContentRoot);
-        cache[cacheIndex] = new ModelRootDescriptor(type, m);
-        result = cache[cacheIndex];
-      } else {
-        m = cache[cacheIndex].getMemento();
-      }
-      Memento sr = m.createChild("sourceRoot");
-      sr.put("location", (relPath.isEmpty() ? "." : relPath));
-      return result;
-    }
-
-    Memento m = new MementoImpl();
-    m.put("contentPath", path);
-    Memento sourceRoot = m.createChild("sourceRoot");
-    sourceRoot.put("location", ".");
+    assert type != null;
     return new ModelRootDescriptor(type, m);
   }
 
@@ -360,9 +310,5 @@ public class ModuleDescriptorPersistence {
     setTimestamp(md, file);
     md.setLoadException((exception.getCause() == null ? exception : exception.getCause()));
   }
-  private static boolean matches(Memento manager, ModelRootManager mrm) {
-    return mrm.getClassName().equals(manager.get("className")) && mrm.getModuleId().equals(manager.get("moduleId"));
-  }
-
   protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
 }
