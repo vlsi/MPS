@@ -4,11 +4,11 @@ package jetbrains.mps.console.blCommand.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 
-public class ScopeProvider_BehaviorDescriptor extends Statement_BehaviorDescriptor {
-  public ScopeProvider_BehaviorDescriptor() {
+public class WithStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
+  public WithStatement_BehaviorDescriptor() {
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.console.blCommand.structure.ScopeProvider";
+    return "jetbrains.mps.console.blCommand.structure.WithStatement";
   }
 }

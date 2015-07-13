@@ -40,6 +40,10 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.EditableFilteringScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import java.util.Iterator;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -194,6 +198,23 @@ public class CommandUtil {
   public static SearchScope createConsoleScope(@Nullable final SearchScope baseScope, final boolean includeReadOnly, final ConsoleContext context) {
     SearchScope scope = (baseScope == null ? context.getDefaultSearchscope() : baseScope);
     return (includeReadOnly ? scope : new EditableFilteringScope(scope));
+  }
+
+  public static SearchScope createScope(SModel model) {
+    return new ModelsScope(model);
+  }
+  public static SearchScope createScope(SModule module) {
+    return new ModulesScope(module);
+  }
+  public static SearchScope createScope(Iterable modelsAndModules) {
+    Iterator<Object> it = modelsAndModules.iterator();
+    if (!(it.hasNext())) {
+      return new ModelsScope();
+    }
+    return (it.next() instanceof SModule ? new ModulesScope(modelsAndModules) : new ModelsScope(modelsAndModules));
+  }
+  public static SearchScope createScope(Project project) {
+    return new ProjectScope(project);
   }
 
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);

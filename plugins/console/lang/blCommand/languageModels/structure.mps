@@ -348,7 +348,8 @@
   </node>
   <node concept="1TIwiD" id="3F2FyKbNNqb">
     <property role="3GE5qa" value="expression.query" />
-    <property role="TrG5h" value="ScopeProvider" />
+    <property role="TrG5h" value="WithStatement" />
+    <property role="34LRSv" value="with" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
     <node concept="1TJgyj" id="3F2FyKbNNqc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />

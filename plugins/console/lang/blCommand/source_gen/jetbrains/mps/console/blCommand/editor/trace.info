@@ -699,7 +699,7 @@
     </file>
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.console.blCommand.editor)/4234138103881610918">
-    <file name="ScopeProvider_Editor.java">
+    <file name="WithStatement_Editor.java">
       <node id="4234138103881610918" at="25,79,26,63" concept="7" />
       <node id="4234138103881610918" at="28,89,29,97" concept="6" />
       <node id="4234138103881610918" at="29,97,30,48" concept="2" />
@@ -803,31 +803,31 @@
       <node id="4234138103881610918" at="37,83,40,5" concept="4" />
       <node id="4234138103881610918" at="49,84,52,5" concept="0" />
       <node id="4234138103881610918" at="49,84,52,5" concept="4" />
-      <node id="4234138103881610918" at="74,0,77,0" concept="1" trace="scopeSingleRoleHandler_4vjucj_b0a0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4234138103881610918" at="74,0,77,0" concept="1" trace="scopeSingleRoleHandler_4f6do1_b0a0#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4234138103881610918" at="83,137,86,7" concept="4" />
       <node id="4234138103881610918" at="98,0,101,0" concept="5" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="4234138103881610918" at="120,0,123,0" concept="9" trace="renderingCondition_4vjucj_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-      <node id="4234138103881610918" at="142,0,145,0" concept="1" trace="stmtsSingleRoleHandler_4vjucj_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4234138103881610918" at="120,0,123,0" concept="9" trace="renderingCondition_4f6do1_a1a0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="4234138103881610918" at="142,0,145,0" concept="1" trace="stmtsSingleRoleHandler_4f6do1_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SContainmentLink;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="4234138103881610918" at="151,137,154,7" concept="4" />
       <node id="4234138103881610918" at="166,0,169,0" concept="5" trace="getNoTargetText#()Ljava/lang/String;" />
-      <node id="4234138103881610918" at="182,0,185,0" concept="9" trace="renderingCondition_4vjucj_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-      <node id="4234138103881610918" at="69,0,73,0" concept="5" trace="createRefNode_4vjucj_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="133,0,137,0" concept="5" trace="createIndentCell_4vjucj_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="137,0,141,0" concept="5" trace="createRefNode_4vjucj_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="182,0,185,0" concept="9" trace="renderingCondition_4f6do1_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="4234138103881610918" at="69,0,73,0" concept="5" trace="createRefNode_4f6do1_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="133,0,137,0" concept="5" trace="createIndentCell_4f6do1_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="137,0,141,0" concept="5" trace="createRefNode_4f6do1_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4234138103881610918" at="77,0,82,0" concept="5" trace="createChildCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4234138103881610918" at="145,0,150,0" concept="5" trace="createChildCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610930" at="63,0,69,0" concept="5" trace="createConstant_4vjucj_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610930" at="63,0,69,0" concept="5" trace="createConstant_4f6do1_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4234138103881610918" at="82,0,88,0" concept="5" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="4234138103881610947" at="103,0,109,0" concept="5" trace="createConstant_4vjucj_c0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610947" at="103,0,109,0" concept="5" trace="createConstant_4f6do1_c0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4234138103881610918" at="150,0,156,0" concept="5" trace="installCellInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="4234138103881610918" at="90,0,97,0" concept="5" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4234138103881610918" at="158,0,165,0" concept="5" trace="createEmptyCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="55,0,63,0" concept="5" trace="createCollection_4vjucj_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="123,0,133,0" concept="5" trace="createCollection_4vjucj_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="109,0,120,0" concept="5" trace="createConstant_4vjucj_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="171,0,182,0" concept="5" trace="createConstant_4vjucj_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="43,0,55,0" concept="5" trace="createCollection_4vjucj_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="4234138103881610918" at="28,0,43,0" concept="5" trace="createCollection_4vjucj_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="55,0,63,0" concept="5" trace="createCollection_4f6do1_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="123,0,133,0" concept="5" trace="createCollection_4f6do1_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="109,0,120,0" concept="5" trace="createConstant_4f6do1_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="171,0,182,0" concept="5" trace="createConstant_4f6do1_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="43,0,55,0" concept="5" trace="createCollection_4f6do1_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4234138103881610918" at="28,0,43,0" concept="5" trace="createCollection_4f6do1_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4234138103881610918" at="25,79,26,63" />
       <scope id="4234138103881610918" at="35,79,36,83" />
       <scope id="4234138103881610918" at="36,83,37,83" />
@@ -987,9 +987,9 @@
         <var name="editorContext" id="4234138103881610918" />
         <var name="node" id="4234138103881610918" />
       </scope>
-      <unit id="4234138103881610918" at="73,0,103,0" name="jetbrains.mps.console.blCommand.editor.ScopeProvider_Editor$scopeSingleRoleHandler_4vjucj_b0a0" />
-      <unit id="4234138103881610918" at="141,0,171,0" name="jetbrains.mps.console.blCommand.editor.ScopeProvider_Editor$stmtsSingleRoleHandler_4vjucj_b1a" />
-      <unit id="4234138103881610918" at="24,0,186,0" name="jetbrains.mps.console.blCommand.editor.ScopeProvider_Editor" />
+      <unit id="4234138103881610918" at="73,0,103,0" name="jetbrains.mps.console.blCommand.editor.WithStatement_Editor$scopeSingleRoleHandler_4f6do1_b0a0" />
+      <unit id="4234138103881610918" at="141,0,171,0" name="jetbrains.mps.console.blCommand.editor.WithStatement_Editor$stmtsSingleRoleHandler_4f6do1_b1a" />
+      <unit id="4234138103881610918" at="24,0,186,0" name="jetbrains.mps.console.blCommand.editor.WithStatement_Editor" />
     </file>
   </root>
   <root nodeRef="r:be520d7c-8791-490a-9d50-1adca7cd12c4(jetbrains.mps.console.blCommand.editor)/4307205004132277777">
