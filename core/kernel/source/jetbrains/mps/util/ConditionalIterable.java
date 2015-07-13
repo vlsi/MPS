@@ -25,21 +25,40 @@ import java.util.Iterator;
 // this class likely deserves to be part of [openapi], or at least [smodel] as it doesn't depend from anything in [kernel]
 public class ConditionalIterable<T> implements Iterable<T> {
   private final Condition<T> myCondition;
-  private final Iterable<T> myIter;
+  private final Iterable<? extends T> myIter;
 
   public ConditionalIterable(@NotNull Iterable<? extends T> iter, @Nullable Condition<T> condition) {
     myCondition = condition;
-    // It's reasonably safe to cast Iterable<? extends T> to Iterable<T> as there's no way to modify it (for clients of this class)
-    // i.e. it's not possible to this.add(OtherThanExpectedSubtypeOfT). Use of SuppressWarning here is better than same suppress
-    // scattered around in calling code. If there's better way to accomplish the same (some smart ? super T, perhaps?), go ahead and
-    // do it right. The use case to handle is node.getChildren() that gives Iterable<? extends SNode>, which I need to filter, and I'm fine with SNode.
-    @SuppressWarnings("unchecked")
-    final Iterable<T> x = (Iterable<T>) iter;
-    myIter = x;
+    // The use case to handle is node.getChildren() that gives Iterable<? extends SNode>, which I need to filter, and I'm fine with SNode.
+    myIter = iter;
   }
 
   @Override
   public Iterator<T> iterator() {
-    return myCondition == null ? myIter.iterator() : new FilterIterator<T>(myIter.iterator(), myCondition);
+    return myCondition == null ? new WildcIteratorDelegate<T>(myIter.iterator()) : new FilterIterator<T>(myIter.iterator(), myCondition);
+  }
+
+  private static class WildcIteratorDelegate<U> implements Iterator<U> {
+
+    private Iterator<? extends U> myWildcIterator;
+
+    public WildcIteratorDelegate(Iterator<? extends U> wildcIterator) {
+      myWildcIterator = wildcIterator;
+    }
+
+    @Override
+    public boolean hasNext() {
+      return myWildcIterator.hasNext();
+    }
+
+    @Override
+    public U next() {
+      return myWildcIterator.next();
+    }
+
+    @Override
+    public void remove() {
+      myWildcIterator.remove();
+    }
   }
 }
