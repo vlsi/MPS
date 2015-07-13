@@ -76,5 +76,6 @@
     <orderEntry type="module" module-name="migrations-runtime" scope="TEST" />
     <orderEntry type="module" module-name="textgen" scope="TEST" />
     <orderEntry type="module" module-name="components" />
+    <orderEntry type="module" module-name="actions-runtime" scope="TEST" />
   </component>
 </module>

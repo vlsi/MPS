@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterByI
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -16,9 +17,9 @@ import com.intellij.openapi.ui.TestDialog;
 import org.junit.BeforeClass;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.BaseMpsTest;
 import org.junit.Assert;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.CopyUtil;
@@ -50,8 +51,9 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import java.io.IOException;
 
 /**
- * * @author Evgeny Gerashchenko
- * * @since 3/23/11
+ * 
+ * @author Evgeny Gerashchenko
+ * @since 3/23/11
  */
 public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private static Pattern FIELD_DECLARATION_CONCEPT_ENTRY_MATCHING_PATTERN = Pattern.compile("\\s*<concept id=\"" + ((SAbstractConceptAdapterById) MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getId().getIdValue() + "\"([^\\/]+)/>");
@@ -65,6 +67,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
 
+  private static Project ourProject;
   private static ModelAccess ourModelAccess;
   private static SRepository ourRepository;
 
@@ -79,11 +82,16 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   @BeforeClass
   public static void setupProject() {
     IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    Project project = BaseMpsTest.openClonedProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
-    ourModelAccess = project.getModelAccess();
+    ourProject = BaseMpsTest.openClonedProject(PROJECT_LOCATION, DESTINATION_PROJECT_DIR);
+    ourModelAccess = ourProject.getModelAccess();
     Assert.assertNotNull(ourModelAccess);
-    ourRepository = project.getRepository();
+    ourRepository = ourProject.getRepository();
     Assert.assertNotNull(ourRepository);
+  }
+
+  @AfterClass
+  public static void tearDownProject() {
+    BaseMpsTest.closeClonedProject(ourProject, DESTINATION_PROJECT_DIR);
   }
 
   @Before

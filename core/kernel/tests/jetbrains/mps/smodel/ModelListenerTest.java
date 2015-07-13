@@ -58,6 +58,8 @@ import static org.hamcrest.Matchers.notNullValue;
 
 /**
  * Check contemporary and legacy model listener approaches, ensure they (not) get notified as expected.
+ * Contemporary listeners are checked indirectly, by means of legacy listeners being registered. Internally, we
+ * use only new listeners, and thus ensure we check both functionality of new listeners and compatibility with legacy code.
  *
  * Lives in [kernel] module for now as its dependencies are here, and not in [smodel]
  *
@@ -308,7 +310,7 @@ public class ModelListenerTest {
   }
 
   /**
-   * Read notifications of SNode.getProperty() and SNode.hasProperty()
+   * Read notifications of SNode.getReference() and SNode.getReferenceTarget()
    */
   @Test
   public void testReferenceReadNotify() {

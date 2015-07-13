@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.BootstrapAdapterFactory;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -207,7 +208,10 @@ final class TestModelFactory {
     return rv;
   }
 
-  // FIXME once node add/remove operations won't require EditableSModelBase to dispatch events, we may get back SModelBase as superclass
+  // FIXME node add/remove operations don't require EditableSModelBase to dispatch events any more, and we may get back SModelBase as superclass
+  // however, at the moment, ModelListenerTest registers listeners through legacy API (to ensure they work as expected), and unless we drop this
+  // old code after 3.3, this class has to be EditableSModelBase
+  @ToRemove(version = 3.3)
   private static class TestModelBase extends EditableSModelBase {
     private final jetbrains.mps.smodel.SModel myModelData;
 
@@ -215,6 +219,7 @@ final class TestModelFactory {
       super(modelData.getReference(), new NullDataSource());
       myModelData = modelData;
       myModelData.setModelDescriptor(this);
+      // the only point to fire state change at construction time (with no listeners yet) is to change myModelLoadState field
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
 
@@ -231,6 +236,7 @@ final class TestModelFactory {
 
     @Override
     public boolean isLoaded() {
+      // FIXME why don't SModelBase use getLoadingState() field to implement this method? Check overrides to see if there's reason not to.
       return true;
     }
 

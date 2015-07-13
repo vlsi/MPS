@@ -200,7 +200,7 @@ public abstract class SModuleBase implements SModule {
   }
 
   public void registerModel(SModelBase model) {
-    assertCanRead();
+    assertCanRead(); // FIXME why read+LOCK, not write? unregisterModel does take write lock!
     if (model.getModule() != null && model.getModule() != this) {
       throw new IllegalArgumentException("Model `" + model.getModelName() + "' is already registered elsewhere");
     }
