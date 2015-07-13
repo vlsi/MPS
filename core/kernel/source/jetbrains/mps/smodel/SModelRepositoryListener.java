@@ -69,8 +69,10 @@ public interface SModelRepositoryListener {
    * It is not guaranteed that this method will be called immediately after the reload
    * <p/>
    * Old instance of SModelData will be disposed right after all listeners are notified
-   *
-   * SModelBase sends this out right before {@link SModelListener#modelReplaced(SModel)}
+   * <p/>
+   * MIGRATION
+   * SModelBase sends this out right before {@link SModelListener#modelReplaced(SModel)}, in a delayed writeInEDT command!
+   * When replacing with SModelListener, check if code expects EDT
    *
    * @param reloadedModels model descriptors which contents were replaced
    */
