@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" file="JavaCopyPasteDataConverter.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.PasteNodeData" />
-    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
-    <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
-    <classNode dependClassName="jetbrains.mps.ide.datatransfer.TextPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.ide.java.util.JavaPaster" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.datatransfer.IDataConverter" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.java.util.JavaPaster" file="JavaPaster.java">
     <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
     <classNode dependClassName="java.awt.datatransfer.DataFlavor" />

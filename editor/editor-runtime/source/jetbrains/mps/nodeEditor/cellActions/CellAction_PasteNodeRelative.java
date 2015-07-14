@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
     }
     List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(anchorNode.getModel());
     if (pasteNodes == null || pasteNodes.isEmpty()) {
-      return CopyPasteUtil.isConversionAvailable(anchorNode.getModel(), anchorNode);
+      return false;
     }
 
     if (!new NodePaster(pasteNodes).canPasteRelative(anchorNode)) {
@@ -77,8 +77,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
 
     PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(anchorNode.getModel());
     if (pasteNodeData == null || pasteNodeData.getNodes().isEmpty()) {
-      pasteNodeData = CopyPasteUtil.getConvertedFromClipboard(anchorNode.getModel(), context.getOperationContext().getProject());
-      if (pasteNodeData == null) return;
+      return;
     }
     List<SNode> pasteNodes = pasteNodeData.getNodes();
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();

@@ -43,8 +43,7 @@ import jetbrains.mps.project.AbstractModule;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class CopyPasteUtil {
-  private static CopyPasteUtil.IDataConverter myDataConverter = null;
+public final class CopyPasteUtil {
   public CopyPasteUtil() {
   }
   private static void processImportsAndLanguages(Set<SModelReference> necessaryImports, Set<SModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
@@ -87,7 +86,7 @@ public class CopyPasteUtil {
     for (SNode newNode : result) {
       CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
-    return new PasteNodeData(result, null, check_lwiaog_c0a31a3(model), necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, null, check_lwiaog_c0a31a2(model), necessaryLanguages, necessaryModels);
   }
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
@@ -392,23 +391,8 @@ public class CopyPasteUtil {
     }
     return false;
   }
-  public static synchronized void setDataConverter(CopyPasteUtil.IDataConverter dataConverter) {
-    myDataConverter = dataConverter;
-  }
-  public static synchronized boolean isConversionAvailable(SModel model, SNode anchor) {
-    return myDataConverter != null && myDataConverter.canPasteAsNodes(model, anchor);
-  }
-  public static synchronized PasteNodeData getConvertedFromClipboard(SModel model, Project project) {
-    return (myDataConverter == null ? null : myDataConverter.getPasteNodeData(model, project));
-  }
-  @Deprecated
-  public static interface IDataConverter {
-    public boolean canPasteAsNodes(SModel model, SNode anchor);
-    public void pasteAsNodes(SModel model, SNode anchor, Project project);
-    public PasteNodeData getPasteNodeData(SModel model, Project project);
-  }
   protected static Logger LOG = LogManager.getLogger(CopyPasteUtil.class);
-  private static SModelReference check_lwiaog_c0a31a3(SModel checkedDotOperand) {
+  private static SModelReference check_lwiaog_c0a31a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

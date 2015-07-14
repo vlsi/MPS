@@ -103,6 +103,7 @@
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
         <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
@@ -212,7 +213,6 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
-      <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -294,14 +294,7 @@
   </registry>
   <node concept="312cEu" id="5tGs5KqKfGH">
     <property role="TrG5h" value="CopyPasteUtil" />
-    <node concept="Wx3nA" id="1GZyMAWubYG" role="jymVt">
-      <property role="TrG5h" value="myDataConverter" />
-      <node concept="3Tm6S6" id="1GZyMAWubYH" role="1B3o_S" />
-      <node concept="3uibUv" id="1GZyMAWubYJ" role="1tU5fm">
-        <ref role="3uigEE" node="1GZyMAWubYs" resolve="CopyPasteUtil.IDataConverter" />
-      </node>
-      <node concept="10Nm6u" id="1GZyMAWubYL" role="33vP2m" />
-    </node>
+    <property role="1EXbeo" value="true" />
     <node concept="3clFbW" id="5tGs5KqKiww" role="jymVt">
       <node concept="3Tm1VV" id="5tGs5KqKiwx" role="1B3o_S" />
       <node concept="3cqZAl" id="5tGs5KqKiwy" role="3clF45" />
@@ -4195,178 +4188,6 @@
       </node>
       <node concept="10P_77" id="2cGWpZaJnzX" role="3clF45" />
       <node concept="3Tm1VV" id="2cGWpZaJiPL" role="1B3o_S" />
-    </node>
-    <node concept="2YIFZL" id="1GZyMAWubYM" role="jymVt">
-      <property role="od$2w" value="true" />
-      <property role="TrG5h" value="setDataConverter" />
-      <node concept="3cqZAl" id="1GZyMAWubYN" role="3clF45" />
-      <node concept="3Tm1VV" id="1GZyMAWubYO" role="1B3o_S" />
-      <node concept="3clFbS" id="1GZyMAWubYP" role="3clF47">
-        <node concept="3clFbF" id="1GZyMAWubYS" role="3cqZAp">
-          <node concept="37vLTI" id="1GZyMAWubYU" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgm9XW" role="37vLTx">
-              <ref role="3cqZAo" node="1GZyMAWubYQ" resolve="dataConverter" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxeodl3" role="37vLTJ">
-              <ref role="3cqZAo" node="1GZyMAWubYG" resolve="myDataConverter" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1GZyMAWubYQ" role="3clF46">
-        <property role="TrG5h" value="dataConverter" />
-        <node concept="3uibUv" id="1GZyMAWubYR" role="1tU5fm">
-          <ref role="3uigEE" node="1GZyMAWubYs" resolve="CopyPasteUtil.IDataConverter" />
-        </node>
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1GZyMAWubYY" role="jymVt">
-      <property role="od$2w" value="true" />
-      <property role="TrG5h" value="isConversionAvailable" />
-      <node concept="10P_77" id="1GZyMAWubZ2" role="3clF45" />
-      <node concept="3Tm1VV" id="1GZyMAWubZ0" role="1B3o_S" />
-      <node concept="3clFbS" id="1GZyMAWubZ1" role="3clF47">
-        <node concept="3clFbF" id="7Ojh7p0doDf" role="3cqZAp">
-          <node concept="1Wc70l" id="23Wprfi8i9m" role="3clFbG">
-            <node concept="2OqwBi" id="23Wprfi8i9n" role="3uHU7w">
-              <node concept="37vLTw" id="2BHiRxeoof0" role="2Oq$k0">
-                <ref role="3cqZAo" node="1GZyMAWubYG" resolve="myDataConverter" />
-              </node>
-              <node concept="liA8E" id="23Wprfi8i9p" role="2OqNvi">
-                <ref role="37wK5l" node="1GZyMAWubYu" resolve="canPasteAsNodes" />
-                <node concept="37vLTw" id="2BHiRxgm7lG" role="37wK5m">
-                  <ref role="3cqZAo" node="1GZyMAWui0f" resolve="model" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxghgca" role="37wK5m">
-                  <ref role="3cqZAo" node="1GZyMAWui0h" resolve="anchor" />
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="23Wprfi8i9s" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxeodlj" role="3uHU7B">
-                <ref role="3cqZAo" node="1GZyMAWubYG" resolve="myDataConverter" />
-              </node>
-              <node concept="10Nm6u" id="23Wprfi8i9u" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1GZyMAWui0f" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="1GZyMAWui0g" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="1GZyMAWui0h" role="3clF46">
-        <property role="TrG5h" value="anchor" />
-        <node concept="3Tqbb2" id="1GZyMAWui0j" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2YIFZL" id="1GZyMAWubZi" role="jymVt">
-      <property role="od$2w" value="true" />
-      <property role="TrG5h" value="getConvertedFromClipboard" />
-      <node concept="3uibUv" id="1GZyMAWubZm" role="3clF45">
-        <ref role="3uigEE" to="k04z:~PasteNodeData" resolve="PasteNodeData" />
-      </node>
-      <node concept="3Tm1VV" id="1GZyMAWubZk" role="1B3o_S" />
-      <node concept="3clFbS" id="1GZyMAWubZl" role="3clF47">
-        <node concept="3clFbF" id="7Ojh7p0doDh" role="3cqZAp">
-          <node concept="3K4zz7" id="23Wprfi8i9w" role="3clFbG">
-            <node concept="10Nm6u" id="23Wprfi8i9x" role="3K4E3e" />
-            <node concept="2OqwBi" id="23Wprfi8i9y" role="3K4GZi">
-              <node concept="37vLTw" id="2BHiRxeoeit" role="2Oq$k0">
-                <ref role="3cqZAo" node="1GZyMAWubYG" resolve="myDataConverter" />
-              </node>
-              <node concept="liA8E" id="23Wprfi8i9$" role="2OqNvi">
-                <ref role="37wK5l" node="1GZyMAWubYB" resolve="getPasteNodeData" />
-                <node concept="37vLTw" id="2BHiRxghfwP" role="37wK5m">
-                  <ref role="3cqZAo" node="1GZyMAWubZn" resolve="model" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmLq8" role="37wK5m">
-                  <ref role="3cqZAo" node="6QTsFv3M8X3" resolve="project" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbC" id="23Wprfi8i9A" role="3K4Cdx">
-              <node concept="37vLTw" id="2BHiRxeop1Y" role="3uHU7B">
-                <ref role="3cqZAo" node="1GZyMAWubYG" resolve="myDataConverter" />
-              </node>
-              <node concept="10Nm6u" id="23Wprfi8i9C" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1GZyMAWubZn" role="3clF46">
-        <property role="TrG5h" value="model" />
-        <node concept="H_c77" id="1GZyMAWubZo" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="6QTsFv3M8X3" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6QTsFv3M8X4" role="1tU5fm">
-          <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-        </node>
-      </node>
-    </node>
-    <node concept="3HP615" id="1GZyMAWubYs" role="jymVt">
-      <property role="TrG5h" value="IDataConverter" />
-      <property role="2bfB8j" value="true" />
-      <node concept="2AHcQZ" id="59L7g1W6gAz" role="2AJF6D">
-        <ref role="2AI5Lk" to="e2lb:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="3Tm1VV" id="1GZyMAWubYt" role="1B3o_S" />
-      <node concept="3clFb_" id="1GZyMAWubYu" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="canPasteAsNodes" />
-        <node concept="10P_77" id="1GZyMAWubYy" role="3clF45" />
-        <node concept="3Tm1VV" id="1GZyMAWubYw" role="1B3o_S" />
-        <node concept="3clFbS" id="1GZyMAWubYx" role="3clF47" />
-        <node concept="37vLTG" id="1GZyMAWui0a" role="3clF46">
-          <property role="TrG5h" value="model" />
-          <node concept="H_c77" id="1GZyMAWui0b" role="1tU5fm" />
-        </node>
-        <node concept="37vLTG" id="1GZyMAWui0c" role="3clF46">
-          <property role="TrG5h" value="anchor" />
-          <node concept="3Tqbb2" id="1GZyMAWui0e" role="1tU5fm" />
-        </node>
-      </node>
-      <node concept="3clFb_" id="1GZyMAWubYz" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="pasteAsNodes" />
-        <node concept="3cqZAl" id="1GZyMAWubY$" role="3clF45" />
-        <node concept="3Tm1VV" id="1GZyMAWubY_" role="1B3o_S" />
-        <node concept="3clFbS" id="1GZyMAWubYA" role="3clF47" />
-        <node concept="37vLTG" id="1GZyMAWuh5W" role="3clF46">
-          <property role="TrG5h" value="model" />
-          <node concept="H_c77" id="1GZyMAWuh5X" role="1tU5fm" />
-        </node>
-        <node concept="37vLTG" id="1GZyMAWuhZI" role="3clF46">
-          <property role="TrG5h" value="anchor" />
-          <node concept="3Tqbb2" id="1GZyMAWuhZK" role="1tU5fm" />
-        </node>
-        <node concept="37vLTG" id="MCyGswqxkg" role="3clF46">
-          <property role="TrG5h" value="project" />
-          <node concept="3uibUv" id="MCyGswqxki" role="1tU5fm">
-            <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="1GZyMAWubYB" role="jymVt">
-        <property role="1EzhhJ" value="true" />
-        <property role="TrG5h" value="getPasteNodeData" />
-        <node concept="3uibUv" id="1GZyMAWubYF" role="3clF45">
-          <ref role="3uigEE" to="k04z:~PasteNodeData" resolve="PasteNodeData" />
-        </node>
-        <node concept="3Tm1VV" id="1GZyMAWubYD" role="1B3o_S" />
-        <node concept="3clFbS" id="1GZyMAWubYE" role="3clF47" />
-        <node concept="37vLTG" id="1GZyMAWuh4P" role="3clF46">
-          <property role="TrG5h" value="model" />
-          <node concept="H_c77" id="1GZyMAWuh4Q" role="1tU5fm" />
-        </node>
-        <node concept="37vLTG" id="MCyGswqxkl" role="3clF46">
-          <property role="TrG5h" value="project" />
-          <node concept="3uibUv" id="MCyGswqxkm" role="1tU5fm">
-            <ref role="3uigEE" to="vsqj:~Project" resolve="Project" />
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3Tm1VV" id="5tGs5KqKiwq" role="1B3o_S" />
   </node>

@@ -19,69 +19,6 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-  <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/4193578441191911527">
-    <file name="JavaCopyPasteDataConverter.java">
-      <node id="4193578441191970303" at="20,0,21,0" concept="14" trace="MIN_TEXT_LENGTH_TO_CONVERT" />
-      <node id="4193578441191921069" at="25,31,26,41" concept="5" />
-      <node id="4193578441191921073" at="29,34,30,41" concept="5" />
-      <node id="4193578441191912031" at="35,36,36,67" concept="11" />
-      <node id="1963440973928800045" at="39,62,40,57" concept="10" />
-      <node id="1963440973928800082" at="40,57,41,70" concept="11" />
-      <node id="1963440973928800181" at="44,73,45,57" concept="10" />
-      <node id="1963440973928800214" at="46,69,47,99" concept="5" />
-      <node id="1963440973928800236" at="51,72,52,32" concept="12" />
-      <node id="1963440973928800121" at="52,32,53,57" concept="10" />
-      <node id="1963440973928800158" at="54,69,55,133" concept="10" />
-      <node id="1963440973928800139" at="55,133,56,43" concept="11" />
-      <node id="1963440973928800152" at="57,5,58,16" concept="11" />
-      <node id="4193578441191911529" at="21,0,24,0" concept="2" trace="JavaCopyPasteDataConverter#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="1963440973928800185" at="45,57,48,5" concept="8" />
-      <node id="4193578441191912013" at="24,0,28,0" concept="9" trace="initComponent#()V" />
-      <node id="4193578441191912017" at="28,0,32,0" concept="9" trace="disposeComponent#()V" />
-      <node id="1963440973928800126" at="53,57,57,5" concept="8" />
-      <node id="4193578441191921088" at="38,0,43,0" concept="9" trace="canPasteAsNodes#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4193578441191912021" at="32,0,38,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="4193578441191921098" at="43,0,50,0" concept="9" trace="pasteAsNodes#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;)V" />
-      <node id="4193578441191921106" at="50,0,60,0" concept="9" trace="getPasteNodeData#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/project/Project;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
-      <scope id="4193578441191911532" at="22,71,22,71" />
-      <scope id="4193578441191912016" at="25,31,26,41" />
-      <scope id="4193578441191912020" at="29,34,30,41" />
-      <scope id="4193578441191912026" at="35,36,36,67" />
-      <scope id="1963440973928800186" at="46,69,47,99" />
-      <scope id="4193578441191921095" at="39,62,41,70">
-        <var name="text" id="1963440973928800046" />
-      </scope>
-      <scope id="1963440973928800127" at="54,69,56,43">
-        <var name="transferable" id="1963440973928800159" />
-      </scope>
-      <scope id="4193578441191911529" at="21,0,24,0">
-        <var name="coreComponents" id="4450057996090661301" />
-      </scope>
-      <scope id="4193578441191912013" at="24,0,28,0" />
-      <scope id="4193578441191912017" at="28,0,32,0" />
-      <scope id="4193578441191921105" at="44,73,48,5">
-        <var name="text" id="1963440973928800182" />
-      </scope>
-      <scope id="4193578441191921088" at="38,0,43,0">
-        <var name="anchor" id="4193578441191921093" />
-        <var name="model" id="4193578441191921091" />
-      </scope>
-      <scope id="4193578441191912021" at="32,0,38,0" />
-      <scope id="4193578441191921098" at="43,0,50,0">
-        <var name="anchor" id="4193578441191921103" />
-        <var name="model" id="4193578441191921101" />
-        <var name="project" id="912131512389473552" />
-      </scope>
-      <scope id="4193578441191921111" at="51,72,58,16">
-        <var name="text" id="1963440973928800122" />
-      </scope>
-      <scope id="4193578441191921106" at="50,0,60,0">
-        <var name="model" id="4193578441191921109" />
-        <var name="project" id="912131512389473569" />
-      </scope>
-      <unit id="4193578441191911527" at="18,0,61,0" name="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" />
-    </file>
-  </root>
   <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/5646944109420335310">
     <file name="JavaPaster.java">
       <node id="5646944109420336544" at="35,0,36,0" concept="14" trace="LOG" />
