@@ -170,15 +170,15 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="4357968816427488499" name="jetbrains.mps.lang.smodel.structure.CheckedModuleReference" flags="nn" index="2L6k_Z">
+        <property id="4357968816427488500" name="moduleId" index="2L6k_S" />
+      </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" flags="nn" index="3rM5sP">
-        <property id="4040588429969021683" name="moduleId" index="3rM5sR" />
-      </concept>
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -541,15 +541,8 @@
             </node>
             <node concept="liA8E" id="3qjQ36DCoWg" role="2OqNvi">
               <ref role="37wK5l" to="vsqj:~AbstractModule.addDependency(org.jetbrains.mps.openapi.module.SModuleReference,boolean):jetbrains.mps.project.structure.modules.Dependency" resolve="addDependency" />
-              <node concept="2OqwBi" id="3qjQ36DCpgm" role="37wK5m">
-                <node concept="2JrnkZ" id="3qjQ36DCpgn" role="2Oq$k0">
-                  <node concept="3rM5sP" id="3qjQ36DCrE_" role="2JrQYb">
-                    <property role="3rM5sR" value="8865b7a8-5271-43d3-884c-6fd1d9cfdd34" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="3qjQ36DCpgp" role="2OqNvi">
-                  <ref role="37wK5l" to="88zw:~SModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
-                </node>
+              <node concept="2L6k_Z" id="2ovWxJi1XHp" role="37wK5m">
+                <property role="2L6k_S" value="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
               </node>
               <node concept="3clFbT" id="3qjQ36DCpsF" role="37wK5m">
                 <property role="3clFbU" value="false" />

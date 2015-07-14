@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,7 +38,7 @@ public class Migration_Queries {
 
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);
-    mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)")).getModuleReference(), false);
+    mod.addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
   }
   public static SNode execute_ret(SNode point) {
     SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getNodeAncestor(point, MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"), false, false));
