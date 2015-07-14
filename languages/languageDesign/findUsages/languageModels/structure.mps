@@ -84,8 +84,8 @@
       <property role="20kJfa" value="isUsedByDefault" />
       <ref role="20lvS9" node="5A3OU5C4Ef" resolve="IsUsedByDefault" />
     </node>
-    <node concept="PrWs8" id="hqPqlEj" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXN7" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="bTBDNe3QoN" role="PzmwI">
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />

@@ -49,8 +49,8 @@
   </registry>
   <node concept="PlHQZ" id="hyWqMFP">
     <property role="TrG5h" value="IClassifier" />
-    <node concept="PrWs8" id="hyWusCI" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXN$" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="hLKIn0i" role="PrDN$">
       <ref role="PrY4T" to="tpee:hLwIKCk" resolve="IExtractMethodAvailable" />
