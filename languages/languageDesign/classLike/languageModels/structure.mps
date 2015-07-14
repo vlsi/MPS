@@ -111,16 +111,16 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
-    <node concept="PrWs8" id="3geGFOI0X5z" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoM3" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5$">
     <property role="3GE5qa" value="member.methodDeclaration" />
     <property role="TrG5h" value="ParameterDescriptor" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3geGFOI0X5_" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhdE6" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1TJgyj" id="3geGFOI0X5A" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -146,8 +146,8 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="3geGFOI0X5E" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoMa" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="7aMlq14w47F" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
@@ -219,8 +219,8 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:fKQkHSB" resolve="PrimitiveDataTypeDeclaration" />
     </node>
-    <node concept="PrWs8" id="7aMlq14w4aX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoMe" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="7aMlq14w4b2" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
@@ -262,9 +262,6 @@
     </node>
     <node concept="PrWs8" id="7aMlq14w5Qt" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
-    </node>
-    <node concept="PrWs8" id="3JYspdAJSjE" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5BD$AU43nQM">
