@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.HashSet;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -227,12 +228,12 @@ public class ClassConcept_Behavior {
     if (SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == null) {
       return fqName;
     }
-    int index = fqName.lastIndexOf(".");
+    int index = fqName.lastIndexOf('.');
     if (index <= 0) {
       return fqName;
     }
-    int length = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)).length();
-    return fqName.substring(0, length) + "." + fqName.substring(length + 1).replace(".", "$");
+    int length = SModelOperations.getModelName(SNodeOperations.getModel(thisNode)).length();
+    return fqName.substring(0, length) + "." + fqName.substring(length + 1).replace('.', '$');
   }
   public static List<SNode> call_getAllSuperClassifiers_4892662966716545618(SNode thisNode) {
     Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
