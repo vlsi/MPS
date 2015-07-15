@@ -13,10 +13,12 @@ import java.util.Arrays;
 public final class IntentionsDescriptor extends IntentionAspectBase {
   private final long[] myId2Index;
   private IntentionFactory[] myIntentions0;
+  private IntentionFactory[] myIntentions1;
 
   public IntentionsDescriptor() {
-    myId2Index = new long[1];
-    myId2Index[0] = 0x340eb2bd2e03d164L;
+    myId2Index = new long[2];
+    myId2Index[0] = 0xf8c108ca66L;
+    myId2Index[1] = 0x340eb2bd2e03d164L;
   }
 
   @Override
@@ -25,12 +27,19 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     final int index = Arrays.binarySearch(myId2Index, conceptId.getIdValue());
     switch (index) {
       case 0:
-        // Concept: ParameterDescriptor 
+        // Concept: ClassConcept 
         if (myIntentions0 == null) {
           myIntentions0 = new IntentionFactory[1];
-          myIntentions0[0] = new SwitchConditional_Intention();
+          myIntentions0[0] = new InitClassLike_Intention();
         }
         return Arrays.asList(myIntentions0);
+      case 1:
+        // Concept: ParameterDescriptor 
+        if (myIntentions1 == null) {
+          myIntentions1 = new IntentionFactory[1];
+          myIntentions1[0] = new SwitchConditional_Intention();
+        }
+        return Arrays.asList(myIntentions1);
       default:
         return null;
     }
@@ -39,8 +48,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[1];
+    IntentionFactory[] rv = new IntentionFactory[2];
     rv[0] = new SwitchConditional_Intention();
+    rv[1] = new InitClassLike_Intention();
     return Arrays.asList(rv);
   }
 }
