@@ -11,7 +11,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.extension.behavior.ApplyOverlappingExtensionOperation_BehaviorDescriptor" />
     </file>
     <file name="ArgumentField_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.extension.behavior.ArgumentField_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.extension.behavior.ArgumentField_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,52,0" name="jetbrains.mps.lang.extension.behavior.BehaviorAspectDescriptor" />
