@@ -141,6 +141,7 @@
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
+      <concept id="1179832490862" name="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement" flags="nn" index="2NvLDW" />
       <concept id="1227096498176" name="jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget" flags="ng" index="2ODE4t">
         <reference id="1227096521710" name="propertyDeclaration" index="2ODJFN" />
       </concept>
@@ -1712,6 +1713,41 @@
     <node concept="1YaCAy" id="2gzehMfi13O" role="1YuTPh">
       <property role="TrG5h" value="classLike" />
       <ref role="1YaFvo" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1LJzqOWis2F">
+    <property role="TrG5h" value="typeof_ParameterDescriptor" />
+    <property role="3GE5qa" value="member.methodDeclaration" />
+    <node concept="3clFbS" id="1LJzqOWis2G" role="18ibNy">
+      <node concept="2NvLDW" id="1LJzqOWissw" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="1LJzqOWissS" role="1ZfhKB">
+          <node concept="2c44tf" id="1LJzqOWissO" role="mwGJk">
+            <node concept="1ajhzC" id="1LJzqOWistb" role="2c44tc">
+              <node concept="3Tqbb2" id="1LJzqOWistV" role="1ajw0F">
+                <ref role="ehGHo" to="oubp:3geGFOI0X5B" resolve="MethodDescriptor" />
+              </node>
+              <node concept="10P_77" id="1LJzqOWisuU" role="1ajl9A" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1LJzqOWissz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1LJzqOWis2M" role="mwGJk">
+            <node concept="2OqwBi" id="1LJzqOWis5f" role="1Z2MuG">
+              <node concept="1YBJjd" id="1LJzqOWis3e" role="2Oq$k0">
+                <ref role="1YBMHb" node="1LJzqOWis2I" resolve="pd" />
+              </node>
+              <node concept="3TrEf2" id="1LJzqOWisnb" role="2OqNvi">
+                <ref role="3Tt5mk" to="oubp:1LJzqOWilZD" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1LJzqOWis2I" role="1YuTPh">
+      <property role="TrG5h" value="pd" />
+      <ref role="1YaFvo" to="oubp:3geGFOI0X5$" resolve="ParameterDescriptor" />
     </node>
   </node>
 </model>
