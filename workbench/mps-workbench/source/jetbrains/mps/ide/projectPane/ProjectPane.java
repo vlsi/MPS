@@ -44,6 +44,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
@@ -55,6 +56,7 @@ import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
@@ -68,6 +70,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -89,6 +93,17 @@ import java.util.Set;
 )
 public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectViewPaneOverride {
   private static final Logger LOG = LogManager.getLogger(ProjectPane.class);
+  private final SRepositoryListenerBase myRepositoryListener = new SRepositoryListenerBase() {
+    @Override
+    public void moduleAdded(@NotNull SModule module) {
+      ProjectPane.this.updateFromRoot(true);
+    }
+
+    @Override
+    public void moduleRemoved(@NotNull SModuleReference module) {
+      ProjectPane.this.updateFromRoot(true);
+    }
+  };
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
     @Override
     protected ProjectTree getTree() {
@@ -142,12 +157,14 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     super.removeListeners();
     FileEditorManager fileEditorManager = getProject().getComponent(FileEditorManager.class);
     fileEditorManager.removeFileEditorManagerListener(myEditorListener);
+    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
   }
 
   @Override
   protected void addListeners() {
     super.addListeners();
     getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
+    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
   }
 
   @Hack
