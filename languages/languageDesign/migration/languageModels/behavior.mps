@@ -638,6 +638,26 @@
     <node concept="13hLZK" id="6d7r2FpIAcZ" role="13h7CW">
       <node concept="3clFbS" id="6d7r2FpIAd0" role="2VODD2" />
     </node>
+    <node concept="13i0hz" id="5KZRo2kms8v" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDeclaration" />
+      <ref role="13i0hy" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
+      <node concept="3Tm1VV" id="5KZRo2kms8w" role="1B3o_S" />
+      <node concept="3clFbS" id="5KZRo2kms8z" role="3clF47">
+        <node concept="3clFbF" id="5KZRo2kmsds" role="3cqZAp">
+          <node concept="3fl2lp" id="5KZRo2kmsdt" role="3clFbG">
+            <ref role="3fl3PK" to="slm6:3A3gNhf1WPI" resolve="custom&lt;RequiredDataDeclaration&gt;" />
+            <node concept="3B5_sB" id="5KZRo2kmsdu" role="3fl3PI">
+              <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5KZRo2kms8$" role="3clF45">
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="6d7r2FpJdmK">
     <property role="3GE5qa" value="member" />
@@ -954,8 +974,55 @@
   <node concept="13h7C7" id="5xXiDaJYpgI">
     <property role="3GE5qa" value="member" />
     <ref role="13h7C2" to="53vh:3A3gNhf1Vg4" resolve="ExecuteAfterDeclaration" />
+    <node concept="13i0hz" id="5KZRo2kmsfm" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDeclaration" />
+      <ref role="13i0hy" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
+      <node concept="3Tm1VV" id="5KZRo2kmsfn" role="1B3o_S" />
+      <node concept="3clFbS" id="5KZRo2kmsfo" role="3clF47">
+        <node concept="3clFbF" id="5KZRo2kmsfp" role="3cqZAp">
+          <node concept="3fl2lp" id="5KZRo2kmsfq" role="3clFbG">
+            <ref role="3fl3PK" to="slm6:7ay_HjIMt1a" resolve="custom&lt;ExecuteAfterDeclaration&gt;" />
+            <node concept="3B5_sB" id="5KZRo2kmsfr" role="3fl3PI">
+              <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5KZRo2kmsfs" role="3clF45">
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+      </node>
+    </node>
     <node concept="13hLZK" id="5xXiDaJYpgJ" role="13h7CW">
       <node concept="3clFbS" id="5xXiDaJYpgK" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5KZRo2kmrDT">
+    <property role="3GE5qa" value="member" />
+    <ref role="13h7C2" to="53vh:536fTXa3qNV" resolve="ProducedDataDeclaration" />
+    <node concept="13hLZK" id="5KZRo2kmrDU" role="13h7CW">
+      <node concept="3clFbS" id="5KZRo2kmrDV" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5KZRo2kmrE5" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDeclaration" />
+      <ref role="13i0hy" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
+      <node concept="3Tm1VV" id="5KZRo2kmrE6" role="1B3o_S" />
+      <node concept="3clFbS" id="5KZRo2kmrE9" role="3clF47">
+        <node concept="3clFbF" id="5KZRo2kmrEg" role="3cqZAp">
+          <node concept="3fl2lp" id="5KZRo2kmrOc" role="3clFbG">
+            <ref role="3fl3PK" to="slm6:536fTXa4WHO" resolve="custom&lt;ProducedDataDeclaration&gt;" />
+            <node concept="3B5_sB" id="5KZRo2kmrEf" role="3fl3PI">
+              <ref role="3B5MYn" to="slm6:1XvrRm0ZjiE" resolve="Migration" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5KZRo2kmrEa" role="3clF45">
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+      </node>
     </node>
   </node>
 </model>

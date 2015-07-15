@@ -4,16 +4,20 @@ package jetbrains.mps.lang.migration.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.lang.classLike.behavior.ClassLikeMemberInstance_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class ProducedDataDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {
+public class ProducedDataDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, ClassLikeMemberInstance_BehaviorDescriptor {
   public ProducedDataDeclaration_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+  }
+  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return ProducedDataDeclaration_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
   }
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
