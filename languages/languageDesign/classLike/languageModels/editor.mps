@@ -546,6 +546,15 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F0ifn" id="5ZzANK5_M3w" role="3EZMnx">
+        <property role="3F0ifm" value="initializer:" />
+        <node concept="ljvvj" id="5ZzANK5_M3x" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="5ZzANK5_M3y" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
       <node concept="3F1sOY" id="1_lSsE3UMgh" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no initializer&gt;" />
         <ref role="1NtTu8" to="oubp:1_lSsE3UM8e" />
