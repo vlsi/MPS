@@ -51,7 +51,7 @@ public interface SAbstractConcept {
   Collection<SContainmentLink> getContainmentLinks();
 
   /**
-     * Returns all the properties this concept has, including inherited
+   * Returns all the properties this concept has, including inherited
    */
   Collection<SProperty> getProperties();
 

@@ -19,30 +19,32 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-// fixme
-// store full method signature
-public final class SMethod {
+/**
+ * SMethod is a behavior method handle abstraction.
+ * @param <T> -- the method return type
+ */
+public final class SMethod<T> {
   private static final String DEFAULT_CONSTRUCTOR_NAME = "__init__";
   public static final SMethod INIT = SMethod.create(DEFAULT_CONSTRUCTOR_NAME, BHMethodModifiers.empty(), Void.class);
 
   private final String myName;
-  private final Class<?> myReturnType;
+  private final Class<T> myReturnType;
   private final Class<?>[] myParameterTypes;
   private final BHMethodModifiers myMethodModifiers;
 
-  private SMethod(@NotNull String name, @NotNull BHMethodModifiers modifiers, Class<?> returnType, Class<?>... paramTypes) {
+  private SMethod(@NotNull String name, @NotNull BHMethodModifiers modifiers, Class<T> returnType, Class<?>... paramTypes) {
     myName = name;
     myMethodModifiers = modifiers;
     myReturnType = returnType;
     myParameterTypes = paramTypes;
   }
 
-  public static SMethod create(String methodName, BHMethodModifiers modifiers, Class<?> returnType, Class<?>... paramTypes) {
+  public static <T> SMethod<T> create(String methodName, BHMethodModifiers modifiers, Class<T> returnType, Class<?>... paramTypes) {
     modifiers.checkCorrectness();
-    return new SMethod(methodName, modifiers, returnType, paramTypes);
+    return new SMethod<T>(methodName, modifiers, returnType, paramTypes);
   }
 
-  public Class<?> getReturnType() {
+  public Class<T> getReturnType() {
     return myReturnType;
   }
 
@@ -67,12 +69,12 @@ public final class SMethod {
   /**
    * @return true iff this method overrides anotherMethod
    */
-  public boolean overrides(@NotNull SMethod anotherMethod) {
-    if (!getName().equals(anotherMethod.getName())) {
+  public static <T1, T2> boolean overrides(@NotNull SMethod<T1> method1, @NotNull SMethod<T2> method2) {
+    if (!method1.getName().equals(method2.getName())) {
       return false;
     }
-    Class<?>[] params1 = getParameterTypes();
-    Class<?>[] params2 = anotherMethod.getParameterTypes();
+    Class<?>[] params1 = method1.getParameterTypes();
+    Class<?>[] params2 = method2.getParameterTypes();
     if (params1.length == params2.length) {
       for (int i = 0; i < params1.length; ++i) {
         if (!params1[i].equals(params2[i])) {
@@ -80,8 +82,8 @@ public final class SMethod {
         }
       }
     }
-    // check covariance of return types
-    return anotherMethod.getReturnType().isAssignableFrom(getReturnType());
+    // check covariance of the return types
+    return method2.getReturnType().isAssignableFrom(method1.getReturnType());
   }
 
   @Override

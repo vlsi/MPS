@@ -15,27 +15,20 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.UniqueIterator;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * This class is used for transition from 3.2 to 3.3 version. Will be dropped afterwards.
@@ -44,7 +37,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @ToRemove(version = 3.3)
 @Deprecated
 public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-  private final Map<String, Method> myMethods = new ConcurrentHashMap<String, Method>();
+  private final Map<String, Method> myMethods = new HashMap<String, Method>();
+  private volatile boolean myInitialized = false;
 
   public InterpretedBehaviorDescriptor(String fqName) {
     super(fqName);
@@ -60,15 +54,20 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     return genericInvoke(concept, methodName, parameters);
   }
 
+  private void init() {
+    if (myInitialized) {
+      return;
+    }
+
+    fillMethods(getConceptFqName());
+    myInitialized = true;
+  }
+
   private Object genericInvoke(@NotNull Object arg, String methodName, Object[] parameters) {
+    init();
     Method method = myMethods.get(methodName);
     if (method == null) {
-      method = findMethod(getConceptFqName(), methodName);
-      if (method != null) {
-        myMethods.put(methodName, method);
-      } else {
-        throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
-      }
+      throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
     }
 
     Object[] params = new Object[parameters.length + 1];
@@ -90,63 +89,20 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     }
   }
 
-  private Method findMethod(final String conceptFqName, final String methodName) {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
-      @Override
-      public Method compute() {
-        Set<SNode> processed = new HashSet<SNode>();
-
-        List<SNode> concepts = Collections.singletonList(SConceptOperations.findConceptDeclaration(conceptFqName));
-        while (!concepts.isEmpty()) {
-          List<SNode> newFrontier = new ArrayList<SNode>();
-          for (SNode currentConcept : concepts) {
-            assert currentConcept != null;
-            if (processed.contains(currentConcept)) {
-              continue;
-            }
-            String fqName = NameUtil.nodeFQName(currentConcept);
-            Class cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
-            if (cls != null) {
-              Method[] methods = cls.getMethods();
-              for (Method method : methods) {
-                myMethods.put(method.getName(), method);
-              }
-              for (Method method : methods) {
-                if (method.getName().equals(methodName)) {
-                  return method;
-                }
-              }
-            }
-
-            if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
-              for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
-                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-                newFrontier.add(interfaceConcept);
-              }
-              SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
-              if (parentConcept != null && !processed.contains(parentConcept)) {
-                newFrontier.add(parentConcept);
-              }
-            } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
-              for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
-                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-                newFrontier.add(interfaceConcept);
-              }
-            }
-            processed.add(currentConcept);
+  private synchronized void fillMethods(final String conceptFqName) {
+    SConcept startConcept = new SConceptAdapterByName(conceptFqName);
+    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthFirstConceptIterator(startConcept))) {
+      String fqName = concept.getQualifiedName();
+      Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
+      if (cls != null) {
+        Method[] methods = cls.getMethods();
+        for (Method method : methods) {
+          if (!myMethods.containsKey(method.getName())) {
+            myMethods.put(method.getName(), method);
           }
-
-          SNode baseConcept = SNodeUtil.concept_BaseConcept.getDeclarationNode();
-          if (newFrontier.isEmpty() && !processed.contains(baseConcept)) {
-            newFrontier.add(baseConcept);
-          }
-
-          concepts = newFrontier;
         }
-
-        return null;
       }
-    });
+    }
   }
 
   public Map<String, Method> getMethods() {

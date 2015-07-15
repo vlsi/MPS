@@ -29,7 +29,7 @@ public interface BHDescriptor {
   /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)
    */
-  Object invoke(@Nullable SNode node, @NotNull SMethod method, Object... parameters);
+  <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   @NotNull
   SAbstractConcept getConcept(); // todo do we need that?

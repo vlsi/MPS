@@ -96,7 +96,7 @@ public class ConstraintsRegistry implements CoreAspectRegistry {
         }
         descriptor = constraintsAspectDescriptor.getDescriptor(conceptId);
       } catch (Throwable e) {
-        LOG.warn("Exception while constraints descriptor creating", e);
+        LOG.error("Exception while constraints descriptor creating", e);
       }
 
       if (descriptor == null) {

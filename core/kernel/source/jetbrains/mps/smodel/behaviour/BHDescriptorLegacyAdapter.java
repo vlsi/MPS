@@ -87,16 +87,14 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
     int lastIndexBeforeMethodId = methodName.lastIndexOf("_");
     for (String possibleMethodPrefix : POSSIBLE_LEGACY_METHOD_PREFIXES) {
       if (methodName.startsWith(possibleMethodPrefix)) {
-        String substring = methodName.substring(possibleMethodPrefix.length() + 1, lastIndexBeforeMethodId);
-        System.out.println(substring); // fixme remove
-        return substring;
+        return methodName.substring(possibleMethodPrefix.length() + 1, lastIndexBeforeMethodId);
       }
     }
     throw new IllegalArgumentException("Could not extract the original method name from " + methodName);
   }
 
   @Override
-  protected Object invokeOwn(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
+  protected <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
     if (method == SMethod.INIT) {
       if (node == null) {
         throw new IllegalArgumentException("Cannot pass null node to constructor");
@@ -104,10 +102,11 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
       myLegacyDescriptor.initNode(node);
     }
     String methodName = myInvocationMap.get(method).getName();
+    Class<T> returnType = method.getReturnType();
     if (node == null) {
-      return myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters);
+      return returnType.cast(myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters));
     } else {
-      return myLegacyDescriptor.invoke(node, methodName, parameters);
+      return returnType.cast(myLegacyDescriptor.invoke(node, methodName, parameters));
     }
   }
 

@@ -15,28 +15,26 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
+import jetbrains.mps.smodel.behaviour.BreadthFirstConceptIterator;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.util.UniqueIterator;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -52,6 +50,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.([^\\.]+)$");
+  private static final String DEFAULT_INIT_METHOD_NAME = "init";
 
   private final String conceptFqName;
   private final List<Method> constructors;
@@ -93,59 +92,22 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   }
 
   private static List<Method> calculateConstructors(final String conceptFqName) {
-    // todo: use SConcept here
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<Method>>() {
-      @Override
-      public List<Method> compute() {
-        List<Method> methodsToCall = new ArrayList<Method>();
-        Set<SNode> processed = new HashSet<SNode>();
-
-        SNode concept = SConceptOperations.findConceptDeclaration(conceptFqName);
-        if (concept == null) return methodsToCall;
-
-        List<SNode> concepts = Collections.singletonList(concept);
-        while (!concepts.isEmpty()) {
-          List<SNode> newFrontier = new ArrayList<SNode>();
-          for (SNode currentConcept : concepts) {
-            assert currentConcept != null : conceptFqName;
-            if (processed.contains(currentConcept)) {
-              continue;
-            }
-            String fqName = NameUtil.nodeFQName(currentConcept);
-            Class cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
-            if (cls != null) {
-              try {
-                Method method = cls.getMethod("init", SNode.class);
-                method.setAccessible(true);
-                methodsToCall.add(method);
-              } catch (NoSuchMethodException e) {
-                //ignore
-              }
-            }
-
-            if (SNodeUtil.isInstanceOfConceptDeclaration(currentConcept)) {
-              for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(currentConcept)) {
-                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-                newFrontier.add(interfaceConcept);
-              }
-              SNode parentConcept = SNodeUtil.getConceptDeclaration_Extends(currentConcept);
-              if (parentConcept != null && !processed.contains(parentConcept)) {
-                newFrontier.add(parentConcept);
-              }
-            } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(currentConcept)) {
-              for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(currentConcept)) {
-                if (interfaceConcept == null || processed.contains(interfaceConcept)) continue;
-                newFrontier.add(interfaceConcept);
-              }
-            }
-            processed.add(currentConcept);
-          }
-          concepts = newFrontier;
+    List<Method> methodsToCall = new ArrayList<Method>();
+    SConcept startConcept = new SConceptAdapterByName(conceptFqName);
+    for (SAbstractConcept concept : new UniqueIterator<SAbstractConcept>(new BreadthFirstConceptIterator(startConcept))) {
+      String fqName = concept.getQualifiedName();
+      Class<?> cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
+      if (cls != null) {
+        try {
+          Method method = cls.getMethod(DEFAULT_INIT_METHOD_NAME, SNode.class);
+          method.setAccessible(true);
+          methodsToCall.add(method);
+        } catch (NoSuchMethodException e) {
+          //ignore
         }
-
-        return methodsToCall;
       }
-    });
+    }
+    return methodsToCall;
   }
 
   protected static Class<?> getGeneratedClass(String conceptFqName, String className) {

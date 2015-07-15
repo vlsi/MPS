@@ -16,75 +16,62 @@
 package jetbrains.mps.smodel.behaviour;
 
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Obsolete API for the generated behavior calls
+ * @deprecated
+ * @see BHInvoker
+ */
+@ToRemove(version = 3.3)
+@Deprecated
 public class BehaviorReflection {
-  private static final Map<Class, Object> OUR_DEFAULT_VALUE = new HashMap<Class, Object>();
-
-  static {
-    // todo: move to SNodeSomething
-    OUR_DEFAULT_VALUE.put(Byte.class, (byte) 0);
-    OUR_DEFAULT_VALUE.put(byte.class, (byte) 0);
-
-    OUR_DEFAULT_VALUE.put(Short.class, (short) 0);
-    OUR_DEFAULT_VALUE.put(short.class, (short) 0);
-
-    OUR_DEFAULT_VALUE.put(Integer.class, 0);
-    OUR_DEFAULT_VALUE.put(int.class, 0);
-
-    OUR_DEFAULT_VALUE.put(Long.class, (long) 0);
-    OUR_DEFAULT_VALUE.put(long.class, (long) 0);
-
-    OUR_DEFAULT_VALUE.put(Float.class, (float) 0);
-    OUR_DEFAULT_VALUE.put(float.class, (float) 0);
-
-    OUR_DEFAULT_VALUE.put(Double.class, (double) 0);
-    OUR_DEFAULT_VALUE.put(double.class, (double) 0);
-
-    OUR_DEFAULT_VALUE.put(Boolean.class, false);
-    OUR_DEFAULT_VALUE.put(boolean.class, false);
-
-    OUR_DEFAULT_VALUE.put(Void.class, null);
-    OUR_DEFAULT_VALUE.put(void.class, null);
+  @NotNull
+  private static ConceptRegistry getConceptRegistry() {
+    return ConceptRegistry.getInstance();
   }
 
+  private static Object invokeVirtual(@NotNull SNode node, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
+  }
+
+  private static Object invokeNonVirtual(@NotNull SNode node, String conceptFqName, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
+  }
+
+  private static Object invokeNonVirtual(@NotNull SNode node, SAbstractConcept concept, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invoke(node, methodName, parameters);
+  }
+
+  private static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
+  }
+
+  private static Object invokeNonVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
+  }
+
+  private static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
+  }
+
+  private static Object invokeSuperStatic(@NotNull SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
+    return getConceptRegistry().getBehaviorDescriptor(targetSuperFqName).invokeStatic(concept, methodName, parameters);
+  }
+
+  // public API
   public static void initNode(SNode node) {
-    ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).initNode(node);
+    getConceptRegistry().getBehaviorDescriptorForInstanceNode(node).initNode(node);
   }
 
-  public static Object invokeVirtual(@NotNull SNode node, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(node).invoke(node, methodName, parameters);
-  }
-
-  public static Object invokeNonVirtual(@NotNull SNode node, String conceptFqName, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(conceptFqName).invoke(node, methodName, parameters);
-  }
-
-  public static Object invokeNonVirtual(@NotNull SNode node, SAbstractConcept concept, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invoke(node, methodName, parameters);
-  }
-
-  public static Object invokeVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
-  }
-
-  public static Object invokeNonVirtualStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(concept.getQualifiedName()).invokeStatic(concept, methodName, parameters);
-  }
-
-  public static Object invokeSuper(@NotNull SNode node, String targetSuperFqName, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
-  }
-
-  public static Object invokeSuperStatic(@NotNull SAbstractConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
-    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invokeStatic(concept, methodName, parameters);
-  }
-
+  // these methods for <T> generic parameter and null safety
   // todo: move to SNodeOperation? this methods for null safety
   public static <T> T invokeVirtual(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
     return node == null ? defaultValue(returnType) : (T) invokeVirtual(node, methodName, parameters);
@@ -94,7 +81,6 @@ public class BehaviorReflection {
     return node == null ? defaultValue(returnType) : (T) invokeNonVirtual(node, conceptFqName, methodName, parameters);
   }
 
-  // this methods for <T> generic parameter and null safety
   public static <T> T invokeVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
     return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
   }
@@ -113,10 +99,6 @@ public class BehaviorReflection {
   }
 
   public static <T> T defaultValue(Class<T> returnValueClass) {
-    if (OUR_DEFAULT_VALUE.containsKey(returnValueClass)) {
-      return (T) OUR_DEFAULT_VALUE.get(returnValueClass);
-    } else {
-      return null;
-    }
+    return DefaultValuesHolder.defaultValue(returnValueClass);
   }
 }

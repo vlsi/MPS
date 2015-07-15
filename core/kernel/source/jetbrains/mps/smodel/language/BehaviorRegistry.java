@@ -123,6 +123,7 @@ public class BehaviorRegistry implements CoreAspectRegistry {
     }
 
     if (!myLegacyStorage.startLoading(conceptFqName)) {
+      LOG.warn("Returning null-safe illegal behavior descriptor for the concept " + conceptFqName);
       return NullSafeIllegalBehaviorDescriptor.INSTANCE;
     }
 

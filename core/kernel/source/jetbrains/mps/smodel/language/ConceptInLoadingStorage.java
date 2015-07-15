@@ -15,34 +15,47 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
  * T could be a concept fq name or any other id-like object
  * Thread-safe storage class.
+ * Using ThreadLocal to get rid of concurrency flaws.
+ * ConcurrentMap is not suitable since,
+ * for example, during the parallel generation we are likely to get {@link NullSafeIllegalBehaviorDescriptor}
+ * for some of the core baseLanguage concepts (e.g. ConstructorDeclaration). Illegal behavior descriptor breaks
+ * the generation, so that implementation is unacceptable.
+ *
+ * We do need such a storage because there might be invocation cycle
  *
  * Created by apyshkin on 7/15/15.
  */
 final class ConceptInLoadingStorage<T> {
-  private final ConcurrentMap<T, Boolean> mySet = new ConcurrentHashMap<T, Boolean>();
+  private final ThreadLocal<Set<T>> mySet = new ThreadLocal<Set<T>>() {
+    @Override
+    protected Set<T> initialValue() {
+      return new HashSet<T>();
+    }
+  };
 
   /**
    * @param concept -- a concept
    * @return true iff loading has been started successfully (i.e. the concept is not already in a loading state)
    */
   public boolean startLoading(@NotNull T concept) {
-    return mySet.putIfAbsent(concept, Boolean.TRUE) == null;
+//    return true;
+    return mySet.get().add(concept);
   }
 
-  /**
-   * @param concept -- a concept
-   */
   public void finishLoading(@NotNull T concept) {
-    Boolean removed = mySet.remove(concept);
-    if (removed == null) {
+    boolean removed = mySet.get().remove(concept);
+    if (!removed) {
       throw new IllegalStateException("Concept storage is inconsistent");
     }
   }

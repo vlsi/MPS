@@ -81,7 +81,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public final Object invoke(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
+  public final <T> T invoke(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters) {
+    checkInitialized();
     if ((node == null) && !method.getMethodModifiers().isStatic()) {
       throw new BHNullPointerException();
     }
@@ -125,13 +126,13 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
    * @generated : switch by the method; direct invocation in each case
    * @throws BHMethodNotFoundException if the method has not been found
    **/
-  protected abstract Object invokeOwn(@Nullable SNode node, @NotNull SMethod method, Object... parameters);
+  protected abstract <T> T invokeOwn(@Nullable SNode node, @NotNull SMethod<T> method, Object... parameters);
 
   /**
    * @generated : switch by the method
    * @return true iff the method exists
    **/
-  protected abstract boolean hasOwnMethod(@NotNull SMethod method);
+  protected abstract <T> boolean hasOwnMethod(@NotNull SMethod<T> method);
 
   @NotNull
   @Override
@@ -148,7 +149,7 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
       }
       // only new virtual method implementations need to be recorded
       for (SMethod methodSeen : myTable.keySet()) {
-        if (methodSeen.overrides(method)) {
+        if (SMethod.overrides(methodSeen, method)) {
           return;
         }
       }
