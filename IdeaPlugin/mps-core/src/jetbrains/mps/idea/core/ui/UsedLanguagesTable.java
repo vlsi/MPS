@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
@@ -36,7 +37,7 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
   private static List<SModuleReference> getUsedLanguages(MPSConfigurationBean data) {
     List<SModuleReference> usedLanguages = new ArrayList<SModuleReference>();
     for (String moduleReference : data.getUsedLanguages()) {
-      usedLanguages.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleReference));
+      usedLanguages.add(PersistenceFacade.getInstance().createModuleReference(moduleReference));
     }
     return usedLanguages;
   }

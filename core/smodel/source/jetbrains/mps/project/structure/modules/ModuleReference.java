@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -35,7 +36,11 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
+  /**
+   * @deprecated use {@link #ModuleReference(String, SModuleId)} instead. <code>SModuleId</code> is mandatory
+   */
   @Deprecated
+  @ToRemove(version = 3.2)
   public ModuleReference(String moduleName) {
     this(moduleName, (SModuleId) null);
   }
@@ -45,7 +50,11 @@ public final class ModuleReference implements SModuleReference {
     myModuleId = moduleId;
   }
 
+  /**
+   * @deprecated use {@link #ModuleReference(String, SModuleId)} instead
+   */
   @Deprecated
+  @ToRemove(version = 3.2)
   public ModuleReference(String moduleName, String moduleId) {
     this(moduleName, ModuleId.fromString(moduleId));
   }

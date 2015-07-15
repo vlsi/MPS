@@ -24,10 +24,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -187,11 +187,14 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
   }
 
+  /**
+   * @deprecated dubious implementation, not in use.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static SModuleReference createReference(String moduleName) {
-    // TODO use SRepository?
-    SModuleReference ref = new ModuleReference(moduleName);
-    SModule module = getInstance().getModule(ref);
-    return module != null ? module.getModuleReference() : ref;
+    SModule module = getInstance().REPO.getModuleByFqName(moduleName);
+    return module != null ? module.getModuleReference() : null;
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {

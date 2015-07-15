@@ -23,7 +23,6 @@ import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -33,6 +32,7 @@ import org.jdom.Element;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.*;
 
@@ -99,7 +99,7 @@ public class MPSConfigurationBean {
   public Collection<ModelRoot> getModelRoots() {
     List<ModelRoot> roots = new ArrayList<ModelRoot>();
     for (ModelRootDescriptor modelRootDescriptor : myDescriptor.getModelRootDescriptors()) {
-      ModelRootFactory factory = PersistenceRegistry.getInstance().getModelRootFactory(modelRootDescriptor.getType());
+      ModelRootFactory factory = PersistenceFacade.getInstance().getModelRootFactory(modelRootDescriptor.getType());
       if (factory == null) continue;
       ModelRoot root = factory.create();
       if (root == null) continue;
@@ -134,7 +134,7 @@ public class MPSConfigurationBean {
     Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
     usedLanguageReferences.clear();
     for (String usedLanguage : usedLanguages) {
-      usedLanguageReferences.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(usedLanguage));
+      usedLanguageReferences.add(PersistenceFacade.getInstance().createModuleReference(usedLanguage));
     }
   }
 

@@ -17,6 +17,8 @@ package org.jetbrains.mps.openapi.module;
 
 /**
  * A repository-wide unique id of a module. Will be used as keys in maps and so should correctly implement equals() and hashCode().
+ * Any module shall have an id. There are no restrictions what to use to identify a module, one could use e.g. qualified (or even un-qualified) name
+ * if it's unique in a repository.
  */
 public interface SModuleId {
 }
