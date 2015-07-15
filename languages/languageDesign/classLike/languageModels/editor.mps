@@ -1395,7 +1395,7 @@
       <node concept="37vLTG" id="7T23sO8wicy" role="3clF46">
         <property role="TrG5h" value="mi" />
         <node concept="3Tqbb2" id="7T23sO8wicz" role="1tU5fm">
-          <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+          <ref role="ehGHo" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
         </node>
       </node>
     </node>
