@@ -5,6 +5,7 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -193,6 +194,10 @@
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
+      </concept>
+      <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
+        <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
+        <child id="597763930871272014" name="parent" index="3fl3PI" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -845,6 +850,26 @@
       </node>
       <node concept="3cqZAl" id="1QReUKIKwWI" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="5KZRo2kncDU" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDeclaration" />
+      <ref role="13i0hy" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
+      <node concept="3Tm1VV" id="5KZRo2kncDV" role="1B3o_S" />
+      <node concept="3clFbS" id="5KZRo2kncDW" role="3clF47">
+        <node concept="3clFbF" id="5KZRo2kndC9" role="3cqZAp">
+          <node concept="3fl2lp" id="5KZRo2kndCa" role="3clFbG">
+            <ref role="3fl3PK" to="90d:1it1kXyqBgo" resolve="overrides" />
+            <node concept="3B5_sB" id="5KZRo2kndCb" role="3fl3PI">
+              <ref role="3B5MYn" to="90d:7z8Vrj4Zy7l" resolve="ExtensionOverlapping" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5KZRo2kncE0" role="3clF45">
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+      </node>
+    </node>
   </node>
   <node concept="13h7C7" id="1QReUKILbLJ">
     <property role="3GE5qa" value="overlapping" />
@@ -959,6 +984,33 @@
     </node>
     <node concept="13hLZK" id="UBgfI9ge6f" role="13h7CW">
       <node concept="3clFbS" id="UBgfI9ge6g" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="5KZRo2knc9c">
+    <property role="3GE5qa" value="overlapping" />
+    <ref role="13h7C2" to="v54s:2gzehMesjCw" resolve="ArgumentField" />
+    <node concept="13hLZK" id="5KZRo2knc9d" role="13h7CW">
+      <node concept="3clFbS" id="5KZRo2knc9e" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="5KZRo2knc9f" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="getDeclaration" />
+      <ref role="13i0hy" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
+      <node concept="3Tm1VV" id="5KZRo2knc9g" role="1B3o_S" />
+      <node concept="3clFbS" id="5KZRo2knc9j" role="3clF47">
+        <node concept="3clFbF" id="5KZRo2kncdC" role="3cqZAp">
+          <node concept="3fl2lp" id="5KZRo2kncxi" role="3clFbG">
+            <ref role="3fl3PK" to="90d:2gzehMes8lw" resolve="argument" />
+            <node concept="3B5_sB" id="5KZRo2kncdB" role="3fl3PI">
+              <ref role="3B5MYn" to="90d:7z8Vrj4Zy7l" resolve="ExtensionOverlapping" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="5KZRo2knc9k" role="3clF45">
+        <ref role="ehGHo" to="oubp:7aMlq14vYj7" resolve="ClassLikeMember" />
+      </node>
     </node>
   </node>
 </model>
