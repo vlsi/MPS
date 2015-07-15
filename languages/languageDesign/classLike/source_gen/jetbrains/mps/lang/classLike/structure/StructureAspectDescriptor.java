@@ -21,6 +21,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptClassLikeMemberInstance = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L)).interface_().create();
   /*package*/ final ConceptDescriptor myConceptClassLikeMemberPlaceholder = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6478870542308703667L, "caption")).properties("caption").referenceDescriptors(new ConceptDescriptorBuilder.Ref(6478870542308703669L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L), false)).references("decl").create();
   /*package*/ final ConceptDescriptor myConceptClassLikeMethod = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(19209059688387895L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L), false)).references("decl").create();
+  /*package*/ final ConceptDescriptor myConceptClassLikeMethodParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethodParameter", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7b3d7e6b74000c44L)).super_("jetbrains.mps.baseLanguage.structure.ParameterDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L)).parents("jetbrains.mps.baseLanguage.structure.ParameterDeclaration").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8880393040217294897L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d164L), false)).references("decl").create();
   /*package*/ final ConceptDescriptor myConceptClassLikeProperty = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeProperty", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").super_(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L)).parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8585153554445465961L, "decl", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L), false)).references("decl").abstract_().create();
   /*package*/ final ConceptDescriptor myConceptClassLikeStringProperty = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L)).super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parentIds(MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6478870542308871429L, "value")).properties("value").create();
   /*package*/ final ConceptDescriptor myConceptCustomMemberDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(8264762413010673055L, "cncpt", MetaIdFactory.conceptId(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L), false)).references("cncpt").alias("custom member", "").create();
@@ -38,13 +39,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAutoInitClassLike, myConceptClassLikeAnnotation, myConceptClassLikeBooleanProperty, myConceptClassLikeDescriptor, myConceptClassLikeIntegerProperty, myConceptClassLikeMember, myConceptClassLikeMemberInstance, myConceptClassLikeMemberPlaceholder, myConceptClassLikeMethod, myConceptClassLikeProperty, myConceptClassLikeStringProperty, myConceptCustomMemberDescriptor, myConceptDependentTypeDeclaration, myConceptDependentTypeInstance, myConceptEmptyMember, myConceptGenerateModifier, myConceptMemberModifier, myConceptMethodDescriptor, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptRequiredModifier);
+    return Arrays.asList(myConceptAutoInitClassLike, myConceptClassLikeAnnotation, myConceptClassLikeBooleanProperty, myConceptClassLikeDescriptor, myConceptClassLikeIntegerProperty, myConceptClassLikeMember, myConceptClassLikeMemberInstance, myConceptClassLikeMemberPlaceholder, myConceptClassLikeMethod, myConceptClassLikeMethodParameter, myConceptClassLikeProperty, myConceptClassLikeStringProperty, myConceptCustomMemberDescriptor, myConceptDependentTypeDeclaration, myConceptDependentTypeInstance, myConceptEmptyMember, myConceptGenerateModifier, myConceptMemberModifier, myConceptMethodDescriptor, myConceptMultipleModifier, myConceptParameterDescriptor, myConceptPlaceholderModifier, myConceptPropertyDescriptor, myConceptRequiredModifier);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0bb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
       case 0:
         return myConceptAutoInitClassLike;
       case 1:
@@ -64,36 +65,38 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptClassLikeMethod;
       case 9:
-        return myConceptClassLikeProperty;
+        return myConceptClassLikeMethodParameter;
       case 10:
-        return myConceptClassLikeStringProperty;
+        return myConceptClassLikeProperty;
       case 11:
-        return myConceptCustomMemberDescriptor;
+        return myConceptClassLikeStringProperty;
       case 12:
-        return myConceptDependentTypeDeclaration;
+        return myConceptCustomMemberDescriptor;
       case 13:
-        return myConceptDependentTypeInstance;
+        return myConceptDependentTypeDeclaration;
       case 14:
-        return myConceptEmptyMember;
+        return myConceptDependentTypeInstance;
       case 15:
-        return myConceptGenerateModifier;
+        return myConceptEmptyMember;
       case 16:
-        return myConceptMemberModifier;
+        return myConceptGenerateModifier;
       case 17:
-        return myConceptMethodDescriptor;
+        return myConceptMemberModifier;
       case 18:
-        return myConceptMultipleModifier;
+        return myConceptMethodDescriptor;
       case 19:
-        return myConceptParameterDescriptor;
+        return myConceptMultipleModifier;
       case 20:
-        return myConceptPlaceholderModifier;
+        return myConceptParameterDescriptor;
       case 21:
-        return myConceptPropertyDescriptor;
+        return myConceptPlaceholderModifier;
       case 22:
+        return myConceptPropertyDescriptor;
+      case 23:
         return myConceptRequiredModifier;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0bb = new String[]{"jetbrains.mps.lang.classLike.structure.AutoInitClassLike", "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.EmptyMember", "jetbrains.mps.lang.classLike.structure.GenerateModifier", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.MultipleModifier", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.lang.classLike.structure.AutoInitClassLike", "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeMethodParameter", "jetbrains.mps.lang.classLike.structure.ClassLikeProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.EmptyMember", "jetbrains.mps.lang.classLike.structure.GenerateModifier", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.MultipleModifier", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

@@ -385,5 +385,16 @@
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="AutoInitClassLike" />
   </node>
+  <node concept="1TIwiD" id="7GXvAHO00L4">
+    <property role="3GE5qa" value="instances" />
+    <property role="TrG5h" value="ClassLikeMethodParameter" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+    <node concept="1TJgyj" id="7GXvAHO0cwL" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="decl" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
+    </node>
+  </node>
 </model>
 

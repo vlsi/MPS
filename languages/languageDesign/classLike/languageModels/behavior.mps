@@ -1117,7 +1117,7 @@
                               </node>
                               <node concept="2pJPEk" id="7T23sO8AOp3" role="33vP2m">
                                 <node concept="2pJPED" id="7T23sO8AOp4" role="2pJPEn">
-                                  <ref role="2pJxaS" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+                                  <ref role="2pJxaS" to="oubp:7GXvAHO00L4" resolve="ClassLikeMethodParameter" />
                                   <node concept="2pJxcG" id="7T23sO8AOp5" role="2pJxcM">
                                     <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
                                     <node concept="2OqwBi" id="7T23sO8AOp6" role="2pJxcZ">
@@ -1134,6 +1134,14 @@
                                     <node concept="36biLy" id="7T23sO8AOpa" role="2pJxcZ">
                                       <node concept="37vLTw" id="7T23sO8AW3T" role="36biLW">
                                         <ref role="3cqZAo" node="3geGFOI14Jk" resolve="type" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2pIpSj" id="7GXvAHO0eyT" role="2pJxcM">
+                                    <ref role="2pIpSl" to="oubp:7GXvAHO0cwL" />
+                                    <node concept="36biLy" id="7GXvAHO0fFh" role="2pJxcZ">
+                                      <node concept="37vLTw" id="7GXvAHO0pMs" role="36biLW">
+                                        <ref role="3cqZAo" node="1XvrRm0XmCL" resolve="it" />
                                       </node>
                                     </node>
                                   </node>
@@ -1167,7 +1175,7 @@
                             <node concept="3cpWs6" id="3geGFOI14JI" role="3cqZAp">
                               <node concept="2pJPEk" id="3geGFOI14JJ" role="3cqZAk">
                                 <node concept="2pJPED" id="3geGFOI14JK" role="2pJPEn">
-                                  <ref role="2pJxaS" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+                                  <ref role="2pJxaS" to="oubp:7GXvAHO00L4" resolve="ClassLikeMethodParameter" />
                                   <node concept="2pJxcG" id="3geGFOI14JL" role="2pJxcM">
                                     <ref role="2pJxcJ" to="tpck:h0TrG11" resolve="name" />
                                     <node concept="2OqwBi" id="3geGFOI14JM" role="2pJxcZ">
@@ -1189,6 +1197,14 @@
                                         <node concept="3TrEf2" id="1XvrRm0XR9n" role="2OqNvi">
                                           <ref role="3Tt5mk" to="oubp:3geGFOI0X5A" />
                                         </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2pIpSj" id="7GXvAHO0vXX" role="2pJxcM">
+                                    <ref role="2pIpSl" to="oubp:7GXvAHO0cwL" />
+                                    <node concept="36biLy" id="7GXvAHO0vXY" role="2pJxcZ">
+                                      <node concept="37vLTw" id="7GXvAHO0vXZ" role="36biLW">
+                                        <ref role="3cqZAo" node="1XvrRm0XmCL" resolve="it" />
                                       </node>
                                     </node>
                                   </node>
