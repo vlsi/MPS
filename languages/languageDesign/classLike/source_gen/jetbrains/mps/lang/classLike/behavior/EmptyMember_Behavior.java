@@ -19,7 +19,7 @@ public class EmptyMember_Behavior {
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
     return SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1458378889e6d166L, "jetbrains.mps.baseLanguage.structure.PlaceholderMember")));
   }
-  public static Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
+  public static Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls) {
     return null;
   }
   public static String virtual_getMatchingText_2736582054146581585(SNode thisNode) {

@@ -101,7 +101,7 @@ public class SubstituteUtil {
           return true;
         }
 
-        Iterable<SNode> member = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_get_2603987804376013077", new Object[]{SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))});
+        Iterable<SNode> member = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_find_2603987804376013077", new Object[]{SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))});
         Iterable<SNode> placeholders = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == md;

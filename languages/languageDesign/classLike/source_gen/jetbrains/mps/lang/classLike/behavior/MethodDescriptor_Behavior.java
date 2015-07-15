@@ -58,7 +58,7 @@ public class MethodDescriptor_Behavior {
       return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, 0x340eb2bd2e03d169L, "retType"));
     }
   }
-  public static Iterable<SNode> virtual_get_2603987804376013077(final SNode thisNode, SNode cls) {
+  public static Iterable<SNode> virtual_find_2603987804376013077(final SNode thisNode, SNode cls) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, 0x443e89bb321537L, "decl")) == thisNode;

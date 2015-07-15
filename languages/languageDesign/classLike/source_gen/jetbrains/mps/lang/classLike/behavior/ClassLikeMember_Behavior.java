@@ -25,7 +25,7 @@ public class ClassLikeMember_Behavior {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fe4c7L, 0x2f38f33681e6c568L, "modifier")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044804f29L, "jetbrains.mps.lang.classLike.structure.PlaceholderModifier"))).first();
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, final SNode cls) {
-    if (Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_get_2603987804376013077", new Object[]{cls})).isNotEmpty()) {
+    if (Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), thisNode, "virtual_find_2603987804376013077", new Object[]{cls})).isNotEmpty()) {
       return;
     }
     if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getInterfaceConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9179L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"))).any(new IWhereFilter<SNode>() {
@@ -41,6 +41,13 @@ public class ClassLikeMember_Behavior {
     } else if ((ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode) != null)) {
       PlaceholderModifier_Behavior.call_init_6478870542308777138(ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode), cls);
     }
+  }
+  public static Iterable<SNode> virtual_findPlaceholders_6909536935410952255(final SNode thisNode, SNode cls) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder"))).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl")) == thisNode;
+      }
+    });
   }
   public static String virtual_getMatchingText_2736582054146581585(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {

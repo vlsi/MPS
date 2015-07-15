@@ -16,7 +16,7 @@ public class CustomMemberDescriptor_Behavior {
   public static SNode virtual_create_8260330507834998478(SNode thisNode) {
     return (SNode) SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))), null);
   }
-  public static Iterable<SNode> virtual_get_2603987804376013077(SNode thisNode, SNode cls) {
+  public static Iterable<SNode> virtual_find_2603987804376013077(SNode thisNode, SNode cls) {
     return SNodeOperations.ofConcept(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), SNodeOperations.asSConcept(SNodeOperations.asSConcept(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")))));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
