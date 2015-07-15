@@ -22,7 +22,6 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
-      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -250,22 +249,6 @@
   <node concept="312cEu" id="3geGFOI1ynn">
     <property role="TrG5h" value="Queries" />
     <property role="3GE5qa" value="" />
-    <node concept="2tJIrI" id="4auf8pYa2BP" role="jymVt">
-      <node concept="2b32R4" id="4auf8pYa3eK" role="lGtFl">
-        <node concept="3JmXsc" id="4auf8pYa3eM" role="2P8S$">
-          <node concept="3clFbS" id="4auf8pYa3eO" role="2VODD2">
-            <node concept="3clFbF" id="4auf8pYa3kh" role="3cqZAp">
-              <node concept="2OqwBi" id="4auf8pYa3wD" role="3clFbG">
-                <node concept="30H73N" id="4auf8pYa3kg" role="2Oq$k0" />
-                <node concept="3Tsc0h" id="4auf8pYa49f" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2YIFZL" id="2VRROcY7sRD" role="jymVt">
       <property role="TrG5h" value="init" />
       <node concept="3cqZAl" id="2VRROcY7sRH" role="3clF45" />
