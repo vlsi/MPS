@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,8 +37,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @see jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor
+ */
+@ToRemove(version = 3.3)
+@Deprecated
 public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
-  private final Map<String, Method> methods = new ConcurrentHashMap<String, Method>();
+  private final Map<String, Method> myMethods = new ConcurrentHashMap<String, Method>();
 
   public InterpretedBehaviorDescriptor(String fqName) {
     super(fqName);
@@ -58,11 +60,11 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
   }
 
   private Object genericInvoke(@NotNull Object arg, String methodName, Object[] parameters) {
-    Method method = methods.get(methodName);
+    Method method = myMethods.get(methodName);
     if (method == null) {
       method = findMethod(getConceptFqName(), methodName);
       if (method != null) {
-        methods.put(methodName, method);
+        myMethods.put(methodName, method);
       } else {
         throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
       }
@@ -87,16 +89,10 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
     }
   }
 
-  private static Method findMethod(final String conceptFqName, final String methodName) {
-    // todo: use SConcept here
+  private Method findMethod(final String conceptFqName, final String methodName) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
       @Override
       public Method compute() {
-        Map<String, Method> methods = new HashMap<String, Method>();
-
-        String languageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
-        final Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-
         Set<SNode> processed = new HashSet<SNode>();
 
         List<SNode> concepts = Collections.singletonList(SConceptOperations.findConceptDeclaration(conceptFqName));
@@ -110,7 +106,11 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             String fqName = NameUtil.nodeFQName(currentConcept);
             Class cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
             if (cls != null) {
-              for (Method method : cls.getMethods()) {
+              Method[] methods = cls.getMethods();
+              for (Method method : methods) {
+                myMethods.put(method.getName(), method);
+              }
+              for (Method method : methods) {
                 if (method.getName().equals(methodName)) {
                   return method;
                 }
@@ -136,7 +136,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
           }
 
           SNode baseConcept = SNodeUtil.concept_BaseConcept.getDeclarationNode();
-          if (newFrontier.size() == 0 && !processed.contains(baseConcept)) {
+          if (newFrontier.isEmpty() && !processed.contains(baseConcept)) {
             newFrontier.add(baseConcept);
           }
 
@@ -146,5 +146,9 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
         return null;
       }
     });
+  }
+
+  public Map<String, Method> getMethods() {
+    return new HashMap<String, Method>(myMethods);
   }
 }

@@ -18,7 +18,11 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.behaviour.BHDescriptor;
+import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
+import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -38,6 +42,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -45,13 +50,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+// TODO this registry must be separated in three different classes
 public class ConceptRegistry implements CoreComponent, LanguageRegistryListener {
   private static final Logger LOG = LogManager.getLogger(ConceptRegistry.class);
 
-  private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
-  private final Map<SConceptId, ConceptDescriptor> conceptDescriptorsById = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
-  private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private final Map<SConceptId, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<SConceptId, ConstraintsDescriptor>();
+  private final Map<String, ConceptDescriptor> myConceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
+  private final Map<SConceptId, ConceptDescriptor> myConceptDescriptorsById = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
+  private final Map<String, BehaviorDescriptor> myBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
+  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
+  private final Map<SConceptId, ConstraintsDescriptor> myConstraintsDescriptors = new ConcurrentHashMap<SConceptId, ConstraintsDescriptor>();
 
   private final LanguageRegistry myLanguageRegistry;
 
@@ -114,7 +121,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @ToRemove(version = 3.3)
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
-    ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
+    ConceptDescriptor descriptor = myConceptDescriptors.get(fqName);
 
     if (descriptor != null) {
       return descriptor;
@@ -144,7 +151,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
       assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
-      conceptDescriptors.put(fqName, descriptor);
+      myConceptDescriptors.put(fqName, descriptor);
       return descriptor;
     } finally {
       finishLoad(fqName, RequestingAspect.STRUCTURE);
@@ -153,7 +160,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
-    ConceptDescriptor descriptor = conceptDescriptorsById.get(id);
+    ConceptDescriptor descriptor = myConceptDescriptorsById.get(id);
 
     if (descriptor != null) {
       return descriptor;
@@ -182,7 +189,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
       assert !descriptor.getId().equals(MetaIdFactory.INVALID_CONCEPT_ID);
 
-      conceptDescriptorsById.put(id, descriptor);
+      myConceptDescriptorsById.put(id, descriptor);
       return descriptor;
     } finally {
       finishLoad(id, RequestingAspect.STRUCTURE);
@@ -190,8 +197,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   }
 
   @NotNull
+  @ToRemove(version = 3.3)
+  @Deprecated
   public BehaviorDescriptor getBehaviorDescriptor(@Nullable String fqName) {
-    BehaviorDescriptor descriptor = behaviorDescriptors.get(fqName);
+    BehaviorDescriptor descriptor = myBehaviorDescriptors.get(fqName);
 
     if (descriptor != null) {
       return descriptor;
@@ -223,7 +232,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       // Nevertheless, just in case we break this contract in the future, assert would help us to notice it fast.
       assert descriptor != null;
 
-      behaviorDescriptors.put(fqName, descriptor);
+      myBehaviorDescriptors.put(fqName, descriptor);
 
       return descriptor;
     } finally {
@@ -231,6 +240,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
+  @ToRemove(version = 3.3)
+  @Deprecated
   public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
     if (node == null) {
       return NullSafeIllegalBehaviorDescriptor.INSTANCE;
@@ -239,6 +250,50 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
+
+  public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
+    if (!(concept instanceof SAbstractConceptAdapterById)) {
+      return new BHDescriptorAdapter(getBehaviorDescriptor(concept.getQualifiedName()));
+    }
+    BHDescriptor descriptor = myBHDescriptors.get(concept);
+
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(concept, RequestingAspect.BEHAVIOR)) {
+      return new IllegalBHDescriptor(concept);
+    }
+
+    try {
+      try {
+        LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
+        BehaviorAspectDescriptor behaviorAspect = null;
+        if (languageRuntime == null) {
+          LOG.warn("No language for: " + concept + ", while looking for the behavior descriptor.");
+        } else {
+          behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
+        }
+        if (behaviorAspect instanceof BaseBehaviorAspectDescriptor && ) {
+        }
+        descriptor = behaviorAspect.getDescriptor(concept.getQualifiedName());
+      } catch (Throwable e) {
+        LOG.warn("Exception while behavior descriptor creating", e);
+      }
+
+      // Shall not happen, provided we use BehaviorAspectInterpreted for missing aspects,
+      // and generated aspects delegate to BehaviorAspectInterpreted for unknown concepts, too.
+      // Nevertheless, just in case we break this contract in the future, assert would help us to notice it fast.
+      assert descriptor != null;
+
+      myBehaviorDescriptors.put(fqName, descriptor);
+
+      return descriptor;
+    } finally {
+      finishLoad(fqName, RequestingAspect.BEHAVIOR);
+    }
+
+  }
 
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SAbstractConcept concept) {
@@ -264,7 +319,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
    */
   @NotNull
   public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
-    ConstraintsDescriptor descriptor = constraintsDescriptors.get(conceptId);
+    ConstraintsDescriptor descriptor = myConstraintsDescriptors.get(conceptId);
 
     if (descriptor != null) {
       return descriptor;
@@ -298,7 +353,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         descriptor = new IllegalConstraintsDescriptor(conceptId, MetaIdFactory.INVALID_CONCEPT_NAME);
       }
 
-      constraintsDescriptors.put(conceptId, descriptor);
+      myConstraintsDescriptors.put(conceptId, descriptor);
 
       return descriptor;
     } finally {
@@ -315,10 +370,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @Override
   public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
     // todo: incremental?
-    conceptDescriptorsById.clear();
-    conceptDescriptors.clear();
-    behaviorDescriptors.clear();
-    constraintsDescriptors.clear();
+    myConceptDescriptorsById.clear();
+    myConceptDescriptors.clear();
+    myBehaviorDescriptors.clear();
+    myConstraintsDescriptors.clear();
   }
 
   private enum RequestingAspect{

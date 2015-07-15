@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,8 +26,22 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The difference between this and {@link InterpretedBehaviorDescriptor} is only that
+ * this implementation uses the generated virtual methods from the *_BehaviorDescriptor classes.
+ *
+ * Thus we exploiting java inheritance instead of traversing the concept hierarchy.
+ *
+ * The {@link jetbrains.mps.smodel.behaviour.BaseBHDescriptor} is a substitute for this class.
+ * Currently the {@link jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter} is used to adapt the old behavior
+ * implementations to the new behavior invocation system.
+ *
+ * This class as well as the adapter class will be dropped all together in the nearest release.
+ */
+@ToRemove(version = 3.3)
+@Deprecated
 public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDescriptor {
-  private final Map<String, Method> methods;
+  private final Map<String, Method> myMethods = new HashMap<String, Method>();
 
   public CompiledBehaviorDescriptor(String conceptFqName) {
     super(conceptFqName);
@@ -40,15 +55,14 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
       nonVirtualMethods = new Method[0];
     }
 
-    this.methods = new HashMap<String, Method>((virtualMethods.length + nonVirtualMethods.length) * 2);
     for (Method method : virtualMethods) {
       if (method.getName().startsWith(VIRTUAL_METHOD_PREFIX)) {
-        this.methods.put(method.getName(), method);
+        myMethods.put(method.getName(), method);
       }
     }
     for (Method method : nonVirtualMethods) {
       if (method.getName().startsWith(NON_VIRTUAL_METHOD_PREFIX)) {
-        this.methods.put(method.getName(), method);
+        myMethods.put(method.getName(), method);
       }
     }
   }
@@ -73,7 +87,7 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
     params[0] = arg;
     System.arraycopy(parameters, 0, params, 1, parameters.length);
 
-    Method method = methods.get(methodName);
+    Method method = myMethods.get(methodName);
     if (method == null) {
       throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
     }

@@ -15,15 +15,16 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.behaviour.BaseBHDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,14 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Used to be the common ancestor for all generated behavior descriptors.
+ * Now it is better to use {@link BaseBHDescriptor}
+ *
+ * @see jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
   private static final Logger LOG = LogManager.getLogger(BaseBehaviorDescriptor.class);
 
@@ -82,7 +91,6 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
       throw new RuntimeException();
     }
   }
-
 
   private static List<Method> calculateConstructors(final String conceptFqName) {
     // todo: use SConcept here
@@ -140,13 +148,16 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
     });
   }
 
-  // TODO: Reflection should not be used here. Either make this method private for InterpretedBehaviorDescriptor or (better) generate all necessary code and kill this method completel
   protected static Class<?> getGeneratedClass(String conceptFqName, String className) {
     String conceptLanguageNamespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
     Language language = ModuleRepositoryFacade.getInstance().getModule(conceptLanguageNamespace, Language.class);
     if (language == null) {
       return null;
     }
-    return ClassLoaderManager.getInstance().getOwnClass(language, className);
+    try {
+      return language.getOwnClass(className);
+    } catch (ClassNotFoundException ignored) {
+      return null;
+    }
   }
 }

@@ -23,8 +23,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Base implementation generated code shall use to facilitate future changes in {@link jetbrains.mps.smodel.runtime.StructureAspectDescriptor}.
- *
- * @author Alex Pyshkin on 8/26/14.
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
   private static final Object LOCK = new Object();

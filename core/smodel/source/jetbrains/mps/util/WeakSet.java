@@ -55,8 +55,9 @@ public class WeakSet<T> extends AbstractSet<T> {
     return myWeakHashMap.remove(o) != null;
   }
 
+  @NotNull
   @Override
-  public Iterator iterator() {
+  public Iterator<T> iterator() {
     return myWeakHashMap.keySet().iterator();
   }
 

@@ -75,20 +75,18 @@ public abstract class LanguageRuntime {
    *
    * @see #createAspect(Class)
    * @see jetbrains.mps.smodel.runtime.ILanguageAspect
-   * @param descriptorInterface identifies aspect to retrieve
+   * @param aspectClass identifies aspect to retrieve
    * @param <T> subtype of {@link jetbrains.mps.smodel.runtime.ILanguageAspect}
    * @return instance of aspect implementation if there's one for the language
    */
-  public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> descriptorInterface) {
-    @SuppressWarnings("unchecked")
-    T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
+  public final <T extends ILanguageAspect> T getAspect(@NotNull Class<T> aspectClass) {
+    T aspectDescriptor = aspectClass.cast(myAspectDescriptors.get(aspectClass));
     if (aspectDescriptor == null) {
-      aspectDescriptor = createAspect(descriptorInterface);
+      aspectDescriptor = createAspect(aspectClass);
       if (aspectDescriptor == null) {
         return null;
       }
-      @SuppressWarnings("unchecked")
-      T alreadyThere = (T) myAspectDescriptors.putIfAbsent(descriptorInterface, aspectDescriptor);
+      T alreadyThere = aspectClass.cast(myAspectDescriptors.putIfAbsent(aspectClass, aspectDescriptor));
       if (alreadyThere != null) {
         return alreadyThere;
       }
@@ -98,7 +96,9 @@ public abstract class LanguageRuntime {
 
   //body needed for compatibility with 3.2-generated classes, remove it after 3.3
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass){
-    if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) return ((T) createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
+    if (LanguageAspectDescriptor.class.isAssignableFrom(aspectClass)) {
+      return aspectClass.cast(createAspectDescriptor(((Class<? extends LanguageAspectDescriptor>) aspectClass)));
+    }
     return null;
   }
 

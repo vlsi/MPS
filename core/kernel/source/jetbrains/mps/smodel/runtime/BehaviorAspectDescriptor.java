@@ -15,10 +15,22 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
  * LanguageRuntime is allowed to return null descriptor in case there are no behavior methods for language's concept defined right in the language.
  * Access to behaviors from concept's hierarchy is done by ConceptRegistry at the moment, see {@link jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor}.
  */
 public interface BehaviorAspectDescriptor extends LanguageAspectDescriptor {
+  /**
+   * Leaving this method in API for the easy transition from 3.2 to 3.3.
+   * After 3.3 the {@link BaseBehaviorAspectDescriptor#getDescriptor(SConceptId)} will be in API
+   * @param fqName is the name id of the concept
+   * @return a behavior descriptor for this concept
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   BehaviorDescriptor getDescriptor(String fqName);
 }

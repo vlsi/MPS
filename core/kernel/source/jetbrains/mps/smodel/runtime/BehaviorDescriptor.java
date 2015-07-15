@@ -15,20 +15,39 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.behaviour.BHDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+@Deprecated
+@ToRemove(version = 3.3)
 public interface BehaviorDescriptor {
-  // remove prefixes to some other place? or rename?
-  public static final String VIRTUAL_METHOD_PREFIX = "virtual";
-  public static final String NON_VIRTUAL_METHOD_PREFIX = "call";
+  String VIRTUAL_METHOD_PREFIX = "virtual";
+  String NON_VIRTUAL_METHOD_PREFIX = "call";
 
+  /**
+   * use instead {@link BHDescriptor#getConcept()}
+   */
+  @Deprecated
   String getConceptFqName();
 
-  public void initNode(SNode node);
+  /**
+   * use instead {@link BHDescriptor#invoke} with SMethod.INIT
+   */
+  @Deprecated
+  void initNode(SNode node);
 
-  public Object invoke(@NotNull SNode node, String methodName, Object[] parameters);
+  /**
+   * use instead {@link BHDescriptor#invoke}
+   */
+  @Deprecated
+  Object invoke(@NotNull SNode node, String methodName, Object[] parameters);
 
+  /**
+   * use instead {@link BHDescriptor#invoke}
+   */
+  @Deprecated
   Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters);
 }
