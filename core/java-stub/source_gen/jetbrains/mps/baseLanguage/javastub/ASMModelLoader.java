@@ -7,6 +7,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.java.stub.StubReferenceFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -35,7 +36,7 @@ public class ASMModelLoader {
   }
   public void update(SModel model) {
     try {
-      ClassifierLoader loader = new ClassifierLoader(new SReferenceCreator(myModule, model), myOnlyPublic, mySkipPrivate);
+      ClassifierLoader loader = new ClassifierLoader(new StubReferenceFactory(myModule, model), myOnlyPublic, mySkipPrivate);
 
       Iterable<IFile> classFiles = CollectionSequence.fromCollection(myPaths).select(new ISelector<String, IFile>() {
         public IFile select(String it) {
