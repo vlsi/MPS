@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -48,14 +48,32 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
         myModel = createModel();
         myModel.setModelDescriptor(this);
       }
-      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      fireModelStateChanged(ModelLoadingState.INTERFACE_LOADED);
     }
     return myModel;
   }
+
   @Override
   public boolean isLoaded() {
-    return myModel != null;
+    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
+
+  @Override
+  public void load() {
+    SModel mi = getSModelInternal();
+    if (mi.isUpdateMode()) {
+      return;
+    }
+    if (getLoadingState() == ModelLoadingState.INTERFACE_LOADED) {
+      mi.setUpdateMode(true);
+      ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
+      loader.skipPrivateMembers(mySkipPrivate);
+      loader.completeRoots(this);
+      mi.setUpdateMode(false);
+      fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+    }
+  }
+
   @Override
   public void unload() {
     assertCanChange();
@@ -72,9 +90,9 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     for (SLanguage l : getLanguagesToImport()) {
       model.addLanguage(l);
     }
-    ASMModelLoader loader = new ASMModelLoader(getModelRoot().getModule(), getSource().getPaths());
+    ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
     loader.skipPrivateMembers(mySkipPrivate);
-    loader.update(model);
+    loader.populateRoots(model);
     return model;
   }
   private Set<SLanguage> getLanguagesToImport() {
@@ -108,5 +126,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     final SModel oldModel = myModel;
     myModel = createModel();
     replaceModelAndFireEvent(oldModel, myModel);
+    fireModelStateChanged(ModelLoadingState.INTERFACE_LOADED);
   }
 }

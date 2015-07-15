@@ -18,13 +18,14 @@ package jetbrains.mps.java.stub;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -56,12 +57,11 @@ public final class StubReferenceFactory implements ReferenceFactory {
   // if we decide to re-use this cache throughout all models loaded within a module. We didn't use this cache,
   // and created a new one for each SReferenceCreator, and it didn't cause any performance issue, thus moved into single class and not reused.
   // 2. We keep SModel as it's handy to try to find proper match when there are few models with same name
-  private final Map<String, List<org.jetbrains.mps.openapi.model.SModel>> myName2Models = new HashMap<String, List<org.jetbrains.mps.openapi.model.SModel>>();
+  private final Map<String, List<SModel>> myName2Models = new HashMap<String, List<SModel>>();
 
   private final Set<SModelReference> myModelImports = new HashSet<SModelReference>();
 
   /**
-   * Note, we use smodel.SModel as SModelData is not enough, and we don't have openapi.SModel the moment we instantiate and populate stub model data.
    * @param module module we try to resolve references in, provides dependencies
    * @param model model we try to resolve references in, ensures priority of local nodes over those from dependencies
    */
@@ -70,7 +70,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
     myModel = model;
     myModelReference = model.getReference();
     myModelLongName = NameUtil.getModelLongName(myModelReference.getModelName());
-    for (ImportElement ie : model.importedModels()) {
+    for (ImportElement ie : ((SModelInternal) model).importedModels()) {
       myModelImports.add(ie.getModelReference());
     }
     myModelImports.add(myModelReference); // it's sort of implicit, just not to perform extra check in #addImport
@@ -86,7 +86,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
       }
     }
 
-    Collection<org.jetbrains.mps.openapi.model.SModel> possibleModels = findModels(SModelStereotype.withStereotype(pack, SModelStereotype.JAVA_STUB));
+    Collection<SModel> possibleModels = findModels(SModelStereotype.withStereotype(pack, SModelStereotype.JAVA_STUB));
 
     if (possibleModels.isEmpty()) {
       return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
@@ -94,7 +94,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
     // first, try to find match
 
-    for (org.jetbrains.mps.openapi.model.SModel m : possibleModels) {
+    for (SModel m : possibleModels) {
       final SModelReference modelRef = m.getReference();
       if (myModelReference.equals(modelRef)) {
         continue;
@@ -125,7 +125,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
   private void addImport(SModelReference mr) {
     if (myModelImports.add(mr)) {
-      myModel.addModelImport(new ImportElement(mr));
+      ((SModelInternal) myModel).addModelImport(new ImportElement(mr));
     }
   }
 
@@ -134,29 +134,29 @@ public final class StubReferenceFactory implements ReferenceFactory {
    * @param modelName qualified name including stereotype (if any), not <code>null</code>
    * @return ordered collection, first come local matches, if any; never <code>null</code>
    */
-  private List<org.jetbrains.mps.openapi.model.SModel> findModels(String modelName) {
+  private List<SModel> findModels(String modelName) {
     if (myName2Models.isEmpty()) {
       ensureInitialized();
     }
-    final List<org.jetbrains.mps.openapi.model.SModel> rv = myName2Models.get(modelName);
-    return rv == null ? Collections.<org.jetbrains.mps.openapi.model.SModel>emptyList() : Collections.unmodifiableList(rv);
+    final List<SModel> rv = myName2Models.get(modelName);
+    return rv == null ? Collections.<SModel>emptyList() : Collections.unmodifiableList(rv);
   }
 
 
   private void ensureInitialized() {
-    LinkedHashSet<org.jetbrains.mps.openapi.model.SModel> visibleModels = new LinkedHashSet<org.jetbrains.mps.openapi.model.SModel>();
+    LinkedHashSet<SModel> visibleModels = new LinkedHashSet<SModel>();
     // local models get precedence over those from imports
     visibleModels.addAll(IterableUtil.asCollection(myModule.getModels()));
     for (SModule visibleModule : new GlobalModuleDependenciesManager(myModule).getModules(Deptype.VISIBLE)) {
       visibleModels.addAll(IterableUtil.asCollection(visibleModule.getModels()));
     }
 
-    for (org.jetbrains.mps.openapi.model.SModel model : visibleModels) {
+    for (SModel model : visibleModels) {
       final SModelReference modelRef = model.getReference();
       final String modelName = modelRef.getModelName();
-      List<org.jetbrains.mps.openapi.model.SModel> modelsFromCache = myName2Models.get(modelName);
+      List<SModel> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
-        myName2Models.put(modelName, modelsFromCache = new ArrayList<org.jetbrains.mps.openapi.model.SModel>(3));
+        myName2Models.put(modelName, modelsFromCache = new ArrayList<SModel>(3));
       }
       modelsFromCache.add(model);
     }

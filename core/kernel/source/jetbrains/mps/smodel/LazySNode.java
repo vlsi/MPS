@@ -26,6 +26,10 @@ public final class LazySNode extends SNode {
     super(concept);
   }
 
+  public LazySNode(@NotNull SConcept concept, @NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    super(concept, nodeId);
+  }
+
   @Override
   protected SNode firstChild() {
     enforceModelLoad();

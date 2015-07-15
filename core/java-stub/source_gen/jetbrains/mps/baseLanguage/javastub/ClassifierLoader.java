@@ -7,14 +7,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.org.objectweb.asm.ClassReader;
 import org.jetbrains.org.objectweb.asm.Opcodes;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.LazySNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.ArrayList;
 import org.jetbrains.org.objectweb.asm.tree.InnerClassNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.InputStream;
 import jetbrains.mps.util.ReadUtil;
 import java.io.IOException;
@@ -23,12 +28,14 @@ public class ClassifierLoader {
   private final ReferenceFactory myReferenceFactory;
   private final boolean mySkipPrivate;
   private final boolean myOnlyPublic;
+
   public ClassifierLoader(ReferenceFactory refFactory, boolean onlyPublic, boolean skipPrivate) {
     myReferenceFactory = refFactory;
     mySkipPrivate = skipPrivate;
     myOnlyPublic = onlyPublic;
   }
-  public SNode getClassifier(IFile file) {
+
+  public SNode createClassifier(IFile file) {
     byte[] code = readClass(file);
     if (code == null) {
       return null;
@@ -37,14 +44,66 @@ public class ClassifierLoader {
     if (myOnlyPublic && (classReader.getAccess() & Opcodes.ACC_PUBLIC) == 0) {
       return null;
     }
-    ASMClass ac = new ASMClass(classReader);
-    SNode res = new ClassifierUpdater(ac, mySkipPrivate, myReferenceFactory).create(getClassName(file));
-    if (res != null && !(ac.getInnerClasses().isEmpty())) {
-      List<SNode> innerClassifiers = updateInnerClassifiers(file, ac);
-      ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addSequence(ListSequence.fromList(innerClassifiers));
+    final String className = getClassName(file);
+    return doCreateClassifier(classReader, className);
+  }
+
+  public void updateClassifier(SNode classifier, IFile file) {
+    byte[] code = readClass(file);
+    ClassReader classReader = new ClassReader(code);
+    doUpdateClassifier(classifier, classReader, file);
+  }
+
+  private SNode doCreateClassifier(ClassReader classReader, String className) {
+    final ClassifierKind kind = ClassifierKind.getClassifierKind(classReader);
+    final SNodeId nodeId = ASMNodeId.createId(className);
+    final String shortName = NameUtil.shortNameFromLongName(className.replace('$', '.'));
+    SNode lazyRoot;
+    switch (kind) {
+      case CLASS:
+        lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), nodeId);
+        break;
+      case INTERFACE:
+        lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"), nodeId);
+        break;
+      case ENUM:
+        lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"), nodeId);
+        break;
+      case ANNOTATIONS:
+        lazyRoot = new LazySNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a69dc80cL, "jetbrains.mps.baseLanguage.structure.Annotation"), nodeId);
+        break;
+      default:
+        return null;
+
     }
+    SNode rv = SNodeOperations.as(lazyRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+    SPropertyOperations.set(rv, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), shortName);
+    return rv;
+  }
+
+  private void doUpdateClassifier(SNode classifier, ClassReader classReader, IFile file) {
+    ASMClass ac = new ASMClass(classReader);
+    new ClassifierUpdater(ac, mySkipPrivate, myReferenceFactory).update(classifier);
+    if (!(ac.getInnerClasses().isEmpty())) {
+      List<SNode> innerClassifiers = updateInnerClassifiers(file, ac);
+      ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addSequence(ListSequence.fromList(innerClassifiers));
+    }
+  }
+
+  private SNode getClassifier(IFile file) {
+    byte[] code = readClass(file);
+    if (code == null) {
+      return null;
+    }
+    ClassReader classReader = new ClassReader(code);
+    if (myOnlyPublic && (classReader.getAccess() & Opcodes.ACC_PUBLIC) == 0) {
+      return null;
+    }
+    SNode res = doCreateClassifier(classReader, getClassName(file));
+    doUpdateClassifier(res, classReader, file);
     return res;
   }
+
   private List<SNode> updateInnerClassifiers(IFile file, ASMClass ac) {
     List<SNode> rv = ListSequence.fromList(new ArrayList<SNode>());
     String outerName = ac.getName();
@@ -108,5 +167,4 @@ public class ClassifierLoader {
     String name = file.getName();
     return name.substring(0, name.indexOf("."));
   }
-  private boolean onlyPublic;
 }

@@ -6,15 +6,21 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.java.stub.StubReferenceFactory;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import java.util.Map;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.java.stub.StubReferenceFactory;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class ASMModelLoader {
   private static final Logger LOG = LogManager.getLogger(ASMModelLoader.class);
@@ -34,39 +40,54 @@ public class ASMModelLoader {
     mySkipPrivate = skipPrivateMembers;
     return this;
   }
-  public void update(SModel model) {
+
+  public void populateRoots(SModelData modelData) {
+    // XXX may pass openapi.SModel in addition to SModelData so that ClassifierLoader may use model as factory 
+    ClassifierLoader loader = new ClassifierLoader(null, myOnlyPublic, mySkipPrivate);
+    for (IFile classfile : getTopClassFiles()) {
+      SNode c = loader.createClassifier(classfile);
+      if (c != null) {
+        modelData.addRootNode(c);
+      }
+    }
+  }
+
+  public void completeRoots(SModel model) {
     try {
+      Map<SNodeId, SNode> roots = new HashMap<SNodeId, SNode>();
+      for (SNode n : model.getRootNodes()) {
+        roots.put(n.getNodeId(), SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      }
       ClassifierLoader loader = new ClassifierLoader(new StubReferenceFactory(myModule, model), myOnlyPublic, mySkipPrivate);
-
-      Iterable<IFile> classFiles = CollectionSequence.fromCollection(myPaths).select(new ISelector<String, IFile>() {
-        public IFile select(String it) {
-          return FileSystem.getInstance().getFileByPath(it);
-        }
-      }).where(new IWhereFilter<IFile>() {
-        public boolean accept(IFile it) {
-          return it != null;
-        }
-      }).translate(new ITranslator2<IFile, IFile>() {
-        public Iterable<IFile> translate(IFile it) {
-          return it.getChildren();
-        }
-      }).where(new IWhereFilter<IFile>() {
-        public boolean accept(IFile it) {
-          return !(it.isDirectory()) && it.getName().endsWith(".class") && !(ClassifierLoader.getClassName(it).contains("$"));
-        }
-      });
-
-      for (IFile classfile : classFiles) {
-        if (model.getNode(ASMNodeId.createId(ClassifierLoader.getClassName(classfile))) != null) {
-          continue;
-        }
-        SNode classifier = loader.getClassifier(classfile);
-        if (classifier != null) {
-          model.addRootNode(classifier);
+      for (IFile classfile : getTopClassFiles()) {
+        SNodeId nodeId = ASMNodeId.createId(ClassifierLoader.getClassName(classfile));
+        SNode root = roots.get(nodeId);
+        if (root != null) {
+          loader.updateClassifier(root, classfile);
         }
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
     }
+  }
+
+  public Iterable<IFile> getTopClassFiles() {
+    return CollectionSequence.fromCollection(myPaths).select(new ISelector<String, IFile>() {
+      public IFile select(String it) {
+        return FileSystem.getInstance().getFileByPath(it);
+      }
+    }).where(new IWhereFilter<IFile>() {
+      public boolean accept(IFile it) {
+        return it != null;
+      }
+    }).translate(new ITranslator2<IFile, IFile>() {
+      public Iterable<IFile> translate(IFile it) {
+        return it.getChildren();
+      }
+    }).where(new IWhereFilter<IFile>() {
+      public boolean accept(IFile it) {
+        return !(it.isDirectory()) && it.getName().endsWith(".class") && !(ClassifierLoader.getClassName(it).contains("$"));
+      }
+    });
   }
 }
