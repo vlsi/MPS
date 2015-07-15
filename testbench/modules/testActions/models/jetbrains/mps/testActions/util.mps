@@ -652,6 +652,19 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6ACV$2CJtvN" role="3cqZAp">
+          <node concept="2OqwBi" id="6ACV$2CJtvO" role="3clFbG">
+            <node concept="37vLTw" id="6ACV$2CJtvP" role="2Oq$k0">
+              <ref role="3cqZAo" node="1YKWOow4nWc" resolve="set" />
+            </node>
+            <node concept="liA8E" id="6ACV$2CJtvQ" role="2OqNvi">
+              <ref role="37wK5l" to="k7g3:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Xl_RD" id="6ACV$2CJtvR" role="37wK5m">
+                <property role="Xl_RC" value="jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="3nWZTp1WA2d" role="3cqZAp">
           <node concept="2OqwBi" id="3nWZTp1WAnd" role="3clFbG">
             <node concept="37vLTw" id="3nWZTp1WA2b" role="2Oq$k0">

@@ -85,6 +85,7 @@ public class FlyingActionsFinder {
     set.add("jetbrains.mps.vcs.platform.actions.ChangesStrip_ActionGroup");
     set.add("jetbrains.mps.vcs.plugin.TestMergeAction_Action");
     set.add("jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DataFlowInternal_ActionGroup");
+    set.add("jetbrains.mps.samples.ActionWithProgress.plugin.ProgressActionsGroup_ActionGroup");
     set.add("Git.LogContextMenu");
 
     return set;
