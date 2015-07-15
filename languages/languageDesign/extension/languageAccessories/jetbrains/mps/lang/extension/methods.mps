@@ -36,10 +36,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
-        <child id="1178549979242" name="visibility" index="1B3o_S" />
-      </concept>
-      <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
@@ -52,7 +48,7 @@
       <concept id="3751132065236767079" name="jetbrains.mps.lang.classLike.structure.MethodDescriptor" flags="ng" index="q3mfq">
         <child id="3751132065236767081" name="retType" index="q3mfk" />
       </concept>
-      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor" flags="ig" index="q3mft">
+      <concept id="3751132065236767072" name="jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor" flags="ng" index="q3mft">
         <reference id="1825613483881131410" name="preferredConcept" index="2qG0Lo" />
         <child id="1825613483881472526" name="initializer" index="2qJGf4" />
         <child id="8264762413010642120" name="classLikeMember" index="QNr5C" />
@@ -233,7 +229,6 @@
         </node>
       </node>
     </node>
-    <node concept="3Tm1VV" id="7z8Vrj4Zy7m" role="1B3o_S" />
     <node concept="1bVj0M" id="3CPpk7pFq_j" role="2qJGf4">
       <node concept="3clFbS" id="3CPpk7pFq_k" role="1bW5cS">
         <node concept="3clFbF" id="3CPpk7pFq_F" role="3cqZAp">

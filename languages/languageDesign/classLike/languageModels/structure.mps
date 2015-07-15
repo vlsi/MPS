@@ -94,7 +94,6 @@
     <property role="TrG5h" value="ClassLikeDescriptor" />
     <property role="3GE5qa" value="" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyj" id="1_lSsE3TuQi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="preferredConcept" />
