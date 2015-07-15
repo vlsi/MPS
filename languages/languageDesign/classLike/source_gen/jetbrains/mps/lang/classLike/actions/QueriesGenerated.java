@@ -33,7 +33,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SubstituteUtil.getMethodDescriptors2Substitute(_context.getParentNode());
+            return SNodeOperations.ofConcept(SubstituteUtil.getMembers2Substitute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, "jetbrains.mps.lang.classLike.structure.MethodDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, "jetbrains.mps.lang.classLike.structure.MethodDescriptor"));
           }
         }.compute();
         if (queryResult != null) {
@@ -62,7 +62,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(childConcept), SNodeOperations.asSConcept(outputConcept))) {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
-            return SubstituteUtil.getPropertyDescriptors2Substitute(_context.getParentNode());
+            return SNodeOperations.ofConcept(SubstituteUtil.getMembers2Substitute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a0447fbb31L, "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"));
           }
         }.compute();
         if (queryResult != null) {
@@ -96,9 +96,9 @@ public class QueriesGenerated {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
           final SNode c = concept;
-          return Sequence.fromIterable(SubstituteUtil.getCustomDescriptors2Substitute(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+          return Sequence.fromIterable(SNodeOperations.ofConcept(SubstituteUtil.getMembers2Substitute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return (SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == c;
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == c;
             }
           }).isEmpty();
         }
