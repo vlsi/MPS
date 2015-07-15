@@ -49,7 +49,7 @@
       <unit at="7,0,18,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeStringProperty_BehaviorDescriptor" />
     </file>
     <file name="CustomMemberDescriptor_BehaviorDescriptor.java">
-      <unit at="8,0,31,0" name="jetbrains.mps.lang.classLike.behavior.CustomMemberDescriptor_BehaviorDescriptor" />
+      <unit at="10,0,36,0" name="jetbrains.mps.lang.classLike.behavior.CustomMemberDescriptor_BehaviorDescriptor" />
     </file>
     <file name="DependentTypeDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_BehaviorDescriptor" />

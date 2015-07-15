@@ -13,6 +13,7 @@
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -35,9 +36,6 @@
       </concept>
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
-      </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
         <child id="1182160096073" name="cls" index="YeSDq" />
@@ -75,7 +73,6 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -386,20 +383,10 @@
       <node concept="Eqf_E" id="3JYspdAJSzo" role="EtsB7">
         <node concept="3clFbS" id="3JYspdAJSzp" role="2VODD2">
           <node concept="3clFbF" id="5KZRo2kmo7U" role="3cqZAp">
-            <node concept="3cpWs3" id="5KZRo2kmoLu" role="3clFbG">
-              <node concept="3cpWs3" id="5KZRo2kmoYR" role="3uHU7B">
-                <node concept="2OqwBi" id="5KZRo2kmpgb" role="3uHU7w">
-                  <node concept="EsrRn" id="5KZRo2kmp4d" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="5KZRo2kmpur" role="2OqNvi">
-                    <ref role="3Tt5mk" to="oubp:7aMlq14w5Qv" />
-                  </node>
-                </node>
-                <node concept="Xl_RD" id="5KZRo2kmoL$" role="3uHU7B">
-                  <property role="Xl_RC" value="custom&lt;" />
-                </node>
-              </node>
-              <node concept="Xl_RD" id="5KZRo2kmoLA" role="3uHU7w">
-                <property role="Xl_RC" value="&gt;" />
+            <node concept="2OqwBi" id="5KZRo2kmP25" role="3clFbG">
+              <node concept="EsrRn" id="5KZRo2kmOX7" role="2Oq$k0" />
+              <node concept="2qgKlT" id="5KZRo2kmPoT" role="2OqNvi">
+                <ref role="37wK5l" to="tpcu:hEwIMiw" resolve="getPresentation" />
               </node>
             </node>
           </node>
