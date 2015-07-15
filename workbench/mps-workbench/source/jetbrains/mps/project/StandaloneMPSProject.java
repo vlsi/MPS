@@ -22,6 +22,7 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
@@ -42,6 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
@@ -59,8 +61,7 @@ import java.util.Set;
     storages = {
         @Storage(file = StoragePathMacros.PROJECT_FILE),
         @Storage(file = StoragePathMacros.PROJECT_CONFIG_DIR + "/modules.xml", scheme = StorageScheme.DIRECTORY_BASED)
-    },
-    reloadable = false
+    }
 )
 public class StandaloneMPSProject extends MPSProject implements FileSystemListener, PersistentStateComponent<Element> {
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
@@ -69,6 +70,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   private String myErrors = null;
   private Element myProjectElement;
   protected ProjectDescriptor myProjectDescriptor;
+  private volatile boolean isOpened = false;
 
   private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
@@ -104,13 +106,17 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   @Override
   public void loadState(Element state) {
     myProjectElement = state;
+    if(isOpened) {
+      initProject();
+    }
   }
 
   @Override
   public void projectOpened() {
     LOG.info("Project '" + getName() + "' opened");
     super.projectOpened();
-    initProjectOnOpen();
+    initProject();
+    isOpened = true;
   }
 
   @Override
@@ -122,7 +128,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     super.projectClosed();
   }
 
-  private void initProjectOnOpen() {
+  private void initProject() {
     String url = myProject.getPresentableUrl();
     ProjectDescriptor descriptor = new ProjectDescriptor();
     if (url != null) {
@@ -213,6 +219,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     }
     for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
+      final SRepository repository =  getRepository();
+      if(repository instanceof SRepositoryExt) {
+        ((SRepositoryExt)repository).unregisterModule(ref.resolve(repository), this);
+      }
     }
   }
 
