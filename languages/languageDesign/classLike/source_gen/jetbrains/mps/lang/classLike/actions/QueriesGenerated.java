@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -95,11 +95,12 @@ public class QueriesGenerated {
       SNode applicableConcept = MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember").getDeclarationNode();
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
-          return Sequence.fromIterable(SubstituteUtil.getCustomDescriptors2Substitute(_context.getParentNode())).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return ((SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")));
+          final SNode c = concept;
+          return Sequence.fromIterable(SubstituteUtil.getCustomDescriptors2Substitute(_context.getParentNode())).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == c;
             }
-          }).contains(concept);
+          }).isEmpty();
         }
       };
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
