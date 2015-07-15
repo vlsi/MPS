@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.datatransfer;
 
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,16 +27,20 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * XXX why is this data modifiable? emptyPasteNodeData creates a copy with
+ * modifiable collections, does it mean we intend to modify PasteNodeData after creation?
+ */
 public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
-  private Set<SModuleReference> myNecessaryLanguages;
+  private Set<SLanguage> myNecessaryLanguages;
   private Set<SModelReference> myNecessaryModels;
   private SModelReference mySourceModel;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
                        SModelReference sourceModelRef,
-                       Set<SModuleReference> necessaryLanguages,
+                       Set<SLanguage> necessaryLanguages,
                        Set<SModelReference> necessaryModels) {
     myNodes = nodes;
     myRequireResolveReferences = references;
@@ -57,7 +62,7 @@ public class PasteNodeData {
     return mySourceModel;
   }
 
-  public Set<SModuleReference> getNecessaryLanguages() {
+  public Set<SLanguage> getNecessaryLanguages() {
     return myNecessaryLanguages;
   }
 
@@ -69,7 +74,7 @@ public class PasteNodeData {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
       sourceModel,
-      new HashSet<SModuleReference>(),
+      new HashSet<SLanguage>(),
       new HashSet<SModelReference>());
   }
 }

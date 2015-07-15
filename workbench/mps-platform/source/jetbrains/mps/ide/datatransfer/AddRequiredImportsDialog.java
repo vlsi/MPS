@@ -26,49 +26,47 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.language.LanguageAspectSupport;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.ListCellRenderer;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 
 /**
  * evgeny, 11/15/11
  */
 public class AddRequiredImportsDialog extends DialogWrapper {
 
+  @NotNull
+  private final Project myProject;
   private final SModelReference[] myRequiredImports;
-  private final SModuleReference[] myRequiredLanguages;
-  private Map<SModelReference, String> myImport2Module = new HashMap<SModelReference, String>();
+  private final SLanguage[] myRequiredLanguages;
 
   private JList myModelsList;
   private JList myLanguagesList;
 
   private SModelReference[] mySelectedImports;
-  private SModuleReference[] mySelectedLanguages;
+  private SLanguage[] mySelectedLanguages;
 
-  public AddRequiredImportsDialog(@NotNull final Project project, @NotNull SModelReference[] requiredImports, @NotNull SModuleReference[] requiredLanguages) {
+  public AddRequiredImportsDialog(@NotNull final Project project, @NotNull SModelReference[] requiredImports, @NotNull SLanguage[] requiredLanguages) {
     super(ProjectHelper.toIdeaProject(project), true);
+    myProject = project;
     myRequiredImports = requiredImports;
     myRequiredLanguages = requiredLanguages;
-    project.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SModelReference ref : myRequiredImports) {
-          SModel descr = ref.resolve(project.getRepository());
-          if (descr == null) continue;
-          SModule module = descr.getModule();
-          if (module == null) continue;
-          myImport2Module.put(ref, module.getModuleName());
-        }
-      }
-    });
     if (requiredImports.length == 0) {
       setTitle("Select languages to import");
     } else if (requiredLanguages.length == 0) {
@@ -96,7 +94,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
     }
     if (myLanguagesList != null) {
       values = myLanguagesList.getSelectedValues();
-      mySelectedLanguages = new SModuleReference[values.length];
+      mySelectedLanguages = new SLanguage[values.length];
       System.arraycopy(values, 0, mySelectedLanguages, 0, values.length);
     }
     super.doOKAction();
@@ -122,7 +120,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
       myModelsList = new JBList((Object[]) myRequiredImports);
-      myModelsList.setCellRenderer(new MyCellRenderer());
+      myModelsList.setCellRenderer(new MyCellRenderer(myProject));
       myModelsList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myModelsList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
     }
@@ -135,7 +133,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(myRequiredImports.length > 0 ? 5 : 0, 0, 0, 0), 0, 0));
 
       myLanguagesList = new JBList((Object[]) myRequiredLanguages);
-      myLanguagesList.setCellRenderer(new MyCellRenderer());
+      myLanguagesList.setCellRenderer(new MyCellRenderer(myProject));
       myLanguagesList.setBorder(BorderFactory.createEtchedBorder());
       center.add(ScrollPaneFactory.createScrollPane(myLanguagesList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 2, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
     }
@@ -156,14 +154,16 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   }
 
   @NotNull
-  public SModuleReference[] getSelectedLanguages() {
-    return mySelectedLanguages != null ? mySelectedLanguages : new SModuleReference[0];
+  public SLanguage[] getSelectedLanguages() {
+    return mySelectedLanguages != null ? mySelectedLanguages : new SLanguage[0];
   }
 
-  public class MyCellRenderer extends SimpleColoredComponent implements ListCellRenderer {
+  private static class MyCellRenderer extends SimpleColoredComponent implements ListCellRenderer {
     private final Font FONT;
+    private final Project myProject;
 
-    public MyCellRenderer() {
+    public MyCellRenderer(Project mpsProject) {
+      myProject = mpsProject;
       EditorColorsScheme scheme = EditorColorsManager.getInstance().getGlobalScheme();
       FONT = new Font(scheme.getEditorFontName(), Font.PLAIN, scheme.getEditorFontSize());
       setOpaque(true);
@@ -180,27 +180,25 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       clear();
 
       if (value instanceof SModelReference) {
-        SModelReference ref = (SModelReference) value;
+        final SModelReference ref = (SModelReference) value;
 
-        SModel model = ref.resolve(MPSModuleRepository.getInstance());
-        setIcon(IconManager.getIconFor(model));
-        String longName = SModelStereotype.withoutStereotype(ref.getModelName());
-        append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);
-        if (!SModelStereotype.getStereotype(ref.getModelName()).isEmpty()) {
-          append("@" + SModelStereotype.getStereotype(ref.getModelName()), SimpleTextAttributes.REGULAR_ATTRIBUTES);
+        // FIXME likely, IconManager shall take project argument
+        myProject.getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SModel model = ref.resolve(myProject.getRepository());
+            setIcon(IconManager.getIconFor(model));
+          }
+        });
+        append(ref.getModelName(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
+        SModuleReference module = ref.getModuleReference();
+        String moduleName = module == null ? null : module.getModuleName();
+        if (moduleName != null && !moduleName.isEmpty()) {
+          append(" (" + moduleName + ")", SimpleTextAttributes.GRAY_ATTRIBUTES);
         }
-        String module = myImport2Module.get(ref);
-        if (module != null && !module.isEmpty()) {
-          append(" (" + module + ")", SimpleTextAttributes.GRAY_ATTRIBUTES);
-        }
-
-
-      } else if (value instanceof SModuleReference) {
-        SModuleReference ref = (SModuleReference) value;
+      } else if (value instanceof SLanguage) {
         setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
-        String longName = ref.getModuleName();
-        append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);
-
+        append(((SLanguage) value).getQualifiedName(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
       } else {
         setIcon(IdeIcons.DEFAULT_ICON);
         append("unknown", SimpleTextAttributes.REGULAR_ATTRIBUTES);

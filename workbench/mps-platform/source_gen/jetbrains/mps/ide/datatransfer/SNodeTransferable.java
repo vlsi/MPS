@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Set;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import java.awt.datatransfer.DataFlavor;
 import java.util.Map;
 import java.util.Collections;
@@ -31,7 +31,7 @@ public class SNodeTransferable implements Transferable {
   @NotNull
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
   @NotNull
-  private Set<SModuleReference> myNecessaryLanguages = new HashSet<SModuleReference>();
+  private Set<SLanguage> myNecessaryLanguages = new HashSet<SLanguage>();
   @Nullable
   private String myText;
   @NotNull
@@ -126,7 +126,7 @@ public class SNodeTransferable implements Transferable {
     mySupportedDataFlavors.add(DataFlavor.plainTextFlavor);
   }
   public PasteNodeData createNodeData() {
-    return CopyPasteUtil.createNodeDataOut(mySNodes, mySourceModel, new HashSet<SModuleReference>(myNecessaryLanguages), new HashSet<SModelReference>(myNecessaryModels));
+    return CopyPasteUtil.createNodeDataOut(mySNodes, mySourceModel, new HashSet<SLanguage>(myNecessaryLanguages), new HashSet<SModelReference>(myNecessaryModels));
   }
   public boolean containsNodes() {
     return (!(mySNodes.isEmpty()));
