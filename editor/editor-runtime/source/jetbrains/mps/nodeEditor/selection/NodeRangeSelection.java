@@ -29,7 +29,7 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -245,7 +245,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   }
 
   private Class loadFromModule(String moduleRefString, String className) throws SelectionStoreException {
-    SModuleReference moduleReference = ModuleReference.parseReference(moduleRefString);
+    SModuleReference moduleReference = PersistenceRegistry.getInstance().createModuleReference(moduleRefString);
     if (moduleReference == null) {
       throw new SelectionStoreException("Can't parse module reference: " + moduleRefString);
     }

@@ -5,13 +5,7 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelVersionsInfo;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import org.jetbrains.annotations.NotNull;
@@ -93,25 +87,12 @@ public class VersionUtil {
     }
     return linkRole;
   }
-  public static int getNodeLanguageVersion(SNode node) {
-    SModuleReference moduleRef = new ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getQualifiedName()));
-    Language lang = (Language) moduleRef.resolve(MPSModuleRepository.getInstance());
-    SModelReference reference = LanguageAspect.STRUCTURE.get(lang).getReference();
-    return VersionUtil.getUsedVersion(node.getModel(), reference);
-  }
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
     if (targetModelReference == null) {
       return -1;
     }
     // target model reference is nullable in postponed references 
     return VersionUtil.getUsedVersion(node.getModel(), targetModelReference);
-  }
-  public static int getRoleVersion(SNode node) {
-    final SNode parent = node.getParent();
-    if (parent == null) {
-      return -1;
-    }
-    return VersionUtil.getNodeLanguageVersion(parent);
   }
   public static String getTargetNodeId(String targetId, String role, SNode node, SModelVersionsInfo versionsInfo) {
     final String linkRole = getBeforeSeparator(targetId);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,18 +32,6 @@ public class ScopeOperations {
     return result;
   }
 
-  public static Language resolveLanguage(SearchScope scope, SModuleReference reference) {
-    return resolveModule(scope, reference, Language.class);
-  }
-
-  public static <T extends SModule> T resolveModule(SearchScope scope, SModuleReference reference, Class<T> moduleClass) {
-    SModule module = scope.resolve(reference);
-    if (module != null && !(moduleClass.isInstance(module))) {
-      throw new IllegalStateException();
-    }
-    return (T) module;
-  }
-
   public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SearchScope scope, final String modelName) {
     return Sequence.fromIterable(scope.getModels()).where(new ISelector<org.jetbrains.mps.openapi.model.SModel, Boolean>() {
       @Override
@@ -56,29 +39,5 @@ public class ScopeOperations {
         return modelName.equals(model.getModelName());
       }
     });
-  }
-
-  @Deprecated
-  public static Language getLanguage(SearchScope scope, String fqName) {
-    return resolveModule(scope, new jetbrains.mps.project.structure.modules.ModuleReference(fqName), Language.class);
-  }
-
-  @Deprecated
-  public static SModel getModelDescriptor(SearchScope scope, SModelReference modelReference) {
-    org.jetbrains.mps.openapi.model.SModel model = scope.resolve(modelReference);
-    if (model != null && !(model instanceof SModelBase)) {
-      throw new IllegalStateException();
-    }
-    return model;
-  }
-
-  @Deprecated
-  public static Iterable<SModel> getModelDescriptors(SearchScope scope) {
-    for (org.jetbrains.mps.openapi.model.SModel model : scope.getModels()) {
-      if (!(model instanceof SModelBase)) {
-        throw new IllegalStateException();
-      }
-    }
-    return (Iterable) scope.getModels();
   }
 }

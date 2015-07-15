@@ -23,6 +23,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
@@ -705,7 +706,7 @@ public class GenPlanTest {
 
     public MockTemplateModel(String name) {
       myName = name;
-      myModelRef = new SModelReference(new ModuleReference("MockModule"), SModelId.generate(), name);
+      myModelRef = new SModelReference(new ModuleReference("MockModule", ModuleId.regular()), SModelId.generate(), name);
     }
 
     @Override

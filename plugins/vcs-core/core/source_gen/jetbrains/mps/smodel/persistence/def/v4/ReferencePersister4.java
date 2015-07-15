@@ -137,46 +137,7 @@ public class ReferencePersister4 implements IReferencePersister {
   }
   @Override
   public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
-    assert useUIDs || visibleModelElements != null;
-    SNode node = reference.getSourceNode();
-    Element linkElement = new Element(VCSPersistenceSupport.LINK);
-    parentElement.addContent(linkElement);
-    linkElement.setAttribute(VCSPersistenceSupport.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
-    String targetModelInfo = "";
-    if (!((reference instanceof StaticReference && node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
-      if (useUIDs) {
-        targetModelInfo = reference.getTargetSModelReference().toString() + "#";
-      } else {
-        SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null) {
-          SModel.ImportElement importElement = VersionUtil.getImportElement(node.getModel(), targetModelReference);
-          if (importElement != null) {
-            int importIndex = importElement.getReferenceID();
-            targetModelInfo = importIndex + ".";
-          } else {
-            int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelReference);
-            targetModelInfo = visibleIndex + "v.";
-          }
-        } else {
-          LOG.error("external reference '" + reference.getRole() + "' has no target model info", reference.getSourceNode());
-          LOG.error("-- was reference " + reference + " in " + SNodeOperations.getDebugText(reference.getSourceNode()));
-        }
-      }
-    }
-    String targetNodeId;
-    if (reference instanceof StaticReference) {
-      StaticReference staticReference = (StaticReference) reference;
-      targetNodeId = String.valueOf(staticReference.getTargetNodeId());
-    } else {
-      targetNodeId = "^";
-    }
-    // stack overflow was here!! 
-    targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
-    linkElement.setAttribute(VCSPersistenceSupport.TARGET_NODE_ID, targetNodeId);
-    String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-    if (resolveInfo != null) {
-      linkElement.setAttribute(VCSPersistenceSupport.RESOLVE_INFO, resolveInfo);
-    }
+    // no-op, we do not support serialization in old formats 
   }
   @Override
   public int getImportIndex() {
