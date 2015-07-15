@@ -28,22 +28,8 @@ public final class IllegalBHDescriptor implements BHDescriptor {
   }
 
   @Override
-  public void init() {
-  }
-
-  @Override
   public Object invoke(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
     throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Object invokeOwn(@Nullable SNode node, @NotNull SMethod method, Object... args) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public boolean hasOwnMethod(@NotNull SMethod method) {
-    return false;
   }
 
   @NotNull

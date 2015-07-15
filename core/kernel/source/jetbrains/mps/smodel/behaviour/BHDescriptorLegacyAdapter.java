@@ -38,6 +38,8 @@ import java.util.Map.Entry;
 @ToRemove(version = 3.3)
 public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
   private final static String[] POSSIBLE_LEGACY_METHOD_PREFIXES = {BehaviorDescriptor.VIRTUAL_METHOD_PREFIX, BehaviorDescriptor.NON_VIRTUAL_METHOD_PREFIX};
+  private final static String DEFAULT_CONSTRUCTOR_METHOD_NAME = "init";
+
   private final InterpretedBehaviorDescriptor myLegacyDescriptor;
   private final Map<SMethod, Method> myInvocationMap = new HashMap<SMethod, Method>(); // gets filled during #init()
 
@@ -49,10 +51,17 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
     myLegacyDescriptor = legacyDescriptor;
   }
 
+  /**
+   * filling the virtual table and also the map SMethod->Method
+   */
   @Override
   protected void fillVTable(@NotNull BHVirtualMethodTable tableToFill) {
     for (Entry<String, Method> entry : myLegacyDescriptor.getMethods().entrySet()) {
-      String methodName = extractNewMethodNameFromOld(entry.getKey());
+      String name = entry.getKey();
+      if (name.equals(DEFAULT_CONSTRUCTOR_METHOD_NAME)) {
+        continue;
+      }
+      String methodName = extractNewMethodNameFromOld(name);
       Method method = entry.getValue();
       BHMethodModifiers modifiers = extractMethodModifiers(methodName, method);
       SMethod sMethod = SMethod.create(methodName, modifiers, method.getReturnType(), method.getParameterTypes());
@@ -88,6 +97,12 @@ public final class BHDescriptorLegacyAdapter extends BaseBHDescriptor {
 
   @Override
   protected Object invokeOwn(@Nullable SNode node, @NotNull SMethod method, Object... parameters) {
+    if (method == SMethod.INIT) {
+      if (node == null) {
+        throw new IllegalArgumentException("Cannot pass null node to constructor");
+      }
+      myLegacyDescriptor.initNode(node);
+    }
     String methodName = myInvocationMap.get(method).getName();
     if (node == null) {
       return myLegacyDescriptor.invokeStatic(getConcept(), methodName, parameters);

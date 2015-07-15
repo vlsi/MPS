@@ -38,6 +38,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * This class is used for transition from 3.2 to 3.3 version. Will be dropped afterwards.
  * @see jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor
  */
 @ToRemove(version = 3.3)

@@ -54,7 +54,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
     myConstructionHandler = new ConstructionHandler(concept, myAncestorCache);
   }
 
-  @Override
   public void init() {
     initVTable();
     myInitialized = true;
@@ -232,6 +231,6 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
   }
 
   // todo
-  private class BHNotInitializedException extends Throwable {
+  private class BHNotInitializedException extends RuntimeException {
   }
 }

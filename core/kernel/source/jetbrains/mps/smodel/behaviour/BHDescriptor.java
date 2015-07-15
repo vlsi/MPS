@@ -27,11 +27,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface BHDescriptor {
   /**
-   * BHDescriptor initialization block.
-   */
-  void init();
-
-  /**
    * invokes a method (trying to resolve the right method on runtime if it is virtual)
    */
   Object invoke(@Nullable SNode node, @NotNull SMethod method, Object... parameters);

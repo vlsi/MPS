@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Common ancestor for all generated behavior aspect's classes.
+ * Appeared only in 3.3, previously generated behavior aspect descriptors do not extend this class
  */
 public abstract class BaseBehaviorAspectDescriptor implements BehaviorAspectDescriptor {
   /**

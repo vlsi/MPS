@@ -1,0 +1,153 @@
+/*
+ * Copyright 2003-2015 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.smodel.language;
+
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapterById;
+import jetbrains.mps.smodel.behaviour.BHDescriptor;
+import jetbrains.mps.smodel.behaviour.BHDescriptorLegacyAdapter;
+import jetbrains.mps.smodel.behaviour.BaseBehaviorAspectDescriptor;
+import jetbrains.mps.smodel.behaviour.IllegalBHDescriptor;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.NullSafeIllegalBehaviorDescriptor;
+import jetbrains.mps.smodel.runtime.interpreted.InterpretedBehaviorDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * Created by apyshkin on 7/15/15.
+ */
+public class BehaviorRegistry implements CoreAspectRegistry {
+  private static final Logger LOG = LogManager.getLogger(BehaviorRegistry.class);
+
+  private final ConceptInLoadingStorage<String> myLegacyStorage = new ConceptInLoadingStorage<String>();
+  private final ConceptInLoadingStorage<SAbstractConcept> myStorage = new ConceptInLoadingStorage<SAbstractConcept>();
+  private final Map<String, BehaviorDescriptor> myLegacyBehaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
+  private final Map<SAbstractConcept, BHDescriptor> myBHDescriptors = new ConcurrentHashMap<SAbstractConcept, BHDescriptor>();
+  private final LanguageRegistry myLanguageRegistry;
+
+  public BehaviorRegistry(LanguageRegistry languageRegistry) {
+    myLanguageRegistry = languageRegistry;
+  }
+
+  @NotNull
+  @ToRemove(version = 3.3)
+  @Deprecated
+  public BehaviorDescriptor getBehaviorDescriptor(@NotNull String fqName) {
+    return getLegacyBehaviorDescriptor(fqName);
+  }
+
+  @ToRemove(version = 3.3)
+  @Deprecated
+  public BehaviorDescriptor getBehaviorDescriptorForInstanceNode(@Nullable SNode node) {
+    if (node == null) {
+      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
+    } else {
+      return getBehaviorDescriptor(node.getConcept().getQualifiedName());
+    }
+  }
+
+  @NotNull
+  public BHDescriptor getBHDescriptor(@NotNull SAbstractConcept concept) {
+    BHDescriptor descriptor = myBHDescriptors.get(concept);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!myStorage.startLoading(concept)) {
+      return new IllegalBHDescriptor(concept);
+    }
+
+    try {
+      try {
+        if ((concept instanceof SAbstractConceptAdapterById)) {
+          LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(concept.getLanguage());
+          BehaviorAspectDescriptor behaviorAspect = null;
+          if (languageRuntime == null) {
+            LOG.warn("No language for: " + concept + ", while looking for the behavior descriptor.");
+          } else {
+            behaviorAspect = languageRuntime.getAspect(BehaviorAspectDescriptor.class);
+          }
+          if (behaviorAspect instanceof BaseBehaviorAspectDescriptor) {
+            SConceptId conceptId = ((SAbstractConceptAdapterById) concept).getId();
+            descriptor = ((BaseBehaviorAspectDescriptor) behaviorAspect).getDescriptor(conceptId);
+            if (descriptor == null) {
+              LOG.warn("BaseBehaviorAspectDescriptor returned null : " + concept);
+              descriptor = new IllegalBHDescriptor(concept);
+            }
+          } else {
+            descriptor = fallbackToInterpretedLegacy(concept);
+          }
+        } else {
+          descriptor = fallbackToInterpretedLegacy(concept);
+        }
+      } catch (Throwable e) {
+        LOG.error("Exception while behavior descriptor creating", e);
+      }
+      assert descriptor != null;
+      myBHDescriptors.put(concept, descriptor);
+      return descriptor;
+    } finally {
+      myStorage.finishLoading(concept);
+    }
+  }
+
+  @ToRemove(version = 3.3)
+  @NotNull
+  private BehaviorDescriptor getLegacyBehaviorDescriptor(@NotNull String conceptFqName) {
+    BehaviorDescriptor descriptor = myLegacyBehaviorDescriptors.get(conceptFqName);
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!myLegacyStorage.startLoading(conceptFqName)) {
+      return NullSafeIllegalBehaviorDescriptor.INSTANCE;
+    }
+
+    descriptor = new InterpretedBehaviorDescriptor(conceptFqName);
+    myLegacyBehaviorDescriptors.put(conceptFqName, descriptor);
+
+    myLegacyStorage.finishLoading(conceptFqName);
+
+    return descriptor;
+  }
+
+  @ToRemove(version = 3.3)
+  @NotNull
+  private BHDescriptor fallbackToInterpretedLegacy(@NotNull SAbstractConcept concept) {
+    BehaviorDescriptor legacyBehaviorDescriptor = getLegacyBehaviorDescriptor(concept.getQualifiedName());
+    if (legacyBehaviorDescriptor instanceof InterpretedBehaviorDescriptor) {
+      return new BHDescriptorLegacyAdapter((InterpretedBehaviorDescriptor) legacyBehaviorDescriptor);
+    } else {
+      return new IllegalBHDescriptor(concept);
+    }
+  }
+
+  @Override
+  public void clear() {
+    myBHDescriptors.clear();
+    myLegacyBehaviorDescriptors.clear();
+  }
+}
