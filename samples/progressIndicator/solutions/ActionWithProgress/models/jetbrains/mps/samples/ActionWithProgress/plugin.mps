@@ -35,6 +35,7 @@
       </concept>
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
+        <child id="1204991552650" name="modifier" index="2f5YQi" />
         <child id="1207145245948" name="contents" index="ftER_" />
       </concept>
       <concept id="1203088046679" name="jetbrains.mps.lang.plugin.structure.ActionInstance" flags="ng" index="tCFHf">
@@ -211,18 +212,8 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
   </registry>
@@ -1490,12 +1481,8 @@
         <ref role="tCJdB" node="2Xt83X0pAwQ" resolve="BackgroundableProgressAction" />
       </node>
     </node>
-    <node concept="1X3_iC" id="3eo8YtERQLO" role="lGtFl">
-      <property role="3V$3am" value="modifier" />
-      <property role="3V$3ak" value="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642/1204991552650" />
-      <node concept="tT9cl" id="3gYwAQdfcQ_" role="8Wnug">
-        <ref role="tU$_T" to="tprs:hF$ojOS" resolve="IDEAHelp" />
-      </node>
+    <node concept="tT9cl" id="3gYwAQdfcQ_" role="2f5YQi">
+      <ref role="tU$_T" to="tprs:hF$ojOS" resolve="IDEAHelp" />
     </node>
   </node>
   <node concept="sE7Ow" id="2Xt83X0pAwQ">

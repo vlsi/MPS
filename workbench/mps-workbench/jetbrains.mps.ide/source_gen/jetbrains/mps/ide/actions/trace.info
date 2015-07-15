@@ -8803,19 +8803,17 @@
       <node id="5152061616759032947" at="17,108,18,99" concept="6" />
       <node id="5152061616759057020" at="18,99,19,108" concept="6" />
       <node id="2503776137138424366" at="19,108,20,117" concept="6" />
-      <node id="7613597131545101720" at="20,117,21,125" concept="6" />
-      <node id="7613597131545101734" at="21,125,22,134" concept="6" />
-      <node id="4053449317375378317" at="23,27,24,39" concept="6" />
-      <node id="4053449317375378317" at="15,25,25,5" concept="20" />
-      <node id="4053449317375378317" at="12,0,27,0" concept="4" trace="FlyingActions_ActionGroup#()V" />
-      <scope id="4053449317375378317" at="23,0,24,39">
+      <node id="4053449317375378317" at="21,27,22,39" concept="6" />
+      <node id="4053449317375378317" at="15,25,23,5" concept="20" />
+      <node id="4053449317375378317" at="12,0,25,0" concept="4" trace="FlyingActions_ActionGroup#()V" />
+      <scope id="4053449317375378317" at="21,0,22,39">
         <var name="t" id="4053449317375378317" />
       </scope>
-      <scope id="4053449317375378317" at="23,27,24,39" />
-      <scope id="4053449317375378317" at="16,9,22,134" />
-      <scope id="4053449317375378317" at="12,38,25,5" />
-      <scope id="4053449317375378317" at="12,0,27,0" />
-      <unit id="4053449317375378317" at="9,0,28,0" name="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
+      <scope id="4053449317375378317" at="21,27,22,39" />
+      <scope id="4053449317375378317" at="16,9,20,117" />
+      <scope id="4053449317375378317" at="12,38,23,5" />
+      <scope id="4053449317375378317" at="12,0,25,0" />
+      <unit id="4053449317375378317" at="9,0,26,0" name="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/4221956679900513437">

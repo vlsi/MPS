@@ -199,19 +199,20 @@
       <node id="7628537775846003928" at="17,57,18,48" concept="2" />
       <node id="7628537775846003928" at="18,48,19,14" concept="8" />
       <node id="7628537775846003928" at="19,14,20,53" concept="2" />
+      <node id="7628537775846003928" at="22,37,23,82" concept="2" />
       <node id="7628537775846003928" at="10,0,12,0" concept="1" trace="ActionWithProgress_ApplicationPlugin#()V" />
-      <node id="7628537775846003928" at="22,0,24,0" concept="5" trace="adjustRegularGroups#()V" />
       <node id="7628537775846003928" at="12,0,15,0" concept="5" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7628537775846003928" at="22,0,25,0" concept="5" trace="adjustRegularGroups#()V" />
       <node id="7628537775846003928" at="15,0,22,0" concept="5" trace="createGroups#()V" />
       <scope id="7628537775846003928" at="10,49,10,49" />
-      <scope id="7628537775846003928" at="22,37,22,37" />
       <scope id="7628537775846003928" at="12,27,13,16" />
+      <scope id="7628537775846003928" at="22,37,23,82" />
       <scope id="7628537775846003928" at="10,0,12,0" />
-      <scope id="7628537775846003928" at="22,0,24,0" />
       <scope id="7628537775846003928" at="12,0,15,0" />
+      <scope id="7628537775846003928" at="22,0,25,0" />
       <scope id="7628537775846003928" at="15,30,20,53" />
       <scope id="7628537775846003928" at="15,0,22,0" />
-      <unit id="7628537775846003928" at="8,0,25,0" name="jetbrains.mps.samples.ActionWithProgress.plugin.ActionWithProgress_ApplicationPlugin" />
+      <unit id="7628537775846003928" at="8,0,26,0" name="jetbrains.mps.samples.ActionWithProgress.plugin.ActionWithProgress_ApplicationPlugin" />
     </file>
   </root>
   <root nodeRef="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)/7628537775846017637">

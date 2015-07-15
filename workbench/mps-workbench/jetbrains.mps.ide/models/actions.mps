@@ -186,7 +186,6 @@
     <import index="n55e" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(jetbrains.mps.smodel.language@java_stub)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
-    <import index="szqb" ref="r:ca0b6fb0-5a5b-46c8-a978-40501bc316cb(jetbrains.mps.samples.ActionWithProgress.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -31497,12 +31496,6 @@
       </node>
       <node concept="tCFHf" id="2aZcM6jf4CI" role="ftvYc">
         <ref role="tCJdB" node="5ACi1uVc9On" resolve="SetPluginIdToCompileInIdeaModules" />
-      </node>
-      <node concept="tCFHf" id="6ACV$2CFsmo" role="ftvYc">
-        <ref role="tCJdB" to="szqb:6Bu0F1WWOD_" resolve="ModalProgressAction" />
-      </node>
-      <node concept="tCFHf" id="6ACV$2CFsmA" role="ftvYc">
-        <ref role="tCJdB" to="szqb:2Xt83X0pAwQ" resolve="BackgroundableProgressAction" />
       </node>
     </node>
   </node>

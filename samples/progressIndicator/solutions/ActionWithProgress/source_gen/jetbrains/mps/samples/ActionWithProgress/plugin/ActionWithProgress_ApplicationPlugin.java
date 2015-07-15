@@ -20,5 +20,6 @@ public class ActionWithProgress_ApplicationPlugin extends BaseApplicationPlugin 
     addGroup(new ProgressActionsGroup_ActionGroup());
   }
   public void adjustRegularGroups() {
+    insertGroupIntoAnother(ProgressActionsGroup_ActionGroup.ID, "HelpMenu", null);
   }
 }
