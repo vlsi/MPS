@@ -1763,7 +1763,7 @@
           <node concept="2c44tf" id="1LJzqOWissO" role="mwGJk">
             <node concept="1ajhzC" id="1LJzqOWistb" role="2c44tc">
               <node concept="3Tqbb2" id="1LJzqOWistV" role="1ajw0F">
-                <ref role="ehGHo" to="oubp:3geGFOI0X5B" resolve="MethodDescriptor" />
+                <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
               </node>
               <node concept="10P_77" id="1LJzqOWisuU" role="1ajl9A" />
             </node>
