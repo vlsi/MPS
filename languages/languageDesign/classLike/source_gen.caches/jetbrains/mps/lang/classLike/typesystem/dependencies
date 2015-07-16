@@ -38,7 +38,6 @@
   <dependency className="jetbrains.mps.lang.classLike.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.DependentType_subtypeOfItsValue_SubtypingRule" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.DependentType_supertypeOfItsValue_InequationReplacementRule" />
-    <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeDescriptor_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeMember_unique_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeMethod_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeProperty_NonTypesystemRule" />
@@ -53,23 +52,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeDescriptor_NonTypesystemRule" file="check_ClassLikeDescriptor_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
-    <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.classLike.typesystem.check_ClassLikeMember_unique_NonTypesystemRule" file="check_ClassLikeMember_unique_NonTypesystemRule.java">
     <classNode dependClassName="java.lang.Class" />
