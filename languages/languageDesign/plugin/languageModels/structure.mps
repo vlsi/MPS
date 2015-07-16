@@ -1523,8 +1523,8 @@
     <node concept="PrWs8" id="283lDAXPS58" role="PzmwI">
       <ref role="PrY4T" node="283lDAXPS55" resolve="OrderConstraints" />
     </node>
-    <node concept="PrWs8" id="1LJzqOWhXNq" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    <node concept="PrWs8" id="1DIqCfTgDpb" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="283lDAXPS5b">
