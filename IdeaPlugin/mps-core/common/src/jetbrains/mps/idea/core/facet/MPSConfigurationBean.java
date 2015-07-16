@@ -34,7 +34,12 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.lang.CloneNotSupportedException;
+import java.lang.Cloneable;
+import java.lang.Override;
+import java.lang.RuntimeException;
 import java.util.*;
+import java.util.ArrayList;
 
 /**
  * evgeny, 10/26/11
@@ -42,158 +47,202 @@ import java.util.*;
 public class MPSConfigurationBean {
 
   @Transient
-  private final SolutionDescriptor myDescriptor;
-  private boolean myUseModuleSourceFolder = false;
-  private boolean myUseTransientOutputFolder = false;
+  private SolutionDescriptor myDescriptor;
+  @Transient
+  private final State myState = new State();
 
   public MPSConfigurationBean() {
-    myDescriptor = new SolutionDescriptor();
   }
 
+  /**
+   * You can invoke this method only once MPS is initialized
+   *
+   * Populate solution descriptor accroding to current state of the bean. Unless the state changes, this method
+   * returns the same instance of SolutionDescriptor.
+   * Bean class shall not serve as proxy to populate descriptor, if you'd need to modify SolutionDescriptor, do it directly:
+   * <pre>
+   *   SolutionDescriptor sd1 = bean.getSolutionDescriptor();
+   *   bean.setId(UUID.random().toString());
+   *   SolutionDescriptor sd2 = bean.getSolutionDescriptor();
+   *   assert sd1 != sd2;
+   *   assert !sd1.getId().equals(sd2.getId());
+   * </pre>
+   */
   @Transient
   public SolutionDescriptor getSolutionDescriptor() {
+    if (myDescriptor == null) {
+      // build descriptor that reflects actual state
+      myDescriptor = new SolutionDescriptor();
+      myDescriptor.setId(ModuleId.fromString(myState.UUID));
+      myDescriptor.setOutputPath(myState.generatorOutputPath);
+      if (myState.usedLanguages != null) {
+        Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+        for (String usedLanguage : myState.usedLanguages) {
+          usedLanguageReferences.add(PersistenceFacade.getInstance().createModuleReference(usedLanguage));
+        }
+      }
+      List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
+      fromPersistableState(roots);
+      myDescriptor.getModelRootDescriptors().addAll(roots);
+    }
     return myDescriptor;
   }
 
   public boolean isModuleIdSet() {
-    return myDescriptor.getId() != null;
+    return myState.UUID != null;
   }
 
   public String getId() {
-    return myDescriptor.getId().toString();
+    return myState.UUID;
   }
 
   public void setId(String uuid) {
-    myDescriptor.setId(ModuleId.fromString(uuid));
+    myState.UUID = uuid;
+    dropDescriptorInstance();
   }
 
   public void setIdByModuleName(String moduleName) {
-    myDescriptor.setId(ModuleId.foreign(moduleName));
+    myState.UUID = ModuleId.foreign(moduleName).toString();
+    dropDescriptorInstance();
   }
 
   public void setUseModuleSourceFolder(boolean use) {
-    myUseModuleSourceFolder = use;
+    myState.useModuleSourceFolder = use;
   }
 
   public boolean isUseModuleSourceFolder() {
-    return myUseModuleSourceFolder;
+    return myState.useModuleSourceFolder;
   }
 
   public boolean isUseTransientOutputFolder() {
-    return myUseTransientOutputFolder;
+    return myState.useTransientOutputFolder;
   }
 
   public void setUseTransientOutputFolder(boolean useTransientOutputFolder) {
-    this.myUseTransientOutputFolder = useTransientOutputFolder;
+    myState.useTransientOutputFolder = useTransientOutputFolder;
   }
 
   public String getGeneratorOutputPath() {
-    return myDescriptor.getOutputPath();
+    return myState.generatorOutputPath;
   }
 
   public void setGeneratorOutputPath(String outputPath) {
-    myDescriptor.setOutputPath(outputPath);
+    myState.generatorOutputPath = outputPath;
+    dropDescriptorInstance();
   }
 
+  /**
+   * You can invoke this method only once MPS is initialized
+   */
   @Transient
   public Collection<ModelRoot> getModelRoots() {
-    List<ModelRoot> roots = new ArrayList<ModelRoot>();
-    for (ModelRootDescriptor modelRootDescriptor : myDescriptor.getModelRootDescriptors()) {
+    List<ModelRootDescriptor> mrd = new ArrayList<ModelRootDescriptor>();
+    fromPersistableState(mrd);
+
+    List<ModelRoot> rv = new ArrayList<ModelRoot>();
+    for (ModelRootDescriptor modelRootDescriptor : mrd) {
       ModelRootFactory factory = PersistenceFacade.getInstance().getModelRootFactory(modelRootDescriptor.getType());
-      if (factory == null) continue;
-      ModelRoot root = factory.create();
-      if (root == null) continue;
+      ModelRoot root;
+      if (factory == null || (root = factory.create()) == null) {
+        continue;
+      }
+      if (root == null) {
+        continue;
+      }
       root.load(modelRootDescriptor.getMemento());
-      roots.add(root);
+      rv.add(root);
     }
-    return roots;
+    return rv;
   }
 
 
   @Transient
   public void setModelRoots(Collection<ModelRoot> roots) {
-    myDescriptor.getModelRootDescriptors().clear();
+    ArrayList<ModelRootDescriptor> mrd = new ArrayList<ModelRootDescriptor>(roots.size());
     for (ModelRoot path : roots) {
       ModelRootDescriptor descr = new ModelRootDescriptor();
       path.save(descr.getMemento());
-      myDescriptor.getModelRootDescriptors().add(descr);
+      mrd.add(descr);
     }
+    myState.rootDescriptors = toPersistableState(mrd);
+    dropDescriptorInstance();
   }
 
   public String[] getUsedLanguages() {
-    String[] usedLanguages = new String[myDescriptor.getUsedLanguages().size()];
-    int i = 0;
-    for (SModuleReference ref : myDescriptor.getUsedLanguages()) {
-      usedLanguages[i] = ref.toString();
-      i++;
-    }
-    return usedLanguages;
+    return myState.usedLanguages == null ? new String[0] : myState.usedLanguages.clone();
   }
 
   public void setUsedLanguages(@NonNls String[] usedLanguages) {
-    Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
-    usedLanguageReferences.clear();
-    for (String usedLanguage : usedLanguages) {
-      usedLanguageReferences.add(PersistenceFacade.getInstance().createModuleReference(usedLanguage));
-    }
+    myState.usedLanguages = usedLanguages;
+    dropDescriptorInstance();
+  }
+
+  private void dropDescriptorInstance() {
+    myDescriptor = null;
   }
 
   public void loadFrom(State state) {
+    // I'd like to keep myState final, and array fields as independent copy, thus don't use myState = state.clone();
     setId(state.UUID);
     setGeneratorOutputPath(state.generatorOutputPath);
     setUseModuleSourceFolder(state.useModuleSourceFolder);
     setUseTransientOutputFolder(state.useTransientOutputFolder);
-    if (state.usedLanguages != null) {
-      setUsedLanguages(state.usedLanguages);
-    }
+    myState.usedLanguages = state.usedLanguages == null ? null : state.usedLanguages.clone();
+    myState.rootDescriptors = state.rootDescriptors == null ? null : state.rootDescriptors.clone();
+    dropDescriptorInstance(); // just in case
+  }
 
-    String moduleContentRoot = null;
-    if (state.generatorOutputPath != null && state.generatorOutputPath.trim().length() > 0) {
-      String moduleDirPath = PathUtil.getParentPath(state.generatorOutputPath);
-      if (moduleDirPath != null && moduleDirPath.trim().length() > 0) {
-        moduleContentRoot = moduleDirPath;
+  public State toState() {
+    if (myDescriptor == null) {
+      return myState.clone();
+    }
+    State result = new State();
+    result.UUID = myDescriptor.getId().toString();
+    result.generatorOutputPath = myDescriptor.getOutputPath();
+    result.useModuleSourceFolder = myState.useModuleSourceFolder;
+    result.useTransientOutputFolder = myState.useTransientOutputFolder;
+    if (!myDescriptor.getUsedLanguages().isEmpty()) {
+      result.usedLanguages = new String[myDescriptor.getUsedLanguages().size()];
+      int i = 0;
+      for (SModuleReference ref : myDescriptor.getUsedLanguages()) {
+        result.usedLanguages[i] = ref.toString();
+        i++;
       }
     }
+    result.rootDescriptors = toPersistableState(myDescriptor.getModelRootDescriptors());
+    return result;
+  }
 
-    List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
-    if (state.rootDescriptors != null) {
-      for (RootDescriptor descriptor : state.rootDescriptors) {
+  // RootDescriptor --> ModelRootDescriptor
+  private void fromPersistableState(Collection<ModelRootDescriptor> roots) {
+    if (myState.rootDescriptors != null) {
+      for (RootDescriptor descriptor : myState.rootDescriptors) {
         Memento m = new MementoImpl();
         MementoUtil.readMemento(m, descriptor.settings);
         roots.add(new ModelRootDescriptor(descriptor.type, m));
 
       }
     }
-    myDescriptor.getModelRootDescriptors().clear();
-    myDescriptor.getModelRootDescriptors().addAll(roots);
   }
 
-  public State toState() {
-    State result = new State();
-    result.UUID = getId();
-    result.generatorOutputPath = myDescriptor.getOutputPath();
-    result.useModuleSourceFolder = myUseModuleSourceFolder;
-    result.useTransientOutputFolder = myUseTransientOutputFolder;
-    result.usedLanguages = getUsedLanguages();
-    if (result.usedLanguages != null && result.usedLanguages.length == 0) {
-      result.usedLanguages = null;
+  // ModelRootDescriptor --> RootDescriptor
+  private static RootDescriptor[] toPersistableState(Collection<ModelRootDescriptor> modelRootDescriptors) {
+    if (modelRootDescriptors.isEmpty()) {
+      return null;
     }
-    Collection<ModelRootDescriptor> modelRootDescriptors = myDescriptor.getModelRootDescriptors();
-    if (!modelRootDescriptors.isEmpty()) {
-      result.rootDescriptors = new RootDescriptor[modelRootDescriptors.size()];
-      int i = 0;
-      for (ModelRootDescriptor mrd : modelRootDescriptors) {
-        RootDescriptor d = new RootDescriptor();
-        d.type = mrd.getType();
-        d.settings = new Element("settings");
-        MementoUtil.writeMemento(mrd.getMemento(), d.settings);
-        result.rootDescriptors[i++] = d;
-      }
+    RootDescriptor[] result = new RootDescriptor[modelRootDescriptors.size()];
+    int i = 0;
+    for (ModelRootDescriptor mrd : modelRootDescriptors) {
+      RootDescriptor d = new RootDescriptor();
+      d.type = mrd.getType();
+      d.settings = new Element("settings");
+      MementoUtil.writeMemento(mrd.getMemento(), d.settings);
+      result[i++] = d;
     }
     return result;
   }
 
-  public static class State {
+  public static class State implements Cloneable {
     public String UUID;
     public String generatorOutputPath;
     public boolean useModuleSourceFolder = false;
@@ -202,6 +251,15 @@ public class MPSConfigurationBean {
     @Tag("modelRoots")
     @AbstractCollection(surroundWithTag = false)
     public RootDescriptor[] rootDescriptors;
+
+    @Override
+    public State clone() {
+      try {
+        return (State) super.clone();
+      } catch (CloneNotSupportedException ex) {
+        throw new RuntimeException(ex);
+      }
+    }
   }
 
   @Tag("modelRoot")
