@@ -58,8 +58,8 @@
   </node>
   <node concept="PlHQZ" id="1whNchEKZrp">
     <property role="TrG5h" value="AbstractConsoleScript" />
-    <node concept="PrWs8" id="1whNchEKZrq" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXN4" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="1whNchEKZru">

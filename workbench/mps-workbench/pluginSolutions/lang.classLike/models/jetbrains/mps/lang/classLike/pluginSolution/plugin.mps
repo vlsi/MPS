@@ -36,6 +36,7 @@
     <import index="42ru" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.module(MPS.Core/jetbrains.mps.module@java_stub)" />
     <import index="9nqt" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" />
     <import index="7hml" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
+    <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -691,6 +692,37 @@
                   <node concept="3TrcHB" id="2WSWNq1RO44" role="2OqNvi">
                     <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5kVFkwb9ZBE" role="3cqZAp">
+          <node concept="2OqwBi" id="5kVFkwb9ZBF" role="3clFbG">
+            <node concept="2OqwBi" id="5kVFkwb9ZBG" role="2Oq$k0">
+              <node concept="tl45R" id="5kVFkwb9ZBH" role="2Oq$k0" />
+              <node concept="liA8E" id="5kVFkwb9ZBI" role="2OqNvi">
+                <ref role="37wK5l" to="nx1:~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolve="getPresentation" />
+              </node>
+            </node>
+            <node concept="liA8E" id="5kVFkwb9ZBJ" role="2OqNvi">
+              <ref role="37wK5l" to="nx1:~Presentation.setIcon(javax.swing.Icon):void" resolve="setIcon" />
+              <node concept="2YIFZM" id="5kVFkwba2hT" role="37wK5m">
+                <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
+                <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
+                <node concept="2OqwBi" id="5kVFkwba31p" role="37wK5m">
+                  <node concept="2OqwBi" id="5kVFkwb9ZBM" role="2Oq$k0">
+                    <node concept="2OqwBi" id="5kVFkwb9ZBN" role="2Oq$k0">
+                      <node concept="2WthIp" id="5kVFkwb9ZBO" role="2Oq$k0" />
+                      <node concept="2BZ7hE" id="5kVFkwb9ZBP" role="2OqNvi">
+                        <ref role="2WH_rO" node="2WSWNq1Pw7L" resolve="descr" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="5kVFkwba1sh" role="2OqNvi">
+                      <ref role="3Tt5mk" to="oubp:1_lSsE3TuQi" />
+                    </node>
+                  </node>
+                  <node concept="1rGIog" id="5kVFkwba3AO" role="2OqNvi" />
                 </node>
               </node>
             </node>

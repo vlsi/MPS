@@ -94,7 +94,6 @@
     <property role="TrG5h" value="ClassLikeDescriptor" />
     <property role="3GE5qa" value="" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpee:fz12cDA" resolve="ClassConcept" />
     <node concept="1TJgyj" id="1_lSsE3TuQi" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="preferredConcept" />
@@ -111,22 +110,27 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
-    <node concept="PrWs8" id="3geGFOI0X5z" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoM3" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5$">
     <property role="3GE5qa" value="member.methodDeclaration" />
     <property role="TrG5h" value="ParameterDescriptor" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="3geGFOI0X5_" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhdE6" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1TJgyj" id="3geGFOI0X5A" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="type" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="1TJgyj" id="1LJzqOWilZD" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="condition" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     </node>
   </node>
   <node concept="1TIwiD" id="3geGFOI0X5B">
@@ -146,8 +150,8 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
     </node>
-    <node concept="PrWs8" id="3geGFOI0X5E" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoMa" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="7aMlq14w47F" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
@@ -219,8 +223,8 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpce:fKQkHSB" resolve="PrimitiveDataTypeDeclaration" />
     </node>
-    <node concept="PrWs8" id="7aMlq14w4aX" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWgoMe" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="7aMlq14w4b2" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
@@ -263,7 +267,7 @@
     <node concept="PrWs8" id="7aMlq14w5Qt" role="PzmwI">
       <ref role="PrY4T" node="7aMlq14vYj7" resolve="ClassLikeMember" />
     </node>
-    <node concept="PrWs8" id="3JYspdAJSjE" role="PzmwI">
+    <node concept="PrWs8" id="5KZRo2kmnyo" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
@@ -380,6 +384,17 @@
   <node concept="PlHQZ" id="UBgfI9exfH">
     <property role="3GE5qa" value="instances" />
     <property role="TrG5h" value="AutoInitClassLike" />
+  </node>
+  <node concept="1TIwiD" id="7GXvAHO00L4">
+    <property role="3GE5qa" value="instances" />
+    <property role="TrG5h" value="ClassLikeMethodParameter" />
+    <ref role="1TJDcQ" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
+    <node concept="1TJgyj" id="7GXvAHO0cwL" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="decl" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="3geGFOI0X5$" resolve="ParameterDescriptor" />
+    </node>
   </node>
 </model>
 

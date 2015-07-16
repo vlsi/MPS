@@ -4,6 +4,7 @@ package jetbrains.mps.lang.extension.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class OverridesItem_Behavior {
   public static void init(SNode thisNode) {
@@ -15,5 +16,8 @@ public class OverridesItem_Behavior {
     return false;
   }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
+  }
+  public static SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return SNodeOperations.getNode("r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)", "1485349290613830680");
   }
 }

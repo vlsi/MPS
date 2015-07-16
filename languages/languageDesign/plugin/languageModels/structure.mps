@@ -138,8 +138,8 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="h$ft7GX" resolve="GroupContents" />
     </node>
-    <node concept="PrWs8" id="hwtDmEh" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXNu" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="hyfom48" role="PzmwI">
       <ref role="PrY4T" node="hxFjmRv" resolve="ActionGroupMember" />
@@ -225,7 +225,7 @@
     <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="34LRSv" value="-&gt;" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="hx13OZ0" role="PzmwI">
+    <node concept="PrWs8" id="1DIqCfThYSG" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="hxFjCBS" role="PzmwI">
@@ -624,8 +624,8 @@
     <property role="TrG5h" value="PreferencePage" />
     <property role="3GE5qa" value="Preference.Page" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="hByzwG1" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXNm" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="4lITsQs6oBu" role="PzmwI">
       <ref role="PrY4T" to="4j10:4cWf37B8oWS" resolve="ICheckedNamePolicy" />
@@ -792,8 +792,8 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="4Ns790kXiYG" resolve="ActionParameterCondition" />
     </node>
-    <node concept="PrWs8" id="hHNuGPW" role="PrDN$">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWhXNj" role="PrDN$">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="1TJgyi" id="hLLd5YE" role="1TKVEl">
       <property role="TrG5h" value="isOptional" />
@@ -925,8 +925,8 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="5nN2_Ou2i9S" resolve="ShortcutChange" />
     </node>
-    <node concept="PrWs8" id="5suWGB1jk0D" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWiari" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="1mJS7WEAV1Q">
@@ -1467,7 +1467,7 @@
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="1r3sUHZQVpC" role="lGtFl" />
     </node>
-    <node concept="PrWs8" id="3fOKOapZL9z" role="PzmwI">
+    <node concept="PrWs8" id="1mVpzgBPPDm" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="3fOKOapZKOV" role="PzmwI">
@@ -1523,7 +1523,7 @@
     <node concept="PrWs8" id="283lDAXPS58" role="PzmwI">
       <ref role="PrY4T" node="283lDAXPS55" resolve="OrderConstraints" />
     </node>
-    <node concept="PrWs8" id="283lDAXQkAh" role="PzmwI">
+    <node concept="PrWs8" id="1DIqCfTgDpb" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
@@ -1919,8 +1919,8 @@
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="1jWAYEV8xjv" resolve="ActionReference" />
     </node>
-    <node concept="PrWs8" id="1jWAYEV8yT0" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="PrWs8" id="1LJzqOWiarl" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="1jWAYEV8xjv">

@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RequiredDataDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -18,5 +19,8 @@ public class RequiredDataDeclaration_Behavior {
         context.addMember(it, null);
       }
     });
+  }
+  public static SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "4144229974054260078");
   }
 }

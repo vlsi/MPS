@@ -9,14 +9,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_Comment;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -34,17 +36,30 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_qcpp4v_a");
     editorCell.setBig(true);
     editorCell.setAction(CellActionType.COMMENT, new CellAction_Comment(node));
-    editorCell.addEditorCell(this.createRefNode_qcpp4v_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_qcpp4v_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_qcpp4v_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qcpp4v_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_qcpp4v_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qcpp4v_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_qcpp4v_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qcpp4v_e0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createRefNode_qcpp4v_a0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new ChildNodeRefExpression_Editor.parentSingleRoleHandler_qcpp4v_a0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, 0x84baf20c71f924eL, "parent"), editorContext);
+  private EditorCell createConstant_qcpp4v_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
+    editorCell.setCellId("Constant_qcpp4v_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_qcpp4v_b0(EditorContext editorContext, SNode node) {
+    SingleRoleCellProvider provider = new ChildNodeRefExpression_Editor.parentSingleRoleHandler_qcpp4v_b0(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, 0x84baf20c71f924eL, "parent"), editorContext);
     return provider.createCell();
   }
-  private class parentSingleRoleHandler_qcpp4v_a0 extends SingleRoleCellProvider {
-    public parentSingleRoleHandler_qcpp4v_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+  private class parentSingleRoleHandler_qcpp4v_b0 extends SingleRoleCellProvider {
+    public parentSingleRoleHandler_qcpp4v_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(ownerNode, containmentLink, context);
     }
     public EditorCell createChildCell(EditorContext editorContext, SNode child) {
@@ -76,18 +91,18 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     }
 
   }
-  private EditorCell createConstant_qcpp4v_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qcpp4v_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_qcpp4v_b0");
+    editorCell.setCellId("Constant_qcpp4v_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_qcpp4v_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_qcpp4v_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetNode");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ChildNodeRefExpression_Editor._Inline_qcpp4v_a2a());
+    provider.setAuxiliaryCellProvider(new ChildNodeRefExpression_Editor._Inline_qcpp4v_a3a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -103,17 +118,17 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  public static class _Inline_qcpp4v_a2a extends InlineCellProvider {
-    public _Inline_qcpp4v_a2a() {
+  public static class _Inline_qcpp4v_a3a extends InlineCellProvider {
+    public _Inline_qcpp4v_a3a() {
       super();
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_qcpp4v_a0c0(editorContext, node);
+      return this.createProperty_qcpp4v_a0d0(editorContext, node);
     }
-    private EditorCell createProperty_qcpp4v_a0c0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_qcpp4v_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<null>");
@@ -133,5 +148,16 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+  private EditorCell createConstant_qcpp4v_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
+    editorCell.setCellId("Constant_qcpp4v_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    style.set(StyleAttributes.SELECTABLE, 0, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }

@@ -299,6 +299,9 @@
     <node concept="PrWs8" id="6d7r2FpKxx0" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
+    <node concept="PrWs8" id="5KZRo2kncDv" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1QReUKIIK3z">
     <property role="3GE5qa" value="overlapping" />
@@ -334,8 +337,8 @@
     <property role="TrG5h" value="ArgumentField" />
     <property role="34LRSv" value="argument" />
     <ref role="1TJDcQ" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-    <node concept="PrWs8" id="2gzehMesjCx" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    <node concept="PrWs8" id="5KZRo2knc8K" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
     </node>
   </node>
 </model>

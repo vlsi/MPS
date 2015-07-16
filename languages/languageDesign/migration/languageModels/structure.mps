@@ -62,6 +62,9 @@
     <node concept="PrWs8" id="7ay_HjIQGEC" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
+    <node concept="PrWs8" id="5KZRo2kmrCG" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4iMwkz$0syh">
     <property role="TrG5h" value="DataDependency" />
@@ -111,6 +114,9 @@
     <node concept="PrWs8" id="536fTXa3qPL" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
+    <node concept="PrWs8" id="5KZRo2kmrDt" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6d7r2FpJdsQ">
     <property role="TrG5h" value="DataDependencyReference" />
@@ -138,6 +144,9 @@
     </node>
     <node concept="PrWs8" id="3A3gNhf2py_" role="PzmwI">
       <ref role="PrY4T" to="tpee:h9ngReX" resolve="ClassifierMember" />
+    </node>
+    <node concept="PrWs8" id="5KZRo2kmrBV" role="PzmwI">
+      <ref role="PrY4T" to="oubp:5BD$AU43p5T" resolve="ClassLikeMemberInstance" />
     </node>
   </node>
   <node concept="1TIwiD" id="3A3gNhf2pHU">
