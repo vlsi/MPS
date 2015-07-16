@@ -78,9 +78,9 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
   @NotNull
   @Override
-  public SReference create(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo) {
+  public SReference create(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo, SNodeId targetTopClassifier) {
     if (pack.equals(myModelLongName)) {
-      SNode nodeInSameModel = myModel.getNode(targetNodeId);
+      SNode nodeInSameModel = myModel.getNode(targetTopClassifier);
       if (nodeInSameModel != null) {
         return jetbrains.mps.smodel.SReference.create(role, source, myModelReference, targetNodeId, resolveInfo);
       }
@@ -99,10 +99,10 @@ public final class StubReferenceFactory implements ReferenceFactory {
       if (myModelReference.equals(modelRef)) {
         continue;
       }
-//      if (m.getNode(targetNodeId) != null) {
+      if (m.getNode(targetTopClassifier) != null) {
         addImport(modelRef);
-//        return jetbrains.mps.smodel.SReference.create(role, source, modelRef, targetNodeId, resolveInfo);
-//      }
+        return jetbrains.mps.smodel.SReference.create(role, source, modelRef, targetNodeId, resolveInfo);
+      }
     }
 
     // ok, there are matching models, and none knows the node with targetNodeId
@@ -115,9 +115,9 @@ public final class StubReferenceFactory implements ReferenceFactory {
     } else {
       // XXX not quite sure if dynamic reference is reasonable here
       // anyway, this is the way it was
-//      for (org.jetbrains.mps.openapi.model.SModel m : possibleModels) {
-//        addImport(m.getReference());
-//      }
+      for (org.jetbrains.mps.openapi.model.SModel m : possibleModels) {
+        addImport(m.getReference());
+      }
       return DynamicReference.createDynamicReference(role, source, pack, resolveInfo);
     }
 

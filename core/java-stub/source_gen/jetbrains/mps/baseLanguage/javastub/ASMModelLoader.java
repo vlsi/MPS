@@ -43,9 +43,9 @@ public class ASMModelLoader {
 
   public void populateRoots(SModelData modelData) {
     // XXX may pass openapi.SModel in addition to SModelData so that ClassifierLoader may use model as factory 
-    ClassifierLoader loader = new ClassifierLoader(null, myOnlyPublic, mySkipPrivate);
     for (IFile classfile : getTopClassFiles()) {
-      SNode c = loader.createClassifier(classfile);
+      ClassifierLoader loader = new ClassifierLoader(classfile, myOnlyPublic, mySkipPrivate);
+      SNode c = loader.createClassifier();
       if (c != null) {
         modelData.addRootNode(c);
       }
@@ -58,12 +58,13 @@ public class ASMModelLoader {
       for (SNode n : model.getRootNodes()) {
         roots.put(n.getNodeId(), SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
-      ClassifierLoader loader = new ClassifierLoader(new StubReferenceFactory(myModule, model), myOnlyPublic, mySkipPrivate);
+      StubReferenceFactory refFactory = new StubReferenceFactory(myModule, model);
       for (IFile classfile : getTopClassFiles()) {
-        SNodeId nodeId = ASMNodeId.createId(ClassifierLoader.getClassName(classfile));
+        ClassifierLoader rootLoader = new ClassifierLoader(classfile, myOnlyPublic, mySkipPrivate);
+        SNodeId nodeId = rootLoader.createNodeId();
         SNode root = roots.get(nodeId);
         if (root != null) {
-          loader.updateClassifier(root, classfile);
+          rootLoader.updateClassifier(root, refFactory);
         }
       }
     } catch (Exception e) {

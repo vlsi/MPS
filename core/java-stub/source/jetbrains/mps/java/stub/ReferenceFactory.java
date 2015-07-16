@@ -37,8 +37,12 @@ public interface ReferenceFactory {
    * @param targetNodeId identifies classifier(?) we look up
    * @param role role of the link to populate
    * @param resolveInfo additional information that descripes the link
+   * @param targetTopClassifier id of root classifier that holds target node (may be the same as targetNodeId).
+   *                            Hint value to pick best possible package and not to force complete model load.
+   *                            Since we load stub models in two steps, with roots available first, check for top classifier
+   *                            through SModel.getNode(SNodeId) doesn't trigger complete load.
    * @return reference to add, never <code>null</code>
    */
   @NotNull
-  SReference create(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo);
+  SReference create(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo, SNodeId targetTopClassifier);
 }
