@@ -10,9 +10,14 @@ import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class DependentTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
+  }
+  public static SNode call_create_2613537504709871067(SNode thisNode, SNode point) {
+    return createDependentTypeInstance_7c8gzc_a0a0(thisNode, point);
   }
   public static SNode call_getType_3751132065236798250(SNode thisNode, SNode node) {
     try {
@@ -37,5 +42,12 @@ public class DependentTypeDeclaration_Behavior {
     } else {
       return SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisNode, MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, "jetbrains.mps.lang.classLike.structure.MethodDescriptor"), false, false), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_ret";
     }
+  }
+  private static SNode createDependentTypeInstance_7c8gzc_a0a0(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"), null, null, false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x340eb2bd2e03d16cL, "decl"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d16bL, 0x7e420dcd0899aa0eL, "point"), (SNode) p1);
+    return n1;
   }
 }
