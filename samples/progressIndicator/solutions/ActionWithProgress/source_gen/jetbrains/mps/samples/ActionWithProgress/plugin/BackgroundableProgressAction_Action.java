@@ -51,7 +51,7 @@ public class BackgroundableProgressAction_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    // Indicates if progress has 'Cancel' option 
+    // Indicates whether the progress dialog has the'Cancel' option 
     boolean canBeCanceled = true;
 
     // Will be  sent to the background with the flag PerformInBackgroundOption.ALWAYS_BACKGROUND 
@@ -62,6 +62,9 @@ public class BackgroundableProgressAction_Action extends BaseAction {
     // or if should be in the background from the start  
     // ALWAYS_BACKGROUND is probably the best solution for quick background tasks -   
     // the user will not get a blinking, hardly noticable progress bar visible for only a few fractions of a second 
+    // Important thing - you need to implement the onCacel() method  
+    // Your code needs to frequently check if the process has been canceled (between every calculation steps)  
+    // and handle yourself all steps to revert the action 
 
     final Task.Backgroundable backgroundable = new Task.Backgroundable(event.getData(CommonDataKeys.PROJECT), "Backgroundable cancelable task", canBeCanceled, showProgress) {
       public void run(@NotNull final ProgressIndicator indicator) {

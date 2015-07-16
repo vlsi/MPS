@@ -425,7 +425,7 @@
       <node concept="3clFbS" id="6Bu0F1WWODB" role="2VODD2">
         <node concept="3SKdUt" id="2Xt83X0qPz7" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0qPz8" role="3SKWNk">
-            <property role="3SKdUp" value="Indicates if progress has 'Cancel' option" />
+            <property role="3SKdUp" value="Indicates whether the progress dialog has the'Cancel' option" />
           </node>
         </node>
         <node concept="3cpWs8" id="2Xt83X0qPz9" role="3cqZAp">
@@ -440,7 +440,7 @@
         <node concept="3clFbH" id="2Xt83X0ooKQ" role="3cqZAp" />
         <node concept="3SKdUt" id="2Xt83X0o_5f" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0o_5e" role="3SKWNk">
-            <property role="3SKdUp" value="It is a common modal task. It can't be sent to background, but can be canceled " />
+            <property role="3SKdUp" value="This is a common modal task. It can't be sent to the background, but can be canceled " />
           </node>
         </node>
         <node concept="3SKdUt" id="2Xt83X0o_5h" role="3cqZAp">
@@ -450,12 +450,12 @@
         </node>
         <node concept="3SKdUt" id="2Xt83X0o_5j" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0o_5i" role="3SKWNk">
-            <property role="3SKdUp" value="It needs to frequently check if process is canceled (between every calculation step) " />
+            <property role="3SKdUp" value="Your code needs to frequently check if the process has been canceled (between every calculation steps) " />
           </node>
         </node>
         <node concept="3SKdUt" id="2Xt83X0o_5l" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0o_5k" role="3SKWNk">
-            <property role="3SKdUp" value="and handle itself all steps to revert the action" />
+            <property role="3SKdUp" value="and handle yourself all steps to revert the action" />
           </node>
         </node>
         <node concept="3cpWs8" id="2Xt83X0o_4E" role="3cqZAp">
@@ -1641,7 +1641,7 @@
       <node concept="3clFbS" id="2Xt83X0pAwS" role="2VODD2">
         <node concept="3SKdUt" id="2Xt83X0qNCE" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0qNQT" role="3SKWNk">
-            <property role="3SKdUp" value="Indicates if progress has 'Cancel' option" />
+            <property role="3SKdUp" value="Indicates whether the progress dialog has the'Cancel' option" />
           </node>
         </node>
         <node concept="3cpWs8" id="2Xt83X0qL06" role="3cqZAp">
@@ -1695,6 +1695,21 @@
         <node concept="3SKdUt" id="2Xt83X0qvcC" role="3cqZAp">
           <node concept="3SKdUq" id="2Xt83X0qvcB" role="3SKWNk">
             <property role="3SKdUp" value="the user will not get a blinking, hardly noticable progress bar visible for only a few fractions of a second" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6ACV$2CJAS8" role="3cqZAp">
+          <node concept="3SKdUq" id="6ACV$2CJAS9" role="3SKWNk">
+            <property role="3SKdUp" value="Important thing - you need to implement the onCacel() method " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6ACV$2CJASa" role="3cqZAp">
+          <node concept="3SKdUq" id="6ACV$2CJASb" role="3SKWNk">
+            <property role="3SKdUp" value="Your code needs to frequently check if the process has been canceled (between every calculation steps) " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6ACV$2CJASc" role="3cqZAp">
+          <node concept="3SKdUq" id="6ACV$2CJASd" role="3SKWNk">
+            <property role="3SKdUp" value="and handle yourself all steps to revert the action" />
           </node>
         </node>
         <node concept="3clFbH" id="3eo8YtERIik" role="3cqZAp" />
