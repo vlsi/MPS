@@ -225,8 +225,8 @@
     <property role="3GE5qa" value="Actions.Groups.GroupMembers" />
     <property role="34LRSv" value="-&gt;" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="1LJzqOWi9qv" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    <node concept="PrWs8" id="1DIqCfThYSG" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="PrWs8" id="hxFjCBS" role="PzmwI">
       <ref role="PrY4T" node="hxFjmRv" resolve="ActionGroupMember" />
