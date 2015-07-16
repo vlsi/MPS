@@ -185,9 +185,9 @@
               <node concept="1bVj0M" id="1LJzqOWiBOi" role="2c44tc">
                 <node concept="3clFbS" id="1LJzqOWiBOk" role="1bW5cS" />
                 <node concept="37vLTG" id="5KZRo2kkPSU" role="1bW2Oz">
-                  <property role="TrG5h" value="cls" />
-                  <node concept="3Tqbb2" id="5KZRo2kkPST" role="1tU5fm">
-                    <ref role="ehGHo" to="oubp:3geGFOI0X5w" resolve="ClassLikeDescriptor" />
+                  <property role="TrG5h" value="method" />
+                  <node concept="3Tqbb2" id="2h59CdJqFy3" role="1tU5fm">
+                    <ref role="ehGHo" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
                   </node>
                 </node>
               </node>

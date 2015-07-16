@@ -40,8 +40,8 @@
       <node id="2049012130657238204" at="74,236,75,225" concept="2" />
       <node id="2049012130657238204" at="75,225,76,161" concept="2" />
       <node id="2049012130657238204" at="76,161,77,232" concept="2" />
-      <node id="2049012130657238204" at="77,232,78,167" concept="2" />
-      <node id="2049012130657238204" at="78,167,79,221" concept="2" />
+      <node id="2049012130657238204" at="77,232,78,170" concept="2" />
+      <node id="2049012130657238204" at="78,170,79,221" concept="2" />
       <node id="2049012130657238204" at="79,221,80,528" concept="2" />
       <node id="2049012130657238204" at="80,528,81,171" concept="2" />
       <node id="2049012130657238204" at="81,171,82,166" concept="2" />
@@ -51,8 +51,8 @@
       <node id="2049012130657238204" at="74,236,76,161" concept="0" />
       <node id="2049012130657192359" at="26,0,29,0" concept="1" trace="SwitchConditional_Intention#()V" />
       <node id="2049012130657192359" at="41,99,44,5" concept="4" />
-      <node id="2049012130657238204" at="78,167,81,171" concept="0" />
-      <node id="2049012130657238204" at="78,167,81,171" concept="0" />
+      <node id="2049012130657238204" at="78,170,81,171" concept="0" />
+      <node id="2049012130657238204" at="78,170,81,171" concept="0" />
       <node id="2049012130657192359" at="29,0,33,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="2049012130657192359" at="33,0,37,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2049012130657192359" at="37,0,41,0" concept="5" trace="isSurroundWith#()Z" />
@@ -78,7 +78,7 @@
       <scope id="2049012130657224950" at="56,190,58,15" />
       <scope id="2049012130657238204" at="74,236,76,161" />
       <scope id="2049012130657192359" at="26,0,29,0" />
-      <scope id="2049012130657238204" at="78,167,81,171" />
+      <scope id="2049012130657238204" at="78,170,81,171" />
       <scope id="2049012130657192359" at="29,0,33,0" />
       <scope id="2049012130657192359" at="33,0,37,0">
         <var name="editorContext" id="2049012130657192359" />
