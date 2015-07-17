@@ -18,8 +18,6 @@ package jetbrains.mps.java.stub;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
@@ -70,10 +68,6 @@ public final class StubReferenceFactory implements ReferenceFactory {
     myModel = model;
     myModelReference = model.getReference();
     myModelLongName = NameUtil.getModelLongName(myModelReference.getModelName());
-    for (ImportElement ie : ((SModelInternal) model).importedModels()) {
-      myModelImports.add(ie.getModelReference());
-    }
-    myModelImports.add(myModelReference); // it's sort of implicit, just not to perform extra check in #addImport
   }
 
   @NotNull
@@ -124,9 +118,12 @@ public final class StubReferenceFactory implements ReferenceFactory {
   }
 
   private void addImport(SModelReference mr) {
-    if (myModelImports.add(mr)) {
-      ((SModelInternal) myModel).addModelImport(new ImportElement(mr));
-    }
+    myModelImports.add(mr);
+  }
+
+  public Collection<SModelReference> getImports() {
+    myModelImports.remove(myModelReference); // just in case it's there
+    return myModelImports;
   }
 
   /**

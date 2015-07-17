@@ -9,8 +9,10 @@ import java.util.Collection;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.java.stub.StubReferenceFactory;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
@@ -47,7 +49,7 @@ public class ASMModelLoader {
     }
   }
 
-  public void completeModel(SModel partialModel, SModelData completeModelData) {
+  public Collection<SModelReference> completeModel(SModel partialModel, SModelData completeModelData) {
     try {
       StubReferenceFactory refFactory = new StubReferenceFactory(myModule, partialModel);
       for (IFile classfile : getTopClassFiles()) {
@@ -58,9 +60,11 @@ public class ASMModelLoader {
           completeModelData.addRootNode(c);
         }
       }
+      return refFactory.getImports();
     } catch (Exception e) {
       LOG.error("Exception", e);
     }
+    return Collections.emptyList();
   }
 
   public Iterable<IFile> getTopClassFiles() {

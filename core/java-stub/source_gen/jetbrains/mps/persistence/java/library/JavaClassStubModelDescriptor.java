@@ -10,13 +10,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
+import java.util.Collection;
 import jetbrains.mps.smodel.loading.PartialModelUpdateFacility;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
-import java.util.Collection;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -69,12 +69,18 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
       loader.skipPrivateMembers(mySkipPrivate);
       SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
-      loader.completeModel(this, completeModelData);
+      Collection<SModelReference> imports = loader.completeModel(this, completeModelData);
       mi.setUpdateMode(true);
       completeModelData.setUpdateMode(true);
-      new PartialModelUpdateFacility(mi, completeModelData, this).update();
-      completeModelData.setUpdateMode(false);
-      mi.setUpdateMode(false);
+      try {
+        new PartialModelUpdateFacility(mi, completeModelData, this).update();
+        for (SModelReference mr : imports) {
+          mi.addModelImport(new SModel.ImportElement(mr));
+        }
+      } finally {
+        completeModelData.setUpdateMode(false);
+        mi.setUpdateMode(false);
+      }
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
   }

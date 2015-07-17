@@ -694,7 +694,7 @@
                     <node concept="37vLTw" id="3Eq_PkMaycu" role="37wK5m">
                       <ref role="3cqZAo" node="4WsV6X003Z_" resolve="myModule" />
                     </node>
-                    <node concept="37vLTw" id="3Eq_PkMaycv" role="37wK5m">
+                    <node concept="37vLTw" id="4kh4OiglXAe" role="37wK5m">
                       <ref role="3cqZAo" node="2qqFBg4Wkwj" resolve="partialModel" />
                     </node>
                   </node>
@@ -791,6 +791,16 @@
                 <ref role="37wK5l" node="2qqFBg4Om8x" resolve="getTopClassFiles" />
               </node>
             </node>
+            <node concept="3cpWs6" id="4kh4Oigm8vH" role="3cqZAp">
+              <node concept="2OqwBi" id="4kh4Oigm9ra" role="3cqZAk">
+                <node concept="37vLTw" id="4kh4Oigm8JS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3Eq_PkMaycr" resolve="refFactory" />
+                </node>
+                <node concept="liA8E" id="4kh4Oigmar9" role="2OqNvi">
+                  <ref role="37wK5l" to="5iu4:~StubReferenceFactory.getImports():java.util.Collection" resolve="getImports" />
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="TDmWw" id="2qqFBg4WrrF" role="TEbGg">
             <node concept="3clFbS" id="2qqFBg4WrrH" role="TDEfX">
@@ -819,9 +829,20 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs6" id="4kh4OigmcAj" role="3cqZAp">
+          <node concept="2YIFZM" id="4kh4Oigme8_" role="3cqZAk">
+            <ref role="37wK5l" to="k7g3:~Collections.emptyList():java.util.List" resolve="emptyList" />
+            <ref role="1Pybhc" to="k7g3:~Collections" resolve="Collections" />
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="2qqFBg4WicN" role="1B3o_S" />
-      <node concept="3cqZAl" id="2qqFBg4WiJ0" role="3clF45" />
+      <node concept="3uibUv" id="4kh4Oigm7EH" role="3clF45">
+        <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+        <node concept="3uibUv" id="4kh4OigmbzU" role="11_B2D">
+          <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+        </node>
+      </node>
       <node concept="37vLTG" id="2qqFBg4Wkwj" role="3clF46">
         <property role="TrG5h" value="partialModel" />
         <node concept="3uibUv" id="2qqFBg4Wlfa" role="1tU5fm">

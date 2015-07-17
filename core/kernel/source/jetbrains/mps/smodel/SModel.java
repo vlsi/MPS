@@ -838,6 +838,9 @@ public class SModel implements SModelData {
   }
 
   private void assertLegalChange() {
+    if (isUpdateMode()) {
+      return;
+    }
     if (myModelDescriptor != null) {
       // FIXME in fact, all modification methods are accessed through SModelInternal iface, and SModelDescriptorStub shall
       // check for legal write instead of SModel itself.

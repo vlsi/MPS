@@ -632,16 +632,25 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="2qqFBg4WBIm" role="3cqZAp">
-              <node concept="2OqwBi" id="2qqFBg4WBIn" role="3clFbG">
-                <node concept="37vLTw" id="2qqFBg4WBIo" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
+            <node concept="3cpWs8" id="4kh4OigmeTN" role="3cqZAp">
+              <node concept="3cpWsn" id="4kh4OigmeTO" role="3cpWs9">
+                <property role="TrG5h" value="imports" />
+                <node concept="3uibUv" id="4kh4OigmeTJ" role="1tU5fm">
+                  <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+                  <node concept="3uibUv" id="4kh4OigmeTM" role="11_B2D">
+                    <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="2qqFBg4WBIp" role="2OqNvi">
-                  <ref role="37wK5l" to="1ltj:2qqFBg4WiJ2" resolve="completeModel" />
-                  <node concept="Xjq3P" id="2qqFBg4WBUe" role="37wK5m" />
-                  <node concept="37vLTw" id="1$0KT$2Mc2J" role="37wK5m">
-                    <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                <node concept="2OqwBi" id="4kh4OigmeTP" role="33vP2m">
+                  <node concept="37vLTw" id="4kh4OigmeTQ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
+                  </node>
+                  <node concept="liA8E" id="4kh4OigmeTR" role="2OqNvi">
+                    <ref role="37wK5l" to="1ltj:2qqFBg4WiJ2" resolve="completeModel" />
+                    <node concept="Xjq3P" id="4kh4OigmeTS" role="37wK5m" />
+                    <node concept="37vLTw" id="4kh4OigmeTT" role="37wK5m">
+                      <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -689,6 +698,37 @@
                 <node concept="liA8E" id="1$0KT$2Mee_" role="2OqNvi">
                   <ref role="37wK5l" to="gznm:~PartialModelUpdateFacility.update():void" resolve="update" />
                 </node>
+              </node>
+            </node>
+            <node concept="1DcWWT" id="4kh4OiglXQF" role="3cqZAp">
+              <node concept="3clFbS" id="4kh4OiglXQH" role="2LFqv$">
+                <node concept="3clFbF" id="4kh4OiglZUd" role="3cqZAp">
+                  <node concept="2OqwBi" id="4kh4OiglZY4" role="3clFbG">
+                    <node concept="37vLTw" id="4kh4OigmgQT" role="2Oq$k0">
+                      <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                    </node>
+                    <node concept="liA8E" id="4kh4Oigm0yY" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~SModel.addModelImport(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addModelImport" />
+                      <node concept="2ShNRf" id="4kh4Oigm0zA" role="37wK5m">
+                        <node concept="1pGfFk" id="4kh4Oigm5gX" role="2ShVmc">
+                          <ref role="37wK5l" to="cu2c:~SModel$ImportElement.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel.ImportElement" />
+                          <node concept="37vLTw" id="4kh4Oigm5l9" role="37wK5m">
+                            <ref role="3cqZAo" node="4kh4OiglXQI" resolve="mr" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWsn" id="4kh4OiglXQI" role="1Duv9x">
+                <property role="TrG5h" value="mr" />
+                <node concept="3uibUv" id="4kh4Oigm5pE" role="1tU5fm">
+                  <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+                </node>
+              </node>
+              <node concept="37vLTw" id="4kh4OigmgnI" role="1DdaDG">
+                <ref role="3cqZAo" node="4kh4OigmeTO" resolve="imports" />
               </node>
             </node>
             <node concept="3clFbF" id="1$0KT$2McQa" role="3cqZAp">
