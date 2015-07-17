@@ -321,6 +321,8 @@ public class TextGen_Facet extends IFacet.Stub {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("TextGen interrupted")));
                 return new IResult.FAILURE(_output_21gswx_a0b);
               } catch (Exception ex) {
+                // FIXME need an expression in ReportFeedbackStatement that would take Throwable and pass it to IFeedback 
+                ex.printStackTrace();
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Exception during TextGen:" + ex.toString())));
                 return new IResult.FAILURE(_output_21gswx_a0b);
               } finally {
