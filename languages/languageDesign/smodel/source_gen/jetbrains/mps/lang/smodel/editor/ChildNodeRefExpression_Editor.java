@@ -48,7 +48,6 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_qcpp4v_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
-    style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -154,7 +153,6 @@ public class ChildNodeRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_qcpp4v_e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
-    style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

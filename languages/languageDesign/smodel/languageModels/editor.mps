@@ -4265,9 +4265,6 @@
         <node concept="VechU" id="5kVFkwb82H2" role="3F10Kt">
           <property role="Vb096" value="gray" />
         </node>
-        <node concept="VPM3Z" id="5kVFkwb82IJ" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
         <node concept="11LMrY" id="5kVFkwb8iAy" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -4300,9 +4297,6 @@
         <property role="3F0ifm" value="]" />
         <node concept="VechU" id="5kVFkwb82IO" role="3F10Kt">
           <property role="Vb096" value="gray" />
-        </node>
-        <node concept="VPM3Z" id="5kVFkwb82IP" role="3F10Kt">
-          <property role="VOm3f" value="false" />
         </node>
         <node concept="11L4FC" id="5kVFkwb8iCp" role="3F10Kt">
           <property role="VOm3f" value="true" />
