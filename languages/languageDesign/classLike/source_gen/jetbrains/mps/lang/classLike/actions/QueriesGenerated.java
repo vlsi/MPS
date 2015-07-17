@@ -96,11 +96,19 @@ public class QueriesGenerated {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode concept) {
           final SNode c = concept;
-          return Sequence.fromIterable(SNodeOperations.ofConcept(SubstituteUtil.getMembers2Substitute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"))).where(new IWhereFilter<SNode>() {
+
+          boolean isCustomMemberConcept = Sequence.fromIterable(SNodeOperations.ofConcept(SubstituteUtil.getAllMembers(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"))).any(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == c;
+            }
+          });
+          boolean shouldNotBeSubstituted = Sequence.fromIterable(SNodeOperations.ofConcept(SubstituteUtil.getMembers2Substitute(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"), _context.getParentNode()), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor"))).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x72b255a044805d9cL, 0x72b255a044805d9fL, "cncpt")) == c;
             }
           }).isEmpty();
+
+          return isCustomMemberConcept && shouldNotBeSubstituted;
         }
       };
       if (SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(applicableConcept), SNodeOperations.asSConcept(outputConcept)) && cond.met(outputConcept)) {
