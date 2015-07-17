@@ -811,8 +811,18 @@
                   </node>
                   <node concept="liA8E" id="2qqFBg4WrKi" role="2OqNvi">
                     <ref role="37wK5l" to="ajxo:~Category.error(java.lang.Object,java.lang.Throwable):void" resolve="error" />
-                    <node concept="Xl_RD" id="2qqFBg4WrKj" role="37wK5m">
-                      <property role="Xl_RC" value="Exception" />
+                    <node concept="3cpWs3" id="4wYSx2JArje" role="37wK5m">
+                      <node concept="2OqwBi" id="4wYSx2JArs_" role="3uHU7w">
+                        <node concept="37vLTw" id="4wYSx2JArnP" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2qqFBg4Wkwj" resolve="partialModel" />
+                        </node>
+                        <node concept="liA8E" id="4wYSx2JArBW" role="2OqNvi">
+                          <ref role="37wK5l" to="ec5l:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="2qqFBg4WrKj" role="3uHU7B">
+                        <property role="Xl_RC" value="Exception for model " />
+                      </node>
                     </node>
                     <node concept="37vLTw" id="2qqFBg4WrKk" role="37wK5m">
                       <ref role="3cqZAo" node="2qqFBg4WrrJ" resolve="e" />
@@ -823,8 +833,8 @@
             </node>
             <node concept="3cpWsn" id="2qqFBg4WrrJ" role="TDEfY">
               <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="2qqFBg4WrHP" role="1tU5fm">
-                <ref role="3uigEE" to="e2lb:~Exception" resolve="Exception" />
+              <node concept="3uibUv" id="4wYSx2JAq2M" role="1tU5fm">
+                <ref role="3uigEE" to="e2lb:~Throwable" resolve="Throwable" />
               </node>
             </node>
           </node>

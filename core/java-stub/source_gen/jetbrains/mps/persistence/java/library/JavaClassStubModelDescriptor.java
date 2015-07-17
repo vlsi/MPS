@@ -59,30 +59,35 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
+  private volatile boolean myIsLoadInProgress;
+
   @Override
   public void load() {
     SModel mi = getSModelInternal();
     if (mi.isUpdateMode()) {
       return;
     }
+    if (myIsLoadInProgress) {
+      return;
+    }
     if (getLoadingState() == ModelLoadingState.INTERFACE_LOADED) {
+      myIsLoadInProgress = true;
       ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
       loader.skipPrivateMembers(mySkipPrivate);
       SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
       Collection<SModelReference> imports = loader.completeModel(this, completeModelData);
       mi.setUpdateMode(true);
       completeModelData.setUpdateMode(true);
-      try {
-        new PartialModelUpdateFacility(mi, completeModelData, this).update();
-        for (SModelReference mr : imports) {
-          mi.addModelImport(new SModel.ImportElement(mr));
-        }
-      } finally {
-        completeModelData.setUpdateMode(false);
-        mi.setUpdateMode(false);
+      new PartialModelUpdateFacility(mi, completeModelData, this).update();
+      for (SModelReference mr : imports) {
+        mi.addModelImport(new SModel.ImportElement(mr));
       }
+      completeModelData.setUpdateMode(false);
+      mi.setUpdateMode(false);
+      myIsLoadInProgress = false;
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }
+
   }
 
   @Override

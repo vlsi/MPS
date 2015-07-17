@@ -61,8 +61,8 @@ public class ASMModelLoader {
         }
       }
       return refFactory.getImports();
-    } catch (Exception e) {
-      LOG.error("Exception", e);
+    } catch (Throwable e) {
+      LOG.error("Exception for model " + partialModel.getReference(), e);
     }
     return Collections.emptyList();
   }

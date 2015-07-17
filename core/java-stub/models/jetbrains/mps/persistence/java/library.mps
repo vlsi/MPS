@@ -539,6 +539,15 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2qqFBg4W_n5" role="jymVt" />
+    <node concept="312cEg" id="4wYSx2JAuLh" role="jymVt">
+      <property role="34CwA1" value="true" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myIsLoadInProgress" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="4wYSx2JAuk5" role="1B3o_S" />
+      <node concept="10P_77" id="4wYSx2JAuLf" role="1tU5fm" />
+    </node>
+    <node concept="2tJIrI" id="4wYSx2JAsxZ" role="jymVt" />
     <node concept="3clFb_" id="2qqFBg4W_N$" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="load" />
@@ -571,8 +580,26 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbJ" id="4wYSx2JAxVz" role="3cqZAp">
+          <node concept="3clFbS" id="4wYSx2JAxV_" role="3clFbx">
+            <node concept="3cpWs6" id="4wYSx2JAyr5" role="3cqZAp" />
+          </node>
+          <node concept="37vLTw" id="4wYSx2JAyaj" role="3clFbw">
+            <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="2qqFBg4WAUv" role="3cqZAp">
           <node concept="3clFbS" id="2qqFBg4WAUx" role="3clFbx">
+            <node concept="3clFbF" id="4wYSx2JAxvj" role="3cqZAp">
+              <node concept="37vLTI" id="4wYSx2JAyB0" role="3clFbG">
+                <node concept="3clFbT" id="4wYSx2JAyKZ" role="37vLTx">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="37vLTw" id="4wYSx2JAxvh" role="37vLTJ">
+                  <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="2qqFBg4WBI8" role="3cqZAp">
               <node concept="3cpWsn" id="2qqFBg4WBI9" role="3cpWs9">
                 <property role="TrG5h" value="loader" />
@@ -755,6 +782,16 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbF" id="4wYSx2JAyZ3" role="3cqZAp">
+              <node concept="37vLTI" id="4wYSx2JAzn0" role="3clFbG">
+                <node concept="3clFbT" id="4wYSx2JAzp7" role="37vLTx">
+                  <property role="3clFbU" value="false" />
+                </node>
+                <node concept="37vLTw" id="4wYSx2JAyZ1" role="37vLTJ">
+                  <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="2qqFBg4WC49" role="3cqZAp">
               <node concept="1rXfSq" id="2qqFBg4WC47" role="3clFbG">
                 <ref role="37wK5l" to="51te:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
@@ -775,6 +812,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4wYSx2JAx6T" role="3cqZAp" />
       </node>
       <node concept="2AHcQZ" id="2qqFBg4W_NF" role="2AJF6D">
         <ref role="2AI5Lk" to="e2lb:~Override" resolve="Override" />
