@@ -57,6 +57,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class SModel implements SModelData {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
@@ -78,8 +79,21 @@ public class SModel implements SModelData {
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
   private ImplicitImportsLegacyHolder myLegacyImplicitImports;
-  // when true, we are attaching newly loaded children to a model loaded partially
-  private boolean myIsFullLoadMode = false;
+  /**
+   * update mode, aka full load mode, is the state we are attaching newly loaded children to a model loaded partially
+   * since it could happen during model read, we can't rely on model read/write action mechanism.
+   * It used to be a mere boolean flag, but it doesn't help to deal with multiple getNode(SNodeId) calls, one of which triggered model load.
+   * Existing implementation used to hack around with synchronized access to model data (in overridden methods SModelBase#geSModelInternal(),
+   * e.g. LazyEditableSModelBase#getSModelInternal synchronize on myModel:UpdatableModel field, and UpdatableModel does synchronize on this when
+   * replacing model nodes in update mode). I could have used the same approach for my model, however, don't want to
+   * (a) build my model on top of LazyEditableSModelBase
+   * (b) keep this synchronized code (future work, though)
+   *
+   * Lock is not the best primitive to use here. With given API (setUpdateMode(boolean) I need smth like a semaphore I could check for being locked,
+   * and wait for release (i.e. without further acquire) if necessary. Neither java's Semaphore, nor Lock are good for this, picked latter just
+   * by tossing a coin (well, it respects the thread, its API is more streamlined with the activity, lock() sounds better than acquire())
+   */
+  private final ReentrantLock myFullLoadMode = new ReentrantLock();
   // nodes from this model communicate with it through this owner instance.
   @NotNull
   private final AttachedNodeOwner myNodeOwner;
@@ -212,10 +226,24 @@ public class SModel implements SModelData {
 
   private SNode getNode_(org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
-    if (myDisposed) return null;
+    if (myDisposed) {
+      return null;
+    }
+
+    if (isUpdateMode()) {
+      // there's a thread that updates the model, and myIdToNodeMap might get updated
+      // thus we shall wait once update is over, and lock()/unlock() pair merely ensures update mode if over.
+      // This is not a decent solution, we'd rather get separate SModelData implementation that is update-aware, and use locks/guards
+      // when accessing internal fields.
+      // Note, if the current thread is the one that performs the update, lock()/unlock() is fine, as the lock is re-enterable
+      myFullLoadMode.lock();
+      myFullLoadMode.unlock();
+    }
 
     org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return ((SNode) node);
+    if (node != null) {
+      return ((SNode) node);
+    }
     enforceFullLoad();
     return ((SNode) myIdToNodeMap.get(nodeId));
   }
@@ -548,7 +576,7 @@ public class SModel implements SModelData {
     checkNotDisposed();
     if (myDisposed) return;
 
-    enforceFullLoad();
+    enforceFullLoad(); // FIXME dubious need to perform full load if all we do is populating id map
     org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
     if (id == null) {
       assignNewId(node);
@@ -581,7 +609,7 @@ public class SModel implements SModelData {
   void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
 
-    enforceFullLoad();
+    enforceFullLoad(); // FIXME see registerNode. What's the purpose?
     org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
@@ -773,12 +801,34 @@ public class SModel implements SModelData {
   //aspects / additional
 
   public boolean isUpdateMode() {
-    return myIsFullLoadMode;
+    return myFullLoadMode.isLocked();
   }
 
+  // update mode means we are attaching newly loaded children
   public void setUpdateMode(boolean value) {
-    // update mode means we are attaching newly loaded children
-    this.myIsFullLoadMode = value;
+    if (value) {
+      // enter update mode
+      if (myFullLoadMode.isLocked()) {
+        if (myFullLoadMode.isHeldByCurrentThread()) {
+          throw new IllegalStateException("attempt to update model which is being updated from another thread");
+        }
+        // fall-through, i don't want to use re-enter feature of the lock - to mimic simple boolean which is
+        // 'unlocked' with a singe false value regardless of number of 'true' values. This might need to change
+        // once we have better approach to updatable models.
+      } else {
+        myFullLoadMode.lock();
+      }
+    } else {
+      // clean update mode
+      if (myFullLoadMode.isLocked()) {
+        if (!myFullLoadMode.isHeldByCurrentThread()) {
+          throw new IllegalStateException("attempt to clear update mode flag from a thread that didn't initiate the mode");
+        }
+        myFullLoadMode.unlock();
+      } else {
+        throw  new IllegalStateException("attempt to clear update mode flag while not in the update mode");
+      }
+    }
   }
 
   //to use only from SNode

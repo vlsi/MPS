@@ -123,6 +123,7 @@ public class FilePerRootFormatUtil {
           // now that it's detached we can safely add it to our model
           result.addRootNode(rootNode);
         }
+        model.setUpdateMode(false);
       } catch (IOException e) {
         throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
       } finally {
