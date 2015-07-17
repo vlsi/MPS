@@ -10,11 +10,6 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import java.util.HashMap;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.java.stub.StubReferenceFactory;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -52,19 +47,15 @@ public class ASMModelLoader {
     }
   }
 
-  public void completeRoots(SModel model) {
+  public void completeModel(SModel partialModel, SModelData completeModelData) {
     try {
-      Map<SNodeId, SNode> roots = new HashMap<SNodeId, SNode>();
-      for (SNode n : model.getRootNodes()) {
-        roots.put(n.getNodeId(), SNodeOperations.cast(n, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")));
-      }
-      StubReferenceFactory refFactory = new StubReferenceFactory(myModule, model);
+      StubReferenceFactory refFactory = new StubReferenceFactory(myModule, partialModel);
       for (IFile classfile : getTopClassFiles()) {
         ClassifierLoader rootLoader = new ClassifierLoader(classfile, myOnlyPublic, mySkipPrivate);
-        SNodeId nodeId = rootLoader.createNodeId();
-        SNode root = roots.get(nodeId);
-        if (root != null) {
-          rootLoader.updateClassifier(root, refFactory);
+        SNode c = rootLoader.createClassifier();
+        if (c != null) {
+          rootLoader.updateClassifier(c, refFactory);
+          completeModelData.addRootNode(c);
         }
       }
     } catch (Exception e) {

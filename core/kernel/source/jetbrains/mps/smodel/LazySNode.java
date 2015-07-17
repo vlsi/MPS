@@ -36,19 +36,6 @@ public final class LazySNode extends SNode {
     return super.firstChild();
   }
 
-  @Override
-  public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    enforceModelLoad();
-    super.insertChildBefore(role, child, anchor);
-  }
-
-  @Override
-  public void insertChildBefore(@NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
-      @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    enforceModelLoad();
-    super.insertChildBefore(role, child, anchor);
-  }
-
   private void enforceModelLoad() {
     final SModel model = getNodeOwner().getModel();
     if (model == null || treeParent() != null) return;

@@ -29,9 +29,16 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Iterator;
 
-public class ModelLoader {
+/**
+ * Takes partially-loaded model and fills it with nodes from a fully-loaded counterpart.
+ * Preserves instances of original partially-loaded model as they might be already exposed to user code
+ * (i.e. full load triggered as part of model traversal, with partial root already accessed by a client).
+ * Fully-loaded model is not preserved.
+ * SHALL MOVE TO [smodel] once LazySNode and InterfaceSNode move there (either with SNode or as interfaces).
+ */
+public class PartialModelUpdateFacility {
 
-  private static final Logger LOG = LogManager.getLogger(ModelLoader.class);
+  private static final Logger LOG = LogManager.getLogger(PartialModelUpdateFacility.class);
 
   private SModelData myModel;
   private SModelData myFullModel;
@@ -43,7 +50,7 @@ public class ModelLoader {
    * @param fullModel source of nodes to inject into updated models, for disposal.
    * @param dataOwner provides extra information about location in case anything goes wrong
    */
-  public ModelLoader(@NotNull SModelData model, @NotNull SModelData fullModel, @NotNull SModel dataOwner) {
+  public PartialModelUpdateFacility(@NotNull SModelData model, @NotNull SModelData fullModel, @NotNull SModel dataOwner) {
     myModel = model;
     myFullModel = fullModel;
     myDataOwner = dataOwner;

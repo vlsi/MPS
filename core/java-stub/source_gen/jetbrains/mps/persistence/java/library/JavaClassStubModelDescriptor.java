@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
+import jetbrains.mps.smodel.loading.PartialModelUpdateFacility;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Set;
 import java.util.Collections;
@@ -65,10 +66,14 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       return;
     }
     if (getLoadingState() == ModelLoadingState.INTERFACE_LOADED) {
-      mi.setUpdateMode(true);
       ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
       loader.skipPrivateMembers(mySkipPrivate);
-      loader.completeRoots(this);
+      SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
+      loader.completeModel(this, completeModelData);
+      mi.setUpdateMode(true);
+      completeModelData.setUpdateMode(true);
+      new PartialModelUpdateFacility(mi, completeModelData, this).update();
+      completeModelData.setUpdateMode(false);
       mi.setUpdateMode(false);
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
     }

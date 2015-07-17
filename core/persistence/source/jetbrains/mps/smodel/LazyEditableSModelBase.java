@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.smodel.loading.ModelLoader;
+import jetbrains.mps.smodel.loading.PartialModelUpdateFacility;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.UpdateableModel;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +52,7 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
       }
       current.setUpdateMode(true);   //not to send events on changes
       fullModel.setUpdateMode(true);
-      new ModelLoader(current, fullModel, LazyEditableSModelBase.this).update();
+      new PartialModelUpdateFacility(current, fullModel, LazyEditableSModelBase.this).update();
       current.setUpdateMode(false);  //enable events
       return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
     }
