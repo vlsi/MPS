@@ -64,28 +64,32 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
   @Override
   public void load() {
     SModel mi = getSModelInternal();
-    if (mi.isUpdateMode()) {
-      return;
-    }
-    if (myIsLoadInProgress) {
-      return;
-    }
     if (getLoadingState() == ModelLoadingState.INTERFACE_LOADED) {
-      myIsLoadInProgress = true;
-      ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
-      loader.skipPrivateMembers(mySkipPrivate);
-      SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
-      Collection<SModelReference> imports = loader.completeModel(this, completeModelData);
-      mi.setUpdateMode(true);
-      completeModelData.setUpdateMode(true);
-      new PartialModelUpdateFacility(mi, completeModelData, this).update();
-      for (SModelReference mr : imports) {
-        mi.addModelImport(new SModel.ImportElement(mr));
+      mi.enterUpdateMode();
+      try {
+        if (getLoadingState() == ModelLoadingState.FULLY_LOADED) {
+          return;
+        }
+        if (myIsLoadInProgress) {
+          // we are inside nested load() within update 
+          return;
+        }
+        myIsLoadInProgress = true;
+        ASMModelLoader loader = new ASMModelLoader(getModule(), getSource().getPaths());
+        loader.skipPrivateMembers(mySkipPrivate);
+        SModel completeModelData = new SModel(getReference(), new ForeignNodeIdMap());
+        Collection<SModelReference> imports = loader.completeModel(this, completeModelData);
+        completeModelData.enterUpdateMode();
+        new PartialModelUpdateFacility(mi, completeModelData, this).update();
+        for (SModelReference mr : imports) {
+          mi.addModelImport(new SModel.ImportElement(mr));
+        }
+        completeModelData.leaveUpdateMode();
+      } finally {
+        mi.leaveUpdateMode();
       }
-      completeModelData.setUpdateMode(false);
-      mi.setUpdateMode(false);
-      myIsLoadInProgress = false;
       fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
+      myIsLoadInProgress = false;
     }
 
   }

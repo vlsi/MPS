@@ -112,7 +112,7 @@ public class FilePerRootFormatUtil {
         }
         int count = 0;
         SModel model = rootHandler.getResult().getModel();
-        model.setUpdateMode(true);
+        model.enterUpdateMode();
         for (SNode rootNode : model.getRootNodes()) {
           if (count != 0) {
             throw new ModelReadException("Couldn't read model: " + stream + " root file is broken - contains more than one roots", null);
@@ -123,7 +123,7 @@ public class FilePerRootFormatUtil {
           // now that it's detached we can safely add it to our model
           result.addRootNode(rootNode);
         }
-        model.setUpdateMode(false);
+        model.leaveUpdateMode();
       } catch (IOException e) {
         throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
       } finally {

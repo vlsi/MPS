@@ -115,13 +115,13 @@ public class ModuleDependenciesTest extends ModuleMpsTest {
           // which otherwise fails in ModelsEventsCollector, registered as command listener, with a check that changes happen inside command.
           // however, GlobalModelAccess, active during tests, doesn't support commands and listeners, and thus ModelsEventsCollector treats
           // any change as 'outside command' change, and fails.
-          ((SModelBase) m).getSModel().setUpdateMode(true);
+          ((SModelBase) m).getSModel().enterUpdateMode();
           if (isDevKit) {
             ((SModelInternal) m).addDevKit(toUse);
           } else {
             ((SModelInternal) m).addLanguage(MetaAdapterFactory.getLanguage(toUse));
           }
-          ((SModelBase) m).getSModel().setUpdateMode(false);
+          ((SModelBase) m).getSModel().leaveUpdateMode();
           // HACK.
           // DependencyUtil.build looks into dependencies between module descriptors, so we mimic them there,
           // although the right solution is to <strikeout>throw DependencyUtil away</strikeout> rewrite DependencyUtil to use SModule API

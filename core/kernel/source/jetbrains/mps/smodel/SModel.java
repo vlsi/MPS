@@ -225,12 +225,8 @@ public class SModel implements SModelData {
     return res;
   }
 
-  private SNode getNode_(org.jetbrains.mps.openapi.model.SNodeId nodeId) {
-    checkNotDisposed();
-    if (myDisposed) {
-      return null;
-    }
 
+  protected final void waitUpdateModeIsOver() {
     if (isUpdateMode()) {
       // there's a thread that updates the model, and myIdToNodeMap might get updated
       // thus we shall wait once update is over, and lock()/unlock() pair merely ensures update mode if over.
@@ -240,6 +236,15 @@ public class SModel implements SModelData {
       myFullLoadMode.lock();
       myFullLoadMode.unlock();
     }
+  }
+
+  private SNode getNode_(org.jetbrains.mps.openapi.model.SNodeId nodeId) {
+    checkNotDisposed();
+    if (myDisposed) {
+      return null;
+    }
+
+    waitUpdateModeIsOver();
 
     org.jetbrains.mps.openapi.model.SNode node = myIdToNodeMap.get(nodeId);
     if (node != null) {
@@ -358,8 +363,10 @@ public class SModel implements SModelData {
   }
 
   private List<SModelListener> getModelListeners() {
-    if (myModelDescriptor == null) return Collections.emptyList();
-    return ((SModelBase) myModelDescriptor).getModelListeners();
+    if (myModelDescriptor == null) {
+      return Collections.emptyList();
+    }
+    return myModelDescriptor.getModelListeners();
   }
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
@@ -805,19 +812,33 @@ public class SModel implements SModelData {
     return myFullLoadMode.isLocked();
   }
 
-  // update mode means we are attaching newly loaded children
+  public void enterUpdateMode() {
+    myFullLoadMode.lock();
+  }
+
+  public void leaveUpdateMode() {
+    myFullLoadMode.unlock();
+  }
+
+  /**
+   * update mode means we are attaching newly loaded children
+   * @deprecated use {@link #enterUpdateMode()} or {@link #leaveUpdateMode()} with new contract. do not mix the two
+   * old method kept, with the contract of single call with <code>false</code> that clears any number of calls with (<code>true</code>).
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public void setUpdateMode(boolean value) {
     if (value) {
       // enter update mode
       if (myFullLoadMode.isLocked()) {
-        if (myFullLoadMode.isHeldByCurrentThread()) {
+        if (!myFullLoadMode.isHeldByCurrentThread()) {
           throw new IllegalStateException("attempt to update model which is being updated from another thread");
         }
         // fall-through, i don't want to use re-enter feature of the lock - to mimic simple boolean which is
         // 'unlocked' with a singe false value regardless of number of 'true' values. This might need to change
         // once we have better approach to updatable models.
       } else {
-        myFullLoadMode.lock();
+        enterUpdateMode();
       }
     } else {
       // clean update mode
@@ -825,7 +846,7 @@ public class SModel implements SModelData {
         if (!myFullLoadMode.isHeldByCurrentThread()) {
           throw new IllegalStateException("attempt to clear update mode flag from a thread that didn't initiate the mode");
         }
-        myFullLoadMode.unlock();
+        leaveUpdateMode();
       } else {
         throw  new IllegalStateException("attempt to clear update mode flag while not in the update mode");
       }

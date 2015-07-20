@@ -51,6 +51,10 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -567,218 +571,229 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="21i_bH2Utlt" role="3cqZAp">
-          <node concept="3clFbS" id="21i_bH2Utlv" role="3clFbx">
-            <node concept="3cpWs6" id="21i_bH2UtNc" role="3cqZAp" />
-          </node>
-          <node concept="2OqwBi" id="21i_bH2Uty2" role="3clFbw">
-            <node concept="37vLTw" id="21i_bH2UtrW" role="2Oq$k0">
-              <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
-            </node>
-            <node concept="liA8E" id="21i_bH2UtLl" role="2OqNvi">
-              <ref role="37wK5l" to="cu2c:~SModel.isUpdateMode():boolean" resolve="isUpdateMode" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="4wYSx2JAxVz" role="3cqZAp">
-          <node concept="3clFbS" id="4wYSx2JAxV_" role="3clFbx">
-            <node concept="3cpWs6" id="4wYSx2JAyr5" role="3cqZAp" />
-          </node>
-          <node concept="37vLTw" id="4wYSx2JAyaj" role="3clFbw">
-            <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="2qqFBg4WAUv" role="3cqZAp">
           <node concept="3clFbS" id="2qqFBg4WAUx" role="3clFbx">
-            <node concept="3clFbF" id="4wYSx2JAxvj" role="3cqZAp">
-              <node concept="37vLTI" id="4wYSx2JAyB0" role="3clFbG">
-                <node concept="3clFbT" id="4wYSx2JAyKZ" role="37vLTx">
-                  <property role="3clFbU" value="true" />
-                </node>
-                <node concept="37vLTw" id="4wYSx2JAxvh" role="37vLTJ">
-                  <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="2qqFBg4WBI8" role="3cqZAp">
-              <node concept="3cpWsn" id="2qqFBg4WBI9" role="3cpWs9">
-                <property role="TrG5h" value="loader" />
-                <node concept="3uibUv" id="2qqFBg4WBIa" role="1tU5fm">
-                  <ref role="3uigEE" to="1ltj:6hYzBiUOtEa" resolve="ASMModelLoader" />
-                </node>
-                <node concept="2ShNRf" id="2qqFBg4WBIb" role="33vP2m">
-                  <node concept="1pGfFk" id="2qqFBg4WBIc" role="2ShVmc">
-                    <ref role="37wK5l" to="1ltj:3M1v4zmXszA" resolve="ASMModelLoader" />
-                    <node concept="1rXfSq" id="2qqFBg4WBId" role="37wK5m">
-                      <ref role="37wK5l" to="51te:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                    </node>
-                    <node concept="2OqwBi" id="2qqFBg4WBIe" role="37wK5m">
-                      <node concept="1rXfSq" id="2qqFBg4WBIf" role="2Oq$k0">
-                        <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
-                      </node>
-                      <node concept="liA8E" id="2qqFBg4WBIg" role="2OqNvi">
-                        <ref role="37wK5l" to="ep0o:~FolderSetDataSource.getPaths():java.util.Collection" resolve="getPaths" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2qqFBg4WBIh" role="3cqZAp">
-              <node concept="2OqwBi" id="2qqFBg4WBIi" role="3clFbG">
-                <node concept="37vLTw" id="2qqFBg4WBIj" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
-                </node>
-                <node concept="liA8E" id="2qqFBg4WBIk" role="2OqNvi">
-                  <ref role="37wK5l" to="1ltj:3M1v4zmXhjW" resolve="skipPrivateMembers" />
-                  <node concept="37vLTw" id="2qqFBg4WBIl" role="37wK5m">
-                    <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="mySkipPrivate" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="1$0KT$2MbxI" role="3cqZAp">
-              <node concept="3cpWsn" id="1$0KT$2MbxL" role="3cpWs9">
-                <property role="TrG5h" value="completeModelData" />
-                <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="1$0KT$2MbxM" role="1tU5fm">
-                  <ref role="3uigEE" to="cu2c:~SModel" resolve="SModel" />
-                </node>
-                <node concept="2ShNRf" id="1$0KT$2MbxN" role="33vP2m">
-                  <node concept="1pGfFk" id="1$0KT$2MbxO" role="2ShVmc">
-                    <ref role="37wK5l" to="cu2c:~SModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap)" resolve="SModel" />
-                    <node concept="1rXfSq" id="1$0KT$2MbxP" role="37wK5m">
-                      <ref role="37wK5l" to="51te:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
-                    </node>
-                    <node concept="2ShNRf" id="1$0KT$2MbxQ" role="37wK5m">
-                      <node concept="1pGfFk" id="1$0KT$2MbxR" role="2ShVmc">
-                        <ref role="37wK5l" to="tyed:~ForeignNodeIdMap.&lt;init&gt;()" resolve="ForeignNodeIdMap" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="4kh4OigmeTN" role="3cqZAp">
-              <node concept="3cpWsn" id="4kh4OigmeTO" role="3cpWs9">
-                <property role="TrG5h" value="imports" />
-                <node concept="3uibUv" id="4kh4OigmeTJ" role="1tU5fm">
-                  <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
-                  <node concept="3uibUv" id="4kh4OigmeTM" role="11_B2D">
-                    <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="4kh4OigmeTP" role="33vP2m">
-                  <node concept="37vLTw" id="4kh4OigmeTQ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
-                  </node>
-                  <node concept="liA8E" id="4kh4OigmeTR" role="2OqNvi">
-                    <ref role="37wK5l" to="1ltj:2qqFBg4WiJ2" resolve="completeModel" />
-                    <node concept="Xjq3P" id="4kh4OigmeTS" role="37wK5m" />
-                    <node concept="37vLTw" id="4kh4OigmeTT" role="37wK5m">
-                      <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="21i_bH2Uuki" role="3cqZAp">
-              <node concept="2OqwBi" id="21i_bH2UupQ" role="3clFbG">
-                <node concept="37vLTw" id="21i_bH2Uukg" role="2Oq$k0">
+            <node concept="3clFbF" id="3f7GYjG0IlT" role="3cqZAp">
+              <node concept="2OqwBi" id="3f7GYjG0Izc" role="3clFbG">
+                <node concept="37vLTw" id="3f7GYjG0IlR" role="2Oq$k0">
                   <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
                 </node>
-                <node concept="liA8E" id="21i_bH2Uu_j" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                  <node concept="3clFbT" id="21i_bH2UuB7" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
+                <node concept="liA8E" id="3f7GYjG0IIM" role="2OqNvi">
+                  <ref role="37wK5l" to="cu2c:~SModel.enterUpdateMode():void" resolve="enterUpdateMode" />
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="1$0KT$2Mcxj" role="3cqZAp">
-              <node concept="2OqwBi" id="1$0KT$2McCq" role="3clFbG">
-                <node concept="37vLTw" id="1$0KT$2Mcxh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
-                </node>
-                <node concept="liA8E" id="1$0KT$2McNG" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                  <node concept="3clFbT" id="1$0KT$2McPH" role="37wK5m">
-                    <property role="3clFbU" value="true" />
+            <node concept="2GUZhq" id="3f7GYjG0scL" role="3cqZAp">
+              <node concept="3clFbS" id="3f7GYjG0scN" role="2GV8ay">
+                <node concept="3clFbJ" id="3f7GYjG0u7R" role="3cqZAp">
+                  <node concept="3clFbS" id="3f7GYjG0u7T" role="3clFbx">
+                    <node concept="3cpWs6" id="3f7GYjG0uPo" role="3cqZAp" />
+                  </node>
+                  <node concept="3clFbC" id="3f7GYjG0u_Z" role="3clFbw">
+                    <node concept="Rm8GO" id="3f7GYjG0uMY" role="3uHU7w">
+                      <ref role="Rm8GQ" to="gznm:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                      <ref role="1Px2BO" to="gznm:~ModelLoadingState" resolve="ModelLoadingState" />
+                    </node>
+                    <node concept="1rXfSq" id="3f7GYjG0uno" role="3uHU7B">
+                      <ref role="37wK5l" to="51te:~SModelDescriptorStub.getLoadingState():jetbrains.mps.smodel.loading.ModelLoadingState" resolve="getLoadingState" />
+                    </node>
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="1$0KT$2Mdb$" role="3cqZAp">
-              <node concept="2OqwBi" id="1$0KT$2Me6p" role="3clFbG">
-                <node concept="2ShNRf" id="1$0KT$2Mdbw" role="2Oq$k0">
-                  <node concept="1pGfFk" id="1$0KT$2MdWA" role="2ShVmc">
-                    <ref role="37wK5l" to="gznm:~PartialModelUpdateFacility.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.extapi.model.SModelData,org.jetbrains.mps.openapi.model.SModel)" resolve="PartialModelUpdateFacility" />
-                    <node concept="37vLTw" id="1$0KT$2MdYp" role="37wK5m">
-                      <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                <node concept="3clFbJ" id="3f7GYjG0pAH" role="3cqZAp">
+                  <node concept="3clFbS" id="3f7GYjG0pAJ" role="3clFbx">
+                    <node concept="3SKdUt" id="3f7GYjG0Kjw" role="3cqZAp">
+                      <node concept="3SKdUq" id="3f7GYjG0Kku" role="3SKWNk">
+                        <property role="3SKdUp" value="we are inside nested load() within update" />
+                      </node>
                     </node>
-                    <node concept="37vLTw" id="1$0KT$2Me2v" role="37wK5m">
-                      <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
-                    </node>
-                    <node concept="Xjq3P" id="1$0KT$2Me58" role="37wK5m" />
+                    <node concept="3cpWs6" id="3f7GYjG0KfJ" role="3cqZAp" />
+                  </node>
+                  <node concept="37vLTw" id="3f7GYjG0K77" role="3clFbw">
+                    <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
                   </node>
                 </node>
-                <node concept="liA8E" id="1$0KT$2Mee_" role="2OqNvi">
-                  <ref role="37wK5l" to="gznm:~PartialModelUpdateFacility.update():void" resolve="update" />
-                </node>
-              </node>
-            </node>
-            <node concept="1DcWWT" id="4kh4OiglXQF" role="3cqZAp">
-              <node concept="3clFbS" id="4kh4OiglXQH" role="2LFqv$">
-                <node concept="3clFbF" id="4kh4OiglZUd" role="3cqZAp">
-                  <node concept="2OqwBi" id="4kh4OiglZY4" role="3clFbG">
-                    <node concept="37vLTw" id="4kh4OigmgQT" role="2Oq$k0">
-                      <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                <node concept="3clFbF" id="4wYSx2JAxvj" role="3cqZAp">
+                  <node concept="37vLTI" id="4wYSx2JAyB0" role="3clFbG">
+                    <node concept="3clFbT" id="4wYSx2JAyKZ" role="37vLTx">
+                      <property role="3clFbU" value="true" />
                     </node>
-                    <node concept="liA8E" id="4kh4Oigm0yY" role="2OqNvi">
-                      <ref role="37wK5l" to="cu2c:~SModel.addModelImport(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addModelImport" />
-                      <node concept="2ShNRf" id="4kh4Oigm0zA" role="37wK5m">
-                        <node concept="1pGfFk" id="4kh4Oigm5gX" role="2ShVmc">
-                          <ref role="37wK5l" to="cu2c:~SModel$ImportElement.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel.ImportElement" />
-                          <node concept="37vLTw" id="4kh4Oigm5l9" role="37wK5m">
-                            <ref role="3cqZAo" node="4kh4OiglXQI" resolve="mr" />
+                    <node concept="37vLTw" id="4wYSx2JAxvh" role="37vLTJ">
+                      <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="2qqFBg4WBI8" role="3cqZAp">
+                  <node concept="3cpWsn" id="2qqFBg4WBI9" role="3cpWs9">
+                    <property role="TrG5h" value="loader" />
+                    <node concept="3uibUv" id="2qqFBg4WBIa" role="1tU5fm">
+                      <ref role="3uigEE" to="1ltj:6hYzBiUOtEa" resolve="ASMModelLoader" />
+                    </node>
+                    <node concept="2ShNRf" id="2qqFBg4WBIb" role="33vP2m">
+                      <node concept="1pGfFk" id="2qqFBg4WBIc" role="2ShVmc">
+                        <ref role="37wK5l" to="1ltj:3M1v4zmXszA" resolve="ASMModelLoader" />
+                        <node concept="1rXfSq" id="2qqFBg4WBId" role="37wK5m">
+                          <ref role="37wK5l" to="51te:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                        </node>
+                        <node concept="2OqwBi" id="2qqFBg4WBIe" role="37wK5m">
+                          <node concept="1rXfSq" id="2qqFBg4WBIf" role="2Oq$k0">
+                            <ref role="37wK5l" node="5JsnGMj1qdA" resolve="getSource" />
+                          </node>
+                          <node concept="liA8E" id="2qqFBg4WBIg" role="2OqNvi">
+                            <ref role="37wK5l" to="ep0o:~FolderSetDataSource.getPaths():java.util.Collection" resolve="getPaths" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="3cpWsn" id="4kh4OiglXQI" role="1Duv9x">
-                <property role="TrG5h" value="mr" />
-                <node concept="3uibUv" id="4kh4Oigm5pE" role="1tU5fm">
-                  <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="4kh4OigmgnI" role="1DdaDG">
-                <ref role="3cqZAo" node="4kh4OigmeTO" resolve="imports" />
-              </node>
-            </node>
-            <node concept="3clFbF" id="1$0KT$2McQa" role="3cqZAp">
-              <node concept="2OqwBi" id="1$0KT$2McQb" role="3clFbG">
-                <node concept="37vLTw" id="1$0KT$2McQc" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
-                </node>
-                <node concept="liA8E" id="1$0KT$2McQd" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                  <node concept="3clFbT" id="1$0KT$2McQe" role="37wK5m" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="21i_bH2UuS$" role="3cqZAp">
-              <node concept="2OqwBi" id="21i_bH2UuYv" role="3clFbG">
-                <node concept="37vLTw" id="21i_bH2UuSy" role="2Oq$k0">
-                  <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
-                </node>
-                <node concept="liA8E" id="21i_bH2Uv9L" role="2OqNvi">
-                  <ref role="37wK5l" to="cu2c:~SModel.setUpdateMode(boolean):void" resolve="setUpdateMode" />
-                  <node concept="3clFbT" id="21i_bH2UvbC" role="37wK5m">
-                    <property role="3clFbU" value="false" />
+                <node concept="3clFbF" id="2qqFBg4WBIh" role="3cqZAp">
+                  <node concept="2OqwBi" id="2qqFBg4WBIi" role="3clFbG">
+                    <node concept="37vLTw" id="2qqFBg4WBIj" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
+                    </node>
+                    <node concept="liA8E" id="2qqFBg4WBIk" role="2OqNvi">
+                      <ref role="37wK5l" to="1ltj:3M1v4zmXhjW" resolve="skipPrivateMembers" />
+                      <node concept="37vLTw" id="2qqFBg4WBIl" role="37wK5m">
+                        <ref role="3cqZAo" node="3M1v4zmWEN5" resolve="mySkipPrivate" />
+                      </node>
+                    </node>
                   </node>
+                </node>
+                <node concept="3cpWs8" id="1$0KT$2MbxI" role="3cqZAp">
+                  <node concept="3cpWsn" id="1$0KT$2MbxL" role="3cpWs9">
+                    <property role="TrG5h" value="completeModelData" />
+                    <property role="3TUv4t" value="false" />
+                    <node concept="3uibUv" id="1$0KT$2MbxM" role="1tU5fm">
+                      <ref role="3uigEE" to="cu2c:~SModel" resolve="SModel" />
+                    </node>
+                    <node concept="2ShNRf" id="1$0KT$2MbxN" role="33vP2m">
+                      <node concept="1pGfFk" id="1$0KT$2MbxO" role="2ShVmc">
+                        <ref role="37wK5l" to="cu2c:~SModel.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap)" resolve="SModel" />
+                        <node concept="1rXfSq" id="1$0KT$2MbxP" role="37wK5m">
+                          <ref role="37wK5l" to="51te:~SModelBase.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                        </node>
+                        <node concept="2ShNRf" id="1$0KT$2MbxQ" role="37wK5m">
+                          <node concept="1pGfFk" id="1$0KT$2MbxR" role="2ShVmc">
+                            <ref role="37wK5l" to="tyed:~ForeignNodeIdMap.&lt;init&gt;()" resolve="ForeignNodeIdMap" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="4kh4OigmeTN" role="3cqZAp">
+                  <node concept="3cpWsn" id="4kh4OigmeTO" role="3cpWs9">
+                    <property role="TrG5h" value="imports" />
+                    <node concept="3uibUv" id="4kh4OigmeTJ" role="1tU5fm">
+                      <ref role="3uigEE" to="k7g3:~Collection" resolve="Collection" />
+                      <node concept="3uibUv" id="4kh4OigmeTM" role="11_B2D">
+                        <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4kh4OigmeTP" role="33vP2m">
+                      <node concept="37vLTw" id="4kh4OigmeTQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2qqFBg4WBI9" resolve="loader" />
+                      </node>
+                      <node concept="liA8E" id="4kh4OigmeTR" role="2OqNvi">
+                        <ref role="37wK5l" to="1ltj:2qqFBg4WiJ2" resolve="completeModel" />
+                        <node concept="Xjq3P" id="4kh4OigmeTS" role="37wK5m" />
+                        <node concept="37vLTw" id="4kh4OigmeTT" role="37wK5m">
+                          <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1$0KT$2Mcxj" role="3cqZAp">
+                  <node concept="2OqwBi" id="1$0KT$2McCq" role="3clFbG">
+                    <node concept="37vLTw" id="1$0KT$2Mcxh" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                    </node>
+                    <node concept="liA8E" id="1$0KT$2McNG" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~SModel.enterUpdateMode():void" resolve="enterUpdateMode" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1$0KT$2Mdb$" role="3cqZAp">
+                  <node concept="2OqwBi" id="1$0KT$2Me6p" role="3clFbG">
+                    <node concept="2ShNRf" id="1$0KT$2Mdbw" role="2Oq$k0">
+                      <node concept="1pGfFk" id="1$0KT$2MdWA" role="2ShVmc">
+                        <ref role="37wK5l" to="gznm:~PartialModelUpdateFacility.&lt;init&gt;(jetbrains.mps.extapi.model.SModelData,jetbrains.mps.extapi.model.SModelData,org.jetbrains.mps.openapi.model.SModel)" resolve="PartialModelUpdateFacility" />
+                        <node concept="37vLTw" id="1$0KT$2MdYp" role="37wK5m">
+                          <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                        </node>
+                        <node concept="37vLTw" id="1$0KT$2Me2v" role="37wK5m">
+                          <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                        </node>
+                        <node concept="Xjq3P" id="1$0KT$2Me58" role="37wK5m" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="1$0KT$2Mee_" role="2OqNvi">
+                      <ref role="37wK5l" to="gznm:~PartialModelUpdateFacility.update():void" resolve="update" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1DcWWT" id="4kh4OiglXQF" role="3cqZAp">
+                  <node concept="3clFbS" id="4kh4OiglXQH" role="2LFqv$">
+                    <node concept="3clFbF" id="4kh4OiglZUd" role="3cqZAp">
+                      <node concept="2OqwBi" id="4kh4OiglZY4" role="3clFbG">
+                        <node concept="37vLTw" id="4kh4OigmgQT" role="2Oq$k0">
+                          <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                        </node>
+                        <node concept="liA8E" id="4kh4Oigm0yY" role="2OqNvi">
+                          <ref role="37wK5l" to="cu2c:~SModel.addModelImport(jetbrains.mps.smodel.SModel$ImportElement):void" resolve="addModelImport" />
+                          <node concept="2ShNRf" id="4kh4Oigm0zA" role="37wK5m">
+                            <node concept="1pGfFk" id="4kh4Oigm5gX" role="2ShVmc">
+                              <ref role="37wK5l" to="cu2c:~SModel$ImportElement.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference)" resolve="SModel.ImportElement" />
+                              <node concept="37vLTw" id="4kh4Oigm5l9" role="37wK5m">
+                                <ref role="3cqZAo" node="4kh4OiglXQI" resolve="mr" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWsn" id="4kh4OiglXQI" role="1Duv9x">
+                    <property role="TrG5h" value="mr" />
+                    <node concept="3uibUv" id="4kh4Oigm5pE" role="1tU5fm">
+                      <ref role="3uigEE" to="ec5l:~SModelReference" resolve="SModelReference" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4kh4OigmgnI" role="1DdaDG">
+                    <ref role="3cqZAo" node="4kh4OigmeTO" resolve="imports" />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1$0KT$2McQa" role="3cqZAp">
+                  <node concept="2OqwBi" id="1$0KT$2McQb" role="3clFbG">
+                    <node concept="37vLTw" id="1$0KT$2McQc" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1$0KT$2MbxL" resolve="completeModelData" />
+                    </node>
+                    <node concept="liA8E" id="1$0KT$2McQd" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~SModel.leaveUpdateMode():void" resolve="leaveUpdateMode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="3f7GYjG0scO" role="2GVbov">
+                <node concept="3clFbF" id="3f7GYjG0sog" role="3cqZAp">
+                  <node concept="2OqwBi" id="3f7GYjG0soh" role="3clFbG">
+                    <node concept="37vLTw" id="3f7GYjG0soi" role="2Oq$k0">
+                      <ref role="3cqZAo" node="21i_bH2Ut2k" resolve="mi" />
+                    </node>
+                    <node concept="liA8E" id="3f7GYjG0soj" role="2OqNvi">
+                      <ref role="37wK5l" to="cu2c:~SModel.leaveUpdateMode():void" resolve="leaveUpdateMode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="2qqFBg4WC49" role="3cqZAp">
+              <node concept="1rXfSq" id="2qqFBg4WC47" role="3clFbG">
+                <ref role="37wK5l" to="51te:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
+                <node concept="Rm8GO" id="2qqFBg4WCi8" role="37wK5m">
+                  <ref role="Rm8GQ" to="gznm:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
+                  <ref role="1Px2BO" to="gznm:~ModelLoadingState" resolve="ModelLoadingState" />
                 </node>
               </node>
             </node>
@@ -789,15 +804,6 @@
                 </node>
                 <node concept="37vLTw" id="4wYSx2JAyZ1" role="37vLTJ">
                   <ref role="3cqZAo" node="4wYSx2JAuLh" resolve="myIsLoadInProgress" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="2qqFBg4WC49" role="3cqZAp">
-              <node concept="1rXfSq" id="2qqFBg4WC47" role="3clFbG">
-                <ref role="37wK5l" to="51te:~SModelBase.fireModelStateChanged(jetbrains.mps.smodel.loading.ModelLoadingState):void" resolve="fireModelStateChanged" />
-                <node concept="Rm8GO" id="2qqFBg4WCi8" role="37wK5m">
-                  <ref role="Rm8GQ" to="gznm:~ModelLoadingState.FULLY_LOADED" resolve="FULLY_LOADED" />
-                  <ref role="1Px2BO" to="gznm:~ModelLoadingState" resolve="ModelLoadingState" />
                 </node>
               </node>
             </node>

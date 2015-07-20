@@ -114,14 +114,14 @@ public class ModelUndoTest {
     m1f.attachTo(myRepo);
     final jetbrains.mps.smodel.SModel modelData = (jetbrains.mps.smodel.SModel) m1f.getModelData();
     final SNode r1 = m1.getRootNodes().iterator().next();
-    modelData.setUpdateMode(true);
+    modelData.enterUpdateMode();
     // update mode is on, add 1+3 nodes, observe no undo
     r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
     myUndo.flushCommand(null);
     Assert.assertEquals(0, myUndo.myUndoStack.size());
     Assert.assertEquals(6 + 4, countTreeNodes(m1.getRootNodes()));
-    modelData.setUpdateMode(false);
+    modelData.leaveUpdateMode();
     // update is over, modify and see undo/redo commands do get collected
     r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(1, myUndo.actualUndoActionCount());

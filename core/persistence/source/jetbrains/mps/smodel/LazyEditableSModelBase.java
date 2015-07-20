@@ -50,10 +50,11 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase implemen
         fullModel.setModelDescriptor(LazyEditableSModelBase.this);
         return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
       }
-      current.setUpdateMode(true);   //not to send events on changes
-      fullModel.setUpdateMode(true);
+      current.enterUpdateMode();   //not to send events on changes
+      fullModel.enterUpdateMode();
       new PartialModelUpdateFacility(current, fullModel, LazyEditableSModelBase.this).update();
-      current.setUpdateMode(false);  //enable events
+      fullModel.leaveUpdateMode();
+      current.leaveUpdateMode();  //enable events
       return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);
     }
     throw new UnsupportedOperationException();
