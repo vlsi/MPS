@@ -103,8 +103,10 @@
         <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
+        <property id="1160590353935" name="usesFolding" index="S$Qs1" />
         <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
+        <child id="7723470090030138869" name="foldedCellModel" index="AHCbl" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
@@ -576,6 +578,7 @@
     <ref role="1XX52x" to="oubp:3geGFOI0X5k" resolve="ClassLikeMethod" />
     <node concept="3EZMnI" id="3geGFOI14vc" role="2wV5jI">
       <property role="3EZMnw" value="false" />
+      <property role="S$Qs1" value="false" />
       <node concept="3F1sOY" id="2dmnr4$$_tF" role="3EZMnx">
         <ref role="1NtTu8" to="tpee:fzclF7X" />
         <node concept="xShMh" id="6d7r2FpHxMs" role="3F10Kt">
@@ -628,30 +631,40 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="3geGFOI14vF" role="3EZMnx">
-        <property role="3F0ifm" value="{" />
-        <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
-        <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
-        <node concept="ljvvj" id="3geGFOI14vG" role="3F10Kt">
-          <property role="VOm3f" value="true" />
+      <node concept="3EZMnI" id="ufiSSsjuRK" role="3EZMnx">
+        <property role="S$Qs1" value="true" />
+        <node concept="VPM3Z" id="ufiSSsjuRM" role="3F10Kt">
+          <property role="VOm3f" value="false" />
         </node>
-      </node>
-      <node concept="3F1sOY" id="3geGFOI14vH" role="3EZMnx">
-        <ref role="1NtTu8" to="tpee:fzclF7Z" />
-        <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
-        <node concept="lj46D" id="3geGFOI14vI" role="3F10Kt">
-          <property role="VOm3f" value="true" />
+        <node concept="3F0ifn" id="3geGFOI14vF" role="3EZMnx">
+          <property role="3F0ifm" value="{" />
+          <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
+          <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
+          <node concept="ljvvj" id="3geGFOI14vG" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
-        <node concept="ljvvj" id="3geGFOI14vJ" role="3F10Kt">
-          <property role="VOm3f" value="true" />
+        <node concept="3F1sOY" id="3geGFOI14vH" role="3EZMnx">
+          <ref role="1NtTu8" to="tpee:fzclF7Z" />
+          <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
+          <node concept="lj46D" id="3geGFOI14vI" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="3geGFOI14vJ" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
-      </node>
-      <node concept="3F0ifn" id="3geGFOI14vK" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
-        <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
-        <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
-        <node concept="ljvvj" id="3geGFOI14vL" role="3F10Kt">
-          <property role="VOm3f" value="true" />
+        <node concept="3F0ifn" id="3geGFOI14vK" role="3EZMnx">
+          <property role="3F0ifm" value="}" />
+          <ref role="1k5W1q" to="tpen:hFD5_7H" resolve="RightBrace" />
+          <ref role="1ERwB7" node="7T23sO8tbnq" resolve="RealObject2Placeholder" />
+          <node concept="ljvvj" id="3geGFOI14vL" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="l2Vlx" id="ufiSSsjuRP" role="2iSdaV" />
+        <node concept="PMmxH" id="7zuBzrp$R_r" role="AHCbl">
+          <ref role="PMmxG" to="tpen:7zuBzrp$swk" resolve="GenericDeclaration_FoldedCodeBlock_Component" />
         </node>
       </node>
       <node concept="l2Vlx" id="3geGFOI14vM" role="2iSdaV" />
