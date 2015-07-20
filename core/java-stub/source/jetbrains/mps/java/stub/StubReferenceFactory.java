@@ -47,15 +47,15 @@ import java.util.Set;
  */
 public final class StubReferenceFactory implements ReferenceFactory {
   private final SModule myModule;
-  private final SModel myModel;
+  private final VisibleModel myModel;
   private final String myModelLongName;
   private final SModelReference myModelReference;
 
   // 1. we used to keep this cache separately, in StubModelsResolver, which might be better approach
   // if we decide to re-use this cache throughout all models loaded within a module. We didn't use this cache,
   // and created a new one for each SReferenceCreator, and it didn't cause any performance issue, thus moved into single class and not reused.
-  // 2. We keep SModel as it's handy to try to find proper match when there are few models with same name
-  private final Map<String, List<SModel>> myName2Models = new HashMap<String, List<SModel>>();
+  // 2. We wrap SModel into VisibleModel to keep set of known model roots along with the model, to avoid attempt to load model again and again from model.getNode()
+  private final Map<String, List<VisibleModel>> myName2Models = new HashMap<String, List<VisibleModel>>();
 
   private final Set<SModelReference> myModelImports = new HashSet<SModelReference>();
 
@@ -65,7 +65,7 @@ public final class StubReferenceFactory implements ReferenceFactory {
    */
   public StubReferenceFactory(@NotNull SModule module, @NotNull SModel model) {
     myModule = module;
-    myModel = model;
+    myModel = new VisibleModel(model);
     myModelReference = model.getReference();
     myModelLongName = NameUtil.getModelLongName(myModelReference.getModelName());
   }
@@ -74,13 +74,12 @@ public final class StubReferenceFactory implements ReferenceFactory {
   @Override
   public SReference create(SNode source, String pack, SNodeId targetNodeId, SReferenceLink role, String resolveInfo, SNodeId targetTopClassifier) {
     if (pack.equals(myModelLongName)) {
-      SNode nodeInSameModel = myModel.getNode(targetTopClassifier);
-      if (nodeInSameModel != null) {
+      if (myModel.isKnownRoot(targetTopClassifier)) {
         return jetbrains.mps.smodel.SReference.create(role, source, myModelReference, targetNodeId, resolveInfo);
       }
     }
 
-    Collection<SModel> possibleModels = findModels(SModelStereotype.withStereotype(pack, SModelStereotype.JAVA_STUB));
+    Collection<VisibleModel> possibleModels = findModels(SModelStereotype.withStereotype(pack, SModelStereotype.JAVA_STUB));
 
     if (possibleModels.isEmpty()) {
       return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
@@ -88,12 +87,12 @@ public final class StubReferenceFactory implements ReferenceFactory {
 
     // first, try to find match
 
-    for (SModel m : possibleModels) {
-      final SModelReference modelRef = m.getReference();
+    for (VisibleModel vm : possibleModels) {
+      final SModelReference modelRef = vm.getModelReference();
       if (myModelReference.equals(modelRef)) {
         continue;
       }
-      if (m.getNode(targetTopClassifier) != null) {
+      if (vm.isKnownRoot(targetTopClassifier)) {
         addImport(modelRef);
         return jetbrains.mps.smodel.SReference.create(role, source, modelRef, targetNodeId, resolveInfo);
       }
@@ -102,15 +101,15 @@ public final class StubReferenceFactory implements ReferenceFactory {
     // ok, there are matching models, and none knows the node with targetNodeId
     if (possibleModels.size() == 1) {
       // only one possible model
-      SModelReference targetModel = possibleModels.iterator().next().getReference();
+      SModelReference targetModel = possibleModels.iterator().next().getModelReference();
       addImport(targetModel);
 
       return jetbrains.mps.smodel.SReference.create(role, source, targetModel, targetNodeId, resolveInfo);
     } else {
       // XXX not quite sure if dynamic reference is reasonable here
       // anyway, this is the way it was
-      for (org.jetbrains.mps.openapi.model.SModel m : possibleModels) {
-        addImport(m.getReference());
+      for (VisibleModel m : possibleModels) {
+        addImport(m.getModelReference());
       }
       return DynamicReference.createDynamicReference(role, source, pack, resolveInfo);
     }
@@ -131,12 +130,12 @@ public final class StubReferenceFactory implements ReferenceFactory {
    * @param modelName qualified name including stereotype (if any), not <code>null</code>
    * @return ordered collection, first come local matches, if any; never <code>null</code>
    */
-  private List<SModel> findModels(String modelName) {
+  private List<VisibleModel> findModels(String modelName) {
     if (myName2Models.isEmpty()) {
       ensureInitialized();
     }
-    final List<SModel> rv = myName2Models.get(modelName);
-    return rv == null ? Collections.<SModel>emptyList() : Collections.unmodifiableList(rv);
+    final List<VisibleModel> rv = myName2Models.get(modelName);
+    return rv == null ? Collections.<VisibleModel>emptyList() : Collections.unmodifiableList(rv);
   }
 
 
@@ -151,12 +150,41 @@ public final class StubReferenceFactory implements ReferenceFactory {
     for (SModel model : visibleModels) {
       final SModelReference modelRef = model.getReference();
       final String modelName = modelRef.getModelName();
-      List<SModel> modelsFromCache = myName2Models.get(modelName);
+      List<VisibleModel> modelsFromCache = myName2Models.get(modelName);
       if (modelsFromCache == null) {
-        myName2Models.put(modelName, modelsFromCache = new ArrayList<SModel>(3));
+        myName2Models.put(modelName, modelsFromCache = new ArrayList<VisibleModel>(3));
       }
-      modelsFromCache.add(model);
+      modelsFromCache.add(new VisibleModel(model));
     }
   }
 
+  /**
+   * In addition to model, keep its root ids, to avoid deadlock when
+   * two models in parallel reads simultaneously are in update model and resolve references to each other with getNode().
+   * Since all we need is to check presence of top classifier, and not interested in full model load, we just cache
+   * known classifiers and proceed gracefully if no match found.
+   * <p/>
+   * Indeed, this is sort of a hack, were we rely on hidden knowledge java stub models are loaded (or could be safely loaded
+   * under given state) at least to the level of top classifiers.
+   */
+  private static class VisibleModel {
+    private final SModel myModel;
+    private final Set<SNodeId> myKnownRoots;
+
+    public VisibleModel(SModel model) {
+      myModel = model;
+      myKnownRoots = new HashSet<SNodeId>();
+      for (SNode n : model.getRootNodes()) {
+        myKnownRoots.add(n.getNodeId());
+      }
+    }
+
+    public boolean isKnownRoot(SNodeId nodeId) {
+      return myKnownRoots.contains(nodeId);
+    }
+
+    public SModelReference getModelReference() {
+      return myModel.getReference();
+    }
+  }
 }
