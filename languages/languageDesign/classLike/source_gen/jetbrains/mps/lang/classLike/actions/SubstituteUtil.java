@@ -33,7 +33,7 @@ public class SubstituteUtil {
         if (ClassLikeMember_Behavior.call_isMultiple_2141245758541890151(md)) {
           return true;
         }
-        return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_find_2603987804376013077", new Object[]{classNode})).isEmpty() && Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_findPlaceholders_6909536935410952255", new Object[]{classNode})).isEmpty();
+        return Sequence.fromIterable(BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), md, "virtual_find_2603987804376013077", new Object[]{classNode})).isEmpty();
       }
     });
   }
