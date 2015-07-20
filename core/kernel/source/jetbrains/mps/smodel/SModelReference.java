@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2015 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -98,7 +100,37 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModel resolve(SRepository repo) {
+    if (myModuleReference != null) {
+      final SRepository repository;
+      if (repo == null) {
+        // see StaticReference, which seems to be the only place we pass null as repository
+        repository = MPSModuleRepository.getInstance();
+      } else {
+        repository = repo;
+      }
+      Computable<SModel> c = new Computable<SModel>() {
+        @Override
+        public SModel compute() {
+          SModule module = repository.getModule(myModuleReference.getModuleId());
+          if (module == null) {
+            return null;
+          }
+          SModel rv = module.getModel(myModelId);
+          return rv != null ? rv : module.resolveInDependencies(myModelId);
+        }
+      };
+      if (!repository.getModelAccess().canRead()) {
+        LOG.warn("Attempt to resolve a model not from read action. What are you going to do with return value?", new Throwable());
+        return new ModelAccessHelper(repository).runReadAction(c);
+      }
+    }
+
     // FIXME !!! use supplied SRepository, not global model repo !!!
+    // If there's no module reference, and model id is global, it's supposed we shall get the model from a global repository.
+    // However, at the moment, there's no easy way to get model from SRepository (other than to iterate over all modules and models,
+    // which doesn't sound like a good approach). Either shall provide method to find model from SRepository, or drop
+    // 'globally unique' model id altogether. What's the benefit of them?
+
     // NOTE, shall tolerate null repo unless every single piece of code that expects StaticReference of a newly created node
     // hanging in the air to resolve. @see StaticReference#getTargetSModel
     return SModelRepository.getInstance().getModelDescriptor(this);

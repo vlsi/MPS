@@ -21,7 +21,9 @@ import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -30,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -144,19 +147,25 @@ public final class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @Nullable
   public VirtualFile getParent() {
-    // Returning the parent of this node's model virtial file
+    // Returning the parent of this node's model virtual file
     // i.e. a real directory wherein the model file lives
     // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
     if (myNode == null || myNode.getModelReference() == null) return null;
-    org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
-    if (modelRef.resolve(MPSModuleRepository.getInstance()) == null) {
-      return null;
-    }
-    MPSModelVirtualFile modelVFile = myFileSystem.getFileFor(modelRef);
-    if (modelVFile != null) {
-      return modelVFile.getParent();
-    }
-    return null;
+    final SRepository repo = MPSModuleRepository.getInstance();
+    return new ModelAccessHelper(repo).runReadAction(new Computable<VirtualFile>() {
+      @Override
+      public VirtualFile compute() {
+        org.jetbrains.mps.openapi.model.SModelReference modelRef = myNode.getModelReference();
+        if (modelRef.resolve(repo) == null) {
+          return null;
+        }
+        MPSModelVirtualFile modelVFile = myFileSystem.getFileFor(modelRef);
+        if (modelVFile != null) {
+          return modelVFile.getParent();
+        }
+        return null;
+      }
+    });
   }
 
   @Override
