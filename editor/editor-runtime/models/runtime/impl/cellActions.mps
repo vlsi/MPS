@@ -2897,6 +2897,58 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="zdLDfNXgfw" role="jymVt">
+      <property role="TrG5h" value="isComment" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="zdLDfNXgfz" role="3clF47">
+        <node concept="3clFbF" id="zdLDfNXgoU" role="3cqZAp">
+          <node concept="2OqwBi" id="zdLDfNXgpL" role="3clFbG">
+            <node concept="37vLTw" id="zdLDfNXgoT" role="2Oq$k0">
+              <ref role="3cqZAo" node="zdLDfNXgnU" resolve="node" />
+            </node>
+            <node concept="1mIQ4w" id="zdLDfNXgyh" role="2OqNvi">
+              <node concept="chp4Y" id="zdLDfNXg_8" role="cj9EA">
+                <ref role="cht4Q" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="zdLDfNXfQk" role="1B3o_S" />
+      <node concept="10P_77" id="zdLDfNXgnR" role="3clF45" />
+      <node concept="37vLTG" id="zdLDfNXgnU" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="zdLDfNXgnT" role="1tU5fm" />
+      </node>
+    </node>
+    <node concept="2YIFZL" id="zdLDfNXhfH" role="jymVt">
+      <property role="TrG5h" value="getCommentedNode" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="zdLDfNXhfK" role="3clF47">
+        <node concept="3clFbF" id="zdLDfNXhrB" role="3cqZAp">
+          <node concept="2OqwBi" id="zdLDfNXhv3" role="3clFbG">
+            <node concept="37vLTw" id="zdLDfNXhrA" role="2Oq$k0">
+              <ref role="3cqZAo" node="zdLDfNXhpA" resolve="comment" />
+            </node>
+            <node concept="3TrEf2" id="zdLDfNXhEK" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpck:2ETBKOyieyt" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="zdLDfNXgM$" role="1B3o_S" />
+      <node concept="3Tqbb2" id="zdLDfNXhpz" role="3clF45" />
+      <node concept="37vLTG" id="zdLDfNXhpA" role="3clF46">
+        <property role="TrG5h" value="comment" />
+        <node concept="3Tqbb2" id="zdLDfNXhp_" role="1tU5fm">
+          <ref role="ehGHo" to="tpck:3Rc6kd0K$RF" resolve="BaseCommentAttribute" />
+        </node>
+      </node>
+    </node>
     <node concept="3Tm1VV" id="5FzO4t9gNbi" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="5FzO4t9hhJk">
