@@ -8,7 +8,7 @@ public class BaseCommentAttribute_BehaviorDescriptor extends ChildAttribute_Beha
   public BaseCommentAttribute_BehaviorDescriptor() {
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+    return BaseCommentAttribute_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
   @Override
   public String getConceptFqName() {
