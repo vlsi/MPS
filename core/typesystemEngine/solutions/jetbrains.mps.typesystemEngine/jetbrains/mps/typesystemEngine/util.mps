@@ -16,6 +16,7 @@
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="msyo" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -87,6 +88,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -96,6 +100,9 @@
       </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
+      </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -1710,6 +1717,38 @@
         <node concept="3THzug" id="4_PC8tdDCbw" role="1tU5fm" />
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="1V3wYmOJA0O">
+    <property role="TrG5h" value="TypeSystemUtil" />
+    <node concept="2YIFZL" id="1V3wYmOJFO$" role="jymVt">
+      <property role="TrG5h" value="shouldApplyTypeSystemRules" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="1V3wYmOJFOA" role="3clF47">
+        <node concept="3clFbF" id="4RwoLpFRu0U" role="3cqZAp">
+          <node concept="3fqX7Q" id="4RwoLpFRu0S" role="3clFbG">
+            <node concept="2OqwBi" id="4RwoLpFRu2J" role="3fr31v">
+              <node concept="37vLTw" id="4RwoLpFRu1$" role="2Oq$k0">
+                <ref role="3cqZAo" node="1V3wYmOJFOX" resolve="node" />
+              </node>
+              <node concept="1mIQ4w" id="4RwoLpFRubk" role="2OqNvi">
+                <node concept="chp4Y" id="4RwoLpFRuej" role="cj9EA">
+                  <ref role="cht4Q" to="tpck:1V3wYmOJsDm" resolve="IDontApplyTypesystemRules" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="1V3wYmOJFOW" role="3clF45" />
+      <node concept="37vLTG" id="1V3wYmOJFOX" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="1V3wYmOJFOY" role="1tU5fm" />
+      </node>
+      <node concept="3Tm1VV" id="1V3wYmOJFP0" role="1B3o_S" />
+    </node>
+    <node concept="3Tm1VV" id="1V3wYmOJA0P" role="1B3o_S" />
   </node>
 </model>
 

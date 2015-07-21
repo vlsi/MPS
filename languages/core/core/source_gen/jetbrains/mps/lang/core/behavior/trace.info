@@ -15,7 +15,7 @@
       <unit at="9,0,29,0" name="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
     </file>
     <file name="BaseCommentAttribute_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.core.behavior.BaseCommentAttribute_BehaviorDescriptor" />
     </file>
     <file name="BaseConcept_BehaviorDescriptor.java">
       <unit at="11,0,37,0" name="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
@@ -50,6 +50,9 @@
     <file name="IDeprecatable_BehaviorDescriptor.java">
       <unit at="7,0,11,0" name="jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor" />
     </file>
+    <file name="IDontApplyTypesystemRules_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IDontApplyTypesystemRules_BehaviorDescriptor" />
+    </file>
     <file name="IDontSubstituteByDefault_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     </file>
@@ -61,6 +64,9 @@
     </file>
     <file name="IResolveInfo_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" />
+    </file>
+    <file name="ISkipConstraintsChecking_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.ISkipConstraintsChecking_BehaviorDescriptor" />
     </file>
     <file name="IStubForAnotherConcept_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" />

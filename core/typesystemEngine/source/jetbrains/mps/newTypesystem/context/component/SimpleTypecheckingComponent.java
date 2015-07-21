@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -213,7 +214,7 @@ import java.util.Set;
 
   private void drainQueue(boolean forceChildrenCheck, SNode targetNode, AccessTracking accessTracking) {
     for (SNode sNode = myQueue.poll(); sNode != null; sNode = myQueue.poll()) {
-      if (myFullyCheckedNodes.contains(sNode)) {
+      if (myFullyCheckedNodes.contains(sNode) || !TypeSystemUtil.shouldApplyTypeSystemRules(sNode)) {
         continue;
       }
       Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
