@@ -121,6 +121,8 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
   }
 
+  // XXX why don't we expose 'kind' if we do specify one at creation time?
+  // What's the point of this ForeignSModelId then? It could be plain AnyStringModelId then.
   public final static class ForeignSModelId extends SModelId {
     public static final String TYPE = "f";
     private String myId;
@@ -129,6 +131,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
       myId = InternUtil.intern(id);
     }
 
+    // XXX what about null/not null?
     public String getId() {
       return myId;
     }

@@ -23,6 +23,8 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -58,6 +60,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -194,9 +197,26 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   @Override
-  public SModel resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId ref) {
+  public SModel resolveInDependencies(SModelId ref) {
     assertCanRead();
-    // TODO: implement something more meaningful
+    SModel rv = getModel(ref);
+    if (rv != null) {
+      return rv;
+    }
+    for (SModule visibleModule : new GlobalModuleDependenciesManager(this).getModules(Deptype.VISIBLE)) {
+      rv = visibleModule.getModel(ref);
+      if (rv != null) {
+        return rv;
+      }
+    }
+//    TODO: Work in progress. At the moment, there are two cases I'm aware of, that
+//    doesn't allow us to return null here (i.e. not to go to global registry):
+//    1) Use of java stub counterparts where their original (source) module is in dependencies.
+//       E.g. closures.runtime and its trick to use java stubs instead of plain node references
+//    2) References to accessory model of used language. E.g. mps.build generator uses mps.wf language,
+//       which exposes fw.preset models as its accessories. These are not deemed visible by GMDM
+//    Uncomment next warning to see these.
+//    LOG.warn(String.format("Failed to resolve %s in module %s", ref, getModuleName()));
     return SModelRepository.getInstance().getModelDescriptor(ref);
   }
 

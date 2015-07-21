@@ -201,10 +201,12 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     if (myCachedDependencies == null) {
-      myCachedDependencies = new HashSet<SDependency>();
+      // could be invoked from multiple threads. Don't want synchronization, and hope extra iteration won't hurt that much
+      HashSet<SDependency> deps = new HashSet<SDependency>();
       for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
-        myCachedDependencies.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
+        deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
       }
+      myCachedDependencies = deps;
     }
     return myCachedDependencies;
   }
