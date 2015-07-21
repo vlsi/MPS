@@ -19,13 +19,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MethodDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static SNode virtual_create_8260330507834998478(final SNode thisNode) {
-    SNode method = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")), null);
+  public static SNode virtual_create_8260330507834998478(SNode thisNode) {
+    final SNode method = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")), null);
     SPropertyOperations.set(method, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1ffL, "body"), SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, "jetbrains.mps.baseLanguage.structure.StatementList"))));
     ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d167L, 0x340eb2bd2e03d168L, "param"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return ParameterDescriptor_Behavior.call_create_2613537504709874302(it, thisNode);
+        return ParameterDescriptor_Behavior.call_create_2613537504709874302(it, method);
       }
     }));
     SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType"), (SNodeOperations.isInstanceOf(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) ? DependentTypeDeclaration_Behavior.call_create_2613537504709871067(SNodeOperations.cast(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d15cL, "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")), thisNode) : SNodeOperations.copyNode(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode))));
