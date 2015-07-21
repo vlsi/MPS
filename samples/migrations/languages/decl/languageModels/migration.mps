@@ -222,11 +222,11 @@
     </node>
     <node concept="3tTeZs" id="1Ij79tqp1g_" role="jymVt">
       <property role="3tTeZt" value="&lt;no execute after&gt;" />
-      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
     </node>
     <node concept="3tTeZs" id="1Ij79tqp1gA" role="jymVt">
       <property role="3tTeZt" value="&lt;no required data&gt;" />
-      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" />
+      <ref role="3tTeZr" to="slm6:3A3gNhf1WPI" resolve="requires data" />
     </node>
     <node concept="qMTd$" id="1Ij79tqsN1v" role="jymVt">
       <ref role="qMTaa" to="3whe:1Ij79tqsMYb" resolve="DeclMigrationData_WholeModule" />

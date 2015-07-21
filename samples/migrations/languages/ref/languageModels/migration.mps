@@ -222,7 +222,7 @@
     </node>
     <node concept="3tTeZs" id="1Ij79tquYla" role="jymVt">
       <property role="3tTeZt" value="&lt;no execute after&gt;" />
-      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" />
+      <ref role="3tTeZr" to="slm6:7ay_HjIMt1a" resolve="execute after" />
     </node>
     <node concept="2T5b9s" id="1Ij79tquYP_" role="jymVt">
       <node concept="2wGOBp" id="1Ij79tquYQJ" role="3iHwz2">
@@ -233,7 +233,7 @@
     </node>
     <node concept="3tTeZs" id="1Ij79tquYlc" role="jymVt">
       <property role="3tTeZt" value="&lt;no produced data&gt;" />
-      <ref role="3tTeZr" to="slm6:536fTXa4WHO" />
+      <ref role="3tTeZr" to="slm6:536fTXa4WHO" resolve="produces data" />
     </node>
     <node concept="2tJIrI" id="1Ij79tquYld" role="jymVt" />
     <node concept="3tYpXE" id="1Ij79tqxAGm" role="jymVt">
