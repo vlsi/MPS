@@ -78,12 +78,23 @@ public interface SModule {
 
   /**
    * FIXME document whether this method required model read
+   * @deprecated This method has been deprecated since it doesn't help to resolve SModelId that are not unique
+   *   I.e. if few modules from dependencies provide model with the same id (happens for java package models),
+   *   then the model returned would depend from iteration order. Instead, use SModelReference.resolve(SRepository) meanwhile.
+   *
+   * FIXME decide whether we need resolveInDependencies(SModelReference), which might be handy to give module control over
+   *   dependency resolution, or do the scope control (whether module of model requested belongs to imports of this module) externally.
+   *   Perhaps, there's a case when one knows only SModelId (i.e. looks up smth like "java.io", and we'd need a method to return a collection
+   *   of models with this id visible from dependencies then)
+   *
    * Find the specified model among the dependencies.
    * Models of this module ({@link #getModel(SModelId)}) are considered and take precedence over models from dependency modules
    *
    * @return The desired model or null, if not found.
    */
   @Nullable
+  @Deprecated
+  //@ToRemove(version = 3.3)
   SModel resolveInDependencies(SModelId ref);
 
   /**

@@ -23,6 +23,7 @@ import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -147,12 +148,49 @@ public class SModelRepository implements CoreComponent {
 
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
+    if (value == null && isVerboseJavaStubModelId(id) ) {
+      SModelId newStubModelId = stripModuleIdFromVerboseJavaStubModelId(id);
+      value = myIdToModelDescriptorMap.get(newStubModelId);
+    }
     if (value == null && id instanceof ModelNameSModelId) {
       // inexact search...
       value = SModelRepository.getInstance().getModelDescriptor(id.getModelName());
     }
     return value;
   }
+
+  /**
+   * Compatibility code to migrate stub model id with module id to an 'honest' model id without module id.
+   * @return <code>true</code> if it's model id of java stub and it includes module id as it used to do in MPS 3.2 and earlier
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  /*package*/ static boolean isVerboseJavaStubModelId(SModelId id) {
+    if (ForeignSModelId.TYPE.equals(id.getType()) && id instanceof ForeignSModelId) {
+      String idValue = ((ForeignSModelId) id).getId();
+      String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
+      if (idValue.length() > stereo.length() + 2 && idValue.startsWith(stereo) && idValue.charAt(stereo.length()) == '#') {
+        // legacy stub model id: f:java_stub#module id#package name
+        //    new stub model id: f:java_stub#package name
+        int secondHashIndex = idValue.indexOf('#', stereo.length() + 1);
+        // there are two hash chars and non-empty package name
+        return secondHashIndex != -1 && idValue.length() > secondHashIndex;
+      }
+    }
+    return false;
+  }
+
+  // here we rely on internals otherwise hidden in JavaPackageNameStub. Since it's for transition period of 1 release only, deemed tolerable.
+  @ToRemove(version = 3.3)
+  /*package*/ static SModelId stripModuleIdFromVerboseJavaStubModelId(SModelId verboseJavaStubId) {
+    // pre: isVerboseJavaStubModelId()
+    String idValue = ((ForeignSModelId) verboseJavaStubId).getId();
+    int firstHash = idValue.indexOf('#');
+    int lastHash = idValue.lastIndexOf('#');
+    assert firstHash != lastHash;
+    return jetbrains.mps.smodel.SModelId.foreign(idValue.substring(0, firstHash) + idValue.substring(lastHash));
+  }
+
 
   @Deprecated
   public List<SModel> getModelDescriptorsByModelName(String modelName) {

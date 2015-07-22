@@ -155,8 +155,8 @@ public final class StaticReference extends SReferenceBase {
     if (targetModelReference == null) return null;
 
     SModel modelDescriptor = null;
-    if (current != null && current.getModule() != null) {
-      modelDescriptor = current.getModule().resolveInDependencies(targetModelReference.getModelId());
+    if (current != null && current.getRepository() != null) {
+      modelDescriptor = targetModelReference.resolve(current.getRepository());
     } else if (!RuntimeFlags.isMergeDriverMode()) {
       // [artem] here comes essential piece of MPS functionality - one can create node hanging in the thin air
       // set reference using string for model name and node id, and then magically resolve this simply navigating the reference

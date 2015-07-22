@@ -17,7 +17,7 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -72,9 +72,11 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
     if (dataSource.hasJavaFiles()) {
       String pkg = dataSource.guessPackage();
       if (pkg != null) {
-        SModelReference modelRef = Util.makeModelReference(pkg, getModule());
-        if (modelRef != null) {
-          JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(modelRef, dataSource);
+        JavaPackageNameStub packStub = new JavaPackageNameStub(pkg);
+        // default package is not handled by MPS; classes in default pkg can be referenced only 
+        // from the default pkg as well, but there are no models that correspond to it 
+        if (!(packStub.isDefaultPackage())) {
+          JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(packStub.asModelReference(getModule().getModuleReference()), dataSource);
           SetSequence.fromSet(models).addElement(model);
         }
       } else {

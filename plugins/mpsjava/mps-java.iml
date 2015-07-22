@@ -23,19 +23,19 @@
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="library" name="Eclipse-compiler" level="project" />
-    <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="findUsages-runtime" />
-    <orderEntry type="library" name="Idea-plaform" level="project" />
-    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="module" module-name="mps-icons" />
-    <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="basePlatform" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="JDOM" level="project" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="library" name="Log4j" level="project" />
   </component>
 </module>

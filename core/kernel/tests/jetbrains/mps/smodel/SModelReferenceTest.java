@@ -66,9 +66,9 @@ public class SModelReferenceTest {
     SModelReference r3 = getPersistenceFacade().createModelReference(
         "6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)");
 
-    SModuleReference moduleRefNoName = getPersistenceFacade().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065");
+    SModuleReference moduleRefNoName = getPersistenceFacade().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065()");
     SModuleReference moduleRefWithName = getPersistenceFacade().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
-    SModelId modelId = SModelId.foreign("java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util");
+    SModelId modelId = SModelId.foreign("java_stub#java.util");
     SModelReference expected1 = getPersistenceFacade().createModelReference(moduleRefNoName, modelId, "java.util@java_stub");
     SModelReference expected2 = getPersistenceFacade().createModelReference(moduleRefWithName, modelId, "java.util@java_stub");
     assertEquals("[sanity]", expected1, expected2);

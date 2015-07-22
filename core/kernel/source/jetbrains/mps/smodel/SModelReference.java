@@ -118,7 +118,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
           if (module == null) {
             return null;
           }
-          return module.resolveInDependencies(myModelId);
+          return module.getModel(myModelId);
         }
       };
       if (!repository.getModelAccess().canRead()) {
@@ -227,6 +227,10 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       moduleId = extractModuleIdFromModelIdIfJavaStub(modelId);
     }
 
+    if (SModelRepository.isVerboseJavaStubModelId(modelId)) {
+      modelId = SModelRepository.stripModuleIdFromVerboseJavaStubModelId(modelId);
+    }
+
     SModuleReference moduleRef =
         moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
     return new SModelReference(moduleRef, modelId, modelName);
@@ -244,7 +248,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Nullable
   @Hack
   private static SModuleId extractModuleIdFromModelIdIfJavaStub(SModelId modelId) {
-    if (modelId instanceof ForeignSModelId) {
+    if (SModelRepository.isVerboseJavaStubModelId(modelId)) {
       // FIXME use JavaPackageNameStub or any other code that keeps knowledge about "java_stub" kind
       String idValue = ((ForeignSModelId) modelId).getId();
       String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -290,6 +294,11 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return SModelStereotype.getStereotype(myModelName);
   }
 
+  /**
+   * @deprecated factory method that requires cast to implementation. why not API way to do the same?
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;

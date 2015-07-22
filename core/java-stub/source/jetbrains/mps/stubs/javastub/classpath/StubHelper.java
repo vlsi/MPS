@@ -15,20 +15,26 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+/**
+ * Use {@link JavaPackageNameStub}
+ */
+@Deprecated
+@ToRemove(version = 3.3)
 public class StubHelper {
   public StubHelper() {
   }
 
   public static SModelReference uidForPackageInStubs(@NotNull SModuleReference moduleRef, String name){
-    String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereo, moduleRef.getModuleId().toString(), name);
-    return new jetbrains.mps.smodel.SModelReference(moduleRef, modelId, name + "@" + stereo);
+    return new JavaPackageNameStub(name).asModelReference(moduleRef);
   }
 }

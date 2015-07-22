@@ -105,7 +105,7 @@ public abstract class DefaultScope extends BaseScope {
       return null;
     }
 
-    SModel model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
+    SModel model = reference.resolve(MPSModuleRepository.getInstance());
 
     if (model == null) {
       return null;
