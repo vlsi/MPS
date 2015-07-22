@@ -120,7 +120,7 @@ public abstract class MigrationScriptBase implements MigrationScript {
     }
   }
   private static MigrationScriptBase.SNodePlacePointer createSNodePlacePointer(SNode node) {
-    if (node.getParent() == null) {
+    if (node.getParent() != null) {
       return new MigrationScriptBase.SNodePlacePointer.ChildPointer(node);
     } else {
       return new MigrationScriptBase.SNodePlacePointer.RootPointer(node);

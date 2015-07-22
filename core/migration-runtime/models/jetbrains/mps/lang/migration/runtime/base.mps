@@ -1157,8 +1157,7 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbC" id="1xD045lU$IA" role="3clFbw">
-            <node concept="10Nm6u" id="1xD045lU$K3" role="3uHU7w" />
+          <node concept="3y3z36" id="IgF9kFHaBh" role="3clFbw">
             <node concept="2OqwBi" id="1xD045lU$xF" role="3uHU7B">
               <node concept="37vLTw" id="1xD045lU$wP" role="2Oq$k0">
                 <ref role="3cqZAo" node="1xD045lU$j2" resolve="node" />
@@ -1167,6 +1166,7 @@
                 <ref role="37wK5l" to="ec5l:~SNode.getParent():org.jetbrains.mps.openapi.model.SNode" resolve="getParent" />
               </node>
             </node>
+            <node concept="10Nm6u" id="1xD045lU$K3" role="3uHU7w" />
           </node>
           <node concept="9aQIb" id="1xD045lU_8N" role="9aQIa">
             <node concept="3clFbS" id="1xD045lU_8O" role="9aQI4">
