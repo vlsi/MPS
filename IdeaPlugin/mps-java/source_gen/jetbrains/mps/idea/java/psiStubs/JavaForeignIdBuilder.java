@@ -19,7 +19,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import com.intellij.facet.FacetManager;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import com.intellij.util.xml.ModuleContentRootSearchScope;
-import jetbrains.mps.ide.java.sourceStubs.Util;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.smodel.SModelId;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
@@ -93,7 +93,7 @@ public class JavaForeignIdBuilder {
     if (mpsModule == null) {
       return null;
     }
-    return Util.makeModelReference(packageName, mpsModule);
+    return new JavaPackageNameStub(packageName).asModelReference(mpsModule.getModuleReference());
   }
 
   /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {

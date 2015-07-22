@@ -226,6 +226,10 @@ public class TemplateQueryContext {
 
 
   public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
+    if (inputNode == null) {
+      showErrorMessage(null, String.format("Attempt to find proxy for non-existent node. Label %s, model %s", exportLabelName, myGenerator.getInputModel().toString()));
+      return null;
+    }
     final ExportsSessionContext exports = myGenerator.getGeneratorSessionContext().getExports();
     final Collection<SNode> exportProxies = exports.find(exportLabelName, getInputModel(), inputNode);
     if (exportProxies.isEmpty()) {

@@ -27,10 +27,10 @@ import com.intellij.psi.PsiPackage;
 import com.intellij.refactoring.listeners.RefactoringElementListener;
 import com.intellij.refactoring.listeners.RefactoringElementListenerProvider;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
-import jetbrains.mps.ide.java.sourceStubs.Util;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
@@ -81,7 +81,7 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
       if (module == null) continue;
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
       if (facet == null) continue;
-      modelRefs.add(Util.makeModelReference(pkg.getQualifiedName(), facet.getSolution()));
+      modelRefs.add(new JavaPackageNameStub(pkg.getQualifiedName()).asModelReference(facet.getSolution().getModuleReference()));
     }
 
     if (modelRefs.isEmpty()) return null;
@@ -123,7 +123,7 @@ public class PackageRenameListener implements RefactoringElementListenerProvider
                   continue;
                 }
                 SModule module = mref.getModuleReference().resolve(repository);
-                SModelReference newModelRef = Util.makeModelReference(newPkgName, module);
+                SModelReference newModelRef = new JavaPackageNameStub(newPkgName).asModelReference(module.getModuleReference());
                 ImportElement newImport = new ImportElement(newModelRef, imp.getReferenceID());
                 ((SModelInternal) model).deleteModelImport(mref);
                 ((SModelInternal) model).addModelImport(newImport);

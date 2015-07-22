@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.ide.java.sourceStubs.Util;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiFileSystemItem;
 
@@ -141,7 +141,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
       packageName = packageName.substring(1);
     }
 
-    return (jetbrains.mps.smodel.SModelReference) Util.makeModelReference(packageName, getModule());
+    return (jetbrains.mps.smodel.SModelReference) new JavaPackageNameStub(packageName).asModelReference(getModule().getModuleReference());
   }
   public boolean isReadOnly() {
     return true;
