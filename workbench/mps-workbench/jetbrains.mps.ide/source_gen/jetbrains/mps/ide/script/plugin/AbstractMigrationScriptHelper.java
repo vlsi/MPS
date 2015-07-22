@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
 import java.util.Collections;
@@ -64,6 +66,13 @@ public abstract class AbstractMigrationScriptHelper {
         return rs;
       }
     }
+    // try name match if none matched by node reference 
+    for (RefactoringScript rs : scriptAspect.getRefactoringScripts()) {
+      if (rs.getName().equals(SPropertyOperations.getString(scriptNode, MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title")))) {
+        return rs;
+      }
+    }
+
     return null;
   }
 

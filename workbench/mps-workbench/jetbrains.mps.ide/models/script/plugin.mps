@@ -1160,6 +1160,60 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="30BDIaJLcvY" role="3cqZAp">
+          <node concept="3SKdUq" id="30BDIaJLcxA" role="3SKWNk">
+            <property role="3SKdUp" value="try name match if none matched by node reference" />
+          </node>
+        </node>
+        <node concept="1DcWWT" id="30BDIaJLbKY" role="3cqZAp">
+          <node concept="3clFbS" id="30BDIaJLbKZ" role="2LFqv$">
+            <node concept="3clFbJ" id="30BDIaJLbL0" role="3cqZAp">
+              <node concept="3clFbS" id="30BDIaJLbL1" role="3clFbx">
+                <node concept="3cpWs6" id="30BDIaJLbL2" role="3cqZAp">
+                  <node concept="37vLTw" id="30BDIaJLbL3" role="3cqZAk">
+                    <ref role="3cqZAo" node="30BDIaJLbLj" resolve="rs" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="30BDIaJLbL5" role="3clFbw">
+                <node concept="2OqwBi" id="30BDIaJLbL6" role="2Oq$k0">
+                  <node concept="37vLTw" id="30BDIaJLbL7" role="2Oq$k0">
+                    <ref role="3cqZAo" node="30BDIaJLbLj" resolve="rs" />
+                  </node>
+                  <node concept="liA8E" id="30BDIaJLbL8" role="2OqNvi">
+                    <ref role="37wK5l" to="nvof:~RefactoringScript.getName():java.lang.String" resolve="getName" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="30BDIaJLbL9" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="2OqwBi" id="30BDIaJLbLa" role="37wK5m">
+                    <node concept="37vLTw" id="30BDIaJLbLb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4B2IQdOqyOL" resolve="scriptNode" />
+                    </node>
+                    <node concept="3TrcHB" id="30BDIaJLbLc" role="2OqNvi">
+                      <ref role="3TsBF5" to="tp33:h8_Wzla" resolve="title" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="30BDIaJLbLj" role="1Duv9x">
+            <property role="TrG5h" value="rs" />
+            <node concept="3uibUv" id="30BDIaJLbLk" role="1tU5fm">
+              <ref role="3uigEE" to="nvof:~RefactoringScript" resolve="RefactoringScript" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="30BDIaJLbLl" role="1DdaDG">
+            <node concept="37vLTw" id="30BDIaJLbLm" role="2Oq$k0">
+              <ref role="3cqZAo" node="4B2IQdOqLO$" resolve="scriptAspect" />
+            </node>
+            <node concept="liA8E" id="30BDIaJLbLn" role="2OqNvi">
+              <ref role="37wK5l" to="nvof:~ScriptAspectDescriptor.getRefactoringScripts():java.util.Collection" resolve="getRefactoringScripts" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="30BDIaJLbBF" role="3cqZAp" />
         <node concept="3cpWs6" id="4B2IQdOqSRA" role="3cqZAp">
           <node concept="10Nm6u" id="4B2IQdOqSUf" role="3cqZAk" />
         </node>
